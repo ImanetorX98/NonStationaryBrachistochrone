@@ -330,16 +330,35 @@ path, so the turning point \emph{anticipates future accretion}
 \subsection{Phenomenology: penetration, timing, bounce}
 \label{sec:vaidya-pheno}
 Three features distinguish the dynamical hole from its frozen-mass
-Schwarzschild limit. \emph{Penetration:} the $\tau$-brachistochrone reaches the
-apparent horizon $r=2m(v)$ only if $|J|$ lies below a threshold $J_c(v_0)$;
-accretion ($m'>0$) opens a \emph{finite} window $J_c>0$, whereas evaporation
-($m'<0$) closes it to zero measure---an
-accretion/evaporation asymmetry with no static analogue. \emph{Timing:} because
-$m$ grows along the path, $r_{\min}$ depends on the \emph{arrival} epoch $v_1$;
-later arrivals meet a heavier hole and turn earlier. \emph{Bounce:} in the
-$v$-parametrization the periapsis is a regular bounce, with the memory term
-$p_v(r)\propto m'$ measuring the departure from the frozen-mass curve
-(Fig.~\ref{fig:vaidya-traj}).
+Schwarzschild limit.
+
+\emph{Penetration.} The $\tau$-brachistochrone reaches the apparent horizon
+$r=2m(v)$ only if $|J|$ lies below a threshold $J_c(v_0)$; accretion ($m'>0$)
+opens a \emph{finite} window $J_c>0$, whereas evaporation ($m'<0$) closes it to
+zero measure---an accretion/evaporation asymmetry with no static analogue. The
+finite capture interval $J\in(0,\Jc]$ is the analogue of the Kerr $t$-branch
+dichotomy, generated here by the \emph{dynamics}: grazing orbits linger near
+periapsis while the growing horizon closes the gap.
+
+\emph{Bounce.} The $r$-parametrization degenerates at periapsis
+($\dd v/\dd r\to\infty$); reparametrizing by $v$ makes the Euler--Lagrange
+problem regular at the turning point $r'=0$, so the trajectory is integrated
+straight \emph{through} the bounce---the same extremal, via the exact change of
+variable $(f v'-1)\dd r=(f-r')\dd v$. The $v$-flow reaches the periapsis exactly
+where the $r$-flow diverges ($r_{\min}=3.0105$ at $v=7.29$ for $\mu\equiv m'=0.01$),
+and the teleological memory $p_v(r)\propto m'$ measures the departure from the
+frozen-mass Schwarzschild curve (Fig.~\ref{fig:vaidya-bounce}).
+
+\emph{Timing and the orbit--horizon race.} Because $m$ grows along the path,
+$r_{\min}$ depends on \emph{when} the particle arrives, the epoch $v_1$---a
+genuinely non-stationary effect absent in Kerr. Strikingly, the absolute and
+relative penetration have \emph{opposite} winners
+(Fig.~\ref{fig:vaidya-timing}): under evaporation the absolute periapsis descends
+but the horizon $2m(v)$ retreats faster, so the relative penetration
+$r_{\min}/2m(v_{\rm peri})$ \emph{worsens} for later arrivals; under accretion the
+periapsis rises yet the horizon grows faster, so late arrivals graze the relative
+horizon. The orbit--horizon chase has reversed outcomes measured in $r$ versus in
+horizon units.
 
 \begin{figure}[tbp]
     \centering
@@ -347,6 +366,24 @@ $p_v(r)\propto m'$ measuring the departure from the frozen-mass curve
     \caption{$\tau$-brachistochrones Schwarzschild vs Vaidya, and $p_v(r)$:
     transversality $p_v(r_1)=0$, non-autonomous memory $\propto m'$.}
     \label{fig:vaidya-traj}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_bounce.png}
+    \caption{Bounce through periapsis in the $v$-parametrization: the
+    Euler--Lagrange flow is regular at $r'=0$ and integrates through the turning
+    point, reaching $r_{\min}$ exactly where the $r$-parametrization diverges.}
+    \label{fig:vaidya-bounce}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_timing.png}
+    \caption{Timing window: $r_{\min}$ depends on the arrival epoch $v_1$. The
+    orbit--horizon race has opposite winners in absolute ($r_{\min}$) and relative
+    ($r_{\min}/2m$) terms for accretion vs evaporation.}
+    \label{fig:vaidya-timing}
 \end{figure}
 
 
