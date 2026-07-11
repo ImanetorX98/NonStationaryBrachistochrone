@@ -231,8 +231,10 @@ the monotone reparametrization $t(\eta)=\int a\,\dd\eta$ maps critical points to
 critical points, and the $\tau$-cost differs from the $\eta$-cost only by the
 same $\eta$-dependent weight. Hence
 \begin{equation}
-    \arg\min T_t=\arg\min T_\tau=\arg\min T_\eta
-    =\text{comoving straight line}.
+\begin{split}
+    \arg\min T_t&=\arg\min T_\tau=\arg\min T_\eta\\
+    &=\text{comoving straight line}.
+\end{split}
     \label{eq:flrwdegen}
 \end{equation}
 The $t/\tau$ splitting that drives every later result is a gravitational-%
@@ -721,24 +723,32 @@ $J=\Jc$ the doranTau factorization $\Delta-\Jc^2 w=f(r^2+c^2)$, $c=a/E$, makes t
 turning quartic $Q_4=r\big((E^2-1)r+2M\big)(r^2+c^2)$, and the factor $r^2+c^2$
 divides $Q_4$ so that only the horizon poles survive. Writing
 \begin{gather}
-    A=\frac{Ma^2}{2E^2},\qquad B=\frac{a^2(E^2-1)}{12E^2},\qquad
+    A=\frac{Ma^2}{2E^2},\qquad B=\frac{a^2(E^2-1)}{12E^2},\notag\\
     g_2=\frac{a^4(E^2-1)^2}{12E^4}-\frac{a^2M^2}{E^2},\notag\\
     g_3=\frac{a^4\big[36E^2M^2(1-E^2)-a^2(E^2-1)^3\big]}{216E^6},
     \label{eq:wp-invariants}
 \end{gather}
 the uniformizing variable is $z(r)=\wp^{-1}\!\big(A/r+B;g_2,g_3\big)
-=\int_0^r\dd r'/\sqrt{Q_4}$. With $r_\pm=M\pm\sqrt{M^2-a^2}$ the horizons,
+=\int_0^r\dd r'/\sqrt{Q_4}$, the Abel map of the turning quartic $Q_4$: it is the
+elliptic argument in which the radial motion linearizes, so that $r$ is recovered
+by $A/r+B=\wp(z)$ and the physical range $r\in[r_{\min},\infty)$ maps to a
+segment of $z$. With $r_\pm=M\pm\sqrt{M^2-a^2}$ the horizons,
 \begin{equation}
-    \alpha_\pm=\frac{r_\pm\big((E^2-1)r_\pm+2M\big)}{r_\pm-r_\mp},\quad
-    \lambda_\pm=\frac{\alpha_\pm}{\sqrt{Q_4(r_\pm)}},\quad v_\pm=z(r_\pm),
+\begin{aligned}
+    \alpha_\pm&=\frac{r_\pm\big((E^2-1)r_\pm+2M\big)}{r_\pm-r_\mp},\\
+    \lambda_\pm&=\frac{\alpha_\pm}{\sqrt{Q_4(r_\pm)}},\qquad v_\pm=z(r_\pm),
+\end{aligned}
 \end{equation}
 $\wp(v_\pm)=A/r_\pm+B$, and
 $\Lambda_0=(E^2-1)-\alpha_+/r_+-\alpha_-/r_-+2\lambda_+\zeta(v_+)+2\lambda_-\zeta(v_-)$,
-the angle is linear in $z$ plus two Weierstrass-$\sigma$ ratios,
+the angle is linear in the uniformizing variable $z\equiv z(r)$ plus two
+Weierstrass-$\sigma$ ratios,
 \begin{equation}
-    \varphi(r)=\frac{a}{E}\!\left[\Lambda_0\,z
-      +\lambda_+\ln\frac{\sigma(z-v_+)}{\sigma(z+v_+)}
-      +\lambda_-\ln\frac{\sigma(z-v_-)}{\sigma(z+v_-)}\right]+\text{const}.
+\begin{split}
+    \varphi(r)=\frac{a}{E}\Big[&\Lambda_0\,z(r)
+      +\lambda_+\ln\frac{\sigma(z-v_+)}{\sigma(z+v_+)}\\
+      &+\lambda_-\ln\frac{\sigma(z-v_-)}{\sigma(z+v_-)}\Big]+\text{const}.
+\end{split}
     \label{eq:sep-phi}
 \end{equation}
 Because $Q_4(2M)=4M^2(4E^2M^2+a^2)>0$, Eq.~\eqref{eq:sep-phi} is regular
@@ -862,8 +872,7 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
     \label{fig:verifmin}
 \end{figure}
 
-
-
+\clearpage
 
 % ======================================================================
 \begin{acknowledgments}
@@ -878,10 +887,9 @@ for the content of this work.
 \section*{Data availability}
 The complete numerical and symbolic codebase underlying this work is openly
 available under the MIT license in the GitHub repository
-``NonStationaryBrachistochrone''~\cite{Rosignoli2026Code}:
+``NonStationary\-Brachi\-sto\-chrone''~\cite{Rosignoli2026Code}:
 \begin{center}
-\href{https://github.com/ImanetorX98/NonStationaryBrachistochrone}
-{\texttt{github.com/ImanetorX98/NonStationaryBrachistochrone}}.
+\url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}
 \end{center}
 The repository includes the trajectory integrators, the Pontryagin Hamiltonian
 constructions, the Poisson-bracket closure and quasi-invariant scans

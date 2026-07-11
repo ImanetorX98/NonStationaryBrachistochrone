@@ -225,7 +225,7 @@ ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
 ax.set_title(f'separatrix $J=J_c=a/E$ ($a={a}$, $E={E}$): three methods\n'
              'closed form crosses $r_e$; PMP-$\\eta$ terminates there')
-ax.legend(loc='lower left')
+ax.legend(loc='upper right', fontsize=6, framealpha=0.9)
 
 axb.semilogy(rg, np.abs(phi3 - phi2) + 1e-18, 'C2-',
              label='|Weierstrass $-$ quadrature|')
