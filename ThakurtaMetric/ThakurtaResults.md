@@ -702,6 +702,16 @@ affonda di più", cfr. Vaidya R13/R15). Un'orbita retrograda con `J=−5`
 simmetria solo per il ramo t; la struttura `J²` di doranTau protegge la
 simmetria del ramo τ. `A>1` allarga leggermente entrambe le soglie.
 
+**Forma analitica delle soglie t (nuovo):** la funzione di svolta del ramo t
+(da H_η=0 a p_r=0) è `N(r)=(P̄−Jbv̄²)²−J²Δv̄²`, `b=2Ma/r`. A r_e:
+`N(r_e)=P̄_e(P̄_e−2aJ)`, `P̄_e=4M²+2a²+a²/E²` ⇒ **un solo** attraversamento
+(prograde) a **`J_+^t=P̄_e/(2a)`** (=3.435 per a=0.9,E=1.2; ≡ "oltre +3").
+Nessun attraversamento retrogrado a r_e. Il bordo retrogrado è la **cattura
+marginale** (doppia radice `N=N'=0` a r*>r_e, analoga alla sfera fotonica
+retrograda): **`J_c^-=−P̄(r*)/[v̄(√Δ−bv̄)]|_{r*}`** = −8.054 (r*=3.514),
+match esatto con il numerico. Banda t = `[J_c^-, J_+^t]`; conforme:
+E→Ê/A, a→s, J→J/A.
+
 ### R12g. La riflessione all'ergosfera è una CUSPIDE (dimostrazione)
 (`cuspide_ergosfera.py`, `fig_thakurta_cuspide_ergosfera`)
 
