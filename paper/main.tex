@@ -26,6 +26,12 @@
 \renewcommand{\textfraction}{0.05}
 \renewcommand{\floatpagefraction}{0.6}
 
+% ToC: widen the number field so roman numerals don't collide with titles
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{2.6em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2.6em}{2.4em}}
+\makeatother
+
 % prose placeholder helper
 \newcommand{\todo}[1]{{\color{red}\small[[#1]]}}
 
@@ -65,6 +71,8 @@ conformal plunge inversion.
 
 \pacs{04.20.-q, 04.70.Bw, 98.80.Jk}
 \maketitle
+
+{\hypersetup{linkcolor=black}\tableofcontents}
 
 
 % ======================================================================
@@ -317,7 +325,7 @@ satisfies $p_v(r_1)=0$ at the free arrival radius yet $p_v(r)\neq0$ along the
 path, so the turning point \emph{anticipates future accretion}
 (Fig.~\ref{fig:vaidya-traj}).
 
-\begin{figure}[tbp]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_kodama_conservazione.png}
     \caption{Kodama energy $-u\cdot K=\Ehat$ conserved along the
@@ -360,30 +368,12 @@ periapsis rises yet the horizon grows faster, so late arrivals graze the relativ
 horizon. The orbit--horizon chase has reversed outcomes measured in $r$ versus in
 horizon units.
 
-\begin{figure}[tbp]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_traiettorie.png}
     \caption{$\tau$-brachistochrones Schwarzschild vs Vaidya, and $p_v(r)$:
     transversality $p_v(r_1)=0$, non-autonomous memory $\propto m'$.}
     \label{fig:vaidya-traj}
-\end{figure}
-
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_bounce.png}
-    \caption{Bounce through periapsis in the $v$-parametrization: the
-    Euler--Lagrange flow is regular at $r'=0$ and integrates through the turning
-    point, reaching $r_{\min}$ exactly where the $r$-parametrization diverges.}
-    \label{fig:vaidya-bounce}
-\end{figure}
-
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_timing.png}
-    \caption{Timing window: $r_{\min}$ depends on the arrival epoch $v_1$. The
-    orbit--horizon race has opposite winners in absolute ($r_{\min}$) and relative
-    ($r_{\min}/2m$) terms for accretion vs evaporation.}
-    \label{fig:vaidya-timing}
 \end{figure}
 
 
@@ -402,7 +392,7 @@ static ratio $J^2_t/J^2_\tau=\Ehat^2/f^2>1$ gives $r_{\min}^t<r_{\min}^\tau$
 evaporative inversion} (the apparent linear-model inversion is an artifact of
 $m\le0$).
 
-\begin{figure}[tbp]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_plunge_t_tau.png}
     \caption{Plunge radii $r_{\min}^{t,\tau}$ and gap vs $\mu=m'$; $t$ deeper,
@@ -410,7 +400,7 @@ $m\le0$).
     \label{fig:vaidya-plunge}
 \end{figure}
 
-\begin{figure}[tbp]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_no_inversione_evaporazione.png}
     \caption{No physical evaporative inversion: the linear-model sign change
@@ -488,7 +478,7 @@ Hamiltonian~\eqref{eq:Heta} remains regular there; the limits $\Ehat\to\infty$
 
 
 
-\begin{figure}[tbp]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_thakurta_kerr_rami.png}
     \caption{The three branches: $\tau$ bounces (mirror pair, no wind), $\eta$
@@ -633,7 +623,7 @@ over by $E\to\Ehat/A$, $a\to s$, $J\to J/A$; in particular
 $\Jc^{\tau}=sA^2/\Ehat$.
 
 
-\begin{figure}[tbp]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_thakurta_cuspide_ergosfera.png}
     \caption{Reflection at the ergosphere: cusp ($|J|<\Jc$), smooth crossing
@@ -657,7 +647,7 @@ $\mathrm{cond}(\Af)=\Ehat r\Delta(\Ehat-1)/(r-2M)>0$, so by the intermediate
 value theorem $A_{\rm inv}\in(1,\Af)$: the conformal inversion always exists
 and is reachable (far field $A_{\rm inv}\to\sqrt{\Ehat}$).
 
-\begin{figure}[tbp]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_thakurta_kerr_plunge_t_tau.png}
     \caption{Rotational inversion in the $(a,J)$ plane; ODE locus vs analytic
@@ -686,7 +676,7 @@ optical-index ratio $n_t/n_\tau=E/f>1$ penalizes deep radii more heavily for
 the $t$-branch, so the $t$-brachistochrone bows outward while the $\tau$-branch
 dips. This must be specified when comparing depths.
 
-\begin{figure}[tbp]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_bvp_estremi_fissi.png}
     \caption{Fixed-endpoint $t$ and $\tau$ brachistochrones (Schwarzschild,
@@ -940,6 +930,24 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
     \caption{Each branch minimizes its own travel time; $t$ and $\tau$ are
     distinct curves.}
     \label{fig:verifmin}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_bounce.png}
+    \caption{Bounce through periapsis in the $v$-parametrization: the
+    Euler--Lagrange flow is regular at $r'=0$ and integrates through the turning
+    point, reaching $r_{\min}$ exactly where the $r$-parametrization diverges.}
+    \label{fig:vaidya-bounce}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_timing.png}
+    \caption{Timing window: $r_{\min}$ depends on the arrival epoch $v_1$. The
+    orbit--horizon race has opposite winners in absolute ($r_{\min}$) and relative
+    ($r_{\min}/2m$) terms for accretion vs evaporation.}
+    \label{fig:vaidya-timing}
 \end{figure}
 
 \clearpage
