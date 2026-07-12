@@ -210,6 +210,7 @@ KM = `KerrMetric/`. Tutte in `.pdf` (paper) + `.png` (anteprima).
 | KM/fig_bvp_estremi_fissi | BVP estremi fissi sim/asim, τ più fondo (R10c) | bvp_estremi_fissi.py | ThakurtaResults.md R10c |
 | KM/fig_bvp_kerr_inversione | Δr(a) estremi fissi, no inversione spin (R10c) | bvp_kerr_simmetrico.py | ThakurtaResults.md R10c |
 | KM/fig_bvp_conforme_inversione | Δr(E_eff) estremi fissi, no inversione A (R10c) | bvp_conforme_inversione.py | ThakurtaResults.md R10c |
+| KM/fig_tbranch_separatrix | separatrice t genere-1 (radice doppia), ODE vs forma chiusa (R12h) | kerr_tbranch_separatrix_figure.py | ThakurtaResults.md R12h |
 | KM/fig_colormap_spin_estremi_fissi | colormap Δr(J,a) estremi fissi, Δr>0 (R10c) | colormap_spin_estremi_fissi.py | ThakurtaResults.md R10c |
 | KM/fig_colormap_conforme_estremi_fissi | colormap Δr(J,A) estremi fissi, Δr>0 (R10c) | colormap_conforme_estremi_fissi.py | ThakurtaResults.md R10c |
 | KM/fig_colormap_spin_asimmetrico | colormap Δr(J,a) estremi ASIMMETRICI, Δr>0 (R10c) | colormap_spin_asimmetrico.py | ThakurtaResults.md R10c |
