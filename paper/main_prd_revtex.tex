@@ -1,16 +1,13 @@
 % ======================================================================
 %  Constrained-worldline brachistochrones in non-stationary spacetimes
-%  IOP iopart class -- Classical and Quantum Gravity
+%  RevTeX 4.2 (PRD) skeleton -- fill prose marked [[...]]
 % ======================================================================
-\documentclass[12pt]{iopart}
+\documentclass[
+    aps, prd, twocolumn, superscriptaddress,
+    showpacs, nofootinbib, floatfix
+]{revtex4-2}
 
-% iopart pre-defines \equation*, which clashes with amsmath; free it first
-\makeatletter
-\expandafter\let\csname equation*\endcsname\relax
-\expandafter\let\csname endequation*\endcsname\relax
-\makeatother
-\usepackage{amsmath}
-\usepackage{iopams}
+\usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
 \usepackage{bm}
 \usepackage{xcolor}
@@ -19,6 +16,21 @@
 
 % all figures collected here as PNG
 \graphicspath{{Immagini/}}
+
+% float placement (skeleton has many figures / sparse prose)
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{10}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.6}
+
+% ToC: widen the number field so roman numerals don't collide with titles
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{2.6em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2.6em}{2.4em}}
+\makeatother
 
 % prose placeholder helper
 \newcommand{\todo}[1]{{\color{red}\small[[#1]]}}
@@ -37,8 +49,10 @@
 spacetimes: Kodama rails, closed forms, and plunge inversion}
 
 \author{Iman Rosignoli}
-\address{University of Pavia, Pavia, Italy}
-\ead{iman.rosignoli01@universitadipavia.it}
+\affiliation{University of Pavia, Pavia, Italy\\
+\normalfont\texttt{iman.rosignoli01@universitadipavia.it}}
+
+\date{\today}
 
 \begin{abstract}
 We extend the relativistic brachistochrone (fastest-descent
@@ -56,6 +70,7 @@ the ergosphere with an analytic cusp theorem; and an existence theorem for the
 conformal plunge inversion.
 \end{abstract}
 
+\pacs{04.20.-q, 04.70.Bw, 98.80.Jk}
 \maketitle
 
 {\hypersetup{linkcolor=black}\tableofcontents}
@@ -190,7 +205,7 @@ deformations, each switching on one further phenomenon.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_indicatrici.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_indicatrici.png}
     \caption{Rail indicatrices (linear constraint $\cap$ normalization
     $=$ ellipse): the unifying formalism. FLRW gives shrinking circles (no
     wind, no eccentricity $\Rightarrow$ degenerate branches); Vaidya an ingoing
@@ -270,7 +285,7 @@ but no branch structure (Fig.~\ref{fig:flrw-var}).
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_flrw_cinematica.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_flrw_cinematica.png}
     \caption{de Sitter FLRW rail kinematics: local speed $v$ and rail redshift
     $E_{\rm phys}=\Ehat/a$; freezing at $a=\Ehat$.}
     \label{fig:flrw-kin}
@@ -279,7 +294,7 @@ but no branch structure (Fig.~\ref{fig:flrw-var}).
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_flrw_variazionale.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_flrw_variazionale.png}
     \caption{Variational check: the comoving straight line minimizes
     \emph{both} $T_t$ and $T_\tau$ (branch degeneracy).}
     \label{fig:flrw-var}
@@ -344,7 +359,7 @@ path, so the turning point \emph{anticipates future accretion}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_kodama_conservazione.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_kodama_conservazione.png}
     \caption{Kodama energy $-u\cdot K=\Ehat$ conserved along the
     $\tau$-brachistochrone to $6.7\times10^{-16}$ (top); the free-particle
     drift $\propto m'$ that the rail cancels (bottom).}
@@ -387,7 +402,7 @@ horizon units.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_traiettorie.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_traiettorie.png}
     \caption{$\tau$-brachistochrones Schwarzschild vs Vaidya, and $p_v(r)$:
     transversality $p_v(r_1)=0$, non-autonomous memory $\propto m'$.}
     \label{fig:vaidya-traj}
@@ -411,7 +426,7 @@ $m\le0$).
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_plunge_t_tau.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_plunge_t_tau.png}
     \caption{Plunge radii $r_{\min}^{t,\tau}$ and gap vs $\mu=m'$; $t$ deeper,
     accretion widens the gap.}
     \label{fig:vaidya-plunge}
@@ -419,7 +434,7 @@ $m\le0$).
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_no_inversione_evaporazione.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_no_inversione_evaporazione.png}
     \caption{No physical evaporative inversion: the linear-model sign change
     lies entirely in the unphysical $m<0$ region; with $m=e^{-\lambda v}>0$ the
     gap shrinks but never inverts.}
@@ -504,7 +519,7 @@ Hamiltonian~\eqref{eq:Heta} remains regular there; the limits $\Ehat\to\infty$
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_rami.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_thakurta_kerr_rami.png}
     \caption{The three branches: $\tau$ bounces (mirror pair, no wind), $\eta$
     spirals (gravitomagnetic wind); breathing conformal scalars $n,k_\tau$.}
     \label{fig:th-branches}
@@ -597,7 +612,7 @@ $2.8\times10^{-10}$ through the ergosphere, and general across parameters.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_separatrix_3traiettorie.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_separatrix_3traiettorie.png}
     \caption{$\tau$-branch separatrix $J=\Jc$: ODE, quadrature and evaluated
     Weierstrass agree to $2.8\times10^{-10}$; the PMP-$\eta$ terminates at $\re$.}
     \label{fig:sep3}
@@ -658,7 +673,7 @@ $\Jc^{\tau}=sA^2/\Ehat$.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_cuspide_ergosfera.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_thakurta_cuspide_ergosfera.png}
     \caption{Reflection at the ergosphere: cusp ($|J|<\Jc$), smooth crossing
     to $\rp$ in Doran coordinates ($|J|=\Jc$), smooth periapsis
     ($|J|>\Jc$); power law $2/3$ vs $2$.}
@@ -682,7 +697,7 @@ and is reachable (far field $A_{\rm inv}\to\sqrt{\Ehat}$).
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_plunge_t_tau.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_thakurta_kerr_plunge_t_tau.png}
     \caption{Rotational inversion in the $(a,J)$ plane; ODE locus vs analytic
     $\rho(r_*)^2=H_{t0}/H_{\tau0}$.}
     \label{fig:th-plungeAJ}
@@ -690,7 +705,7 @@ and is reachable (far field $A_{\rm inv}\to\sqrt{\Ehat}$).
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_inversione_AJ.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_thakurta_kerr_inversione_AJ.png}
     \caption{Conformal inversion in the $(J,A)$ plane: $\Delta r$ changes sign;
     analytic $\mathrm{cond}=0$ matches the numerical contour; reachable
     ($A_{\rm inv}<\Af$).}
@@ -711,7 +726,7 @@ dips. This must be specified when comparing depths.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_bvp_estremi_fissi.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_bvp_estremi_fissi.png}
     \caption{Fixed-endpoint $t$ and $\tau$ brachistochrones (Schwarzschild,
     $E=1.2$): symmetric (top) and asymmetric (bottom) endpoints. Both branches
     join the same $A,B$; the $\tau$-branch dips deeper.}
@@ -734,7 +749,7 @@ move.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_spin_estremi_fissi.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_colormap_spin_estremi_fissi.png}
     \caption{Spin scan at fixed symmetric endpoints (Kerr, Hamiltonian
     flow): $\Delta r$ in the $(J,a)$ plane stays positive everywhere---spin
     does not invert once the endpoints are pinned. The gradient is set by the
@@ -755,14 +770,14 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
     comparison inverts under either rotation or a conformal factor;
     the genuine fixed-endpoint brachistochrone never inverts.}
     \label{tab:protocol}
-    \begin{tabular}{@{}lcc}
-        \br
+    \begin{ruledtabular}
+    \begin{tabular}{lcc}
         protocol & spin $a$ & conformal $A$ \\
-        \mr
+        \colrule
         same launch & inverts (\S\ref{sec:inversion}) & inverts (\S\ref{sec:inversion}) \\
         fixed endpoints & no ($\Delta r>0$) & no ($n_t/n_\tau=E/f>1$) \\
-        \br
     \end{tabular}
+    \end{ruledtabular}
 \end{table}
 
 
@@ -788,32 +803,8 @@ exact Sultana--Dyer source
 \cite{McVittie1933,Kottler1918,Kaloper2010} with their photon surfaces
 \cite{ClaudelViracVirbhadra2001}, escape maps, and freezing-surface dynamics.
 
-\ack
-The author thanks the University of Pavia for providing a stimulating academic
-environment. The author received no external funding for this work. The AI
-assistants GPT~5.5 (OpenAI) and Claude Fable (Anthropic) were used to assist with
-symbolic derivations, numerical implementation, and manuscript preparation; all
-results were verified independently by the author, who takes full responsibility
-for the content of this work.
 
-\section*{Data availability}
-The complete numerical and symbolic codebase underlying this work is openly
-available under the MIT license in the GitHub repository
-``NonStationary\-Brachi\-sto\-chrone''~\cite{Rosignoli2026Code}:
-\begin{center}
-\url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}
-\end{center}
-The repository includes the trajectory integrators, the Pontryagin Hamiltonian
-constructions, the Poisson-bracket closure and quasi-invariant scans
-(Sec.~\ref{sec:quasiconst}), the Weierstrass separatrix and Doran-continuation
-scripts, the fixed-endpoint BVP and colormap pipelines, and the
-figure-generation code. It also retains exploratory scripts and negative results,
-documenting which ansatz classes failed the held-out trajectory and phase-space
-residual tests reported in Sec.~\ref{sec:quasiconst} and
-App.~\ref{app:validation}.
-
-
-
+\clearpage
 % ======================================================================
 \appendix
 \section{Validation and consistency checks}
@@ -945,7 +936,7 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_conforme_estremi_fissi.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_colormap_conforme_estremi_fissi.png}
     \caption{Conformal scan at fixed symmetric endpoints (via
     $E_{\rm eff}=\hat E/A$): $\Delta r$ in the $(J,A)$ plane is positive
     everywhere, matching the closed-form theorem $n_t/n_\tau=E/f>1$.}
@@ -955,7 +946,7 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_spin_asimmetrico.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_colormap_spin_asimmetrico.png}
     \caption{Robustness of the fixed-endpoint no-inversion result under
     \emph{asymmetric} endpoints ($r_A=10,r_B=6$), spin scan (Kerr flow):
     $\Delta r>0$ throughout the $(J,a)$ plane.}
@@ -964,7 +955,7 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_conforme_asimmetrico.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_colormap_conforme_asimmetrico.png}
     \caption{Same robustness check, conformal scan (via $E_{\rm eff}=\hat E/A$):
     $\Delta r>0$ throughout the $(J,A)$ plane for asymmetric endpoints. The
     blank wedge is the region where the $\tau$-turning point rises above
@@ -976,7 +967,7 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_kerr_a0.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_kerr_a0.png}
     \caption{Stationary-limit check ($m'=0$): numerical orbit vs closed-form
     Kerr $a=0$.}
     \label{fig:vaidya-kerra0}
@@ -985,7 +976,7 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_verifica_minimo_brachi.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_verifica_minimo_brachi.png}
     \caption{Each branch minimizes its own travel time; $t$ and $\tau$ are
     distinct curves.}
     \label{fig:verifmin}
@@ -993,7 +984,7 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_bounce.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_bounce.png}
     \caption{Bounce through periapsis in the $v$-parametrization: the
     Euler--Lagrange flow is regular at $r'=0$ and integrates through the turning
     point, reaching $r_{\min}$ exactly where the $r$-parametrization diverges.}
@@ -1002,16 +993,42 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_timing.png}
+    \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_timing.png}
     \caption{Timing window: $r_{\min}$ depends on the arrival epoch $v_1$. The
     orbit--horizon race has opposite winners in absolute ($r_{\min}$) and relative
     ($r_{\min}/2m$) terms for accretion vs evaporation.}
     \label{fig:vaidya-timing}
 \end{figure}
 
+\clearpage
 
+% ======================================================================
+\begin{acknowledgments}
+The author thanks the University of Pavia for providing a stimulating academic
+environment. The author received no external funding for this work. The AI
+assistants GPT~5.5 (OpenAI) and Claude Fable (Anthropic) were used to assist with
+symbolic derivations, numerical implementation, and manuscript preparation; all
+results were verified independently by the author, who takes full responsibility
+for the content of this work.
+\end{acknowledgments}
 
-\bibliographystyle{iopart-num}
+\section*{Data availability}
+The complete numerical and symbolic codebase underlying this work is openly
+available under the MIT license in the GitHub repository
+``NonStationary\-Brachi\-sto\-chrone''~\cite{Rosignoli2026Code}:
+\begin{center}
+\url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}
+\end{center}
+The repository includes the trajectory integrators, the Pontryagin Hamiltonian
+constructions, the Poisson-bracket closure and quasi-invariant scans
+(Sec.~\ref{sec:quasiconst}), the Weierstrass separatrix and Doran-continuation
+scripts, the fixed-endpoint BVP and colormap pipelines, and the
+figure-generation code. It also retains exploratory scripts and negative results,
+documenting which ansatz classes failed the held-out trajectory and phase-space
+residual tests reported in Sec.~\ref{sec:quasiconst} and
+App.~\ref{app:validation}.
+
+\bibliographystyle{apsrev4-2}
 \bibliography{refs}
 
 \end{document}

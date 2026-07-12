@@ -20,7 +20,7 @@ Three spacetimes form a ladder of increasing structure:
 | `ThakurtaMetric/` | Thakurta–Kerr | conformal rotating compact object `g = A(η)² g_Kerr` |
 | `KerrMetric/` | Kerr (equatorial) | Weierstrass separatrix, Doran continuation, fixed-endpoint BVP/colormaps |
 | `PaperFigures/` | — | shared conceptual figures |
-| `paper/` | — | LaTeX source (`main.tex`, `refs.bib`), figures (`Immagini/`), compiled `main.pdf` |
+| `paper/` | — | LaTeX source and figures. `main.tex` is the CQG/IOP version (`iopart.cls`); `main_prd_revtex.tex` is the equivalent Physical Review D version (RevTeX). Both share identical scientific content; `refs.bib`, `Immagini/`, and the compiled `main.pdf` accompany them. |
 
 Each metric folder contains a `*Results.md` logbook documenting the analytic
 results, validations, and — deliberately retained — the exploratory scripts and
