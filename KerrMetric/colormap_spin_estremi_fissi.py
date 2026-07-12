@@ -131,7 +131,7 @@ if np.nanmin(Z) * np.nanmax(Z) < 0:
     except Exception:
         pass
 ax.set_xlabel(r'$J$ ($\tau$-branch momentum $\to$ endpoint angle)')
-ax.set_ylabel('$a$ (black-hole spin)')
+ax.set_ylabel('$a$ (TK spin)')
 ax.set_title('Fixed symmetric endpoints, Kerr: $\\Delta r$ in $(J,a)$\n'
              'no inversion ($\\Delta r>0$): spin does not invert either')
 savefig(fig, HERE, 'fig_colormap_spin_estremi_fissi')

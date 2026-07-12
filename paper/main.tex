@@ -61,7 +61,7 @@ spacetimes. The rail constraint $-u\cdot W=\Ehat$ is an actively controlled
 invariant, legitimate via Pontryagin's principle; the selector $W$ follows a
 hierarchy Killing $\to$ conformal Killing $\to$ Kodama vector. We treat FLRW
 (degenerate base), Vaidya (dynamical black hole, $W=\partial_v$ the Kodama
-vector), and Thakurta--Kerr (conformal rotating black hole). Main results:
+vector), and Thakurta--Kerr (conformal rotating compact object). Main results:
 Kodama energy conservation along the rail; the plunge-radius law and the
 absence of a \emph{physical} evaporative inversion (only rotation and the
 conformal factor invert); closed-form equatorial separatrices in Weierstrass
@@ -174,14 +174,45 @@ free---$\Ehat$ is controlled, not conserved. The optical reductions of $H$
 reproduce the Randers/Zermelo structure
 \cite{GibbonsRanders2009,CaponioWind}.
 
+\paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
+independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and
+the \emph{eccentricity} of its semi-axes (the anisotropy of the local speed,
+$a_r\neq a_\varphi$)---and each governs a distinct feature of the
+brachistochrones, the same for every branch:
+\begin{itemize}\itemsep2pt
+\item eccentricity $\neq0$ (a spatial gradient $\partial_r f\neq0$)
+$\Rightarrow$ the $t$ and $\tau$ branches split in depth, $n_t/n_\tau=E/f\neq1$;
+\item azimuthal offset $c_\varphi\neq0$ (frame dragging)
+$\Rightarrow$ rotational plunge inversion becomes possible;
+\item radial offset $c_r\neq0$ (a non-stationary wind, $m'\neq0$)
+$\Rightarrow$ teleological memory, $p_v\neq0$ along the path;
+\item shrinking axes $R\to0$ (local speed $v\to0$) $\Rightarrow$ freezing and
+capture.
+\end{itemize}
+Eccentricity and center offset are \emph{separate} levers: the first switches on
+the $t/\tau$ split, the second the inversions. In particular the three branches
+\emph{degenerate}---the $t$, $\tau$ and $\eta$ brachistochrones coincide---iff the
+indicatrix is, up to a position-independent conformal scale, a rigid centered
+circle ($c=0$, $a_r=a_\varphi$, radius depending on the flow parameter alone),
+equivalently iff the optical cost ratios $n_t/n_\tau,\,n_t/n_\eta$ are
+position-independent. This is exactly spatial homogeneity: FLRW is the unique
+such case in our ladder (Sec.~\ref{sec:flrw}), whereas any gradient or wind
+breaks it---even the static, non-rotating Schwarzschild ellipse, which is
+centered ($c=0$) yet eccentric, already splits $t$ from $\tau$. The indicatrix
+shape is thus the organizing thread of the paper: FLRW (circle) $\to$ Vaidya
+(radial wind) $\to$ Thakurta--Kerr (angular wind) is a progression of ellipse
+deformations, each switching on one further phenomenon.
+
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_indicatrici.png}
     \caption{Rail indicatrices (linear constraint $\cap$ normalization
     $=$ ellipse): the unifying formalism. FLRW gives shrinking circles (no
-    wind); Vaidya an ingoing radial wind ($f-E^2<0$, driven by $m(v)$);
-    Thakurta--Kerr an angular wind (frame dragging), the ellipse shrinking
-    with $A(\eta)$.}
+    wind, no eccentricity $\Rightarrow$ degenerate branches); Vaidya an ingoing
+    radial wind ($f-E^2<0$, driven by $m(v)$ $\Rightarrow$ teleological memory);
+    Thakurta--Kerr an angular wind (frame dragging $\Rightarrow$ rotational
+    inversion), the ellipse shrinking with $A(\eta)$. Eccentricity switches on
+    the $t/\tau$ split, the center offset the inversions.}
     \label{fig:indicatrici}
 \end{figure}
 
@@ -412,11 +443,11 @@ $m\le0$).
 
 
 % ======================================================================
-\section{Thakurta--Kerr: conformal rotating black hole}
+\section{Thakurta--Kerr: conformal rotating compact object}
 \label{sec:thakurta}
 % ----------------------------------------------------------------------
 Thakurta--Kerr is conformal Kerr, $g=A(\eta)^2 g_{\rm Kerr}$
-\cite{Thakurta1981,Kerr1963}, one of a family of cosmological black holes
+\cite{Thakurta1981,Kerr1963}, one of a family of cosmological geometries
 \cite{McVittie1933,SultanaDyer2005,Kaloper2010,NolanMcVittie1998,MelloMaciel2017,FaraoniBook}.
 For constant $A$
 the transfer theorem maps the problem to Kerr with $E_{\rm eff}=\Ehat/A$,
@@ -687,7 +718,7 @@ dips. This must be specified when comparing depths.
 \end{figure}
 
 Crucially, neither driver of same-launch inversion survives the
-fixed-endpoint constraint. Scanning the black-hole spin over the entire
+fixed-endpoint constraint. Scanning the spin $a$ over the entire
 Kerr flow with fixed symmetric endpoints $(r_0,\pm\Phi)$ leaves
 $\Delta r=r_{\min}^t-r_{\min}^\tau$ strictly positive
 ($\Delta r\in[+0.45,+2.06]$ on $a\in[0.05,0.95]$); the map is nearly flat
@@ -743,7 +774,8 @@ invariant $-u\cdot W=\Ehat$ is legitimate via Pontryagin's principle, and the
 selector $W$ is fixed canonically by the Killing--CKV--Kodama hierarchy, with
 the Kodama energy conserved along the rail even when free fall does not conserve
 it. FLRW is the degenerate base---freezing without branch splitting---while the
-black hole breaks the $t/\tau$ symmetry through the gravitational gradient. On
+mass breaks the $t/\tau$ symmetry through its radial gravitational gradient (the
+spin instead driving the rotational plunge inversion). On
 the equatorial sector we obtained closed-form separatrices in Weierstrass
 functions, continued through the ergosphere in Doran coordinates, and an analytic
 cusp theorem for the $|J|<\Jc$ reflection. The plunge inversion resolves into a
