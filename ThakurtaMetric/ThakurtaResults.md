@@ -754,6 +754,43 @@ finito, BL+shift diverge). Così l'orbita `J_c` **attraversa `r_e` e
 scende all'orizzonte** con winding finito — la verde compare "dall'altra
 parte" dell'ergosfera (impossibile in BL, che vi si ferma).
 
+### R12h. Separatrice del ramo t: genere 2 in generale, genere 1 al saddle-node
+(`../KerrMetric/kerr_tbranch_separatrix_weierstrass.py`)
+
+**CORREZIONE + estensione di R12.** L'affermazione precedente "il ramo t ha
+𝒦 razionale ⟹ nessuna forma chiusa" era **imprecisa nella causa**: 𝒦
+razionale dà solo integrali di **terza specie**, comunque chiusi in ℘,ζ,σ.
+Ciò che conta è il **genere del radicando**.
+
+- **Ramo t generico**: `dφ/dr = 𝒦/√R₆`, `R₆ = r·Q₂(r)·[(E²−1)r+2M]`
+  **sestico ⟹ genere 2** (iperellittico). Nessuna cancellazione doranTau
+  (il vento gravitomagnetico non si elide). Verificato simbolicamente
+  (grado 6) e numericamente (`dφ/dr=𝒦/√R₆`).
+- **Separatrice dinamica del ramo t** = il **saddle-node retrogrado**
+  `J_c^-` (R12f): lì `R₆=R₆'=0` ⟹ **radice doppia** `(r−r*)²` a
+  `r*` (marginale). Quindi `R₆=(r−r*)²Q₄`, `Q₄` quartico ⟹ **genere 1**.
+  Meccanismo **diverso** dalla separatrice τ (doranTau `(r²+c²)|Q₄`),
+  stesso esito ellittico.
+
+**Forma chiusa esplicita** (stessa struttura della eq. A3 di R12a):
+```
+z(r)   = ℘⁻¹(A/r + B; g₂, g₃)     [invarianti di Q₄]
+φ(r)   = Λ₀ z + Σ_k λ_k ln(σ(z−v_k)/σ(z+v_k))
+poli   c_k ∈ {r₊, r₋, r*}   (TRE reali; NIENTE polo a r=0, NIENTE coppia ±ic
+             — più pulita della separatrice τ, che ha 4 poli)
+v_k=℘⁻¹(A/c_k+B),  λ_k=−A α_k/(c_k² ℘'(v_k)),
+Λ₀=Λ_poly − Σα_k/c_k + Σ 2ζ(v_k)λ_k
+```
+Sample M=1, a=0.9, E=1.2 (r*=3.5139, J_c^-=−8.0535): g₂=−11.650,
+g₃=−2.578, A=12.985, B=2.639; residui α: r₊→+13.23, r₋→−6.59, r*→+21.13;
+Λ_poly=+3.544. **Verifica**: φ dal flusso Hamiltoniano vs decomposizione
+= +1.557010139, **diff 2×10⁻¹⁴** (fit razionale RMS 3×10⁻¹³).
+
+**Quadro finale**: entrambe le separatrici (τ, t) sono **genere 1** ma per
+meccanismi diversi (cancellazione vs radice doppia); solo le orbite t
+**non-separatrici** sono genuinamente genere 2 (Kleinian). La crossing
+prograda `J_+^t` ha radice **semplice** a r_e ⟹ resta genere 2.
+
 ## Aperti
 1. Dinamica sulla superficie di congelamento (dopo il contatto il
    formalismo hamiltoniano degenera: serve descrizione vincolata al

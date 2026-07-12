@@ -598,14 +598,24 @@ horizon; the Doran shift---a second, quasi-lemniscatic elliptic
 curve---cancels it, so the ergosphere-penetrating separatrix
 $\varphi_D=\varphi_{\rm BL}+\varphi_{\rm shift}$ is closed on two elliptic curves.
 
-This closed form is specific to the \emph{$\tau$-branch}. Being
-Riemannian-pure (Sec.~\ref{sec:thakurta}, the gravitomagnetic wind cancels),
-its turning problem factorizes as doranTau and reduces to genus~1. The
-$t$-branch instead carries the wind: its angular integrand $\mathcal K(r)$ is
-\emph{rational} rather than elliptic, so the $t$-brachistochrone admits
-\emph{no} closed separatrix of this kind---only the ergosphere-crossing
-threshold $J_+^{t}=\bar P_e/(2a)$ of Eq.~\eqref{eq:Jplus-t}. The
-Weierstrass/Doran separatrix is thus a genuinely $\tau$-branch object.
+What controls the reduction is the \emph{genus} of the turning radical, not the
+rationality of $\mathcal K$. Being Riemannian-pure
+(Sec.~\ref{sec:thakurta}, the gravitomagnetic wind cancels), the $\tau$-branch
+factorizes as doranTau---the factor $r^2+c^2$ dividing the quartic---dropping a
+generically genus-2 reduction to genus~1. Generic $t$-branch orbits carry the
+wind and have the sextic radical
+$\mathcal R(r)=r\,Q_2(r)\,[(E^2-1)r+2M]$ (genus~2, hyperelliptic), with no such
+cancellation. The $t$-brachistochrone nonetheless has its own genus-1 closed-form
+separatrix, by a \emph{different} mechanism: at the marginal-capture (saddle-node)
+momentum $J_c^-$ [Eq.~\eqref{eq:Jc-minus}] the sextic develops a \emph{double
+root}, $\mathcal R=(r-r_*)^2 Q_4$ with $Q_4$ quartic (whereas the prograde
+ergosphere crossing $J_+^t$ has only a simple root and stays genus~2). The double
+root drops the radical to $Q_4$, and $\varphi(r)$ closes in the same
+Weierstrass $\wp,\sigma,\zeta$ form as the $\tau$-separatrix
+(App.~\ref{app:explicit}). Both separatrices are thus genus~1---the $\tau$ one
+via the doranTau factorization, the $t$ one via a double root---while generic
+(non-separatrix) $t$-orbits are genuinely genus~2, closed only in genus-2
+Kleinian functions.
 The Kerr geodesic structure and its constants are classical
 \cite{Carter1968,Chandrasekhar}. Validated end-to-end to
 $2.8\times10^{-10}$ through the ergosphere, and general across parameters.
@@ -877,6 +887,30 @@ $B_\pm=2\zeta(v_\pm)z+\ln[\sigma(z-v_\pm)/\sigma(z+v_\pm)]$; the log divergences
 $\varphi$ and $\varphi_{\rm shift}$ cancel at $\rp$, the analytic content of Doran
 regularity. Thus $\varphi_D=\varphi_{\rm BL}+\varphi_{\rm shift}$ is closed on two
 elliptic curves.
+
+\paragraph{$t$-branch separatrix in Weierstrass functions.} The coordinate-time
+brachistochrone has $\dd\varphi/\dd r=\mathcal K(r)/\sqrt{\mathcal R(r)}$ with the
+\emph{sextic} radical $\mathcal R=r\,Q_2(r)\,[(E^2-1)r+2M]$ ($Q_2$ quartic),
+genus~2. At the saddle-node $J_c^-$ [Eq.~\eqref{eq:Jc-minus}] it acquires a
+\emph{double root} at the marginal-capture radius $r_*$,
+$\mathcal R=(r-r_*)^2 Q_4(r)$, and
+$\dd\varphi/\dd r=\mathcal G(r)/\sqrt{Q_4}$ becomes a third-kind elliptic
+differential on the quartic $Q_4$ (which retains the root $r=0$). With the same
+uniformization $z(r)=\wp^{-1}(A/r+B;g_2,g_3)$ (invariants of $Q_4$) the closed
+form is
+\begin{equation}
+    \varphi(r)=\Lambda_0\,z(r)+\sum_{k}\lambda_k\,
+      \ln\frac{\sigma(z-v_k)}{\sigma(z+v_k)},
+    \label{eq:t-sep-phi}
+\end{equation}
+now with third-kind poles only at $c_k\in\{\rp,\rm,r_*\}$---three real ones, with
+\emph{no} pole at $r=0$ and no complex pair, unlike the $\tau$-separatrix. Here
+$v_k=\wp^{-1}(A/c_k+B)$, $\lambda_k=-A\alpha_k/(c_k^2\wp'(v_k))$, and
+$\Lambda_0=\Lambda_{\rm poly}-\sum_k\alpha_k/c_k+\sum_k 2\zeta(v_k)\lambda_k$,
+with $\alpha_k$ the residues of $\mathcal G$. For $M=1$, $a=0.9$, $E=1.2$
+($r_*=3.514$, $J_c^-=-8.05$) Eq.~\eqref{eq:t-sep-phi} reproduces the Hamiltonian
+flow to $2\times10^{-14}$. So both separatrices are genus~1 by different
+mechanisms; only non-separatrix $t$-orbits need genus-2 Kleinian functions.
 
 \paragraph{Stationary-limit conserved quantities.} At $A=1$ the branch flows admit
 the closed first integrals used for validation,
