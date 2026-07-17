@@ -386,3 +386,20 @@ Tutti i pezzi 3ª specie ∝ stesso L → collassano in UN dilog nel montaggio �
 VERIFICHE: identità differenziale 0/7e-15/3.6e-12; identità INTEGRALE U_k(dir) vs
 ricostruzione = 1e-14…1e-16 (r=10,8,6). ⇒ peso-1 CHIUSO, coeff simbolici razionali in E.
 PROSSIMO (Sage): naming Kleiniano R_i→ζ_i(u), L→log[σ(u-e+)/σ(u-e-)]; poi il dilog.
+
+### Mattone 2b: montaggio ψ nella base canonica ✓ (end-to-end VERIFICATO 1e-15)
+`KerrMetric/kerr_tau_Wij_assembly.py`. A=∂_Eφ0=[𝒜/√S]+Σc_k U_k (c_k razionali E),
+η=clock=Σb_k U_k, b=(0,0,-2M,1,0). Usando U_k=boundary+Σ_α M_kα V_α (mattone 2a),
+V∈{u1,u2,R1,R2,L}: A=A_alg+Σa_α V_α, η=η_alg+Σh_α V_α. Decomposizione A,η verificata
+vs diretto 1e-15. ⇒ ψ=½Ê Σ_{α<β} P_αβ w_αβ + T_alg, P_αβ=a_α h_β-a_β h_α SIMBOLICO.
+STRUTTURA (clock ha solo 2 letters: R1 con h=-2/(E²-1), L con h=1/(E²-1); source a_L=0
+= niente 3ª specie nel source):
+- (u1,u2)=0  → niente olo×olo (conferma Q_01=0/ψ_ab=0).
+- peso-1 Kleinian (3): (u1,R1),(u2,R1),(R1,R2)  [2ª×1ª, 2ª×2ª].
+- DILOG (4, tutte con L): (u1,L),(u2,L),(R1,L),(R2,L) → condividono L = UN dilog genus-2,
+  sorgente = residuo 3ª specie del CLOCK (h_L=1/(E²-1)).
+- T_alg = termini algebrici (boundary elementari), verificato indipendentemente.
+END-TO-END: ψ_dir = ½Ê Σ P_ab w_ab + T_alg a 1e-15 (r=10,8,6.5). Peso dilog ~3% del
+trascendente qui (cresce verso turning). ⇒ ψ CHIUSA: [Kleinian peso-1 σ,ζ] + [1 dilog
+genus-2] + [algebrico], coeff TUTTI simbolici razionali in E.
+PROSSIMO: (Sage) naming w_peso1→ζ_i,σ e L→log[σ(u-e+)/σ(u-e-)]; poi q-serie del dilog.
