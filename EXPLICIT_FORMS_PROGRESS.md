@@ -526,3 +526,17 @@ sorgente N_t=dE(Kt/sqrtR6)R6^{3/2}. G~_t pole-adapted. delta phi_t = G~_t eta_t 
   prograda = diretto a 3e-8..5e-7; retrograda a 2e-8..4e-7. check dG/dz=R_t ~ 4-5e-9.
 => ramo t chiude con lo stesso pipeline (clock 3a-specie orizzonte gestito). RESTA: block assembly
    (dilog espliciti incl. orizzonte r_pm) + tracking, per entrambe le separatrici.
+
+## 6septies. TK ramo t BLOCK ASSEMBLY (2 separatrici): eta3 + weight-2 espliciti (verif 1e-6)
+
+Script `ThakurtaMetric/tk_t_sep_blockassembly.py` (prograda) + `_retro.py`. Completati (a)+(b):
+- (a) eta3 (clock 3a-specie orizzonte) ESPLICITO: eta_t'(dz)=rho_t/(r-r_d)=[P3+R_Delta/Delta]/(r-r_d)
+  e' RAZIONALE in r (EVEN, niente sqrtQ4, a differenza di v). Poli: +-z_d, +-z_inf, +-z(r_pm).
+  Immagini orizzonti z(r_pm) COMPLESSE (Im=w_im, semiperiodo): r_pm in (e2,e3) mappano li'.
+  z(r_pm) trovate con mp.findroot(r_of_z(z)=r_pm). eta_t' ricostruito da parti principali 1-2e-7.
+- (b) BLOCK: delta phi_t = G~_t(z) eta_t - sum c_i c_j int gf_i gf_j (prodotto), coeff residui chiusi.
+  prograda: 20 dilog (incl. orizzonte z(r_pm)), block=diretto 2e-6..7e-6;
+  retrograda: 22 dilog, block=diretto 2e-6..6.5e-6.
+  (prec 1e-6, limitata da eps contorno vicino ai poli orizzonte complessi.)
+=> TK ramo t COMPLETO (fisso, prograda+retrograda): weight-2 esplicito in dilog, eta3 in lnsigma
+   agli orizzonti. RESTA solo il tracking del ramo t (N_t->N_tot con dJc_pm/dE, meccanico).
