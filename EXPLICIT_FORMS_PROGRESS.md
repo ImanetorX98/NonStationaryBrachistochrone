@@ -558,3 +558,21 @@ Script `paper/crosscheck_identities.wl`, `crosscheck_tk_numeric.wl`, `crosscheck
   retrograda -0.0795252758. block=diretto=Mathematica, 16 dilog (erano 20/22). Verif 2e-8..2e-10.
 => Il cross-check indipendente ha CATTURATO un errore reale (l'assemblato=diretto Python era
    self-consistente col clock buggato, non l'aveva visto). Ora Python==Mathematica.
+
+## 8. TK ramo t TRACKING (separatrice mobile Jc_pm(E)) -- COMPLETO, entrambe le separatrici
+
+Script `ThakurtaMetric/tk_t_sep_track_blockassembly.py`. Segue la separatrice t mentre A varia
+(E_eff=Ehat/A): J=Jc_pm(E). Solo la SORGENTE cambia, il clock eta_t (2a+3a specie) e' invariato.
+- N_tot = N_t + (dJc_pm/dE) N_J^t,  con N_t=dE(K_t/sqrtR6)R6^{3/2}, N_J^t=dJ(K_t/sqrtR6)R6^{3/2}.
+- dJc_pm/dE = -Q2_E/Q2_J valutato a (r_d,Jc): dalla doppia radice di Q2 (Q2_r=0 =>
+  Q2_J dJc + Q2_E dE = 0). CONFERMATO con finite-diff (h=1e-6):
+    prograda:   dJc/dE = -148.541751  (Jc=+19.0894, r_d=-6.6207)
+    retrograda: dJc/dE = +150.328105  (Jc=-18.6711, r_d=-6.5884)
+  |dJc/dE| quasi uguale ma NON identico (asimmetria frame-dragging, come |Jc+|!=|Jc-|).
+- block assembly (G~ eta_t - sum c_i c_j int gf_i gf_j) vs diretto (N_tot):
+    prograda   delta phi_t^track(19)=-4.03767e-01, (18)=-1.875e+00, (17)=-5.003e+00 ; diff ~1e-7
+    retrograda delta phi_t^track(19)=+3.889e-01,   (18)=+1.792e+00, (17)=+4.734e+00 ; diff ~2-7e-7
+  16 dilog (prograda) / 18 dilog (retrograda), 143 prodotti; coeff residui chiusi su N_tot.
+=> PARITA' COMPLETA su tutti i casi: Vaidya (tau,v: fisso+tracking) e TK (tau,t: fisso+tracking,
+   entrambe le separatrici). Nessun pezzo meccanico rimasto. (Aperto solo: beta simbolico dei 5-dilog
+   Fay, frontiera di ricerca, non richiesto.)
