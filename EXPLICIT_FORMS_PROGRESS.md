@@ -408,3 +408,16 @@ Verifica vs numerico: Ce diff 4.9e-8, C0 diff 2.0e-8 (residuo dal passo finito d
   l'ipotesi adiabatica stessa si degrada; (2) Jc mobile -> crossing. Matematica = limite controllato
   (genus drop, ellittico); fisica = delicata. delta phi|_sep vive nell'INTORNO, non sul punto singolare.
 - Paper: esteso il paragrafo "Domain of validity" (sec:adiabatic) con questo chiarimento.
+
+## 5ter. SEPARATRICE-TRACKING (J=Jc(m)): forma chiusa, STESSA macchina
+
+Script `VaidyaMetric/vaidya_sep_track.py`. Correzione con Jc mobile (orbita che segue la
+separatrice istantanea): sorgente = dm F + (Jc/m) dJ F = N_tot/S^{3/2},
+  **N_tot = N_m + (Jc/m) N_J**, N_J polinomiale (grado 7, verif), Jc/m = j(E) = 7.026624.
+Tutto il resto IDENTICO alla tau: pole-adapted G_track (parti principali), residui b_n^a /
+C0 / C_e dalle STESSE formule chiuse (N_m -> N_tot), dilog A[e_i,e_j] invariati (dipendono
+dal clock, non da N). Coefficienti tutti algebrici in m,E.
+Verifica: dG_track/dz=R_track 2.2e-8; delta phi_track assemblato (IBP, G esplicito) = diretto
+int[dmF+(Jc/m)dJF] eta dr a 1e-8..4e-7 (r=11/10/9.2).
+=> la correzione separatrice-following e' in forma chiusa esplicita (funz. speciali) con
+coefficienti simbolici, esattamente come la J-fissa. Paper: nota in "Domain of validity".
