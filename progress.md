@@ -469,3 +469,15 @@ Kronecker-Eisenstein genus-2 (T4=frontiera). NB: il dilog È già nominato (∫l
 NB: la somma reticolare θ converge SEMPRE (Im τ≻0); la riduzione serve solo per la serie di
 POTENZE nei nomi. RESTA (frontiera): T3 log θ-ratio come nome-serie in τ'; T4 kernel
 Kronecker-Eisenstein genus-2 per Λ (con θ trasformata sotto S). = ricerca aperta.
+
+### AUDIT coefficienti simbolici (genus-2, risposta onesta)
+SIMBOLICI e verificati (razionali in E): c_k (source), b=(0,0,-2M,1,0) (clock),
+Q_ij=c_k b_j-c_j b_k, coeff mattone-2a (c1_k,c2_k,g1_k,g2_k,n_k in base BEL/odd),
+P_ab (assembly), h_L=1/(E²-1), a_L=0, g_i (parti principali, cross-check ESATTO 0).
+⇒ TUTTI i coeff di residuo/polo (la fisica) sono simbolici.
+NUMERICI (come sulla separatrice): dati delle funzioni speciali — punti e_±, periodi τ,
+normalizzazioni di Ω,Z,P; caratteristica δ discreta/esatta. Come σ,ζ,℘ e z_d,z_∞ sulla sep.
+CAVO APERTO onesto: la parte OLOMORFA (coeff u1,u2) nel cambio base BEL→canonica θ[δ] mescola
+fattori di periodo numerici (Z,P def mod olomorfe). Simbolica in base BEL (mattone-2a), non
+ancora ripulita in base canonica. Analogo agli additivi C0/Ce della separatrice (che pure
+portavano dati di punto marcato). Estraibile via a-periodi (impor: U_k senza periodo spurio).
