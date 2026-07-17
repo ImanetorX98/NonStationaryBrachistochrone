@@ -343,3 +343,20 @@ Script `VaidyaMetric/vaidya_sep_fay_symbolic.wl` (wolframscript). Sfrutta precis
   o (b) la riduzione di Fay ANALITICA vera (skeleton in sez.4a del .wl: formule di addizione
   Weierstrass pronte, riduzione algebrica da sviluppare). Sage non aggiungerebbe nulla qui.
 - WIN comunque: rango 5 ESATTO (era il dubbio 5-vs-6), e infrastruttura Mathematica pronta.
+
+## 4duodecies. FAY ANALITICA - fondazione simbolica (VERIFICATA), matching finale scoped
+
+Script `VaidyaMetric/vaidya_sep_fay_analytic.wl`. Riduzione simbolica dei dilog via addizione
+di Weierstrass, costanti ai poli SIMBOLICHE. FONDAZIONE COMPLETA E VERIFICATA:
+- **INSIGHT chiave**: Z_a = zeta(z-a)-zeta(z+a) = -2 zeta(a) + P'(a)/(P(z)-P(a)) -> RAZIONALE in p!
+- **Tutti gli 8 e_i sono razionali in p=P(z), pp=P'(z)** (verificato vs diretto 1e-62).
+  P(z-+c) = -p-P(c)+1/4((pp-+ppc)/(p-P(c)))^2; Pp_zd via dz[]; ecc.
+- **Le 8 primitive Pe_i si riducono a 6 LETTERE** {z, zeta(z), lnsigma(z-+zd), lnsigma(z-+zi)}
+  + parte razionale in p (verificato: differenza costante in z, 1e-71).
+  (usa zeta(z-+c)=zeta(z)-+zeta(c)+1/2(pp+-ppc)/(p-P(c)); P'(iw)=0.)
+- ⟹ A'_k = e_i Pe_j - e_j Pe_i = (razionale in p) x (lettera): struttura ESATTA, niente sampling.
+MATCHING FINALE (scoped, NON completato): la relazione Sum lambda_k A'_k = W' (W peso-1) diventa,
+per ciascuna lettera, la condizione che il coeff (razionale in p) sia dz-ESATTO (Ostrogradsky).
+Le condizioni di non-esattezza -> sistema lineare su lambda -> 16 relazioni -> beta simbolici.
+E' ben definito ma e' un'ulteriore implementazione simbolica sostanziosa (test di dz-esattezza
+su funzioni razionali di p per ogni lettera). Fondazione pronta; il Solve finale resta da fare.
