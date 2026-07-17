@@ -416,3 +416,14 @@ come ζ_i(u) Kleiniano nudo → weight-1 in funzioni Baker tabulate. FALLITO, st
 ⇒ La 2ª specie NON è ζ_i nuda. Naming robusto = forma-DIFFERENZA ζ_i(u−e+)−ζ_i(u−e−)/σ-ratios
   agli e_± (i due r=∞, dove ω_3,ω_4 hanno i poli). Il muro §7-iii si AGGIRA (forma-differenza),
   non si sfonda (costante di Riemann). PROSSIMO: implementare forma-differenza, o passare a q-serie.
+
+### Naming forma-DIFFERENZA: FUNZIONA ✓ (muro divisore-θ aggirato)
+`KerrMetric/kerr_tau_Wij_diffform.sage`. Riusa convenzione validata di thirdkind (δ dispari,
+e_±=±w(r=∞), base branch point, misura 1/√q). Nomina i differenziali canonici agli e_±:
+- 3ª specie (U_2): D3=[ζ_δ(w-e+)-ζ_δ(w-e-)]·dw/dr = d/dr log[θδ(w-e+)/θδ(w-e-)] (log-ratio).
+- 2ª specie (U_3,U_4): G±=[∇ζ_δ(w-e±)]·dw/dr = ζ_δ shiftata (= ∂ log θδ, NON log nudo).
+VERIFICA: r^k/√S generato dalla base {du1,du2,D3,G+,G-} — δ#1 residui: k=2 2.0e-6, k=3 1.5e-6,
+k=4 2.7e-4 (floor troncamento θ ~1e-4). ⇒ U_2,U_3,U_4 CHIUSI in forma-differenza θ[δ] agli e_±,
+ROBUSTO al divisore-θ (argomenti shiftati). Il muro §7-iii AGGIRATO (non sfondato).
+NB per l'utente: il log-ratio (θδ-ratio) basta per la 3ª specie/dilog; la 2ª specie serve la
+sua DERIVATA ζ_δ=∂log θδ. Ma tutto da UN oggetto tabulato: θ[δ] dispari ai due punti e_±.
