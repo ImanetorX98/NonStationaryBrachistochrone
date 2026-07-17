@@ -510,3 +510,19 @@ Clock v e v_z invariati; cambia solo R via N_tot -> G~_track. block = diretto in
 a 2.7e-7..7.2e-7 (r=11/10.5/10). 11 dilog + orizzonte, coeff residui chiusi.
 => VAIDYA COMPLETO: tau (fisso+tracking) + v (fisso+tracking), tutti block-assembled, coeff simbolici.
 RESTA (per l'intero programma): TK ramo t (curva R6=r Q2 DE, clock 2a+3a specie).
+
+## 6sexies. THAKURTA-KERR ramo t (tempo coordinata): DUE separatrici, baseline verif 1e-7
+
+Script `ThakurtaMetric/tk_t_sep_baseline.py` (prograda) + `tk_t_sep_baseline_retro.py`.
+Curva R6=r Q2 DE; clock t = eta2+eta3: eta2'=P3/sqrtR6 (2a specie, b=(8E^2M^3-2(E^2-1)JMa,4E^2M^2,2E^2M,E^2,0)),
+eta3'=R_Delta/(Delta sqrtR6) (3a specie, poli agli ORIZZONTI r_pm=1.436,0.564). rho_t=P3+R_Delta/Delta.
+Separatrice = radice doppia di Q2 (quartico). ASIMMETRICA (frame-dragging, Q2 lineare in J): DUE separatrici:
+- **prograda Jc+=+19.0894427**, r_d=-6.6207, Q4 radici {-4.545,0,1.839,11.403}, turning 11.40;
+- **retrograda Jc-=-18.6710563**, r_d=-6.5884, Q4 radici {-4.545,0,2.241,10.935}, turning 10.94.
+  |Jc+| != |Jc-| (19.089 vs 18.671). Entrambe r_d<0 (come Vaidya), orbite scattering a r>10.
+(Jc,r_d) raffinati con mpmath.findroot su {Q2=0,dQ2/dr=0} (np.roots splittava la doppia in coppia
+complessa ±0.037j). R6=(r-r_d)^2 Q4 (resto 3.5e-11 / 5.4e-11).
+sorgente N_t=dE(Kt/sqrtR6)R6^{3/2}. G~_t pole-adapted. delta phi_t = G~_t eta_t - int G~_t eta_t':
+  prograda = diretto a 3e-8..5e-7; retrograda a 2e-8..4e-7. check dG/dz=R_t ~ 4-5e-9.
+=> ramo t chiude con lo stesso pipeline (clock 3a-specie orizzonte gestito). RESTA: block assembly
+   (dilog espliciti incl. orizzonte r_pm) + tracking, per entrambe le separatrici.
