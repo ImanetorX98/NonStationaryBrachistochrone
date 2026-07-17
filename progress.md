@@ -1,0 +1,373 @@
+# Progress — brachistocrone in spaziotempi non stazionari (sessione)
+
+Traccia completa dei progressi. Riferimenti: `sumUp.md` (indice figure),
+`KerrMetric/doranTau.md` (ramo τ), `KerrMetric/doranT.md` (ramo t),
+`paper/main.tex` (CQG), `paper/main_prd_revtex.tex` (backup PRD).
+
+Parametri di riferimento: `M=1, a=0.9, E=1.2`, `r_e=2M=2`, `r_±=M±√(M²−a²)`
+(`r_+=1.4359, r_-=0.5641`), `J_c=a/E=0.75`, `Ω_H=a/(2Mr_+)=0.3134`.
+
+---
+
+## 1. φ(r) generale ramo t (J_+^t) — genere 2 Kleinian
+- `dφ/dr = K(r)/√R6`, `K = r[(E²−1)r+2M](J(r−2M)+2Ma)/Δ` (GENERALE in M,a,E,J).
+- `R6 = r Q2(r)[(E²−1)r+2M]` sestico; 6 radici semplici → genere 2.
+- `J_+^t = (4M²+2a²+a²/E²)/(2a) = 2M²/a+a+a/(2E²) = 3.4347` (turning su r_e).
+- Decomposizione 1ª+3ª specie, matrice periodi τ (Sage, Riemann OK), verifica
+  vs flusso di Hamilton 4×10⁻¹².
+- Script: `KerrMetric/kerr_jpt_genus2_kleinian.py` (Sage periodi),
+  `kerr_jpt_genus2_reduction_check.py`, `kerr_jpt_genus2_figure.py`,
+  `kerr_jcm_capture_figure.py` (cattura 0.95 J_c^-, saddle-node).
+- Paper: eq. t-K, t-genus2; figure fig:jpt-g2, fig:jcm-cap.
+
+## 2. φ(r) generale ramo τ — genere 2 Kleinian (NUOVO, calcolato esplicito)
+- `dφ/dr|_τ = J r√(wf)/(Δ√(Δ−J²w))`, `w=E²−f`, `f=1−2M/r` (forma BL, eq.56).
+- `dφ/dr = K_τ/√S`, `K_τ = J r(r−2M)[(E²−1)r+2M]/Δ`.
+- **Sestico** `S(r) = r(r−2M)[(E²−1)r+2M][rΔ − J²((E²−1)r+2M)]`,
+  6 radici semplici (per J generico) → genere 2. Per J=−0.9J_c:
+  branch points {−4.55, 0, 0.036±0.686i, 1.93, 2.00}.
+- **Decomposizione esplicita** (poli 3ª specie agli ORIZZONTI r_±):
+  `φ(r) = c1∫r dr/√S + c0∫dr/√S + α_+∫dr/((r−r_+)√S) + α_-∫dr/((r−r_-)√S)`.
+- **Coefficienti generali (M,a,E,J)** — verificati diff=0:
+  - `c1 = J(E²−1)`
+  - `c0 = 2MJ`
+  - `α_± = ∓ J a²[M(E²+1) ± (E²−1)√(M²−a²)] / (2√(M²−a²))`
+  - (num: c1=0.44J, c0=2J, α_+=−2.4453J, α_-=+2.0889J).
+- Matrice periodi τ (Sage, J=−0.9J_c): `[[0.782+0.833i, 0.068+0.771i],
+  [0.068+0.771i, 0.257+1.114i]]`, Riemann OK (‖τ−τᵀ‖=7e-12, Im τ≻0).
+- Verifiche: decomposizione vs diretta 10⁻¹⁵; traiettoria speciale vs diretta
+  4.7×10⁻¹³ (fig_tau_phi_special_vs_direct).
+- **Riduzione a |J|=J_c**: la f² rende r_e radice DOPPIA; la (r−2M) di K_τ ne
+  cancella una → √Q4 quartica = genere 1 Weierstrass = separatrice (eq.59),
+  verificato 1.8×10⁻¹⁴.
+- Script: `KerrMetric/kerr_tau_general_genus2.py` (+ `_periods.sage.py`).
+- Paper: eq. tau-sextic, tau-genus2, tau-coeffs (appendice, dopo separatrice τ).
+
+## 3. Tricotomia τ vs dicotomia t (CORRETTA — era sbagliata nella mia tabella)
+- **τ TRICOTOMIA** (muro √(wf): reale solo r≥r_e):
+  - `|J|>J_c`: rimbalzo LISCIO fuori r_e (periapside, r_min>r_e).
+  - `J=+J_c`: UNICO che PENETRA (attraversa, spirala su r_+); √f si cancella.
+  - `|J|<J_c` e `J=−J_c`: rimbalzo con CUSPIDE/CORNER a r_e.
+  - insieme penetrante τ = SINGOLO PUNTO {+J_c}.
+- **t DICOTOMIA**: penetra INTERVALLO `(J_c^-, J_c^+)=(−8.05, 3.43)`
+  (retrograde inclusi, frame dragging auto-sintonizza 𝒦(r_e)=a/E); mai cuspidi.
+  - `J_c^+ = 2M²/a+a+a/(2E²)` (alto spin) o saddle-node (basso spin, a<a*≈0.65).
+  - `J_c^- = −8.05` (saddle-node retrogrado, spirala su r_*=3.514).
+- Paper: Table A1 (tab:penetration) riscritta; §VI trichotomy affinato;
+  Conformal trichotomy e didascalie corrette (solo +J_c attraversa).
+- Immagine `cuspide_ergosfera.py` rigenerata (etichette "+J_c crosses").
+- Figure: fig_master_penetration_taut (asse J), fig_atlas_tau, fig_atlas_t
+  (5 regimi, flusso Hamilton adattivo solve_ivp), fig_tau_jc_pm (±J_c).
+
+## 4. Scan fine regimi τ retrogradi (ogni 0.05 J_c)
+- `k=−0.05…−0.95`: CUSPIDE a r_e (tutto |J|<J_c, intervallo continuo).
+- `k=−1.00` (=−J_c): GRAZING/CORNER (marginale, r_min=r_e, dφ/dr finito=−1.04).
+- `k=−1.05…−1.50`: SCATTERING (periapside liscio fuori r_e, r_min cresce).
+- boundary layer cuspide `ε* ≈ 0.947(J_c−|J|) → 0` avvicinandosi a −J_c.
+- Script/figure: `kerr_tau_scan_regimes_table.py`, `fig_tau_scan_regimes.py`,
+  `fig_tau_shooting_mJc.py`.
+
+## 5. Chiarimenti fisici (verificati)
+- **Muro √f**: τ minimizza tempo proprio, `√(wf)` reale solo r≥r_e (dentro r_e
+  niente frame statico). Fa cuspare TUTTE le |J|<J_c (prograde e retrograde):
+  la svolta centrifuga `Δ−J²w=0` è DENTRO r_e (es. r_t=1.65 per +0.5J_c) ma
+  IRRAGGIUNGIBILE; l'orbita si ferma al muro r_e (dφ/dr→0, azimut congelato).
+- **Co-rotazione**: dentro r_e `dφ/dλ=(w/Δ)J`, segno=segno(J). Conta SOLO al
+  marginale: blocca l'attraversamento di −J_c (che +J_c ottiene) → corner.
+- **La forma chiusa NON distingue ±J_c** (riduzione dipende da J²): dφ/dr(±J_c,
+  r_e)=±1.04 entrambi finiti. La non-penetrazione di −J_c è FISICA (co-rot),
+  non geometrica.
+- **Doran vs BL**: le φ(r) sono in BL. r_e NON è singolare in BL (Δ(r_e)=a²≠0):
+  BL attraversa già l'ergosfera. Doran serve per (a) frame regolare del tempo
+  proprio a r_e, (b) rimuovere il log-winding all'ORIZZONTE r_+ (poli 3ª specie).
+- **Particella libera retrograda**: PUÒ penetrare l'ergosfera; L<0 resta
+  possibile (Penrose) ma dφ/dt è forzato >0 (co-rotazione). Il vincolo del
+  binario (non la geometria) ferma la brachistocrona τ retrograda.
+- **Spirale sull'orizzonte UNIVERSALE**: ogni geodetica → `dφ/dt=Ω_H=a/(2Mr_+)
+  =0.3134`, qualunque L (verificato L=+4,−4,−8,0). Il segno di L cambia la
+  traiettoria PRIMA di r_+ (una retrograda inverte a r_e), non la spirale finale.
+
+## 6. Layout/paper (fatto)
+- Reformat CQG (iopart.cls) + backup PRD (revtex), parità di contenuto.
+- ToC: fix sovrapposizione "Appendix A" (\renewcommand\numberline naturale).
+- Referenze contigue (\clearpage prima della bibliografia).
+- Tabella ottica Randers (τ/t/v/η per FLRW, Vaidya, Thakurta-Kerr).
+- Metriche ottiche di ramo (Table 1): α, β, n per ogni ramo/metrica.
+
+---
+
+## 7. (B) Inversione Kleinian r(φ) — TENTATA, PARZIALE
+Genere 2: r(φ) NON è un singolo quoziente-θ. Due vie analitiche:
+- **Klein 2-punti**: `r1+r2=℘22(u)`, `r1 r2=−℘12(u)`, `℘ij=−∂²log σ/∂ui∂uj`.
+- **Enolski–Hackmann–Lämmerzahl (integrale singolo, divisore-θ)**:
+  `dr/dλ=√S`, `r(λ)=−σ1(u)/σ2(u)|_{σ(u)=0}`, `u1=λ`; poi `φ(λ)=∫K_τ dλ`.
+- È FORMULA ANALITICA (σ = somma reticolare θ, convergenza geometrica), non
+  iterazione; unico root-finding = localizzare il punto sul divisore-θ.
+
+### Esito (mattoni)
+- **(i) θ genere-2** `kerr_genus2_theta.py`: somma reticolare, quasi-periodicità
+  verificata (intera 1e-14, τ-periodo 1e-11), convergenza geometrica (stabile N=6).
+  **FATTO ✓**
+- **(ii) Mappa di Abel + periodi** `kerr_genus2_abel_klein.py`,
+  `kerr_tau_periods_export.sage.py` (esporta τ, period matrix A|B a prec=100):
+  `τ=A⁻¹B` a 1e-16, `u(r)` calcolata per integrazione diretta dei differenziali
+  `dx/y, x dx/y`. **FATTO ✓**
+  (Nota: τ a prec=100 differisce da prec=40 per una trasformazione Sp(4,Z).)
+- **(iii) Inversione ℘/σ** `kerr_genus2_klein_find_char.py`: **BLOCCATA.**
+  Cercando la caratteristica half-integer, `℘22(u)−(r1+r2)` NON è costante
+  (spread ~0.74, dovrebbe essere `−η22` costante). Motivo fondamentale:
+  `℘ij=−∂i∂j log θ[δ] − ηij`, e la matrice **η** sono i **periodi di 2ª specie**
+  (Baker), che **Sage non fornisce** (dà solo la 1ª specie). Nessuna
+  caratteristica assorbe η (è additivo). Serve integrare i differenziali
+  meromorfi di 2ª specie sui cicli di omologia + costanti di Riemann esatte.
+
+### Conclusione
+Le **φ(r) pure** (§1,§2) sono complete e nel paper. L'inversione r(φ) è 2/3
+costruita (θ + Abel verificati); l'ultimo passo dipende da η (2ª specie) —
+research-grade, direzione futura (Enolski–Baker). Non chiusa in modo affidabile.
+
+Script mattoni: `kerr_genus2_theta.py`, `kerr_genus2_abel_klein.py`,
+`kerr_genus2_klein_find_char.py`, `kerr_tau_periods_export.sage.py`.
+
+---
+
+## 8. WKB adiabatico φ(r,A) — forma IBRIDA (FATTO ✓)
+A(η) lento lungo orbita (universo espande, E_eff=Ê/A scorre). Ordine dominante
+WKB = famiglia CONGELATA (forme chiuse §1,§2 con E_eff istantaneo). Correzione
+1° ordine O(A'/A). Forma finale:
+
+  φ(r,A) = φ_0(r;Ê/A)  +  (A'/A)[ Closed(r) + ψ(r) ]  +  O((A'/A)²)
+
+  Closed(r) = −½ Ê · ∂_E φ_0 · η(r)            [CHIUSO]
+  ψ(r)      = ½ Ê (ρ − ρ̃)                       [NUMERICO 1D]
+              ρ=∫∂_Eφ_0·h dr,  ρ̃=∫η·∂_E F dr,  h=dη/dr,  η(r)=t(r) flusso congelato
+
+### Pezzi CHIUSI (analitici)
+- φ_0: forma chiusa Kleinian (§1 t / §2 τ).
+- ∂_E φ_0 = A(r)/√R + Σ_{k=0}^4 c_k ∫ r^k/√R  (riduzione 2ª specie completa:
+  β_±=0, δ_±=0 → NIENTE terza specie, err=0 verificato ENTRAMBI i rami; gauge c5).
+- Closed = −½ Ê ∂_E φ_0 η: prodotto di pezzi chiusi.
+
+### Pezzo NUMERICO (unico irriducibile)
+- ψ = ½Ê(ρ−ρ̃): integrale iterato iperellittico lunghezza-2 (polilog iperell.).
+  Antisimmetrico ½(ρ−ρ̃) = parte IRRIDUCIBILE (shuffle: ρ+ρ̃=∂_Eφ_0·η chiuso
+  simmetrico; ½(ρ−ρ̃) primitivo/irriducibile). ~26% correzione L2 (cresce 9%→28%
+  verso turning). Integrato NUMERICAMENTE (trapezio 1D).
+
+### Verifica ENTRAMBI i rami (parità)
+Ramo **t** `kerr_adiabatic_phi_hybrid.py` (J=6, clock η=t coordinato dal flusso):
+  A'/A=0.005: max|φ_hybrid−φ_full| = 1.39e-06
+  A'/A=0.02 : 5.57e-06     A'/A=0.06 : 1.67e-05
+Ramo **τ** `kerr_adiabatic_phi_hybrid_tau.py` (J=2.5 scattering, clock η=tempo
+proprio η=∫L_τ dr, L_τ=√(Q/w) invariante doranTau.md §2, h=dη/dr=−L_τ analitico):
+  A'/A=0.005: max|φ_hybrid−φ_full| = 2.5e-08
+  A'/A=0.02 : 1.0e-07      A'/A=0.06 : 3.0e-07
+Errore ~lineare in A'/A (residuo trapezio, non struttura). Ibrido = piena.
+Forma di φ IDENTICA nei due rami (stesso E_eff=Ê/A); τ ha in più solo il
+prefattore A⁻² sul TIMING, non sulla forma. NB τ: backoff dal turning
+(F_τ~1/√(Δ−J²w) diverge a r_min) e h analitico → 1e-8.
+
+### Approccio (concordato con utente)
+Pezzi analitici trattati come chiusi; UNICO pezzo irriducibile (ψ) integrato
+numericamente. Onesto: forma chiusa dove esiste, numerico solo dove dimostrato
+irriducibile.
+
+### Nel paper (FATTO ✓)
+Sottosezione `sec:adiabatic` "Semi-analytic first-order adiabatic orbit shape"
+in Sec V, ENTRAMBI i file (main.tex 43pp, main_prd_revtex.tex 23pp):
+- eq:phi-adiab (forma ibrida), eq:dEphi0 (riduzione 2ª specie, no 3ª specie),
+  eq:psi-irr (parte irriducibile), tab:adiab-valid (validazione t+τ).
+- Framing onesto: ψ NON riducibile alla classe depth-1 (shuffle) MA è polilog
+  iperellittico genus-2 (funzione speciale depth-2), valutato numericamente.
+  NON scritto "non integrabile".
+
+Script: `ThakurtaMetric/kerr_adiabatic_phi_hybrid.py` (ramo t),
+`kerr_adiabatic_phi_hybrid_tau.py` (ramo τ, clock proprio),
+`fig_adiabatic_pieces.py` (chiuso 74% vs irriducibile 26%),
+`fig_adiabatic_curve.py`, `fig_breathing_families.py` (t+τ), `fig_breathing_wkb.py`
+(non-autonomo + errore O(A'/A)).
+
+---
+
+## 9. Livello 3 (polilog iperellittico genus-2) — motore installato (FATTO ✓ primo mattone)
+`abelfunctions` 0.2.0 compilato in SageMath 10.9 (vedi memoria
+`abelfunctions-sage-install.md`): forzato build x86_64 (Sage in Rosetta) +
+patch API deprecate `is_LaurentSeries` ecc. → shim isinstance.
+Espone: `RiemannTheta` (con **derivate** via `derivs=[...]`), `RiemannSurface`,
+`AbelMap`, `RiemannConstantVector`, `Jacobian`, `differentials`.
+Verificato sul reticolo τ (§2): θ + gradiente + Hessiana simmetrica (dà
+℘ij=−∂i∂j log θ − ηij), quasi-periodicità 5.8e-16. Sage nativo integro.
+NB: eseguire dentro `sage` (non `sage -python`) da cwd neutra.
+Resta il muro η (2ª specie, §7) per ℘ij pieno; ma il motore θ-derivate è ora
+libreria robusta (non più somma manuale). Acknowledgements software aggiunti a
+entrambi i paper (Sage Developers, abelfunctions/Swierczewski, SymPy/NumPy/SciPy/
+Matplotlib).
+
+### Mattone ψ (Abel map in avanti) — FATTO ✓
+Pivot corretto: obiettivo = chiudere ψ(r) come polilog genus-2 (funzione IN
+AVANTI di r), NON r(φ). Script `KerrMetric/kerr_psi_forward_abel.sage`.
+Bug abelfunctions: `holomorphic_differentials()`/RS pipeline crasha su Singular
+(`integralbasis`) per leading non-monico/coeff grandi (x^6-1 e monic-ish interi
+OK; nostra sestica no). AGGIRATO: pipeline RS di **Sage** per τ, A|B (OK 4.9s);
+Abel map in avanti u(r) per integrazione diretta di (1,x)/(2√S) conv. f_y=2y,
+u=A⁻¹I; θ+derivate da abelfunctions (numpy, ogni τ).
+Verifiche (params razionali M=1,a=9/10,E=7/5,J=5/2): A⁻¹B−τ=1e-16; u(r0)=0;
+∇θ(0)=1.6e-16 (θ pari); Hessiana≠0. θ,grad,Hess valutati su tutta l'orbita
+r∈[4.3,12] → ingredienti kernel Kronecker-Eisenstein genus-2 pronti.
+PROSSIMO mattone: assemblare g^(n)(u,τ) e l'integrale iterato lunghezza-2
+½(ρ−ρ̃) nelle 1-forme (dEF 2ª specie, L), verificare che riproduca ψ(r) numerica.
+
+### Struttura polilog di ψ — dicotomia t/τ (FATTO ✓, validato)
+Prerequisito assemblaggio: le due 1-forme di ψ (ω_a=∂_E F dr, ω_b=clock dη)
+vivono sulla curva del ramo? Test simbolico+numerico (`/tmp/oncurve_check.py`,
+`tclock_oncurve.py`, validazioni):
+- **τ**: β cancella in Q; (dτ/dr)²·S_τ=[r²(r−2M)]² QUADRATO PERFETTO →
+  `dτ/dr = r²(r−2M)/√S_τ` RAZIONALE su y²=S_τ (validato 8.9e-16).
+  ω_a=∂_E F_τ dr 2ª specie su curva. ⇒ **ψ_τ = polilog iperellittico genus-2 PURO.**
+- **t**: β cancella in Q_t; (Q_t/w)·R6=E²r⁶=(Er³)² → √(Q_t/w)=Er³/√R6 on-curve.
+  MA il termine B/f porta β=√(2Mr/(r²+a²)) (frame-dragging Doran), NON in √R6:
+  `dt/dr = ρ_t/√R6 + c_β√(2Mr/(r²+a²))`, c_β=(1−2Ma²/(rΔ))/f (validato 2.5e-14).
+  ⇒ **ψ_t = [polilog genus-2 su R6] + [resto su cover frame-dragging β].**
+Fisica: τ frame-independent → curva pulita; t trascina β (velocità fiume Doran)
+→ rivestimento √ extra. Dicotomia polilog = dicotomia frame-dragging.
+STATO closed form: differenziali ora ESPLICITI e on-curve (τ) / on-curve+cover (t),
+validati. Ultimo passo (kernel Kronecker-Eisenstein genus-2 named / q-serie) =
+research-grade, non ancora fatto. NON è forma tabulata finale, è la STRUTTURA
+polilog rigorosa provata.
+
+### ψ chiude in Kleinian ζ,σ (NON polilog) — η calcolata ✓ (muro §7-iii rotto)
+CORREZIONE: ψ NON è polilog. Le sue 1-forme sono 1ª/2ª specie (no 3ª: β_±=δ_±=0).
+Iterato antisimmetrico lunghezza-2 di 2ª specie CHIUDE in Kleinian ζ,σ (peso 1,
+classe di φ₀). Es. ellittico: ψ=z ζ(z)−2 log σ(z). Mancava solo η (2ª specie).
+**η CALCOLATA** (`KerrMetric/kerr_quasiperiods_bel.sage`): modello dispari
+(quintica x=1/s, 1 punto ∞) + 2ª-specie canoniche Baker-Enolski-Leykin
+(dr_1=(λ3 s+2λ4 s²+3λ5 s³)/4y, dr_2=λ5 s²/4y) + Sage matrix_of_integral_values
+(interi). VALIDATA: κ=η ω⁻¹ simmetrica 1.4e-12, Legendre ω'ηᵀ−ωη'ᵀ=−iπ·I.
+Il modello pari (deg 6, 2 punti ∞) sbaglia (x²dx/y 3ª specie). Ingredienti ψ
+chiuso tutti pronti (u(r), θ+deriv, κ). Resta assemblaggio σ,ζ→ψ + validazione.
+PAPER: sec:adiabatic dice "polylog" → correggere in "Kleinian ζ (2ª specie)".
+
+### Natura di ψ — FINALE (decomposizione residui)
+Correzione della correzione (onesto). Residui: res_∞(ω_a=∂_E F)=0 (pura 1ª+2ª,
+niente 3ª); res_∞(ω_b=dη)=1.063≠0 (dipolo 3ª specie all'∞, perché dη~dr/r, η~log r).
+⇒ ψ = [Kleinian ζ,σ peso 1, termini (2ª)×(1ª/2ª), chiudibile con η calcolata]
+     + [dilogaritmo iperellittico peso 2, termini (3ª)×(1ª/2ª)=∫(int.abel.)·dlog,
+        GENUINO, sourced dal residuo 3ª specie del clock all'∞].
+Il "polylog" del paper era giusto nello spirito (c'è un dilog genuino); la mia
+"ζ puro" era sbagliata. Ora preciso: ζ-chiudibile + dilog-irriducibile con origine
+fisica (crescita log tempo proprio). η (2ª specie) resta utile per la parte ζ.
+PAPER: sec:adiabatic "polylog" OK; volendo raffinare in "splits into a Kleinian-ζ
+part (weight 1) and a genuine hyperelliptic dilogarithm (weight 2) sourced by the
+clock's third-kind residue at infinity".
+
+### Validazione decomposizione ψ vs ODE (vari innesco) — FATTO ✓
+`ThakurtaMetric/psi_decomp_launch.py`. ψ = ψ_a (2ª specie, r³/√S → ζ) + ψ_b
+(3ª specie, −2Mr²/√S → dilog). Closed+ψ_a+ψ_b = δφ_direct (−Ê∫dEF·η dr, verità
+ODE) a **1e-6** per r0 ∈ {14,12,10,8,6.5}. Peso dilog ψ_b: 24.5%→47.4%
+(cresce verso turning). VALIDA la struttura per-specie contro l'ODE, ogni innesco.
+Livello mancante: valutare ψ_a via ζ(σ) e ψ_b via dilog iperellittico
+INDIPENDENTEMENTE (serve caratteristica di Riemann + σ da θ+κ) e rimatchare.
+
+### Livello 2: forma chiusa θ del 3ª-specie — VALIDATA ✓ (cerchio chiuso)
+`KerrMetric/kerr_thirdkind_theta_closed.sage`. Il pezzo trascendente di ψ_Li è
+l'integrale di 3ª specie η_b=∫h_b, h_b=−2Mr²/√S. Forma chiusa:
+  η_b(r) = ρ₀ log[θ[δ](w(r)−e₊)/θ[δ](w(r)−e₋)] + holo,  δ = caratteristica ODD.
+VALIDAZIONE (livello differenziale, scan 6 odd δ): d/dr della log-ratio θ,
+fittata su base {r^k/√S, k=0..3} (1ª+2ª+3ª specie). δ **#1** unico con residuo
+**7.3e-5** (prossimo 7.8e-4, 10×), coeff 3ª specie REALE (−0.2575). Ingredienti:
+θ+deriv (abelfunctions), w(r) Abel normalizzato, e₊=w(∞), e₋=−e₊ (base branch pt).
+Floor ~1e-4 (troncamento θ + e₋=−e₊ + 40 pt). ⇒ integrale 3ª specie CHIUSO in θ.
+Quindi ψ_Li = ½Êρ₀[∂_Eφ₀·L − 2𝓛₂], L=log(θ-ratio) CHIUSO, 𝓛₂=∫L dA il dilog
+(peso 2, endpoint). Combinato con L1 (decomp vs ODE 1e-6) e η (κ sym 1e-12):
+forma chiusa di ψ validata end-to-end (struttura + pezzi speciali).
+
+### Round-trip primitiva + PAPER aggiornato ✓
+Round-trip (`/tmp/roundtrip.sage`): derivando la primitiva chiusa L(r) black-box
+(differenze finite) si RIOTTIENE l'integrando algebrico di 3ª specie: dL_fd vs
+dL_analitico = 4.5e-8; ricostruzione Σc_k r^k/√S residuo 5.6e-5; c2 reale. Primitiva
+CORRETTA. PAPER (main.tex 44pp + PRD 23pp, compilano puliti, 0 undefined):
+sec:adiabatic esteso con forme chiuse φ_t/φ_τ(r,A):
+- eq:clock-tau (dτ/dr=r²(r−2M)/√S), eq:clock-t (dt/dr=ρ_t/√R6+c_β√(2Mr/(r²+a²)))
+- eq:psi-split (ψ=ψ_ζ+ψ_Li, ψ_Li=½Êρ₀[∂_Eφ₀ L−2𝓛₂]), eq:thirdkind-theta (L=log θ-ratio)
+- ψ_ζ Kleinian ζ,σ (Legendre 1e-12); L 3ª specie chiuso in θ[δ] (round-trip 5e-8);
+  𝓛₂ dilog iperellittico peso-2 (endpoint, serie Kronecker-Eisenstein).
+
+### Decomposizione ANALITICA (no fit) → ψ ha TRE pezzi (non due)
+Riduzione 2ª specie di ∂_E F: c_k esatti (razionali in E), @E=7/5
+[-0.531,1.979,-0.812,-0.360,0.189] (sympy, identità polinomiale, no fit).
+Residuo 3ª specie clock: ρ0=M/(E²-1)^(3/2) ESATTO (analitico), num 1.0631.
+Componenti olomorfe via a-periodi esatti (`KerrMetric/kerr_holo_component_check.sage`):
+b^A=holo(∂_Eφ0), b^B=holo(clock). det = b^A_0 b^B_1 - b^A_1 b^B_0 = -4.27-7.94i,
+|det|/(|bA||bB|)=0.80 ≠ 0.
+⇒ **ψ = ψ_ζ (peso1, Kleinian) + ψ_ab (peso2, olomorfo×olomorfo ∫(u1 du2-u2 du1),
+regolatore Beilinson) + ψ_Li (peso2, 3ª specie/dilog).** TRE pezzi.
+ψ_ab è novità genus≥2 (genus1 ha 1 sola olomorfa → assente); l'ellittico zζ-2logσ
+non ce l'ha. Il FIT least-squares nascondeva ψ_ab (assorbito nei coeff liberi);
+l'algebra esatta lo rivela. 3ª specie: L=Fay (teoria), ρ0 analitico — NON fit.
+PAPER DA CORREGGERE: sec:adiabatic dice ψ=ψ_ζ+ψ_Li (due pezzi) → sono TRE
+(aggiungere il termine olomorfo×olomorfo peso-2).
+
+### FORMA ESPLICITA ANALITICA di ψ — VERIFICATA (fix metodologico) ✓✓
+`KerrMetric/kerr_psi_explicit_verified.py`. Dopo errori ripetuti (fit, gestione Δ),
+fix metodologico = verificare OGNI passo prima di costruirci sopra.
+- Riduzione CORRETTA: ∂_E F = N/S^(3/2), N=EJ r⁴(r−2M)²Emu (il Δ di K si CANCELLA).
+  Poi 2N=2S𝒜'−𝒜S'+2SM, 𝒜 deg5, M=Σc_k x^k (k=0..4). Verificata dE F(diretto)=
+  d(𝒜/√S)+M/√S a 1e-15. (I c_k erano giusti; bug era in 𝒜/costanti del bookkeeping.)
+- FORMA ESPLICITA (identità, NO fit): ψ = ½Ê Σ_{k<j} Q_kj W_kj + ½Ê(peso≤1).
+  Q_kj = c_k b_j − c_j b_k (ALGEBRICI), b=(0,0,−2M,1,0) (clock), W_kj=∫(U_k dU_j−
+  U_j dU_k), U_k=∫x^k/√S (polilog genus-2). Verificata ρ−ρ̃=decomposizione a 4.8e-14.
+- Q_01=0 → NIENTE olomorfo×olomorfo (ψ_ab=0, l'artefatto Hodge è risolto).
+- Q_02=−2M c_0=1.063, Q_03=c_0, Q_12=−2M c_1, Q_13=c_1, Q_23=c_2+2M c_3,
+  Q_24=2M c_4, Q_34=−c_4. c_k funzioni razionali esatte di E → Q_kj SIMBOLICI.
+- W_kj = polilog iperellittici genus-2 (peso 2, NON riducibili a peso-1: teorema
+  divisore theta Θ=W_{g-1}). ρ_0=M/(E²−1)^{3/2} per il pezzo 3ª specie (L=Fay).
+CONCLUSIONE: coefficienti ALGEBRICI (simbolici, no fit, no periodi) × funzioni
+polilog genus-2 (transcendenti, endpoint). Questa è la forma chiusa di ψ.
+
+### Soglia di penetrazione ergosfera (ramo t) — diagramma di fase ✓
+`KerrMetric/kerr_penetration_threshold.py`, `fig_penetration_threshold`.
+Piano (A,J), 4 regimi: plunge(orizzonte)/penetra+rimbalza/scattering/forbidden.
+DUE soglie ANALITICHE verificate:
+- muro congelamento: A_c^wall = Ehat/sqrt(1-2M/r0) = 1.534 (E_eff<1 -> r_w=2M/(1-E_eff²);
+  lancio proibito se r_w<r0). Verticale, indip. da J.
+- ergosfera: J_c^+(A)=2M²/a+a+aA²/(2Ehat²) (confine penetra/scatter, diff 1e-15).
+Finestra penetrante (J_c^-,J_c^+)~(-8,3.35) matcha dicotomia t di progress §3.
+Fisica: A cresce -> muro avanza -> a A_c^wall espelle l'orbita (transizione osservata
+nella fig penetranti). Risultato pubblicabile a sé.
+
+### Figure penetrazione nel paper + setup adiabatico Vaidya ✓
+Paper (main 48pp, PRD 25pp): aggiunte fig:penetration-phase (diagramma di fase A,J
+con A_c^wall e J_c^+(A)) e fig:bounce (orbita penetra-rimbalza J=3.2), paragrafo
+"Penetration phase diagram" con eq:Awall.
+VAIDYA adiabatico impostato (`VaidyaMetric/vaidya_adiabatic_setup.md`,
+`vaidya_dMF_reduction.py`): frozen=Schwarzschild (a=0 di Thakurta-Kerr), genus-2
+(NON ellittica: 6 radici distinte; ellittiche sono le geodetiche, non la
+brachistocrona vincolata). Parametro lento M(v), Ṁ=dM/dv. Riduzione ∂_M F=N_M/S^(3/2)
+VERIFICATA 1e-15, c_k^M dati. Stessa pipeline polilog genus-2; clock v(r) (tempo
+avanzato) da esplicitare. No teorema conforme (M(v) non è fattore conforme).
+
+---
+
+## 10. Chiusura W_ij (J generico, genus-2) in funzioni NOMINATE — MATTONE 1 (TK-τ) ✓
+Obiettivo (utente): chiudere i W_ij (peso-2, ψ=½Ê Σ Q_ij W_ij) in funzioni speciali
+nominate con coeff simbolici, come Brown-Levin Γ̃ sulla separatrice. Caso TK-τ.
+Script `KerrMetric/kerr_tau_Wij_reduction.sage` (sympy). Params M=1,a=9/10,E=7/5,J=5/2.
+
+SCHELETRO VERIFICATO (diff 0.00e0): i 5 integrali abeliani U_k=∫r^k dr/√S (k=0..4)
+sono TUTTI indipendenti (k=4 provato irriducibile: grado minimo riducibile via forma
+esatta = 5 per modello deg-6). Classificazione a r=∞ (a6=E²−1):
+- U_0,U_1: 1ª specie (olomorfe) = coordinate Abel u.
+- **U_2: UNICO generatore 3ª specie**, residuo 1/√(E²−1) ai due punti r=∞ → log σ-ratio.
+  UNICA sorgente di peso-2 genuino.
+- U_3,U_4: 2ª specie → Kleinian ζ_i(u).
+
+⇒ Chiusura = ESATTO parallelo separatrice (Weierstrass+Γ̃):
+- peso-1 (coppie senza U_2): chiude in Kleinian σ,ζ_i (Legendre/Baker), coeff simbolici
+  da c_k, b=(0,0,−2M,1,0), κ. κ validata (`kerr_quasiperiods_bel`, Legendre 1e-12).
+- peso-2 irriducibile: UN dilog genus-2 da U_2×(2ª specie), coeff ∝ ρ_0=M/(E²−1)^{3/2}
+  (analitico). U_2=log[σ(u−e₊)/σ(u−e₋)] già validato (`kerr_thirdkind_theta_closed`, 5e-8).
+
+Q_ij nonzero (7): Q_02=−2Mc_0, Q_03=c_0, Q_12=−2Mc_1, Q_13=c_1, Q_23=c_2+2Mc_3,
+Q_24=2Mc_4, Q_34=−c_4 (c_k razionali in E, simbolici).
+PROSSIMO: (a) Sage — U_3,U_4→ζ_i con coeff simbolici, verifica vs U_k diretto;
+(b) forma nominata q-serie (Kronecker-Eisenstein/Fay genus-2) del singolo dilog = frontiera.
