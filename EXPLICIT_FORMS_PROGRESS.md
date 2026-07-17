@@ -576,3 +576,25 @@ Script `ThakurtaMetric/tk_t_sep_track_blockassembly.py`. Segue la separatrice t 
 => PARITA' COMPLETA su tutti i casi: Vaidya (tau,v: fisso+tracking) e TK (tau,t: fisso+tracking,
    entrambe le separatrici). Nessun pezzo meccanico rimasto. (Aperto solo: beta simbolico dei 5-dilog
    Fay, frontiera di ricerca, non richiesto.)
+
+## 9. J GENERICO (off-separatrice, GENUS-2): chiusura W_ij in θ[δ] — TK-τ
+
+Dettaglio completo in `progress.md` §10 + `ThakurtaMetric`/`KerrMetric` script. Off-separatrice
+la sestica S resta genus-2 (no doppia radice). Correzione adiabatica ψ = ½Ê Σ Q_ij W_ij.
+
+**STRUTTURA VERIFICATA (mattoni 1-2b, 1e-15):**
+- U_0..U_4 = ∫r^k/√S indipendenti; U_2 unico generatore 3ª specie (residuo ∞), U_3,U_4 2ª specie.
+- ψ = ½Ê[ 3 iterati Kleinian peso-1 + 1 dilog genus-2 (coppie con L) ] + T_alg(algebrico).
+  Clock ha 2 letters (R1 2ª, L 3ª); source senza 3ª (a_L=0). (u1,u2)=0 ⟹ Q_01=0.
+
+**NAMING (forma-differenza θ[δ] agli e_±, aggira muro divisore-θ):**
+- Ω=log[θ[δ](w-e+)/θ[δ](w-e-)] (3ª specie); Z=ζ_δ(w-e±), P=℘_δ(w-e±) (2ª specie). δ dispari #1.
+- Verifica integrale: U_2,U_3,clock η a 1e-6 (`kerr_tau_Wij_diffform_integral.sage`).
+- COEFFICIENTI SIMBOLICI (parti principali, base canonica): U_k coeff=-g_{k-2},
+  g0=1/√(E²-1), g1=(2E²-3)/(E²-1)^{3/2}, g2=(625E⁶-1156E⁴+37E²+794)/(200√(E²-1)(E²-1)²).
+  Cross-check vs residui BEL mattone-2a = 0 esatto. Clock: η=-g0 Z+(2M g0-g1)Ω+olo.
+  ⟹ φ0 e clock CHIUSI in θ[δ] con coeff simbolici (come σ,ζ,℘ separatrice).
+
+**MURI ONESTI:** ζ_i nudo cade sul divisore-θ (§7-iii), aggirato con forma-differenza agli e_±.
+**APERTO (frontiera):** q-serie nominata del singolo dilog genus-2 (Kronecker-Eisenstein/Fay),
+analogo genus-2 di Γ̃ Brown-Levin. = prossimo lavoro.
