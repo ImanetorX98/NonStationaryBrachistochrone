@@ -421,3 +421,18 @@ Verifica: dG_track/dz=R_track 2.2e-8; delta phi_track assemblato (IBP, G esplici
 int[dmF+(Jc/m)dJF] eta dr a 1e-8..4e-7 (r=11/10/9.2).
 => la correzione separatrice-following e' in forma chiusa esplicita (funz. speciali) con
 coefficienti simbolici, esattamente come la J-fissa. Paper: nota in "Domain of validity".
+
+## 5quater. RAMO v (tempo avanzato) sulla separatrice: ASSEMBLATO (verif 1e-8)
+
+Script `VaidyaMetric/vaidya_sep_vbranch_assembly.py`. Stessa curva/R/G~ della tau; clock diverso:
+  v = E U_3 + r + 2m ln(r-2m),  v_z = dv/dz = E r^3/(r-r_d) + r sqrt(Q4)/(r-2m).
+  - 1o termine (pari, E r^3/(r-r_d)): riproduce i dilog della tau (poli z_d, z_inf).
+  - 2o termine (DISPARI sulla curva, r sqrt(Q4)/(r-2m)): polo SEMPLICE all'immagine
+    dell'orizzonte 2-torsione z=i w_im (r=2m=e3) -> DILOGARITMO DI ORIZZONTE.
+  ln(r-2m) come funzione di z = funzione ellittica (zero doppio a i w_im, poli semplici +-z_inf)
+  -> combinazione lnσ (parte reale verificata costante; c'e' termine lineare lambda z di quasi-periodicita').
+delta phi_v|_sep = G~(z) v(r) - int_{z0}^z G~ v_z dz. ASSEMBLATO (G~,v_z espliciti) = DIRETTO
+  int dm F v dr a 1e-8..6e-8 (r=11/10.5/10). Tutto esplicito in sigma,zeta,P + dilog ellittici,
+  coefficienti chiusi (residui, stessa macchina + settore orizzonte).
+=> ABBIAMO ENTRAMBI I RAMI (tau e v) sulla separatrice in forma chiusa esplicita con coeff simbolici.
+Paper: nota aggiunta in "Domain of validity".
