@@ -327,3 +327,19 @@ Obiettivo: portare i 5 β da numerici (~1e-10) a forma chiusa simbolica.
   pesante (16 relazioni), non affrontata — error-prone, richiederebbe molto lavoro.
 - ESITO ONESTO: β restano NUMERICI (~1e-10). La forma a 5 termini è comunque verificata
   end-to-end a 1e-9 (§4nonies) — solida. La chiusura simbolica dei β è irrisolta.
+
+## 4undecies. MATHEMATICA: rango 5 CONFERMATO ESATTO (residuo 1e-79); beta a 80 cifre
+
+Script `VaidyaMetric/vaidya_sep_fay_symbolic.wl` (wolframscript). Sfrutta precisione arbitraria
+(70-80 cifre) + WeierstrassP/Zeta/Sigma built-in + teoremi di addizione.
+- Residui IDENTICI a Python (b1zd=0.27044665, b2zd=0.0325642, b3zd=0.0098730), C0=−0.084098. ✓
+- **Residuo del sistema = 1.4e-79 ⟹ rango ESATTAMENTE 5** (il 1.4e-10 di Python era solo
+  condizionamento double; a 70 cifre svanisce). La compattificazione a 5 dilog è ESATTA.
+- β estratti a 80 cifre: [0.047969, 0.012025, −0.271152, −0.201227, −0.0048875] (base come Python;
+  nota: differiscono dai β Python perché lo split peso-1 è non-canonico con base W rank-deficient).
+- RICONOSCIMENTO SIMBOLICO FALLITO: RootApproximant → razionali giganti (β non algebrici semplici);
+  FindIntegerNullVector → solo relazione spuria 24/a4=25 (a4=0.96), nessuna relazione β↔residui.
+- ⟹ β NON in forma chiusa nei residui/periodi ovvi. Serve o (a) i valori dei dilog nella base,
+  o (b) la riduzione di Fay ANALITICA vera (skeleton in sez.4a del .wl: formule di addizione
+  Weierstrass pronte, riduzione algebrica da sviluppare). Sage non aggiungerebbe nulla qui.
+- WIN comunque: rango 5 ESATTO (era il dubbio 5-vs-6), e infrastruttura Mathematica pronta.
