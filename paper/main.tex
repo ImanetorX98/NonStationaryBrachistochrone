@@ -2007,9 +2007,12 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 \label{app:separatrix}
 This appendix collects in one place the fully explicit first-order adiabatic
 brachistochrone on the Vaidya separatrix $J=\Jc$---both the proper-time ($\tau$) and
-advanced-time ($v$) branches---with every coefficient in closed form. All objects live
-on the elliptic curve $E:\,w^2=Q_4(r)$ into which the sextic $S$ collapses at $\Jc$.
-The adiabatic expansion is $\varphi(r)=\varphi_0(r)+\dot m\,\delta\varphi(r)+O(\dot m^2)$.
+advanced-time ($v$) branches---with every coefficient in closed form, and closes with
+the rotating Thakurta--Kerr $\tau$ and $t$ branches (the latter with its two
+separatrices $\Jc^\pm$). All objects live on the elliptic curve $E:\,w^2=Q_4(r)$ into
+which the branch sextic collapses at $\Jc$. The adiabatic expansion is
+$\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$
+($\lambda=m$ for Vaidya, $\lambda=A$ via $E_{\rm eff}=\Ehat/A$ for Thakurta--Kerr).
 
 \paragraph{Curve and special functions.}
 $\Jc=5\sqrt{3011/3072+581\sqrt{249}/9216}$ (at $E=7/5,\,m=1$; in general $\Jc=m\,j(E)$),
@@ -2074,6 +2077,35 @@ supplies the horizon dilogarithm.
 Imposing $J=\Jc(m)$ (following the moving separatrix) replaces
 $N_m\to N_m+(\Jc/m)N_J$, $N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$, in the residues above;
 $\varphi_0$, the clocks and the dilogarithms are unchanged (verified to $10^{-8}$).
+
+\paragraph{Thakurta--Kerr branches and their tracking.}
+The rotating (conformal) case follows by the transfer $E\to E_{\rm eff}=\Ehat/A$,
+$a\to s$, $J\to J/A$; the control parameter is now $A$ (equivalently $E_{\rm eff}$), and
+the separatrix $\Jc(E_{\rm eff})$ drifts as $A$ runs. Two curves carry the two clocks.
+\emph{Proper-time ($\tau$) branch:} curve $S=r(r-2M)DE\,(r\Delta-J^2DE)$, source
+$N_\tau=\partial_E(K/\sqrt S)S^{3/2}=E\,J\,r^4(r-2M)^2DE$, clock
+$\eta=U_3-2MU_2$; the block form and residue formulae are those above with
+$N_m\to N_\tau$. Tracking uses $N_\tau\to N_\tau+(\dd\Jc/\dd E)N_J$ with
+$N_J=r^3(r-2M)^2DE^2$ ($\Delta$ cancelling identically) and
+$\dd\Jc/\dd E=-E\,\Jc\,r_d/DE(r_d)=-152.96$ (at $M=1,\,a=9/10,\,E_{\rm eff}=6/5$;
+verified against finite differences, block $=$ direct to $10^{-7}$).
+\emph{Coordinate-time ($t$) branch:} curve $R_6=r\,Q_2\,DE$ with $Q_2$ \emph{linear}
+in $J$, so the separatrix condition $\mathrm{Res}_r(Q_2,Q_2')=0$ has \emph{two}
+distinct roots $\Jc^\pm$ ($\Jc^+=+19.089$, $\Jc^-=-18.671$: prograde$/$retrograde
+frame-dragging asymmetry $|\Jc^+|\neq|\Jc^-|$). The clock is the mixed second/third
+kind $\dd t/\dd r=\rho_t/\sqrt{R_6}$, $\rho_t=P_3+R_\Delta/\Delta$
+[Eq.~\eqref{eq:clock-t}], adding a third-kind horizon letter (dilogarithm anchored at
+the images $z(r_\pm)$). Tracking replaces $N_t\to N_t+(\dd\Jc^\pm/\dd E)N_t^J$,
+$N_t=\partial_E(K_t/\sqrt{R_6})R_6^{3/2}$, $N_t^J=\partial_J(K_t/\sqrt{R_6})R_6^{3/2}$,
+while $\rho_t$ is unchanged. From the double root of $Q_2$ ($Q_2'=0$ gives
+$Q_{2,J}\,\dd\Jc+Q_{2,E}\,\dd E=0$),
+\begin{equation}
+\frac{\dd\Jc^\pm}{\dd E}=-\frac{\partial_E Q_2}{\partial_J Q_2}\bigg|_{(r_d,\Jc^\pm)}
+=\begin{cases}-148.542 & (\text{prograde}),\\ +150.328 & (\text{retrograde}),\end{cases}
+\end{equation}
+again asymmetric (the two magnitudes differ), verified against finite differences;
+the block assembly reproduces the direct integral to $10^{-7}$ ($16$/$18$ horizon
+dilogarithms for the two signs). All coefficients remain closed-form residues.
 
 \paragraph{Transcendence.}
 None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
