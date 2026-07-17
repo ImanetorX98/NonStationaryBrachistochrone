@@ -2003,6 +2003,90 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 
 
+\section{Explicit separatrix adiabatic forms}
+\label{app:separatrix}
+This appendix collects in one place the fully explicit first-order adiabatic
+brachistochrone on the Vaidya separatrix $J=\Jc$---both the proper-time ($\tau$) and
+advanced-time ($v$) branches---with every coefficient in closed form. All objects live
+on the elliptic curve $E:\,w^2=Q_4(r)$ into which the sextic $S$ collapses at $\Jc$.
+The adiabatic expansion is $\varphi(r)=\varphi_0(r)+\dot m\,\delta\varphi(r)+O(\dot m^2)$.
+
+\paragraph{Curve and special functions.}
+$\Jc=5\sqrt{3011/3072+581\sqrt{249}/9216}$ (at $E=7/5,\,m=1$; in general $\Jc=m\,j(E)$),
+$S=(r-r_d)^2Q_4(r)$ with double root $r_d$ and quartic $Q_4$ (roots
+$e_1<e_2<e_3=2m<e_4$, leading coefficient $a_4$). The Abel coordinate is
+$z(r)=\int_{r_0}^r\dd r'/\sqrt{Q_4}$; $\sigma,\zeta,\wp$ are the Weierstrass functions
+of $E$ (periods $2\omega_1,2i\omega_{\rm im}$, built from $\theta_1$). Marked points:
+$\pm z_d$ (images of $r_d$), $\pm z_\infty$ (of $r=\infty$), the two-torsion turning
+image $z=0$ ($r=e_4$) and horizon image $z=i\omega_{\rm im}$ ($r=e_3=2m$).
+
+\paragraph{Zeroth order (frozen orbit), verified to $10^{-12}$.}
+\begin{equation}
+\varphi_0(r)=\Jc\big[(E^2-1)z+((E^2-1)r_d+2m)\,U_0(z)\big],\;\;
+U_0=\rho[\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)]+C_{U_0}z,
+\end{equation}
+$\rho=1/\sqrt{Q_4(r_d)}$, $U_k=\int_{r_0}^r r^k/\sqrt S\,\dd r$ (explicit in
+$\sigma,\zeta$ by Hermite recursion).
+
+\paragraph{First order: source and antiderivative.}
+$\partial_m F=N_m/S^{3/2}$, $N_m=S\,\partial_mK-\tfrac12K\,\partial_mS$, $K=\Jc\,DE$,
+$DE=(E^2-1)r+2m$; on the curve $\partial_m F\,\dd r=R(z)\,\dd z$ with
+$R=N_m(r(z))/[(r(z)-r_d)^3Q_4(r(z))]$ and $r(z)=c_r-a_4^{-1/2}[\zeta(z-z_\infty)-
+\zeta(z+z_\infty)]$. Its antiderivative is Eq.~\eqref{eq:vaidya-sep-G},
+$\tilde G(z)=C_0 z+\sum_{a}[b_1^a\ln\sigma(z-a)-b_2^a\zeta(z-a)-\tfrac12 b_3^a
+\wp(z-a)]$, $a\in\{\pm z_d,0,i\omega_{\rm im}\}$, with closed-form residues: at the
+triple pole $z_d$, writing $s=\sqrt{Q_4(r_d)}$, $F=N_m/Q_4$, $a_1=Q_4'(r_d)/4s$,
+$a_2=Q_4''(r_d)/12$, $h_0=F(r_d)$, $h_1=F'(r_d)s$,
+$h_2=\tfrac12F''(r_d)s^2+\tfrac14F'(r_d)Q_4'(r_d)$,
+\begin{equation}
+b_3^{z_d}=\frac{h_0}{s^3},\quad b_2^{z_d}=\frac{h_1-3a_1h_0}{s^3},\quad
+b_1^{z_d}=\frac{h_2-3a_1h_1+(6a_1^2-3a_2)h_0}{s^3},\quad
+b_2^{e_i}=\frac{4N_m(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
+\end{equation}
+($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
+$R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
+b_3^a\wp'(z_\infty-a)]$.
+
+\paragraph{First order, proper-time branch (verified to $10^{-9}$).}
+Clock $\eta=U_3-2mU_2$; block form
+\begin{equation}
+\delta\varphi_\tau=\tfrac12\,\tilde G(z)\,\eta(r)
++\tfrac12\sum_{i<j}(c_i d_j-c_j d_i)\,A[e_i,e_j],
+\end{equation}
+$A[e_i,e_j]=\int(e_i\,\mathrm{Pe}_j-e_j\,\mathrm{Pe}_i)\dd z$ the antisymmetric
+elliptic dilogarithms (Brown--Levin $\tilde\Gamma$), over the eight even blocks
+$\{1,Z_{z_d},P_{z_d},P'_{z_d},\wp(z),\wp(z{-}i\omega_{\rm im}),P_{z_\infty},
+Z_{z_\infty}\}$ with $Z_a=\zeta(z{-}a)-\zeta(z{+}a)$,
+$P_a=\wp(z{-}a)+\wp(z{+}a)$, $P'_a=\wp'(z{-}a)-\wp'(z{+}a)$. Coefficients: $c_i$ (the
+$\tilde G$ residues), $d_j$ (clock residues $e_1^{z_d}=(r_d^3-2r_d^2)/s$,
+$e_2^{z_\infty}=1/a_4$, $e_1^{z_\infty}=-(2B+r_d-2)/\sqrt{a_4}$) and the constant
+$C_e=(e_4^3-2e_4^2)/(e_4-r_d)+2e_1^{z_d}\zeta(z_d)-2e_2^{z_\infty}\wp(z_\infty)
++2e_1^{z_\infty}\zeta(z_\infty)$---all closed form.
+
+\paragraph{First order, advanced-time branch (verified to $10^{-8}$).}
+Clock $v=E\,U_3+r+2m\ln(r-2m)$;
+$\delta\varphi_v=\tilde G(z)\,v-\int_{z_0}^z\tilde G\,v_z\,\dd z$ with
+$v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term reproduces the proper-time
+dilogarithms; the second is odd on $E$ with a simple pole at $z=i\omega_{\rm im}$ and
+supplies the horizon dilogarithm.
+
+\paragraph{Separatrix tracking.}
+Imposing $J=\Jc(m)$ (following the moving separatrix) replaces
+$N_m\to N_m+(\Jc/m)N_J$, $N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$, in the residues above;
+$\varphi_0$, the clocks and the dilogarithms are unchanged (verified to $10^{-8}$).
+
+\paragraph{Transcendence.}
+None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
+lives in $\sigma,\zeta,\wp$, and the weight-two content is the elliptic dilogarithm,
+irreducible to weight one by the theta-divisor obstruction $\Theta=W_{g-1}$. The
+advanced-time horizon logarithm is elementary only as a $\dd\log$ letter; integrated
+against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, of the
+same transcendental weight as the proper-time case---the horizon merely relocates the
+dilogarithm's anchor from infinity to the two-torsion point $r=2m$. The sole
+numerical ingredient anywhere is the optional compression of the weight-two content to
+its minimal five-dimensional dilogarithm basis (rank confirmed exactly five to
+$10^{-79}$), which the block forms above do not require.
+
 \clearpage
 \bibliographystyle{iopart-num}
 \bibliography{refs}
