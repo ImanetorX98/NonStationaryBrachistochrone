@@ -394,3 +394,17 @@ Verifica vs numerico: Ce diff 4.9e-8, C0 diff 2.0e-8 (residuo dal passo finito d
    ha ORA TUTTI i coefficienti in FORMA CHIUSA (algebrici in m,E + valori Weierstrass ai poli):
    residui b_n^a, e-residui, C0, Ce. E' la forma RIUTILIZZABILE, in funzioni speciali, con
    coefficienti SIMBOLICI. (L'unico pezzo numerico restante e' la COMPRESSIONE opzionale a 5 dilog.)
+
+## 5bis. SIGNIFICATO FISICO adiabatico: Jc(m) mobile + separatrix crossing (chiarimento)
+
+- **Jc NON e' costante**: Jc=m*j(E), j adimensionale (verif Jc/m=7.026624 esatto per m=1,2,3).
+  Quindi durante l'evoluzione m(v) la separatrice si SPOSTA.
+- delta phi|_sep = risposta al 1o ordine a **J FISSO** (dm F|_J), valutata all'istante J=Jc(m0):
+  oggetto ISTANTANEO/locale, NON "orbita che segue la separatrice".
+- **Separatrix crossing**: J conservato, Jc(m) mobile -> la particella attraversa la separatrice.
+  Accrescimento (m^, Jc^ oltre J) -> CATTURA; evaporazione (m v) -> FUGA. Stesso divario fisico
+  dell'asimmetria accr./evap. (eq:vaidya-asymmetry). Regime non-perturbativo, oltre il 1o ordine.
+- **Doppia fragilita' sulla separatrice**: (1) periodo radiale DIVERGE (orbita instabile) ->
+  l'ipotesi adiabatica stessa si degrada; (2) Jc mobile -> crossing. Matematica = limite controllato
+  (genus drop, ellittico); fisica = delicata. delta phi|_sep vive nell'INTORNO, non sul punto singolare.
+- Paper: esteso il paragrafo "Domain of validity" (sec:adiabatic) con questo chiarimento.
