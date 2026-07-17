@@ -452,3 +452,12 @@ CROSS-CHECK indipendente vs mattone-2a (residui BEL): n_2a·g0-(-g_k)=0 ESATTO (
 CLOCK nominato: η=U3-2M U2 = -g0 Z + (2M g0 - g1) Ω + olo, coeff simbolici:
   Z: -1/√(E²-1) ; Ω: 2M/√(E²-1) - (2E²-3)/(E²-1)^{3/2}.
 ⇒ φ0 e clock CHIUSI in θ[δ] agli e_± con COEFFICIENTI SIMBOLICI. Naming peso-1 COMPLETO.
+
+### q-serie dilog genus-2 — TAPPA 1 (fondamenta) + ostruzione Siegel
+`KerrMetric/kerr_tau_dilog_qseries1.sage`. (1) θ[δ] genus-2 somma-nome vs RiemannTheta = 2.4e-9.
+(2) ground-truth dilog Λ(r)=∫(A dΩ-Ω dA), Ω=log θ-ratio: Λ(10)=-0.283, Λ(8)=-0.876, Λ(6.5)=-1.679.
+(3) NOMI: |q11|=0.045, |q22|=0.009 (piccoli), ma |q12|=6.71>1 (Im τ12=-0.606<0). τ di Sage NON
+Siegel-ridotta → serie naïve in q12 diverge (somma reticolare converge, Im τ≻0). 
+⇒ q-serie pulita richiede riduzione Siegel Sp(4,Z) (Tappa 2), poi log θ nome (T3), poi kernel
+Kronecker-Eisenstein genus-2 (T4=frontiera). NB: il dilog È già nominato (∫log θ-ratio × 2ª specie
+= dilog ellittico genus-2 via somma reticolare θ convergente); la q-serie in nomi è raffinamento.
