@@ -501,3 +501,12 @@ int G~ v_z esplicito in atomi. delta phi_v = G~(z) v - sum_{i,j} c_i c_j int gf_
 - NB: e' un integrale PRODOTTO int gf_i gf_j (non iterato); bordo con G~ RAW: delta phi_v=Gt(z)v-sum.
 Verifica: block = diretto a 5e-8..1e-7 (r=11/10.5/10). Coeff = prodotti di residui chiusi.
 => Vaidya v ora COMPLETO come tau: weight-2 esplicito in dilog nominati (incl. dilog orizzonte).
+
+## 5sexies. VAIDYA v TRACKING block assembly (verif 1e-7) -> VAIDYA COMPLETO
+
+Script `VaidyaMetric/vaidya_sep_v_track_blockassembly.py` (N_m -> N_tot=N_m+(Jc/m)N_J).
+N_J = S dJK - 1/2 K dJS = S*DE + J^2 r(r-2m) DE^3; dJc/dm=Jc/m=7.02662 (scaling lineare Vaidya).
+Clock v e v_z invariati; cambia solo R via N_tot -> G~_track. block = diretto int[N_tot/S^{3/2}] v dr
+a 2.7e-7..7.2e-7 (r=11/10.5/10). 11 dilog + orizzonte, coeff residui chiusi.
+=> VAIDYA COMPLETO: tau (fisso+tracking) + v (fisso+tracking), tutti block-assembled, coeff simbolici.
+RESTA (per l'intero programma): TK ramo t (curva R6=r Q2 DE, clock 2a+3a specie).
