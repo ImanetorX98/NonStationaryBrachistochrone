@@ -453,3 +453,18 @@ Verifica: r(z) 8.3e-9; dG/dz=R_tau 3.9e-9 (pole-adapted G, parti principali);
   delta phi assemblato (G esplicito) = diretto int eta dEF dr a 1e-9..4e-8 (r=19/18/17).
 => il rotante chiude con l'IDENTICA macchina genus-1. Residui b_n^a/C0/Ce dalle stesse formule
    (N_m->N_tau). Restano: block assembly weight-2 (dilog), ramo t (curva R6=r Q2 DE).
+
+## 6ter. THAKURTA-KERR tracking (J=Jc(A)): forma chiusa, verificato 1e-8
+
+Script `ThakurtaMetric/tk_sep_track.py`. La separatrice mobile Jc(A) (via E_eff=Ehat/A):
+sorgente = dE F + (dJc/dEeff) dJ F = N_tot/S^{3/2}, N_tot = N_tau + (dJc/dE) N_J.
+Pezzi in FORMA CHIUSA (tutti verificati):
+- **N_tau = E J r^4 (r-2M)^2 DE**  (sorgente E-deriv);
+- **N_J = S dJ K - 1/2 K dJ S = r^3 (r-2M)^2 DE^2**  (J-deriv; Delta si CANCELLA, verif N_J - r^3(r-2M)^2DE^2=0);
+- **dJc/dEeff = -Ehat Jc r_d / DE(r_d)**  (teorema funzione implicita su g=rDelta-J^2 DE:
+  dJc/dE=-g_E/g_J, g_E=-2E J^2 r, g_J=-2J DE). Verif: analitico=-152.960 = finite-diff.
+Stessa macchina genus-1 (pole-adapted G). Verifica: dG/dz=R_track 8.9e-10;
+delta phi_track assemblato = diretto int[dEF+(dJc/dE)dJF] eta dr a 3e-9..1e-7.
+=> anche TK ha ENTRAMBE le versioni (J fisso, J-tracking) in forma chiusa esplicita, coeff simbolici.
+Analogo esatto di Vaidya: dJc/dE (TK) al posto di Jc/m (Vaidya). a!=0 rompe lo scaling lineare.
+Jc(E_eff) verificato mobile: E=1.15/1.20/1.25/1.30 -> Jc=31.34/20.33/14.53/11.05.
