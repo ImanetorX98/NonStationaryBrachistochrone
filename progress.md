@@ -427,3 +427,15 @@ k=4 2.7e-4 (floor troncamento θ ~1e-4). ⇒ U_2,U_3,U_4 CHIUSI in forma-differe
 ROBUSTO al divisore-θ (argomenti shiftati). Il muro §7-iii AGGIRATO (non sfondato).
 NB per l'utente: il log-ratio (θδ-ratio) basta per la 3ª specie/dilog; la 2ª specie serve la
 sua DERIVATA ζ_δ=∂log θδ. Ma tutto da UN oggetto tabulato: θ[δ] dispari ai due punti e_±.
+
+### Naming peso-1 a livello INTEGRALE: VERIFICATO ✓ (coeff da raffinare via residui)
+`KerrMetric/kerr_tau_Wij_diffform_integral.sage`. Primitive nominate valutate DIRETTAMENTE
+(log θ[δ]-ratio, ζ_δ come valori θ, non integrando derivate). δ#1. Verifica U_k(named) vs
+U_k(direct):
+- U_2: 5.8e-7..2.3e-6 ; U_3: 1.4e-6..4.1e-6 ; clock η=U3-2M U2: 2.5e-7..1.4e-6  ✓✓
+- U_4: 8.6e-5..1.7e-3 (floor troncamento θ + polo ordine alto).
+⇒ φ0 e CLOCK chiusi analiticamente in θ[δ] tabulata agli e_± (3ª specie=log θ-ratio;
+2ª specie=ζ_δ). Coeff Lrat del clock ≈1.017 (residuo 3ª specie, pulito).
+LIMITE ONESTO: coeff globali dal lstsq ENORMI/complessi (u1,u2~1e5, cancellazione) — base
+sovracompleta (e_-=-e_+ rende i 4 ζ_δ dipendenti). Naming FUNZIONA ma i coeff puliti simbolici
+servono dai residui/parti principali agli e_± (non fit). Raffinamento = prossimo passo.
