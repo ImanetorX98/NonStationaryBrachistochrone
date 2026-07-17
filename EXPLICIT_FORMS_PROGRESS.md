@@ -360,3 +360,20 @@ per ciascuna lettera, la condizione che il coeff (razionale in p) sia dz-ESATTO 
 Le condizioni di non-esattezza -> sistema lineare su lambda -> 16 relazioni -> beta simbolici.
 E' ben definito ma e' un'ulteriore implementazione simbolica sostanziosa (test di dz-esattezza
 su funzioni razionali di p per ogni lettera). Fondazione pronta; il Solve finale resta da fare.
+
+## 4terdecies. Matching di Ostrogradsky per beta: TENTATO, NON RIUSCITO (residuo 0.72)
+
+Aggiunto in `vaidya_sep_fay_analytic.wl` sez.4 (marcato INCOMPLETO/BUGGATO):
+- Idea: mod dz-esatto ogni coeff-lettera (razionale in p) e' caratterizzato da invarianti ai poli
+  (residuo t^-1 + doppio-polo t^-2). Match delta_phi vs 5 base -> sistema per beta.
+- ESITO: residuo matching = 0.72 (non ~1e-50); beta[4]=beta[5]=0. NON funziona.
+- Cause identificate: (1) manca il contenuto COSTANTE del coeff-lettera; (2) polo a z=0
+  (da e_5=P(z)) trattato con hack P(10^-30), sbagliato; (3) lo spazio invarianti scelto
+  non copre tutto il mod-dz-esatto (serve anche la condizione di PERIODO, non solo residui).
+- Il matching corretto = implementare la caratterizzazione completa mod-dz-esatto sulla curva
+  ellittica (Ostrogradsky/seconda specie: residui + coeff ℘ + periodi), che e' la riduzione
+  degli integrali ellittici in piena regola. Error-prone, non chiuso.
+
+ESITO FINALE onesto sui beta SIMBOLICI: NON RAGGIUNTI. Solidi restano: rango 5 ESATTO (1e-79),
+beta NUMERICI a 80 cifre, fondazione analitica verificata (e_i razionali, Pe_i->lettere).
+La chiusura simbolica dei beta e' un problema aperto (riduzione integrali ellittici completa).

@@ -99,3 +99,66 @@ Do[Module[{d1, d2},
    d1 = (PeR[i] /. letterVal[z1]) - Pe[i][z1];
    d2 = (PeR[i] /. letterVal[z2]) - Pe[i][z2];
    Print["  Pe[", i, "]: |d(z1)-d(z2)| = ", N[Abs[d1 - d2], 6]]], {i, 8}];
+
+(* ---------- 4. MATCHING DI OSTROGRADSKY -> beta ----------
+   A'_k = erat[i] PeR[j] - erat[j] PeR[i] = sum_L coeffL(p,pp) L + ratPart.
+   Mod dz-esatto, ogni coeffL(razionale in p) e' caratterizzato dagli INVARIANTI ai poli:
+   residuo (coeff t^-1) e coeff di doppio-polo (t^-2) [t=z-a].  Match delta_phi vs 5 base. *)
+letters = {zz, Zz, Ls[zd], Ls[-zd], Ls[zi], Ls[-zi]};
+Aprime[k_] := Module[{i = pairsList[[k, 1]], j = pairsList[[k, 2]]},
+   Expand[erat[i] PeR[j] - erat[j] PeR[i]]];
+(* coppie (1-based, indici delle 8 funzioni) *)
+Rall = {1, 2, 3, 4, 5, 6}; Eall = {1, 2, 7, 8};
+pairsList = Select[Subsets[Range[8], {2}],
+   (MemberQ[Rall, #[[1]]] && MemberQ[Eall, #[[2]]]) || (MemberQ[Eall, #[[1]]] && MemberQ[Rall, #[[2]]]) &];
+(* coeff di R e eta' (numerici, dal setup dei residui) - li ricalcolo qui *)
+NmSym = Expand[((r (r - 2 M)((Em^2-1)r+2M)(r^2(r-2M)-Jcn^2((Em^2-1)r+2M))) D[Jcn((Em^2-1)r+2M), M]
+   - (1/2)(Jcn((Em^2-1)r+2M)) D[r(r-2M)((Em^2-1)r+2M)(r^2(r-2M)-Jcn^2((Em^2-1)r+2M)), M]) /. M -> mm];
+Nmf[x_] := NmSym /. r -> x; Qd[x_] := (D[Q4[y], y] /. y -> x); Qdd[x_] := (D[Q4[y], {y, 2}] /. y -> x);
+Frat[x_] := Nmf[x]/Q4[x]; sP = Sqrt[Q4[rd]]; a1c = Qd[rd]/(4 sP); a2c = Qdd[rd]/12;
+h0 = Frat[rd]; h1 = (D[Frat[x], x] /. x -> rd) sP; h2 = (1/2)((D[Frat[x], {x, 2}] /. x -> rd) sP^2 + (D[Frat[x], x] /. x -> rd)(Qd[rd]/2));
+b1zdN = (h2 - 3 a1c h1 + (6 a1c^2 - 3 a2c) h0)/sP^3; b2zdN = (h1 - 3 a1c h0)/sP^3; b3zdN = h0/sP^3;
+b2hf[ei_] := Nmf[ei]/(ei - rd)^3 (4/Qd[ei]^2);
+e1zdN = (rd^3 - 2 rd^2)/sP; saN = Sqrt[a4]; crN = e4 - (2/saN) zdc*0 - (2/saN) WZ[zinf];
+BcN = crN + (1/saN) WZ[2 zinf]; AqN = -1/saN; e1ziN = AqN (2 BcN + rd - 2); e2ziN = AqN^2;
+cvR = {0, b1zdN, b2zdN, -b3zdN/2, b2hf[e4], b2hf[e3], 0, 0};
+dvE = {0, e1zdN, 0, 0, 0, 0, e2ziN, e1ziN};
+(* C0,Ce per match numerico *)
+rOfz[z_] := crN - (1/saN)(WZ[z - zinf] - WZ[z + zinf]);
+ztt = zr[191/100]; RexN = Nmf[rOfz[ztt]]/((rOfz[ztt] - rd)^3 Q4[rOfz[ztt]]);
+EpexN = (rOfz[ztt]^3 - 2 rOfz[ztt]^2)/(rOfz[ztt] - rd);
+cvR[[1]] = RexN - Sum[cvR[[i]] ef[i][ztt], {i, 2, 8}]; dvE[[1]] = EpexN - Sum[dvE[[i]] ef[i][ztt], {i, 2, 8}];
+wkN = Table[(cvR[[p[[1]]]] dvE[[p[[2]]]] - cvR[[p[[2]]]] dvE[[p[[1]]]])/2, {p, pairsList}];
+(* delta_phi_w2' in forma lettere *)
+dphiP = Expand[Sum[wkN[[k]] Aprime[k], {k, Length[pairsList]}]];
+(* 5 dilog-base *)
+baseNames = {{5, 7}, {5, 8}, {2, 5}, {1, 5}, {4, 7}};
+baseK = Flatten[Position[pairsList, Sort[#]] & /@ baseNames];
+(* invarianti: residuo e coeff doppio-polo a ciascun polo, per una funzione razionale(p,pp) *)
+gPrime[Pa_] := 6 Pa^2 - g2/2;
+ploc[Pa_, ppa_, t_] := Pa + ppa t + (1/2) gPrime[Pa] t^2 + (1/6)(12 Pa ppa) t^3 + (1/24)(gPrime[Pa]^2 + 12 Pa gPrime[Pa]... )t^4;
+(* uso solo fino a t^3: basta per residuo(t^-1) e doppio-polo(t^-2) di poli fino a ordine 2 *)
+ploc2[Pa_, ppa_, t_] := Pa + ppa t + (1/2) gPrime[Pa] t^2 + (1/6)(12 Pa ppa) t^3;
+pploc2[Pa_, ppa_, t_] := ppa + gPrime[Pa] t + (1/2)(12 Pa ppa) t^2;
+inv[coeffL_, Pa_, ppa_] := Module[{ser},
+   ser = Series[coeffL /. {p -> ploc2[Pa, ppa, t], pp -> pploc2[Pa, ppa, t]}, {t, 0, 0}];
+   {Coefficient[ser, t, -1], Coefficient[ser, t, -2]}];   (* {residuo, doppio-polo} *)
+(* poli e loro (Pa,ppa) *)
+poli = {{pd, ppd}, {pd, -ppd}, {pI, ppI}, {pI, -ppI}, {eIw, 0}, {WP[0*iw + 10^-30], 0}}; (* z_d,-z_d,z_inf,-z_inf,iw,~0 *)
+(* nota: polo a z=0 (e_5=p) trattato a parte come coeff di p *)
+Print["--- MATCHING invarianti: costruisco sistema per beta ---"];
+letCoeff[expr_, L_] := Coefficient[expr, L];
+rows = {}; rhs = {};
+Do[Do[Module[{cD, cB, iD, iB},
+    cD = letCoeff[dphiP, L];
+    iD = inv[cD, pol[[1]], pol[[2]]];
+    cB = letCoeff[Aprime[#], L] & /@ baseK;
+    iB = Table[inv[cB[[b]], pol[[1]], pol[[2]]], {b, 5}];
+    AppendTo[rows, iB[[All, 1]]]; AppendTo[rhs, iD[[1]]];   (* residuo *)
+    AppendTo[rows, iB[[All, 2]]]; AppendTo[rhs, iD[[2]]];   (* doppio-polo *)
+   ], {pol, poli}], {L, letters}];
+Mrows = N[rows, prec]; Mrhs = N[rhs, prec];
+betaSol = LeastSquares[Mrows, Mrhs];
+residM = Max[Abs[Mrows.betaSol - Mrhs]];
+Print["residuo matching invarianti = ", N[residM, 5]];
+Print["beta (da invarianti):"]; Do[Print["  beta[", b, "] = ", N[betaSol[[b]], 30]], {b, 5}];
