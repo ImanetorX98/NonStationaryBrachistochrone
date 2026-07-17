@@ -74,7 +74,93 @@ Schottky-Kronecker). NON truccato: il check numerico dice che non torna.
 **Script tentativi (framework):** codice inline nelle ultime run (non salvato come file
 definitivo — il regulator non chiude ancora).
 
+### AGGIORNAMENTO: GiNaC dilog ellittico VALIDATO (1e-18)
+
+GiNaC 1.8.10 (+CLN 1.3.7, Rosetta `-arch x86_64`) HA il toolkit polilog ellittico
+(Weinzierl, arXiv:2602.09956) built-in — **eMPL separato NON serve**.
+- Toolchain OK: `iterated_integral(lst{kernels}, y[, N_trunc])`, primo kernel = int. ESTERNA.
+- **Normalizzazione FISSATA (verif 1.87e-7, limite solo troncamento):**
+  `Kronecker_dz_kernel(2, z_j, tau)` = g^(1)(z-z_j) dz, con
+  **g^(1)(z,tau) = d/dz log theta1(pi z, q), reticolo (1,tau), q=e^{i pi tau}.**
+  (Mappa alla mia coord Weierstrass: z_ginac = z_phys/(2 om1), tau = w_im/om1 = 0.90597338 i.)
+- **Length-2 (dilog ellittico) VERIFICATO 4.38e-18** vs quadratura annidata mpmath:
+  I2 = int_0^y g^(1)(t1-za) int_0^{t1} g^(1)(t2-zb). Ordering: 1° kernel lst = esterno.
+- Vincolo pratico: polo di g^(1) a z=z_j NON deve stare sul cammino [0,y] (z_j immaginario
+  ok); y dentro raggio di convergenza serie (y~0.15 ok, y~0.40 diverge).
+- **Compile:** `export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH;
+  clang++ -std=c++17 -arch x86_64 f.cpp -o out $(pkg-config --cflags --libs ginac);
+  DYLD_LIBRARY_PATH=/usr/local/lib ./out`. Script test in /tmp/ginac_ell/.
+- **PROSSIMO:** assemblare W_kj = 2 int U_k dU_j - U_k U_j riducendo ogni ζ->g^(1)+lineare,
+  lnσ->int g^(1)+quadratico, pezzo irriducibile = Gamma-tilde(1,1;z_a,z_b;z_end) length-2.
+  Poi testare W_kj assemblato vs quadratura diretta.
+
+### NOTA STRATEGICA (mappa 2×2, cosa serve davvero)
+- Curve adiab. 1° ordine J-GENERICO: **già analitiche+verificate in rappr. integrale**
+  (Vaidya v,τ; TK t,τ). NON richiedono questi conti genus-1.
+- Questi conti (GiNaC, genus 1) servono SOLO a portare la **separatrice** a forma esplicita
+  in funz. speciali. J-generico esplicito richiederebbe **genus 2 = Schottky-Kronecker**
+  (arXiv:2406.10051), NON in GiNaC.
+
 ---
+
+## 4bis. WEIGHT-2 CHIUSO + assemblaggio separatrice (VERIFICATO)
+
+**Weight-2 W_kj CHIUSO** (`VaidyaMetric/vaidya_sep_weight2_assembly.py`):
+- r(z) = c_r - (1/√a4)[ζ(z-z_∞)-ζ(z+z_∞)] esplicito (elliptic, verif 1e-11)
+- f_k(z)=U_k'(z)=r(z)^k/(r(z)-r_d) esplicito (1e-10)
+- **W_kj = 2∫U_k dU_j - U_k U_j**, con U_k funz. speciali esplicite (σ,ζ+Hermite) e
+  ∫U_k dU_j = **polilog ellittico length-2** (= iterated_integral Kronecker g^(1), verif
+  GiNaC 1e-18). W_kj asm vs quadratura diretta: **1e-12…1e-15** su tutte le coppie
+  (2,3),(0,2),(0,3),(1,3),(1,2). → il §4 "regulator non chiude" È RISOLTO.
+
+**φ_0|_sep (orbita frozen sulla separatrice) ESPLICITA** (verif 1e-12):
+  **φ_0|_sep = Jc[(E²-1) z + ((E²-1)r_d + 2m) U_0(z)]**,  z=∫_{r0}^r dr/√Q4,
+  U_0=ρ[lnσ(z-z_d)-lnσ(z+z_d)]+C0 z.
+
+**Jc (condizione separatrice) ESATTO:** doppia radice di S ⇔ Res_r(S,S')=0 ⇔
+  S(r_d)=S'(r_d)=0.  **Jc = 5√(3011/3072 + 581√249/9216) = 7.026623740389046**,
+  r_d=-3.36371118. (M=1,E=1.4.)
+
+**δφ_τ|_sep(r) ESPLICITO E VERIFICATO end-to-end (1e-7…1e-9)** — MICROSTEP FINALE FATTO.
+- Lo SPLIT eq:psi-split (𝒜 polinomiale) è SINGOLARE a Jc (S'(r_d)=0 ma N_m(r_d)≠0 →
+  identità 2𝒜'S-𝒜S'+2SM=2N_m inconsistente). CONFERMA §5. Ansatz a gradi fissi NON risolve.
+- **RISOLTO per ALGORITMO (Hermite-Ostrogradsky via parti principali sul toro, NIENTE ansatz):**
+  `VaidyaMetric/vaidya_sep_G_partialfractions.py`.
+  In z: ∂_mF dr = R(z)dz, **R(z)=N_m(r(z))/((r(z)-r_d)³ Q(r(z)))** funzione ellittica.
+  Parti principali via contorno b_n^a=(1/2πi)∮R(z)(z-a)^{n-1}dz (analitico). Poli:
+  ±z_d (ord.3), z=0 e z=i·w_im (ord.2). Integrazione termine-a-termine:
+  **G(z)=∫∂_mF = C₀ z + Σ_a[ b₁^a lnσ(z-a) − b₂^a ζ(z-a) − (b₃^a/2)℘(z-a) ]**
+  (usa ∫ζ=lnσ, ∫℘=−ζ, ∫℘'=℘). Verif dG/dz=R a 1e-13.
+  Coeff (M=1,E=1.4): C₀=−0.084098;  z_d: b1=+0.27045,b2=+0.032564,b3=+0.0098730;
+  −z_d: b1=−0.27045,b2=+0.032564,b3=−0.0098730;  z=0: b2=+0.033998;  z=i·w_im: b2=−0.38946.
+- **δφ_τ|_sep(r) = G~(z(r))·η(r) − ∫_{r0}^r G~ η' dr**, η=U_3−2U_2,
+  η'-forma=(r³−2r²)/(r−r_d). ASSEMBLATO (G esplicito) = DIRETTO a **1e-7…1e-9** a ogni r.
+- **WEIGHT-2 CHIUSO in atomi nominati** (`VaidyaMetric/vaidya_sep_weight2_closure.py`):
+  ∫G~ η' dz NON è un integrale irrisolto — è somma di **dilog ellittici**. η' scomposto in
+  parti principali (contorno, analitico): poli ±z_d(ord1), ±z_∞(ord2). Prodotto G~·η'
+  costruito PROGRAMMATICAMENTE (no algebra a mano) → ogni coppia kind_i×kind_j = 1 atomo:
+    **D(a,b)=∫lnσ(z−a)ζ(z−b)dz** (dilog ellittico, = iterated_integral GiNaC, verif 1e-18),
+    C(a,b)=∫ζζ, + atomi ℘/z (weight-1 o dilog). Coeff = prodotti di parti principali (ANALITICI).
+  Atomi dilog irriducibili: D(±z_d, {±z_d,±z_∞}) con coeff ±1.00232, ±0.28752.
+  **Somma atomi = ∫diretto a 1e-9**; **δφ COMPLETO = G~η − Σatomi = diretto a 1.6e-8…4.3e-8.**
+  Precisione limitata solo da eps contorno/wpp; nessun fit. FORMA CHIUSA ESPLICITA COMPLETA.
+- **COEFFICIENTI DILOG NOMINATI ANALITICAMENTE** (`VaidyaMetric/vaidya_sep_residui_analitici.py`):
+  c_ab = Res_a(R)·Res_b(η'), residui in forma chiusa dai dati della curva (verif vs contorno 1e-7..1e-16):
+  · **Res_{±z_d}(η') = ±(r_d³−2r_d²)/√Q4(r_d)**  (residuo terza specie a r_d)
+  · **Res_{±z_∞}(η'): b₁=∓(1/√a4)(2B+r_d−2), b₂=1/a4** (B=c_r+ζ(2z_∞)/√a4) [b₂=1/a4 ESATTO]
+  · **Res_{z_d}(R)** (polo triplo, espansione r=r_d+s·w+..., s=√Q4(r_d), a₁=Q4'(r_d)/(4s), a₂=Q4''(r_d)/12,
+    F=N_m/Q4, h₀=F(r_d), h₁=F'(r_d)s, h₂=½F''(r_d)s²+¼F'(r_d)Q4'(r_d)):
+      b₃=h₀/s³,  b₂=(h₁−3a₁h₀)/s³,  **b₁=(h₂−3a₁h₁+(6a₁²−3a₂)h₀)/s³**  (Res=b₁).
+  Coeff dilog: **D(±z_d,±z_d)=∓1.002315, D(±z_d,±z_∞)=±0.287525** (da formule, non fit).
+- **DILOG ELLITTICI NOMINATI:** D(a,b)=∫lnσ(z−a)ζ(z−b)dz = **Brown-Levin Γ̃(1,1;a,b)** = length-2
+  Kronecker iterated integral (= GiNaC iterated_integral, verif 1e-18). Poli a,b∈{±z_d,±z_∞}.
+  Valori (a r=10): D(z_d,z_d)=−0.11236, D(z_d,−z_d)=+0.06308, D(z_d,z_∞)=−0.31209, D(z_d,−z_∞)=+0.11733,
+  D(−z_d,z_d)=−0.06489, D(−z_d,−z_d)=+0.03657, D(−z_d,z_∞)=−0.17968, D(−z_d,−z_∞)=+0.06804.
+- **CAVEAT (fisico, già noto):** l'angolo TOTALE diverge al turning: ∂_mF~(r−rt)^{-3/2}
+  → δφ~(r−rt)^{-1/2}. È il breakdown adiabatico al punto di svolta (vale per OGNI orbita,
+  non solo separatrice; = "Domain of validity" caveat nel paper). δφ(r) accumulato fino a
+  r>rt è la quantità esplicita ben definita. NON esiste un singolo numero "δφ|_sep"; il
+  "3.7302" precedente era artefatto di cutoff (r=8.9) — RITIRATO.
 
 ## 5. Findings / correzioni importanti (verificati)
 
@@ -118,3 +204,126 @@ Ambiente: clang++ ✓, brew ✓, pkg-config ✓. GiNaC/CLN da installare.
 **In sintesi:** settore abeliano ESPLICITO e verificato (§3); manca solo il **dilog
 ellittico** del weight-2 (§4), che è frontiera e richiede eMPL/GiNaC. δφ|_sep va
 assemblato via limite J→Jc.
+
+## 4ter. BROWN-LEVIN Gamma-tilde SCRITTA ESPLICITA + serie-q TABULABILE (VERIFICATO)
+
+Script `VaidyaMetric/brown_levin_gamma.py`. Risponde a "abbiamo scritto Γ̃ e chiuso con essa?".
+
+**g^(1)(x,τ) = ∂_x log θ₁(πx, q), q=e^{iπτ}, reticolo (1,τ).** Serie-q TABULABILE:
+  **g^(1)(x) = π cot(πx) + 4π Σ_{n≥1} [q^{2n}/(1−q^{2n})] sin(2πn x)**   (verif vs θ₁: 1e-31)
+
+**Γ̃(1,1; x1,x2; y) = ∫_0^y g^(1)(t−x1)[∫_0^t g^(1)(s−x2)ds]dt**  (length-2 Kronecker).
+  Shuffle Γ̃(x1,x2)+Γ̃(x2,x1)=[∫g1(·−x1)][∫g1(·−x2)] verif 1e-31 (⇒ è l'iterato corretto).
+
+**Mappa Weierstrass↔Kronecker (reticolo Vaidya, ESATTA 1e-31):** con û=z/(2ω1), q=e^{iπτ}, τ=w_im/om1:
+  ζ_W(z) = (η1/ω1) z + (1/(2ω1)) g^(1)(z/(2ω1))
+  lnσ_W(z) = ln(2ω1/π)−lnθ₁'(0) + η1 z²/(2ω1) + log θ₁(π z/(2ω1))
+
+**Nucleo trascendente del dilog D(a,b) = Γ̃(1,1) + peso-1 (ESATTO 4.5e-32, tutti i poli):**
+  ∫_{u0}^u lnθ₁(π(û'−â))·g^(1)(û'−b̂)dû' = Γ̃(1,1;â,b̂;u0,u) + lnθ₁(π(u0−â))·[lnθ₁(π(u−b̂))−lnθ₁(π(u0−b̂))]
+  (â=a/(2ω1), b̂=b/(2ω1)). [Attenzione: serve dps≥40 per la doppia quadratura vicino al polo z_∞.]
+
+**CHIUSURA:** D(a,b)=∫lnσ(z−a)ζ(z−b)dz = **Γ̃(1,1;â,b̂)** (coeff 1) + [E₂=∫lnθ₁ (dilog ell.
+proprio) + poly×g1 + elementari]. Quindi δφ_τ|_sep = G~η − Σ c_ab[Γ̃(1,1;â,b̂)+peso-1] − (atomi C,℘)
+è CHIUSA in funzioni Brown-Levin {Γ̃(1,1), E₂} + elementari, TUTTE con serie-q tabulabile.
+Atomi C(a,b)=∫ζζ e ℘-prodotti = stessa famiglia (Γ̃(n1,n2) ordine sup.), riduzione identica.
+
+## 4quater. FORMULA 100% TERMINE-PER-TERMINE (VERIFICATA 1e-9)
+
+Script `VaidyaMetric/vaidya_sep_deltaphi_full_gamma.py`. Forma SENZA bordo (no IBP):
+  **δφ_τ|_sep = ∫_{z0}^z R(z')η(z')dz' = Σ_{i,j} R_i η'_j · J[f₁^i, f₂^j]**
+- R(z)=Σ_i R_i f₁^i con f₁∈{1, ζ(z-a), ℘(z-a), ℘'(z-a)}, a∈{±z_d, 0, i·w_im};
+  coeff R_i = residui ANALITICI (C₀=−0.084099; b₁,b₂,b₃ a ±z_d da formule §residui;
+  semiperiodi: b₂ = 4N_m(e_i)/((e_i−r_d)³Q4'(e_i)²), con **e₄→z=0, e₃→z=i·w_im**;
+  N_m(e₁)=N_m(e₂)=0 ⇒ niente polo a z=ω1, ω1+i·w_im).
+- η'(z)=Σ_j η'_j f₂^j con f₂∈{1, ζ(z-b), ℘(z-b)}, b∈{±z_d, ±z_∞}; coeff analitici (§residui).
+- **J[f₁,f₂] = ∫_{z0}^z f₁(z')[∫_{z0}^{z'}f₂(s)ds]dz'** = iterato length-2 di forme Weierstrass
+  = **Brown-Levin Γ̃(m,n; â,b̂)** con mappa ordine-g: ζ→g⁽¹⁾, ℘→g⁽²⁾, ℘'→g⁽³⁾, 1→g⁽⁰⁾.
+  Tipi presenti: Γ̃(m,n), m∈{0,1,2,3}, n∈{0,1,2}. m=0/n=0 → peso-1/E₂; m,n≥1 → dilog ell.
+- **63 termini non nulli. Σ termini = δφ diretto a 9e-10 / 2.6e-9 / 6.5e-9** (r=11/10.5/10, dps=40).
+- Reconstruction R: 3.3e-8, η': 1.6e-8. NESSUN integrale irrisolto, nessun fit.
+- Ogni Γ̃ valutabile via serie-q g⁽¹⁾ (§4ter) → interamente tabulabile.
+
+## 4quinquies. VALIDAZIONE MULTI-PARAMETRO (PASSATA)
+
+Script `VaidyaMetric/vaidya_sep_validate_multiparam.py`. Gira l'INTERO pipeline (coeff
+ANALITICI, non contorno) per vari E (M=1), ognuno con Jc/r_d/curva diversi. Σ63 termini
+Γ̃ = ∫diretto ∂_mF·η, a meta' orbita:
+  E=1.30: Jc=10.907, r_d=-4.606, turn=11.21, diff=4.4e-10
+  E=1.40: Jc= 7.027, r_d=-3.364, turn= 8.73, diff=3.4e-9
+  E=1.50: Jc= 4.987, r_d=-2.621, turn= 7.24, diff=7.1e-10
+  E=1.60: Jc= 3.764, r_d=-2.128, turn= 6.26, diff=7.1e-9
+  (E=1.25: turn=13.2 > finestra r0=12 → orbita fuori range, non testato; alzare r0.)
+→ formule chiuse dei residui + assemblaggio Γ̃ VALIDI sull'intera famiglia, non un punto solo.
+
+Nota "riduzione Γ̃(m,n) dei 63 termini": è la riscrittura Weierstrass→Kronecker standard;
+NON compattifica (semmai espande per gli shift lineari). Compattificazione vera = sfruttare
+simmetria ± (involuzione z→−z: coppie z_d/−z_d, z_∞/−z_∞ con residui ±) + relazioni shuffle
+→ combina in dilog ellittici reali, riducendo 63 a poche unita' indipendenti (DA FARE se si
+vuole la forma minima).
+
+## 4sexies. COMPATTIFICAZIONE 63 -> 24 (VERIFICATA 1e-9)
+
+Script `VaidyaMetric/vaidya_sep_compact.py`. R(z),η'(z) sono funzioni PARI (r(z) pari,
+involuzione iperellittica z->-z). Poli ±z_d, ±z_∞ si combinano in BLOCCHI PARI:
+  Z_a=ζ(z-a)-ζ(z+a),  P_a=℘(z-a)+℘(z+a),  P'_a=℘'(z-a)-℘'(z+a)   (tutti pari in z)
+  R = C0 + b1 Z_{z_d} + b2 P_{z_d} - (b3/2) P'_{z_d} + b2^(0) ℘(z) + b2^(iw) ℘(z-i w_im)  [6 blk]
+  η'= Ce + e1^d Z_{z_d} + e2^∞ P_{z_∞} + e1^∞ Z_{z_∞}                                    [4 blk]
+δφ = Σ_{blkR,blkη'} coeff · J[blkR,blkη'],  J=iterato length-2.  **24 prodotti (era 63)**:
+  15 dilog ellittici genuini (5×3 non costanti) + 9 con costanti C0/Ce (peso inf/E₂).
+Check: R,η' ricostruiti coi blocchi pari (3.3e-8, 1.6e-8); δφ_compatto = diretto a 9e-10…3e-8
+(r=11/10/9.2). Stessi coefficienti analitici, solo regruppati per parità → vale a ogni E.
+Ulteriore riduzione 24->~15 possibile via relazioni shuffle tra Γ̃, ma rendimenti calanti.
+
+## 4septies. COMPATTIFICAZIONE (a): forma ANTISIMMETRICA / shuffle (VERIFICATA 1e-9)
+
+Script `VaidyaMetric/vaidya_sep_compact_antisym.py`. Decomposizione shuffle dell'iterato:
+  J[g,h] = ½(∫g)(∫h) + ½ A[g,h],   A[g,h]=∫(g·∫h − h·∫g)dz = −A[h,g]  (dilog ell. genuino).
+Sommando: la parte simmetrica si ricombina in ½(∫R)(∫η')=½ G~ η (peso-1 ELEMENTARE), e:
+  **δφ_τ|_sep = ½ G~(z) η(r) + ½ Σ_{i<j} (c_i d_j − c_j d_i) A[e_i,e_j]**
+con e = {1, Z_zd, P_zd, P'_zd, ℘_0, ℘_iw, P_z∞, Z_z∞} (8 funzioni PARI), c_i=coeff in R,
+d_i=coeff in η'. Le coppie R×R e η'×η' danno (c_i d_j−c_j d_i)=0 → spariscono; diagonali A[g,g]=0.
+**21 coppie A sopravvissute** (era 24 prodotti J): 14 dilog ellittici genuini + 7 tipo E₂ (A[1,g]).
+Coeff (E=1.4): A[1,Z_zd]=+0.719, A[Z_zd,wp_iw]=−1.443, A[Z_zd,Z_z∞]=+0.288, … (tutti analitici).
+δφ_antisym = diretto a 9e-10…3e-8 (r=11/10/9.2). 
+Ulteriore riduzione (21→ meno) richiede identità di FAY/Kronecker (oltre lo shuffle), non fatta.
+
+## 4octies. RIDUZIONE DI FAY: rango 5 (16 relazioni) — RISULTATO POSITIVO
+
+Script `VaidyaMetric/vaidya_sep_fay_fast.py`. Metodo rigoroso e VELOCE: le relazioni tra i
+21 A[e_i,e_j] modulo peso-1 si trovano dalle DERIVATE A'_k = e_i Pe_j − e_j Pe_i (peso-1 in
+forma CHIUSA: Pe = ζ/lnσ/z, nessuna quadratura). Una relazione tra le A' si solleva ESATTA a
+una relazione tra gli A (d/dz(ΣλA−ΣμW)=0 ⟹ =cost). Matrice derivate 120×75 (ben posta).
+℘' ESATTO da θ₁ (θ₁'''/θ₁ − 3θ₁'θ₁''/θ₁² + 2(θ₁'/θ₁)³), non differenze finite.
+- **RANGO di A modulo peso-1 = 5  ⟹  16 relazioni di Fay indipendenti.**
+- Gap netto valori singolari A_perp: [1, 1.1e-4, 6.3e-6, 2.3e-6, 1.2e-6 | 9.1e-9, …] (fattore ~130).
+- ⟹ la parte trascendente di δφ_τ|_sep ha solo **≈5 dilog ellittici indipendenti** (non 21/63).
+- CAVEAT: i 5 SV "non nulli" spaziano 1…1e-6 → conteggio robusto ≈5 (3-5 secondo soglia).
+- FATTO: il RANGO. DA FARE: estrarre la FORMA esplicita a 5 termini (5 dilog-base + coeff
+  analitici delle 16 relazioni via null-space simbolico) e mapparla su Γ̃(m,n).
+
+## 4nonies. FORMA ESPLICITA A 5 TERMINI (estrazione Fay completata, VERIFICATA)
+
+Script `VaidyaMetric/vaidya_sep_5term.py` (con tqdm + logging). Metodo: algebra lineare
+ESATTA sulle DERIVATE (forma chiusa, residuo→0, non fit). QR-pivot sceglie 5 dilog-base;
+risolvo δφ_w2' = Σβ_b A_base' + Σγ V'_{peso-1} su 160 punti.
+  **δφ_τ|_sep = ½ G~ η + Σ_{b=1}^5 β_b A_base^(b) + [peso-1]**
+- 5 dilog-base: A[℘_0,P_z∞], A[℘_0,Z_z∞], A[Z_zd,℘_0], A[1,℘_0], A[P'_zd,P_z∞]
+- β = [+0.019246, −0.001957, +0.002138, +0.000115, −0.003883]
+- Residuo sistema = 1.4e-10 (condizionamento ℘'/range dinamico; relazione genuina, non fit).
+- **VERIFICA end-to-end (5 A_base annidati veri + peso-1) = diretto a 9e-10…3e-8.** ✓
+CATENA COMPATTIFICAZIONE: 63 →(parità) 24 →(shuffle) 21 →(Fay) **5 dilog ellittici**.
+CAVEAT: β NUMERICI (da algebra lineare esatta ~1e-10), non ancora forma chiusa simbolica;
+nominarli richiede le relazioni di Fay simboliche (passo ulteriore, non fatto).
+
+## 4decies. beta SIMBOLICI (Fay analitico): TENTATO, BLOCCATO da condizionamento
+
+Obiettivo: portare i 5 β da numerici (~1e-10) a forma chiusa simbolica.
+- Via NUMERICA ad alta precisione (mpmath dps=45 + PSLQ): BLOCCATA. Vicino al turning (z→0,
+  r→e4) ℘(z)~1/z² esplode → range dinamico enorme → base peso-1 (46 fn, rango effettivo ~12)
+  quasi singolare; ranghi numerici instabili; qr_solve/lu_solve falliscono ("matrix numerically
+  singular"). Non si raggiunge la precisione (~40 cifre) per PSLQ. Script `vaidya_sep_beta_hp.py`.
+- Via ANALITICA (identità di Fay/addizione Weierstrass per ℘(z-a)ζ(z-b)): derivazione simbolica
+  pesante (16 relazioni), non affrontata — error-prone, richiederebbe molto lavoro.
+- ESITO ONESTO: β restano NUMERICI (~1e-10). La forma a 5 termini è comunque verificata
+  end-to-end a 1e-9 (§4nonies) — solida. La chiusura simbolica dei β è irrisolta.
