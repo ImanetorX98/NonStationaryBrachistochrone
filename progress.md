@@ -439,3 +439,16 @@ U_k(direct):
 LIMITE ONESTO: coeff globali dal lstsq ENORMI/complessi (u1,u2~1e5, cancellazione) — base
 sovracompleta (e_-=-e_+ rende i 4 ζ_δ dipendenti). Naming FUNZIONA ma i coeff puliti simbolici
 servono dai residui/parti principali agli e_± (non fit). Raffinamento = prossimo passo.
+
+### Coefficienti simbolici via PARTI PRINCIPALI ✓ (base canonica, cross-check esatto)
+`KerrMetric/kerr_tau_Wij_principalparts.py`. Nella base canonica θ[δ] (oggetti a polo unitario
+agli e_±: Ω=3ª specie, Z=2ª doppio polo, P=2ª triplo polo), i coeff di U_k sono i coeff di polo
+di ω_k=-s^{1-k}/√q6 ds a s=0 = -g_{k-2}, g_i=Taylor di q6^{-1/2}:
+  g_0=1/√(E²-1) ; g_1=(2E²-3)/(E²-1)^{3/2} ; g_2=(625E⁶-1156E⁴+37E²+794)/(200√(E²-1)(E²-1)²)
+  U_2=-g0 Ω +olo ; U_3=-g0 Z -g1 Ω +olo ; U_4=-g0 P -g1 Z -g2 Ω +olo   (coeff SIMBOLICI).
+CROSS-CHECK indipendente vs mattone-2a (residui BEL): n_2a·g0-(-g_k)=0 ESATTO (U_3,U_4).
+⇒ risolve il mal-condizionamento del fit globale: coeff FISSI simbolici, gli oggetti Ω,Z,P
+(θ[δ] agli e_±) portano la normalizzazione geometrica (come σ,ζ,℘ sulla separatrice).
+CLOCK nominato: η=U3-2M U2 = -g0 Z + (2M g0 - g1) Ω + olo, coeff simbolici:
+  Z: -1/√(E²-1) ; Ω: 2M/√(E²-1) - (2E²-3)/(E²-1)^{3/2}.
+⇒ φ0 e clock CHIUSI in θ[δ] agli e_± con COEFFICIENTI SIMBOLICI. Naming peso-1 COMPLETO.
