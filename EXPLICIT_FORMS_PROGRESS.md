@@ -540,3 +540,21 @@ Script `ThakurtaMetric/tk_t_sep_blockassembly.py` (prograda) + `_retro.py`. Comp
   (prec 1e-6, limitata da eps contorno vicino ai poli orizzonte complessi.)
 => TK ramo t COMPLETO (fisso, prograda+retrograda): weight-2 esplicito in dilog, eta3 in lnsigma
    agli orizzonti. RESTA solo il tracking del ramo t (N_t->N_tot con dJc_pm/dE, meccanico).
+
+## 7. CROSS-CHECK MATHEMATICA: identita' esatte + BUG TROVATO E CORRETTO nel ramo t
+
+Script `paper/crosscheck_identities.wl`, `crosscheck_tk_numeric.wl`, `crosscheck_vt_numeric.wl`,
+`crosscheck_tkt_flat.wl` (wolframscript, WeierstrassP nativo, indipendente da theta1/mpmath).
+- IDENTITA' SIMBOLICHE (tutti i casi) confermate ESATTE: Jc (Vaidya Root=radicale, TK tau, TK t
+  prograda +19.089/retrograda -18.671), N_m/N_tau/N_J (=0), N_J(TK)=r^3(r-2M)^2 DE^2, dJc/dE=-EJr/DE,
+  scaling Vaidya, asimmetria ramo t (Q2 lineare in J).
+- NUMERICO: Vaidya tau (residui, rango 5); TK tau (Jc,r_d,Q4,r(z) 1e-29, delta phi diretto 8 cifre);
+  Vaidya v (sqrtQ4=dr/dz 1e-28, delta phi_v diretto); z(r_pm) orizzonti 1e-31.
+- **BUG TROVATO (ramo t)**: il Python estraeva P3 con sp.div(numer, Delta) ma il denom di cancel(rho_t)
+  e' **2500*Delta** -> P3 era 2500x, P3+RD/Delta != rho_t, e delta phi_t 100x troppo grande.
+  FIX: dividere per il denominatore VERO (sp.denom(rho_t)); RD=(rho_t-P3)Delta. Ora P3 leading=E^2=1.44
+  (= P3 del paper, b-vector), P3+RD/Delta-rho_t=0. Corretti tk_t_sep_baseline.py/_retro.py +
+  blockassembly.py/_retro.py. VALORI CORRETTI: prograda delta phi_t(19)=0.0871960819 (era 8.72),
+  retrograda -0.0795252758. block=diretto=Mathematica, 16 dilog (erano 20/22). Verif 2e-8..2e-10.
+=> Il cross-check indipendente ha CATTURATO un errore reale (l'assemblato=diretto Python era
+   self-consistente col clock buggato, non l'aveva visto). Ora Python==Mathematica.

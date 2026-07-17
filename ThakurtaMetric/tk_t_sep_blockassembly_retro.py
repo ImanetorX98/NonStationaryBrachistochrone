@@ -19,8 +19,9 @@ Ntf=sp.expand(sp.simplify(sp.diff(Ktf/sp.sqrt(R6f),Esy)*R6f**sp.Rational(3,2)))
 rho_tf=sp.cancel(sp.together((Esy**2*r**3-2*Msy*asy*Ktf/r)/((r-2*Msy)/r)))
 # sostituisco M,a numerici (E,J restano simbolici per ora)
 R6=sp.expand(R6f.subs(asub)); Nt=sp.expand(Ntf.subs(asub)); rho_t=sp.cancel(rho_tf.subs(asub)); DeltaN=Delta.subs(asub)
-P3poly,Rrem=sp.div(sp.Poly(sp.numer(sp.cancel(rho_t)),r),sp.Poly(sp.expand(DeltaN),r))
-P3=sp.expand(P3poly.as_expr()); RD=sp.expand(Rrem.as_expr())   # rho_t = P3 + RD/Delta
+# FIX: dividi per il denominatore VERO (=2500*Delta), non Delta (bug: P3 era 2500x)
+P3poly,_=sp.div(sp.Poly(sp.numer(rho_t),r),sp.Poly(sp.denom(rho_t),r))
+P3=sp.expand(P3poly.as_expr()); RD=sp.expand(sp.simplify((rho_t-P3)*DeltaN))   # rho_t = P3 + RD/Delta
 Delta=DeltaN
 log.info("simbolico OK. Jc=%.5f (%s), raffino (Jc,r_d) ad alta prec"%(Jc,SIGN))
 # raffina: Q2(rd,Jc)=0 e dQ2/dr(rd,Jc)=0  (sistema doppia radice), near (r_d0,Jc)
