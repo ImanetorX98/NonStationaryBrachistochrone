@@ -436,3 +436,20 @@ delta phi_v|_sep = G~(z) v(r) - int_{z0}^z G~ v_z dz. ASSEMBLATO (G~,v_z esplici
   coefficienti chiusi (residui, stessa macchina + settore orizzonte).
 => ABBIAMO ENTRAMBI I RAMI (tau e v) sulla separatrice in forma chiusa esplicita con coeff simbolici.
 Paper: nota aggiunta in "Domain of validity".
+
+## 6bis. THAKURTA-KERR (a≠0) separatrice, ramo tau: STESSO PIPELINE, verificato 1e-9
+
+Script `ThakurtaMetric/tk_sep_baseline.py`. Scoperta chiave: la correzione adiabatica TK
+(parametro = fattore conforme A, via E_eff=Ehat/A) COLLASSA a
+   delta phi_TK = -Ehat (A'/A) int eta * dE F dr,
+struttura IDENTICA a Vaidya (int clock * sorgente). Quindi riuso il pipeline con:
+- sorgente dE F = N_tau/S^{3/2}, **N_tau = E J r^4 (r-2M)^2 DE** (E-derivata, da reproduce_reductions);
+- clock **eta = U_3 - 2M U_2** (stesso di Vaidya tau, dtau/dr=r^2(r-2M)/sqrtS);
+- curva **S = r(r-2M)DE(rDelta - J^2 DE)**, Delta=r^2-2Mr+a^2 (a=0.9); DE=(E^2-1)r+2M.
+Separatrice: radice doppia del cubico (rDelta-J^2 DE). M=1,a=0.9,E=1.2:
+  **Jc=20.327866**, r_d=-7.12951, Q4 radici {-4.545,0,2,16.259}, a4=0.44, turning e4=16.259.
+  (altra separatrice near-horizon a Jc=0.210, r_d=0.241.)
+Verifica: r(z) 8.3e-9; dG/dz=R_tau 3.9e-9 (pole-adapted G, parti principali);
+  delta phi assemblato (G esplicito) = diretto int eta dEF dr a 1e-9..4e-8 (r=19/18/17).
+=> il rotante chiude con l'IDENTICA macchina genus-1. Residui b_n^a/C0/Ce dalle stesse formule
+   (N_m->N_tau). Restano: block assembly weight-2 (dilog), ramo t (curva R6=r Q2 DE).
