@@ -371,3 +371,18 @@ Q_ij nonzero (7): Q_02=−2Mc_0, Q_03=c_0, Q_12=−2Mc_1, Q_13=c_1, Q_23=c_2+2Mc
 Q_24=2Mc_4, Q_34=−c_4 (c_k razionali in E, simbolici).
 PROSSIMO: (a) Sage — U_3,U_4→ζ_i con coeff simbolici, verifica vs U_k diretto;
 (b) forma nominata q-serie (Kronecker-Eisenstein/Fay genus-2) del singolo dilog = frontiera.
+
+### Mattone 2a: riduzione peso-1 di U_k a integrali abeliani canonici ✓ (VERIFICATO 1e-14)
+`KerrMetric/kerr_tau_Wij_oddmodel_reduce.py`. Modello dispari (quintica Y²=q6=s^6 S(1/s),
+s=1/r, 1 punto ∞=r=0). ω_k=r^k dr/√S=-s^{1-k}/Y ds. Riduzione (forme esatte d(s^m Y),
+m≤0, cancellano poli ordine≥2 a s=0; residuo 3ª specie n_-1/s tenuto esplicito):
+  U_k = [P_k Y]_{r0}^r + c1_k R1 + c2_k R2 + g1_k u1 + g2_k u2 + n_-1,k L
+con R_i=∫dr_i (2ª specie BEL), u_i=∫du_i (1ª), L=∫ds/(sY) (3ª specie). COEFF SIMBOLICI:
+- ω_2: PURO 3ª specie, n_-1=-1, resto 0 → U_2=-L (letter canonico del dilog).
+- ω_3: n_-1=(3-2E²)/(E²-1), c1=-2/(E²-1), P=1/(s(E²-1)).
+- ω_4: n_-1=(-625E⁶+1156E⁴-37E²-794)/(200(E²-1)²), c1=3(3-2E²)/(E²-1)²,
+       c2=-1/(E²-1), g1=(625E⁴-2581E²+2437)/(200(E²-1)), P=(6E²s+E²-9s-1)/(2s²(E²-1)²).
+Tutti i pezzi 3ª specie ∝ stesso L → collassano in UN dilog nel montaggio ψ.
+VERIFICHE: identità differenziale 0/7e-15/3.6e-12; identità INTEGRALE U_k(dir) vs
+ricostruzione = 1e-14…1e-16 (r=10,8,6). ⇒ peso-1 CHIUSO, coeff simbolici razionali in E.
+PROSSIMO (Sage): naming Kleiniano R_i→ζ_i(u), L→log[σ(u-e+)/σ(u-e-)]; poi il dilog.
