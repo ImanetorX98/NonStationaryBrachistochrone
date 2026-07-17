@@ -468,3 +468,15 @@ delta phi_track assemblato = diretto int[dEF+(dJc/dE)dJF] eta dr a 3e-9..1e-7.
 => anche TK ha ENTRAMBE le versioni (J fisso, J-tracking) in forma chiusa esplicita, coeff simbolici.
 Analogo esatto di Vaidya: dJc/dE (TK) al posto di Jc/m (Vaidya). a!=0 rompe lo scaling lineare.
 Jc(E_eff) verificato mobile: E=1.15/1.20/1.25/1.30 -> Jc=31.34/20.33/14.53/11.05.
+
+## 6quater. TK tau BLOCK ASSEMBLY: int G~ eta' decomposto in dilog (verif 1e-9)
+
+Script `ThakurtaMetric/tk_sep_blockassembly.py`. Come Vaidya, decompone il weight-2 in atomi:
+  delta phi_tau^TK ~ int R_tau eta dz = 1/2 G~ eta + 1/2 sum_{i<j}(c_i d_j - c_j d_i) A[e_i,e_j].
+- c_i = residui di R_tau (N_tau) dalle formule chiuse (b1zd,b2zd,b3zd, b2h semiperiodi, C0);
+- d_j = residui di eta'=(r^3-2M r^2)/(r-r_d) (e1_zd, e2_zi, e1_zi, Ce);
+- A[e_i,e_j] = dilog ellittici antisimmetrici (Brown-Levin), 8 blocchi pari.
+Verifica: R,eta' ricostruiti (4e-7,1e-9); **17 atomi A**; block = diretto a 1.3e-9..2e-8 (r=19/18/17).
+=> TK tau ora COMPLETO come Vaidya: forma a blocchi esplicita, coeff simbolici (residui chiusi).
+NB: log letti da file (unbuffered) per progresso live; tolto finite-diff ridondante altrove.
+RESTA: ramo t (curva R6=r Q2 DE, clock 2a+3a specie, separatrice distinta).
