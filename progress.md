@@ -461,3 +461,11 @@ Siegel-ridotta → serie naïve in q12 diverge (somma reticolare converge, Im τ
 ⇒ q-serie pulita richiede riduzione Siegel Sp(4,Z) (Tappa 2), poi log θ nome (T3), poi kernel
 Kronecker-Eisenstein genus-2 (T4=frontiera). NB: il dilog È già nominato (∫log θ-ratio × 2ª specie
 = dilog ellittico genus-2 via somma reticolare θ convergente); la q-serie in nomi è raffinamento.
+
+### q-serie tappa 2: riduzione Siegel — serve la trasformazione S
+`KerrMetric/kerr_tau_siegel_reduce.py`. Minkowski(Im τ)+shift(Re τ) da soli NON riducono
+(q12 resta 6.71). La trasformazione S=-τ^{-1} (inversione modulare/Fricke) dà nomi ridotti
+|q11'|=0.054, |q22'|=0.176, |q12'|=0.587 (tutti <1) → q-serie converge in τ'=-τ^{-1}.
+NB: la somma reticolare θ converge SEMPRE (Im τ≻0); la riduzione serve solo per la serie di
+POTENZE nei nomi. RESTA (frontiera): T3 log θ-ratio come nome-serie in τ'; T4 kernel
+Kronecker-Eisenstein genus-2 per Λ (con θ trasformata sotto S). = ricerca aperta.
