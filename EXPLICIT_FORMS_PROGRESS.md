@@ -377,3 +377,20 @@ Aggiunto in `vaidya_sep_fay_analytic.wl` sez.4 (marcato INCOMPLETO/BUGGATO):
 ESITO FINALE onesto sui beta SIMBOLICI: NON RAGGIUNTI. Solidi restano: rango 5 ESATTO (1e-79),
 beta NUMERICI a 80 cifre, fondazione analitica verificata (e_i razionali, Pe_i->lettere).
 La chiusura simbolica dei beta e' un problema aperto (riduzione integrali ellittici completa).
+
+## 4quaterdecies. C0, Ce in FORMA CHIUSA -> forma a blocchi 100% simbolica nei coefficienti
+
+Script `VaidyaMetric/vaidya_sep_C0Ce_closed.py`. Le uniche due costanti additive numeriche
+della forma a blocchi ora sono chiuse (valutazione in un punto regolare + sottrazione parti
+principali):
+- eta' regolare a z=0 (r=e4):  **Ce = (e4^3-2e4^2)/(e4-r_d) + 2 e1_zd zeta(z_d)
+  - 2 e2_zi P(z_inf) + 2 e1_zi zeta(z_inf)**.
+- R regolare a z=z_inf E R(z_inf)=0 (decade ~1/r, verif 1.1e-28):
+  **C0 = - sum_a [ b1^a zeta(z_inf-a) + b2^a P(z_inf-a) - (b3^a/2) P'(z_inf-a) ]**.
+Verifica vs numerico: Ce diff 4.9e-8, C0 diff 2.0e-8 (residuo dal passo finito di P'; esatte).
+
+=> CONCLUSIONE: la forma a blocchi
+   delta phi_tau|_sep = 1/2 G~ eta + 1/2 sum (c_i d_j - c_j d_i) A[e_i,e_j]
+   ha ORA TUTTI i coefficienti in FORMA CHIUSA (algebrici in m,E + valori Weierstrass ai poli):
+   residui b_n^a, e-residui, C0, Ce. E' la forma RIUTILIZZABILE, in funzioni speciali, con
+   coefficienti SIMBOLICI. (L'unico pezzo numerico restante e' la COMPRESSIONE opzionale a 5 dilog.)
