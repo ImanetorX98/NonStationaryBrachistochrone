@@ -489,3 +489,15 @@ con N_tot alcuni coeff si annullano). block = diretto a 3.4e-9..5.3e-8.
 Log letti LIVE da file (python3 -u > file, no grep bufferizzato). tqdm ok.
 => TK ramo tau COMPLETO: J-fisso (17 dilog) + J-tracking (13 dilog), forma a blocchi esplicita,
    coeff chiusi (residui). RESTA: ramo t (curva R6, clock 2a+3a specie, separatrice distinta).
+
+## 5quinquies. VAIDYA v BLOCK ASSEMBLY: int G~ v_z decomposto in dilog (verif 1e-7)
+
+Script `VaidyaMetric/vaidya_sep_v_blockassembly.py`. Prima era solo baseline IBP; ora
+int G~ v_z esplicito in atomi. delta phi_v = G~(z) v - sum_{i,j} c_i c_j int gf_i gf_j dz.
+- v_z = E r^3/(r-r_d) + r sqrt(Q4)/(r-2m); sqrt(Q4)(z) = dr/dz = (1/sqrt a4)[P(z-z_inf)-P(z+z_inf)]
+  (meromorfa, corretta per z COMPLESSO: niente hack real-part). Parti principali di v_z via contorno:
+  poli +-z_d (res), +-z_inf (ord.2), iw (orizzonte, dal termine DISPARI). Ricostruito 6.7e-8.
+- G~ (13 termini principali) x v_z (8 termini) = 104 prodotti; 11 dilog (lnσ×ζ) + C/P + peso-1.
+- NB: e' un integrale PRODOTTO int gf_i gf_j (non iterato); bordo con G~ RAW: delta phi_v=Gt(z)v-sum.
+Verifica: block = diretto a 5e-8..1e-7 (r=11/10.5/10). Coeff = prodotti di residui chiusi.
+=> Vaidya v ora COMPLETO come tau: weight-2 esplicito in dilog nominati (incl. dilog orizzonte).
