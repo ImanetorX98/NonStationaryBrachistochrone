@@ -403,3 +403,16 @@ END-TO-END: ψ_dir = ½Ê Σ P_ab w_ab + T_alg a 1e-15 (r=10,8,6.5). Peso dilog 
 trascendente qui (cresce verso turning). ⇒ ψ CHIUSA: [Kleinian peso-1 σ,ζ] + [1 dilog
 genus-2] + [algebrico], coeff TUTTI simbolici razionali in E.
 PROSSIMO: (Sage) naming w_peso1→ζ_i,σ e L→log[σ(u-e+)/σ(u-e-)]; poi q-serie del dilog.
+
+### Naming Kleiniano: muro divisore-θ per ζ_i nudo (ONESTO, non riuscito con ζ nudo)
+`KerrMetric/kerr_tau_Wij_naming{,2,3}.sage` (5 run Sage). Tentato: nominare R_i (2ª specie)
+come ζ_i(u) Kleiniano nudo → weight-1 in funzioni Baker tabulate. FALLITO, strutturale.
+- Diagnostica OK: ordine cicli coerente (2e-33), τ 1e-16, κ sym 1e-12, Legendre −I/2.
+  RiemannConstantVector(abelfunctions) fallisce API ("must be a Place").
+- CAUSA: ζ_i(u(r)) sull'orbita REALE cade sul divisore-θ (θ→0 → ζ esplode; dζ/dr O(1)
+  complesso vs dR/dr O(0.03) reale; least_squares "residuals not finite"). = muro §7-iii.
+- L (3ª specie) invece funziona (5e-8) perché è un RAPPORTO log[θ(u−e+)/θ(u−e−)], δ dispari:
+  gli zeri di θ si cancellano num/denom. ζ nudo non ha questa cancellazione.
+⇒ La 2ª specie NON è ζ_i nuda. Naming robusto = forma-DIFFERENZA ζ_i(u−e+)−ζ_i(u−e−)/σ-ratios
+  agli e_± (i due r=∞, dove ω_3,ω_4 hanno i poli). Il muro §7-iii si AGGIRA (forma-differenza),
+  non si sfonda (costante di Riemann). PROSSIMO: implementare forma-differenza, o passare a q-serie.
