@@ -480,3 +480,12 @@ Verifica: R,eta' ricostruiti (4e-7,1e-9); **17 atomi A**; block = diretto a 1.3e
 => TK tau ora COMPLETO come Vaidya: forma a blocchi esplicita, coeff simbolici (residui chiusi).
 NB: log letti da file (unbuffered) per progresso live; tolto finite-diff ridondante altrove.
 RESTA: ramo t (curva R6=r Q2 DE, clock 2a+3a specie, separatrice distinta).
+
+## 6quinquies. TK tau TRACKING block assembly (verif 1e-8) -> ramo tau COMPLETO
+
+Script `ThakurtaMetric/tk_sep_track_blockassembly.py` (N_tau -> N_tot=N_tau+(dJc/dE)N_J).
+dJc/dE=-152.960 (formula chiusa, no finite-diff -> gira 40s). 13 atomi A (meno dei 17 J-fisso:
+con N_tot alcuni coeff si annullano). block = diretto a 3.4e-9..5.3e-8.
+Log letti LIVE da file (python3 -u > file, no grep bufferizzato). tqdm ok.
+=> TK ramo tau COMPLETO: J-fisso (17 dilog) + J-tracking (13 dilog), forma a blocchi esplicita,
+   coeff chiusi (residui). RESTA: ramo t (curva R6, clock 2a+3a specie, separatrice distinta).
