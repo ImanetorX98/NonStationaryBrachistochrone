@@ -45,8 +45,11 @@ I 7 Q_kj non nulli (in forma simbolica esplicita):
     Q₂₃ = c₂ + 2M c₃     Q₂₄ = 2M c₄     Q₃₄ = −c₄
     (Q₀₁ = Q₀₄ = Q₁₄ = 0)
 
-G_alg = termine algebrico (boundary elementare da 𝒜₅/√S): prodotti di U_k con 𝒜₅/√S,
-        già chiuso in funzioni elementari.
+G_alg = 2·I_el(r) + [η·(cost − 𝒜₅/√S)] boundary   (ELEMENTARE, forma chiusa esplicita)
+        I_el(r) = P(r) + Σ_{i=1..6} res_i·log(r − r_i)   [P cubica; r_i = 6 zeri di S;
+        res_i = 𝒜₅(r_i)(r_i³−2Mr_i²)/S'(r_i); 3 residui nulli (r=0,2M, e una radice)]
+        boundary: η=U₃−2M U₂ (tabulato) × 𝒜₅/√S (algebrico esplicito).
+        VERIFICATO forma chiusa vs diretto = 0 esatto (kerr_tau_Talg_explicit.py).
 
 ═══════════════════════════════════════════════════════════════════
 ## STRUTTURA FINE del peso-2 (opzionale, espandendo W_kj in θ)

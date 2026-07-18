@@ -530,3 +530,11 @@ STATUS = separatrice: là Γ̃ era serie di nome g^(1)=π cot+4πΣ q^{2n}/(1-q^
 qui KE genus-2 (serie di nome 2D, NON classica). Stesso standard: [coeff simbolico P_ab/h_L] ×
 [serie di nome, coeff = dati di periodo q'^{Q(n)}]. La q-serie del dilog e' CHIUSA (convergente
 esplicita); i suoi coeff interni sono dati di periodo (come le q-potenze di g^(1)), non razionali E.
+
+### T_alg/G_alg ESPLICITO in forma chiusa elementare ✓ (verificato 0 esatto)
+`KerrMetric/kerr_tau_Talg_explicit.py`. Prima solo verificato numericamente come resto; ora
+CALCOLATO esplicito. G_alg=2 I_el + boundary, I_el=∫A5(r³-2Mr²)/S dr (i due 1/√S -> 1/S ->
+RAZIONALE). Forma chiusa: I_el=P(r)+Σ res_i log(r-r_i), P cubica razionale, res_i=A5(r_i)
+(r_i³-2M r_i²)/S'(r_i) sui 6 zeri di S (3 nulli: r=0,2M, una radice). Boundary=η·(alg). VERIF
+forma chiusa vs diretto = 0 esatto (r=10,8,6.5). ⇒ T_alg ELEMENTARE (polinomio+log)+boundary,
+NON irriducibile. Era l'ultimo pezzo asserito-ma-non-calcolato: ora esplicito.
