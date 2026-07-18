@@ -489,3 +489,14 @@ portavano dati di punto marcato). Estraibile via a-periodi (impor: U_k senza per
   ζ_i=(w-e_pm)+τa+b, t=τ. VERIFICA vs diretto (RiemannTheta a τ): 3e-7..1e-10 (mod 2πi ramo log).
 ⇒ la 3ª specie del dilog HA serie di nome convergente. RESTA T4: kernel Kronecker-Eisenstein
 genus-2 per l'integrale iterato Λ=∫(2ª specie)×Ω (frontiera vera).
+
+### Chiusura parte olomorfa: NON estraibile dall'orbita (period-level, come C0/Ce)
+`KerrMetric/kerr_tau_Wij_holomorphic.sage`. Tentato: fissare coeff polo ai g_i, risolvere
+olomorfa (u1,u2) dal residuo. RISULTATO: ancora mal-condizionato (cond 2e5, coeff ~370 con
+cancellazione) ANCHE per U_2 (puro 3ª+olo). CAUSA INTRINSECA: sull'orbita reale du_1=ds/√q e
+du_2=s ds/√q sono QUASI PARALLELI (rapporto s ~ costante su arco corto) → α u1+β u2 non
+separabile dai dati d'orbita. ⇒ i coeff olomorfi sono PERIOD-LEVEL: determinati dal vincolo
+degli a-PERIODI (∮_{a_j}ω_k = Σ pole·∮pole + α∮du1 + β∮du2), NON dall'orbita. STESSO status di
+C0/Ce sulla separatrice (principio a-periodi/punto marcato, no fit, ma dipendono dai periodi).
+NON sono razionali puri in E (intrinseco a genere≥1). Chiusura esplicita = calcolo a-periodi
+(residui simbolici × periodi), step Sage dedicato.
