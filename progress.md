@@ -481,3 +481,11 @@ CAVO APERTO onesto: la parte OLOMORFA (coeff u1,u2) nel cambio base BEL→canoni
 fattori di periodo numerici (Z,P def mod olomorfe). Simbolica in base BEL (mattone-2a), non
 ancora ripulita in base canonica. Analogo agli additivi C0/Ce della separatrice (che pure
 portavano dati di punto marcato). Estraibile via a-periodi (impor: U_k senza periodo spurio).
+
+### q-serie tappa 3: Ω=log θ-ratio in serie di NOME convergente ✓
+`KerrMetric/kerr_tau_dilog_qseries3.sage`. Via S=Fricke (τ'=-τ^{-1}, nomi 0.026/0.088/0.228 <1)
++ caratteristica-zero (δ assorbita nell'argomento, θ0 si trasforma pulita). Formula:
+  Ω = [log θ0(t^{-1}ζ1;τ')-log θ0(t^{-1}ζ2;τ')] - iπ(ζ1 t^{-1}ζ1 - ζ2 t^{-1}ζ2) + 2πi a·(e_--e_+)
+  ζ_i=(w-e_pm)+τa+b, t=τ. VERIFICA vs diretto (RiemannTheta a τ): 3e-7..1e-10 (mod 2πi ramo log).
+⇒ la 3ª specie del dilog HA serie di nome convergente. RESTA T4: kernel Kronecker-Eisenstein
+genus-2 per l'integrale iterato Λ=∫(2ª specie)×Ω (frontiera vera).
