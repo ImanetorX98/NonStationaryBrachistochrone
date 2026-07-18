@@ -509,3 +509,13 @@ k=1→(0,1). Coeff olomorfi period-level: k=2 (-0.215+1.105j, 0.451-0.102j); k=3
 fit; ben condizionato), NON razionali in E — dipendono dai periodi come C0/Ce separatrice.
 ⇒ DECOMPOSIZIONE CANONICA COMPLETA: U_k = (poli, coeff simbolici g_i) + α_k u1 + β_k u2 + const.
 Tutti i coeff determinati da principi (residui simbolici + a-periodi), ZERO fit. Status = separatrice.
+
+### (B) q-serie tappa 4: il dilog È alimentato dalla serie di nome ✓ (milestone)
+`KerrMetric/kerr_tau_dilog_qseries4.sage`. Lambda=int Omega dA calcolato con Omega_nome (tappa 3,
+serie di nome in tau') vs Omega_diretto (RiemannTheta): diff 1e-9 (r=10,8,6.5). ⇒ la
+rappresentazione in nomi alimenta il dilog end-to-end. STRUTTURA derivata:
+  Lambda = Sum_{n,m} c_n d_m e^{2pi i(n+m)w}/(2pi i(n+m))  (Kronecker-Eisenstein genus-2)
+  c_n=Fourier(Omega=log theta-ratio), d_m=Fourier(2a specie). FRONTIERA APERTA: la resummazione
+analitica di questa doppia somma in forma NOMINATA chiusa (kernel Kronecker-Eisenstein genus-2)
+= research-grade (letteratura Enriquez/Schlotterer). Il dilog E' nominato+calcolabile via nomi;
+la forma-serie-chiusa esplicita resta il pezzo di ricerca.
