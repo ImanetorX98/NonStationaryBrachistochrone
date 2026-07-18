@@ -607,3 +607,13 @@ SIMBOLICI razionali in (a,E,J) - riduzione chiude A5 deg5, verif 2.6e-17; Q_kj (
 (3) g0=1/(E sqrt(E^2-1)), g1=-1/(E(E^2-1)^{3/2}), g2 razionale [a4=E^2(E^2-1)]; P3 clock simbolico.
 Coeff pienamente simbolici in (a,E,J). RESTA (per tutti i rami generici): naming theta + q-serie
 dilog (stesso template TK-tau, meccanico).
+
+### q-serie dilog: Vaidya e TK-t generici ✓ (naming theta + nome-serie)
+`VaidyaMetric/vaidya_dilog_qseries.sage`, `ThakurtaMetric/tk_t_dilog_qseries.sage`. Template TK-tau
+applicato: naming theta[delta] agli e_pm + Omega=log theta-ratio nome-serie (tau'=-tau^{-1}) +
+dilog split Q(elem)+L(dilog). CONVERGENZA GEOMETRICA verificata:
+- Vaidya (m=1,E=7/5,J=5/2): N=1->3.8e-3, N=4->2.1e-14. nomi tau' 0.025/0.088/0.220.
+- TK-t (a=9/10,E=6/5,J=5 scattering, turning 3.079): N=1->3.4e-1, N=4->4.4e-16. nomi 0.008/0.043/0.112.
+⇒ Tutti i rami generici (TK-tau, Vaidya, TK-t) hanno il dilog come serie di nome KE genus-2
+convergente. NB TK-t ha ANCHE dilog agli ORIZZONTI (da rho_t, a z(r_pm)): stessa struttura nome,
+punti shiftati (dimostrato sulla separatrice t). Coeff simbolici + funzioni speciali (theta) tabulate.
