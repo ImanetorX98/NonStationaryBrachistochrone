@@ -617,3 +617,11 @@ dilog split Q(elem)+L(dilog). CONVERGENZA GEOMETRICA verificata:
 ⇒ Tutti i rami generici (TK-tau, Vaidya, TK-t) hanno il dilog come serie di nome KE genus-2
 convergente. NB TK-t ha ANCHE dilog agli ORIZZONTI (da rho_t, a z(r_pm)): stessa struttura nome,
 punti shiftati (dimostrato sulla separatrice t). Coeff simbolici + funzioni speciali (theta) tabulate.
+
+### Cross-check Mathematica: Vaidya e TK-t generici ✓ (punto 1)
+`paper/crosscheck_generic.wl`. Mathematica risolve la riduzione 2a specie autonomamente:
+- Vaidya: identita' 2N-(...)=0 ESATTA; g0=1/sqrt(E^2-1), g1=m(2E^2-3)/(E^2-1)^{3/2} (check=0);
+  c_k(num) a (m=1,E=7/5,J=5/2) = [-0.8715,-0.3597,1.0354,0.2129,-0.1894] = MATCH ESATTO Python.
+- TK-t: N_t denom=1 (Delta cancella); identita' 2N_t-(...)=0 ESATTA; g0=1/(E sqrt(E^2-1)),
+  g1=-1/(E(E^2-1)^{3/2}) (match sotto E>0). Riduzione chiude.
+⇒ coeff generici Vaidya+TK-t confermati da tool indipendente.
