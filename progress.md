@@ -585,3 +585,10 @@ Residui: z_d = rho_t(r_d)/s ; orizzonti z(r±) = sigma R_Delta(r±)/((r±-r∓)(
 sigma=-1 (foglio sqrt Q4). Q4(r±)=R6(r±)/(r±-r_d)^2. INVARIANTE res(r+)+res(r-)=2M (verificato).
 Match contorno: z_d,r+,r- tutti 1e-6. ⇒ SEPARATRICI COMPLETE: sorgente b_i (tutti i rami) +
 residui clock (tau, v, t tutti) SIMBOLICI e verificati. Restano solo additivi Ce,C0 (period-level).
+
+### Ce,C0 espliciti + natura period-level (risposta concettuale) ✓
+`vaidya_sep_C0Ce_closed.py` (Ce,C0 chiuse, verif 1e-8), `sep_periodlevel_test.py` (test 2 params).
+Ce=η'(0)+2e1_zd ζ(z_d)-2e2_zi ℘(z_∞)+2e1_zi ζ(z_∞); C0=-Σ[b1 ζ+b2 ℘-b3/2 ℘'](z_∞-a). Coeff
+(e_i,b_i) SIMBOLICI; valori ζ,℘ ai punti = period-level. TEST E=7/5 vs 13/10: ω1,z_d,z_∞,ζ(z_d),
+℘(z_∞) TUTTI diversi -> period-level NON universali, NON razionali-simbolici, valutati per-curva
+(come K(m)). Gerarchia: residui=razionali; e_i,g2,g3=algebrici; z_d,z_∞,ζ,℘,Ce,C0=trascendenti.

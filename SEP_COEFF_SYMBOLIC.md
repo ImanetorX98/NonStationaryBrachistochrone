@@ -56,3 +56,23 @@ Vaidya τ: match vs contorno a 1e-7. TK τ/t: Jc,r_d match valori noti; formula 
     z_d: **ρ_t(r_d)/s** ;  orizzonti z(r±): **σ·R_Δ(r±)/[(r±−r∓)(r±−r_d)√Q4(r±)]** (σ=±1 foglio √Q4).
     Q4(r±)=R6(r±)/(r±−r_d)², R6=r Q2 DE. INVARIANTE: res(r+)+res(r−)=2M (verificato). 
     [prograda Jc+: res z_d=−8.907, z(r+)=+3.294, z(r−)=−1.294; match contorno 1e-6]
+
+## Costanti additive Ce, C0 (forma esplicita) e natura period-level
+Forma chiusa esplicita (verificata 1e-8, `VaidyaMetric/vaidya_sep_C0Ce_closed.py`):
+    Ce = η'(0) + 2 e1_zd·ζ(z_d) − 2 e2_zi·℘(z_∞) + 2 e1_zi·ζ(z_∞)
+    C0 = −Σ_a [ b1^a·ζ(z_∞−a) + b2^a·℘(z_∞−a) − (b3^a/2)·℘'(z_∞−a) ],  a∈{±z_d,0,iω_im}
+dove η'(0)=(e4³−2M e4²)/(e4−r_d) (clock al turning). I COEFFICIENTI (e_i, b_i) sono SIMBOLICI;
+i VALORI ζ,℘,℘' ai punti marcati sono period-level.
+
+### I pezzi period-level: simbolici? universali? o per-curva? (`sep_periodlevel_test.py`)
+Test Vaidya τ a E=7/5 vs E=13/10: ω1, ω_im, z_d, z_∞, ζ(z_d), ℘(z_∞) TUTTI DIVERSI.
+GERARCHIA:
+- RAZIONALI-simbolici in (M,a,E,r_d,Jc): residui b_i, e_i, residui clock. [formule universali]
+- ALGEBRICI in (M,a,E,r_d,Jc): radici e_i di Q4; invarianti g2,g3 (simmetrici nelle e_i).
+- TRASCENDENTI (period-level): punti marcati z_d,z_∞ (integrali ellittici INCOMPLETI ∫dr/√Q4);
+  valori ζ(z_d),℘(z_∞); quindi Ce,C0.
+⇒ I period-level NON sono razionali-simbolici (sono periodi/valori di funzioni ellittiche),
+  NON sono universali (cambiano coi parametri), si VALUTANO per-curva via procedura universale
+  (radici→g2,g3→periodi→ζ,℘ ai punti; serie θ geom. convergente). ESATTAMENTE come K(m): la
+  FORMULA e' universale (scritta una volta), il VALORE e' per-modulo. Irriducibile: e' cio' che
+  "periodo" significa.
