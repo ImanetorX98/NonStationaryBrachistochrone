@@ -45,11 +45,15 @@ I 7 Q_kj non nulli (in forma simbolica esplicita):
     Q₂₃ = c₂ + 2M c₃     Q₂₄ = 2M c₄     Q₃₄ = −c₄
     (Q₀₁ = Q₀₄ = Q₁₄ = 0)
 
-G_alg = 2·I_el(r) + [η·(cost − 𝒜₅/√S)] boundary   (ELEMENTARE, forma chiusa esplicita)
-        I_el(r) = P(r) + Σ_{i=1..6} res_i·log(r − r_i)   [P cubica; r_i = 6 zeri di S;
-        res_i = 𝒜₅(r_i)(r_i³−2Mr_i²)/S'(r_i); 3 residui nulli (r=0,2M, e una radice)]
-        boundary: η=U₃−2M U₂ (tabulato) × 𝒜₅/√S (algebrico esplicito).
-        VERIFICATO forma chiusa vs diretto = 0 esatto (kerr_tau_Talg_explicit.py).
+G_alg = 2·I_el(r) + [η·(cost − 𝒜₅/√S)] boundary   (ELEMENTARE, coeff SIMBOLICI in E)
+        I_el(r) = P(r) + Σ_{x:C(x)=0} res(x)·log(r − x)
+          P(r) = [p₃(E)r³+p₂(E)r²+p₁(E)r]/D(E)   coeff RAZIONALI in E (espliciti)
+          C(r) = rΔ−J²DE = r³−2Mr²+(a²−J²(E²−1))r−2MJ²   (cubico; le sue 3 radici)
+          res(x) = 𝒜₅(x)·x²(x−2M)/S'(x)   RAZIONALE in x,E (RootSum sul cubico)
+          [res(x)=0 provato simbolico a x=0,2M,2M/(1−E²) → solo 3 radici del cubico contribuiscono]
+        boundary: η=U₃−2M U₂ (tabulato) × 𝒜₅/√S (𝒜₅ razionale in E).
+        VERIFICATO: forma chiusa vs diretto = 0; coeff simbolici cross-check Mathematica
+        (crosscheck_Ialg_symbolic.wl); non universali (E=7/5 != E=13/10).
 
 ═══════════════════════════════════════════════════════════════════
 ## STRUTTURA FINE del peso-2 (opzionale, espandendo W_kj in θ)

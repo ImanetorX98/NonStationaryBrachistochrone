@@ -538,3 +538,12 @@ RAZIONALE). Forma chiusa: I_el=P(r)+Σ res_i log(r-r_i), P cubica razionale, res
 (r_i³-2M r_i²)/S'(r_i) sui 6 zeri di S (3 nulli: r=0,2M, una radice). Boundary=η·(alg). VERIF
 forma chiusa vs diretto = 0 esatto (r=10,8,6.5). ⇒ T_alg ELEMENTARE (polinomio+log)+boundary,
 NON irriducibile. Era l'ultimo pezzo asserito-ma-non-calcolato: ora esplicito.
+
+### T_alg/I_el coefficienti SIMBOLICI in E ✓ (Mathematica, cross-check)
+`paper/crosscheck_Ialg_symbolic.wl` + `crosscheck_genus2.wl`. I coeff di I_el sono razionali/
+algebrici (non period-level come α,β) → resi SIMBOLICI: P(r)=[p_k(E)r^k]/D(E) razionale in E;
+log-part = RootSum sul cubico C(r)=rΔ-J²DE con res(x)=A5(x)x²(x-2M)/S'(x) razionale. Residui NULLI
+provati simbolici a x=0,2M,2M/(1-E²). Coeff diversi E=7/5 vs 13/10 (non universali, giusto renderli
+simbolici). Cross-check Mathematica INDIPENDENTE: g0=1/√(E²-1), g1=(2E²-3)/(E²-1)^{3/2} esatti;
+c_k razionali in E; Q_kj pattern esatto; T_alg integrando razionale→elementare. Ora T_alg
+INTERAMENTE simbolico (nessun coeff numerico residuo).
