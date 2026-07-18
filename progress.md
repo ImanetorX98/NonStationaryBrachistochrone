@@ -578,3 +578,10 @@ poly decimale -> 0/0 -> catena a zero. FIX: Taylor locale Q4^(m)(rd)=m! S^(m+2)(
 `VaidyaMetric/sep_v_clock_residui.py`. Sorgente b_i = Vaidya tau (identica). Clock v_z=E r^3/(r-r_d)
 +r sqrt(Q4)/(r-2M): residuo z_d = E r_d^3/s (diff contorno 3.6e-7); residuo orizzonte z=i w_im = 4M
 (ESATTO, diff 0, indip dai e_i). Ramo v completo. RESTA: residui clock ramo t (rho_t, poli r±).
+
+### Ramo TK t: residui clock SIMBOLICI ✓ (verificati) - SEPARATRICI COMPLETE
+`ThakurtaMetric/sep_t_clock_residui.py`. Clock rho_t=P3+R_Delta/Delta, in z: etpz=rho_t/(r-r_d).
+Residui: z_d = rho_t(r_d)/s ; orizzonti z(r±) = sigma R_Delta(r±)/((r±-r∓)(r±-r_d)sqrtQ4(r±)),
+sigma=-1 (foglio sqrt Q4). Q4(r±)=R6(r±)/(r±-r_d)^2. INVARIANTE res(r+)+res(r-)=2M (verificato).
+Match contorno: z_d,r+,r- tutti 1e-6. ⇒ SEPARATRICI COMPLETE: sorgente b_i (tutti i rami) +
+residui clock (tau, v, t tutti) SIMBOLICI e verificati. Restano solo additivi Ce,C0 (period-level).

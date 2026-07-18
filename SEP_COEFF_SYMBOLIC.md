@@ -52,4 +52,7 @@ Vaidya τ: match vs contorno a 1e-7. TK τ/t: Jc,r_d match valori noti; formula 
 - **τ (Vaidya/TK)**: clock r³−2M r². Residui: e1_zd=(r_d³−2M r_d²)/s ; e2_zi=1/a4=1/(E²−1).
 - **v (Vaidya)**: clock v_z=E r³/(r−r_d)+r√Q4/(r−2M). Residui SIMBOLICI (verificati):
     z_d: **E r_d³/s**  ;  orizzonte z=iω_im: **4M** (esatto, indip. dai e_i). Sorgente b_i = Vaidya τ.
-- **t (TK)**: clock ρ_t=P3+R_Δ/Δ, poli 3ª specie agli orizzonti r±. Residui orizzonte = da fare.
+- **t (TK)**: clock ρ_t=P3+R_Δ/Δ, poli 3ª specie agli orizzonti r±. Residui SIMBOLICI (verificati):
+    z_d: **ρ_t(r_d)/s** ;  orizzonti z(r±): **σ·R_Δ(r±)/[(r±−r∓)(r±−r_d)√Q4(r±)]** (σ=±1 foglio √Q4).
+    Q4(r±)=R6(r±)/(r±−r_d)², R6=r Q2 DE. INVARIANTE: res(r+)+res(r−)=2M (verificato). 
+    [prograda Jc+: res z_d=−8.907, z(r+)=+3.294, z(r−)=−1.294; match contorno 1e-6]
