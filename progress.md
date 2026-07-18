@@ -564,3 +564,12 @@ Prima erano valutati a params fissi; ora SIMBOLICI in (M,a,E,r_d,Jc). Verifiche:
 match contorno 1e-7 (b1=0.2704,b2=0.0326,b3=0.0099); TK tau Jc=20.328,r_d=-7.130; TK t+
 Jc=19.089,TK t- Jc=-18.671 (match noti). a4=E^2-1, e2_zi=1/(E^2-1) (solo E). Vaidya v = stessi
 b_i di tau (clock diverso). Riutilizzabile: (M,a,E)->doppia radice->plug formule.
+
+### Cross-check Mathematica indipendente dei b_i separatrice ✓ (1e-16)
+`paper/crosscheck_sep_bi.wl`. Via INDIPENDENTE dalla formula h0/s^3: r(t) via InverseSeries
+dell'ODE dr/dt=sqrt(Q4), estrazione Laurent della sorgente al polo triplo. Match a precisione
+macchina: Vaidya tau b1 7e-16,b2 2e-17,b3 0; TK tau b1 1.5e-14,b2 7e-17,b3 7e-18.
+b_i confermati per TRE vie: sympy formula, contorno Python (1e-7), Laurent Mathematica (1e-16).
+BUG DEBUG (rigoroso): Q4f=Cancel[S/(r-rd)^2] con r_d NUMERICO -> Cancel non elimina (r-rd)^2 da
+poly decimale -> 0/0 -> catena a zero. FIX: Taylor locale Q4^(m)(rd)=m! S^(m+2)(rd)/(m+2)!
+(solo derivate di S a rd, niente divisione). 
