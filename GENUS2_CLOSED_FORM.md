@@ -94,6 +94,25 @@ I 3 iterati Kleiniani chiudono in θ[δ], ζ_δ, σ (funzioni Kleiniane, peso 1)
   già una funzione tabulata. Come nel pendolo T=4√(L/g)·K(sin²(θ₀/2)): coeff simbolico
   × funzione tabulata valutata per-caso.
 
+═══════════════════════════════════════════════════════════════════
+## GERARCHIA period-level (parallela alla separatrice, vedi SEP_COEFF_SYMBOLIC.md)
+═══════════════════════════════════════════════════════════════════
+| Livello | Oggetti (genus-2) | Natura |
+|---|---|---|
+| 🟢 RAZIONALE-simbolico in (M,a,E,J) | c_k, Q_kj, g_i, P(r), res(x), h_L, C₁,C₀,α± | formule universali |
+| 🟡 ALGEBRICO in (M,a,E,J) | radici di S; radici del cubico C=rΔ−J²DE (per res(x)) | radicali |
+| 🔴 TRASCENDENTE (period-level) | matrice τ (2×2); e± (immagini Abel di r=∞); α_k,β_k (a-periodi ∮ω_k·ω⁻¹); i coeff interni q'^{n^T τ' n} della serie del dilog Λ | periodi |
+
+RISPOSTA (identica alla separatrice): i period-level NON sono razionali-simbolici (sono
+periodi/valori di θ genus-2), NON universali (cambiano coi parametri — verificato α_k,β_k
+diversi J=5/2 vs J=2), si VALUTANO per-curva via procedura universale (S → periodi τ →
+Abel e± → θ,ζ_δ). Come K(m): formula universale, valore per-modulo.
+CORRISPONDENZA separatrice ↔ genus-2:
+  ζ,℘ ai punti (Ce,C0)  ↔  θ[δ],ζ_δ agli e± (U_k, Λ)
+  z_d,z_∞ (∫dr/√Q4)     ↔  e± (Abel map ∫du)
+  b_i,e_i (residui)      ↔  g_i, c_k, Q_kj (residui/riduzioni)
+  α,β genus-2 (a-periodi) sono l'analogo di C0,Ce (additivi period-level).
+
 ## Verifiche (in progress.md, tutte committate)
 - struttura ψ = Σ Q_kj W_kj + G_alg: end-to-end 1e-15
 - Q_kj, c_k, g_i simbolici: cross-check esatto
