@@ -47,3 +47,9 @@ Vaidya τ: match vs contorno a 1e-7. TK τ/t: Jc,r_d match valori noti; formula 
 3. Sostituisci (M,a,E,r_d,Jc) nelle formule simboliche b1,b2,b3 (e nei residui clock).
 4. I dilog ellittici (Brown-Levin Γ̃ / D(a,b)) sono le funzioni tabulate valutate sulla curva.
 ⇒ Coefficienti = formule simboliche universali; funzioni speciali = valutate per-curva (come K(m)).
+
+## Residui del CLOCK (per i coeff dilog c_ab = b_a(sorgente)·d_b(clock))
+- **τ (Vaidya/TK)**: clock r³−2M r². Residui: e1_zd=(r_d³−2M r_d²)/s ; e2_zi=1/a4=1/(E²−1).
+- **v (Vaidya)**: clock v_z=E r³/(r−r_d)+r√Q4/(r−2M). Residui SIMBOLICI (verificati):
+    z_d: **E r_d³/s**  ;  orizzonte z=iω_im: **4M** (esatto, indip. dai e_i). Sorgente b_i = Vaidya τ.
+- **t (TK)**: clock ρ_t=P3+R_Δ/Δ, poli 3ª specie agli orizzonti r±. Residui orizzonte = da fare.

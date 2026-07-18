@@ -573,3 +573,8 @@ b_i confermati per TRE vie: sympy formula, contorno Python (1e-7), Laurent Mathe
 BUG DEBUG (rigoroso): Q4f=Cancel[S/(r-rd)^2] con r_d NUMERICO -> Cancel non elimina (r-rd)^2 da
 poly decimale -> 0/0 -> catena a zero. FIX: Taylor locale Q4^(m)(rd)=m! S^(m+2)(rd)/(m+2)!
 (solo derivate di S a rd, niente divisione). 
+
+### Ramo Vaidya v: residui clock SIMBOLICI ✓ (verificati)
+`VaidyaMetric/sep_v_clock_residui.py`. Sorgente b_i = Vaidya tau (identica). Clock v_z=E r^3/(r-r_d)
++r sqrt(Q4)/(r-2M): residuo z_d = E r_d^3/s (diff contorno 3.6e-7); residuo orizzonte z=i w_im = 4M
+(ESATTO, diff 0, indip dai e_i). Ramo v completo. RESTA: residui clock ramo t (rho_t, poli r±).
