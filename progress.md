@@ -519,3 +519,14 @@ rappresentazione in nomi alimenta il dilog end-to-end. STRUTTURA derivata:
 analitica di questa doppia somma in forma NOMINATA chiusa (kernel Kronecker-Eisenstein genus-2)
 = research-grade (letteratura Enriquez/Schlotterer). Il dilog E' nominato+calcolabile via nomi;
 la forma-serie-chiusa esplicita resta il pezzo di ricerca.
+
+### (B) q-serie CHIUSA come serie di nome KE genus-2 ✓ (tappa 5, convergenza geometrica)
+`KerrMetric/kerr_tau_dilog_qseries5.sage`. Split: Λ = ∫Q dA [ELEMENTARE, quadratica in coord
+Abel, ~80%] + ∫L dA [dilog puro, ~20%]. Il pezzo L (log θ0-ratio) HA serie di nome ESPLICITA
+GEOMETRICAMENTE convergente: N=1→1e-2, N=2→2e-4, N=3→2e-8, N=4→9e-14, N=6→0. ⇒ q-serie CHIUSA.
+FATTO ONESTO: NON riducibile a Li2 classici — genus-2 non ha formula prodotto di Jacobi (triple
+product e' genus-1), quindi log θ0 != Σ log(1-x_k) -> polilog genus-2 GENUINO (Enriquez), non Li2.
+STATUS = separatrice: là Γ̃ era serie di nome g^(1)=π cot+4πΣ q^{2n}/(1-q^{2n})sin (NON elementare);
+qui KE genus-2 (serie di nome 2D, NON classica). Stesso standard: [coeff simbolico P_ab/h_L] ×
+[serie di nome, coeff = dati di periodo q'^{Q(n)}]. La q-serie del dilog e' CHIUSA (convergente
+esplicita); i suoi coeff interni sono dati di periodo (come le q-potenze di g^(1)), non razionali E.
