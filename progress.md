@@ -500,3 +500,12 @@ degli a-PERIODI (∮_{a_j}ω_k = Σ pole·∮pole + α∮du1 + β∮du2), NON da
 C0/Ce sulla separatrice (principio a-periodi/punto marcato, no fit, ma dipendono dai periodi).
 NON sono razionali puri in E (intrinseco a genere≥1). Chiusura esplicita = calcolo a-periodi
 (residui simbolici × periodi), step Sage dedicato.
+
+### (A) Parte olomorfa CHIUSA via a-periodi ✓ (sanity esatto)
+`KerrMetric/kerr_tau_Wij_aperiods.sage`. (α_k,β_k)=∮_{a_j}ω_k · ω^{-1}, ω_k=x^k dx/y modello
+PARI (Sage matrix_of_integral_values, differenziali polinomiali). SANITY ESATTO: k=0→(1,0),
+k=1→(0,1). Coeff olomorfi period-level: k=2 (-0.215+1.105j, 0.451-0.102j); k=3 (1.344+3.523j,
+4.212+2.326j); k=4 (-0.356+6.721j, 10.127+4.091j). Determinati dagli a-periodi (PRINCIPIO, non
+fit; ben condizionato), NON razionali in E — dipendono dai periodi come C0/Ce separatrice.
+⇒ DECOMPOSIZIONE CANONICA COMPLETA: U_k = (poli, coeff simbolici g_i) + α_k u1 + β_k u2 + const.
+Tutti i coeff determinati da principi (residui simbolici + a-periodi), ZERO fit. Status = separatrice.
