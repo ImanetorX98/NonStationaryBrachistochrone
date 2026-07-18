@@ -547,3 +547,10 @@ provati simbolici a x=0,2M,2M/(1-E²). Coeff diversi E=7/5 vs 13/10 (non univers
 simbolici). Cross-check Mathematica INDIPENDENTE: g0=1/√(E²-1), g1=(2E²-3)/(E²-1)^{3/2} esatti;
 c_k razionali in E; Q_kj pattern esatto; T_alg integrando razionale→elementare. Ora T_alg
 INTERAMENTE simbolico (nessun coeff numerico residuo).
+
+### Precisazione: P(r), c_k, Q_kj, g_2 razionali in (M,a,E,J) — NON solo E
+`paper/crosscheck_P_params.wl`. Il coeff r^3 di P(r) con a,E,J simbolici dipende da a,E,J tutti
+(∂_a,∂_J,∂_E ≠0). Verificato: a=9/10 → -14504578125/443030960699 (= valore prima); a=1/2 diverso.
+⇒ P(r),c_k,Q_kj,g_2,res(x) sono razionali in (M,a,E,J), formule simboliche universali (4 variabili).
+ECCEZIONE: g_0=1/√(E²-1), g_1=(2E²-3)/(E²-1)^{3/2} dipendono SOLO da E (leading r→∞, solo DE conta).
+Corretto GENUS2_CLOSED_FORM.md ("razionale in E" -> "razionale in M,a,E,J").

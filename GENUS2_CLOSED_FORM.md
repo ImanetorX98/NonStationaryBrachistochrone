@@ -47,9 +47,9 @@ I 7 Q_kj non nulli (in forma simbolica esplicita):
 
 G_alg = 2·I_el(r) + [η·(cost − 𝒜₅/√S)] boundary   (ELEMENTARE, coeff SIMBOLICI in E)
         I_el(r) = P(r) + Σ_{x:C(x)=0} res(x)·log(r − x)
-          P(r) = [p₃(E)r³+p₂(E)r²+p₁(E)r]/D(E)   coeff RAZIONALI in E (espliciti)
+          P(r) = [p₃r³+p₂r²+p₁r]/D   coeff RAZIONALI in (M,a,E,J) — NON solo E
           C(r) = rΔ−J²DE = r³−2Mr²+(a²−J²(E²−1))r−2MJ²   (cubico; le sue 3 radici)
-          res(x) = 𝒜₅(x)·x²(x−2M)/S'(x)   RAZIONALE in x,E (RootSum sul cubico)
+          res(x) = 𝒜₅(x)·x²(x−2M)/S'(x)   RAZIONALE in (x,M,a,E,J) (RootSum sul cubico)
           [res(x)=0 provato simbolico a x=0,2M,2M/(1−E²) → solo 3 radici del cubico contribuiscono]
         boundary: η=U₃−2M U₂ (tabulato) × 𝒜₅/√S (𝒜₅ razionale in E).
         VERIFICATO: forma chiusa vs diretto = 0; coeff simbolici cross-check Mathematica
@@ -82,8 +82,9 @@ I 3 iterati Kleiniani chiudono in θ[δ], ζ_δ, σ (funzioni Kleiniane, peso 1)
 ## STATUS ONESTO di ogni pezzo
 ═══════════════════════════════════════════════════════════════════
 🟢 SIMBOLICI UNIVERSALI (formule razionali in M,a,E,J — scrivi una volta):
-   C₁, C₀, α±, b, c_k, Q_kj, h_L, g_i.  [g_i=1/√(E²−1), (2E²−3)/(E²−1)^{3/2}, … se
-   espandi U_k in θ]
+   C₁, C₀, α±, b, c_k, Q_kj, h_L, g_i, P(r), res(x) — razionali in (M,a,E,J).
+   ECCEZIONE: g₀=1/√(E²−1) e g₁=(2E²−3)/(E²−1)^{3/2} dipendono SOLO da E (leading r→∞);
+   g₂, c_k, Q_kj, P, res dipendono da tutti (M,a,E,J).
 🟡 FUNZIONI TABULATE (valutate per-curva via periodi/θ, come K(m)):
    U_k, Π±, W_kj, θ[δ], ζ_δ, Λ, e i dati di curva τ, e±, δ.
 
