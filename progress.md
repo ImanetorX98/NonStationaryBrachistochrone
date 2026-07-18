@@ -599,3 +599,11 @@ sorgente dm F (N_m=S dm K-1/2 K dm S, K=J DE). Mattoni: (1) dm F=N/S^{3/2} =0; (
 in (m,E,J); Q_kj=c_k b_j-c_j b_k (b=(0,0,-2m,1,0)); (3) g0=1/sqrt(E^2-1), g1=m(2E^2-3)/(E^2-1)^{3/2},
 g2 razionale; (4) P(r) razionale. Verifica riduzione dm F 1e-15. STESSO schema di TK-tau, coeff
 pienamente simbolici in (m,E,J). [g1 mostra dipendenza da m, TK aveva M=1]
+
+### TK-t GENERICO (genus-2, J qualsiasi) - coeff simbolici ✓
+`ThakurtaMetric/tk_t_generic_coeff.py`. Curva R6=r Q2 DE (M=1), sorgente dE F_t (N_t POLINOMIALE,
+Delta si cancella), clock rho_t=P3+R_Delta/Delta. Mattoni: (1) dE F=N_t/R6^{3/2} 1e-17; (2) c_k^E
+SIMBOLICI razionali in (a,E,J) - riduzione chiude A5 deg5, verif 2.6e-17; Q_kj (b=P3, 10 non nulli);
+(3) g0=1/(E sqrt(E^2-1)), g1=-1/(E(E^2-1)^{3/2}), g2 razionale [a4=E^2(E^2-1)]; P3 clock simbolico.
+Coeff pienamente simbolici in (a,E,J). RESTA (per tutti i rami generici): naming theta + q-serie
+dilog (stesso template TK-tau, meccanico).
