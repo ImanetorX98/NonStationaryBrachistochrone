@@ -592,3 +592,10 @@ Ce=η'(0)+2e1_zd ζ(z_d)-2e2_zi ℘(z_∞)+2e1_zi ζ(z_∞); C0=-Σ[b1 ζ+b2 ℘
 (e_i,b_i) SIMBOLICI; valori ζ,℘ ai punti = period-level. TEST E=7/5 vs 13/10: ω1,z_d,z_∞,ζ(z_d),
 ℘(z_∞) TUTTI diversi -> period-level NON universali, NON razionali-simbolici, valutati per-curva
 (come K(m)). Gerarchia: residui=razionali; e_i,g2,g3=algebrici; z_d,z_∞,ζ,℘,Ce,C0=trascendenti.
+
+### Vaidya tau GENERICO (genus-2, J qualsiasi) - coeff simbolici ✓ (tutti i mattoni)
+`VaidyaMetric/vaidya_generic_coeff.py`. Parametro m (massa). Curva S=r(r-2m)DE(r^2(r-2m)-J^2 DE),
+sorgente dm F (N_m=S dm K-1/2 K dm S, K=J DE). Mattoni: (1) dm F=N/S^{3/2} =0; (2) c_k^m razionali
+in (m,E,J); Q_kj=c_k b_j-c_j b_k (b=(0,0,-2m,1,0)); (3) g0=1/sqrt(E^2-1), g1=m(2E^2-3)/(E^2-1)^{3/2},
+g2 razionale; (4) P(r) razionale. Verifica riduzione dm F 1e-15. STESSO schema di TK-tau, coeff
+pienamente simbolici in (m,E,J). [g1 mostra dipendenza da m, TK aveva M=1]
