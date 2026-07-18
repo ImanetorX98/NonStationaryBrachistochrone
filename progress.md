@@ -554,3 +554,13 @@ INTERAMENTE simbolico (nessun coeff numerico residuo).
 ⇒ P(r),c_k,Q_kj,g_2,res(x) sono razionali in (M,a,E,J), formule simboliche universali (4 variabili).
 ECCEZIONE: g_0=1/√(E²-1), g_1=(2E²-3)/(E²-1)^{3/2} dipendono SOLO da E (leading r→∞, solo DE conta).
 Corretto GENUS2_CLOSED_FORM.md ("razionale in E" -> "razionale in M,a,E,J").
+
+### Coefficienti SEPARATRICE pienamente SIMBOLICI in (M,a,E,r_d,Jc) ✓ (tutti i rami)
+`SEP_COEFF_SYMBOLIC.py`, `SEP_COEFF_SYMBOLIC.md`, `VaidyaMetric/sep_coeff_symbolic.py`.
+Formula universale b_i (residui R polo triplo) via DERIVATE DI S a r_d: Q4(rd)=S''(rd)/2,
+Q4'(rd)=S'''(rd)/6, Q4''(rd)=S''''(rd)/12, a4=[r^6]curva. b3=h0/s^3, b2=(h1-3a1h0)/s^3,
+b1=(h2-3a1h1+(6a1^2-3a2)h0)/s^3, F=N/Q4. r_d,Jc=doppia radice (S(rd)=S'(rd)=0).
+Prima erano valutati a params fissi; ora SIMBOLICI in (M,a,E,r_d,Jc). Verifiche: Vaidya tau
+match contorno 1e-7 (b1=0.2704,b2=0.0326,b3=0.0099); TK tau Jc=20.328,r_d=-7.130; TK t+
+Jc=19.089,TK t- Jc=-18.671 (match noti). a4=E^2-1, e2_zi=1/(E^2-1) (solo E). Vaidya v = stessi
+b_i di tau (clock diverso). Riutilizzabile: (M,a,E)->doppia radice->plug formule.
