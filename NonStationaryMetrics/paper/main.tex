@@ -2107,6 +2107,29 @@ again asymmetric (the two magnitudes differ), verified against finite difference
 the block assembly reproduces the direct integral to $10^{-7}$ ($16$/$18$ horizon
 dilogarithms for the two signs). All coefficients remain closed-form residues.
 
+\paragraph{Fully symbolic coefficients, off-separatrix $q$-series, and independent checks.}
+Off the separatrix (generic $J$, genus two) every block coefficient is a
+\emph{rational function of $(M,a,E,J)$}: the source coefficients $c_k$,
+$Q_{kj}=c_kb_j-c_jb_k$, and the canonical pole coefficients $g_i$ (Taylor
+coefficients of $q_6^{-1/2}$ at the odd-model infinity), with
+$g_0=1/\sqrt{E^2-1}$ and $g_1=(2E^2-3)/(E^2-1)^{3/2}$ set by the leading behaviour
+($E$-only), while $g_2$ and the $c_k$ carry the full $(a,J)$ dependence. The
+algebraic remainder is elementary in closed form,
+$T_{\rm alg}=P(r)+\sum_i\mathrm{res}_i\ln(r-r_i)$ over the six roots of $S$
+(three residues vanish, at $r=0,\,2M,\,2M/(1-E^2)$). The genus-two dilogarithm is a
+convergent \emph{nome ($q$-)series}: after Siegel reduction $\tau'=-\tau^{-1}$ (all
+nomes ${<}1$), $\Lambda=\int Q\,\dd\mathcal A+\int L\,\dd\mathcal A$ with $Q$
+elementary and $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ a genus-two
+Kronecker--Eisenstein series that converges geometrically (order $N{=}4$ already
+matches to $10^{-13}$) and does \emph{not} reduce to classical dilogarithms (there is
+no genus-two Jacobi product formula). Following the moving separatrix moreover
+\emph{cancels the triple pole}: $N_{\rm tot}(r_d)=\tfrac12K(r_d)S'(r_d)\,\dd r_d/\dd\lambda=0$
+by the double-root condition $S'(r_d)=0$, so $b_3^{\rm track}=0$. All these symbolic
+statements are \emph{independently reproduced in Mathematica} (native $\wp$, Gröbner
+reduction, Laurent extraction): the separatrix residues to $10^{-16}$--$10^{-38}$, the
+generic-$J$ reductions to an exact polynomial identity, and the tracking theorem
+$N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$.
+
 \paragraph{Transcendence.}
 None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
 lives in $\sigma,\zeta,\wp$, and the weight-two content is the elliptic dilogarithm,

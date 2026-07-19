@@ -883,7 +883,17 @@ infinity, residue $\rho_0=M/(E^2-1)^{3/2}$---integrates to
 $L(u(r))$ differentiated back reproduces the third-kind differential to
 $5\times10^{-8}$). Like $\mathrm{Li}_2$, the $W_{kj}$ are their own closed form
 (Kronecker--Eisenstein series~\cite{BeilinsonLevin1994}); the weight-two content is genuine and irreducible, the coefficients
-algebraic.
+algebraic. Explicitly the pole coefficients are $g_0=1/\sqrt{E^2-1}$,
+$g_1=(2E^2-3)/(E^2-1)^{3/2}$ ($E$-only), with $g_2$ and the $c_k$ rational in
+$(a,J)$ too, and $T_{\rm alg}=P(r)+\sum_i\mathrm{res}_i\ln(r-r_i)$ over the roots of
+$S$; the genus-two dilogarithm~\eqref{eq:thirdkind-theta} is evaluated as a
+Kronecker--Eisenstein nome ($q$-)series that, after Siegel reduction $\tau'=-\tau^{-1}$
+(all nomes ${<}1$), converges geometrically ($N{=}4$ matches to $10^{-13}$). Following
+the moving separatrix cancels the triple-pole residue,
+$N_{\rm tot}(r_d)=\tfrac12K(r_d)S'(r_d)\,\dd r_d/\dd\lambda=0$ by $S'(r_d)=0$, so
+$b_3^{\rm track}=0$. All symbolic coefficients, the separatrix residues, and this
+tracking theorem are independently reproduced in Mathematica (native $\wp$, Gröbner
+reduction, Laurent extraction) to $10^{-16}$--$10^{-38}$.
 
 Table~\ref{tab:adiab-valid} compares the hybrid
 form~\eqref{eq:phi-adiab}--\eqref{eq:psi-irr} (closed $\mathcal{C}$ plus numerical
