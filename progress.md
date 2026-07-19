@@ -625,3 +625,12 @@ punti shiftati (dimostrato sulla separatrice t). Coeff simbolici + funzioni spec
 - TK-t: N_t denom=1 (Delta cancella); identita' 2N_t-(...)=0 ESATTA; g0=1/(E sqrt(E^2-1)),
   g1=-1/(E(E^2-1)^{3/2}) (match sotto E>0). Riduzione chiude.
 ⇒ coeff generici Vaidya+TK-t confermati da tool indipendente.
+
+### Tracking Jc separatrice: coeff simbolici + TEOREMA cancellazione polo triplo ✓ (Mathematica)
+`sep_tracking_coeff.py`, `paper/crosscheck_tracking.wl`. I coeff simbolici separatrice precedenti
+erano FIXED-Jc. Tracking: N_tot=N+(dJc/dl)N_J. b_i^track = bcoeffs(S,N_tot), simbolici in
+(M,a,E,r_d,Jc). RISULTATO: N_tot(r_d)=0 (Vaidya 1e-11, TK 3e-9) -> b3^track=0. TEOREMA: N_tot(r_d)
+=-1/2 K(r_d)[d_l S+(dJc/dl)d_J S](r_d)=1/2 K S'(r_d)(dr_d/dl)=0 perche' S'(r_d)=0 (doppia radice).
+CROSS-CHECK MATHEMATICA SIMBOLICO: m N_tot(rd) mod {S(rd),S'(rd)}=0 (Vaidya); DE(rd) N_tot(rd) mod
+ideale=0 (TK). ⇒ tracking cancella il polo triplo a r_d, PROVATO simbolicamente. Fixed b3!=0, track b3=0.
+Vaidya track: b1=0,b2=0.108,b3=0. TK track: b1=0.154,b2=-0.492,b3=0.
