@@ -2073,12 +2073,25 @@ $v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term reproduces the proper-ti
 dilogarithms; the second is odd on $E$ with a simple pole at $z=i\omega_{\rm im}$ and
 supplies the horizon dilogarithm.
 
-\paragraph{Separatrix tracking.}
-Imposing $J=\Jc(m)$ (following the moving separatrix) replaces
-$N_m\to N_m+(\Jc/m)N_J$, $N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$, in the residues above;
-$\varphi_0$, the clocks and the dilogarithms are unchanged (verified to $10^{-8}$).
+\subsection{Separatrix $\Jc$ tracking}
+\label{app:tracking}
+Along an adiabatic evolution the separatrix itself moves, $J=\Jc(\lambda)$, so the
+first-order source is the \emph{total} $\lambda$-derivative taken along the
+separatrix,
+\begin{equation}
+N_{\rm tot}=N+\frac{\dd\Jc}{\dd\lambda}\,N_J,\qquad
+N_J=S\,\partial_JK-\tfrac12K\,\partial_JS,
+\label{eq:Ntot-track}
+\end{equation}
+and the block form and residue formulae above hold verbatim with $N\to N_{\rm tot}$;
+$\varphi_0$, the clocks and the dilogarithm structure are unchanged. The three branches
+differ only in $\dd\Jc/\dd\lambda$ and $N_J$.
 
-\paragraph{Thakurta--Kerr branches and their tracking.}
+\paragraph{Vaidya ($\lambda=m$).}
+The linear scaling $\Jc=m\,j(E)$ gives $\dd\Jc/\dd m=\Jc/m$, with
+$N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$ (verified to $10^{-8}$).
+
+\paragraph{Thakurta--Kerr $\tau$ and $t$ branches.}
 The rotating (conformal) case follows by the transfer $E\to E_{\rm eff}=\Ehat/A$,
 $a\to s$, $J\to J/A$; the control parameter is now $A$ (equivalently $E_{\rm eff}$), and
 the separatrix $\Jc(E_{\rm eff})$ drifts as $A$ runs. Two curves carry the two clocks.
@@ -2105,7 +2118,23 @@ $Q_{2,J}\,\dd\Jc+Q_{2,E}\,\dd E=0$),
 \end{equation}
 again asymmetric (the two magnitudes differ), verified against finite differences;
 the block assembly reproduces the direct integral to $10^{-7}$ ($16$/$18$ horizon
-dilogarithms for the two signs). All coefficients remain closed-form residues.
+dilogarithms for the two signs). All tracking coefficients are again closed-form
+residues, symbolic in $(M,a,E,r_d,\Jc)$.
+
+\paragraph{Tracking cancels the triple pole.}
+A clean structural consequence closes the logic: at the double root the tracked
+source \emph{vanishes},
+\begin{equation}
+N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
++\tfrac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)
+=\tfrac12K(r_d)\,S'(r_d)\,\frac{\dd r_d}{\dd\lambda}=0,
+\label{eq:track-cancel}
+\end{equation}
+because $S'(r_d)=0$ (the separatrix double-root condition). Hence the triple-pole
+residue drops, $b_3^{\rm track}=0$: following the moving separatrix softens the
+strongest singularity, precisely where the double root travels. This is verified
+symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$, for both Vaidya
+and Thakurta--Kerr.
 
 \paragraph{Fully symbolic coefficients, off-separatrix $q$-series, and independent checks.}
 Off the separatrix (generic $J$, genus two) every block coefficient is a
@@ -2122,13 +2151,11 @@ nomes ${<}1$), $\Lambda=\int Q\,\dd\mathcal A+\int L\,\dd\mathcal A$ with $Q$
 elementary and $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ a genus-two
 Kronecker--Eisenstein series that converges geometrically (order $N{=}4$ already
 matches to $10^{-13}$) and does \emph{not} reduce to classical dilogarithms (there is
-no genus-two Jacobi product formula). Following the moving separatrix moreover
-\emph{cancels the triple pole}: $N_{\rm tot}(r_d)=\tfrac12K(r_d)S'(r_d)\,\dd r_d/\dd\lambda=0$
-by the double-root condition $S'(r_d)=0$, so $b_3^{\rm track}=0$. All these symbolic
-statements are \emph{independently reproduced in Mathematica} (native $\wp$, Gröbner
-reduction, Laurent extraction): the separatrix residues to $10^{-16}$--$10^{-38}$, the
-generic-$J$ reductions to an exact polynomial identity, and the tracking theorem
-$N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$.
+no genus-two Jacobi product formula). All these symbolic statements are
+\emph{independently reproduced in Mathematica} (native $\wp$, Gröbner reduction,
+Laurent extraction): the separatrix residues to $10^{-16}$--$10^{-38}$, the generic-$J$
+reductions to an exact polynomial identity, and the tracking
+theorem~\eqref{eq:track-cancel}.
 
 \paragraph{Transcendence.}
 None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
