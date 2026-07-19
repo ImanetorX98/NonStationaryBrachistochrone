@@ -634,3 +634,12 @@ erano FIXED-Jc. Tracking: N_tot=N+(dJc/dl)N_J. b_i^track = bcoeffs(S,N_tot), sim
 CROSS-CHECK MATHEMATICA SIMBOLICO: m N_tot(rd) mod {S(rd),S'(rd)}=0 (Vaidya); DE(rd) N_tot(rd) mod
 ideale=0 (TK). ⇒ tracking cancella il polo triplo a r_d, PROVATO simbolicamente. Fixed b3!=0, track b3=0.
 Vaidya track: b1=0,b2=0.108,b3=0. TK track: b1=0.154,b2=-0.492,b3=0.
+
+### Cross-check Mathematica punti 2+3 completati ✓
+`paper/crosscheck_tkt_bi.wl` (punto 2), `paper/crosscheck_clock_res.wl` (punto 3).
+- PUNTO 2: b_i separatrice TK-t+/- via Laurent indipendente (r(t) da ODE) vs formula h0/s^3:
+  diff 1e-38 (macchina). Jc+ b1=-1.6172,b2=-0.0737,b3=-0.0353; Jc- b1=1.6170,b2=0.0708,b3=0.0343.
+- PUNTO 3: residui clock (Weierstrass NATIVO Mathematica, indip da mpmath):
+  v z_d: E rd^3/s = -3.2539 (match contorno 1e-15); v orizzonte: 4M=4.0 (esatto) + PROVA SIMBOLICA
+  T(z-zh)->4 indip dai e_i; t orizzonti: formula + invariante res(r+)+res(r-)=2M.
+⇒ TUTTI i cross-check Mathematica richiesti (punti 1,2,3 + teorema tracking) COMPLETATI.
