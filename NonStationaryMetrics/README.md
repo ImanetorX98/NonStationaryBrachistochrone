@@ -58,6 +58,45 @@ python3 -m pip install -r requirements.txt      # numpy scipy sympy matplotlib m
 
 Verification scripts print numerical residuals; ~machine precision means the identity holds.
 
+> **Run all commands from inside this folder** (`.../NonStationaryMetrics/`), so paths like
+> `VaidyaMetric/…`, `KerrSessionScripts/…`, `paper/…` resolve. The stationary-Kerr base lives
+> one level up, so reference it as `../KerrScripts/…` and `../KerrMetric/…`.
+
+### Quick start — key commands (explicit paths, run from `NonStationaryMetrics/`)
+```bash
+# --- symbolic coefficients (Python, fast) ---
+python3 SEP_COEFF_SYMBOLIC.py                       # separatrix b1,b2,b3 (all branches), (M,a,E,r_d,Jc)
+python3 sep_tracking_coeff.py                       # tracking coeffs + triple-pole cancellation
+python3 VaidyaMetric/vaidya_generic_coeff.py        # Vaidya generic c_k,Q_kj,g_i,P in (m,E,J)
+python3 ThakurtaMetric/tk_t_generic_coeff.py        # TK-t generic c_k,Q_kj,g_i in (a,E,J)
+python3 KerrSessionScripts/kerr_psi_explicit_verified.py     # TK-τ source reduction (c_k)
+python3 KerrSessionScripts/kerr_tau_Wij_principalparts.py    # g_i (principal parts)
+python3 KerrSessionScripts/kerr_tau_Talg_explicit.py         # T_alg explicit (poly + logs)
+python3 VaidyaMetric/vaidya_sep_residui_analitici.py         # closed-form residues (foundational)
+python3 VaidyaMetric/sep_v_clock_residui.py                  # v-branch clock residues (4M)
+python3 ThakurtaMetric/sep_t_clock_residui.py               # t-branch clock residues (2M)
+
+# --- genus-2 assembly / naming / q-series (SageMath) ---
+sage KerrSessionScripts/kerr_tau_Wij_assembly.py            # NB: pure-sympy, also runs with python3
+sage KerrSessionScripts/kerr_tau_Wij_diffform_integral.sage # naming U_k in θ[δ] at e_±
+sage KerrSessionScripts/kerr_tau_dilog_qseries5.sage        # dilog q-series (geometric convergence)
+sage VaidyaMetric/vaidya_dilog_qseries.sage                 # Vaidya dilog q-series
+sage ThakurtaMetric/tk_t_dilog_qseries.sage                 # TK-t dilog q-series
+sage KerrSessionScripts/kerr_quasiperiods_bel.sage          # genus-2 quasi-periods κ
+
+# --- independent cross-checks (Mathematica) ---
+wolframscript -file paper/crosscheck_generic.wl     # Vaidya+TK-t generic coeffs
+wolframscript -file paper/crosscheck_sep_bi.wl      # separatrix b_i (τ) via Laurent
+wolframscript -file paper/crosscheck_tkt_bi.wl      # separatrix b_i (TK t±)
+wolframscript -file paper/crosscheck_tracking.wl    # tracking theorem N_tot(r_d)=0
+wolframscript -file paper/crosscheck_clock_res.wl   # clock residues (native Weierstrass)
+
+# --- stationary-Kerr base machinery (sibling at repo root) ---
+python3 ../KerrScripts/pipeline_completa_deltaphi.py   # full base (M,a,E,J)→δφ chain
+python3 ../KerrScripts/kerr_psi_explicit_verified.py   # base TK-τ reduction
+sage    ../KerrScripts/kerr_quasiperiods_bel.sage      # base genus-2 quasi-periods
+```
+
 ---
 
 ## Script guide (by pipeline stage)
