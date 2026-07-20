@@ -955,28 +955,32 @@ remainder
 \end{equation}
 is a depth-two iterated integral. Expand $\partial_E\varphi_0$ and $\eta$ in the
 cohomology basis $U_k=\int r^k/\mathcal{R}\,\dd r$: the reduction
-$\partial_E F=N/\mathcal{R}^3$ with $N=EJ\,r^4(r-2M)^2\,DE$ (the horizon factor
-$\Delta$ cancels identically) gives
-$\partial_E\varphi_0=\mathcal{A}/\mathcal{R}+\sum_{k=0}^{4} c_k U_k$, and on the
+$(E\partial_E+J\partial_J)F=N/\mathcal{R}^3$ with $N=\Ehat\,N_E+J\,N_J$ a degree-seven
+polynomial ($N_E=EJ\,r^4(r-2M)^2\,DE$, and $N_J$ its angular analogue; the horizon
+factor $\Delta$ cancels identically in both) gives
+$(E\partial_E+J\partial_J)\varphi_0=\mathcal{A}/\mathcal{R}+\sum_{k=0}^{4} C_k U_k$,
+$C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$, and on the
 $\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$. The \emph{complete}
-first-order coefficient $\delta\varphi=\mathcal{C}+\psi=-\Ehat\int\partial_E F\,
-\eta\,\dd r$ then reorganizes, with \emph{no term discarded}, into
+first-order coefficient $\delta\varphi=\mathcal{C}+\psi=-\!\int(\Ehat\,\partial_E F
++J\,\partial_J F)\,\eta\,\dd r$ then reorganizes, with \emph{no term discarded}, into
 \begin{equation}
     \delta\varphi=
-    \underbrace{\tfrac12\Ehat\!\sum_{k<j}Q_{kj}\,W_{kj}}_{\text{weight two}}
-    \;-\;\underbrace{\Ehat\,\eta\Big(\tfrac{\mathcal{A}}{\mathcal{R}}
-    +\tfrac12\!\sum_k c_k U_k\Big)}_{\text{clock}\times\text{abelian}}
-    \;+\;\underbrace{\Ehat\!\sum_j b_j\,\mathcal{I}_j}_{\text{elementary}},
+    \underbrace{\tfrac12\!\sum_{k<j}Q_{kj}\,W_{kj}}_{\text{weight two}}
+    \;-\;\underbrace{\eta\Big(\tfrac{\mathcal{A}}{\mathcal{R}}
+    +\tfrac12\!\sum_k C_k U_k\Big)}_{\text{clock}\times\text{abelian}}
+    \;+\;\underbrace{\sum_j b_j\,\mathcal{I}_j}_{\text{elementary}},
     \label{eq:psi-split}
 \end{equation}
-with $Q_{kj}=c_k b_j-c_j b_k$, $W_{kj}=\int(U_k\,\dd U_j-U_j\,\dd U_k)$ the
+with $Q_{kj}=C_k b_j-C_j b_k$, $W_{kj}=\int(U_k\,\dd U_j-U_j\,\dd U_k)$ the
 genus-two polylogarithms, and $\mathcal{I}_j=\int\mathcal{A}\,r^j/\mathcal{R}^2\,
 \dd r$ \emph{elementary} (rational integrands, evaluating to logarithms). Every
 piece is explicit: the second group is a product of the elapsed clock with the
 reduced abelian integrals (weight one), the third an elementary logarithmic
 remainder---none is spurious or dropped. The coefficients are \emph{algebraic}
-(rational in $M,a,E,J$ through the $c_k$); we verified~\eqref{eq:psi-split} to
-$4\times10^{-14}$ with all coefficients \emph{given}, not fitted. The
+(rational in $M,a,E,J$ through the $C_k=\Ehat c_k^E+J c_k^J$); we
+verified~\eqref{eq:psi-split} to $4\times10^{-14}$ for the energy part and to
+$1\times10^{-7}$ for the full Euler source with all coefficients \emph{given}, not
+fitted. The
 holomorphic$\times$holomorphic coefficient vanishes, $Q_{01}=0$ (the clock has no
 first-kind part). On the $t$-branch the same reorganization holds with
 $\mathcal{R}^2=R_6$ and $K$ of Table~\ref{tab:branch-adiab}: its clock is likewise
@@ -1890,28 +1894,37 @@ double cover. Three reference solutions to check against (polynomial residual $0
 exactly):
 \begin{table}[htbp]
     \centering
-    \caption{Reference reduction coefficients $c_k$, obtained by solving
-    Eq.~\eqref{eq:reduction-identity}. A reviewer reproduces them from the stated
-    parameters with a single linear solve; the script
-    \texttt{reproduce\_reductions.py} performs all three.}
+    \caption{Reference reduction coefficients, obtained by solving
+    Eq.~\eqref{eq:reduction-identity}. For Thakurta--Kerr the conformal drift acts
+    through \emph{both} charges, so the source is the Euler operator and the
+    combined weight is $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$: we list the energy
+    ($\partial_E$) and angular ($\partial_J$) reductions separately. Vaidya (mass
+    parameter) has only $\partial_m$. A reviewer reproduces all rows from the
+    stated parameters with a single linear solve each (residual $0$ exactly); the
+    script \texttt{reproduce\_reductions.py} performs them all.}
     \label{tab:reduction-ck}
     \begin{tabular}{lllllll}
         \hline\hline
         reduction & parameters & $c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$\\
         \hline
-        TK $\tau$-branch & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
+        TK $\tau$, $\partial_E$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
             & $-1.1575$ & $1.86406$ & $-0.57499$ & $0.02429$ & $0.07117$\\
-        TK $t$-branch & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
+        TK $\tau$, $\partial_J$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
+            & $0.18027$ & $0.06996$ & $-0.29682$ & $0.03840$ & $0.03760$\\
+        TK $t$, $\partial_E$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
             & $-0.39084$ & $1.72654$ & $-0.19058$ & $-0.14503$ & $-0.01676$\\
-        Vaidya ($a{=}0$) & $M{=}1,E{=}1.4,J{=}2.5$
+        TK $t$, $\partial_J$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
+            & $4.33922$ & $4.03122$ & $-0.64349$ & $-2.63600$ & $-0.64444$\\
+        Vaidya ($a{=}0$), $\partial_m$ & $M{=}1,E{=}1.4,J{=}2.5$
             & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
         \hline\hline
     \end{tabular}
 \end{table}
 
-Given the $c_k$, the weight-two assembly~\eqref{eq:psi-split} is mechanical: the
-clock supplies the vector $b$ (on the $\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\
-$b=(0,0,-2M,1,0)$), the algebraic weights are $Q_{kj}=c_kb_j-c_jb_k$, the weight-two
+Given the combined $C_k=\Ehat c_k^{E}+J c_k^{J}$, the weight-two
+assembly~\eqref{eq:psi-split} is mechanical: the clock supplies the vector $b$ (on
+the $\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$), the algebraic
+weights are $Q_{kj}=C_kb_j-C_jb_k$, the weight-two
 letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
 $\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
 same steps with the advanced-time clock give the fully assembled
@@ -2085,7 +2098,12 @@ b_2^{e_i}=\frac{4N_m(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
 \end{equation}
 ($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
 $R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
-b_3^a\wp'(z_\infty-a)]$.
+b_3^a\wp'(z_\infty-a)]$. This example is Vaidya (source $\partial_m F$, hence
+$N_m$); for the Thakurta--Kerr separatrices the identical Weierstrass assembly runs
+with the combined conformal numerator $N=\Ehat N_E+J N_J$ (Sec.~\ref{sec:thakurta},
+referee point on $J_{\rm eff}=J/A$), giving $b_i=\Ehat b_i^{E}+J b_i^{J}$; the
+angular part shifts $b_1$ by $\sim\!30\%$ and is tabulated in
+\texttt{ThakurtaMetric/conformal\_source\_Jterm.py}.
 
 \paragraph{First order, proper-time branch (verified to $10^{-9}$).}
 Clock $\eta=U_3-2mU_2$; block form

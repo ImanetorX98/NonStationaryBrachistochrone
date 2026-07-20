@@ -21,6 +21,13 @@ a quelli in E.
 NB: Vaidya (parametro m, non conforme) NON e' toccato: E,J entrambi conservati,
 sorgente d_m F, nessun termine d_J F.
 
+Verifica a livello di ASSEMBLY completo (non solo coefficienti): sostituendo la
+sorgente di Eulero (E d_E + J d_J)F in tk_t_sep_blockassembly.py, il block assembly
+con TUTTE le funzioni speciali (Weierstrass zeta,wp via theta + dilog genus-2,
+143 prodotti) riproduce l'integrale diretto a ~1e-8 sulla separatrice TK-t --
+stessa precisione del solo termine E. Quindi la forma chiusa e' completa anche col
+termine J: nessuna funzione speciale nuova, solo coefficienti c_k^tot=c_k^E+c_k^J.
+
 Uscita: c_k^J e b_i corretti per TK ramo t e tau, con verifica di chiusura.
 """
 import sympy as sp

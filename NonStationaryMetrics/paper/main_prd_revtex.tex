@@ -843,10 +843,10 @@ structure~\eqref{eq:phi-adiab} and differ only in the branch curve and the clock
     share $\varphi=\varphi_0+\varepsilon[\mathcal{C}+\psi]$;
     only the curve $\mathcal{R}^2$, the frozen numerator $K$ ($F=K/\mathcal{R}$),
     and the clock $\dd\eta/\dd r$ change. $\Delta=r^2-2Mr+a^2$, $DE=(E^2-1)r+2M$,
-    all at $E=E_{\rm eff}=\Ehat/A$; $\varphi_0,\partial_E\varphi_0$ are
-    Kleinian/abelian on $y^2=\mathcal{R}^2$, and $\psi=\tfrac12\Ehat\sum Q_{kj}W_{kj}$
-    has algebraic coefficients times genus-two polylogarithms
-    [Eq.~\eqref{eq:psi-split}].}
+    all at $(E,J)_{\rm eff}=(\Ehat,J)/A$; $\varphi_0,(E\partial_E+J\partial_J)\varphi_0$
+    are Kleinian/abelian on $y^2=\mathcal{R}^2$, and
+    $\psi=\tfrac12\sum Q_{kj}W_{kj}$ ($Q_{kj}=C_kb_j-C_jb_k$) has algebraic
+    coefficients times genus-two polylogarithms [Eq.~\eqref{eq:psi-split}].}
     \label{tab:branch-adiab}
     \begin{ruledtabular}
     \begin{tabular}{lll}
@@ -880,16 +880,16 @@ $\partial_J F=N_J/\mathcal{R}^3$ reduces in the same basis and threads through t
 identical shuffle, adding $J\,\partial_J\varphi_0$ to the energy term. The complete
 first-order coefficient
 $\delta\varphi=\mathcal{C}+\psi=-\int(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\dd r$
-reorganizes, with no term discarded, into
+reorganizes, with no term discarded, into ($C_k\equiv\Ehat c_k^{E}+J c_k^{J}$)
 \begin{equation}
     \delta\varphi=
-    \underbrace{\tfrac12\Ehat\!\sum_{k<j}Q_{kj}\,W_{kj}}_{\text{weight two}}
-    -\underbrace{\Ehat\,\eta\big(\tfrac{\mathcal{A}}{\mathcal{R}}
-    +\tfrac12\!\sum_k c_k U_k\big)}_{\text{clock}\times\text{abelian}}
-    +\underbrace{\Ehat\!\sum_j b_j\,\mathcal{I}_j}_{\text{elementary}},
+    \underbrace{\tfrac12\!\sum_{k<j}Q_{kj}\,W_{kj}}_{\text{weight two}}
+    -\underbrace{\eta\big(\tfrac{\mathcal{A}}{\mathcal{R}}
+    +\tfrac12\!\sum_k C_k U_k\big)}_{\text{clock}\times\text{abelian}}
+    +\underbrace{\sum_j b_j\,\mathcal{I}_j}_{\text{elementary}},
     \label{eq:psi-split}
 \end{equation}
-$Q_{kj}=c_k b_j-c_j b_k$, $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$ the genus-two
+$Q_{kj}=C_k b_j-C_j b_k$, $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$ the genus-two
 polylogarithms, $\mathcal{I}_j=\int\mathcal{A}\,r^j/\mathcal{R}^2\,\dd r$ elementary
 (rational, evaluating to logarithms). Every piece is explicit---the second group a
 product of the clock with the reduced abelian integrals, the third an elementary
@@ -1712,27 +1712,35 @@ $R_\Delta/\Delta$ the third-kind $\ln\sigma$-quotients; no double cover. Three
 reference solutions (polynomial residual $0$ exactly):
 \begin{table*}[t]
     \centering
-    \caption{Reference reduction coefficients $c_k$ from
-    Eq.~\eqref{eq:reduction-identity}, reproducible by one linear solve; the script
-    \texttt{reproduce\_reductions.py} performs all three.}
+    \caption{Reference reduction coefficients from
+    Eq.~\eqref{eq:reduction-identity}, reproducible by one linear solve each. For
+    Thakurta--Kerr the conformal source is the Euler operator, so the combined
+    weight is $C_k=\Ehat c_k^{E}+J c_k^{J}$: energy ($\partial_E$) and angular
+    ($\partial_J$) reductions are listed separately; Vaidya has only $\partial_m$.
+    \texttt{reproduce\_reductions.py} performs them all.}
     \label{tab:reduction-ck}
     \begin{ruledtabular}
     \begin{tabular}{lllllll}
         reduction & parameters & $c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$\\
         \hline
-        TK $\tau$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
+        TK $\tau$, $\partial_E$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
             & $-1.1575$ & $1.86406$ & $-0.57499$ & $0.02429$ & $0.07117$\\
-        TK $t$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
+        TK $\tau$, $\partial_J$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
+            & $0.18027$ & $0.06996$ & $-0.29682$ & $0.03840$ & $0.03760$\\
+        TK $t$, $\partial_E$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
             & $-0.39084$ & $1.72654$ & $-0.19058$ & $-0.14503$ & $-0.01676$\\
-        Vaidya & $M{=}1,E{=}1.4,J{=}2.5$
+        TK $t$, $\partial_J$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
+            & $4.33922$ & $4.03122$ & $-0.64349$ & $-2.63600$ & $-0.64444$\\
+        Vaidya, $\partial_m$ & $M{=}1,E{=}1.4,J{=}2.5$
             & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
     \end{tabular}
     \end{ruledtabular}
 \end{table*}
 
-Given the $c_k$, the weight-two assembly~\eqref{eq:psi-split} is mechanical: the
-clock supplies $b$ ($\tau$-branch $\eta=U_3-2M U_2$, $b=(0,0,-2M,1,0)$), the weights
-are $Q_{kj}=c_kb_j-c_jb_k$, the letters $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and
+Given $C_k=\Ehat c_k^{E}+J c_k^{J}$, the weight-two assembly~\eqref{eq:psi-split} is
+mechanical: the clock supplies $b$ ($\tau$-branch $\eta=U_3-2M U_2$,
+$b=(0,0,-2M,1,0)$), the weights are $Q_{kj}=C_kb_j-C_jb_k$, the letters
+$W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and
 $\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms; Vaidya follows
 identically with the advanced-time clock [Eq.~\eqref{eq:vaidya-full}], the horizon
 dilogarithm closing by one integration by parts [Eq.~\eqref{eq:horizon-dilog}].

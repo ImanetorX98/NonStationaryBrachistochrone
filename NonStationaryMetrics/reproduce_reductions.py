@@ -42,6 +42,14 @@ K_t = r*DE*(J*(r-2*M) + 2*M*a)/Delta          # eq. (t-K); third-kind poles at h
 N_t = sp.simplify(sp.diff(K_t/sp.sqrt(R6), E) * R6**sp.Rational(3,2))   # Delta cancels -> polynomial
 solve_reduction(R6, N_t, sub_tk, "TK t-branch  (M=1,a=0.9,E=1.2,J=2.5)")
 
+# ---- angular reductions c_k^J (referee #5: conformal J_eff=J/A also drifts) ----
+# Under g^TK=A^2 g^Kerr both Kerr charges weight A^-1, so the source is the Euler
+# operator (E d_E + J d_J)F; the d_J piece reduces in the SAME basis: C_k = E c_k^E + J c_k^J.
+N_tau_J = sp.simplify(sp.diff(K_tau/sp.sqrt(S_tk), J) * S_tk**sp.Rational(3,2))
+solve_reduction(S_tk, N_tau_J, sub_tk, "TK tau-branch d_J (M=1,a=0.9,E=1.2,J=2.5)")
+N_t_J = sp.simplify(sp.diff(K_t/sp.sqrt(R6), J) * R6**sp.Rational(3,2))
+solve_reduction(R6, N_t_J, sub_tk, "TK t-branch   d_J (M=1,a=0.9,E=1.2,J=2.5)")
+
 # ---- Vaidya (a=0, Schwarzschild frozen): mass reduction on S ----
 DEm = (E**2-1)*r + 2*m
 S_v = sp.expand(r*(r-2*m)*DEm*(r**2*(r-2*m) - J**2*DEm))
