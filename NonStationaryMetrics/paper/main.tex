@@ -375,10 +375,11 @@ $\sim\!10^{-11}$), whereas along the \emph{brachistochrone}---instantaneously an
 on-shell Kerr orbit at $E_{\rm eff}=\Ehat/A(\eta)$---the rail holds $\Ehat$
 constant to $8.9\times10^{-16}$, the exact analogue of the Vaidya value
 (\texttt{ThakurtaMetric/rail\_conservation.py}). This confirms that
-$E_{\rm eff}=\Ehat/A$ tracks along the orbit, so the frozen shape relation
-$\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J)$ stays exact and the adiabatic
-correction $\delta\varphi=\int\partial_E F\,\eta\,\mathrm{d}r$ carries no missing
-off-shell term.
+$E_{\rm eff}=\Ehat/A$ (and, by the same conformal weight,
+$J_{\rm eff}=J/A$) track along the orbit, so the frozen shape relation
+$\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J_{\rm eff})$ stays exact and the
+adiabatic correction $\delta\varphi=-\int(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\mathrm{d}r$
+[Eq.~\eqref{eq:deltaphi-EJ}] carries no missing off-shell term.
 
 
 \subsection{Phenomenology: penetration, timing, bounce}
@@ -836,16 +837,30 @@ The transport equation~\eqref{eq:Kdyn} controls the quasi-constant; the
 \emph{orbit shape} $\varphi(r,A)$ itself admits a companion first-order adiabatic
 form~\cite{BornFock1928,BenderOrszag1999} that is explicit up to a single higher
 transcendental. Writing the frozen integrand as
-$F(r;E)=\dd\varphi/\dd r$ (Eq.~\eqref{eq:t-K} for the $t$-branch,
-Eq.~\eqref{eq:tau-sextic} for $\tau$) and linearizing $E_{\rm eff}=\Ehat/A$ in
+$F(r;E_{\rm eff},J_{\rm eff})=\dd\varphi/\dd r$ (Eq.~\eqref{eq:t-K} for the
+$t$-branch, Eq.~\eqref{eq:tau-sextic} for $\tau$) and linearizing the
+\emph{conformal weights} of the Kerr charges---both $E_{\rm eff}=\Ehat/A$ and
+$J_{\rm eff}=J/A$ carry weight $A^{-1}$, since for $u^{\rm TK}=u^{\rm Kerr}/A$ one
+has $-g^{\rm TK}(u,\partial_\eta)=A\,E_{\rm eff}$ and
+$g^{\rm TK}(u,\partial_\varphi)=A\,J_{\rm eff}$---in
 $A(\eta)=A_0(1+\varepsilon\eta+\dots)$, $\varepsilon=A'/A$, gives
 \begin{equation}
-    \varphi(r,A)=\underbrace{\varphi_0(r;E_{\rm eff})}_{\text{frozen, Kleinian}}
+    \varphi(r,A)=\underbrace{\varphi_0(r;E_{\rm eff},J_{\rm eff})}_{\text{frozen, Kleinian}}
     +\varepsilon\big[\mathcal{C}(r)+\psi(r)\big]+O(\varepsilon^2),
     \label{eq:phi-adiab}
 \end{equation}
-where the first-order coefficient is the elapsed-clock--weighted energy
-derivative $\delta\varphi=-\Ehat\!\int\!\partial_E F\,\eta\,\dd r$, and $\eta(r)$
+where the first-order coefficient is the elapsed-clock--weighted \emph{scaling}
+derivative
+\begin{equation}
+    \delta\varphi=-\!\int\!\big(\Ehat\,\partial_E F+J\,\partial_J F\big)\,\eta\,\dd r
+    =-\!\int\!\big(E\,\partial_E+J\,\partial_J\big)F\,\eta\,\dd r,
+    \label{eq:deltaphi-EJ}
+\end{equation}
+i.e.\ the Euler scaling operator $(E\partial_E+J\partial_J)F$ acting through both
+drifting charges (the $J\,\partial_J F$ term is required by axisymmetric momentum
+conservation and was absent in an earlier form; Vaidya, whose parameter is the
+mass rather than a conformal factor, keeps only its $\partial_m F$ source). Here
+$\eta(r)$
 is the clock the orbit accumulates along the frozen slice: coordinate time
 $\eta=t(r)$ on the $t$-branch, proper time $\eta=\tau(r)=\int\!L_\tau\,\dd r$ with
 $L_\tau=\sqrt{Q/w}$, $Q=\Delta\varphi'^2-2a\beta\varphi'+r^2/(r^2+a^2)$, on the
@@ -853,21 +868,23 @@ $\tau$-branch (the extra $A^{-2}$ of the proper-time functional affects the
 \emph{timing}, not the shape, so Eq.~\eqref{eq:phi-adiab} is common to both
 branches).
 
-\paragraph{Closed piece.} The energy derivative reduces to the same depth-one
+\paragraph{Closed piece.} The scaling derivative reduces to the same depth-one
 class as $\varphi_0$ itself, by the classical reduction of abelian differentials to
-first/second kind~\cite{BakerAbelian1897,GriffithsHarris1978}. Solving
-$\partial_E(F)=\dd_r[\mathcal{A}(r)/\mathcal{R}]
-+\sum_{k=0}^{4}c_k\,r^k/\mathcal{R}$ for a degree-six numerator $\mathcal{A}(r)$
-and constants $c_k$ (here $\mathcal{R}$ is the branch sextic radical, $\sqrt{R_6}$
-or $\sqrt{S}$) yields
+first/second kind~\cite{BakerAbelian1897,GriffithsHarris1978}. Both pieces
+$\partial_E F$ and $\partial_J F$ share the identical basis: solving
 \begin{equation}
-    \partial_E\varphi_0=\frac{\mathcal{A}(r)}{\mathcal{R}}
-    +\sum_{k=0}^{4}c_k\!\int\!\frac{r^k\,\dd r}{\mathcal{R}},
+    \big(E\partial_E+J\partial_J\big)F=\dd_r\!\left[\frac{\mathcal{A}(r)}{\mathcal{R}}\right]
+    +\sum_{k=0}^{4}c_k\,r^k/\mathcal{R}
     \label{eq:dEphi0}
 \end{equation}
-with \emph{no} third-kind (horizon-pole) contribution: the second-kind reduction
-closes with vanishing polar residues for both branches (verified to machine
-precision). Hence $\mathcal{C}(r)=-\tfrac12\Ehat\,\partial_E\varphi_0\,\eta(r)$ is
+for a degree-five numerator $\mathcal{A}(r)=\sum_{i=0}^{5}a_i r^i$ and constants
+$c_k=\Ehat\,c_k^{E}+J\,c_k^{J}$ (here $\mathcal{R}$ is the branch sextic radical,
+$\sqrt{R_6}$ or $\sqrt{S}$) closes in the second kind with \emph{no} third-kind
+(horizon-pole) contribution for both branches (verified to machine precision); the
+$J\,\partial_J F$ term merely adds its own coefficients $c_k^{J}$ to the existing
+$c_k^{E}$, requiring no new building block
+(\texttt{ThakurtaMetric/conformal\_source\_Jterm.py}). Hence
+$\mathcal{C}(r)=-\tfrac12\big(E\partial_E+J\partial_J\big)\varphi_0\,\eta(r)$ is
 a product of depth-one objects and is closed in the Kleinian/abelian class.
 
 \paragraph{Clock differentials.} The clock $\eta$ enters $\mathcal{C}$ through its

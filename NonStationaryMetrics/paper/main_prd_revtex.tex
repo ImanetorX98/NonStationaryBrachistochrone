@@ -386,10 +386,11 @@ $\Ehat=-g^{\rm TK}(u,\partial_\eta)$ drifts at exactly $\mathrm{d}\Ehat/\mathrm{
 an on-shell Kerr orbit at $E_{\rm eff}=\Ehat/A(\eta)$---the rail holds $\Ehat$
 constant to $8.9\times10^{-16}$, the exact analogue of the Vaidya value
 (\texttt{ThakurtaMetric/rail\_conservation.py}). Hence $E_{\rm eff}=\Ehat/A$
-tracks along the orbit, the frozen relation
-$\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J)$ stays exact, and the adiabatic
-correction $\delta\varphi=\int\partial_E F\,\eta\,\mathrm{d}r$ has no missing
-off-shell term.
+(and, by the same conformal weight, $J_{\rm eff}=J/A$) track along the orbit, the
+frozen relation $\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J_{\rm eff})$ stays
+exact, and the adiabatic correction
+$\delta\varphi=-\int(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\mathrm{d}r$ has no
+missing off-shell term.
 
 
 \subsection{Phenomenology: penetration, timing, bounce}
@@ -766,16 +767,24 @@ The transport equation~\eqref{eq:Kdyn} controls the quasi-constant; the
 \emph{orbit shape} $\varphi(r,A)$ itself admits a companion first-order adiabatic
 form~\cite{BornFock1928,BenderOrszag1999} that is explicit up to a single higher
 transcendental. Writing the frozen integrand as
-$F(r;E)=\dd\varphi/\dd r$ (Eq.~\eqref{eq:t-K} for the $t$-branch,
-Eq.~\eqref{eq:tau-sextic} for $\tau$) and linearizing $E_{\rm eff}=\Ehat/A$ in
+$F(r;E_{\rm eff},J_{\rm eff})=\dd\varphi/\dd r$ (Eq.~\eqref{eq:t-K} for the
+$t$-branch, Eq.~\eqref{eq:tau-sextic} for $\tau$) and linearizing the conformal
+weights of \emph{both} Kerr charges---$E_{\rm eff}=\Ehat/A$ and $J_{\rm eff}=J/A$
+carry weight $A^{-1}$ (for $u^{\rm TK}=u^{\rm Kerr}/A$,
+$-g^{\rm TK}(u,\partial_\eta)=A\,E_{\rm eff}$ and
+$g^{\rm TK}(u,\partial_\varphi)=A\,J_{\rm eff}$)---in
 $A(\eta)=A_0(1+\varepsilon\eta+\dots)$, $\varepsilon=A'/A$, gives
 \begin{equation}
-    \varphi(r,A)=\underbrace{\varphi_0(r;E_{\rm eff})}_{\text{frozen, Kleinian}}
+    \varphi(r,A)=\underbrace{\varphi_0(r;E_{\rm eff},J_{\rm eff})}_{\text{frozen, Kleinian}}
     +\varepsilon\big[\mathcal{C}(r)+\psi(r)\big]+O(\varepsilon^2),
     \label{eq:phi-adiab}
 \end{equation}
-where the first-order coefficient is the elapsed-clock--weighted energy
-derivative $\delta\varphi=-\Ehat\!\int\!\partial_E F\,\eta\,\dd r$, and $\eta(r)$
+where the first-order coefficient is the elapsed-clock--weighted \emph{scaling}
+derivative
+$\delta\varphi=-\!\int\!(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\dd r
+=-\!\int\!(E\partial_E+J\partial_J)F\,\eta\,\dd r$ (the $J\,\partial_J F$ term is
+required by axisymmetric momentum conservation; Vaidya keeps only $\partial_m F$),
+and $\eta(r)$
 is the clock the orbit accumulates along the frozen slice: coordinate time
 $\eta=t(r)$ on the $t$-branch, proper time $\eta=\tau(r)=\int\!L_\tau\,\dd r$ with
 $L_\tau=\sqrt{Q/w}$, $Q=\Delta\varphi'^2-2a\beta\varphi'+r^2/(r^2+a^2)$, on the
@@ -783,21 +792,24 @@ $\tau$-branch (the extra $A^{-2}$ of the proper-time functional affects the
 \emph{timing}, not the shape, so Eq.~\eqref{eq:phi-adiab} is common to both
 branches).
 
-The energy derivative reduces to the same depth-one class as $\varphi_0$ itself, by
+The scaling derivative reduces to the same depth-one class as $\varphi_0$ itself, by
 the classical reduction of abelian differentials to first/second
-kind~\cite{BakerAbelian1897,GriffithsHarris1978}.
-Solving $\partial_E(F)=\dd_r[\mathcal{A}(r)/\mathcal{R}]
-+\sum_{k=0}^{4}c_k\,r^k/\mathcal{R}$ for a degree-six numerator $\mathcal{A}(r)$
-and constants $c_k$ ($\mathcal{R}$ the branch sextic radical, $\sqrt{R_6}$ or
+kind~\cite{BakerAbelian1897,GriffithsHarris1978}; $\partial_E F$ and $\partial_J F$
+share the identical basis. Solving $(E\partial_E+J\partial_J)F=\dd_r[\mathcal{A}(r)/\mathcal{R}]
++\sum_{k=0}^{4}c_k\,r^k/\mathcal{R}$ for a degree-five numerator
+$\mathcal{A}(r)=\sum_{i=0}^{5}a_ir^i$ and constants $c_k=\Ehat\,c_k^{E}+J\,c_k^{J}$
+($\mathcal{R}$ the branch sextic radical, $\sqrt{R_6}$ or
 $\sqrt{S}$) yields
 \begin{equation}
-    \partial_E\varphi_0=\frac{\mathcal{A}(r)}{\mathcal{R}}
+    (E\partial_E+J\partial_J)\varphi_0=\frac{\mathcal{A}(r)}{\mathcal{R}}
     +\sum_{k=0}^{4}c_k\!\int\!\frac{r^k\,\dd r}{\mathcal{R}},
     \label{eq:dEphi0}
 \end{equation}
 with \emph{no} third-kind (horizon-pole) contribution: the second-kind reduction
 closes with vanishing polar residues for both branches (verified to machine
-precision). Hence $\mathcal{C}(r)=-\tfrac12\Ehat\,\partial_E\varphi_0\,\eta(r)$ is
+precision), the $J\,\partial_J F$ term adding only its coefficients $c_k^{J}$
+(\texttt{ThakurtaMetric/conformal\_source\_Jterm.py}). Hence
+$\mathcal{C}(r)=-\tfrac12(E\partial_E+J\partial_J)\varphi_0\,\eta(r)$ is
 a product of depth-one objects, closed in the Kleinian/abelian class.
 
 \emph{Clock differentials.} The clock $\eta$ enters $\mathcal{C}$ through its
@@ -863,8 +875,11 @@ is a depth-two iterated integral. Expand $\partial_E\varphi_0$ and $\eta$ in the
 cohomology basis $U_k=\int r^k/\mathcal{R}\,\dd r$: the reduction
 $\partial_E F=N/\mathcal{R}^3$, $N=EJ\,r^4(r-2M)^2 DE$ (the horizon factor $\Delta$
 cancels) gives $\partial_E\varphi_0=\mathcal{A}/\mathcal{R}+\sum_{k=0}^4 c_k U_k$,
-and on $\tau$ $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$. The complete first-order
-coefficient $\delta\varphi=\mathcal{C}+\psi=-\Ehat\int\partial_E F\,\eta\,\dd r$
+and on $\tau$ $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$. The angular piece
+$\partial_J F=N_J/\mathcal{R}^3$ reduces in the same basis and threads through the
+identical shuffle, adding $J\,\partial_J\varphi_0$ to the energy term. The complete
+first-order coefficient
+$\delta\varphi=\mathcal{C}+\psi=-\int(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\dd r$
 reorganizes, with no term discarded, into
 \begin{equation}
     \delta\varphi=
