@@ -206,6 +206,18 @@ controlled, not conserved. The optical reductions of $H$
 reproduce the Randers/Zermelo structure
 \cite{GibbonsRanders2009,CaponioWind}.
 
+\paragraph{Thrust and fuel.} As $a^\mu=Du^\mu/\dd\tau$ is the \emph{proper}
+acceleration (gravity is in the covariant derivative, so a geodesic reads $a=0$),
+the rail force is the thrust per unit mass a rocket must supply; $|a|=\sqrt{a\cdot a}$
+integrates to $\Delta v=\int|a|\dd\tau$ and, via Tsiolkovsky, to a fuel fraction
+$1-e^{-\Delta v/v_{\rm e}}$. A Schwarzschild arc ($E=1.4$, $r:10M\!\to\!5.7M$) gives
+$\Delta v\approx0.6c$ (a photon rocket burns $\sim45\%$ of its mass); $|a|$ diverges
+toward the freezing/horizon surface, so the fuel diverges there
+(\texttt{brachistochrone\_thrust\_fuel.py}). The brachistochrone is the fastest rail
+curve, not the fuel-minimal one (a geodesic costs nothing): this is the price of
+speed at fixed $\Ehat$, the $a\cdot W$ term adding the thrust that fights the
+non-stationary drift.
+
 \paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
 independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and
 the \emph{eccentricity} of its semi-axes (the anisotropy of the local speed,

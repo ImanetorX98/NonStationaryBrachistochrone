@@ -204,6 +204,22 @@ conserved by a symmetry. The optical reductions of $H$
 reproduce the Randers/Zermelo structure
 \cite{GibbonsRanders2009,CaponioWind}.
 
+\paragraph{Operational reading: thrust and fuel.} Since $a^\mu=Du^\mu/\dd\tau$ is the
+\emph{proper} acceleration---the covariant derivative already contains gravity, so a
+free-fall geodesic reads $a=0$ on an accelerometer---the rail force is exactly the
+thrust per unit mass a rocket must supply to fly the brachistochrone. Its magnitude
+$|a|=\sqrt{a\cdot a}\ge0$ ($a$ is spacelike since $a\cdot u=0$) integrates to a
+characteristic velocity $\Delta v=\int|a|\,\dd\tau$ and hence, by the (relativistic)
+Tsiolkovsky relation, to a fuel fraction $1-\exp(-\Delta v/v_{\rm e})$ for exhaust
+speed $v_{\rm e}$. For a representative Schwarzschild arc ($E=1.4$, $r:10M\!\to\!5.7M$)
+one finds $|a|\sim0.03$--$0.2/M$ and $\Delta v\approx0.6\,c$ (a photon rocket burns
+$\sim\!45\%$ of its mass; a chemical one cannot); the proper acceleration diverges as
+the freezing/horizon surface is approached, so the fuel budget diverges there
+(\texttt{brachistochrone\_thrust\_fuel.py}). The brachistochrone is the
+\emph{fastest} rail curve, not the fuel-minimal one---a geodesic costs no fuel---so
+this is the price of speed at fixed $\Ehat$; in the non-stationary case the
+$a\cdot W$ term adds the thrust that fights the accretion/evaporation drift.
+
 \paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
 independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and
 the \emph{eccentricity} of its semi-axes (the anisotropy of the local speed,
