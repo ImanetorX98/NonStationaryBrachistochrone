@@ -552,7 +552,15 @@ $r_d=-3.3637$, branch points $\{-2.083,0,2m,8.727\}$, elliptic modulus $k^2=0.60
 and rectangular nome $\tau=0.90597\,i$ (agreeing to fifteen digits between the
 Legendre form $\tau=iK'/K$ and the Sage period lattice); the horizon $r=2m$, being a
 branch point of $Q_4$, sits at a \emph{two-torsion} point (half the imaginary
-period), so it carries the $\dd\log$ letter of the elliptic dilogarithm. Concretely,
+period), so it carries the $\dd\log$ letter of the elliptic dilogarithm. At these
+parameters $r_d=-3.36<0$: this locus is the \emph{algebraic} genus-degeneration
+$J_{\rm deg}$ (a double root of the sextic where the closed form drops to genus one),
+not a physical external separatrix---the Schwarzschild $\tau$-brachistochrone at
+$E=1.4$ has \emph{no} double root at $r>2m$, hence no external capture$/$scatter
+unstable circular orbit, and $J_{\rm deg}$ must not be conflated with the dynamical
+penetration threshold $J_c(v_0)$. The genus-one Weierstrass reduction that follows is
+purely algebraic and valid regardless of the sign of $r_d$
+(\texttt{separatrix\_classification.py}). Concretely,
 with the Weierstrass $\sigma,\zeta$ of $E$ (built from $\tau$ with base at the
 Weierstrass point, so the involution is $z\to-z$) the weight-one integrals close in
 closed form as third-kind elliptic integrals,
@@ -2157,24 +2165,32 @@ $N_m\to N_\tau$. Tracking uses $N_\tau\to N_\tau+(\dd\Jc/\dd E)N_J$ with
 $N_J=r^3(r-2M)^2DE^2$ ($\Delta$ cancelling identically) and
 $\dd\Jc/\dd E=-E\,\Jc\,r_d/DE(r_d)=-152.96$ (at $M=1,\,a=9/10,\,E_{\rm eff}=6/5$;
 verified against finite differences, block $=$ direct to $10^{-7}$).
-\emph{Coordinate-time ($t$) branch:} curve $R_6=r\,Q_2\,DE$ with $Q_2$ \emph{linear}
-in $J$, so the separatrix condition $\mathrm{Res}_r(Q_2,Q_2')=0$ has \emph{two}
-distinct roots $\Jc^\pm$ ($\Jc^+=+19.089$, $\Jc^-=-18.671$: prograde$/$retrograde
-frame-dragging asymmetry $|\Jc^+|\neq|\Jc^-|$). The clock is the mixed second/third
-kind $\dd t/\dd r=\rho_t/\sqrt{R_6}$, $\rho_t=P_3+R_\Delta/\Delta$
-[Eq.~\eqref{eq:clock-t}], adding a third-kind horizon letter (dilogarithm anchored at
-the images $z(r_\pm)$). Tracking replaces $N_t\to N_t+(\dd\Jc^\pm/\dd E)N_t^J$,
-$N_t=\partial_E(K_t/\sqrt{R_6})R_6^{3/2}$, $N_t^J=\partial_J(K_t/\sqrt{R_6})R_6^{3/2}$,
-while $\rho_t$ is unchanged. From the double root of $Q_2$ ($Q_2'=0$ gives
-$Q_{2,J}\,\dd\Jc+Q_{2,E}\,\dd E=0$),
+\emph{Coordinate-time ($t$) branch:} curve $R_6=r\,Q_2\,DE$ with $Q_2$
+\emph{quadratic} in $J$ (it carries $J^2$ and $(J-a)^2$ terms---not linear), so the
+discriminant $\mathrm{Res}_r(Q_2,\partial_r Q_2)=0$ has \emph{six} real roots that
+must be classified by the sign and location of the associated double root $r_d$
+(script \texttt{separatrix\_classification.py}). Only an \emph{external} double
+root $r_d>r_+$, at which two real turning points \emph{merge}, is a physical
+separatrix (capture$/$scatter boundary): this is the retrograde $\Jc^-=-8.054$
+($r_d=+3.514>2M$) of Eq.~\eqref{eq:Jc-minus}, consistent with the body, plus a
+prograde \emph{ergospheric} branch $\Jc=+2.936$ at $r_+<r_d=1.512<2M$. The large
+roots $\Jc=+19.089,\,-18.671$ instead sit at $r_d=-6.62,\,-6.59<0$: these are
+\emph{algebraic genus-degenerations} $J_{\rm deg}$ (the sextic drops to genus one
+and the Weierstrass reduction still closes) but \emph{not} physical separatrices---
+no external turning-point merger, no divergent radial period, and they must not be
+conflated with the dynamical penetration threshold $J_c(v_0)$. The clock is the
+mixed second/third kind $\dd t/\dd r=\rho_t/\sqrt{R_6}$, $\rho_t=P_3+R_\Delta/\Delta$
+[Eq.~\eqref{eq:clock-t}], adding a third-kind horizon letter. On the physical branch
+$\Jc^-$ the corrected conformal source (Sec.~\ref{sec:thakurta}, with the
+$J\,\partial_J F$ term) gives $b=(b_1,b_2,b_3)=(-0.685,-0.074,-0.0035)$ and the
+\emph{tame} separatrix drift
 \begin{equation}
-\frac{\dd\Jc^\pm}{\dd E}=-\frac{\partial_E Q_2}{\partial_J Q_2}\bigg|_{(r_d,\Jc^\pm)}
-=\begin{cases}-148.542 & (\text{prograde}),\\ +150.328 & (\text{retrograde}),\end{cases}
+\frac{\dd\Jc^-}{\dd E}=-\frac{\partial_E Q_2}{\partial_J Q_2}\bigg|_{(r_d,\Jc^-)}=+2.44
 \end{equation}
-again asymmetric (the two magnitudes differ), verified against finite differences;
-the block assembly reproduces the direct integral to $10^{-7}$ ($16$/$18$ horizon
-dilogarithms for the two signs). All tracking coefficients are again closed-form
-residues, symbolic in $(M,a,E,r_d,\Jc)$.
+(the earlier $\mp148$--$150$ magnitudes belonged to the unphysical $J_{\rm deg}$
+roots at $r_d<0$). All tracking coefficients are closed-form residues, symbolic in
+$(M,a,E,r_d,\Jc)$; the triple-pole cancellation below is an algebraic identity at
+\emph{any} double root, hence holds on the physical branch as well.
 
 \paragraph{Tracking cancels the triple pole.}
 A clean structural consequence closes the logic: at the double root the tracked

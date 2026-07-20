@@ -543,7 +543,12 @@ tabulated elliptic (Bloch--Wigner) dilogarithm on $E:w^2=Q_4$---the maximally
 explicit reusable form. For $m=1,E=1.4$: $\Jc=7.0266$, $r_d=-3.3637$, branch points
 $\{-2.083,0,2m,8.727\}$, $k^2=0.6067$, rectangular nome $\tau=0.90597\,i$ (Legendre
 $iK'/K$ and Sage lattice agree to fifteen digits); the horizon $r=2m$ is a branch
-point of $Q_4$, hence a two-torsion point carrying the elliptic $\dd\log$ letter. With
+point of $Q_4$, hence a two-torsion point carrying the elliptic $\dd\log$ letter.
+Here $r_d<0$: this locus is the \emph{algebraic} genus-degeneration $J_{\rm deg}$
+(a double root of the sextic), not a physical external separatrix---at $E=1.4$ the
+Schwarzschild $\tau$-brachistochrone has no double root at $r>2m$; the reduction is
+algebraic and valid for any sign of $r_d$, and $J_{\rm deg}$ is distinct from the
+dynamical penetration threshold $J_c(v_0)$ (\texttt{separatrix\_classification.py}). With
 the Weierstrass $\sigma,\zeta$ of $E$ (base at the Weierstrass point, involution
 $z\to-z$) the weight-one integrals close as third-kind elliptic integrals,
 $U_0=\rho[\ln\sigma(z-z_d)-\ln\sigma(z+z_d)]+Cz$, residue $\rho=1/\sqrt{Q_4(r_d)}$ and
