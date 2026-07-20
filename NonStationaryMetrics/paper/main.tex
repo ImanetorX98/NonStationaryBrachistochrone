@@ -141,6 +141,22 @@ Every branch---arrival time $t$, proper time $\tau$, conformal time $\eta$---sha
 this \emph{same} indicatrix; the branches differ only in the cost one-form, i.e.\
 in which clock measures the elapsed travel time.
 
+\paragraph{Domain of the indicatrix.} The intersection~\eqref{eq:ellipse} is a
+compact, strictly convex oval---the hypothesis under which the Pontryagin reduction
+below applies---precisely where the selector $W$ is \emph{timelike} and the quadric
+intersection is nondegenerate. Three loci require separate treatment. (i) At the
+freezing surface the oval collapses to a point, $R\to0$ (the strict convexity
+degenerates; this is the turning-point/separatrix locus). (ii) At the horizon the
+radial metric coefficient degenerates. (iii) For Thakurta--Kerr inside the
+\emph{ergosphere}, $\partial_\eta$---hence $W$---becomes spacelike, so
+$-u\cdot W=\Ehat$ fixes a \emph{spatial} component of $u$ and the intersection with
+the mass shell is no longer automatically a compact oval in the PMP sense. The local
+theorems of this section are therefore stated in the timelike-$W$, nondegenerate
+domain; the ergosphere is reached by analytic continuation of the closed forms
+(Sec.~\ref{sec:trichotomy}, where the penetrating $t$-branch is analyzed
+explicitly), equivalently by re-anchoring the selector to a timelike congruence
+(Doran/ZAMO), which leaves the equatorial closed forms unchanged.
+
 \paragraph{Pontryagin reduction.} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.
 The admissible-velocity set is already compact and convex (the oval), so its
@@ -153,28 +169,38 @@ $H(x,p)=\max_\theta p\cdot\dot x(\theta)$ in closed form
 control problem, for which the Pontryagin (vakonomic-type) reduction is the correct
 prescription; we do not invoke the nonholonomic d'Alembert principle, whose
 equations differ from the vakonomic ones unless the constraint distribution is
-integrable---a coincidence that convexity does not entail. Two structural facts hold throughout: the transversality
-condition
+integrable---a coincidence that convexity does not entail. Two structural facts hold throughout: $p_\varphi=J$ is conserved (axial symmetry),
+and the free-arrival-time transversality fixes the branch Hamiltonian to vanish
+\emph{at the free endpoint},
 \begin{equation}
-    H=0 \qquad\text{(free arrival time),}
+    H\big|_{s=s_f}=0 \qquad\text{(free arrival time).}
     \label{eq:transversality}
 \end{equation}
-and $p_\varphi=J$ conserved (axial symmetry). In the stationary limit $H$ is
-autonomous and $H\equiv0$ is a genuine first integral; non-stationarity enters
-only through the explicit time dependence $\dd H/\dd(\text{time})=
-\partial_{\text{time}}H$, proportional to $m'(v)$ (Vaidya) or $A'(\eta)$
-(Thakurta--Kerr).
+For a non-autonomous system $H$ is \emph{not} a global first integral: along the
+extremal $\dd H/\dd s=\partial_s H$, proportional to $m'(v)$ (Vaidya) or $A'(\eta)$
+(Thakurta--Kerr), so $H\neq0$ in the interior---consistently, $p_v(r_1)=0$ at the
+free arrival radius yet $p_v(r)\neq0$ along the path (Fig.~\ref{fig:vaidya-traj}).
+The globally conserved object is the extended Hamiltonian $\mathcal H=p_s+H=0$ on
+the enlarged phase space, with $p_s$ conjugate to the evolution parameter $s$; only
+in the stationary limit is $H$ autonomous and $H\equiv0$ a genuine first integral.
 
-\paragraph{Cost of control.} Differentiating the invariant along the worldline,
+\paragraph{Cost of control.} For an accelerated worldline with rail four-force
+$a^\mu=Du^\mu/\dd\tau$, differentiating the invariant gives the \emph{exact}
+identity
 \begin{equation}
-    \frac{\dd(-u\cdot W)}{\dd\tau}=-\,u^a u^b\,\nabla_{(a}W_{b)},
+    \frac{\dd(-u\cdot W)}{\dd\tau}=-\,a\cdot W-u^a u^b\,\nabla_{(a}W_{b)},
     \label{eq:cost}
 \end{equation}
-which vanishes for \emph{all} $u$ iff $W$ satisfies the Killing equation. When it
-does not, the right-hand side is the power the rail force must supply to hold
-$\Ehat$ fixed: the control cost equals the failure of the Killing equation, i.e.\
-the missing symmetry. This is why the non-stationary rail is legitimate but not
-free---$\Ehat$ is controlled, not conserved. The optical reductions of $H$
+whose two terms play distinct roles. The rail force is \emph{magnetic-type} in the
+kinetic sense $a\cdot u=0$: it does no work on the particle and preserves the mass
+shell $u\cdot u=-1$, but it is free to exert power \emph{against the selector} $W$.
+A free geodesic ($a=0$) would let $-u\cdot W$ drift at $-u^au^b\nabla_{(a}W_{b)}$,
+which vanishes for all $u$ iff $W$ satisfies the Killing equation; to hold
+$-u\cdot W=\Ehat$ fixed the rail supplies exactly $a\cdot W=-u^au^b\nabla_{(a}W_{b)}$,
+so that the left-hand side of~\eqref{eq:cost} is zero. This control power equals the
+failure of the Killing equation---the missing symmetry---which is why the
+non-stationary rail is legitimate but not free: $\Ehat$ is actively controlled, not
+conserved by a symmetry. The optical reductions of $H$
 reproduce the Randers/Zermelo structure
 \cite{GibbonsRanders2009,CaponioWind}.
 
@@ -534,7 +560,14 @@ centred at $r=2m$ instead of infinity; and
 the \emph{horizon dilogarithms} $\mathcal{D}_k=\int U_k/(r-2m)\,\dd r$. Since $r=2m$
 is a branch point of $S$, in the local uniformiser $t=\sqrt{r-2m}$ one has
 $\dd r/(r-2m)=2\,\dd t/t$: a \emph{simple} pole of residue two, i.e.\ a genuine
-third-kind letter $\dd\log$ anchored \emph{at the horizon}. Its elementary primitive
+third-kind letter $\dd\log$ anchored \emph{at the horizon}. On the compact
+genus-two curve this pole cannot stand alone: by the residue theorem the
+differential $\dd r/(r-2m)$ carries residue $+2$ at the horizon Weierstrass point
+and compensating residues $-1$ at each of the two points at infinity $\infty_\pm$ of
+the sextic ($\dd r/(r-2m)\sim-\dd s/s$ in $s=1/r$ on each sheet), so the residues sum
+to zero. ``$\dd\log$ at the horizon'' names the horizon part of this divisor; the
+Fay/prime-form ($\theta$-ratio) representation of the third-kind differential carries
+the full divisor $2\,(r{=}2m)-\infty_+-\infty_-$. Its elementary primitive
 is $\int\dd r/(r-2m)=\ln(r-2m)$, so one integration by parts closes $\mathcal{D}_k$
 onto a \emph{single} weight-two letter (verified to $10^{-12}$),
 \begin{equation}
