@@ -377,6 +377,20 @@ path, so the turning point \emph{anticipates future accretion}
     \label{fig:kodama}
 \end{figure}
 
+\paragraph{Sanity check: rail energy in Thakurta--Kerr.} The same test applies
+to Thakurta--Kerr, where---the geometry being only axisymmetric---no Kodama
+vector exists and the rail invariant is tied instead to the conformal Killing
+vector $\partial_\eta$ (factor $A'/A$). On a \emph{geodesic} the energy
+$\Ehat=-g^{\rm TK}(u,\partial_\eta)$ drifts at exactly $\mathrm{d}\Ehat/\mathrm{d}\tau=A'/A$
+(numerically to $\sim\!10^{-11}$); on the \emph{brachistochrone}---instantaneously
+an on-shell Kerr orbit at $E_{\rm eff}=\Ehat/A(\eta)$---the rail holds $\Ehat$
+constant to $8.9\times10^{-16}$, the exact analogue of the Vaidya value
+(\texttt{ThakurtaMetric/rail\_conservation.py}). Hence $E_{\rm eff}=\Ehat/A$
+tracks along the orbit, the frozen relation
+$\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J)$ stays exact, and the adiabatic
+correction $\delta\varphi=\int\partial_E F\,\eta\,\mathrm{d}r$ has no missing
+off-shell term.
+
 
 \subsection{Phenomenology: penetration, timing, bounce}
 \label{sec:vaidya-pheno}
