@@ -155,12 +155,16 @@ in which clock measures the elapsed travel time.
 
 \paragraph{Pontryagin reduction.} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.
-Since the admissible-velocity set is a smooth strictly convex oval, the maximizer
-of $p\cdot\dot x(\theta)$ is unique and Pontryagin's maximum principle
-\cite{Pontryagin,Liberzon} delivers the branch Hamiltonian $H(x,p)$ in closed
-form (Secs.~\ref{sec:vaidya}--\ref{sec:thakurta}); the convex-oval regularity
-makes the vakonomic and d'Alembert formulations coincide, so no Filippov
-relaxation is needed. Two structural facts hold throughout: the transversality
+The admissible-velocity set is already compact and convex (the oval), so no
+Filippov convexification is needed; and since it is \emph{strictly} convex the
+maximizer of $p\cdot\dot x(\theta)$ is unique, so the optimal control is
+single-valued and smooth and Pontryagin's maximum principle
+\cite{Pontryagin,Liberzon} delivers $H(x,p)=\max_\theta p\cdot\dot x(\theta)$ in
+closed form (Secs.~\ref{sec:vaidya}--\ref{sec:thakurta}). Being a genuine
+time-optimal control problem, the correct prescription is the Pontryagin
+(vakonomic-type) one; we do not invoke the nonholonomic d'Alembert principle, whose
+equations differ unless the constraint distribution is integrable---which convexity
+does not entail. Two structural facts hold throughout: the transversality
 condition
 \begin{equation}
     H=0 \qquad\text{(free arrival time),}
