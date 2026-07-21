@@ -396,7 +396,9 @@ Hamiltonians
 \end{align}
 The $\tau$-branch is the $v$-branch under $p_r\to p_r+1/\Ehat$ with unit cost
 replaced by $\Ehat$. Non-stationarity is the explicit dependence
-$\dd H/\dd v=\partial_v H\propto m'(v)$; the teleological momentum $p_v=-H$
+$\dd H/\dd v=\partial_v H\propto m'(v)$; the \emph{teleological}
+(here: \emph{endpoint-sensitive}, from the free-future two-point problem---not
+causal) momentum $p_v=-H$
 satisfies $p_v(r_1)=0$ at the free arrival radius yet $p_v(r)\neq0$ along the
 path, so the turning point \emph{anticipates future accretion}
 (Fig.~\ref{fig:vaidya-traj}).
@@ -404,7 +406,8 @@ path, so the turning point \emph{anticipates future accretion}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_kodama_conservazione.png}
-    \caption{Kodama energy $-u\cdot K=\Ehat$ conserved along the
+    \caption{Kodama energy $-u\cdot K=\Ehat$ held constant (actively
+    rail-controlled, not a Noether constant) along the
     $\tau$-brachistochrone to $6.7\times10^{-16}$ (top); the free-particle
     drift $\propto m'$ that the rail cancels (bottom).}
     \label{fig:kodama}
@@ -479,9 +482,14 @@ at periapsis, $f_*=1-2m(v_{\rm peri})/r_{\min}$:
 \end{align}
 plus a genuine $O(m')$ correction from the teleological momentum $p_v$. The
 static ratio $J^2_t/J^2_\tau=\Ehat^2/f^2>1$ gives $r_{\min}^t<r_{\min}^\tau$
-(``$t$ deeper''), robust for physical evaporation: \emph{there is no physical
-evaporative inversion} (the apparent linear-model inversion is an artifact of
-$m\le0$).
+(``$t$ deeper''), a \emph{branch-intrinsic} ordering set by $\Ehat/f>1$ alone,
+independent of the sign of $m'$ and of the ingoing/outgoing flux. Physical
+evaporation is not the ingoing metric with $m'<0$ but the \emph{outgoing} Vaidya
+metric $\dd s^2=-f\dd u^2-2\dd u\,\dd r$ (retarded $u$), derived and compared
+below (Eq.~\eqref{eq:vaidya-asymmetry}); there the depth ordering is unchanged, so
+\emph{there is no physical evaporative inversion}. The apparent linear-model
+``inversion'' from flipping $m'<0$ in the \emph{ingoing} model is an unphysical
+artifact of extrapolating to $m\le0$.
 
 \begin{figure}[ht]
     \centering
@@ -642,7 +650,7 @@ ergosphere $\re=2M$ is crossed regularly, while the freezing surface
 $A^2 f=\Ehat^2$ breathes.
 
 \paragraph{Indicatrix and Hamiltonians.} Equatorially, write
-$\Delta=r^2-2Mr+s^2$, $\bar v^2=1-A^2f/\Ehat^2$, and
+$\Delta=r^2-2Mr+a^2$, $\bar v^2=1-A^2f/\Ehat^2$, and
 $\bar P=P+A^2(2Ms/r)^2/\Ehat^2$ with $P=r^2+s^2+2Ms^2/r$. The rail
 $\Ehat=-u_\eta$ makes the indicatrix an ellipse with an \emph{azimuthal} wind
 (frame dragging),
@@ -698,8 +706,8 @@ reduction is thus a Zermelo problem with a time-dependent landscape in which onl
 the metric term breathes, not the wind. It degenerates at the ergosphere ($f=0$,
 where $1/F$ is intrinsic, as for stationary Kerr) even though the
 Hamiltonian~\eqref{eq:Heta} remains regular there; the limits $\Ehat\to\infty$
-(null Kerr optics), $A=1$ (stationary Perlick on Kerr), $s=0$
-(Thakurta--Schwarzschild) and $M=s=0$ ($n=1/v$, FLRW) are all recovered.
+(null Kerr optics), $A=1$ (stationary Perlick on Kerr), $a=0$
+(Thakurta--Schwarzschild) and $M=a=0$ ($n=1/v$, FLRW) are all recovered.
 
 
 
@@ -724,14 +732,14 @@ universal ratio $n_t/n_\tau=E/f$ ($E=\Ehat$ for Vaidya, $E_{\rm eff}=\Ehat/A$ fo
 Thakurta--Kerr); (iii) non-stationarity makes only $\alpha,n$ \emph{breathe}
 (through $m(v)$ or $A(\eta)$), while $\beta$ is rigid. FLRW is the degenerate top
 of the ladder: $n$ is position-independent so all three branches share the same
-(straight) geodesic. The $s=0$ limit of the Thakurta $\tau$-row reproduces the
-static Vaidya $\tau$-row, and $M=s=0$ (or $m=0$) gives $n=1/v$, FLRW.
+(straight) geodesic. The $a=0$ limit of the Thakurta $\tau$-row reproduces the
+static Vaidya $\tau$-row, and $M=a=0$ (or $m=0$) gives $n=1/v$, FLRW.
 
 \begin{table*}[t]
     \centering
     \caption{Branch optical (Randers) metrics $\dd(\text{cost})=n\,\alpha+\beta$.
-    Here $f=1-2m(v)/r$ (Vaidya) or $1-2M/r$ (Thakurta, with spin $s$,
-    $\Delta=r^2-2Mr+s^2$), $w=\Ehat^2-f$, $w_A=\Ehat^2-A^2f$. The wind $\beta$
+    Here $f=1-2m(v)/r$ (Vaidya) or $1-2M/r$ (Thakurta, with spin $a$,
+    $\Delta=r^2-2Mr+a^2$), $w=\Ehat^2-f$, $w_A=\Ehat^2-A^2f$. The wind $\beta$
     acts on the native/arrival branch ($v$ for Vaidya, $\eta,t$ for Thakurta);
     $\tau$ is always Riemannian-pure ($\beta_\tau=0$). Native indices:
     $n_v=n_t^{\rm V}$ (Vaidya), $n_\eta=\Ehat/\sqrt{w_A}$ (Thakurta). FLRW is
