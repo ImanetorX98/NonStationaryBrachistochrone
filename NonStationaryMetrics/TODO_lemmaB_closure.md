@@ -173,6 +173,33 @@ sfrutta la CONCENTRAZIONE di -W' vicino al turning (il bound uniforme -W'(2x) pe
 Log-convessita' di W: `W W''-(W')^2` ha numeratore polinomiale (in schw_Wode.py) da
 certificare positivo (SOS/Sturm) — ingrediente, non chiusura.
 
+## ROUTE B TENTATA (stima concentrazione -W') — MURO CONFERMATO trascendente
+Scripts: `/tmp/schw_cheb.py`, `/tmp/schw_cheb2.py` (antideriv. kernel verificata 1e-14).
+Riformulazione pulita via W(V0)=W(x)-int_x^{V0}(-W'):  serve
+```
+int_x^{V0} (-W'(t)) ker(t) dt  >  W(x)(V0-2x)/sqrt(V0-x),
+ker(t)=(2x-t)/sqrt(t-x)+(V0-2x)/sqrt(V0-x)  > 0 su (x,V0), ->0 a t=V0, ->+inf a t=x.
+```
+`ker` e `-W'` ENTRAMBE positive decrescenti => Chebyshev integrale applicabile. Integrali
+esatti: int_x^{V0} ker dt = sqrt(V0-x)(V0+2x)/3. Chebyshev singolo intervallo da':
+```
+int(-W')ker >= (W(x)-W(V0))(V0+2x)/(3 sqrt(V0-x))  =>  chiude sse  2W(x)(4x-V0) >= W(V0)(V0+2x)
+```
+cioe' soglia ~V0/4 (in pratica ~x/V0≈0.3-0.35 per il termine W(V0)). Chebyshev e' lo
+strumento OTTIMALE per due funzioni monotone concordi => non si fa meglio senza sfruttare
+la FORZA della concentrazione, non solo la monotonia.
+- Split multi-intervallo: converge al vero (che sta sopra bnd) ma margine->0 a r_pk =>
+  nessun numero FINITO di split chiude uniformemente.
+- Bound uniforme -W'(2x), convessita' W, Phi''<0 a critico (=d/dx[sqrt(x)Phi']<0, unico
+  termine ostile A2=int W''(2x-t)/sqrt(t-x)dt concentrato a t=x): tutti stesso muro.
+- **Vpk CRESCE con r0** (r0=10->Vpk~2.46; r0=20->6.08; Vpk/V0->0, Vpk~V0^0.54): la regione
+  tight INSEGUE r_pk che si sposta => nessun trucco a regione fissa. r0=inf e' monotono
+  (nessun critico): margine->0 in quel limite.
+CONCLUSIONE ROUTE B: la chiusura NON e' elementare (confermato, non solo congetturato).
+Restano solo: (i) proof computer-assistito (interval arithmetic) su range compatto di
+(E,r0) = teorema onesto per range fisico stabilito, non pen-and-paper, non tutti r0;
+(ii) stima trascendente ad hoc con idea nuova (le vie standard sono esaurite).
+
 ## Stato
 Lemma A: **chiuso**. Lemma B (congelato Schwarzschild): **forma chiusa di Phi' provata**;
 monotonia **elementare per x>=V0/4** (=> pienamente elementare per r0<=R*(E)); ridotta a
