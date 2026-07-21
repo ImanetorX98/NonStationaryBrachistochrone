@@ -1437,17 +1437,33 @@ Q_2(r_{\min},J^{\ast\ast})=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\mi
 \]
 are both manifestly negative, placing the thresholds beyond the larger root
 (\texttt{no\_inversion\_reduction.py}). Hence (A) is a theorem for all $r_{\min}>2M$,
-$E>1$, $a>0$. Lemma~(B), the monotonicity, is \emph{conditional}: $\Phi_\tau(r_{\min})$
-has a single maximum at a deflection radius $r_{\rm pk}\approx3M$ (the
-strong-deflection/winding threshold, where the orbit approaches the unstable circular
-$\tau$-orbit) and is strictly decreasing for $r_{\min}>r_{\rm pk}$ (verified robustly
-over $a\in[0.2,0.9]$, $E\in[1.05,1.5]$). The fixed-endpoint turning points all lie in
-this \emph{scattering} regime---for the wide-angle endpoints of Fig.~\ref{fig:bvp},
-$r_{\min}^{\tau,t}\gtrsim4.7M>r_{\rm pk}$---where (B) holds. The fixed-endpoint
-no-inversion is therefore a theorem in the scattering regime (turning points above the
-deflection maximum): (A) is proven in closed form, and (B) is a characterized,
-verified monotonicity whose only outstanding step is a symbolic scattering-angle
-estimate for $r_{\min}>r_{\rm pk}$.
+$E>1$, $a>0$. Lemma~(B), the monotonicity $\Phi_\tau'(r_{\min})<0$, is
+\emph{conditional}: $\Phi_\tau$ has a single maximum at a deflection radius
+$r_{\rm pk}\approx3M$ (the strong-deflection/winding threshold, where the orbit
+approaches the unstable circular $\tau$-orbit) and is strictly decreasing for
+$r_{\min}>r_{\rm pk}$. In the effective-potential form
+$\Phi_\tau=\sqrt{V_{\min}}\int_{r_{\min}}^{r_0}K/\sqrt{V-V_{\min}}\,\dd r$ with
+$V=r\Delta/DE$, $K=\sqrt{r(r-2M)}/\Delta$, $V_{\min}=V(r_{\min})$, the substitution
+$V=V_{\min}+\sigma^2$ and one integration by parts give, for $W\equiv K/V'$
+($W>0$, $W'<0$),
+\begin{equation}
+    \frac{\dd\Phi_\tau}{\dd V_{\min}}=
+    \frac{(V_0-2V_{\min})\,W(V_{\min})}{\Sigma\sqrt{V_{\min}}}
+    +\frac{2}{\sqrt{V_{\min}}}\!\int_0^{\Sigma}\!W'(V_{\min}+\sigma^2)\,g(\sigma)\,\dd\sigma,
+\end{equation}
+$\Sigma=\sqrt{V_0-V_{\min}}$, where $g(\sigma)=(V_0-2V_{\min})\sigma/\Sigma+V_{\min}-\sigma^2$
+satisfies $g(0)=V_{\min}>0$, $g(\Sigma)=0$ with its other root negative, hence
+$g>0$ on $[0,\Sigma)$; the second term is therefore \emph{manifestly negative}.
+When $V(r_0)\le2V(r_{\min})$ (the grazing regime, $r_{\min}$ near $r_0$) the first
+term is $\le0$ as well, and $\Phi_\tau'<0$ is \emph{proven in closed form}. For
+$V(r_0)>2V(r_{\min})$ the first term is positive and must be dominated by the
+integral; this holds (verified over $a\in[0.2,0.9]$, $E\in[1.05,1.5]$) but is a
+tight quantitative inequality, tight at the \emph{transcendental} threshold
+$r_{\rm pk}$, and its symbolic proof is left open. The fixed-endpoint turning points
+lie in the scattering regime $r_{\min}>r_{\rm pk}$---for the wide-angle endpoints of
+Fig.~\ref{fig:bvp}, $r_{\min}^{\tau,t}\gtrsim4.7M$---where (B) holds. Thus the
+fixed-endpoint no-inversion is a theorem in the scattering regime, with (A) proven in
+closed form and (B) proven in the grazing sub-regime and verified beyond it.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint

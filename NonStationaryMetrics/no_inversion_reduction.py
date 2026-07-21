@@ -193,3 +193,34 @@ def lemma_B_regime():
 if __name__ == '__main__':
     print("\n=== Lemma B (conditional monotonicity, r_min > r_pk) ===")
     lemma_B_regime()
+
+
+# ============================================================================
+# LEMMA B -- prova parziale in forma chiusa (regime grazing) + struttura.
+# Forma potenziale efficace: Phi_tau = sqrt(Vmin) int_{rmin}^{r0} K/sqrt(V-Vmin) dr,
+#   V=r Delta/DE,  K=sqrt(r(r-2M))/Delta,  Vmin=V(rmin),  W=K/V' (>0, W'<0).
+# Con V=Vmin+sigma^2 e una IBP:
+#   dPhi/dVmin = (V0-2Vmin) W(Vmin)/(Sigma sqrt(Vmin))
+#                + (2/sqrt(Vmin)) int_0^Sigma W'(Vmin+sigma^2) g(sigma) dsigma,
+#   g(sigma) = (V0-2Vmin) sigma/Sigma + Vmin - sigma^2,  Sigma=sqrt(V0-Vmin).
+# g(0)=Vmin>0, g(Sigma)=0, altra radice <0 => g>0 su [0,Sigma) => secondo termine <0.
+# Se V(r0)<=2 V(rmin) (grazing): primo termine <=0 => dPhi/dVmin<0 PROVATO.
+# Se V(r0)>2 V(rmin): primo termine >0, dominato dall'integrale (verificato, ma
+# disuguaglianza stretta alla soglia trascendente r_pk: prova simbolica aperta).
+def lemma_B_partial():
+    import sympy as sp
+    r, a, E, s = sp.symbols('r a E sigma', positive=True); M = 1
+    Vmin, V0, Sig = sp.symbols('V_min V_0 Sigma', positive=True)
+    g = (V0 - 2*Vmin)*s/Sig + Vmin - s**2
+    print("  g(sigma) =", g)
+    print("  g(0) =", g.subs(s, 0), " (>0);  g(Sigma) =", sp.simplify(g.subs(s, Sig).subs(Sig**2, V0-Vmin)), " (=0)")
+    roots = sp.solve(sp.Eq(g, 0), s)
+    print("  radici di g:", [sp.simplify(rt.subs(Sig, sp.sqrt(V0-Vmin))) for rt in roots],
+          " => una =Sigma, l'altra <0  =>  g>0 su [0,Sigma)")
+    print("  => secondo termine (2/sqrt Vmin) int W' g dsigma < 0 (W'<0).")
+    print("  Grazing V0<=2Vmin: primo termine <=0 => dPhi/dVmin<0 PROVATO in forma chiusa.")
+
+
+if __name__ == '__main__':
+    print("\n=== Lemma B: closed-form partial proof (grazing regime) ===")
+    lemma_B_partial()

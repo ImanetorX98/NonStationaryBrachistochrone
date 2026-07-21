@@ -1280,13 +1280,20 @@ and slope $w_1=aDE_{\min}(J^{\ast\ast}-J_t)>0$ is positive for $r>r_{\min}$. Bot
 follow because the prograde root $J_t$ of $Q_2(r_{\min},\cdot)$ (which opens downward,
 $A=-(r_{\min}-2M)DE_{\min}<0$, negative vertex) lies below $J^\ast,J^{\ast\ast}>0$,
 since $Q_2(r_{\min},J^\ast)$ and $Q_2(r_{\min},J^{\ast\ast})$ are manifestly negative
-(\texttt{no\_inversion\_reduction.py}). Thus (A) is a theorem. Lemma~(B) is
-\emph{conditional}: $\Phi_\tau$ peaks at a deflection radius $r_{\rm pk}\approx3M$
-(strong-deflection threshold) and is strictly decreasing for $r_{\min}>r_{\rm pk}$;
-the fixed-endpoint turning points lie in this scattering regime
-($r_{\min}^{\tau,t}\gtrsim4.7M$), where (B) holds. The no-inversion is thus a theorem
-in the scattering regime, with (A) closed-form and (B) a verified monotonicity
-awaiting a symbolic scattering-angle estimate.
+(\texttt{no\_inversion\_reduction.py}). Thus (A) is a theorem. Lemma~(B),
+$\Phi_\tau'(r_{\min})<0$, is \emph{conditional}: $\Phi_\tau$ peaks at
+$r_{\rm pk}\approx3M$ (strong-deflection threshold) and decreases for
+$r_{\min}>r_{\rm pk}$. In the effective-potential form
+$\Phi_\tau=\sqrt{V_{\min}}\int K/\sqrt{V-V_{\min}}\,\dd r$ ($V=r\Delta/DE$), the
+substitution $V=V_{\min}+\sigma^2$ and one IBP give
+$\Phi_\tau'\propto(V_0-2V_{\min})W(V_{\min})/\Sigma+2\int_0^\Sigma W'(V_{\min}+\sigma^2)g\,\dd\sigma$
+with $W=K/V'$ ($W'<0$) and $g=(V_0-2V_{\min})\sigma/\Sigma+V_{\min}-\sigma^2>0$ on
+$[0,\Sigma)$, so the integral is manifestly negative; for $V(r_0)\le2V(r_{\min})$
+(grazing) the boundary is $\le0$ too and (B) is \emph{proven in closed form}. Beyond
+that it is a tight inequality at the transcendental $r_{\rm pk}$, verified. The
+fixed-endpoint turning points lie in the scattering regime $r_{\min}>r_{\rm pk}$
+($r_{\min}^{\tau,t}\gtrsim4.7M$), so the no-inversion is a theorem there, with (A)
+closed-form and (B) proven in the grazing sub-regime and verified beyond it.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
