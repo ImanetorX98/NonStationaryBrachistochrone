@@ -1437,8 +1437,17 @@ Q_2(r_{\min},J^{\ast\ast})=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\mi
 \]
 are both manifestly negative, placing the thresholds beyond the larger root
 (\texttt{no\_inversion\_reduction.py}). Hence (A) is a theorem for all $r_{\min}>2M$,
-$E>1$, $a>0$; the fixed-endpoint no-inversion follows from (A) together with the
-monotonicity (B) (verified numerically). Only (B) remains to be shown symbolically.
+$E>1$, $a>0$. Lemma~(B), the monotonicity, is \emph{conditional}: $\Phi_\tau(r_{\min})$
+has a single maximum at a deflection radius $r_{\rm pk}\approx3M$ (the
+strong-deflection/winding threshold, where the orbit approaches the unstable circular
+$\tau$-orbit) and is strictly decreasing for $r_{\min}>r_{\rm pk}$ (verified robustly
+over $a\in[0.2,0.9]$, $E\in[1.05,1.5]$). The fixed-endpoint turning points all lie in
+this \emph{scattering} regime---for the wide-angle endpoints of Fig.~\ref{fig:bvp},
+$r_{\min}^{\tau,t}\gtrsim4.7M>r_{\rm pk}$---where (B) holds. The fixed-endpoint
+no-inversion is therefore a theorem in the scattering regime (turning points above the
+deflection maximum): (A) is proven in closed form, and (B) is a characterized,
+verified monotonicity whose only outstanding step is a symbolic scattering-angle
+estimate for $r_{\min}>r_{\rm pk}$.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint

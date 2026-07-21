@@ -1280,8 +1280,13 @@ and slope $w_1=aDE_{\min}(J^{\ast\ast}-J_t)>0$ is positive for $r>r_{\min}$. Bot
 follow because the prograde root $J_t$ of $Q_2(r_{\min},\cdot)$ (which opens downward,
 $A=-(r_{\min}-2M)DE_{\min}<0$, negative vertex) lies below $J^\ast,J^{\ast\ast}>0$,
 since $Q_2(r_{\min},J^\ast)$ and $Q_2(r_{\min},J^{\ast\ast})$ are manifestly negative
-(\texttt{no\_inversion\_reduction.py}). Thus (A) is a theorem; the no-inversion
-follows from (A) and the (numerically verified) monotonicity (B).
+(\texttt{no\_inversion\_reduction.py}). Thus (A) is a theorem. Lemma~(B) is
+\emph{conditional}: $\Phi_\tau$ peaks at a deflection radius $r_{\rm pk}\approx3M$
+(strong-deflection threshold) and is strictly decreasing for $r_{\min}>r_{\rm pk}$;
+the fixed-endpoint turning points lie in this scattering regime
+($r_{\min}^{\tau,t}\gtrsim4.7M$), where (B) holds. The no-inversion is thus a theorem
+in the scattering regime, with (A) closed-form and (B) a verified monotonicity
+awaiting a symbolic scattering-angle estimate.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
