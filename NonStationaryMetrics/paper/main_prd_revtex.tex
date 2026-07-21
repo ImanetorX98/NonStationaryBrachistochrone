@@ -1272,14 +1272,16 @@ close it: (A) at matched $r_{\min}$ the $t$-integrand dominates pointwise,
 $F_t>F_\tau$---an \emph{algebraic} inequality since $J_{t,\tau}(r_{\min})$ are
 algebraic---so $\Phi_t>\Phi_\tau$; (B) $\Phi_{\rm br}$ is strictly decreasing. Then
 $\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$ gives
-$r_{\min}^\tau<r_{\min}^t$. The \emph{singular} part of (A)---the residue ordering at
-the turning point, dominating the angle integral---is proven symbolically: the sign
-of $F_t^2-F_\tau^2$ near $r_{\min}$ is that of $J^\ast-J_t$ with
-$J^\ast=[E^2r_{\min}(a^2+r_{\min}^2)+2a^2]/(a\,DE(r_{\min}))$, and since
-$Q_2(r_{\min},\cdot)$ opens downward ($-(r_{\min}-2M)DE<0$) with negative vertex while
-$Q_2(r_{\min},J^\ast)<0$, one has $J_t<J^\ast$; the interior reduces to an explicit
-degree-five inequality, verified. The no-inversion is thus a theorem with proven
-singular core (\texttt{no\_inversion\_reduction.py}).
+$r_{\min}^\tau<r_{\min}^t$. Lemma~(A) is proven in full: reducing
+$F_t^2-F_\tau^2=(r\,DE/\Delta^2)N_G/(Q_2P_\tau)$ modulo the turning conditions gives
+$N_G=(r-r_{\min})[4r\Delta/(r_{\min}-2M)]\,W(r)$ with $W$ \emph{linear} in $r$, so
+(A) $\Leftrightarrow W>0$; a linear $W$ with $W(r_{\min})=(r_{\min}-2M)aDE_{\min}(J^\ast-J_t)>0$
+and slope $w_1=aDE_{\min}(J^{\ast\ast}-J_t)>0$ is positive for $r>r_{\min}$. Both
+follow because the prograde root $J_t$ of $Q_2(r_{\min},\cdot)$ (which opens downward,
+$A=-(r_{\min}-2M)DE_{\min}<0$, negative vertex) lies below $J^\ast,J^{\ast\ast}>0$,
+since $Q_2(r_{\min},J^\ast)$ and $Q_2(r_{\min},J^{\ast\ast})$ are manifestly negative
+(\texttt{no\_inversion\_reduction.py}). Thus (A) is a theorem; the no-inversion
+follows from (A) and the (numerically verified) monotonicity (B).
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint

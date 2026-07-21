@@ -1414,20 +1414,31 @@ are \emph{algebraic}, this is a polynomial (not transcendental) inequality, when
 $\Phi_t(r_{\min})>\Phi_\tau(r_{\min})$. \emph{(B)} $\Phi_{\rm br}$ is strictly
 decreasing. Together: at equal angle
 $\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$, so
-$r_{\min}^\tau<r_{\min}^t$ by (B)---the fixed-endpoint no-inversion. The
-\emph{singular} part of (A)---the ordering of the residues at the turning point,
-which dominates the angle integral since both integrands diverge as
-$(r-r_{\min})^{-1/2}$---is proven symbolically: the sign of $F_t^2-F_\tau^2$ near
-$r_{\min}$ is that of $D=4r_{\min}\Delta(r_{\min})\,a\,DE(r_{\min})\,(J^\ast-J_t)$
-with $J^\ast=[E^2r_{\min}(a^2+r_{\min}^2)+2a^2]/(a\,DE(r_{\min}))$; the quadratic
-$Q_2(r_{\min},\cdot)$ has leading coefficient $-(r_{\min}-2M)DE(r_{\min})<0$ and
-vertex at $J_v=-2a/(r_{\min}-2M)<0$, while $J^\ast>0$ and
-$Q_2(r_{\min},J^\ast)=-E^2r_{\min}^3(E^2r_{\min}^2+a^2)\Delta(r_{\min})/[a^2 DE(r_{\min})]<0$,
-placing $J^\ast$ beyond the larger root, so $J_t<J^\ast$ and $D>0$ for all
-$r_{\min}>2M$, $E>1$ (\texttt{no\_inversion\_reduction.py}). The interior positivity
-reduces to an explicit degree-five inequality $N_G(r)>0$, verified over the scanned
-ranges. The no-inversion is thus a theorem with its singular core proven and the
-interior an explicit, verified algebraic inequality.
+$r_{\min}^\tau<r_{\min}^t$ by (B)---the fixed-endpoint no-inversion. Lemma~(A) is
+\emph{proven in full}. Writing $F_t^2-F_\tau^2=(r\,DE/\Delta^2)\,N_G/(Q_2 P_\tau)$
+with $N_G=(J_t(r-2M)+2Ma)^2 P_\tau-J_\tau^2(r-2M)Q_2$ and reducing modulo the turning
+conditions ($J_\tau^2=r_{\min}\Delta_{\min}/DE_{\min}$, $Q_2(r_{\min},J_t)=0$), one
+finds the key factorization
+\begin{equation}
+    N_G=(r-r_{\min})\,\frac{4r\,\Delta(r)}{r_{\min}-2M}\,W(r),\qquad W\ \text{\emph{linear} in }r .
+\end{equation}
+The prefactor is positive for $r>r_{\min}>2M$, so (A) reduces to $W(r)>0$; and a
+linear $W$ with $W(r_{\min})>0$ and positive slope stays positive for all
+$r>r_{\min}$. Both $W(r_{\min})=(r_{\min}-2M)\,a\,DE_{\min}(J^\ast-J_t)$ and the slope
+$w_1=a\,DE_{\min}(J^{\ast\ast}-J_t)$ are positive because the prograde root $J_t$ of
+$Q_2(r_{\min},\cdot)$ lies below both thresholds
+$J^\ast=[E^2r_{\min}(a^2+r_{\min}^2)+2a^2]/(a\,DE_{\min})$,
+$J^{\ast\ast}=[E^2r_{\min}^2(r_{\min}-1)+E^2a^2r_{\min}+a^2]/(a\,DE_{\min})$: the
+quadratic opens downward ($A=-(r_{\min}-2M)DE_{\min}<0$) with negative vertex
+$-2a/(r_{\min}-2M)$, while $J^\ast,J^{\ast\ast}>0$ and
+\[
+Q_2(r_{\min},J^\ast)=\frac{-E^2r_{\min}^3(E^2r_{\min}^2+a^2)\Delta_{\min}}{a^2DE_{\min}},\quad
+Q_2(r_{\min},J^{\ast\ast})=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\min}^2[(r_{\min}-1)^2+a^2]+a^2\big)}{a^2DE_{\min}}
+\]
+are both manifestly negative, placing the thresholds beyond the larger root
+(\texttt{no\_inversion\_reduction.py}). Hence (A) is a theorem for all $r_{\min}>2M$,
+$E>1$, $a>0$; the fixed-endpoint no-inversion follows from (A) together with the
+monotonicity (B) (verified numerically). Only (B) remains to be shown symbolically.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
