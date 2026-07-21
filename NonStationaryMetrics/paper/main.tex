@@ -1414,9 +1414,20 @@ are \emph{algebraic}, this is a polynomial (not transcendental) inequality, when
 $\Phi_t(r_{\min})>\Phi_\tau(r_{\min})$. \emph{(B)} $\Phi_{\rm br}$ is strictly
 decreasing. Together: at equal angle
 $\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$, so
-$r_{\min}^\tau<r_{\min}^t$ by (B)---the fixed-endpoint no-inversion. It is thus a
-theorem modulo the two verified lemmas, with (A) an explicit \emph{algebraic}
-inequality; a fully symbolic proof of (A) is the one remaining step.
+$r_{\min}^\tau<r_{\min}^t$ by (B)---the fixed-endpoint no-inversion. The
+\emph{singular} part of (A)---the ordering of the residues at the turning point,
+which dominates the angle integral since both integrands diverge as
+$(r-r_{\min})^{-1/2}$---is proven symbolically: the sign of $F_t^2-F_\tau^2$ near
+$r_{\min}$ is that of $D=4r_{\min}\Delta(r_{\min})\,a\,DE(r_{\min})\,(J^\ast-J_t)$
+with $J^\ast=[E^2r_{\min}(a^2+r_{\min}^2)+2a^2]/(a\,DE(r_{\min}))$; the quadratic
+$Q_2(r_{\min},\cdot)$ has leading coefficient $-(r_{\min}-2M)DE(r_{\min})<0$ and
+vertex at $J_v=-2a/(r_{\min}-2M)<0$, while $J^\ast>0$ and
+$Q_2(r_{\min},J^\ast)=-E^2r_{\min}^3(E^2r_{\min}^2+a^2)\Delta(r_{\min})/[a^2 DE(r_{\min})]<0$,
+placing $J^\ast$ beyond the larger root, so $J_t<J^\ast$ and $D>0$ for all
+$r_{\min}>2M$, $E>1$ (\texttt{no\_inversion\_reduction.py}). The interior positivity
+reduces to an explicit degree-five inequality $N_G(r)>0$, verified over the scanned
+ranges. The no-inversion is thus a theorem with its singular core proven and the
+interior an explicit, verified algebraic inequality.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint

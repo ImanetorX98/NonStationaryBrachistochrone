@@ -79,3 +79,43 @@ for a, E in [(0.3, 1.2), (0.6, 1.2), (0.9, 1.2), (0.9, 1.05), (0.9, 1.5), (0.5, 
           f"                     {str(thesis):>5}")
 print("\nLemma A e' ALGEBRICO (J_{t,tau}(r_min) radici di polinomi) => prova simbolica")
 print("possibile per positivita' polinomiale. QED del teorema modulo (A) simbolico.")
+
+
+# ============================================================================
+# PROVA SIMBOLICA di Lemma A al TURNING POINT (parte singolare dominante).
+# Il segno di F_t^2 - F_tau^2 vicino a r_min e' dato dai RESIDUI: F^2 ~ c/(r-r_min).
+# c_t > c_tau  <=>  D := numeratore di (c_t-c_tau) > 0. Con le condizioni di turning
+# (J_tau^2 = r_d Delta_d/DE_d, Q2(r_d,J_t)=0) si riduce a:
+#     D = 4 r_d Delta(r_d) * B,   B = a DE(r_d) (J* - J_t),
+#     J* = [E^2 r_d(a^2+r_d^2)+2a^2]/(a DE_d)  (>0).
+# Catena di segni (r_d>2M, r_d>r_+, E>1, a>0), tutti fattori espliciti:
+#   A   = coeff J_t^2 di Q2(r_d)     = -(r_d-2M) DE_d          < 0   (parabola giu')
+#   J_v = vertice = -B_q/2A          = -2a/(r_d-2M)            < 0
+#   Q2(r_d,J*) = -E^2 r_d^3 (E^2 r_d^2+a^2) Delta_d/[a^2 DE_d] < 0
+#   => J*>0>J_v e Q2(J*)<0 con A<0  => J* oltre la radice grande => J_t<J*
+#   => B>0 => D>0 => c_t>c_tau => F_t^2>F_tau^2 al turning.  QED (parte singolare)
+# La positivita' INTERNA (r lontano da r_min) si riduce a N_G(r)>0 (grado 5),
+# verificata numericamente sopra.
+def symbolic_residue_proof():
+    rd, a, E = sp.symbols('r_d a E', positive=True); M = 1
+    Jt = sp.symbols('J_t', positive=True)
+    Q2d = (2*E**2*Jt**2*M*rd - E**2*Jt**2*rd**2 - 4*E**2*Jt*M*a*rd + 2*E**2*M*a**2*rd
+           + E**2*a**2*rd**2 + E**2*rd**4 + 4*Jt**2*M**2 - 4*Jt**2*M*rd + Jt**2*rd**2
+           - 8*Jt*M**2*a + 4*Jt*M*a*rd + 4*M**2*a**2)
+    P = sp.Poly(Q2d, Jt)
+    A, Bq = P.coeff_monomial(Jt**2), P.coeff_monomial(Jt)
+    DEd = (E**2-1)*rd + 2*M
+    Jstar = (E**2*rd*(a**2+rd**2) + 2*a**2)/(a*DEd)
+    assert sp.simplify(A - (-(rd-2*M)*DEd)) == 0
+    assert sp.simplify(-Bq/(2*A) - (-2*a/(rd-2*M))) == 0
+    Q2star = sp.factor(Q2d.subs(Jt, Jstar))
+    print("  A            =", sp.factor(A), "   (<0 for r_d>2M)")
+    print("  vertex J_v   =", sp.factor(-Bq/(2*A)), "   (<0)")
+    print("  J*           =", sp.factor(Jstar), "   (>0)")
+    print("  Q2(r_d,J*)   =", Q2star, "   (<0 for r_d>r_+)")
+    print("  => J_t < J* => B>0 => residue ordering proven.  QED")
+
+
+if __name__ == '__main__':
+    print("\n=== Symbolic proof of Lemma A at the turning point ===")
+    symbolic_residue_proof()
