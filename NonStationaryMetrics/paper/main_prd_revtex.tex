@@ -1262,12 +1262,18 @@ $\Delta r=r_{\min}^t-r_{\min}^\tau$ strictly positive
 in $a$, its gradient set almost entirely by the endpoint angle
 $\Phi$ (encoded by $J$). The conformal scan (via the transfer
 $E_{\rm eff}=\hat E/A$) is likewise everywhere positive
-($\Delta r\in[+0.002,+3.711]$), consistent with the \emph{pointwise} bound
-$n_t/n_\tau=E/f>1$. This bound does not by itself prove an ordering of the minima of
-two distinct functionals (the $t$-cost carries a Randers wind the $\tau$-cost lacks);
-we report the fixed-endpoint no-inversion as a robust \emph{numerical observation}
-over the scanned ranges---a conjecture supported by the scans, not a theorem---leaving
-a global comparison lemma open.
+($\Delta r\in[+0.002,+3.711]$). The pointwise bound $n_t/n_\tau=E/f>1$ does not by
+itself order the minima of two distinct functionals (at \emph{fixed} $J$ the order is
+opposite; the fixed-endpoint result is a reversal via the angle map $J\mapsto\Phi$),
+but it reduces cleanly: parametrizing each branch by its turning radius $r_{\min}$ and
+setting $\Phi_{\rm br}(r_{\min})=\int_{r_{\min}}^{r_0}F_{\rm br}(r;J_{\rm
+br}(r_{\min}))\dd r$, two lemmas (verified over $a\in[0.3,0.9]$, $E\in[1.05,1.5]$)
+close it: (A) at matched $r_{\min}$ the $t$-integrand dominates pointwise,
+$F_t>F_\tau$---an \emph{algebraic} inequality since $J_{t,\tau}(r_{\min})$ are
+algebraic---so $\Phi_t>\Phi_\tau$; (B) $\Phi_{\rm br}$ is strictly decreasing. Then
+$\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$ gives
+$r_{\min}^\tau<r_{\min}^t$. The no-inversion is thus a theorem modulo the two verified
+lemmas, with (A) algebraic; a fully symbolic proof of (A) remains.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint

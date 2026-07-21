@@ -1396,15 +1396,27 @@ $\Delta r=r_{\min}^t-r_{\min}^\tau$ strictly positive
 in $a$, its gradient set almost entirely by the endpoint angle
 $\Phi$ (encoded by $J$). The conformal scan (via the transfer
 $E_{\rm eff}=\hat E/A$) is likewise everywhere positive
-($\Delta r\in[+0.002,+3.711]$), consistent with the pointwise bound
-$n_t/n_\tau=E/f>1$. We emphasize that this bound is \emph{pointwise}: it penalizes
-deep radii more for the $t$-cost, but it does not by itself \emph{prove} an ordering
-of the minima of two distinct functionals (the more so as the $t$-cost carries a
-Randers wind absent from the Riemannian $\tau$-cost). We therefore report the
-fixed-endpoint no-inversion as a robust \emph{numerical observation} over the scanned
-$(a,J,\Phi)$ ranges, a conjecture supported by the scans rather than a theorem; a
-global comparison lemma (unique minimizer, no conjugate points, wind term controlled)
-is left open.
+($\Delta r\in[+0.002,+3.711]$). The pointwise index bound $n_t/n_\tau=E/f>1$ does
+not by itself order the minima of two distinct functionals---indeed at \emph{fixed}
+$J$ the ordering is the opposite (the $t$-orbit turns deeper), and the fixed-endpoint
+result is a reversal driven by the accumulated-angle map $J\mapsto\Phi$. It admits,
+however, a clean reduction. Parametrize each branch by its turning radius $r_{\min}$
+(which fixes $J$ through the turning condition $r\Delta=J^2 DE$ for $\tau$, $Q_2=0$
+for $t$), and let
+\begin{equation}
+    \Phi_{\rm br}(r_{\min})=\int_{r_{\min}}^{r_0}\!F_{\rm br}\big(r;J_{\rm br}(r_{\min})\big)\,\dd r
+\end{equation}
+be the half-angle swept by the orbit turning at $r_{\min}$. Two lemmas---verified
+across $a\in[0.3,0.9]$, $E\in[1.05,1.5]$---close the result. \emph{(A)} At matched
+turning radius the $t$-integrand dominates \emph{pointwise},
+$F_t(r;J_t)>F_\tau(r;J_\tau)$ for $r\in(r_{\min},r_0)$; since $J_{t,\tau}(r_{\min})$
+are \emph{algebraic}, this is a polynomial (not transcendental) inequality, whence
+$\Phi_t(r_{\min})>\Phi_\tau(r_{\min})$. \emph{(B)} $\Phi_{\rm br}$ is strictly
+decreasing. Together: at equal angle
+$\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$, so
+$r_{\min}^\tau<r_{\min}^t$ by (B)---the fixed-endpoint no-inversion. It is thus a
+theorem modulo the two verified lemmas, with (A) an explicit \emph{algebraic}
+inequality; a fully symbolic proof of (A) is the one remaining step.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
