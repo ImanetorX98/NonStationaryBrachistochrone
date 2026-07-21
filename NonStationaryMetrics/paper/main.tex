@@ -593,8 +593,9 @@ onto a \emph{single} weight-two letter (verified to $10^{-12}$),
 \end{equation}
 where $\mathcal{G}_k$ is the horizon-anchored genus-two dilogarithm---the exact
 counterpart of the Kerr weight-two piece $W_{jk}$, in the same
-hyperelliptic-dilogarithm class (irreducible to weight one by the theta-divisor
-obstruction $\Theta=W_{g-1}$), but with its $\dd\log$ letter sourced by the
+hyperelliptic-dilogarithm class (conjecturally irreducible to weight one, the
+theta-divisor obstruction $\Theta=W_{g-1}$ preventing the genus-one factorization),
+but with its $\dd\log$ letter sourced by the
 advanced-time divergence at the horizon $r=2m$ rather than by a third-kind dipole at
 infinity. On the separatrix $|J|=\Jc$ the sextic develops a double root at $r=r_d$
 and the genus drops to one: $\sqrt S=(r-r_d)\sqrt{Q_4}$ with $Q_4$ quartic, so the
@@ -673,10 +674,13 @@ transcendental weight: the parity involution $z\to-z$ groups the raw terms into
 $24$ blocks, the shuffle identity~\cite{Chen1977} recasts these as $21$
 antisymmetric elliptic dilogarithms, and the Weierstrass-addition (Fay) relations
 collapse them further, so that the entire weight-two content of
-$\delta\varphi_\tau|_{\rm sep}$ spans a space of \emph{dimension exactly five}
-(rank confirmed to $10^{-79}$ in arbitrary precision). This minimality is a
-property of the curve, but the coefficients $\beta_b$ of any chosen five-element
-dilogarithm basis are \emph{curve-specific numbers}---obtained per curve by a
+$\delta\varphi_\tau|_{\rm sep}$ appears to span a space of dimension five: a
+high-precision numerical reduction gives a stable rank five (the discarded singular
+values fall to $10^{-79}$ in arbitrary precision). We state this as strong
+\emph{numerical evidence}, not a proof---an exact bound on the dimension would
+require a motivic/Hodge basis-count or an explicit basis with a proven
+independence, which we do not carry out. The coefficients $\beta_b$ of any chosen
+five-element dilogarithm basis are \emph{curve-specific numbers}---obtained per curve by a
 mechanical linear reduction (here, at $m=1,E=1.4$, to eighty digits), not a
 universal formula---and a closed symbolic form for them, which would require the
 full second-kind reduction of $E$, is left open. What makes the algebraic reduction
@@ -1338,9 +1342,13 @@ $\rho(r_*)^2=H_{t0}/H_{\tau0}$, extending the stationary Kerr analysis
     \label{eq:condinv}
 \end{equation}
 with $\mathrm{cond}(1)<0$ and
-$\mathrm{cond}(\Af)=\Ehat r\Delta(\Ehat-1)/(r-2M)>0$, so by the intermediate
-value theorem $A_{\rm inv}\in(1,\Af)$: the conformal inversion always exists
-and is reachable (far field $A_{\rm inv}\to\sqrt{\Ehat}$).
+$\mathrm{cond}(\Af)=\Ehat r\Delta(\Ehat-1)/(r-2M)$. Under the explicit hypotheses
+$\Ehat>1$ (scattering energy), $r>2M$ and $\Delta>0$ (exterior, off-horizon), the
+latter is $>0$, so by the intermediate value theorem a root
+$A_{\rm inv}\in(1,\Af)$ exists; it is reachable when $A_{\rm inv}<\Af$, with far
+field $A_{\rm inv}\to\sqrt{\Ehat}$. For $\Ehat\le1$ the sign is non-positive and no
+such root is guaranteed: the conformal inversion is thus a \emph{conditional}
+statement, holding in the stated energy/domain window rather than universally.
 
 \begin{figure}[ht]
     \centering
@@ -1388,7 +1396,15 @@ $\Delta r=r_{\min}^t-r_{\min}^\tau$ strictly positive
 in $a$, its gradient set almost entirely by the endpoint angle
 $\Phi$ (encoded by $J$). The conformal scan (via the transfer
 $E_{\rm eff}=\hat E/A$) is likewise everywhere positive
-($\Delta r\in[+0.002,+3.711]$), as forced by the theorem $n_t/n_\tau=E/f>1$.
+($\Delta r\in[+0.002,+3.711]$), consistent with the pointwise bound
+$n_t/n_\tau=E/f>1$. We emphasize that this bound is \emph{pointwise}: it penalizes
+deep radii more for the $t$-cost, but it does not by itself \emph{prove} an ordering
+of the minima of two distinct functionals (the more so as the $t$-cost carries a
+Randers wind absent from the Riemannian $\tau$-cost). We therefore report the
+fixed-endpoint no-inversion as a robust \emph{numerical observation} over the scanned
+$(a,J,\Phi)$ ranges, a conjecture supported by the scans rather than a theorem; a
+global comparison lemma (unique minimizer, no conjugate points, wind term controlled)
+is left open.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
@@ -1445,15 +1461,21 @@ drifts slowly,
 with $q_{kj}$ \emph{algebraic} (rational in the metric parameters, via the exact
 reduction $\partial_\lambda F=N_\lambda/S^{3/2}$) and $W_{kj}=\int(U_j\dd U_k-U_k
 \dd U_j)$ the genus-two polylogarithms of the frozen curve. The transcendence is
-\emph{universal}; the three geometries differ only in \emph{which datum of the
-ellipse breathes} and \emph{which clock weights it}, through
-$\partial_\lambda F=\partial_c F\,(\partial_\lambda c)+\partial_R F\,
-(\partial_\lambda R)$: Thakurta--Kerr breathes the semi-axes $R$ (conformal scale)
-read by $t,\tau$, and its weight-two letter is a third-kind dipole \emph{at
-infinity} (the logarithmic growth of the clock at large $r$); Vaidya breathes the
-centre $c_r$ (the radial Zermelo wind $\propto\sqrt{2m/r}$) read by the advanced
-time $v$, and its letter is a $\dd\log$ \emph{at the horizon} $r=2m$ (the tortoise
-divergence of $v$). FLRW is the degenerate circle---$c=0$, isotropic $R$---where the
+\emph{universal}. The three geometries are distinguished \emph{not} by which datum
+of the indicatrix varies---in each, \emph{both} the centre $c$ and the semi-axes $R$
+breathe, through $\partial_\lambda F=\partial_c F\,\partial_\lambda c+\partial_R
+F\,\partial_\lambda R$ with \emph{both} terms nonzero (for Vaidya, explicitly,
+$\partial_m c_r=-2/r$, $\partial_m R_r=E\,[r(2m+(E^2-1)r)]^{-1/2}$,
+$\partial_m R_\varphi=[r^3(2m+(E^2-1)r)]^{-1/2}$; likewise every $E_{\rm
+eff}=\Ehat/A$-dependent datum of Thakurta--Kerr varies via $\partial_A E_{\rm
+eff}=-\Ehat/A^2$)---but by two structural features. First, the \emph{orientation} of
+the wind: Vaidya's is the ingoing \emph{radial} centre-wind $c_r=f-\Ehat^2$;
+Thakurta--Kerr's is the \emph{azimuthal} frame-dragging shift. Second, and
+decisively for the weight-two letter, the \emph{clock} that weights the source,
+through the location of its logarithmic singularity: the advanced time $v$ diverges
+at the horizon $r=2m$, giving Vaidya a $\dd\log$ letter \emph{there}; the $t,\tau$
+clocks grow logarithmically at large $r$, giving Thakurta--Kerr a third-kind dipole
+\emph{at infinity}. FLRW is the degenerate circle---$c=0$, isotropic $R$---where the
 three branches coincide and the polylogs collapse to genus zero: no wind, no
 dilogarithm. The organizing thread ``circle $\to$ radial-wind ellipse $\to$
 angular-wind ellipse'' is thus literally the ladder of weight-two letters the
@@ -2293,7 +2315,7 @@ theorem~\eqref{eq:track-cancel}.
 \paragraph{Transcendence.}
 None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
 lives in $\sigma,\zeta,\wp$, and the weight-two content is the elliptic dilogarithm,
-irreducible to weight one by the theta-divisor obstruction $\Theta=W_{g-1}$. The
+conjecturally irreducible to weight one (theta-divisor obstruction $\Theta=W_{g-1}$). The
 advanced-time horizon logarithm is elementary only as a $\dd\log$ letter; integrated
 against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, of the
 same transcendental weight as the proper-time case---the horizon merely relocates the

@@ -570,8 +570,8 @@ onto a single weight-two letter (verified to $10^{-12}$),
     \label{eq:horizon-dilog}
 \end{equation}
 $\mathcal{G}_k$ being the horizon-anchored genus-two dilogarithm---the exact
-counterpart of the Kerr $W_{jk}$, same hyperelliptic-dilogarithm class (irreducible by
-the theta-divisor obstruction), but sourced by the advanced-time divergence at the
+counterpart of the Kerr $W_{jk}$, same hyperelliptic-dilogarithm class (conjecturally
+irreducible; theta-divisor obstruction), but sourced by the advanced-time divergence at the
 horizon rather than a third-kind dipole at infinity. On the separatrix $|J|=\Jc$ the
 sextic gains a double root at $r_d$, the genus drops to one
 ($\sqrt S=(r-r_d)\sqrt{Q_4}$), the $U_k$ reduce to elliptic integrals (machine
@@ -960,7 +960,7 @@ infinity, residue $\rho_0=M/(E^2-1)^{3/2}$---integrates to
 (Fay prime form~\cite{Fay1973}, odd $\delta$, $e_\pm$ the Abel images of infinity;
 $L(u(r))$ differentiated back reproduces the third-kind differential to
 $5\times10^{-8}$). Like $\mathrm{Li}_2$, the $W_{kj}$ are their own closed form
-(Kronecker--Eisenstein series~\cite{BeilinsonLevin1994}); the weight-two content is genuine and irreducible, the coefficients
+(Kronecker--Eisenstein series~\cite{BeilinsonLevin1994}); the weight-two content is genuine and (conjecturally) irreducible, the coefficients
 algebraic. Explicitly the pole coefficients are $g_0=1/\sqrt{E^2-1}$,
 $g_1=(2E^2-3)/(E^2-1)^{3/2}$ ($E$-only), with $g_2$ and the $c_k$ rational in
 $(a,J)$ too, and $T_{\rm alg}=P(r)+\sum_i\mathrm{res}_i\ln(r-r_i)$ over the roots of
@@ -1210,10 +1210,11 @@ $\rho(r_*)^2=H_{t0}/H_{\tau0}$, extending the stationary Kerr analysis
     Q=b\bar v^2+\sqrt{\bar v^2\Delta},
     \label{eq:condinv}
 \end{equation}
-with $\mathrm{cond}(1)<0$ and
-$\mathrm{cond}(\Af)=\Ehat r\Delta(\Ehat-1)/(r-2M)>0$, so by the intermediate
-value theorem $A_{\rm inv}\in(1,\Af)$: the conformal inversion always exists
-and is reachable (far field $A_{\rm inv}\to\sqrt{\Ehat}$).
+with $\mathrm{cond}(1)<0$ and $\mathrm{cond}(\Af)=\Ehat r\Delta(\Ehat-1)/(r-2M)$.
+Under $\Ehat>1$, $r>2M$, $\Delta>0$ (exterior scattering) the latter is $>0$, so by
+the intermediate value theorem a root $A_{\rm inv}\in(1,\Af)$ exists, reachable when
+$A_{\rm inv}<\Af$ (far field $A_{\rm inv}\to\sqrt{\Ehat}$). This is a
+\emph{conditional} existence: for $\Ehat\le1$ no such root is guaranteed.
 
 \begin{figure}[ht]
     \centering
@@ -1261,7 +1262,12 @@ $\Delta r=r_{\min}^t-r_{\min}^\tau$ strictly positive
 in $a$, its gradient set almost entirely by the endpoint angle
 $\Phi$ (encoded by $J$). The conformal scan (via the transfer
 $E_{\rm eff}=\hat E/A$) is likewise everywhere positive
-($\Delta r\in[+0.002,+3.711]$), as forced by the theorem $n_t/n_\tau=E/f>1$.
+($\Delta r\in[+0.002,+3.711]$), consistent with the \emph{pointwise} bound
+$n_t/n_\tau=E/f>1$. This bound does not by itself prove an ordering of the minima of
+two distinct functionals (the $t$-cost carries a Randers wind the $\tau$-cost lacks);
+we report the fixed-endpoint no-inversion as a robust \emph{numerical observation}
+over the scanned ranges---a conjecture supported by the scans, not a theorem---leaving
+a global comparison lemma open.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
@@ -1316,14 +1322,17 @@ $\lambda=\lambda(\text{clock})$ gives
 \end{equation}
 with $q_{kj}$ algebraic (via $\partial_\lambda F=N_\lambda/S^{3/2}$) and
 $W_{kj}=\int(U_j\dd U_k-U_k\dd U_j)$ the genus-two polylogarithms of the frozen
-curve. The transcendence is universal; the geometries differ only in which datum of
-the ellipse breathes and which clock weights it,
+curve. The transcendence is universal. The geometries are distinguished \emph{not}
+by which datum varies---in each, \emph{both} centre and semi-axes breathe,
 $\partial_\lambda F=\partial_c F(\partial_\lambda c)+\partial_R F(\partial_\lambda
-R)$: Thakurta--Kerr breathes the semi-axes $R$ (conformal scale, clocks $t,\tau$),
-letter a third-kind dipole \emph{at infinity}; Vaidya breathes the centre $c_r$ (the
-radial wind $\propto\sqrt{2m/r}$, clock the advanced time $v$), letter a $\dd\log$
-\emph{at the horizon} $r=2m$. FLRW is the degenerate circle ($c=0$, isotropic $R$):
-branches coincide, polylogs collapse to genus zero. The thread ``circle $\to$
+R)$ with both terms nonzero (Vaidya: $\partial_m c_r=-2/r$,
+$\partial_m R_r=E[r(2m+(E^2-1)r)]^{-1/2}$, etc.; Thakurta--Kerr via
+$\partial_A E_{\rm eff}=-\Ehat/A^2$)---but by the wind \emph{orientation} (Vaidya's
+radial centre-wind $c_r=f-\Ehat^2$ vs.\ Thakurta--Kerr's azimuthal frame-drag) and,
+decisively for the letter, the \emph{clock} singularity: $v$ diverges at the horizon
+$r=2m$ (Vaidya $\dd\log$ \emph{there}); $t,\tau$ grow at large $r$ (Thakurta--Kerr
+third-kind dipole \emph{at infinity}). FLRW is the degenerate circle ($c=0$,
+isotropic $R$): branches coincide, polylogs collapse to genus zero. The thread ``circle $\to$
 radial-wind ellipse $\to$ angular-wind ellipse'' is the ladder of weight-two letters
 the breathing switches on, on one hyperelliptic backbone.
 
