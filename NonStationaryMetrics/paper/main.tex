@@ -1213,7 +1213,7 @@ ergosphere because the factor $r^2+c^2$ divides the turning quartic and removes
 $\re$ from the radicand. The Boyer--Lindquist form winds logarithmically at the
 horizon; the Doran shift---a second, quasi-lemniscatic elliptic
 curve---cancels it, so the ergosphere-penetrating separatrix
-$\varphi_D=\varphi_{\rm BL}+\varphi_{\rm shift}$ is closed on two elliptic curves.
+$\varphi_D=\varphi_{\rm BL}-\varphi_{\rm shift}$ is closed on two elliptic curves.
 
 What controls the reduction is the \emph{genus} of the turning radical, not the
 rationality of $\mathcal K$. Being Riemannian-pure
@@ -1646,10 +1646,18 @@ $C_3=2Mr(r^2+a^2)$ regularizes it. This is a \emph{second} elliptic curve, in
 clean Weierstrass form $r(z)=(2/M)\wp(z;g_2,g_3)$ with $g_2=-M^2a^2$, $g_3=0$
 (quasi-lemniscatic), giving
 $\varphi_{\rm shift}=\tfrac{a}{r_+-r_-}\big(B_+-B_-\big)$,
-$B_\pm=2\zeta(v_\pm)z+\ln[\sigma(z-v_\pm)/\sigma(z+v_\pm)]$; the log divergences of
-$\varphi$ and $\varphi_{\rm shift}$ cancel at $\rp$, the analytic content of Doran
-regularity. Thus $\varphi_D=\varphi_{\rm BL}+\varphi_{\rm shift}$ is closed on two
-elliptic curves.
+$B_\pm=2\zeta(v_\pm)z+\ln[\sigma(z-v_\pm)/\sigma(z+v_\pm)]$. With
+$\dd\varphi_{\rm shift}$ defined as above (a positive residue at $\rp$), the
+log residues of $\varphi_{\rm BL}$ and $\varphi_{\rm shift}$ are \emph{equal}
+(numerically $1.0324=1.0324$ at $a=0.9,E=1.2,J=3$), so they cancel under
+\emph{subtraction}: the horizon-regular Doran azimuth is
+\begin{equation}
+    \varphi_D=\varphi_{\rm BL}-\varphi_{\rm shift},
+    \label{eq:doran-phi}
+\end{equation}
+closed on two elliptic curves. (The single consistent sign is fixed by this
+residue cancellation; the same convention is used throughout,
+Eq.~\eqref{eq:doran-phi}.)
 
 \paragraph{General $\tau$-branch $\varphi(r)$: genus-2 Kleinian form.} Off the
 separatrix, for \emph{arbitrary} $J$, the $\tau$ integrand
