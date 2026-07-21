@@ -136,9 +136,47 @@ RAGIONE strutturale, non solo mancanza di idee. Chiusura piena richiede o accett
 stato verificato-modulo-(STAR), o disuguaglianza sull'angolo di deflessione tight a r_pk
 (CAS pesante / stima trascendente ad hoc).
 
+## CASO CONGELATO — FORMA CHIUSA di Phi' + single-crossing (sessione 2026-07-21/22)
+
+Script: `no_inversion_schwarzschild_closedform.py`. Progresso NUOVO oltre a (STAR):
+
+**Forma chiusa di dPhi/dVmin** (verificata ~1e-9 vs diff. finite). Con
+`G(x)=int_x^{V0}W(A)/sqrt(A-x)dA`, IBP che sposta d/dV su W (uccide singolarita' sqrt):
+`G=2W(V0)sqrt(V0-x)-2 int_x^{V0}W'(t)sqrt(t-x)dt`, poi derivo (nessun bordo singolare):
+```
+sqrt(x) Phi'(x) = W(V0)(V0-2x)/sqrt(V0-x) + int_x^{V0} W'(t)(2x-t)/sqrt(t-x) dt
+```
+CONSEGUENZE rigorose:
+- **Grazing x>=V0/2**: (V0-2x)<=0, (2x-t)>=0, W'<0 => entrambi <=0 => Phi'<=0. Elementare.
+- **Quarto x>=V0/4**: split a t=2x, P1=int_x^{2x}(-W')(2x-t)/sqrt(t-x), P2=int_{2x}^{V0}(...).
+  Integrali esatti: int_x^{2x}(2x-t)/sqrt(t-x)dt=(4/3)x^{3/2};
+  int_{2x}^{V0}(t-2x)/sqrt(t-x)dt=2[(V0-x)^{3/2}/3 - x sqrt(V0-x)+(2/3)x^{3/2}].
+  -W' decrescente (W convessa) => `P1-P2 >= (-W'(2x))(2/3)sqrt(V0-x)(4x-V0) >=0` per x>=V0/4.
+  => monotonia controllata per x>=V0/4 (estende grazing V0/2, prima solo abbozzo ~4Vmin).
+  **Finestra elementare piena**: se `V0<=4 Vpk` (cioe' r0<=R*(E), ~4.3 per E=1.2) TUTTI i
+  turning r>r_pk hanno x>=V0/4 => no-inversion **pienamente elementare per r0 piccolo**.
+
+**Riduzione single-crossing (copre ogni r0)**: Lemma B <=> Phi_tau ha UN SOLO punto
+critico. Fatto standard: se a OGNI critico L=log Phi ha L''<0 => al piu' un critico; con
+L'(0+)>0, L'(V0-)<0 => esattamente uno => Phi single-peaked => Lemma B. A critico
+(L'=0 => I'/I=-(1/2)(a-c), a=1/x, c=1/(V0-x)):
+```
+L'' = -(3/4)(a^2+c^2) + (1/2)ac + I''/I         (a critico)
+(DAGGER)   I''/I < (3/4)(a^2+c^2) - (1/2)ac
+```
+I=int_0^1 W(A)du, I''=int_0^1 W''(A)(1-u^2)^2du, A=x+(V0-x)u^2. Verificato 40 cifre,
+margine >0 STRETTO per ogni (E,r0) finito; margine->0 per r0->inf (il picco r_pk fugge a
+inf: r0=inf e' monotono). r_pk~2.94-2.99 (~3M) per tutti gli E testati.
+
+GAP RESIDUO: regione r_pk<r_min<r_quarter (x/V0 in ~0.02..0.25). Serve stima sharp che
+sfrutta la CONCENTRAZIONE di -W' vicino al turning (il bound uniforme -W'(2x) perde ~1/4).
+Log-convessita' di W: `W W''-(W')^2` ha numeratore polinomiale (in schw_Wode.py) da
+certificare positivo (SOS/Sturm) — ingrediente, non chiusura.
+
 ## Stato
-Lemma A: **chiuso**. Lemma B: aperto ma con **muro strutturale identificato** (caso
-congelato: (STAR) tight alla soglia trascendente r_pk; grazing elementare ma non copre
-i punti fisici). Il no-inversion e' un teorema nel regime scattering **modulo (STAR)**,
-verificato numericamente ovunque. Riduzione `Phi=2sqrt(Vmin(V0-Vmin))I` = miglioria
-pubblicabile.
+Lemma A: **chiuso**. Lemma B (congelato Schwarzschild): **forma chiusa di Phi' provata**;
+monotonia **elementare per x>=V0/4** (=> pienamente elementare per r0<=R*(E)); ridotta a
+single-crossing = **una** disuguaglianza puntuale (DAGGER) a critico, verificata 40 cifre.
+GAP: stima trascendente in (r_pk,r_quarter). Kerr congelato: W non elementare (genus-2),
+resta verificato-numerico. Il no-inversion e' teorema modulo (DAGGER), con sotto-regime
+x>=V0/4 dimostrato.
