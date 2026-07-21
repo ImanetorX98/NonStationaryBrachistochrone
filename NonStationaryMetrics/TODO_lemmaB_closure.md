@@ -105,7 +105,40 @@ uniforme, che perde un fattore ~1/4 asintoticamente).
 - Sfera fotonica assente: `/tmp/photon.py`. PF r0=inf: `/tmp/pf_order.py`,
   `/tmp/pf_identify.py`.
 
+## CASO CONGELATO (Vaidya mu=0 / TK a=0) — riduzione pulita + muro strutturale
+
+Script: `no_inversion_schwarzschild_frozen.py` (+ `/tmp/schw_ineq.py`, `/tmp/check_grazing.py`).
+Verificato a 1e-13 che, con `V0=V(r0)` FISSO (estremo fisso):
+```
+Phi_tau(Vmin) = sqrt(Vmin) int_{Vmin}^{V0} W(V)/sqrt(V-Vmin) dV
+              = 2 sqrt(Vmin(V0-Vmin)) I(Vmin),   I(Vmin)=int_0^1 W(Vmin+(V0-Vmin)u^2)du
+```
+`W(V)=K/V'` fisso (>0, decrescente, convesso); `r(V)` = radice di cubica
+`r^3-2r^2-bVr-2V=0` (b=E^2-1) => W ELEMENTARE-algebrico. Log-derivata:
+```
+Phi'/Phi = (1/2)(1/Vmin - 1/(V0-Vmin)) + I'/I
+dPhi/dVmin<0  <=>  (STAR)  -I' > (V0-2Vmin)/(2 Vmin(V0-Vmin)) I,   -I'=int_0^1(-W'(A))(1-u^2)du
+```
+RISULTATI:
+- **(STAR) e' TIGHT a r_min->r_pk+** (margine->0): r_pk e' DEFINITO da Phi'=0 = (STAR)
+  con uguaglianza. => soglia genuinamente TRASCENDENTE; **nessun certificato elementare
+  uniforme** puo' provare (STAR) su tutto r_min>r_pk. Bound Chebyshev `(2/3)int(-W')du`
+  troppo debole (sotto rhs in piu' righe).
+- **Sub-risultato ELEMENTARE**: `Vmin>=V0/2` (grazing) => entrambi i pezzi di Phi'/Phi
+  <=0 => Phi decrescente. MA raggio V0/2 (~7.5M per r0=10) sta SOPRA i turning fisici
+  (~4.7-6.4M): grazing da solo non li copre.
+- Punti fisici: `Vmin << V0/2`, tra r_pk e raggio-grazing; (STAR) vale con margine
+  positivo ma trascendente.
+
+CONCLUSIONE: anche congelato (Schwarzschild), la chiusura NON e' elementare — la soglia
+r_pk e' un punto trascendente dove (STAR) e' uguaglianza. Il "modulo Lemma B" ha ora una
+RAGIONE strutturale, non solo mancanza di idee. Chiusura piena richiede o accettare lo
+stato verificato-modulo-(STAR), o disuguaglianza sull'angolo di deflessione tight a r_pk
+(CAS pesante / stima trascendente ad hoc).
+
 ## Stato
-Lemma A: **chiuso**. Lemma B: aperto (grazing chiuso; scorciatoie escluse; Route 2
-research-level, cancellazione delicata a r0 finito). Il no-inversion e' un teorema
-nel regime scattering **modulo Lemma B**.
+Lemma A: **chiuso**. Lemma B: aperto ma con **muro strutturale identificato** (caso
+congelato: (STAR) tight alla soglia trascendente r_pk; grazing elementare ma non copre
+i punti fisici). Il no-inversion e' un teorema nel regime scattering **modulo (STAR)**,
+verificato numericamente ovunque. Riduzione `Phi=2sqrt(Vmin(V0-Vmin))I` = miglioria
+pubblicabile.
