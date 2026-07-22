@@ -87,6 +87,6 @@ ax[1].loglog(epss,epss*res_dyn[2]/epss[2],'C0:',lw=0.6,alpha=0.6,label=r'$\propt
 ax[1].set_xlabel(r"$A^\prime/A$"); ax[1].set_ylabel('residual')
 ax[1].set_title('physical error (~2%, off-shell) is\nfar above the algebraic floor',fontsize=6.6)
 ax[1].legend(fontsize=5.6,loc='upper left')
-savefig(fig,HERE,'fig_phi_validation_true_dynamic')
+savefig(fig,os.path.join(os.path.dirname(HERE),'paper','Immagini'),'fig_phi_validation_true_dynamic')
 print(f"physical residual/eps ~ {res_dyn[0]/epss[0]:.3f} (=2% of leading ~0.33); vs IBP floor ~1e-6")
 print("FATTO: fig_phi_validation_true_dynamic")

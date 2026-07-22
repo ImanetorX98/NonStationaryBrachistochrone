@@ -1119,10 +1119,41 @@ itself already exhibits nontrivial ergosphere dynamics: for penetrating $t$-bran
 angular momenta the orbit dips inside $r_e$, co-rotates, and turns just outside the
 horizon, and a growing conformal factor eventually expels it from the ergosphere at
 an adiabatic threshold (Fig.~\ref{fig:phi-penetrating}).
+
+\paragraph{Exact first-order term and the true dynamic test.} Table~\ref{tab:adiab-valid}
+and Fig.~\ref{fig:phi-closed} certify only the \emph{algebraic} identity (closed
+$\mathcal{C}+\psi$ equals the direct integral of the same coefficient); they do not by
+themselves test the adiabatic form against the actual non-autonomous dynamics. Integrating
+the true non-autonomous optical-metric geodesic---the branch-Hamiltonian flow with
+$E_{\rm eff}=\Ehat/A(\eta)$, $J_{\rm eff}=J/A(\eta)$---and comparing to
+$\varphi_0+\varepsilon\,\delta\varphi$ shows the \emph{physical} accuracy is $\sim2\%$
+(linear in $\varepsilon$), far above the algebraic floor
+(Fig.~\ref{fig:phi-true-dynamic}). A complete canonical perturbation theory of that flow
+closes the correction to $O(\varepsilon^2)$:
+\begin{equation}
+    \frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{p_r}G}{H_{p_r}}\,
+    \big(\lambda\,\Theta H-S\big)-\lambda\,\Theta G\Big]\dd r,\quad
+    \Theta\equiv E\partial_E+J\partial_J,\ \ S=\!\int_0^{\lambda}\!\Theta H\,\dd\lambda',\ \
+    G=\frac{H_J}{H_{p_r}}=\varphi',
+    \label{eq:adiab-exact}
+\end{equation}
+verified numerically (coefficient and slope~$\approx2$;
+\texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py}). This splits into an
+\emph{on-shell} part (parameter drift along the frozen shell) and an \emph{off-shell}
+part driven by the slow-time costate: since $H$ departs from zero in the interior
+($H_{\rm ext}=p_\eta+H=0$ with $\dd p_\eta/\dd\lambda=\Theta H$, so $H=-p_\eta\sim
+O(\varepsilon)$), the off-shell piece $-\!\int(\partial_{p_r}G/H_{p_r})\,S\,\dd r$ is a
+depth-two iterated integral (a genus-two dilogarithm). The
+$\tfrac12(E\partial_E+J\partial_J)\varphi_0\,\eta$ term above is the leading
+\emph{approximation} to Eq.~\eqref{eq:adiab-exact}, accurate to $\sim2\%$; the exact
+off-shell term is derived and verified, its closed-form special-function assembly being
+completed separately (it lives in the same genus-two class as $\mathcal{C}+\psi$).
 \begin{table}[htbp]
     \centering
-    \caption{Hybrid semi-analytic adiabatic form versus full non-autonomous
-    first-order coefficient, $\max_r|\varphi_{\rm hybrid}-\varphi_{\rm full}|$.
+    \caption{Hybrid closed form versus the direct integral of the \emph{same}
+    first-order coefficient, $\max_r|\varphi_{\rm hybrid}-\varphi_{\rm full}|$ (an
+    integration-by-parts identity---an algebraic self-consistency, \emph{not} a test
+    against the true dynamics; for the latter see Fig.~\ref{fig:phi-true-dynamic}).
     Both branches; the residual is the numerical-quadrature floor.}
     \label{tab:adiab-valid}
     \begin{tabular}{lcc}
@@ -1157,6 +1188,20 @@ an adiabatic threshold (Fig.~\ref{fig:phi-penetrating}).
     reproducibility package. All coefficients in $\delta\varphi$ are algebraic and
     given, not fitted.}
     \label{fig:phi-closed}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth]{Immagini/fig_phi_validation_true_dynamic.pdf}
+    \caption{\emph{Physical} validation against the true non-autonomous dynamics
+    ($t$-branch). Left: the actual optical-metric geodesic (branch-Hamiltonian flow
+    with $E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$) versus the frozen shape plus the
+    leading adiabatic correction, at $A'/A=0.04$. Right: the physical error is
+    $\sim2\%$ and scales linearly with $\varepsilon$, \emph{far above} the algebraic
+    integration-by-parts floor of Fig.~\ref{fig:phi-closed}/Table~\ref{tab:adiab-valid}
+    ($\sim10^{-6}$). The $\sim2\%$ is the off-shell residual of the leading
+    approximation; the exact term~\eqref{eq:adiab-exact} closes it to $O(\varepsilon^2)$.}
+    \label{fig:phi-true-dynamic}
 \end{figure}
 
 \begin{figure}[tbp]
