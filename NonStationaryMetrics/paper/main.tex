@@ -1599,8 +1599,10 @@ $J^{\ast\ast}=[E^2r_{\min}^2(r_{\min}-M)+E^2a^2r_{\min}+a^2]/(a\,DE_{\min})$: th
 quadratic opens downward ($A=-(r_{\min}-2M)DE_{\min}<0$) with negative vertex
 $-2a/(r_{\min}-2M)$, while $J^\ast,J^{\ast\ast}>0$ and
 \[
-Q_2(r_{\min},J^\ast)=\frac{-E^2r_{\min}^3(E^2r_{\min}^2+a^2)\Delta_{\min}}{a^2DE_{\min}},\quad
-Q_2(r_{\min},J^{\ast\ast})=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\min}^2[(r_{\min}-M)^2+a^2]+a^2\big)}{a^2DE_{\min}}
+\begin{aligned}
+Q_2(r_{\min},J^\ast)&=\frac{-E^2r_{\min}^3(E^2r_{\min}^2+a^2)\Delta_{\min}}{a^2DE_{\min}},\\[2pt]
+Q_2(r_{\min},J^{\ast\ast})&=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\min}^2[(r_{\min}-M)^2+a^2]+a^2\big)}{a^2DE_{\min}}
+\end{aligned}
 \]
 are both manifestly negative, placing the thresholds beyond the larger root
 (\texttt{no\_inversion\_reduction.py}). Hence (A) is a theorem for all $r_{\min}>2M$,
@@ -2253,28 +2255,26 @@ exactly):
 \begin{table}[htbp]
     \centering
     \caption{Reference reduction coefficients, obtained by solving
-    Eq.~\eqref{eq:reduction-identity}. For Thakurta--Kerr the conformal drift acts
-    through \emph{both} charges, so the source is the Euler operator and the
-    combined weight is $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$: we list the energy
-    ($\partial_E$) and angular ($\partial_J$) reductions separately. Vaidya (mass
-    parameter) has only $\partial_m$. A reviewer reproduces all rows from the
-    stated parameters with a single linear solve each (residual $0$ exactly); the
-    script \texttt{reproduce\_reductions.py} performs them all.}
+    Eq.~\eqref{eq:reduction-identity}, at $M{=}1$ and (Thakurta--Kerr rows)
+    $a{=}0.9,E{=}1.2,J{=}2.5$, (Vaidya row) $a{=}0,E{=}1.4,J{=}2.5$. For
+    Thakurta--Kerr the conformal drift acts through \emph{both} charges, so the source
+    is the Euler operator and the combined weight is $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$:
+    we list the energy ($\partial_E$) and angular ($\partial_J$) reductions separately;
+    Vaidya has only $\partial_m$. Decimals are shown for readability; each $c_k$ is the
+    exact rational solution of a single linear solve (residual $0$ exactly), regenerated
+    by \texttt{reproduce\_reductions.py} (exact coefficients in the reproducibility
+    package).}
     \label{tab:reduction-ck}
-    \begin{tabular}{lllllll}
+    \small
+    \begin{tabular}{lrrrrr}
         \hline\hline
-        reduction & parameters & $c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$\\
+        reduction & $c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$\\
         \hline
-        TK $\tau$, $\partial_E$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
-            & $-1.1575$ & $1.86406$ & $-0.57499$ & $0.02429$ & $0.07117$\\
-        TK $\tau$, $\partial_J$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
-            & $0.18027$ & $0.06996$ & $-0.29682$ & $0.03840$ & $0.03760$\\
-        TK $t$, $\partial_E$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
-            & $-0.39084$ & $1.72654$ & $-0.19058$ & $-0.14503$ & $-0.01676$\\
-        TK $t$, $\partial_J$ & $M{=}1,a{=}0.9,E{=}1.2,J{=}2.5$
-            & $4.33922$ & $4.03122$ & $-0.64349$ & $-2.63600$ & $-0.64444$\\
-        Vaidya ($a{=}0$), $\partial_m$ & $M{=}1,E{=}1.4,J{=}2.5$
-            & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
+        TK $\tau$, $\partial_E$ & $-1.1575$ & $1.86406$ & $-0.57499$ & $0.02429$ & $0.07117$\\
+        TK $\tau$, $\partial_J$ & $0.18027$ & $0.06996$ & $-0.29682$ & $0.03840$ & $0.03760$\\
+        TK $t$, $\partial_E$ & $-0.39084$ & $1.72654$ & $-0.19058$ & $-0.14503$ & $-0.01676$\\
+        TK $t$, $\partial_J$ & $4.33922$ & $4.03122$ & $-0.64349$ & $-2.63600$ & $-0.64444$\\
+        Vaidya, $\partial_m$ & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
         \hline\hline
     \end{tabular}
 \end{table}
