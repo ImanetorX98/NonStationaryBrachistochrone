@@ -1128,17 +1128,25 @@ the true non-autonomous optical-metric geodesic---the branch-Hamiltonian flow wi
 $E_{\rm eff}=\Ehat/A(\eta)$, $J_{\rm eff}=J/A(\eta)$---and comparing to
 $\varphi_0+\varepsilon\,\delta\varphi$ shows the \emph{physical} accuracy is $\sim2\%$
 (linear in $\varepsilon$), far above the algebraic floor
-(Fig.~\ref{fig:phi-true-dynamic}). A complete canonical perturbation theory of that flow
-closes the correction to $O(\varepsilon^2)$:
+(Fig.~\ref{fig:phi-true-dynamic}). Linearizing the extended Hamiltonian
+$\mathcal H=p_s+H=0$ about the frozen extremal---with the slow variable
+$\lambda$ the elapsed clock measured \emph{from the free-arrival endpoint} (where
+$H=0$ by the transversality~\eqref{eq:transversality}), oriented inward, and
+$A(\eta)=A_0(1+\varepsilon\lambda+\cdots)$---gives $\dd p_\eta/\dd\lambda=\Theta H$
+with $p_\eta=0$ at that endpoint, hence the first-order shift of the momentum shell
+$\delta p_r=(\lambda\,\Theta H-S)/H_{p_r}$ and
 \begin{equation}
     \frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{p_r}G}{H_{p_r}}\,
     \big(\lambda\,\Theta H-S\big)-\lambda\,\Theta G\Big]\dd r,\quad
-    \Theta\equiv E\partial_E+J\partial_J,\ \ S=\!\int_0^{\lambda}\!\Theta H\,\dd\lambda',\ \
+    \Theta\equiv E\partial_E+J\partial_J,\ \ S(\lambda)=\!\int_0^{\lambda}\!\Theta H\,\dd\lambda',\ \
     G=\frac{H_J}{H_{p_r}}=\varphi',
     \label{eq:adiab-exact}
 \end{equation}
-verified numerically (coefficient and slope~$\approx2$;
-\texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py}). This splits into an
+which closes the correction to $O(\varepsilon^2)$. Here $S$ is \emph{terminally
+anchored} ($S=0$ at the free-arrival endpoint), fixing the homogeneous constant so
+that $\delta p_r,\delta J\to0$ there; the reduction holds on compact sub-arcs bounded
+away from the turning point, where $H_{p_r}\to0$. Verified numerically (coefficient
+and residual slope~$\approx2$; \texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py}). This splits into an
 \emph{on-shell} part (parameter drift along the frozen shell) and an \emph{off-shell}
 part driven by the slow-time costate: since $H$ departs from zero in the interior
 ($H_{\rm ext}=p_\eta+H=0$ with $\dd p_\eta/\dd\lambda=\Theta H$, so $H=-p_\eta\sim
