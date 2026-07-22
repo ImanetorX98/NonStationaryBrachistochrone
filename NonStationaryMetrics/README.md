@@ -41,6 +41,18 @@ independently in Mathematica** (`paper/crosscheck_*.wl`).
 | `progress.md` | Chronological log of the whole derivation, brick by brick. |
 | `EXPLICIT_FORMS_PROGRESS.md`, `RESULTS_ROADMAP.md`, `ALGORITHM_adiabatic_closed_forms.md`, `UNIFIED_ADIABATIC.md`, `sumUp.md`, `paperOutline.md` | Earlier progress notes, the reusable algorithm, figure index, outline. |
 
+### Fixed-endpoint no-inversion (Lemma B) + referee response (recent)
+| File | What it does |
+|------|--------------|
+| `RESULTS_lemmaB_frozen_schwarzschild.md` | Master summary of the frozen-Schwarzschild no-inversion: Lemma A closed; Lemma B via elementary (`r0<=R*`) + closed-form large-`r0` asymptotic + CAP. |
+| `no_inversion_reduction.py` | Reduction + Lemma A closed-form proof (`symbolic_full_proof`). |
+| `no_inversion_schwarzschild_closedform.py` | Closed form for `Phi_tau'` (IBP); elementary grazing/quarter regimes; single-crossing criterion. |
+| `no_inversion_schwarzschild_asymptotic.py` | Large-`r0` asymptotic: `Phi=arctan(...)-b^{-3/2}sqrt(...)`, single non-degenerate max, `Phi''(x_pk)=-1/2 b^{9/4} V0^{-5/4}`. |
+| `no_inversion_schwarzschild_CAP.py`, `..._CAP_r0_10.py`, `..._CAP_grid.py` | Computer-assisted proof (mpmath interval arithmetic): single-crossing certificates. Complete at `r0=10`; grid `E in {1.2,1.6,2.5} x r0 in {8,12}` (`CAP_grid_certificates.txt`). |
+| `verify_lemmaB_mathematica.wls` | Independent Mathematica cross-check of all no-inversion derivations. |
+| `REFEREE_RESPONSE_main8.md` | Point-by-point response to the main8 referee report (DONE vs PLANNED). |
+| `ThakurtaMetric/adiabatic_offshell_validation.py`, `adiabatic_tk_geodesic_check.py` | Validation of the adiabatic correction against the true optical-metric geodesic: `1/2`-Euler captures ~98%; off-shell (`H2!=0`, costate `p_eta`) term is the ~2% residual (referee 4.6). |
+
 ---
 
 ## Install / run
