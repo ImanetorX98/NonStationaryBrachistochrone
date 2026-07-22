@@ -155,10 +155,14 @@ radial metric coefficient degenerates. (iii) For Thakurta--Kerr inside the
 $-u\cdot W=\Ehat$ fixes a \emph{spatial} component of $u$ and the intersection with
 the mass shell is no longer automatically a compact oval in the PMP sense. The local
 theorems of this section are therefore stated in the timelike-$W$, nondegenerate
-domain; the ergosphere is reached by analytic continuation of the closed forms
-(Sec.~\ref{sec:trichotomy}, where the penetrating $t$-branch is analyzed
-explicitly), equivalently by re-anchoring the selector to a timelike congruence
-(Doran/ZAMO), which leaves the equatorial closed forms unchanged.
+domain. The interior expressions are the \emph{analytic continuation} of these
+closed forms (Sec.~\ref{sec:trichotomy}, where the penetrating $t$-branch is analyzed
+explicitly); we do \emph{not} claim they are proved optimal-control solutions inside
+the ergosphere. A genuinely different, and inequivalent, construction---re-anchoring
+the constraint $-u\cdot W=\Ehat$ to a timelike congruence (Doran/ZAMO)---would change
+the selector $W$, the indicatrix, the cost, and the Hamiltonian, and is left to
+future work; a coordinate change alone (e.g.\ to Doran variables) does not alter the
+geometric selector and hence cannot substitute for it.
 
 \paragraph{Pontryagin reduction.} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.
@@ -225,15 +229,16 @@ reproduce the Randers/Zermelo structure
 free-fall geodesic reads $a=0$ on an accelerometer---the rail force is exactly the
 thrust per unit mass a rocket must supply to fly the brachistochrone. Its magnitude
 $|a|=\sqrt{a\cdot a}\ge0$ ($a$ is spacelike since $a\cdot u=0$) integrates to a
-characteristic velocity $\Delta v=\int|a|\,\dd\tau$ and hence, by the (relativistic)
-Tsiolkovsky relation, to a fuel fraction $1-\exp(-\Delta v/v_{\rm e})$ for exhaust
+characteristic velocity $\Delta v=\int|a|\,\dd\tau$ and hence, \emph{heuristically}
+and under a chosen constant-exhaust rocket model (not needed for the mathematical
+argument below), to a fuel fraction $1-\exp(-\Delta v/v_{\rm e})$ for exhaust
 speed $v_{\rm e}$. For a representative Schwarzschild arc ($E=1.4$, $r:10M\!\to\!5.7M$)
 one finds $|a|\sim0.03$--$0.2/M$ and $\Delta v\approx0.6\,c$ (a photon rocket burns
 $\sim\!45\%$ of its mass; a chemical one cannot); the proper acceleration diverges as
 the freezing/horizon surface is approached, so the fuel budget diverges there
 (\texttt{brachistochrone\_thrust\_fuel.py}). The brachistochrone is the
-\emph{fastest} rail curve, not the fuel-minimal one---a geodesic costs no fuel---so
-this is the price of speed at fixed $\Ehat$; in the non-stationary case the
+\emph{fastest} rail curve, not the fuel-minimal one---an unpowered free-fall geodesic
+(after launch) requires no rail thrust---so this is the price of speed at fixed $\Ehat$; in the non-stationary case the
 $a\cdot W$ term adds the thrust that fights the accretion/evaporation drift.
 
 \paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
@@ -765,8 +770,13 @@ Thakurta--Kerr is conformal Kerr, $g=A(\eta)^2 g_{\rm Kerr}$
 \cite{McVittie1933,SultanaDyer2005,Kaloper2010,NolanMcVittie1998,MelloMaciel2017,FaraoniBook}.
 For constant $A$
 the transfer theorem maps the problem to Kerr with $E_{\rm eff}=\Ehat/A$,
-$J_{\rm eff}=J/A$; the horizon $\rp$ is rigid (conformally invariant), the
-ergosphere $\re=2M$ is crossed regularly, while the freezing surface
+$J_{\rm eff}=J/A$. Throughout we use $\rp$ (where $\Delta=0$) and $\re=2M$ as
+labels for the \emph{seed} Kerr null surface and conformal-stationary-limit surface:
+a conformal factor preserves the null \emph{character} of $\Delta=0$, so $\rp$ is a
+conformal Killing horizon candidate, but for time-dependent $A(\eta)$ this does
+\emph{not} by itself fix the apparent/trapping or event horizon (which require the
+null expansions and the global causal structure, not computed here). With that
+caveat, $\rp$ is rigid, $\re=2M$ is crossed regularly, and the freezing surface
 $A^2 f=\Ehat^2$ breathes.
 
 \paragraph{Indicatrix and Hamiltonians.} Equatorially, write
@@ -1122,7 +1132,7 @@ The agreement is at the discretization floor and scales linearly with
 $\varepsilon$, confirming that the split is an exact reorganization (integration by
 parts) rather than an approximation. Figure~\ref{fig:phi-closed} shows the same
 comparison as orbit shapes in the plane, closed form against direct integration,
-for both branches over the full arc through the turning point. The frozen family
+for both branches on compact sub-arcs bounded away from the turning point. The frozen family
 itself already exhibits nontrivial ergosphere dynamics: for penetrating $t$-branch
 angular momenta the orbit dips inside $r_e$, co-rotates, and turns just outside the
 horizon, and a growing conformal factor eventually expels it from the ergosphere at
@@ -1526,12 +1536,12 @@ $r>r_{\min}$. Both $W(r_{\min})=(r_{\min}-2M)\,a\,DE_{\min}(J^\ast-J_t)$ and the
 $w_1=a\,DE_{\min}(J^{\ast\ast}-J_t)$ are positive because the prograde root $J_t$ of
 $Q_2(r_{\min},\cdot)$ lies below both thresholds
 $J^\ast=[E^2r_{\min}(a^2+r_{\min}^2)+2a^2]/(a\,DE_{\min})$,
-$J^{\ast\ast}=[E^2r_{\min}^2(r_{\min}-1)+E^2a^2r_{\min}+a^2]/(a\,DE_{\min})$: the
+$J^{\ast\ast}=[E^2r_{\min}^2(r_{\min}-M)+E^2a^2r_{\min}+a^2]/(a\,DE_{\min})$: the
 quadratic opens downward ($A=-(r_{\min}-2M)DE_{\min}<0$) with negative vertex
 $-2a/(r_{\min}-2M)$, while $J^\ast,J^{\ast\ast}>0$ and
 \[
 Q_2(r_{\min},J^\ast)=\frac{-E^2r_{\min}^3(E^2r_{\min}^2+a^2)\Delta_{\min}}{a^2DE_{\min}},\quad
-Q_2(r_{\min},J^{\ast\ast})=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\min}^2[(r_{\min}-1)^2+a^2]+a^2\big)}{a^2DE_{\min}}
+Q_2(r_{\min},J^{\ast\ast})=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\min}^2[(r_{\min}-M)^2+a^2]+a^2\big)}{a^2DE_{\min}}
 \]
 are both manifestly negative, placing the thresholds beyond the larger root
 (\texttt{no\_inversion\_reduction.py}). Hence (A) is a theorem for all $r_{\min}>2M$,
@@ -1589,9 +1599,10 @@ move.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_spin_estremi_fissi.png}
-    \caption{Spin scan at fixed symmetric endpoints (Kerr, Hamiltonian
-    flow): $\Delta r$ in the $(J,a)$ plane stays positive everywhere---spin
-    does not invert once the endpoints are pinned. The gradient is set by the
+    \caption{Numerical spin scan at fixed symmetric endpoints (Kerr, Hamiltonian
+    flow): $\Delta r$ over the sampled $(J,a)$ domain stays positive---spin
+    does not invert once the endpoints are pinned (a finite scan, consistent with the
+    tiered no-inversion status of \S\ref{sec:inversion}). The gradient is set by the
     endpoint angle ($J$), not by $a$.}
     \label{fig:cm-spin-fix}
 \end{figure}
@@ -1617,7 +1628,10 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
         protocol & spin $a$ & conformal $A$ \\
         \mr
         same launch & inverts (\S\ref{sec:inversion}) & inverts (\S\ref{sec:inversion}) \\
-        fixed endpoints & no ($\Delta r>0$) & no ($n_t/n_\tau=E/f>1$) \\
+        fixed endpoints & no inversion$^\ast$ & no inversion$^\ast$ \\
+        \mr
+        \multicolumn{3}{@{}l}{\footnotesize $^\ast$Tiered status (see caption); the
+        pointwise bound $n_t/n_\tau=E/f>1$ is \emph{necessary but not sufficient}.}\\
         \br
     \end{tabular}
 \end{table}
@@ -2283,17 +2297,18 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_spin_asimmetrico.png}
-    \caption{Robustness of the fixed-endpoint no-inversion result under
-    \emph{asymmetric} endpoints ($r_A=10,r_B=6$), spin scan (Kerr flow):
-    $\Delta r>0$ throughout the $(J,a)$ plane.}
+    \caption{Numerical robustness scan (not a theorem) of the fixed-endpoint
+    no-inversion result under \emph{asymmetric} endpoints ($r_A=10,r_B=6$), spin
+    scan (Kerr flow): $\Delta r>0$ over the sampled $(J,a)$ domain.}
     \label{fig:asym-spin}
 \end{figure}
 
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_conforme_asimmetrico.png}
-    \caption{Same robustness check, conformal scan (via $E_{\rm eff}=\hat E/A$):
-    $\Delta r>0$ throughout the $(J,A)$ plane for asymmetric endpoints. The
+    \caption{Same numerical robustness scan (not a theorem), conformal
+    (via $E_{\rm eff}=\hat E/A$): $\Delta r>0$ over the sampled $(J,A)$ domain for
+    asymmetric endpoints. The
     blank wedge is the region where the $\tau$-turning point rises above
     $r_B$ (no dipping orbit reaches $B$).}
     \label{fig:asym-conf}
