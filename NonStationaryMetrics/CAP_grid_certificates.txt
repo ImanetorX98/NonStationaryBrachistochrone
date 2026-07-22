@@ -1,0 +1,8 @@
+E  r0  bb  rquarter  RESULT  nc S M  time
+E=1.2 r0=8 bb=0.440 rquarter=4.958 : PASS (nc=374 S=66 M=35 399s)
+E=1.6 r0=8 bb=1.560 rquarter=4.759 : PASS (nc=399 S=65 M=43 381s)
+E=2.5 r0=8 bb=5.250 rquarter=4.659 : PASS (nc=427 S=69 M=46 418s)
+E=1.2 r0=12 bb=0.440 rquarter=7.063 : PASS (nc=917 S=140 M=75 1023s)
+E=1.6 r0=12 bb=1.560 rquarter=6.765 : PASS (nc=939 S=148 M=73 1003s)
+E=2.5 r0=12 bb=5.250 rquarter=6.634 : PASS (nc=964 S=150 M=75 1042s)
+GRID DONE
