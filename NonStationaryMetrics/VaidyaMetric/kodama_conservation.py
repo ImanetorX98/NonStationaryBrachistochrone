@@ -159,14 +159,16 @@ print(f"  energia di Kodama che la rotaia risparmia (drift geo. cumulato) "
 
 # --------------------------------------------------------------- figura
 fig, (a1, a2) = plt.subplots(2, 1, figsize=(COL, 5.2))
-a1.plot(rg, np.abs(E_K_num), 'C0-', lw=1.5,
-        label='$-u\\cdot K$ (brachistochrone)')
-a1.axhline(E_n, color='k', ls='--', lw=0.8, label=f'rail $E={E_n}$')
-a1.set_ylabel('$-u\\cdot K$')
-a1.set_ylim(E_n - 0.02, E_n + 0.02)
+# top panel: the conservation RESIDUAL on a log scale (a near-flat linear plot
+# cannot show ~1e-16 constancy; referee 4/Fig 4).
+resid = np.abs(E_K_num - E_n) + 1e-18
+a1.semilogy(rg, resid, 'C0-', lw=1.5,
+            label='$|{-}u\\cdot K-E|$ (brachistochrone)')
+a1.axhline(dev_E, color='k', ls='--', lw=0.8, label=f'max $={dev_E:.1e}$')
+a1.set_ylabel('$|{-}u\\cdot K-E|$')
+a1.set_ylim(1e-18, 1e-10)
 a1.set_title('Kodama energy conserved along the $\\tau$-brachistochrone\n'
-             f'(accreting Vaidya $m=1+{mu_n}v$): $|{{-}}u\\cdot K-E|'
-             f'<{dev_E:.0e}$')
+             f'(accreting Vaidya $m=1+{mu_n}v$): residual $<{dev_E:.0e}$ (log scale)')
 a1.legend()
 a2.plot(rg, drift_geo, 'C3-', lw=1.5,
         label="geodesic rate $-m'(u^v)^2/r$")
