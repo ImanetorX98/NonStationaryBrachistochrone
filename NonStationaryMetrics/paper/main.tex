@@ -123,8 +123,9 @@ The rail is a constrained worldline with the invariant
     -\,u\cdot W \;=\; \Ehat ,
     \label{eq:rail}
 \end{equation}
-actively maintained by an ideal (magnetic-type) rail force $f_\mu=Du_\mu/\dd\tau$
-with $f\cdot u=0$, so that the rail does no work on the particle.
+actively maintained by an ideal rail force $f_\mu=Du_\mu/\dd\tau$ with
+$f\cdot u=0$ (automatic for a rest-mass--preserving force), which creates no rest
+mass but is free to exert power against the selector (see below).
 
 \paragraph{The ellipse.} Fix an event and a time function adapted to $W$. The
 linear constraint~\eqref{eq:rail} fixes the $W$-component of $u$; the mass shell
@@ -159,10 +160,17 @@ explicitly), equivalently by re-anchoring the selector to a timelike congruence
 
 \paragraph{Pontryagin reduction.} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.
-The admissible-velocity set is already compact and convex (the oval), so its
-attainable set needs \emph{no} Filippov convexification; and since the oval is
-\emph{strictly} convex the maximizer of $p\cdot\dot x(\theta)$ is unique, so the
-optimal control $\theta^\star(x,p)$ is single-valued and smooth and Pontryagin's
+The velocity indicatrix~\eqref{eq:ellipse} is a compact, strictly convex
+\emph{closed curve} (the boundary of a convex region), and the control is its
+direction $\theta\in S^1$, itself a compact one-dimensional set. Maximizing the
+support function $p\cdot\dot x(\theta)$ over this curve has a \emph{unique} maximizer
+by strict convexity, so \emph{no} Filippov relaxation is needed---the control set
+$S^1$ is already compact and the maximizer single-valued; we do \emph{not} claim the
+velocity locus is a convex \emph{subset} of the plane, nor convexify it (which would
+admit averaged velocities violating the unit-mass shell). Excluding $p=0$ by the
+nontriviality condition, the optimal control $\theta^\star(x,p)$ is single-valued and
+smooth (away from the freezing and horizon degeneracies, treated separately) and
+Pontryagin's
 maximum principle \cite{Pontryagin,Liberzon} delivers the branch Hamiltonian
 $H(x,p)=\max_\theta p\cdot\dot x(\theta)$ in closed form
 (Secs.~\ref{sec:vaidya}--\ref{sec:thakurta}). This is a genuine time-optimal
@@ -191,9 +199,15 @@ identity
     \frac{\dd(-u\cdot W)}{\dd\tau}=-\,a\cdot W-u^a u^b\,\nabla_{(a}W_{b)},
     \label{eq:cost}
 \end{equation}
-whose two terms play distinct roles. The rail force is \emph{magnetic-type} in the
-kinetic sense $a\cdot u=0$: it does no work on the particle and preserves the mass
-shell $u\cdot u=-1$, but it is free to exert power \emph{against the selector} $W$.
+whose two terms play distinct roles. The constraint $a\cdot u=0$ holds
+\emph{automatically} for any four-force that preserves the mass shell
+$u\cdot u=-1$ (it is the derivative of the shell condition); it is \emph{not} a
+special ``magnetic'' property and does not by itself imply that the rail performs no
+work relative to a physical observer. It means only that no rest mass is created;
+the rail is nonetheless free to exert power \emph{against the selector} $W$ (the term
+$a\cdot W$). One should distinguish (i) preservation of rest mass ($a\cdot u=0$),
+(ii) power measured by a chosen observer congruence, (iii) the constraint force
+itself, and (iv) the additional power needed to compensate non-stationarity.
 A free geodesic ($a=0$) would let $-u\cdot W$ drift at $-u^au^b\nabla_{(a}W_{b)}$,
 which vanishes for all $u$ iff $W$ satisfies the Killing equation; to hold
 $-u\cdot W=\Ehat$ fixed the rail supplies exactly $a\cdot W=-u^au^b\nabla_{(a}W_{b)}$,
@@ -507,9 +521,11 @@ extrapolating to $m\le0$ rather than passing to the outgoing metric.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_no_inversione_evaporazione.png}
-    \caption{No physical evaporative inversion: the linear-model sign change
-    lies entirely in the unphysical $m<0$ region; with $m=e^{-\lambda v}>0$ the
-    gap shrinks but never inverts.}
+    \caption{No evaporative inversion in the ingoing model: the linear-model
+    sign change lies entirely in the unphysical $m<0$ region; with
+    $m=e^{-\lambda v}>0$ the gap shrinks but does not invert. This is a
+    model-dependent statement for ingoing Vaidya; the physical evaporation
+    (outgoing $m'<0$) is treated separately and shares the same depth ordering.}
     \label{fig:vaidya-noinv}
 \end{figure}
 
@@ -1127,12 +1143,19 @@ an adiabatic threshold (Fig.~\ref{fig:phi-penetrating}).
     integration, for both branches. Panels (a,b): the closed form
     $\varphi_0+\varepsilon\,\delta\varphi$ (dashed), with $\delta\varphi$ assembled
     from Eq.~\eqref{eq:psi-split}, overlies the numerically integrated orbit
-    (solid) over the whole incoming/outgoing arc through the turning point (marker);
+    (solid) on compact sub-arcs bounded away from the turning point (marker);
     the orbits wind close to the ergosphere $r_e$. Panel (c): the residual
-    $\max_r|\varphi_{\rm closed}-\varphi_{\rm num}|$ scales linearly with
-    $\varepsilon=A'/A$ (the $O(\varepsilon^2)$ truncation floor), for the $t$-branch
-    ($J=6$) and $\tau$-branch ($J=2.5$). All coefficients in $\delta\varphi$ are
-    algebraic and given, not fitted.}
+    $\max_r|\varphi_{\rm closed}-\varphi_{\rm num}|$ grows approximately
+    \emph{linearly} with $\varepsilon=A'/A$ over the tested range
+    (residual$/\varepsilon\approx2.8\times10^{-4}$), for the $t$-branch
+    ($J=6$) and $\tau$-branch ($J=2.5$). This linear growth measures the size of
+    the retained first-order correction and a fixed numerical floor; it is
+    \emph{not} an $O(\varepsilon^2)$ truncation test. A dedicated log--log
+    convergence study against the full non-autonomous flow (expected slope two if
+    the parameter-derivative formula is the complete first-order term), separating
+    discretization, quadrature and truncation errors, is deferred to the
+    reproducibility package. All coefficients in $\delta\varphi$ are algebraic and
+    given, not fitted.}
     \label{fig:phi-closed}
 \end{figure}
 
@@ -1465,15 +1488,34 @@ $\Sigma=\sqrt{V_0-V_{\min}}$, where $g(\sigma)=(V_0-2V_{\min})\sigma/\Sigma+V_{\
 satisfies $g(0)=V_{\min}>0$, $g(\Sigma)=0$ with its other root negative, hence
 $g>0$ on $[0,\Sigma)$; the second term is therefore \emph{manifestly negative}.
 When $V(r_0)\le2V(r_{\min})$ (the grazing regime, $r_{\min}$ near $r_0$) the first
-term is $\le0$ as well, and $\Phi_\tau'<0$ is \emph{proven in closed form}. For
-$V(r_0)>2V(r_{\min})$ the first term is positive and must be dominated by the
-integral; this holds (verified over $a\in[0.2,0.9]$, $E\in[1.05,1.5]$) but is a
-tight quantitative inequality, tight at the \emph{transcendental} threshold
-$r_{\rm pk}$, and its symbolic proof is left open. The fixed-endpoint turning points
-lie in the scattering regime $r_{\min}>r_{\rm pk}$---for the wide-angle endpoints of
-Fig.~\ref{fig:bvp}, $r_{\min}^{\tau,t}\gtrsim4.7M$---where (B) holds. Thus the
-fixed-endpoint no-inversion is a theorem in the scattering regime, with (A) proven in
-closed form and (B) proven in the grazing sub-regime and verified beyond it.
+term is $\le0$ as well, and $\Phi_\tau'<0$ is \emph{proven in closed form}. The same
+closed form---using the exact identity (integration by parts on the Abel integral)
+\begin{equation}
+    \sqrt{V_{\min}}\,\Phi_\tau'=\frac{W(V_0)(V_0-2V_{\min})}{\Sigma}
+    +\int_{V_{\min}}^{V_0}\!\frac{W'(t)\,(2V_{\min}-t)}{\sqrt{t-V_{\min}}}\,\dd t ,
+    \label{eq:phitau-closed}
+\end{equation}
+together with the convexity of $W$ ($W''>0$)---extends the proof to the quarter
+regime $V(r_0)\le4V(r_{\min})$, hence to all endpoints $r_0\le R_\ast(E)$. In the
+static limit $a\to0$ (Vaidya $\dot m=0$ / frozen Thakurta) we can go further:
+$W(V)=\tfrac1{2V}-\tfrac1{2b^{3/2}V^{3/2}}+O(V^{-2})$ with $b=E^2-1$, so the
+large-$r_0$ angle is
+$\Phi_\tau=\arctan\!\sqrt{V_0/V_{\min}-1}-b^{-3/2}\sqrt{1/V_{\min}-1/V_0}+\cdots$,
+exhibiting a \emph{single, non-degenerate} maximum at $V_{\rm pk}\sim b^{-3/2}\sqrt{V_0}$
+with $\Phi_\tau''(V_{\rm pk})=-\tfrac12 b^{9/4}V_0^{-5/4}<0$; hence (B) holds for all
+sufficiently large $r_0$. For intermediate $r_0$ the single-crossing property
+(at every $r_{\min}$, \emph{either} $\Phi_\tau'<0$ \emph{or} $\Phi_\tau''<0$) is
+established by a validated interval-arithmetic certificate, completed for $r_0=10M$
+over the entire continuum $r_{\min}\in(2.6,6.05)M$ (the elementary grazing bound
+covering $r_{\min}\gtrsim6.05M$; \texttt{no\_inversion\_schwarzschild\_CAP\_r0\_10.py}).
+A uniform symbolic proof for all $(a,E,r_0)$ remains open---the deciding inequality is
+tight at the \emph{transcendental} deflection threshold $r_{\rm pk}$. We therefore state
+(B), and hence the fixed-endpoint no-inversion, as a \emph{theorem for $r_0\le R_\ast(E)$
+and asymptotically as $r_0\to\infty$ in the static case}, machine-certified at
+representative $r_0$, and a numerically supported conjecture in full generality
+(verified over $a\in[0.2,0.9]$, $E\in[1.05,1.5]$); the fixed-endpoint turning points of
+Fig.~\ref{fig:bvp} ($r_{\min}^{\tau,t}\gtrsim4.7M$) lie in the certified scattering
+regime.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
@@ -1499,8 +1541,11 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
 \begin{table}[t]
     \centering
     \caption{Protocol dependence of plunge inversion. Same-launch
-    comparison inverts under either rotation or a conformal factor;
-    the genuine fixed-endpoint brachistochrone never inverts.}
+    comparison inverts under either rotation or a conformal factor; the
+    genuine fixed-endpoint brachistochrone shows no inversion in every
+    proven and tested regime (proven for $r_0\le R_\ast$ and, in the static
+    case, as $r_0\to\infty$; machine-certified at representative $r_0$;
+    numerically verified elsewhere).}
     \label{tab:protocol}
     \begin{tabular}{@{}lcc}
         \br
