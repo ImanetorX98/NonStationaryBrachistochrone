@@ -53,12 +53,14 @@ absence of a \emph{physical} evaporative inversion (only rotation and the
 conformal factor invert); closed-form equatorial separatrices in Weierstrass
 functions with Doran continuation through the ergosphere; the trichotomy at
 the ergosphere with an analytic cusp theorem; an existence theorem for the
-conformal plunge inversion; and closed-form first-order adiabatic corrections
-whose transcendence is a universal genus-two hyperelliptic dilogarithm on the
-frozen spectral curve, unified across the three geometries by a
-breathing-indicatrix theorem in which the weight-two letter migrates from a
-third-kind dipole at infinity (Thakurta--Kerr) to a $\mathrm{d}\!\log$ at the
-horizon (Vaidya, where it is the face of the accretion/evaporation asymmetry).
+conformal plunge inversion; and first-order adiabatic corrections whose \emph{on-shell} (parameter-drift)
+component is a closed form in length-two iterated Abelian integrals on the frozen
+spectral curve, unified across the three geometries by a breathing-indicatrix
+structure in which the weight-two letter migrates from a third-kind dipole at
+infinity (Thakurta--Kerr) to a $\mathrm{d}\!\log$ at the horizon (Vaidya); the
+complete first-order term additionally carries an off-shell (costate) piece of the
+same class, derived from the extended Hamiltonian and verified against the true
+non-autonomous flow.
 Throughout, the block coefficients are obtained in explicit symbolic form (rational in
 the physical parameters and the separatrix data), the genus-two dilogarithm as a
 geometrically convergent Kronecker--Eisenstein nome ($q$-)series, and a
@@ -438,12 +440,18 @@ conformal rate $\mathrm{d}\Ehat/\mathrm{d}\tau=A'/A$ (verified numerically to
 $\sim\!10^{-11}$), whereas along the \emph{brachistochrone}---instantaneously an
 on-shell Kerr orbit at $E_{\rm eff}=\Ehat/A(\eta)$---the rail holds $\Ehat$
 constant to $8.9\times10^{-16}$, the exact analogue of the Vaidya value
-(\texttt{ThakurtaMetric/rail\_conservation.py}). This confirms that
-$E_{\rm eff}=\Ehat/A$ (and, by the same conformal weight,
-$J_{\rm eff}=J/A$) track along the orbit, so the frozen shape relation
-$\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J_{\rm eff})$ stays exact and the
-adiabatic correction $\delta\varphi=-\int(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\mathrm{d}r$
-[Eq.~\eqref{eq:deltaphi-EJ}] carries no missing off-shell term.
+(\texttt{ThakurtaMetric/rail\_conservation.py}). This confirms that the controlled charges
+$E_{\rm eff}=\Ehat/A$ (and, by the same conformal weight, $J_{\rm eff}=J/A$)
+track along the orbit. Conservation of $\Ehat$ determines how the parameters
+\emph{drift}; it does \emph{not} force the non-autonomous trajectory to remain on
+the instantaneous $H=0$ shell---the costate equation is independent information.
+The frozen shape relation $\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J_{\rm eff})$
+and the parameter-drift correction
+$\delta\varphi=-\int(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\mathrm{d}r$
+[Eq.~\eqref{eq:deltaphi-EJ}] are therefore the \emph{on-shell component} of the
+first-order term; the complete first-order correction is
+Eq.~\eqref{eq:adiab-exact}, which adds the off-shell (costate $p_\eta$) piece
+[Sec.~\ref{sec:vaidya-adiabatic}, Fig.~\ref{fig:phi-true-dynamic}].
 
 
 \subsection{Phenomenology: penetration, timing, bounce}
@@ -1627,8 +1635,13 @@ drifts slowly,
 \end{equation}
 with $q_{kj}$ \emph{algebraic} (rational in the metric parameters, via the exact
 reduction $\partial_\lambda F=N_\lambda/S^{3/2}$) and $W_{kj}=\int(U_j\dd U_k-U_k
-\dd U_j)$ the genus-two polylogarithms of the frozen curve. The transcendence is
-\emph{universal}. The three geometries are distinguished \emph{not} by which datum
+\dd U_j)$ length-two iterated Abelian integrals of the frozen curve. Equation
+\eqref{eq:unified} is the \emph{on-shell} component of the first-order response
+(the parameter drift of the frozen family); the \emph{complete} first-order term is
+the extended-Hamiltonian expression Eq.~\eqref{eq:adiab-exact}, whose off-shell
+(costate $p_\eta$) piece is itself a length-two iterated integral of the same class
+(a $\sim2\%$ correction here). Within the on-shell component the transcendence
+structure is \emph{universal} across the three geometries. The three geometries are distinguished \emph{not} by which datum
 of the indicatrix varies---in each, \emph{both} the centre $c$ and the semi-axes $R$
 breathe, through $\partial_\lambda F=\partial_c F\,\partial_\lambda c+\partial_R
 F\,\partial_\lambda R$ with \emph{both} terms nonzero (for Vaidya, explicitly,
@@ -1676,7 +1689,12 @@ generically \emph{crosses} the moving separatrix as $m(v)$ drifts---accretion
 ($m\!\downarrow$) driving escape, the same physical divide carried by the
 accretion--evaporation asymmetry of Eq.~\eqref{eq:vaidya-asymmetry}. That crossing is
 a genuinely non-perturbative regime, beyond first order. Within these bounds, which
-are the usual bounds of first-order WKB, the theorem is airtight; the separatrix
+are the usual bounds of first-order WKB, this closed form is the \emph{on-shell
+component} of the first-order response---the parameter drift along the frozen
+family---and is exact as such; the \emph{complete} first-order term is the
+extended-Hamiltonian expression Eq.~\eqref{eq:adiab-exact}, which adds the
+off-shell (costate $p_\eta$) displacement of the momentum shell (a $\sim2\%$
+correction here, Fig.~\ref{fig:phi-true-dynamic}). The separatrix
 results in particular quantify the response \emph{at} the instantaneous marginal
 configuration $J=\Jc(m)$, not a trajectory pinned to it. The complementary,
 separatrix-\emph{following} response---imposing $J=\Jc(m(v))$ so that the orbit
@@ -1709,15 +1727,19 @@ the equatorial sector we obtained closed-form separatrices in Weierstrass
 functions, continued through the ergosphere in Doran coordinates, and an analytic
 cusp theorem for the $|J|<\Jc$ reflection. The plunge inversion resolves into a
 three-way picture: rotation and the conformal factor invert the $t/\tau$
-ordering under a same-launch comparison, whereas physical evaporation never does,
-and \emph{no} inversion survives once both endpoints are fixed. Slow drift of the
-metric yields closed-form first-order corrections whose transcendence is a
-universal genus-two hyperelliptic dilogarithm on the frozen spectral curve; a
-single breathing-indicatrix theorem unifies the three geometries, the weight-two
-letter migrating from a third-kind dipole at infinity (Thakurta--Kerr) to a
-$\dd\log$ at the horizon (Vaidya)---where it is the face of the
-accretion/evaporation asymmetry and collapses on the separatrix to a tabulated
-elliptic (Bloch--Wigner) dilogarithm. Outlook: the
+ordering under a same-launch comparison, while in the ingoing-Vaidya model the
+evaporative sign change is absent. The fixed-endpoint no-inversion is a
+\emph{theorem} for endpoint radii $r_0\le R_\ast(E)$ and, in the static case,
+asymptotically as $r_0\to\infty$; it is machine-certified (validated interval
+arithmetic) at representative $r_0$, and remains a numerically supported
+\emph{conjecture} in full generality. Slow drift of the metric yields first-order
+corrections whose \emph{on-shell} (parameter-drift) component is a closed form in
+length-two iterated Abelian integrals on the frozen spectral curve---unified across
+the three geometries, the weight-two letter migrating from a third-kind dipole at
+infinity (Thakurta--Kerr) to a $\dd\log$ at the horizon (Vaidya), and collapsing on
+the separatrix to an elliptic (Bloch--Wigner) dilogarithm; the complete first-order
+term additionally carries an off-shell (costate) piece of the same class, derived
+from the extended Hamiltonian and verified against the true non-autonomous flow. Outlook: the
 exact Sultana--Dyer source
 \cite{SultanaDyer2005}, the McVittie/Schwarzschild--de Sitter limits
 \cite{McVittie1933,Kottler1918,Kaloper2010} with their photon surfaces
