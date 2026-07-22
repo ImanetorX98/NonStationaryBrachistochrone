@@ -584,7 +584,18 @@ fully explicit closed form (verified to $9\times10^{-14}$, coefficients given),
     -\int\! A_m\,\frac{r}{r-2m}\,\dd r,\qquad A_m\equiv\partial_m\varphi_0,
     \label{eq:vaidya-deltaphi}
 \end{equation}
-whose two integrals expand into named building blocks with algebraic coefficients.
+This is the \emph{on-shell} component of the Vaidya first-order correction (the
+mass-drift of the frozen family). As in Thakurta--Kerr, the interior costate does not
+vanish---$p_v=-H_v=O(\dot m)$ with $p_v(r_1)=0$ only at the free arrival---so the
+\emph{complete} first-order term adds the off-shell piece given by the Vaidya analogue
+of Eq.~\eqref{eq:adiab-exact}, with the single-parameter operator $\Theta=m\partial_m$
+and $S=\int_0^\lambda\Theta H_v\,\dd\lambda'$ terminally anchored; the extra term is
+$-\!\int(\partial_{p_r}G/H_{p_r})\,S\,\dd r$, a length-two iterated integral of the
+same horizon-dilogarithm class. Applying the identical canonical perturbation theory
+to $H_v$ closes the Vaidya first order to $O(\dot m^2)$ (residual slope $\approx2$;
+\texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}). We display the on-shell
+component in closed form below;
+its two integrals expand into named building blocks with algebraic coefficients.
 Writing $A_m=\mathcal{A}^m/\sqrt S-\alpha_0+\sum_k c_k^m U_k$ with the constant
 $\alpha_0=\mathcal{A}^m(r_0)/\sqrt{S(r_0)}$, integration by parts in each factor gives
 the \emph{fully assembled} closed form (verified to $2\times10^{-13}$)
