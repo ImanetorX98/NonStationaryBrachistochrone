@@ -49,9 +49,10 @@ hierarchy Killing $\to$ conformal Killing $\to$ Kodama vector. We treat FLRW
 (degenerate base), Vaidya (dynamical black hole, $W=\partial_v$ the Kodama
 vector), and Thakurta--Kerr (conformal rotating compact object). Main results:
 Kodama energy conservation along the rail; the plunge-radius law and the
-absence of a \emph{physical} evaporative inversion (only rotation and the
-conformal factor invert); closed-form equatorial separatrices in Weierstrass
-functions with Doran continuation through the ergosphere; the trichotomy at
+branch-intrinsic depth ordering (rotation and the conformal factor invert the plunge
+under a same-launch comparison, while at the static/frozen-clock level there is no
+evaporative inversion); closed-form equatorial separatrices in Weierstrass
+functions, analytically continued through the ergosphere; the trichotomy at
 the ergosphere with an analytic cusp theorem; an existence theorem for the
 conformal plunge inversion; and first-order adiabatic corrections whose \emph{on-shell} (parameter-drift)
 component is a closed form in length-two iterated Abelian integrals on the frozen
@@ -61,6 +62,13 @@ infinity (Thakurta--Kerr) to a $\mathrm{d}\!\log$ at the horizon (Vaidya); the
 complete first-order term additionally carries an off-shell (costate) piece of the
 same class, derived from the extended Hamiltonian and verified against the true
 non-autonomous flow.
+\emph{Status and scope.} The controlled-rail formulation, the closed-form
+separatrices and cusp theorem, and the on-shell first-order reduction are proved; the
+fixed-endpoint no-inversion is proved for $r_0\le R_\ast(E)$ and, in the static case,
+as $r_0\to\infty$, machine-certified at representative $r_0$, and conjectural in
+general; and the interior-ergosphere optimality, the outgoing-Vaidya boundary-value
+problem, the exact off-shell closed form, and a rigorous higher-genus polylogarithm
+framework are identified as open.
 Throughout, the block coefficients are obtained in explicit symbolic form (rational in
 the physical parameters and the separatrix data), the length-two iterated Abelian
 integrals being represented by a geometrically convergent theta-nome ($q$-)series
@@ -822,15 +830,15 @@ $A^2 f=\Ehat^2$ breathes.
 
 \paragraph{Indicatrix and Hamiltonians.} Equatorially, write
 $\Delta=r^2-2Mr+a^2$, $\bar v^2=1-A^2f/\Ehat^2$, and
-$\bar P=P+A^2(2Ms/r)^2/\Ehat^2$ with $P=r^2+s^2+2Ms^2/r$. The rail
+$\bar P=P+A^2(2Ma/r)^2/\Ehat^2$ with $P=r^2+a^2+2Ma^2/r$. The rail
 $\Ehat=-u_\eta$ makes the indicatrix an ellipse with an \emph{azimuthal} wind
 (frame dragging),
 \begin{equation}
-    \varphi'_0=\frac{2Ms}{r}\frac{\bar v^2}{\bar P},\qquad
+    \varphi'_0=\frac{2Ma}{r}\frac{\bar v^2}{\bar P},\qquad
     R^2=f\bar v^2+\bar P\varphi_0'^2=\frac{\Delta\,\bar v^2}{\bar P},
     \label{eq:tk-ind}
 \end{equation}
-the last equality using the Kerr identity $fP+(2Ms/r)^2=\Delta$. The
+the last equality using the Kerr identity $fP+(2Ma/r)^2=\Delta$. The
 conformal-time, coordinate-time and proper-time Hamiltonians are
 \begin{align}
     H_\eta&=p_\varphi\varphi'_0
@@ -844,7 +852,7 @@ conformal-time, coordinate-time and proper-time Hamiltonians are
     \label{eq:Htau-tk}
 \end{align}
 with the conformal gravitomagnetic shift
-$\tilde p_\varphi=p_\varphi-2MsA^2/(r\Ehat)$. The arrival-time branch $H_t$ differs
+$\tilde p_\varphi=p_\varphi-2MaA^2/(r\Ehat)$. The arrival-time branch $H_t$ differs
 from $H_\eta$ only in the unit cost ($-1\to-A$) and reduces to it for $A=1$; it is
 the branch compared with $\tau$ in the plunge inversion
 (Sec.~\ref{sec:inversion}), where its turning potential
@@ -865,7 +873,7 @@ Randers metric, non-autonomous through the conformal factor,
     \label{eq:randers}\\
     \alpha_K^2 &= \frac{r^2\,\dd r^2}{f\Delta}+\frac{\Delta\,\dd\varphi^2}{f^2},
     \qquad
-    \beta_K = -\frac{2Ms}{rf}\,\dd\varphi.
+    \beta_K = -\frac{2Ma}{rf}\,\dd\varphi.
     \label{eq:randers-data}
 \end{align}
 The Riemannian data $\alpha_K$ and the one-form $\beta_K$ are \emph{exactly} those
@@ -926,7 +934,7 @@ static Vaidya $\tau$-row, and $M=a=0$ (or $m=0$) gives $n=1/v$, FLRW.
       & $1/\sqrt{w}$ & $\Ehat/(f\sqrt{w})$ \\[2pt]
     Thakurta--Kerr
       & $\dfrac{r^2\dd r^2}{f\Delta}+\dfrac{\Delta\,\dd\varphi^2}{f^2}$
-      & $-\dfrac{2Ms}{rf}\dd\varphi$
+      & $-\dfrac{2Ma}{rf}\dd\varphi$
       & $\dfrac{A^2 f}{\sqrt{w_A}}$ & $\dfrac{A\Ehat}{\sqrt{w_A}}$ \\[3pt]
     \hline
     \end{tabular}
@@ -945,7 +953,7 @@ $E_{\rm eff}=\Ehat/A$, so every Kerr quasi-constant carries over by substitution
 with $Q_{\rm std}$ the Carter constant and $f_2$ the next-to-leading polar
 coefficient \cite{Carter1968,RosignoliKerr}. The polar libration that carries the
 quasi-constant lives off the equatorial plane, governed by the full Hamiltonian
-on a generic slice $\Sigma=r^2+s^2\cos^2\theta$,
+on a generic slice $\Sigma=r^2+a^2\cos^2\theta$,
 \begin{equation}
     H_\tau=\tilde p_\varphi\varphi'_0
       +R\sqrt{\frac{\Delta}{\Sigma}p_r^2+\frac{p_\theta^2}{\Sigma}
@@ -1353,7 +1361,7 @@ from the ergosphere at $A_c^{\rm wall}$: a purely non-stationary effect.
 
 All closed forms in this section and in App.~\ref{app:explicit} are obtained at
 \emph{frozen conformal factor}: constant $A$, equivalently stationary Kerr with
-the substitution $E\to E_{\rm eff}=\Ehat/A$ (and $a\to s$, $J\to J/A$) in every
+the substitution $E\to E_{\rm eff}=\Ehat/A$ (and $J\to J/A$, the spin $a$ retained) in every
 parameter (Sec.~\ref{sec:thakurta}). They are therefore the exact
 \emph{instantaneous} orbit shapes on a Thakurta--Kerr slice of given $A$; the
 running $A(\eta)$ makes the full problem non-autonomous---the quasi-constant
@@ -1463,7 +1471,7 @@ $J\in[J_c^{-},J_+^{t}]$, far more capture-prone on the retrograde side. A
 moderately retrograde orbit ($J=-5$, say) is therefore captured on the
 $t$-branch but scattered on the $\tau$-branch (Fig.~\ref{fig:master-pen}). For
 constant $A$ the results carry
-over by $E\to\Ehat/A$, $a\to s$, $J\to J/A$; in particular
+over by $E\to\Ehat/A$, $J\to J/A$ (spin $a$ retained); in particular
 $\Jc^{\tau}=sA^2/\Ehat$.
 
 \begin{figure}[ht]
@@ -1875,7 +1883,7 @@ checked over the asymmetric-endpoint grids (Figs.~\ref{fig:asym-spin}--%
 \label{app:explicit}
 
 All expressions below are at \emph{constant (frozen) conformal factor} $A$:
-stationary Kerr with $E\to E_{\rm eff}=\Ehat/A$, $a\to s$, $J\to J/A$. They give
+stationary Kerr with $E\to E_{\rm eff}=\Ehat/A$, $J\to J/A$ (spin $a$ retained). They give
 the instantaneous orbit shape on a Thakurta--Kerr slice; the time dependence
 enters only through $E_{\rm eff}(\eta)$ (Sec.~\ref{sec:quasiconst}).
 
@@ -2177,7 +2185,7 @@ $\sim10^{-9}$ (Fig.~\ref{fig:jcm-cap}).
 the closed first integrals used for validation,
 \begin{equation}
     \mathcal K_\tau=J,\qquad
-    \mathcal K_t=\frac{fJ+2Ms/r}{E},\qquad
+    \mathcal K_t=\frac{fJ+2Ma/r}{E},\qquad
     \mathcal K_\eta=\frac{fJ}{E},
     \label{eq:kerr-conserved}
 \end{equation}
@@ -2187,7 +2195,7 @@ the equatorial Kerr doranTau/doranT constants.
 inverts where $\rho(r_*)^2=H_{t0}/H_{\tau0}$ with the explicit ratio of
 centrifugal potentials
 \begin{equation}
-    \rho=\frac{A^2}{\Ehat}\Big(f+\frac{2Ms}{rJ}\Big),
+    \rho=\frac{A^2}{\Ehat}\Big(f+\frac{2Ma}{rJ}\Big),
     \label{eq:rho-explicit}
 \end{equation}
 $\rho<1$ giving $t$ deeper, $\rho>1$ giving $\tau$ deeper.
@@ -2498,7 +2506,7 @@ $N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$ (verified to $10^{-8}$).
 
 \paragraph{Thakurta--Kerr $\tau$ and $t$ branches.}
 The rotating (conformal) case follows by the transfer $E\to E_{\rm eff}=\Ehat/A$,
-$a\to s$, $J\to J/A$; the control parameter is now $A$ (equivalently $E_{\rm eff}$), and
+$J\to J/A$ (spin $a$ retained); the control parameter is now $A$ (equivalently $E_{\rm eff}$), and
 the separatrix $\Jc(E_{\rm eff})$ drifts as $A$ runs. Two curves carry the two clocks.
 \emph{Proper-time ($\tau$) branch:} curve $S=r(r-2M)DE\,(r\Delta-J^2DE)$, source
 $N_\tau=\partial_E(K/\sqrt S)S^{3/2}=E\,J\,r^4(r-2M)^2DE$, clock
