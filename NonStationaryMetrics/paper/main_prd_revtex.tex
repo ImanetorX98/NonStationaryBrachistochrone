@@ -135,8 +135,9 @@ The rail is a constrained worldline with the invariant
     -\,u\cdot W \;=\; \Ehat ,
     \label{eq:rail}
 \end{equation}
-actively maintained by an ideal (magnetic-type) rail force $f_\mu=Du_\mu/\dd\tau$
-with $f\cdot u=0$, so that the rail does no work on the particle.
+actively maintained by an ideal rail force $f_\mu=Du_\mu/\dd\tau$ with
+$f\cdot u=0$ (automatic for a rest-mass--preserving force), which creates no rest
+mass but is free to exert power against the selector.
 
 \paragraph{The ellipse.} Fix an event and a time function adapted to $W$. The
 linear constraint~\eqref{eq:rail} fixes the $W$-component of $u$; the mass shell
@@ -167,10 +168,12 @@ continuation (Sec.~\ref{sec:trichotomy}) or by re-anchoring $W$ to a timelike
 
 \paragraph{Pontryagin reduction.} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.
-The admissible-velocity set is already compact and convex (the oval), so no
-Filippov convexification is needed; and since it is \emph{strictly} convex the
-maximizer of $p\cdot\dot x(\theta)$ is unique, so the optimal control is
-single-valued and smooth and Pontryagin's maximum principle
+The indicatrix~\eqref{eq:ellipse} is a compact, strictly convex closed \emph{curve},
+and the control is its direction $\theta\in S^1$; strict convexity makes the
+support-function maximizer unique, so no Filippov relaxation is needed (the control
+set $S^1$ is compact)---we do \emph{not} claim the velocity locus is a convex
+\emph{subset} of the plane, nor convexify it. Excluding $p=0$ (nontriviality), the
+optimal control is single-valued and smooth and Pontryagin's maximum principle
 \cite{Pontryagin,Liberzon} delivers $H(x,p)=\max_\theta p\cdot\dot x(\theta)$ in
 closed form (Secs.~\ref{sec:vaidya}--\ref{sec:thakurta}). Being a genuine
 time-optimal control problem, the correct prescription is the Pontryagin
@@ -196,8 +199,10 @@ $a^\mu=Du^\mu/\dd\tau$, the invariant obeys the \emph{exact} identity
     \frac{\dd(-u\cdot W)}{\dd\tau}=-\,a\cdot W-u^a u^b\,\nabla_{(a}W_{b)}.
     \label{eq:cost}
 \end{equation}
-The rail force is magnetic-type in the kinetic sense $a\cdot u=0$ (no work on the
-particle, mass shell preserved), but it exerts power \emph{against} $W$. A geodesic
+The constraint $a\cdot u=0$ is \emph{automatic} for a rest-mass--preserving four-force
+(not a special ``magnetic'' property, and not by itself zero work relative to an
+observer): it means only that no rest mass is created, while the rail exerts power
+\emph{against} $W$. A geodesic
 ($a=0$) lets $-u\cdot W$ drift at $-u^au^b\nabla_{(a}W_{b)}$, zero for all $u$ iff
 $W$ is Killing; to hold $-u\cdot W=\Ehat$ fixed the rail supplies exactly
 $a\cdot W=-u^au^b\nabla_{(a}W_{b)}$, so~\eqref{eq:cost} vanishes. This control power
@@ -502,9 +507,11 @@ artifact of extrapolating to $m\le0$.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_no_inversione_evaporazione.png}
-    \caption{No physical evaporative inversion: the linear-model sign change
-    lies entirely in the unphysical $m<0$ region; with $m=e^{-\lambda v}>0$ the
-    gap shrinks but never inverts.}
+    \caption{No evaporative inversion in the ingoing model: the linear-model
+    sign change lies entirely in the unphysical $m<0$ region; with
+    $m=e^{-\lambda v}>0$ the gap shrinks but does not invert. This is a
+    model-dependent statement for ingoing Vaidya; physical evaporation (outgoing
+    $m'<0$) is treated separately and shares the same depth ordering.}
     \label{fig:vaidya-noinv}
 \end{figure}
 
@@ -990,10 +997,34 @@ approximation. Figure~\ref{fig:phi-closed} shows the same comparison as orbit
 shapes; the frozen family itself penetrates the ergosphere for suitable angular
 momenta, turning just outside the horizon and being expelled at an adiabatic
 threshold (Fig.~\ref{fig:phi-penetrating}).
+
+Table~\ref{tab:adiab-valid} certifies only the \emph{algebraic} identity; it does not
+test the adiabatic form against the true dynamics. Integrating the actual
+non-autonomous optical-metric geodesic (the branch-Hamiltonian flow with
+$E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$) versus $\varphi_0+\varepsilon\,\delta\varphi$
+gives a \emph{physical} accuracy $\sim2\%$, linear in $\varepsilon$, far above the
+algebraic floor (Fig.~\ref{fig:phi-true-dynamic}). Canonical perturbation theory of
+that flow closes the correction to $O(\varepsilon^2)$,
+\begin{equation}
+    \frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{p_r}G}{H_{p_r}}
+    \big(\lambda\,\Theta H-S\big)-\lambda\,\Theta G\Big]\dd r,\quad
+    \Theta\equiv E\partial_E+J\partial_J,\ S=\!\int_0^{\lambda}\!\Theta H\,\dd\lambda',\
+    G=\frac{H_J}{H_{p_r}}=\varphi',
+    \label{eq:adiab-exact}
+\end{equation}
+verified numerically (slope~$\approx2$). This splits into an on-shell part and an
+off-shell part driven by the slow-time costate ($H_{\rm ext}=p_\eta+H=0$,
+$H=-p_\eta\sim O(\varepsilon)$): the latter, $-\!\int(\partial_{p_r}G/H_{p_r})S\,\dd r$,
+is a depth-two iterated integral (genus-two dilogarithm). The
+$\tfrac12(E\partial_E+J\partial_J)\varphi_0\,\eta$ term is the leading approximation to
+Eq.~\eqref{eq:adiab-exact}, accurate to $\sim2\%$; its exact off-shell closed form lives
+in the same genus-two class as $\mathcal{C}+\psi$.
 \begin{table}[htbp]
     \centering
-    \caption{Hybrid semi-analytic adiabatic form versus full non-autonomous
-    first-order coefficient, $\max_r|\varphi_{\rm hybrid}-\varphi_{\rm full}|$.
+    \caption{Hybrid closed form versus the direct integral of the \emph{same}
+    first-order coefficient, $\max_r|\varphi_{\rm hybrid}-\varphi_{\rm full}|$ (an
+    integration-by-parts identity---algebraic self-consistency, \emph{not} a test of
+    the true dynamics; for the latter see Fig.~\ref{fig:phi-true-dynamic}).
     Both branches; the residual is the numerical-quadrature floor.}
     \label{tab:adiab-valid}
     \begin{tabular}{lcc}
@@ -1013,12 +1044,25 @@ threshold (Fig.~\ref{fig:phi-penetrating}).
     \caption{Closed-form adiabatic orbit shape $\varphi(r,A)$ against direct
     integration, both branches. (a,b): the closed form
     $\varphi_0+\varepsilon\,\delta\varphi$ (dashed), $\delta\varphi$ from
-    Eq.~\eqref{eq:psi-split}, overlies the numerically integrated orbit (solid) over
-    the whole arc through the turning point (marker), winding near $r_e$. (c): the
-    residual scales linearly with $\varepsilon=A'/A$ ($t$-branch $J=6$, $\tau$-branch
-    $J=2.5$). All coefficients are algebraic and given, not fitted.}
+    Eq.~\eqref{eq:psi-split}, overlies the direct integral of the same coefficient
+    (solid) on compact sub-arcs bounded away from the turning point (marker), winding
+    near $r_e$. (c): the residual grows \emph{linearly} with $\varepsilon=A'/A$
+    (residual$/\varepsilon\approx2.8\times10^{-4}$; $t$-branch $J=6$, $\tau$-branch
+    $J=2.5$)---an integration-by-parts identity, \emph{not} an $O(\varepsilon^2)$
+    truncation test. All coefficients are algebraic and given, not fitted.}
     \label{fig:phi-closed}
 \end{figure*}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\columnwidth]{Immagini/fig_phi_validation_true_dynamic.pdf}
+    \caption{\emph{Physical} validation ($t$-branch): the true non-autonomous
+    optical-metric geodesic versus frozen plus the leading adiabatic correction at
+    $A'/A=0.04$ (left), and the physical error $\sim2\%$, linear in $\varepsilon$, far
+    above the algebraic IBP floor of Fig.~\ref{fig:phi-closed} ($\sim10^{-6}$; right).
+    The $\sim2\%$ is the off-shell residual, closed by Eq.~\eqref{eq:adiab-exact}.}
+    \label{fig:phi-true-dynamic}
+\end{figure}
 
 \begin{figure*}[tbp]
     \centering
@@ -1297,11 +1341,23 @@ substitution $V=V_{\min}+\sigma^2$ and one IBP give
 $\Phi_\tau'\propto(V_0-2V_{\min})W(V_{\min})/\Sigma+2\int_0^\Sigma W'(V_{\min}+\sigma^2)g\,\dd\sigma$
 with $W=K/V'$ ($W'<0$) and $g=(V_0-2V_{\min})\sigma/\Sigma+V_{\min}-\sigma^2>0$ on
 $[0,\Sigma)$, so the integral is manifestly negative; for $V(r_0)\le2V(r_{\min})$
-(grazing) the boundary is $\le0$ too and (B) is \emph{proven in closed form}. Beyond
-that it is a tight inequality at the transcendental $r_{\rm pk}$, verified. The
-fixed-endpoint turning points lie in the scattering regime $r_{\min}>r_{\rm pk}$
-($r_{\min}^{\tau,t}\gtrsim4.7M$), so the no-inversion is a theorem there, with (A)
-closed-form and (B) proven in the grazing sub-regime and verified beyond it.
+(grazing) the boundary is $\le0$ too and (B) is \emph{proven in closed form}. The same
+closed form (an IBP identity $\sqrt{V_{\min}}\Phi_\tau'=W(V_0)(V_0-2V_{\min})/\Sigma+
+\int_{V_{\min}}^{V_0}W'(t)(2V_{\min}-t)/\sqrt{t-V_{\min}}\,\dd t$) plus convexity of $W$
+extends the proof to $V(r_0)\le4V(r_{\min})$, hence to all $r_0\le R_\ast(E)$. In the
+static limit $W(V)=\tfrac1{2V}-\tfrac1{2b^{3/2}V^{3/2}}+O(V^{-2})$ ($b=E^2-1$), so
+$\Phi_\tau=\arctan\!\sqrt{V_0/V_{\min}-1}-b^{-3/2}\sqrt{1/V_{\min}-1/V_0}+\cdots$, a
+single non-degenerate maximum ($\Phi_\tau''(V_{\rm pk})=-\tfrac12 b^{9/4}V_0^{-5/4}<0$),
+so (B) holds for all large $r_0$. For intermediate $r_0$ the single-crossing property is
+established by a validated interval-arithmetic certificate, completed for $r_0=10M$ over
+the whole continuum and on a grid $E\in\{1.2,1.6,2.5\}\times r_0\in\{8,12\}M$
+(\texttt{no\_inversion\_schwarzschild\_CAP\_grid.py}). A uniform symbolic proof for all
+$(a,E,r_0)$ remains open (the deciding inequality is tight at the transcendental
+$r_{\rm pk}$); we thus state the fixed-endpoint no-inversion as a theorem for
+$r_0\le R_\ast(E)$ and, in the static case, as $r_0\to\infty$, machine-certified at
+representative $r_0$, and a numerically supported conjecture in full generality. The
+fixed-endpoint turning points ($r_{\min}^{\tau,t}\gtrsim4.7M$) lie in the certified
+scattering regime.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
@@ -1327,8 +1383,10 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
 \begin{table}[t]
     \centering
     \caption{Protocol dependence of plunge inversion. Same-launch
-    comparison inverts under either rotation or a conformal factor;
-    the genuine fixed-endpoint brachistochrone never inverts.}
+    comparison inverts under either rotation or a conformal factor; the
+    genuine fixed-endpoint brachistochrone shows no inversion in every proven
+    and tested regime (proven for $r_0\le R_\ast$ and, in the static case, as
+    $r_0\to\infty$; machine-certified at representative $r_0$; verified elsewhere).}
     \label{tab:protocol}
     \begin{ruledtabular}
     \begin{tabular}{lcc}
