@@ -62,10 +62,11 @@ complete first-order term additionally carries an off-shell (costate) piece of t
 same class, derived from the extended Hamiltonian and verified against the true
 non-autonomous flow.
 Throughout, the block coefficients are obtained in explicit symbolic form (rational in
-the physical parameters and the separatrix data), the genus-two dilogarithm as a
-geometrically convergent Kronecker--Eisenstein nome ($q$-)series, and a
-separatrix-tracking theorem shows the moving double root cancels the triple-pole
-residue; every symbolic identity is independently confirmed in Mathematica.
+the physical parameters and the separatrix data), the length-two iterated Abelian
+integrals being represented by a geometrically convergent theta-nome ($q$-)series
+(their irreducibility and minimal basis dimension are stated as conjectures, not
+proved), and a separatrix-tracking theorem shows the moving double root cancels the
+triple-pole residue; every symbolic identity is independently confirmed in Mathematica.
 \end{abstract}
 
 \maketitle
@@ -660,7 +661,11 @@ to zero. ``$\dd\log$ at the horizon'' names the horizon part of this divisor; th
 Fay/prime-form ($\theta$-ratio) representation of the third-kind differential carries
 the full divisor $2\,(r{=}2m)-\infty_+-\infty_-$. Its elementary primitive
 is $\int\dd r/(r-2m)=\ln(r-2m)$, so one integration by parts closes $\mathcal{D}_k$
-onto a \emph{single} weight-two letter (verified to $10^{-12}$),
+onto a \emph{single} weight-two letter (verified to $10^{-12}$). Throughout, displayed
+logarithms are to be read with a fixed reference length, $\ln(r-2m)\equiv\ln[(r-2m)/L]$
+(likewise $\ln[(r-2M)/L]$); the scale $L$ is dimensionally required but shifts only the
+additive constants $\alpha_0$ and cancels in every assembled closed form, so we suppress
+it in the displayed primitives.
 \begin{equation}
     \mathcal{D}_k=U_k\,\ln(r-2m)-\mathcal{G}_k,\qquad
     \mathcal{G}_k=\int\ln(r-2m)\,\frac{r^k}{\sqrt S}\,\dd r,
@@ -1137,11 +1142,16 @@ dipole at infinity)---no double cover. The full $t$-branch assembly (the
 $W_{kj}$-reorganization plus the horizon piece) reproduces the direct double integral
 $-\Ehat\!\int\!\partial_E F\,t\,\dd r$ to $9\times10^{-13}$.
 
-The building blocks $W_{kj}$ are the genus-two hyperelliptic polylogarithms of
-$y^2=\mathcal{R}^2$: depth-two iterated integrals~\cite{Chen1977} of \emph{weight
-two}, in the class of the (elliptic and higher-genus) polylogarithms of
-Beilinson--Levin and Brown--Levin~\cite{BeilinsonLevin1994,BrownLevin2011}. They do
-\emph{not} reduce to a weight-one Kleinian $\zeta,\sigma$
+The building blocks $W_{kj}$ are length-two iterated Abelian
+integrals~\cite{Chen1977} of $y^2=\mathcal{R}^2$, of \emph{weight two}. Their elliptic
+($g{=}1$) analogues are the polylogarithms of Beilinson--Levin and
+Brown--Levin~\cite{BeilinsonLevin1994,BrownLevin2011}; a rigorous \emph{higher-genus}
+(hyperelliptic) polylogarithm framework---base points, paths, tangential
+regularization, monodromy and single-valued completion---is the subject of recent work
+\cite{BauneEtal2024,DHokerSchlotterer2024}, and would be required before ``genus-two
+dilogarithm'' can be used as a theorem-level term; we therefore adopt the neutral name
+above and keep irreducibility and basis dimension conjectural. As iterated integrals
+they do \emph{not} reduce to a weight-one Kleinian $\zeta,\sigma$
 combination~\cite{BakerAbelian1897,BuchstaberEnolskii1997}, because for
 genus two the Abel image of single points lies on the theta divisor
 $\Theta=W_{g-1}$~\cite{MumfordTata}, where $\zeta,\wp$ are singular; the single-point
@@ -1154,9 +1164,13 @@ $\rho_0=M/(E^2-1)^{3/2}$---integrates to
 \end{equation}
 (Fay prime form~\cite{Fay1973}, odd half-characteristic $\delta$, $e_\pm$ the Abel
 images of the two points at infinity; differentiating $L(u(r))$ back reproduces the
-third-kind differential to $5\times10^{-8}$). Like $\mathrm{Li}_2$, the $W_{kj}$ are
-their own closed form (a Kronecker--Eisenstein series~\cite{BeilinsonLevin1994}): the
-weight-two content is genuine and irreducible, while all coefficients remain
+third-kind differential to $5\times10^{-8}$). The $W_{kj}$ are length-two iterated Abelian integrals of the frozen curve; their
+elliptic ($g{=}1$) analogues admit Kronecker--Eisenstein
+representations~\cite{BeilinsonLevin1994}, but that reference does not by itself
+establish a higher-genus construction (a genus-two framework needs base points, paths,
+tangential regularization, monodromy and single-valued completion). The
+weight-two content is genuine and \emph{conjecturally} irreducible to weight one, while
+all coefficients remain
 algebraic.
 
 \paragraph{Numerical validation.} Table~\ref{tab:adiab-valid} compares the
@@ -2565,8 +2579,9 @@ against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, 
 same transcendental weight as the proper-time case---the horizon merely relocates the
 dilogarithm's anchor from infinity to the two-torsion point $r=2m$. The sole
 numerical ingredient anywhere is the optional compression of the weight-two content to
-its minimal five-dimensional dilogarithm basis (rank confirmed exactly five to
-$10^{-79}$), which the block forms above do not require.
+an apparent minimal five-dimensional dilogarithm basis (a numerically stable rank five,
+singular values falling to $10^{-79}$---strong evidence, \emph{not} a proof, and
+curve-specific), which the block forms above do not require.
 
 \clearpage
 \bibliographystyle{iopart-num}
