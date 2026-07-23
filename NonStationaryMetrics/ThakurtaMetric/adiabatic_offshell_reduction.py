@@ -97,8 +97,54 @@ CONFIGS = [
     ('t   (a=0.5, E=1.3, J=5)  ', 'eta', sp.Rational(13, 10), sp.Integer(5), sp.Rational(1, 2)),
 ]
 
+
+def symbolic_reduction_t_branch():
+    """SYMBOLIC (t/eta branch) reduction of int p_r dr, coefficients as functions of ALL
+    trajectory parameters (M, a, E, J).
+
+    Result (verified g^2 S = p_r^2 symbolically, integrand 1e-15 at random params incl. M != 1):
+        p_r = sqrt(S) / [ Delta * ((E^2-1) r + 2 M) ] ,   Delta = r^2 - 2 M r + a^2,
+        int p_r dr = sum_k a_k(M,a,E,J) U_k + (third kind at Delta=0),  U_k = int r^k/sqrt(S) dr,
+        a_3 = E^2,
+        a_2 = 2 E^2 M,
+        a_1 = 4 E^2 M^2 - (E^2 - 1) J^2,
+        a_0 = 2 M [ 4 E^2 M^2 - J^2 + 2 (1 - E^2) J a ].
+    Dimensionally [a_k] = length^(3-k), [U_k] = length^(k-2), so [a_k U_k] = length (consistent).
+    Delta=0 are the seed Kerr null surfaces r_pm = M +/- sqrt(M^2 - a^2).
+    """
+    r, a, E, J, M = sp.symbols('r a E J_ M', positive=True)
+    f = 1 - 2 * M / r
+    Dl = r**2 - 2 * M * r + a**2
+    b = 2 * M * a / r
+    v = 1 - f / E**2
+    Pcap = r**2 + a**2 + 2 * M * a**2 / r
+    Pb = Pcap + b**2 / E**2
+    pr2 = sp.cancel(((1 - J * b * v / Pb)**2 / (Dl * v / Pb) - J**2 / Pb) / (Dl / r**2))
+    num, den = sp.fraction(pr2)
+
+    def sqfree(poly):
+        o = sp.Integer(1)
+        for base, m in sp.factor_list(sp.expand(poly), r)[1]:
+            if m % 2:
+                o *= base
+        return sp.expand(o)
+
+    S = sp.expand(sqfree(num) * sqfree(den))               # on-shell sextic
+    g = 1 / (Dl * ((E**2 - 1) * r + 2 * M))                 # p_r / sqrt(S)
+    assert sp.simplify(g**2 * S - pr2) == 0, "g^2 S != p_r^2"
+    Q, R = sp.div(sp.Poly(sp.expand(S), r), sp.Poly(sp.expand(1 / g), r))
+    ak = [sp.factor(c) for c in Q.all_coeffs()[::-1]]
+    return dict(M=M, a=a, E=E, J=J, r=r, S=S, g=g, ak=ak, third_num=sp.factor(R.as_expr()))
+
 if __name__ == '__main__':
-    print("Closed-form reduction of  int p_r dr  (the new S_D dilation letter):")
+    print("SYMBOLIC reduction (t/eta branch), coefficients a_k(M,a,E,J):")
+    s = symbolic_reduction_t_branch()
+    print("  p_r = sqrt(S) *", sp.factor(s['g']))
+    for k, c in enumerate(s['ak']):
+        print(f"  a_{k} =", c)
+    print("  third-kind poles at Delta = r^2 - 2 M r + a^2 = 0 (seed Kerr null surfaces)")
+
+    print("\nNumeric per-config reduction of  int p_r dr  (the new S_D dilation letter):")
     ok = True
     for name, br, E, J, a in CONFIGS:
         d = reduce_branch(br, E, J, a)
