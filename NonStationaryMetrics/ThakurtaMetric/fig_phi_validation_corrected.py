@@ -1,13 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Honest validation figure for the adiabatic correction (referee 4.6/4.7/4.14 and main10 Fig.10):
- Left  : true non-autonomous optical-metric geodesic (frozen E_eff=Ehat/A, J_eff=J/A)
-         vs frozen + leading 1/2-Euler AND vs frozen + the exact Eq.(40) correction (t-branch).
+Validation figure for the adiabatic correction against the TRUE canonical flow (main11 fix).
+ Left  : true non-autonomous optical-metric geodesic vs frozen + leading (on-shell) AND vs
+         frozen + the exact Eq.(40) correction (t-branch).
  Right : residual vs A'/A for BOTH branches (t and tau) and a SECOND (a,E,J) parameter set.
-         The leading 1/2-Euler is O(eps) (slope ~1, ~2% physical error); the exact Eq.(40)
-         term is O(eps^2) (slope ~2). Slopes are reported with a least-squares 1sigma
-         uncertainty (error bars). The tau-branch Hamiltonian H_tau is verified elsewhere to
-         reproduce the Boyer-Lindquist tau shape (kerr_adiabatic_phi_hybrid_tau.py) exactly.
+
+The true flow integrates the PHYSICAL canonical dynamics: in the normalized momentum
+P_r=p_r/A the radial equation carries the dilation term -(A'/A) P_r (main11 referee). The
+exact source is therefore the FULL Euler operator, S_D = int (Theta H + P_r H_Pr) dlambda;
+the extra P_r H_Pr = int p_r dr (radial action) reduces in closed form to the on-shell U_k
+basis + third-kind at the seed Kerr null surfaces r_pm (see tests/test_adiabatic_noreg.py and
+the pass1-3 checks). Result: on-shell term slope ~1 (O(eps)); exact S_D slope ~2 (O(eps^2)),
+both against the true flow. The tau-branch H_tau reproduces the Boyer-Lindquist tau shape
+(kerr_adiabatic_phi_hybrid_tau.py) exactly.
 """
 import os,sys
 import numpy as np, sympy as sp
@@ -60,7 +65,8 @@ def analyse(Hbuilder,M,a,Ehat,J0,r0):
     def flow(eps):
         def rhs(lam,y):
             rv,pv,ph=y; s=np.exp(-eps*lam); E=Ehat*s; Jv=J0*s
-            return [D['Hp'](rv,pv,E,Jv),-D['Hr'](rv,pv,E,Jv),D['HJ'](rv,pv,E,Jv)]
+            # TRUE canonical flow: -eps*pv is the dilation term of the normalized P_r=p_r/A
+            return [D['Hp'](rv,pv,E,Jv),-D['Hr'](rv,pv,E,Jv)-eps*pv,D['HJ'](rv,pv,E,Jv)]
         so=solve_ivp(rhs,[0,300],[r0,prof(D,r0,Ehat,J0),0.0],rtol=1e-12,atol=1e-14,
                      max_step=0.005,dense_output=True,events=ev)
         lam=np.linspace(0,so.t[-1],12000); Y=so.sol(lam); return lam,Y[0],Y[1],Y[2]
@@ -75,12 +81,15 @@ def analyse(Hbuilder,M,a,Ehat,J0,r0):
     # leading (on-shell 1/2-Euler), from the Hamiltonian frame: dphi/dr=G, ThetaG on-shell
     ThetaG=Ehat*D['GE'](rg,prg,Ehat,J0)+J0*D['GJ'](rg,prg,Ehat,J0)
     eul=-0.5*ct(lam_r(rg)*ThetaG,rg,initial=0); ec=interp1d(rg,eul,bounds_error=False,fill_value='extrapolate')
-    # exact Eq.(40)
+    # exact Eq.(40) with the CORRECTED terminally-anchored source
+    # S_D = int (Theta H + P_r H_Pr) dlam  (the extra P_r*H_Pr = int p_r dr is the radial-momentum
+    # dilation of the time-dependent transform P_r=p_r/A; omitting it gives a spurious O(eps) error).
     EulerH=Ehat*D['HE'](rg,prg,Ehat,J0)+J0*D['HJ'](rg,prg,Ehat,J0)
-    S=ct(EulerH*np.gradient(lam_r(rg),rg),rg,initial=0)
+    PrHpr=prg*D['Hp'](rg,prg,Ehat,J0)
+    S=ct((EulerH+PrHpr)*np.gradient(lam_r(rg),rg),rg,initial=0)        # S_D
     integ=D['Gpr'](rg,prg,Ehat,J0)*(lam_r(rg)*EulerH-S)/D['Hp'](rg,prg,Ehat,J0)-lam_r(rg)*ThetaG
     xc=interp1d(rg,ct(integ,rg,initial=0),bounds_error=False,fill_value='extrapolate')
-    epss=np.array([0.0025,0.005,0.01,0.02,0.04])
+    epss=np.array([0.001,0.002,0.004,0.008,0.016])
     rh=[];rx=[]
     for e in epss:
         _,rL,_,pL=flow(e); p=interp1d(rL,pL,bounds_error=False,fill_value='extrapolate')(rc)

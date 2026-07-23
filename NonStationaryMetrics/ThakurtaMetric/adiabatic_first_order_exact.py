@@ -1,14 +1,21 @@
 # -*- coding: utf-8 -*-
-# EXACT first-order adiabatic correction (closes referee 4.6 to O(eps^2), slope ~2).
-# Canonical perturbation theory of the non-autonomous optical Hamiltonian flow H2,
-# with E_eff=Ehat/A, J_eff=J/A, A=exp(eps*lambda):
-#   delta p_r/eps = [lambda*Euler_H - S]/H_pr,   Euler_H=E H_E + J H_J,  S=int_0^lambda Euler_H dlambda
-#   delta phi/eps = int[ G_pr*(delta p_r/eps) - lambda*(E G_E + J G_J) ] dr,   G=H_J/H_pr=dphi/dr
-# Verified: coeff -0.3298 = true -0.328 ; robust slope ~1.90 (=> O(eps^2), first order CLOSED).
-# Decomposition: partA (single integral, ~-full Euler) + partB (OFF-SHELL, S nested = length-2
-#   iterated integral, ~+1/2 full Euler). The papers 1/2-Euler is the approximation partB~=-1/2 partA
-#   (accurate to ~2%); this file is the exact term. Closed form = partA (clock x algebraic) +
-#   partB (length-2 iterated integral, genus-2 dilogarithm structure).
+# EXACT first-order adiabatic correction (Thakurta-Kerr), closing to O(eps^2), slope ~2,
+# against the TRUE canonical flow of the physical Hamiltonian (main11 referee fix).
+#
+# The optical Hamiltonian H2 = Hbar(r, P_r, J_eff; E_eff) is written in the NORMALIZED
+# momentum P_r = p_r/A. Because A = A(lambda) is time-dependent, the physical canonical
+# flow carries the DILATION term -alpha*P_r (alpha=A'/A=eps) in the P_r equation, and the
+# shell-departure source is the full Euler operator D = E_eff d_E_eff + J_eff d_J_eff + P_r d_P_r:
+#   dP_r/dlambda = -Hbar_r - eps*P_r                         (true canonical flow)
+#   S_D = int_0^lambda (Theta H + P_r H_P_r) dlambda,  Theta = E_eff d_E_eff + J_eff d_J_eff
+#   delta P_r/eps = [lambda*Theta H - S_D]/H_P_r
+#   delta phi/eps = int[ G_P_r*(delta P_r/eps) - lambda*Theta G ] dr,   G=H_J/H_P_r=dphi/dr
+# Identity (verified 1e-15): the extra source piece int P_r H_P_r dlambda = int p_r dr (the
+# radial action), which reduces in closed form to the on-shell U_k = int r^k/sqrt(R6) basis
+# (second kind) + third-kind letters at the seed Kerr null surfaces r_pm (same spectral curve).
+# The earlier version used S = int Theta H dlambda and a surrogate flow (no -eps*P_r): it
+# closed only against that surrogate, giving a spurious slope 2; against the true flow it is
+# O(eps) (slope 1). See tests/test_adiabatic_noreg.py for the independent ground-truth oracle.
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid as ct
 from scipy.optimize import brentq
@@ -31,15 +38,18 @@ ev=lambda lam,y:y[1]; ev.terminal=True; ev.direction=1
 def flow(eps):
     def rhs(lam,y):
         rv,pv,ph=y; s=np.exp(-eps*lam); E=Ehat*s; Jv=J0*s
-        return [dHp(rv,pv,E,Jv),-dHr(rv,pv,E,Jv),dHJ(rv,pv,E,Jv)]
+        # true canonical flow in normalized P_r: the -eps*pv is the dilation term of P_r=p_r/A
+        return [dHp(rv,pv,E,Jv),-dHr(rv,pv,E,Jv)-eps*pv,dHJ(rv,pv,E,Jv)]
     so=solve_ivp(rhs,[0,300],[r0,prof(r0,Ehat,J0),0.0],rtol=1e-12,atol=1e-14,max_step=0.004,dense_output=True,events=ev)
     lam=np.linspace(0,so.t[-1],16000); Y=so.sol(lam); return lam,Y[0],Y[1],Y[2]
 lam0,rF,prF,phiF=flow(0.0)
-# Euler_H(lam) and S(lam) along frozen orbit
+# Euler_H(lam) and the CORRECTED terminally-anchored source S_D along the frozen orbit.
+# S_D = int (Theta H + P_r H_Pr) dlam ; the extra P_r*H_Pr is the radial-momentum dilation
+# (verified equal to int p_r dr, the radial action).
 EulerH=Ehat*dHE(rF,prF,Ehat,J0)+J0*dHJ(rF,prF,Ehat,J0)
-S_lam=ct(EulerH,lam0,initial=0)
-# analytic dp_r/eps(r) = [lam*EulerH - S]/H_pr
 Hpr_fr=dHp(rF,prF,Ehat,J0)
+S_lam=ct(EulerH + prF*Hpr_fr, lam0, initial=0)          # S_D
+# analytic dp_r/eps(r) = [lam*Theta H - S_D]/H_pr
 dpr_an=(lam0*EulerH - S_lam)/Hpr_fr
 dpr_an_r=interp1d(rF,dpr_an,bounds_error=False,fill_value='extrapolate')
 pr0_r=interp1d(rF,prF,bounds_error=False,fill_value='extrapolate')
@@ -66,7 +76,7 @@ dphi_eps=ct(integ,rF,initial=0)
 dphi_eps_r=interp1d(rF,dphi_eps,bounds_error=False,fill_value='extrapolate')
 s_=-1.0; phi0_shape=lambda x:-phi0f(x)
 # note: dphi from flow phi is +, shape is - ; the correction integ built in flow-phi convention
-print("\nSTEP2: delta phi/eps coeff on [8,11]: %.4f  (true correction ~ -0.328 in flow-phi conv, +0.328 shape)"%np.mean(dphi_eps_r(rc)))
+print("\nSTEP2: delta phi/eps coeff on [8,11]: %.4f  (partA and partB nearly cancel; see STEP3)"%np.mean(dphi_eps_r(rc)))
 epss=np.array([0.0025,0.005,0.01,0.02])
 res=[]
 for eps in epss:
@@ -74,12 +84,12 @@ for eps in epss:
     # flow phi convention directly: phi_true(flow) vs phi0(flow)+eps*dphi_eps
     pred=phi0f(rc)+eps*dphi_eps_r(rc)
     res.append(np.nanmax(np.abs(pt-pred)))
-res=np.array(res); print(f"  SLOPE(full PT) = {np.polyfit(np.log(epss),np.log(res),1)[0]:.2f}  res@0.0025={res[0]:.2e}")
-print(f"  (compare: 1/2 Euler-only gave slope 1.25, res 8.4e-5)")
+res=np.array(res); print(f"  SLOPE(full PT, S_D) vs TRUE flow = {np.polyfit(np.log(epss),np.log(res),1)[0]:.2f}  res@0.0025={res[0]:.2e}")
+print(f"  (old S without P_r H_Pr gives slope ~1 vs the true flow; see tests/test_adiabatic_noreg.py)")
 
-# STEP3: robust slope + decompose into (A) single-integral part and (B) off-shell S-part
-# dphi/eps = int[ G_pr*(lam*EulerH)/Hpr - lam*EulerG ]dr  +  int[ -G_pr*S/Hpr ]dr
-#            \_______ part A (single integral) _______/     \__ part B: off-shell (S = nested) __/
+# STEP3: robust slope + decompose into (A) single-integral part and (B) off-shell S_D-part
+# dphi/eps = int[ G_pr*(lam*EulerH)/Hpr - lam*EulerG ]dr  +  int[ -G_pr*S_D/Hpr ]dr
+#            \_______ part A (single integral) _______/     \_ part B: off-shell (S_D nested) _/
 EulerG=Ehat*dG_E(rF,prF,Ehat,J0)+J0*dG_J(rF,prF,Ehat,J0)
 Gpr=dG_pr(rF,prF,Ehat,J0)
 partA_int = Gpr*(lam0*EulerH)/Hpr_fr - lam0*EulerG
