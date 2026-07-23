@@ -42,6 +42,14 @@ independently in Mathematica** (`paper/crosscheck_*.wl`).
 | `EXPLICIT_FORMS_PROGRESS.md`, `RESULTS_ROADMAP.md`, `ALGORITHM_adiabatic_closed_forms.md`, `UNIFIED_ADIABATIC.md`, `sumUp.md`, `paperOutline.md` | Earlier progress notes, the reusable algorithm, figure index, outline. |
 
 ### Fixed-endpoint no-inversion (Lemma B) + referee response (recent)
+
+> **Status (tiered, not absolute).** The fixed-endpoint no-inversion is **proved**
+> for `r0 <= R*(E)` and, in the static case, asymptotically as `r0 -> infinity`;
+> **machine-certified** (interval arithmetic) at representative `r0`; and
+> **conjectural** in general. The static/frozen branch ordering does not invert
+> under the outgoing-clock replacement; the full outgoing-Vaidya optimal-control
+> boundary-value problem **remains open**.
+
 | File | What it does |
 |------|--------------|
 | `RESULTS_lemmaB_frozen_schwarzschild.md` | Master summary of the frozen-Schwarzschild no-inversion: Lemma A closed; Lemma B via elementary (`r0<=R*`) + closed-form large-`r0` asymptotic + CAP. |
@@ -52,6 +60,13 @@ independently in Mathematica** (`paper/crosscheck_*.wl`).
 | `verify_lemmaB_mathematica.wls` | Independent Mathematica cross-check of all no-inversion derivations. |
 | `REFEREE_RESPONSE_main8.md` | Point-by-point response to the main8 referee report (DONE vs PLANNED). |
 | `ThakurtaMetric/adiabatic_offshell_validation.py`, `adiabatic_tk_geodesic_check.py` | Validation of the adiabatic correction against the true optical-metric geodesic: `1/2`-Euler captures ~98%; off-shell (`H2!=0`, costate `p_eta`) term is the ~2% residual (referee 4.6). |
+
+### Complete first-order extended-Hamiltonian correction (Eq. 40, on-shell + off-shell)
+| File | What it does |
+|------|--------------|
+| `ThakurtaMetric/adiabatic_first_order_exact.py` | Exact canonical PT of the non-autonomous optical Hamiltonian: `delta p_r=(lambda ThetaH - S)/H_pr`, `S=int Theta H dlambda`; closes the **Thakurta–Kerr** first order to `O(eps^2)` (residual slope ~1.86). |
+| `VaidyaMetric/vaidya_first_order_offshell.py` | **Vaidya** `v`-branch analogue (`Theta=m d_m`, sign flip for accreting `m`, terminal anchoring of `p_v`); closes to `O(eps^2)` (slope **2.00** full vs **1.00** on-shell only). Emits `fig_vaidya_offshell`. |
+| `ThakurtaMetric/fig_phi_validation_corrected.py` | True-dynamics validation figure (`fig_phi_validation_true_dynamic`): leading on-shell (slope ~1, ~2% physical error) vs exact Eq. (40) (slope ~1.86) vs the true non-autonomous flow. |
 
 ---
 

@@ -1,6 +1,6 @@
 % ======================================================================
-%  Bibliography -- thematic. VERIFY all details (vol/page/year/DOI)
-%  before submission; some entries reconstructed from memory.
+%  Bibliography -- thematic. Metadata verified against published records
+%  (vol/page/year/DOI) 2026-07.
 % ======================================================================
 
 % ---- 0. Author's previous works (Zenodo preprints, 2026) -------------
@@ -43,8 +43,8 @@
   author = {Perlick, Volker},
   title = {Ray Optics, Fermat's Principle, and Applications to General
            Relativity},
-  series = {Lecture Notes in Physics}, volume = {m61},
-  publisher = {Springer}, year = {2000}}
+  series = {Lecture Notes in Physics Monographs}, volume = {61},
+  publisher = {Springer}, year = {2000}, doi = {10.1007/3-540-46662-2}}
 
 @article{Kovner1990,
   author = {Kovner, Isaac},
@@ -81,9 +81,11 @@
 
 @article{CaponioWind,
   author = {Caponio, E. and Javaloyes, M. A. and S\'anchez, M.},
-  title = {Wind Finslerian structures: from Zermelo's navigation to the
+  title = {Wind {F}inslerian structures: from {Z}ermelo's navigation to the
            causality of spacetimes},
-  journal = {arXiv:1407.5494}, year = {2014}}
+  journal = {Mem. Amer. Math. Soc.}, volume = {300}, number = {1501},
+  year = {2024}, doi = {10.1090/memo/1501}, eprint = {1407.5494},
+  archivePrefix = {arXiv}}
 
 % ---- 3. Optimal control / calculus of variations ---------------------
 @book{Pontryagin,
@@ -264,7 +266,12 @@
 
 @book{DLMF,
   title = {{NIST} Digital Library of Mathematical Functions},
-  note = {https://dlmf.nist.gov/}, year = {2023}}
+  editor = {Olver, F. W. J. and Daalhuis, A. B. Olde and Lozier, D. W. and
+            Schneider, B. I. and Boisvert, R. F. and Clark, C. W. and
+            Miller, B. R. and Saunders, B. V. and Cohl, H. S. and McClain, M. A.},
+  publisher = {National Institute of Standards and Technology},
+  note = {Release 1.2.4 of 2025-03-15, \url{https://dlmf.nist.gov/} (accessed 2026-07-23)},
+  year = {2025}}
 
 @misc{Rosignoli2026Code,
   author       = {Rosignoli, Iman},
@@ -272,8 +279,11 @@
                   codebase for constrained-worldline brachistochrones in
                   non-stationary spacetimes},
   year         = {2026},
-  howpublished = {GitHub repository},
-  note         = {\url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}}
+  version      = {v1.0},
+  howpublished = {GitHub repository, tagged release \texttt{v1.0}},
+  note         = {\url{https://github.com/ImanetorX98/NonStationaryBrachistochrone},
+                  release \texttt{v1.0} (commit \texttt{<SHA-TBD>});
+                  archived on Zenodo, DOI \texttt{<Zenodo-DOI-TBD>}}
 }
 
 @misc{SageMath,
@@ -281,7 +291,8 @@
   title        = {{SageMath}, the {Sage} {Mathematics} {Software} {System}
                   (Version 10.9)},
   year         = {2026},
-  howpublished = {\url{https://www.sagemath.org}}
+  howpublished = {\url{https://www.sagemath.org} (accessed 2026-07-23)},
+  note         = {Release 10.9 (2026-02-22)}
 }
 
 @misc{abelfunctions,
@@ -289,7 +300,10 @@
   title        = {{abelfunctions}: A library for computing with {Abelian}
                   functions, {Riemann} surfaces, and algebraic curves},
   year         = {2026},
-  howpublished = {\url{https://github.com/abelfunctions/abelfunctions}}
+  howpublished = {\url{https://github.com/abelfunctions/abelfunctions}},
+  note         = {Patched for {SageMath}~10.9 (\texttt{is\_*} API); the exact
+                  patched tree is archived in the reproducibility package
+                  \cite{Rosignoli2026Code}; accessed 2026-07-23}
 }
 
 @article{NumPy,
@@ -382,7 +396,8 @@
 @Article{BrownLevin2011,
   author  = {Brown, Francis and Levin, Andrey},
   title   = {Multiple elliptic polylogarithms},
-  journal = {arXiv:1110.6917},
+  journal = {arXiv preprint},
+  eprint  = {1110.6917}, archivePrefix = {arXiv}, primaryClass = {math.NT},
   year    = {2011},
 }
 
@@ -420,10 +435,14 @@
 }
 
 @Article{BauneEtal2024,
-  author  = {Baune, Konrad and Broedel, Johannes and Kaderli, Andr\'e and others},
+  author  = {Baune, Konrad and Broedel, Johannes and Im, Gijs and Lisitsyn, Artyom and Zerbini, Federico},
   title   = {Schottky--Kronecker forms and hyperelliptic polylogarithms},
-  journal = {arXiv preprint},
+  journal = {J. Phys. A: Math. Theor.},
+  volume  = {57},
+  number  = {44},
+  pages   = {445202},
   year    = {2024},
+  doi     = {10.1088/1751-8121/ad8197},
   eprint  = {2406.10051},
   archivePrefix = {arXiv},
   primaryClass  = {hep-th},
@@ -435,6 +454,34 @@
   journal = {arXiv preprint},
   year    = {2024},
   eprint  = {2407.11476},
+  archivePrefix = {arXiv},
+  primaryClass  = {hep-th},
+}
+
+@Article{DHokerHiddingSchlotterer2025,
+  author  = {D'Hoker, Eric and Hidding, Martijn and Schlotterer, Oliver},
+  title   = {Constructing polylogarithms on higher-genus Riemann surfaces},
+  journal = {Commun. Num. Theor. Phys.},
+  volume  = {19},
+  number  = {2},
+  pages   = {355--413},
+  year    = {2025},
+  doi     = {10.4310/CNTP.250531031558},
+  eprint  = {2306.08644},
+  archivePrefix = {arXiv},
+  primaryClass  = {hep-th},
+}
+
+@Article{DHokerEnriquezSchlottererZerbini2026,
+  author  = {D'Hoker, Eric and Enriquez, Benjamin and Schlotterer, Oliver and Zerbini, Federico},
+  title   = {Relating flat connections and polylogarithms on higher genus Riemann surfaces},
+  journal = {Commun. Math. Phys.},
+  volume  = {407},
+  number  = {3},
+  pages   = {43},
+  year    = {2026},
+  doi     = {10.1007/s00220-025-05540-x},
+  eprint  = {2501.07640},
   archivePrefix = {arXiv},
   primaryClass  = {hep-th},
 }

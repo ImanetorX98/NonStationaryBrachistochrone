@@ -55,39 +55,35 @@ spacetimes: Kodama rails, closed forms, and plunge inversion}
 \date{\today}
 
 \begin{abstract}
-We extend the relativistic brachistochrone (fastest-descent
-constrained rail curves, Perlick 1991) from stationary to non-stationary
-spacetimes. The rail constraint $-u\cdot W=\Ehat$ is an actively controlled
-invariant, legitimate via Pontryagin's principle; the selector $W$ follows a
-hierarchy Killing $\to$ conformal Killing $\to$ Kodama vector. We treat FLRW
-(degenerate base), Vaidya (dynamical black hole, $W=\partial_v$ the Kodama
-vector), and Thakurta--Kerr (conformal rotating compact object). Main results:
-Kodama energy conservation along the rail; the plunge-radius law and the
-branch-intrinsic depth ordering (rotation and the conformal factor invert under a
-same-launch comparison, while at the static/frozen-clock level there is no evaporative
-inversion); closed-form equatorial separatrices in Weierstrass
-functions, analytically continued through the ergosphere; the trichotomy at
-the ergosphere with an analytic cusp theorem; an existence theorem for the
-conformal plunge inversion; and first-order adiabatic corrections whose
-\emph{on-shell} component is a closed form in length-two iterated Abelian integrals on
-the frozen spectral curve, unified across the three geometries by a
-breathing-indicatrix structure in which the weight-two letter migrates from a
-third-kind dipole at infinity (Thakurta--Kerr) to a $\mathrm{d}\!\log$ at the
-horizon (Vaidya); the complete first-order term additionally carries an off-shell
-(costate) piece of the same class, derived from the extended Hamiltonian and verified
-against the true non-autonomous flow.
-Throughout, the block coefficients are obtained in explicit symbolic form
-(rational in the physical parameters and the separatrix data), the length-two iterated
-integrals represented by a geometrically convergent theta-nome ($q$-)series (their
-irreducibility and minimal basis dimension are conjectural, not proved), and a
-separatrix-tracking theorem shows the moving double root cancels the triple-pole
-residue; every symbolic identity is independently confirmed in Mathematica.
+We extend the relativistic brachistochrone (fastest-descent constrained rail
+curves, Perlick 1991) from stationary to non-stationary spacetimes. The rail
+constraint $-u\cdot W=\Ehat$ is an actively controlled invariant, legitimate via
+Pontryagin's principle, with the selector $W$ following a hierarchy Killing $\to$
+conformal Killing $\to$ Kodama vector; we treat FLRW, Vaidya
+($W=\partial_v$, the Kodama vector), and Thakurta--Kerr. Our main results are:
+Kodama energy conservation along the rail; a plunge-radius law and a branch-intrinsic
+depth ordering (rotation and the conformal factor invert the plunge under a
+same-launch comparison, with no evaporative inversion at the frozen-clock level);
+closed-form equatorial separatrices in Weierstrass functions, continued through the
+ergosphere, with a trichotomy and an analytic cusp theorem; an existence theorem for
+the conformal plunge inversion; and first-order adiabatic corrections whose
+\emph{on-shell} component reduces in closed form to length-two iterated Abelian
+integrals on the frozen spectral curve, unified across the three geometries by a
+breathing-indicatrix structure (the weight-two letter migrating from a third-kind
+dipole at infinity to a $\mathrm{d}\!\log$ at the horizon). The \emph{off-shell}
+costate piece, of the same class, is derived from the extended Hamiltonian and
+verified against the true non-autonomous flow.
 \emph{Status.} The controlled-rail formulation, the closed-form separatrices and cusp
-theorem, and the on-shell first-order reduction are proved; the fixed-endpoint
-no-inversion is proved for $r_0\le R_\ast(E)$ and, in the static case, as
-$r_0\to\infty$, machine-certified at representative $r_0$, and conjectural in general;
-the interior-ergosphere optimality, the outgoing-Vaidya problem, the exact off-shell
-closed form, and a rigorous higher-genus framework are open.
+theorem, and the on-shell first-order reduction are proved. The fixed-endpoint
+no-inversion is proved for $r_0\le R_\ast(E)$ (and, statically, as $r_0\to\infty$),
+machine-certified at representative $r_0$, conjectural in general. Interior-ergosphere
+optimality, the outgoing-Vaidya boundary-value problem, an explicit off-shell closed
+form, and a rigorous higher-genus polylogarithm framework remain open. Block
+coefficients are obtained in explicit symbolic form; the iterated Abelian integrals
+are evaluated numerically by a geometrically convergent theta-nome ($q$-)series
+supplied in the reproducibility package (their irreducibility and minimal basis
+dimension stated as conjectures). Every symbolic identity is independently confirmed
+in Mathematica.
 \end{abstract}
 
 \pacs{04.20.-q, 04.70.Bw, 98.80.Jk}
@@ -130,6 +126,41 @@ FLRW (degenerate base), Vaidya (dynamical horizon), Thakurta--Kerr
 (rotation $+$ conformal expansion)---treated in
 Secs.~\ref{sec:flrw}--\ref{sec:thakurta}; equatorial closed forms and the
 plunge-inversion analysis follow in Secs.~\ref{sec:closed}--\ref{sec:bvp}.
+Table~\ref{tab:claims} states each principal claim with its status (proved /
+machine-certified / verified / conjectural) and supporting evidence; the adiabatic
+first-order result is deliberately split into three separate claims (on-shell closed
+form; exact off-shell quadrature; explicit off-shell special-function assembly, open).
+
+\begin{table*}[htbp]
+    \centering
+    \caption{Principal claims, status, and evidence. ``Proved'': analytic proof in the
+    text. ``Machine-certified'': computer-assisted proof over a stated domain (interval
+    arithmetic). ``Verified'': checked numerically to the quoted residual.
+    ``Conjectural'': stated as such.}
+    \label{tab:claims}
+    \begin{ruledtabular}
+    \begin{tabular}{lll}
+        Claim & Status & Evidence\\
+        \hline
+        Controlled-rail (Kodama) formulation & proved & Sec.~\ref{sec:principle}\\
+        Kodama energy conserved along the rail & proved & Sec.~\ref{sec:vaidya},
+            Fig.~\ref{fig:kodama}\\
+        Closed-form separatrices; cusp theorem & proved & Sec.~\ref{sec:closed}\\
+        On-shell first order $=$ length-two Abelian integrals & proved (reduction)
+            & Sec.~\ref{sec:thakurta}, Tab.~\ref{tab:script-map}\\
+        Exact off-shell first-order term & derived $+$ verified
+            & App.~\ref{app:firstorder}; Figs.~\ref{fig:phi-true-dynamic},
+              \ref{fig:vaidya-offshell}\\
+        Explicit off-shell special-function form & open & reduction supplied\\
+        Fixed-endpoint no-inversion & proved / certified / conjectural
+            & Sec.~\ref{sec:bvp}, Tab.~\ref{tab:protocol}\\
+        Genus-two irreducibility \& basis dimension & conjectural
+            & Sec.~\ref{sec:thakurta}\\
+        Interior-ergosphere PMP optimality; outgoing BVP & open
+            & analytic continuation only\\
+    \end{tabular}
+    \end{ruledtabular}
+\end{table*}
 
 
 % ======================================================================
@@ -536,11 +567,14 @@ BVP to future work.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_no_inversione_evaporazione.png}
-    \caption{No evaporative inversion in the ingoing model: the linear-model
-    sign change lies entirely in the unphysical $m<0$ region; with
-    $m=e^{-\lambda v}>0$ the gap shrinks but does not invert. This is a
-    model-dependent statement for ingoing Vaidya; physical evaporation (outgoing
-    $m'<0$) is treated separately and shares the same depth ordering.}
+    \caption{This figure establishes \emph{only} the absence of inversion within
+    the ingoing, positive-mass model and the frozen-clock branch decomposition; it
+    does \emph{not} exhibit a solution of the outgoing-Vaidya boundary-value problem.
+    The linear-model sign change lies entirely in the unphysical $m<0$ region; with
+    $m=e^{-\lambda v}>0$ the branch gap shrinks but does not invert. The
+    static/frozen branch ordering does not invert under the outgoing-clock
+    replacement; the full outgoing-Vaidya optimal-control boundary-value problem
+    remains open.}
     \label{fig:vaidya-noinv}
 \end{figure}
 
@@ -1050,12 +1084,18 @@ elapsed clock measured \emph{from the free-arrival endpoint} (where $H=0$ by
 transversality), oriented inward---gives $\dd p_\eta/\dd\lambda=\Theta H$ with
 $p_\eta=0$ there, hence $\delta p_r=(\lambda\Theta H-S)/H_{p_r}$ and
 \begin{equation}
-    \frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{p_r}G}{H_{p_r}}
-    \big(\lambda\,\Theta H-S\big)-\lambda\,\Theta G\Big]\dd r,\quad
-    \Theta\equiv E\partial_E+J\partial_J,\ S(\lambda)=\!\int_0^{\lambda}\!\Theta H\,\dd\lambda',\
-    G=\frac{H_J}{H_{p_r}}=\varphi',
+    \begin{aligned}
+    &\frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{p_r}G}{H_{p_r}}
+    \big(\lambda\,\Theta H-S\big)-\lambda\,\Theta G\Big]\dd r,\\
+    &G=\frac{H_J}{H_{p_r}}=\varphi',\quad
+    S(\lambda)=\!\int_0^{\lambda}\!\Theta H\,\dd\lambda',
+    \end{aligned}
     \label{eq:adiab-exact}
 \end{equation}
+with $\Theta\equiv E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}}$
+(it differentiates only the dynamical charges $E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$;
+the rail invariants $\Ehat,J_{\rm TK}$ are conserved and inert under $\Theta$; for
+Vaidya $\Theta=m\partial_m$),
 closing the correction to $O(\varepsilon^2)$; $S$ is \emph{terminally anchored}
 ($S=0$ at the free-arrival endpoint, so $\delta p_r,\delta J\to0$ there) and the
 reduction holds on compact sub-arcs bounded away from the turning point ($H_{p_r}\to0$).
@@ -1064,7 +1104,8 @@ off-shell part driven by the slow-time costate ($H_{\rm ext}=p_\eta+H=0$,
 $H=-p_\eta\sim O(\varepsilon)$): the latter, $-\!\int(\partial_{p_r}G/H_{p_r})S\,\dd r$,
 is a depth-two iterated integral (a length-two iterated Abelian integral of the same
 class). The
-$\tfrac12(E\partial_E+J\partial_J)\varphi_0\,\eta$ term is the leading approximation to
+$\tfrac12(E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}})\varphi_0\,\eta$
+term is the leading approximation to
 Eq.~\eqref{eq:adiab-exact}, accurate to $\sim2\%$; its exact off-shell closed form lives
 in the same genus-two class as $\mathcal{C}+\psi$.
 \begin{table}[htbp]
@@ -1089,8 +1130,11 @@ in the same genus-two class as $\mathcal{C}+\psi$.
 \begin{figure*}[tbp]
     \centering
     \includegraphics[width=\textwidth]{Immagini/fig_phi_closed_validation.pdf}
-    \caption{Closed-form adiabatic orbit shape $\varphi(r,A)$ against direct
-    integration, both branches. (a,b): the closed form
+    \caption{Closed-form adiabatic orbit shape $\varphi(r,A)$ against the
+    \emph{direct quadrature of the same on-shell coefficient} (an
+    integration-by-parts self-consistency check, \emph{not} a test of the true
+    dynamics; cf.\ Fig.~\ref{fig:phi-true-dynamic}), both branches. (a,b): the closed
+    form
     $\varphi_0+\varepsilon\,\delta\varphi$ (dashed), $\delta\varphi$ from
     Eq.~\eqref{eq:psi-split}, overlies the direct integral of the same coefficient
     (solid) on compact sub-arcs bounded away from the turning point (marker), winding
@@ -1104,14 +1148,18 @@ in the same genus-two class as $\mathcal{C}+\psi$.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_phi_validation_true_dynamic.pdf}
-    \caption{\emph{Physical} validation ($t$-branch): the true non-autonomous
-    optical-metric geodesic versus frozen plus the \emph{leading} on-shell correction
+    \caption{\emph{Physical} validation: the true non-autonomous optical-metric
+    geodesic ($t$-branch) versus frozen plus the \emph{leading} on-shell correction
     (dashed) and plus the \emph{exact} Eq.~\eqref{eq:adiab-exact} correction (dotted) at
-    $A'/A=0.04$ (left). Right: the leading term has an $O(\varepsilon)$ physical error
-    (fitted slope $0.99$, $\sim2\%$), while the exact Eq.~\eqref{eq:adiab-exact} term
-    closes it to $O(\varepsilon^2)$ (fitted slope $1.86$), both far above the algebraic
-    IBP floor of Fig.~\ref{fig:phi-closed} ($\sim10^{-6}$). The $\sim2\%$ is the
-    off-shell (costate) residual of the leading approximation.}
+    $A'/A=0.04$ (left). Right: the residual for \emph{both branches} and \emph{two
+    parameter sets} ($t$: $a{=}0.9,\Ehat{=}1.4,J{=}6$; $\tau$: $a{=}0.9,\Ehat{=}1.4,
+    J{=}2.5$; $t$: $a{=}0.5,\Ehat{=}1.3,J{=}5$). The leading term (dotted) is
+    $O(\varepsilon)$ ($\sim2\%$); the exact Eq.~\eqref{eq:adiab-exact} term (solid)
+    closes it to $O(\varepsilon^2)$, log--log slopes $1.95\pm0.01$ ($t$),
+    $1.97\pm0.02$ ($\tau$), $2.16\pm0.11$ (second set)---consistent with slope two
+    within the fit uncertainty, far above the algebraic IBP floor of
+    Fig.~\ref{fig:phi-closed} ($\sim10^{-6}$). The $\sim2\%$ is the off-shell
+    (costate) residual of the leading approximation.}
     \label{fig:phi-true-dynamic}
 \end{figure}
 
@@ -1119,11 +1167,13 @@ in the same genus-two class as $\mathcal{C}+\psi$.
     \centering
     \includegraphics[width=\textwidth]{Immagini/fig_phi_penetrating.pdf}
     \caption{Ergosphere-penetrating $t$-branch orbits ($J=3<J_c^+$), frozen family.
-    (a): as $A$ grows the brachistochrone enters the ergosphere ($r<r_e$),
-    co-rotates, and turns ($\circ$) in $r_+<r_{\rm t}<r_e$---outside the horizon---%
-    before exiting; the rail turning $R_6=0$ keeps it above $r_+$. (b): the
-    penetration depth $r_{\rm t}(A)$ stays near $r_+$ until a threshold
-    $A_c\!\simeq\!1.5$, beyond which the orbit no longer penetrates.}
+    (a): as $A$ grows the \emph{analytically continued extremal} (inside $r_e$ a
+    continuation of the exterior extremal, not a proved PMP solution) enters the
+    ergosphere ($r<r_e$), co-rotates, and turns ($\circ$) in $r_+<r_{\rm t}<r_e$---%
+    outside the horizon---before exiting; the rail turning $R_6=0$ keeps it above
+    $r_+$. (b): the penetration depth $r_{\rm t}(A)$ stays near $r_+$ until a
+    frozen-family threshold $A_c\!\simeq\!1.5$ (each curve frozen at fixed $A$),
+    beyond which the orbit no longer penetrates.}
     \label{fig:phi-penetrating}
 \end{figure*}
 
@@ -1958,7 +2008,9 @@ file---from $(M,a,E,J)$ through the $11\times11$ solve and the building blocks t
 assembled $\delta\varphi$, matching the direct integral to $4\times10^{-15}$.
 \begin{table*}[t]
     \centering
-    \caption{Result-to-script map with achieved numerical residual.}
+    \footnotesize
+    \caption{Result-to-script map with achieved numerical residual (SHA-256, first 12
+    hex, in brackets for the off-shell scripts).}
     \label{tab:script-map}
     \begin{ruledtabular}
     \begin{tabular}{lll}
@@ -1974,6 +2026,16 @@ assembled $\delta\varphi$, matching the direct integral to $4\times10^{-15}$.
         horizon dilog $\mathcal{D}_k$ & \texttt{vaidya\_horizon\_dilog.py} & $10^{-12}$\\
         separatrix $U_0(\sigma,\zeta)$; $\tau$ & \texttt{vaidya\_ell\_dilog\_match.py} & $10^{-14}$\\
         accr./evap.\ split & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
+        \hline
+        \multicolumn{3}{l}{\emph{First-order Eq.~\eqref{eq:adiab-exact} (on-shell $+$
+            off-shell); dirs \texttt{ThakurtaMetric/}, \texttt{VaidyaMetric/}:}}\\
+        TK $t$ exact PT vs true flow & \texttt{adiabatic\_first\_order\_exact.py}
+            [\texttt{78ab24b5373c}] & slope $1.95$\\
+        Vaidya $v$ exact PT $+$ fig & \texttt{vaidya\_first\_order\_offshell.py}
+            [\texttt{5dc9fe177f2f}] & slope $2.00$\\
+        true-dyn.\ valid.\ ($t,\tau$, 2 sets)
+            & \texttt{fig\_phi\_validation\_corrected.py} [\texttt{a086a0692e8c}]
+            & $1.95$--$2.16$\\
     \end{tabular}
     \end{ruledtabular}
 \end{table*}
@@ -2101,6 +2163,73 @@ also retains exploratory scripts and negative results,
 documenting which ansatz classes failed the held-out trajectory and phase-space
 residual tests reported in Sec.~\ref{sec:quasiconst} and
 App.~\ref{app:validation}.
+
+\clearpage
+\section{Complete first-order extended-Hamiltonian correction}
+\label{app:firstorder}
+This appendix derives Eq.~\eqref{eq:adiab-exact}---the complete first-order (on-shell
+\emph{plus} off-shell) adiabatic correction---from the extended Hamiltonian and
+specializes it to the $t$-, $\tau$- and Vaidya branches, so a reader can reconstruct
+it without the code.
+
+\paragraph{Notation and the slow datum.}
+$\Ehat$ and $J\equiv J_{\rm TK}=p_\varphi$ are the \emph{conserved} control charges;
+the effective unit-mass Kerr charges on the frozen slice are $E_{\rm eff}=\Ehat/A$ and
+$J_{\rm eff}=J/A$, both of conformal weight $A^{-1}$. The slow datum is $s$ ($s=\eta$
+Thakurta--Kerr, $s=v$ Vaidya); $A(s)=A_0(1+\varepsilon s+\cdots)$ with $A_0\equiv1$ and
+\emph{dimensionless} rate $\varepsilon=M A_{,\eta}/A$ (Vaidya $\varepsilon=M\dot m/m$).
+The Euler operator generating the drift of the frozen family is
+$\Theta\equiv E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}}$
+(Thakurta--Kerr), $\Theta\equiv m\partial_m$ (Vaidya), since $\dd E_{\rm eff}/\dd
+s=-\varepsilon E_{\rm eff}$ etc.\ ($\dd m/\dd s=+\varepsilon m$).
+
+\paragraph{Extended system and first order.}
+Adjoin $s$ with conjugate $p_s$: $\mathcal H=p_s+H_0(r,p_r;E_{\rm eff}(s),J_{\rm
+eff}(s))=0$. Free-arrival transversality sets $H_0=0$ ($p_s=0$) at the endpoint
+$\lambda=0$. Along the flow $\dd p_s/\dd\lambda=\varepsilon\,\Theta H_0$, so
+$p_s^{(1)}(\lambda)\equiv S(\lambda)=\int_0^\lambda\Theta H_0\,\dd\lambda'$,
+\emph{terminally anchored} ($S=0$ at $\lambda=0$). Because $H_0=-\varepsilon S$ the
+orbit leaves the frozen shell at $O(\varepsilon)$; linearizing $H_0$ at fixed $r$ gives
+$\delta p_r=(\lambda\,\Theta H_0-S)/H_{0,p_r}$, the axial costate remaining conserved
+($\delta J=0$; it is $J_{\rm eff}=J/A$ that breathes). Integrating $\dd\varphi/\dd
+r=G_0+\varepsilon[\partial_{p_r}G_0\,\delta p_r-\lambda\,\Theta G_0]+O(\varepsilon^2)$
+reproduces Eq.~\eqref{eq:adiab-exact}. Here $G_0=H_{0,J}/H_{0,p_r}$ is the frozen shape
+integrand and $\dd\lambda/\dd r=1/H_{0,p_r}$ the clock density, both on the ingoing
+root $p_{r0}(r)$ ($H_{0,p_r}<0$). The reduction holds on compact sub-arcs bounded away
+from the turning point ($H_{0,p_r}\to0$).
+
+\paragraph{Branch specialization.}
+The frozen $H_0$ per branch: $H_\eta,H_t,H_\tau$ (Thakurta--Kerr,
+Eqs.~\eqref{eq:Heta}) and, for Vaidya, $H_v$ of Eq.~\eqref{eq:Hv} with
+\begin{equation}
+    \Theta H_v=m\,\partial_m H_v=m\!\left[-\frac{2p_r}{r}
+    +\frac{\sqrt{\Ehat^2 p_r^2+J^2/r^2}}{r\sqrt w}\right],\quad w=\Ehat^2-f.
+\end{equation}
+Since $m$ \emph{increases} while $E_{\rm eff},J_{\rm eff}$ decrease, the Vaidya
+correction is Eq.~\eqref{eq:adiab-exact} with $(\lambda\Theta H_0-S)\to(S-\lambda\Theta
+H_0)$ and $-\lambda\Theta G_0\to+\lambda\Theta G_0$; the proper-time branch uses
+$H_\tau$ of Eq.~\eqref{eq:Htau-vaidya}. All four cases close the correction to
+$O(\varepsilon^2)$: least-squares log--log slopes $1.95\pm0.01$ ($t$), $1.97\pm0.02$
+($\tau$) and $2.16\pm0.11$ (a second parameter set), Fig.~\ref{fig:phi-true-dynamic},
+and $2.00$ (Vaidya, Fig.~\ref{fig:vaidya-offshell}), versus $\approx1$ for the on-shell
+term alone (\texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py},
+\texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}). The explicit assembly of the
+off-shell term---itself a length-two iterated Abelian integral, since $S$ is already an
+integral---into the special-function basis of App.~\ref{app:explicit} is supplied in
+the reproducibility package.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\columnwidth]{Immagini/fig_vaidya_offshell.png}
+    \caption{Vaidya $v$-branch first-order correction, residual against the true
+    non-autonomous flow versus $\varepsilon=M\dot m/m$ (log--log). The on-shell term
+    alone (dropping the costate integral $S$) is $O(\varepsilon)$ (slope
+    $\approx1.00$); the complete extended-Hamiltonian term of
+    Eq.~\eqref{eq:adiab-exact}, adding the off-shell piece, closes to
+    $O(\varepsilon^2)$ (slope $\approx2.00$). Generated by
+    \texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}.}
+    \label{fig:vaidya-offshell}
+\end{figure}
 
 \clearpage
 \bibliographystyle{apsrev4-2}

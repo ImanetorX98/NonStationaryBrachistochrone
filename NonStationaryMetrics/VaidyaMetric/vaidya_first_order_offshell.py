@@ -7,10 +7,15 @@
 # Off-shell costate: H_ext=p_v+H_v=0 => p_v=-H_v=O(mdot). Verified: residual slope ~2.00
 # (closes the Vaidya first order to O(eps^2)), so Eqs (17-21) on-shell horizon-dilogarithm
 # are the on-shell COMPONENT; the complete first-order term adds this off-shell piece.
+import os,sys
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid as ct
 from scipy.optimize import brentq
 from scipy.interpolate import interp1d
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from paper_style import COL, set_style, savefig
+import matplotlib.pyplot as plt
+set_style(); HERE=os.path.dirname(os.path.abspath(__file__))
 E0,J0,r0=1.4,6.0,12.0; m0=1.0
 rr,pr,mm=sp.symbols('r pr m',positive=True); Es,Js=sp.symbols('E J_',positive=True)
 f=1-2*mm/rr; w=Es**2-f
@@ -39,15 +44,34 @@ rg=np.linspace(r0,rF.min()+0.3,5000); rc=np.linspace(8.0,11.0,2000)
 prg=interp1d(rF,prF,bounds_error=False,fill_value='extrapolate')(rg)
 ThetaH=m0*dHm(rg,prg,m0,E0,J0)                    # Theta_m H = m dH/dm
 S=ct(ThetaH*np.gradient(lam_r(rg),rg),rg,initial=0)
-integ=dGpr(rg,prg,m0,E0,J0)*(S-lam_r(rg)*ThetaH)/dHp(rg,prg,m0,E0,J0)+lam_r(rg)*m0*dGm(rg,prg,m0,E0,J0)
+Gpr=dGpr(rg,prg,m0,E0,J0)/dHp(rg,prg,m0,E0,J0); Gm=lam_r(rg)*m0*dGm(rg,prg,m0,E0,J0)
+integ=Gpr*(S-lam_r(rg)*ThetaH)+Gm                 # complete first order (on- + off-shell)
+integ_on=Gpr*(-lam_r(rg)*ThetaH)+Gm               # ON-SHELL only (drop costate S)
 xc=interp1d(rg,ct(integ,rg,initial=0),bounds_error=False,fill_value='extrapolate')
+xc_on=interp1d(rg,ct(integ_on,rg,initial=0),bounds_error=False,fill_value='extrapolate')
 # leading (on-shell, m d_m F * clock) for comparison: Theta_m applied to shape
 print("Vaidya v-branch off-shell PT:")
-epss=np.array([0.0025,0.005,0.01,0.02]); res=[]
+epss=np.array([0.0025,0.005,0.01,0.02,0.04]); res=[]; res_on=[]
 for eps in epss:
     _,rL,_,pL=flow(eps); pt=interp1d(rL,pL,bounds_error=False,fill_value='extrapolate')(rc)
     res.append(np.nanmax(np.abs(pt-(phi0(rc)+eps*xc(rc)))))
-res=np.array(res)
+    res_on.append(np.nanmax(np.abs(pt-(phi0(rc)+eps*xc_on(rc)))))
+res=np.array(res); res_on=np.array(res_on)
 print("  coeff on [8,11]: %.4f"%np.mean(xc(rc)))
-for e,r in zip(epss,res): print(f"  eps={e:.4f}  res={r:.2e}")
-print(f"  SLOPE = {np.polyfit(np.log(epss),np.log(res),1)[0]:.2f}  (2 => off-shell PT closes Vaidya too)")
+for e,r,ro in zip(epss,res,res_on): print(f"  eps={e:.4f}  res_full={r:.2e}  res_onshell={ro:.2e}")
+s_full=np.polyfit(np.log(epss),np.log(res),1)[0]
+s_on=np.polyfit(np.log(epss),np.log(res_on),1)[0]
+print(f"  SLOPE full = {s_full:.2f}  (2 => off-shell PT closes Vaidya too)")
+print(f"  SLOPE on-shell only = {s_on:.2f}  (1 => costate piece needed)")
+
+# ---- convergence figure (referee follow-up 4.6, fig:vaidya-offshell) ----
+fig,ax=plt.subplots(1,1,figsize=(COL,COL*0.85))
+ax.loglog(epss,res_on,'ko-',ms=4,label=r'on-shell only: slope $\approx%.2f$'%s_on)
+ax.loglog(epss,res,'C3s-',ms=4,label=r'complete Eq.(40): slope $\approx%.2f$'%s_full)
+ax.loglog(epss,epss**2*res[2]/epss[2]**2,'C3:',lw=0.6,alpha=0.6,label=r'$O(\varepsilon^2)$ guide')
+ax.loglog(epss,epss*res_on[2]/epss[2],'k:',lw=0.6,alpha=0.6,label=r'$O(\varepsilon)$ guide')
+ax.set_xlabel(r"$\varepsilon=M\dot m/m$"); ax.set_ylabel('residual vs true flow')
+ax.set_title('Vaidya first order: off-shell costate closes to $O(\\varepsilon^2)$',fontsize=6.6)
+ax.legend(fontsize=5.6,loc='upper left')
+savefig(fig,os.path.join(os.path.dirname(HERE),'paper','Immagini'),'fig_vaidya_offshell')
+print("FATTO")
