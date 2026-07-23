@@ -211,6 +211,15 @@ KM = `KerrMetric/`. Tutte in `.pdf` (paper) + `.png` (anteprima).
 | KM/fig_bvp_kerr_inversione | Δr(a) estremi fissi, no inversione spin (R10c) | bvp_kerr_simmetrico.py | ThakurtaResults.md R10c |
 | KM/fig_bvp_conforme_inversione | Δr(E_eff) estremi fissi, no inversione A (R10c) | bvp_conforme_inversione.py | ThakurtaResults.md R10c |
 | KM/fig_tbranch_separatrix | separatrice t genere-1 (radice doppia), ODE vs forma chiusa (R12h) | kerr_tbranch_separatrix_figure.py | ThakurtaResults.md R12h |
+| KM/fig_jpt_genus2 | J_+^t genere-2 (Kleinian), penetra ergosfera, ODE vs forma chiusa 1ª+3ª specie (R12i) | kerr_jpt_genus2_figure.py | ThakurtaResults.md R12i |
+| KM/fig_jcm_capture | cattura retrograda 0.95·J_c^-, saddle-node (radice doppia→coppia complessa) (R12i) | kerr_jcm_capture_figure.py | ThakurtaResults.md R12i |
+| KM/fig_master_penetration_taut | classificazione all'ergosfera vs J: τ tricotomia / t dicotomia (R12j) | fig_master_penetration_taut.py | ThakurtaResults.md R12j |
+| KM/fig_atlas_tau | atlante 5 regimi ramo τ (liscio/penetra +J_c/cuspide/cuspide-retro/liscio) (R12j) | fig_atlas_tau_t.py | ThakurtaResults.md R12j |
+| KM/fig_atlas_t | atlante 5 regimi ramo t (liscio/tangente/penetra/cattura 0.99·J_c^-/liscio) (R12j) | fig_atlas_tau_t.py | ThakurtaResults.md R12j |
+| KM/fig_tau_jc_pm | le due τ marginali ±J_c: +J_c penetra vs −J_c cuspide (co-rotazione) (R12j) | fig_tau_jc_pm.py | ThakurtaResults.md R12j |
+| KM/fig_tau_scan_regimes | scan τ retrogrado ogni 0.05 J_c: cuspide/grazing/scattering (R12k) | fig_tau_scan_regimes.py | progress.md §4 |
+| KM/fig_tau_shooting_mJc | shooting τ vicino a −J_c (−0.9,−0.95,−0.99,−1.01 J_c), r_min≥r_e (R12k) | fig_tau_shooting_mJc.py | progress.md §4 |
+| KM/fig_tau_phi_special_vs_direct | φ(r) forma speciale genere-2 vs integrazione diretta (stessa curva) (R12k) | fig_tau_phi_special_vs_direct.py | progress.md §2 |
 | KM/fig_colormap_spin_estremi_fissi | colormap Δr(J,a) estremi fissi, Δr>0 (R10c) | colormap_spin_estremi_fissi.py | ThakurtaResults.md R10c |
 | KM/fig_colormap_conforme_estremi_fissi | colormap Δr(J,A) estremi fissi, Δr>0 (R10c) | colormap_conforme_estremi_fissi.py | ThakurtaResults.md R10c |
 | KM/fig_colormap_spin_asimmetrico | colormap Δr(J,a) estremi ASIMMETRICI, Δr>0 (R10c) | colormap_spin_asimmetrico.py | ThakurtaResults.md R10c |
@@ -221,4 +230,9 @@ KM = `KerrMetric/`. Tutte in `.pdf` (paper) + `.png` (anteprima).
 Script di sola analisi (senza figura dedicata):
 `tricotomia_equatoriale.py` (R12f, tabella soglie J),
 `kerr_separatrix_weierstrass.py` / `kerr_separatrix_validation.py` /
-`kerr_doran_shift_weierstrass.py` (forma chiusa separatrice, R12a–c).
+`kerr_doran_shift_weierstrass.py` (forma chiusa separatrice, R12a–c),
+`kerr_jpt_genus2_kleinian.py` (SageMath: curva y²=R6, matrice dei periodi τ
+genere-2, condizioni di Riemann verificate; R12i),
+`kerr_jpt_genus2_reduction_check.py` (decomposizione 1ª+3ª specie di φ vs flusso
+di Hamilton, 4×10⁻¹²; R12i),
+`kerr_tbranch_separatrix_weierstrass.py` (genere-1 t-separatrice, radice doppia).

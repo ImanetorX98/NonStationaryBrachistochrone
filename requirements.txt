@@ -3,4 +3,14 @@ scipy
 sympy
 matplotlib
 mpmath
-tqdm
+Pillow
+
+# SageMath (with the abelfunctions library) is required ONLY for the four .sage
+# scripts in KerrScripts/ that build the genus-2 Riemann surface / theta / Abel-map
+# machinery (Kerr only):
+#   kerr_quasiperiods_bel.sage        (second-kind quasi-periods; Sage RiemannSurface)
+#   kerr_thirdkind_theta_closed.sage  (third-kind L = theta-ratio; abelfunctions)
+#   kerr_psi_forward_abel.sage        (Abel map + RiemannTheta; abelfunctions)
+#   kerr_holo_component_check.sage    (holomorphic-component check; Sage RiemannSurface)
+# Everything else -- ALL FLRW, Vaidya and Thakurta-Kerr analysis, every closed-form
+# check, and all figures -- runs on the pure-Python stack above (no Sage).

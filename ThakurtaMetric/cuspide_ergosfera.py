@@ -166,7 +166,7 @@ for Jv, col, lab, ls in [(0.5, 'C0', r'$|J|<J_c$: CUSP (bounce)', '-'),
     ax.plot(phf - phe, rf, col, ls=ls, lw=1.8, label=lab)
 rg_x, ph_x = traiettoria_crossing()
 ax.plot(ph_x, rg_x, 'C2--', lw=1.8,
-        label=r'$|J|=J_c$: crossing (Doran) $\to r_+$')
+        label=r'$J{=}{+}J_c$ (prograde): crosses $\to r_+$')
 ax.axhline(r_e, color='k', ls='--', lw=0.9)
 ax.axhline(r_plus, color='k', ls='-', lw=0.8)
 ax.text(0.02, r_e + 0.03, 'ergosphere $r_e=2M$', fontsize=6)
@@ -176,8 +176,8 @@ ax.set_ylim(1.3, 2.55)
 ax.set_xlabel('$\\varphi - \\varphi_e$  (Doran for the crossing)')
 ax.set_ylabel('$r$')
 ax.set_title('At the ergosphere (Thakurta-Kerr, $s=0.9$, $E_{eff}$='
-             f'{E}, $J_c={Jc:.2f}$):\nCUSP bounce / smooth periapsis / '
-             '$J_c$ CROSSES to $r_+$ (Doran)')
+             f'{E}, $J_c={Jc:.2f}$):\ncusp ($|J|{{<}}J_c$) / periapsis '
+             '($|J|{>}J_c$) / only $+J_c$ crosses to $r_+$')
 ax.legend(fontsize=5.5, loc='upper right')
 
 # pannello b: r-r_turn vs |phi-phi_e| log-log (pendenza = potenza)
