@@ -2183,40 +2183,51 @@ $\Theta\equiv E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}
 (Thakurta--Kerr), $\Theta\equiv m\partial_m$ (Vaidya), since $\dd E_{\rm eff}/\dd
 s=-\varepsilon E_{\rm eff}$ etc.\ ($\dd m/\dd s=+\varepsilon m$).
 
-\paragraph{Extended system and first order.}
-Adjoin $s$ with conjugate $p_s$: $\mathcal H=p_s+H_0(r,p_r;E_{\rm eff}(s),J_{\rm
-eff}(s))=0$. Free-arrival transversality sets $H_0=0$ ($p_s=0$) at the endpoint
-$\lambda=0$. Along the flow $\dd p_s/\dd\lambda=\varepsilon\,\Theta H_0$, so
-$p_s^{(1)}(\lambda)\equiv S(\lambda)=\int_0^\lambda\Theta H_0\,\dd\lambda'$,
-\emph{terminally anchored} ($S=0$ at $\lambda=0$). Because $H_0=-\varepsilon S$ the
-orbit leaves the frozen shell at $O(\varepsilon)$; linearizing $H_0$ at fixed $r$ gives
-$\delta p_r=(\lambda\,\Theta H_0-S)/H_{0,p_r}$, the axial costate remaining conserved
-($\delta J=0$; it is $J_{\rm eff}=J/A$ that breathes). Integrating $\dd\varphi/\dd
-r=G_0+\varepsilon[\partial_{p_r}G_0\,\delta p_r-\lambda\,\Theta G_0]+O(\varepsilon^2)$
-reproduces Eq.~\eqref{eq:adiab-exact}. Here $G_0=H_{0,J}/H_{0,p_r}$ is the frozen shape
-integrand and $\dd\lambda/\dd r=1/H_{0,p_r}$ the clock density, both on the ingoing
-root $p_{r0}(r)$ ($H_{0,p_r}<0$). The reduction holds on compact sub-arcs bounded away
-from the turning point ($H_{0,p_r}\to0$).
-
-\paragraph{Branch specialization.}
-The frozen $H_0$ per branch: $H_\eta,H_t,H_\tau$ (Thakurta--Kerr,
-Eqs.~\eqref{eq:Heta}) and, for Vaidya, $H_v$ of Eq.~\eqref{eq:Hv} with
+\paragraph{The conformal rescaling carries a dilation term.}
+The Thakurta--Kerr Hamiltonians factorize as $H_{\rm br}=A\,\bar H(r,P_r,J_{\rm
+eff};E_{\rm eff})$ with the \emph{normalized} momentum $P_r=p_r/A$. Since $P_r=p_r/A$ is
+a \emph{time-dependent} canonical transformation, the physical canonical flow carries its
+generator: with $\alpha=A_{,s}/A=\varepsilon+O(\varepsilon^2)$,
+$\dd P_r/\dd s=-\bar H_r-\alpha P_r$ (and $\dd E_{\rm eff}/\dd s=-\alpha E_{\rm eff}$,
+$\dd J_{\rm eff}/\dd s=-\alpha J_{\rm eff}$). Hence the shell-departure rate is the
+\emph{full} Euler operator $\mathcal D=\Theta+P_r\partial_{P_r}$, and the
+terminally-anchored source is
 \begin{equation}
-    \Theta H_v=m\,\partial_m H_v=m\!\left[-\frac{2p_r}{r}
-    +\frac{\sqrt{\Ehat^2 p_r^2+J^2/r^2}}{r\sqrt w}\right],\quad w=\Ehat^2-f.
+    S_{\mathcal D}(\lambda)=\int_0^\lambda\big(\Theta\bar H+P_r\bar H_{P_r}\big)\dd\lambda',
+    \qquad \delta P_r=\frac{\lambda\,\Theta\bar H-S_{\mathcal D}}{\bar H_{P_r}},
 \end{equation}
-Since $m$ \emph{increases} while $E_{\rm eff},J_{\rm eff}$ decrease, the Vaidya
-correction is Eq.~\eqref{eq:adiab-exact} with $(\lambda\Theta H_0-S)\to(S-\lambda\Theta
-H_0)$ and $-\lambda\Theta G_0\to+\lambda\Theta G_0$; the proper-time branch uses
-$H_\tau$ of Eq.~\eqref{eq:Htau-vaidya}. All four cases close the correction to
-$O(\varepsilon^2)$: least-squares log--log slopes $1.95\pm0.01$ ($t$), $1.97\pm0.02$
-($\tau$) and $2.16\pm0.11$ (a second parameter set), Fig.~\ref{fig:phi-true-dynamic},
-and $2.00$ (Vaidya, Fig.~\ref{fig:vaidya-offshell}), versus $\approx1$ for the on-shell
-term alone (\texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py},
-\texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}). The explicit assembly of the
-off-shell term---itself a length-two iterated Abelian integral, since $S$ is already an
-integral---into the special-function basis of App.~\ref{app:explicit} is supplied in
-the reproducibility package.
+giving Eq.~\eqref{eq:adiab-exact} with $S\to S_{\mathcal D}$ (integrating
+$\dd\varphi/\dd r=G_0+\varepsilon[\partial_{P_r}G_0\,\delta P_r-\lambda\Theta G_0]$).
+Omitting $P_r\bar H_{P_r}$ leaves an $O(\varepsilon)$ error against the true canonical
+flow. The reduction holds on compact sub-arcs bounded away from the turning point.
+
+\paragraph{The dilation letter in closed form.}
+Since $\dd\lambda=\dd r/\bar H_{P_r}$, the extra source piece is the radial action,
+$\int P_r\bar H_{P_r}\dd\lambda=\int p_{r0}\dd r$. On the $t$-branch shell
+$p_{r0}=\sqrt S/[\Delta((E^2-1)r+2M)]$, $S=r[(E^2-1)r+2M]Q_2$, and
+\begin{equation}
+    \int p_{r0}\dd r=\sum_{k=0}^3 a_k U_k+(\text{third kind at }\Delta=0),\quad
+    U_k=\int r^k/\sqrt S\,\dd r,
+\end{equation}
+$a_3=E^2$, $a_2=2E^2M$, $a_1=4E^2M^2-(E^2-1)J^2$, $a_0=2M[4E^2M^2-J^2+2(1-E^2)Ja]$
+($E=E_{\rm eff}$, $J=J_{\rm eff}$). The kernel is $\partial_{P_r}G_0/\bar
+H_{P_r}=A(r)/\sqrt S$ with $A$ rational; the on-shell block closes in Kleinian
+$\zeta,\sigma$, the third-kind at the seed Kerr null surface $\Delta=0$ adds one
+genus-two dilogarithm. Verified to machine precision against the true flow
+(\texttt{adiabatic\_offshell\_reduction.py}, \texttt{tests/test\_adiabatic\_noreg.py}).
+
+\paragraph{Branch forms and separatrix limit.}
+For Vaidya the slow datum $m$ is a metric modulus (no rescaling), so
+$\mathcal D=\Theta=m\partial_m$ and no dilation term arises. All four cases close to
+$O(\varepsilon^2)$ against the true flow: slope $\approx1$ (on-shell alone) versus
+$2.05,2.07$ ($t,\tau$), a second set $2.01$ (Fig.~\ref{fig:phi-true-dynamic}), and
+$2.00$ (Vaidya). At the separatrix $J\to\Jc$ the off-shell term is just the generic term
+there: the curve degenerates ($S=(r-r_d)^2Q_4$, genus two $\to$ one), $U_k$ collapse to
+elliptic 2nd/3rd kind and $W_{jk}$ to an elliptic dilogarithm~\cite{BrownLevin2011}, the
+$r_d$ poles cancelling because $[S/\text{deng}](r_d)=0$. For Thakurta--Kerr the moving-root
+tracking must be extended to cancel the dilation triple pole at $r_d$ (isolated and
+physics-verified, not assembled in closed form here); for Vaidya, with no dilation, none is
+needed.
 
 \begin{figure}[htbp]
     \centering
