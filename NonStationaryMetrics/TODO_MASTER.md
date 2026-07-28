@@ -13,9 +13,17 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 - [x] **Framework coniugati/Maxwell/cut locus** — §8, VALIDO
 - [ ] **MAJOR — Equivalenza esplicita con Perlick** (`F_rail=F_Perlick` o `X_{H_rail}∥X_{H_Perlick}` su `H=0`):
       §3.3 la lascia da mostrare. Serve come proposizione autonoma nel paper.
-- [ ] **BLOCKER(Issue 2) — `p_φ` costato vs momento meccanico `L_mech`**: derivare la mappa di Legendre
-      `ℓ_eff = f(P_φ, Ê, A, branch)`, non asserire `J_eff=J/A` per peso conforme. Ricalcolare la sorgente
-      TK dalla relazione derivata; unificare `rail_conservation.py` + paper + script.
+- [ ] **BLOCKER(Issue 2) — `p_φ` costato vs momento meccanico `L_mech`** — TENTATO, CONFERMATO APERTO
+      (commit ad3a372, `costate_finsler_derivation.py`). Derivazione rigorosa di Finsler (Euler-verificata):
+      * il costato `p_φ=∂F/∂φ'` **≠** meccanico `u_φ=g(u,∂_φ)` (rapporto 1.125; brachistocrona non-geodetica);
+      * il `(p_r0,J)` del paper **È** il costato di Pontryagin, NON il meccanico geodetico (p_r0=1.29475
+        combacia col costato Finsler 1.29487; geodetico u_r=1.049 sbagliato del 20%);
+      * per tempo-COORDINATA min con `W=∂_t`, il costato `p_φ` è conformemente INVARIANTE (peso 0):
+        `F(Ê,A)=F(Ê/A,1)` a 1e-16; il meccanico `u_φ` ha peso −1.
+      TENSIONE IRRISOLTA: il `J` del paper è il costato (peso 0), ma paper+codice validato scalano
+      `J_eff=J/A` (peso −1). Il peso conforme asserito NON segue dal setup tempo-coordinata naturale.
+      NEXT: fissare il selettore ESATTO `W` (Kodama/conforme-Killing) e il funzionale-tempo (branch t vs τ
+      pesano diverso); ridurre la sorgente adiabatica dal `J` corretto; unificare `rail_conservation.py`.
 - [ ] Integrare il "Testo proposto" (§10 nota) come blocco control-theory nel paper (main.tex + PRD).
 - [ ] **MAJOR(Issue 6) — esclusioni**: minimalità dentro l'ergosfera (selettore spacelike, continuazione
       analitica ≠ ottimo fisico); PMP necessario ≠ esistenza/minimalità globale (già chiarito dalla nota,
