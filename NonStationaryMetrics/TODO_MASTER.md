@@ -56,13 +56,16 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       **ANCORATO ALLA FISICA**: closed==sub-pezzo off-shell del vero flusso τ a 6.9e-10; totale slope=2.03
       (~2). Il physics anchor ha beccato un bug di segno (Vaidya `m` cresce → `δp_r=(S_D−λΘH)/H_pr`),
       corretto → slope 2.03. Doc: `vaidya_offshell_closure.md`. Anchor: `vaidya_tau_physics_anchor.py`.
-- [~] **Vaidya-v generico off-shell** — STRUTTURA derivata analiticamente, chiusura da completare.
-      Il v-branch (tempo avanzato, costo "−1" con termine lineare in p_r) ha `p_r0` con PARTE ADDITIVA
-      razionale (curva spettrale `D_v`=discriminante). Kernel scompone: `A_part/D_v^{3/2}` (2ª specie √S)
-      **+ B_part/D_v** (ELEMENTARE, razionale, niente √S). Quindi ha un BLOCCO ELEMENTARE EXTRA che τ non ha;
-      l'additive-part propaga anche nella lettera interna. Chiudibile con A+B+C + blocco elementare extra.
-      Bounded, meccanico, ma più sporco di τ. Scripts WIP: `vaidya_offshell_closed_form.py`,
-      `vaidya_offshell_both_numeric.py`.
+- [~] **Vaidya-v generico off-shell** — TENTATO, NON chiuso (bug di derivazione + struttura più dura).
+      CONFERMATO: curva spettrale `S_v=r·DE·Q2v` (genus-2, DIVERSA dal τ; `Q2v`=quartica a=0),
+      `D_v=S_v/r⁶`, `K1=−DE/r`, `K2=(r−2m)DE/r²`. MA il kernel split che ho derivato
+      (`A_kernel_v=−E²J·DE·r⁴/Q2v` su √S_v + `elementary_v=−J·DE·r/Q2v`) **NON verifica** contro il numerico
+      (diff 5.5e-2, magnitudini diverse → bug algebrico nella derivazione, non solo segno). Da ri-derivare
+      con cura la scomposizione on-shell del kernel `d_pr G/H_pr` e della lettera interna.
+      STRUTTURA ATTESA (da confermare dopo fix): 2ª specie A+B+C (Hermite su Q2v) + BLOCCO ELEMENTARE
+      `−∫elementary_v·Σ dr` che via IBP dà probabilmente lettere weight-2 **log×Abeliane** (classe nuova,
+      più dura dei dilog genus-2). Genuinamente più difficile del τ. Scripts WIP: `vaidya_v_offshell_step1.py`
+      (curva OK), `vaidya_v_offshell_assembly.py` (split buggato). Il costo "−1" (additive part) è la radice.
 - [~] **Coeff simbolici all-(M,a,J)**: tabelle già simboliche; Hermite `rem_k`/`rho` mostrati E-simbolici;
       inverso modulare all-param = muro perf SymPy → usare Singular / tower QQ(a,E,J)[M]
 - [ ] Cosmetico: cancellazione grande A≈−75 vs C≈+73 nella decomposizione di Hermite (decomp più naturale)
