@@ -45,11 +45,16 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 - [ ] **FRONTIERA — theta-nome naming** dei dilog genus-2 (`D_{j,root}` a Δ=0, dilog s=0) nella classe
       tabulata Baune/D'Hoker (referee Issue 7). Serve rappresentazione theta + teorema di identificazione.
       Vale per TK-t e TK-τ (entrambi lasciano i letters genus-2 come trascendenti non nominati).
-- [~] **Vaidya-v generico off-shell** — INIZIATO (`VaidyaMetric/vaidya_offshell_closed_form.py`, step 1).
-      Sorgente `Θ=m∂_m` (NO dilatazione), lettera interna `∫(ΘH/H_pr)dr` (razionale, pulita). COMPLICAZIONE:
-      il costo unitario "−1" di `H_v` rende `p_r0 = razionale + y/(2A)` (parte additiva algebrica), non
-      la forma pulita `√S/den` di TK → wrap con più pezzi ELEMENTARI. Rifare con la forma Hamiltoniana
-      NON-surrogata (senza "−1", come il codex τ). Bounded, meccanico, non-frontiera. Curva genus-2.
+- [~] **Vaidya v+τ generico off-shell** — FORMA PULITA impostata (`VaidyaMetric/vaidya_offshell_tau_clean.py`,
+      `vaidya_offshell_both_numeric.py`). Progresso concreto:
+      * la forma NON-surrogata (τ: `−f/E` invece di `−1`) dà `P_r0=√S/(r(r−2m)DE)` PULITO (niente parte
+        additiva) — il "−1" era il blocco. Verificato.
+      * off-shell wrap **Vaidya-τ computato numericamente**: `Φ≈+1.645` (m=1,E=1.4,J=2.5) — finito, ben def.;
+        struttura = kernel `A/√S` × lettera-interna (sorgente `Θ=m∂_m`), terza specie a `r=2m` (orizzonte).
+      BLOCCHI residui: (i) sympy sqrt-hell con `a=0` (`√(Δv)` non semplifica) → fare la riduzione con
+      l'approccio a POLINOMIO DI SHELL (come `vaidya_tau_assembly.py`: `S` polinomiale + `U_k,W_kj`), NON
+      sympy sqrt grezzo; (ii) Hamiltoniana v-branch pulita corretta (advanced-time) da fissare (il solve
+      `p_r0` all'orizzonte falliva). Assemblaggio A+B+C + verifica ancora da completare. Bounded, non-frontiera.
 - [~] **Coeff simbolici all-(M,a,J)**: tabelle già simboliche; Hermite `rem_k`/`rho` mostrati E-simbolici;
       inverso modulare all-param = muro perf SymPy → usare Singular / tower QQ(a,E,J)[M]
 - [ ] Cosmetico: cancellazione grande A≈−75 vs C≈+73 nella decomposizione di Hermite (decomp più naturale)
