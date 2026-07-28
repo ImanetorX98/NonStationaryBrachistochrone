@@ -50,9 +50,12 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       analitiche sulla shell pulita: `G=J/(Δp_r)`, `H_pr=(r−2m)DE p_r/(Er²)`, `H_m=C0+C2 p_r²`,
       kernel `A_V=JEr³DE/Q3`, inner `P_inner=−mN4/((r−2m)DE)` — verificati vs numerico 1e-16.
       FULL A+B+C: A(2ª specie W_jk) + B(terza specie a **r=2m orizzonte** e DE=0, dilogs genus-2) +
-      C(Hermite elementare, remainder=0 SIMBOLICO). A+B+C == diretto a 1e-16. **Coeff simbolici in TUTTI
-      (m,E,J)** (a=0 toglie un parametro → all-param passa, a differenza di TK E-simbolico). Sorgente
-      `Θ=m∂_m` (no dilatazione, corretto). ρ(r=2m)=−2E²J²m², ρ(DE)=8E²m⁴/…
+      C(Hermite elementare, remainder=0 SIMBOLICO). A+B+C == diretto a 1e-16 (config 1) e 1e-15 (config 2).
+      **Coeff simbolici in TUTTI (m,E,J)** (a=0 toglie un parametro → all-param passa, a differenza di TK
+      E-simbolico). Sorgente `Θ=m∂_m` (no dilatazione, corretto). ρ(r=2m)=−2E²J²m², ρ(DE)=8E²m⁴/…
+      **ANCORATO ALLA FISICA**: closed==sub-pezzo off-shell del vero flusso τ a 6.9e-10; totale slope=2.03
+      (~2). Il physics anchor ha beccato un bug di segno (Vaidya `m` cresce → `δp_r=(S_D−λΘH)/H_pr`),
+      corretto → slope 2.03. Doc: `vaidya_offshell_closure.md`. Anchor: `vaidya_tau_physics_anchor.py`.
 - [~] **Vaidya-v generico off-shell** — STRUTTURA derivata analiticamente, chiusura da completare.
       Il v-branch (tempo avanzato, costo "−1" con termine lineare in p_r) ha `p_r0` con PARTE ADDITIVA
       razionale (curva spettrale `D_v`=discriminante). Kernel scompone: `A_part/D_v^{3/2}` (2ª specie √S)
