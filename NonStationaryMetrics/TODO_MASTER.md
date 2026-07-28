@@ -35,16 +35,25 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 ## B. Correzione adiabatica off-shell (referee Issue 1, main11)
 - [x] Termine di dilatazione `−(Ȧ/A)P_r`, Euler completo `D=Θ+P_r∂_Pr`, sorgente `S_D` — verificato vs vero flusso (slope~2), oracolo `test_adiabatic_noreg.py`
 - [x] Riduzione livello-B `∫p_r dr = Σa_k U_k + terza specie`, coeff simbolici (M,a,E,J)
-- [x] **Wrap off-shell GENERICO t-branch CHIUSO** in funzioni speciali: A(2ª specie→Kleiniane ζ,σ + dilog s=0)
-      + B(Δ=0 dilog genus-2) + C(elementare via Hermite). Verificato 1e-14 (2 config) + ancora fisica (slope~2)
+- [x] **Wrap off-shell GENERICO TK-t CHIUSO** in funzioni speciali: A(2ª specie→Kleiniane ζ,σ + dilog s=0)
+      + B(Δ=0 dilog genus-2) + C(elementare via Hermite). Verificato 1e-14 (2 config) + ancora fisica (slope~2).
+      Scripts: `KerrSessionScripts/offshell_tbranch_FULL_assembly.py`, `physics_anchor_offshell_closed.py`
+- [x] **Wrap off-shell GENERICO TK-τ CHIUSO** — stessa struttura A+B+C, kernel `A=r²D(EJr−2Ma)/Q3`, azione
+      `(−2J²M,−J²(E²−1),−2M,1)`, terza specie solo a Δ=0. Verificato 1e-14 (2 config) + ancora fisica
+      (link 7.8e-9 vs sotto-pezzo del flusso). Scripts: `KerrSessionScripts/offshell_taubranch_closed_form_codex.py`,
+      `offshell_taubranch_physics_anchor_codex.py` (verificati girare/passare in questa sessione)
 - [ ] **FRONTIERA — theta-nome naming** dei dilog genus-2 (`D_{j,root}` a Δ=0, dilog s=0) nella classe
       tabulata Baune/D'Hoker (referee Issue 7). Serve rappresentazione theta + teorema di identificazione.
-- [ ] **Vaidya generico off-shell** — curva `S_V=r·Emu·Q2(a=0)` genus-2, terza specie a `r=2m`, sorgente
-      `Θ=m∂_m` (no dilatazione). Port meccanico del t-branch.
+      Vale per TK-t e TK-τ (entrambi lasciano i letters genus-2 come trascendenti non nominati).
+- [~] **Vaidya-v generico off-shell** — INIZIATO (`VaidyaMetric/vaidya_offshell_closed_form.py`, step 1).
+      Sorgente `Θ=m∂_m` (NO dilatazione), lettera interna `∫(ΘH/H_pr)dr` (razionale, pulita). COMPLICAZIONE:
+      il costo unitario "−1" di `H_v` rende `p_r0 = razionale + y/(2A)` (parte additiva algebrica), non
+      la forma pulita `√S/den` di TK → wrap con più pezzi ELEMENTARI. Rifare con la forma Hamiltoniana
+      NON-surrogata (senza "−1", come il codex τ). Bounded, meccanico, non-frontiera. Curva genus-2.
 - [~] **Coeff simbolici all-(M,a,J)**: tabelle già simboliche; Hermite `rem_k`/`rho` mostrati E-simbolici;
       inverso modulare all-param = muro perf SymPy → usare Singular / tower QQ(a,E,J)[M]
 - [ ] Cosmetico: cancellazione grande A≈−75 vs C≈+73 nella decomposizione di Hermite (decomp più naturale)
-- [ ] Paper Tab.1: upgrade "off-shell closed form: open" → "t-branch assemblato+ancorato; naming e Vaidya deferred"
+- [ ] Paper Tab.1: upgrade "off-shell closed form: open" → "TK t+τ assemblati+ancorati; theta-naming e Vaidya deferred"
 
 ## C. Separatrice TK t-branch — tracking counterterm
 - [x] Diagnosi: polo di POTENZA `1/(r−r_d)²` on-path (Jc=2.9364, r_d=1.5123 in ergosfera), residuo ∝ ΔS(r_d)=34.75
