@@ -86,7 +86,11 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 - [x] Diagnosi: polo di POTENZA `1/(r−r_d)²` on-path (Jc=2.9364, r_d=1.5123 in ergosfera), residuo ∝ ΔS(r_d)=34.75
 - [x] Charge tracking `dJc/dE=−0.115` muove il root (`dr_d/dE=+0.0515`) ma NON cancella il polo del kernel
 - [x] Non-uniformità LOCALIZZATA a r_d (arco pulito matcha flusso a 99.4% Jc; overshoot satura vicino r_d)
-- [ ] **Costruire il controtermine `dr_d/dλ`**: derivare il moto del doppio root lungo il raggio di
+- [x] **Controtermine `dr_d/dλ` — RISOLTO (natura identificata)**: NON esiste. Sotto l'evoluzione il raggio
+      dilatazione lascia la separatrice → il doppio root si DISSOLVE, l'orbita ATTRAVERSA la separatrice.
+      È SEPARATRIX CROSSING (Neishtadt), non un controtermine algebrico. `tk_separatrix_crossing.md`,
+      `tk_sep_tracking_counterterm.py`, propagato ad App C (main.tex+PRD, +ref Neishtadt). Commit c9bd978.
+      [ex] derivare il moto del doppio root lungo il raggio di
       dilatazione (E,J)→(E/A,J/A), verificare se sottrae il polo 34.75; OPPURE analisi di strato limite
       (matched asymptotics inner/outer alla separatrice). Vaidya immune (r_d off-path).
 

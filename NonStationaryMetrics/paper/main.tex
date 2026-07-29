@@ -2855,12 +2855,19 @@ dilogarithm~\cite{BeilinsonLevin1994,BrownLevin2011} plus third kind at $\Delta=
 the separatrix off-shell form is one degree \emph{lower} than the generic genus-two case;
 verified letter by letter to machine precision (\texttt{ThakurtaMetric/tk\_sep\_genus2\_to\_elliptic.py},
 \texttt{tk\_sep\_offshell\_elliptic.py}; Vaidya \texttt{VaidyaMetric/vaidya\_sep\_offshell\_elliptic.py}).
-For Thakurta--Kerr the double root sits inside the ergosphere and the moving-root
-separatrix tracking (App.~\ref{app:separatrix}) must be extended to cancel the residual
-triple pole that the dilation letter injects at $r_d$ (an $O(1)$ residue, isolated and
-verified against the true flow but not assembled in closed form here); for Vaidya the
-double root is a branch point off the physical arc, $\mathcal D=\Theta$ carries no
-dilation, and no such extension is needed.
+For Thakurta--Kerr the double root sits inside the ergosphere, on the physical arc, and
+the dilation letter injects there a power pole $1/(r-r_d)^2$ (residue
+$\propto\Delta S(r_d)$, verified against the true flow) that is \emph{not} removed by
+the charge tracking $\dd J_c/\dd E$: the pole comes from the kernel $A\sim1/Q_2^2$, not
+from the source. Crucially this is not a missing algebraic counterterm. Under the
+adiabatic evolution the dilation ray $(\Ehat/A,\,J/A)$ leaves the separatrix locus
+$J=J_c(E)$, so the double root does not merely move---it \emph{dissolves}, and the orbit
+\emph{crosses} the separatrix. The off-shell non-uniformity at $r_d$ is therefore a
+separatrix-crossing phenomenon \cite{Neishtadt1987,Neishtadt2013}: the first-order
+adiabatic term is non-uniform there and its uniform completion requires inner/outer
+matched asymptotics, outside the symbolic-coefficient reduction. For Vaidya the double
+root is a branch point off the physical arc, $\mathcal D=\Theta$ carries no dilation,
+and no such crossing occurs.
 
 \begin{figure}[htbp]
     \centering
