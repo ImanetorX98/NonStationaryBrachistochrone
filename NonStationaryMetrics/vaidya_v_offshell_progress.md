@@ -46,3 +46,11 @@ genus-2 a r=2m, stessa base del block1. Radice: costo "−1" tempo avanzato → 
 ## Scripts
 `VaidyaMetric/vaidya_v_offshell_structure.py` (struttura verificata 3.5e-18),
 `vaidya_v_step1_clean.py`, `vaidya_v_kernel_probe.py`.
+
+
+## CHIUSO (esplicito)
+P_inner_v ridotto: `Σ_2nd = Σ poly_k U_k + a2/(r−2m)² Π²₂ₘ + a1/(r−2m) Π₂ₘ + b/DE Π_DE`,
+`a2=32E²m⁵`, `a1=2m²(−E²J²+32E²m²−4m²)`, `b=8m⁴/(E²−1)³` (simbolici). Σ_elem=4m²/(r−2m)−2m·log(r−2m).
+Wrap esplicito == diretto **5e-17**; PHYSICS-ANCHORED **7.6e-11**, slope 1.96. Espansione pura W_jk =
+stessa macchina τ (block1 A+B+C con letter doppio-polo D²₂ₘ; block2 = terza-specie weight-1 + 2m·M^{2m}).
+Script: `VaidyaMetric/vaidya_v_explicit_assembly.py`.

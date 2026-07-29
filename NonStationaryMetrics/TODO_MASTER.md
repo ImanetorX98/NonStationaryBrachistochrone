@@ -56,7 +56,7 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       **ANCORATO ALLA FISICA**: closed==sub-pezzo off-shell del vero flusso τ a 6.9e-10; totale slope=2.03
       (~2). Il physics anchor ha beccato un bug di segno (Vaidya `m` cresce → `δp_r=(S_D−λΘH)/H_pr`),
       corretto → slope 2.03. Doc: `vaidya_offshell_closure.md`. Anchor: `vaidya_tau_physics_anchor.py`.
-- [~] **Vaidya-v generico off-shell** — STRUTTURA VERIFICATA, assemblaggio simbolico completo da fare.
+- [x] **Vaidya-v generico off-shell CHIUSO** (esplicito, verificato, fisica-ancorato).
       BUG FIXATO (sessione dedicata): avevo derivato `d_pr G` dalla `G` GIÀ on-shell; serve la derivata
       OFF-shell valutata on-shell. Estratto numericamente e verificato:
       * curva `S_v=r·DE·Q2v` (genus-2, `Q2v`=quartica a=0), diversa dal τ;
