@@ -116,16 +116,21 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 - [ ] Nomenclatura orizzonte/ergosfera: TK = oggetto compatto non BH; `Δ=0` = superficie null seme Kerr
       (vedi memoria thakurta-kerr-not-black-hole)
 
-## E. Editoriale/bibliografia/riproducibilità (main11 sec.8-9) — MINOR
-- [~] Rinominare Eq (32)/(38)/(51), titolo App. B (on-shell), caption Fig. 10/14 — linguaggio
-      on-shell/off-shell ORA pervasivo in eq/caption/Table 1 (main.tex+PRD; es. line 556-557 "on-shell
-      component ... complete first-order correction is", caption 1364-1367). RESTA: audit finale che ogni
-      eq/fig specifica citata dal referee porti il qualificatore (numeri eq spostati dopo le split).
+## E. Editoriale/bibliografia/riproducibilità (main11 sec.8-9) — MINOR — ✅ CHIUSO (salvo Zenodo DOI, blocco esterno)
+- [x] Rinominare Eq (32)/(38)/(51), titolo App. B (on-shell), caption Fig. 10/14 — AUDIT COMPLETO.
+      Linguaggio on-shell/off-shell pervasivo e CORRETTO in eq/caption/titoli/teorema in ENTRAMBI i paper
+      (main.tex + PRD, 38 occorrenze PRD). Ogni claim di forma chiusa qualificata come "on-shell component",
+      con "complete first-order term = extended-Hamiltonian (off-shell)" esplicito: teorema unificato
+      (main 1820 / PRD 1571), Vaidya subsec (main 655 / PRD 627), Table 1 (line 150), abstract (55-60),
+      App validation (PRD 2194 "complete first-order (on-shell+off-shell)"). Nessun overclaim residuo.
 - [x] Abstract/Tab.1: split "on-shell closed" / "complete first-order (S_D)" / "off-shell assembly" —
       FATTO. Abstract main.tex line 55-60 ("on-shell component reduces in closed form ... off-shell costate
       piece, of the same class"); Table 1 line 150 "On-shell first-order correction"; propagato a PRD.
-- [~] Bib: [54 Nario→Natario]✓ + DLMF 1.2.7✓ + SageMath 2026-05-04✓ + Neishtadt1987/2013✓ + repo SHA✓
-      (commit bbdc385). RESTA: audit [15][31][43][44][45][46][49][58][59] titoli/DOI/date; [64] Zenodo DOI.
+- [x] Bib: [54 Nario→Natario]✓ + DLMF 1.2.7✓ + SageMath 2026-05-04✓ + Neishtadt1987/2013✓ + repo SHA✓
+      (commit bbdc385). AUDIT: ZERO citazioni/ref indefinite in entrambi i compile; igiene genus-1/genus-2
+      CORRETTA (separatrice=ellittica usa Brown-Levin/Beilinson-Levin propriamente; disclaimer esplicito
+      main line 1260 "that reference does not by itself establish a higher-genus construction"); entries
+      complete (autori/pagine/DOI dove disponibili). UNICO aperto → Zenodo DOI (bloccato esterno, sotto).
 - [x] Overfull boxes: main.tex script-map table 165pt→6.7pt (p{} cols); PRD 92.7pt→8.1pt (split eqs
       t-Q2/unified/radial-action/vaidya-deltaphi), 38/30/17pt eliminati. Commit 5c0120e.
 - [x] Regression runner + environment lockfile: `run_regression.py` (12/12 pass, residui 0–1.2e-12,
