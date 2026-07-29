@@ -56,16 +56,22 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       **ANCORATO ALLA FISICA**: closed==sub-pezzo off-shell del vero flusso τ a 6.9e-10; totale slope=2.03
       (~2). Il physics anchor ha beccato un bug di segno (Vaidya `m` cresce → `δp_r=(S_D−λΘH)/H_pr`),
       corretto → slope 2.03. Doc: `vaidya_offshell_closure.md`. Anchor: `vaidya_tau_physics_anchor.py`.
-- [~] **Vaidya-v generico off-shell** — TENTATO, NON chiuso (bug di derivazione + struttura più dura).
-      CONFERMATO: curva spettrale `S_v=r·DE·Q2v` (genus-2, DIVERSA dal τ; `Q2v`=quartica a=0),
-      `D_v=S_v/r⁶`, `K1=−DE/r`, `K2=(r−2m)DE/r²`. MA il kernel split che ho derivato
-      (`A_kernel_v=−E²J·DE·r⁴/Q2v` su √S_v + `elementary_v=−J·DE·r/Q2v`) **NON verifica** contro il numerico
-      (diff 5.5e-2, magnitudini diverse → bug algebrico nella derivazione, non solo segno). Da ri-derivare
-      con cura la scomposizione on-shell del kernel `d_pr G/H_pr` e della lettera interna.
-      STRUTTURA ATTESA (da confermare dopo fix): 2ª specie A+B+C (Hermite su Q2v) + BLOCCO ELEMENTARE
-      `−∫elementary_v·Σ dr` che via IBP dà probabilmente lettere weight-2 **log×Abeliane** (classe nuova,
-      più dura dei dilog genus-2). Genuinamente più difficile del τ. Scripts WIP: `vaidya_v_offshell_step1.py`
-      (curva OK), `vaidya_v_offshell_assembly.py` (split buggato). Il costo "−1" (additive part) è la radice.
+- [~] **Vaidya-v generico off-shell** — STRUTTURA VERIFICATA, assemblaggio simbolico completo da fare.
+      BUG FIXATO (sessione dedicata): avevo derivato `d_pr G` dalla `G` GIÀ on-shell; serve la derivata
+      OFF-shell valutata on-shell. Estratto numericamente e verificato:
+      * curva `S_v=r·DE·Q2v` (genus-2, `Q2v`=quartica a=0), diversa dal τ;
+      * **kernel PURO 2ª specie** `= A_kernel_v/√S_v`, `A_kernel_v=+E²J·DE·r⁴/Q2v` (verificato 1e-16;
+        niente parte elementare/D_v^{3/2} — erano artefatti del bug);
+      * inner = `elem_inn`(razionale) + 2ª specie (`A_inn·sign(y)/√D_v`), verificato 1e-17;
+      * **wrap = block1 + block2**, verificato a 3.5e-18:
+        - block1 = kernel×Σ_2nd = **genus-2 A+B+C** (stessa macchina del τ, dilog a r=2m e DE=0);
+        - block2 = kernel×Σ_elem = **DOMINANTE** (585%, grande cancellazione).
+      block2 via IBP: `∫(rᵏ/√S_v)log(r−2m)dr = Uₖ log(r−2m) − ∫Uₖ/(r−2m)dr` → `∫Uₖ/(r−2m)dr` è una
+      **classe weight-2 DISTINTA** dai dilog puri (Abeliano/fattore-lineare, senza √S; tabulata ma diverso
+      sotto-tipo). Il v-branch è più ricco del τ (costo "−1" → parte additiva → block2). RIMANE: Hermite
+      kernel (Q2v) → g_k; riduzione Σ_2nd e Σ_elem; assemblaggio block1(A+B+C)+block2(IBP → classe Uₖ/(r-2m));
+      verifica + physics-anchor. Scripts: `vaidya_v_offshell_structure.py` (struttura verificata),
+      `vaidya_v_step1_clean.py`, `vaidya_v_kernel_probe.py`.
 - [~] **Coeff simbolici all-(M,a,J)**: tabelle già simboliche; Hermite `rem_k`/`rho` mostrati E-simbolici;
       inverso modulare all-param = muro perf SymPy → usare Singular / tower QQ(a,E,J)[M]
 - [ ] Cosmetico: cancellazione grande A≈−75 vs C≈+73 nella decomposizione di Hermite (decomp più naturale)
