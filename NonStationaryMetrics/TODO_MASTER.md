@@ -1,4 +1,4 @@
-# TODO MASTER — stato consolidato (agg. 28 lug 2026)
+# TODO MASTER — stato consolidato (agg. 30 lug 2026)
 
 Fonte unica dei punti aperti. Consolida: referee report 2026-07-22 (13 issue), propagazione testo
 main11, chiusura off-shell, tracking separatrice TK, e la nota derivazioni_post_referaggio.
@@ -117,11 +117,21 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       (vedi memoria thakurta-kerr-not-black-hole)
 
 ## E. Editoriale/bibliografia/riproducibilità (main11 sec.8-9) — MINOR
-- [ ] Rinominare Eq (32)/(38)/(51), titolo App. B (on-shell), caption Fig. 10/14
-- [ ] Abstract/Tab.1: split "on-shell closed" / "complete first-order (S_D)" / "off-shell assembly"
-- [ ] Bib: [15][31][43][44][45][46][49][54 Nario→Natario][58][59][64 Zenodo DOI] — titoli/DOI/date
-- [ ] Overfull boxes (166/106/68 pt); sync PRD; regression runner; environment lockfile
-- [ ] Rilascio taggato/Zenodo DOI legato al PDF; coefficienti simbolici machine-readable
+- [~] Rinominare Eq (32)/(38)/(51), titolo App. B (on-shell), caption Fig. 10/14 — linguaggio
+      on-shell/off-shell ORA pervasivo in eq/caption/Table 1 (main.tex+PRD; es. line 556-557 "on-shell
+      component ... complete first-order correction is", caption 1364-1367). RESTA: audit finale che ogni
+      eq/fig specifica citata dal referee porti il qualificatore (numeri eq spostati dopo le split).
+- [x] Abstract/Tab.1: split "on-shell closed" / "complete first-order (S_D)" / "off-shell assembly" —
+      FATTO. Abstract main.tex line 55-60 ("on-shell component reduces in closed form ... off-shell costate
+      piece, of the same class"); Table 1 line 150 "On-shell first-order correction"; propagato a PRD.
+- [~] Bib: [54 Nario→Natario]✓ + DLMF 1.2.7✓ + SageMath 2026-05-04✓ + Neishtadt1987/2013✓ + repo SHA✓
+      (commit bbdc385). RESTA: audit [15][31][43][44][45][46][49][58][59] titoli/DOI/date; [64] Zenodo DOI.
+- [x] Overfull boxes: main.tex script-map table 165pt→6.7pt (p{} cols); PRD 92.7pt→8.1pt (split eqs
+      t-Q2/unified/radial-action/vaidya-deltaphi), 38/30/17pt eliminati. Commit 5c0120e.
+- [x] Regression runner + environment lockfile: `run_regression.py` (12/12 pass, residui 0–1.2e-12,
+      slope 2.00–2.21; --quick, -k) + `requirements-lock.txt` (stack pinnato + nota Sage/abelfunctions).
+      Commit fb45761.
+- [ ] **BLOCCATO (esterno)** Rilascio taggato/Zenodo DOI legato al PDF; coefficienti simbolici machine-readable
 
 ---
 ### Riferimenti
