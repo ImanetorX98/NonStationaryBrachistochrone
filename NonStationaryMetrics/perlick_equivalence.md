@@ -35,3 +35,12 @@ Chiude l'Issue 1/§3.3: il gauge ottico del controlled-rail = intersezione mass-
 β_a=ω_a, a_ab=Ê² h_ab/(f(Ê²−f)); ossia il formalismo controlled-rail recupera l'ottica di Perlick a
 energia fissata, con limite null Ê→∞ = Fermat.*" Distinto dall'equivalenza al livello di flusso
 Hamiltoniano (X_{H_rail}∥X_{H_Perlick} su H=0), qui più forte (uguaglianza delle Finsler).
+
+## Copertura: TUTTE e tre le geometrie del paper (frozen/stazionario)
+Verificato a precisione macchina (`perlick_equivalence.py`, `perlick_equivalence_flrw.py`):
+- **Kerr** (TK frozen, stazionario assisimmetrico): Randers pieno, `β_a=ω_a≠0`. diff 0–4.4e-16.
+- **Schwarzschild** (Vaidya frozen, statico): `β=0`, pura Riemanniana `a_ab=Ê²h_ab/(f(Ê²−f))`. diff 0–4.4e-16.
+- **FLRW frozen slice** (statico isotropo): `β=0`, isotropo, indice `n=Ê/√(Ê²−a₀²)`. diff 0–2.2e-16.
+Le versioni NON stazionarie complete (TK con A(η), Vaidya con m(v), FLRW con a(η)) sono le
+generalizzazioni conformi (livello b) / Kodama (livello c) della gerarchia del selettore W — Perlick
+statario è il caso base recuperato su ogni slice congelata.
