@@ -78,7 +78,7 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 - [~] **Coeff simbolici all-(M,a,J)**: tabelle già simboliche; Hermite `rem_k`/`rho` mostrati E-simbolici;
       inverso modulare all-param = muro perf SymPy → usare Singular / tower QQ(a,E,J)[M]
 - [ ] Cosmetico: cancellazione grande A≈−75 vs C≈+73 nella decomposizione di Hermite (decomp più naturale)
-- [ ] Paper Tab.1: upgrade "off-shell closed form: open" → "TK t+τ assemblati+ancorati; theta-naming e Vaidya deferred"
+- [ ] Paper Tab.1: upgrade "off-shell closed form: open" → "assemblato+ancorato su TUTTE le 4 branch (TK t/τ, Vaidya τ/v); solo theta-naming genus-2 deferred"
 
 ## C. Separatrice TK t-branch — tracking counterterm
 - [x] Diagnosi: polo di POTENZA `1/(r−r_d)²` on-path (Jc=2.9364, r_d=1.5123 in ergosfera), residuo ∝ ΔS(r_d)=34.75
