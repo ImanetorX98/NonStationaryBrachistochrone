@@ -91,15 +91,15 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       (matched asymptotics inner/outer alla separatrice). Vaidya immune (r_d off-path).
 
 ## D. Fisica/classificazione (referee Issues 3,4,5)
-- [ ] **MAJOR(3)** — notazione soglie unica: `J_ergo/J_deg/J_sep^phys/J_pen`; nessun root a raggio negativo
-      chiamato separatrice fisica; `7.0266` etichettato `J_deg/m` (righe 737, 1829 ancora `\Jc`)
+- [~] **MAJOR(3)** — notazione soglie: tabella autoritativa FATTA (`separatrix_notation_table.md`,
+      `separatrix_classification.py`). RESTA propagazione al testo (7.0266→J_deg righe ~737/1829; disambig \Jc).
 - [~] **MAJOR(4)** — Vaidya USCENTE: segno FIXATO (differenza=2A, somma=2B=fallimento antisimmetria) +
       clock uscente DERIVATO (`du/dr=dv/dr−2dr_*/dr`, 2.2e-16); nomenclatura accr=ingoing/evap=outgoing.
       `vaidya_asymmetry_fix.md`, commit aa56992. RESTA: scan fisico no-inversion outgoing su classe compatta.
       [ex] correggere
       il segno `δ_accr−δ_evap=2qA` (non `2qB`); no "evaporazione" per `m'<0` in chart ingoing
-- [ ] **MAJOR(5)** — Lemma B: rendere condizionale fuori dal sotto-regime provato; togliere "never"/"theorem
-      in scattering regime"; togliere il ratio puntuale `n_t/n_τ=E/f` dalla tabella come "prova"
+- [~] **MAJOR(5)** — Lemma B: status onesto documentato (`issue5_lemmaB_status.md`): Lemma A provato,
+      Lemma B parziale→CONDIZIONALE. RESTA propagazione testo (condizionale, no "never", no ratio puntuale).
 - [ ] **MAJOR(7)** — genus-2 Kronecker–Eisenstein: definire la classe o declassare a "integrali abeliani
       iterati depth-2"; rank-5 come evidenza numerica; allineare Mathematica/Sage con VERIFICATION_STATUS.md
 - [ ] Nomenclatura orizzonte/ergosfera: TK = oggetto compatto non BH; `Δ=0` = superficie null seme Kerr
