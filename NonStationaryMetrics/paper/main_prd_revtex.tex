@@ -617,8 +617,11 @@ b_k$, all coefficients algebraic (verified to $10^{-14}$). The advanced-time
 first-order correction integrates by parts into a fully explicit closed form (verified
 to $9\times10^{-14}$),
 \begin{equation}
-    \frac{\delta\varphi}{\dot m}=A_m\,v-E\!\int\! A_m\frac{r^3}{\sqrt S}\dd r
-    -\int\! A_m\frac{r}{r-2m}\dd r,\quad A_m\equiv\partial_m\varphi_0,
+\begin{split}
+    \frac{\delta\varphi}{\dot m}&=A_m\,v-E\!\int\! A_m\frac{r^3}{\sqrt S}\dd r
+    -\int\! A_m\frac{r}{r-2m}\dd r,\\
+    A_m&\equiv\partial_m\varphi_0,
+\end{split}
     \label{eq:vaidya-deltaphi}
 \end{equation}
 This is the \emph{on-shell} component (mass-drift of the frozen family). As in
@@ -1527,9 +1530,11 @@ with frozen integrand $F(r;\lambda)$ on the genus-two curve $y^2=S(r;\lambda)$
 ($\lambda=$ scale $a$, mass $m$, or conformal $A$), a slow drift
 $\lambda=\lambda(\text{clock})$ gives
 \begin{equation}
-    \varphi=\varphi_0(r;\lambda)+\dot\lambda\!\int\!\partial_\lambda F\,
-    (\text{clock})\,\dd r
-    =\varphi_0+\dot\lambda\Big[\sum_{k<j} q_{kj}W_{kj}+(\text{elem.})\Big],
+\begin{split}
+    \varphi&=\varphi_0(r;\lambda)+\dot\lambda\!\int\!\partial_\lambda F\,
+    (\text{clock})\,\dd r\\
+    &=\varphi_0+\dot\lambda\Big[\sum_{k<j} q_{kj}W_{kj}+(\text{elem.})\Big],
+\end{split}
     \label{eq:unified}
 \end{equation}
 with $q_{kj}$ algebraic (via $\partial_\lambda F=N_\lambda/S^{3/2}$) and
@@ -1730,8 +1735,10 @@ brachistochrone has $\dd\varphi/\dd r=\mathcal K(r)/\sqrt{\mathcal R(r)}$ with t
 \emph{sextic} radical $\mathcal R=r\,Q_2(r)\,[(E^2-1)r+2M]$, genus~2, the quartic
 being (no cubic term)
 \begin{equation}
-    Q_2(r)=E^2r^4+\big[E^2(a^2-J^2)+J^2\big]r^2
-      +2M(J-a)\big[E^2(J-a)-2J\big]r+4M^2(J-a)^2,
+\begin{split}
+    Q_2(r)={}&E^2r^4+\big[E^2(a^2-J^2)+J^2\big]r^2\\
+      &+2M(J-a)\big[E^2(J-a)-2J\big]r+4M^2(J-a)^2,
+\end{split}
     \label{eq:t-Q2}
 \end{equation}
 and a \emph{closed-form} numerator in the problem quantities
@@ -2223,8 +2230,10 @@ Since $\dd\lambda=\dd r/\bar H_{P_r}$, the extra source piece is the radial acti
 $\int P_r\bar H_{P_r}\dd\lambda=\int p_{r0}\dd r$. On the $t$-branch shell
 $p_{r0}=\sqrt S/[\Delta((E^2-1)r+2M)]$, $S=r[(E^2-1)r+2M]Q_2$, and
 \begin{equation}
-    \int p_{r0}\dd r=\sum_{k=0}^3 a_k U_k+(\text{third kind at }\Delta=0),\quad
-    U_k=\int r^k/\sqrt S\,\dd r,
+\begin{split}
+    \int p_{r0}\dd r&=\sum_{k=0}^3 a_k U_k+(\text{third kind at }\Delta=0),\\
+    U_k&=\int r^k/\sqrt S\,\dd r,
+\end{split}
 \end{equation}
 $a_3=E^2$, $a_2=2E^2M$, $a_1=4E^2M^2-(E^2-1)J^2$, $a_0=2M[4E^2M^2-J^2+2(1-E^2)Ja]$
 ($E=E_{\rm eff}$, $J=J_{\rm eff}$). The kernel is $\partial_{P_r}G_0/\bar
