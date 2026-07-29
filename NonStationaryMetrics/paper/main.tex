@@ -518,7 +518,12 @@ holds, and the conformal weight $u^{\rm TK}=u^{\rm Kerr}/A$ makes
 $J_{\rm eff}=J/A=g^{\rm Kerr}(u^{\rm Kerr},\partial_\varphi)$ the Kerr-frame,
 unit-mass charge [Eq.~\eqref{eq:phi-adiab}\,ff.]. We therefore reserve
 ``angular momentum'' for the mechanical $g(u,\partial_\varphi)$ and call $J$ the
-branch costate where the distinction matters.
+branch costate where the distinction matters. The stationary Finsler function makes
+this concrete: solving the rail with the mass shell (Eq.~\eqref{eq:perlick-randers})
+gives a Randers metric whose conserved $\varphi$-costate is precisely $J$---distinct
+from the mechanical $g(u,\partial_\varphi)$ off a geodesic, and conformally
+\emph{invariant}, so that $J_{\rm eff}=J/A$ is the optical rescaling
+$P_\varphi=p_\varphi/A$ rather than a scaling of the costate itself.
 
 \begin{figure}[ht]
     \centering
@@ -761,7 +766,7 @@ and the genus drops to one: $\sqrt S=(r-r_d)\sqrt{Q_4}$ with $Q_4$ quartic, so t
 $U_k$ reduce to elliptic integrals (verified to machine precision against the direct
 genus-two quadrature) and $\mathcal{G}_k$ collapses to the tabulated \emph{elliptic
 (Bloch--Wigner) dilogarithm} on $E:\,w^2=Q_4(r)$---the maximally explicit, directly
-reusable form. For the representative $m=1,E=1.4$ one finds $\Jc=7.0266$,
+reusable form. For the representative $m=1,E=1.4$ one finds $J_{\rm deg}=7.0266$,
 $r_d=-3.3637$, branch points $\{-2.083,0,2m,8.727\}$, elliptic modulus $k^2=0.6067$
 and rectangular nome $\tau=0.90597\,i$ (agreeing to fifteen digits between the
 Legendre form $\tau=iK'/K$ and the Sage period lattice); the horizon $r=2m$, being a
@@ -1850,15 +1855,18 @@ the radial period diverges (the orbit asymptotes an unstable circular orbit), so
 adiabatic hypothesis itself---``$\lambda$ varies slowly compared with the orbital
 period''---degrades, and the separatrix correction is properly read as an
 \emph{instantaneous, local} first-order statement about the neighbourhood of the
-separatrix rather than a long-time separatrix-following orbit. Moreover the separatrix
+separatrix rather than a long-time separatrix-following orbit. Moreover the degeneration
 locus is not fixed under the evolution it responds to: in Vaidya
-$\Jc=m\,j(E)$ scales linearly with the mass (verified exactly proportional,
-$\Jc/m=7.0266$ at $E=1.4$, independent of $m$), so a particle of conserved $J$
-generically \emph{crosses} the moving separatrix as $m(v)$ drifts---accretion
-($m\!\uparrow$, $\Jc$ rising through $J$) driving capture, evaporation
-($m\!\downarrow$) driving escape, the same physical divide carried by the
-accretion--evaporation asymmetry of Eq.~\eqref{eq:vaidya-asymmetry}. That crossing is
-a genuinely non-perturbative regime, beyond first order. Within these bounds, which
+$J_{\rm deg}=m\,j(E)$ scales linearly with the mass (verified exactly proportional,
+$J_{\rm deg}/m=7.0266$ at $E=1.4$, independent of $m$). This is the \emph{algebraic}
+degeneration at $r_d<0$, not an external separatrix: the physical accretion$/$evaporation
+capture--escape divide is the dynamical penetration threshold, not $J_{\rm deg}$. A
+particle of conserved $J$ nonetheless \emph{crosses} the moving locus as $m(v)$ drifts;
+that crossing---the same phenomenon that makes the Thakurta--Kerr off-shell separatrix
+limit a Neishtadt separatrix-crossing problem---is a genuinely non-perturbative regime,
+beyond first order, and the accretion--evaporation asymmetry of
+Eq.~\eqref{eq:vaidya-asymmetry} is the first-order fingerprint that survives on either
+side of it. Within these bounds, which
 are the usual bounds of first-order WKB, this closed form is the \emph{on-shell
 component} of the first-order response---the parameter drift along the frozen
 family---and is exact as such; the \emph{complete} first-order term is the
