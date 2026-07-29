@@ -70,8 +70,11 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       **classe weight-2 DISTINTA** dai dilog puri (Abeliano/fattore-lineare, senza √S; tabulata ma diverso
       sotto-tipo). Il v-branch è più ricco del τ (costo "−1" → parte additiva → block2). RIMANE: Hermite
       kernel (Q2v) → g_k; riduzione Σ_2nd e Σ_elem; assemblaggio block1(A+B+C)+block2(IBP → classe Uₖ/(r-2m));
-      verifica + physics-anchor. Scripts: `vaidya_v_offshell_structure.py` (struttura verificata),
-      `vaidya_v_step1_clean.py`, `vaidya_v_kernel_probe.py`.
+      verifica + physics-anchor. **PHYSICS-ANCHORED**: closed wrap == sub-pezzo off-shell del vero flusso v a
+      7.6e-11, totale slope=1.96 (`vaidya_v_physics_anchor.py`). Σ_elem CHIUSO=4m²/(r−2m)−2m·log(r−2m),
+      una sola lettera log-Abeliana M^{2m} (coeff 2m). RIMANE (meccanico): block1 A+B+C esplicito
+      (P_inner_v ha DOPPIO polo a r=2m) + naming M^{2m}. Scripts: `vaidya_v_FULL_closure.py`,
+      `vaidya_v_physics_anchor.py`, `vaidya_v_offshell_structure.py`.
 - [~] **Coeff simbolici all-(M,a,J)**: tabelle già simboliche; Hermite `rem_k`/`rho` mostrati E-simbolici;
       inverso modulare all-param = muro perf SymPy → usare Singular / tower QQ(a,E,J)[M]
 - [ ] Cosmetico: cancellazione grande A≈−75 vs C≈+73 nella decomposizione di Hermite (decomp più naturale)
