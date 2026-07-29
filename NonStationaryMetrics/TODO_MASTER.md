@@ -16,7 +16,7 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       limite null Ê→∞ = Fermat. Verificato 0–4.4e-16. **PROPAGATO al paper** (main.tex §W-hierarchy(a) + PRD, eq:perlick-randers, compilano).
       Scripts: `perlick_equivalence.py/.md`.
 - [~] **Issue 2 — `p_φ` costato vs momento meccanico `L_mech`** — DERIVAZIONE FATTA (commit ad3a372,
-      `costate_finsler_derivation.py`); resta solo la riscrittura del testo §4.1. NON invalida i risultati.
+      `costate_finsler_derivation.py`); resta solo la riscrittura del testo §4.1. NON invalida i risultati. **§4.1 già attento; aggiunta frase Finsler/Perlick (propagato).**
       Derivazione rigorosa di Finsler (Euler-verificata):
       * il `(p_r0,J)` del paper **È** il costato di Pontryagin, NON il meccanico geodetico (p_r0=1.29475
         combacia col costato Finsler 1.29487; geodetico u_r=1.049 sbagliato del 20%);
@@ -106,7 +106,7 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       `separatrix_classification.py`). RESTA propagazione al testo (7.0266→J_deg righe ~737/1829; disambig \Jc).
 - [~] **MAJOR(4)** — Vaidya USCENTE: segno FIXATO (differenza=2A, somma=2B=fallimento antisimmetria) +
       clock uscente DERIVATO (`du/dr=dv/dr−2dr_*/dr`, 2.2e-16); nomenclatura accr=ingoing/evap=outgoing.
-      `vaidya_asymmetry_fix.md`, commit aa56992. RESTA: scan fisico no-inversion outgoing su classe compatta.
+      `vaidya_asymmetry_fix.md`, commit aa56992. **PROPAGATO al paper** (main.tex+PRD: differenza=2A, deviazione=2B; commit segue). RESTA: scan fisico no-inversion outgoing su classe compatta.
       [ex] correggere
       il segno `δ_accr−δ_evap=2qA` (non `2qB`); no "evaporazione" per `m'<0` in chart ingoing
 - [~] **MAJOR(5)** — Lemma B: status onesto documentato (`issue5_lemmaB_status.md`): Lemma A provato,
