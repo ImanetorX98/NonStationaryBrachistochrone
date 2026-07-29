@@ -1,0 +1,16 @@
+# Pinned environment lockfile for exact reproduction of the closed-form
+# residuals reported in the paper (Table "Result-to-script map").
+# Generated on the reference machine: Python 3.13.2, macOS (darwin, arm64).
+# The pure-Python stack below reproduces ALL FLRW, Vaidya and Thakurta-Kerr
+# closed-form checks and every figure. Install with:
+#     python3 -m pip install -r requirements-lock.txt
+matplotlib==3.10.0
+mpmath==1.3.0
+numpy==2.2.2
+pillow==11.1.0
+scipy==1.17.1
+sympy==1.13.3
+
+# --- SageMath (NOT pip-installable; used ONLY by the four .sage genus-2 scripts) ---
+# Reference: SageMath 10.9 (x86_64 build) with the abelfunctions library.
+# Only required for KerrScripts/*.sage (Riemann surface / theta / Abel map).
