@@ -342,6 +342,28 @@ right-hand side of Eq.~\eqref{eq:cost} vanishes identically: $-u\cdot\xi$ is
 Noether-conserved and the rail is free. This is Perlick's stationary case
 \cite{Perlick1991}.
 
+\paragraph{Recovery of Perlick's stationary optics.} In the Killing limit
+$W=\xi=\partial_t$ the controlled-rail arrival-time Finsler function is exactly a
+Randers metric, so the construction reduces to Perlick's fixed-energy optics rather
+than merely resembling it. Solving the rail $-u\cdot\xi=\Ehat$ jointly with
+$g(u,u)=-1$ for the coordinate-time rate $t'=\dd t/\dd\sigma$ gives a quadratic whose
+future-directed root is
+\begin{equation}
+F_{\rm rail}=\beta_a v^a+\sqrt{a_{ab}\,v^a v^b},\quad
+\beta_a=\frac{g_{ta}}{f},\quad
+a_{ab}=\frac{\Ehat^2\bigl(g_{ta}g_{tb}+f\,g_{ab}\bigr)}{f^2(\Ehat^2-f)},
+\label{eq:perlick-randers}
+\end{equation}
+with $f=-g_{tt}$ and $v^a=\dd x^a/\dd\sigma$. In the threading form
+$g=-f(\dd t-\omega_a\dd x^a)^2+h_{ab}\dd x^a\dd x^b$ one has
+$g_{ta}g_{tb}+f\,g_{ab}=f\,h_{ab}$, so $\beta_a=\omega_a$ and
+$a_{ab}=\Ehat^2 h_{ab}/[f(\Ehat^2-f)]$---precisely Perlick's fixed-energy stationary
+optical metric \cite{Perlick1991}. The null/high-energy limit $\Ehat\to\infty$ gives
+$a_{ab}\to h_{ab}/f$, the standard Fermat--Randers optical metric of Kerr
+\cite{GibbonsWerner2008}. This is the functional equality $F_{\rm rail}=F_{\rm Perlick}$
+(stronger than coincidence of the Hamiltonian flows on $H=0$), verified against the
+directly solved $F_{\rm rail}$ on equatorial Kerr to machine precision.
+
 \emph{(b) Conformal Killing.} If the spacetime is conformally stationary,
 $g=\Omega^2\hat g$ with $\hat g$ stationary, the timelike conformal Killing
 vector $\partial_\eta$ selects the conformal-time branch; $-u\cdot W$ is exactly

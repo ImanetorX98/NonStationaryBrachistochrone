@@ -13,8 +13,8 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 - [x] **Framework coniugati/Maxwell/cut locus** — §8, VALIDO
 - [x] **MAJOR — Equivalenza esplicita con Perlick DIMOSTRATA** (`F_rail=F_Perlick`): la Finsler tempo-
       d'arrivo È la metrica di Randers di Perlick a energia fissata, `β_a=ω_a`, `a_ab=Ê²h_ab/(f(Ê²−f))`;
-      limite null Ê→∞ = Fermat. Verificato 0–4.4e-16 (`KerrSessionScripts/perlick_equivalence.py`,
-      `perlick_equivalence.md`). RESTA: aggiungere come proposizione autonoma nel paper (main.tex+PRD).
+      limite null Ê→∞ = Fermat. Verificato 0–4.4e-16. **PROPAGATO al paper** (main.tex §W-hierarchy(a) + PRD, eq:perlick-randers, compilano).
+      Scripts: `perlick_equivalence.py/.md`.
 - [~] **Issue 2 — `p_φ` costato vs momento meccanico `L_mech`** — DERIVAZIONE FATTA (commit ad3a372,
       `costate_finsler_derivation.py`); resta solo la riscrittura del testo §4.1. NON invalida i risultati.
       Derivazione rigorosa di Finsler (Euler-verificata):
