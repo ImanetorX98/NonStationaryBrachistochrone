@@ -46,7 +46,14 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       `offshell_taubranch_physics_anchor_codex.py` (verificati girare/passare in questa sessione)
 - [ ] **FRONTIERA — theta-nome naming** dei dilog genus-2 (`D_{j,root}` a Δ=0, dilog s=0) nella classe
       tabulata Baune/D'Hoker (referee Issue 7). Serve rappresentazione theta + teorema di identificazione.
-      Vale per TK-t e TK-τ (entrambi lasciano i letters genus-2 come trascendenti non nominati).
+      STATO (sessione): abelfunctions OK (`~/.sage/local`, usare sage di /Applications); convergenza
+      theta-nome VERIFICATA (N=4→1e-13, `kerr_tau_dilog_qseries5.sage`); MA naming Kleiniano NON chiude
+      (residui ~1e-3, ostruzione theta-divisor Θ=W_{g-1}, `kerr_tau_Wij_diffform.sage`). Teorema completo
+      = ricerca dedicata / collaborazione con esperti (framework higher-genus esso stesso frontiera aperta).
+- [ ] **theta-naming: MATCHING STRUTTURALE NUMERICO** (via di mezzo FATTIBILE): esprimere le lettere
+      W_jk/dilog nella forma D'Hoker–Schlotterer per la nostra curva, verificare numericamente il matching
+      struttura-per-struttura (abelfunctions), dichiarare "structurally matched, single-valued completion
+      deferred" — alza la claim da "conjectural" a "structurally matched". NON è il teorema completo.
 - [x] **Vaidya-τ generico off-shell CHIUSO** (`VaidyaMetric/vaidya_offshell_FULL_assembly.py`,
       `vaidya_offshell_shellpoly.py`). Macchina a polinomio-di-shell (no sqrt hell). Semplificazioni
       analitiche sulla shell pulita: `G=J/(Δp_r)`, `H_pr=(r−2m)DE p_r/(Er²)`, `H_m=C0+C2 p_r²`,
