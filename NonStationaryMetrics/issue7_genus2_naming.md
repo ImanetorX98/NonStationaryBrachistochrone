@@ -32,3 +32,23 @@ Entrambi compilano (main 70pp, PRD 33pp, 0 undefined).
   da paper dedicato. Il paper lo dichiara onestamente "open".
 - Terminologia U_k: nel contesto separatrice (genus-1) "third-kind elliptic" è corretto; nel generico
   (genus-2) il paper usa già "iterated Abelian integrals". OK.
+
+## Tentativo esplicito con abelfunctions (sessione frontiera)
+`abelfunctions` era GIÀ installato in `~/.sage/local` (il sage di PATH non lo vede; usare
+`/Applications/SageMath-10-9.app/.../sage`). Risultati concreti:
+- **Convergenza CONFERMATA** (`kerr_tau_dilog_qseries5.sage`): il dilog genus-2 `∫L dA` converge
+  geometricamente in ordine di nome: N=1→1.2e-2, N=2→2.2e-4, N=3→2.2e-8, **N=4→9.4e-14**, N=6→0.
+  È un polilog genus-2 genuino (niente formula prodotto ⟹ non somma di Li2 classici). La rappresentazione
+  theta-nome (Kronecker-Eisenstein genus-2) è ESPLICITA e convergente ⟹ claim di riproducibilità SOLIDA.
+- **Identificazione (naming) NON chiude pulito** (`kerr_tau_Wij_diffform.sage`): la forma-differenza
+  Kleiniana `ζ_δ(u−e_+)−ζ_δ(u−e_-)` per `U_2,U_3,U_4` lascia residui **~1e-3–1e-5** su tutte le 6
+  caratteristiche dispari δ (nessuna a precisione macchina). L'ostruzione del theta-divisor `Θ=W_{g-1}`
+  è reale ⟹ l'identificazione rigorosa con la base nominata (ζ,σ Kleiniane + un dilog) NON è pulita.
+
+## Conclusione onesta
+La **rappresentazione theta-nome convergente esiste ed è verificata** (rafforza la claim). Il
+**teorema di identificazione** con la classe higher-genus canonica (Baune/D'Hoker) **NON chiude** in
+sessione (residui ~1e-3, ostruzione theta-divisor) ⟹ resta **frontiera genuina**, un paper dedicato.
+La posizione onesta del testo ("iterated Abelian integrals + theta-nome convergente; naming higher-genus
+deferred/conjectural") è quindi CORRETTA e ora **supportata da evidenza concreta** (convergenza N=4 +
+ostruzione naming documentata).
