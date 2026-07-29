@@ -11,8 +11,10 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 - [x] **Limite stazionario** `H≡0`, recupero energia fissata — Prop 3.2, VALIDO
 - [x] **Certificato globale HJB** (sub-soluzione Lipschitz ⟹ ottimalità) — Teorema 7.1, VALIDO
 - [x] **Framework coniugati/Maxwell/cut locus** — §8, VALIDO
-- [ ] **MAJOR — Equivalenza esplicita con Perlick** (`F_rail=F_Perlick` o `X_{H_rail}∥X_{H_Perlick}` su `H=0`):
-      §3.3 la lascia da mostrare. Serve come proposizione autonoma nel paper.
+- [x] **MAJOR — Equivalenza esplicita con Perlick DIMOSTRATA** (`F_rail=F_Perlick`): la Finsler tempo-
+      d'arrivo È la metrica di Randers di Perlick a energia fissata, `β_a=ω_a`, `a_ab=Ê²h_ab/(f(Ê²−f))`;
+      limite null Ê→∞ = Fermat. Verificato 0–4.4e-16 (`KerrSessionScripts/perlick_equivalence.py`,
+      `perlick_equivalence.md`). RESTA: aggiungere come proposizione autonoma nel paper (main.tex+PRD).
 - [~] **Issue 2 — `p_φ` costato vs momento meccanico `L_mech`** — DERIVAZIONE FATTA (commit ad3a372,
       `costate_finsler_derivation.py`); resta solo la riscrittura del testo §4.1. NON invalida i risultati.
       Derivazione rigorosa di Finsler (Euler-verificata):
