@@ -216,8 +216,18 @@ master. Ordine: P0 fondamentali → P1 armonizzazione → P2 editoriale → spli
       "App. Appendix" duplicati, global attractor, J_c^+(A) numerata, Fig 9 forward-ref. RESTA (fase split):
       rigenerare IMMAGINI figure (Fig 10 label/slope, Fig 14 due residui, assi, scala pannelli), spostare
       thrust/fuel in remark, rimuovere §5.1, Fig 20 cross-ref.
-- [ ] **Split** (dopo nuova review GPT): Paper I rail/Kodama+Vaidya sferico; Paper II TK conforme.
-      §5.1 quasi-costanti + thrust/fuel + regenerazione figure si sistemano naturalmente nello split.
+- [x] **Review main15 (GPT)** — ricalca main14 (GPT ha revisionato la versione post-main14 ri-segnalando
+      molto di già fatto). AUDIT del master: 4 residui testuali reali che main14 aveva mancato, sistemati
+      (commit 87de08c): (A) App C "Extended system" scriveva ancora `H=p_s+H̄(r,P_r)` come canonica →
+      corretto a (r,p_r); (B) conclusione aveva Open problems + Future directions ridondanti → un solo
+      blocco Outlook (Proved/Conditional/Outlook); (C) Vaidya sferico `δφ_sep`→`δφ_deg` + titolo
+      "degeneration-family"; (D) thrust/fuel "photon rocket 45%" → remark compatto. Resto main15 = figure
+      da rigenerare + §5.1 + distribuzione split → fase split (sotto).
+- [ ] **Split in 2 paper** (prossimo): Paper I rail/Kodama+Vaidya sferico; Paper II TK conforme.
+      main15 §5.3 dà la distribuzione esplicita dei contenuti. Nello split si sistemano: rigenerazione
+      IMMAGINI figure (Fig 10 Eq(40)→(44)+slope, Fig 14 due residui, assi "axial control costate J",
+      Fig 6/7/17/18/A11/A12 relabel, scala pannelli, Fig 20 Sec 6.4, residui documentati); rimozione §5.1
+      (→ materiale paper futuro); Fig A6-A8 "numerical evidence/robustness scan" non "proof".
 - Nota: 4.2/4.3/4.4 = lacune reali in pezzi aggiunti da me (rigore, non invalidano i numerici).
 
 ---
