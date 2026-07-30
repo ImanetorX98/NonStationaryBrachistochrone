@@ -24,8 +24,20 @@ Legenda: [ ] aperto · [~] parziale · [x] fatto.
       `-αP_r` è conseguenza, non trasformazione canonica; sistema normalizzato non-canonico ma equivalente.
       Identità VERIFICATA (`canonical_dilation_check.py`, diff=0). main+PRD.
 
-## P1 — Major (armonizzazione, sostanza già iniziata)
-- [ ] **4.5 R_*(E) + no-inversion.** R_*(E) mai definito. O definizione esplicita (formula/dominio/
+## P1 — Major — ✅ TUTTI FATTI (commit 6ac905f)
+- [x] **4.5 R_*(E,a)**: definizione esplicita `R_*(E,a)=sup{r_0:V(r_0)≤4V(r_min)}` (eq:Rstar), dipende
+      da (E,a) non solo E; tutte `R_*(E)`→`R_*(E,a)`. main+PRD.
+- [x] **4.6 tracking**: rinominato "Adiabatic derivative of the degeneration family"; NON estremale
+      torque-free (J conservato; serve torque esterno per seguire il locus). main+PRD.
+- [x] **4.7 J_deg**: App. retitolata "genus-degeneration loci"; Vaidya J=Jc = J_deg algebrico (r_d<0), non
+      separatrice; TK Jc^± = separatrice fisica esterna + J_deg. main (PRD già aveva J_deg).
+- [x] **4.8 evaporazione**: m'<0 ingoing = "negative-rate continuation" (evaporazione fisica = outgoing).
+      main+PRD.
+- [x] **4.9 genus-2 peso-due**: App C corretta — U_k peso-1 (Kleiniane), W_jk iterati lunghezza-2 peso-2
+      (non riducibili a peso-1, congetturalmente irriducibili), dilog genus-2 congetturale. main.
+
+### (originale P1, per riferimento)
+- [x] **4.5 R_*(E) + no-inversion.** R_*(E) mai definito. O definizione esplicita (formula/dominio/
       ipotesi/box) O declassamento coerente (grazing/quarter provato + asintotico statico + interval
       domini elencati + numerico altrove), abstract=conclusione stesso status tiered. `n_t/n_τ=E/f` NON
       è prova di ordinamento. [Sec 6.4, Eq(54-57), Table 5, Abstract, Concl]
@@ -46,7 +58,11 @@ Legenda: [ ] aperto · [~] parziale · [x] fatto.
       aperto; base 5-dim numerica non teorema. "length-two iterated Abelian integral" nei teoremi.
       [Abstract, Table 1, Sec 4.4/5.2, App B, App C]
 
-## P2 — Editoriale / struttura
+## P2 — Editoriale / struttura — ✅ TESTO FATTO; immagini+struttura → fase split
+FATTO (commit 8b3e421, 15052b2): tabella notazione (tab:notation); conclusione in 3 blocchi
+(Proved/Conditional-numerical/Open); fix "App. Appendix X" duplicati (12×); "global attractor"→
+"moving kinematic boundary"; J_c^+(A) equazione numerata (eq:Jcplus); Fig 9 forward-ref a Fig 10.
+RESTA (richiede rigenerare le IMMAGINI figure via script, o è strutturale → fase split):
 - [ ] Fig 10 (label "Eq(40)"→(43); slope legenda 2.12 vs caption 2.05/2.07/2.01 — una sola sorgente).
 - [ ] Fig 9 (caption dice full-flow deferred ma Fig 10 lo fornisce → forward ref a Fig 10).
 - [ ] Fig 14 (residuo Weierstrass-vs-quadratura E ODE-vs-closed vicino instabilità: due residui distinti).

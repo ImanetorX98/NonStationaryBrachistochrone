@@ -210,12 +210,14 @@ master. Ordine: P0 fondamentali → P1 armonizzazione → P2 editoriale → spli
       sufficiente (22f994a); 4.3 costato≠meccanico, `L_mech=((Ê²−f)/Ê)J` verificato (5c07823); 4.4 App C
       ri-derivata da variabili canoniche, `-αP_r` da regola catena, verificato (3102013). Dettaglio in
       `REFEREE_MEMO_main14.md`.
-- [ ] **P1 (5)**: 4.5 definire/declassare R_*(E); 4.6 "separatrix tracking"→derivata di famiglia;
-      4.7 J_pen/J_sep/J_deg distinti ovunque (App B residui); 4.8 evaporazione fisica vs sign-flip ingoing;
-      4.9 status genus-2 peso-due (App C contraddice peso-uno).
-- [ ] **P2 editoriale**: Fig 10/9/14/20, cross-ref "App. Appendix" duplicati, tabella notazione, spostare
-      thrust/fuel, rimuovere §5.1 (o svilupparlo), conclusione in 3 blocchi, assi/residui/scala.
-- [ ] **Split** (solo dopo master corretto): Paper I rail/Kodama+Vaidya sferico; Paper II TK conforme.
+- [x] **P1 (5) — TUTTI FATTI** (commit 6ac905f): 4.5 R_*(E,a) esplicito; 4.6 tracking→derivata famiglia;
+      4.7 J_deg vs separatrice (App retitolata); 4.8 evaporazione→negative-rate ingoing; 4.9 genus-2 peso-due.
+- [~] **P2 editoriale**: TESTO FATTO (8b3e421, 15052b2) — tabella notazione, conclusione 3 blocchi,
+      "App. Appendix" duplicati, global attractor, J_c^+(A) numerata, Fig 9 forward-ref. RESTA (fase split):
+      rigenerare IMMAGINI figure (Fig 10 label/slope, Fig 14 due residui, assi, scala pannelli), spostare
+      thrust/fuel in remark, rimuovere §5.1, Fig 20 cross-ref.
+- [ ] **Split** (dopo nuova review GPT): Paper I rail/Kodama+Vaidya sferico; Paper II TK conforme.
+      §5.1 quasi-costanti + thrust/fuel + regenerazione figure si sistemano naturalmente nello split.
 - Nota: 4.2/4.3/4.4 = lacune reali in pezzi aggiunti da me (rigore, non invalidano i numerici).
 
 ---
