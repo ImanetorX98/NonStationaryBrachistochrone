@@ -595,7 +595,7 @@ the instantaneous $H=0$ shell---the costate equation is independent information.
 The frozen shape relation $\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J_{\rm eff})$
 and the parameter-drift correction
 $\delta\varphi=-\int(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\mathrm{d}r$
-[Eq.~\eqref{eq:deltaphi-EJ}] are therefore the \emph{on-shell component} of the
+(the on-shell parameter-drift formula) are therefore the \emph{on-shell component} of the
 first-order term; the complete first-order correction is
 Eq.~\eqref{eq:adiab-exact}, which adds the off-shell (costate $p_\eta$) piece
 [Sec.~\ref{sec:vaidya-adiabatic}, Fig.~\ref{fig:vaidya-offshell}].
@@ -699,7 +699,7 @@ trajectory to accompany Fig.~\ref{fig:vaidya-noinv}---to future work.
 \subsection{Closed-form adiabatic correction and the horizon dilogarithm}
 \label{sec:vaidya-adiabatic}
 When $m(v)$ varies slowly the same frozen-coefficient WKB scheme as in
-Sec.~\ref{sec:adiabatic} applies, with the mass function $m(v)$ playing the role of
+the conformal adiabatic reduction (companion paper) applies, with the mass function $m(v)$ playing the role of
 the conformal factor and $\dot m=\dd m/\dd v$ the small parameter. The frozen family
 is the \emph{Schwarzschild} brachistochrone---the $a\to0$ limit of the
 Thakurta--Kerr forms---on the sextic
@@ -726,7 +726,7 @@ the tortoise term injecting a \emph{horizon logarithm}. This is the advanced-tim
 (native) branch; the \emph{proper-time} branch instead uses the second-kind clock
 $\dd\tau/\dd r=r^2(r-2m)/\sqrt S$, i.e.\ $\eta=U_3-2m\,U_2$, $b=(0,0,-2m,1,0)$ (no
 horizon log), and closes by the very same
-assembly~\eqref{eq:psi-split}---$\delta\varphi_\tau/\dot m=\tfrac12\sum_{k<j}Q_{kj}
+assembly (the conformal $\psi$-split of the companion paper)---$\delta\varphi_\tau/\dot m=\tfrac12\sum_{k<j}Q_{kj}
 W_{kj}-\eta(\mathcal{A}^m/\sqrt S+\tfrac12\sum c_k^m U_k)+\sum_j b_j\mathcal{I}_j$ with
 $Q_{kj}=c_k^m b_j-c_j^m b_k$, all coefficients algebraic (verified to
 $10^{-14}$). The two canonical clocks of the ingoing problem are therefore the
@@ -784,7 +784,7 @@ $\mathcal{A}^m(2m)\ne0$ its integrand behaves as $(r-2m)^{-3/2}$, a double pole 
 $\zeta$/quasi-periods~\cite{BuchstaberEnolskii1997,BakerAbelian1897}, not by Fay; the
 genuinely \emph{third}-kind object is the horizon letter $\dd r/(r-2m)$ (the tortoise
 log, a simple pole of residue two at that Weierstrass point), which closes as a Fay
-$\theta$-ratio~\cite{Fay1973} exactly as $L$ in Eq.~\eqref{eq:thirdkind-theta} but
+$\theta$-ratio~\cite{Fay1973} exactly as the conformal third-kind letter $L$ of the companion paper but
 centred at $r=2m$ instead of infinity; and
 the \emph{horizon dilogarithms} $\mathcal{D}_k=\int U_k/(r-2m)\,\dd r$. Since $r=2m$
 is a branch point of $S$, in the local uniformiser $t=\sqrt{r-2m}$ one has
@@ -1015,8 +1015,245 @@ paper.
 \todo{Vaidya J\_deg (algebraic degeneration, r\_d<0) only; NOT called a physical
 separatrix.}
 
-\section{Complete first-order extended-Hamiltonian correction (Vaidya)}
-\todo{Canonical derivation in (r,p\_r); mass-function source.}
+\section{Complete first-order extended-Hamiltonian correction}
+\label{app:firstorder}
+
+The complete first-order correction linearizes the extended Hamiltonian
+$\mathcal H=p_s+H=0$ about the frozen extremal, with $\lambda$ the elapsed clock from
+the free-arrival endpoint and $P_r=p_r/A$ the normalized momentum: the momentum-shell
+shift is $\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
+\begin{equation}
+    \begin{aligned}
+    &\frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{P_r}G}{H_{P_r}}\,
+    \big(\lambda\,\Theta H-S_{\mathcal D}\big)-\lambda\,\Theta G\Big]\dd r,\qquad
+    G=\frac{H_J}{H_{P_r}}=\varphi',\\[2pt]
+    &S_{\mathcal D}(\lambda)=\!\int_0^{\lambda}\!\mathcal D H\,\dd\lambda',\qquad
+    \mathcal D\equiv\underbrace{E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}}}_{\Theta}
+    +\,P_r\partial_{P_r},
+    \end{aligned}
+    \label{eq:adiab-exact}
+\end{equation}
+closing the correction to $O(\varepsilon^2)$. For single-parameter Vaidya
+$\mathcal D=\Theta=m\partial_m$ (no rescaling).
+
+This appendix derives Eq.~\eqref{eq:adiab-exact}---the complete first-order (on-shell
+\emph{plus} off-shell) adiabatic correction to the orbit shape---from the extended
+Hamiltonian, and specializes it to the $t$-, $\tau$- and Vaidya branches so that a
+reader can reconstruct it without the accompanying code.
+
+\paragraph{Notation and the slow datum.} $\Ehat$ and $J\equiv J_{\rm TK}=p_\varphi$ are
+the \emph{conserved} control charges (Kodama energy and axial costate); the effective
+unit-mass Kerr charges on the frozen slice are $E_{\rm eff}=\Ehat/A$ and
+$J_{\rm eff}=J/A$, both of conformal weight $A^{-1}$. The slow datum is $s$ ($s=\eta$ for
+Thakurta--Kerr, $s=v$ for Vaidya); we write $A(s)=A_0(1+\varepsilon s+\cdots)$ with
+$A_0\equiv1$ and the \emph{dimensionless} rate $\varepsilon=M\,A_{,\eta}/A$ (for Vaidya
+$\varepsilon=M\dot m/m$). The operator generating the drift of the frozen family is the
+Euler operator
+\begin{equation}
+    \Theta\equiv E_{\rm eff}\,\partial_{E_{\rm eff}}+J_{\rm eff}\,\partial_{J_{\rm eff}}
+    \quad(\text{Thakurta--Kerr}),\qquad
+    \Theta\equiv m\,\partial_m\quad(\text{Vaidya}),
+    \label{eq:theta-op}
+\end{equation}
+since $\dd E_{\rm eff}/\dd s=-\varepsilon E_{\rm eff}$, $\dd J_{\rm eff}/\dd s=-\varepsilon
+J_{\rm eff}$ at leading order (Vaidya: $\dd m/\dd s=+\varepsilon m$).
+
+\paragraph{Frozen data (per branch).} At fixed $s$ the branch Hamiltonian
+$H_0(r,p_r;E_{\rm eff},J_{\rm eff})=0$ fixes: the \emph{ingoing} frozen momentum
+$p_{r0}(r)$, the root of $H_0=0$ with $H_{0,p_r}<0$ (the outgoing arc is its mirror
+across the turning point); the shape integrand $G_0(r)=\dd\varphi/\dd r=H_{0,J}/H_{0,p_r}$;
+and the clock density $\dd\lambda/\dd r=1/H_{0,p_r}$, with $\lambda$ the elapsed clock
+oriented \emph{inward from the free-arrival endpoint}.
+
+\paragraph{The conformal rescaling: canonical derivation of the dilation term.} The
+Thakurta--Kerr Hamiltonians factorize (the conformal Hamiltonians of the companion paper) as
+$H_{\rm br}(r,p_r,p_\varphi;A)=A\,\bar H_{\rm br}(r,P_r,J_{\rm eff};E_{\rm eff})$ with the
+\emph{normalized} radial momentum $P_r=p_r/A$ (and $J_{\rm eff}=p_\varphi/A$,
+$E_{\rm eff}=\Ehat/A$). We derive the flow in the \emph{original} canonical variables
+$(r,p_r)$ and only then pass to $P_r$. Adjoining the slow clock $s$ with conjugate
+$p_s$, the extended Hamiltonian $\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$ generates the
+\emph{canonical} equations $\dd r/\dd s=\partial_{p_r}H_{\rm br}$,
+$\dd p_r/\dd s=-\partial_r H_{\rm br}$. The rescaling $P_r=p_r/A$ is \emph{not} itself
+canonical---at fixed $A$, $\dd r\wedge\dd p_r=A\,\dd r\wedge\dd P_r$, so it is a
+time-dependent (conformally symplectic) \emph{normalization}, not a canonical
+transformation. Its $s$-derivative along the canonical flow follows by the chain rule
+(with $\alpha\equiv A_{,s}/A=\varepsilon+O(\varepsilon^2)$ and the identity
+$\partial_r H_{\rm br}|_{p_r}=A\,\bar H_r|_{P_r}$):
+\begin{equation}
+    \frac{\dd r}{\dd s}=\bar H_{P_r},\quad
+    \frac{\dd P_r}{\dd s}=\frac1A\frac{\dd p_r}{\dd s}-\frac{A_{,s}}{A}P_r
+      =-\bar H_r-\alpha P_r,\quad
+    \frac{\dd E_{\rm eff}}{\dd s}=-\alpha E_{\rm eff},\quad
+    \frac{\dd J_{\rm eff}}{\dd s}=-\alpha J_{\rm eff},
+    \label{eq:normflow}
+\end{equation}
+an identity verified symbolically (\texttt{ThakurtaMetric/canonical\_dilation\_check.py}).
+The $-\alpha P_r$ term is thus a \emph{consequence} of the canonical flow in $(r,p_r)$
+together with the normalization---not an added piece, and not the generator of a
+canonical transformation; dropping it would misrepresent $\dd(p_r/A)/\dd s$. The
+normalized system~\eqref{eq:normflow} is non-canonical (conformally symplectic) but
+\emph{equivalent} to the canonical derivation. Consequently the shell-departure rate is
+the \emph{full} Euler operator
+\begin{equation}
+    \frac{\dd\bar H}{\dd s}=-\alpha\,\mathcal D\bar H,\qquad
+    \mathcal D\equiv\Theta+P_r\partial_{P_r}
+    =E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}}+P_r\partial_{P_r}.
+    \label{eq:Dop}
+\end{equation}
+
+\paragraph{Extended system and first order.} The canonical extended system adjoins $s$
+with conjugate $p_s$ in the \emph{original} variables,
+$\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$; passing to the normalized (conformally
+symplectic) variables rewrites the shell as $\bar H(r,P_r;E_{\rm eff}(s),J_{\rm eff}(s))=0$
+(since $H_{\rm br}=A\bar H$, $A>0$). Free-arrival transversality
+sets $\bar H=0$ (hence $p_s=0$) at $\lambda=0$. Along the flow
+$\dd p_s/\dd\lambda=\varepsilon\,\mathcal D\bar H$, so the \emph{terminally-anchored}
+source is
+\begin{equation}
+    p_s^{(1)}(\lambda)\equiv S_{\mathcal D}(\lambda)
+    =\int_0^{\lambda}\mathcal D\bar H\,\dd\lambda'
+    =\int_0^{\lambda}\big(\Theta\bar H+P_r\bar H_{P_r}\big)\,\dd\lambda',
+    \label{eq:pS-app}
+\end{equation}
+and, linearizing $\bar H$ at fixed $r$, the momentum-shell shift
+\begin{equation}
+    \delta P_r=\frac{\lambda\,\Theta\bar H-S_{\mathcal D}}{\bar H_{P_r}},
+    \label{eq:dpr-app}
+\end{equation}
+the axial costate remaining conserved ($\delta J=0$; it is $J_{\rm eff}=J/A$ that
+breathes). The shape varies as $\dd\varphi/\dd r=G_0+\varepsilon[\partial_{P_r}G_0\,\delta
+P_r-\lambda\,\Theta G_0]+O(\varepsilon^2)$; integrating in $r$ gives
+Eq.~\eqref{eq:adiab-exact} \emph{with $S\to S_{\mathcal D}$}. The earlier $S=\int\Theta\bar
+H\,\dd\lambda$ (omitting $P_r\bar H_{P_r}$) closes only against a surrogate flow lacking
+$-\alpha P_r$; against the true canonical flow it leaves an $O(\varepsilon)$ error. The
+reduction is non-uniform at the turning point ($\bar H_{P_r}\to0$): it holds on compact
+sub-arcs, and all displayed residuals are taken there.
+
+\paragraph{The dilation letter in closed form (so the reader can reconstruct it).}
+Since $\dd\lambda=\dd r/\bar H_{P_r}$, the extra source piece is the radial action,
+\begin{equation}
+    \int_0^{\lambda}P_r\bar H_{P_r}\,\dd\lambda'=\int p_{r0}\,\dd r,
+    \label{eq:dilation-action}
+\end{equation}
+and this is elementary to reduce. On the frozen $t$-branch shell the radial momentum is
+\begin{equation}
+    p_{r0}=\frac{\sqrt{S}}{\Delta\,[(E^2-1)r+2M]},\qquad
+    \Delta=r^2-2Mr+a^2,\qquad S=r\,[(E^2-1)r+2M]\,Q_2(r),
+    \label{eq:pr0-tbranch}
+\end{equation}
+with $E\equiv E_{\rm eff}$, $J\equiv J_{\rm eff}$, $Q_2$ the branch quartic (companion paper)
+and $S$ the on-shell sextic. Polynomial division of $S$ by $\Delta\,[(E^2-1)r+2M]$ gives,
+in the standard basis $U_k=\int r^k/\sqrt S\,\dd r$,
+\begin{equation}
+    \int p_{r0}\,\dd r=\sum_{k=0}^{3}a_k\,U_k+(\text{third kind at }\Delta=0),
+    \label{eq:action-reduction}
+\end{equation}
+\begin{equation}
+    a_3=E^2,\quad a_2=2E^2M,\quad a_1=4E^2M^2-(E^2-1)J^2,\quad
+    a_0=2M\big[4E^2M^2-J^2+2(1-E^2)Ja\big],
+    \label{eq:ak}
+\end{equation}
+with $[a_k]=\text{length}^{3-k}$. The kernel is likewise algebraic on the shell,
+$\partial_{P_r}G_0/\bar H_{P_r}=A(r)/\sqrt S$ with $A$ rational (the inner radical
+$\sqrt{\Delta v/\bar P}$ cancels on shell), so the complete off-shell correction is a
+length-two iterated integral on the single spectral curve $\sqrt S$, with the symbolic
+coefficients~\eqref{eq:ak}. Every step is verified to machine precision against the
+\emph{true} canonical flow~\eqref{eq:normflow}
+(\texttt{ThakurtaMetric/adiabatic\_offshell\_reduction.py},
+\texttt{adiabatic\_first\_order\_exact.py}, \texttt{tests/test\_adiabatic\_noreg.py}).
+
+\paragraph{Special-function class.} The building blocks form a strict transcendence
+hierarchy. The second-kind integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
+\emph{ordinary Abelian integrals} (weight one), reducible to the classical Kleinian
+$\zeta,\sigma$ basis (Baker; the companion paper), the same class as $\varphi_0$. The
+letters $W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$ are \emph{length-two iterated} Abelian
+integrals with algebraic coefficients---one transcendence level above the $U_k$ and
+\emph{not} reducible to the weight-one Kleinian class (their irreducibility to weight one
+is \emph{conjectural}). The third-kind letter at the seed Kerr null surfaces
+$\Delta=0$---whose residue is nonzero, unlike the on-shell $\psi$ where it
+vanishes---adds a genus-two dilogarithm (descriptively, a hyperelliptic polylogarithm
+\cite{BauneEtal2024,DHokerHiddingSchlotterer2025}), evaluated by the geometrically
+convergent theta-nome series in the reproducibility package; its irreducibility and
+single-valued completion remain open. Thus the on-shell reduction is a proved weight-one
+closed form, while the off-shell term additionally carries the length-two iterated
+integrals $W_{jk}$ and one genus-two dilogarithm (conjecturally irreducible).
+
+\paragraph{What is reconstructible from the text alone.} Everything algebraic is fixed
+by the manuscript without the repository: the frozen integrands
+$\dd\varphi/\dd r=\mathcal K/\sqrt S$ with their spectral radicals and numerators;
+the on-shell reduction (the polynomial identity $2A'S-AS'+2S\sum_k c_kr^k=2N_\lambda$
+and its $11\times11$ linear system---no fit); all block coefficients $c_k,a_k,g_i,Q_{kj}$;
+the Kleinian $\zeta,\sigma$ closed forms of $U_k,W_{jk}$ (Hermite recursion); the elementary
+remainders; and the \emph{form} of the genus-two letter
+$L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ with its odd half-characteristic
+$\delta$ and the genus-one nome series $g^{(1)}$ printed in
+the companion paper. What the text does \emph{not} reproduce by hand is the
+\emph{numerical evaluation} of the genus-two $\theta$: constructing the period matrix
+$\tau$ from $Y^2=\mathcal S$, its Siegel reduction, and summing the geometrically
+convergent nome series (order $N{=}4$ already to $10^{-13}$) are performed by
+\texttt{Sage}$+$\texttt{abelfunctions} (\texttt{RiemannTheta}) in the reproducibility
+package~\cite{Rosignoli2026Code}. In short: the symbolic reduction and the closed-form
+\emph{representation} are reconstructible from the PDF; the genus-two \emph{numbers}
+require the archived routine.
+
+\paragraph{Branch forms.} For the \emph{Vaidya} $v$-branch the slow datum $m$ is a metric
+modulus, \emph{not} a conformal rescaling of momenta: there is no $p_r/A$ transformation
+and hence no dilation term, so $\mathcal D=\Theta=m\partial_m$ is complete and
+\begin{equation}
+    \Theta H_v=m\,\partial_m H_v
+    =m\!\left[-\frac{2p_r}{r}+\frac{\sqrt{\Ehat^2p_r^2+J^2/r^2}}{r\sqrt w}\right],
+    \qquad w=\Ehat^2-f;
+    \label{eq:ThetaHv}
+\end{equation}
+since $m$ \emph{increases}, the Vaidya correction is Eq.~\eqref{eq:adiab-exact} with
+$(\lambda\Theta H_0-S_{\mathcal D})\to(S_{\mathcal D}-\lambda\Theta H_0)$ and
+$-\lambda\Theta G_0\to+\lambda\Theta G_0$; the proper-time branch uses $H_\tau$ of
+Eq.~\eqref{eq:Htau-vaidya}. All four cases close to $O(\varepsilon^2)$ against the true
+flow: least-squares log--log slope $\approx1$ for the on-shell term alone versus
+$2.05,\,2.07$ ($t,\tau$) and a second parameter set $2.01$
+(Fig.~\ref{fig:vaidya-offshell}), and $2.00$ (Vaidya, Fig.~\ref{fig:vaidya-offshell}).
+
+\paragraph{Separatrix limit ($J\to\Jc$).} The off-shell separatrix correction is simply
+the generic term at $J=\Jc$: the coefficients~\eqref{eq:ak} are polynomials in $J$, hence
+finite there, while the spectral curve \emph{degenerates}, $S=(r-r_d)^2Q_4$ (double root
+$r_d$, genus two $\to$ genus one). Each hyperelliptic letter collapses,
+$U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\sqrt{Q_4}$
+(elliptic second kind, Weierstrass $\wp,\zeta$) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
+(third kind); the spurious poles at $r_d$ cancel in the physical combination because
+$\sum_k a_k(\Jc)r_d^{\,k}+R(\Jc,r_d)/[\Delta\,((E^2-1)r+2M)]|_{r_d}=[S/\text{deng}](r_d)=0$
+(as $S(r_d)=0$), leaving the weight-two block as a genuine \emph{elliptic}
+dilogarithm~\cite{BeilinsonLevin1994,BrownLevin2011} plus third kind at $\Delta=0$. Thus
+the separatrix off-shell form is one degree \emph{lower} than the generic genus-two case;
+verified letter by letter to machine precision (\texttt{ThakurtaMetric/tk\_sep\_genus2\_to\_elliptic.py},
+\texttt{tk\_sep\_offshell\_elliptic.py}; Vaidya \texttt{VaidyaMetric/vaidya\_sep\_offshell\_elliptic.py}).
+For Thakurta--Kerr the double root sits inside the ergosphere, on the physical arc, and
+the dilation letter injects there a power pole $1/(r-r_d)^2$ (residue
+$\propto\Delta S(r_d)$, verified against the true flow) that is \emph{not} removed by
+the charge tracking $\dd J_c/\dd E$: the pole comes from the kernel $A\sim1/Q_2^2$, not
+from the source. Crucially this is not a missing algebraic counterterm. Under the
+adiabatic evolution the dilation ray $(\Ehat/A,\,J/A)$ leaves the separatrix locus
+$J=J_c(E)$, so the double root does not merely move---it \emph{dissolves}, and the orbit
+\emph{crosses} the separatrix. The off-shell non-uniformity at $r_d$ is therefore a
+separatrix-crossing phenomenon \cite{Neishtadt1987,Neishtadt2013}: the first-order
+adiabatic term is non-uniform there and its uniform completion requires inner/outer
+matched asymptotics, outside the symbolic-coefficient reduction. For Vaidya the double
+root is a branch point off the physical arc, $\mathcal D=\Theta$ carries no dilation,
+and no such crossing occurs.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.62\textwidth]{Immagini/fig_vaidya_offshell.png}
+    \caption{Vaidya $v$-branch first-order correction, residual against the true
+    non-autonomous flow versus $\varepsilon=M\dot m/m$ (log--log). The on-shell term
+    alone (dropping the costate integral $S$) is $O(\varepsilon)$ (slope $\approx1.00$);
+    the complete extended-Hamiltonian term of Eq.~\eqref{eq:adiab-exact}, adding the
+    off-shell piece, closes the correction to $O(\varepsilon^2)$ (slope $\approx2.00$).
+    Generated by \texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}.}
+    \label{fig:vaidya-offshell}
+\end{figure}
+
+\clearpage
+
 
 % ---- back matter -----------------------------------------------------
 \section*{Data availability}
