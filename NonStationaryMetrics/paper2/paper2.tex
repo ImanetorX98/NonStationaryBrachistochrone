@@ -1,0 +1,109 @@
+% ======================================================================
+%  PAPER II of the two-paper split
+%  Brachistochrones in conformal Kerr spacetimes:
+%  ergosphere trichotomy, separatrices, and adiabatic response
+%  IOP iopart class -- Classical and Quantum Gravity
+%  (axisymmetric sector: Thakurta-Kerr; control-theory foundations are
+%   cited from Paper I)
+% ======================================================================
+\documentclass[12pt]{iopart}
+
+% iopart pre-defines \equation*, which clashes with amsmath; free it first
+\makeatletter
+\expandafter\let\csname equation*\endcsname\relax
+\expandafter\let\csname endequation*\endcsname\relax
+\makeatother
+\usepackage{amsmath}
+\usepackage{iopams}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+% figures shared with the master/Paper I
+\graphicspath{{../paper/Immagini/}}
+
+% prose placeholder helper
+\newcommand{\todo}[1]{{\color{red}\small[[#1]]}}
+
+% shortcuts
+\newcommand{\Ehat}{\hat E}
+\newcommand{\rp}{r_{+}}
+\newcommand{\re}{r_{e}}
+\newcommand{\Jc}{J_{c}}
+\newcommand{\Af}{A_{\mathrm{freeze}}}
+\newcommand{\dd}{\mathrm{d}}
+
+\begin{document}
+
+\title{Brachistochrones in conformal Kerr spacetimes:
+ergosphere trichotomy, separatrices, and adiabatic response}
+
+\author{Iman Rosignoli}
+\address{University of Pavia, Pavia, Italy}
+\ead{iman.rosignoli01@universitadipavia.it}
+
+\begin{abstract}
+\todo{Paper II abstract (<=300 words, CQG): Thakurta-Kerr = conformal Kerr;
+the breathing indicatrix and the arrival branch t==eta vs proper time tau;
+frame-dragging; closed-form Weierstrass/Kleinian separatrices continued through
+the ergosphere with the cusp theorem and trichotomy; rotational and conformal
+plunge inversion with same-launch vs fixed-endpoint (tiered R\_*(E,a));
+first-order on-shell/off-shell correction canonically re-derived and validated
+against the true flow; length-two iterated Abelian integrals (weight-two,
+irreducibility conjectural). Control-theory foundations are established in
+Paper I.}
+\end{abstract}
+
+\maketitle
+{\hypersetup{linkcolor=black}\tableofcontents}
+
+% ======================================================================
+\section{Introduction}
+\todo{Adapt master intro; scope to the axisymmetric (Thakurta-Kerr) case;
+cite Paper I for the controlled-rail formulation, existence/normality/HJB, and
+the W-hierarchy.}
+
+\section{Thakurta--Kerr: conformal rotating compact object}
+\todo{Migrate master TK section: indicatrix and Hamiltonians (H\_eta, H\_t,
+H\_tau); the conformal-time (eta) brachistochrone and t==eta arrival family;
+Randers optical reduction; quasi-constants drift.
+DO NOT migrate Sec. 5.1 (off-equatorial quasi-constants) -- hold for a later
+3D paper.
+Then: semi-analytic first-order adiabatic orbit shape; the branch costate vs
+mechanical angular momentum dictionary.}
+
+\section{Equatorial closed forms and the ergosphere}
+\todo{Migrate master Sec.: separatrix in Weierstrass functions; trichotomy and
+the ergosphere cusp; plunge inversion (rotational and conformal); fixed-endpoint
+comparison and protocol dependence (tiered R\_*(E,a)); the breathing indicatrix
+unified adiabatic theorem.}
+
+\section{Conclusions}
+\todo{Three blocks: Proved / Conditional and numerical / Outlook.}
+
+\appendix
+\section{Validation and consistency checks (Thakurta--Kerr)}
+\todo{TK parts of the master validation appendix.}
+
+\section{Explicit adiabatic forms on the genus-degeneration loci (Thakurta--Kerr)}
+\todo{TK tau/t separatrices: physical external separatrix (r\_d>2M) vs algebraic
+J\_deg roots.}
+
+\section{Complete first-order extended-Hamiltonian correction (Thakurta--Kerr)}
+\todo{Canonical derivation in (r,p\_r); conformal source S\_D=eta+int E H\_E d.eta;
+length-two iterated Abelian integrals with weight-one/weight-two hierarchy.}
+
+% ---- back matter -----------------------------------------------------
+\section*{Data availability}
+\todo{Same Zenodo DOI 10.5281/zenodo.21707378 statement as the master.}
+
+\ack
+\todo{Same acknowledgements as master.}
+
+\nocite{*}
+\bibliographystyle{iopart-num}
+\bibliography{../paper/refs}
+
+\end{document}

@@ -227,10 +227,12 @@ master. Ordine: P0 fondamentali → P1 armonizzazione → P2 editoriale → spli
 Prerequisito: master coerente ✅ (P0/P1/P2-testo + figure P0/P1 fatti). Le figure P0/P1 sono già
 rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono per entrambi i paper.
 
-### I.0 Preparazione
-- [ ] Creare `paper1/` e `paper2/` (sorgenti separati) partendo da `main.tex`/`refs.bib`/`Immagini/`.
-      Condividere `refs.bib`, `paper_style`, cartella figure. Decidere classe (iopart per CQG entrambi).
-- [ ] Change-log per paper (quale sezione del master va dove).
+### I.0 Preparazione — ✅ FATTO
+- [x] Creati `paper1/paper1.tex` (rail/Kodama/Vaidya) e `paper2/paper2.tex` (Thakurta-Kerr): scheletri con
+      preambolo iopart, `\graphicspath{{../paper/Immagini/}}` (figure condivise), `\bibliography{../paper/refs}`
+      (bib condivisa), classe iopart copiata localmente, placeholder di sezione con `\todo` di migrazione.
+      Entrambi compilano (5pp, bibliografia completa via `\nocite{*}` finché non ci sono `\cite` reali).
+- [x] Change-log/mappa sezioni: `SPLIT_MAP.md` (quale sezione del master va in quale paper).
 
 ### I.1 Paper I — "Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry,
       Kodama energy, Vaidya dynamics" (sferico, ~25-35pp)

@@ -1,0 +1,107 @@
+% ======================================================================
+%  PAPER I of the two-paper split
+%  Controlled-rail brachistochrones in non-stationary spacetimes:
+%  conformal symmetry, Kodama energy, and Vaidya dynamics
+%  IOP iopart class -- Classical and Quantum Gravity
+%  (spherically symmetric sector: FLRW + Vaidya; shared control-theory
+%   foundations live here and are cited by Paper II)
+% ======================================================================
+\documentclass[12pt]{iopart}
+
+% iopart pre-defines \equation*, which clashes with amsmath; free it first
+\makeatletter
+\expandafter\let\csname equation*\endcsname\relax
+\expandafter\let\csname endequation*\endcsname\relax
+\makeatother
+\usepackage{amsmath}
+\usepackage{iopams}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+% figures shared with the master/Paper II
+\graphicspath{{../paper/Immagini/}}
+
+% prose placeholder helper
+\newcommand{\todo}[1]{{\color{red}\small[[#1]]}}
+
+% shortcuts
+\newcommand{\Ehat}{\hat E}
+\newcommand{\rp}{r_{+}}
+\newcommand{\re}{r_{e}}
+\newcommand{\Jc}{J_{c}}
+\newcommand{\Af}{A_{\mathrm{freeze}}}
+\newcommand{\dd}{\mathrm{d}}
+
+\begin{document}
+
+\title{Controlled-rail brachistochrones in non-stationary spacetimes:
+conformal symmetry, Kodama energy, and Vaidya dynamics}
+
+\author{Iman Rosignoli}
+\address{University of Pavia, Pavia, Italy}
+\ead{iman.rosignoli01@universitadipavia.it}
+
+\begin{abstract}
+\todo{Paper I abstract (<=300 words, CQG): rail invariant -u.W=Ehat via
+Pontryagin; W-hierarchy Killing -> CKV -> Kodama; FLRW degenerate base and
+Vaidya dynamical black hole (Kodama energy conserved on the rail,
+endpoint-sensitive costate memory, bounce regularization); Vaidya first-order
+adiabatic correction and the mass-function universal source S\_D=[r p\_r]-lambda.
+Status: existence/normality/HJB-verification; outgoing-Vaidya BVP left open.}
+\end{abstract}
+
+\maketitle
+{\hypersetup{linkcolor=black}\tableofcontents}
+
+% ======================================================================
+\section{Introduction}
+\todo{Adapt master intro; scope to the spherically symmetric sector; forward
+Paper II for the rotating (Thakurta-Kerr) case.}
+
+% ---- SHARED FOUNDATIONS (cited by Paper II) --------------------------
+\section{The controlled-rail principle}
+\todo{Migrate master Sec. 'The controlled-rail principle':
+2.1 rail constraint + indicatrix + optimal-control problem statement;
+2.2 existence, normality, non-autonomous HJB verification;
+2.3 W-hierarchy Killing--CKV--Kodama.}
+
+\section{FLRW: the degenerate base case}
+\todo{Migrate master FLRW section.}
+
+\section{Vaidya: dynamical black hole and the Kodama rail}
+\todo{Migrate master Vaidya section: Kodama energy invariant; phenomenology
+(penetration, timing, bounce); plunge-radius law and the (absent) evaporative
+inversion with the negative-rate-continuation scoping; closed-form adiabatic
+correction and horizon dilogarithm; the mass-function universal source
+S\_D=[r p\_r]-lambda.}
+
+\section{Conclusions}
+\todo{Three blocks: Proved / Conditional and numerical / Outlook (Vaidya scope,
+outgoing-BVP open).}
+
+\appendix
+\section{Validation and consistency checks}
+\todo{Vaidya/shared parts of the master validation appendix.}
+
+\section{Explicit adiabatic forms on the genus-degeneration loci (Vaidya)}
+\todo{Vaidya J\_deg (algebraic degeneration, r\_d<0) only; NOT called a physical
+separatrix.}
+
+\section{Complete first-order extended-Hamiltonian correction (Vaidya)}
+\todo{Canonical derivation in (r,p\_r); mass-function source.}
+
+% ---- back matter -----------------------------------------------------
+\section*{Data availability}
+\todo{Same Zenodo DOI 10.5281/zenodo.21707378 statement as the master.}
+
+\ack
+\todo{Same acknowledgements as master.}
+
+\nocite{*}
+\bibliographystyle{iopart-num}
+\bibliography{../paper/refs}
+
+\end{document}
