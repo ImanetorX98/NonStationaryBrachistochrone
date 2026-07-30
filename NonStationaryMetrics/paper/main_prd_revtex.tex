@@ -75,7 +75,7 @@ to $O(\varepsilon^2)$; its source admits a universal form
 ($\lambda+\int E H_E\,\dd\lambda$ conformal, $[\,rp_r\,]-\lambda$ Vaidya).
 \emph{Status.} The controlled-rail formulation, the closed-form separatrices and
 cusp theorem, and the on-shell reduction are proved; the fixed-endpoint no-inversion
-is proved for $r_0\le R_\ast(E)$, machine-certified at representative $r_0$,
+is proved for $r_0\le R_\ast(E,a)$, machine-certified at representative $r_0$,
 conjectural in general; interior-ergosphere optimality, the outgoing-Vaidya problem,
 and a rigorous higher-genus polylogarithm framework remain open. Only the canonical
 \emph{naming} of the genus-two weight-two letters (single-valued completion,
@@ -610,8 +610,10 @@ Schwarzschild limit.
 
 \emph{Penetration.} The $\tau$-brachistochrone reaches the apparent horizon
 $r=2m(v)$ only if $|J|$ lies below a threshold $J_c(v_0)$; accretion ($m'>0$)
-opens a \emph{finite} window $J_c>0$, whereas evaporation ($m'<0$) closes it to
-zero measure---an accretion/evaporation asymmetry with no static analogue. The
+opens a \emph{finite} window $J_c>0$, whereas the negative-rate continuation
+($m'<0$ in the \emph{ingoing} metric; physical evaporation is outgoing,
+Sec.~\ref{sec:inversion}) closes it to zero measure---an accretion/(negative-rate)
+asymmetry with no static analogue. The
 finite capture interval $J\in(0,\Jc]$ is the analogue of the Kerr $t$-branch
 dichotomy, generated here by the \emph{dynamics}: grazing orbits linger near
 periapsis while the growing horizon closes the gap.
@@ -629,7 +631,7 @@ frozen-mass Schwarzschild curve (Fig.~\ref{fig:vaidya-bounce}).
 $r_{\min}$ depends on \emph{when} the particle arrives, the epoch $v_1$---a
 genuinely non-stationary effect absent in Kerr. Strikingly, the absolute and
 relative penetration have \emph{opposite} winners
-(Fig.~\ref{fig:vaidya-timing}): under evaporation the absolute periapsis descends
+(Fig.~\ref{fig:vaidya-timing}): under the negative-rate branch ($m'<0$) the absolute periapsis descends
 but the horizon $2m(v)$ retreats faster, so the relative penetration
 $r_{\min}/2m(v_{\rm peri})$ \emph{worsens} for later arrivals; under accretion the
 periapsis rises yet the horizon grows faster, so late arrivals graze the relative
@@ -1602,7 +1604,9 @@ $[0,\Sigma)$, so the integral is manifestly negative; for $V(r_0)\le2V(r_{\min})
 (grazing) the boundary is $\le0$ too and (B) is \emph{proven in closed form}. The same
 closed form (an IBP identity $\sqrt{V_{\min}}\Phi_\tau'=W(V_0)(V_0-2V_{\min})/\Sigma+
 \int_{V_{\min}}^{V_0}W'(t)(2V_{\min}-t)/\sqrt{t-V_{\min}}\,\dd t$) plus convexity of $W$
-extends the proof to $V(r_0)\le4V(r_{\min})$, hence to all $r_0\le R_\ast(E)$. In the
+extends the proof to $V(r_0)\le4V(r_{\min})$, which \emph{defines}
+$R_\ast(E,a)=\sup\{r_0: V(r_0)\le4V(r_{\min}(r_0))\}$ ($V=r\Delta/DE$; an $(E,a)$-dependent
+radius, not a function of $E$ alone), so the proof covers all $r_0\le R_\ast(E,a)$. In the
 static limit $W(V)=\tfrac1{2V}-\tfrac1{2b^{3/2}V^{3/2}}+O(V^{-2})$ ($b=E^2-1$), so
 $\Phi_\tau=\arctan\!\sqrt{V_0/V_{\min}-1}-b^{-3/2}\sqrt{1/V_{\min}-1/V_0}+\cdots$, a
 single non-degenerate maximum ($\Phi_\tau''(V_{\rm pk})=-\tfrac12 b^{9/4}V_0^{-5/4}<0$),
@@ -1612,7 +1616,7 @@ the whole continuum and on a grid $E\in\{1.2,1.6,2.5\}\times r_0\in\{8,12\}M$
 (\texttt{no\_inversion\_schwarzschild\_CAP\_grid.py}). A uniform symbolic proof for all
 $(a,E,r_0)$ remains open (the deciding inequality is tight at the transcendental
 $r_{\rm pk}$); we thus state the fixed-endpoint no-inversion as a theorem for
-$r_0\le R_\ast(E)$ and, in the static case, as $r_0\to\infty$, machine-certified at
+$r_0\le R_\ast(E,a)$ and, in the static case, as $r_0\to\infty$, machine-certified at
 representative $r_0$, and a numerically supported conjecture in full generality. The
 fixed-endpoint turning points ($r_{\min}^{\tau,t}\gtrsim4.7M$) lie in the certified
 scattering regime.
@@ -1727,7 +1731,7 @@ cusp theorem for the $|J|<\Jc$ reflection. The plunge inversion resolves into a
 three-way picture: rotation and the conformal factor invert the $t/\tau$
 ordering under a same-launch comparison, while in the ingoing-Vaidya model the
 evaporative sign change is absent. The fixed-endpoint no-inversion is a \emph{theorem}
-for $r_0\le R_\ast(E)$ and, in the static case, as $r_0\to\infty$; it is
+for $r_0\le R_\ast(E,a)$ and, in the static case, as $r_0\to\infty$; it is
 machine-certified at representative $r_0$ and a numerically supported \emph{conjecture}
 in general. Slow drift of the metric yields first-order corrections whose
 \emph{on-shell} component is a closed form in length-two iterated Abelian integrals on
@@ -1944,9 +1948,12 @@ flow to $2\times10^{-14}$ (Fig.~\ref{fig:t-sep}). So both separatrices are
 genus~1 by different mechanisms; only non-separatrix $t$-orbits need genus-2
 Kleinian functions.
 
-\paragraph{Separatrix $\Jc$ tracking.} As the control parameter drifts the separatrix
-itself moves, $J=\Jc(\lambda)$, so the adiabatic source becomes the \emph{total}
-$\lambda$-derivative taken along it, $N\to N_{\rm tot}=N+(\dd\Jc/\dd\lambda)N_J$ with
+\paragraph{Adiabatic derivative of the degeneration family.} As the control parameter
+drifts the degeneration value moves, $J=\Jc(\lambda)$. This is \emph{not} the evolution of
+one torque-free extremal ($J$ is a conserved costate, so following the moving locus needs
+an external torque $\dd J/\dd\lambda\neq0$); it is the total $\lambda$-derivative of the
+one-parameter family of marginal solutions along $J=\Jc(\lambda)$,
+$N\to N_{\rm tot}=N+(\dd\Jc/\dd\lambda)N_J$ with
 $N_J=S\,\partial_JK-\tfrac12K\,\partial_JS$, the residue formulae unchanged. The
 branches differ only in $\dd\Jc/\dd\lambda$: Vaidya $\dd\Jc/\dd m=\Jc/m$ (scaling
 $\Jc=m\,j(E)$); TK $\tau$ $\dd\Jc/\dd E=-E\Jc r_d/DE(r_d)$; TK $t$ two roots $\Jc^\pm$

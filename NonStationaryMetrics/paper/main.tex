@@ -61,7 +61,7 @@ to $O(\varepsilon^2)$; its source admits a universal form
 ($\lambda+\int E H_E\,\dd\lambda$ conformal, $[\,rp_r\,]-\lambda$ Vaidya).
 \emph{Status.} The controlled-rail formulation, the closed-form separatrices and
 cusp theorem, and the on-shell reduction are proved; the fixed-endpoint no-inversion
-is proved for $r_0\le R_\ast(E)$, machine-certified at representative $r_0$,
+is proved for $r_0\le R_\ast(E,a)$, machine-certified at representative $r_0$,
 conjectural in general; interior-ergosphere optimality, the outgoing-Vaidya problem,
 and a rigorous higher-genus polylogarithm framework remain open. Only the canonical
 \emph{naming} of the genus-two weight-two letters (single-valued completion,
@@ -678,8 +678,10 @@ Schwarzschild limit.
 
 \emph{Penetration.} The $\tau$-brachistochrone reaches the apparent horizon
 $r=2m(v)$ only if $|J|$ lies below a threshold $J_c(v_0)$; accretion ($m'>0$)
-opens a \emph{finite} window $J_c>0$, whereas evaporation ($m'<0$) closes it to
-zero measure---an accretion/evaporation asymmetry with no static analogue. The
+opens a \emph{finite} window $J_c>0$, whereas the negative-rate continuation
+($m'<0$ in the \emph{ingoing} metric---a formal continuation; physical evaporation is
+the \emph{outgoing} metric, Sec.~\ref{sec:inversion}) closes it to zero
+measure---an accretion/(negative-rate) asymmetry with no static analogue. The
 finite capture interval $J\in(0,\Jc]$ is the analogue of the Kerr $t$-branch
 dichotomy, generated here by the \emph{dynamics}: grazing orbits linger near
 periapsis while the growing horizon closes the gap.
@@ -697,8 +699,8 @@ frozen-mass Schwarzschild curve (Fig.~\ref{fig:vaidya-bounce}).
 $r_{\min}$ depends on \emph{when} the particle arrives, the epoch $v_1$---a
 genuinely non-stationary effect absent in Kerr. Strikingly, the absolute and
 relative penetration have \emph{opposite} winners
-(Fig.~\ref{fig:vaidya-timing}): under evaporation the absolute periapsis descends
-but the horizon $2m(v)$ retreats faster, so the relative penetration
+(Fig.~\ref{fig:vaidya-timing}): under the negative-rate branch ($m'<0$) the absolute
+periapsis descends but the horizon $2m(v)$ retreats faster, so the relative penetration
 $r_{\min}/2m(v_{\rm peri})$ \emph{worsens} for later arrivals; under accretion the
 periapsis rises yet the horizon grows faster, so late arrivals graze the relative
 horizon. The orbit--horizon chase has reversed outcomes measured in $r$ versus in
@@ -1935,7 +1937,15 @@ closed form---using the exact identity (integration by parts on the Abel integra
     \label{eq:phitau-closed}
 \end{equation}
 together with the convexity of $W$ ($W''>0$)---extends the proof to the quarter
-regime $V(r_0)\le4V(r_{\min})$, hence to all endpoints $r_0\le R_\ast(E)$. In the
+regime $V(r_0)\le4V(r_{\min})$. We accordingly \emph{define}
+\begin{equation}
+    R_\ast(E,a)=\sup\big\{\,r_0:\ V(r_0)\le 4\,V(r_{\min}(r_0))\ \text{along the marginal
+    turning family}\,\big\},
+    \label{eq:Rstar}
+\end{equation}
+with $V=r\Delta/DE$ the turning potential---an explicit $(E,a)$-dependent radius (it is
+\emph{not} a function of $E$ alone, since $V$ carries the spin through $\Delta$)---so the
+closed-form proof covers all endpoints $r_0\le R_\ast(E,a)$. In the
 static limit $a\to0$ (Vaidya $\dot m=0$ / frozen Thakurta) we can go further:
 $W(V)=\tfrac1{2V}-\tfrac1{2b^{3/2}V^{3/2}}+O(V^{-2})$ with $b=E^2-1$, so the
 large-$r_0$ angle is
@@ -1949,7 +1959,7 @@ over the entire continuum $r_{\min}\in(2.6,6.05)M$ (the elementary grazing bound
 covering $r_{\min}\gtrsim6.05M$; \texttt{no\_inversion\_schwarzschild\_CAP\_r0\_10.py}).
 A uniform symbolic proof for all $(a,E,r_0)$ remains open---the deciding inequality is
 tight at the \emph{transcendental} deflection threshold $r_{\rm pk}$. We therefore state
-(B), and hence the fixed-endpoint no-inversion, as a \emph{theorem for $r_0\le R_\ast(E)$
+(B), and hence the fixed-endpoint no-inversion, as a \emph{theorem for $r_0\le R_\ast(E,a)$
 and asymptotically as $r_0\to\infty$ in the static case}, machine-certified at
 representative $r_0$, and a numerically supported conjecture in full generality
 (verified over $a\in[0.2,0.9]$, $E\in[1.05,1.5]$); the fixed-endpoint turning points of
@@ -2114,7 +2124,7 @@ cusp theorem for the $|J|<\Jc$ reflection. The plunge inversion resolves into a
 three-way picture: rotation and the conformal factor invert the $t/\tau$
 ordering under a same-launch comparison, while in the ingoing-Vaidya model the
 evaporative sign change is absent. The fixed-endpoint no-inversion is a
-\emph{theorem} for endpoint radii $r_0\le R_\ast(E)$ and, in the static case,
+\emph{theorem} for endpoint radii $r_0\le R_\ast(E,a)$ and, in the static case,
 asymptotically as $r_0\to\infty$; it is machine-certified (validated interval
 arithmetic) at representative $r_0$, and remains a numerically supported
 \emph{conjecture} in full generality. Slow drift of the metric yields first-order
@@ -2772,14 +2782,19 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 
 
-\section{Explicit separatrix adiabatic forms}
+\section{Explicit adiabatic forms on the genus-degeneration loci}
 \label{app:separatrix}
 This appendix collects in one place the fully explicit first-order adiabatic
-brachistochrone on the Vaidya separatrix $J=\Jc$---both the proper-time ($\tau$) and
-advanced-time ($v$) branches---with every coefficient in closed form, and closes with
-the rotating Thakurta--Kerr $\tau$ and $t$ branches (the latter with its two
-separatrices $\Jc^\pm$). All objects live on the elliptic curve $E:\,w^2=Q_4(r)$ into
-which the branch sextic collapses at $\Jc$. The adiabatic expansion is
+brachistochrone on the loci where the branch sextic acquires a double root and drops to
+genus one. For \emph{spherical} Vaidya the relevant value $J=\Jc$ is the \emph{algebraic}
+genus-degeneration $J_{\rm deg}$---the double root sits at $r_d<0$
+(Sec.~\ref{sec:trichotomy}), so it is \emph{not} a physical, accessible separatrix,
+though the genus-two$\,\to\,$genus-one reduction is valid there all the same; we give both
+the proper-time ($\tau$) and advanced-time ($v$) branches with every coefficient in closed
+form. We then treat the rotating Thakurta--Kerr $\tau$ and $t$ branches, whose degeneration
+values $\Jc^\pm$ include the \emph{physical} external separatrix (accessible double root
+$r_d>2M$) alongside further algebraic $J_{\rm deg}$ roots at $r_d<0$. All objects live on
+the elliptic curve $E:\,w^2=Q_4(r)$ into which the branch sextic collapses. The adiabatic expansion is
 $\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$
 ($\lambda=m$ for Vaidya, $\lambda=A$ via $E_{\rm eff}=\Ehat/A$ for Thakurta--Kerr).
 
@@ -2847,17 +2862,23 @@ $v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term reproduces the proper-ti
 dilogarithms; the second is odd on $E$ with a simple pole at $z=i\omega_{\rm im}$ and
 supplies the horizon dilogarithm.
 
-\subsection{Separatrix $\Jc$ tracking}
+\subsection{Adiabatic derivative of the degeneration family}
 \label{app:tracking}
-Along an adiabatic evolution the separatrix itself moves, $J=\Jc(\lambda)$, so the
-first-order source is the \emph{total} $\lambda$-derivative taken along the
-separatrix,
+As the slow parameter drifts, the genus-degeneration value itself moves,
+$J=\Jc(\lambda)$. This is \emph{not} the evolution of a single torque-free extremal:
+the axial costate $J$ is conserved along every extremal
+(Sec.~\ref{sec:principle}), so one trajectory cannot follow the moving locus by
+changing $J$ unless an external azimuthal torque---a modified control law with
+$\dd J/\dd\lambda\neq0$---is supplied. The object below is instead the total
+$\lambda$-derivative of the \emph{one-parameter family of marginal (degeneration)
+solutions} along $J=\Jc(\lambda)$: the adiabatic derivative of the family, which
+packages how the closed form deforms as the locus drifts,
 \begin{equation}
 N_{\rm tot}=N+\frac{\dd\Jc}{\dd\lambda}\,N_J,\qquad
 N_J=S\,\partial_JK-\tfrac12K\,\partial_JS,
 \label{eq:Ntot-track}
 \end{equation}
-and the block form and residue formulae above hold verbatim with $N\to N_{\rm tot}$;
+with the block form and residue formulae above holding verbatim under $N\to N_{\rm tot}$;
 $\varphi_0$, the clocks and the dilogarithm structure are unchanged. The three branches
 differ only in $\dd\Jc/\dd\lambda$ and $N_J$.
 
@@ -3078,16 +3099,21 @@ coefficients~\eqref{eq:ak}. Every step is verified to machine precision against 
 (\texttt{ThakurtaMetric/adiabatic\_offshell\_reduction.py},
 \texttt{adiabatic\_first\_order\_exact.py}, \texttt{tests/test\_adiabatic\_noreg.py}).
 
-\paragraph{Special-function class.} The second-kind block ($U_0,\dots,U_3$ and the
-weight-two letters $W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$) closes in the classical
-Kleinian $\zeta,\sigma$ functions (Baker), of the same weight-one class as $\varphi_0$
-(App.~\ref{app:explicit}); the third-kind letter at the seed Kerr null surfaces
+\paragraph{Special-function class.} The building blocks form a strict transcendence
+hierarchy. The second-kind integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
+\emph{ordinary Abelian integrals} (weight one), reducible to the classical Kleinian
+$\zeta,\sigma$ basis (Baker; App.~\ref{app:explicit}), the same class as $\varphi_0$. The
+letters $W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$ are \emph{length-two iterated} Abelian
+integrals with algebraic coefficients---one transcendence level above the $U_k$ and
+\emph{not} reducible to the weight-one Kleinian class (their irreducibility to weight one
+is \emph{conjectural}). The third-kind letter at the seed Kerr null surfaces
 $\Delta=0$---whose residue is nonzero, unlike the on-shell $\psi$ where it
-vanishes---contributes a genuine genus-two dilogarithm (a hyperelliptic polylogarithm
+vanishes---adds a genus-two dilogarithm (descriptively, a hyperelliptic polylogarithm
 \cite{BauneEtal2024,DHokerHiddingSchlotterer2025}), evaluated by the geometrically
-convergent theta-nome series supplied in the reproducibility package. Thus the on-shell
-reduction is a proved weight-one closed form, while the off-shell term additionally
-carries one irreducible genus-two dilogarithm sourced by the horizon-candidate.
+convergent theta-nome series in the reproducibility package; its irreducibility and
+single-valued completion remain open. Thus the on-shell reduction is a proved weight-one
+closed form, while the off-shell term additionally carries the length-two iterated
+integrals $W_{jk}$ and one genus-two dilogarithm (conjecturally irreducible).
 
 \paragraph{What is reconstructible from the text alone.} Everything algebraic is fixed
 by the manuscript without the repository: the frozen integrands
