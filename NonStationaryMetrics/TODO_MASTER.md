@@ -298,9 +298,10 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
 ## J. Ristrutturazione teorema-applicazione Paper I/II — dettaglio in `RESTRUCTURE_MEMO.md`
 Principio: Paper I DIMOSTRA (formalismo+FLRW+Vaidya, teoremi I.1–I.6 numerati); Paper II CITA e applica
 (TK + corollari), niente ridimostrazioni/duplicazioni. Ordine esecuzione (§9 del memo):
-- [ ] 1. Numerare I.1–I.6 in Paper I (PMP, esistenza/normalità, HJB, riduzione polinomiale, first-order,
-      double-root lemma).
-- [ ] 2. Riscrivere intro Paper II citando I.1–I.6.
+- [x] 1. Numerati I.1–I.6 in Paper I (commit 4571410): Thm I.1 PMP, Thm I.2 esist./norm., Prop I.3 HJB,
+      Lemma I.4 riduzione polinomiale, Thm I.5 first-order, Lemma I.6 double-root. Compila.
+- [~] 2. Paper II cita i teoremi (commit eead4fc): aperture 7.1 (§TK: cita I.1/I.2/I.3) + 7.3 (App C: cita
+      Thm I.5) FATTE. RESTANO: 7.2 (Lemma I.4 all'apertura riduzione adiabatica) + 7.4 (ladder pointer).
 - [ ] 3. Rifondere App C: generale in I; II solo dilatazione conforme ("By Theorem I.5...").
 - [ ] 4. Rifondere App B per metrica (Vaidya J_deg in I; separatrici TK in II).
 - [ ] 5. Paper II §3.5 breathing → applicazione conforme (teorema 3-geometrie resta in I).
