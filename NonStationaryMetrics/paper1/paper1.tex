@@ -1075,10 +1075,6 @@ exactly):
         \hline\hline
         reduction & $c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$\\
         \hline
-        TK $\tau$, $\partial_E$ & $-1.1575$ & $1.86406$ & $-0.57499$ & $0.02429$ & $0.07117$\\
-        TK $\tau$, $\partial_J$ & $0.18027$ & $0.06996$ & $-0.29682$ & $0.03840$ & $0.03760$\\
-        TK $t$, $\partial_E$ & $-0.39084$ & $1.72654$ & $-0.19058$ & $-0.14503$ & $-0.01676$\\
-        TK $t$, $\partial_J$ & $4.33922$ & $4.03122$ & $-0.64349$ & $-2.63600$ & $-0.64444$\\
         Vaidya, $\partial_m$ & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
         \hline\hline
     \end{tabular}
@@ -1092,12 +1088,9 @@ letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
 $\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
 same steps with the advanced-time clock give the fully assembled
 form~\eqref{eq:vaidya-full}; the horizon dilogarithm closes by one integration by
-parts, Eq.~\eqref{eq:horizon-dilog}. Table~\ref{tab:script-map} maps each result to
-the script in the repository~\cite{Rosignoli2026Code} that generates and verifies it;
-the first entry, \texttt{pipeline\_completa\_deltaphi.py}, runs the entire chain in one
-file---from $(M,a,E,J)$ through the $11\times11$ solve, the algebraic $c_k,b,Q_{kj}$,
-and the building blocks $U_k,W_{kj},\mathcal{I}_j$, to the assembled $\delta\varphi$,
-matching the direct double integral to $4\times10^{-15}$.
+parts, Eq.~\eqref{eq:horizon-dilog}. Table~\ref{tab:script-map} maps each Vaidya result to
+the script in the repository~\cite{Rosignoli2026Code} that generates and verifies it (the
+Thakurta--Kerr map is in the companion paper).
 \begin{table}[htbp]
     \centering
     \caption{Result-to-script map with the achieved numerical residual, so each
@@ -1108,14 +1101,6 @@ matching the direct double integral to $4\times10^{-15}$.
         \hline\hline
         result & script & residual\\
         \hline
-        \emph{end-to-end example} $(M,a,E,J)\!\to\!\delta\varphi$
-            & \texttt{pipeline\_completa\_deltaphi.py} & $4\times10^{-15}$\\
-        TK $\tau$ reduction $c_k$, $\psi=\tfrac12\Ehat\sum Q_{kj}W_{kj}$
-            & \texttt{kerr\_psi\_explicit\_verified.py} & $5\times10^{-14}$\\
-        TK $t$-branch on-curve clock \& full assembly
-            & \texttt{kerr\_tbranch\_psi\_assembly.py} & $9\times10^{-13}$\\
-        quasi-periods $\eta$; $L$ (Fay third-kind)
-            & \texttt{kerr\_quasiperiods\_bel.sage} & $10^{-12}$; $5\times10^{-8}$\\
         Vaidya reduction $c_k^m$
             & \texttt{vaidya\_dMF\_reduction.py} & $10^{-15}$\\
         Vaidya clock $v$; assembled $\delta\varphi$~\eqref{eq:vaidya-full}
@@ -1131,21 +1116,14 @@ matching the direct double integral to $4\times10^{-15}$.
         \hline
         \multicolumn{3}{@{}p{\textwidth}@{}}{\emph{First-order
             extended-Hamiltonian correction, Eq.~\eqref{eq:adiab-exact} (on-shell
-            $+$ off-shell); paths under \texttt{ThakurtaMetric/},
-            \texttt{VaidyaMetric/}:}}\\
-        TK $t$ exact PT, $\delta\varphi$ vs true flow
-            & \texttt{adiabatic\_first\_order\_exact.py} & slope $1.95$\\
+            $+$ off-shell); paths under \texttt{VaidyaMetric/}:}}\\
         Vaidya $v$ exact PT $+$ Fig.~\ref{fig:vaidya-offshell}
             & \texttt{vaidya\_first\_order\_offshell.py} & slope $2.00$\\
-        true-dynamics validation ($t,\tau$, 2 sets), Fig.~\ref{fig:vaidya-offshell}
-            & \texttt{fig\_phi\_validation\_corrected.py} & slopes $1.95$--$2.16$\\
         \hline\hline
     \end{tabular}
     \\[2pt]
     {\footnotesize SHA-256 (first 12 hex):
-    \texttt{adiabatic\_first\_order\_exact.py} $=$\,\texttt{78ab24b5373c};
-    \texttt{vaidya\_first\_order\_offshell.py} $=$\,\texttt{5dc9fe177f2f};
-    \texttt{fig\_phi\_validation\_corrected.py} $=$\,\texttt{a086a0692e8c}.}
+    \texttt{vaidya\_first\_order\_offshell.py} $=$\,\texttt{5dc9fe177f2f}.}
 \end{table}
 
 \subsection{Consistency residuals}
