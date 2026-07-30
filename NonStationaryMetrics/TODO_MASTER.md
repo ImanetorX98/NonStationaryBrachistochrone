@@ -276,7 +276,12 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
 - [ ] (scope, → I.5 trimming) fig:vaidya-kerra0 + fig:verifmin sono Vaidya ma presenti anche in App A di
       Paper II (overlap): rimuovere da Paper II in fase di trimming.
 
-### I.5 Finalizzazione
+### I.5 Finalizzazione — ✅ PARZIALE (README+verifica fatti; trimming opzionale)
+- [x] README: sezione two-paper split + mappa script Paper I/II (commit 4f61e4d).
+- [x] Verifica finale: Paper I 38pp / Paper II 55pp, **0 undefined, 0 overfull>80** in entrambi.
+- [ ] (opzionale) Trimming Paper II 55→30-40pp: rimuovere overlap Vaidya nelle appendici (fig:vaidya-kerra0,
+      verifmin, vaidya-bounce, vaidya-timing, vaidya-offshell + prose che li referenzia → ritargeting/rimozione),
+      condensare parte Vaidya di App B, tabella script-map per-paper (ora lista tutti gli script).
 - [ ] **Aggiornare `README.md`**: sezione "quale script per quale paper" — mappa directory/script a
       Paper I vs Paper II, così chi riproduce sa dove guardare. Mappatura proposta:
       * **Paper I** (rail/Kodama/Vaidya sferico): `FLRWmetric/`, `VaidyaMetric/` + fondamenta control-theory
