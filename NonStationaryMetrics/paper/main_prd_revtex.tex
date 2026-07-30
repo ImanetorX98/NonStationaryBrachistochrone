@@ -314,6 +314,87 @@ deformations, each switching on one further phenomenon.
     \label{fig:indicatrici}
 \end{figure}
 
+\subsection{Existence, normality, and global optimality}
+\label{sec:control-foundations}
+The Pontryagin reduction above supplies only \emph{necessary} conditions. We
+record here the three complementary facts that make the constrained problem well
+posed for the non-stationary rail: an existence theorem for the minimizer, the
+normality of every regular extremal (so the reduction $-u\cdot W=\Ehat$ is never
+vacuous), and a Hamilton--Jacobi certificate that upgrades a saturated extremal to
+a \emph{global} optimum. All three are elementary under the standing hypothesis
+that the indicatrix is a compact, uniformly convex oval [Eq.~\eqref{eq:ellipse}].
+
+\paragraph{Existence (direct method).} Let the spatial arc range over a compact,
+regular domain $\Omega$ on which the rail one-form and the metric are smooth and
+the arrival-time indicatrix obeys the uniform two-sided bound
+\begin{equation}
+  \rho\,|v| \le F(x,v) \le R\,|v|, \qquad 0<\rho\le R<\infty,
+  \label{eq:coercive}
+\end{equation}
+with $\rho,R$ the inradius and circumradius of the oval. Then the arrival time
+$T[\gamma]=\int F(\gamma,\dot\gamma)\,\dd\sigma$ attains its infimum in the class
+of Lipschitz arcs joining the fixed endpoints. The left inequality gives
+coercivity and a uniform Lipschitz---hence, by Arzel\`a--Ascoli, uniformly
+convergent---minimizing sequence; convexity of $F$ in $v$ gives sequential lower
+semicontinuity (Tonelli); and the non-autonomous coupling to the evolution
+parameter $s$ (through $m(v)$ or $A(\eta)$) is controlled by ODE stability and a
+Gr\"onwall estimate, so the limit arc is admissible and minimizing. The two-sided
+bound~\eqref{eq:coercive} fails exactly at the freezing/horizon surfaces, where
+$\rho\to0$ and the fuel budget of Sec.~\ref{sec:indicatrix} diverges; the theorem
+therefore applies on any compact subdomain bounded away from them.
+
+\paragraph{Normality.} Every regular minimizer is a \emph{normal} extremal---the
+abnormal multiplier $p_0$ cannot vanish. If $p_0=0$ the maximized Hamiltonian
+would read $\max_v p\cdot v=0$ with $p\neq0$; but the support function of the oval
+obeys $h(p)=\max_{v\in\partial B}p\cdot v\ge\rho\,|p|>0$, a contradiction. Hence
+$p_0$ normalizes to $-1$, the costate $p$ never vanishes, and the reduction to the
+branch Hamiltonian $H=\max_\theta p\cdot\dot x(\theta)$ together with the rail
+invariant $-u\cdot W=\Ehat$ is legitimate along the entire extremal. This is the
+control-theoretic content of ``excluding $p=0$'' used in the Pontryagin reduction
+of Sec.~\ref{sec:indicatrix}: nontriviality is not an assumption but a consequence
+of $\rho>0$.
+
+\paragraph{Global optimality (Hamilton--Jacobi certificate).} The maximum
+principle is necessary but not sufficient: a PMP extremal is guaranteed only
+\emph{locally} optimal. A sufficient global certificate comes from dynamic
+programming. If $V(x)$ is a Lipschitz viscosity subsolution of the stationary
+Hamilton--Jacobi--Bellman (eikonal) equation
+\begin{equation}
+  F^\ast\big(x,\nabla V(x)\big)=1
+  \label{eq:hjb}
+\end{equation}
+(with $F^\ast$ the dual/optical norm and the correct boundary datum), and a
+candidate extremal \emph{saturates} it---$\nabla V\cdot\dot x=F(x,\dot x)$
+pointwise along the arc---then that extremal realizes the value function and is a
+\emph{global} minimizer. Building $V$ from the closed-form optical (Randers)
+metric of Secs.~\ref{sec:vaidya}--\ref{sec:thakurta} certifies the closed-form
+arcs globally on any region carrying a single-valued $V$; where $V$ turns
+multivalued the certificate localizes, as follows.
+
+\paragraph{Conjugate points, Maxwell set, cut locus.} Two mechanisms end
+optimality. A \emph{conjugate point} (Jacobi) ends \emph{local} minimality when
+the second variation degenerates; up to the first conjugate point the extremal is
+a strict local minimum. A \emph{Maxwell point}---two distinct extremals of equal
+arrival time---ends \emph{global} minimality earlier and is exactly a shock
+(gradient discontinuity) of $V$, i.e.\ a point of the cut locus. Strict convexity
+of the indicatrix removes Filippov relaxation but does \emph{not} exclude Maxwell
+points: distinct windings past the rotation axis, or the two $\pm J$ arcs reaching
+a common target, can tie. Our closed forms are certified between the launch point
+and the first such singularity of $V$; beyond it the global optimum is selected by
+comparing arrival times across the competing extremals.
+
+\paragraph{What is \emph{not} claimed inside the ergosphere.} Where the Killing
+selector $\xi$ becomes spacelike---inside the ergosphere---the invariant
+$-u\cdot\xi=\Ehat$ no longer bounds a timelike-future cost and the indicatrix oval
+degenerates: the closed-form $\varphi(r)$ continued through $\re$
+(Sec.~\ref{sec:trichotomy}) is a genuine \emph{analytic continuation} of the
+extremal, not a certified physical minimum. The existence and Hamilton--Jacobi
+statements above are asserted only outside the ergosphere, on the region where $F$
+is a bona fide convex indicatrix; inside, a spacelike (Kodama-type) selector would
+be needed to restore a timelike cost, which we do not develop. Freezing (where
+$\rho\to0$), turning (where a semi-axis vanishes), and the separatrix (a double
+root of the radical) are distinct degeneracies and are not conflated.
+
 \subsection{Selecting $W$: the Killing--CKV--Kodama hierarchy}
 \label{sec:whierarchy}
 The selector $W$ is fixed by a hierarchy of decreasing symmetry, each level
