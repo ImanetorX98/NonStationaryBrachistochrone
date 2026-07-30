@@ -590,27 +590,30 @@ path, so the turning point \emph{anticipates future accretion}
 (Fig.~\ref{fig:vaidya-traj}).
 
 \paragraph{Branch costate vs mechanical angular momentum.} The conserved $J=p_\varphi$
-is, in the first instance, the Noether \emph{costate} of the reduced control
-Hamiltonian, not a priori the spacetime angular momentum $g(u,\partial_\varphi)$: for
-an accelerated (rail-constrained) worldline the two need not coincide. They do coincide
-here because $\partial_\varphi$ is a Killing vector of \emph{both} the metric and the
-control problem, so Noether's theorem for the control symmetry returns the mechanical
-momentum. The Legendre map $\dot x\!\leftrightarrow\!p$ is, however,
-\emph{branch-specific}---the $t$-, $\tau$- and $\eta$-costs carry different cost
-one-forms---so the numerical value of the conserved costate differs by branch: the
-native $v/t$ value is $J$, while the proper-time branch carries
-$\tilde p_\varphi=J-A^2b/\Ehat$ (the shift is the frame-drag term of the second-kind
-clock). In Thakurta--Kerr the mechanical identity $g^{\rm TK}(u,\partial_\varphi)=J$
-holds, and the conformal weight $u^{\rm TK}=u^{\rm Kerr}/A$ makes
-$J_{\rm eff}=J/A=g^{\rm Kerr}(u^{\rm Kerr},\partial_\varphi)$ the Kerr-frame,
-unit-mass charge [Eq.~\eqref{eq:phi-adiab}\,ff.]. We therefore reserve
-``angular momentum'' for the mechanical $g(u,\partial_\varphi)$ and call $J$ the
-branch costate where the distinction matters. The stationary Finsler function makes
-this concrete: solving the rail with the mass shell (Eq.~\eqref{eq:perlick-randers})
-gives a Randers metric whose conserved $\varphi$-costate is precisely $J$---distinct
-from the mechanical $g(u,\partial_\varphi)$ off a geodesic, and conformally
-\emph{invariant}, so that $J_{\rm eff}=J/A$ is the optical rescaling
-$P_\varphi=p_\varphi/A$ rather than a scaling of the costate itself.
+is the Noether \emph{costate} of the reduced control Hamiltonian---the canonical
+momentum conjugate to $\varphi$ in the arrival-time problem---\emph{not} the spacetime
+angular momentum $L_{\rm mech}=g(u,\partial_\varphi)$. Although $\partial_\varphi$ is a
+Killing vector, Noether's theorem for the \emph{control} symmetry returns the control
+costate, not the mechanical momentum: along a forced (rail-constrained, accelerated)
+worldline $L_{\rm mech}$ is \emph{not} conserved, since
+$\dd L_{\rm mech}/\dd\tau=a\cdot\partial_\varphi\neq0$. The two are therefore distinct
+objects. On the native Vaidya $v$-branch shell the Legendre map gives the exact
+relation
+\begin{equation}
+    L_{\rm mech}=r^2 u^\varphi=\frac{\Ehat^2-f(r)}{\Ehat}\,J,
+    \label{eq:costate-mech}
+\end{equation}
+which varies with $r$ while $J$ stays constant (they agree only at the isolated radius
+$f=\Ehat^2-\Ehat$); verified from the indicatrix~\eqref{eq:vaidya-ind}. The Legendre
+map is moreover \emph{branch-specific}---the $t$-, $\tau$- and $\eta$-costs carry
+different cost one-forms---so the conserved costate differs by branch: the native
+$v/t$ value is $J$, while the proper-time branch carries
+$\tilde p_\varphi=J-A^2b/\Ehat$ (the frame-drag shift of the second-kind clock). We
+therefore reserve ``angular momentum'' for the mechanical $g(u,\partial_\varphi)$
+throughout and call $J$ the branch costate. The optical rescaling
+$J_{\rm eff}=J/A=P_\varphi=p_\varphi/A$ is a normalization of the \emph{costate}
+(conformal weight $A^{-1}$), \emph{not} the Kerr-frame mechanical momentum; the
+conserved datum is $J$, and $L_{\rm mech}$ is a derived, non-conserved quantity.
 
 \begin{figure}[ht]
     \centering
