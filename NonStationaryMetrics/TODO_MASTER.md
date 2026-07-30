@@ -295,6 +295,22 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
 - [ ] Recuperare eventuali risultati riusati tra i due paper con citazione incrociata (Paper I ↔ Paper II).
 - Nota: 4.2/4.3/4.4 = lacune reali in pezzi aggiunti da me (rigore, non invalidano i numerici).
 
+## J. Ristrutturazione teorema-applicazione Paper I/II — dettaglio in `RESTRUCTURE_MEMO.md`
+Principio: Paper I DIMOSTRA (formalismo+FLRW+Vaidya, teoremi I.1–I.6 numerati); Paper II CITA e applica
+(TK + corollari), niente ridimostrazioni/duplicazioni. Ordine esecuzione (§9 del memo):
+- [ ] 1. Numerare I.1–I.6 in Paper I (PMP, esistenza/normalità, HJB, riduzione polinomiale, first-order,
+      double-root lemma).
+- [ ] 2. Riscrivere intro Paper II citando I.1–I.6.
+- [ ] 3. Rifondere App C: generale in I; II solo dilatazione conforme ("By Theorem I.5...").
+- [ ] 4. Rifondere App B per metrica (Vaidya J_deg in I; separatrici TK in II).
+- [ ] 5. Paper II §3.5 breathing → applicazione conforme (teorema 3-geometrie resta in I).
+- [ ] 6. Scindere tabelle coeff/script/verifiche (I solo Vaidya, II solo TK).
+- [ ] 7. Figure: togliere Vaidya da II, TK da I.
+- [ ] 8. Ladder completa solo in I; II frase + riga TK.
+- [ ] 9. Aggiornare cross-reference dopo i tagli.
+- [ ] 10. Lettura incrociata finale (ogni risultato II ha dipendenza esplicita o prova nuova).
+- Testi modello §7 per aperture Paper II già in `RESTRUCTURE_MEMO.md`.
+
 ---
 ### Riferimenti
 - Referee: `REFEREE_REPORT_CURRENT_2026-07-22.md` (13 issue)
