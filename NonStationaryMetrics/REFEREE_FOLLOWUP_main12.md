@@ -18,26 +18,29 @@ Abstract dice off-shell "assembled in closed form on all four branches"; Table 1
   theta-divisor). → **Opzione 1 del referee** (assembly completo; solo naming/
   single-valued completion/irriducibilità/basi aperti). Table 1 va allineata all'abstract.
 
-## §10 — Azioni raccomandate (8)
-1. [ ] Eliminare contraddizione abstract/status vs Table 1 sull'assembly off-shell. (§2)
-2. [ ] Dire esplicitamente che la formula first-order completa è uniformemente valida
-   solo su sub-archi regolari con `H_Pr≠0` (al turning point `H_Pr=dr/ds=0` → non uniforme).
-3. [ ] Aggiungere sottosezione con le CONVENZIONI di curva: base point, sheet, cuts,
-   orientamento path, costanti additive per ogni `U_k`, `W_kj`, e ogni lettera di 3ª specie.
-4. [ ] Chiarire quali ingredienti sono ricostruibili dal solo PDF vs quali richiedono
-   il repository (in particolare la q-series theta-nome + normalizzazione, da stampare per intero).
-5. [ ] Aggiungere la correzione fixed-endpoint `J_1 = −δΦ_dyn/∂_J Φ_0` (da
-   `J=J_0+εJ_1+O(ε²)`), OPPURE dichiarare che le formule attuali sono fixed-charge/same-launch.
-6. [ ] Separare "correzione adiabatica ISTANTANEA alla separatrice" da "crossing dinamico/
-   long-time following di una separatrice in movimento" (§6.3: non stabilito; serve inner
-   problem di Neishtadt + jump/capture law + matched asymptotics). Già abbiamo il linguaggio
-   separatrix-crossing — verificare che i due siano distinti chiaramente.
-7. [ ] Presentare η (tempo conforme) come la rappresentazione CANONICA del ramo di ARRIVO
-   di Thakurta–Kerr (NON una terza famiglia spaziale indipendente: `dt=A(η)dη`, monotono ⟹
-   `argmin η_f = argmin t_f`, stesso path). τ = ramo proper-time genuinamente distinto.
-8. [ ] NON introdurre un tempo t "alla Schwarzschild" come terzo clock canonico in Vaidya
-   (t non canonico quando `m=m(v)`: il tortoise `r_*` dipende da v). Trattare u (retarded)
-   come problema outgoing-Vaidya SEPARATO (geometria/Hamiltoniane/costati/endpoint diversi).
+## §10 — Azioni raccomandate (8) — ✅ TUTTE INDIRIZZATE
+1. [x] Contraddizione abstract/status vs Table 1 RISOLTA (opzione 1): off-shell assemblato
+   come depth-two iterated Abelian integrals + elementare su 4 branch; solo naming deferito.
+   Abstract + intro + riga Table 1 allineati (main+PRD). Commit bc2b85c.
+2. [x] Validità uniforme solo su sub-archi regolari `H_Pr≠0` GIÀ presente (main 1405-1406 /
+   PRD 1213: "reduction holds on compact sub-arcs bounded away from the turning point").
+3. [x] Convenzioni di curva: paragrafo "Curve conventions (fixed once for all letters)" in
+   App. (main+PRD): sheet `√S>0` arco esterno, cuts tra radici reali, base point `r_0` +
+   orientamento crescente-r, costanti additive pinnate a riferimento regolare (cancellano in δφ).
+   Commit b225b9e.
+4. [x] PDF-solo vs repository: paragrafo "What is reconstructible from the text alone" (main) /
+   "Reconstructibility" (PRD): testo fissa tutto l'algebrico + la FORMA della lettera genus-2 +
+   q-series genus-1; i NUMERI genus-2 (τ, Siegel, nome series) via Sage/abelfunctions. Commit b225b9e.
+5. [x] Fixed-charge/fixed-endpoint: paragrafo "Fixed-charge versus fixed-endpoint" + eq
+   `J_1=−δφ_dyn/∂_J φ_0` (eq:J1-fixedendpoint) in main; versione condensata PRD. Commit 7c57bc8.
+6. [x] Istantanea vs crossing GIÀ separate (main 1971-1989): "instantaneous, local first-order
+   statement about the neighbourhood of the separatrix" vs "long-time separatrix-following";
+   periodo radiale diverge, ipotesi adiabatica degrada, Neishtadt crossing "beyond first order".
+7. [x] η = rappresentazione canonica del ramo di ARRIVO (non terza famiglia): `dt=A(η)dη`
+   monotono ⟹ `argmin t_f=argmin η_f`; τ distinto; Vaidya nativo = v. main+PRD. Commit 7c57bc8.
+8. [x] Vaidya: clock canonici = v (advanced null, Kodama `K=∂_v`) + τ; il t del confronto di
+   profondità è il t frozen (Schwarzschild-like), NON canonico sotto `m=m(v)`; u (retarded) =
+   problema outgoing-Vaidya SEPARATO. main+PRD (+ 700-712 già presente). Commit b225b9e.
 
 ## §3-5 — Ricostruibilità (verdetti, per riferimento)
 - Frozen brachistochrones: ricostruibili (Hamiltoniana/integrando + radicale spettrale + numeratore).
