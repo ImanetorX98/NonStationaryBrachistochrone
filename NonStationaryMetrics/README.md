@@ -20,6 +20,29 @@ independently in Mathematica** (`paper/crosscheck_*.wl`).
 
 ---
 
+## Two companion papers (split)
+
+The manuscript is split into two companion papers that share this reproducibility
+package. The combined master (`paper/main.tex`, iopart/CQG; `paper/main_prd_revtex.tex`,
+PRD) is retained as the reference version.
+
+- **Paper I** — *Controlled-rail brachistochrones in non-stationary spacetimes: conformal
+  symmetry, Kodama energy, and Vaidya dynamics* (`paper1/paper1.tex`). Spherically
+  symmetric sector: the controlled-rail foundations, FLRW, and Vaidya.
+- **Paper II** — *Brachistochrones in conformal Kerr spacetimes: ergosphere trichotomy,
+  separatrices, and adiabatic response* (`paper2/paper2.tex`). Axisymmetric sector:
+  Thakurta–Kerr. Its control-theory foundations are cited from Paper I.
+
+### Which scripts belong to which paper
+
+| Paper | Directories / representative scripts |
+|---|---|
+| **Paper I** (rail / Kodama / Vaidya, spherical) | `FLRWmetric/`, `VaidyaMetric/`; shared control-theory checks `KerrSessionScripts/perlick_equivalence*.py`; `VaidyaMetric/costate_vs_mechanical.py`, `VaidyaMetric/universal_SD_source_vaidya.py` |
+| **Paper II** (Thakurta–Kerr, axisymmetric) | `ThakurtaMetric/`, `KerrSessionScripts/` (genus-2 closure), `../KerrMetric/`, `../KerrScripts/`; `ThakurtaMetric/eta_brachistochrone_check.py`, `ThakurtaMetric/canonical_dilation_check.py`, `ThakurtaMetric/universal_SD_source_check.py` |
+| **Shared** | `paper/` (master + `crosscheck_*.wl`), `PaperFigures/`, `run_regression.py`, `requirements-lock.txt`, `paper_style.py`, `VERIFICATION_STATUS.md` |
+
+---
+
 ## Layout
 
 | Path | Contents |
