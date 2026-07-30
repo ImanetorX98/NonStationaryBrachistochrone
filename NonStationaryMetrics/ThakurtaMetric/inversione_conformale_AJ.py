@@ -127,7 +127,7 @@ ax.text(9, 1.05, 'blue: $t$ deeper', fontsize=6.5, color='magenta',
         fontweight='bold')
 ax.text(24, 1.42, 'red:\n$\\tau$ deeper', fontsize=6.5, color='darkred',
         ha='center', fontweight='bold')
-ax.set_xlabel('$J$ (particle angular momentum)')
+ax.set_xlabel('$J$ (axial control costate)')
 ax.set_ylabel('$A$ (conformal factor)')
 ax.set_xlim(J_g[0], J_g[-1])
 ax.set_ylim(A_g[0], A_g[-1])

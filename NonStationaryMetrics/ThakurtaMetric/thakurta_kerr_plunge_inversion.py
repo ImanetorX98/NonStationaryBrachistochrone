@@ -231,7 +231,7 @@ axa.text(0.42, 1.32, 'CAPTURE\n$r_{\\min}=2M$', fontsize=6.5,
          color='darkorange', ha='center', va='center', fontweight='bold')
 axa.text(2.3, 0.85, 'SCATTER\n(smooth periapsis)', fontsize=6.5,
          color='k', ha='center', va='center')
-axa.set_xlabel('$J$ (particle angular momentum)')
+axa.set_xlabel('$J$ (axial control costate)')
 axa.set_ylabel('$A$ (conformal factor)')
 axa.set_xlim(J_g[0], J_g[-1])
 axa.set_ylim(A_g[0], A_g[-1])
@@ -247,7 +247,7 @@ plt.colorbar(im2, ax=axb,
              label='non-adiab. shift $(r_{\\min}-r_{qs})/r_{qs}$ [%]')
 axb.plot(s_n * A_ax**2 / E_n, A_ax, 'c--', lw=2.0,
          label='separatrix $J_c(A_0)$')
-axb.set_xlabel('$J$ (particle angular momentum)')
+axb.set_xlabel('$J$ (axial control costate)')
 axb.set_ylabel('$A_0$ at launch')
 axb.set_xlim(J_g3[0], J_g3[-1])
 axb.set_title(f'Dynamic ($a=-1/H\\eta$, $H={H_c}$): freezing decel.\n'

@@ -237,7 +237,7 @@ axa.plot(Jr_1, a_c, 'w--', lw=1.4,
          label='analytic $\\rho(r_*)^2 = H_{t0}/H_{\\tau 0}$')
 axa.plot(J_ode_pts, a_pts, 'o', mfc='none', mec='lime', ms=6, mew=1.3,
          label='$\\Delta r=0$ numerical (ODE bisection)')
-axa.set_xlabel('$J$ (particle angular momentum)')
+axa.set_xlabel('$J$ (axial control costate)')
 axa.set_ylabel('$a$ (TK spin)')
 axa.set_title(f'Kerr ($A=1$, $E={E_n}$, $r_0={r0}$, $p_r={pr0}$):\n'
               'colormap + black contour = PURE ODE; '

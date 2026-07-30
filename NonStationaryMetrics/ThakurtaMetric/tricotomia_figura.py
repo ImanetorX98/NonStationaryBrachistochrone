@@ -105,7 +105,7 @@ a1.annotate(f'$J_{{neg}}^{{\\tau}}=-sA^2/\\hat E={-Jc:.2f}$', (-Jc, 4.2),
 a1.annotate(r'$J_{neg}^{t}\approx-8.05$', (-8.05, 2.0), fontsize=6,
             color='C0', xytext=(-10.5, 4.0),
             arrowprops=dict(arrowstyle='->', lw=0.5, color='C0'))
-a1.set_xlabel('$J$ (particle angular momentum; $J<0$ = retrograde)')
+a1.set_xlabel('$J$ (axial control costate; $J<0$ = retrograde)')
 a1.set_ylabel('$r_{\\min}$ reached')
 a1.set_ylim(1.8, 8.2)
 a1.set_title('Capture reaches $r_e$ for a BAND of $J$, incl. negative:\n'
