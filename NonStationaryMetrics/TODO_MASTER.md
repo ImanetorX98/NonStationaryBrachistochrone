@@ -113,20 +113,29 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       dilatazione (E,J)→(E/A,J/A), verificare se sottrae il polo 34.75; OPPURE analisi di strato limite
       (matched asymptotics inner/outer alla separatrice). Vaidya immune (r_d off-path).
 
-## D. Fisica/classificazione (referee Issues 3,4,5)
-- [~] **MAJOR(3)** — notazione soglie: tabella autoritativa FATTA (`separatrix_notation_table.md`,
-      `separatrix_classification.py`). RESTA propagazione al testo (7.0266→J_deg righe ~737/1829; disambig \Jc).
-- [~] **MAJOR(4)** — Vaidya USCENTE: segno FIXATO (differenza=2A, somma=2B=fallimento antisimmetria) +
-      clock uscente DERIVATO (`du/dr=dv/dr−2dr_*/dr`, 2.2e-16); nomenclatura accr=ingoing/evap=outgoing.
-      `vaidya_asymmetry_fix.md`, commit aa56992. **PROPAGATO al paper** (main.tex+PRD: differenza=2A, deviazione=2B; commit segue). RESTA: scan fisico no-inversion outgoing su classe compatta.
-      [ex] correggere
-      il segno `δ_accr−δ_evap=2qA` (non `2qB`); no "evaporazione" per `m'<0` in chart ingoing
-- [~] **MAJOR(5)** — Lemma B: status onesto documentato (`issue5_lemmaB_status.md`): Lemma A provato,
-      Lemma B parziale→CONDIZIONALE. RESTA propagazione testo (condizionale, no "never", no ratio puntuale).
-- [ ] **MAJOR(7)** — genus-2 Kronecker–Eisenstein: definire la classe o declassare a "integrali abeliani
-      iterati depth-2"; rank-5 come evidenza numerica; allineare Mathematica/Sage con VERIFICATION_STATUS.md
-- [ ] Nomenclatura orizzonte/ergosfera: TK = oggetto compatto non BH; `Δ=0` = superficie null seme Kerr
-      (vedi memoria thakurta-kerr-not-black-hole)
+## D. Fisica/classificazione (referee Issues 3,4,5,7) — ✅ CHIUSO (propagato ai paper; frontiere deferite esplicite)
+- [x] **MAJOR(3)** — notazione soglie: tabella autoritativa (`separatrix_notation_table.md`,
+      `separatrix_classification.py`) + PROPAGATO. `J_deg=7.0266, r_d=−3.3637` (radice NEGATIVA =
+      degenerazione algebrica) etichettato J_deg ovunque in main (850,1948) + PRD (763), disambiguato dalla
+      soglia dinamica `J_c(v₀)` ("must not be conflated"), interpretazione capture/escape rimossa. Nessun
+      `\Jc=7`/"separatrice 7.0266" residuo. `\Jc` restante = solo la marginale τ `a/E` (significato unico).
+- [x] **MAJOR(4)** — Vaidya USCENTE: segno FIXATO + PROPAGATO (main+PRD): `2A_∞=17.455` (differenza fisica),
+      `2B_hor=12.225` (deviazione antisimmetria); clock uscente DERIVATO (`du/dr=dv/dr−2dr_*/dr`, 2.2e-16);
+      nomenclatura accr=ingoing/evap=outgoing. `vaidya_asymmetry_fix.md`, commit aa56992. Inversione
+      evaporativa esplicitamente SCOPED al livello frozen-clock; BVP outgoing completo + scan fisico
+      no-inversion outgoing DEFERITI in-testo (§685-712 main / 643-665 PRD), non rivendicati (onesto).
+- [x] **MAJOR(5)** — Lemma B: PROPAGATO (`issue5_lemmaB_status.md`). Lemma A provato in chiuso;
+      Lemma B **condizionale/tiered** (chiuso per grazing/quarter `r₀≤R_*(E)` + asintotico statico +
+      interval-arithmetic certificato a r₀=10M + congettura in generale, aperta a `r_pk` trascendente);
+      rapporto `n_t/n_τ=E/f` "necessary but not sufficient" (no più "prova"); no "never" non qualificato.
+      main 1792-1837 / PRD 1538-1590; Table protocollo con footnote necessary-not-sufficient.
+- [x] **MAJOR(7)** — genus-2: DECLASSATO a "depth-two iterated Abelian integrals" + "hyperelliptic-dilog
+      class conjecturally irreducible"; rank-5 = evidenza numerica; Table 1 tiered proved/machine-certified/
+      conjectural; higher-genus polylog framework "deferred". main (68,75,841,159) + PRD (82,1107,1206).
+      VERIFICATION_STATUS.md allineato (SYM/NUM/SAGE + WL Mathematica cross-check indipendente).
+- [x] Nomenclatura orizzonte/ergosfera: TK = "conformal rotating compact object" (§977 main / 819 PRD);
+      `Δ=0` = "seed Kerr null surface" (non orizzonte); linguaggio BH/orizzonte solo per Vaidya.
+      Coerente con memoria thakurta-kerr-not-black-hole.
 
 ## E. Editoriale/bibliografia/riproducibilità (main11 sec.8-9) — MINOR — ✅ CHIUSO (salvo Zenodo DOI, blocco esterno)
 - [x] Rinominare Eq (32)/(38)/(51), titolo App. B (on-shell), caption Fig. 10/14 — AUDIT COMPLETO.
