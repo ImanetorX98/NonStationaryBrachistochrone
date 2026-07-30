@@ -259,12 +259,13 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
 - [ ] Nota: 55pp è ancora sopra il target 30-40pp (main15) — trimming opzionale in polish (App A residui,
       overlap Vaidya nelle appendici, §5.1 già rimossa).
 
-### I.3 Interventi strutturali durante lo split (main15 §5.1-5.2, tabella §4)
-- [ ] **Rimuovere/isolare §5.1** (quasi-costanti off-equatoriali, theta/p_theta/Carter, sorgente O(a²)):
-      NON trasferirla in Paper I; conservare gli script nel repo come materiale per articolo futuro 3D.
-- [x] Ridurre remark thrust/fuel (già fatto nel master, commit 87de08c) — verificare che passi nei due paper.
-- [ ] Fondamenta condivise (rail formalism, gerarchia W, esistenza/normalità/HJB, equivalenza Perlick):
-      collocate in Paper I come framework generale, richiamate da Paper II.
+### I.3 Interventi strutturali durante lo split — ✅ FATTO (commit e1be126)
+- [x] **§5.1 rimossa/isolata**: esclusa dal body di Paper II (I.2); paragrafo appendice off-equatoriale
+      "Closed toroidal averages" (p_θ/inclinazione) rimosso dall'App A di Paper II. Script conservati nel
+      repo come materiale futuro 3D. I 3 paragrafi equatoriali (Kerr constants, rotational inversion,
+      conformal trichotomy) tenuti in Paper II.
+- [x] Remark thrust/fuel ridotto (master 87de08c) — presente ridotto in Paper I, verificato.
+- [x] Fondamenta condivise in Paper I, richiamate da Paper II (18 rimandi al companion). ✓
 
 ### I.4 Polish figure/caption residuo (durante lo split)
 - [ ] Caption A6-A10: "numerical evidence / robustness scan" non "proof"; A9 specificare norma residuo
