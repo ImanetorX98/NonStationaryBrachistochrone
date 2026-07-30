@@ -2376,15 +2376,21 @@ $\Theta\equiv E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}
 (Thakurta--Kerr), $\Theta\equiv m\partial_m$ (Vaidya), since $\dd E_{\rm eff}/\dd
 s=-\varepsilon E_{\rm eff}$ etc.\ ($\dd m/\dd s=+\varepsilon m$).
 
-\paragraph{The conformal rescaling carries a dilation term.}
+\paragraph{The conformal rescaling: canonical derivation of the dilation term.}
 The Thakurta--Kerr Hamiltonians factorize as $H_{\rm br}=A\,\bar H(r,P_r,J_{\rm
-eff};E_{\rm eff})$ with the \emph{normalized} momentum $P_r=p_r/A$. Since $P_r=p_r/A$ is
-a \emph{time-dependent} canonical transformation, the physical canonical flow carries its
-generator: with $\alpha=A_{,s}/A=\varepsilon+O(\varepsilon^2)$,
-$\dd P_r/\dd s=-\bar H_r-\alpha P_r$ (and $\dd E_{\rm eff}/\dd s=-\alpha E_{\rm eff}$,
-$\dd J_{\rm eff}/\dd s=-\alpha J_{\rm eff}$). Hence the shell-departure rate is the
-\emph{full} Euler operator $\mathcal D=\Theta+P_r\partial_{P_r}$, and the
-terminally-anchored source is
+eff};E_{\rm eff})$ with the \emph{normalized} momentum $P_r=p_r/A$. We derive the flow in
+the \emph{original} canonical variables $(r,p_r)$: with $\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$,
+the canonical equations give $\dd p_r/\dd s=-\partial_r H_{\rm br}$. The rescaling
+$P_r=p_r/A$ is \emph{not} canonical ($\dd r\wedge\dd p_r=A\,\dd r\wedge\dd P_r$ at fixed
+$A$): it is a time-dependent (conformally symplectic) normalization. Its chain-rule
+derivative along the canonical flow gives (with $\alpha=A_{,s}/A=\varepsilon+O(\varepsilon^2)$,
+$\partial_r H_{\rm br}|_{p_r}=A\bar H_r|_{P_r}$) $\dd P_r/\dd s=A^{-1}\dd p_r/\dd s-\alpha
+P_r=-\bar H_r-\alpha P_r$ (and $\dd E_{\rm eff}/\dd s=-\alpha E_{\rm eff}$, $\dd J_{\rm
+eff}/\dd s=-\alpha J_{\rm eff}$)---an identity, verified symbolically
+(\texttt{canonical\_dilation\_check.py}). The $-\alpha P_r$ term is thus a consequence of
+the canonical flow, not a canonical transformation; the normalized system is non-canonical
+but equivalent. Hence the shell-departure rate is the \emph{full} Euler operator
+$\mathcal D=\Theta+P_r\partial_{P_r}$, and the terminally-anchored source is
 \begin{equation}
     S_{\mathcal D}(\lambda)=\int_0^\lambda\big(\Theta\bar H+P_r\bar H_{P_r}\big)\dd\lambda',
     \qquad \delta P_r=\frac{\lambda\,\Theta\bar H-S_{\mathcal D}}{\bar H_{P_r}},

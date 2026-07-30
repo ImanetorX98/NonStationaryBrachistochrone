@@ -1448,9 +1448,10 @@ $\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
     \label{eq:adiab-exact}
 \end{equation}
 which closes the correction to $O(\varepsilon^2)$. The source uses the \emph{full} Euler
-operator $\mathcal D$: because the conformal rescaling makes $P_r=p_r/A$ a
-time-dependent canonical transformation, the physical flow carries a dilation term
-$-\!\left(A'/A\right)P_r$, so the shell-departure rate is $\mathcal D H=\Theta
+operator $\mathcal D$: the normalization $P_r=p_r/A$ is a time-dependent (conformally
+symplectic) rescaling---\emph{not} canonical---so the canonical flow in the original
+$(r,p_r)$ carries, after passing to $P_r$, a dilation term
+$-\!\left(A'/A\right)P_r$ (App.~\ref{app:firstorder}), and the shell-departure rate is $\mathcal D H=\Theta
 H+P_r H_{P_r}$, \emph{not} $\Theta H$ alone (omitting $P_r H_{P_r}$ leaves an
 $O(\varepsilon)$ error against the true flow---this is the correction of
 App.~\ref{app:firstorder}). Here $\Theta$ differentiates only the \emph{dynamical}
@@ -2983,24 +2984,35 @@ across the turning point); the shape integrand $G_0(r)=\dd\varphi/\dd r=H_{0,J}/
 and the clock density $\dd\lambda/\dd r=1/H_{0,p_r}$, with $\lambda$ the elapsed clock
 oriented \emph{inward from the free-arrival endpoint}.
 
-\paragraph{The conformal rescaling carries a dilation term.} The Thakurta--Kerr
-Hamiltonians factorize (Eqs.~\eqref{eq:Heta}--\eqref{eq:Htau-tk}) as
+\paragraph{The conformal rescaling: canonical derivation of the dilation term.} The
+Thakurta--Kerr Hamiltonians factorize (Eqs.~\eqref{eq:Heta}--\eqref{eq:Htau-tk}) as
 $H_{\rm br}(r,p_r,p_\varphi;A)=A\,\bar H_{\rm br}(r,P_r,J_{\rm eff};E_{\rm eff})$ with the
 \emph{normalized} radial momentum $P_r=p_r/A$ (and $J_{\rm eff}=p_\varphi/A$,
-$E_{\rm eff}=\Ehat/A$). Because $P_r=p_r/A$ is a \emph{time-dependent} canonical
-transformation, the physical canonical flow in normalized variables carries its
-generator: with $\alpha\equiv A_{,s}/A=\varepsilon+O(\varepsilon^2)$,
+$E_{\rm eff}=\Ehat/A$). We derive the flow in the \emph{original} canonical variables
+$(r,p_r)$ and only then pass to $P_r$. Adjoining the slow clock $s$ with conjugate
+$p_s$, the extended Hamiltonian $\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$ generates the
+\emph{canonical} equations $\dd r/\dd s=\partial_{p_r}H_{\rm br}$,
+$\dd p_r/\dd s=-\partial_r H_{\rm br}$. The rescaling $P_r=p_r/A$ is \emph{not} itself
+canonical---at fixed $A$, $\dd r\wedge\dd p_r=A\,\dd r\wedge\dd P_r$, so it is a
+time-dependent (conformally symplectic) \emph{normalization}, not a canonical
+transformation. Its $s$-derivative along the canonical flow follows by the chain rule
+(with $\alpha\equiv A_{,s}/A=\varepsilon+O(\varepsilon^2)$ and the identity
+$\partial_r H_{\rm br}|_{p_r}=A\,\bar H_r|_{P_r}$):
 \begin{equation}
     \frac{\dd r}{\dd s}=\bar H_{P_r},\quad
-    \frac{\dd P_r}{\dd s}=-\bar H_r-\alpha P_r,\quad
+    \frac{\dd P_r}{\dd s}=\frac1A\frac{\dd p_r}{\dd s}-\frac{A_{,s}}{A}P_r
+      =-\bar H_r-\alpha P_r,\quad
     \frac{\dd E_{\rm eff}}{\dd s}=-\alpha E_{\rm eff},\quad
-    \frac{\dd J_{\rm eff}}{\dd s}=-\alpha J_{\rm eff}.
+    \frac{\dd J_{\rm eff}}{\dd s}=-\alpha J_{\rm eff},
     \label{eq:normflow}
 \end{equation}
-The $-\alpha P_r$ term is \emph{not} optional---it is the derivative of $p_r/A$---and
-integrating $E_{\rm eff},J_{\rm eff}$ as decaying while keeping $P_r'=-\bar H_r$ would
-combine two inequivalent representations. Consequently the shell-departure rate is the
-\emph{full} Euler operator
+an identity verified symbolically (\texttt{ThakurtaMetric/canonical\_dilation\_check.py}).
+The $-\alpha P_r$ term is thus a \emph{consequence} of the canonical flow in $(r,p_r)$
+together with the normalization---not an added piece, and not the generator of a
+canonical transformation; dropping it would misrepresent $\dd(p_r/A)/\dd s$. The
+normalized system~\eqref{eq:normflow} is non-canonical (conformally symplectic) but
+\emph{equivalent} to the canonical derivation. Consequently the shell-departure rate is
+the \emph{full} Euler operator
 \begin{equation}
     \frac{\dd\bar H}{\dd s}=-\alpha\,\mathcal D\bar H,\qquad
     \mathcal D\equiv\Theta+P_r\partial_{P_r}
