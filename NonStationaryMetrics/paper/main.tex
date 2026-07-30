@@ -84,8 +84,9 @@ theta/nome evaluations use Sage with \texttt{abelfunctions}.
 \section{Introduction}
 \label{sec:intro}
 % ----------------------------------------------------------------------
-The relativistic brachistochrone---the fastest constrained ``rail'' worldline
-between two events---was formulated by Perlick for stationary spacetimes
+The relativistic brachistochrone---the fastest constrained ``rail'' worldline from a
+given launch event to a fixed spatial target, at a \emph{free} value of the arrival
+clock---was formulated by Perlick for stationary spacetimes
 \cite{Perlick1991,PerlickRayOptics}, where a timelike Killing vector provides
 the conserved rail energy. It connects naturally to Fermat's principle and to
 optical (Randers--Zermelo--Finsler) geometry
@@ -223,6 +224,21 @@ the constraint $-u\cdot W=\Ehat$ to a timelike congruence (Doran/ZAMO)---would c
 the selector $W$, the indicatrix, the cost, and the Hamiltonian, and is left to
 future work; a coordinate change alone (e.g.\ to Doran variables) does not alter the
 geometric selector and hence cannot substitute for it.
+
+\paragraph{The optimal-control problem.} Precisely, the brachistochrone is the
+following time-optimal control problem. The state is the spatial position
+$x=(r,\varphi)$ carried along the worldline; the evolution parameter is the selected
+clock $s\in\{t,\tau,\eta,v\}$; the control is the unit spatial direction $\theta\in
+S^1$ of the velocity on the rail indicatrix~\eqref{eq:ellipse}, with dynamics
+$\dd x/\dd s=\dot x(\theta;x,s)$ read off that indicatrix. The boundary data are a
+\emph{fixed initial event} $(s_0,x_0)$ and a \emph{fixed spatial target} $x_f$ (a
+point, or a target set/worldline), with the arrival clock $s_f$ left \emph{free}; the
+cost is the elapsed clock $s_f-s_0$. Because $s_f$ is free, the Pontryagin
+transversality condition is $H|_{s=s_f}=0$ [Eq.~\eqref{eq:transversality}]---a free
+final-clock condition, \emph{not} a two-event condition. We accordingly reserve
+``fixed endpoints'' for the two-point boundary-value problem of Sec.~\ref{sec:bvp}, in
+which both spatial endpoints \emph{and} the arrival are prescribed; the default problem
+fixes the spatial target at a free arrival clock.
 
 \paragraph{Pontryagin reduction.} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.

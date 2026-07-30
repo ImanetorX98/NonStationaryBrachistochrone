@@ -95,8 +95,9 @@ theta/nome evaluations use Sage with \texttt{abelfunctions}.
 \section{Introduction}
 \label{sec:intro}
 % ----------------------------------------------------------------------
-The relativistic brachistochrone---the fastest constrained ``rail'' worldline
-between two events---was formulated by Perlick for stationary spacetimes
+The relativistic brachistochrone---the fastest constrained ``rail'' worldline from a
+given launch event to a fixed spatial target, at a \emph{free} value of the arrival
+clock---was formulated by Perlick for stationary spacetimes
 \cite{Perlick1991,PerlickRayOptics}, where a timelike Killing vector provides
 the conserved rail energy. It connects naturally to Fermat's principle and to
 optical (Randers--Zermelo--Finsler) geometry
@@ -216,6 +217,15 @@ inside the ergosphere. Re-anchoring the constraint to a timelike (Doran/ZAMO)
 congruence is a genuinely different, inequivalent construction (it changes $W$, the
 indicatrix, the cost and the Hamiltonian) and is left to future work; a coordinate
 change alone does not alter the geometric selector.
+
+\paragraph{The optimal-control problem.} Precisely: state $x=(r,\varphi)$; evolution
+parameter the selected clock $s\in\{t,\tau,\eta,v\}$; control the unit direction
+$\theta\in S^1$ on the indicatrix~\eqref{eq:ellipse}; boundary data a fixed initial
+event $(s_0,x_0)$ and a fixed spatial target $x_f$, with the arrival clock $s_f$
+\emph{free}; cost $s_f-s_0$. As $s_f$ is free, the transversality is $H|_{s_f}=0$
+[Eq.~\eqref{eq:transversality}], a free final-clock (not two-event) condition. We
+reserve ``fixed endpoints'' for the two-point BVP of Sec.~\ref{sec:bvp} (both spatial
+endpoints and arrival prescribed); the default fixes the spatial target at free arrival.
 
 \paragraph{Pontryagin reduction.} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.
