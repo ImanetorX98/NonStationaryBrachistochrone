@@ -779,7 +779,16 @@ horizon log), and closes by the very same
 assembly~\eqref{eq:psi-split}---$\delta\varphi_\tau/\dot m=\tfrac12\sum_{k<j}Q_{kj}
 W_{kj}-\eta(\mathcal{A}^m/\sqrt S+\tfrac12\sum c_k^m U_k)+\sum_j b_j\mathcal{I}_j$ with
 $Q_{kj}=c_k^m b_j-c_j^m b_k$, all coefficients algebraic (verified to
-$10^{-14}$). The advanced-time first-order correction
+$10^{-14}$). The two canonical clocks of the ingoing problem are therefore the
+\emph{advanced null time} $v$ (adapted to the Kodama selector $K=\partial_v$, the
+native evolution parameter) and the \emph{proper time} $\tau$; the coordinate time
+$t$ that enters the static depth comparison~\eqref{eq:vaidya-turn} is the
+\emph{frozen} Schwarzschild-like time, a comparison device valid at frozen order and
+\emph{not} a canonical non-autonomous clock---once $m=m(v)$ the tortoise
+$r_*=r+2m\ln(r-2m)$ acquires $\dd m$ terms and no Killing time survives. The retarded
+time $u=t-r_*$ of the outgoing metric is a \emph{separate} outgoing-Vaidya problem
+(its own Hamiltonians, costates, and transversality), not a third clock of the ingoing
+family. The advanced-time first-order correction
 $\delta\varphi=\dot m\!\int\!\partial_m F\,v\,\dd r$ then integrates by parts into a
 fully explicit closed form (verified to $9\times10^{-14}$, coefficients given),
 \begin{equation}
@@ -2109,6 +2118,25 @@ stationary Kerr with $E\to E_{\rm eff}=\Ehat/A$, $J\to J/A$ (spin $a$ retained).
 the instantaneous orbit shape on a Thakurta--Kerr slice; the time dependence
 enters only through $E_{\rm eff}(\eta)$ (Sec.~\ref{sec:quasiconst}).
 
+\paragraph{Curve conventions (fixed once for all letters).} Every letter
+below---the second-kind $U_k=\int r^k/\sqrt S\,\dd r$, the weight-two
+$W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$, and the third-kind letters $L,\mathcal
+D_k$---is an integral on the hyperelliptic curve $Y^2=\mathcal S(r)$ read with the
+following fixed data. \emph{(i) Sheet:} $\sqrt S>0$ on the physical outer arc
+$r>r_{\min}$, the sign flipping across each branch point, which fixes $Y$ globally by
+analytic continuation. \emph{(ii) Cuts:} along the real segments between consecutive
+real roots of $\mathcal S$, so the path stays on the physical sheet between turning
+points. \emph{(iii) Base point and orientation:} all integrals share the lower limit
+$r_0$ (the launch radius) and run with increasing $r$ toward arrival; reversing the
+orientation flips the overall sign. \emph{(iv) Additive constants:} each
+antiderivative is pinned at a regular reference---$U_k$ at $r_0$, the third-kind
+letters at the regular point $z_\infty$ (where $\mathcal S$ vanishes as $1/r$), giving
+the constants $C_{U_0},C_0$ used below---so that no spurious constant survives; these
+constants multiply the common holomorphic differential and \emph{cancel} in every
+assembled $\delta\varphi$. The same conventions apply verbatim to the separatrix
+degeneration, with $\mathcal S\to Q_4$ and the Kleinian $\sigma,\zeta$ replaced by the
+Weierstrass $\sigma,\zeta,\wp$.
+
 \paragraph{Equatorial $\tau$-branch separatrix in Weierstrass functions.} On the
 $\tau$-separatrix $J=\Jc$ the doranTau factorization $\Delta-\Jc^2 w=f(r^2+c^2)$,
 $c=a/E$, makes the
@@ -2543,9 +2571,10 @@ matching the direct double integral to $4\times10^{-15}$.
         accretion/evaporation split $\mathcal{A}_\infty,\mathcal{B}_{\rm hor}$
             & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
         \hline
-        \multicolumn{3}{l}{\emph{First-order extended-Hamiltonian correction,
-            Eq.~\eqref{eq:adiab-exact} (on-shell $+$ off-shell); paths under
-            \texttt{ThakurtaMetric/}, \texttt{VaidyaMetric/}:}}\\
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\emph{First-order
+            extended-Hamiltonian correction, Eq.~\eqref{eq:adiab-exact} (on-shell
+            $+$ off-shell); paths under \texttt{ThakurtaMetric/},
+            \texttt{VaidyaMetric/}:}}\\
         TK $t$ exact PT, $\delta\varphi$ vs true flow
             & \texttt{adiabatic\_first\_order\_exact.py} & slope $1.95$\\
         Vaidya $v$ exact PT $+$ Fig.~\ref{fig:vaidya-offshell}
@@ -2953,6 +2982,24 @@ vanishes---contributes a genuine genus-two dilogarithm (a hyperelliptic polyloga
 convergent theta-nome series supplied in the reproducibility package. Thus the on-shell
 reduction is a proved weight-one closed form, while the off-shell term additionally
 carries one irreducible genus-two dilogarithm sourced by the horizon-candidate.
+
+\paragraph{What is reconstructible from the text alone.} Everything algebraic is fixed
+by the manuscript without the repository: the frozen integrands
+$\dd\varphi/\dd r=\mathcal K/\sqrt S$ with their spectral radicals and numerators;
+the on-shell reduction (the polynomial identity $2A'S-AS'+2S\sum_k c_kr^k=2N_\lambda$
+and its $11\times11$ linear system---no fit); all block coefficients $c_k,a_k,g_i,Q_{kj}$;
+the Kleinian $\zeta,\sigma$ closed forms of $U_k,W_{jk}$ (Hermite recursion); the elementary
+remainders; and the \emph{form} of the genus-two letter
+$L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ with its odd half-characteristic
+$\delta$ and the genus-one nome series $g^{(1)}$ printed in
+Sec.~\ref{sec:closed}. What the text does \emph{not} reproduce by hand is the
+\emph{numerical evaluation} of the genus-two $\theta$: constructing the period matrix
+$\tau$ from $Y^2=\mathcal S$, its Siegel reduction, and summing the geometrically
+convergent nome series (order $N{=}4$ already to $10^{-13}$) are performed by
+\texttt{Sage}$+$\texttt{abelfunctions} (\texttt{RiemannTheta}) in the reproducibility
+package~\cite{Rosignoli2026Code}. In short: the symbolic reduction and the closed-form
+\emph{representation} are reconstructible from the PDF; the genus-two \emph{numbers}
+require the archived routine.
 
 \paragraph{Branch forms.} For the \emph{Vaidya} $v$-branch the slow datum $m$ is a metric
 modulus, \emph{not} a conformal rescaling of momenta: there is no $p_r/A$ transformation

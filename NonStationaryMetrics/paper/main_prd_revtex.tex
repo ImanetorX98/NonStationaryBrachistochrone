@@ -158,9 +158,8 @@ higher-genus-polylogarithm naming left open).
         Exact off-shell first-order term & derived $+$ verified
             & App.~\ref{app:firstorder}; Figs.~\ref{fig:phi-true-dynamic},
               \ref{fig:vaidya-offshell}\\
-        Explicit off-shell assembly $=$ depth-two iterated Abelian integrals $+$
-        elementary (four branches) & assembled $+$ verified & App.~\ref{app:firstorder};
-              canonical polylog naming deferred (row below)\\
+        Off-shell assembly $=$ depth-two Abelian integrals & assembled $+$ verified
+            & App.~\ref{app:firstorder}; naming deferred\\
         Fixed-endpoint no-inversion & proved / certified / conjectural
             & Sec.~\ref{sec:bvp}, Tab.~\ref{tab:protocol}\\
         Genus-two irreducibility \& basis dimension & conjectural
@@ -705,7 +704,12 @@ the tortoise term injecting a horizon logarithm. This is the advanced-time (nati
 branch; the \emph{proper-time} branch uses the second-kind clock
 $\dd\tau/\dd r=r^2(r-2m)/\sqrt S$ ($\eta=U_3-2m U_2$, $b=(0,0,-2m,1,0)$, no horizon
 log) and closes by the same assembly~\eqref{eq:psi-split} with $Q_{kj}=c_k^m b_j-c_j^m
-b_k$, all coefficients algebraic (verified to $10^{-14}$). The advanced-time
+b_k$, all coefficients algebraic (verified to $10^{-14}$). The canonical clocks are thus
+the advanced null time $v$ (adapted to $K=\partial_v$) and proper time $\tau$; the
+coordinate $t$ in the static depth comparison is the \emph{frozen} Schwarzschild-like
+time, not a canonical non-autonomous clock (once $m=m(v)$ the tortoise gains $\dd m$
+terms, no Killing time survives), and the retarded $u=t-r_*$ is a separate
+outgoing-Vaidya problem, not a third ingoing clock. The advanced-time
 first-order correction integrates by parts into a fully explicit closed form (verified
 to $9\times10^{-14}$),
 \begin{equation}
@@ -1730,6 +1734,25 @@ All expressions below are at \emph{constant (frozen) conformal factor} $A$:
 stationary Kerr with $E\to E_{\rm eff}=\Ehat/A$, $J\to J/A$ (spin $a$ retained). They give
 the instantaneous orbit shape on a Thakurta--Kerr slice; the time dependence
 enters only through $E_{\rm eff}(\eta)$ (Sec.~\ref{sec:quasiconst}).
+
+\paragraph{Curve conventions.} Every letter below---second-kind
+$U_k=\int r^k/\sqrt S\,\dd r$, weight-two $W_{jk}$, third-kind $L,\mathcal D_k$---is an
+integral on $Y^2=\mathcal S(r)$ with fixed data: $\sqrt S>0$ on the physical outer arc
+$r>r_{\min}$ (sheet), cuts along the real segments between consecutive real roots,
+common base point $r_0$ with increasing-$r$ orientation, and additive constants pinned
+at a regular reference ($U_k$ at $r_0$; the third-kind letters at $z_\infty$ where
+$\mathcal S\sim1/r$)---these constants cancel in every assembled $\delta\varphi$. The
+separatrix degeneration uses the same conventions with $\mathcal S\to Q_4$ and
+Weierstrass $\sigma,\zeta,\wp$.
+
+\paragraph{Reconstructibility.} From the text alone: the frozen integrands, the
+on-shell reduction (polynomial identity $+$ $11\times11$ linear system, no fit), all
+block coefficients, the Kleinian $\zeta,\sigma$ forms of $U_k,W_{jk}$, and the
+\emph{form} of the genus-two letter $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$.
+The genus-two \emph{numbers}---period matrix $\tau$ from $Y^2=\mathcal S$, Siegel
+reduction, and the nome series (order $N{=}4$ to $10^{-13}$)---require
+\texttt{Sage}$+$\texttt{abelfunctions} in the reproducibility
+package~\cite{Rosignoli2026Code}.
 
 \paragraph{Equatorial $\tau$-branch separatrix in Weierstrass functions.} On the
 $\tau$-separatrix $J=\Jc$ the doranTau factorization $\Delta-\Jc^2 w=f(r^2+c^2)$,
