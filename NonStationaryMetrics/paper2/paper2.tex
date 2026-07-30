@@ -100,6 +100,15 @@ true non-autonomous flow.
 \section{Thakurta--Kerr: conformal rotating compact object}
 \label{sec:thakurta}
 % ----------------------------------------------------------------------
+\paragraph{The controlled-rail formalism (from Paper I).} We use the controlled-rail
+variational problem established in the companion Paper~I. On a regular domain where the
+selector $W$ is timelike and the velocity indicatrix is smooth, compact and uniformly
+convex, minimizing the arrival clock is a time-optimal control problem whose minimizer is
+a \emph{normal} Pontryagin extremal (Paper~I, Theorem~I.1 and Theorem~I.2); the arrival
+clock is free, so the transversality is $H|_{s_f}=0$, and global optimality is certified
+by the non-autonomous Hamilton--Jacobi criterion (Paper~I, Proposition~I.3). We do not
+reprove these; we specialize the construction to the conformal Kerr geometry.
+
 Thakurta--Kerr is conformal Kerr, $g=A(\eta)^2 g_{\rm Kerr}$
 \cite{Thakurta1981,Kerr1963}, one of a family of cosmological geometries
 \cite{McVittie1933,SultanaDyer2005,Kaloper2010,NolanMcVittie1998,MelloMaciel2017,FaraoniBook}.
@@ -1944,10 +1953,16 @@ curve-specific), which the block forms above do not require.
 \clearpage
 \section{Complete first-order extended-Hamiltonian correction}
 \label{app:firstorder}
-This appendix derives Eq.~\eqref{eq:adiab-exact}---the complete first-order (on-shell
-\emph{plus} off-shell) adiabatic correction to the orbit shape---from the extended
-Hamiltonian, and specializes it to the $t$-, $\tau$- and Vaidya branches so that a
-reader can reconstruct it without the accompanying code.
+The complete first-order (on-shell \emph{plus} off-shell) adiabatic correction follows
+from Theorem~I.5 of the companion Paper~I, where it is established from the extended
+Hamiltonian in canonical variables. The new, metric-specific feature of the conformal
+Kerr application is that the normalization $P_r=p_r/A$ is time-dependent and
+\emph{non-canonical}: passing from the canonical pair $(r,p_r)$ to $P_r$ produces the
+dilation term $-(A'/A)P_r$ and the full Euler operator
+$\mathcal D=E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}}+P_r
+\partial_{P_r}$. This appendix specializes the theorem to the conformal $t$- and
+$\tau$-branches and gives the resulting Abelian reduction; the general canonical-variable
+proof and the (non-conformal) Vaidya specialization are in Paper~I.
 
 \paragraph{Notation and the slow datum.} $\Ehat$ and $J\equiv J_{\rm TK}=p_\varphi$ are
 the \emph{conserved} control charges (Kodama energy and axial costate); the effective
