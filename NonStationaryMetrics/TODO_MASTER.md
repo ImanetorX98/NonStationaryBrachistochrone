@@ -203,6 +203,20 @@ Verdetto: "major conceptual objections addressed; remaining = rigor/consistency/
       sulle estensioni. Alternativa: split subito se il combinato (74pp) è troppo lungo per il journal.
       Piano dettagliato: `PLAN_split_and_extensions.md`.
 
+## H. Technical Revision Memorandum main14 (GPT) — change-list completa in `REFEREE_MEMO_main14.md`
+Verdetto: core pubblicabile, major revision, NON splittare finché i fondamentali non sono corretti nel
+master. Ordine: P0 fondamentali → P1 armonizzazione → P2 editoriale → split in 2 paper.
+- [ ] **P0 (4)**: 4.1 problema terminale formale (clock libero+target); 4.2 HJB non-autonoma (verifica
+      sufficiente, non costruita) [mio blocco]; 4.3 costato≠meccanico, togliere "coincidono" [mio paragrafo];
+      4.4 ri-derivare App C da variabili canoniche (`P_r=p_r/A` non canonica) [mia derivazione].
+- [ ] **P1 (5)**: 4.5 definire/declassare R_*(E); 4.6 "separatrix tracking"→derivata di famiglia;
+      4.7 J_pen/J_sep/J_deg distinti ovunque (App B residui); 4.8 evaporazione fisica vs sign-flip ingoing;
+      4.9 status genus-2 peso-due (App C contraddice peso-uno).
+- [ ] **P2 editoriale**: Fig 10/9/14/20, cross-ref "App. Appendix" duplicati, tabella notazione, spostare
+      thrust/fuel, rimuovere §5.1 (o svilupparlo), conclusione in 3 blocchi, assi/residui/scala.
+- [ ] **Split** (solo dopo master corretto): Paper I rail/Kodama+Vaidya sferico; Paper II TK conforme.
+- Nota: 4.2/4.3/4.4 = lacune reali in pezzi aggiunti da me (rigore, non invalidano i numerici).
+
 ---
 ### Riferimenti
 - Referee: `REFEREE_REPORT_CURRENT_2026-07-22.md` (13 issue)
