@@ -185,11 +185,16 @@ Verdetto: "major conceptual objections addressed; remaining = rigor/consistency/
         Doc `UNIVERSAL_SD_source.md`; script `ThakurtaMetric/universal_SD_source_check.py`,
         `VaidyaMetric/universal_SD_source_vaidya.py`; commit 39afd74/7618675. Propagato: paragrafo
         "Universal form of the off-shell source" (main eq:finsler-euler/SD-conformal/SD-vaidya + PRD), commit 06bc3ca.
-  - [ ] **η-brachistocrona in TK** (frozen + adiabatica + separatrice nel gauge conforme η); confronto t/η
-        (stesso path spaziale, `dt=A dη`, ma Hamiltoniane diverse) e τ distinto. [estensione referee 4/5]
+  - [x] **η-brachistocrona in TK** — FATTA+PROPAGATA (chiude estensioni 4 E 5). `F_t=A F_η` (frozen) +
+        monotonia (`t_f=∫A dη` crescente in η_f) ⟹ frozen/adiabatica/separatrice η ≡ t (stessa curva,
+        carica rietichettata `J_t=A J_η`, verificato 7e-9); DUE famiglie ottimali (arrivo t≡η, proprio τ),
+        non tre; η = gauge conforme naturale (H_η costo unitario, `S_D=η+∫E H_E dη`). Doc
+        `eta_brachistochrone.md`, script `ThakurtaMetric/eta_brachistochrone_check.py`. Paragrafo "The
+        conformal-time (η) brachistochrone" main+PRD, commit 4aa16ea.
   - [ ] **Vaidya terzo clock** SOLO se legato a osservatori privilegiati (Kodama), non per analogia:
         esiste un tempo proprio di Kodama-osservatore con brachistocrona distinta da v e τ? [estensione 6, condizionale]
-  - [ ] Framework unificato t/τ/η-brachistocrone [estensione 5]
+  - [x] Framework unificato t/τ/η-brachistocrone [estensione 5] — chiuso insieme all'η-brachistocrona:
+        il framework unificato È "due famiglie (arrivo t≡η, proprio τ)". Vedi sopra, commit 4aa16ea.
   - [ ] Teoria generale dei **turning point in movimento** [estensione 1] + delle **separatrici adiabatiche**
         e correzioni first-order [estensione 2] (research-heavy)
 - [ ] **DECISIONE STRATEGICA — split in 2 paper** (FLRW-Vaidya sferico | TK assisimmetrico): confine fisico
