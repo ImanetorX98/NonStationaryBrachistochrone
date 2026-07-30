@@ -45,12 +45,27 @@ conformal symmetry, Kodama energy, and Vaidya dynamics}
 \ead{iman.rosignoli01@universitadipavia.it}
 
 \begin{abstract}
-\todo{Paper I abstract (<=300 words, CQG): rail invariant -u.W=Ehat via
-Pontryagin; W-hierarchy Killing -> CKV -> Kodama; FLRW degenerate base and
-Vaidya dynamical black hole (Kodama energy conserved on the rail,
-endpoint-sensitive costate memory, bounce regularization); Vaidya first-order
-adiabatic correction and the mass-function universal source S\_D=[r p\_r]-lambda.
-Status: existence/normality/HJB-verification; outgoing-Vaidya BVP left open.}
+We extend the relativistic brachistochrone---the fastest constrained rail worldline
+reaching a fixed spatial target at a free arrival clock (Perlick 1991)---from stationary
+to non-stationary, spherically symmetric spacetimes: spatially flat FLRW and the ingoing
+Vaidya dynamical black hole. The rail invariant $-u\cdot W=\Ehat$ is actively controlled
+and legitimate via Pontryagin's principle, with the selector $W$ following a hierarchy
+Killing $\to$ conformal Killing $\to$ Kodama; in Vaidya $W$ is the Kodama vector and
+$\Ehat$ its charge, conserved along the rail even where free fall is not. We establish
+the shared control-theoretic foundations---an existence and normality theorem and a
+non-autonomous Hamilton--Jacobi verification criterion---then treat FLRW (the degenerate
+base) and Vaidya in full: the plunge phenomenology (penetration, timing, and a bounce
+integrated through periapsis), the branch-intrinsic depth ordering, and the absence of an
+evaporative inversion at the frozen-clock level (the $m'<0$ ingoing continuation is
+formal; physical evaporation is the outgoing metric). The first-order adiabatic correction
+closes in a horizon dilogarithm and is verified against the true non-autonomous flow to
+$O(\varepsilon^2)$; its off-shell source admits the universal boundary form
+$S_{\mathcal D}=[\,rp_r\,]-\lambda$. \emph{Status.} The controlled-rail formulation,
+existence and normality, and the on-shell reduction are established; the full
+outgoing-Vaidya boundary-value problem remains open. The rotating Thakurta--Kerr
+case---frame dragging, ergosphere trichotomy, and genus-two closed forms---is developed
+in the companion paper. Algebraic identities are confirmed in Mathematica; the
+reproducibility package is archived at Zenodo.
 \end{abstract}
 
 \maketitle
@@ -1008,12 +1023,330 @@ paper.
 
 
 \appendix
-\section{Validation and consistency checks}
-\todo{Vaidya/shared parts of the master validation appendix.}
+\section{Reproducibility and consistency}
+\label{app:validation}
 
-\section{Explicit adiabatic forms on the genus-degeneration loci (Vaidya)}
-\todo{Vaidya J\_deg (algebraic degeneration, r\_d<0) only; NOT called a physical
-separatrix.}
+\subsection{Reproducing the reductions}
+\label{app:reproduce}
+Every coefficient in the adiabatic corrections is fixed by a \emph{single}
+polynomial identity that the reader can solve directly; nothing is fitted. The
+depth-one reduction $\partial_\lambda\varphi_0=\mathcal{A}/\sqrt S+\sum_{k=0}^4 c_k
+U_k$ [Eq.~\eqref{eq:dm-reduction}], differentiated in $r$ and
+cleared of the radical using $\partial_\lambda F=N_\lambda/S^{3/2}$, is equivalent to
+\begin{equation}
+    2\,\mathcal{A}'(r)\,S(r)-\mathcal{A}(r)\,S'(r)
+    +2\,S(r)\sum_{k=0}^4 c_k\,r^k \;=\; 2\,N_\lambda(r),
+    \qquad \mathcal{A}=\sum_{i=0}^5 a_i r^i,
+    \label{eq:reduction-identity}
+\end{equation}
+a polynomial identity of degree ten. Matching the eleven coefficients of
+$r^0,\dots,r^{10}$ gives a nonsingular $11\times11$ linear system in the eleven
+unknowns $\{a_0,\dots,a_5,c_0,\dots,c_4\}$; solving it (one call to a linear solver)
+returns the $c_k$ \emph{rationally} in the metric parameters (here $S$ stands for the
+branch radical: $S$ on the $\tau$-branch, $R_6=r\,Q_2\,DE$ on the $t$-branch). The
+numerator is $N_\lambda=EJ\,r^4(r-2M)^2 DE$ for the $\tau$-branch energy reduction
+(the horizon factor $\Delta$ cancels), $N_\lambda=R_6\,\partial_E\mathcal K
+-\tfrac12\mathcal K\,\partial_E R_6$ for the $t$-branch (with $Q_2$, $\mathcal K$ of
+the conformal $t$-branch sextic (companion paper), the $\Delta$ in $\mathcal K$ again cancelling to
+leave a degree-seven polynomial), and $N_m=S\,\partial_m K-\tfrac12K\,\partial_m S$
+for the Vaidya mass reduction. The $t$-branch clock is entirely on-curve
+(the advanced/coordinate-time clock, companion paper): its second-kind vector $b$ feeds the $W_{kj}$ of $R_6$ and
+its horizon part $R_\Delta/\Delta$ the third-kind $\ln\sigma$-quotients, with no
+double cover. Three reference solutions to check against (polynomial residual $0$
+exactly):
+\begin{table}[htbp]
+    \centering
+    \caption{Reference reduction coefficients, obtained by solving
+    Eq.~\eqref{eq:reduction-identity}, at $M{=}1$ and (Thakurta--Kerr rows)
+    $a{=}0.9,E{=}1.2,J{=}2.5$, (Vaidya row) $a{=}0,E{=}1.4,J{=}2.5$. For
+    Thakurta--Kerr the conformal drift acts through \emph{both} charges, so the source
+    is the Euler operator and the combined weight is $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$:
+    we list the energy ($\partial_E$) and angular ($\partial_J$) reductions separately;
+    Vaidya has only $\partial_m$. Decimals are shown for readability; each $c_k$ is the
+    exact rational solution of a single linear solve (residual $0$ exactly), regenerated
+    by \texttt{reproduce\_reductions.py} (exact coefficients in the reproducibility
+    package).}
+    \label{tab:reduction-ck}
+    \small
+    \begin{tabular}{lrrrrr}
+        \hline\hline
+        reduction & $c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$\\
+        \hline
+        TK $\tau$, $\partial_E$ & $-1.1575$ & $1.86406$ & $-0.57499$ & $0.02429$ & $0.07117$\\
+        TK $\tau$, $\partial_J$ & $0.18027$ & $0.06996$ & $-0.29682$ & $0.03840$ & $0.03760$\\
+        TK $t$, $\partial_E$ & $-0.39084$ & $1.72654$ & $-0.19058$ & $-0.14503$ & $-0.01676$\\
+        TK $t$, $\partial_J$ & $4.33922$ & $4.03122$ & $-0.64349$ & $-2.63600$ & $-0.64444$\\
+        Vaidya, $\partial_m$ & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
+        \hline\hline
+    \end{tabular}
+\end{table}
+
+Given the combined $C_k=\Ehat c_k^{E}+J c_k^{J}$, the weight-two
+assembly (the conformal $\psi$-split, companion paper) is mechanical: the clock supplies the vector $b$ (on
+the $\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$), the algebraic
+weights are $Q_{kj}=C_kb_j-C_jb_k$, the weight-two
+letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
+$\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
+same steps with the advanced-time clock give the fully assembled
+form~\eqref{eq:vaidya-full}; the horizon dilogarithm closes by one integration by
+parts, Eq.~\eqref{eq:horizon-dilog}. Table~\ref{tab:script-map} maps each result to
+the script in the repository~\cite{Rosignoli2026Code} that generates and verifies it;
+the first entry, \texttt{pipeline\_completa\_deltaphi.py}, runs the entire chain in one
+file---from $(M,a,E,J)$ through the $11\times11$ solve, the algebraic $c_k,b,Q_{kj}$,
+and the building blocks $U_k,W_{kj},\mathcal{I}_j$, to the assembled $\delta\varphi$,
+matching the direct double integral to $4\times10^{-15}$.
+\begin{table}[htbp]
+    \centering
+    \caption{Result-to-script map with the achieved numerical residual, so each
+    closed form can be regenerated and re-checked independently.}
+    \label{tab:script-map}
+    \small
+    \begin{tabular}{@{}p{0.47\textwidth}p{0.34\textwidth}l@{}}
+        \hline\hline
+        result & script & residual\\
+        \hline
+        \emph{end-to-end example} $(M,a,E,J)\!\to\!\delta\varphi$
+            & \texttt{pipeline\_completa\_deltaphi.py} & $4\times10^{-15}$\\
+        TK $\tau$ reduction $c_k$, $\psi=\tfrac12\Ehat\sum Q_{kj}W_{kj}$
+            & \texttt{kerr\_psi\_explicit\_verified.py} & $5\times10^{-14}$\\
+        TK $t$-branch on-curve clock \& full assembly
+            & \texttt{kerr\_tbranch\_psi\_assembly.py} & $9\times10^{-13}$\\
+        quasi-periods $\eta$; $L$ (Fay third-kind)
+            & \texttt{kerr\_quasiperiods\_bel.sage} & $10^{-12}$; $5\times10^{-8}$\\
+        Vaidya reduction $c_k^m$
+            & \texttt{vaidya\_dMF\_reduction.py} & $10^{-15}$\\
+        Vaidya clock $v$; assembled $\delta\varphi$~\eqref{eq:vaidya-full}
+            & \texttt{vaidya\_fully\_explicit.py} & $2\times10^{-13}$\\
+        Vaidya $\tau$-branch assembly
+            & \texttt{vaidya\_tau\_assembly.py} & $10^{-14}$\\
+        horizon dilogarithm $\mathcal{D}_k=U_k\ln-\mathcal{G}_k$
+            & \texttt{vaidya\_horizon\_dilog.py} & $10^{-12}$\\
+        separatrix elliptic form $U_0(\sigma,\zeta)$; $\tau$
+            & \texttt{vaidya\_ell\_dilog\_match.py} & $10^{-14}$\\
+        accretion/evaporation split $\mathcal{A}_\infty,\mathcal{B}_{\rm hor}$
+            & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
+        \hline
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\emph{First-order
+            extended-Hamiltonian correction, Eq.~\eqref{eq:adiab-exact} (on-shell
+            $+$ off-shell); paths under \texttt{ThakurtaMetric/},
+            \texttt{VaidyaMetric/}:}}\\
+        TK $t$ exact PT, $\delta\varphi$ vs true flow
+            & \texttt{adiabatic\_first\_order\_exact.py} & slope $1.95$\\
+        Vaidya $v$ exact PT $+$ Fig.~\ref{fig:vaidya-offshell}
+            & \texttt{vaidya\_first\_order\_offshell.py} & slope $2.00$\\
+        true-dynamics validation ($t,\tau$, 2 sets), Fig.~\ref{fig:vaidya-offshell}
+            & \texttt{fig\_phi\_validation\_corrected.py} & slopes $1.95$--$2.16$\\
+        \hline\hline
+    \end{tabular}
+    \\[2pt]
+    {\footnotesize SHA-256 (first 12 hex):
+    \texttt{adiabatic\_first\_order\_exact.py} $=$\,\texttt{78ab24b5373c};
+    \texttt{vaidya\_first\_order\_offshell.py} $=$\,\texttt{5dc9fe177f2f};
+    \texttt{fig\_phi\_validation\_corrected.py} $=$\,\texttt{a086a0692e8c}.}
+\end{table}
+
+\subsection{Consistency residuals}
+\label{app:residuals}
+The closed forms and reductions above were checked symbolically and numerically. The
+Kodama energy is held to $|{-}u\cdot K-\Ehat|<7\times10^{-16}$ along the Vaidya rail; the
+stationary limit $m'=0$ reproduces the closed-form Schwarzschild ($a{=}0$ Kerr) orbit to
+$10^{-12}$ (Fig.~\ref{fig:vaidya-kerra0}); each branch minimizes its own travel time,
+$t$ and $\tau$ being distinct curves (Fig.~\ref{fig:verifmin}); and the first-order
+adiabatic correction closes to $O(\varepsilon^2)$ against the true non-autonomous flow
+(Fig.~\ref{fig:vaidya-offshell}). The rotating (Thakurta--Kerr) validations---Weierstrass
+separatrix, Kerr null Fermat data, Kerr constants---are reported in the companion paper.
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_kerr_a0.png}
+    \caption{Stationary-limit check ($m'=0$): numerical orbit vs closed-form
+    Kerr $a=0$.}
+    \label{fig:vaidya-kerra0}
+\end{figure}
+
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_verifica_minimo_brachi.png}
+    \caption{Each branch minimizes its own travel time; $t$ and $\tau$ are
+    distinct curves.}
+    \label{fig:verifmin}
+\end{figure}
+
+
+
+
+
+
+
+
+
+\section{Explicit adiabatic forms on the genus-degeneration loci}
+\label{app:separatrix}
+This appendix collects in one place the fully explicit first-order adiabatic
+brachistochrone on the loci where the branch sextic acquires a double root and drops to
+genus one. For \emph{spherical} Vaidya the relevant value $J=\Jc$ is the \emph{algebraic}
+genus-degeneration $J_{\rm deg}$---the double root sits at $r_d<0$
+(a negative-radius double root), so it is \emph{not} a physical, accessible separatrix,
+though the genus-two$\,\to\,$genus-one reduction is valid there all the same; we give both
+the proper-time ($\tau$) and advanced-time ($v$) branches with every coefficient in closed
+form. (The rotating Thakurta--Kerr degeneration loci are treated in the companion paper.) All objects live on
+the elliptic curve $E:\,w^2=Q_4(r)$ into which the branch sextic collapses. The adiabatic expansion is
+$\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$
+($\lambda=m$ for Vaidya, $\lambda=A$ via $E_{\rm eff}=\Ehat/A$ for Thakurta--Kerr).
+
+\paragraph{Curve and special functions.}
+$\Jc=5\sqrt{3011/3072+581\sqrt{249}/9216}$ (at $E=7/5,\,m=1$; in general $\Jc=m\,j(E)$),
+$S=(r-r_d)^2Q_4(r)$ with double root $r_d$ and quartic $Q_4$ (roots
+$e_1<e_2<e_3=2m<e_4$, leading coefficient $a_4$). The Abel coordinate is
+$z(r)=\int_{r_0}^r\dd r'/\sqrt{Q_4}$; $\sigma,\zeta,\wp$ are the Weierstrass functions
+of $E$ (periods $2\omega_1,2i\omega_{\rm im}$, built from $\theta_1$). Marked points:
+$\pm z_d$ (images of $r_d$), $\pm z_\infty$ (of $r=\infty$), the two-torsion turning
+image $z=0$ ($r=e_4$) and horizon image $z=i\omega_{\rm im}$ ($r=e_3=2m$).
+
+\paragraph{Zeroth order (frozen orbit), verified to $10^{-12}$.}
+\begin{equation}
+\varphi_0(r)=\Jc\big[(E^2-1)z+((E^2-1)r_d+2m)\,U_0(z)\big],\;\;
+U_0=\rho[\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)]+C_{U_0}z,
+\end{equation}
+$\rho=1/\sqrt{Q_4(r_d)}$, $U_k=\int_{r_0}^r r^k/\sqrt S\,\dd r$ (explicit in
+$\sigma,\zeta$ by Hermite recursion).
+
+\paragraph{First order: source and antiderivative.}
+$\partial_m F=N_m/S^{3/2}$, $N_m=S\,\partial_mK-\tfrac12K\,\partial_mS$, $K=\Jc\,DE$,
+$DE=(E^2-1)r+2m$; on the curve $\partial_m F\,\dd r=R(z)\,\dd z$ with
+$R=N_m(r(z))/[(r(z)-r_d)^3Q_4(r(z))]$ and $r(z)=c_r-a_4^{-1/2}[\zeta(z-z_\infty)-
+\zeta(z+z_\infty)]$. Its antiderivative is Eq.~\eqref{eq:vaidya-sep-G},
+$\tilde G(z)=C_0 z+\sum_{a}[b_1^a\ln\sigma(z-a)-b_2^a\zeta(z-a)-\tfrac12 b_3^a
+\wp(z-a)]$, $a\in\{\pm z_d,0,i\omega_{\rm im}\}$, with closed-form residues: at the
+triple pole $z_d$, writing $s=\sqrt{Q_4(r_d)}$, $F=N_m/Q_4$, $a_1=Q_4'(r_d)/4s$,
+$a_2=Q_4''(r_d)/12$, $h_0=F(r_d)$, $h_1=F'(r_d)s$,
+$h_2=\tfrac12F''(r_d)s^2+\tfrac14F'(r_d)Q_4'(r_d)$,
+\begin{equation}
+b_3^{z_d}=\frac{h_0}{s^3},\quad b_2^{z_d}=\frac{h_1-3a_1h_0}{s^3},\quad
+b_1^{z_d}=\frac{h_2-3a_1h_1+(6a_1^2-3a_2)h_0}{s^3},\quad
+b_2^{e_i}=\frac{4N_m(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
+\end{equation}
+($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
+$R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
+b_3^a\wp'(z_\infty-a)]$. This example is Vaidya (source $\partial_m F$, hence
+$N_m$); for the Thakurta--Kerr separatrices the identical Weierstrass assembly runs
+with the combined conformal numerator $N=\Ehat N_E+J N_J$ (the companion paper,
+referee point on $J_{\rm eff}=J/A$), giving $b_i=\Ehat b_i^{E}+J b_i^{J}$; the
+angular part shifts $b_1$ by $\sim\!30\%$ and is tabulated in
+\texttt{ThakurtaMetric/conformal\_source\_Jterm.py}.
+
+\paragraph{First order, proper-time branch (verified to $10^{-9}$).}
+Clock $\eta=U_3-2mU_2$; block form
+\begin{equation}
+\delta\varphi_\tau=\tfrac12\,\tilde G(z)\,\eta(r)
++\tfrac12\sum_{i<j}(c_i d_j-c_j d_i)\,A[e_i,e_j],
+\end{equation}
+$A[e_i,e_j]=\int(e_i\,\mathrm{Pe}_j-e_j\,\mathrm{Pe}_i)\dd z$ the antisymmetric
+elliptic dilogarithms (Brown--Levin $\tilde\Gamma$), over the eight even blocks
+$\{1,Z_{z_d},P_{z_d},P'_{z_d},\wp(z),\wp(z{-}i\omega_{\rm im}),P_{z_\infty},
+Z_{z_\infty}\}$ with $Z_a=\zeta(z{-}a)-\zeta(z{+}a)$,
+$P_a=\wp(z{-}a)+\wp(z{+}a)$, $P'_a=\wp'(z{-}a)-\wp'(z{+}a)$. Coefficients: $c_i$ (the
+$\tilde G$ residues), $d_j$ (clock residues $e_1^{z_d}=(r_d^3-2r_d^2)/s$,
+$e_2^{z_\infty}=1/a_4$, $e_1^{z_\infty}=-(2B+r_d-2)/\sqrt{a_4}$) and the constant
+$C_e=(e_4^3-2e_4^2)/(e_4-r_d)+2e_1^{z_d}\zeta(z_d)-2e_2^{z_\infty}\wp(z_\infty)
++2e_1^{z_\infty}\zeta(z_\infty)$---all closed form.
+
+\paragraph{First order, advanced-time branch (verified to $10^{-8}$).}
+Clock $v=E\,U_3+r+2m\ln(r-2m)$;
+$\delta\varphi_v=\tilde G(z)\,v-\int_{z_0}^z\tilde G\,v_z\,\dd z$ with
+$v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term reproduces the proper-time
+dilogarithms; the second is odd on $E$ with a simple pole at $z=i\omega_{\rm im}$ and
+supplies the horizon dilogarithm.
+
+\subsection{Adiabatic derivative of the degeneration family}
+\label{app:tracking}
+As the slow parameter drifts, the genus-degeneration value itself moves,
+$J=\Jc(\lambda)$. This is \emph{not} the evolution of a single torque-free extremal:
+the axial costate $J$ is conserved along every extremal
+(Sec.~\ref{sec:principle}), so one trajectory cannot follow the moving locus by
+changing $J$ unless an external azimuthal torque---a modified control law with
+$\dd J/\dd\lambda\neq0$---is supplied. The object below is instead the total
+$\lambda$-derivative of the \emph{one-parameter family of marginal (degeneration)
+solutions} along $J=\Jc(\lambda)$: the adiabatic derivative of the family, which
+packages how the closed form deforms as the locus drifts,
+\begin{equation}
+N_{\rm tot}=N+\frac{\dd\Jc}{\dd\lambda}\,N_J,\qquad
+N_J=S\,\partial_JK-\tfrac12K\,\partial_JS,
+\label{eq:Ntot-track}
+\end{equation}
+with the block form and residue formulae above holding verbatim under $N\to N_{\rm tot}$;
+$\varphi_0$, the clocks and the dilogarithm structure are unchanged. The three branches
+differ only in $\dd\Jc/\dd\lambda$ and $N_J$.
+
+\paragraph{Vaidya ($\lambda=m$).}
+The linear scaling $\Jc=m\,j(E)$ gives $\dd\Jc/\dd m=\Jc/m$, with
+$N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$ (verified to $10^{-8}$).
+
+\paragraph{Rotating (Thakurta--Kerr) case.} The rotating branches---with a physical external separatrix ($r_d>2M$) alongside algebraic $J_{
+m deg}$ roots at $r_d<0$---follow by the conformal transfer $E\to E_{
+m eff}=\Ehat/A$, $J\to J/A$; they are treated in the companion paper.
+
+\paragraph{Tracking cancels the triple pole.}
+A clean structural consequence closes the logic: at the double root the tracked
+source \emph{vanishes},
+\begin{equation}
+N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
++\tfrac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)
+=\tfrac12K(r_d)\,S'(r_d)\,\frac{\dd r_d}{\dd\lambda}=0,
+\label{eq:track-cancel}
+\end{equation}
+because $S'(r_d)=0$ (the separatrix double-root condition). Hence the triple-pole
+residue drops, $b_3^{\rm track}=0$: following the moving separatrix softens the
+strongest singularity, precisely where the double root travels. This is verified
+symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$, for both Vaidya
+and Thakurta--Kerr.
+
+\paragraph{Fully symbolic coefficients, off-separatrix $q$-series, and independent checks.}
+Off the separatrix (generic $J$, genus two) every block coefficient is a
+\emph{rational function of $(M,a,E,J)$}: the source coefficients $c_k$,
+$Q_{kj}=c_kb_j-c_jb_k$, and the canonical pole coefficients $g_i$ (Taylor
+coefficients of $q_6^{-1/2}$ at the odd-model infinity), with
+$g_0=1/\sqrt{E^2-1}$ and $g_1=(2E^2-3)/(E^2-1)^{3/2}$ set by the leading behaviour
+($E$-only), while $g_2$ and the $c_k$ carry the full $(a,J)$ dependence. The
+algebraic remainder is elementary in closed form,
+$T_{\rm alg}=P(r)+\sum_i\mathrm{res}_i\ln(r-r_i)$ over the six roots of $S$
+(three residues vanish, at $r=0,\,2M,\,2M/(1-E^2)$). The genus-two dilogarithm is a
+convergent \emph{nome ($q$-)series}: after Siegel reduction $\tau'=-\tau^{-1}$ (all
+nomes ${<}1$), $\Lambda=\int Q\,\dd\mathcal A+\int L\,\dd\mathcal A$ with $Q$
+elementary and $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ a genus-two
+Kronecker--Eisenstein series that converges geometrically (order $N{=}4$ already
+matches to $10^{-13}$) and does \emph{not} reduce to classical dilogarithms (there is
+no genus-two Jacobi product formula). All these symbolic statements are
+\emph{independently reproduced in Mathematica} (native $\wp$, Gröbner reduction,
+Laurent extraction): the separatrix residues to $10^{-16}$--$10^{-38}$, the generic-$J$
+reductions to an exact polynomial identity, and the tracking
+theorem~\eqref{eq:track-cancel}.
+
+\paragraph{Transcendence.}
+None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
+lives in $\sigma,\zeta,\wp$, and the weight-two content is the elliptic dilogarithm,
+conjecturally irreducible to weight one (theta-divisor obstruction $\Theta=W_{g-1}$). The
+advanced-time horizon logarithm is elementary only as a $\dd\log$ letter; integrated
+against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, of the
+same transcendental weight as the proper-time case---the horizon merely relocates the
+dilogarithm's anchor from infinity to the two-torsion point $r=2m$. The sole
+numerical ingredient anywhere is the optional compression of the weight-two content to
+an apparent minimal five-dimensional dilogarithm basis (a numerically stable rank five,
+singular values falling to $10^{-79}$---strong evidence, \emph{not} a proof, and
+curve-specific), which the block forms above do not require.
+
+\clearpage
+
 
 \section{Complete first-order extended-Hamiltonian correction}
 \label{app:firstorder}
@@ -1240,27 +1573,30 @@ matched asymptotics, outside the symbolic-coefficient reduction. For Vaidya the 
 root is a branch point off the physical arc, $\mathcal D=\Theta$ carries no dilation,
 and no such crossing occurs.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.62\textwidth]{Immagini/fig_vaidya_offshell.png}
-    \caption{Vaidya $v$-branch first-order correction, residual against the true
-    non-autonomous flow versus $\varepsilon=M\dot m/m$ (log--log). The on-shell term
-    alone (dropping the costate integral $S$) is $O(\varepsilon)$ (slope $\approx1.00$);
-    the complete extended-Hamiltonian term of Eq.~\eqref{eq:adiab-exact}, adding the
-    off-shell piece, closes the correction to $O(\varepsilon^2)$ (slope $\approx2.00$).
-    Generated by \texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}.}
-    \label{fig:vaidya-offshell}
-\end{figure}
+
 
 \clearpage
 
 
 % ---- back matter -----------------------------------------------------
 \section*{Data availability}
-\todo{Same Zenodo DOI 10.5281/zenodo.21707378 statement as the master.}
+The complete numerical and symbolic codebase underlying this work is openly available
+under the MIT license, archived at the persistent DOI~\cite{Rosignoli2026Code}
+\begin{center}
+\url{https://doi.org/10.5281/zenodo.21707378}
+\end{center}
+(tagged release \texttt{v1.0}), and developed in the GitHub repository
+\url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}.
 
 \ack
-\todo{Same acknowledgements as master.}
+The author thanks the University of Pavia for a stimulating environment and received no
+external funding. AI assistants (GPT and Claude) were used to assist with symbolic
+derivations, numerical implementation and manuscript preparation; all results were
+verified independently by the author, who takes full responsibility for the content. The
+closed-form and hyperelliptic computations relied on \textsc{SageMath}~\cite{SageMath}
+with \textsc{abelfunctions}~\cite{abelfunctions}, and on
+\textsc{SymPy}~\cite{SymPy}, \textsc{NumPy}~\cite{NumPy}, \textsc{SciPy}~\cite{SciPy} and
+\textsc{Matplotlib}~\cite{Matplotlib}.
 
 \nocite{*}
 \bibliographystyle{iopart-num}
