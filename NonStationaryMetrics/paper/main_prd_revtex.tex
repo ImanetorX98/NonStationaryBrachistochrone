@@ -359,21 +359,23 @@ of Sec.~\ref{sec:indicatrix}: nontriviality is not an assumption but a consequen
 of $\rho>0$.
 
 \paragraph{Global optimality (Hamilton--Jacobi certificate).} The maximum
-principle is necessary but not sufficient: a PMP extremal is guaranteed only
-\emph{locally} optimal. A sufficient global certificate comes from dynamic
-programming. If $V(x)$ is a Lipschitz viscosity subsolution of the stationary
-Hamilton--Jacobi--Bellman (eikonal) equation
+principle is necessary but not sufficient: a PMP extremal is a \emph{candidate}
+minimizer, guaranteed only \emph{locally} optimal. In the \emph{stationary} problem the
+value function solves the eikonal $F^\ast(x,\nabla V)=1$; but the rail is
+\emph{non-autonomous} (Vaidya $m(v)$, Thakurta--Kerr $A(\eta)$), so $V$ depends on the
+evolution clock $s$ and obeys
 \begin{equation}
-  F^\ast\big(x,\nabla V(x)\big)=1
+  \partial_s V+\min_{u}\big\{\,1+\nabla_x V\cdot f(x,u,s)\,\big\}=0
   \label{eq:hjb}
 \end{equation}
-(with $F^\ast$ the dual/optical norm and the correct boundary datum), and a
-candidate extremal \emph{saturates} it---$\nabla V\cdot\dot x=F(x,\dot x)$
-pointwise along the arc---then that extremal realizes the value function and is a
-\emph{global} minimizer. Building $V$ from the closed-form optical (Randers)
-metric of Secs.~\ref{sec:vaidya}--\ref{sec:thakurta} certifies the closed-form
-arcs globally on any region carrying a single-valued $V$; where $V$ turns
-multivalued the certificate localizes, as follows.
+(an autonomous HJB on the state extended by $s$). This is a \emph{verification theorem}:
+if a Lipschitz viscosity subsolution $V$ exists and a candidate extremal \emph{saturates}
+it ($\nabla V\cdot\dot x=F$ pointwise), that extremal is a \emph{global} minimizer on the
+single-valued region of $V$. We do \emph{not} construct such a global $V$ for generic
+non-stationary trajectories; the stationary limit supplies one from the closed-form
+Randers metric of Secs.~\ref{sec:vaidya}--\ref{sec:thakurta}, and elsewhere our statements
+are those of PMP extremals with local checks. Where $V$ turns multivalued the certificate
+localizes, as follows.
 
 \paragraph{Conjugate points, Maxwell set, cut locus.} Two mechanisms end
 optimality. A \emph{conjugate point} (Jacobi) ends \emph{local} minimality when
