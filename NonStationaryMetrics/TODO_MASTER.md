@@ -249,14 +249,15 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
 - [x] Abstract reale **227 parole** (≤300 CQG); Data availability (DOI Zenodo) + ack riempiti; zero \todo.
 - [x] **Paper I COMPLETO: 38pp, zero undefined/multiply refs, self-contained.** `paper1/paper1.tex`.
 
-### I.2 Paper II — "Brachistochrones in conformal Kerr spacetimes: ergosphere trichotomy, separatrices,
-      and adiabatic response" (assisimmetrico, ~30-40pp)
-- [ ] Contenuti: indicatrice TK + equivalenza t≡η (arrival) + Fig 10; ramo arrivo vs τ + dizionario
-      costato/meccanico; ergosfera cuspide/tricotomia + diagramma penetrazione; forme Weierstrass/Kleiniane
-      frozen + continuazione Doran; inversione + protocol dependence (same-launch vs fixed-endpoint tiered,
-      R_*(E,a)); first-order on-shell/off-shell CANONICAMENTE ri-derivato + true-flow validation;
-      rappresentazione iterati Abeliani lunghezza-2 con terminologia cauta (peso-1/peso-2).
-- [ ] Abstract dedicato ≤300.
+### I.2 Paper II — "Brachistochrones in conformal Kerr spacetimes..." (assisimmetrico) — ✅ FATTO
+- [x] Assemblato (commit 7dc7e19): intro TK (cita Paper I per fondamenta); body = §5 TK **senza §5.1**
+      (η-brachistocrona t≡η, indicatrice/Hamiltoniane, dizionario costato) + §6 (separatrici Weierstrass,
+      tricotomia/cuspide, inversione, fixed-endpoint tiered R_*(E,a), breathing); conclusioni 3 blocchi;
+      appendici TK (explicit closed forms, genus-degeneration, first-order); Data availability+ack.
+      Cross-ref Paper I/Vaidya/§5.1-rimossa → companion. **55pp, zero undefined/multiply refs, zero \todo.**
+- [x] Abstract reale **220 parole** (≤300 CQG).
+- [ ] Nota: 55pp è ancora sopra il target 30-40pp (main15) — trimming opzionale in polish (App A residui,
+      overlap Vaidya nelle appendici, §5.1 già rimossa).
 
 ### I.3 Interventi strutturali durante lo split (main15 §5.1-5.2, tabella §4)
 - [ ] **Rimuovere/isolare §5.1** (quasi-costanti off-equatoriali, theta/p_theta/Carter, sorgente O(a²)):
