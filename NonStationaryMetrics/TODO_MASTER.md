@@ -159,6 +159,38 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       Commit fb45761.
 - [ ] **BLOCCATO (esterno)** Rilascio taggato/Zenodo DOI legato al PDF; coefficienti simbolici machine-readable
 
+## F. Follow-up referee main12 — ✅ CHIUSO (8 azioni)
+Dettaglio in `REFEREE_FOLLOWUP_main12.md`. Verdetto: "responded successfully to the principal
+technical referee criticism". Tutte 8 le azioni indirizzate (commit bc2b85c, 7c57bc8, b225b9e, 7daa912):
+- [x] (1) Contraddizione abstract/Table 1 su assembly off-shell → opzione 1 (assemblato 4 branch, solo naming deferito)
+- [x] (2) Validità solo su sub-archi `H_Pr≠0` (già presente) + (6) istantanea vs Neishtadt crossing (già presente)
+- [x] (3) Convenzioni di curva (sheet/cuts/base point/orientamento/costanti) — paragrafo App. main+PRD
+- [x] (4) PDF-solo vs repository (reconstructibility) — paragrafo main+PRD
+- [x] (5) Fixed-charge vs fixed-endpoint + `J_1=−δφ_dyn/∂_J φ_0` (eq:J1-fixedendpoint)
+- [x] (7) η = rappresentazione ramo di arrivo (non 3ª famiglia) + (8) Vaidya clock v,τ canonici; t frozen; u separato
+
+## G. Follow-up referee main13 — obiezioni ✅ già coperte; estensioni = futuro
+Dettaglio in `REFEREE_FOLLOWUP_main12.md` (stesso lavoro) + piano in `PLAN_split_and_extensions.md`.
+Verdetto: "major conceptual objections addressed; remaining = rigor/consistency/extension, not fundamental flaws".
+- [x] 4 "remaining objections" (regular sub-arcs/turning points; fixed-launch vs fixed-endpoint; off-shell
+      consistency; explicit quadratures vs pipeline) — TUTTE già chiuse dal follow-up main12 (report scritto
+      contro versione precedente ai fix).
+- [ ] **ESTENSIONI (lavoro futuro, NON richiesto per submission corrente)**:
+  - [ ] Forma **generale/universale** della sorgente off-shell `S_D` per metriche conformemente stazionarie
+        (= punto di GPT: `S_D=∫(EH_E+JH_J+P_r H_Pr)dλ` non ancora sviluppata in forma metrica-indipendente;
+        le branch TK/Vaidya SONO ridotte per-metrica). Naturale per la famiglia conforme (TK).
+  - [ ] **η-brachistocrona in TK** (frozen + adiabatica + separatrice nel gauge conforme η); confronto t/η
+        (stesso path spaziale, `dt=A dη`, ma Hamiltoniane diverse) e τ distinto. [estensione referee 4/5]
+  - [ ] **Vaidya terzo clock** SOLO se legato a osservatori privilegiati (Kodama), non per analogia:
+        esiste un tempo proprio di Kodama-osservatore con brachistocrona distinta da v e τ? [estensione 6, condizionale]
+  - [ ] Framework unificato t/τ/η-brachistocrone [estensione 5]
+  - [ ] Teoria generale dei **turning point in movimento** [estensione 1] + delle **separatrici adiabatiche**
+        e correzioni first-order [estensione 2] (research-heavy)
+- [ ] **DECISIONE STRATEGICA — split in 2 paper** (FLRW-Vaidya sferico | TK assisimmetrico): confine fisico
+      pulito (frame dragging). Raccomandazione: prima pubblicare il combinato (verdetto positivo), POI split
+      sulle estensioni. Alternativa: split subito se il combinato (74pp) è troppo lungo per il journal.
+      Piano dettagliato: `PLAN_split_and_extensions.md`.
+
 ---
 ### Riferimenti
 - Referee: `REFEREE_REPORT_CURRENT_2026-07-22.md` (13 issue)
