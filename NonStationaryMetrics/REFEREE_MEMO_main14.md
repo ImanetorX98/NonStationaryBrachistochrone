@@ -5,28 +5,24 @@ NON splittare ancora; correggi 5 fondamentali, armonizza terminologia/status, ri
 poi dividi in due paper (I: rail/Kodama+Vaidya sferico; II: Thakurta-Kerr conforme).
 Legenda: [ ] aperto · [~] parziale · [x] fatto.
 
-## P0 — Fondamentali (priorità massima)
-- [ ] **4.1 Definire il problema terminale reale.** `H(s_f)=0` = clock finale LIBERO + target spaziale
-      fisso, NON due eventi fissi. Enunciato formale di controllo ottimo (stato, controllo, dominio,
-      evento iniziale, insieme terminale, clock libero, costo) prima delle sezioni geometriche.
-      Riservare "fixed endpoints" solo per estremi spaziali davvero fissi. Propagare a titolo/intro/
-      teorema PMP/HJB/Sec 6.4/caption/conclusioni. [Sec 2.1-2.2; ovunque "between two events"]
-- [ ] **4.2 HJB non-autonoma.** [MIO blocco control-theory] La mia `F*(x,∇V)=1` è autonoma/frozen;
-      Vaidya/TK sono non-autonomi. Riformulare come TEOREMA DI VERIFICA SUFFICIENTE (subsoluzione
-      viscosa saturata ⟹ minimo globale su regione a valore singolo; NON costruita per traiettorie
-      generiche). Augment state con s / HJB estesa `∂_s V + min_u{1+∇_x V·f}=0`. Usare "PMP extremal"/
-      "candidate minimizer" dove solo necessarie. Mantenere Maxwell/conjugate per delimitare. [Sec 2.2]
-- [ ] **4.3 Costato assiale ≠ momento meccanico.** [MIO paragrafo, contraddizione reale] Cancellare
-      "They coincide here"; J = costato di Pontryagin conservato; `L_mech=r²u^φ=((Ê²−f)/Ê)J` varia con r
-      (NON conservato lungo il rail forzato); `J_eff=J/A` = costato ottico normalizzato, non momento
-      meccanico di Kerr; rietichettare assi "particle angular momentum". Dizionario branch-by-branch.
-      VERIFICARE numericamente L_mech Vaidya prima di scrivere. [pp.13-14; App C; figure]
-- [ ] **4.4 Ri-derivare App. C da variabili canoniche.** [MIA derivazione] `P_r=p_r/A` NON canonica da
-      sola (`dr∧dp_r=A dr∧dP_r` a A fisso): normalizzazione tempo-dipendente (conf. simplettica).
-      Partire da `K_ext=p_s+A(s)H̄(r,p_r/A,Ê/A,J/A)`, derivare l'eq. di p_r canonicamente, POI definire
-      P_r; mostrare se `DH=(E∂_E+J∂_J+P_r∂_Pr)H` è invariato. Se sì: dichiarare "flusso normalizzato
-      non-canonico ma equivalente al canonico". O(ε²) conferma numerico, non ripara l'argomento formale.
-      [Sec 5.2 ~Eq(43); App C]
+## P0 — Fondamentali — ✅ TUTTI FATTI
+- [x] **4.1 Problema terminale definito** (commit 2ae215f). Apertura "between two events" → "from a given
+      launch event to a fixed spatial target at a free arrival clock"; nuovo paragrafo "The optimal-control
+      problem" (stato, clock, controllo, evento iniziale+target, s_f libero, costo, trasversalità free-clock);
+      "fixed endpoints" riservato al two-point BVP (Sec bvp). main+PRD.
+- [x] **4.2 HJB non-autonoma** (commit 22f994a) [mio blocco]. Eikonale = solo caso frozen; rail
+      non-autonomo obbedisce `∂_s V+min_u{1+∇_x V·f}=0` (HJB estesa su stato+s). Framing come TEOREMA DI
+      VERIFICA SUFFICIENTE NON costruito per traiettorie generiche; "candidate minimizer"/PMP extremal
+      altrove. main+PRD.
+- [x] **4.3 Costato ≠ meccanico** (commit 5c07823) [mia contraddizione]. Tolto "coincidono"; Noether del
+      controllo dà il costato, non il meccanico; `dL_mech/dτ=a·∂_φ≠0` (rail forzato). Formula esatta
+      VERIFICATA simbolicamente `L_mech=r²u^φ=((Ê²−f)/Ê)J` (eq:costate-mech, `costate_vs_mechanical.py`,
+      diff=0); `J_eff=J/A` = normalizzazione del costato, non momento meccanico di Kerr. main+PRD.
+- [x] **4.4 App. C canonica** (commit 3102013) [mia derivazione]. `P_r=p_r/A` NON canonica
+      (`dr∧dp_r=A dr∧dP_r`): normalizzazione conf. simplettica. Derivazione in (r,p_r) originali:
+      canonica `dp_r/ds=-∂_r H_br`, poi P_r + regola catena ⟹ ESATTAMENTE `-H̄_r-αP_r` (eq:normflow);
+      `-αP_r` è conseguenza, non trasformazione canonica; sistema normalizzato non-canonico ma equivalente.
+      Identità VERIFICATA (`canonical_dilation_check.py`, diff=0). main+PRD.
 
 ## P1 — Major (armonizzazione, sostanza già iniziata)
 - [ ] **4.5 R_*(E) + no-inversion.** R_*(E) mai definito. O definizione esplicita (formula/dominio/
