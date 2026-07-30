@@ -234,15 +234,17 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
       Entrambi compilano (5pp, bibliografia completa via `\nocite{*}` finché non ci sono `\cite` reali).
 - [x] Change-log/mappa sezioni: `SPLIT_MAP.md` (quale sezione del master va in quale paper).
 
-### I.1 Paper I — "Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry,
-      Kodama energy, Vaidya dynamics" (sferico, ~25-35pp)
-- [ ] Contenuti (da §5.3): problema di controllo + condizioni terminali; esistenza/normalità/HJB
-      verification (non-autonoma); gerarchia W Killing→CKV→Kodama; FLRW ramo degenere; Vaidya ingoing
-      (Hamiltoniane, Kodama energy, costate memory endpoint-sensitive, bounce regularization); correzione
-      adiabatica first-order Vaidya + sorgente universale mass-function `S_D=[r p_r]−λ`; limite: BVP
-      outgoing dichiarata aperta; appendice degenerazione algebrica SOLO se supporta la correzione Vaidya
-      senza chiamarla separatrice fisica (J_deg).
-- [ ] Abstract dedicato ≤300 (CQG) — 3 risultati + 1 limite.
+### I.1 Paper I — "Controlled-rail brachistochrones..." (sferico) — ✅ CORPO+App C FATTI
+- [x] Corpo migrato (commit bb72d00): intro sferica (rinvia TK al companion); fondamenta condivise
+      (controlled-rail, esistenza/normalità/HJB non-auton., gerarchia W); FLRW; Vaidya (Kodama energy,
+      fenomenologia, plunge law + assenza inversione evaporativa, adiabatica+dilog); 3 figure Vaidya;
+      conclusioni 3 blocchi (Vaidya scope, BVP outgoing aperta). Cross-ref TK → "companion paper".
+- [x] App C migrata (commit 6310ce6): first-order extended-Hamiltonian correction (eq:adiab-exact
+      self-contained, derivazione canonica eq:normflow, sorgente universale, branch Vaidya). Ref TK ammorbiditi.
+- [x] **Paper I compila a 33pp con ZERO undefined references.** `paper1/paper1.tex`.
+- [ ] App A (validation) + App B (genus-degeneration Vaidya J_deg): ancora placeholder (NON referenziate,
+      nessun dangling ref) — completamento opzionale per submission.
+- [ ] Abstract dedicato ≤300 (CQG) — sostituire il placeholder \todo con abstract reale.
 
 ### I.2 Paper II — "Brachistochrones in conformal Kerr spacetimes: ergosphere trichotomy, separatrices,
       and adiabatic response" (assisimmetrico, ~30-40pp)
