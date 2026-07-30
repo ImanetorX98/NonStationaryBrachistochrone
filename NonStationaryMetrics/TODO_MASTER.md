@@ -176,13 +176,15 @@ Verdetto: "major conceptual objections addressed; remaining = rigor/consistency/
       consistency; explicit quadratures vs pipeline) — TUTTE già chiuse dal follow-up main12 (report scritto
       contro versione precedente ai fix).
 - [ ] **ESTENSIONI (lavoro futuro, NON richiesto per submission corrente)**:
-  - [x] Forma **generale/universale** della sorgente off-shell `S_D` (caso conforme) — **TROVATA+VERIFICATA**:
-        `S_D(λ) = λ + ∫E_eff H_{E_eff} dλ`. Identità universale di Finsler `(J∂_J+P_r∂_Pr)H=H+1` (provata
-        per β,A_rr,A_φφ ARBITRARIE) ⟹ su shell frozen (H=0) `DH=1+E H_E`. Il `λ` è universale, l'`E H_E`
-        è l'unico termine metrica-specifico (via `E∂_E v²=2(1−v²)`). Simbolico esatto + numerico 2e-13 su
-        TK. Doc `UNIVERSAL_SD_source.md`, script `ThakurtaMetric/universal_SD_source_check.py`, commit 39afd74.
-        RESTA: analogo Vaidya (non conforme, `D=m∂_m`, no dilatazione P_r → struttura diversa `S_D=∫m H_m dλ`);
-        opzionale: aggiungere paragrafo al paper (chiude estensione 3 + critica GPT).
+  - [x] Forma **generale/universale** della sorgente off-shell `S_D` — **TROVATA+VERIFICATA+PROPAGATA AL PAPER**
+        (chiude estensione 3 + critica GPT). Identità universale di Finsler `(J∂_J+P_r∂_Pr)H=H+1` (provata per
+        β,A_rr,A_φφ ARBITRARIE). DUE forme universali per tipo di deformazione (non metrica-specifica):
+        * **Conforme (TK)**: `S_D = λ + ∫E_eff H_{E_eff} dλ` (λ universale, E H_E unico pezzo metrica-specifico).
+        * **Mass-function (Vaidya)**: `S_D = [r p_r] − λ` (termine di bordo, via auto-similarità `m H_m=−(rH_r+JH_J)`).
+        * Scheletro comune ±λ. Simbolico esatto (anche astratto) + numerico macchina su TK e Schwarzschild.
+        Doc `UNIVERSAL_SD_source.md`; script `ThakurtaMetric/universal_SD_source_check.py`,
+        `VaidyaMetric/universal_SD_source_vaidya.py`; commit 39afd74/7618675. Propagato: paragrafo
+        "Universal form of the off-shell source" (main eq:finsler-euler/SD-conformal/SD-vaidya + PRD), commit 06bc3ca.
   - [ ] **η-brachistocrona in TK** (frozen + adiabatica + separatrice nel gauge conforme η); confronto t/η
         (stesso path spaziale, `dt=A dη`, ma Hamiltoniane diverse) e τ distinto. [estensione referee 4/5]
   - [ ] **Vaidya terzo clock** SOLO se legato a osservatori privilegiati (Kodama), non per analogia:
