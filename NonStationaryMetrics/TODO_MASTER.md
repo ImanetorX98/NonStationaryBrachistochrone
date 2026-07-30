@@ -242,9 +242,12 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
 - [x] App C migrata (commit 6310ce6): first-order extended-Hamiltonian correction (eq:adiab-exact
       self-contained, derivazione canonica eq:normflow, sorgente universale, branch Vaidya). Ref TK ammorbiditi.
 - [x] **Paper I compila a 33pp con ZERO undefined references.** `paper1/paper1.tex`.
-- [ ] App A (validation) + App B (genus-degeneration Vaidya J_deg): ancora placeholder (NON referenziate,
-      nessun dangling ref) — completamento opzionale per submission.
-- [ ] Abstract dedicato ≤300 (CQG) — sostituire il placeholder \todo con abstract reale.
+- [x] App A ("Reproducibility and consistency") + App B ("genus-degeneration loci", Vaidya J_deg)
+      migrate (commit 261709e): App A residui riscritti a scope Vaidya (Kodama energy, limite a=0,
+      minimizzazione branch), colormap TK + figure Vaidya duplicate rimosse; App B Vaidya J_deg, branch TK
+      condensate a rimando companion.
+- [x] Abstract reale **227 parole** (≤300 CQG); Data availability (DOI Zenodo) + ack riempiti; zero \todo.
+- [x] **Paper I COMPLETO: 38pp, zero undefined/multiply refs, self-contained.** `paper1/paper1.tex`.
 
 ### I.2 Paper II — "Brachistochrones in conformal Kerr spacetimes: ergosphere trichotomy, separatrices,
       and adiabatic response" (assisimmetrico, ~30-40pp)
