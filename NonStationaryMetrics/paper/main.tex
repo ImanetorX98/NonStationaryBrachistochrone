@@ -1591,12 +1591,11 @@ map to the fixed-endpoint problem.
     (residual$/\varepsilon\approx2.8\times10^{-4}$), for the $t$-branch
     ($J=6$) and $\tau$-branch ($J=2.5$). This linear growth measures the size of
     the retained first-order correction and a fixed numerical floor; it is
-    \emph{not} an $O(\varepsilon^2)$ truncation test. A dedicated log--log
-    convergence study against the full non-autonomous flow (expected slope two if
-    the parameter-derivative formula is the complete first-order term), separating
-    discretization, quadrature and truncation errors, is deferred to the
-    reproducibility package. All coefficients in $\delta\varphi$ are algebraic and
-    given, not fitted.}
+    \emph{not} an $O(\varepsilon^2)$ truncation test. The dedicated log--log
+    convergence study against the full non-autonomous flow (slope two once the
+    complete first-order, on-shell $+$ off-shell, term is used) is supplied in
+    Fig.~\ref{fig:phi-true-dynamic}. All coefficients in $\delta\varphi$ are algebraic
+    and given, not fitted.}
     \label{fig:phi-closed}
 \end{figure}
 
@@ -1652,8 +1651,11 @@ swallowed at
 \end{equation}
 beyond which no orbit issues from $r_0$. Below the wall the $t$-orbit crosses the
 ergosphere iff its outer turning lies inside $r_e$; the prograde boundary is
-$J_c^+(A)=2M^2/a+a+a\,A^2/(2\Ehat^2)$ (matching the numerics to $10^{-15}$), the
-retrograde one a saddle-node $J_c^-(A)$. The window $(J_c^-,J_c^+)$ splits into a
+\begin{equation}
+    J_c^+(A)=\frac{2M^2}{a}+a+\frac{a\,A^2}{2\Ehat^2}
+    \label{eq:Jcplus}
+\end{equation}
+(matching the numerics to $10^{-15}$), the retrograde one a saddle-node $J_c^-(A)$. The window $(J_c^-,J_c^+)$ splits into a
 \emph{plunge} core (no turning, the orbit reaches $r_+$) and a thin
 \emph{penetrate-and-bounce} rim just below $J_c^+$, where the orbit dips inside
 $r_e$, co-rotates, and turns in the annulus $r_+<r_{\rm t}<r_e$ before exiting
@@ -1667,7 +1669,7 @@ from the ergosphere at $A_c^{\rm wall}$: a purely non-stationary effect.
     $(A,J)$ plane ($M=1$, $a=0.9$, $\Ehat=1.4$, $r_0=12$). Four regimes: plunge to
     the horizon, penetrate-and-bounce, scattering, and forbidden (beyond the
     freezing wall $A_c^{\rm wall}=1.534$, dashed). The prograde ergosphere boundary
-    $J_c^+(A)$ [Eq.~\eqref{eq:Awall} caption] is analytic (solid, verified to
+    $J_c^+(A)$ [Eq.~\eqref{eq:Jcplus}] is analytic (solid, verified to
     $10^{-15}$); the penetrating window is $(J_c^-,J_c^+)$.}
     \label{fig:penetration-phase}
 \end{figure}
