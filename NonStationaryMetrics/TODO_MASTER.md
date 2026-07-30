@@ -272,6 +272,13 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
 - [ ] Scala pannelli galleria appendice troppo piccoli: split/ingrandire se finiscono nei paper.
 
 ### I.5 Finalizzazione
+- [ ] **Aggiornare `README.md`**: sezione "quale script per quale paper" — mappa directory/script a
+      Paper I vs Paper II, così chi riproduce sa dove guardare. Mappatura proposta:
+      * **Paper I** (rail/Kodama/Vaidya sferico): `FLRWmetric/`, `VaidyaMetric/` + fondamenta control-theory
+        condivise (`KerrSessionScripts/perlick_equivalence*.py`, esistenza/normalità).
+      * **Paper II** (Thakurta-Kerr): `ThakurtaMetric/`, `KerrSessionScripts/` (genus-2), `KerrMetric/`, `KerrScripts/`.
+      * **Condivisi**: `PaperFigures/`, `run_regression.py`, `requirements-lock.txt`, `paper_style.py`.
+      Aggiornare anche la tabella script-map in ciascun paper per elencare solo i propri script.
 - [ ] Rigenerare TUTTI i cross-reference dopo la separazione (numeri eq/fig/sez cambiano).
 - [ ] Verificare zero undefined ref/citation, zero overfull, in entrambi i paper separati.
 - [ ] Aggiornare Data availability + DOI Zenodo in entrambi (già presente nel master).
