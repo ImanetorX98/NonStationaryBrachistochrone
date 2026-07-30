@@ -267,11 +267,14 @@ rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono 
 - [x] Remark thrust/fuel ridotto (master 87de08c) — presente ridotto in Paper I, verificato.
 - [x] Fondamenta condivise in Paper I, richiamate da Paper II (18 rimandi al companion). ✓
 
-### I.4 Polish figure/caption residuo (durante lo split)
-- [ ] Caption A6-A10: "numerical evidence / robustness scan" non "proof"; A9 specificare norma residuo
-      (assoluta/relativa); A10 = local variational check, non prova di minimo globale.
-- [ ] Fig 20: caption "finite numerical scan" (già ok via label sec:inversion) — verificare dopo renumber.
-- [ ] Scala pannelli galleria appendice troppo piccoli: split/ingrandire se finiscono nei paper.
+### I.4 Polish figure/caption residuo — ✅ FATTO (commit 1b891fc)
+- [x] Caption scan: fig:cm-spin-fix ("finite scan"), fig:cm-conf-fix ("finite numerical scan, not a
+      theorem"), fig:asym-spin/asym-conf ("robustness scan, not a theorem") — tutte con framing
+      numerical-evidence non-proof. fig:vaidya-kerra0: norma residuo sup <1e-12 (A9). Entrambi i paper.
+- [x] Fig 20 (fig:cm-spin-fix): "finite scan, tiered no-inversion status" — già ok, verificato.
+- [x] Pannelli: colormap a \textwidth (single-panel) — leggibili, ok.
+- [ ] (scope, → I.5 trimming) fig:vaidya-kerra0 + fig:verifmin sono Vaidya ma presenti anche in App A di
+      Paper II (overlap): rimuovere da Paper II in fase di trimming.
 
 ### I.5 Finalizzazione
 - [ ] **Aggiornare `README.md`**: sezione "quale script per quale paper" — mappa directory/script a
