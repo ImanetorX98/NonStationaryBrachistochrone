@@ -147,12 +147,12 @@ irreducibility, and basis minimality) left open).
         On-shell first-order correction $=$ length-two iterated Abelian integrals
             & proved (reduction) & Sec.~\ref{sec:thakurta}, Tab.~\ref{tab:script-map}\\
         Exact \emph{off-shell} first-order term (extended-Hamiltonian quadrature)
-            & derived $+$ verified & App.~\ref{app:firstorder};
+            & derived $+$ verified & \ref{app:firstorder};
               Figs.~\ref{fig:phi-true-dynamic},~\ref{fig:vaidya-offshell}
               (slope $\to2$)\\
         Explicit off-shell assembly $=$ depth-two iterated Abelian integrals
         $+$ elementary (all four branches)
-            & assembled $+$ verified & App.~\ref{app:firstorder},
+            & assembled $+$ verified & \ref{app:firstorder},
               Tab.~\ref{tab:script-map}; canonical polylog naming deferred
               (row below)\\
         Fixed-endpoint no-inversion
@@ -182,6 +182,31 @@ The rail is a constrained worldline with the invariant
 actively maintained by an ideal rail force $f_\mu=Du_\mu/\dd\tau$ with
 $f\cdot u=0$ (automatic for a rest-mass--preserving force), which creates no rest
 mass but is free to exert power against the selector (see below).
+
+\begin{table}[htbp]
+    \centering\small
+    \caption{Notation used throughout. Rail charges $(\Ehat,J)$ are conserved control
+    costates; the ``eff'' quantities are their optical/conformal normalizations.}
+    \label{tab:notation}
+    \begin{tabular}{@{}ll@{}}
+        \hline\hline
+        symbol & meaning\\
+        \hline
+        $\Ehat=-u\cdot W$ & rail energy invariant (conserved control charge)\\
+        $J=p_\varphi$ & axial control costate (conserved; \emph{not} $g(u,\partial_\varphi)$)\\
+        $L_{\rm mech}=g(u,\partial_\varphi)$ & mechanical angular momentum (\emph{not} conserved on the rail)\\
+        $A(\eta)$ & Thakurta conformal factor, $g=A^2 g_{\rm Kerr}$\\
+        $m(v)$ & Vaidya Misner--Sharp mass\\
+        $a$ & Kerr spin\\
+        $E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$ & conformally normalized charges (weight $A^{-1}$)\\
+        $P_r=p_r/A$ & normalized radial momentum (conformally symplectic, not canonical)\\
+        $t,\tau,\eta,v$ & coordinate, proper, conformal, advanced-null clocks\\
+        $s$ & the selected evolution clock / slow parameter\\
+        $\lambda$ & elapsed clock from the free-arrival endpoint\\
+        $\varepsilon$ & adiabatic rate ($A'/A$ for Thakurta, $\dot m$ for Vaidya)\\
+        \hline\hline
+    \end{tabular}
+\end{table}
 
 \paragraph{The ellipse.} Fix an event and a time function adapted to $W$. The
 linear constraint~\eqref{eq:rail} fixes the $W$-component of $u$; the mass shell
@@ -1212,9 +1237,10 @@ with closed toroidal averages
 $\langle S_1\rangle=E_{\rm eff}^2(1-J^2/L^2)
 +2ME_{\rm eff}^2|J|(L-|J|)/(r\,DE_0^2)$, $L^2=p_\theta^2+J^2/\sin^2\theta$. In
 Kerr ($E>1$) the wall is absent; in Thakurta--Kerr with $E_{\rm eff}<1$ it enters
-from the far field and advances inward as $A$ grows, becoming a \emph{global
-attractor}: the bound $\tau$-libration ceases to exist, so the dynamical
-quasi-constants live on scattering arcs ($E_{\rm eff}>1$) or on the $t$-branch.
+from the far field and advances inward as $A$ grows, a \emph{moving kinematic
+boundary} (not a proved dynamical attractor): past it the bound $\tau$-libration
+ceases to exist, so the dynamical quasi-constants live on scattering arcs
+($E_{\rm eff}>1$) or on the $t$-branch.
 
 \subsection{Semi-analytic first-order adiabatic orbit shape}
 \label{sec:adiabatic}
@@ -1436,7 +1462,7 @@ $\mathcal H=p_s+H=0$ about the frozen extremal---with the slow variable
 $\lambda$ the elapsed clock measured \emph{from the free-arrival endpoint} (where
 $H=0$ by the transversality~\eqref{eq:transversality}), oriented inward, and
 $A(\eta)=A_0(1+\varepsilon\lambda+\cdots)$---gives, in the \emph{normalized} momentum
-$P_r=p_r/A$ (App.~\ref{app:firstorder}), the first-order shift of the momentum shell
+$P_r=p_r/A$ (\ref{app:firstorder}), the first-order shift of the momentum shell
 $\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
 \begin{equation}
     \begin{aligned}
@@ -1453,10 +1479,10 @@ which closes the correction to $O(\varepsilon^2)$. The source uses the \emph{ful
 operator $\mathcal D$: the normalization $P_r=p_r/A$ is a time-dependent (conformally
 symplectic) rescaling---\emph{not} canonical---so the canonical flow in the original
 $(r,p_r)$ carries, after passing to $P_r$, a dilation term
-$-\!\left(A'/A\right)P_r$ (App.~\ref{app:firstorder}), and the shell-departure rate is $\mathcal D H=\Theta
+$-\!\left(A'/A\right)P_r$ (\ref{app:firstorder}), and the shell-departure rate is $\mathcal D H=\Theta
 H+P_r H_{P_r}$, \emph{not} $\Theta H$ alone (omitting $P_r H_{P_r}$ leaves an
 $O(\varepsilon)$ error against the true flow---this is the correction of
-App.~\ref{app:firstorder}). Here $\Theta$ differentiates only the \emph{dynamical}
+\ref{app:firstorder}). Here $\Theta$ differentiates only the \emph{dynamical}
 charges $E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$ (the rail invariants $\Ehat,J_{\rm TK}$
 are inert); for single-parameter Vaidya there is no rescaling, $\mathcal D=\Theta=m\partial_m$.
 The source $S_{\mathcal D}$ is \emph{terminally anchored} ($S_{\mathcal D}=0$ at the
@@ -1467,7 +1493,7 @@ canonical flow (slope~$\approx2$;
 into an \emph{on-shell} part (parameter drift, the closed form $\mathcal C+\psi$ of
 Sec.~\ref{sec:thakurta}, weight one in Kleinian $\zeta,\sigma$) and an \emph{off-shell}
 part driven by the dilation letter $\int P_r H_{P_r}\dd\lambda=\int p_{r0}\dd r$ (the
-radial action, reduced in closed form in App.~\ref{app:firstorder},
+radial action, reduced in closed form in \ref{app:firstorder},
 Eqs.~\eqref{eq:action-reduction}--\eqref{eq:ak}): a length-two iterated integral on the
 same spectral curve, closing in $\zeta,\sigma$ \emph{plus} one genus-two dilogarithm
 sourced by the third-kind letter at the seed Kerr null surface $\Delta=0$.
@@ -1513,7 +1539,7 @@ $\int\mathcal D H\,\dd\lambda$ (\texttt{ThakurtaMetric/universal\_SD\_source\_ch
 \paragraph{Fixed-charge versus fixed-endpoint.} The correction~\eqref{eq:adiab-exact}
 is computed at \emph{fixed canonical charges} $(\Ehat,J)$: it is the same-launch,
 fixed-charge response of the orbit to the slow drift, the object that the true-flow
-test of App.~\ref{app:firstorder} validates. A genuine two-point boundary-value
+test of \ref{app:firstorder} validates. A genuine two-point boundary-value
 problem with \emph{fixed spatial endpoints} instead lets the conserved charge float,
 $J=J_0+\varepsilon\,J_1+O(\varepsilon^2)$, with $J_1$ fixed by holding the arrival
 azimuth,
@@ -1665,7 +1691,7 @@ from the ergosphere at $A_c^{\rm wall}$: a purely non-stationary effect.
 \label{sec:closed}
 % ----------------------------------------------------------------------
 
-All closed forms in this section and in App.~\ref{app:explicit} are obtained at
+All closed forms in this section and in \ref{app:explicit} are obtained at
 \emph{frozen conformal factor}: constant $A$, equivalently stationary Kerr with
 the substitution $E\to E_{\rm eff}=\Ehat/A$ (and $J\to J/A$, the spin $a$ retained) in every
 parameter (Sec.~\ref{sec:thakurta}). They are therefore the exact
@@ -1684,7 +1710,7 @@ equatorial $\tau$-separatrix $\varphi(r)$ is genus~1, closed in the
 Weierstrass functions $\wp,\sigma,\zeta$
 \cite{WhittakerWatson,DLMF,Hackmann2008,Hackmann2010}: the angle is linear in the
 uniformizing variable $z(r)=\wp^{-1}(A/r+B)$ plus two $\sigma$-ratios
-[App.~\ref{app:explicit}, Eq.~\eqref{eq:sep-phi}], regular \emph{through} the
+[\ref{app:explicit}, Eq.~\eqref{eq:sep-phi}], regular \emph{through} the
 ergosphere because the factor $r^2+c^2$ divides the turning quartic and removes
 $\re$ from the radicand. The Boyer--Lindquist form winds logarithmically at the
 horizon; the Doran shift---a second, quasi-lemniscatic elliptic
@@ -1705,7 +1731,7 @@ root}, $\mathcal R=(r-r_*)^2 Q_4$ with $Q_4$ quartic (whereas the prograde
 ergosphere crossing $J_+^t$ has only a simple root and stays genus~2). The double
 root drops the radical to $Q_4$, and $\varphi(r)$ closes in the same
 Weierstrass $\wp,\sigma,\zeta$ form as the $\tau$-separatrix
-(App.~\ref{app:explicit}). Both separatrices are thus genus~1---the $\tau$ one
+(\ref{app:explicit}). Both separatrices are thus genus~1---the $\tau$ one
 via the doranTau factorization, the $t$ one via a double root---while generic
 (non-separatrix) $t$-orbits are genuinely genus~2, closed only in genus-2
 Kleinian functions.
@@ -2111,30 +2137,32 @@ dilogarithms with closed-form coefficients (verified to $10^{-8}$).
 \section{Conclusions}
 \label{sec:concl}
 % ----------------------------------------------------------------------
-The non-stationary brachistochrone is a well-posed controlled-rail problem: the
-invariant $-u\cdot W=\Ehat$ is legitimate via Pontryagin's principle, and the
-selector $W$ is fixed canonically by the Killing--CKV--Kodama hierarchy, with
-the Kodama energy conserved along the rail even when free fall does not conserve
-it. FLRW is the degenerate base---freezing without branch splitting---while the
-mass breaks the $t/\tau$ symmetry through its radial gravitational gradient (the
-spin instead driving the rotational plunge inversion). On
-the equatorial sector we obtained closed-form separatrices in Weierstrass
-functions, continued through the ergosphere in Doran coordinates, and an analytic
-cusp theorem for the $|J|<\Jc$ reflection. The plunge inversion resolves into a
-three-way picture: rotation and the conformal factor invert the $t/\tau$
-ordering under a same-launch comparison, while in the ingoing-Vaidya model the
-evaporative sign change is absent. The fixed-endpoint no-inversion is a
-\emph{theorem} for endpoint radii $r_0\le R_\ast(E,a)$ and, in the static case,
-asymptotically as $r_0\to\infty$; it is machine-certified (validated interval
-arithmetic) at representative $r_0$, and remains a numerically supported
-\emph{conjecture} in full generality. Slow drift of the metric yields first-order
-corrections whose \emph{on-shell} (parameter-drift) component is a closed form in
-length-two iterated Abelian integrals on the frozen spectral curve---unified across
-the three geometries, the weight-two letter migrating from a third-kind dipole at
-infinity (Thakurta--Kerr) to a $\dd\log$ at the horizon (Vaidya), and collapsing on
-the separatrix to an elliptic (Bloch--Wigner) dilogarithm; the complete first-order
-term additionally carries an off-shell (costate) piece of the same class, derived
-from the extended Hamiltonian and verified against the true non-autonomous flow. Outlook: the
+\paragraph{Proved.} The non-stationary brachistochrone is a well-posed controlled-rail
+problem: the invariant $-u\cdot W=\Ehat$ is legitimate via Pontryagin's principle, the
+selector $W$ fixed canonically by the Killing--CKV--Kodama hierarchy, with the Kodama
+energy conserved along the rail even when free fall does not. Existence, normality, and
+the (non-autonomous) Hamilton--Jacobi verification criterion hold on the
+timelike-selector domain. On the equatorial sector we obtained closed-form separatrices
+in Weierstrass functions, continued through the ergosphere in Doran coordinates, and an
+analytic cusp theorem for the $|J|<\Jc$ reflection; the on-shell first-order reduction
+to length-two iterated Abelian integrals is a proved weight-one closed form. FLRW is the
+degenerate base---freezing without branch splitting---while the mass breaks the $t/\tau$
+symmetry through its radial gradient and the spin drives the rotational plunge inversion.
+
+\paragraph{Conditional and numerical.} The plunge inversion resolves into a three-way
+picture: rotation and the conformal factor invert the $t/\tau$ ordering under a
+same-launch comparison, while in the ingoing model the negative-rate sign change is
+absent at the frozen-clock level. The fixed-endpoint no-inversion is a \emph{theorem}
+for $r_0\le R_\ast(E,a)$ [Eq.~\eqref{eq:Rstar}] and asymptotically as $r_0\to\infty$ in
+the static case, machine-certified (interval arithmetic) at representative $r_0$, and a
+numerically supported \emph{conjecture} in general. The complete first-order
+(on-shell $+$ off-shell) correction is assembled on all four branches and verified
+against the true non-autonomous flow to $O(\varepsilon^2)$; the weight-two letters
+migrate from a third-kind dipole at infinity to a $\dd\log$ at the horizon and collapse
+on the separatrix to an elliptic dilogarithm, evaluated by a convergent theta-nome
+series with irreducibility and single-valued completion left conjectural.
+
+\paragraph{Open problems.} The
 exact Sultana--Dyer source
 \cite{SultanaDyer2005}, the McVittie/Schwarzschild--de Sitter limits
 \cite{McVittie1933,Kottler1918,Kaloper2010} with their photon surfaces
@@ -2192,7 +2220,7 @@ letting a reader reproduce the algebraic heart of the closed forms in isolation.
 also retains exploratory scripts and negative results,
 documenting which ansatz classes failed the held-out trajectory and phase-space
 residual tests reported in Sec.~\ref{sec:quasiconst} and
-App.~\ref{app:validation}.
+\ref{app:validation}.
 
 
 
@@ -3102,7 +3130,7 @@ coefficients~\eqref{eq:ak}. Every step is verified to machine precision against 
 \paragraph{Special-function class.} The building blocks form a strict transcendence
 hierarchy. The second-kind integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
 \emph{ordinary Abelian integrals} (weight one), reducible to the classical Kleinian
-$\zeta,\sigma$ basis (Baker; App.~\ref{app:explicit}), the same class as $\varphi_0$. The
+$\zeta,\sigma$ basis (Baker; \ref{app:explicit}), the same class as $\varphi_0$. The
 letters $W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$ are \emph{length-two iterated} Abelian
 integrals with algebraic coefficients---one transcendence level above the $U_k$ and
 \emph{not} reducible to the weight-one Kleinian class (their irreducibility to weight one
