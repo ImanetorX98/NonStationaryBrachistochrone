@@ -157,7 +157,8 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
 - [x] Regression runner + environment lockfile: `run_regression.py` (12/12 pass, residui 0–1.2e-12,
       slope 2.00–2.21; --quick, -k) + `requirements-lock.txt` (stack pinnato + nota Sage/abelfunctions).
       Commit fb45761.
-- [ ] **BLOCCATO (esterno)** Rilascio taggato/Zenodo DOI legato al PDF; coefficienti simbolici machine-readable
+- [x] Rilascio taggato/Zenodo DOI — FATTO. `10.5281/zenodo.21707378` (release v1.0) nel bib
+      (`Rosignoli2026Code`) + Data availability di entrambi i paper. Commit 42aebb3. **Ultimo blocco chiuso.**
 
 ## F. Follow-up referee main12 — ✅ CHIUSO (8 azioni)
 Dettaglio in `REFEREE_FOLLOWUP_main12.md`. Verdetto: "responded successfully to the principal
