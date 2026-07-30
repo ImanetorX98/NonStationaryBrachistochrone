@@ -199,9 +199,15 @@ velocity plane $(\dd r,\,r\,\dd\varphi)$ per unit selector-time, is an ellipse
 whose center $c$ is the Zermelo wind (zero for FLRW, ingoing radial for Vaidya,
 azimuthal---frame dragging---for Thakurta--Kerr) and whose axes $R$ shrink with
 the local speed as the freezing surface is approached (Fig.~\ref{fig:indicatrici}).
-Every branch---arrival time $t$, proper time $\tau$, conformal time $\eta$---shares
-this \emph{same} indicatrix; the branches differ only in the cost one-form, i.e.\
-in which clock measures the elapsed travel time.
+Every cost clock---arrival/coordinate time $t$, proper time $\tau$, conformal time
+$\eta$---shares this \emph{same} indicatrix; the branches differ only in the cost
+one-form. Two are \emph{not} independent spatial families: as $\dd t=A(\eta)\,\dd\eta$
+($A>0$) is a monotone reparametrization, coordinate and conformal time extremize the
+\emph{same} spatial path ($\arg\min t_f=\arg\min\eta_f$), so $\eta$ is the canonical
+conformal-time \emph{representation} of the arrival branch, not a third independent
+brachistochrone; the genuinely distinct branch is proper time $\tau$ (extra
+$\sqrt{1-v^2}$ weight). For Vaidya the native arrival clock is the advanced null time
+$v$, again distinct from $\tau$.
 
 \emph{Domain.} The oval~\eqref{eq:ellipse} is compact and strictly convex---the
 hypothesis of the Pontryagin reduction---precisely where $W$ is \emph{timelike} and
@@ -1213,7 +1219,12 @@ class). The
 $\tfrac12(E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}})\varphi_0\,\eta$
 term is the leading approximation to
 Eq.~\eqref{eq:adiab-exact}, accurate to $\sim2\%$; its exact off-shell closed form lives
-in the same genus-two class as $\mathcal{C}+\psi$.
+in the same genus-two class as $\mathcal{C}+\psi$. Equation~\eqref{eq:adiab-exact} is
+computed at \emph{fixed canonical charges} $(\Ehat,J)$---the same-launch, fixed-charge
+response validated by the true-flow test. The fixed spatial-endpoint problem instead
+lets $J=J_0+\varepsilon J_1$ float, with $J_1=-\delta\varphi_{\rm dyn}/\partial_J\varphi_0$
+fixing the arrival azimuth; this adds $\varepsilon J_1\partial_J\varphi_0$, re-selecting
+the launch angle without changing the transcendental class.
 \begin{table}[htbp]
     \centering
     \caption{Hybrid closed form versus the direct integral of the \emph{same}

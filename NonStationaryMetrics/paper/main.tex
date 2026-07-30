@@ -200,9 +200,16 @@ velocity plane $(\dd r,\,r\,\dd\varphi)$ per unit selector-time, is an ellipse
 whose center $c$ is the Zermelo wind (zero for FLRW, ingoing radial for Vaidya,
 azimuthal---frame dragging---for Thakurta--Kerr) and whose axes $R$ shrink with
 the local speed as the freezing surface is approached (Fig.~\ref{fig:indicatrici}).
-Every branch---arrival time $t$, proper time $\tau$, conformal time $\eta$---shares
-this \emph{same} indicatrix; the branches differ only in the cost one-form, i.e.\
-in which clock measures the elapsed travel time.
+Every cost clock---arrival/coordinate time $t$, proper time $\tau$, conformal time
+$\eta$---shares this \emph{same} indicatrix; the branches differ only in the cost
+one-form, i.e.\ in which clock measures the elapsed travel time. Two of these are
+\emph{not} independent spatial families: since $\dd t=A(\eta)\,\dd\eta$ with $A>0$ is
+a monotone reparametrization, the coordinate-time and conformal-time functionals are
+extremized by the \emph{same} spatial path ($\arg\min t_f=\arg\min\eta_f$), so $\eta$
+is the canonical conformal-time \emph{representation} of the arrival branch rather
+than a third independent brachistochrone. The genuinely distinct branch is the proper
+time $\tau$, whose cost carries the extra $\sqrt{1-v^2}$ weight; for Vaidya the native
+arrival clock is the advanced null time $v$, again distinct from $\tau$.
 
 \paragraph{Domain of the indicatrix.} The intersection~\eqref{eq:ellipse} is a
 compact, strictly convex oval---the hypothesis under which the Pontryagin reduction
@@ -1413,6 +1420,26 @@ radial action, reduced in closed form in App.~\ref{app:firstorder},
 Eqs.~\eqref{eq:action-reduction}--\eqref{eq:ak}): a length-two iterated integral on the
 same spectral curve, closing in $\zeta,\sigma$ \emph{plus} one genus-two dilogarithm
 sourced by the third-kind letter at the seed Kerr null surface $\Delta=0$.
+
+\paragraph{Fixed-charge versus fixed-endpoint.} The correction~\eqref{eq:adiab-exact}
+is computed at \emph{fixed canonical charges} $(\Ehat,J)$: it is the same-launch,
+fixed-charge response of the orbit to the slow drift, the object that the true-flow
+test of App.~\ref{app:firstorder} validates. A genuine two-point boundary-value
+problem with \emph{fixed spatial endpoints} instead lets the conserved charge float,
+$J=J_0+\varepsilon\,J_1+O(\varepsilon^2)$, with $J_1$ fixed by holding the arrival
+azimuth,
+\begin{equation}
+    0=\delta\varphi_{\rm dyn}+J_1\,\partial_J\varphi_0
+    \;\Longrightarrow\;
+    J_1=-\,\frac{\delta\varphi_{\rm dyn}}{\partial_J\varphi_0},
+    \label{eq:J1-fixedendpoint}
+\end{equation}
+where $\delta\varphi_{\rm dyn}$ is the fixed-charge displacement above. The
+fixed-endpoint shape then adds $\varepsilon J_1\,\partial_J\varphi_0$, which merely
+re-selects the launch angle and does not alter the transcendental class. We report
+the fixed-charge form throughout and quote~\eqref{eq:J1-fixedendpoint} as the explicit
+map to the fixed-endpoint problem.
+
 \begin{table}[htbp]
     \centering
     \caption{Hybrid closed form versus the direct integral of the \emph{same}
