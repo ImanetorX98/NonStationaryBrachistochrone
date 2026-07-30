@@ -272,19 +272,15 @@ controlled, not conserved. The optical reductions of $H$
 reproduce the Randers/Zermelo structure
 \cite{GibbonsRanders2009,CaponioWind}.
 
-\paragraph{Thrust and fuel.} As $a^\mu=Du^\mu/\dd\tau$ is the \emph{proper}
-acceleration (gravity is in the covariant derivative, so a geodesic reads $a=0$),
-the rail force is the thrust per unit mass a rocket must supply; $|a|=\sqrt{a\cdot a}$
-integrates to $\Delta v=\int|a|\dd\tau$ and, \emph{heuristically} under a chosen
-constant-exhaust model (not needed for the mathematical argument), to a fuel fraction
-$1-e^{-\Delta v/v_{\rm e}}$. A Schwarzschild arc ($E=1.4$, $r:10M\!\to\!5.7M$) gives
-$\Delta v\approx0.6c$ (a photon rocket burns $\sim45\%$ of its mass); $|a|$ diverges
-toward the freezing/horizon surface, so the fuel diverges there
-(\texttt{brachistochrone\_thrust\_fuel.py}). The brachistochrone is the fastest rail
-curve, not the fuel-minimal one (an unpowered free-fall geodesic needs no rail thrust):
-this is the price of
-speed at fixed $\Ehat$, the $a\cdot W$ term adding the thrust that fights the
-non-stationary drift.
+\paragraph{Thrust.} Maintaining the controlled invariant generally requires nonzero
+\emph{proper} acceleration $a^\mu=Du^\mu/\dd\tau$ ($a=0$ only on a geodesic), so the rail
+force is the thrust per unit mass, with $|a|$ diverging toward the freezing/horizon
+surface. The present variational problem minimizes the selected elapsed \emph{clock}, not
+thrust, fuel, or integrated control effort---these define distinct optimal-control
+problems; the brachistochrone is the fastest rail curve, not the fuel-minimal one. A
+representative $\Delta v$ estimate is in the reproducibility package
+(\texttt{brachistochrone\_thrust\_fuel.py}); the $a\cdot W$ term adds the thrust that
+fights the non-stationary drift.
 
 \paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
 independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and

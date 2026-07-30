@@ -325,22 +325,16 @@ conserved by a symmetry. The optical reductions of $H$
 reproduce the Randers/Zermelo structure
 \cite{GibbonsRanders2009,CaponioWind}.
 
-\paragraph{Operational reading: thrust and fuel.} Since $a^\mu=Du^\mu/\dd\tau$ is the
-\emph{proper} acceleration---the covariant derivative already contains gravity, so a
-free-fall geodesic reads $a=0$ on an accelerometer---the rail force is exactly the
-thrust per unit mass a rocket must supply to fly the brachistochrone. Its magnitude
-$|a|=\sqrt{a\cdot a}\ge0$ ($a$ is spacelike since $a\cdot u=0$) integrates to a
-characteristic velocity $\Delta v=\int|a|\,\dd\tau$ and hence, \emph{heuristically}
-and under a chosen constant-exhaust rocket model (not needed for the mathematical
-argument below), to a fuel fraction $1-\exp(-\Delta v/v_{\rm e})$ for exhaust
-speed $v_{\rm e}$. For a representative Schwarzschild arc ($E=1.4$, $r:10M\!\to\!5.7M$)
-one finds $|a|\sim0.03$--$0.2/M$ and $\Delta v\approx0.6\,c$ (a photon rocket burns
-$\sim\!45\%$ of its mass; a chemical one cannot); the proper acceleration diverges as
-the freezing/horizon surface is approached, so the fuel budget diverges there
-(\texttt{brachistochrone\_thrust\_fuel.py}). The brachistochrone is the
-\emph{fastest} rail curve, not the fuel-minimal one---an unpowered free-fall geodesic
-(after launch) requires no rail thrust---so this is the price of speed at fixed $\Ehat$; in the non-stationary case the
-$a\cdot W$ term adds the thrust that fights the accretion/evaporation drift.
+\paragraph{Operational reading: thrust.} Maintaining the controlled invariant generally
+requires nonzero \emph{proper} acceleration $a^\mu=Du^\mu/\dd\tau$ ($a=0$ only on a
+free-fall geodesic), so the rail force is the thrust per unit mass, spacelike
+($a\cdot u=0$) with $|a|$ diverging as the freezing/horizon surface is approached. We
+stress that the present variational problem minimizes the selected elapsed \emph{clock},
+not thrust, fuel, or integrated control effort---these define distinct optimal-control
+problems; the brachistochrone is the fastest rail curve, not the fuel-minimal one. A
+representative $\Delta v$ estimate is in the reproducibility package
+(\texttt{brachistochrone\_thrust\_fuel.py}). In the non-stationary case the $a\cdot W$
+term adds the thrust that fights the accretion/evaporation drift.
 
 \paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
 independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and
@@ -944,8 +938,10 @@ algebraic (rational in $m,E,J$); the transcendence lives entirely in
 $W_{jk},\mathcal{G}_k$, so the correction is reusable by direct evaluation once $S$
 and the $c_k^m$ are fixed.
 
-\paragraph{Fully explicit separatrix correction and its minimal dilogarithm basis.}
-The separatrix reduction can be pushed to a fully explicit form. Writing
+\paragraph{Fully explicit degeneration-family correction and its minimal dilogarithm
+basis.} For spherical Vaidya the value $J=\Jc$ is the algebraic genus-degeneration
+$J_{\rm deg}$ (double root at $r_d<0$), not a physical separatrix; the reduction on this
+locus can nonetheless be pushed to a fully explicit form. Writing
 $\partial_m F\,\dd r=R(z)\,\dd z$ with $R$ the elliptic function
 $R=N_m(r(z))/[(r(z)-r_d)^3\,Q_4(r(z))]$ on $E$ (where $r(z)$ is itself explicit,
 $r(z)=c_r-a_4^{-1/2}[\zeta(z-z_\infty)-\zeta(z+z_\infty)]$), its Mittag--Leffler
@@ -976,7 +972,7 @@ evaluation, to $10^{-18}$). This building-block form---$G$ from
 Eq.~\eqref{eq:vaidya-sep-G} plus the $W_{kj}=\tilde\Gamma(1,1)$---is the
 \emph{reusable} closed form: \emph{every} coefficient in it (the residues $b_n^a$,
 the mass constants $c_k^m$, $\Jc$ itself) is given in closed form as an algebraic
-function of $m,E$, so a reader reconstructs $\delta\varphi_\tau|_{\rm sep}$ for any
+function of $m,E$, so a reader reconstructs $\delta\varphi_\tau|_{\rm deg}$ for any
 $(m,E)$ by evaluating those formulas on the corresponding curve---checked to
 $10^{-9}$ against the direct integral and, term by term for the closed-form
 coefficients, across $E\in[1.3,1.6]$ (each a distinct curve).
@@ -986,7 +982,7 @@ transcendental weight: the parity involution $z\to-z$ groups the raw terms into
 $24$ blocks, the shuffle identity~\cite{Chen1977} recasts these as $21$
 antisymmetric elliptic dilogarithms, and the Weierstrass-addition (Fay) relations
 collapse them further, so that the entire weight-two content of
-$\delta\varphi_\tau|_{\rm sep}$ appears to span a space of dimension five: a
+$\delta\varphi_\tau|_{\rm deg}$ appears to span a space of dimension five: a
 high-precision numerical reduction gives a stable rank five (the discarded singular
 values fall to $10^{-79}$ in arbitrary precision). We state this as strong
 \emph{numerical evidence}, not a proof---an exact bound on the dimension would
@@ -2127,7 +2123,7 @@ tracks the moving marginal curve, with $\dd J/\dd v=(\Jc/m)\dot m$---closes by t
 polynomial; the same pole-adapted Weierstrass assembly then yields its closed form
 (verified to $10^{-8}$), all coefficients again algebraic in $m,E$. The
 advanced-time branch closes on the same separatrix by the identical scheme:
-$\delta\varphi_v|_{\rm sep}=\tilde G(z)\,v-\int\tilde G\,v_z\,\dd z$ with
+$\delta\varphi_v|_{\rm deg}=\tilde G(z)\,v-\int\tilde G\,v_z\,\dd z$ with
 $v_z=\dd v/\dd z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$, the first term reproducing the
 proper-time dilogarithms and the second---odd on the curve, with a simple pole at
 the horizon two-torsion image $z=i\omega_{\rm im}$ (where $r=2m=e_3$)---furnishing the
@@ -2164,25 +2160,20 @@ migrate from a third-kind dipole at infinity to a $\dd\log$ at the horizon and c
 on the separatrix to an elliptic dilogarithm, evaluated by a convergent theta-nome
 series with irreducibility and single-valued completion left conjectural.
 
-\paragraph{Open problems.} The
-exact Sultana--Dyer source
-\cite{SultanaDyer2005}, the McVittie/Schwarzschild--de Sitter limits
-\cite{McVittie1933,Kottler1918,Kaloper2010} with their photon surfaces
-\cite{ClaudelViracVirbhadra2001}, escape maps, and freezing-surface dynamics.
-
-\paragraph{Future directions.} Three threads are left open. First, a general theory of
-\emph{moving turning points}: the first-order correction is uniform only on sub-arcs
-with $H_{p_r}\neq0$, and a matched-asymptotic (WKB connection) treatment across the
-turning point would render the orbit globally uniform. Second, a general theory of
-\emph{adiabatic separatrices}: the instantaneous separatrix response closes in elliptic
-dilogarithms, but a genuine crossing of a \emph{moving} separatrix is a Neishtadt inner
-problem---jump/capture laws and matched asymptotics beyond first order. Third, in Vaidya
-a genuine \emph{third clock} would require a distinguished observer family (e.g.\ Kodama
-observers) rather than a coordinate analogy: whether a Kodama-observer proper time
-defines a brachistochrone distinct from the advanced-null $v$ and the proper time $\tau$
-remains open. By contrast, the conformal-time branch needs no separate
-development---$t$ and $\eta$ are the \emph{same} arrival family---and the off-shell
-source is now known in universal form on each deformation class
+\paragraph{Outlook.} Several threads remain open. A general theory of \emph{moving
+turning points}: the first-order correction is uniform only on sub-arcs with
+$H_{p_r}\neq0$, and a matched-asymptotic (WKB connection) treatment across the turning
+point would render the orbit globally uniform. A general theory of \emph{adiabatic
+separatrices}: the instantaneous response closes in elliptic dilogarithms, but a genuine
+crossing of a \emph{moving} separatrix is a Neishtadt inner problem---jump/capture laws
+and matched asymptotics beyond first order. In Vaidya a genuine \emph{third clock} would
+require a distinguished observer family (e.g.\ Kodama observers) rather than a coordinate
+analogy. Further afield lie the exact Sultana--Dyer source \cite{SultanaDyer2005}, the
+McVittie/Schwarzschild--de Sitter limits \cite{McVittie1933,Kottler1918,Kaloper2010} with
+their photon surfaces \cite{ClaudelViracVirbhadra2001}, escape maps, and freezing-surface
+dynamics. By contrast the conformal-time branch needs no separate development ($t$ and
+$\eta$ are the \emph{same} arrival family) and the off-shell source is now known in
+universal form on each deformation class
 [Eqs.~\eqref{eq:SD-conformal},~\eqref{eq:SD-vaidya}].
 
 \ack
@@ -3071,8 +3062,11 @@ the \emph{full} Euler operator
     \label{eq:Dop}
 \end{equation}
 
-\paragraph{Extended system and first order.} Adjoin $s$ with conjugate $p_s$:
-$\mathcal H=p_s+\bar H(r,P_r;E_{\rm eff}(s),J_{\rm eff}(s))=0$. Free-arrival transversality
+\paragraph{Extended system and first order.} The canonical extended system adjoins $s$
+with conjugate $p_s$ in the \emph{original} variables,
+$\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$; passing to the normalized (conformally
+symplectic) variables rewrites the shell as $\bar H(r,P_r;E_{\rm eff}(s),J_{\rm eff}(s))=0$
+(since $H_{\rm br}=A\bar H$, $A>0$). Free-arrival transversality
 sets $\bar H=0$ (hence $p_s=0$) at $\lambda=0$. Along the flow
 $\dd p_s/\dd\lambda=\varepsilon\,\mathcal D\bar H$, so the \emph{terminally-anchored}
 source is
