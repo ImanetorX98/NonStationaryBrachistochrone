@@ -195,7 +195,7 @@ final-clock condition, \emph{not} a two-event condition. We accordingly reserve
 which both spatial endpoints \emph{and} the arrival are prescribed; the default problem
 fixes the spatial target at a free arrival clock.
 
-\paragraph{Pontryagin reduction.} Minimizing travel time subject
+\paragraph{Theorem~I.1 (controlled-rail reduction).} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.
 The velocity indicatrix~\eqref{eq:ellipse} is a compact, strictly convex
 \emph{closed curve} (the boundary of a convex region), and the control is its
@@ -318,7 +318,7 @@ vacuous), and a Hamilton--Jacobi certificate that upgrades a saturated extremal 
 a \emph{global} optimum. All three are elementary under the standing hypothesis
 that the indicatrix is a compact, uniformly convex oval [Eq.~\eqref{eq:ellipse}].
 
-\paragraph{Existence (direct method).} Let the spatial arc range over a compact,
+\paragraph{Theorem~I.2 (existence and normality; direct method).} Let the spatial arc range over a compact,
 regular domain $\Omega$ on which the rail one-form and the metric are smooth and
 the arrival-time indicatrix obeys the uniform two-sided bound
 \begin{equation}
@@ -337,7 +337,7 @@ bound~\eqref{eq:coercive} fails exactly at the freezing/horizon surfaces, where
 $\rho\to0$ and the fuel budget of Sec.~\ref{sec:indicatrix} diverges; the theorem
 therefore applies on any compact subdomain bounded away from them.
 
-\paragraph{Normality.} Every regular minimizer is a \emph{normal} extremal---the
+\paragraph{Normality (part of Theorem~I.2).} Every regular minimizer is a \emph{normal} extremal---the
 abnormal multiplier $p_0$ cannot vanish. If $p_0=0$ the maximized Hamiltonian
 would read $\max_v p\cdot v=0$ with $p\neq0$; but the support function of the oval
 obeys $h(p)=\max_{v\in\partial B}p\cdot v\ge\rho\,|p|>0$, a contradiction. Hence
@@ -348,7 +348,7 @@ control-theoretic content of ``excluding $p=0$'' used in the Pontryagin reductio
 of Sec.~\ref{sec:indicatrix}: nontriviality is not an assumption but a consequence
 of $\rho>0$.
 
-\paragraph{Global optimality (Hamilton--Jacobi certificate).} The maximum
+\paragraph{Proposition~I.3 (Hamilton--Jacobi verification).} The maximum
 principle is necessary but not sufficient: a PMP extremal is a \emph{candidate}
 minimizer, guaranteed only \emph{locally} optimal. A sufficient global certificate
 comes from dynamic programming. In the \emph{stationary} (frozen) problem the value
@@ -1032,8 +1032,7 @@ paper.
 
 \subsection{Reproducing the reductions}
 \label{app:reproduce}
-Every coefficient in the adiabatic corrections is fixed by a \emph{single}
-polynomial identity that the reader can solve directly; nothing is fitted. The
+\emph{Lemma~I.4 (polynomial reduction).} Every coefficient in the adiabatic corrections is fixed by a \emph{single} polynomial identity that the reader can solve directly; nothing is fitted. The
 depth-one reduction $\partial_\lambda\varphi_0=\mathcal{A}/\sqrt S+\sum_{k=0}^4 c_k
 U_k$ [Eq.~\eqref{eq:dm-reduction}], differentiated in $r$ and
 cleared of the radical using $\partial_\lambda F=N_\lambda/S^{3/2}$, is equivalent to
@@ -1274,8 +1273,7 @@ supplies the horizon dilogarithm.
 
 \subsection{Adiabatic derivative of the degeneration family}
 \label{app:tracking}
-As the slow parameter drifts, the genus-degeneration value itself moves,
-$J=\Jc(\lambda)$. This is \emph{not} the evolution of a single torque-free extremal:
+\emph{Lemma~I.6 (degeneration-family derivative).} As the slow parameter drifts, the genus-degeneration value itself moves, $J=\Jc(\lambda)$. This is \emph{not} the evolution of a single torque-free extremal:
 the axial costate $J$ is conserved along every extremal
 (Sec.~\ref{sec:principle}), so one trajectory cannot follow the moving locus by
 changing $J$ unless an external azimuthal torque---a modified control law with
@@ -1355,7 +1353,7 @@ curve-specific), which the block forms above do not require.
 \section{Complete first-order extended-Hamiltonian correction}
 \label{app:firstorder}
 
-The complete first-order correction linearizes the extended Hamiltonian
+\emph{Theorem~I.5 (complete first-order response).} The complete first-order correction linearizes the extended Hamiltonian
 $\mathcal H=p_s+H=0$ about the frozen extremal, with $\lambda$ the elapsed clock from
 the free-arrival endpoint and $P_r=p_r/A$ the normalized momentum: the momentum-shell
 shift is $\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
