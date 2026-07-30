@@ -69,6 +69,10 @@ reproducibility package is archived at Zenodo.
 \end{abstract}
 
 \maketitle
+% widen ToC number box so the wide "Appendix A" label does not overlap titles
+\makeatletter
+\renewcommand{\numberline}[1]{#1\enspace}
+\makeatother
 {\hypersetup{linkcolor=black}\tableofcontents}
 
 % ======================================================================
