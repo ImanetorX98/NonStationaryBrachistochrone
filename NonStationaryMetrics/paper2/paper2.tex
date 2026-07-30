@@ -1187,12 +1187,9 @@ rigorous higher-genus polylogarithm framework with a canonical basis. The off-eq
 We collect the numerical checks that underpin the analytic results. The
 minimum principle is verified directly by perturbing the computed
 brachistochrones and confirming that both $T_t$ and $T_\tau$ are minimized
-(Paper I for the FLRW branch degeneracy, and
-Fig.~\ref{fig:verifmin} for the two distinct Vaidya branches). Stationary-limit
-residuals confirm that the non-stationary
-Hamiltonian flow reproduces the closed-form Kerr expressions as $m'\to0$ and
-$A\to1$ (Fig.~\ref{fig:vaidya-kerra0}); the Kodama energy is conserved to
-$\sim10^{-16}$ along the rail (Paper I). The equatorial closed
+(the spherical branches are treated in Paper~I). Stationary-limit residuals confirm
+that the non-stationary Hamiltonian flow reproduces the closed-form Kerr expressions
+as $A\to1$; the Kodama energy is conserved to $\sim10^{-16}$ along the rail. The equatorial closed
 forms are validated end-to-end by the three-method superposition
 (ODE flow, quadrature, evaluated Weierstrass) through the ergosphere
 (Fig.~\ref{fig:sep3}), and the fixed-endpoint no-inversion theorem is
@@ -1636,27 +1633,12 @@ matching the direct double integral to $4\times10^{-15}$.
             & \texttt{kerr\_tbranch\_psi\_assembly.py} & $9\times10^{-13}$\\
         quasi-periods $\eta$; $L$ (Fay third-kind)
             & \texttt{kerr\_quasiperiods\_bel.sage} & $10^{-12}$; $5\times10^{-8}$\\
-        Vaidya reduction $c_k^m$
-            & \texttt{vaidya\_dMF\_reduction.py} & $10^{-15}$\\
-        Vaidya clock $v$; assembled $\delta\varphi$~(Paper I)
-            & \texttt{vaidya\_fully\_explicit.py} & $2\times10^{-13}$\\
-        Vaidya $\tau$-branch assembly
-            & \texttt{vaidya\_tau\_assembly.py} & $10^{-14}$\\
-        horizon dilogarithm $\mathcal{D}_k=U_k\ln-\mathcal{G}_k$
-            & \texttt{vaidya\_horizon\_dilog.py} & $10^{-12}$\\
-        separatrix elliptic form $U_0(\sigma,\zeta)$; $\tau$
-            & \texttt{vaidya\_ell\_dilog\_match.py} & $10^{-14}$\\
-        accretion/evaporation split $\mathcal{A}_\infty,\mathcal{B}_{\rm hor}$
-            & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
         \hline
         \multicolumn{3}{@{}p{\textwidth}@{}}{\emph{First-order
             extended-Hamiltonian correction, Eq.~\eqref{eq:adiab-exact} (on-shell
-            $+$ off-shell); paths under \texttt{ThakurtaMetric/},
-            \texttt{VaidyaMetric/}:}}\\
+            $+$ off-shell); paths under \texttt{ThakurtaMetric/}:}}\\
         TK $t$ exact PT, $\delta\varphi$ vs true flow
             & \texttt{adiabatic\_first\_order\_exact.py} & slope $1.95$\\
-        Vaidya $v$ exact PT $+$ Fig.~\ref{fig:vaidya-offshell}
-            & \texttt{vaidya\_first\_order\_offshell.py} & slope $2.00$\\
         true-dynamics validation ($t,\tau$, 2 sets), Fig.~\ref{fig:phi-true-dynamic}
             & \texttt{fig\_phi\_validation\_corrected.py} & slopes $1.95$--$2.16$\\
         \hline\hline
@@ -1664,7 +1646,6 @@ matching the direct double integral to $4\times10^{-15}$.
     \\[2pt]
     {\footnotesize SHA-256 (first 12 hex):
     \texttt{adiabatic\_first\_order\_exact.py} $=$\,\texttt{78ab24b5373c};
-    \texttt{vaidya\_first\_order\_offshell.py} $=$\,\texttt{5dc9fe177f2f};
     \texttt{fig\_phi\_validation\_corrected.py} $=$\,\texttt{a086a0692e8c}.}
 \end{table}
 
@@ -1718,40 +1699,14 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
 \clearpage
 
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_kerr_a0.png}
-    \caption{Stationary-limit check ($m'=0$): the numerical orbit matches the
-    closed-form Kerr $a=0$ solution to a sup-norm residual $<10^{-12}$.}
-    \label{fig:vaidya-kerra0}
-\end{figure}
 
 
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_verifica_minimo_brachi.png}
-    \caption{Each branch minimizes its own travel time; $t$ and $\tau$ are
-    distinct curves.}
-    \label{fig:verifmin}
-\end{figure}
 
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_bounce.png}
-    \caption{Bounce through periapsis in the $v$-parametrization: the
-    Euler--Lagrange flow is regular at $r'=0$ and integrates through the turning
-    point, reaching $r_{\min}$ exactly where the $r$-parametrization diverges.}
-    \label{fig:vaidya-bounce}
-\end{figure}
 
-\begin{figure}[tbp]
-    \centering
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_timing.png}
-    \caption{Timing window: $r_{\min}$ depends on the arrival epoch $v_1$. The
-    orbit--horizon race has opposite winners in absolute ($r_{\min}$) and relative
-    ($r_{\min}/2m$) terms for accretion vs the negative-rate branch ($m'<0$, ingoing).}
-    \label{fig:vaidya-timing}
-\end{figure}
+
+
+
+
 
 
 
@@ -2130,7 +2085,7 @@ $-\lambda\Theta G_0\to+\lambda\Theta G_0$; the proper-time branch uses $H_\tau$ 
 the Vaidya $\tau$ Hamiltonian (Paper I). All four cases close to $O(\varepsilon^2)$ against the true
 flow: least-squares log--log slope $\approx1$ for the on-shell term alone versus
 $2.05,\,2.07$ ($t,\tau$) and a second parameter set $2.01$
-(Fig.~\ref{fig:phi-true-dynamic}), and $2.00$ (Vaidya, Fig.~\ref{fig:vaidya-offshell}).
+(Fig.~\ref{fig:phi-true-dynamic}), and $2.00$ (Vaidya, Paper~I).
 
 \paragraph{Separatrix limit ($J\to\Jc$).} The off-shell separatrix correction is simply
 the generic term at $J=\Jc$: the coefficients~\eqref{eq:ak} are polynomials in $J$, hence
@@ -2159,17 +2114,7 @@ matched asymptotics, outside the symbolic-coefficient reduction. For Vaidya the 
 root is a branch point off the physical arc, $\mathcal D=\Theta$ carries no dilation,
 and no such crossing occurs.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.62\textwidth]{Immagini/fig_vaidya_offshell.png}
-    \caption{Vaidya $v$-branch first-order correction, residual against the true
-    non-autonomous flow versus $\varepsilon=M\dot m/m$ (log--log). The on-shell term
-    alone (dropping the costate integral $S$) is $O(\varepsilon)$ (slope $\approx1.00$);
-    the complete extended-Hamiltonian term of Eq.~\eqref{eq:adiab-exact}, adding the
-    off-shell piece, closes the correction to $O(\varepsilon^2)$ (slope $\approx2.00$).
-    Generated by \texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}.}
-    \label{fig:vaidya-offshell}
-\end{figure}
+
 
 \clearpage
 
