@@ -5,7 +5,7 @@ main11, chiusura off-shell, tracking separatrice TK, e la nota derivazioni_post_
 Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** severità referee.
 
 ---
-## A. Fondamenti control-theory (referee Issues 1,2,6) — coperti dalla nota derivazioni
+## A. Fondamenti control-theory (referee Issues 1,2,6) — ✅ CHIUSO (nota derivazioni + propagato ai paper)
 - [x] **Esistenza** minimo assoluto (dominio compatto regolare, indicatrice unif. convessa) — Teorema 5.1, VALIDO
 - [x] **Normalità** PMP (ogni minimo regolare = estremale normale) — Prop 3.1, VALIDO
 - [x] **Limite stazionario** `H≡0`, recupero energia fissata — Prop 3.2, VALIDO
@@ -15,8 +15,12 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       d'arrivo È la metrica di Randers di Perlick a energia fissata, `β_a=ω_a`, `a_ab=Ê²h_ab/(f(Ê²−f))`;
       limite null Ê→∞ = Fermat. Verificato 0–4.4e-16. **PROPAGATO al paper** (main.tex §W-hierarchy(a) + PRD, eq:perlick-randers, compilano).
       Scripts: `perlick_equivalence.py/.md`.
-- [~] **Issue 2 — `p_φ` costato vs momento meccanico `L_mech`** — DERIVAZIONE FATTA (commit ad3a372,
-      `costate_finsler_derivation.py`); resta solo la riscrittura del testo §4.1. NON invalida i risultati. **§4.1 già attento; aggiunta frase Finsler/Perlick (propagato).**
+- [x] **Issue 2 — `p_φ` costato vs momento meccanico `L_mech`** — CHIUSO. Derivazione (commit ad3a372,
+      `costate_finsler_derivation.py`) + testo §4.1 COMPLETO in entrambi i paper: paragrafo "Branch costate
+      vs mechanical angular momentum" (main line 586-607, PRD 549-555): `J=p_φ` = costato di Noether NON a
+      priori meccanico `g(u,∂_φ)`; coincidono qui perché `∂_φ` Killing di metrica+problema di controllo;
+      Legendre branch-specific; `J_eff=J/A` = rescaling ottico `P_φ=p_φ/A`, non riscalatura del costato.
+      Ancorato alla Finsler stazionaria (eq:perlick-randers). NON invalida i risultati.
       Derivazione rigorosa di Finsler (Euler-verificata):
       * il `(p_r0,J)` del paper **È** il costato di Pontryagin, NON il meccanico geodetico (p_r0=1.29475
         combacia col costato Finsler 1.29487; geodetico u_r=1.049 sbagliato del 20%);
@@ -29,10 +33,18 @@ Legenda: [x] fatto · [~] parziale · [ ] aperto · **BLOCKER/MAJOR/MINOR** seve
       (argomento meccanico) con: "`J` = costato di Pontryagin conservato, distinto da `g(u,∂_φ)` perché
       la brachistocrona è non-geodetica; `J_eff=J/A` è la normalizzazione ottica". Unificare
       `rail_conservation.py` (nomenclatura costato vs meccanico).
-- [ ] Integrare il "Testo proposto" (§10 nota) come blocco control-theory nel paper (main.tex + PRD).
-- [ ] **MAJOR(Issue 6) — esclusioni**: minimalità dentro l'ergosfera (selettore spacelike, continuazione
-      analitica ≠ ottimo fisico); PMP necessario ≠ esistenza/minimalità globale (già chiarito dalla nota,
-      da riflettere nel testo); freezing≠turning≠separatrice (notazione).
+- [x] Integrare il "Testo proposto" (§10 nota) come blocco control-theory nel paper (main.tex + PRD).
+      FATTO — nuova subsection "Existence, normality, and global optimality" (sec:control-foundations)
+      dopo indicatrice/Pontryagin in ENTRAMBI: Esistenza (Tonelli, bound ρ|v|≤F≤R|v|, coercività+
+      Arzelà-Ascoli+semicont. convessa, s-coupling Grönwall) + Normalità (p₀=0 ⟹ contraddizione
+      h(p)≥ρ|p|>0, costato mai nullo) + HJB (subsoluzione Lipschitz saturata ⟹ ottimo globale) +
+      Conjugate/Maxwell/cut-locus. main 71→72pp, PRD 33pp, compila pulito. Commit 6813fbe.
+- [x] **MAJOR(Issue 6) — esclusioni**: minimalità dentro l'ergosfera (selettore spacelike, continuazione
+      analitica ≠ ottimo fisico); PMP necessario ≠ esistenza/minimalità globale; freezing≠turning≠
+      separatrice. FATTO — paragrafo "What is not claimed inside the ergosphere" nel blocco control-theory
+      (sec:control-foundations, main+PRD): ξ spacelike ⟹ φ(r) continuato = continuazione analitica NON
+      minimo fisico certificato; esistenza/HJB asserite solo fuori ergosfera; le tre degenerazioni distinte.
+      Commit 6813fbe.
 
 ## B. Correzione adiabatica off-shell (referee Issue 1, main11)
 - [x] Termine di dilatazione `−(Ȧ/A)P_r`, Euler completo `D=Θ+P_r∂_Pr`, sorgente `S_D` — verificato vs vero flusso (slope~2), oracolo `test_adiabatic_noreg.py`
