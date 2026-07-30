@@ -1049,6 +1049,27 @@ curves as $\eta$ through $t=\int A\,\dd\eta$, while $\tau$ is Riemannian-pure, t
 wind cancelling the gravitomagnetic term, so it survives the expansion
 (Fig.~\ref{fig:th-branches}).
 
+\paragraph{The conformal-time ($\eta$) brachistochrone.} The relation
+$\dd t=A(\eta)\,\dd\eta$ makes $\eta$ the canonical conformal clock and shows that the
+arrival branch carries no new content beyond $t$: the two are the \emph{same} spatial
+family. Frozen, the arrival-time Finsler functions obey $F_t=A\,F_\eta$ exactly, so at
+fixed $A$ the brachistochrone curves coincide (a constant Finsler rescaling leaves
+geodesics invariant), the conserved charge merely relabelled by the conformal weight
+$J_t=A\,J_\eta$: the $\eta$-orbit at $J_\eta$ and the $t$-orbit at $A\,J_\eta$ trace the
+same $\varphi(r)$ to $7\times10^{-9}$
+(\texttt{ThakurtaMetric/eta\_brachistochrone\_check.py}), whereas the naive same-$J$
+comparison does \emph{not}. Under a drift the equivalence survives by monotonicity: for
+any fixed-endpoint path the arrival time $t_f=\int_0^{\eta_f}A\,\dd\eta$ is a strictly
+increasing function of $\eta_f$ ($A>0$), so $\arg\min\eta_f=\arg\min t_f$ for
+\emph{every} $A(\eta)$. Hence the frozen, adiabatic and separatrix $\eta$-solutions are
+exactly the $t$-solutions of Secs.~\ref{sec:closed}--\ref{sec:thakurta}; there are
+\emph{two} distinct optimal families, not three---the arrival branch $t\equiv\eta$ and
+the proper-time branch $\tau$. The $\eta$ gauge is nonetheless the natural one: $H_\eta$
+carries unit cost, the extended Hamiltonian $\mathcal H=p_\eta+H_\eta=0$ is the cleanest
+non-autonomous form, the drift enters as the single scalar $\varepsilon=A'/A$, and the
+off-shell source takes the universal form $S_{\mathcal D}=\eta+\int E_{\rm eff}
+H_{E_{\rm eff}}\,\dd\eta$ [Eq.~\eqref{eq:SD-conformal}].
+
 \paragraph{Non-autonomous optical reduction.} Solving the indicatrix for
 $\dd\eta$ at fixed spatial displacement casts the $\eta$-branch as a closed-form
 Randers metric, non-autonomous through the conformal factor,

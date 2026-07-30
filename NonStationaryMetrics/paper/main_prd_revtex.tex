@@ -883,6 +883,18 @@ curves as $\eta$ through $t=\int A\,\dd\eta$, while $\tau$ is Riemannian-pure, t
 wind cancelling the gravitomagnetic term, so it survives the expansion
 (Fig.~\ref{fig:th-branches}).
 
+\paragraph{The conformal-time ($\eta$) brachistochrone.} Since $\dd t=A(\eta)\,\dd\eta$,
+the arrival branch carries no new content beyond $t$. Frozen, $F_t=A F_\eta$ exactly, so
+the brachistochrone curves coincide (constant Finsler rescaling), the charge relabelled by
+$J_t=A J_\eta$: the $\eta$-orbit at $J_\eta$ and the $t$-orbit at $A J_\eta$ trace the same
+$\varphi(r)$ to $7\times10^{-9}$ (\texttt{eta\_brachistochrone\_check.py}). Under a drift,
+$t_f=\int_0^{\eta_f}A\,\dd\eta$ is strictly increasing in $\eta_f$ ($A>0$), so
+$\arg\min\eta_f=\arg\min t_f$ for every $A(\eta)$; the frozen, adiabatic and separatrix
+$\eta$-solutions are thus the $t$-solutions. There are \emph{two} optimal families, not
+three: the arrival branch $t\equiv\eta$ and the proper-time branch $\tau$. The $\eta$ gauge
+is the natural one ($H_\eta$ unit cost, $\mathcal H=p_\eta+H_\eta=0$, drift $\varepsilon=A'/A$,
+source $S_{\mathcal D}=\eta+\int E_{\rm eff}H_{E_{\rm eff}}\dd\eta$).
+
 \paragraph{Non-autonomous optical reduction.} Solving the indicatrix for
 $\dd\eta$ at fixed spatial displacement casts the $\eta$-branch as a closed-form
 Randers metric, non-autonomous through the conformal factor,
