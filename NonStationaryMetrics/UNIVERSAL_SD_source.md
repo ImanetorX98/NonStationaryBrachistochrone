@@ -68,8 +68,45 @@ e integrando:
 - La riduzione finale di `∫E H_E dλ` a funzioni speciali resta per-metrica (stessa classe genus-2),
   ma la DECOMPOSIZIONE `S_D = λ + ∫E H_E` è universale e chiusa.
 
+## Caso VAIDYA (mass-function, non conforme) — forma universale DIVERSA, anch'essa trovata
+Vaidya frozen = Schwarzschild (a=0, β=0): `H = √(f v²)·√(f p_r² + J²/r²) − 1`, `f=1−2m/r`.
+Parametro lento = m (funzione di massa), `D = Θ = m∂_m` (NIENTE dilatazione P_r). Quindi `S_D = ∫ m H_m dλ`.
+
+Tre identità (tutte simboliche esatte, =0):
+1. **Auto-similarità** di Schwarzschild: sotto `(r,m)→κ(r,m)` con E,p_r invarianti e J→κJ, H è invariante
+   (peso 0) ⟹ `r H_r + J H_J + m H_m = 0`, cioè `m H_m = −(r H_r + J H_J)`.
+2. Regola universale `m ∂_m f = f − 1`.
+3. La Finsler `(J∂_J + p_r∂_pr)H = H+1` vale ancora (a=0).
+
+Combinando su shell (H=0 ⟹ `J H_J = 1 − p_r H_pr`):
+`m H_m = −(r H_r + J H_J) = (p_r H_pr − r H_r) − 1`. E per Hamilton (`dr/dλ=H_pr`, `dp_r/dλ=−H_r`):
+`p_r H_pr − r H_r = d(r p_r)/dλ`. Perciò
+```
+┌──────────────────────────────────┐
+│   S_D(λ) = [ r p_r ]_0^λ  −  λ    │   ← FORMA UNIVERSALE VAIDYA (mass-function)
+└──────────────────────────────────┘
+```
+Il termine off-shell è un **termine di bordo** (derivata totale) meno λ — ancora più semplice del conforme.
+Verifica numerica (Schwarzschild m=1, Ê=1.4, J=6, r0=12): max|H|=3.5e-15;
+max|m H_m + (r H_r+J H_J)|=7e-16; max|S_D − ([r p_r]−λ)| a livello di quadratura; S_D end −7.607436 identico.
+Script: `ThakurtaMetric/universal_SD_source_check.py` (blocco TK) + `VaidyaMetric/universal_SD_source_vaidya.py`.
+
+## CONCLUSIONE — c'è una forma universale, ma è DIVERSA per tipo di deformazione (non metrica-specifica)
+| | Conforme (TK) | Mass-function (Vaidya) |
+|---|---|---|
+| operatore lento | `D=E∂_E+J∂_J+P_r∂_Pr` | `D=m∂_m` |
+| sorgente | `S_D = λ + ∫E H_E dλ` | `S_D = [r p_r] − λ` |
+| pezzo extra | energy-Euler (quadratura, per-metrica) | termine di bordo (derivata totale) |
+| origine | omogeneità di Finsler | Finsler + auto-similarità |
+
+- **NON** esiste una singola formula che copra entrambi i tipi: il parametro lento accoppia la geometria in
+  modo diverso (riscalamento conforme di TUTTI i momenti vs shift di una funzione metrica con auto-similarità).
+- **MA** non è "metrica-specifica": dentro OGNI classe di deformazione la formula è **universale**
+  (metrica-indipendente). Tutte le metriche conformemente stazionarie condividono `λ+∫E H_E`; tutte quelle
+  a funzione-di-massa auto-simili condividono `[r p_r]−λ`.
+- **Scheletro comune**: entrambe hanno il termine universale **±λ** dalla stessa identità di Finsler
+  `(J∂_J+p_r∂_pr)H=H+1`. È una parziale unificazione, non una coincidenza.
+
 ## Prossimo (opzionale)
-- Aggiungere il risultato al paper (paragrafo "Universal form of the off-shell source"), che chiude
-  esplicitamente l'estensione 3 e la critica di GPT.
-- Verificare l'analogo per Vaidya (`S_D=∫m H_m dλ`, m∂_m) e cercarne la forma universale sferica.
-- Script di verifica: rifà i blocchi qui sopra (da consolidare in `universal_SD_source_check.py`).
+- Aggiungere entrambi i risultati al paper (paragrafo "Universal form of the off-shell source"): chiude
+  esplicitamente l'estensione 3 e la critica di GPT, e unifica parzialmente TK/Vaidya via il termine ±λ.
