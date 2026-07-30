@@ -223,11 +223,52 @@ master. Ordine: P0 fondamentali → P1 armonizzazione → P2 editoriale → spli
       blocco Outlook (Proved/Conditional/Outlook); (C) Vaidya sferico `δφ_sep`→`δφ_deg` + titolo
       "degeneration-family"; (D) thrust/fuel "photon rocket 45%" → remark compatto. Resto main15 = figure
       da rigenerare + §5.1 + distribuzione split → fase split (sotto).
-- [ ] **Split in 2 paper** (prossimo): Paper I rail/Kodama+Vaidya sferico; Paper II TK conforme.
-      main15 §5.3 dà la distribuzione esplicita dei contenuti. Nello split si sistemano: rigenerazione
-      IMMAGINI figure (Fig 10 Eq(40)→(44)+slope, Fig 14 due residui, assi "axial control costate J",
-      Fig 6/7/17/18/A11/A12 relabel, scala pannelli, Fig 20 Sec 6.4, residui documentati); rimozione §5.1
-      (→ materiale paper futuro); Fig A6-A8 "numerical evidence/robustness scan" non "proof".
+## I. SPLIT IN DUE PAPER — piano d'esecuzione (da main15 §5.3)
+Prerequisito: master coerente ✅ (P0/P1/P2-testo + figure P0/P1 fatti). Le figure P0/P1 sono già
+rigenerate/etichettate correttamente (commit cb0bbc7/d076374/ff05ede) e valgono per entrambi i paper.
+
+### I.0 Preparazione
+- [ ] Creare `paper1/` e `paper2/` (sorgenti separati) partendo da `main.tex`/`refs.bib`/`Immagini/`.
+      Condividere `refs.bib`, `paper_style`, cartella figure. Decidere classe (iopart per CQG entrambi).
+- [ ] Change-log per paper (quale sezione del master va dove).
+
+### I.1 Paper I — "Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry,
+      Kodama energy, Vaidya dynamics" (sferico, ~25-35pp)
+- [ ] Contenuti (da §5.3): problema di controllo + condizioni terminali; esistenza/normalità/HJB
+      verification (non-autonoma); gerarchia W Killing→CKV→Kodama; FLRW ramo degenere; Vaidya ingoing
+      (Hamiltoniane, Kodama energy, costate memory endpoint-sensitive, bounce regularization); correzione
+      adiabatica first-order Vaidya + sorgente universale mass-function `S_D=[r p_r]−λ`; limite: BVP
+      outgoing dichiarata aperta; appendice degenerazione algebrica SOLO se supporta la correzione Vaidya
+      senza chiamarla separatrice fisica (J_deg).
+- [ ] Abstract dedicato ≤300 (CQG) — 3 risultati + 1 limite.
+
+### I.2 Paper II — "Brachistochrones in conformal Kerr spacetimes: ergosphere trichotomy, separatrices,
+      and adiabatic response" (assisimmetrico, ~30-40pp)
+- [ ] Contenuti: indicatrice TK + equivalenza t≡η (arrival) + Fig 10; ramo arrivo vs τ + dizionario
+      costato/meccanico; ergosfera cuspide/tricotomia + diagramma penetrazione; forme Weierstrass/Kleiniane
+      frozen + continuazione Doran; inversione + protocol dependence (same-launch vs fixed-endpoint tiered,
+      R_*(E,a)); first-order on-shell/off-shell CANONICAMENTE ri-derivato + true-flow validation;
+      rappresentazione iterati Abeliani lunghezza-2 con terminologia cauta (peso-1/peso-2).
+- [ ] Abstract dedicato ≤300.
+
+### I.3 Interventi strutturali durante lo split (main15 §5.1-5.2, tabella §4)
+- [ ] **Rimuovere/isolare §5.1** (quasi-costanti off-equatoriali, theta/p_theta/Carter, sorgente O(a²)):
+      NON trasferirla in Paper I; conservare gli script nel repo come materiale per articolo futuro 3D.
+- [x] Ridurre remark thrust/fuel (già fatto nel master, commit 87de08c) — verificare che passi nei due paper.
+- [ ] Fondamenta condivise (rail formalism, gerarchia W, esistenza/normalità/HJB, equivalenza Perlick):
+      collocate in Paper I come framework generale, richiamate da Paper II.
+
+### I.4 Polish figure/caption residuo (durante lo split)
+- [ ] Caption A6-A10: "numerical evidence / robustness scan" non "proof"; A9 specificare norma residuo
+      (assoluta/relativa); A10 = local variational check, non prova di minimo globale.
+- [ ] Fig 20: caption "finite numerical scan" (già ok via label sec:inversion) — verificare dopo renumber.
+- [ ] Scala pannelli galleria appendice troppo piccoli: split/ingrandire se finiscono nei paper.
+
+### I.5 Finalizzazione
+- [ ] Rigenerare TUTTI i cross-reference dopo la separazione (numeri eq/fig/sez cambiano).
+- [ ] Verificare zero undefined ref/citation, zero overfull, in entrambi i paper separati.
+- [ ] Aggiornare Data availability + DOI Zenodo in entrambi (già presente nel master).
+- [ ] Recuperare eventuali risultati riusati tra i due paper con citazione incrociata (Paper I ↔ Paper II).
 - Nota: 4.2/4.3/4.4 = lacune reali in pezzi aggiunti da me (rigore, non invalidano i numerici).
 
 ---
