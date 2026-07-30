@@ -62,8 +62,18 @@ Legenda: [ ] aperto · [~] parziale · [x] fatto.
 FATTO (commit 8b3e421, 15052b2): tabella notazione (tab:notation); conclusione in 3 blocchi
 (Proved/Conditional-numerical/Open); fix "App. Appendix X" duplicati (12×); "global attractor"→
 "moving kinematic boundary"; J_c^+(A) equazione numerata (eq:Jcplus); Fig 9 forward-ref a Fig 10.
-RESTA (richiede rigenerare le IMMAGINI figure via script, o è strutturale → fase split):
-- [ ] Fig 10 (label "Eq(40)"→(43); slope legenda 2.12 vs caption 2.05/2.07/2.01 — una sola sorgente).
+FIGURE RIGENERATE (main15, commit cb0bbc7, d076374, ff05ede):
+- [x] Fig 10: label "Eq.(40)"→"complete first-order"; slope unica 2.12±0.03 (tutte e 3 le curve, una
+      sorgente) + caption con setup del fit. Rigenerata (fig_phi_validation_corrected.py).
+- [x] Fig 14: due residui separati in caption (la figura già li mostrava: verde Weierstrass-vs-quadratura
+      2.8e-10, nero ODE-vs-closed cresce a r_e). main+PRD.
+- [x] Fig 17/18: asse "particle angular momentum"→"axial control costate" (inversione_conformale_AJ,
+      tricotomia, thakurta_kerr_plunge_t_tau/inversion), rigenerate+copiate in paper/Immagini.
+- [x] Fig 6/7/timing: "evaporation rate"→"ingoing mass-rate"; "evaporation shrinks"→"negative-rate
+      continuation"; caption timing→"negative-rate branch". Rigenerate+caption. main+PRD.
+RESTA (polish minore → fase split): caption micro-tweak A6-A10 (numerical evidence/residual norms/local
+check — nessuna rivendica "proof"); Fig A11/A12 se figure separate.
+- [x] (originale) Fig 10 label/slope — vedi sopra.
 - [ ] Fig 9 (caption dice full-flow deferred ma Fig 10 lo fornisce → forward ref a Fig 10).
 - [ ] Fig 14 (residuo Weierstrass-vs-quadratura E ODE-vs-closed vicino instabilità: due residui distinti).
 - [ ] Fig 20 (cross-ref Sec 6.3 → 6.4).
