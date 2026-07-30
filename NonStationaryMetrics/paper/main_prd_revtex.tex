@@ -1422,9 +1422,11 @@ $2.8\times10^{-10}$ through the ergosphere, and general across parameters.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Immagini/fig_separatrix_3traiettorie.png}
-    \caption{Prograde $\tau$-branch separatrix $J=+\Jc$ (the single penetrating
-    value): ODE, quadrature and evaluated Weierstrass agree to
-    $2.8\times10^{-10}$; the PMP-$\eta$ terminates at $\re$.}
+    \caption{Prograde $\tau$-branch separatrix $J=+\Jc$; the closed form crosses $\re$
+    (PMP-$\eta$ terminates there). Top: Hamilton ODE, closed-form quadrature and evaluated
+    Weierstrass overlap. Bottom: the two residuals separately---Weierstrass vs quadrature
+    to $2.8\times10^{-10}$ (green); ODE vs closed form agreeing away from the unstable
+    endpoint, its residual growing near $\re$ from numerical sensitivity (black).}
     \label{fig:sep3}
 \end{figure}
 
@@ -2314,7 +2316,7 @@ contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
     \includegraphics[width=\columnwidth]{Immagini/fig_vaidya_timing.png}
     \caption{Timing window: $r_{\min}$ depends on the arrival epoch $v_1$. The
     orbit--horizon race has opposite winners in absolute ($r_{\min}$) and relative
-    ($r_{\min}/2m$) terms for accretion vs evaporation.}
+    ($r_{\min}/2m$) terms for accretion vs the negative-rate branch ($m'<0$, ingoing).}
     \label{fig:vaidya-timing}
 \end{figure}
 
@@ -2424,7 +2426,7 @@ genus-two dilogarithm. Verified to machine precision against the true flow
 For Vaidya the slow datum $m$ is a metric modulus (no rescaling), so
 $\mathcal D=\Theta=m\partial_m$ and no dilation term arises. All four cases close to
 $O(\varepsilon^2)$ against the true flow: slope $\approx1$ (on-shell alone) versus
-$2.05,2.07$ ($t,\tau$), a second set $2.01$ (Fig.~\ref{fig:phi-true-dynamic}), and
+$2.12$ (the three Thakurta--Kerr curves, Fig.~\ref{fig:phi-true-dynamic}) and
 $2.00$ (Vaidya). At the separatrix $J\to\Jc$ the off-shell term is just the generic term
 there: the curve degenerates ($S=(r-r_d)^2Q_4$, genus two $\to$ one), $U_k$ collapse to
 elliptic 2nd/3rd kind and $W_{jk}$ to an elliptic dilogarithm~\cite{BrownLevin2011}, the
