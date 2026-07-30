@@ -1430,6 +1430,44 @@ Eqs.~\eqref{eq:action-reduction}--\eqref{eq:ak}): a length-two iterated integral
 same spectral curve, closing in $\zeta,\sigma$ \emph{plus} one genus-two dilogarithm
 sourced by the third-kind letter at the seed Kerr null surface $\Delta=0$.
 
+\paragraph{Universal form of the off-shell source.} The source $S_{\mathcal D}$ does
+not, in fact, require the per-metric reduction to be written in closed form: it admits
+a metric-independent structure fixed by the \emph{Randers} character of the
+arrival-time Hamiltonian. Any such Hamiltonian is
+$H=\beta(r,E)\,J+\sqrt{A_{rr}(r,E)\,p_r^2+A_{\varphi\varphi}(r,E)\,J^2}-1$, homogeneous
+of degree one in $(p_r,J)$ apart from the normalization $-1$; Euler's theorem then
+gives the identity
+\begin{equation}
+    \big(J\,\partial_J+P_r\,\partial_{P_r}\big)H=H+1,
+    \label{eq:finsler-euler}
+\end{equation}
+valid for \emph{arbitrary} $\beta,A_{rr},A_{\varphi\varphi}$ (verified symbolically).
+On the frozen shell $H=0$ this collapses the integrand of $S_{\mathcal D}$ to a
+universal skeleton. For the \emph{conformal} family ($\mathcal D=\Theta+P_r\partial_{P_r}$),
+$\mathcal D H=E H_E+(H+1)$, so
+\begin{equation}
+    S_{\mathcal D}(\lambda)=\lambda+\int_0^{\lambda}E_{\rm eff}H_{E_{\rm eff}}\,\dd\lambda',
+    \label{eq:SD-conformal}
+\end{equation}
+the $\lambda$ term universal and $E_{\rm eff}H_{E_{\rm eff}}$ the single
+metric-specific ``energy-Euler'' piece (fixed by $E\partial_E v^2=2(1-v^2)$). For the
+\emph{mass-function} family (Vaidya, $\mathcal D=m\partial_m$), Schwarzschild
+self-similarity $(r,m)\to\kappa(r,m)$ (with $E,p_r$ inert, $J\to\kappa J$) gives
+$m H_m=-(rH_r+JH_J)$, and combining with~\eqref{eq:finsler-euler} and Hamilton's
+equations ($p_rH_{p_r}-rH_r=\dd(rp_r)/\dd\lambda$) yields the still simpler
+\begin{equation}
+    S_{\mathcal D}(\lambda)=\big[\,r\,p_r\,\big]_0^{\lambda}-\lambda,
+    \label{eq:SD-vaidya}
+\end{equation}
+a boundary term minus $\lambda$. The two deformation classes thus carry
+\emph{different} universal sources---no single formula spans both, because the slow
+parameter couples to the geometry differently (a conformal rescaling of all momenta
+versus a self-similar mass shift)---yet both share the same universal $\pm\lambda$
+skeleton from~\eqref{eq:finsler-euler}. Both~\eqref{eq:SD-conformal}
+and~\eqref{eq:SD-vaidya} are verified to machine precision against the direct
+$\int\mathcal D H\,\dd\lambda$ (\texttt{ThakurtaMetric/universal\_SD\_source\_check.py},
+\texttt{VaidyaMetric/universal\_SD\_source\_vaidya.py}).
+
 \paragraph{Fixed-charge versus fixed-endpoint.} The correction~\eqref{eq:adiab-exact}
 is computed at \emph{fixed canonical charges} $(\Ehat,J)$: it is the same-launch,
 fixed-charge response of the orbit to the slow drift, the object that the true-flow
