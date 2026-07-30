@@ -45,15 +45,27 @@ ergosphere trichotomy, separatrices, and adiabatic response}
 \ead{iman.rosignoli01@universitadipavia.it}
 
 \begin{abstract}
-\todo{Paper II abstract (<=300 words, CQG): Thakurta-Kerr = conformal Kerr;
-the breathing indicatrix and the arrival branch t==eta vs proper time tau;
-frame-dragging; closed-form Weierstrass/Kleinian separatrices continued through
-the ergosphere with the cusp theorem and trichotomy; rotational and conformal
-plunge inversion with same-launch vs fixed-endpoint (tiered R\_*(E,a));
-first-order on-shell/off-shell correction canonically re-derived and validated
-against the true flow; length-two iterated Abelian integrals (weight-two,
-irreducibility conjectural). Control-theory foundations are established in
-Paper I.}
+We develop the relativistic controlled-rail brachistochrone---the fastest constrained
+worldline reaching a fixed spatial target at a free arrival clock---in the rotating,
+axisymmetric Thakurta--Kerr spacetime, the conformal Kerr geometry $g=A(\eta)^2 g_{\rm
+Kerr}$. The controlled-rail principle, its existence/normality and non-autonomous
+Hamilton--Jacobi verification, and the Killing--CKV--Kodama selector hierarchy are
+established in the companion paper (with the spherically symmetric FLRW and Vaidya cases);
+here frame dragging, an ergosphere and genus-two spectral curves appear. We derive the
+breathing-indicatrix Hamiltonians and the conformal-time ($\eta$) brachistochrone---the
+arrival branch $t\equiv\eta$, distinct from proper time $\tau$; closed-form equatorial
+separatrices in Weierstrass functions, continued through the ergosphere in Doran
+coordinates, with a trichotomy and an analytic cusp theorem; the rotational and conformal
+plunge inversion, and an existence theorem for the conformal inversion, under a
+same-launch comparison; and the first-order adiabatic correction, on-shell and off-shell,
+canonically re-derived from the extended Hamiltonian and verified against the true
+non-autonomous flow to $O(\varepsilon^2)$, its weight-two content a length-two iterated
+Abelian integral on the genus-two curve. \emph{Status.} The closed-form separatrices and
+cusp theorem and the on-shell reduction are proved; the fixed-endpoint no-inversion is a
+theorem for $r_0\le R_\ast(E,a)$, machine-certified at representative $r_0$, conjectural
+in general; interior-ergosphere optimality and a rigorous higher-genus polylogarithm
+framework remain open. Algebraic identities are confirmed in Mathematica; genus-two
+theta/nome evaluations use Sage with \texttt{abelfunctions}.
 \end{abstract}
 
 \maketitle
@@ -61,46 +73,2121 @@ Paper I.}
 
 % ======================================================================
 \section{Introduction}
-\todo{Adapt master intro; scope to the axisymmetric (Thakurta-Kerr) case;
-cite Paper I for the controlled-rail formulation, existence/normality/HJB, and
-the W-hierarchy.}
+\label{sec:intro}
+The relativistic brachistochrone---the fastest constrained ``rail'' worldline reaching a
+fixed spatial target at a free arrival clock---was formulated by Perlick for stationary
+spacetimes \cite{Perlick1991,PerlickRayOptics}, connecting to Fermat's principle and
+optical (Randers--Zermelo--Finsler) geometry
+\cite{Kovner1990,Randers1941,GibbonsWerner2008,GibbonsRanders2009,BaoRoblesShen}. In the
+companion paper we established the shared control-theoretic foundations---the
+controlled-rail principle, an existence and normality theorem, the non-autonomous
+Hamilton--Jacobi verification criterion, and the Killing--CKV--Kodama selector
+hierarchy---and treated the spherically symmetric geometries (FLRW and the ingoing Vaidya
+black hole). Here we develop the rotating, axisymmetric case: \emph{Thakurta--Kerr}, the
+conformal Kerr spacetime $g=A(\eta)^2 g_{\rm Kerr}$, in which frame dragging, an
+ergosphere and genus-two spectral curves appear. We derive the breathing-indicatrix
+Hamiltonians and the conformal-time ($\eta$) brachistochrone (the arrival branch
+$t\equiv\eta$, distinct from proper time $\tau$); the closed-form equatorial separatrices
+in Weierstrass functions, continued through the ergosphere in Doran coordinates, with a
+trichotomy and an analytic cusp theorem; the rotational and conformal plunge inversion;
+and the first-order adiabatic correction, on-shell and off-shell, verified against the
+true non-autonomous flow.
 
 \section{Thakurta--Kerr: conformal rotating compact object}
-\todo{Migrate master TK section: indicatrix and Hamiltonians (H\_eta, H\_t,
-H\_tau); the conformal-time (eta) brachistochrone and t==eta arrival family;
-Randers optical reduction; quasi-constants drift.
-DO NOT migrate Sec. 5.1 (off-equatorial quasi-constants) -- hold for a later
-3D paper.
-Then: semi-analytic first-order adiabatic orbit shape; the branch costate vs
-mechanical angular momentum dictionary.}
+\label{sec:thakurta}
+% ----------------------------------------------------------------------
+Thakurta--Kerr is conformal Kerr, $g=A(\eta)^2 g_{\rm Kerr}$
+\cite{Thakurta1981,Kerr1963}, one of a family of cosmological geometries
+\cite{McVittie1933,SultanaDyer2005,Kaloper2010,NolanMcVittie1998,MelloMaciel2017,FaraoniBook}.
+For constant $A$
+the transfer theorem maps the problem to Kerr with $E_{\rm eff}=\Ehat/A$,
+$J_{\rm eff}=J/A$. Throughout we use $\rp$ (where $\Delta=0$) and $\re=2M$ as
+labels for the \emph{seed} Kerr null surface and conformal-stationary-limit surface:
+a conformal factor preserves the null \emph{character} of $\Delta=0$, so $\rp$ is a
+conformal Killing horizon candidate, but for time-dependent $A(\eta)$ this does
+\emph{not} by itself fix the apparent/trapping or event horizon (which require the
+null expansions and the global causal structure, not computed here). With that
+caveat, $\rp$ is rigid, $\re=2M$ is crossed regularly, and the freezing surface
+$A^2 f=\Ehat^2$ breathes.
 
+\paragraph{Indicatrix and Hamiltonians.} Equatorially, write
+$\Delta=r^2-2Mr+a^2$, $\bar v^2=1-A^2f/\Ehat^2$, and
+$\bar P=P+A^2(2Ma/r)^2/\Ehat^2$ with $P=r^2+a^2+2Ma^2/r$. The rail
+$\Ehat=-u_\eta$ makes the indicatrix an ellipse with an \emph{azimuthal} wind
+(frame dragging),
+\begin{equation}
+    \varphi'_0=\frac{2Ma}{r}\frac{\bar v^2}{\bar P},\qquad
+    R^2=f\bar v^2+\bar P\varphi_0'^2=\frac{\Delta\,\bar v^2}{\bar P},
+    \label{eq:tk-ind}
+\end{equation}
+the last equality using the Kerr identity $fP+(2Ma/r)^2=\Delta$. The
+conformal-time, coordinate-time and proper-time Hamiltonians are
+\begin{align}
+    H_\eta&=p_\varphi\varphi'_0
+        +R\sqrt{(\Delta/r^2)p_r^2+p_\varphi^2/\bar P}-1,
+    \label{eq:Heta}\\
+    H_t&=p_\varphi\varphi'_0
+        +R\sqrt{(\Delta/r^2)p_r^2+p_\varphi^2/\bar P}-A,
+    \label{eq:Ht-tk}\\
+    H_\tau&=\tilde p_\varphi\varphi'_0
+        +R\sqrt{(\Delta/r^2)p_r^2+\tilde p_\varphi^2/\bar P}-\frac{A^2 f}{\Ehat},
+    \label{eq:Htau-tk}
+\end{align}
+with the conformal gravitomagnetic shift
+$\tilde p_\varphi=p_\varphi-2MaA^2/(r\Ehat)$. The arrival-time branch $H_t$ differs
+from $H_\eta$ only in the unit cost ($-1\to-A$) and reduces to it for $A=1$; it is
+the branch compared with $\tau$ in the plunge inversion
+(Sec.~\ref{sec:inversion}), where its turning potential
+$H_{t0}=H_t|_{p_r=0}$ enters. All three are regular through the
+ergosphere ($f=0\Rightarrow R^2=\bar v^2\Delta/\bar P>0$) and degenerate only at
+the horizon $\Delta=0$, which is therefore conformally invariant---independent of
+$A$ and $\Ehat$. The three branches share this ellipse: $t$ follows the same
+curves as $\eta$ through $t=\int A\,\dd\eta$, while $\tau$ is Riemannian-pure, the
+wind cancelling the gravitomagnetic term, so it survives the expansion
+(Fig.~\ref{fig:th-branches}).
+
+\paragraph{The conformal-time ($\eta$) brachistochrone.} The relation
+$\dd t=A(\eta)\,\dd\eta$ makes $\eta$ the canonical conformal clock and shows that the
+arrival branch carries no new content beyond $t$: the two are the \emph{same} spatial
+family. Frozen, the arrival-time Finsler functions obey $F_t=A\,F_\eta$ exactly, so at
+fixed $A$ the brachistochrone curves coincide (a constant Finsler rescaling leaves
+geodesics invariant), the conserved charge merely relabelled by the conformal weight
+$J_t=A\,J_\eta$: the $\eta$-orbit at $J_\eta$ and the $t$-orbit at $A\,J_\eta$ trace the
+same $\varphi(r)$ to $7\times10^{-9}$
+(\texttt{ThakurtaMetric/eta\_brachistochrone\_check.py}), whereas the naive same-$J$
+comparison does \emph{not}. Under a drift the equivalence survives by monotonicity: for
+any fixed-endpoint path the arrival time $t_f=\int_0^{\eta_f}A\,\dd\eta$ is a strictly
+increasing function of $\eta_f$ ($A>0$), so $\arg\min\eta_f=\arg\min t_f$ for
+\emph{every} $A(\eta)$. Hence the frozen, adiabatic and separatrix $\eta$-solutions are
+exactly the $t$-solutions of Secs.~\ref{sec:closed}--\ref{sec:thakurta}; there are
+\emph{two} distinct optimal families, not three---the arrival branch $t\equiv\eta$ and
+the proper-time branch $\tau$. The $\eta$ gauge is nonetheless the natural one: $H_\eta$
+carries unit cost, the extended Hamiltonian $\mathcal H=p_\eta+H_\eta=0$ is the cleanest
+non-autonomous form, the drift enters as the single scalar $\varepsilon=A'/A$, and the
+off-shell source takes the universal form $S_{\mathcal D}=\eta+\int E_{\rm eff}
+H_{E_{\rm eff}}\,\dd\eta$ [Eq.~\eqref{eq:SD-conformal}].
+
+\paragraph{Non-autonomous optical reduction.} Solving the indicatrix for
+$\dd\eta$ at fixed spatial displacement casts the $\eta$-branch as a closed-form
+Randers metric, non-autonomous through the conformal factor,
+\begin{align}
+    \dd\eta &= n(\eta,r)\,\alpha_K+\beta_K,\qquad
+    n=\frac{\Ehat}{\sqrt{\Ehat^2-A^2 f}},
+    \label{eq:randers}\\
+    \alpha_K^2 &= \frac{r^2\,\dd r^2}{f\Delta}+\frac{\Delta\,\dd\varphi^2}{f^2},
+    \qquad
+    \beta_K = -\frac{2Ma}{rf}\,\dd\varphi.
+    \label{eq:randers-data}
+\end{align}
+The Riemannian data $\alpha_K$ and the one-form $\beta_K$ are \emph{exactly} those
+of the \emph{null} Fermat (Randers) metric of Kerr \cite{GibbonsWerner2008}: all
+of the mass, rail, and expansion physics is carried by the scalar index $n$,
+which multiplies only the Riemannian part, while the frame-dragging one-form
+$\beta_K$ is rigid---conformally invariant and independent of $\Ehat$. The
+reduction is thus a Zermelo problem with a time-dependent landscape in which only
+the metric term breathes, not the wind. It degenerates at the ergosphere ($f=0$,
+where $1/F$ is intrinsic, as for stationary Kerr) even though the
+Hamiltonian~\eqref{eq:Heta} remains regular there; the limits $\Ehat\to\infty$
+(null Kerr optics), $A=1$ (stationary Perlick on Kerr), $a=0$
+(Thakurta--Schwarzschild) and $M=a=0$ ($n=1/v$, FLRW) are all recovered.
+
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_rami.png}
+    \caption{The three branches: $\tau$ bounces (mirror pair, no wind), $\eta$
+    spirals (gravitomagnetic wind); breathing conformal scalars $n,k_\tau$.}
+    \label{fig:th-branches}
+\end{figure}
+
+\paragraph{Branch optical metrics across the ladder.} The same Zermelo inversion
+casts \emph{every} branch of \emph{every} metric in the paper as a Randers form
+$\dd(\text{cost})=n\,\alpha+\beta$ (Table~\ref{tab:optical}), with the Riemannian
+Fermat data $\alpha$ and wind one-form $\beta$ shared by the branches of a given
+metric and only the scalar index $n$ set by the clock. Three structural facts
+hold throughout and are verified to machine precision: (i) the proper-time branch
+is always \emph{Riemannian-pure}, $\beta_\tau=0$---the wind (ingoing for Vaidya,
+gravitomagnetic for Thakurta--Kerr) cancels in $\tau$; (ii) the arrival/native
+branches carry the wind but share $\alpha$, and the arrival--proper split is the
+universal ratio $n_t/n_\tau=E/f$ ($E=\Ehat$ for Vaidya, $E_{\rm eff}=\Ehat/A$ for
+Thakurta--Kerr); (iii) non-stationarity makes only $\alpha,n$ \emph{breathe}
+(through $m(v)$ or $A(\eta)$), while $\beta$ is rigid. FLRW is the degenerate top
+of the ladder: $n$ is position-independent so all three branches share the same
+(straight) geodesic. The $a=0$ limit of the Thakurta $\tau$-row reproduces the
+static Vaidya $\tau$-row, and $M=a=0$ (or $m=0$) gives $n=1/v$, FLRW.
+
+\begin{table}[ht]
+    \centering
+    \small
+    \caption{Branch optical (Randers) metrics $\dd(\text{cost})=n\,\alpha+\beta$.
+    Here $f=1-2m(v)/r$ (Vaidya) or $1-2M/r$ (Thakurta, with spin $a$,
+    $\Delta=r^2-2Mr+a^2$), $w=\Ehat^2-f$, $w_A=\Ehat^2-A^2f$. The wind $\beta$
+    acts on the native/arrival branch ($v$ for Vaidya, $\eta,t$ for Thakurta);
+    $\tau$ is always Riemannian-pure ($\beta_\tau=0$). Native indices:
+    $n_v=n_t^{\rm V}$ (Vaidya), $n_\eta=\Ehat/\sqrt{w_A}$ (Thakurta).}
+    \label{tab:optical}
+    \begin{tabular}{lcccc}
+    \hline
+    metric & $\alpha^2$ & $\beta$ & $n_\tau$ & $n_t$ \\
+    \hline
+    FLRW & $\dd r^2+r^2\dd\varphi^2$ & $0$
+      & \multicolumn{2}{c}{$\Ehat/\sqrt{\Ehat^2-a^2}$ \ (degenerate)} \\[2pt]
+    Vaidya & $\dd r^2+f\,r^2\dd\varphi^2$ & $\dd r/f$
+      & $1/\sqrt{w}$ & $\Ehat/(f\sqrt{w})$ \\[2pt]
+    Thakurta--Kerr
+      & $\dfrac{r^2\dd r^2}{f\Delta}+\dfrac{\Delta\,\dd\varphi^2}{f^2}$
+      & $-\dfrac{2Ma}{rf}\dd\varphi$
+      & $\dfrac{A^2 f}{\sqrt{w_A}}$ & $\dfrac{A\Ehat}{\sqrt{w_A}}$ \\[3pt]
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Semi-analytic first-order adiabatic orbit shape}
+\label{sec:adiabatic}
+The dynamical quasi-constant (developed in a companion 3D analysis) drifts; the
+\emph{orbit shape} $\varphi(r,A)$ itself admits a companion first-order adiabatic
+form~\cite{BornFock1928,BenderOrszag1999} that is explicit up to a single higher
+transcendental. Writing the frozen integrand as
+$F(r;E_{\rm eff},J_{\rm eff})=\dd\varphi/\dd r$ (Eq.~\eqref{eq:t-K} for the
+$t$-branch, Eq.~\eqref{eq:tau-sextic} for $\tau$) and linearizing the
+\emph{conformal weights} of the Kerr charges---both $E_{\rm eff}=\Ehat/A$ and
+$J_{\rm eff}=J/A$ carry weight $A^{-1}$, since for $u^{\rm TK}=u^{\rm Kerr}/A$ one
+has $-g^{\rm TK}(u,\partial_\eta)=A\,E_{\rm eff}$ and
+$g^{\rm TK}(u,\partial_\varphi)=A\,J_{\rm eff}$---in
+$A(\eta)=A_0(1+\varepsilon\eta+\dots)$, $\varepsilon=A'/A$, gives
+\begin{equation}
+    \varphi(r,A)=\underbrace{\varphi_0(r;E_{\rm eff},J_{\rm eff})}_{\text{frozen, Kleinian}}
+    +\varepsilon\big[\mathcal{C}(r)+\psi(r)\big]+O(\varepsilon^2),
+    \label{eq:phi-adiab}
+\end{equation}
+where the first-order coefficient is the elapsed-clock--weighted \emph{scaling}
+derivative
+\begin{equation}
+    \delta\varphi=-\!\int\!\big(\Ehat\,\partial_E F+J\,\partial_J F\big)\,\eta\,\dd r
+    =-\!\int\!\big(E\,\partial_E+J\,\partial_J\big)F\,\eta\,\dd r,
+    \label{eq:deltaphi-EJ}
+\end{equation}
+i.e.\ the Euler scaling operator $(E\partial_E+J\partial_J)F$ acting through both
+drifting charges (the $J\,\partial_J F$ term is required by axisymmetric momentum
+conservation and was absent in an earlier form; Vaidya, whose parameter is the
+mass rather than a conformal factor, keeps only its $\partial_m F$ source). Here
+$\eta(r)$
+is the clock the orbit accumulates along the frozen slice: coordinate time
+$\eta=t(r)$ on the $t$-branch, proper time $\eta=\tau(r)=\int\!L_\tau\,\dd r$ with
+$L_\tau=\sqrt{Q/w}$, $Q=\Delta\varphi'^2-2a\beta\varphi'+r^2/(r^2+a^2)$, on the
+$\tau$-branch (the extra $A^{-2}$ of the proper-time functional affects the
+\emph{timing}, not the shape, so Eq.~\eqref{eq:phi-adiab} is common to both
+branches).
+
+\paragraph{Closed piece.} The scaling derivative reduces to the same depth-one
+class as $\varphi_0$ itself, by the classical reduction of abelian differentials to
+first/second kind~\cite{BakerAbelian1897,GriffithsHarris1978}. Both pieces
+$\partial_E F$ and $\partial_J F$ share the identical basis: solving
+\begin{equation}
+    \big(E\partial_E+J\partial_J\big)F=\dd_r\!\left[\frac{\mathcal{A}(r)}{\mathcal{R}}\right]
+    +\sum_{k=0}^{4}c_k\,r^k/\mathcal{R}
+    \label{eq:dEphi0}
+\end{equation}
+for a degree-five numerator $\mathcal{A}(r)=\sum_{i=0}^{5}a_i r^i$ and constants
+$c_k=\Ehat\,c_k^{E}+J\,c_k^{J}$ (here $\mathcal{R}$ is the branch sextic radical,
+$\sqrt{R_6}$ or $\sqrt{S}$) closes in the second kind with \emph{no} third-kind
+(horizon-pole) contribution for both branches (verified to machine precision); the
+$J\,\partial_J F$ term merely adds its own coefficients $c_k^{J}$ to the existing
+$c_k^{E}$, requiring no new building block
+(\texttt{ThakurtaMetric/conformal\_source\_Jterm.py}). Hence
+$\mathcal{C}(r)=-\tfrac12\big(E\partial_E+J\partial_J\big)\varphi_0\,\eta(r)$ is
+a product of depth-one objects and is closed in the Kleinian/abelian class.
+
+\paragraph{Clock differentials.} The clock $\eta$ enters $\mathcal{C}$ through its
+differential, which we obtain in closed form on the branch curve. On the
+$\tau$-branch the proper-time density reduces to a \emph{rational} second-kind
+differential,
+\begin{equation}
+    \frac{\dd\tau}{\dd r}=\frac{r^2(r-2M)}{\sqrt{S}},
+    \label{eq:clock-tau}
+\end{equation}
+the frame-dragging term cancelling identically (verified to $10^{-16}$). The
+$t$-branch coordinate-time density is \emph{also entirely on-curve}: using the
+Randers form $\dd t=n_t\alpha+\beta$ and the identity
+$(r-2M)Q_2+DE\,(J(r-2M)+2Ma)^2=E^2r^3\Delta$ (so that $n_t\alpha=E^2r^3/(f\sqrt{R_6})$
+exactly, $E^2-f=DE/r$), the gravitomagnetic wind collapses and
+\begin{equation}
+    \frac{\dd t}{\dd r}=\frac{\rho_t(r)}{\sqrt{R_6}},\qquad
+    \rho_t=\frac{E^2r^3-(2Ma/r)\,\mathcal K}{f}
+          =P_3(r)+\frac{R_\Delta(r)}{\Delta},
+    \label{eq:clock-t}
+\end{equation}
+with $\mathcal K$ the frozen numerator [Eq.~\eqref{eq:t-K}], the ergosphere pole
+$r=2M$ \emph{removable}, and third-kind poles only at the horizons ($\Delta=0$). The
+second-kind polynomial part is
+$P_3=E^2r^3+2E^2Mr^2+4E^2M^2r+8E^2M^3-2(E^2-1)JMa$ (giving the clock vector
+$b=(8E^2M^3-2(E^2-1)JMa,\,4E^2M^2,\,2E^2M,\,E^2,\,0)$, the $t$-analogue of the
+$\tau$-branch $b=(0,0,-2M,1,0)$), and $R_\Delta$ is the degree-one horizon numerator
+(explicit in \texttt{reproduce\_reductions.py}). Thus \emph{neither} branch leaves
+the genus-two curve---the $t$-branch merely adds a third-kind horizon letter to the
+second-kind clock (verified against the Hamiltonian flow to $10^{-10}$); the apparent
+Doran double cover of a first analysis was spurious. Table~\ref{tab:branch-adiab}
+collects the branch data: the two solutions share the structure~\eqref{eq:phi-adiab}
+and differ \emph{only} in the branch curve and the clock.
+\begin{table}[htbp]
+    \centering
+    \caption{The two branches of the adiabatic solution~\eqref{eq:phi-adiab}. They
+    share $\varphi=\varphi_0+\varepsilon[\mathcal{C}+\psi]$;
+    only the branch curve $\mathcal{R}^2$, the frozen numerator $K$
+    ($F=K/\mathcal{R}$), and the clock $\dd\eta/\dd r$ change. Here
+    $\Delta=r^2-2Mr+a^2$, $DE=(E^2-1)r+2M$, all at $E=E_{\rm eff}=\Ehat/A$;
+    $\varphi_0,\partial_E\varphi_0$ are Kleinian/abelian on $y^2=\mathcal{R}^2$, and
+    $\psi=\tfrac12\Ehat\sum Q_{kj}W_{kj}$ has algebraic coefficients times the
+    genus-two polylogarithms $W_{kj}$ [Eq.~\eqref{eq:psi-split}].}
+    \label{tab:branch-adiab}
+    \begin{tabular}{lll}
+        \hline\hline
+         & $t$-branch (coord.\ time) & $\tau$-branch (proper time)\\
+        \hline
+        curve $\mathcal{R}^2$ & $R_6=r\,Q_2\,DE$ & $S=r(r{-}2M)DE[r\Delta{-}J^2DE]$\\
+        numerator $K$ & $r\,DE\,(J(r{-}2M){+}2Ma)/\Delta$ & $J\,r(r{-}2M)DE/\Delta$\\
+        clock $\dd\eta/\dd r$ & $\dfrac{\rho_t}{\sqrt{R_6}}$ (2nd$+$3rd kind)
+            & $\dfrac{r^2(r-2M)}{\sqrt{S}}$ (2nd kind)\\[4pt]
+        off-curve cover & none & none\\
+        timing prefactor & $1$ & $A^{-2}$\\
+        \hline\hline
+    \end{tabular}
+\end{table}
+
+\paragraph{The correction $\psi$: algebraic coefficients times genus-two
+polylogarithms.} By parts and the shuffle identity~\cite{Chen1977} the symmetric
+combination $\rho+\tilde\rho=\partial_E\varphi_0\,\eta$
+($\rho=\int\partial_E\varphi_0\,\dd\eta$,
+$\tilde\rho=\int\eta\,\partial_E F\,\dd r$) is closed, and the antisymmetric
+remainder
+\begin{equation}
+    \psi(r)=\tfrac12\Ehat\,(\rho-\tilde\rho)
+    \label{eq:psi-irr}
+\end{equation}
+is a depth-two iterated integral. Expand $\partial_E\varphi_0$ and $\eta$ in the
+cohomology basis $U_k=\int r^k/\mathcal{R}\,\dd r$: the reduction
+$(E\partial_E+J\partial_J)F=N/\mathcal{R}^3$ with $N=\Ehat\,N_E+J\,N_J$ a degree-seven
+polynomial ($N_E=EJ\,r^4(r-2M)^2\,DE$, and $N_J$ its angular analogue; the horizon
+factor $\Delta$ cancels identically in both) gives
+$(E\partial_E+J\partial_J)\varphi_0=\mathcal{A}/\mathcal{R}+\sum_{k=0}^{4} C_k U_k$,
+$C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$, and on the
+$\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$. The \emph{complete}
+first-order coefficient $\delta\varphi=\mathcal{C}+\psi=-\!\int(\Ehat\,\partial_E F
++J\,\partial_J F)\,\eta\,\dd r$ then reorganizes, with \emph{no term discarded}, into
+\begin{equation}
+    \delta\varphi=
+    \underbrace{\tfrac12\!\sum_{k<j}Q_{kj}\,W_{kj}}_{\text{weight two}}
+    \;-\;\underbrace{\eta\Big(\tfrac{\mathcal{A}}{\mathcal{R}}
+    +\tfrac12\!\sum_k C_k U_k\Big)}_{\text{clock}\times\text{abelian}}
+    \;+\;\underbrace{\sum_j b_j\,\mathcal{I}_j}_{\text{elementary}},
+    \label{eq:psi-split}
+\end{equation}
+with $Q_{kj}=C_k b_j-C_j b_k$, $W_{kj}=\int(U_k\,\dd U_j-U_j\,\dd U_k)$ the
+genus-two polylogarithms, and $\mathcal{I}_j=\int\mathcal{A}\,r^j/\mathcal{R}^2\,
+\dd r$ \emph{elementary} (rational integrands, evaluating to logarithms). Every
+piece is explicit: the second group is a product of the elapsed clock with the
+reduced abelian integrals (weight one), the third an elementary logarithmic
+remainder---none is spurious or dropped. The coefficients are \emph{algebraic}
+(rational in $M,a,E,J$ through the $C_k=\Ehat c_k^E+J c_k^J$); we
+verified~\eqref{eq:psi-split} to $4\times10^{-14}$ for the energy part and to
+$1\times10^{-7}$ for the full Euler source with all coefficients \emph{given}, not
+fitted. The
+holomorphic$\times$holomorphic coefficient vanishes, $Q_{01}=0$ (the clock has no
+first-kind part). On the $t$-branch the same reorganization holds with
+$\mathcal{R}^2=R_6$ and $K$ of Table~\ref{tab:branch-adiab}: its clock is likewise
+on-curve, with the second-kind vector $b$ of Eq.~\eqref{eq:clock-t} feeding the same
+$W_{kj}$ of $R_6$, plus the horizon third-kind part $R_\Delta/\Delta$ contributing
+$\ln\sigma$-quotients at $r_\pm$ (the coordinate-time analogue of the $\tau$-branch's
+dipole at infinity)---no double cover. The full $t$-branch assembly (the
+$W_{kj}$-reorganization plus the horizon piece) reproduces the direct double integral
+$-\Ehat\!\int\!\partial_E F\,t\,\dd r$ to $9\times10^{-13}$.
+
+The building blocks $W_{kj}$ are length-two iterated Abelian
+integrals~\cite{Chen1977} of $y^2=\mathcal{R}^2$, of \emph{weight two}. Their elliptic
+($g{=}1$) analogues are the polylogarithms of Beilinson--Levin and
+Brown--Levin~\cite{BeilinsonLevin1994,BrownLevin2011}; a rigorous \emph{higher-genus}
+(hyperelliptic) polylogarithm framework---base points, paths, tangential
+regularization, monodromy and single-valued completion---is the subject of recent work
+\cite{BauneEtal2024,DHokerSchlotterer2024,DHokerHiddingSchlotterer2025,DHokerEnriquezSchlottererZerbini2026},
+and would be required before ``genus-two
+dilogarithm'' can be used as a theorem-level term; we therefore adopt the neutral name
+above and keep irreducibility and basis dimension conjectural. As iterated integrals
+they do \emph{not} reduce to a weight-one Kleinian $\zeta,\sigma$
+combination~\cite{BakerAbelian1897,BuchstaberEnolskii1997}, because for
+genus two the Abel image of single points lies on the theta divisor
+$\Theta=W_{g-1}$~\cite{MumfordTata}, where $\zeta,\wp$ are singular; the single-point
+second-kind integrals are instead Fay theta-derivatives at shifted (off-divisor)
+arguments. The one third-kind piece---the clock's dipole at infinity, residue
+$\rho_0=M/(E^2-1)^{3/2}$---integrates to
+\begin{equation}
+    L(u)=\log\frac{\theta[\delta](u-e_+)}{\theta[\delta](u-e_-)}
+    \label{eq:thirdkind-theta}
+\end{equation}
+(Fay prime form~\cite{Fay1973}, odd half-characteristic $\delta$, $e_\pm$ the Abel
+images of the two points at infinity; differentiating $L(u(r))$ back reproduces the
+third-kind differential to $5\times10^{-8}$). The $W_{kj}$ are length-two iterated Abelian integrals of the frozen curve; their
+elliptic ($g{=}1$) analogues admit Kronecker--Eisenstein
+representations~\cite{BeilinsonLevin1994}, but that reference does not by itself
+establish a higher-genus construction (a genus-two framework needs base points, paths,
+tangential regularization, monodromy and single-valued completion). The
+weight-two content is genuine and \emph{conjecturally} irreducible to weight one, while
+all coefficients remain
+algebraic.
+
+\paragraph{Numerical validation.} Table~\ref{tab:adiab-valid} compares the
+hybrid form~\eqref{eq:phi-adiab}--\eqref{eq:psi-irr} (closed
+$\mathcal{C}$ plus numerical $\psi$) against the directly integrated non-autonomous
+coefficient $-\Ehat\!\int\partial_E F\,\eta\,\dd r$, for both branches
+($M=1$, $a=0.9$, $\Ehat=1.4$; $t$-branch $J=6$, $\tau$-branch scattering $J=2.5$).
+The agreement is at the discretization floor and scales linearly with
+$\varepsilon$, confirming that the split is an exact reorganization (integration by
+parts) rather than an approximation. Figure~\ref{fig:phi-closed} shows the same
+comparison as orbit shapes in the plane, closed form against direct integration,
+for both branches on compact sub-arcs bounded away from the turning point. The frozen family
+itself already exhibits nontrivial ergosphere dynamics: for penetrating $t$-branch
+angular momenta the orbit dips inside $r_e$, co-rotates, and turns just outside the
+horizon, and a growing conformal factor eventually expels it from the ergosphere at
+an adiabatic threshold (Fig.~\ref{fig:phi-penetrating}).
+
+\paragraph{Exact first-order term and the true dynamic test.} Table~\ref{tab:adiab-valid}
+and Fig.~\ref{fig:phi-closed} certify only the \emph{algebraic} identity (closed
+$\mathcal{C}+\psi$ equals the direct integral of the same coefficient); they do not by
+themselves test the adiabatic form against the actual non-autonomous dynamics. Integrating
+the true non-autonomous optical-metric geodesic---the branch-Hamiltonian flow with
+$E_{\rm eff}=\Ehat/A(\eta)$, $J_{\rm eff}=J/A(\eta)$---and comparing to
+$\varphi_0+\varepsilon\,\delta\varphi$ shows the \emph{physical} accuracy is $\sim2\%$
+(linear in $\varepsilon$), far above the algebraic floor
+(Fig.~\ref{fig:phi-true-dynamic}). Linearizing the extended Hamiltonian
+$\mathcal H=p_s+H=0$ about the frozen extremal---with the slow variable
+$\lambda$ the elapsed clock measured \emph{from the free-arrival endpoint} (where
+$H=0$ by the transversality~the transversality of Paper I), oriented inward, and
+$A(\eta)=A_0(1+\varepsilon\lambda+\cdots)$---gives, in the \emph{normalized} momentum
+$P_r=p_r/A$ (\ref{app:firstorder}), the first-order shift of the momentum shell
+$\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
+\begin{equation}
+    \begin{aligned}
+    &\frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{P_r}G}{H_{P_r}}\,
+    \big(\lambda\,\Theta H-S_{\mathcal D}\big)-\lambda\,\Theta G\Big]\dd r,\qquad
+    G=\frac{H_J}{H_{P_r}}=\varphi',\\[2pt]
+    &S_{\mathcal D}(\lambda)=\!\int_0^{\lambda}\!\mathcal D H\,\dd\lambda',\qquad
+    \mathcal D\equiv\underbrace{E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}}}_{\Theta}
+    +\,P_r\partial_{P_r},
+    \end{aligned}
+    \label{eq:adiab-exact}
+\end{equation}
+which closes the correction to $O(\varepsilon^2)$. The source uses the \emph{full} Euler
+operator $\mathcal D$: the normalization $P_r=p_r/A$ is a time-dependent (conformally
+symplectic) rescaling---\emph{not} canonical---so the canonical flow in the original
+$(r,p_r)$ carries, after passing to $P_r$, a dilation term
+$-\!\left(A'/A\right)P_r$ (\ref{app:firstorder}), and the shell-departure rate is $\mathcal D H=\Theta
+H+P_r H_{P_r}$, \emph{not} $\Theta H$ alone (omitting $P_r H_{P_r}$ leaves an
+$O(\varepsilon)$ error against the true flow---this is the correction of
+\ref{app:firstorder}). Here $\Theta$ differentiates only the \emph{dynamical}
+charges $E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$ (the rail invariants $\Ehat,J_{\rm TK}$
+are inert); for single-parameter Vaidya there is no rescaling, $\mathcal D=\Theta=m\partial_m$.
+The source $S_{\mathcal D}$ is \emph{terminally anchored} ($S_{\mathcal D}=0$ at the
+free-arrival endpoint); the reduction holds on compact sub-arcs bounded away from the
+turning point ($H_{P_r}\to0$), and is verified to machine precision against the true
+canonical flow (slope~$\approx2$;
+\texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py}, \texttt{tests/}). This splits
+into an \emph{on-shell} part (parameter drift, the closed form $\mathcal C+\psi$ of
+Sec.~\ref{sec:thakurta}, weight one in Kleinian $\zeta,\sigma$) and an \emph{off-shell}
+part driven by the dilation letter $\int P_r H_{P_r}\dd\lambda=\int p_{r0}\dd r$ (the
+radial action, reduced in closed form in \ref{app:firstorder},
+Eqs.~\eqref{eq:action-reduction}--\eqref{eq:ak}): a length-two iterated integral on the
+same spectral curve, closing in $\zeta,\sigma$ \emph{plus} one genus-two dilogarithm
+sourced by the third-kind letter at the seed Kerr null surface $\Delta=0$.
+
+\paragraph{Universal form of the off-shell source.} The source $S_{\mathcal D}$ does
+not, in fact, require the per-metric reduction to be written in closed form: it admits
+a metric-independent structure fixed by the \emph{Randers} character of the
+arrival-time Hamiltonian. Any such Hamiltonian is
+$H=\beta(r,E)\,J+\sqrt{A_{rr}(r,E)\,p_r^2+A_{\varphi\varphi}(r,E)\,J^2}-1$, homogeneous
+of degree one in $(p_r,J)$ apart from the normalization $-1$; Euler's theorem then
+gives the identity
+\begin{equation}
+    \big(J\,\partial_J+P_r\,\partial_{P_r}\big)H=H+1,
+    \label{eq:finsler-euler}
+\end{equation}
+valid for \emph{arbitrary} $\beta,A_{rr},A_{\varphi\varphi}$ (verified symbolically).
+On the frozen shell $H=0$ this collapses the integrand of $S_{\mathcal D}$ to a
+universal skeleton. For the \emph{conformal} family ($\mathcal D=\Theta+P_r\partial_{P_r}$),
+$\mathcal D H=E H_E+(H+1)$, so
+\begin{equation}
+    S_{\mathcal D}(\lambda)=\lambda+\int_0^{\lambda}E_{\rm eff}H_{E_{\rm eff}}\,\dd\lambda',
+    \label{eq:SD-conformal}
+\end{equation}
+the $\lambda$ term universal and $E_{\rm eff}H_{E_{\rm eff}}$ the single
+metric-specific ``energy-Euler'' piece (fixed by $E\partial_E v^2=2(1-v^2)$). For the
+\emph{mass-function} family (Vaidya, $\mathcal D=m\partial_m$), Schwarzschild
+self-similarity $(r,m)\to\kappa(r,m)$ (with $E,p_r$ inert, $J\to\kappa J$) gives
+$m H_m=-(rH_r+JH_J)$, and combining with~\eqref{eq:finsler-euler} and Hamilton's
+equations ($p_rH_{p_r}-rH_r=\dd(rp_r)/\dd\lambda$) yields the still simpler
+\begin{equation}
+    S_{\mathcal D}(\lambda)=\big[\,r\,p_r\,\big]_0^{\lambda}-\lambda,
+    \label{eq:SD-vaidya}
+\end{equation}
+a boundary term minus $\lambda$. The two deformation classes thus carry
+\emph{different} universal sources---no single formula spans both, because the slow
+parameter couples to the geometry differently (a conformal rescaling of all momenta
+versus a self-similar mass shift)---yet both share the same universal $\pm\lambda$
+skeleton from~\eqref{eq:finsler-euler}. Both~\eqref{eq:SD-conformal}
+and~\eqref{eq:SD-vaidya} are verified to machine precision against the direct
+$\int\mathcal D H\,\dd\lambda$ (\texttt{ThakurtaMetric/universal\_SD\_source\_check.py},
+\texttt{VaidyaMetric/universal\_SD\_source\_vaidya.py}).
+
+\paragraph{Fixed-charge versus fixed-endpoint.} The correction~\eqref{eq:adiab-exact}
+is computed at \emph{fixed canonical charges} $(\Ehat,J)$: it is the same-launch,
+fixed-charge response of the orbit to the slow drift, the object that the true-flow
+test of \ref{app:firstorder} validates. A genuine two-point boundary-value
+problem with \emph{fixed spatial endpoints} instead lets the conserved charge float,
+$J=J_0+\varepsilon\,J_1+O(\varepsilon^2)$, with $J_1$ fixed by holding the arrival
+azimuth,
+\begin{equation}
+    0=\delta\varphi_{\rm dyn}+J_1\,\partial_J\varphi_0
+    \;\Longrightarrow\;
+    J_1=-\,\frac{\delta\varphi_{\rm dyn}}{\partial_J\varphi_0},
+    \label{eq:J1-fixedendpoint}
+\end{equation}
+where $\delta\varphi_{\rm dyn}$ is the fixed-charge displacement above. The
+fixed-endpoint shape then adds $\varepsilon J_1\,\partial_J\varphi_0$, which merely
+re-selects the launch angle and does not alter the transcendental class. We report
+the fixed-charge form throughout and quote~\eqref{eq:J1-fixedendpoint} as the explicit
+map to the fixed-endpoint problem.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Hybrid closed form versus the direct integral of the \emph{same}
+    first-order coefficient, $\max_r|\varphi_{\rm hybrid}-\varphi_{\rm full}|$ (an
+    integration-by-parts identity---an algebraic self-consistency, \emph{not} a test
+    against the true dynamics; for the latter see Fig.~\ref{fig:phi-true-dynamic}).
+    Both branches; the residual is the numerical-quadrature floor.}
+    \label{tab:adiab-valid}
+    \begin{tabular}{lcc}
+        \hline\hline
+        $\varepsilon=A'/A$ & $t$-branch ($\eta=t$) & $\tau$-branch ($\eta=\tau$)\\
+        \hline
+        $0.005$ & $1.4\times10^{-6}$ & $2.5\times10^{-8}$\\
+        $0.02$  & $5.6\times10^{-6}$ & $1.0\times10^{-7}$\\
+        $0.06$  & $1.7\times10^{-5}$ & $3.0\times10^{-7}$\\
+        \hline\hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth]{Immagini/fig_phi_closed_validation.pdf}
+    \caption{Closed-form adiabatic orbit shape $\varphi(r,A)$ against the
+    \emph{direct quadrature of the same on-shell coefficient}, for both branches
+    (this is an integration-by-parts self-consistency check, \emph{not} a test
+    against the true non-autonomous dynamics; for the latter see
+    Fig.~\ref{fig:phi-true-dynamic}). Panels (a,b): the closed form
+    $\varphi_0+\varepsilon\,\delta\varphi$ (dashed), with $\delta\varphi$ assembled
+    from Eq.~\eqref{eq:psi-split}, overlies the direct quadrature of the same
+    first-order coefficient (solid) on compact sub-arcs bounded away from the
+    turning point (marker); the orbits wind close to the ergosphere $r_e$. Panel
+    (c): the residual $\max_r|\varphi_{\rm closed}-\varphi_{\rm quad}|$ grows
+    approximately \emph{linearly} with $\varepsilon=A'/A$ over the tested range
+    (residual$/\varepsilon\approx2.8\times10^{-4}$), for the $t$-branch
+    ($J=6$) and $\tau$-branch ($J=2.5$). This linear growth measures the size of
+    the retained first-order correction and a fixed numerical floor; it is
+    \emph{not} an $O(\varepsilon^2)$ truncation test. The dedicated log--log
+    convergence study against the full non-autonomous flow (slope two once the
+    complete first-order, on-shell $+$ off-shell, term is used) is supplied in
+    Fig.~\ref{fig:phi-true-dynamic}. All coefficients in $\delta\varphi$ are algebraic
+    and given, not fitted.}
+    \label{fig:phi-closed}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth]{Immagini/fig_phi_validation_true_dynamic.pdf}
+    \caption{\emph{Physical} validation against the \emph{true canonical flow}
+    (Eq.~\eqref{eq:normflow}, with the dilation term $-\!\left(A'/A\right)P_r$). Left:
+    the actual optical-metric geodesic ($t$-branch) versus the frozen shape plus the
+    \emph{leading} on-shell correction (dashed) and plus the \emph{exact}
+    Eq.~\eqref{eq:adiab-exact} correction ($S_{\mathcal D}$, dotted), at $A'/A=0.04$.
+    Right: the residual on a compact sub-arc bounded away from the turning point, for
+    \emph{both branches} and \emph{two parameter sets} ($t$: $a{=}0.9,\Ehat{=}1.4,J{=}6$;
+    $\tau$: $a{=}0.9,\Ehat{=}1.4,J{=}2.5$ scattering; $t$: $a{=}0.5,\Ehat{=}1.3,J{=}5$).
+    The on-shell term alone (dotted; source $\int\Theta H\dd\lambda$ without the
+    $P_r H_{P_r}$ dilation) has an $O(\varepsilon)$ physical error (least-squares
+    log--log slope $\approx1.0$); the complete first-order term (solid; source
+    $S_{\mathcal D}$) closes it to $O(\varepsilon^2)$, with slope $2.12\pm0.03$ for all
+    three curves---the legend reports the slopes from the same fit data used to draw the
+    plot (six $\varepsilon$ values per curve)---far above the algebraic
+    integration-by-parts floor of Fig.~\ref{fig:phi-closed}/Table~\ref{tab:adiab-valid}
+    ($\sim10^{-6}$). The $\sim2\%$ leading-term gap is precisely the off-shell (costate)
+    residual.}
+    \label{fig:phi-true-dynamic}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth]{Immagini/fig_phi_penetrating.pdf}
+    \caption{Ergosphere-penetrating $t$-branch orbits ($J=3<J_c^+$), frozen family.
+    Panel (a): as the conformal factor $A$ grows ($E_{\rm eff}=\Ehat/A$ drops) the
+    \emph{analytically continued extremal} (inside $r_e$ it is a continuation of the
+    exterior extremal, not a proved PMP solution) \emph{enters the ergosphere}
+    ($r<r_e$), is forced to co-rotate by frame dragging, and turns ($\circ$) in the
+    annulus $r_+<r_{\rm t}<r_e$---\emph{outside} the horizon---before exiting; the
+    rail turning point $R_6=0$ prevents it from ever reaching $r_+$. Panel (b): the
+    penetration depth $r_{\rm t}(A)$ stays just above $r_+$ until a frozen-family
+    threshold $A_c\!\simeq\!1.5$ (each curve is frozen at fixed $A$),
+    beyond which the orbit no longer penetrates
+    ($r_{\rm t}$ jumps outward): the breathing conformal factor expels the orbit
+    from the ergosphere.}
+    \label{fig:phi-penetrating}
+\end{figure}
+
+\paragraph{Penetration phase diagram.} The frozen ergosphere dynamics is organized
+by two \emph{analytic} thresholds, both of which we verify against direct
+root-tracking (Fig.~\ref{fig:penetration-phase}). Writing $DE=(E_{\rm eff}^2-1)r+2M$,
+for $E_{\rm eff}<1$ a \emph{freezing wall} $r_w=2M/(1-E_{\rm eff}^2)$ (the zero of
+$DE$, and of $R_6$) advances inward as $A$ grows; the launch radius $r_0$ is
+swallowed at
+\begin{equation}
+    A_c^{\rm wall}=\frac{\Ehat}{\sqrt{1-2M/r_0}},
+    \label{eq:Awall}
+\end{equation}
+beyond which no orbit issues from $r_0$. Below the wall the $t$-orbit crosses the
+ergosphere iff its outer turning lies inside $r_e$; the prograde boundary is
+\begin{equation}
+    J_c^+(A)=\frac{2M^2}{a}+a+\frac{a\,A^2}{2\Ehat^2}
+    \label{eq:Jcplus}
+\end{equation}
+(matching the numerics to $10^{-15}$), the retrograde one a saddle-node $J_c^-(A)$. The window $(J_c^-,J_c^+)$ splits into a
+\emph{plunge} core (no turning, the orbit reaches $r_+$) and a thin
+\emph{penetrate-and-bounce} rim just below $J_c^+$, where the orbit dips inside
+$r_e$, co-rotates, and turns in the annulus $r_+<r_{\rm t}<r_e$ before exiting
+(Fig.~\ref{fig:bounce}). The breathing conformal factor thus \emph{expels} orbits
+from the ergosphere at $A_c^{\rm wall}$: a purely non-stationary effect.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.82\columnwidth]{Immagini/fig_penetration_threshold.pdf}
+    \caption{Ergosphere-penetration phase diagram of the frozen $t$-branch in the
+    $(A,J)$ plane ($M=1$, $a=0.9$, $\Ehat=1.4$, $r_0=12$). Four regimes: plunge to
+    the horizon, penetrate-and-bounce, scattering, and forbidden (beyond the
+    freezing wall $A_c^{\rm wall}=1.534$, dashed). The prograde ergosphere boundary
+    $J_c^+(A)$ [Eq.~\eqref{eq:Jcplus}] is analytic (solid, verified to
+    $10^{-15}$); the penetrating window is $(J_c^-,J_c^+)$.}
+    \label{fig:penetration-phase}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{Immagini/fig_penetrate_bounce_orbit.pdf}
+    \caption{A penetrate-and-bounce $t$-brachistochrone ($J=3.2$, frozen): it
+    enters the ergosphere, is forced to co-rotate (red arc), turns at
+    $r_{\rm t}=1.87$---inside $r_e$ but outside the horizon $r_+$---and exits. The
+    rail turning $R_6=0$ guarantees it never reaches $r_+$; crossing the ergosphere
+    and returning is causally allowed.}
+    \label{fig:bounce}
+\end{figure}
+
+
+
+
+% ======================================================================
 \section{Equatorial closed forms and the ergosphere}
-\todo{Migrate master Sec.: separatrix in Weierstrass functions; trichotomy and
-the ergosphere cusp; plunge inversion (rotational and conformal); fixed-endpoint
-comparison and protocol dependence (tiered R\_*(E,a)); the breathing indicatrix
-unified adiabatic theorem.}
+\label{sec:closed}
+% ----------------------------------------------------------------------
 
+All closed forms in this section and in \ref{app:explicit} are obtained at
+\emph{frozen conformal factor}: constant $A$, equivalently stationary Kerr with
+the substitution $E\to E_{\rm eff}=\Ehat/A$ (and $J\to J/A$, the spin $a$ retained) in every
+parameter (Sec.~\ref{sec:thakurta}). They are therefore the exact
+\emph{instantaneous} orbit shapes on a Thakurta--Kerr slice of given $A$; the
+running $A(\eta)$ makes the full problem non-autonomous---the quasi-constant
+drift of a companion 3D analysis, $K^{\rm TK}(\eta)=K^{\rm Kerr}(E_{\rm
+eff}(\eta))+O(A'/A)$---so a genuinely time-dependent trajectory is recovered by
+letting $E_{\rm eff}=E_{\rm eff}(\eta)$ run through this family, not by a single
+autonomous curve.
+
+\subsection{Separatrix in Weierstrass functions}
+\label{sec:separatrix}
+From the doranTau factorization $\Delta-\Jc^2 w=f(r^2+c^2)$, $c=a/E$
+\cite{RosignoliKerr}, the
+equatorial $\tau$-separatrix $\varphi(r)$ is genus~1, closed in the
+Weierstrass functions $\wp,\sigma,\zeta$
+\cite{WhittakerWatson,DLMF,Hackmann2008,Hackmann2010}: the angle is linear in the
+uniformizing variable $z(r)=\wp^{-1}(A/r+B)$ plus two $\sigma$-ratios
+[\ref{app:explicit}, Eq.~\eqref{eq:sep-phi}], regular \emph{through} the
+ergosphere because the factor $r^2+c^2$ divides the turning quartic and removes
+$\re$ from the radicand. The Boyer--Lindquist form winds logarithmically at the
+horizon; the Doran shift---a second, quasi-lemniscatic elliptic
+curve---cancels it, so the ergosphere-penetrating separatrix
+$\varphi_D=\varphi_{\rm BL}-\varphi_{\rm shift}$ is closed on two elliptic curves.
+
+What controls the reduction is the \emph{genus} of the turning radical, not the
+rationality of $\mathcal K$. Being Riemannian-pure
+(Sec.~\ref{sec:thakurta}, the gravitomagnetic wind cancels), the $\tau$-branch
+factorizes as doranTau---the factor $r^2+c^2$ dividing the quartic---dropping a
+generically genus-2 reduction to genus~1. Generic $t$-branch orbits carry the
+wind and have the sextic radical
+$\mathcal R(r)=r\,Q_2(r)\,[(E^2-1)r+2M]$ (genus~2, hyperelliptic), with no such
+cancellation. The $t$-brachistochrone nonetheless has its own genus-1 closed-form
+separatrix, by a \emph{different} mechanism: at the marginal-capture (saddle-node)
+momentum $J_c^-$ [Eq.~\eqref{eq:Jc-minus}] the sextic develops a \emph{double
+root}, $\mathcal R=(r-r_*)^2 Q_4$ with $Q_4$ quartic (whereas the prograde
+ergosphere crossing $J_+^t$ has only a simple root and stays genus~2). The double
+root drops the radical to $Q_4$, and $\varphi(r)$ closes in the same
+Weierstrass $\wp,\sigma,\zeta$ form as the $\tau$-separatrix
+(\ref{app:explicit}). Both separatrices are thus genus~1---the $\tau$ one
+via the doranTau factorization, the $t$ one via a double root---while generic
+(non-separatrix) $t$-orbits are genuinely genus~2, closed only in genus-2
+Kleinian functions.
+The Kerr geodesic structure and its constants are classical
+\cite{Carter1968,Chandrasekhar}. Validated end-to-end to
+$2.8\times10^{-10}$ through the ergosphere, and general across parameters.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_separatrix_3traiettorie.png}
+    \caption{Prograde $\tau$-branch separatrix $J=+\Jc$ (the single penetrating value);
+    the closed form crosses $\re$, where the PMP-$\eta$ terminates. \emph{Top:} the three
+    methods---Hamilton ODE, closed-form quadrature, evaluated Weierstrass
+    $\sigma,\zeta,\wp$---overlap. \emph{Bottom:} the two residuals shown \emph{separately}.
+    The evaluated Weierstrass agrees with direct quadrature to $2.8\times10^{-10}$ across
+    the interval (green); the Hamiltonian ODE agrees with the closed form away from the
+    asymptotic unstable endpoint, its residual growing near $\re$ from numerical
+    sensitivity (black).}
+    \label{fig:sep3}
+\end{figure}
+
+
+\subsection{Trichotomy and the ergosphere cusp}
+\label{sec:trichotomy}
+For the equatorial $\tau$-branch, $\dd\varphi/\dd r\sim K\sqrt{r-\re}$ as
+$r\to\re$ (because $\sqrt f\to0$ while the turning radicand stays finite),
+giving
+\begin{equation}
+    \varphi-\varphi_e \sim \tfrac{2}{3}K\,(r-\re)^{3/2},
+    \label{eq:cusp}
+\end{equation}
+a cusp with radial tangent. The trichotomy in $|J|$ (sign of $a^2-J^2E^2$):
+smooth periapsis above $\re$ ($|J|>\Jc$); marginal contact with $\re$
+($|J|=\Jc=a/E$, separatrix); cusp reflection at $\re$ ($|J|<\Jc$). Only the
+\emph{prograde} marginal $J=+\Jc$ actually crosses: inside $\re$ frame dragging
+forces co-rotation ($\dd\varphi/\dd\lambda>0$), so the retrograde marginal
+$J=-\Jc$, which would counter-rotate, reflects with a cusp instead. The crossing
+(prograde) branch is continued through $\re$ to the horizon in Doran
+(horizon-penetrating) coordinates
+\cite{Doran2000,Natario2009,MartelPoisson2001},
+$\varphi_D=\varphi_{\rm BL}-\varphi_{\rm shift}$.
+
+\paragraph{Retrograde branch and the $\tau/t$ asymmetry.} The trichotomy above is
+a $\tau$-branch statement. The set that \emph{reaches} $\re$ is symmetric in the
+sign of $J$---the doranTau factorization depends on $J$ only through $J^2$, so the
+ingoing orbit reaches $\re$ for $|J|\le\Jc=a/E$, prograde and retrograde sharing
+the same threshold despite frame dragging---but the set that \emph{penetrates} is
+not: only the single prograde $+\Jc$ crosses, the co-rotation constraint breaking
+the $\pm J$ symmetry at the wall. The $t$-branch is not protected. Its turning function (from
+$H_\eta=0$ at $p_r=0$, with $b=2Ma/r$) is
+\begin{equation}
+    N(r)=\big(\bar P-Jb\bar v^2\big)^2-J^2\Delta\bar v^2,
+    \label{eq:tbranch-turn}
+\end{equation}
+which is only linear-plus-quadratic in $J$. At the ergosphere
+$N(\re)=\bar P_e\,(\bar P_e-2aJ)$ with
+$\bar P_e=\bar P(\re)=4M^2+2a^2+a^2/E^2$, so the $t$-orbit crosses $\re$ at the
+single \emph{prograde} value
+\begin{equation}
+    J_+^{t}=\frac{\bar P_e}{2a}=\frac{4M^2+2a^2+a^2/E^2}{2a};
+    \label{eq:Jplus-t}
+\end{equation}
+there is no retrograde $r_e$-crossing. Instead the retrograde $t$-capture is
+bounded by the \emph{marginal} (double-root) condition $N=N'=0$ at a radius
+$r_*>\re$---the massive analogue of the retrograde photon sphere---which closes
+to
+\begin{equation}
+    J_c^{-}=-\,\frac{\bar P}{\bar v\,(\sqrt\Delta-b\bar v)}\bigg|_{r_*}<0 .
+    \label{eq:Jc-minus}
+\end{equation}
+For $a=0.9$, $E=1.2$ (and $A=1$) these give $J_+^{t}=3.43$ and $J_c^{-}=-8.05$
+($r_*=3.51$): the $t$-branch captures the wide, asymmetric band
+$J\in[J_c^{-},J_+^{t}]$, far more capture-prone on the retrograde side. A
+moderately retrograde orbit ($J=-5$, say) is therefore captured on the
+$t$-branch but scattered on the $\tau$-branch (Fig.~\ref{fig:master-pen}). For
+constant $A$ the results carry
+over by $E\to\Ehat/A$, $J\to J/A$ (spin $a$ retained); in particular
+$\Jc^{\tau}=sA^2/\Ehat$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{Immagini/fig_master_penetration_taut.png}
+    \caption{Ergosphere behaviour of the two branches versus $J$
+    (Table~\ref{tab:penetration}). The $\tau$-branch (bottom bar) is a
+    \emph{trichotomy}: smooth bounce for $|J|>J_c$, cusp bounce at $r_e$ for
+    $|J|<J_c$ (red), and a \emph{single} penetrating value $J=+J_c$ (star)---the
+    reality wall $\sqrt{wf}$ and forced co-rotation block all others. The
+    $t$-branch (top bar) is a \emph{dichotomy}: it penetrates the whole interval
+    $(J_c^-,J_+^t)$ (green), reflecting smoothly outside.}
+    \label{fig:master-pen}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_cuspide_ergosfera.png}
+    \caption{Behaviour at the ergosphere: cusp reflection ($|J|<\Jc$), smooth
+    periapsis ($|J|>\Jc$), and the \emph{prograde} marginal $J=+\Jc$ crossing to
+    $\rp$ in Doran coordinates---only $+\Jc$ crosses, the retrograde $-\Jc$
+    cusping instead. Power law $2/3$ (cusp) vs $2$ (periapsis).}
+    \label{fig:th-cusp}
+\end{figure}
+
+\subsection{Plunge inversion: rotational and conformal}
+\label{sec:inversion}
+Two mechanisms invert the $t/\tau$ ordering. Rotationally, in the $(a,J)$ plane,
+$\rho(r_*)^2=H_{t0}/H_{\tau0}$, extending the stationary Kerr analysis
+\cite{RosignoliKerr}. Conformally, the inversion locus is
+\begin{equation}
+    \mathrm{cond}(r,A)=A^2 b\,Q-\bar P(\Ehat-A^2 f)=0,\quad
+    Q=b\bar v^2+\sqrt{\bar v^2\Delta},
+    \label{eq:condinv}
+\end{equation}
+with $\mathrm{cond}(1)<0$ and
+$\mathrm{cond}(\Af)=\Ehat r\Delta(\Ehat-1)/(r-2M)$. Under the explicit hypotheses
+$\Ehat>1$ (scattering energy), $r>2M$ and $\Delta>0$ (exterior, off-horizon), the
+latter is $>0$, so by the intermediate value theorem a root
+$A_{\rm inv}\in(1,\Af)$ exists; it is reachable when $A_{\rm inv}<\Af$, with far
+field $A_{\rm inv}\to\sqrt{\Ehat}$. For $\Ehat\le1$ the sign is non-positive and no
+such root is guaranteed: the conformal inversion is thus a \emph{conditional}
+statement, holding in the stated energy/domain window rather than universally.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_plunge_t_tau.png}
+    \caption{Rotational inversion in the $(a,J)$ plane; ODE locus vs analytic
+    $\rho(r_*)^2=H_{t0}/H_{\tau0}$.}
+    \label{fig:th-plungeAJ}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_inversione_AJ.png}
+    \caption{Conformal inversion in the $(J,A)$ plane: $\Delta r$ changes sign;
+    analytic $\mathrm{cond}=0$ matches the numerical contour; reachable
+    ($A_{\rm inv}<\Af$).}
+    \label{fig:th-invAJ}
+\end{figure}
+
+
+\subsection{Fixed-endpoint comparison and protocol dependence}
+\label{sec:bvp}
+The statement ``branch $X$ plunges deeper'' is protocol dependent. With
+\emph{fixed initial data} (same $r_0,J,p_r$) the $t$-branch is deeper
+($r_{\min}^t<r_{\min}^\tau$). With \emph{fixed endpoints} (the genuine
+two-point brachistochrone), the two branches join the same $A,B$ but are
+distinct paths, and the ordering reverses: $r_{\min}^\tau<r_{\min}^t$. The
+optical-index ratio $n_t/n_\tau=E/f>1$ penalizes deep radii more heavily for
+the $t$-branch, so the $t$-brachistochrone bows outward while the $\tau$-branch
+dips. This must be specified when comparing depths.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_bvp_estremi_fissi.png}
+    \caption{Fixed-endpoint $t$ and $\tau$ brachistochrones (Schwarzschild,
+    $E=1.2$): symmetric (top) and asymmetric (bottom) endpoints. Both branches
+    join the same $A,B$; the $\tau$-branch dips deeper.}
+    \label{fig:bvp}
+\end{figure}
+
+Crucially, neither driver of same-launch inversion survives the
+fixed-endpoint constraint. Scanning the spin $a$ over the entire
+Kerr flow with fixed symmetric endpoints $(r_0,\pm\Phi)$ leaves
+$\Delta r=r_{\min}^t-r_{\min}^\tau$ strictly positive
+($\Delta r\in[+0.45,+2.06]$ on $a\in[0.05,0.95]$); the map is nearly flat
+in $a$, its gradient set almost entirely by the endpoint angle
+$\Phi$ (encoded by $J$). The conformal scan (via the transfer
+$E_{\rm eff}=\hat E/A$) is likewise everywhere positive
+($\Delta r\in[+0.002,+3.711]$). The pointwise index bound $n_t/n_\tau=E/f>1$ does
+not by itself order the minima of two distinct functionals---indeed at \emph{fixed}
+$J$ the ordering is the opposite (the $t$-orbit turns deeper), and the fixed-endpoint
+result is a reversal driven by the accumulated-angle map $J\mapsto\Phi$. It admits,
+however, a clean reduction. Parametrize each branch by its turning radius $r_{\min}$
+(which fixes $J$ through the turning condition $r\Delta=J^2 DE$ for $\tau$, $Q_2=0$
+for $t$), and let
+\begin{equation}
+    \Phi_{\rm br}(r_{\min})=\int_{r_{\min}}^{r_0}\!F_{\rm br}\big(r;J_{\rm br}(r_{\min})\big)\,\dd r
+\end{equation}
+be the half-angle swept by the orbit turning at $r_{\min}$. Two lemmas---verified
+across $a\in[0.3,0.9]$, $E\in[1.05,1.5]$---close the result. \emph{(A)} At matched
+turning radius the $t$-integrand dominates \emph{pointwise},
+$F_t(r;J_t)>F_\tau(r;J_\tau)$ for $r\in(r_{\min},r_0)$; since $J_{t,\tau}(r_{\min})$
+are \emph{algebraic}, this is a polynomial (not transcendental) inequality, whence
+$\Phi_t(r_{\min})>\Phi_\tau(r_{\min})$. \emph{(B)} $\Phi_{\rm br}$ is strictly
+decreasing. Together: at equal angle
+$\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$, so
+$r_{\min}^\tau<r_{\min}^t$ by (B)---the fixed-endpoint no-inversion. Lemma~(A) is
+\emph{proven in full}. Writing $F_t^2-F_\tau^2=(r\,DE/\Delta^2)\,N_G/(Q_2 P_\tau)$
+with $N_G=(J_t(r-2M)+2Ma)^2 P_\tau-J_\tau^2(r-2M)Q_2$ and reducing modulo the turning
+conditions ($J_\tau^2=r_{\min}\Delta_{\min}/DE_{\min}$, $Q_2(r_{\min},J_t)=0$), one
+finds the key factorization
+\begin{equation}
+    N_G=(r-r_{\min})\,\frac{4r\,\Delta(r)}{r_{\min}-2M}\,W(r),\qquad W\ \text{\emph{linear} in }r .
+\end{equation}
+The prefactor is positive for $r>r_{\min}>2M$, so (A) reduces to $W(r)>0$; and a
+linear $W$ with $W(r_{\min})>0$ and positive slope stays positive for all
+$r>r_{\min}$. Both $W(r_{\min})=(r_{\min}-2M)\,a\,DE_{\min}(J^\ast-J_t)$ and the slope
+$w_1=a\,DE_{\min}(J^{\ast\ast}-J_t)$ are positive because the prograde root $J_t$ of
+$Q_2(r_{\min},\cdot)$ lies below both thresholds
+$J^\ast=[E^2r_{\min}(a^2+r_{\min}^2)+2a^2]/(a\,DE_{\min})$,
+$J^{\ast\ast}=[E^2r_{\min}^2(r_{\min}-M)+E^2a^2r_{\min}+a^2]/(a\,DE_{\min})$: the
+quadratic opens downward ($A=-(r_{\min}-2M)DE_{\min}<0$) with negative vertex
+$-2a/(r_{\min}-2M)$, while $J^\ast,J^{\ast\ast}>0$ and
+\[
+\begin{aligned}
+Q_2(r_{\min},J^\ast)&=\frac{-E^2r_{\min}^3(E^2r_{\min}^2+a^2)\Delta_{\min}}{a^2DE_{\min}},\\[2pt]
+Q_2(r_{\min},J^{\ast\ast})&=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\min}^2[(r_{\min}-M)^2+a^2]+a^2\big)}{a^2DE_{\min}}
+\end{aligned}
+\]
+are both manifestly negative, placing the thresholds beyond the larger root
+(\texttt{no\_inversion\_reduction.py}). Hence (A) is a theorem for all $r_{\min}>2M$,
+$E>1$, $a>0$. Lemma~(B), the monotonicity $\Phi_\tau'(r_{\min})<0$, is
+\emph{conditional}: $\Phi_\tau$ has a single maximum at a deflection radius
+$r_{\rm pk}\approx3M$ (the strong-deflection/winding threshold, where the orbit
+approaches the unstable circular $\tau$-orbit) and is strictly decreasing for
+$r_{\min}>r_{\rm pk}$. In the effective-potential form
+$\Phi_\tau=\sqrt{V_{\min}}\int_{r_{\min}}^{r_0}K/\sqrt{V-V_{\min}}\,\dd r$ with
+$V=r\Delta/DE$, $K=\sqrt{r(r-2M)}/\Delta$, $V_{\min}=V(r_{\min})$, the substitution
+$V=V_{\min}+\sigma^2$ and one integration by parts give, for $W\equiv K/V'$
+($W>0$, $W'<0$),
+\begin{equation}
+    \frac{\dd\Phi_\tau}{\dd V_{\min}}=
+    \frac{(V_0-2V_{\min})\,W(V_{\min})}{\Sigma\sqrt{V_{\min}}}
+    +\frac{2}{\sqrt{V_{\min}}}\!\int_0^{\Sigma}\!W'(V_{\min}+\sigma^2)\,g(\sigma)\,\dd\sigma,
+\end{equation}
+$\Sigma=\sqrt{V_0-V_{\min}}$, where $g(\sigma)=(V_0-2V_{\min})\sigma/\Sigma+V_{\min}-\sigma^2$
+satisfies $g(0)=V_{\min}>0$, $g(\Sigma)=0$ with its other root negative, hence
+$g>0$ on $[0,\Sigma)$; the second term is therefore \emph{manifestly negative}.
+When $V(r_0)\le2V(r_{\min})$ (the grazing regime, $r_{\min}$ near $r_0$) the first
+term is $\le0$ as well, and $\Phi_\tau'<0$ is \emph{proven in closed form}. The same
+closed form---using the exact identity (integration by parts on the Abel integral)
+\begin{equation}
+    \sqrt{V_{\min}}\,\Phi_\tau'=\frac{W(V_0)(V_0-2V_{\min})}{\Sigma}
+    +\int_{V_{\min}}^{V_0}\!\frac{W'(t)\,(2V_{\min}-t)}{\sqrt{t-V_{\min}}}\,\dd t ,
+    \label{eq:phitau-closed}
+\end{equation}
+together with the convexity of $W$ ($W''>0$)---extends the proof to the quarter
+regime $V(r_0)\le4V(r_{\min})$. We accordingly \emph{define}
+\begin{equation}
+    R_\ast(E,a)=\sup\big\{\,r_0:\ V(r_0)\le 4\,V(r_{\min}(r_0))\ \text{along the marginal
+    turning family}\,\big\},
+    \label{eq:Rstar}
+\end{equation}
+with $V=r\Delta/DE$ the turning potential---an explicit $(E,a)$-dependent radius (it is
+\emph{not} a function of $E$ alone, since $V$ carries the spin through $\Delta$)---so the
+closed-form proof covers all endpoints $r_0\le R_\ast(E,a)$. In the
+static limit $a\to0$ (Vaidya $\dot m=0$ / frozen Thakurta) we can go further:
+$W(V)=\tfrac1{2V}-\tfrac1{2b^{3/2}V^{3/2}}+O(V^{-2})$ with $b=E^2-1$, so the
+large-$r_0$ angle is
+$\Phi_\tau=\arctan\!\sqrt{V_0/V_{\min}-1}-b^{-3/2}\sqrt{1/V_{\min}-1/V_0}+\cdots$,
+exhibiting a \emph{single, non-degenerate} maximum at $V_{\rm pk}\sim b^{-3/2}\sqrt{V_0}$
+with $\Phi_\tau''(V_{\rm pk})=-\tfrac12 b^{9/4}V_0^{-5/4}<0$; hence (B) holds for all
+sufficiently large $r_0$. For intermediate $r_0$ the single-crossing property
+(at every $r_{\min}$, \emph{either} $\Phi_\tau'<0$ \emph{or} $\Phi_\tau''<0$) is
+established by a validated interval-arithmetic certificate, completed for $r_0=10M$
+over the entire continuum $r_{\min}\in(2.6,6.05)M$ (the elementary grazing bound
+covering $r_{\min}\gtrsim6.05M$; \texttt{no\_inversion\_schwarzschild\_CAP\_r0\_10.py}).
+A uniform symbolic proof for all $(a,E,r_0)$ remains open---the deciding inequality is
+tight at the \emph{transcendental} deflection threshold $r_{\rm pk}$. We therefore state
+(B), and hence the fixed-endpoint no-inversion, as a \emph{theorem for $r_0\le R_\ast(E,a)$
+and asymptotically as $r_0\to\infty$ in the static case}, machine-certified at
+representative $r_0$, and a numerically supported conjecture in full generality
+(verified over $a\in[0.2,0.9]$, $E\in[1.05,1.5]$); the fixed-endpoint turning points of
+Fig.~\ref{fig:bvp} ($r_{\min}^{\tau,t}\gtrsim4.7M$) lie in the certified scattering
+regime.
+Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
+inversion is a property of the \emph{comparison protocol}, not an invariant
+of the two brachistochrones---it requires the freedom to let the endpoint
+move.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_spin_estremi_fissi.png}
+    \caption{Numerical spin scan at fixed symmetric endpoints (Kerr, Hamiltonian
+    flow): $\Delta r$ over the sampled $(J,a)$ domain stays positive---spin
+    does not invert once the endpoints are pinned (a finite scan, consistent with the
+    tiered no-inversion status of \S\ref{sec:inversion}). The gradient is set by the
+    endpoint angle ($J$), not by $a$.}
+    \label{fig:cm-spin-fix}
+\end{figure}
+
+
+The verdict is independent of the endpoint symmetry: repeating both scans
+with \emph{asymmetric} fixed endpoints ($r_A=10,r_B=6$) leaves
+$\Delta r>0$ everywhere as well (spin $[+0.76,+2.64]$, conformal
+$[+0.16,+3.24]$; Figs.~\ref{fig:asym-spin}--\ref{fig:asym-conf}),
+consistent with the pointwise bound $n_t/n_\tau=E/f$.
+
+\begin{table}[t]
+    \centering
+    \caption{Protocol dependence of plunge inversion. Same-launch
+    comparison inverts under either rotation or a conformal factor; the
+    genuine fixed-endpoint brachistochrone shows no inversion in every
+    proven and tested regime (proven for $r_0\le R_\ast$ and, in the static
+    case, as $r_0\to\infty$; machine-certified at representative $r_0$;
+    numerically verified elsewhere).}
+    \label{tab:protocol}
+    \begin{tabular}{@{}lcc}
+        \br
+        protocol & spin $a$ & conformal $A$ \\
+        \mr
+        same launch & inverts (\S\ref{sec:inversion}) & inverts (\S\ref{sec:inversion}) \\
+        fixed endpoints & no inversion$^\ast$ & no inversion$^\ast$ \\
+        \mr
+        \multicolumn{3}{@{}l}{\footnotesize $^\ast$Tiered status (see caption); the
+        pointwise bound $n_t/n_\tau=E/f>1$ is \emph{necessary but not sufficient}.}\\
+        \br
+    \end{tabular}
+\end{table}
+
+\subsection{The breathing indicatrix: a unified adiabatic theorem}
+\label{sec:unified}
+The two closed-form corrections---Thakurta--Kerr, Eq.~\eqref{eq:psi-split}, and
+Vaidya, the Vaidya correction of Paper I---are one statement in disguise, and the
+indicatrix ellipse of Paper I is the reason. Let $F(r;\lambda)$
+be the frozen brachistochrone integrand of a one-parameter family of rail
+indicatrices, $\lambda$ the slow datum (scale $a$, mass $m$, conformal $A$), on the
+genus-two spectral curve $y^2=S(r;\lambda)$. Whenever $\lambda=\lambda(\text{clock})$
+drifts slowly,
+\begin{equation}
+    \varphi(r)=\varphi_0\!\big(r;\lambda\big)+\dot\lambda\!\int\!\partial_\lambda
+    F\,(\text{clock})\,\dd r+O(\dot\lambda^2)
+    =\varphi_0+\dot\lambda\Big[\sum_{k<j} q_{kj}\,W_{kj}+(\text{elementary})\Big],
+    \label{eq:unified}
+\end{equation}
+with $q_{kj}$ \emph{algebraic} (rational in the metric parameters, via the exact
+reduction $\partial_\lambda F=N_\lambda/S^{3/2}$) and $W_{kj}=\int(U_j\dd U_k-U_k
+\dd U_j)$ length-two iterated Abelian integrals of the frozen curve. Equation
+\eqref{eq:unified} is the \emph{on-shell} component of the first-order response
+(the parameter drift of the frozen family); the \emph{complete} first-order term is
+the extended-Hamiltonian expression Eq.~\eqref{eq:adiab-exact}, whose off-shell
+(costate $p_\eta$) piece is itself a length-two iterated integral of the same class
+(a $\sim2\%$ correction here). Within the on-shell component the transcendence
+structure is \emph{universal} across the three geometries. The three geometries are distinguished \emph{not} by which datum
+of the indicatrix varies---in each, \emph{both} the centre $c$ and the semi-axes $R$
+breathe, through $\partial_\lambda F=\partial_c F\,\partial_\lambda c+\partial_R
+F\,\partial_\lambda R$ with \emph{both} terms nonzero (for Vaidya, explicitly,
+$\partial_m c_r=-2/r$, $\partial_m R_r=E\,[r(2m+(E^2-1)r)]^{-1/2}$,
+$\partial_m R_\varphi=[r^3(2m+(E^2-1)r)]^{-1/2}$; likewise every $E_{\rm
+eff}=\Ehat/A$-dependent datum of Thakurta--Kerr varies via $\partial_A E_{\rm
+eff}=-\Ehat/A^2$)---but by two structural features. First, the \emph{orientation} of
+the wind: Vaidya's is the ingoing \emph{radial} centre-wind $c_r=f-\Ehat^2$;
+Thakurta--Kerr's is the \emph{azimuthal} frame-dragging shift. Second, and
+decisively for the weight-two letter, the \emph{clock} that weights the source,
+through the location of its logarithmic singularity: the advanced time $v$ diverges
+at the horizon $r=2m$, giving Vaidya a $\dd\log$ letter \emph{there}; the $t,\tau$
+clocks grow logarithmically at large $r$, giving Thakurta--Kerr a third-kind dipole
+\emph{at infinity}. FLRW is the degenerate circle---$c=0$, isotropic $R$---where the
+three branches coincide and the polylogs collapse to genus zero: no wind, no
+dilogarithm. The organizing thread ``circle $\to$ radial-wind ellipse $\to$
+angular-wind ellipse'' is thus literally the ladder of weight-two letters the
+breathing switches on, on one and the same hyperelliptic backbone.
+
+\paragraph{Domain of validity.} The statement is a \emph{first-order} adiabatic
+theorem, and it rests on two \emph{exact} lemmas---the algebraic reduction
+$\partial_\lambda F=N_\lambda/S^{3/2}$ with the unique rational $c_k$ from the
+polynomial identity~\eqref{eq:reduction-identity} (nonsingular whenever $S$ has
+distinct roots, i.e.\ away from the separatrix), and the integration-by-parts
+assembly~\eqref{eq:psi-split} using the shuffle relation---so the closed form is
+rigorous, not fitted, wherever those hypotheses hold. Two caveats bound it honestly.
+First, it is $O(\dot\lambda)$: the second-order term needs the next reduction.
+Second, and more importantly, the expansion \emph{fails at the turning points}
+$S(r)=0$: there $\partial_\lambda F\sim N_\lambda/S^{3/2}$ diverges and the na\"ive
+$\dot\lambda\,\delta\varphi$ is not uniformly valid, so the closed forms hold on the
+smooth arcs between turning points and must be joined across them by the standard WKB
+connection formulae (matched asymptotics). On the separatrix the \emph{mathematics}
+is a controlled limit---the genus drops and the reduction degenerates to the elliptic
+(Bloch--Wigner) case---but the \emph{physics} there is delicate for a separate reason:
+the radial period diverges (the orbit asymptotes an unstable circular orbit), so the
+adiabatic hypothesis itself---``$\lambda$ varies slowly compared with the orbital
+period''---degrades, and the separatrix correction is properly read as an
+\emph{instantaneous, local} first-order statement about the neighbourhood of the
+separatrix rather than a long-time separatrix-following orbit. Moreover the degeneration
+locus is not fixed under the evolution it responds to: in Vaidya
+$J_{\rm deg}=m\,j(E)$ scales linearly with the mass (verified exactly proportional,
+$J_{\rm deg}/m=7.0266$ at $E=1.4$, independent of $m$). This is the \emph{algebraic}
+degeneration at $r_d<0$, not an external separatrix: the physical accretion$/$evaporation
+capture--escape divide is the dynamical penetration threshold, not $J_{\rm deg}$. A
+particle of conserved $J$ nonetheless \emph{crosses} the moving locus as $m(v)$ drifts;
+that crossing---the same phenomenon that makes the Thakurta--Kerr off-shell separatrix
+limit a Neishtadt separatrix-crossing problem---is a genuinely non-perturbative regime,
+beyond first order, and the accretion--evaporation asymmetry of
+the Vaidya asymmetry of Paper I is the first-order fingerprint that survives on either
+side of it. Within these bounds, which
+are the usual bounds of first-order WKB, this closed form is the \emph{on-shell
+component} of the first-order response---the parameter drift along the frozen
+family---and is exact as such; the \emph{complete} first-order term is the
+extended-Hamiltonian expression Eq.~\eqref{eq:adiab-exact}, which adds the
+off-shell (costate $p_\eta$) displacement of the momentum shell (a $\sim2\%$
+correction here, Fig.~\ref{fig:phi-true-dynamic}). The separatrix
+results in particular quantify the response \emph{at} the instantaneous marginal
+configuration $J=\Jc(m)$, not a trajectory pinned to it. The complementary,
+separatrix-\emph{following} response---imposing $J=\Jc(m(v))$ so that the orbit
+tracks the moving marginal curve, with $\dd J/\dd v=(\Jc/m)\dot m$---closes by the
+\emph{identical} reduction, the only change being the source $\partial_m F\to
+\partial_m F+(\Jc/m)\,\partial_J F=(N_m+(\Jc/m)N_J)/S^{3/2}$ with $N_J$ again
+polynomial; the same pole-adapted Weierstrass assembly then yields its closed form
+(verified to $10^{-8}$), all coefficients again algebraic in $m,E$. The
+advanced-time branch closes on the same separatrix by the identical scheme:
+$\delta\varphi_v|_{\rm deg}=\tilde G(z)\,v-\int\tilde G\,v_z\,\dd z$ with
+$v_z=\dd v/\dd z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$, the first term reproducing the
+proper-time dilogarithms and the second---odd on the curve, with a simple pole at
+the horizon two-torsion image $z=i\omega_{\rm im}$ (where $r=2m=e_3$)---furnishing the
+horizon dilogarithm; the whole is explicit in $\sigma,\zeta,\wp$ and elliptic
+dilogarithms with closed-form coefficients (verified to $10^{-8}$).
+
+
+% ======================================================================
+
+% ======================================================================
 \section{Conclusions}
-\todo{Three blocks: Proved / Conditional and numerical / Outlook.}
+\label{sec:concl-II}
+\paragraph{Proved.} In the conformal Kerr (Thakurta--Kerr) geometry the controlled rail
+inherits the Killing--CKV--Kodama structure of the companion paper. On the equatorial
+sector we obtained closed-form separatrices in Weierstrass functions, continued through
+the ergosphere in Doran coordinates, and an analytic cusp theorem for the $|J|<\Jc$
+reflection; the on-shell first-order reduction to length-two iterated Abelian integrals is
+a proved weight-one closed form. The arrival branch is $t\equiv\eta$ (a monotone
+reparametrization), leaving two genuinely distinct optimal families, arrival and proper
+time $\tau$.
+
+\paragraph{Conditional and numerical.} Rotation and the conformal factor invert the
+$t/\tau$ plunge ordering under a same-launch comparison. The fixed-endpoint no-inversion
+is a \emph{theorem} for $r_0\le R_\ast(E,a)$ [Eq.~\eqref{eq:Rstar}], machine-certified at
+representative $r_0$, and a numerically supported conjecture in general. The complete
+first-order (on-shell $+$ off-shell) correction is verified against the true
+non-autonomous flow to $O(\varepsilon^2)$; the genus-two weight-two letters are evaluated
+by a convergent theta-nome series, their irreducibility and single-valued completion
+conjectural.
+
+\paragraph{Outlook.} Open threads: a general theory of moving turning points and of
+adiabatic separatrices (a genuine crossing of a moving separatrix is a Neishtadt inner
+problem, beyond first order); interior-ergosphere optimality as a certified minimum; and a
+rigorous higher-genus polylogarithm framework with a canonical basis. The off-equatorial
+(three-dimensional) quasi-constant dynamics is deferred to a dedicated study.
+
 
 \appendix
-\section{Validation and consistency checks (Thakurta--Kerr)}
-\todo{TK parts of the master validation appendix.}
+\section{Validation and consistency checks}
+\label{app:validation}
+We collect the numerical checks that underpin the analytic results. The
+minimum principle is verified directly by perturbing the computed
+brachistochrones and confirming that both $T_t$ and $T_\tau$ are minimized
+(Paper I for the FLRW branch degeneracy, and
+Fig.~\ref{fig:verifmin} for the two distinct Vaidya branches). Stationary-limit
+residuals confirm that the non-stationary
+Hamiltonian flow reproduces the closed-form Kerr expressions as $m'\to0$ and
+$A\to1$ (Fig.~\ref{fig:vaidya-kerra0}); the Kodama energy is conserved to
+$\sim10^{-16}$ along the rail (Paper I). The equatorial closed
+forms are validated end-to-end by the three-method superposition
+(ODE flow, quadrature, evaluated Weierstrass) through the ergosphere
+(Fig.~\ref{fig:sep3}), and the fixed-endpoint no-inversion theorem is
+checked over the asymmetric-endpoint grids (Figs.~\ref{fig:asym-spin}--%
+\ref{fig:asym-conf}).
 
-\section{Explicit adiabatic forms on the genus-degeneration loci (Thakurta--Kerr)}
-\todo{TK tau/t separatrices: physical external separatrix (r\_d>2M) vs algebraic
-J\_deg roots.}
+\subsection{Explicit closed forms}
+\label{app:explicit}
 
-\section{Complete first-order extended-Hamiltonian correction (Thakurta--Kerr)}
-\todo{Canonical derivation in (r,p\_r); conformal source S\_D=eta+int E H\_E d.eta;
-length-two iterated Abelian integrals with weight-one/weight-two hierarchy.}
+All expressions below are at \emph{constant (frozen) conformal factor} $A$:
+stationary Kerr with $E\to E_{\rm eff}=\Ehat/A$, $J\to J/A$ (spin $a$ retained). They give
+the instantaneous orbit shape on a Thakurta--Kerr slice; the time dependence
+enters only through $E_{\rm eff}(\eta)$ (a companion 3D analysis).
 
-% ---- back matter -----------------------------------------------------
+\paragraph{Curve conventions (fixed once for all letters).} Every letter
+below---the second-kind $U_k=\int r^k/\sqrt S\,\dd r$, the weight-two
+$W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$, and the third-kind letters $L,\mathcal
+D_k$---is an integral on the hyperelliptic curve $Y^2=\mathcal S(r)$ read with the
+following fixed data. \emph{(i) Sheet:} $\sqrt S>0$ on the physical outer arc
+$r>r_{\min}$, the sign flipping across each branch point, which fixes $Y$ globally by
+analytic continuation. \emph{(ii) Cuts:} along the real segments between consecutive
+real roots of $\mathcal S$, so the path stays on the physical sheet between turning
+points. \emph{(iii) Base point and orientation:} all integrals share the lower limit
+$r_0$ (the launch radius) and run with increasing $r$ toward arrival; reversing the
+orientation flips the overall sign. \emph{(iv) Additive constants:} each
+antiderivative is pinned at a regular reference---$U_k$ at $r_0$, the third-kind
+letters at the regular point $z_\infty$ (where $\mathcal S$ vanishes as $1/r$), giving
+the constants $C_{U_0},C_0$ used below---so that no spurious constant survives; these
+constants multiply the common holomorphic differential and \emph{cancel} in every
+assembled $\delta\varphi$. The same conventions apply verbatim to the separatrix
+degeneration, with $\mathcal S\to Q_4$ and the Kleinian $\sigma,\zeta$ replaced by the
+Weierstrass $\sigma,\zeta,\wp$.
+
+\paragraph{Equatorial $\tau$-branch separatrix in Weierstrass functions.} On the
+$\tau$-separatrix $J=\Jc$ the doranTau factorization $\Delta-\Jc^2 w=f(r^2+c^2)$,
+$c=a/E$, makes the
+turning quartic $Q_4=r\big((E^2-1)r+2M\big)(r^2+c^2)$, and the factor $r^2+c^2$
+divides $Q_4$ so that only the horizon poles survive. Writing
+\begin{gather}
+    A=\frac{Ma^2}{2E^2},\qquad B=\frac{a^2(E^2-1)}{12E^2},\notag\\
+    g_2=\frac{a^4(E^2-1)^2}{12E^4}-\frac{a^2M^2}{E^2},\notag\\
+    g_3=\frac{a^4\big[36E^2M^2(1-E^2)-a^2(E^2-1)^3\big]}{216E^6},
+    \label{eq:wp-invariants}
+\end{gather}
+the uniformizing variable is $z(r)=\wp^{-1}\!\big(A/r+B;g_2,g_3\big)
+=\int_0^r\dd r'/\sqrt{Q_4}$, the Abel map of the turning quartic $Q_4$: it is the
+elliptic argument in which the radial motion linearizes, so that $r$ is recovered
+by $A/r+B=\wp(z)$ and the physical range $r\in[r_{\min},\infty)$ maps to a
+segment of $z$. With $r_\pm=M\pm\sqrt{M^2-a^2}$ the horizons,
+\begin{equation}
+\begin{aligned}
+    \alpha_\pm&=\frac{r_\pm\big((E^2-1)r_\pm+2M\big)}{r_\pm-r_\mp},\\
+    \lambda_\pm&=\frac{\alpha_\pm}{\sqrt{Q_4(r_\pm)}},\qquad v_\pm=z(r_\pm),
+\end{aligned}
+\end{equation}
+$\wp(v_\pm)=A/r_\pm+B$, and
+$\Lambda_0=(E^2-1)-\alpha_+/r_+-\alpha_-/r_-+2\lambda_+\zeta(v_+)+2\lambda_-\zeta(v_-)$,
+the angle is linear in the uniformizing variable $z\equiv z(r)$ plus two
+Weierstrass-$\sigma$ ratios,
+\begin{equation}
+\begin{split}
+    \varphi(r)=\frac{a}{E}\Big[&\Lambda_0\,z(r)
+      +\lambda_+\ln\frac{\sigma(z-v_+)}{\sigma(z+v_+)}\\
+      &+\lambda_-\ln\frac{\sigma(z-v_-)}{\sigma(z+v_-)}\Big]+\text{const}.
+\end{split}
+    \label{eq:sep-phi}
+\end{equation}
+Because $Q_4(2M)=4M^2(4E^2M^2+a^2)>0$, Eq.~\eqref{eq:sep-phi} is regular
+\emph{through} the ergosphere $\re=2M$; the only singularities are the
+third-kind logarithms at the horizons. The conformal case is
+$E\to E_{\rm eff}=\Ehat/A$ in every parameter.
+
+\paragraph{Doran continuation through the horizon.} The Boyer--Lindquist form
+$\varphi(r)$ winds logarithmically at $\rp$ (the standard BL artifact); adding the
+Doran shift $\dd\varphi_{\rm shift}=2Mar\,\dd r/(\Delta\sqrt{C_3})$ with the cubic
+$C_3=2Mr(r^2+a^2)$ regularizes it. This is a \emph{second} elliptic curve, in
+clean Weierstrass form $r(z)=(2/M)\wp(z;g_2,g_3)$ with $g_2=-M^2a^2$, $g_3=0$
+(quasi-lemniscatic), giving
+$\varphi_{\rm shift}=\tfrac{a}{r_+-r_-}\big(B_+-B_-\big)$,
+$B_\pm=2\zeta(v_\pm)z+\ln[\sigma(z-v_\pm)/\sigma(z+v_\pm)]$. With
+$\dd\varphi_{\rm shift}$ defined as above (a positive residue at $\rp$), the
+log residues of $\varphi_{\rm BL}$ and $\varphi_{\rm shift}$ are \emph{equal}
+(numerically $1.0324=1.0324$ at $a=0.9,E=1.2,J=3$), so they cancel under
+\emph{subtraction}: the horizon-regular Doran azimuth is
+\begin{equation}
+    \varphi_D=\varphi_{\rm BL}-\varphi_{\rm shift},
+    \label{eq:doran-phi}
+\end{equation}
+closed on two elliptic curves. (The single consistent sign is fixed by this
+residue cancellation; the same convention is used throughout,
+Eq.~\eqref{eq:doran-phi}.)
+
+\paragraph{General $\tau$-branch $\varphi(r)$: genus-2 Kleinian form.} Off the
+separatrix, for \emph{arbitrary} $J$, the $\tau$ integrand
+$\dd\varphi/\dd r=\mathcal K_\tau(r)/\sqrt{\mathcal S(r)}$ is genus~2, with the
+sextic
+\begin{equation}
+    \mathcal S(r)=r(r-2M)\big[(E^2-1)r+2M\big]
+      \big[r\Delta-J^2\big((E^2-1)r+2M\big)\big]
+    \label{eq:tau-sextic}
+\end{equation}
+(six generically simple branch points, hyperelliptic) and the rational numerator
+$\mathcal K_\tau=Jr(r-2M)\big[(E^2-1)r+2M\big]/\Delta$. Partial fractions split it
+into a first-kind (holomorphic) part and third-kind poles at the horizons
+$r_\pm=M\pm\sqrt{M^2-a^2}$,
+\begin{equation}
+    \varphi(r)=c_1\!\int\!\frac{r\,\dd r}{\sqrt{\mathcal S}}
+      +c_0\!\int\!\frac{\dd r}{\sqrt{\mathcal S}}
+      +\sum_{\pm}\alpha_\pm\!\int\!\frac{\dd r}{(r-r_\pm)\sqrt{\mathcal S}},
+    \label{eq:tau-genus2}
+\end{equation}
+with closed-form coefficients (in $M,a,E,J$)
+\begin{equation}
+    c_1=J(E^2-1),\quad c_0=2MJ,\quad
+    \alpha_\pm=\mp\frac{Ja^2\big[M(E^2+1)\pm(E^2-1)\sqrt{M^2-a^2}\big]}
+      {2\sqrt{M^2-a^2}}.
+    \label{eq:tau-coeffs}
+\end{equation}
+The two holomorphic integrals are the Abel-map coordinates (arguments of the
+Kleinian hyperelliptic $\sigma$), the horizon terms the third-kind
+$\ln\sigma$-quotients---the exact genus-2 analogue of the $t$-branch $J_+^t$
+[Eq.~\eqref{eq:t-genus2}]. We built $Y^2=\mathcal S$ in SageMath at $J=-0.9\Jc$
+and computed its Riemann period matrix $\tau$; both Riemann relations hold
+($\tau=\tau^\top$ to $7\times10^{-12}$, $\operatorname{Im}\tau\succ0$), and
+Eq.~\eqref{eq:tau-genus2} reproduces the direct integral to $10^{-15}$. At
+$|J|=\Jc$ the factor $f^2$ (from $\Delta-\Jc^2w=f(r^2+c^2)$) makes $r_e$ a
+\emph{double} root of $\mathcal S$; the $(r-2M)$ in $\mathcal K_\tau$ cancels one
+factor, dropping the radical to the quartic $Q_4$---genus~1, the Weierstrass
+separatrix~\eqref{eq:sep-phi}. This double root is also why the retrograde
+marginal $J=-\Jc$ reflects with a \emph{corner} (finite $\dd\varphi/\dd r$)
+rather than a smooth grazing: only the prograde $+\Jc$, aided by co-rotation,
+threads through.
+
+\paragraph{$t$-branch closed form: generic integrand.} The coordinate-time
+brachistochrone has $\dd\varphi/\dd r=\mathcal K(r)/\sqrt{\mathcal R(r)}$ with the
+\emph{sextic} radical $\mathcal R=r\,Q_2(r)\,[(E^2-1)r+2M]$, genus~2, the quartic
+being (no cubic term)
+\begin{equation}
+    Q_2(r)=E^2r^4+\big[E^2(a^2-J^2)+J^2\big]r^2
+      +2M(J-a)\big[E^2(J-a)-2J\big]r+4M^2(J-a)^2,
+    \label{eq:t-Q2}
+\end{equation}
+and a \emph{closed-form} numerator in the problem quantities,
+\begin{equation}
+    \mathcal K(r)=\frac{r\,[(E^2-1)r+2M]\,\big(J(r-2M)+2Ma\big)}{\Delta(r)},
+    \qquad \Delta=r^2-2Mr+a^2,
+    \label{eq:t-K}
+\end{equation}
+holding for \emph{any} $(M,a,E,J)$: the third-kind poles sit at the two horizons
+$r_\pm$ ($\Delta=0$) and the polynomial part carries the first-/second-kind
+pieces (there is \emph{no} pole at $r=0$, cancelled by the leading factor $r$).
+By the conformal transfer $n^2_{\rm TK}=n^2_{\rm Kerr}(E_{\rm eff})$
+(Sec.~\ref{sec:thakurta}), Eq.~\eqref{eq:t-K} is also the Thakurta--Kerr
+$t$-integrand under $E\to E_{\rm eff}=\Ehat/A$, $J\to J/A$, so the conformal
+factor is \emph{not} a separate variable of $\varphi(r)$.
+
+\paragraph{$t$-branch separatrix in Weierstrass functions.} At the saddle-node
+$J_c^-$ [Eq.~\eqref{eq:Jc-minus}] the radical acquires a
+\emph{double root} at the marginal-capture radius $r_*$,
+$\mathcal R=(r-r_*)^2 Q_4(r)$, and
+$\dd\varphi/\dd r=\mathcal G(r)/\sqrt{Q_4}$ becomes a third-kind elliptic
+differential on the quartic $Q_4$ (which retains the root $r=0$). With the same
+uniformization $z(r)=\wp^{-1}(A/r+B;g_2,g_3)$ (invariants of $Q_4$) the closed
+form is
+\begin{equation}
+    \varphi(r)=\Lambda_0\,z(r)+\sum_{k}\lambda_k\,
+      \ln\frac{\sigma(z-v_k)}{\sigma(z+v_k)},
+    \label{eq:t-sep-phi}
+\end{equation}
+now with third-kind poles only at $c_k\in\{\rp,\rm,r_*\}$---three real ones, with
+\emph{no} pole at $r=0$ and no complex pair, unlike the $\tau$-separatrix. Here
+$v_k=\wp^{-1}(A/c_k+B)$, $\lambda_k=-A\alpha_k/(c_k^2\wp'(v_k))$, and
+$\Lambda_0=\Lambda_{\rm poly}-\sum_k\alpha_k/c_k+\sum_k 2\zeta(v_k)\lambda_k$,
+with $\alpha_k$ the residues of $\mathcal G$. For $M=1$, $a=0.9$, $E=1.2$
+($r_*=3.514$, $J_c^-=-8.05$) Eq.~\eqref{eq:t-sep-phi} reproduces the Hamiltonian
+flow to $2\times10^{-14}$ (Fig.~\ref{fig:t-sep}). So both separatrices are
+genus~1 by different mechanisms; only non-separatrix $t$-orbits need genus-2
+Kleinian functions.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_tbranch_separatrix.png}
+    \caption{$t$-branch separatrix (the retrograde saddle-node $J_c^-$): the
+    orbit spirals onto the marginal circle $r_*$. Top: Hamilton ODE vs the
+    genus-1 closed form (the sextic radical has a double root, dropping to the
+    quartic $Q_4$). Bottom: they agree to $\sim10^{-13}$; inset shows the double
+    root of $R_6=(r-r_*)^2Q_4$.}
+    \label{fig:t-sep}
+\end{figure}
+
+\paragraph{Genus-2 Kleinian form and ergosphere penetration.} Away from the
+separatrices the sextic $\mathcal R$ keeps six \emph{simple} branch points
+(here $\{-4.545,\,-1.722\pm1.793i,\,0,\,1.444,\,2.000\}$), so the curve
+$y^2=\mathcal R(r)$ is a genuine genus-2 hyperelliptic Riemann surface and
+$\varphi(r)$ closes only in \emph{Kleinian} (hyperelliptic $\sigma$) functions.
+With the numerator~\eqref{eq:t-K} the partial-fraction split
+$\mathcal K=c_1 r+c_0+\alpha_+/(r-\rp)+\alpha_-/(r-\rm)$ gives
+\begin{equation}
+    \varphi(r)=\underbrace{c_1\!\!\int\!\frac{r\,\dd r}{\sqrt{\mathcal R}}
+      +c_0\!\!\int\!\frac{\dd r}{\sqrt{\mathcal R}}}_{\text{first kind}}
+      +\underbrace{\sum_{\pm}\alpha_\pm\!\!\int\!
+      \frac{\dd r}{(r-r_\pm)\sqrt{\mathcal R}}}_{\text{third kind}},
+    \label{eq:t-genus2}
+\end{equation}
+the holomorphic pair being the Abel-map coordinates (arguments of the Kleinian
+$\sigma$) and the horizon terms the third-kind $\ln\sigma$-quotients---the exact
+genus-2 analogue of Eq.~\eqref{eq:t-sep-phi}. For $M=1$, $a=0.9$, $E=1.2$ we
+built $y^2=\mathcal R$ in SageMath and computed its Riemann period matrix
+$\tau$; both Riemann relations hold ($\tau=\tau^\top$ to $4\times10^{-12}$,
+$\operatorname{Im}\tau\succ0$ with eigenvalues $\{0.61,1.08\}$), certifying the
+homology basis. The single Abelian integral $\varphi(r)$ does not invert to a
+one-$\theta$ quotient $r(\varphi)$ (that needs the 2D Jacobi inversion,
+$r=\wp_{22}$ along the trajectory line in the Jacobian, à la
+Hackmann--L\"ammerzahl); but Eq.~\eqref{eq:t-genus2} reproduces the Hamiltonian
+flow to $2\times10^{-13}$. Physically these genus-2 orbits are exactly the ones
+that \emph{penetrate the ergosphere}: the prograde threshold $J_+^t$
+[Eq.~\eqref{eq:Jplus-t}] has its turning point \emph{on} $r_e=2M$ (simple root at
+$r=2$), while for $J$ just inside the capture window $[J_c^-,J_+^t]$ the turning
+point moves \emph{inside} the ergoregion and the closed form stays accurate
+across and below $r_e$ (Fig.~\ref{fig:jpt-g2}). This penetration is generic in a
+sharp sense that distinguishes the two branches (Table~\ref{tab:penetration}). The
+$t$-branch obeys a \emph{dichotomy}: it penetrates over the whole finite interval
+$J\in(J_c^-,J_+^t)=(-8.05,3.43)$---every $J$ inside crosses, every $J$ outside
+reflects at a smooth periapsis $r_{\min}>r_e$, with \emph{no} cusp---because the
+frame-dragging term auto-tunes the effective momentum
+$\mathcal K(r_e)=fJ_t/E+2Ma/(rE)\to a/E$ to the critical value for \emph{all}
+$J_t$, so a whole family (retrograde included) is carried across. The
+$\tau$-branch obeys the opposite \emph{trichotomy}: its proper-time cost carries
+the reality wall $\sqrt{wf}$ ($w=\Ehat^2-f$), imaginary for $f<0$ inside $r_e$,
+which confines $\tau$-orbits to $r\ge r_e$ \emph{except} at the single fine-tuned
+prograde value $J=+a/E$, where $\sqrt f$ cancels [Eq.~\eqref{eq:sep-phi}] and the
+orbit crosses and spirals onto $r_+$. Off that value the $\tau$-orbit reflects:
+smoothly for $|J|>a/E$ (periapsis outside $r_e$), but with a semicubic \emph{cusp}
+at $r_e$ for $|J|<a/E$---the retrograde marginal $J=-a/E$ cusps too, counter-%
+rotation being forbidden inside $r_e$. The $\tau$ penetrating set is thus a single
+point, the $t$ one a finite interval: at coordinate time ergosphere penetration
+is the rule, at proper time the fine-tuned exception. Only the retrograde
+$t$-separatrix $J_c^-$ (the saddle-node) never reaches the ergosphere---it spirals
+onto $r_*=3.514>r_e$.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_jpt_genus2.png}
+    \caption{Genus-2 prograde $t$-orbits and ergosphere penetration. Top: the
+    threshold $J_+^t=3.43$ (grey) turns \emph{on} $r_e=2M$; a momentum just
+    inside the capture window ($J=3.0$) penetrates the ergoregion (shaded),
+    Hamilton ODE (black) and the genus-2 closed form~\eqref{eq:t-genus2}
+    (dotted) coinciding across $r_e$. Bottom: the deviation stays
+    $\sim2\times10^{-13}$ including \emph{inside} the ergosphere ($r<r_e$,
+    shaded).}
+    \label{fig:jpt-g2}
+\end{figure}
+
+The two $t$-window boundaries are themselves of different kinds
+(Table~\ref{tab:penetration}): the prograde $J_+^t$ is a \emph{simple} root on
+$r_e$ (the orbit reaches the ergosphere and crosses), whereas the retrograde
+$J_c^-$ is a \emph{double} root at $r_*=3.514>r_e$---a logarithmic
+$\varphi$-barrier onto which the orbit spirals with infinite winding, never
+reaching $r_e$ even though the region $(r_e,r_*)$ is itself allowed
+($\mathcal R>0$). At $J=J_c^-$ the closed form~\eqref{eq:t-genus2} accordingly
+diverges as $r\to r_*$. Just inside the
+window the mechanism is a \emph{saddle-node}: the double root splits into a
+complex-conjugate pair ($r_*=3.514\to3.393\pm0.601i$ at $J=0.95\,J_c^-$), the
+$\varphi$-barrier vanishes, and the retrograde orbit is captured---plunging
+through $r_e$ to the horizon, with the genus-2 closed form tracking it to
+$\sim10^{-9}$ (Fig.~\ref{fig:jcm-cap}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_jcm_capture.png}
+    \caption{Retrograde capture just inside the window ($J=0.95\,J_c^-=-7.65$).
+    Top: the orbit plunges from $r_0=6$ through the ergosphere (shaded) to the
+    horizon $r_+$ (Hamilton ODE, black; genus-2 closed form, dotted), whereas
+    the marginal $J_c^-$ (grey) only spirals onto $r_*$. Bottom: the saddle-node
+    in the complex-$r$ plane---the double root of $\mathcal R$ at $r_*$ (square)
+    splits into a complex-conjugate pair (circles) as $J$ moves off $J_c^-$,
+    removing the barrier and opening the plunge.}
+    \label{fig:jcm-cap}
+\end{figure}
+
+\begin{table}[ht]
+    \centering
+    \small
+    \caption{Ergosphere behaviour of the two branches. The $\tau$-branch is a
+    \emph{trichotomy} that penetrates only at the single prograde $J=+J_c$
+    ($J_c=a/E$): the reality wall $\sqrt{wf}$ confines it to $r\ge r_e$, and off
+    $+J_c$ it reflects---smoothly for $|J|>J_c$, with a semicubic cusp at $r_e$
+    for $|J|<J_c$ (the retrograde marginal $-J_c$ cusps too, counter-rotation
+    being forbidden inside $r_e$). The $t$-branch is a \emph{dichotomy} that
+    penetrates the whole interval $(J_c^-,J_+^t)$, frame dragging auto-tuning the
+    crossing; it never cusps. Values for $M=1$, $a=0.9$, $E=1.2$; orbit shapes in
+    Figs.~\ref{fig:atlas-tau} and~\ref{fig:atlas-t}.}
+    \label{tab:penetration}
+    \begin{tabular}{lccc}
+    \hline
+    branch & penetrates & smooth bounce (outside $r_e$) & cusp bounce (at $r_e$) \\
+    \hline
+    $\tau$ & only $J=+J_c=+0.75$ & $|J|>J_c$
+      & $|J|<J_c$ \ (and $J=-J_c$) \\
+    $t$ & $(J_c^-,J_+^t)=(-8.05,3.43)$ & $J\notin(J_c^-,J_+^t)$ & --- (none) \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.40\textheight,keepaspectratio]{Immagini/fig_atlas_tau.png}
+    \caption{$\tau$-brachistochrones by regime (trichotomy). Each panel is one
+    momentum relative to $\pm J_c$ (integrated by adaptive Hamiltonian flow):
+    smooth bounce outside $r_e$ ($|J|>J_c$), the single penetrating $J=+J_c$
+    (crosses and spirals onto $r_+$), cusp bounce at $r_e$ ($|J|<J_c$), the
+    retrograde marginal $J=-J_c$ (also a cusp), and a smooth bounce for
+    $J<-J_c$. Grey disc: ergoregion; dashed circles $r_e,r_+$.}
+    \label{fig:atlas-tau}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.40\textheight,keepaspectratio]{Immagini/fig_atlas_t.png}
+    \caption{$t$-brachistochrones by regime (dichotomy). Relative to
+    $J_c^\pm=(-8.05,3.43)$: smooth bounce ($J>J_c^+$), tangent contact at $r_e$
+    ($J=J_c^+$), penetration ($J_c^-<J<J_c^+$), retrograde capture just inside
+    the edge ($J=0.99\,J_c^-$, plunging to $r_+$), and a smooth bounce
+    ($J<J_c^-$). Unlike $\tau$, a whole interval penetrates and no orbit cusps.}
+    \label{fig:atlas-t}
+\end{figure}
+
+\paragraph{Stationary-limit conserved quantities.} At $A=1$ the branch flows admit
+the closed first integrals used for validation,
+\begin{equation}
+    \mathcal K_\tau=J,\qquad
+    \mathcal K_t=\frac{fJ+2Ma/r}{E},\qquad
+    \mathcal K_\eta=\frac{fJ}{E},
+    \label{eq:kerr-conserved}
+\end{equation}
+the equatorial Kerr doranTau/doranT constants.
+
+\paragraph{Rotational inversion function.} The same-launch $t/\tau$ ordering
+inverts where $\rho(r_*)^2=H_{t0}/H_{\tau0}$ with the explicit ratio of
+centrifugal potentials
+\begin{equation}
+    \rho=\frac{A^2}{\Ehat}\Big(f+\frac{2Ma}{rJ}\Big),
+    \label{eq:rho-explicit}
+\end{equation}
+$\rho<1$ giving $t$ deeper, $\rho>1$ giving $\tau$ deeper.
+
+\paragraph{Conformal trichotomy.} With constant $A$ the separatrix momentum is
+$\Jc=sA^2/\Ehat$, and above it the smooth periapsis is the outer root of
+\begin{equation}
+    \Delta(r)-\Big(\tfrac{J}{A}\Big)^2\Big[\big(\tfrac{\Ehat}{A}\big)^2-f(r)\Big]=0,
+    \label{eq:periapsis-root}
+\end{equation}
+while $|J|<\Jc$ reflects at a cusp $r_{\min}=\re$ (as does the retrograde
+marginal $-\Jc$, forced counter-rotation forbidding it inside $\re$), and only
+the prograde $+\Jc$ crosses to $\rp$.
+
+\paragraph{Closed toroidal averages.} The secular source $\langle S_1\rangle$ of
+the off-equatorial secular source (companion 3D analysis) follows from the orbit-plane averages ($\cos\theta=\sin i\,
+\sin\psi$, $k=1-J^2/L^2$)
+\begin{equation}
+    \Big\langle\cos^2\theta\Big\rangle=\tfrac{k}{2},\quad
+    \Big\langle\tfrac{1}{\sin^2\theta}\Big\rangle=\tfrac{L}{|J|},\quad
+    \big\langle p_\theta^2\big\rangle=L(L-|J|),
+    \label{eq:averages}
+\end{equation}
+with $\langle\cos2\theta\,p_\theta^2\rangle=|J|(L-|J|)$.
+
+\subsection{Reproducing the reductions}
+\label{app:reproduce}
+Every coefficient in the adiabatic corrections is fixed by a \emph{single}
+polynomial identity that the reader can solve directly; nothing is fitted. The
+depth-one reduction $\partial_\lambda\varphi_0=\mathcal{A}/\sqrt S+\sum_{k=0}^4 c_k
+U_k$ [Eqs.~\eqref{eq:dEphi0},~(Paper I)], differentiated in $r$ and
+cleared of the radical using $\partial_\lambda F=N_\lambda/S^{3/2}$, is equivalent to
+\begin{equation}
+    2\,\mathcal{A}'(r)\,S(r)-\mathcal{A}(r)\,S'(r)
+    +2\,S(r)\sum_{k=0}^4 c_k\,r^k \;=\; 2\,N_\lambda(r),
+    \qquad \mathcal{A}=\sum_{i=0}^5 a_i r^i,
+    \label{eq:reduction-identity}
+\end{equation}
+a polynomial identity of degree ten. Matching the eleven coefficients of
+$r^0,\dots,r^{10}$ gives a nonsingular $11\times11$ linear system in the eleven
+unknowns $\{a_0,\dots,a_5,c_0,\dots,c_4\}$; solving it (one call to a linear solver)
+returns the $c_k$ \emph{rationally} in the metric parameters (here $S$ stands for the
+branch radical: $S$ on the $\tau$-branch, $R_6=r\,Q_2\,DE$ on the $t$-branch). The
+numerator is $N_\lambda=EJ\,r^4(r-2M)^2 DE$ for the $\tau$-branch energy reduction
+(the horizon factor $\Delta$ cancels), $N_\lambda=R_6\,\partial_E\mathcal K
+-\tfrac12\mathcal K\,\partial_E R_6$ for the $t$-branch (with $Q_2$, $\mathcal K$ of
+Eqs.~\eqref{eq:t-Q2},~\eqref{eq:t-K}, the $\Delta$ in $\mathcal K$ again cancelling to
+leave a degree-seven polynomial), and $N_m=S\,\partial_m K-\tfrac12K\,\partial_m S$
+for the Vaidya mass reduction. The $t$-branch clock is entirely on-curve
+[Eq.~\eqref{eq:clock-t}]: its second-kind vector $b$ feeds the $W_{kj}$ of $R_6$ and
+its horizon part $R_\Delta/\Delta$ the third-kind $\ln\sigma$-quotients, with no
+double cover. Three reference solutions to check against (polynomial residual $0$
+exactly):
+\begin{table}[htbp]
+    \centering
+    \caption{Reference reduction coefficients, obtained by solving
+    Eq.~\eqref{eq:reduction-identity}, at $M{=}1$ and (Thakurta--Kerr rows)
+    $a{=}0.9,E{=}1.2,J{=}2.5$, (Vaidya row) $a{=}0,E{=}1.4,J{=}2.5$. For
+    Thakurta--Kerr the conformal drift acts through \emph{both} charges, so the source
+    is the Euler operator and the combined weight is $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$:
+    we list the energy ($\partial_E$) and angular ($\partial_J$) reductions separately;
+    Vaidya has only $\partial_m$. Decimals are shown for readability; each $c_k$ is the
+    exact rational solution of a single linear solve (residual $0$ exactly), regenerated
+    by \texttt{reproduce\_reductions.py} (exact coefficients in the reproducibility
+    package).}
+    \label{tab:reduction-ck}
+    \small
+    \begin{tabular}{lrrrrr}
+        \hline\hline
+        reduction & $c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$\\
+        \hline
+        TK $\tau$, $\partial_E$ & $-1.1575$ & $1.86406$ & $-0.57499$ & $0.02429$ & $0.07117$\\
+        TK $\tau$, $\partial_J$ & $0.18027$ & $0.06996$ & $-0.29682$ & $0.03840$ & $0.03760$\\
+        TK $t$, $\partial_E$ & $-0.39084$ & $1.72654$ & $-0.19058$ & $-0.14503$ & $-0.01676$\\
+        TK $t$, $\partial_J$ & $4.33922$ & $4.03122$ & $-0.64349$ & $-2.63600$ & $-0.64444$\\
+        Vaidya, $\partial_m$ & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
+        \hline\hline
+    \end{tabular}
+\end{table}
+
+Given the combined $C_k=\Ehat c_k^{E}+J c_k^{J}$, the weight-two
+assembly~\eqref{eq:psi-split} is mechanical: the clock supplies the vector $b$ (on
+the $\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$), the algebraic
+weights are $Q_{kj}=C_kb_j-C_jb_k$, the weight-two
+letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
+$\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
+same steps with the advanced-time clock give the fully assembled
+form~(Paper I); the horizon dilogarithm closes by one integration by
+parts, the Vaidya reduction (Paper I). Table~\ref{tab:script-map} maps each result to
+the script in the repository~\cite{Rosignoli2026Code} that generates and verifies it;
+the first entry, \texttt{pipeline\_completa\_deltaphi.py}, runs the entire chain in one
+file---from $(M,a,E,J)$ through the $11\times11$ solve, the algebraic $c_k,b,Q_{kj}$,
+and the building blocks $U_k,W_{kj},\mathcal{I}_j$, to the assembled $\delta\varphi$,
+matching the direct double integral to $4\times10^{-15}$.
+\begin{table}[htbp]
+    \centering
+    \caption{Result-to-script map with the achieved numerical residual, so each
+    closed form can be regenerated and re-checked independently.}
+    \label{tab:script-map}
+    \small
+    \begin{tabular}{@{}p{0.47\textwidth}p{0.34\textwidth}l@{}}
+        \hline\hline
+        result & script & residual\\
+        \hline
+        \emph{end-to-end example} $(M,a,E,J)\!\to\!\delta\varphi$
+            & \texttt{pipeline\_completa\_deltaphi.py} & $4\times10^{-15}$\\
+        TK $\tau$ reduction $c_k$, $\psi=\tfrac12\Ehat\sum Q_{kj}W_{kj}$
+            & \texttt{kerr\_psi\_explicit\_verified.py} & $5\times10^{-14}$\\
+        TK $t$-branch on-curve clock \& full assembly
+            & \texttt{kerr\_tbranch\_psi\_assembly.py} & $9\times10^{-13}$\\
+        quasi-periods $\eta$; $L$ (Fay third-kind)
+            & \texttt{kerr\_quasiperiods\_bel.sage} & $10^{-12}$; $5\times10^{-8}$\\
+        Vaidya reduction $c_k^m$
+            & \texttt{vaidya\_dMF\_reduction.py} & $10^{-15}$\\
+        Vaidya clock $v$; assembled $\delta\varphi$~(Paper I)
+            & \texttt{vaidya\_fully\_explicit.py} & $2\times10^{-13}$\\
+        Vaidya $\tau$-branch assembly
+            & \texttt{vaidya\_tau\_assembly.py} & $10^{-14}$\\
+        horizon dilogarithm $\mathcal{D}_k=U_k\ln-\mathcal{G}_k$
+            & \texttt{vaidya\_horizon\_dilog.py} & $10^{-12}$\\
+        separatrix elliptic form $U_0(\sigma,\zeta)$; $\tau$
+            & \texttt{vaidya\_ell\_dilog\_match.py} & $10^{-14}$\\
+        accretion/evaporation split $\mathcal{A}_\infty,\mathcal{B}_{\rm hor}$
+            & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
+        \hline
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\emph{First-order
+            extended-Hamiltonian correction, Eq.~\eqref{eq:adiab-exact} (on-shell
+            $+$ off-shell); paths under \texttt{ThakurtaMetric/},
+            \texttt{VaidyaMetric/}:}}\\
+        TK $t$ exact PT, $\delta\varphi$ vs true flow
+            & \texttt{adiabatic\_first\_order\_exact.py} & slope $1.95$\\
+        Vaidya $v$ exact PT $+$ Fig.~\ref{fig:vaidya-offshell}
+            & \texttt{vaidya\_first\_order\_offshell.py} & slope $2.00$\\
+        true-dynamics validation ($t,\tau$, 2 sets), Fig.~\ref{fig:phi-true-dynamic}
+            & \texttt{fig\_phi\_validation\_corrected.py} & slopes $1.95$--$2.16$\\
+        \hline\hline
+    \end{tabular}
+    \\[2pt]
+    {\footnotesize SHA-256 (first 12 hex):
+    \texttt{adiabatic\_first\_order\_exact.py} $=$\,\texttt{78ab24b5373c};
+    \texttt{vaidya\_first\_order\_offshell.py} $=$\,\texttt{5dc9fe177f2f};
+    \texttt{fig\_phi\_validation\_corrected.py} $=$\,\texttt{a086a0692e8c}.}
+\end{table}
+
+\subsection{Consistency residuals}
+\label{app:residuals}
+The closed forms and reductions above were checked symbolically and numerically.
+The Weierstrass separatrix~\eqref{eq:sep-phi} reproduces the direct quadrature to
+$|\Delta\varphi|<2.8\times10^{-10}$ through the ergosphere, with the $\wp$-identity
+satisfied to $9\times10^{-28}$ and the antiderivative to $30$ digits; the Doran
+shift reduces to $1.1\times10^{-16}$. The non-autonomous Randers
+data~\eqref{eq:randers-data} match the Kerr null Fermat metric to
+$\sim10^{-14}$. The equatorial Thakurta--Kerr flow reproduces the $A=1$ Kerr
+constants~\eqref{eq:kerr-conserved} to ten digits at $r=4,6,9$ ($a=0.9$, $E=1.2$),
+and the $a\to0$ limit the Thakurta--Schwarzschild flow to $10^{-12}$; the $3+1$
+the $3+1$ Hamiltonian (companion 3D analysis) reduces to the equatorial one exactly, and conserves
+$L^2$ to $6\times10^{-13}$ at $a=0$. The Kodama energy is held to
+$|{-}u\cdot K-\Ehat|<7\times10^{-16}$ along the rail, and the static
+inversion/trichotomy colormap agrees with the analytic
+contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_conforme_estremi_fissi.png}
+    \caption{Conformal scan at fixed symmetric endpoints (via
+    $E_{\rm eff}=\hat E/A$): $\Delta r>0$ throughout the sampled $(J,A)$ domain,
+    consistent with the conjectured ordering and with the closed-form frozen-clock
+    bound $n_t/n_\tau=E/f>1$.}
+    \label{fig:cm-conf-fix}
+\end{figure}
+
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_spin_asimmetrico.png}
+    \caption{Numerical robustness scan (not a theorem) of the fixed-endpoint
+    no-inversion result under \emph{asymmetric} endpoints ($r_A=10,r_B=6$), spin
+    scan (Kerr flow): $\Delta r>0$ over the sampled $(J,a)$ domain.}
+    \label{fig:asym-spin}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_colormap_conforme_asimmetrico.png}
+    \caption{Same numerical robustness scan (not a theorem), conformal
+    (via $E_{\rm eff}=\hat E/A$): $\Delta r>0$ over the sampled $(J,A)$ domain for
+    asymmetric endpoints. The
+    blank wedge is the region where the $\tau$-turning point rises above
+    $r_B$ (no dipping orbit reaches $B$).}
+    \label{fig:asym-conf}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_kerr_a0.png}
+    \caption{Stationary-limit check ($m'=0$): numerical orbit vs closed-form
+    Kerr $a=0$.}
+    \label{fig:vaidya-kerra0}
+\end{figure}
+
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_verifica_minimo_brachi.png}
+    \caption{Each branch minimizes its own travel time; $t$ and $\tau$ are
+    distinct curves.}
+    \label{fig:verifmin}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_bounce.png}
+    \caption{Bounce through periapsis in the $v$-parametrization: the
+    Euler--Lagrange flow is regular at $r'=0$ and integrates through the turning
+    point, reaching $r_{\min}$ exactly where the $r$-parametrization diverges.}
+    \label{fig:vaidya-bounce}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_timing.png}
+    \caption{Timing window: $r_{\min}$ depends on the arrival epoch $v_1$. The
+    orbit--horizon race has opposite winners in absolute ($r_{\min}$) and relative
+    ($r_{\min}/2m$) terms for accretion vs the negative-rate branch ($m'<0$, ingoing).}
+    \label{fig:vaidya-timing}
+\end{figure}
+
+
+
+\section{Explicit adiabatic forms on the genus-degeneration loci}
+\label{app:separatrix}
+This appendix collects in one place the fully explicit first-order adiabatic
+brachistochrone on the loci where the branch sextic acquires a double root and drops to
+genus one. For \emph{spherical} Vaidya the relevant value $J=\Jc$ is the \emph{algebraic}
+genus-degeneration $J_{\rm deg}$---the double root sits at $r_d<0$
+(Sec.~\ref{sec:trichotomy}), so it is \emph{not} a physical, accessible separatrix,
+though the genus-two$\,\to\,$genus-one reduction is valid there all the same; we give both
+the proper-time ($\tau$) and advanced-time ($v$) branches with every coefficient in closed
+form. We then treat the rotating Thakurta--Kerr $\tau$ and $t$ branches, whose degeneration
+values $\Jc^\pm$ include the \emph{physical} external separatrix (accessible double root
+$r_d>2M$) alongside further algebraic $J_{\rm deg}$ roots at $r_d<0$. All objects live on
+the elliptic curve $E:\,w^2=Q_4(r)$ into which the branch sextic collapses. The adiabatic expansion is
+$\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$
+($\lambda=m$ for Vaidya, $\lambda=A$ via $E_{\rm eff}=\Ehat/A$ for Thakurta--Kerr).
+
+\paragraph{Curve and special functions.}
+$\Jc=5\sqrt{3011/3072+581\sqrt{249}/9216}$ (at $E=7/5,\,m=1$; in general $\Jc=m\,j(E)$),
+$S=(r-r_d)^2Q_4(r)$ with double root $r_d$ and quartic $Q_4$ (roots
+$e_1<e_2<e_3=2m<e_4$, leading coefficient $a_4$). The Abel coordinate is
+$z(r)=\int_{r_0}^r\dd r'/\sqrt{Q_4}$; $\sigma,\zeta,\wp$ are the Weierstrass functions
+of $E$ (periods $2\omega_1,2i\omega_{\rm im}$, built from $\theta_1$). Marked points:
+$\pm z_d$ (images of $r_d$), $\pm z_\infty$ (of $r=\infty$), the two-torsion turning
+image $z=0$ ($r=e_4$) and horizon image $z=i\omega_{\rm im}$ ($r=e_3=2m$).
+
+\paragraph{Zeroth order (frozen orbit), verified to $10^{-12}$.}
+\begin{equation}
+\varphi_0(r)=\Jc\big[(E^2-1)z+((E^2-1)r_d+2m)\,U_0(z)\big],\;\;
+U_0=\rho[\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)]+C_{U_0}z,
+\end{equation}
+$\rho=1/\sqrt{Q_4(r_d)}$, $U_k=\int_{r_0}^r r^k/\sqrt S\,\dd r$ (explicit in
+$\sigma,\zeta$ by Hermite recursion).
+
+\paragraph{First order: source and antiderivative.}
+$\partial_m F=N_m/S^{3/2}$, $N_m=S\,\partial_mK-\tfrac12K\,\partial_mS$, $K=\Jc\,DE$,
+$DE=(E^2-1)r+2m$; on the curve $\partial_m F\,\dd r=R(z)\,\dd z$ with
+$R=N_m(r(z))/[(r(z)-r_d)^3Q_4(r(z))]$ and $r(z)=c_r-a_4^{-1/2}[\zeta(z-z_\infty)-
+\zeta(z+z_\infty)]$. Its antiderivative (the Vaidya form of Paper I) is
+$\tilde G(z)=C_0 z+\sum_{a}[b_1^a\ln\sigma(z-a)-b_2^a\zeta(z-a)-\tfrac12 b_3^a
+\wp(z-a)]$, $a\in\{\pm z_d,0,i\omega_{\rm im}\}$, with closed-form residues: at the
+triple pole $z_d$, writing $s=\sqrt{Q_4(r_d)}$, $F=N_m/Q_4$, $a_1=Q_4'(r_d)/4s$,
+$a_2=Q_4''(r_d)/12$, $h_0=F(r_d)$, $h_1=F'(r_d)s$,
+$h_2=\tfrac12F''(r_d)s^2+\tfrac14F'(r_d)Q_4'(r_d)$,
+\begin{equation}
+b_3^{z_d}=\frac{h_0}{s^3},\quad b_2^{z_d}=\frac{h_1-3a_1h_0}{s^3},\quad
+b_1^{z_d}=\frac{h_2-3a_1h_1+(6a_1^2-3a_2)h_0}{s^3},\quad
+b_2^{e_i}=\frac{4N_m(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
+\end{equation}
+($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
+$R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
+b_3^a\wp'(z_\infty-a)]$. This example is Vaidya (source $\partial_m F$, hence
+$N_m$); for the Thakurta--Kerr separatrices the identical Weierstrass assembly runs
+with the combined conformal numerator $N=\Ehat N_E+J N_J$ (Sec.~\ref{sec:thakurta},
+referee point on $J_{\rm eff}=J/A$), giving $b_i=\Ehat b_i^{E}+J b_i^{J}$; the
+angular part shifts $b_1$ by $\sim\!30\%$ and is tabulated in
+\texttt{ThakurtaMetric/conformal\_source\_Jterm.py}.
+
+\paragraph{First order, proper-time branch (verified to $10^{-9}$).}
+Clock $\eta=U_3-2mU_2$; block form
+\begin{equation}
+\delta\varphi_\tau=\tfrac12\,\tilde G(z)\,\eta(r)
++\tfrac12\sum_{i<j}(c_i d_j-c_j d_i)\,A[e_i,e_j],
+\end{equation}
+$A[e_i,e_j]=\int(e_i\,\mathrm{Pe}_j-e_j\,\mathrm{Pe}_i)\dd z$ the antisymmetric
+elliptic dilogarithms (Brown--Levin $\tilde\Gamma$), over the eight even blocks
+$\{1,Z_{z_d},P_{z_d},P'_{z_d},\wp(z),\wp(z{-}i\omega_{\rm im}),P_{z_\infty},
+Z_{z_\infty}\}$ with $Z_a=\zeta(z{-}a)-\zeta(z{+}a)$,
+$P_a=\wp(z{-}a)+\wp(z{+}a)$, $P'_a=\wp'(z{-}a)-\wp'(z{+}a)$. Coefficients: $c_i$ (the
+$\tilde G$ residues), $d_j$ (clock residues $e_1^{z_d}=(r_d^3-2r_d^2)/s$,
+$e_2^{z_\infty}=1/a_4$, $e_1^{z_\infty}=-(2B+r_d-2)/\sqrt{a_4}$) and the constant
+$C_e=(e_4^3-2e_4^2)/(e_4-r_d)+2e_1^{z_d}\zeta(z_d)-2e_2^{z_\infty}\wp(z_\infty)
++2e_1^{z_\infty}\zeta(z_\infty)$---all closed form.
+
+\paragraph{First order, advanced-time branch (verified to $10^{-8}$).}
+Clock $v=E\,U_3+r+2m\ln(r-2m)$;
+$\delta\varphi_v=\tilde G(z)\,v-\int_{z_0}^z\tilde G\,v_z\,\dd z$ with
+$v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term reproduces the proper-time
+dilogarithms; the second is odd on $E$ with a simple pole at $z=i\omega_{\rm im}$ and
+supplies the horizon dilogarithm.
+
+\subsection{Adiabatic derivative of the degeneration family}
+\label{app:tracking}
+As the slow parameter drifts, the genus-degeneration value itself moves,
+$J=\Jc(\lambda)$. This is \emph{not} the evolution of a single torque-free extremal:
+the axial costate $J$ is conserved along every extremal
+(Paper I), so one trajectory cannot follow the moving locus by
+changing $J$ unless an external azimuthal torque---a modified control law with
+$\dd J/\dd\lambda\neq0$---is supplied. The object below is instead the total
+$\lambda$-derivative of the \emph{one-parameter family of marginal (degeneration)
+solutions} along $J=\Jc(\lambda)$: the adiabatic derivative of the family, which
+packages how the closed form deforms as the locus drifts,
+\begin{equation}
+N_{\rm tot}=N+\frac{\dd\Jc}{\dd\lambda}\,N_J,\qquad
+N_J=S\,\partial_JK-\tfrac12K\,\partial_JS,
+\label{eq:Ntot-track}
+\end{equation}
+with the block form and residue formulae above holding verbatim under $N\to N_{\rm tot}$;
+$\varphi_0$, the clocks and the dilogarithm structure are unchanged. The three branches
+differ only in $\dd\Jc/\dd\lambda$ and $N_J$.
+
+\paragraph{Vaidya ($\lambda=m$).}
+The linear scaling $\Jc=m\,j(E)$ gives $\dd\Jc/\dd m=\Jc/m$, with
+$N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$ (verified to $10^{-8}$).
+
+\paragraph{Thakurta--Kerr $\tau$ and $t$ branches.}
+The rotating (conformal) case follows by the transfer $E\to E_{\rm eff}=\Ehat/A$,
+$J\to J/A$ (spin $a$ retained); the control parameter is now $A$ (equivalently $E_{\rm eff}$), and
+the separatrix $\Jc(E_{\rm eff})$ drifts as $A$ runs. Two curves carry the two clocks.
+\emph{Proper-time ($\tau$) branch:} curve $S=r(r-2M)DE\,(r\Delta-J^2DE)$, source
+$N_\tau=\partial_E(K/\sqrt S)S^{3/2}=E\,J\,r^4(r-2M)^2DE$, clock
+$\eta=U_3-2MU_2$; the block form and residue formulae are those above with
+$N_m\to N_\tau$. Tracking uses $N_\tau\to N_\tau+(\dd\Jc/\dd E)N_J$ with
+$N_J=r^3(r-2M)^2DE^2$ ($\Delta$ cancelling identically) and
+$\dd\Jc/\dd E=-E\,\Jc\,r_d/DE(r_d)=-152.96$ (at $M=1,\,a=9/10,\,E_{\rm eff}=6/5$;
+verified against finite differences, block $=$ direct to $10^{-7}$).
+\emph{Coordinate-time ($t$) branch:} curve $R_6=r\,Q_2\,DE$ with $Q_2$
+\emph{quadratic} in $J$ (it carries $J^2$ and $(J-a)^2$ terms---not linear), so the
+discriminant $\mathrm{Res}_r(Q_2,\partial_r Q_2)=0$ has \emph{six} real roots that
+must be classified by the sign and location of the associated double root $r_d$
+(script \texttt{separatrix\_classification.py}). Only an \emph{external} double
+root $r_d>r_+$, at which two real turning points \emph{merge}, is a physical
+separatrix (capture$/$scatter boundary): this is the retrograde $\Jc^-=-8.054$
+($r_d=+3.514>2M$) of Eq.~\eqref{eq:Jc-minus}, consistent with the body, plus a
+prograde \emph{ergospheric} branch $\Jc=+2.936$ at $r_+<r_d=1.512<2M$. The large
+roots $\Jc=+19.089,\,-18.671$ instead sit at $r_d=-6.62,\,-6.59<0$: these are
+\emph{algebraic genus-degenerations} $J_{\rm deg}$ (the sextic drops to genus one
+and the Weierstrass reduction still closes) but \emph{not} physical separatrices---
+no external turning-point merger, no divergent radial period, and they must not be
+conflated with the dynamical penetration threshold $J_c(v_0)$. The clock is the
+mixed second/third kind $\dd t/\dd r=\rho_t/\sqrt{R_6}$, $\rho_t=P_3+R_\Delta/\Delta$
+[Eq.~\eqref{eq:clock-t}], adding a third-kind horizon letter. On the physical branch
+$\Jc^-$ the corrected conformal source (Sec.~\ref{sec:thakurta}, with the
+$J\,\partial_J F$ term) gives $b=(b_1,b_2,b_3)=(-0.685,-0.074,-0.0035)$ and the
+\emph{tame} separatrix drift
+\begin{equation}
+\frac{\dd\Jc^-}{\dd E}=-\frac{\partial_E Q_2}{\partial_J Q_2}\bigg|_{(r_d,\Jc^-)}=+2.44
+\end{equation}
+(the earlier $\mp148$--$150$ magnitudes belonged to the unphysical $J_{\rm deg}$
+roots at $r_d<0$). All tracking coefficients are closed-form residues, symbolic in
+$(M,a,E,r_d,\Jc)$; the triple-pole cancellation below is an algebraic identity at
+\emph{any} double root, hence holds on the physical branch as well.
+
+\paragraph{Tracking cancels the triple pole.}
+A clean structural consequence closes the logic: at the double root the tracked
+source \emph{vanishes},
+\begin{equation}
+N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
++\tfrac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)
+=\tfrac12K(r_d)\,S'(r_d)\,\frac{\dd r_d}{\dd\lambda}=0,
+\label{eq:track-cancel}
+\end{equation}
+because $S'(r_d)=0$ (the separatrix double-root condition). Hence the triple-pole
+residue drops, $b_3^{\rm track}=0$: following the moving separatrix softens the
+strongest singularity, precisely where the double root travels. This is verified
+symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$, for both Vaidya
+and Thakurta--Kerr.
+
+\paragraph{Fully symbolic coefficients, off-separatrix $q$-series, and independent checks.}
+Off the separatrix (generic $J$, genus two) every block coefficient is a
+\emph{rational function of $(M,a,E,J)$}: the source coefficients $c_k$,
+$Q_{kj}=c_kb_j-c_jb_k$, and the canonical pole coefficients $g_i$ (Taylor
+coefficients of $q_6^{-1/2}$ at the odd-model infinity), with
+$g_0=1/\sqrt{E^2-1}$ and $g_1=(2E^2-3)/(E^2-1)^{3/2}$ set by the leading behaviour
+($E$-only), while $g_2$ and the $c_k$ carry the full $(a,J)$ dependence. The
+algebraic remainder is elementary in closed form,
+$T_{\rm alg}=P(r)+\sum_i\mathrm{res}_i\ln(r-r_i)$ over the six roots of $S$
+(three residues vanish, at $r=0,\,2M,\,2M/(1-E^2)$). The genus-two dilogarithm is a
+convergent \emph{nome ($q$-)series}: after Siegel reduction $\tau'=-\tau^{-1}$ (all
+nomes ${<}1$), $\Lambda=\int Q\,\dd\mathcal A+\int L\,\dd\mathcal A$ with $Q$
+elementary and $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ a genus-two
+Kronecker--Eisenstein series that converges geometrically (order $N{=}4$ already
+matches to $10^{-13}$) and does \emph{not} reduce to classical dilogarithms (there is
+no genus-two Jacobi product formula). All these symbolic statements are
+\emph{independently reproduced in Mathematica} (native $\wp$, Gröbner reduction,
+Laurent extraction): the separatrix residues to $10^{-16}$--$10^{-38}$, the generic-$J$
+reductions to an exact polynomial identity, and the tracking
+theorem~\eqref{eq:track-cancel}.
+
+\paragraph{Transcendence.}
+None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
+lives in $\sigma,\zeta,\wp$, and the weight-two content is the elliptic dilogarithm,
+conjecturally irreducible to weight one (theta-divisor obstruction $\Theta=W_{g-1}$). The
+advanced-time horizon logarithm is elementary only as a $\dd\log$ letter; integrated
+against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, of the
+same transcendental weight as the proper-time case---the horizon merely relocates the
+dilogarithm's anchor from infinity to the two-torsion point $r=2m$. The sole
+numerical ingredient anywhere is the optional compression of the weight-two content to
+an apparent minimal five-dimensional dilogarithm basis (a numerically stable rank five,
+singular values falling to $10^{-79}$---strong evidence, \emph{not} a proof, and
+curve-specific), which the block forms above do not require.
+
+\clearpage
+\section{Complete first-order extended-Hamiltonian correction}
+\label{app:firstorder}
+This appendix derives Eq.~\eqref{eq:adiab-exact}---the complete first-order (on-shell
+\emph{plus} off-shell) adiabatic correction to the orbit shape---from the extended
+Hamiltonian, and specializes it to the $t$-, $\tau$- and Vaidya branches so that a
+reader can reconstruct it without the accompanying code.
+
+\paragraph{Notation and the slow datum.} $\Ehat$ and $J\equiv J_{\rm TK}=p_\varphi$ are
+the \emph{conserved} control charges (Kodama energy and axial costate); the effective
+unit-mass Kerr charges on the frozen slice are $E_{\rm eff}=\Ehat/A$ and
+$J_{\rm eff}=J/A$, both of conformal weight $A^{-1}$. The slow datum is $s$ ($s=\eta$ for
+Thakurta--Kerr, $s=v$ for Vaidya); we write $A(s)=A_0(1+\varepsilon s+\cdots)$ with
+$A_0\equiv1$ and the \emph{dimensionless} rate $\varepsilon=M\,A_{,\eta}/A$ (for Vaidya
+$\varepsilon=M\dot m/m$). The operator generating the drift of the frozen family is the
+Euler operator
+\begin{equation}
+    \Theta\equiv E_{\rm eff}\,\partial_{E_{\rm eff}}+J_{\rm eff}\,\partial_{J_{\rm eff}}
+    \quad(\text{Thakurta--Kerr}),\qquad
+    \Theta\equiv m\,\partial_m\quad(\text{Vaidya}),
+    \label{eq:theta-op}
+\end{equation}
+since $\dd E_{\rm eff}/\dd s=-\varepsilon E_{\rm eff}$, $\dd J_{\rm eff}/\dd s=-\varepsilon
+J_{\rm eff}$ at leading order (Vaidya: $\dd m/\dd s=+\varepsilon m$).
+
+\paragraph{Frozen data (per branch).} At fixed $s$ the branch Hamiltonian
+$H_0(r,p_r;E_{\rm eff},J_{\rm eff})=0$ fixes: the \emph{ingoing} frozen momentum
+$p_{r0}(r)$, the root of $H_0=0$ with $H_{0,p_r}<0$ (the outgoing arc is its mirror
+across the turning point); the shape integrand $G_0(r)=\dd\varphi/\dd r=H_{0,J}/H_{0,p_r}$;
+and the clock density $\dd\lambda/\dd r=1/H_{0,p_r}$, with $\lambda$ the elapsed clock
+oriented \emph{inward from the free-arrival endpoint}.
+
+\paragraph{The conformal rescaling: canonical derivation of the dilation term.} The
+Thakurta--Kerr Hamiltonians factorize (Eqs.~\eqref{eq:Heta}--\eqref{eq:Htau-tk}) as
+$H_{\rm br}(r,p_r,p_\varphi;A)=A\,\bar H_{\rm br}(r,P_r,J_{\rm eff};E_{\rm eff})$ with the
+\emph{normalized} radial momentum $P_r=p_r/A$ (and $J_{\rm eff}=p_\varphi/A$,
+$E_{\rm eff}=\Ehat/A$). We derive the flow in the \emph{original} canonical variables
+$(r,p_r)$ and only then pass to $P_r$. Adjoining the slow clock $s$ with conjugate
+$p_s$, the extended Hamiltonian $\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$ generates the
+\emph{canonical} equations $\dd r/\dd s=\partial_{p_r}H_{\rm br}$,
+$\dd p_r/\dd s=-\partial_r H_{\rm br}$. The rescaling $P_r=p_r/A$ is \emph{not} itself
+canonical---at fixed $A$, $\dd r\wedge\dd p_r=A\,\dd r\wedge\dd P_r$, so it is a
+time-dependent (conformally symplectic) \emph{normalization}, not a canonical
+transformation. Its $s$-derivative along the canonical flow follows by the chain rule
+(with $\alpha\equiv A_{,s}/A=\varepsilon+O(\varepsilon^2)$ and the identity
+$\partial_r H_{\rm br}|_{p_r}=A\,\bar H_r|_{P_r}$):
+\begin{equation}
+    \frac{\dd r}{\dd s}=\bar H_{P_r},\quad
+    \frac{\dd P_r}{\dd s}=\frac1A\frac{\dd p_r}{\dd s}-\frac{A_{,s}}{A}P_r
+      =-\bar H_r-\alpha P_r,\quad
+    \frac{\dd E_{\rm eff}}{\dd s}=-\alpha E_{\rm eff},\quad
+    \frac{\dd J_{\rm eff}}{\dd s}=-\alpha J_{\rm eff},
+    \label{eq:normflow}
+\end{equation}
+an identity verified symbolically (\texttt{ThakurtaMetric/canonical\_dilation\_check.py}).
+The $-\alpha P_r$ term is thus a \emph{consequence} of the canonical flow in $(r,p_r)$
+together with the normalization---not an added piece, and not the generator of a
+canonical transformation; dropping it would misrepresent $\dd(p_r/A)/\dd s$. The
+normalized system~\eqref{eq:normflow} is non-canonical (conformally symplectic) but
+\emph{equivalent} to the canonical derivation. Consequently the shell-departure rate is
+the \emph{full} Euler operator
+\begin{equation}
+    \frac{\dd\bar H}{\dd s}=-\alpha\,\mathcal D\bar H,\qquad
+    \mathcal D\equiv\Theta+P_r\partial_{P_r}
+    =E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}}+P_r\partial_{P_r}.
+    \label{eq:Dop}
+\end{equation}
+
+\paragraph{Extended system and first order.} The canonical extended system adjoins $s$
+with conjugate $p_s$ in the \emph{original} variables,
+$\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$; passing to the normalized (conformally
+symplectic) variables rewrites the shell as $\bar H(r,P_r;E_{\rm eff}(s),J_{\rm eff}(s))=0$
+(since $H_{\rm br}=A\bar H$, $A>0$). Free-arrival transversality
+sets $\bar H=0$ (hence $p_s=0$) at $\lambda=0$. Along the flow
+$\dd p_s/\dd\lambda=\varepsilon\,\mathcal D\bar H$, so the \emph{terminally-anchored}
+source is
+\begin{equation}
+    p_s^{(1)}(\lambda)\equiv S_{\mathcal D}(\lambda)
+    =\int_0^{\lambda}\mathcal D\bar H\,\dd\lambda'
+    =\int_0^{\lambda}\big(\Theta\bar H+P_r\bar H_{P_r}\big)\,\dd\lambda',
+    \label{eq:pS-app}
+\end{equation}
+and, linearizing $\bar H$ at fixed $r$, the momentum-shell shift
+\begin{equation}
+    \delta P_r=\frac{\lambda\,\Theta\bar H-S_{\mathcal D}}{\bar H_{P_r}},
+    \label{eq:dpr-app}
+\end{equation}
+the axial costate remaining conserved ($\delta J=0$; it is $J_{\rm eff}=J/A$ that
+breathes). The shape varies as $\dd\varphi/\dd r=G_0+\varepsilon[\partial_{P_r}G_0\,\delta
+P_r-\lambda\,\Theta G_0]+O(\varepsilon^2)$; integrating in $r$ gives
+Eq.~\eqref{eq:adiab-exact} \emph{with $S\to S_{\mathcal D}$}. The earlier $S=\int\Theta\bar
+H\,\dd\lambda$ (omitting $P_r\bar H_{P_r}$) closes only against a surrogate flow lacking
+$-\alpha P_r$; against the true canonical flow it leaves an $O(\varepsilon)$ error. The
+reduction is non-uniform at the turning point ($\bar H_{P_r}\to0$): it holds on compact
+sub-arcs, and all displayed residuals are taken there.
+
+\paragraph{The dilation letter in closed form (so the reader can reconstruct it).}
+Since $\dd\lambda=\dd r/\bar H_{P_r}$, the extra source piece is the radial action,
+\begin{equation}
+    \int_0^{\lambda}P_r\bar H_{P_r}\,\dd\lambda'=\int p_{r0}\,\dd r,
+    \label{eq:dilation-action}
+\end{equation}
+and this is elementary to reduce. On the frozen $t$-branch shell the radial momentum is
+\begin{equation}
+    p_{r0}=\frac{\sqrt{S}}{\Delta\,[(E^2-1)r+2M]},\qquad
+    \Delta=r^2-2Mr+a^2,\qquad S=r\,[(E^2-1)r+2M]\,Q_2(r),
+    \label{eq:pr0-tbranch}
+\end{equation}
+with $E\equiv E_{\rm eff}$, $J\equiv J_{\rm eff}$, $Q_2$ the branch quartic (Eq.~\eqref{eq:t-K})
+and $S$ the on-shell sextic. Polynomial division of $S$ by $\Delta\,[(E^2-1)r+2M]$ gives,
+in the standard basis $U_k=\int r^k/\sqrt S\,\dd r$,
+\begin{equation}
+    \int p_{r0}\,\dd r=\sum_{k=0}^{3}a_k\,U_k+(\text{third kind at }\Delta=0),
+    \label{eq:action-reduction}
+\end{equation}
+\begin{equation}
+    a_3=E^2,\quad a_2=2E^2M,\quad a_1=4E^2M^2-(E^2-1)J^2,\quad
+    a_0=2M\big[4E^2M^2-J^2+2(1-E^2)Ja\big],
+    \label{eq:ak}
+\end{equation}
+with $[a_k]=\text{length}^{3-k}$. The kernel is likewise algebraic on the shell,
+$\partial_{P_r}G_0/\bar H_{P_r}=A(r)/\sqrt S$ with $A$ rational (the inner radical
+$\sqrt{\Delta v/\bar P}$ cancels on shell), so the complete off-shell correction is a
+length-two iterated integral on the single spectral curve $\sqrt S$, with the symbolic
+coefficients~\eqref{eq:ak}. Every step is verified to machine precision against the
+\emph{true} canonical flow~\eqref{eq:normflow}
+(\texttt{ThakurtaMetric/adiabatic\_offshell\_reduction.py},
+\texttt{adiabatic\_first\_order\_exact.py}, \texttt{tests/test\_adiabatic\_noreg.py}).
+
+\paragraph{Special-function class.} The building blocks form a strict transcendence
+hierarchy. The second-kind integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
+\emph{ordinary Abelian integrals} (weight one), reducible to the classical Kleinian
+$\zeta,\sigma$ basis (Baker; \ref{app:explicit}), the same class as $\varphi_0$. The
+letters $W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$ are \emph{length-two iterated} Abelian
+integrals with algebraic coefficients---one transcendence level above the $U_k$ and
+\emph{not} reducible to the weight-one Kleinian class (their irreducibility to weight one
+is \emph{conjectural}). The third-kind letter at the seed Kerr null surfaces
+$\Delta=0$---whose residue is nonzero, unlike the on-shell $\psi$ where it
+vanishes---adds a genus-two dilogarithm (descriptively, a hyperelliptic polylogarithm
+\cite{BauneEtal2024,DHokerHiddingSchlotterer2025}), evaluated by the geometrically
+convergent theta-nome series in the reproducibility package; its irreducibility and
+single-valued completion remain open. Thus the on-shell reduction is a proved weight-one
+closed form, while the off-shell term additionally carries the length-two iterated
+integrals $W_{jk}$ and one genus-two dilogarithm (conjecturally irreducible).
+
+\paragraph{What is reconstructible from the text alone.} Everything algebraic is fixed
+by the manuscript without the repository: the frozen integrands
+$\dd\varphi/\dd r=\mathcal K/\sqrt S$ with their spectral radicals and numerators;
+the on-shell reduction (the polynomial identity $2A'S-AS'+2S\sum_k c_kr^k=2N_\lambda$
+and its $11\times11$ linear system---no fit); all block coefficients $c_k,a_k,g_i,Q_{kj}$;
+the Kleinian $\zeta,\sigma$ closed forms of $U_k,W_{jk}$ (Hermite recursion); the elementary
+remainders; and the \emph{form} of the genus-two letter
+$L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ with its odd half-characteristic
+$\delta$ and the genus-one nome series $g^{(1)}$ printed in
+Sec.~\ref{sec:closed}. What the text does \emph{not} reproduce by hand is the
+\emph{numerical evaluation} of the genus-two $\theta$: constructing the period matrix
+$\tau$ from $Y^2=\mathcal S$, its Siegel reduction, and summing the geometrically
+convergent nome series (order $N{=}4$ already to $10^{-13}$) are performed by
+\texttt{Sage}$+$\texttt{abelfunctions} (\texttt{RiemannTheta}) in the reproducibility
+package~\cite{Rosignoli2026Code}. In short: the symbolic reduction and the closed-form
+\emph{representation} are reconstructible from the PDF; the genus-two \emph{numbers}
+require the archived routine.
+
+\paragraph{Branch forms.} For the \emph{Vaidya} $v$-branch the slow datum $m$ is a metric
+modulus, \emph{not} a conformal rescaling of momenta: there is no $p_r/A$ transformation
+and hence no dilation term, so $\mathcal D=\Theta=m\partial_m$ is complete and
+\begin{equation}
+    \Theta H_v=m\,\partial_m H_v
+    =m\!\left[-\frac{2p_r}{r}+\frac{\sqrt{\Ehat^2p_r^2+J^2/r^2}}{r\sqrt w}\right],
+    \qquad w=\Ehat^2-f;
+    \label{eq:ThetaHv}
+\end{equation}
+since $m$ \emph{increases}, the Vaidya correction is Eq.~\eqref{eq:adiab-exact} with
+$(\lambda\Theta H_0-S_{\mathcal D})\to(S_{\mathcal D}-\lambda\Theta H_0)$ and
+$-\lambda\Theta G_0\to+\lambda\Theta G_0$; the proper-time branch uses $H_\tau$ of
+the Vaidya $\tau$ Hamiltonian (Paper I). All four cases close to $O(\varepsilon^2)$ against the true
+flow: least-squares log--log slope $\approx1$ for the on-shell term alone versus
+$2.05,\,2.07$ ($t,\tau$) and a second parameter set $2.01$
+(Fig.~\ref{fig:phi-true-dynamic}), and $2.00$ (Vaidya, Fig.~\ref{fig:vaidya-offshell}).
+
+\paragraph{Separatrix limit ($J\to\Jc$).} The off-shell separatrix correction is simply
+the generic term at $J=\Jc$: the coefficients~\eqref{eq:ak} are polynomials in $J$, hence
+finite there, while the spectral curve \emph{degenerates}, $S=(r-r_d)^2Q_4$ (double root
+$r_d$, genus two $\to$ genus one). Each hyperelliptic letter collapses,
+$U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\sqrt{Q_4}$
+(elliptic second kind, Weierstrass $\wp,\zeta$) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
+(third kind); the spurious poles at $r_d$ cancel in the physical combination because
+$\sum_k a_k(\Jc)r_d^{\,k}+R(\Jc,r_d)/[\Delta\,((E^2-1)r+2M)]|_{r_d}=[S/\text{deng}](r_d)=0$
+(as $S(r_d)=0$), leaving the weight-two block as a genuine \emph{elliptic}
+dilogarithm~\cite{BeilinsonLevin1994,BrownLevin2011} plus third kind at $\Delta=0$. Thus
+the separatrix off-shell form is one degree \emph{lower} than the generic genus-two case;
+verified letter by letter to machine precision (\texttt{ThakurtaMetric/tk\_sep\_genus2\_to\_elliptic.py},
+\texttt{tk\_sep\_offshell\_elliptic.py}; Vaidya \texttt{VaidyaMetric/vaidya\_sep\_offshell\_elliptic.py}).
+For Thakurta--Kerr the double root sits inside the ergosphere, on the physical arc, and
+the dilation letter injects there a power pole $1/(r-r_d)^2$ (residue
+$\propto\Delta S(r_d)$, verified against the true flow) that is \emph{not} removed by
+the charge tracking $\dd J_c/\dd E$: the pole comes from the kernel $A\sim1/Q_2^2$, not
+from the source. Crucially this is not a missing algebraic counterterm. Under the
+adiabatic evolution the dilation ray $(\Ehat/A,\,J/A)$ leaves the separatrix locus
+$J=J_c(E)$, so the double root does not merely move---it \emph{dissolves}, and the orbit
+\emph{crosses} the separatrix. The off-shell non-uniformity at $r_d$ is therefore a
+separatrix-crossing phenomenon \cite{Neishtadt1987,Neishtadt2013}: the first-order
+adiabatic term is non-uniform there and its uniform completion requires inner/outer
+matched asymptotics, outside the symbolic-coefficient reduction. For Vaidya the double
+root is a branch point off the physical arc, $\mathcal D=\Theta$ carries no dilation,
+and no such crossing occurs.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.62\textwidth]{Immagini/fig_vaidya_offshell.png}
+    \caption{Vaidya $v$-branch first-order correction, residual against the true
+    non-autonomous flow versus $\varepsilon=M\dot m/m$ (log--log). The on-shell term
+    alone (dropping the costate integral $S$) is $O(\varepsilon)$ (slope $\approx1.00$);
+    the complete extended-Hamiltonian term of Eq.~\eqref{eq:adiab-exact}, adding the
+    off-shell piece, closes the correction to $O(\varepsilon^2)$ (slope $\approx2.00$).
+    Generated by \texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}.}
+    \label{fig:vaidya-offshell}
+\end{figure}
+
+\clearpage
+
+
 \section*{Data availability}
-\todo{Same Zenodo DOI 10.5281/zenodo.21707378 statement as the master.}
+The complete numerical and symbolic codebase underlying this work is openly available
+under the MIT license, archived at the persistent DOI~\cite{Rosignoli2026Code}
+\begin{center}
+\url{https://doi.org/10.5281/zenodo.21707378}
+\end{center}
+(tagged release \texttt{v1.0}), and developed in the GitHub repository
+\url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}.
 
 \ack
-\todo{Same acknowledgements as master.}
+The author thanks the University of Pavia for a stimulating environment and received no
+external funding. AI assistants (GPT and Claude) were used to assist with symbolic
+derivations, numerical implementation and manuscript preparation; all results were
+verified independently by the author, who takes full responsibility for the content. The
+closed-form and hyperelliptic computations relied on \textsc{SageMath}~\cite{SageMath}
+with \textsc{abelfunctions}~\cite{abelfunctions}, and on
+\textsc{SymPy}~\cite{SymPy}, \textsc{NumPy}~\cite{NumPy}, \textsc{SciPy}~\cite{SciPy} and
+\textsc{Matplotlib}~\cite{Matplotlib}.
 
 \nocite{*}
 \bibliographystyle{iopart-num}
