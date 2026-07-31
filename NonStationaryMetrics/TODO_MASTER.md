@@ -304,7 +304,10 @@ Principio: Paper I DIMOSTRA (formalismo+FLRW+Vaidya, teoremi I.1–I.6 numerati)
       7.2 (Lemma I.4 riduzione, 44b49fa) + 7.4 (ladder pointer, 44b49fa). Tutte fatte.
 - [x] 3. App C: paragrafo Vaidya rimosso da Paper II (95e6085); intro cita Thm I.5, resta solo il conforme.
 - [x] 4. App B TK-primario in Paper II (bbc26fa): 2 branch Vaidya rimossi, macchina condivisa richiamata,
-      Vaidya J_deg → Paper I. (Resta: i paragrafi macchina usano ancora un esempio numerico Vaidya — polish.)
+      Vaidya J_deg → Paper I. Residuo rifinito: paragrafi macchina resi metric-neutral/TK-primari
+      (sorgente generica $\partial_\lambda F=N/S^{3/2}$, $N=\Ehat N_E+J N_J$ via Lemma I.4/Thm I.5;
+      seed mass $2m\to2M$; rimosso "This example is Vaidya" e paragrafo "Vaidya ($\lambda=m$)";
+      $N_m\to N$). Ricompilato 49pp, 0 undefined.
 - [x] 5. §breathing → "Application of the breathing-indicatrix theorem to conformal Kerr" (1617a86).
 - [x] 6. Tabelle scisse: Paper I solo Vaidya (7c60436), Paper II solo TK (5f1d76f).
 - [x] 7. Figure: Vaidya rimosse da Paper II (5f1d76f); Paper I non aveva figure TK.
