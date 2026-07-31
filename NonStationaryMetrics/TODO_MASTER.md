@@ -300,16 +300,19 @@ Principio: Paper I DIMOSTRA (formalismo+FLRW+Vaidya, teoremi I.1–I.6 numerati)
 (TK + corollari), niente ridimostrazioni/duplicazioni. Ordine esecuzione (§9 del memo):
 - [x] 1. Numerati I.1–I.6 in Paper I (commit 4571410): Thm I.1 PMP, Thm I.2 esist./norm., Prop I.3 HJB,
       Lemma I.4 riduzione polinomiale, Thm I.5 first-order, Lemma I.6 double-root. Compila.
-- [~] 2. Paper II cita i teoremi (commit eead4fc): aperture 7.1 (§TK: cita I.1/I.2/I.3) + 7.3 (App C: cita
-      Thm I.5) FATTE. RESTANO: 7.2 (Lemma I.4 all'apertura riduzione adiabatica) + 7.4 (ladder pointer).
-- [ ] 3. Rifondere App C: generale in I; II solo dilatazione conforme ("By Theorem I.5...").
-- [ ] 4. Rifondere App B per metrica (Vaidya J_deg in I; separatrici TK in II).
-- [ ] 5. Paper II §3.5 breathing → applicazione conforme (teorema 3-geometrie resta in I).
-- [ ] 6. Scindere tabelle coeff/script/verifiche (I solo Vaidya, II solo TK).
-- [ ] 7. Figure: togliere Vaidya da II, TK da I.
-- [ ] 8. Ladder completa solo in I; II frase + riga TK.
-- [ ] 9. Aggiornare cross-reference dopo i tagli.
-- [ ] 10. Lettura incrociata finale (ogni risultato II ha dipendenza esplicita o prova nuova).
+- [x] 2. Paper II cita i teoremi: 7.1 (§TK: I.1/I.2/I.3, eead4fc) + 7.3 (App C: Thm I.5, eead4fc) +
+      7.2 (Lemma I.4 riduzione, 44b49fa) + 7.4 (ladder pointer, 44b49fa). Tutte fatte.
+- [x] 3. App C: paragrafo Vaidya rimosso da Paper II (95e6085); intro cita Thm I.5, resta solo il conforme.
+- [x] 4. App B TK-primario in Paper II (bbc26fa): 2 branch Vaidya rimossi, macchina condivisa richiamata,
+      Vaidya J_deg → Paper I. (Resta: i paragrafi macchina usano ancora un esempio numerico Vaidya — polish.)
+- [x] 5. §breathing → "Application of the breathing-indicatrix theorem to conformal Kerr" (1617a86).
+- [x] 6. Tabelle scisse: Paper I solo Vaidya (7c60436), Paper II solo TK (5f1d76f).
+- [x] 7. Figure: Vaidya rimosse da Paper II (5f1d76f); Paper I non aveva figure TK.
+- [x] 8. Ladder ridotta a pointer + riga TK in Paper II (44b49fa).
+- [x] 9. Cross-reference: **0 undefined in entrambi** dopo tutti i tagli.
+- [~] 10. Lettura incrociata: contaminazione maggiore rimossa (App C/B, tabelle, figure, ladder, breathing,
+      sorgente universale). Menzioni Vaidya residue in Paper II = confronti qualitativi legittimi (ladder,
+      limite statico). **Paper I 38pp, Paper II 50pp, self-contained, teorema-applicazione stabilita.**
 - Testi modello §7 per aperture Paper II già in `RESTRUCTURE_MEMO.md`.
 
 ---
