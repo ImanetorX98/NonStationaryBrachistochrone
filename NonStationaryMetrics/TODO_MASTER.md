@@ -334,8 +334,20 @@ Audit GPT confermato nei file: 2 contaminazioni simmetriche vere che il restruct
 - [x] **Bib reciproca**: voci `PaperOne`/`PaperTwo` in `paper/refs.bib`; `\cite{PaperTwo}` in intro Paper I,
       `\cite{PaperOne}` in intro Paper II. Rinominato §"breathing-indicatrix theorem" →
       "Adiabatic breathing of the conformal-Kerr indicatrix" (evita teorema non numerato).
-- Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined entrambi**. Non in scope (lasciati): sanity-check
-      rail TK in §4.1 di Paper I, item P1/P2/P3 cosmetici del memo.
+- Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined entrambi**.
+
+### J-ter. Simmetria del fix P0 (item 1,2,3, 2026-07-31)
+Il giro P0 era asimmetrico (pulito Paper II ma non i gemelli in Paper I). Chiusi 3 residui reali:
+- [x] **1. App B di Paper I → Vaidya-only.** Rimossi residui TK: parentetica `λ=A`, forward-computation
+      `N=Ê N_E+J N_J`/"30% shift"/`conformal_source_Jterm.py`, paragrafo "Rotating (TK) case",
+      "three branches"→"two", "for both Vaidya and TK", coefficienti `(M,a,E,J)`→`(m,E,J)` (roots `2m`).
+      Restano solo pointer brevi a Paper II.
+- [x] **2. Sanity-check rail TK spostato** da §4 di Paper I (`rail_conservation.py`, orbita Kerr on-shell)
+      → nuovo paragrafo in §2 di Paper II; in Paper I resta pointer + il punto generale on-shell/off-shell.
+- [x] **3. Riga "Vaidya, ∂_m" + `N_m`** rimossi da tab:reduction-ck e testo di App A di Paper II
+      (tabella riproducibilità ora TK-only; Vaidya → pointer una riga a Paper I).
+- Non in scope (cosmetici, lasciati): status-tier, rinumerazione eq/fig, rename Kodama→conformal-selector,
+      trim notazione `P_r` in Table 1 di Paper I, duplicazioni lecite (11×11, `N_tot(r_d)=0`).
 
 ---
 ### Riferimenti

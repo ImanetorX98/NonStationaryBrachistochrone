@@ -597,18 +597,10 @@ conserved datum is $J$, and $L_{\rm mech}$ is a derived, non-conserved quantity.
     \label{fig:kodama}
 \end{figure}
 
-\paragraph{Sanity check: rail energy along the Thakurta--Kerr rail.} The same
-test applies to Thakurta--Kerr, where---the geometry being only axisymmetric---no
-Kodama vector exists and the rail invariant is instead tied to the conformal
-Killing vector $\partial_\eta$ (with factor $A'/A$). Along a \emph{geodesic} the
-associated energy $\Ehat=-g^{\rm TK}(u,\partial_\eta)$ drifts at exactly the
-conformal rate $\mathrm{d}\Ehat/\mathrm{d}\tau=A'/A$ (verified numerically to
-$\sim\!10^{-11}$), whereas along the \emph{brachistochrone}---instantaneously an
-on-shell Kerr orbit at $E_{\rm eff}=\Ehat/A(\eta)$---the rail holds $\Ehat$
-constant to $8.9\times10^{-16}$, the exact analogue of the Vaidya value
-(\texttt{ThakurtaMetric/rail\_conservation.py}). This confirms that the controlled charges
-$E_{\rm eff}=\Ehat/A$ (and, by the same conformal weight, $J_{\rm eff}=J/A$)
-track along the orbit. Conservation of $\Ehat$ determines how the parameters
+\paragraph{On-shell drift versus the off-shell shell.} The analogous rail-energy sanity
+check for the axisymmetric Thakurta--Kerr rail---where the invariant is tied to the
+conformal Killing vector $\partial_\eta$ rather than a Kodama vector---is given in
+Paper~II. Conservation of the Kodama rail energy $\Ehat$ determines how the parameters
 \emph{drift}; it does \emph{not} force the non-autonomous trajectory to remain on
 the instantaneous $H=0$ shell---the costate equation is independent information.
 The frozen shape relation $\mathrm{d}\varphi/\mathrm{d}r=F(r;E_{\rm eff},J_{\rm eff})$
@@ -1182,8 +1174,7 @@ though the genus-two$\,\to\,$genus-one reduction is valid there all the same; we
 the proper-time ($\tau$) and advanced-time ($v$) branches with every coefficient in closed
 form. (The rotating Thakurta--Kerr degeneration loci are treated in the companion paper.) All objects live on
 the elliptic curve $E:\,w^2=Q_4(r)$ into which the branch sextic collapses. The adiabatic expansion is
-$\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$
-($\lambda=m$ for Vaidya, $\lambda=A$ via $E_{\rm eff}=\Ehat/A$ for Thakurta--Kerr).
+$\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$, $\lambda=m$.
 
 \paragraph{Curve and special functions.}
 $\Jc=5\sqrt{3011/3072+581\sqrt{249}/9216}$ (at $E=7/5,\,m=1$; in general $\Jc=m\,j(E)$),
@@ -1219,12 +1210,9 @@ b_2^{e_i}=\frac{4N_m(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
 \end{equation}
 ($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
 $R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
-b_3^a\wp'(z_\infty-a)]$. This example is Vaidya (source $\partial_m F$, hence
-$N_m$); for the Thakurta--Kerr separatrices the identical Weierstrass assembly runs
-with the combined conformal numerator $N=\Ehat N_E+J N_J$ (the companion paper,
-referee point on $J_{\rm eff}=J/A$), giving $b_i=\Ehat b_i^{E}+J b_i^{J}$; the
-angular part shifts $b_1$ by $\sim\!30\%$ and is tabulated in
-\texttt{ThakurtaMetric/conformal\_source\_Jterm.py}.
+b_3^a\wp'(z_\infty-a)]$. The identical Weierstrass assembly runs, with the conformal
+source $N=\Ehat N_E+J N_J$ in place of $N_m$, for the rotating Thakurta--Kerr
+separatrices of the companion Paper~II.
 
 \paragraph{First order, proper-time branch (verified to $10^{-9}$).}
 Clock $\eta=U_3-2mU_2$; block form
@@ -1265,16 +1253,15 @@ N_J=S\,\partial_JK-\tfrac12K\,\partial_JS,
 \label{eq:Ntot-track}
 \end{equation}
 with the block form and residue formulae above holding verbatim under $N\to N_{\rm tot}$;
-$\varphi_0$, the clocks and the dilogarithm structure are unchanged. The three branches
-differ only in $\dd\Jc/\dd\lambda$ and $N_J$.
+$\varphi_0$, the clocks and the dilogarithm structure are unchanged. The two Vaidya
+branches (proper-time $\tau$ and advanced-time $v$) differ only in $\dd\Jc/\dd\lambda$
+and $N_J$.
 
 \paragraph{Vaidya ($\lambda=m$).}
 The linear scaling $\Jc=m\,j(E)$ gives $\dd\Jc/\dd m=\Jc/m$, with
-$N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$ (verified to $10^{-8}$).
-
-\paragraph{Rotating (Thakurta--Kerr) case.} The rotating branches---with a physical external separatrix ($r_d>2M$) alongside algebraic $J_{
-m deg}$ roots at $r_d<0$---follow by the conformal transfer $E\to E_{
-m eff}=\Ehat/A$, $J\to J/A$; they are treated in the companion paper.
+$N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$ (verified to $10^{-8}$). The rotating conformal analogue,
+with $\dd\Jc/\dd E_{\rm eff}$ and a physical external separatrix ($r_d>2M$), is developed
+in Paper~II.
 
 \paragraph{Tracking cancels the triple pole.}
 A clean structural consequence closes the logic: at the double root the tracked
@@ -1288,19 +1275,19 @@ N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
 because $S'(r_d)=0$ (the separatrix double-root condition). Hence the triple-pole
 residue drops, $b_3^{\rm track}=0$: following the moving separatrix softens the
 strongest singularity, precisely where the double root travels. This is verified
-symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$, for both Vaidya
-and Thakurta--Kerr.
+symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$ (the same structural
+cancellation holds for the rotating case of Paper~II).
 
 \paragraph{Fully symbolic coefficients, off-separatrix $q$-series, and independent checks.}
 Off the separatrix (generic $J$, genus two) every block coefficient is a
-\emph{rational function of $(M,a,E,J)$}: the source coefficients $c_k$,
+\emph{rational function of $(m,E,J)$}: the source coefficients $c_k$,
 $Q_{kj}=c_kb_j-c_jb_k$, and the canonical pole coefficients $g_i$ (Taylor
 coefficients of $q_6^{-1/2}$ at the odd-model infinity), with
 $g_0=1/\sqrt{E^2-1}$ and $g_1=(2E^2-3)/(E^2-1)^{3/2}$ set by the leading behaviour
-($E$-only), while $g_2$ and the $c_k$ carry the full $(a,J)$ dependence. The
+($E$-only), while $g_2$ and the $c_k$ carry the full $J$ dependence. The
 algebraic remainder is elementary in closed form,
 $T_{\rm alg}=P(r)+\sum_i\mathrm{res}_i\ln(r-r_i)$ over the six roots of $S$
-(three residues vanish, at $r=0,\,2M,\,2M/(1-E^2)$). The genus-two dilogarithm is a
+(three residues vanish, at $r=0,\,2m,\,2m/(1-E^2)$). The genus-two dilogarithm is a
 convergent \emph{nome ($q$-)series}: after Siegel reduction $\tau'=-\tau^{-1}$ (all
 nomes ${<}1$), $\Lambda=\int Q\,\dd\mathcal A+\int L\,\dd\mathcal A$ with $Q$
 elementary and $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ a genus-two

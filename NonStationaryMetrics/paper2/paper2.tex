@@ -124,6 +124,17 @@ null expansions and the global causal structure, not computed here). With that
 caveat, $\rp$ is rigid, $\re=2M$ is crossed regularly, and the freezing surface
 $A^2 f=\Ehat^2$ breathes.
 
+\paragraph{Sanity check: rail energy along the Thakurta--Kerr rail.} The geometry being
+only axisymmetric, no Kodama vector exists and the rail invariant is instead tied to the
+conformal Killing vector $\partial_\eta$ (with factor $A'/A$). Along a \emph{geodesic} the
+associated energy $\Ehat=-g^{\rm TK}(u,\partial_\eta)$ drifts at exactly the conformal
+rate $\dd\Ehat/\dd\tau=A'/A$ (verified numerically to $\sim\!10^{-11}$), whereas along the
+\emph{brachistochrone}---instantaneously an on-shell Kerr orbit at
+$E_{\rm eff}=\Ehat/A(\eta)$---the rail holds $\Ehat$ constant to $8.9\times10^{-16}$, the
+exact analogue of the spherical Kodama value of Paper~I
+(\texttt{ThakurtaMetric/rail\_conservation.py}). This confirms that the controlled charges
+$E_{\rm eff}=\Ehat/A$ and $J_{\rm eff}=J/A$ track along the orbit.
+
 \paragraph{Indicatrix and Hamiltonians.} Equatorially, write
 $\Delta=r^2-2Mr+a^2$, $\bar v^2=1-A^2f/\Ehat^2$, and
 $\bar P=P+A^2(2Ma/r)^2/\Ehat^2$ with $P=r^2+a^2+2Ma^2/r$. The rail
@@ -1527,8 +1538,7 @@ numerator is $N_\lambda=EJ\,r^4(r-2M)^2 DE$ for the $\tau$-branch energy reducti
 (the horizon factor $\Delta$ cancels), $N_\lambda=R_6\,\partial_E\mathcal K
 -\tfrac12\mathcal K\,\partial_E R_6$ for the $t$-branch (with $Q_2$, $\mathcal K$ of
 Eqs.~\eqref{eq:t-Q2},~\eqref{eq:t-K}, the $\Delta$ in $\mathcal K$ again cancelling to
-leave a degree-seven polynomial), and $N_m=S\,\partial_m K-\tfrac12K\,\partial_m S$
-for the Vaidya mass reduction. The $t$-branch clock is entirely on-curve
+leave a degree-seven polynomial). The $t$-branch clock is entirely on-curve
 [Eq.~\eqref{eq:clock-t}]: its second-kind vector $b$ feeds the $W_{kj}$ of $R_6$ and
 its horizon part $R_\Delta/\Delta$ the third-kind $\ln\sigma$-quotients, with no
 double cover. Three reference solutions to check against (polynomial residual $0$
@@ -1536,12 +1546,11 @@ exactly):
 \begin{table}[htbp]
     \centering
     \caption{Reference reduction coefficients, obtained by solving
-    Eq.~\eqref{eq:reduction-identity}, at $M{=}1$ and (Thakurta--Kerr rows)
-    $a{=}0.9,E{=}1.2,J{=}2.5$, (Vaidya row) $a{=}0,E{=}1.4,J{=}2.5$. For
+    Eq.~\eqref{eq:reduction-identity}, at $M{=}1$, $a{=}0.9,E{=}1.2,J{=}2.5$. For
     Thakurta--Kerr the conformal drift acts through \emph{both} charges, so the source
     is the Euler operator and the combined weight is $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$:
-    we list the energy ($\partial_E$) and angular ($\partial_J$) reductions separately;
-    Vaidya has only $\partial_m$. Decimals are shown for readability; each $c_k$ is the
+    we list the energy ($\partial_E$) and angular ($\partial_J$) reductions separately.
+    Decimals are shown for readability; each $c_k$ is the
     exact rational solution of a single linear solve (residual $0$ exactly), regenerated
     by \texttt{reproduce\_reductions.py} (exact coefficients in the reproducibility
     package).}
@@ -1555,7 +1564,6 @@ exactly):
         TK $\tau$, $\partial_J$ & $0.18027$ & $0.06996$ & $-0.29682$ & $0.03840$ & $0.03760$\\
         TK $t$, $\partial_E$ & $-0.39084$ & $1.72654$ & $-0.19058$ & $-0.14503$ & $-0.01676$\\
         TK $t$, $\partial_J$ & $4.33922$ & $4.03122$ & $-0.64349$ & $-2.63600$ & $-0.64444$\\
-        Vaidya, $\partial_m$ & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
         \hline\hline
     \end{tabular}
 \end{table}
@@ -1565,10 +1573,9 @@ assembly~\eqref{eq:psi-split} is mechanical: the clock supplies the vector $b$ (
 the $\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$), the algebraic
 weights are $Q_{kj}=C_kb_j-C_jb_k$, the weight-two
 letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
-$\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
-same steps with the advanced-time clock give the fully assembled
-form~(Paper I); the horizon dilogarithm closes by one integration by
-parts, the Vaidya reduction (Paper I). Table~\ref{tab:script-map} maps each result to
+$\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. The spherical Vaidya
+reduction (advanced-time clock, horizon dilogarithm) is in Paper~I.
+Table~\ref{tab:script-map} maps each result to
 the script in the repository~\cite{Rosignoli2026Code} that generates and verifies it;
 the first entry, \texttt{pipeline\_completa\_deltaphi.py}, runs the entire chain in one
 file---from $(M,a,E,J)$ through the $11\times11$ solve, the algebraic $c_k,b,Q_{kj}$,
