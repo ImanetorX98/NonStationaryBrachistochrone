@@ -485,7 +485,7 @@ $\varphi_0+\varepsilon\,\delta\varphi$ shows the \emph{physical} accuracy is $\s
 (Fig.~\ref{fig:phi-true-dynamic}). Linearizing the extended Hamiltonian
 $\mathcal H=p_s+H=0$ about the frozen extremal---with the slow variable
 $\lambda$ the elapsed clock measured \emph{from the free-arrival endpoint} (where
-$H=0$ by the transversality~the transversality of Paper I), oriented inward, and
+$H=0$ by the transversality of Paper I), oriented inward, and
 $A(\eta)=A_0(1+\varepsilon\lambda+\cdots)$---gives, in the \emph{normalized} momentum
 $P_r=p_r/A$ (\ref{app:firstorder}), the first-order shift of the momentum shell
 $\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
@@ -516,7 +516,9 @@ turning point ($H_{P_r}\to0$), and is verified to machine precision against the 
 canonical flow (slope~$\approx2$;
 \texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py}, \texttt{tests/}). This splits
 into an \emph{on-shell} part (parameter drift, the closed form $\mathcal C+\psi$ of
-Sec.~\ref{sec:thakurta}, weight one in Kleinian $\zeta,\sigma$) and an \emph{off-shell}
+Sec.~\ref{sec:thakurta}: weight-one clock$\times$Abelian terms together with the
+weight-two $W_{jk}$, and no third-kind dilogarithm since the on-shell residue vanishes)
+and an \emph{off-shell}
 part driven by the dilation letter $\int P_r H_{P_r}\dd\lambda=\int p_{r0}\dd r$ (the
 radial action, reduced in closed form in \ref{app:firstorder},
 Eqs.~\eqref{eq:action-reduction}--\eqref{eq:ak}): a length-two iterated integral on the
@@ -1133,8 +1135,10 @@ $N=\Ehat N_E+J N_J$ and $\dd\Jc/\dd E_{\rm eff}$ (App.~\ref{app:tracking}).
 inherits the Killing--CKV--Kodama structure of the companion paper. On the equatorial
 sector we obtained closed-form separatrices in Weierstrass functions, continued through
 the ergosphere in Doran coordinates, and an analytic cusp theorem for the $|J|<\Jc$
-reflection; the on-shell first-order reduction to length-two iterated Abelian integrals is
-a proved weight-one closed form. The arrival branch is $t\equiv\eta$ (a monotone
+reflection; the on-shell first-order response reduces to length-two iterated Abelian
+integrals, a proved closed form of \emph{weight two} built on the weight-one Abelian
+primitives (their reduction to weight one conjectural). The arrival branch is
+$t\equiv\eta$ (a monotone
 reparametrization), leaving two genuinely distinct optimal families, arrival and proper
 time $\tau$.
 
@@ -1162,7 +1166,7 @@ minimum principle is verified directly by perturbing the computed
 brachistochrones and confirming that both $T_t$ and $T_\tau$ are minimized
 (the spherical branches are treated in Paper~I). Stationary-limit residuals confirm
 that the non-stationary Hamiltonian flow reproduces the closed-form Kerr expressions
-as $A\to1$; the Kodama energy is conserved to $\sim10^{-16}$ along the rail. The equatorial closed
+as $A\to1$; the conformal-Killing rail charge $\Ehat$ is conserved to $\sim10^{-16}$ along the rail. The equatorial closed
 forms are validated end-to-end by the three-method superposition
 (ODE flow, quadrature, evaluated Weierstrass) through the ergosphere
 (Fig.~\ref{fig:sep3}), and the fixed-endpoint no-inversion theorem is
@@ -1625,9 +1629,9 @@ data~\eqref{eq:randers-data} match the Kerr null Fermat metric to
 $\sim10^{-14}$. The equatorial Thakurta--Kerr flow reproduces the $A=1$ Kerr
 constants~\eqref{eq:kerr-conserved} to ten digits at $r=4,6,9$ ($a=0.9$, $E=1.2$),
 and the $a\to0$ limit the Thakurta--Schwarzschild flow to $10^{-12}$; the $3+1$
-the $3+1$ Hamiltonian (companion 3D analysis) reduces to the equatorial one exactly, and conserves
-$L^2$ to $6\times10^{-13}$ at $a=0$. The Kodama energy is held to
-$|{-}u\cdot K-\Ehat|<7\times10^{-16}$ along the rail, and the static
+Hamiltonian (companion 3D analysis) reduces to the equatorial one exactly, and conserves
+$L^2$ to $6\times10^{-13}$ at $a=0$. The conformal-Killing rail charge is held to
+$|{-}u\cdot\partial_\eta-\Ehat|<7\times10^{-16}$ along the rail, and the static
 inversion/trichotomy colormap agrees with the analytic
 contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
 
@@ -1790,7 +1794,7 @@ roots at $r_d<0$). All tracking coefficients are closed-form residues, symbolic 
 $(M,a,E,r_d,\Jc)$; the triple-pole cancellation below is an algebraic identity at
 \emph{any} double root, hence holds on the physical branch as well.
 
-\paragraph{Tracking cancels the triple pole.}
+\paragraph{The degeneration-family derivative cancels the leading pole.}
 By Lemma~I.6 of Paper~I, at the double root the tracked source \emph{vanishes},
 \begin{equation}
 N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
@@ -1854,7 +1858,7 @@ $\tau$-branches and gives the resulting Abelian reduction; the general canonical
 proof and the (non-conformal) Vaidya specialization are in Paper~I.
 
 \paragraph{Notation and the slow datum.} $\Ehat$ and $J\equiv J_{\rm TK}=p_\varphi$ are
-the \emph{conserved} control charges (Kodama energy and axial costate); the effective
+the \emph{conserved} control charges (the conformal-Killing rail charge and the axial costate); the effective
 unit-mass Kerr charges on the frozen slice are $E_{\rm eff}=\Ehat/A$ and
 $J_{\rm eff}=J/A$, both of conformal weight $A^{-1}$. The slow datum is $s$ ($s=\eta$ for
 Thakurta--Kerr, $s=v$ for Vaidya); we write $A(s)=A_0(1+\varepsilon s+\cdots)$ with
@@ -1986,16 +1990,20 @@ $\Delta=0$---whose residue is nonzero, unlike the on-shell $\psi$ where it
 vanishes---adds a genus-two dilogarithm (descriptively, a hyperelliptic polylogarithm
 \cite{BauneEtal2024,DHokerHiddingSchlotterer2025}), evaluated by the geometrically
 convergent theta-nome series in the reproducibility package; its irreducibility and
-single-valued completion remain open. Thus the on-shell reduction is a proved weight-one
-closed form, while the off-shell term additionally carries the length-two iterated
-integrals $W_{jk}$ and one genus-two dilogarithm (conjecturally irreducible).
+single-valued completion remain open. Thus the \emph{frozen} reduction
+$\partial_\lambda\varphi_0$ closes in the weight-one Abelian/Kleinian class, but already
+the \emph{on-shell} first-order response carries a genuine weight-two sector---the
+length-two iterated integrals $W_{jk}$; the off-shell term adds further length-two letters
+and one genus-two dilogarithm. Reducibility of the $W_{jk}$ to weight one and a canonical
+single-valued completion remain conjectural.
 
 \paragraph{What is reconstructible from the text alone.} Everything algebraic is fixed
 by the manuscript without the repository: the frozen integrands
 $\dd\varphi/\dd r=\mathcal K/\sqrt S$ with their spectral radicals and numerators;
 the on-shell reduction (the polynomial identity $2A'S-AS'+2S\sum_k c_kr^k=2N_\lambda$
 and its $11\times11$ linear system---no fit); all block coefficients $c_k,a_k,g_i,Q_{kj}$;
-the Kleinian $\zeta,\sigma$ closed forms of $U_k,W_{jk}$ (Hermite recursion); the elementary
+the Kleinian $\zeta,\sigma$ closed forms of the $U_k$ (Hermite recursion) and the assembly
+of the weight-two $W_{jk}$ from them (not reduced to the weight-one class); the elementary
 remainders; and the \emph{form} of the genus-two letter
 $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ with its odd half-characteristic
 $\delta$ and the genus-one nome series $g^{(1)}$ printed in

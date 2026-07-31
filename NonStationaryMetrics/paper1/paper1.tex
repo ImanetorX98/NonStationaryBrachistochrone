@@ -192,8 +192,9 @@ cost is the elapsed clock $s_f-s_0$. Because $s_f$ is free, the Pontryagin
 transversality condition is $H|_{s=s_f}=0$ [Eq.~\eqref{eq:transversality}]---a free
 final-clock condition, \emph{not} a two-event condition. We accordingly reserve
 ``fixed endpoints'' for the two-point boundary-value problem of the companion paper, in
-which both spatial endpoints \emph{and} the arrival are prescribed; the default problem
-fixes the spatial target at a free arrival clock.
+which both spatial endpoint \emph{positions} are prescribed while the branch-dependent
+arrival clock is determined by the optimal solution and remains the quantity being
+compared; the default problem fixes the spatial target at a free arrival clock.
 
 \paragraph{Theorem~I.1 (controlled-rail reduction).} Minimizing travel time subject
 to~\eqref{eq:ellipse} is a time-optimal control problem with control $\theta$.
@@ -379,9 +380,13 @@ arrival time---ends \emph{global} minimality earlier and is exactly a shock
 (gradient discontinuity) of $V$, i.e.\ a point of the cut locus. Strict convexity
 of the indicatrix removes Filippov relaxation but does \emph{not} exclude Maxwell
 points: distinct windings past the rotation axis, or the two $\pm J$ arcs reaching
-a common target, can tie. Our closed forms are certified between the launch point
-and the first such singularity of $V$; beyond it the global optimum is selected by
-comparing arrival times across the competing extremals.
+a common target, can tie. A closed-form extremal admitting a single-valued saturated
+verification function is globally certified only up to its first Maxwell or conjugate
+obstruction---the first such singularity of $V$. For the generic non-stationary
+trajectories treated here we establish PMP extremality and local numerical minimality
+checks, \emph{not} a complete global Hamilton--Jacobi certificate; beyond the first
+obstruction the global optimum is selected by comparing arrival times across the competing
+extremals.
 
 \paragraph{What is \emph{not} claimed inside the ergosphere.} Where the Killing
 selector $\xi$ becomes spacelike---inside the ergosphere---the invariant
@@ -390,8 +395,9 @@ degenerates: the closed-form $\varphi(r)$ continued through $\re$
 (the companion paper) is a genuine \emph{analytic continuation} of the
 extremal, not a certified physical minimum. The existence and Hamilton--Jacobi
 statements above are asserted only outside the ergosphere, on the region where $F$
-is a bona fide convex indicatrix; inside, a spacelike (Kodama-type) selector would
-be needed to restore a timelike cost, which we do not develop. Freezing (where
+is a bona fide convex indicatrix; inside, a timelike observer congruence or a different
+timelike selector would be required to formulate a compact future-timelike indicatrix,
+which we do not develop. Freezing (where
 $\rho\to0$), turning (where a semi-axis vanishes), and the separatrix (a double
 root of the radical) are distinct degeneracies and are not conflated.
 
@@ -597,7 +603,7 @@ conserved datum is $J$, and $L_{\rm mech}$ is a derived, non-conserved quantity.
     \label{fig:kodama}
 \end{figure}
 
-\paragraph{On-shell drift versus the off-shell shell.} The analogous rail-energy sanity
+\paragraph{On-shell drift versus off-shell shell departure.} The analogous rail-energy sanity
 check for the axisymmetric Thakurta--Kerr rail---where the invariant is tied to the
 conformal Killing vector $\partial_\eta$ rather than a Kodama vector---is given in
 Paper~II. Conservation of the Kodama rail energy $\Ehat$ determines how the parameters
@@ -1254,7 +1260,7 @@ $N_J=S\,DE+\Jc^2\,r(r-2m)DE^3$ (verified to $10^{-8}$). The rotating conformal a
 with $\dd\Jc/\dd E_{\rm eff}$ and a physical external separatrix ($r_d>2M$), is developed
 in Paper~II.
 
-\paragraph{Tracking cancels the triple pole.}
+\paragraph{The degeneration-family derivative cancels the leading pole.}
 A clean structural consequence closes the logic: at the double root the tracked
 source \emph{vanishes},
 \begin{equation}
@@ -1431,16 +1437,20 @@ $\dd\log$ letter, whose residue is nonzero, unlike the on-shell $\psi$ where it
 vanishes---adds a genus-two dilogarithm (descriptively, a hyperelliptic polylogarithm
 \cite{BauneEtal2024,DHokerHiddingSchlotterer2025}), evaluated by the geometrically
 convergent theta-nome series in the reproducibility package; its irreducibility and
-single-valued completion remain open. Thus the on-shell reduction is a proved weight-one
-closed form, while the off-shell term additionally carries the length-two iterated
-integrals $W_{jk}$ and one genus-two (horizon) dilogarithm (conjecturally irreducible).
+single-valued completion remain open. Thus the \emph{frozen} reduction
+$\partial_\lambda\varphi_0$ closes in the weight-one Abelian/Kleinian class, but already
+the \emph{on-shell} first-order response carries a genuine weight-two sector---the
+length-two iterated integrals $W_{jk}$; the off-shell term adds further length-two letters
+and one genus-two (horizon) dilogarithm. Reducibility of the $W_{jk}$ to weight one and a
+canonical single-valued completion remain conjectural.
 
 \paragraph{What is reconstructible from the text alone.} Everything algebraic is fixed
 by the manuscript without the repository: the frozen integrands
 $\dd\varphi/\dd r=\mathcal K/\sqrt S$ with their spectral radicals and numerators;
 the on-shell reduction (the polynomial identity $2A'S-AS'+2S\sum_k c_kr^k=2N_\lambda$
 and its $11\times11$ linear system---no fit); all block coefficients $c_k,g_i,Q_{kj}$;
-the Kleinian $\zeta,\sigma$ closed forms of $U_k,W_{jk}$ (Hermite recursion); the elementary
+the Kleinian $\zeta,\sigma$ closed forms of the $U_k$ (Hermite recursion) and the assembly
+of the weight-two $W_{jk}$ from them (not reduced to the weight-one class); the elementary
 remainders; and the \emph{form} of the genus-two letter
 $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ with its odd half-characteristic
 $\delta$ and the genus-one nome series $g^{(1)}$ printed in

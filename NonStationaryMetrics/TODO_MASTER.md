@@ -365,6 +365,33 @@ di App B, non la prosa di App A né la coda di App B). 4 fix reali:
 - Ricompilati: **Paper I 37pp, Paper II 49pp, 0 undefined**. Cosmetico lasciato: coda reproducibility
       condivisa (nome q-series/rank-five) leggermente duplicata.
 
+### J-quinquies. Memo GPT "Consigli finali" (2026-07-31) — verdetto: publishable after moderate revision
+Fatte le modifiche SIGNIFICATIVE (correttezza/coerenza):
+- [x] **P0 §2.1 gerarchia peso-uno/peso-due (il vero fix scientifico).** La correzione on-shell del primo
+      ordine contiene GIÀ i `W_jk` (peso due, esplicito in §thakurta 430-458), quindi "on-shell = proved
+      weight-one closed form" era contraddittorio. Uniformato in entrambi: frozen ∂_λφ_0=peso uno, ma
+      on-shell first-order porta un settore peso-due `W_jk`; off-shell aggiunge terzo-tipo (dilog).
+      Fix a paper1:1434/1443, paper2:519/1137/1989/2004. Anche "Kleinian ζ,σ closed forms of U_k,W_jk"
+      → solo U_k Kleinian, W_jk assemblati (non ridotti a peso uno).
+- [x] **P0 §2.2 HJB Paper I** (paper1:382): "certified between launch and first singularity" → "PMP +
+      local numerical minimality, NOT a complete global HJB certificate; globally certified only up to
+      first Maxwell/conjugate obstruction".
+- [x] **P0 §2.3 fixed endpoints** (paper1:195): "both spatial endpoints AND the arrival are prescribed"
+      (contraddittorio) → "both spatial endpoint positions prescribed, arrival clock DETERMINED by optimum".
+- [x] **§2 ergosfera** (paper1:394): "spacelike selector to restore a timelike cost" → "timelike observer
+      congruence / different timelike selector for a compact future-timelike indicatrix".
+- [x] **Mislabel Kodama→conformal-Killing rail charge in Paper II** (paper2:1166, 1631, 1857): TK non ha
+      vettore di Kodama.
+- [x] **Refusi**: "transversality~the transversality" (paper2:488), "the 3+1 the 3+1 Hamiltonian"
+      (paper2:1630), "off-shell shell"→"off-shell shell departure" (paper1:606). "Secs.3–2"/"App.Appendix"
+      non presenti (già a posto).
+- [x] **Terminologia §4.2**: intestazione "Tracking cancels the triple pole" → "The degeneration-family
+      derivative cancels the leading pole" (entrambi). "separatrix-following" lasciato dove usato con caveat.
+- NON fatto (poco significativo, motivato all'utente): trim notazione Table 1 Paper I; rigenerazione
+      legende figure evaporation→negative-rate; conversione "companion paper"→"Ref.[X]" ovunque; thrust/Δv;
+      coda reproducibility duplicata.
+- Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**.
+
 ---
 ### Riferimenti
 - Referee: `REFEREE_REPORT_CURRENT_2026-07-22.md` (13 issue)
