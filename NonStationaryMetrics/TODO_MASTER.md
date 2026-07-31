@@ -392,6 +392,26 @@ Fatte le modifiche SIGNIFICATIVE (correttezza/coerenza):
       coda reproducibility duplicata.
 - Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**.
 
+### J-sexies. Memo GPT "Risposta paper1-5/paper2-5" (2026-07-31) — set significativo
+Verdetto GPT sceso a minor-to-moderate; fix peso-due/HJB/endpoint riconosciuti "Riuscita". Chiusi i residui:
+- [x] **(1) Blocco TK-costate fuori dalla sezione Vaidya di Paper I** (paper1:585-593): rimossi
+      `p̃_φ=J−A²b/Ê`, `J_eff=J/A=P_φ`, "Kerr-frame"; ora "on all Vaidya branches costate=J, drift=m∂_m",
+      mappe conformi/gravitomagnetiche → rinvio a Paper II.
+- [x] **(2) Fix bib chirurgico (auto-citazione)**: voci companion spostate in `paper/companionI.bib`
+      (PaperOne) e `companionII.bib` (PaperTwo), fuori dal refs.bib condiviso. Paper I include
+      `refs,companionII` (cita solo PaperTwo); Paper II include `refs,companionI` (solo PaperOne).
+      Verificato: nessun paper si auto-cita (bbl 70→69).
+- [x] **(3) Refusi**: "App.~\ref{app:tracking}"→"\ref{...}" (iopart rende "Appendix B.1", evita "App.
+      Appendix B.1"); "Secs.~closed--thakurta"→"thakurta--closed" (era 3–2 all'indietro); "fuel budget
+      ... diverges"→"velocity indicatrix degenerates"; "accretion/evaporation drift"→"non-stationary
+      mass-rate drift"; tolto "Δv" dal corpo.
+- [x] **(4) Terminologia/segno**: paragrafo "Accretion--evaporation asymmetry"→"Advanced/retarded
+      frozen-clock decomposition" + caveat "non è soluzione del BVP outgoing"; convenzione di segno λ in
+      App C dichiarata come orientazione (sgn(dλ/dm)=−1), non flip post-hoc (numeri invariati).
+- NON in scope (legende figure evaporation cotte nelle immagini → rigenerazione script; conversione
+      "companion paper"→"Ref.[X]" ovunque; separatrix-following residuo con caveat corretto).
+- Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**, auto-citazione eliminata.
+
 ---
 ### Riferimenti
 - Referee: `REFEREE_REPORT_CURRENT_2026-07-22.md` (13 issue)

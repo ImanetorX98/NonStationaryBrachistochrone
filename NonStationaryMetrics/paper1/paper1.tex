@@ -263,9 +263,10 @@ free-fall geodesic), so the rail force is the thrust per unit mass, spacelike
 stress that the present variational problem minimizes the selected elapsed \emph{clock},
 not thrust, fuel, or integrated control effort---these define distinct optimal-control
 problems; the brachistochrone is the fastest rail curve, not the fuel-minimal one. A
-representative $\Delta v$ estimate is in the reproducibility package
+representative estimate is in the reproducibility package
 (\texttt{brachistochrone\_thrust\_fuel.py}). In the non-stationary case the $a\cdot W$
-term adds the thrust that fights the accretion/evaporation drift.
+term adds the proper acceleration that maintains the rail against the non-stationary
+mass-rate drift.
 
 \paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
 independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and
@@ -335,8 +336,8 @@ semicontinuity (Tonelli); and the non-autonomous coupling to the evolution
 parameter $s$ (through $m(v)$ or $A(\eta)$) is controlled by ODE stability and a
 Gr\"onwall estimate, so the limit arc is admissible and minimizing. The two-sided
 bound~\eqref{eq:coercive} fails exactly at the freezing/horizon surfaces, where
-$\rho\to0$ and the fuel budget of Sec.~\ref{sec:indicatrix} diverges; the theorem
-therefore applies on any compact subdomain bounded away from them.
+$\rho\to0$ and the velocity indicatrix of Sec.~\ref{sec:indicatrix} degenerates; the
+theorem therefore applies on any compact subdomain bounded away from them.
 
 \paragraph{Normality (part of Theorem~I.2).} Every regular minimizer is a \emph{normal} extremal---the
 abnormal multiplier $p_0$ cannot vanish. If $p_0=0$ the maximized Hamiltonian
@@ -582,15 +583,12 @@ relation
 \end{equation}
 which varies with $r$ while $J$ stays constant (they agree only at the isolated radius
 $f=\Ehat^2-\Ehat$); verified from the indicatrix~\eqref{eq:vaidya-ind}. The Legendre
-map is moreover \emph{branch-specific}---the $t$-, $\tau$- and $\eta$-costs carry
-different cost one-forms---so the conserved costate differs by branch: the native
-$v/t$ value is $J$, while the proper-time branch carries
-$\tilde p_\varphi=J-A^2b/\Ehat$ (the frame-drag shift of the second-kind clock). We
-therefore reserve ``angular momentum'' for the mechanical $g(u,\partial_\varphi)$
-throughout and call $J$ the branch costate. The optical rescaling
-$J_{\rm eff}=J/A=P_\varphi=p_\varphi/A$ is a normalization of the \emph{costate}
-(conformal weight $A^{-1}$), \emph{not} the Kerr-frame mechanical momentum; the
-conserved datum is $J$, and $L_{\rm mech}$ is a derived, non-conserved quantity.
+map is branch-specific, but on all Vaidya branches the conserved axial control costate is
+$J$ and the slow deformation is generated solely by $m\partial_m$; we reserve ``angular
+momentum'' for the mechanical $g(u,\partial_\varphi)$ and call $J$ the branch costate,
+$L_{\rm mech}$ being a derived, non-conserved quantity. The conformal and gravitomagnetic
+costate maps---the frame-drag-shifted branch momentum $\tilde p_\varphi$ and the
+$(E_{\rm eff},J_{\rm eff})$ Euler source---are derived in the companion Paper~II.
 
 \begin{figure}[ht]
     \centering
@@ -924,7 +922,7 @@ possible is that every $e_i(z)$ entering the assembly is a \emph{rational} funct
 of $\wp(z)$---e.g.\ the third-kind combination
 $\zeta(z-a)-\zeta(z+a)=-2\zeta(a)+\wp'(a)/[\wp(z)-\wp(a)]$.
 
-\paragraph{Accretion--evaporation asymmetry.} At first order $\delta\varphi$ is
+\paragraph{Advanced/retarded frozen-clock decomposition.} At first order $\delta\varphi$ is
 linear in $\dot m$, so na\"ively $\dot m\to-\dot m$ merely flips its sign. The
 physical asymmetry is subtler: accretion ($\dot m>0$) is \emph{ingoing} Vaidya,
 clocked by the \emph{advanced} time $v=t+r_*$, whereas evaporation ($\dot m<0$) is
@@ -949,7 +947,11 @@ $\delta\varphi_{\rm accr}-\delta\varphi_{\rm evap}=2|\dot m|\,\mathcal{A}_\infty
 (carried by the infinity bulk), while the \emph{deviation from exact antisymmetry} is
 $\delta\varphi_{\rm accr}+\delta\varphi_{\rm evap}=2|\dot m|\,\mathcal{B}_{\rm hor}$,
 carried \emph{entirely by the tortoise/horizon}: the horizon term $\mathcal{B}_{\rm hor}$
-is exactly what breaks the na\"ive $\dot m\to-\dot m$ antisymmetry. Within
+is exactly what breaks the na\"ive $\dot m\to-\dot m$ antisymmetry. This
+advanced/retarded split is a \emph{frozen-clock} comparison at first order, isolating the
+sign change of the tortoise contribution; it is \emph{not} a solution of the full
+outgoing-Vaidya optimal-control boundary-value problem, whose Hamiltonians, costates and
+transversality remain to be derived. Within
 $\mathcal{B}_{\rm hor}$ the transcendental, direction-sensitive content is precisely
 the horizon term $2m\!\int\!\partial_m F\ln(r-2m)\,\dd r$, which by parts is the
 horizon dilogarithm $\mathcal{D}_k$ of Eq.~\eqref{eq:horizon-dilog}. Thus the
@@ -1472,10 +1474,13 @@ and hence no dilation term, so $\mathcal D=\Theta=m\partial_m$ is complete and
     \qquad w=\Ehat^2-f;
     \label{eq:ThetaHv}
 \end{equation}
-since $m$ \emph{increases}, the Vaidya correction is Eq.~\eqref{eq:adiab-exact} with
-$(\lambda\Theta H_0-S_{\mathcal D})\to(S_{\mathcal D}-\lambda\Theta H_0)$ and
-$-\lambda\Theta G_0\to+\lambda\Theta G_0$; the proper-time branch uses $H_\tau$ of
-Eq.~\eqref{eq:Htau-vaidya}. Both Vaidya branches (advanced-time $v$ and proper-time
+since $m$ \emph{increases} along the ingoing flow while the elapsed clock $\lambda$ is
+oriented inward from the free-arrival endpoint, $\lambda$ runs \emph{opposite} to the mass
+drift on this branch. This fixed orientation ($\mathrm{sgn}(\dd\lambda/\dd m)=-1$) is what
+inverts both source contributions in Eq.~\eqref{eq:adiab-exact}, i.e.\
+$\lambda\Theta H_0-S_{\mathcal D}\to S_{\mathcal D}-\lambda\Theta H_0$ and
+$-\lambda\Theta G_0\to+\lambda\Theta G_0$---a declared sign convention, not a change of
+result. The proper-time branch uses $H_\tau$ of Eq.~\eqref{eq:Htau-vaidya}. Both Vaidya branches (advanced-time $v$ and proper-time
 $\tau$) close to $O(\varepsilon^2)$ against the true flow: least-squares log--log slope
 $\approx1$ for the on-shell term alone versus $\approx2.0$ for the complete first-order
 term (Fig.~\ref{fig:vaidya-offshell}).
@@ -1526,6 +1531,6 @@ with \textsc{abelfunctions}~\cite{abelfunctions}, and on
 
 \nocite{*}
 \bibliographystyle{iopart-num}
-\bibliography{../paper/refs}
+\bibliography{../paper/refs,../paper/companionII}
 
 \end{document}
