@@ -1054,48 +1054,28 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
     \end{tabular}
 \end{table}
 
-\subsection{The breathing indicatrix: a unified adiabatic theorem}
+\subsection{Application of the breathing-indicatrix theorem to conformal Kerr}
 \label{sec:unified}
-The two closed-form corrections---Thakurta--Kerr, Eq.~\eqref{eq:psi-split}, and
-Vaidya, the Vaidya correction of Paper I---are one statement in disguise, and the
-indicatrix ellipse of Paper I is the reason. Let $F(r;\lambda)$
-be the frozen brachistochrone integrand of a one-parameter family of rail
-indicatrices, $\lambda$ the slow datum (scale $a$, mass $m$, conformal $A$), on the
-genus-two spectral curve $y^2=S(r;\lambda)$. Whenever $\lambda=\lambda(\text{clock})$
-drifts slowly,
+Paper~I establishes the \emph{breathing-indicatrix theorem}: for a one-parameter family
+of rail indicatrices with frozen integrand $F(r;\lambda)$ on the genus-two curve
+$y^2=S(r;\lambda)$, a slow drift $\lambda=\lambda(\text{clock})$ gives, on-shell,
 \begin{equation}
-    \varphi(r)=\varphi_0\!\big(r;\lambda\big)+\dot\lambda\!\int\!\partial_\lambda
-    F\,(\text{clock})\,\dd r+O(\dot\lambda^2)
-    =\varphi_0+\dot\lambda\Big[\sum_{k<j} q_{kj}\,W_{kj}+(\text{elementary})\Big],
+    \varphi(r)=\varphi_0(r;\lambda)+\dot\lambda\Big[\sum_{k<j} q_{kj}\,W_{kj}
+    +(\text{elementary})\Big]+O(\dot\lambda^2),
     \label{eq:unified}
 \end{equation}
-with $q_{kj}$ \emph{algebraic} (rational in the metric parameters, via the exact
-reduction $\partial_\lambda F=N_\lambda/S^{3/2}$) and $W_{kj}=\int(U_j\dd U_k-U_k
-\dd U_j)$ length-two iterated Abelian integrals of the frozen curve. Equation
-\eqref{eq:unified} is the \emph{on-shell} component of the first-order response
-(the parameter drift of the frozen family); the \emph{complete} first-order term is
-the extended-Hamiltonian expression Eq.~\eqref{eq:adiab-exact}, whose off-shell
-(costate $p_\eta$) piece is itself a length-two iterated integral of the same class
-(a $\sim2\%$ correction here). Within the on-shell component the transcendence
-structure is \emph{universal} across the three geometries. The three geometries are distinguished \emph{not} by which datum
-of the indicatrix varies---in each, \emph{both} the centre $c$ and the semi-axes $R$
-breathe, through $\partial_\lambda F=\partial_c F\,\partial_\lambda c+\partial_R
-F\,\partial_\lambda R$ with \emph{both} terms nonzero (for Vaidya, explicitly,
-$\partial_m c_r=-2/r$, $\partial_m R_r=E\,[r(2m+(E^2-1)r)]^{-1/2}$,
-$\partial_m R_\varphi=[r^3(2m+(E^2-1)r)]^{-1/2}$; likewise every $E_{\rm
-eff}=\Ehat/A$-dependent datum of Thakurta--Kerr varies via $\partial_A E_{\rm
-eff}=-\Ehat/A^2$)---but by two structural features. First, the \emph{orientation} of
-the wind: Vaidya's is the ingoing \emph{radial} centre-wind $c_r=f-\Ehat^2$;
-Thakurta--Kerr's is the \emph{azimuthal} frame-dragging shift. Second, and
-decisively for the weight-two letter, the \emph{clock} that weights the source,
-through the location of its logarithmic singularity: the advanced time $v$ diverges
-at the horizon $r=2m$, giving Vaidya a $\dd\log$ letter \emph{there}; the $t,\tau$
-clocks grow logarithmically at large $r$, giving Thakurta--Kerr a third-kind dipole
-\emph{at infinity}. FLRW is the degenerate circle---$c=0$, isotropic $R$---where the
-three branches coincide and the polylogs collapse to genus zero: no wind, no
-dilogarithm. The organizing thread ``circle $\to$ radial-wind ellipse $\to$
-angular-wind ellipse'' is thus literally the ladder of weight-two letters the
-breathing switches on, on one and the same hyperelliptic backbone.
+with $q_{kj}$ \emph{algebraic} (Lemma~I.4, via the reduction $\partial_\lambda
+F=N_\lambda/S^{3/2}$) and $W_{kj}=\int(U_j\dd U_k-U_k\dd U_j)$ length-two iterated Abelian
+integrals of the frozen curve; the \emph{complete} first-order term adds the off-shell
+(costate) piece of Theorem~I.5, itself of the same class (a $\sim2\%$ correction here). We
+now specialize to $\lambda=A$, equivalently $E_{\rm eff}=\Ehat/A$: every
+$E_{\rm eff}$-dependent datum of the Thakurta--Kerr indicatrix breathes through
+$\partial_A E_{\rm eff}=-\Ehat/A^2$---both the \emph{azimuthal} frame-dragging centre-wind
+and the semi-axes. Decisively for the weight-two letter, the $t,\tau$ clocks grow
+logarithmically at large $r$, giving Thakurta--Kerr a third-kind dipole \emph{at
+infinity}; the ladder ``circle $\to$ radial-wind ellipse $\to$ azimuthal-wind ellipse'' of
+Paper~I places conformal Kerr as the last (azimuthal) member on the same hyperelliptic
+backbone.
 
 \paragraph{Domain of validity.} The statement is a \emph{first-order} adiabatic
 theorem, and it rests on two \emph{exact} lemmas---the algebraic reduction
