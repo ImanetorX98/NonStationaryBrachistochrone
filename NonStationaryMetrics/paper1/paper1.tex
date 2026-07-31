@@ -1037,27 +1037,19 @@ cleared of the radical using $\partial_\lambda F=N_\lambda/S^{3/2}$, is equivale
 a polynomial identity of degree ten. Matching the eleven coefficients of
 $r^0,\dots,r^{10}$ gives a nonsingular $11\times11$ linear system in the eleven
 unknowns $\{a_0,\dots,a_5,c_0,\dots,c_4\}$; solving it (one call to a linear solver)
-returns the $c_k$ \emph{rationally} in the metric parameters (here $S$ stands for the
-branch radical: $S$ on the $\tau$-branch, $R_6=r\,Q_2\,DE$ on the $t$-branch). The
-numerator is $N_\lambda=EJ\,r^4(r-2M)^2 DE$ for the $\tau$-branch energy reduction
-(the horizon factor $\Delta$ cancels), $N_\lambda=R_6\,\partial_E\mathcal K
--\tfrac12\mathcal K\,\partial_E R_6$ for the $t$-branch (with $Q_2$, $\mathcal K$ of
-the conformal $t$-branch sextic (companion paper), the $\Delta$ in $\mathcal K$ again cancelling to
-leave a degree-seven polynomial), and $N_m=S\,\partial_m K-\tfrac12K\,\partial_m S$
-for the Vaidya mass reduction. The $t$-branch clock is entirely on-curve
-(the advanced/coordinate-time clock, companion paper): its second-kind vector $b$ feeds the $W_{kj}$ of $R_6$ and
-its horizon part $R_\Delta/\Delta$ the third-kind $\ln\sigma$-quotients, with no
-double cover. Three reference solutions to check against (polynomial residual $0$
+returns the $c_k$ \emph{rationally} in the metric parameters. For Vaidya $S$ is the
+Schwarzschild-seed sextic and the numerator is
+$N_m=S\,\partial_m K-\tfrac12K\,\partial_m S$; the advanced-time clock is entirely
+on-curve, its second-kind vector $b$ feeding the $W_{kj}$ of $S$ and its horizon part the
+third-kind $\ln\sigma$-quotients. The identical identity reduces the rotating
+Thakurta--Kerr radicals ($S_\tau$ and $R_6=r\,Q_2\,DE$) with the combined-charge
+numerator in Paper~II. One reference solution to check against (polynomial residual $0$
 exactly):
 \begin{table}[htbp]
     \centering
     \caption{Reference reduction coefficients, obtained by solving
-    Eq.~\eqref{eq:reduction-identity}, at $M{=}1$ and (Thakurta--Kerr rows)
-    $a{=}0.9,E{=}1.2,J{=}2.5$, (Vaidya row) $a{=}0,E{=}1.4,J{=}2.5$. For
-    Thakurta--Kerr the conformal drift acts through \emph{both} charges, so the source
-    is the Euler operator and the combined weight is $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$:
-    we list the energy ($\partial_E$) and angular ($\partial_J$) reductions separately;
-    Vaidya has only $\partial_m$. Decimals are shown for readability; each $c_k$ is the
+    Eq.~\eqref{eq:reduction-identity}, at $m{=}1$, $E{=}1.4$, $J{=}2.5$, for the Vaidya
+    mass reduction ($\partial_m$). Decimals are shown for readability; each $c_k$ is the
     exact rational solution of a single linear solve (residual $0$ exactly), regenerated
     by \texttt{reproduce\_reductions.py} (exact coefficients in the reproducibility
     package).}
@@ -1072,10 +1064,9 @@ exactly):
     \end{tabular}
 \end{table}
 
-Given the combined $C_k=\Ehat c_k^{E}+J c_k^{J}$, the weight-two
-assembly (the conformal $\psi$-split, companion paper) is mechanical: the clock supplies the vector $b$ (on
-the $\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$), the algebraic
-weights are $Q_{kj}=C_kb_j-C_jb_k$, the weight-two
+Given the $c_k$, the weight-two assembly is mechanical: the clock supplies the vector
+$b$ (proper-time $\eta=U_3-2m\,U_2$, i.e.\ $b=(0,0,-2m,1,0)$), the algebraic
+weights are $Q_{kj}=c_kb_j-c_jb_k$, the weight-two
 letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
 $\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
 same steps with the advanced-time clock give the fully assembled

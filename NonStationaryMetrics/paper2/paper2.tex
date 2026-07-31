@@ -106,9 +106,12 @@ variational problem established in the companion Paper~I. On a regular domain wh
 selector $W$ is timelike and the velocity indicatrix is smooth, compact and uniformly
 convex, minimizing the arrival clock is a time-optimal control problem whose minimizer is
 a \emph{normal} Pontryagin extremal (Paper~I, Theorem~I.1 and Theorem~I.2); the arrival
-clock is free, so the transversality is $H|_{s_f}=0$, and global optimality is certified
-by the non-autonomous Hamilton--Jacobi criterion (Paper~I, Proposition~I.3). We do not
-reprove these; we specialize the construction to the conformal Kerr geometry.
+clock is free, so the transversality is $H|_{s_f}=0$. Global optimality is certified only
+\emph{under the hypotheses} of the non-autonomous Hamilton--Jacobi \emph{verification}
+criterion of Paper~I (Proposition~I.3)---the existence of a value function (or viscosity
+subsolution) saturated by the candidate extremal---which we invoke as a verification
+criterion, not an automatic global guarantee. We do not reprove these; we specialize the
+construction to the conformal Kerr geometry.
 
 Thakurta--Kerr is conformal Kerr, $g=A(\eta)^2 g_{\rm Kerr}$
 \cite{Thakurta1981,Kerr1963}, one of a family of cosmological geometries
@@ -1518,22 +1521,18 @@ the prograde $+\Jc$ crosses to $\rp$.
 
 \subsection{Reproducing the reductions}
 \label{app:reproduce}
-Every coefficient in the adiabatic corrections is fixed by a \emph{single}
-polynomial identity that the reader can solve directly; nothing is fitted. The
-depth-one reduction $\partial_\lambda\varphi_0=\mathcal{A}/\sqrt S+\sum_{k=0}^4 c_k
-U_k$ [Eqs.~\eqref{eq:dEphi0},~(Paper I)], differentiated in $r$ and
-cleared of the radical using $\partial_\lambda F=N_\lambda/S^{3/2}$, is equivalent to
+By Lemma~I.4 of Paper~I, every coefficient in the adiabatic corrections is fixed by the
+single degree-ten polynomial identity
 \begin{equation}
     2\,\mathcal{A}'(r)\,S(r)-\mathcal{A}(r)\,S'(r)
     +2\,S(r)\sum_{k=0}^4 c_k\,r^k \;=\; 2\,N_\lambda(r),
     \qquad \mathcal{A}=\sum_{i=0}^5 a_i r^i,
     \label{eq:reduction-identity}
 \end{equation}
-a polynomial identity of degree ten. Matching the eleven coefficients of
-$r^0,\dots,r^{10}$ gives a nonsingular $11\times11$ linear system in the eleven
-unknowns $\{a_0,\dots,a_5,c_0,\dots,c_4\}$; solving it (one call to a linear solver)
-returns the $c_k$ \emph{rationally} in the metric parameters (here $S$ stands for the
-branch radical: $S$ on the $\tau$-branch, $R_6=r\,Q_2\,DE$ on the $t$-branch). The
+whose $11\times11$ linear system returns the $c_k$ \emph{rationally} in the metric
+parameters (nothing is fitted); we do not repeat that general reduction here. For the
+Thakurta--Kerr radicals $S$ is the branch radical ($S$ on the $\tau$-branch,
+$R_6=r\,Q_2\,DE$ on the $t$-branch). The
 numerator is $N_\lambda=EJ\,r^4(r-2M)^2 DE$ for the $\tau$-branch energy reduction
 (the horizon factor $\Delta$ cancels), $N_\lambda=R_6\,\partial_E\mathcal K
 -\tfrac12\mathcal K\,\partial_E R_6$ for the $t$-branch (with $Q_2$, $\mathcal K$ of
@@ -1792,8 +1791,7 @@ $(M,a,E,r_d,\Jc)$; the triple-pole cancellation below is an algebraic identity a
 \emph{any} double root, hence holds on the physical branch as well.
 
 \paragraph{Tracking cancels the triple pole.}
-A clean structural consequence closes the logic: at the double root the tracked
-source \emph{vanishes},
+By Lemma~I.6 of Paper~I, at the double root the tracked source \emph{vanishes},
 \begin{equation}
 N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
 +\tfrac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)
@@ -1802,9 +1800,9 @@ N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
 \end{equation}
 because $S'(r_d)=0$ (the separatrix double-root condition). Hence the triple-pole
 residue drops, $b_3^{\rm track}=0$: following the moving separatrix softens the
-strongest singularity, precisely where the double root travels. This is verified
-symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$, for both Vaidya
-and Thakurta--Kerr.
+strongest singularity, precisely where the double root travels. For the Thakurta--Kerr
+separatrices this is verified symbolically in Mathematica,
+$N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$.
 
 \paragraph{Fully symbolic coefficients, off-separatrix $q$-series, and independent checks.}
 Off the separatrix (generic $J$, genus two) every block coefficient is a
@@ -1831,10 +1829,11 @@ theorem~\eqref{eq:track-cancel}.
 None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
 lives in $\sigma,\zeta,\wp$, and the weight-two content is the elliptic dilogarithm,
 conjecturally irreducible to weight one (theta-divisor obstruction $\Theta=W_{g-1}$). The
-advanced-time horizon logarithm is elementary only as a $\dd\log$ letter; integrated
-against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, of the
-same transcendental weight as the proper-time case---the horizon merely relocates the
-dilogarithm's anchor from infinity to the two-torsion point $r=2m$. The sole
+third-kind letter at the seed Kerr null surface $\Delta=0$ is elementary only as a
+$\dd\log$ letter; integrated against the elliptic source it yields the genus-two
+dilogarithm, of the same transcendental weight as the on-shell case, with the anchor at
+the third-kind dipole \emph{at infinity} of the $t,\tau$ clocks (the spherical
+horizon-anchored analogue, at $r=2m$, is in Paper~I). The sole
 numerical ingredient anywhere is the optional compression of the weight-two content to
 an apparent minimal five-dimensional dilogarithm basis (a numerically stable rank five,
 singular values falling to $10^{-79}$---strong evidence, \emph{not} a proof, and

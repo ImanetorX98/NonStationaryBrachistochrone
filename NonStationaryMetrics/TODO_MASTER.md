@@ -347,7 +347,23 @@ Il giro P0 era asimmetrico (pulito Paper II ma non i gemelli in Paper I). Chiusi
 - [x] **3. Riga "Vaidya, ∂_m" + `N_m`** rimossi da tab:reduction-ck e testo di App A di Paper II
       (tabella riproducibilità ora TK-only; Vaidya → pointer una riga a Paper I).
 - Non in scope (cosmetici, lasciati): status-tier, rinumerazione eq/fig, rename Kodama→conformal-selector,
-      trim notazione `P_r` in Table 1 di Paper I, duplicazioni lecite (11×11, `N_tot(r_d)=0`).
+      trim notazione `P_r` in Table 1 di Paper I.
+
+### J-quater. Audit memo GPT "Prescrizioni giustapposte" (2026-07-31) — layer Appendici mancato
+Il memo ha rivelato contaminazione residua NEGLI APPENDICI (i giri prima toccavano App C e i paragrafi-macchina
+di App B, non la prosa di App A né la coda di App B). 4 fix reali:
+- [x] **A. App A di Paper I → Vaidya-only.** Prosa riduzione era TK (`R_6`/`Q_2`/ramo `t`/`c_k^E,c_k^J`/
+      "conformal ψ-split") e caption diceva "(Thakurta–Kerr rows)" con tabella già solo-Vaidya (incoerenza).
+      Ora identità 11×11 generale + sola specializzazione Vaidya; TK → 1 frase a Paper II.
+- [x] **B. App A di Paper II** apre con "By Lemma~I.4 of Paper~I" e non ri-espone il solve 11×11 generale
+      (tiene identità come risultato citato + applicazione TK).
+- [x] **C. Coda App B di Paper II**: "Tracking cancels the triple pole" ora cita Lemma I.6 e toglie
+      "for both Vaidya and TK"; "Transcendence" riquadrata TK (`Δ=0`, ancora a infinito) via contenuto
+      Vaidya (`∂_m F`, `r=2m`) → pointer a Paper I.
+- [x] **D. HJB condizionale** in Paper II (`paper2:109`): "global optimality certified" → "only under the
+      hypotheses of the verification criterion..." (Paper I Prop I.3 era già condizionale).
+- Ricompilati: **Paper I 37pp, Paper II 49pp, 0 undefined**. Cosmetico lasciato: coda reproducibility
+      condivisa (nome q-series/rank-five) leggermente duplicata.
 
 ---
 ### Riferimenti
