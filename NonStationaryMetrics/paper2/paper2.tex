@@ -528,23 +528,15 @@ $\mathcal D H=E H_E+(H+1)$, so
     \label{eq:SD-conformal}
 \end{equation}
 the $\lambda$ term universal and $E_{\rm eff}H_{E_{\rm eff}}$ the single
-metric-specific ``energy-Euler'' piece (fixed by $E\partial_E v^2=2(1-v^2)$). For the
-\emph{mass-function} family (Vaidya, $\mathcal D=m\partial_m$), Schwarzschild
-self-similarity $(r,m)\to\kappa(r,m)$ (with $E,p_r$ inert, $J\to\kappa J$) gives
-$m H_m=-(rH_r+JH_J)$, and combining with~\eqref{eq:finsler-euler} and Hamilton's
-equations ($p_rH_{p_r}-rH_r=\dd(rp_r)/\dd\lambda$) yields the still simpler
-\begin{equation}
-    S_{\mathcal D}(\lambda)=\big[\,r\,p_r\,\big]_0^{\lambda}-\lambda,
-    \label{eq:SD-vaidya}
-\end{equation}
-a boundary term minus $\lambda$. The two deformation classes thus carry
-\emph{different} universal sources---no single formula spans both, because the slow
+metric-specific ``energy-Euler'' piece (fixed by $E\partial_E v^2=2(1-v^2)$). The
+non-conformal mass-function (Vaidya) family instead yields the boundary form
+$S_{\mathcal D}=[\,rp_r\,]-\lambda$ (Paper~I): the two deformation classes carry
+\emph{different} universal sources---no single formula spans both, since the slow
 parameter couples to the geometry differently (a conformal rescaling of all momenta
-versus a self-similar mass shift)---yet both share the same universal $\pm\lambda$
-skeleton from~\eqref{eq:finsler-euler}. Both~\eqref{eq:SD-conformal}
-and~\eqref{eq:SD-vaidya} are verified to machine precision against the direct
-$\int\mathcal D H\,\dd\lambda$ (\texttt{ThakurtaMetric/universal\_SD\_source\_check.py},
-\texttt{VaidyaMetric/universal\_SD\_source\_vaidya.py}).
+versus a self-similar mass shift)---yet both share the same $\pm\lambda$ Finsler skeleton
+from~\eqref{eq:finsler-euler}. Equation~\eqref{eq:SD-conformal} is verified to machine
+precision against the direct $\int\mathcal D H\,\dd\lambda$
+(\texttt{ThakurtaMetric/universal\_SD\_source\_check.py}).
 
 \paragraph{Fixed-charge versus fixed-endpoint.} The correction~\eqref{eq:adiab-exact}
 is computed at \emph{fixed canonical charges} $(\Ehat,J)$: it is the same-launch,
