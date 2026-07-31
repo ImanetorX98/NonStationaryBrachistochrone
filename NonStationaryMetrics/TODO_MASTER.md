@@ -318,6 +318,25 @@ Principio: Paper I DIMOSTRA (formalismo+FLRW+Vaidya, teoremi I.1–I.6 numerati)
       limite statico). **Paper I 38pp, Paper II 50pp, self-contained, teorema-applicazione stabilita.**
 - Testi modello §7 per aperture Paper II già in `RESTRUCTURE_MEMO.md`.
 
+### J-bis. Memorandum GPT 2 (2026-07-31) — 2 sostituzioni P0 + bib (scope scelto dall'utente)
+Audit GPT confermato nei file: 2 contaminazioni simmetriche vere che il restructure non aveva rimosso.
+- [x] **P0-A. De-conformalizzata Theorem I.5 / App C di Paper I.** App C era duplicato quasi-verbatim
+      dell'App C conforme di Paper II. Enunciato I.5 riscritto in variabili canoniche $(r,p_r)$ con Euler
+      astratto $\Theta$ (via $E_{\rm eff},J_{\rm eff},P_r$ dall'enunciato); rimossi i paragrafi conformi
+      ("conformal rescaling/dilation term", "dilation letter" con $a_k$ Kerr/$\Delta$, script ThakurtaMetric,
+      pole ergosfera/crossing TK) → ora posseduti solo da Paper II App C. Aggiunta chiusura Vaidya:
+      identità Randers–Euler $(J\partial_J+p_r\partial_{p_r})H=H+1$ + self-similarità Schwarzschild →
+      **boundary form $S_{\mathcal D}=[rp_r]-\lambda$**. Special-function/separatrix riquadrati Vaidya
+      (third-kind a $r=2m$, no crossing; TK crossing → 1 frase a Paper II).
+- [x] **P0-B. Rimosso blocco Vaidya da §sec:unified di Paper II** (`J_deg=m j(E)`, 7.0266,
+      accretion/evaporation, tracking `J=Jc(m)` sorgente `∂_m F+(Jc/m)∂_J F`, advanced-time, horizon dilog
+      a $r=2m$) → riquadrato conforme + pointer a Paper I e App.~\ref{app:tracking}.
+- [x] **Bib reciproca**: voci `PaperOne`/`PaperTwo` in `paper/refs.bib`; `\cite{PaperTwo}` in intro Paper I,
+      `\cite{PaperOne}` in intro Paper II. Rinominato §"breathing-indicatrix theorem" →
+      "Adiabatic breathing of the conformal-Kerr indicatrix" (evita teorema non numerato).
+- Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined entrambi**. Non in scope (lasciati): sanity-check
+      rail TK in §4.1 di Paper I, item P1/P2/P3 cosmetici del memo.
+
 ---
 ### Riferimenti
 - Referee: `REFEREE_REPORT_CURRENT_2026-07-22.md` (13 issue)

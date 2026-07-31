@@ -83,7 +83,8 @@ fixed spatial target at a free arrival clock---was formulated by Perlick for sta
 spacetimes \cite{Perlick1991,PerlickRayOptics}, connecting to Fermat's principle and
 optical (Randers--Zermelo--Finsler) geometry
 \cite{Kovner1990,Randers1941,GibbonsWerner2008,GibbonsRanders2009,BaoRoblesShen}. In the
-companion paper we established the shared control-theoretic foundations---the
+companion Paper~I~\cite{PaperOne} we established the shared control-theoretic
+foundations---the
 controlled-rail principle, an existence and normality theorem, the non-autonomous
 Hamilton--Jacobi verification criterion, and the Killing--CKV--Kodama selector
 hierarchy---and treated the spherically symmetric geometries (FLRW and the ingoing Vaidya
@@ -1046,9 +1047,10 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
     \end{tabular}
 \end{table}
 
-\subsection{Application of the breathing-indicatrix theorem to conformal Kerr}
+\subsection{Adiabatic breathing of the conformal-Kerr indicatrix}
 \label{sec:unified}
-Paper~I establishes the \emph{breathing-indicatrix theorem}: for a one-parameter family
+Combining Lemma~I.4 with the on-shell part of Theorem~I.5 of Paper~I yields the
+indicatrix-breathing response: for a one-parameter family
 of rail indicatrices with frozen integrand $F(r;\lambda)$ on the genus-two curve
 $y^2=S(r;\lambda)$, a slow drift $\lambda=\lambda(\text{clock})$ gives, on-shell,
 \begin{equation}
@@ -1089,38 +1091,23 @@ adiabatic hypothesis itself---``$\lambda$ varies slowly compared with the orbita
 period''---degrades, and the separatrix correction is properly read as an
 \emph{instantaneous, local} first-order statement about the neighbourhood of the
 separatrix rather than a long-time separatrix-following orbit. Moreover the degeneration
-locus is not fixed under the evolution it responds to: in Vaidya
-$J_{\rm deg}=m\,j(E)$ scales linearly with the mass (verified exactly proportional,
-$J_{\rm deg}/m=7.0266$ at $E=1.4$, independent of $m$). This is the \emph{algebraic}
-degeneration at $r_d<0$, not an external separatrix: the physical accretion$/$evaporation
-capture--escape divide is the dynamical penetration threshold, not $J_{\rm deg}$. A
-particle of conserved $J$ nonetheless \emph{crosses} the moving locus as $m(v)$ drifts;
-that crossing---the same phenomenon that makes the Thakurta--Kerr off-shell separatrix
-limit a Neishtadt separatrix-crossing problem---is a genuinely non-perturbative regime,
-beyond first order, and the accretion--evaporation asymmetry of
-the Vaidya asymmetry of Paper I is the first-order fingerprint that survives on either
-side of it. Within these bounds, which
+locus is not fixed under the evolution it responds to: under the conformal drift the
+dilation ray $(\Ehat/A,J/A)$ leaves the marginal locus $J=\Jc(E_{\rm eff})$, so a
+particle of conserved $J$ \emph{crosses} the moving separatrix as $A(\eta)$ runs---a
+genuinely non-perturbative regime (a Neishtadt separatrix-crossing problem, App.~C),
+beyond first order. Within these bounds, which
 are the usual bounds of first-order WKB, this closed form is the \emph{on-shell
 component} of the first-order response---the parameter drift along the frozen
 family---and is exact as such; the \emph{complete} first-order term is the
 extended-Hamiltonian expression Eq.~\eqref{eq:adiab-exact}, which adds the
 off-shell (costate $p_\eta$) displacement of the momentum shell (a $\sim2\%$
-correction here, Fig.~\ref{fig:phi-true-dynamic}). The separatrix
-results in particular quantify the response \emph{at} the instantaneous marginal
-configuration $J=\Jc(m)$, not a trajectory pinned to it. The complementary,
-separatrix-\emph{following} response---imposing $J=\Jc(m(v))$ so that the orbit
-tracks the moving marginal curve, with $\dd J/\dd v=(\Jc/m)\dot m$---closes by the
-\emph{identical} reduction, the only change being the source $\partial_m F\to
-\partial_m F+(\Jc/m)\,\partial_J F=(N_m+(\Jc/m)N_J)/S^{3/2}$ with $N_J$ again
-polynomial; the same pole-adapted Weierstrass assembly then yields its closed form
-(verified to $10^{-8}$), all coefficients again algebraic in $m,E$. The
-advanced-time branch closes on the same separatrix by the identical scheme:
-$\delta\varphi_v|_{\rm deg}=\tilde G(z)\,v-\int\tilde G\,v_z\,\dd z$ with
-$v_z=\dd v/\dd z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$, the first term reproducing the
-proper-time dilogarithms and the second---odd on the curve, with a simple pole at
-the horizon two-torsion image $z=i\omega_{\rm im}$ (where $r=2m=e_3$)---furnishing the
-horizon dilogarithm; the whole is explicit in $\sigma,\zeta,\wp$ and elliptic
-dilogarithms with closed-form coefficients (verified to $10^{-8}$).
+correction here, Fig.~\ref{fig:phi-true-dynamic}). The separatrix results in particular
+quantify the response \emph{at} the instantaneous marginal configuration
+$J=\Jc(E_{\rm eff})$, not a trajectory pinned to it. The complementary
+separatrix-\emph{following} response and the general degeneration-family derivative
+(with the spherical Vaidya $J_{\rm deg}=m\,j(E)$ as the worked instance) are established
+in Paper~I; here the same reduction applies verbatim with the conformal source
+$N=\Ehat N_E+J N_J$ and $\dd\Jc/\dd E_{\rm eff}$ (App.~\ref{app:tracking}).
 
 
 % ======================================================================
