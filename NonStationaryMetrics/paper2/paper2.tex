@@ -136,7 +136,7 @@ rate $\dd\Ehat/\dd\tau=A'/A$ (verified numerically to $\sim\!10^{-11}$), whereas
 $E_{\rm eff}=\Ehat/A(\eta)$---the rail holds $\Ehat$ constant to $8.9\times10^{-16}$, the
 exact analogue of the spherical Kodama value of Paper~I
 (\texttt{ThakurtaMetric/rail\_conservation.py}). This confirms that the controlled charges
-$E_{\rm eff}=\Ehat/A$ and $J_{\rm eff}=J/A$ track along the orbit.
+$E_{\rm eff}=\Ehat/A$ and $J_{\rm eff}=J/A$ are carried consistently along the orbit.
 
 \paragraph{Indicatrix and Hamiltonians.} Equatorially, write
 $\Delta=r^2-2Mr+a^2$, $\bar v^2=1-A^2f/\Ehat^2$, and
@@ -1106,7 +1106,7 @@ the radial period diverges (the orbit asymptotes an unstable circular orbit), so
 adiabatic hypothesis itself---``$\lambda$ varies slowly compared with the orbital
 period''---degrades, and the separatrix correction is properly read as an
 \emph{instantaneous, local} first-order statement about the neighbourhood of the
-separatrix rather than a long-time separatrix-following orbit. Moreover the degeneration
+separatrix rather than a long-time orbit pinned to the moving locus. Moreover the degeneration
 locus is not fixed under the evolution it responds to: under the conformal drift the
 dilation ray $(\Ehat/A,J/A)$ leaves the marginal locus $J=\Jc(E_{\rm eff})$, so a
 particle of conserved $J$ \emph{crosses} the moving separatrix as $A(\eta)$ runs---a
@@ -1120,8 +1120,8 @@ off-shell (costate $p_\eta$) displacement of the momentum shell (a $\sim2\%$
 correction here, Fig.~\ref{fig:phi-true-dynamic}). The separatrix results in particular
 quantify the response \emph{at} the instantaneous marginal configuration
 $J=\Jc(E_{\rm eff})$, not a trajectory pinned to it. The complementary
-separatrix-\emph{following} response and the general degeneration-family derivative
-(with the spherical Vaidya $J_{\rm deg}=m\,j(E)$ as the worked instance) are established
+adiabatic derivative along the degeneration family
+(with the spherical Vaidya $J_{\rm deg}=m\,j(E)$ as the worked instance) is established
 in Paper~I; here the same reduction applies verbatim with the conformal source
 $N=\Ehat N_E+J N_J$ and $\dd\Jc/\dd E_{\rm eff}$ (\ref{app:tracking}).
 
@@ -1790,12 +1790,12 @@ $J\,\partial_J F$ term) gives $b=(b_1,b_2,b_3)=(-0.685,-0.074,-0.0035)$ and the
 \frac{\dd\Jc^-}{\dd E}=-\frac{\partial_E Q_2}{\partial_J Q_2}\bigg|_{(r_d,\Jc^-)}=+2.44
 \end{equation}
 (the earlier $\mp148$--$150$ magnitudes belonged to the unphysical $J_{\rm deg}$
-roots at $r_d<0$). All tracking coefficients are closed-form residues, symbolic in
+roots at $r_d<0$). All family-derivative coefficients are closed-form residues, symbolic in
 $(M,a,E,r_d,\Jc)$; the triple-pole cancellation below is an algebraic identity at
 \emph{any} double root, hence holds on the physical branch as well.
 
 \paragraph{The degeneration-family derivative cancels the leading pole.}
-By Lemma~I.6 of Paper~I, at the double root the tracked source \emph{vanishes},
+By Lemma~I.6 of Paper~I, at the double root the total family-derivative source \emph{vanishes},
 \begin{equation}
 N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
 +\tfrac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)
@@ -1803,7 +1803,7 @@ N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
 \label{eq:track-cancel}
 \end{equation}
 because $S'(r_d)=0$ (the separatrix double-root condition). Hence the triple-pole
-residue drops, $b_3^{\rm track}=0$: following the moving separatrix softens the
+residue drops, $b_3^{\rm track}=0$: the total family derivative softens the
 strongest singularity, precisely where the double root travels. For the Thakurta--Kerr
 separatrices this is verified symbolically in Mathematica,
 $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$.
@@ -1826,8 +1826,8 @@ matches to $10^{-13}$) and does \emph{not} reduce to classical dilogarithms (the
 no genus-two Jacobi product formula). All these symbolic statements are
 \emph{independently reproduced in Mathematica} (native $\wp$, Gröbner reduction,
 Laurent extraction): the separatrix residues to $10^{-16}$--$10^{-38}$, the generic-$J$
-reductions to an exact polynomial identity, and the tracking
-theorem~\eqref{eq:track-cancel}.
+reductions to an exact polynomial identity, and the family-derivative
+cancellation~\eqref{eq:track-cancel}.
 
 \paragraph{Transcendence.}
 None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
@@ -2039,7 +2039,7 @@ verified letter by letter to machine precision (\texttt{ThakurtaMetric/tk\_sep\_
 For Thakurta--Kerr the double root sits inside the ergosphere, on the physical arc, and
 the dilation letter injects there a power pole $1/(r-r_d)^2$ (residue
 $\propto\Delta S(r_d)$, verified against the true flow) that is \emph{not} removed by
-the charge tracking $\dd J_c/\dd E$: the pole comes from the kernel $A\sim1/Q_2^2$, not
+differentiation along the marginal family, $\dd J_c/\dd E$: the pole comes from the kernel $A\sim1/Q_2^2$, not
 from the source. Crucially this is not a missing algebraic counterterm. Under the
 adiabatic evolution the dilation ray $(\Ehat/A,\,J/A)$ leaves the separatrix locus
 $J=J_c(E)$, so the double root does not merely move---it \emph{dissolves}, and the orbit

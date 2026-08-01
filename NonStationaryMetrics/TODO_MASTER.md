@@ -412,6 +412,26 @@ Verdetto GPT sceso a minor-to-moderate; fix peso-due/HJB/endpoint riconosciuti "
       "companion paper"→"Ref.[X]" ovunque; separatrix-following residuo con caveat corretto).
 - Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**, auto-citazione eliminata.
 
+### J-septies. Memo GPT "Risposta paper1-6/paper2-6" (2026-08-01) — 4 punti finali (90-95% recepito)
+- [x] **P0 §2: formula TK residua nella sezione Vaidya di Paper I** (paper1:610): usava
+      `F(r;E_eff,J_eff)`, sorgente Euleriana `Ê∂_E+J∂_J`, clock `η`, costate `p_η`. Riscritta Vaidya
+      (`F(r;Ê,J)`, drift `m∂_m`, off-shell `p_v`); `E_eff/J_eff/P_r/p_η` relegati esplicitamente a Paper II
+      (la formula è sparita, non solo un rinvio).
+- [x] **P1 §3: direzione narrativa Paper I→II**: apertura §4.4 "same WKB scheme as conformal (companion)"
+      → "we apply Lemma I.4/Theorem I.5 to the Vaidya modulus; specialized to conformal Kerr in Paper II";
+      "conformal ψ-split of the companion paper" → "universal on-shell assembly established here"; attenuate
+      "(as in Kerr)" e "as the conformal letter of companion".
+- [x] **P1 §5: separatrix-following/tracking in Paper II** eliminati globalmente (7 occorrenze):
+      "separatrix-following response"→"adiabatic derivative along the degeneration family",
+      "tracking coefficients"→"family-derivative coefficients", "tracked source"→"total family-derivative
+      source", "charge tracking"→"differentiation along the marginal family", ecc. Grep residuo = 0.
+- [x] **P1 §4: negative-rate/frozen-clock**: notazione `δφ_accr/evap`→`δφ_adv/ret`, "physical difference"→
+      "formal advanced/retarded frozen-clock difference", tabella script "accretion/evaporation split"→
+      "advanced/retarded frozen-clock decomposition". **Figura rigenerata**: `inversione_fisica.py` (label
+      già corrette "ingoing mass-rate") rieseguito → `fig_vaidya_no_inversione_evaporazione.png` aggiornata
+      in paper/Immagini (via legenda "evapora"/"accretion-evaporation rate").
+- Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**.
+
 ---
 ### Riferimenti
 - Referee: `REFEREE_REPORT_CURRENT_2026-07-22.md` (13 issue)
