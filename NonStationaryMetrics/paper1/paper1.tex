@@ -41,39 +41,35 @@
 conformal symmetry, Kodama energy, and Vaidya dynamics}
 
 \author{Iman Rosignoli}
-\address{University of Pavia, Pavia, Italy}
+\address{Department of Physics, University of Pavia, Via A.\ Bassi 6, 27100 Pavia, Italy}
 \ead{iman.rosignoli01@universitadipavia.it}
 
 \begin{abstract}
 We extend the relativistic brachistochrone---the fastest constrained rail worldline
-reaching a fixed spatial target at a free arrival clock (Perlick 1991)---from stationary
-to non-stationary, spherically symmetric spacetimes: spatially flat FLRW and the ingoing
-Vaidya dynamical black hole. The rail invariant $-u\cdot W=\Ehat$ is actively controlled
-and legitimate via Pontryagin's principle, with the selector $W$ following a hierarchy
-Killing $\to$ conformal Killing $\to$ Kodama; in Vaidya $W$ is the Kodama vector and
-$\Ehat$ its charge, conserved along the rail even where free fall is not. We establish
-the shared control-theoretic foundations---an existence and normality theorem and a
-non-autonomous Hamilton--Jacobi verification criterion---then treat FLRW (the degenerate
-base) and Vaidya in full: the plunge phenomenology (penetration, timing, and a bounce
-integrated through periapsis), the branch-intrinsic depth ordering, and the absence of an
-evaporative inversion at the frozen-clock level (the $m'<0$ ingoing continuation is
-formal; physical evaporation is the outgoing metric). The first-order adiabatic correction
-closes in a horizon dilogarithm and is verified against the true non-autonomous flow to
+reaching a fixed spatial target at a free arrival clock---from stationary to
+non-stationary, spherically symmetric spacetimes: spatially flat
+Friedmann--Lema\^itre--Robertson--Walker (FLRW) and the ingoing Vaidya dynamical black
+hole. The rail invariant $-u\cdot W=\Ehat$ is actively controlled and legitimate via
+Pontryagin's principle, with the selector $W$ following a hierarchy Killing $\to$
+conformal Killing $\to$ Kodama; in Vaidya $W$ is the Kodama vector and $\Ehat$ its charge,
+conserved along the rail even where free fall is not. We establish the shared
+control-theoretic foundations---an existence and normality theorem and a non-autonomous
+Hamilton--Jacobi verification criterion---then treat FLRW (the degenerate base) and Vaidya
+in full: the plunge phenomenology (penetration, timing, and a bounce integrated through
+periapsis), the branch-intrinsic depth ordering, and the absence of an inversion in the
+frozen-clock branch comparison (the $m'<0$ ingoing continuation is formal; physical
+evaporation belongs to the outgoing metric). The first-order adiabatic correction closes
+in a horizon dilogarithm and is verified against the true non-autonomous flow to
 $O(\varepsilon^2)$; its off-shell source admits the universal boundary form
-$S_{\mathcal D}=[\,rp_r\,]-\lambda$. \emph{Status.} The controlled-rail formulation,
-existence and normality, and the on-shell reduction are established; the full
-outgoing-Vaidya boundary-value problem remains open. The rotating Thakurta--Kerr
-case---frame dragging, ergosphere trichotomy, and genus-two closed forms---is developed
-in the companion paper. Algebraic identities are confirmed in Mathematica; the
-reproducibility package is archived at Zenodo.
+$S_{\mathcal D}=[\,rp_r\,]-\lambda$. The controlled-rail formulation, existence and
+normality, and the first-order reduction are established, while the full outgoing-Vaidya
+boundary-value problem remains open; the rotating conformal-Kerr application is developed
+in the companion paper.
 \end{abstract}
 
 \maketitle
-% widen ToC number box so the wide "Appendix A" label does not overlap titles
-\makeatletter
-\renewcommand{\numberline}[1]{#1\enspace}
-\makeatother
-{\hypersetup{linkcolor=black}\tableofcontents}
+% Table of contents removed for the research-paper submission (the running
+% header no longer displays CONTENTS; the journal reformats the accepted article).
 
 % ======================================================================
 \section{Introduction}
@@ -259,14 +255,12 @@ reproduce the Randers/Zermelo structure
 \paragraph{Operational reading: thrust.} Maintaining the controlled invariant generally
 requires nonzero \emph{proper} acceleration $a^\mu=Du^\mu/\dd\tau$ ($a=0$ only on a
 free-fall geodesic), so the rail force is the thrust per unit mass, spacelike
-($a\cdot u=0$) with $|a|$ diverging as the freezing/horizon surface is approached. We
-stress that the present variational problem minimizes the selected elapsed \emph{clock},
-not thrust, fuel, or integrated control effort---these define distinct optimal-control
-problems; the brachistochrone is the fastest rail curve, not the fuel-minimal one. A
-representative estimate is in the reproducibility package
-(\texttt{brachistochrone\_thrust\_fuel.py}). In the non-stationary case the $a\cdot W$
-term adds the proper acceleration that maintains the rail against the non-stationary
-mass-rate drift.
+($a\cdot u=0$) with $|a|$ diverging as the freezing/horizon surface is approached.
+Maintaining the controlled invariant generally requires nonzero proper acceleration; the
+present variational problem minimizes the selected elapsed \emph{clock}, not thrust, fuel
+or integrated control effort, which define distinct optimal-control problems. In the
+non-stationary case the $a\cdot W$ term is the proper acceleration that maintains the rail
+against the non-stationary mass-rate drift.
 
 \paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
 independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and
@@ -560,9 +554,9 @@ Hamiltonians
 \end{align}
 The $\tau$-branch is the $v$-branch under $p_r\to p_r+1/\Ehat$ with unit cost
 replaced by $\Ehat$. Non-stationarity is the explicit dependence
-$\dd H/\dd v=\partial_v H\propto m'(v)$; the \emph{teleological} (here and
-throughout: \emph{endpoint-sensitive}, arising from the two-point boundary-value
-problem with a free future arrival---not a causal effect) momentum $p_v=-H$
+$\dd H/\dd v=\partial_v H\propto m'(v)$; the \emph{endpoint-sensitive} (arising from the
+two-point boundary-value problem with a free future arrival---a costate memory, not a
+causal effect) momentum $p_v=-H$
 satisfies $p_v(r_1)=0$ at the free arrival radius yet $p_v(r)\neq0$ along the
 path, so the turning point \emph{anticipates future accretion}
 (Fig.~\ref{fig:vaidya-traj}).
@@ -660,7 +654,7 @@ horizon units.
 \end{figure}
 
 
-\subsection{Plunge-radius law and the (absent) evaporative inversion}
+\subsection{Plunge-radius law and the absence of inversion in the frozen-clock comparison}
 \label{sec:vaidya-plunge}
 The turning-point law has the static Schwarzschild form evaluated at the mass
 at periapsis, $f_*=1-2m(v_{\rm peri})/r_{\min}$:
@@ -721,8 +715,8 @@ is the \emph{Schwarzschild} brachistochrone---the $a\to0$ limit of the
 Thakurta--Kerr forms---on the sextic
 $S=r(r-2m)DE\,[r^2(r-2m)-J^2 DE]$, $DE=(E^2-1)r+2m$. Notably this sextic keeps six
 distinct roots: the constrained brachistochrone is genus \emph{two} even in
-Schwarzschild (only the geodesics are elliptic; the separatrix $|J|=\Jc$ is the
-genus drop). The mass derivative reduces exactly, the horizon factor cancelling,
+Schwarzschild (only the geodesics are elliptic; the genus drop occurs at the algebraic
+degeneration value $|J|=J_{\rm deg}$). The mass derivative reduces exactly, the horizon factor cancelling,
 \begin{equation}
     \partial_m F=\frac{N_m}{S^{3/2}},\quad N_m=S\,\partial_m K-\tfrac12 K\,\partial_m S,
     \qquad
@@ -831,7 +825,7 @@ hyperelliptic-dilogarithm class (conjecturally irreducible to weight one, the
 theta-divisor obstruction $\Theta=W_{g-1}$ preventing the genus-one factorization),
 but with its $\dd\log$ letter sourced by the
 advanced-time divergence at the horizon $r=2m$ rather than by a third-kind dipole at
-infinity. On the separatrix $|J|=\Jc$ the sextic develops a double root at $r=r_d$
+infinity. At the genus-degeneration $|J|=J_{\rm deg}$ the sextic develops a double root at $r=r_d$
 and the genus drops to one: $\sqrt S=(r-r_d)\sqrt{Q_4}$ with $Q_4$ quartic, so the
 $U_k$ reduce to elliptic integrals (verified to machine precision against the direct
 genus-two quadrature) and $\mathcal{G}_k$ collapses to the tabulated \emph{elliptic
@@ -1513,23 +1507,30 @@ separatrix, a Neishtadt separatrix-crossing problem
 
 % ---- back matter -----------------------------------------------------
 \section*{Data availability}
-The complete numerical and symbolic codebase underlying this work is openly available
-under the MIT license, archived at the persistent DOI~\cite{Rosignoli2026Code}
-\begin{center}
-\url{https://doi.org/10.5281/zenodo.21707378}
-\end{center}
-(tagged release \texttt{v1.0}), and developed in the GitHub repository
+The numerical data and the symbolic and numerical code supporting the findings of this
+study are openly available under the MIT licence in the Zenodo repository
+\emph{NonStationaryBrachistochrone}, version~1.0, at the persistent
+DOI~\cite{Rosignoli2026Code} (\url{https://doi.org/10.5281/zenodo.21707378}). The
+development history is available in the associated GitHub repository
 \url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}.
 
 \ack
-The author thanks the University of Pavia for a stimulating environment and received no
-external funding. AI assistants (GPT and Claude) were used to assist with symbolic
-derivations, numerical implementation and manuscript preparation; all results were
-verified independently by the author, who takes full responsibility for the content. The
+The author thanks the University of Pavia for a stimulating environment. OpenAI
+GPT-5.6 (Sol) and Anthropic Claude (Opus~4.8) were used to assist with symbolic-algebra
+checks, numerical-code development, and language and structural editing of the manuscript;
+all AI-assisted output was critically reviewed and independently verified by the author,
+who takes full responsibility for the accuracy, originality and integrity of the work. The
 closed-form and hyperelliptic computations relied on \textsc{SageMath}~\cite{SageMath}
 with \textsc{abelfunctions}~\cite{abelfunctions}, and on
 \textsc{SymPy}~\cite{SymPy}, \textsc{NumPy}~\cite{NumPy}, \textsc{SciPy}~\cite{SciPy} and
 \textsc{Matplotlib}~\cite{Matplotlib}.
+
+\medskip\noindent\textit{Funding:} This research received no external funding.
+
+\medskip\noindent\textit{Competing interests:} The author declares no competing interests.
+
+\medskip\noindent\textit{ORCID iD:} Iman Rosignoli,
+\url{https://orcid.org/0009-0004-4536-0285}.
 
 \nocite{*}
 \bibliographystyle{iopart-num}

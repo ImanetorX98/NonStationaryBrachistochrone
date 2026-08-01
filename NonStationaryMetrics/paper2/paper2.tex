@@ -41,7 +41,7 @@
 ergosphere trichotomy, separatrices, and adiabatic response}
 
 \author{Iman Rosignoli}
-\address{University of Pavia, Pavia, Italy}
+\address{Department of Physics, University of Pavia, Via A.\ Bassi 6, 27100 Pavia, Italy}
 \ead{iman.rosignoli01@universitadipavia.it}
 
 \begin{abstract}
@@ -49,31 +49,28 @@ We develop the relativistic controlled-rail brachistochrone---the fastest constr
 worldline reaching a fixed spatial target at a free arrival clock---in the rotating,
 axisymmetric Thakurta--Kerr spacetime, the conformal Kerr geometry $g=A(\eta)^2 g_{\rm
 Kerr}$. The controlled-rail principle, its existence/normality and non-autonomous
-Hamilton--Jacobi verification, and the Killing--CKV--Kodama selector hierarchy are
-established in the companion paper (with the spherically symmetric FLRW and Vaidya cases);
-here frame dragging, an ergosphere and genus-two spectral curves appear. We derive the
-breathing-indicatrix Hamiltonians and the conformal-time ($\eta$) brachistochrone---the
-arrival branch $t\equiv\eta$, distinct from proper time $\tau$; closed-form equatorial
-separatrices in Weierstrass functions, continued through the ergosphere in Doran
-coordinates, with a trichotomy and an analytic cusp theorem; the rotational and conformal
-plunge inversion, and an existence theorem for the conformal inversion, under a
-same-launch comparison; and the first-order adiabatic correction, on-shell and off-shell,
-canonically re-derived from the extended Hamiltonian and verified against the true
-non-autonomous flow to $O(\varepsilon^2)$, its weight-two content a length-two iterated
-Abelian integral on the genus-two curve. \emph{Status.} The closed-form separatrices and
-cusp theorem and the on-shell reduction are proved; the fixed-endpoint no-inversion is a
-theorem for $r_0\le R_\ast(E,a)$, machine-certified at representative $r_0$, conjectural
-in general; interior-ergosphere optimality and a rigorous higher-genus polylogarithm
-framework remain open. Algebraic identities are confirmed in Mathematica; genus-two
-theta/nome evaluations use Sage with \texttt{abelfunctions}.
+Hamilton--Jacobi verification, and the Killing, conformal-Killing and Kodama selector
+hierarchy are established in the companion paper (with the spherically symmetric FLRW and
+Vaidya cases); here frame dragging, an ergosphere and genus-two spectral curves appear. We
+derive the breathing-indicatrix Hamiltonians and the conformal-time ($\eta$)
+brachistochrone---the arrival branch $t\equiv\eta$, distinct from proper time $\tau$;
+closed-form equatorial separatrices in Weierstrass functions, continued through the
+ergosphere in Doran coordinates, with a trichotomy and an analytic cusp theorem; the
+rotational and conformal plunge inversion, and an existence theorem for the conformal
+inversion, under a same-launch comparison; and the first-order adiabatic correction,
+on-shell and off-shell, canonically re-derived from the extended Hamiltonian and verified
+against the true non-autonomous flow to $O(\varepsilon^2)$, its weight-two content a
+length-two iterated Abelian integral on the genus-two curve. The closed-form separatrices
+and cusp theorem and the on-shell reduction are proved; the fixed-endpoint no-inversion is
+established in the stated analytic domain ($r_0\le R_\ast(E,a)$) and machine-certified at
+representative $r_0$, while its unrestricted extension remains conjectural;
+interior-ergosphere optimality and a rigorous higher-genus polylogarithm framework remain
+open.
 \end{abstract}
 
 \maketitle
-% widen ToC number box so the wide "Appendix A" label does not overlap titles
-\makeatletter
-\renewcommand{\numberline}[1]{#1\enspace}
-\makeatother
-{\hypersetup{linkcolor=black}\tableofcontents}
+% Table of contents removed for the research-paper submission (the running
+% header no longer displays CONTENTS; the journal reformats the accepted article).
 
 % ======================================================================
 \section{Introduction}
@@ -169,7 +166,7 @@ the branch compared with $\tau$ in the plunge inversion
 $H_{t0}=H_t|_{p_r=0}$ enters. All three are regular through the
 ergosphere ($f=0\Rightarrow R^2=\bar v^2\Delta/\bar P>0$) and degenerate only at
 the horizon $\Delta=0$, which is therefore conformally invariant---independent of
-$A$ and $\Ehat$. The three branches share this ellipse: $t$ follows the same
+$A$ and $\Ehat$. The two spatial families share this ellipse: $t$ follows the same
 curves as $\eta$ through $t=\int A\,\dd\eta$, while $\tau$ is Riemannian-pure, the
 wind cancelling the gravitomagnetic term, so it survives the expansion
 (Fig.~\ref{fig:th-branches}).
@@ -224,8 +221,9 @@ Hamiltonian~\eqref{eq:Heta} remains regular there; the limits $\Ehat\to\infty$
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_rami.png}
-    \caption{The three branches: $\tau$ bounces (mirror pair, no wind), $\eta$
-    spirals (gravitomagnetic wind); breathing conformal scalars $n,k_\tau$.}
+    \caption{The two distinct spatial families: the arrival branch $t\equiv\eta$, which
+    spirals under the gravitomagnetic wind, and the proper-time branch $\tau$ (mirror pair),
+    for which the wind cancels; breathing conformal scalars $n,k_\tau$.}
     \label{fig:th-branches}
 \end{figure}
 
@@ -261,7 +259,7 @@ wind $\beta=-2Ma/(rf)\,\dd\varphi$ is rigid.
     \end{tabular}
 \end{table}
 
-\subsection{Semi-analytic first-order adiabatic orbit shape}
+\subsection{On-shell first-order adiabatic orbit shape}
 \label{sec:adiabatic}
 By Lemma~I.4 of the companion Paper~I, every source of the form
 $\partial_\lambda F=N_\lambda/S^{3/2}$ reduces \emph{uniquely} to the Abelian basis
@@ -269,8 +267,8 @@ $\{U_k=\int r^k/\sqrt S\,\dd r\}$ through the degree-ten polynomial identity (a
 nonsingular $11\times11$ linear system, no fit); for Thakurta--Kerr the slow parameter is
 $A$ and the source is generated by $E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm
 eff}\partial_{J_{\rm eff}}$. We give the resulting coefficients below and do not repeat
-the reduction lemma. The dynamical quasi-constant (developed in a companion 3D analysis) drifts; the
-\emph{orbit shape} $\varphi(r,A)$ itself admits a companion first-order adiabatic
+the reduction lemma. The dynamical quasi-constant drifts; the
+\emph{orbit shape} $\varphi(r,A)$ itself admits a first-order adiabatic
 form~\cite{BornFock1928,BenderOrszag1999} that is explicit up to a single higher
 transcendental. Writing the frozen integrand as
 $F(r;E_{\rm eff},J_{\rm eff})=\dd\varphi/\dd r$ (Eq.~\eqref{eq:t-K} for the
@@ -359,7 +357,8 @@ and differ \emph{only} in the branch curve and the clock.
     \caption{The two branches of the adiabatic solution~\eqref{eq:phi-adiab}. They
     share $\varphi=\varphi_0+\varepsilon[\mathcal{C}+\psi]$;
     only the branch curve $\mathcal{R}^2$, the frozen numerator $K$
-    ($F=K/\mathcal{R}$), and the clock $\dd\eta/\dd r$ change. Here
+    ($F=K/\mathcal{R}$), and the branch clock $\dd T_{\rm br}/\dd r$ (with $T_t=t$,
+    $T_\tau=\tau$) change. Here
     $\Delta=r^2-2Mr+a^2$, $DE=(E^2-1)r+2M$, all at $E=E_{\rm eff}=\Ehat/A$;
     $\varphi_0,\partial_E\varphi_0$ are Kleinian/abelian on $y^2=\mathcal{R}^2$, and
     $\psi=\tfrac12\Ehat\sum Q_{kj}W_{kj}$ has algebraic coefficients times the
@@ -371,7 +370,7 @@ and differ \emph{only} in the branch curve and the clock.
         \hline
         curve $\mathcal{R}^2$ & $R_6=r\,Q_2\,DE$ & $S=r(r{-}2M)DE[r\Delta{-}J^2DE]$\\
         numerator $K$ & $r\,DE\,(J(r{-}2M){+}2Ma)/\Delta$ & $J\,r(r{-}2M)DE/\Delta$\\
-        clock $\dd\eta/\dd r$ & $\dfrac{\rho_t}{\sqrt{R_6}}$ (2nd$+$3rd kind)
+        clock $\dd T_{\rm br}/\dd r$ & $\dfrac{\rho_t}{\sqrt{R_6}}$ (2nd$+$3rd kind)
             & $\dfrac{r^2(r-2M)}{\sqrt{S}}$ (2nd kind)\\[4pt]
         off-curve cover & none & none\\
         timing prefactor & $1$ & $A^{-2}$\\
@@ -396,7 +395,7 @@ polynomial ($N_E=EJ\,r^4(r-2M)^2\,DE$, and $N_J$ its angular analogue; the horiz
 factor $\Delta$ cancels identically in both) gives
 $(E\partial_E+J\partial_J)\varphi_0=\mathcal{A}/\mathcal{R}+\sum_{k=0}^{4} C_k U_k$,
 $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$, and on the
-$\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$. The \emph{complete}
+$\tau$-branch $T_\tau=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$. The \emph{complete}
 first-order coefficient $\delta\varphi=\mathcal{C}+\psi=-\!\int(\Ehat\,\partial_E F
 +J\,\partial_J F)\,\eta\,\dd r$ then reorganizes, with \emph{no term discarded}, into
 \begin{equation}
@@ -719,7 +718,7 @@ the substitution $E\to E_{\rm eff}=\Ehat/A$ (and $J\to J/A$, the spin $a$ retain
 parameter (Sec.~\ref{sec:thakurta}). They are therefore the exact
 \emph{instantaneous} orbit shapes on a Thakurta--Kerr slice of given $A$; the
 running $A(\eta)$ makes the full problem non-autonomous---the quasi-constant
-drift of a companion 3D analysis, $K^{\rm TK}(\eta)=K^{\rm Kerr}(E_{\rm
+drift $K^{\rm TK}(\eta)=K^{\rm Kerr}(E_{\rm
 eff}(\eta))+O(A'/A)$---so a genuinely time-dependent trajectory is recovered by
 letting $E_{\rm eff}=E_{\rm eff}(\eta)$ run through this family, not by a single
 autonomous curve.
@@ -1179,7 +1178,7 @@ checked over the asymmetric-endpoint grids (Figs.~\ref{fig:asym-spin}--%
 All expressions below are at \emph{constant (frozen) conformal factor} $A$:
 stationary Kerr with $E\to E_{\rm eff}=\Ehat/A$, $J\to J/A$ (spin $a$ retained). They give
 the instantaneous orbit shape on a Thakurta--Kerr slice; the time dependence
-enters only through $E_{\rm eff}(\eta)$ (a companion 3D analysis).
+enters only through $E_{\rm eff}(\eta)$. The off-equatorial extension is left to future work.
 
 \paragraph{Curve conventions (fixed once for all letters).} Every letter
 below---the second-kind $U_k=\int r^k/\sqrt S\,\dd r$, the weight-two
@@ -1573,7 +1572,7 @@ exactly):
 
 Given the combined $C_k=\Ehat c_k^{E}+J c_k^{J}$, the weight-two
 assembly~\eqref{eq:psi-split} is mechanical: the clock supplies the vector $b$ (on
-the $\tau$-branch $\eta=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$), the algebraic
+the $\tau$-branch $T_\tau=U_3-2M\,U_2$, i.e.\ $b=(0,0,-2M,1,0)$), the algebraic
 weights are $Q_{kj}=C_kb_j-C_jb_k$, the weight-two
 letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
 $\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. The spherical Vaidya
@@ -1629,7 +1628,7 @@ data~\eqref{eq:randers-data} match the Kerr null Fermat metric to
 $\sim10^{-14}$. The equatorial Thakurta--Kerr flow reproduces the $A=1$ Kerr
 constants~\eqref{eq:kerr-conserved} to ten digits at $r=4,6,9$ ($a=0.9$, $E=1.2$),
 and the $a\to0$ limit the Thakurta--Schwarzschild flow to $10^{-12}$; the $3+1$
-Hamiltonian (companion 3D analysis) reduces to the equatorial one exactly, and conserves
+Hamiltonian reduces to the equatorial one exactly, and conserves
 $L^2$ to $6\times10^{-13}$ at $a=0$. The conformal-Killing rail charge is held to
 $|{-}u\cdot\partial_\eta-\Ehat|<7\times10^{-16}$ along the rail, and the static
 inversion/trichotomy colormap agrees with the analytic
@@ -1762,7 +1761,7 @@ $J\to J/A$ (spin $a$ retained); the control parameter is now $A$ (equivalently $
 the separatrix $\Jc(E_{\rm eff})$ drifts as $A$ runs. Two curves carry the two clocks.
 \emph{Proper-time ($\tau$) branch:} curve $S=r(r-2M)DE\,(r\Delta-J^2DE)$, source
 $N_\tau=\partial_E(K/\sqrt S)S^{3/2}=E\,J\,r^4(r-2M)^2DE$, clock
-$\eta=U_3-2MU_2$; the block form and residue formulae are those above with
+$T_\tau=U_3-2MU_2$; the block form and residue formulae are those above with
 $N\to N_\tau$. Differentiation along the degeneration family uses $N_\tau\to N_\tau+(\dd\Jc/\dd E)N_J$ with
 $N_J=r^3(r-2M)^2DE^2$ ($\Delta$ cancelling identically) and
 $\dd\Jc/\dd E=-E\,\Jc\,r_d/DE(r_d)=-152.96$ (at $M=1,\,a=9/10,\,E_{\rm eff}=6/5$;
@@ -2056,23 +2055,30 @@ and no such crossing occurs.
 
 
 \section*{Data availability}
-The complete numerical and symbolic codebase underlying this work is openly available
-under the MIT license, archived at the persistent DOI~\cite{Rosignoli2026Code}
-\begin{center}
-\url{https://doi.org/10.5281/zenodo.21707378}
-\end{center}
-(tagged release \texttt{v1.0}), and developed in the GitHub repository
+The numerical data and the symbolic and numerical code supporting the findings of this
+study are openly available under the MIT licence in the Zenodo repository
+\emph{NonStationaryBrachistochrone}, version~1.0, at the persistent
+DOI~\cite{Rosignoli2026Code} (\url{https://doi.org/10.5281/zenodo.21707378}). The
+development history is available in the associated GitHub repository
 \url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}.
 
 \ack
-The author thanks the University of Pavia for a stimulating environment and received no
-external funding. AI assistants (GPT and Claude) were used to assist with symbolic
-derivations, numerical implementation and manuscript preparation; all results were
-verified independently by the author, who takes full responsibility for the content. The
+The author thanks the University of Pavia for a stimulating environment. OpenAI
+GPT-5.6 (Sol) and Anthropic Claude (Opus~4.8) were used to assist with symbolic-algebra
+checks, numerical-code development, and language and structural editing of the manuscript;
+all AI-assisted output was critically reviewed and independently verified by the author,
+who takes full responsibility for the accuracy, originality and integrity of the work. The
 closed-form and hyperelliptic computations relied on \textsc{SageMath}~\cite{SageMath}
 with \textsc{abelfunctions}~\cite{abelfunctions}, and on
 \textsc{SymPy}~\cite{SymPy}, \textsc{NumPy}~\cite{NumPy}, \textsc{SciPy}~\cite{SciPy} and
 \textsc{Matplotlib}~\cite{Matplotlib}.
+
+\medskip\noindent\textit{Funding:} This research received no external funding.
+
+\medskip\noindent\textit{Competing interests:} The author declares no competing interests.
+
+\medskip\noindent\textit{ORCID iD:} Iman Rosignoli,
+\url{https://orcid.org/0009-0004-4536-0285}.
 
 \nocite{*}
 \bibliographystyle{iopart-num}

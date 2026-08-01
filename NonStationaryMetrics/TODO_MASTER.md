@@ -455,3 +455,23 @@ Verdetto GPT sceso a minor-to-moderate; fix peso-due/HJB/endpoint riconosciuti "
 - Propagazione testo: `TODO_main11_text_propagation.md`
 - Scripts chiusura: `KerrSessionScripts/offshell_tbranch_*.py`, `physics_anchor_offshell_closed.py`
 - Tracking: `ThakurtaMetric/tk_sep_offshell_divergence.py`, `tk_sep_tracking_vs_trueflow.py`
+
+### J-nonies. Review editoriale finale CQG (2026-08-01) — blocco "faccio io" eseguito
+Status scientifico frozen; solo editoriale. Fatto:
+- [x] **P0: rimosso ToC** in entrambi → l'header "CONTENTS" sparito (verificato: ora mostra il titolo).
+- [x] **Abstract riscritti** (I e II): FLRW espanso, CKV per esteso, "(Perlick 1991)"/Mathematica/Zenodo/Sage
+      rimossi, "Status." integrato in prosa, "evaporative inversion"→"inversion in the frozen-clock branch
+      comparison", frasi di chiusura/status di GPT.
+- [x] **Paper I**: §4.3 rinominata (frozen-clock comparison); `teleological`→`endpoint-sensitive`; thrust
+      remark 2-frasi (Δv fuori dal corpo); `J_deg` consistente (2 occorrenze "separatrix |J|=Jc"→genus-deg).
+- [x] **Paper II**: Fig.1 caption "due famiglie spaziali" (t≡η, τ); "Semi-analytic"→"On-shell first-order";
+      rimosse 4 "companion 3D analysis" (+ "off-equatorial extension left to future work"); τ-branch clock
+      `η=U_3−2MU_2`→`T_τ` (3 punti) + riga tabella "clock dη/dr"→"dT_br/dr" con T_t=t,T_τ=τ.
+- [x] **Metadata**: affiliazione completa (Dept of Physics, Via A. Bassi 6, 27100 Pavia); **ack con modelli
+      esatti** (OpenAI GPT-5.6 (Sol), Anthropic Claude (Opus 4.8)); **Funding** + **Competing interests** +
+      **ORCID 0009-0004-4536-0285**. Data availability standardizzata (wording IOP).
+- Ricompilati: **Paper I 37pp, Paper II 49pp, 0 undefined**.
+- NON fatto (per scelta/input): §4 paragrafi contesto fisico (add material, opzionale); §6.5 sottodivisione
+  sezione adiabatica lunga; §7 densità frasi (soggettivo); §8 restyle grafico figure (font/greyscale);
+  §9 stile riferimenti globale (Fig.→figure, grande mecc.); §12 DOI companion (serve assegnazione preprint);
+  keywords nel sistema di submission (ORCID già nel PDF).
