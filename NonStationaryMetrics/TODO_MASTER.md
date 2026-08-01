@@ -489,3 +489,17 @@ Status scientifico frozen; solo editoriale. Fatto:
       2.3 Fixed-charge and fixed-endpoint perturbations, 2.4 Frozen penetration phase diagram
       (3 \paragraph→\subsection, nessuna equazione spostata).
 - Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**.
+
+### J-undecies. Final editorial checklist (2026-08-01) — pronti per submission
+- [x] #1 DOI companion verificati (I 21739998, II 21740000), nessun placeholder.
+- [x] #2 Running header corto via \markboth (no più troncatura del titolo lungo). Verificato render.
+- [x] #3 η riservato al conforme: residui `T_br`/`T_τ` in Paper II (η(r) generico 303-305, "clock η" 330,
+      tabella η=t/η=τ 597). Nessun η=proper-time residuo.
+- [x] #4 "evaporative inversion" residuo (paper1:1017) → "inversion in the frozen advanced/retarded clock
+      comparison".
+- [x] #5 J_deg vs J_c: già coerente in corpo+appendici (nessun residuo).
+- [x] #6 Rimosso doppione thrust (paper1:265 "Maintaining the controlled invariant..." duplicato).
+- [x] #7 Figure: label "angular momentum" solo in script di verifica (non figure del paper) → J già ok;
+      font della figura indicatrice aumentati (legend 6→8, assi 9, tick 8), rigenerata fig_indicatrici.
+- [x] #8 AI names esatti: OpenAI GPT-5.6 (Sol), Anthropic Claude (Opus 4.8).
+- [x] #9 Final pass: **0 undefined, 0 multiply-defined**, DOI/hyperlink/numerazione ok. Paper I 38pp, II 49pp.

@@ -201,7 +201,7 @@ for aa, c in zip((1.0, 1.5, 2.0, 2.75), plt.cm.viridis([0.2, 0.45, 0.7, 0.9])):
                             label=f'$a={aa}$'))
 ax.plot(0, 0, 'k+', ms=8)
 ax.set_title('FLRW ($\\hat E=3$): circles,\nno wind; freezing $a\\to\\hat E$')
-ax.legend(fontsize=6, loc='upper right')
+ax.legend(fontsize=8, loc='upper right')
 ax.set_xlim(-1.15, 1.15)
 ax.set_ylim(-1.15, 1.15)
 
@@ -218,7 +218,7 @@ ax.plot(0, 0, 'k+', ms=8)
 ax.axvline(0, color='k', lw=0.5)
 ax.set_title('Vaidya (EF, $E=1.2$): ingoing radial\nwind $f-E^2<0$; '
              '$m(v)$ moves everything')
-ax.legend(fontsize=6, loc='upper right')
+ax.legend(fontsize=8, loc='upper right')
 ax.set_xlim(-3.6, 1.2)
 ax.set_ylim(-2.0, 2.0)
 
@@ -241,12 +241,13 @@ ax.plot(0, 0, 'k+', ms=8)
 ax.axhline(0, color='k', lw=0.5)
 ax.set_title(f'Thakurta-Kerr ($r={rv}$, $s={s_n}$): angular\nwind '
              '(dragging); $A(\\eta)$ shrinks it')
-ax.legend(fontsize=6, loc='upper right')
+ax.legend(fontsize=8, loc='upper right')
 ax.set_xlim(-1.3, 1.3)
 ax.set_ylim(-0.6, 1.5)
 for ax in axs:
-    ax.set_xlabel("$r'$")
-    ax.set_ylabel("$r\\,\\phi'$")
+    ax.set_xlabel("$r'$", fontsize=9)
+    ax.set_ylabel("$r\\,\\phi'$", fontsize=9)
+    ax.tick_params(labelsize=8)
     ax.set_aspect('equal')
 fig.suptitle('Rail indicatrices (linear constraint $\\cap$ normalization'
              '\n= ellipse): the unifying formalism')

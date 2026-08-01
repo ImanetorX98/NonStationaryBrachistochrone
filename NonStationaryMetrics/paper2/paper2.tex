@@ -71,6 +71,9 @@ open.
 \maketitle
 % Table of contents removed for the research-paper submission (the running
 % header no longer displays CONTENTS; the journal reformats the accepted article).
+% Concise running head to avoid truncation of the long title.
+\markboth{Brachistochrones in conformal Kerr spacetimes}%
+         {Brachistochrones in conformal Kerr spacetimes}
 
 % ======================================================================
 \section{Introduction}
@@ -300,9 +303,9 @@ i.e.\ the Euler scaling operator $(E\partial_E+J\partial_J)F$ acting through bot
 drifting charges (the $J\,\partial_J F$ term is required by axisymmetric momentum
 conservation and was absent in an earlier form; Vaidya, whose parameter is the
 mass rather than a conformal factor, keeps only its $\partial_m F$ source). Here
-$\eta(r)$
+$T_{\rm br}(r)$
 is the clock the orbit accumulates along the frozen slice: coordinate time
-$\eta=t(r)$ on the $t$-branch, proper time $\eta=\tau(r)=\int\!L_\tau\,\dd r$ with
+$T_{\rm br}=t(r)$ on the $t$-branch, proper time $T_{\rm br}=\tau(r)=\int\!L_\tau\,\dd r$ with
 $L_\tau=\sqrt{Q/w}$, $Q=\Delta\varphi'^2-2a\beta\varphi'+r^2/(r^2+a^2)$, on the
 $\tau$-branch (the extra $A^{-2}$ of the proper-time functional affects the
 \emph{timing}, not the shape, so equation~\eqref{eq:phi-adiab} is common to both
@@ -327,7 +330,7 @@ $c_k^{E}$, requiring no new building block
 $\mathcal{C}(r)=-\tfrac12\big(E\partial_E+J\partial_J\big)\varphi_0\,\eta(r)$ is
 a product of depth-one objects and is closed in the Kleinian/abelian class.
 
-\paragraph{Clock differentials.} The clock $\eta$ enters $\mathcal{C}$ through its
+\paragraph{Clock differentials.} The branch clock $T_{\rm br}$ enters $\mathcal{C}$ through its
 differential, which we obtain in closed form on the branch curve. On the
 $\tau$-branch the proper-time density reduces to a \emph{rational} second-kind
 differential,
@@ -591,7 +594,7 @@ map to the fixed-endpoint problem.
     \label{tab:adiab-valid}
     \begin{tabular}{lcc}
         \hline\hline
-        $\varepsilon=A'/A$ & $t$-branch ($\eta=t$) & $\tau$-branch ($\eta=\tau$)\\
+        $\varepsilon=A'/A$ & $t$-branch ($T_{\rm br}=t$) & $\tau$-branch ($T_{\rm br}=\tau$)\\
         \hline
         $0.005$ & $1.4\times10^{-6}$ & $2.5\times10^{-8}$\\
         $0.02$  & $5.6\times10^{-6}$ & $1.0\times10^{-7}$\\
