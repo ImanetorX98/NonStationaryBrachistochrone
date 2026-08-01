@@ -179,9 +179,9 @@ print()
 print("=" * 72)
 print("[V4] scan di timing: r_min vs istante d'arrivo v1")
 print("=" * 72)
-mus = [(-0.01, 'C0', 'evapora $\\mu=-0.01$'),
-       (0.0, 'k', 'statico $\\mu=0$'),
-       (0.01, 'C3', 'accresce $\\mu=+0.01$')]
+mus = [(-0.01, 'C0', 'formal negative-rate continuation, $\\mu=-0.01$'),
+       (0.0, 'k', 'static ingoing model, $\\mu=0$'),
+       (0.01, 'C3', 'accreting ingoing model, $\\mu=+0.01$')]
 v1_grid = np.linspace(25.0, 70.0, 10)
 curve = {}
 for mu_n, _, _ in mus:

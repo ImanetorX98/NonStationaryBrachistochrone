@@ -432,6 +432,21 @@ Verdetto GPT sceso a minor-to-moderate; fix peso-due/HJB/endpoint riconosciuti "
       in paper/Immagini (via legenda "evapora"/"accretion-evaporation rate").
 - Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**.
 
+### J-octies. Memo GPT chiusura "paper1-7/paper2-7" (2026-08-01) — 4 punti finali → congelabili
+- [x] **P0: Figs 8-9 + Fig 6 di Paper I rigenerate.** `vaidya_brachistochrone_vparam.py` label
+      `evapora/statico/accresce`→`formal negative-rate continuation / static ingoing model / accreting
+      ingoing model` (fig_vaidya_bounce + fig_vaidya_timing); `plunge_vaidya_t_tau.py` asse
+      "accretion rate"→"ingoing mass-rate parameter" (fig_vaidya_plunge_t_tau). Rieseguiti + copiati,
+      verificato visivamente (inglese).
+- [x] **P1 §3: "The physical asymmetry is subtler"** → "The formal advanced/retarded frozen-clock asymmetry
+      is subtler..."; 684 "accretion–evaporation asymmetry"→"advanced/retarded frozen-clock asymmetry".
+- [x] **P1 §4: Paper II App B** ultimo tracking: "Tracking uses..."→"Differentiation along the degeneration
+      family uses..."; `b_3^{track}`→`b_3^{fam}`. Grep positivi = 0 (resta solo root-tracking numerico).
+- [x] **P1 §5: η riservato al conforme.** `η=U_3−2m U_2` (clock proper-time Vaidya) → `T_τ` in 6 punti
+      (§4, App A, App B); l'η conforme FLRW/TK/pointer invariato. Notazionale, numeri invariati.
+- P2 (non bloccanti): thrust 2-frasi, marcatura righe TK Table 1 (utente le tiene), placeholder DOI.
+- Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**, figure inglesi. GPT: congelabili.
+
 ---
 ### Riferimenti
 - Referee: `REFEREE_REPORT_CURRENT_2026-07-22.md` (13 issue)

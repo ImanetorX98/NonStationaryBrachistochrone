@@ -681,7 +681,7 @@ the ingoing/outgoing character of the flux, so to this (static, frozen-clock) or
 is unchanged under evaporation. The apparent linear-model ``inversion'' from flipping
 $m'<0$ in the \emph{ingoing} model is an unphysical extrapolation to $m\le0$. We do
 \emph{not} here solve the full outgoing optimal-control problem with its own
-Hamiltonians, costates and transversality: the accretion--evaporation asymmetry
+Hamiltonians, costates and transversality: the advanced/retarded frozen-clock asymmetry
 [Eq.~\eqref{eq:vaidya-asymmetry}] is a clock decomposition ($v\!\leftrightarrow\!u$,
 the tortoise $r_*$ changing sign) of the frozen first-order correction, not a complete
 outgoing boundary-value solution. Accordingly we state the absence of an evaporative
@@ -740,10 +740,10 @@ to $10^{-15}$). The clock is now the \emph{advanced time}: from $v=t+r_*$,
 \end{equation}
 the tortoise term injecting a \emph{horizon logarithm}. This is the advanced-time
 (native) branch; the \emph{proper-time} branch instead uses the second-kind clock
-$\dd\tau/\dd r=r^2(r-2m)/\sqrt S$, i.e.\ $\eta=U_3-2m\,U_2$, $b=(0,0,-2m,1,0)$ (no
+$\dd\tau/\dd r=r^2(r-2m)/\sqrt S$, i.e.\ $T_\tau=U_3-2m\,U_2$, $b=(0,0,-2m,1,0)$ (no
 horizon log), and closes by the very same
 universal on-shell assembly established here (specialized to the Vaidya clock)---$\delta\varphi_\tau/\dot m=\tfrac12\sum_{k<j}Q_{kj}
-W_{kj}-\eta(\mathcal{A}^m/\sqrt S+\tfrac12\sum c_k^m U_k)+\sum_j b_j\mathcal{I}_j$ with
+W_{kj}-T_\tau(\mathcal{A}^m/\sqrt S+\tfrac12\sum c_k^m U_k)+\sum_j b_j\mathcal{I}_j$ with
 $Q_{kj}=c_k^m b_j-c_j^m b_k$, all coefficients algebraic (verified to
 $10^{-14}$). The two canonical clocks of the ingoing problem are therefore the
 \emph{advanced null time} $v$ (adapted to the Kodama selector $K=\partial_v$, the
@@ -888,7 +888,7 @@ $b_2=4N_m(e_i)/[(e_i-r_d)^3 Q_4'(e_i)^2]$; the additive constant closes at the
 regular point $z_\infty$, where $R$ \emph{vanishes} as $1/r$, giving
 $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12 b_3^a
 \wp'(z_\infty-a)]$, and the analogous constant of the clock differential
-$\eta'$ from its value at the regular turning image $z=0$). The weight-two blocks
+$T_\tau'$ from its value at the regular turning image $z=0$). The weight-two blocks
 $W_{kj}=2\int U_k\,\dd U_j-U_kU_j$ close on the Brown--Levin elliptic
 polylogarithm, whose transcendental core is the length-two Kronecker--Eisenstein
 iterated integral~\cite{BrownLevin2011}
@@ -926,10 +926,10 @@ $\zeta(z-a)-\zeta(z+a)=-2\zeta(a)+\wp'(a)/[\wp(z)-\wp(a)]$.
 
 \paragraph{Advanced/retarded frozen-clock decomposition.} At first order $\delta\varphi$ is
 linear in $\dot m$, so na\"ively $\dot m\to-\dot m$ merely flips its sign. The
-physical asymmetry is subtler: accretion ($\dot m>0$) is \emph{ingoing} Vaidya,
-clocked by the \emph{advanced} time $v=t+r_*$, whereas evaporation ($\dot m<0$) is
-\emph{outgoing} Vaidya, clocked by the \emph{retarded} time $u=t-r_*$
-($\dd s^2=-f\dd u^2-2\dd u\,\dd r$). The frozen reduction $\partial_m F$ is identical
+formal advanced/retarded frozen-clock asymmetry is subtler: accretion ($\dot m>0$) is
+described by the \emph{ingoing} Vaidya model and its \emph{advanced} clock $v=t+r_*$,
+whereas the \emph{retarded} clock $u=t-r_*$ ($\dd s^2=-f\dd u^2-2\dd u\,\dd r$) belongs to
+the outgoing geometry. The frozen reduction $\partial_m F$ is identical
 (it depends only on $S$); only the clock changes, and $v\leftrightarrow u$ flips the
 sign of the tortoise $r_*$. Splitting the clock into its bulk and tortoise parts,
 $v=E\,U_3+r_*$ with $r_*=(r-r_0)+2m\ln\!\frac{r-2m}{r_0-2m}$,
@@ -1075,7 +1075,7 @@ exactly):
 \end{table}
 
 Given the $c_k$, the weight-two assembly is mechanical: the clock supplies the vector
-$b$ (proper-time $\eta=U_3-2m\,U_2$, i.e.\ $b=(0,0,-2m,1,0)$), the algebraic
+$b$ (proper-time $T_\tau=U_3-2m\,U_2$, i.e.\ $b=(0,0,-2m,1,0)$), the algebraic
 weights are $Q_{kj}=c_kb_j-c_jb_k$, the weight-two
 letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
 $\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
@@ -1216,9 +1216,9 @@ source $N=\Ehat N_E+J N_J$ in place of $N_m$, for the rotating Thakurta--Kerr
 separatrices of the companion Paper~II.
 
 \paragraph{First order, proper-time branch (verified to $10^{-9}$).}
-Clock $\eta=U_3-2mU_2$; block form
+Clock $T_\tau=U_3-2mU_2$; block form
 \begin{equation}
-\delta\varphi_\tau=\tfrac12\,\tilde G(z)\,\eta(r)
+\delta\varphi_\tau=\tfrac12\,\tilde G(z)\,T_\tau(r)
 +\tfrac12\sum_{i<j}(c_i d_j-c_j d_i)\,A[e_i,e_j],
 \end{equation}
 $A[e_i,e_j]=\int(e_i\,\mathrm{Pe}_j-e_j\,\mathrm{Pe}_i)\dd z$ the antisymmetric
