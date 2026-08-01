@@ -29,9 +29,11 @@ PRD) is retained as the reference version.
 - **Paper I** — *Controlled-rail brachistochrones in non-stationary spacetimes: conformal
   symmetry, Kodama energy, and Vaidya dynamics* (`paper1/paper1.tex`). Spherically
   symmetric sector: the controlled-rail foundations, FLRW, and Vaidya.
+  Zenodo preprint: [10.5281/zenodo.21739998](https://doi.org/10.5281/zenodo.21739998).
 - **Paper II** — *Brachistochrones in conformal Kerr spacetimes: ergosphere trichotomy,
   separatrices, and adiabatic response* (`paper2/paper2.tex`). Axisymmetric sector:
   Thakurta–Kerr. Its control-theory foundations are cited from Paper I.
+  Zenodo preprint: [10.5281/zenodo.21740000](https://doi.org/10.5281/zenodo.21740000).
 
 ### Which scripts belong to which paper
 
