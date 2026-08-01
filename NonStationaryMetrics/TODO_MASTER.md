@@ -475,3 +475,17 @@ Status scientifico frozen; solo editoriale. Fatto:
   sezione adiabatica lunga; §7 densità frasi (soggettivo); §8 restyle grafico figure (font/greyscale);
   §9 stile riferimenti globale (Fig.→figure, grande mecc.); §12 DOI companion (serve assegnazione preprint);
   keywords nel sistema di submission (ORCID già nel PDF).
+
+### J-decies. CQG editoriale — contesto + stile riferimenti + sottodivisione (2026-08-01)
+- [x] **§4 contesto fisico**: paragrafo "Beyond the brachistochrone..." in intro Paper I; "In the rotating
+      case the ergosphere..." in intro Paper II; frase di significato fisico a chiusura di entrambe le
+      Conclusions. (+ fix CKV bare nell'intro roadmap di Paper I.)
+- [x] **§9 stile riferimenti IOP** (globale, entrambi): Fig.~→figure~, Figs.~→figures~, Sec.~→section~,
+      Secs.~→sections~, Eq.~→equation~, Eqs.~→equations~, App.~C→appendix~C; maiuscole a inizio frase
+      gestite (regex ". "/paragrafo/riga). "Appendix~C of Paper II" letterali (companion) lasciati.
+      Preservati \ref/\eqref e la numerazione. 0 undefined.
+- [x] **§6.5 sottodivisione** sezione adiabatica lunga di Paper II (§2): da 1 subsection a 4 —
+      2.1 On-shell adiabatic response, 2.2 Complete first-order response and true-flow validation,
+      2.3 Fixed-charge and fixed-endpoint perturbations, 2.4 Frozen penetration phase diagram
+      (3 \paragraph→\subsection, nessuna equazione spostata).
+- Ricompilati: **Paper I 38pp, Paper II 49pp, 0 undefined**.
