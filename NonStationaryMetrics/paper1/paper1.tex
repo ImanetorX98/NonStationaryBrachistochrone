@@ -53,16 +53,17 @@ non-autonomous. We address this by formulating the brachistochrone as a
 \emph{controlled-rail} optimal-control problem, in which the invariant $-u\cdot W=\Ehat$ is
 actively maintained along the worldline by a selector $W$ that follows a Killing $\to$
 conformal-Killing $\to$ Kodama hierarchy and reduces to the \emph{Kodama} vector when no
-timelike Killing field survives. We prove that this construction is a legitimate
-Pontryagin problem---with existence, normality, and a non-autonomous Hamilton--Jacobi
-verification criterion in place of the stationary conservation law---and then solve two
-spherically symmetric non-stationary cases in closed form: spatially flat
-Friedmann--Lema\^itre--Robertson--Walker (FLRW) and the ingoing Vaidya dynamical black
-hole. For Vaidya we obtain the plunge phenomenology and a first-order adiabatic correction
-in closed special-function form, verified against the true non-autonomous flow; the
-construction cleanly separates the effects of spatial curvature from those of radial mass
-flow. The rotating, axisymmetric conformal-Kerr (Thakurta--Kerr) application is developed
-in a companion paper.
+timelike Killing field survives. We show that this construction is a legitimate
+Pontryagin problem---establishing existence and normality on a regular timelike-selector
+domain and a non-autonomous Hamilton--Jacobi \emph{verification} criterion (global
+minimisation being conditional, not automatic)---and then derive the extremal equations
+and their closed representations in two spherically symmetric non-stationary cases:
+spatially flat Friedmann--Lema\^itre--Robertson--Walker (FLRW) and the ingoing Vaidya
+dynamical black hole. For Vaidya we obtain the plunge phenomenology and a complete
+first-order adiabatic correction, verified against the true non-autonomous flow, that
+separates the spatial-curvature effects of the FLRW base from the radial mass-flow effects
+of the dynamical horizon. The rotating, axisymmetric conformal-Kerr (Thakurta--Kerr)
+application is developed in a companion paper.
 \end{abstract}
 
 \maketitle
@@ -82,16 +83,21 @@ launch event to a fixed spatial target, at a \emph{free} value of the arrival cl
 supplies a conserved rail energy, and the problem reduces to Fermat's principle and to
 optical (Randers--Zermelo--Finsler) geometry
 \cite{Perlick1991,PerlickRayOptics,Kovner1990,Randers1941,GibbonsWerner2008,GibbonsRanders2009,BaoRoblesShen}.
+Existence, multiplicity and Morse theory for these stationary arrival- and travel-time
+brachistochrones, together with their sub-Riemannian and Fermat-principle formulations,
+are by now well developed
+\cite{GiannoniPiccioneVerderesi1997,GiannoniPiccioneTausk2002,GiannoniPiccione2002,CaponioJavaloyes2026}.
 The physically central regimes of gravitation, however---cosmological expansion,
 gravitational collapse, accretion---are \emph{not} stationary.
 
-When the geometry itself evolves, the ingredients that make the stationary problem
-tractable disappear: there is no timelike Killing field, hence no conserved energy to
-label the extremals, and the variational problem is genuinely non-autonomous. Whether a
-well-posed fastest constrained worldline even exists in such spacetimes, what invariant
-should replace the Killing energy, and how time dependence---as opposed to spatial
-curvature---reshapes the optimal path, have not been addressed. This is the question the
-present paper answers.
+These treatments all exploit stationarity---a prescribed observer-field energy, a
+conserved Killing charge, or a time-independent optical metric. When the background
+geometry itself evolves that structure disappears: there is no timelike Killing field, no
+conserved energy to label the extremals, and the reduced problem is genuinely
+non-autonomous, its ordinary Hamiltonian no longer an interior first integral. The
+difficulty we address is therefore specific: how to \emph{prescribe and maintain} a rail
+charge in an evolving spacetime, what field should supply it, and how time
+dependence---as opposed to spatial curvature---reshapes the optimal path.
 
 Our starting point is that the rail energy need not be a symmetry charge: it can be an
 invariant that is \emph{actively maintained} along the worldline. We formulate the
@@ -516,8 +522,9 @@ but no branch structure (figure~\ref{fig:flrw-var}).
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_flrw_variazionale.png}
-    \caption{Variational check: the comoving straight line minimizes
-    \emph{both} $T_t$ and $T_\tau$ (branch degeneracy).}
+    \caption{Numerical perturbation check: sinusoidal deformations of the comoving
+    straight line raise \emph{both} $T_t$ and $T_\tau$, consistent with the analytically
+    proved branch degeneracy---a local check, not a global-minimality proof.}
     \label{fig:flrw-var}
 \end{figure}
 
@@ -1019,7 +1026,8 @@ $2\mathcal{B}_{\rm hor}=12.225$ (each $\times|\dot m|$).
 \section{Conclusions}
 \label{sec:concl}
 \paragraph{Proved.} The non-stationary brachistochrone is a well-posed controlled-rail
-problem: the invariant $-u\cdot W=\Ehat$ is legitimate via Pontryagin's principle, with
+problem on the regular domain where the selector is timelike and the velocity indicatrix
+is nondegenerate: the invariant $-u\cdot W=\Ehat$ is legitimate via Pontryagin's principle, with
 $W$ fixed by the Killing--CKV--Kodama hierarchy and the Kodama energy conserved along
 the Vaidya rail even when free fall does not. Existence, normality, and the
 non-autonomous Hamilton--Jacobi verification criterion hold on the timelike-selector
@@ -1140,8 +1148,9 @@ Thakurta--Kerr map is in the companion paper).
 The closed forms and reductions above were checked symbolically and numerically. The
 Kodama energy is held to $|{-}u\cdot K-\Ehat|<7\times10^{-16}$ along the Vaidya rail; the
 stationary limit $m'=0$ reproduces the closed-form Schwarzschild ($a{=}0$ Kerr) orbit to
-$10^{-12}$ (figure~\ref{fig:vaidya-kerra0}); each branch minimizes its own travel time,
-$t$ and $\tau$ being distinct curves (figure~\ref{fig:verifmin}); and the first-order
+$10^{-12}$ (figure~\ref{fig:vaidya-kerra0}); each branch is a local minimizer of its own
+travel time within the tested perturbation family, $t$ and $\tau$ being distinct curves
+(figure~\ref{fig:verifmin}); and the first-order
 adiabatic correction closes to $O(\varepsilon^2)$ against the true non-autonomous flow
 (figure~\ref{fig:vaidya-offshell}). The rotating (Thakurta--Kerr) validations---Weierstrass
 separatrix, Kerr null Fermat data, Kerr constants---are reported in the companion paper.
@@ -1167,8 +1176,8 @@ separatrix, Kerr null Fermat data, Kerr constants---are reported in the companio
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_verifica_minimo_brachi.png}
-    \caption{Each branch minimizes its own travel time; $t$ and $\tau$ are
-    distinct curves.}
+    \caption{Local perturbation check: within the tested family each branch is a minimizer
+    of its own travel time; $t$ and $\tau$ are distinct curves.}
     \label{fig:verifmin}
 \end{figure}
 
@@ -1554,7 +1563,6 @@ with \textsc{abelfunctions}~\cite{abelfunctions}, and on
 \medskip\noindent\textit{ORCID iD:} Iman Rosignoli,
 \url{https://orcid.org/0009-0004-4536-0285}.
 
-\nocite{*}
 \bibliographystyle{iopart-num}
 \bibliography{../paper/refs,../paper/companionII}
 

@@ -517,3 +517,20 @@ Verdetto: problema di presentazione/positioning, non di matematica. Fatto su Pap
       "We stress that"→tolto, "sharp probe"→"quantitative probe". "genuinely/a genuine" tecnici lasciati.
 - Conclusione: già chiude col significato fisico (frase quantitative-probe).
 - Ricompilato: Paper I 38pp, 0 undefined. Paper II: si aspetta la risposta CQG prima di replicare.
+
+### J-terdecies. Codex CQG editorial review (major-revision, resubmit) — cluster testuale-gating (2026-08-03)
+Review su paper1-11 (post mio restructuring): loda abstract-domanda/intro-4-blocchi, spinge oltre. 4 condizioni-cancello.
+Fatto il cluster testuale/basso-rischio scelto dall'utente:
+- [x] **① Novelty + literature positioning**: aggiunte le citazioni della linea diretta (Giannoni–Piccione–
+      Verderesi 1997, Giannoni–Piccione–Tausk 2002, Giannoni–Piccione 2002 arrival-time GR, Caponio–Javaloyes
+      2026 survey) in refs.bib + intro. Rimosso il claim assoluto "have not been addressed"; novità ristretta
+      (mantenimento attivo carica-rail in background non-autonomo + Kodama + free-arrival Pontryagin + FLRW/Vaidya).
+- [x] **Abstract calibrato** (M11): "legitimate Pontryagin problem" ora esplicita "global minimisation
+      conditional, not automatic"; "solve in closed form"→"derive the extremal equations and their closed
+      representations"; "cleanly separates"→separazione concreta (spatial-curvature FLRW vs mass-flow Vaidya).
+- [x] **④ Calibrazione claim/caption**: fig 3 "minimizes both"→"numerical perturbation check ... a local
+      check, not a global-minimality proof"; fig A2/verifmin "minimizes its own travel time"→"local
+      perturbation check"; body idem; Conclusions "well-posed" qualificato col dominio timelike/nondegenere.
+- [x] **⑤ Bibliografia**: rimosso `\nocite{*}` → **69→44 voci (solo citate)**, 0 undefined.
+- Ricompilato Paper I 37pp, 0 undefined. Restano (parte strutturale, prossimo giro se serve): ② promuovere
+      Theorem I.5 nel corpo, ③ shorten §4.4 (funzioni speciali→appendici), Table 1 Paper-I-only, figure/Table A2.
