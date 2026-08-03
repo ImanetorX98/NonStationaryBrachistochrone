@@ -503,3 +503,17 @@ Status scientifico frozen; solo editoriale. Fatto:
       font della figura indicatrice aumentati (legend 6→8, assi 9, tick 8), rigenerata fig_indicatrici.
 - [x] #8 AI names esatti: OpenAI GPT-5.6 (Sol), Anthropic Claude (Opus 4.8).
 - [x] #9 Final pass: **0 undefined, 0 multiply-defined**, DOI/hyperlink/numerazione ok. Paper I 38pp, II 49pp.
+
+### J-duodecies. Mock CQG Associate Editor (desk-reject soft) — restructuring editoriale Paper I (2026-08-03)
+Verdetto: problema di presentazione/positioning, non di matematica. Fatto su Paper I:
+- [x] **Abstract** riscritto attorno a UNA domanda ("What is the fastest constrained worldline in a
+      spacetime that is itself evolving?"): gap (non-autonomo, niente energia conservata) → idea
+      (controlled-rail/Kodama) → fondamenti → 2 casi (FLRW, Vaidya). Tecnicismi (horizon dilogarithm,
+      S_D, weight-two, O(ε²)) tolti. 194 parole.
+- [x] **Introduzione** ristrutturata in 4 blocchi: (1) domanda/motivazione fisica, (2) gap + positioning
+      esplicito (stazionario vs dinamico), (3) idea controlled-rail/Kodama, (4) risultati + roadmap con
+      separazione framework(§2)/applicazioni(§3 FLRW, §4 Vaidya) + rinvio Paper II.
+- [x] **De-promozione**: "the unifying formalism"→"the shared construction", "Strikingly,"→tolto,
+      "We stress that"→tolto, "sharp probe"→"quantitative probe". "genuinely/a genuine" tecnici lasciati.
+- Conclusione: già chiude col significato fisico (frase quantitative-probe).
+- Ricompilato: Paper I 38pp, 0 undefined. Paper II: si aspetta la risposta CQG prima di replicare.

@@ -45,26 +45,24 @@ conformal symmetry, Kodama energy, and Vaidya dynamics}
 \ead{iman.rosignoli01@universitadipavia.it}
 
 \begin{abstract}
-We extend the relativistic brachistochrone---the fastest constrained rail worldline
-reaching a fixed spatial target at a free arrival clock---from stationary to
-non-stationary, spherically symmetric spacetimes: spatially flat
+What is the fastest constrained worldline in a spacetime that is itself evolving? In a
+stationary spacetime the relativistic brachistochrone reduces to Fermat/Randers optics
+with a conserved rail energy supplied by a timelike Killing vector; in a dynamical
+spacetime no such conservation law exists and the variational problem becomes
+non-autonomous. We address this by formulating the brachistochrone as a
+\emph{controlled-rail} optimal-control problem, in which the invariant $-u\cdot W=\Ehat$ is
+actively maintained along the worldline by a selector $W$ that follows a Killing $\to$
+conformal-Killing $\to$ Kodama hierarchy and reduces to the \emph{Kodama} vector when no
+timelike Killing field survives. We prove that this construction is a legitimate
+Pontryagin problem---with existence, normality, and a non-autonomous Hamilton--Jacobi
+verification criterion in place of the stationary conservation law---and then solve two
+spherically symmetric non-stationary cases in closed form: spatially flat
 Friedmann--Lema\^itre--Robertson--Walker (FLRW) and the ingoing Vaidya dynamical black
-hole. The rail invariant $-u\cdot W=\Ehat$ is actively controlled and legitimate via
-Pontryagin's principle, with the selector $W$ following a hierarchy Killing $\to$
-conformal Killing $\to$ Kodama; in Vaidya $W$ is the Kodama vector and $\Ehat$ its charge,
-conserved along the rail even where free fall is not. We establish the shared
-control-theoretic foundations---an existence and normality theorem and a non-autonomous
-Hamilton--Jacobi verification criterion---then treat FLRW (the degenerate base) and Vaidya
-in full: the plunge phenomenology (penetration, timing, and a bounce integrated through
-periapsis), the branch-intrinsic depth ordering, and the absence of an inversion in the
-frozen-clock branch comparison (the $m'<0$ ingoing continuation is formal; physical
-evaporation belongs to the outgoing metric). The first-order adiabatic correction closes
-in a horizon dilogarithm and is verified against the true non-autonomous flow to
-$O(\varepsilon^2)$; its off-shell source admits the universal boundary form
-$S_{\mathcal D}=[\,rp_r\,]-\lambda$. The controlled-rail formulation, existence and
-normality, and the first-order reduction are established, while the full outgoing-Vaidya
-boundary-value problem remains open; the rotating conformal-Kerr application is developed
-in the companion paper.
+hole. For Vaidya we obtain the plunge phenomenology and a first-order adiabatic correction
+in closed special-function form, verified against the true non-autonomous flow; the
+construction cleanly separates the effects of spatial curvature from those of radial mass
+flow. The rotating, axisymmetric conformal-Kerr (Thakurta--Kerr) application is developed
+in a companion paper.
 \end{abstract}
 
 \maketitle
@@ -77,31 +75,44 @@ in the companion paper.
 % ======================================================================
 \section{Introduction}
 \label{sec:intro}
-The relativistic brachistochrone---the fastest constrained ``rail'' worldline from a
-given launch event to a fixed spatial target, at a \emph{free} value of the arrival
-clock---was formulated by Perlick for stationary spacetimes
-\cite{Perlick1991,PerlickRayOptics}, where a timelike Killing vector supplies the
-conserved rail energy and the problem connects to Fermat's principle and optical
-(Randers--Zermelo--Finsler) geometry
-\cite{Kovner1990,Randers1941,GibbonsWerner2008,GibbonsRanders2009,BaoRoblesShen}.
-This paper extends the construction to \emph{non-stationary, spherically symmetric}
-spacetimes: the spatially flat FLRW base and the ingoing Vaidya dynamical black hole,
-the rail energy now carried by the Kodama vector. The rotating (axisymmetric)
-case---Thakurta--Kerr, with frame dragging, an ergosphere and genus-two closed
-forms---is developed in the companion Paper~II~\cite{PaperTwo}. We first build the shared
-control-theoretic foundations used by both papers---the controlled-rail principle, an
-existence and normality theorem, the non-autonomous Hamilton--Jacobi verification
-criterion, and the Killing, conformal-Killing and Kodama selector hierarchy---and then
-treat FLRW and Vaidya in full: Kodama energy conservation along the rail, the plunge
-phenomenology, the (absent) inversion in the frozen-clock branch comparison, the
-closed-form adiabatic correction with its horizon dilogarithm, and the universal
-off-shell source $S_{\mathcal D}=[\,rp_r\,]-\lambda$.
+The brachistochrone---the path of fastest descent---is a classical variational problem
+whose relativistic analogue asks for the fastest constrained ``rail'' worldline from a
+launch event to a fixed spatial target, at a \emph{free} value of the arrival clock. In a
+\emph{stationary} spacetime the answer is well understood: a timelike Killing vector
+supplies a conserved rail energy, and the problem reduces to Fermat's principle and to
+optical (Randers--Zermelo--Finsler) geometry
+\cite{Perlick1991,PerlickRayOptics,Kovner1990,Randers1941,GibbonsWerner2008,GibbonsRanders2009,BaoRoblesShen}.
+The physically central regimes of gravitation, however---cosmological expansion,
+gravitational collapse, accretion---are \emph{not} stationary.
 
-Beyond the brachistochrone problem itself, the controlled-rail construction provides a
-systematic optical and Hamiltonian framework for comparing arrival-time and proper-time
-extremals in genuinely time-dependent geometries. It links dynamical black-hole optics,
-optimal control and non-autonomous Hamiltonian perturbation theory, and separates the
-effects generated by spatial gradients from those generated by radial mass flow.
+When the geometry itself evolves, the ingredients that make the stationary problem
+tractable disappear: there is no timelike Killing field, hence no conserved energy to
+label the extremals, and the variational problem is genuinely non-autonomous. Whether a
+well-posed fastest constrained worldline even exists in such spacetimes, what invariant
+should replace the Killing energy, and how time dependence---as opposed to spatial
+curvature---reshapes the optimal path, have not been addressed. This is the question the
+present paper answers.
+
+Our starting point is that the rail energy need not be a symmetry charge: it can be an
+invariant that is \emph{actively maintained} along the worldline. We formulate the
+brachistochrone as a \emph{controlled-rail} optimal-control problem in which
+$-u\cdot W=\Ehat$ is held fixed by a selector $W$ following a Killing $\to$
+conformal-Killing $\to$ Kodama hierarchy; in a dynamical spherically symmetric spacetime
+$W$ is the \emph{Kodama} vector, whose charge is conserved along the controlled worldline
+even where free fall is not. Pontryagin's maximum principle makes this a legitimate
+time-optimal control problem, supplying existence, normality and a non-autonomous
+Hamilton--Jacobi verification criterion in place of the stationary conservation law.
+
+We develop this general framework in section~\ref{sec:principle} and then apply it to two
+spherically symmetric non-stationary spacetimes: the spatially flat FLRW base
+(section~\ref{sec:flrw}) and the ingoing Vaidya dynamical black hole
+(section~\ref{sec:vaidya}). For Vaidya we obtain the plunge phenomenology and a
+first-order adiabatic correction in closed special-function form, verified against the
+true non-autonomous flow; the construction cleanly separates the effects of spatial
+curvature from those of radial mass flow. The rotating, axisymmetric conformal-Kerr
+(Thakurta--Kerr) case---frame dragging, an ergosphere and genus-two closed forms---is
+developed in the companion Paper~II~\cite{PaperTwo}, which cites the foundations proved
+here.
 
 \section{The controlled-rail principle}
 \label{sec:principle}
@@ -303,7 +314,7 @@ deformations, each switching on one further phenomenon.
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_indicatrici.png}
     \caption{Rail indicatrices (linear constraint $\cap$ normalization
-    $=$ ellipse): the unifying formalism. FLRW gives shrinking circles (no
+    $=$ ellipse): the shared construction. FLRW gives shrinking circles (no
     wind, no eccentricity $\Rightarrow$ degenerate branches); Vaidya an ingoing
     radial wind ($f-E^2<0$, driven by $m(v)$ $\Rightarrow$ endpoint-sensitive memory);
     Thakurta--Kerr an angular wind (frame dragging $\Rightarrow$ rotational
@@ -644,7 +655,7 @@ frozen-mass Schwarzschild curve (figure~\ref{fig:vaidya-bounce}).
 
 \emph{Timing and the orbit--horizon race.} Because $m$ grows along the path,
 $r_{\min}$ depends on \emph{when} the particle arrives, the epoch $v_1$---a
-genuinely non-stationary effect absent in Kerr. Strikingly, the absolute and
+genuinely non-stationary effect absent in Kerr. The absolute and
 relative penetration have \emph{opposite} winners
 (figure~\ref{fig:vaidya-timing}): under the negative-rate branch ($m'<0$) the absolute
 periapsis descends but the horizon $2m(v)$ retreats faster, so the relative penetration
@@ -675,7 +686,7 @@ plus a genuine $O(m')$ correction from the endpoint-sensitive costate memory $p_
 static ratio $J^2_t/J^2_\tau=\Ehat^2/f^2>1$ gives $r_{\min}^t<r_{\min}^\tau$
 (``$t$ deeper''), a \emph{branch-intrinsic} ordering set by $\Ehat/f>1$ alone---it
 does not depend on the sign of $m'$ nor on the ingoing/outgoing character of the
-flux. We stress that \emph{physical} evaporation is the \emph{outgoing} Vaidya metric
+flux. \emph{Physical} evaporation is the \emph{outgoing} Vaidya metric
 $\dd s^2=-f\dd u^2-2\dd u\,\dd r$ (retarded time $u$), not the ingoing metric with
 $m'<0$. The depth ordering $r_{\min}^t<r_{\min}^\tau$ is \emph{branch-intrinsic}: it
 follows from $\Ehat/f>1$ alone and is therefore independent of the sign of $m'$ and of
@@ -1028,7 +1039,7 @@ Hamiltonians, costates and transversality---remains open, as does a genuine thir
 (Kodama-observer) clock. The rotating Thakurta--Kerr case, its ergosphere trichotomy,
 closed-form separatrices and conformal plunge inversion, is developed in the companion
 paper. More broadly, the controlled-rail brachistochrone turns the comparison of
-arrival-time and proper-time optimal worldlines into a sharp probe of how spatial
+arrival-time and proper-time optimal worldlines into a quantitative probe of how spatial
 curvature and time-dependent mass flow shape causal transport in dynamical black-hole
 spacetimes.
 
