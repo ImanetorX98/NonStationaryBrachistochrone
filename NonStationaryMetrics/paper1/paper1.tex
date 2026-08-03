@@ -851,19 +851,11 @@ the \emph{horizon dilogarithms} $\mathcal{D}_k=\int U_k/(r-2m)\,\dd r$. Since $r
 is a branch point of $S$, in the local uniformiser $t=\sqrt{r-2m}$ one has
 $\dd r/(r-2m)=2\,\dd t/t$: a \emph{simple} pole of residue two, i.e.\ a genuine
 third-kind letter $\dd\log$ anchored \emph{at the horizon}. On the compact
-genus-two curve this pole cannot stand alone: by the residue theorem the
-differential $\dd r/(r-2m)$ carries residue $+2$ at the horizon Weierstrass point
-and compensating residues $-1$ at each of the two points at infinity $\infty_\pm$ of
-the sextic ($\dd r/(r-2m)\sim-\dd s/s$ in $s=1/r$ on each sheet), so the residues sum
-to zero. ``$\dd\log$ at the horizon'' names the horizon part of this divisor; the
-Fay/prime-form ($\theta$-ratio) representation of the third-kind differential carries
-the full divisor $2\,(r{=}2m)-\infty_+-\infty_-$. Its elementary primitive
-is $\int\dd r/(r-2m)=\ln(r-2m)$, so one integration by parts closes $\mathcal{D}_k$
-onto a \emph{single} weight-two letter (verified to $10^{-12}$). Throughout, displayed
-logarithms are to be read with a fixed reference length, $\ln(r-2m)\equiv\ln[(r-2m)/L]$
-(likewise $\ln[(r-2M)/L]$); the scale $L$ is dimensionally required but shifts only the
-additive constants $\alpha_0$ and cancels in every assembled closed form, so we suppress
-it in the displayed primitives.
+genus-two curve this letter carries the divisor $2\,(r{=}2m)-\infty_+-\infty_-$ (residues
+summing to zero) and closes as a Fay prime-form $\theta$-ratio; one integration by parts
+then closes $\mathcal{D}_k$ onto a \emph{single} weight-two letter (verified to
+$10^{-12}$). Displayed horizon logarithms carry a fixed reference length,
+$\ln(r-2m)\equiv\ln[(r-2m)/L]$, which cancels in every assembled result.
 \begin{equation}
     \mathcal{D}_k=U_k\,\ln(r-2m)-\mathcal{G}_k,\qquad
     \mathcal{G}_k=\int\ln(r-2m)\,\frac{r^k}{\sqrt S}\,\dd r,
@@ -875,87 +867,37 @@ hyperelliptic-dilogarithm class (conjecturally irreducible to weight one, the
 theta-divisor obstruction $\Theta=W_{g-1}$ preventing the genus-one factorization),
 but with its $\dd\log$ letter sourced by the
 advanced-time divergence at the horizon $r=2m$ rather than by a third-kind dipole at
-infinity. At the genus-degeneration $|J|=J_{\rm deg}$ the sextic develops a double root at $r=r_d$
-and the genus drops to one: $\sqrt S=(r-r_d)\sqrt{Q_4}$ with $Q_4$ quartic, so the
-$U_k$ reduce to elliptic integrals (verified to machine precision against the direct
-genus-two quadrature) and $\mathcal{G}_k$ collapses to the tabulated \emph{elliptic
-(Bloch--Wigner) dilogarithm} on $E:\,w^2=Q_4(r)$---the maximally explicit, directly
-reusable form. For the representative $m=1,E=1.4$ one finds $J_{\rm deg}=7.0266$,
-$r_d=-3.3637$, branch points $\{-2.083,0,2m,8.727\}$, elliptic modulus $k^2=0.6067$
-and rectangular nome $\tau=0.90597\,i$ (agreeing to fifteen digits between the
-Legendre form $\tau=iK'/K$ and the Sage period lattice); the horizon $r=2m$, being a
-branch point of $Q_4$, sits at a \emph{two-torsion} point (half the imaginary
-period), so it carries the $\dd\log$ letter of the elliptic dilogarithm. At these
-parameters $r_d=-3.36<0$: this locus is the \emph{algebraic} genus-degeneration
-$J_{\rm deg}$ (a double root of the sextic where the closed form drops to genus one),
-not a physical external separatrix---the Schwarzschild $\tau$-brachistochrone at
-$E=1.4$ has \emph{no} double root at $r>2m$, hence no external capture$/$scatter
-unstable circular orbit, and $J_{\rm deg}$ must not be conflated with the dynamical
-penetration threshold $J_c(v_0)$. The genus-one Weierstrass reduction that follows is
-purely algebraic and valid regardless of the sign of $r_d$
-(\texttt{separatrix\_classification.py}). Concretely,
-with the Weierstrass $\sigma,\zeta$ of $E$ (built from $\tau$ with base at the
-Weierstrass point, so the involution is $z\to-z$) the weight-one integrals close in
-closed form as third-kind elliptic integrals,
-$U_0=\rho\,[\ln\sigma(z-z_d)-\ln\sigma(z+z_d)]+Cz$ with the residue
-$\rho=1/\sqrt{Q_4(r_d)}$ and $C$ both \emph{algebraic} (derived, not fitted; verified
-to $10^{-14}$ against direct quadrature), and one further integration against the
-horizon third-kind letter turns $\mathcal{G}_k$ into the elliptic
-dilogarithm~\cite{Bloch2000,BeilinsonLevin1994}
-$\int\ln\sigma\,\zeta\,\dd z$, whose single-valued projection is the tabulated
-Zagier series~\cite{Zagier1990}
-$D^E(z)=\sum_{n\ge0}D(q^n\zeta)-\sum_{n\ge1}D(q^n/\zeta)$
-($q=e^{2\pi i\tau}$, $D$ the Bloch--Wigner function). As in Kerr, every coefficient is
-algebraic (rational in $m,E,J$); the transcendence lives entirely in
-$W_{jk},\mathcal{G}_k$, so the correction is reusable by direct evaluation once $S$
-and the $c_k^m$ are fixed.
+infinity. At the genus-degeneration $|J|=J_{\rm deg}$ the sextic acquires a double root at $r=r_d$
+and the genus drops to one: the $U_k$ reduce to elliptic integrals and $\mathcal{G}_k$
+collapses to the tabulated elliptic (Bloch--Wigner/Zagier) dilogarithm
+\cite{Bloch2000,Zagier1990} on $E:\,w^2=Q_4(r)$. For spherical Vaidya this locus is
+\emph{algebraic} ($r_d<0$, a double root off the physical arc, not an external
+separatrix, and not to be conflated with the dynamical penetration threshold
+$J_c(v_0)$); the explicit Weierstrass $\sigma,\zeta$ reduction, with representative
+numerical values, is given in \ref{app:separatrix}. Every coefficient is algebraic
+(rational in $m,E,J$); the transcendence lives entirely in $W_{jk},\mathcal{G}_k$, so the
+correction is reusable by direct evaluation once $S$ and the $c_k^m$ are fixed.
 
-\paragraph{Fully explicit degeneration-family correction and its minimal dilogarithm
-basis.} For spherical Vaidya the value $J=\Jc$ is the algebraic genus-degeneration
-$J_{\rm deg}$ (double root at $r_d<0$), not a physical separatrix; the reduction on this
-locus can nonetheless be pushed to a fully explicit form. Writing
-$\partial_m F\,\dd r=R(z)\,\dd z$ with $R$ the elliptic function
-$R=N_m(r(z))/[(r(z)-r_d)^3\,Q_4(r(z))]$ on $E$ (where $r(z)$ is itself explicit,
-$r(z)=c_r-a_4^{-1/2}[\zeta(z-z_\infty)-\zeta(z+z_\infty)]$), its Mittag--Leffler
-decomposition on the torus---principal parts extracted by contour residues, in
-closed algebraic form---integrates term by term to
+\paragraph{Explicit degeneration-family correction.} On the algebraic genus-degeneration
+locus $J=J_{\rm deg}$ (a double root at $r_d<0$, not a physical separatrix) the correction
+reduces to a finite basis of standard letters. The antiderivative of the source is a sum
+of Weierstrass letters,
 \begin{equation}
     G(z)=\int\partial_m F=C_0\,z+\sum_a\Big[b_1^a\ln\sigma(z-a)-b_2^a\zeta(z-a)
         -\tfrac12 b_3^a\wp(z-a)\Big],
     \label{eq:vaidya-sep-G}
 \end{equation}
-verified $\dd G/\dd z=R$ to $10^{-13}$, the poles $a\in\{\pm z_d,\,0,\,i\omega_{\rm im}\}$
-carrying respectively the third-, second- and higher-kind letters, and each residue
-$b_n^a$ given in closed form (the triple pole at $z_d$ from a Hermite--Ostrogradsky
-Laurent expansion, the double poles at the two-torsion turning points from
-$b_2=4N_m(e_i)/[(e_i-r_d)^3 Q_4'(e_i)^2]$; the additive constant closes at the
-regular point $z_\infty$, where $R$ \emph{vanishes} as $1/r$, giving
-$C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12 b_3^a
-\wp'(z_\infty-a)]$, and the analogous constant of the clock differential
-$T_\tau'$ from its value at the regular turning image $z=0$). The weight-two blocks
-$W_{kj}=2\int U_k\,\dd U_j-U_kU_j$ close on the Brown--Levin elliptic
-polylogarithm, whose transcendental core is the length-two Kronecker--Eisenstein
-iterated integral~\cite{BrownLevin2011}
-$\tilde\Gamma(1,1;\hat a,\hat b;y)=\int_0^y g^{(1)}(t-\hat a)\big[\int_0^t
-g^{(1)}(s-\hat b)\,\dd s\big]\dd t$ with the \emph{tabulatable} $q$-series
-$g^{(1)}(x)=\pi\cot\pi x+4\pi\sum_{n\ge1}\frac{q^{2n}}{1-q^{2n}}\sin 2\pi n x$
-(agreeing with the direct nested quadrature, and with the GiNaC elliptic-polylog
-evaluation, to $10^{-18}$). This building-block form---$G$ from
-Equation~\eqref{eq:vaidya-sep-G} plus the $W_{kj}=\tilde\Gamma(1,1)$---is the
-\emph{reusable} closed form: \emph{every} coefficient in it (the residues $b_n^a$,
-the mass constants $c_k^m$, $\Jc$ itself) is given in closed form as an algebraic
-function of $m,E$, so a reader reconstructs $\delta\varphi_\tau|_{\rm deg}$ for any
-$(m,E)$ by evaluating those formulas on the corresponding curve---checked to
-$10^{-9}$ against the direct integral and, term by term for the closed-form
-coefficients, across $E\in[1.3,1.6]$ (each a distinct curve).
-
-A secondary \emph{structural} numerical experiment (detailed, with its shuffle/Fay
-reduction and rank estimate, in the reproducibility package) finds that the weight-two
-content of $\delta\varphi_\tau|_{\rm deg}$ compresses to an apparent five-dimensional
-dilogarithm basis. This is strong \emph{numerical evidence}, not a proof; the basis
-coefficients are curve-specific numbers rather than a universal formula, and we treat both
-the minimal basis dimension and the irreducibility of the weight-two letters as
-conjectural.
+with every residue $b_n^a$ closed in algebraic form over the poles
+$a\in\{\pm z_d,0,i\omega_{\rm im}\}$, while the weight-two blocks $W_{kj}$ are length-two
+iterated (Brown--Levin elliptic-polylogarithm~\cite{BrownLevin2011}) integrals evaluated by
+a convergent $q$-series. The full construction---the Mittag--Leffler decomposition, the
+residue formulae and the Kronecker--Eisenstein evaluation---is given in
+\ref{app:separatrix}. Every coefficient is an algebraic function of $(m,E)$, so
+$\delta\varphi_\tau|_{\rm deg}$ is reconstructed on any curve by evaluating these formulae
+(checked to $10^{-9}$ against the direct integral across $E\in[1.3,1.6]$). The minimal
+dilogarithm-basis dimension and the irreducibility of the weight-two letters remain
+\emph{conjectural}; a secondary numerical rank experiment is in the reproducibility
+package.
 
 \paragraph{Advanced/retarded frozen-clock decomposition.} At first order $\delta\varphi$ is
 linear in $\dot m$, so na\"ively $\dot m\to-\dot m$ merely flips its sign. The

@@ -561,3 +561,15 @@ Fatto il cluster testuale/basso-rischio scelto dall'utente:
 - DEFERRED (heavy, sessione nuova per budget): rigenerazione figure (combinare FLRW fig 2-3, fig 7→supplement,
       line-styles greyscale), relocazione più ampia della macchina funzioni-speciali di §4.4→appendici,
       restanti minori (m-list: ripetizioni "genuinely/cleanly", sub-arc/norm nelle caption, ecc.).
+
+### J-sexdecies. Codex ③ — §4.4 alleggerita (2026-08-03)
+Il punto ③ (era parziale) ora sostanzialmente fatto: spostata/condensata la macchina funzioni-speciali dal
+corpo §4.4, tenendo i 5 oggetti (orbita frozen, Theorem I.5, S_D=[rp_r]−λ, evaluabilità compatta + horizon
+weight-two, fig.10/numeri):
+- [x] Paragrafo "Fully explicit degeneration-family correction" (~45 righe: Mittag-Leffler, residui,
+      Hermite-Ostrogradsky, Kronecker-Eisenstein tilde-Gamma q-series) → ~18 righe, eq:vaidya-sep-G tenuta,
+      costruzione completa → rinvio a \ref{app:separatrix}.
+- [x] Blocco horizon-dilogarithm: divisore/residue-theorem/reference-length (~14→4) + riduzione numerica
+      genus-degeneration (~34→10, J_deg=7.0266/r_d/branch points/nome → App B). eq:horizon-dilog tenuta.
+- Ricompilato 38pp, 0 undefined/multiply, size scesa (~90 righe di dettaglio tolte dal corpo).
+- Restano solo le FIGURE (combinare FLRW fig 2-3, fig 7→supplement, line-styles greyscale) + minori m-list.
