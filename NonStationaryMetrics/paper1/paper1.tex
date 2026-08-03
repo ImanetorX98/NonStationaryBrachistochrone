@@ -16,6 +16,7 @@
 \usepackage{amsmath}
 \usepackage{iopams}
 \usepackage{graphicx}
+\usepackage{array}
 \usepackage{bm}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -31,7 +32,8 @@
 \newcommand{\Ehat}{\hat E}
 \newcommand{\rp}{r_{+}}
 \newcommand{\re}{r_{e}}
-\newcommand{\Jc}{J_{c}}
+\newcommand{\Jc}{J_{\rm deg}}
+\newcommand{\Jpen}{J_{\rm pen}}
 \newcommand{\Af}{A_{\mathrm{freeze}}}
 \newcommand{\dd}{\mathrm{d}}
 
@@ -188,8 +190,9 @@ arrival clock is the advanced null time $v$, again distinct from $\tau$.
 compact, strictly convex oval---the hypothesis under which the Pontryagin reduction
 below applies---precisely where the selector $W$ is \emph{timelike} and the quadric
 intersection is nondegenerate. Three loci require separate treatment. (i) At the
-freezing surface the oval collapses to a point, $R\to0$ (the strict convexity
-degenerates; this is the turning-point/separatrix locus). (ii) At the horizon the
+freezing surface the entire indicatrix collapses to a point, $R\to0$, and strict
+convexity is lost; this degeneration is distinct from a radial turning point and
+from a spectral separatrix, both treated separately below. (ii) At the horizon the
 radial metric coefficient degenerates. (iii) For Thakurta--Kerr inside the
 \emph{ergosphere}, $\partial_\eta$---hence $W$---becomes spacelike, so
 $-u\cdot W=\Ehat$ fixes a \emph{spatial} component of $u$ and the intersection with
@@ -642,12 +645,12 @@ Three features distinguish the dynamical hole from its frozen-mass
 Schwarzschild limit.
 
 \emph{Penetration.} The $\tau$-brachistochrone reaches the apparent horizon
-$r=2m(v)$ only if $|J|$ lies below a threshold $J_c(v_0)$; accretion ($m'>0$)
-opens a \emph{finite} window $J_c>0$, whereas the negative-rate continuation
+$r=2m(v)$ only if $|J|$ lies below a threshold $\Jpen(v_0)$; accretion ($m'>0$)
+opens a \emph{finite} window $\Jpen>0$, whereas the negative-rate continuation
 ($m'<0$ in the \emph{ingoing} metric---a formal continuation; physical evaporation is
 the \emph{outgoing} metric, section~\ref{sec:vaidya-plunge}) closes it to zero
 measure---an accretion/(negative-rate) asymmetry with no static analogue. The
-finite capture interval $J\in(0,\Jc]$ is the analogue of the Kerr $t$-branch
+finite capture interval $J\in(0,\Jpen]$ is the analogue of the Kerr $t$-branch
 dichotomy, generated here by the \emph{dynamics}: grazing orbits linger near
 periapsis while the growing horizon closes the gap.
 
@@ -868,7 +871,7 @@ collapses to the tabulated elliptic (Bloch--Wigner/Zagier) dilogarithm
 \cite{Bloch2000,Zagier1990} on $E:\,w^2=Q_4(r)$. For spherical Vaidya this locus is
 \emph{algebraic} ($r_d<0$, a double root off the physical arc, not an external
 separatrix, and not to be conflated with the dynamical penetration threshold
-$J_c(v_0)$); the explicit Weierstrass $\sigma,\zeta$ reduction, with representative
+$\Jpen(v_0)$); the explicit Weierstrass $\sigma,\zeta$ reduction, with representative
 numerical values, is given in \ref{app:separatrix}. Every coefficient is algebraic
 (rational in $m,E,J$); the transcendence lives entirely in $W_{jk},\mathcal{G}_k$, so the
 correction is reusable by direct evaluation once $S$ and the $c_k^m$ are fixed.
@@ -1067,7 +1070,7 @@ Thakurta--Kerr map is in the companion paper).
     \texttt{VaidyaMetric/} in the archived repository~\cite{Rosignoli2026Code}.}
     \label{tab:script-map}
     \small
-    \begin{tabular}{@{}p{0.44\textwidth}p{0.30\textwidth}r@{}}
+    \begin{tabular}{@{}p{0.42\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}r@{}}
         \hline\hline
         result & script & residual\\
         \hline
@@ -1084,7 +1087,7 @@ Thakurta--Kerr map is in the companion paper).
         advanced/retarded frozen-clock decomposition $\mathcal{A}_\infty,\mathcal{B}_{\rm hor}$
             & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
         complete first-order correction~\eqref{eq:adiab-exact} (on-shell $+$ off-shell)
-            & \texttt{vaidya\_first\_order\_offshell.py} & slope $2.00$\\
+            & \texttt{vaidya\_first\_\allowbreak order\_\allowbreak offshell.py} & slope $2.00$\\
         \hline\hline
     \end{tabular}
     \\[2pt]
