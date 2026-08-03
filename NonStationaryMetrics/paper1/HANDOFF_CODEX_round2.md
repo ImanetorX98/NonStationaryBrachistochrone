@@ -106,17 +106,16 @@ spatial gradient, whereas Vaidya introduces radial gradients and mass-flow memor
 effects" for Vaidya, in **both the abstract and the introduction** (and the cover letter if
 the phrase appears there).
 
-### M9 — Reference [12] / cover letter title vs public DOI  *(author decision)*
-Manuscript and cover letter cite DOI `10.5281/zenodo.21740000` under the title
-"Brachistochrones in conformal Kerr (Thakurta) spacetimes: ergosphere trichotomy,
-separatrices, and adiabatic response". The **registered Zenodo/DataCite title** is
-"Relativistic Brachistochrones in Conformal Kerr Spacetimes: Adiabatic Theory, Ergosphere
-Transitions and Hyperelliptic Closed Forms".
-**Fix (author must choose one):** (a) update the citation and cover letter to the
-*deposited* title; or (b) publish a new companion Zenodo version with the intended title
-and cite that version. **Bibliographic title must match the retrievable object.** If
-"Thakurta" stays in a BibTeX title, protect its capitalization with braces `{Thakurta}`
-(the current PDF lower-cases it). Mark with `% TODO(author)` — do not invent metadata.
+### M9 — Reference [12] / cover letter title vs public DOI  *(RESOLVED by author — no manuscript edit)*
+The manuscript is **self-consistent**: `paper2.tex` `\title`, `companionII.bib`, and both
+cover letters all use "Brachistochrones in conformal Kerr spacetimes: ergosphere
+trichotomy, separatrices, and adiabatic response". Only the Zenodo/DataCite record for DOI
+`10.5281/zenodo.21740000` diverged ("Relativistic Brachistochrones in Conformal Kerr
+Spacetimes: Adiabatic Theory, Ergosphere Transitions and Hyperelliptic Closed Forms").
+**Author decision taken: edit the Zenodo record title to match the manuscript.** Therefore
+**do NOT change any manuscript, bibliography, or cover-letter title** for M9.
+Remaining Codex action: in `companionII.bib`, keep the capitalization brace on `{Kerr}` and
+add a brace on `{Thakurta}` (currently rendered lower-case), leaving the wording as is.
 
 ### M10 — Public snapshots older than the final build  *(author decision)*
 The cover letter calls DOI `10.5281/zenodo.21739998` "the present paper", but that public
@@ -214,8 +213,9 @@ older record is called "the present paper". Do not mutate a DOI claim by inferen
    symbol. Recompile; check eqs (12), (22), (C.1)–(C.6).
 2. **Special-function claims:** remove the false printed-`g^{(1)}` claim, pick the honest
    reconstructibility wording, rename the algebraic degeneration.
-3. **Public records (author):** decide final titles, create new Zenodo versions as needed,
-   then update ref [12], ref [32] and the cover letter from *verified* metadata.
+3. **Public records (author):** M9 resolved by editing the Zenodo record to the manuscript
+   title (no manuscript change). Still update ref [32] and the cover-letter DOI wording
+   (M10) from *verified* metadata once the final Zenodo versions exist.
 4. **Bibliography pass:** fix [15], [31], [39] rendering; add only verified permanent
    identifiers; keep all 43 entries cited.
 5. **Trim Paper-II leakage** (S1) without touching Paper-I derivations.
@@ -249,8 +249,8 @@ numerical / Outlook" conclusion; the data DOI, script map and transparent AI dis
 > **Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry,
 > Kodama energy, and Vaidya dynamics**
 
-**Note on Paper II (see M9):** the companion is currently cited as *"Brachistochrones in
-conformal Kerr spacetimes: ergosphere trichotomy, separatrices, and adiabatic response"*,
-but the **deposited Zenodo title** is *"Relativistic Brachistochrones in Conformal Kerr
-Spacetimes: Adiabatic Theory, Ergosphere Transitions and Hyperelliptic Closed Forms"*.
-These must be reconciled before submission (author decision — do not guess).
+**Note on Paper II (see M9 — resolved):** the manuscript title
+*"Brachistochrones in conformal Kerr spacetimes: ergosphere trichotomy, separatrices, and
+adiabatic response"* is used consistently across `paper2.tex`, `companionII.bib` and both
+cover letters. The author will **edit the Zenodo record** to this title, so **no manuscript
+title change is needed** — Codex only braces `{Thakurta}` in `companionII.bib`.
