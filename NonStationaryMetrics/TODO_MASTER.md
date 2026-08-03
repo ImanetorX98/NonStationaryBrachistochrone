@@ -573,3 +573,12 @@ weight-two, fig.10/numeri):
       genus-degeneration (~34→10, J_deg=7.0266/r_d/branch points/nome → App B). eq:horizon-dilog tenuta.
 - Ricompilato 38pp, 0 undefined/multiply, size scesa (~90 righe di dettaglio tolte dal corpo).
 - Restano solo le FIGURE (combinare FLRW fig 2-3, fig 7→supplement, line-styles greyscale) + minori m-list.
+
+### J-septendecies. Codex — figure (livello LaTeX) 2026-08-03
+- [x] **FLRW fig 2+3 combinate** in un unico float a due pannelli (a,b) via minipage; rinvio nel testo →
+      "figure~\ref{fig:flrw-kin}a,b"; entrambi i label tenuti. (Codex §6.7/§9.2)
+- [x] **Fig 7 (no-inversion)**: caption-disclaimer accorciata (~8 righe→4). (Codex Fig 7)
+- Ricompilato 37pp, 0 undefined/multiply (una pagina risparmiata dalla combinazione).
+- DEFERRED (richiede rigenerare gli script figura, sessione con budget): togliere i titoli in-plot verbosi
+      che duplicano le caption (es. fig Kodama), line-styles+marker per il greyscale, export vettoriale,
+      spostamento fisico di fig 7 nel supplement. + minori m-list (ripetizioni "genuinely/cleanly", sub-arc/norm).
