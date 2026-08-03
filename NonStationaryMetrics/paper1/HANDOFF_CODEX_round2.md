@@ -117,15 +117,17 @@ Spacetimes: Adiabatic Theory, Ergosphere Transitions and Hyperelliptic Closed Fo
 Remaining Codex action: in `companionII.bib`, keep the capitalization brace on `{Kerr}` and
 add a brace on `{Thakurta}` (currently rendered lower-case), leaving the wording as is.
 
-### M10 — Public snapshots older than the final build  *(author decision)*
-The cover letter calls DOI `10.5281/zenodo.21739998` "the present paper", but that public
-record contains `paper1-10.pdf`, not this 34-page build. The software DOI
-`10.5281/zenodo.21707378` is active/v1.0/MIT but was issued before the final Figure 1 and
-Figure 9 production wrappers.
-**Fix (author action):** publish immutable final versions (new Zenodo version for Paper I,
-and if needed Paper II and the code package), then update the cover letter / data
-statement / Table A2 hash from the *verified* new metadata; **or** soften the wording so no
-older record is called "the present paper". Do not mutate a DOI claim by inference. Mark
+### M10 — Public snapshots older than the final build  *(Paper I DOI RESOLVED; code DOI pending)*
+The old Paper I preprint DOI `10.5281/zenodo.21739998` contained `paper1-10.pdf`, not the
+34-page build. **The author published a new immutable Paper I version:
+`10.5281/zenodo.21781850`.** All Paper-I self-citations have been updated to it:
+`cover_letter_paperI.tex`, `cover_letter_paperII.tex` (Paper-I mention), `companionI.bib`,
+and `README.md`. **Codex: use `10.5281/zenodo.21781850` for Paper I everywhere; do not
+reintroduce `21739998`.**
+Still pending *(author)*: the software DOI `10.5281/zenodo.21707378` (v1.0/MIT) predates the
+final Figure 1 and Figure 9 production wrappers — either publish a new code version and
+update ref [32] + the data statement + the Table A2 hash from *verified* new metadata, or
+confirm v1.0 still supports the submitted figures. Do not mutate a DOI by inference. Mark
 `% TODO(author)`.
 
 ---

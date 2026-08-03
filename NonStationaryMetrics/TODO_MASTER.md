@@ -492,6 +492,9 @@ Status scientifico frozen; solo editoriale. Fatto:
 
 ### J-undecies. Final editorial checklist (2026-08-01) — pronti per submission
 - [x] #1 DOI companion verificati (I 21739998, II 21740000), nessun placeholder.
+      NB (2026-08-04): Paper I re-versionato → nuovo DOI **21781850** (aggiornati cover
+      letter I/II, companionI.bib, README); il titolo Zenodo di Paper II va allineato al
+      manoscritto (ergosphere trichotomy, separatrices, and adiabatic response).
 - [x] #2 Running header corto via \markboth (no più troncatura del titolo lungo). Verificato render.
 - [x] #3 η riservato al conforme: residui `T_br`/`T_τ` in Paper II (η(r) generico 303-305, "clock η" 330,
       tabella η=t/η=τ 597). Nessun η=proper-time residuo.
