@@ -544,3 +544,20 @@ Fatto il cluster testuale/basso-rischio scelto dall'utente:
 - Restano (heavy, prossimo giro): ③ shorten §4.4 (macchina funzioni-speciali→App B/supplement, tenere i 5
       oggetti nel corpo); figure/hierarchy (combinare FLRW, fig7→supplement, fig8-10 prima delle Conclusions);
       Table A2 ricostruzione. + minori (m-list: define CKV, ripetizioni "genuinely/cleanly", ecc.).
+
+### J-quindecies. Codex review — batch strutturale/editoriale 2 (2026-08-03)
+- [x] **Float order (M7)**: `\clearpage` prima di \section{Conclusions} → le fig 8-10 non spezzano più le
+      Conclusions.
+- [x] **Table A2 ricostruita (M8)**: tolto l'header-prosa multicolumn che collideva con la riga dati e l'hash;
+      "complete first-order correction" ora riga normale; "paths under VaidyaMetric/" spostato in caption;
+      residual right-aligned; SHA in footnote.
+- [x] **CKV esteso (m3)**: titolo §2.3 e Conclusions "Killing--CKV--Kodama" → "Killing / conformal-Killing /
+      Kodama" (niente più sigla bare).
+- [x] **③ parziale + m24**: paragrafo rank-five/shuffle/Fay nel corpo §4.4 condensato in 2 frasi + rinvio al
+      reproducibility package (esperimento strutturale fuori dalla narrativa principale). "closed form"→
+      "closed representation" nella caption script-map.
+- [x] Fix overfull Table 1 (riga di rinvio TK come multicolumn che va a capo).
+- Ricompilato Paper I 38pp, 0 undefined, 0 overfull≥100pt.
+- DEFERRED (heavy, sessione nuova per budget): rigenerazione figure (combinare FLRW fig 2-3, fig 7→supplement,
+      line-styles greyscale), relocazione più ampia della macchina funzioni-speciali di §4.4→appendici,
+      restanti minori (m-list: ripetizioni "genuinely/cleanly", sub-arc/norm nelle caption, ecc.).

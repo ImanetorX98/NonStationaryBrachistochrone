@@ -154,8 +154,10 @@ mass but is free to exert power against the selector (see below).
         $\lambda$ & elapsed clock from the free-arrival endpoint\\
         $\varepsilon=\dot m$ & adiabatic rate (Vaidya)\\
         \hline
-        \multicolumn{2}{@{}l@{}}{\emph{Conformal Thakurta--Kerr notation (forward references only; companion Paper~II):}}\\
-        $A(\eta),\,a,\,E_{\rm eff}{=}\Ehat/A,\,J_{\rm eff}{=}J/A,\,P_r{=}p_r/A,\,\eta$ & conformal factor, Kerr spin, normalized charges/momentum, conformal time\\
+        \multicolumn{2}{@{}p{0.98\linewidth}@{}}{\emph{Conformal Thakurta--Kerr notation
+        (forward references only; companion Paper~II):} $A(\eta)$ conformal factor, $a$
+        Kerr spin, $E_{\rm eff}=\Ehat/A$ and $J_{\rm eff}=J/A$ normalized charges,
+        $P_r=p_r/A$ normalized radial momentum, $\eta$ conformal time.}\\
         \hline\hline
     \end{tabular}
 \end{table}
@@ -421,7 +423,7 @@ which we do not develop. Freezing (where
 $\rho\to0$), turning (where a semi-axis vanishes), and the separatrix (a double
 root of the radical) are distinct degeneracies and are not conflated.
 
-\subsection{Selecting $W$: the Killing--CKV--Kodama hierarchy}
+\subsection{Selecting $W$: the Killing / conformal-Killing / Kodama hierarchy}
 \label{sec:whierarchy}
 The selector $W$ is fixed by a hierarchy of decreasing symmetry, each level
 recovering the previous one in the appropriate limit.
@@ -947,24 +949,13 @@ $(m,E)$ by evaluating those formulas on the corresponding curve---checked to
 $10^{-9}$ against the direct integral and, term by term for the closed-form
 coefficients, across $E\in[1.3,1.6]$ (each a distinct curve).
 
-Beyond this reusable form there is a purely \emph{structural} statement about the
-transcendental weight: the parity involution $z\to-z$ groups the raw terms into
-$24$ blocks, the shuffle identity~\cite{Chen1977} recasts these as $21$
-antisymmetric elliptic dilogarithms, and the Weierstrass-addition (Fay) relations
-collapse them further, so that the entire weight-two content of
-$\delta\varphi_\tau|_{\rm deg}$ appears to span a space of dimension five: a
-high-precision numerical reduction gives a stable rank five (the discarded singular
-values fall to $10^{-79}$ in arbitrary precision). We state this as strong
-\emph{numerical evidence}, not a proof---an exact bound on the dimension would
-require a motivic/Hodge basis-count or an explicit basis with a proven
-independence, which we do not carry out. The coefficients $\beta_b$ of any chosen
-five-element dilogarithm basis are \emph{curve-specific numbers}---obtained per curve by a
-mechanical linear reduction (here, at $m=1,E=1.4$, to eighty digits), not a
-universal formula---and a closed symbolic form for them, which would require the
-full second-kind reduction of $E$, is left open. What makes the algebraic reduction
-possible is that every $e_i(z)$ entering the assembly is a \emph{rational} function
-of $\wp(z)$---e.g.\ the third-kind combination
-$\zeta(z-a)-\zeta(z+a)=-2\zeta(a)+\wp'(a)/[\wp(z)-\wp(a)]$.
+A secondary \emph{structural} numerical experiment (detailed, with its shuffle/Fay
+reduction and rank estimate, in the reproducibility package) finds that the weight-two
+content of $\delta\varphi_\tau|_{\rm deg}$ compresses to an apparent five-dimensional
+dilogarithm basis. This is strong \emph{numerical evidence}, not a proof; the basis
+coefficients are curve-specific numbers rather than a universal formula, and we treat both
+the minimal basis dimension and the irreducibility of the weight-two letters as
+conjectural.
 
 \paragraph{Advanced/retarded frozen-clock decomposition.} At first order $\delta\varphi$ is
 linear in $\dot m$, so na\"ively $\dot m\to-\dot m$ merely flips its sign. The
@@ -1045,12 +1036,14 @@ $2\mathcal{B}_{\rm hor}=12.225$ (each $\times|\dot m|$).
 
 
 % ======================================================================
+% Flush pending floats so no figure interrupts the Conclusions.
+\clearpage
 \section{Conclusions}
 \label{sec:concl}
 \paragraph{Proved.} The non-stationary brachistochrone is a well-posed controlled-rail
 problem on the regular domain where the selector is timelike and the velocity indicatrix
 is nondegenerate: the invariant $-u\cdot W=\Ehat$ is legitimate via Pontryagin's principle, with
-$W$ fixed by the Killing--CKV--Kodama hierarchy and the Kodama energy conserved along
+$W$ fixed by the Killing / conformal-Killing / Kodama hierarchy and the Kodama energy conserved along
 the Vaidya rail even when free fall does not. Existence, normality, and the
 non-autonomous Hamilton--Jacobi verification criterion hold on the timelike-selector
 domain. FLRW is the degenerate base---freezing without branch splitting---while in
@@ -1132,11 +1125,12 @@ the script in the repository~\cite{Rosignoli2026Code} that generates and verifie
 Thakurta--Kerr map is in the companion paper).
 \begin{table}[htbp]
     \centering
-    \caption{Result-to-script map with the achieved numerical residual, so each
-    closed form can be regenerated and re-checked independently.}
+    \caption{Result-to-script map with the achieved numerical residual, so each closed
+    representation can be regenerated and re-checked independently. Scripts are under
+    \texttt{VaidyaMetric/} in the archived repository~\cite{Rosignoli2026Code}.}
     \label{tab:script-map}
     \small
-    \begin{tabular}{@{}p{0.47\textwidth}p{0.34\textwidth}l@{}}
+    \begin{tabular}{@{}p{0.44\textwidth}p{0.30\textwidth}r@{}}
         \hline\hline
         result & script & residual\\
         \hline
@@ -1152,17 +1146,13 @@ Thakurta--Kerr map is in the companion paper).
             & \texttt{vaidya\_ell\_dilog\_match.py} & $10^{-14}$\\
         advanced/retarded frozen-clock decomposition $\mathcal{A}_\infty,\mathcal{B}_{\rm hor}$
             & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
-        \hline
-        \multicolumn{3}{@{}p{\textwidth}@{}}{\emph{First-order
-            extended-Hamiltonian correction, equation~\eqref{eq:adiab-exact} (on-shell
-            $+$ off-shell); paths under \texttt{VaidyaMetric/}:}}\\
-        Vaidya $v$ exact PT $+$ figure~\ref{fig:vaidya-offshell}
+        complete first-order correction~\eqref{eq:adiab-exact} (on-shell $+$ off-shell)
             & \texttt{vaidya\_first\_order\_offshell.py} & slope $2.00$\\
         \hline\hline
     \end{tabular}
     \\[2pt]
-    {\footnotesize SHA-256 (first 12 hex):
-    \texttt{vaidya\_first\_order\_offshell.py} $=$\,\texttt{5dc9fe177f2f}.}
+    {\footnotesize SHA-256 (first 12 hex) of
+    \texttt{vaidya\_first\_order\_offshell.py}: \texttt{5dc9fe177f2f}.}
 \end{table}
 
 \subsection{Consistency residuals}
