@@ -137,8 +137,9 @@ mass but is free to exert power against the selector (see below).
 
 \begin{table}[htbp]
     \centering\small
-    \caption{Notation used throughout. Rail charges $(\Ehat,J)$ are conserved control
-    costates; the ``eff'' quantities are their optical/conformal normalizations.}
+    \caption{Notation used throughout. Rail charges $(\Ehat,J)$ are the conserved control
+    costates; the conformal (``eff'') normalizations appear only in forward references to
+    the companion Paper~II.}
     \label{tab:notation}
     \begin{tabular}{@{}ll@{}}
         \hline\hline
@@ -147,15 +148,14 @@ mass but is free to exert power against the selector (see below).
         $\Ehat=-u\cdot W$ & rail energy invariant (conserved control charge)\\
         $J=p_\varphi$ & axial control costate (conserved; \emph{not} $g(u,\partial_\varphi)$)\\
         $L_{\rm mech}=g(u,\partial_\varphi)$ & mechanical angular momentum (\emph{not} conserved on the rail)\\
-        $A(\eta)$ & Thakurta conformal factor, $g=A^2 g_{\rm Kerr}$\\
         $m(v)$ & Vaidya Misner--Sharp mass\\
-        $a$ & Kerr spin\\
-        $E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$ & conformally normalized charges (weight $A^{-1}$)\\
-        $P_r=p_r/A$ & normalized radial momentum (conformally symplectic, not canonical)\\
-        $t,\tau,\eta,v$ & coordinate, proper, conformal, advanced-null clocks\\
+        $t,\tau,v$ & coordinate, proper, advanced-null clocks\\
         $s$ & the selected evolution clock / slow parameter\\
         $\lambda$ & elapsed clock from the free-arrival endpoint\\
-        $\varepsilon$ & adiabatic rate ($A'/A$ for Thakurta, $\dot m$ for Vaidya)\\
+        $\varepsilon=\dot m$ & adiabatic rate (Vaidya)\\
+        \hline
+        \multicolumn{2}{@{}l@{}}{\emph{Conformal Thakurta--Kerr notation (forward references only; companion Paper~II):}}\\
+        $A(\eta),\,a,\,E_{\rm eff}{=}\Ehat/A,\,J_{\rm eff}{=}J/A,\,P_r{=}p_r/A,\,\eta$ & conformal factor, Kerr spin, normalized charges/momentum, conformal time\\
         \hline\hline
     \end{tabular}
 \end{table}
@@ -784,7 +784,29 @@ fully explicit closed form (verified to $9\times10^{-14}$, coefficients given),
     \label{eq:vaidya-deltaphi}
 \end{equation}
 This is the \emph{on-shell} component of the Vaidya first-order correction (the
-mass-drift of the frozen family). As in Thakurta--Kerr, the interior costate does not
+mass-drift of the frozen family).
+
+\paragraph{Theorem~I.5 (complete first-order response).} Linearizing the extended
+Hamiltonian $\mathcal H=p_s+H=0$ about the frozen extremal, in the original canonical
+variables $(r,p_r)$ with $\lambda$ the elapsed clock from the free-arrival endpoint, the
+momentum-shell shift is $\delta p_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{p_r}$ and
+\begin{equation}
+    \begin{aligned}
+    &\frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{p_r}G}{H_{p_r}}\,
+    \big(\lambda\,\Theta H-S_{\mathcal D}\big)-\lambda\,\Theta G\Big]\dd r,\qquad
+    G=\frac{H_J}{H_{p_r}}=\varphi',\\[2pt]
+    &S_{\mathcal D}(\lambda)=\!\int_0^{\lambda}\!\mathcal D H\,\dd\lambda',
+    \end{aligned}
+    \label{eq:adiab-exact}
+\end{equation}
+closing the correction to $O(\varepsilon^2)$. Here $\Theta$ is the Euler operator that
+generates the frozen-family drift, and the drift generator $\mathcal D$ equals $\Theta$
+unless the slow parameter rescales the canonical momenta. For single-parameter Vaidya
+$\mathcal D=\Theta=m\partial_m$, and the terminally-anchored source collapses to the
+universal boundary form $S_{\mathcal D}=[\,rp_r\,]-\lambda$. The proof, metric-independent
+and then closed explicitly for the Vaidya branches, is given in~\ref{app:firstorder}.
+
+As in Thakurta--Kerr, the interior costate does not
 vanish---$p_v=-H_v=O(\dot m)$ with $p_v(r_1)=0$ only at the free arrival---so the
 \emph{complete} first-order term adds the off-shell piece given by the Vaidya analogue
 of equation~\eqref{eq:adiab-exact}, with the single-parameter operator $\Theta=m\partial_m$
@@ -1344,34 +1366,20 @@ curve-specific), which the block forms above do not require.
 \section{Complete first-order extended-Hamiltonian correction}
 \label{app:firstorder}
 
-\emph{Theorem~I.5 (complete first-order response).} The complete first-order correction linearizes the extended Hamiltonian
-$\mathcal H=p_s+H=0$ about the frozen extremal, in the \emph{original canonical}
-variables $(r,p_r)$, with $\lambda$ the elapsed clock from the free-arrival endpoint:
-the momentum-shell shift is $\delta p_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{p_r}$ and
-\begin{equation}
-    \begin{aligned}
-    &\frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{p_r}G}{H_{p_r}}\,
-    \big(\lambda\,\Theta H-S_{\mathcal D}\big)-\lambda\,\Theta G\Big]\dd r,\qquad
-    G=\frac{H_J}{H_{p_r}}=\varphi',\\[2pt]
-    &S_{\mathcal D}(\lambda)=\!\int_0^{\lambda}\!\mathcal D H\,\dd\lambda',
-    \end{aligned}
-    \label{eq:adiab-exact}
-\end{equation}
-closing the correction to $O(\varepsilon^2)$. Here $\Theta$ is the Euler operator that
+This appendix proves Theorem~I.5, stated in section~\ref{sec:vaidya-adiabatic}: it derives
+equation~\eqref{eq:adiab-exact}---the complete first-order (on-shell \emph{plus} off-shell)
+adiabatic correction to the orbit shape---from the extended Hamiltonian in a
+metric-independent way, and closes it explicitly for the Vaidya branches so that a reader
+can reconstruct it without the accompanying code. Here $\Theta$ is the Euler operator that
 generates the drift of the frozen family through the slow parameter, and the drift
 generator $\mathcal D$ equals $\Theta$ \emph{unless} the slow parameter rescales the
 canonical momenta, in which case it acquires a momentum-normalization term. For
 single-parameter Vaidya the mass is a metric modulus (no rescaling), so
-$\mathcal D=\Theta=m\partial_m$ and the source collapses to the universal boundary
-form $S_{\mathcal D}=[\,rp_r\,]-\lambda$ derived below. The conformal Thakurta--Kerr
+$\mathcal D=\Theta=m\partial_m$ and the source collapses to the universal boundary form
+$S_{\mathcal D}=[\,rp_r\,]-\lambda$ derived below. The conformal Thakurta--Kerr
 instance---where the time-dependent normalization $P_r=p_r/A$ adds the dilation term
 $P_r\partial_{P_r}$, and the radial-action letter carries Kerr-specific
 coefficients---is developed in Appendix~C of the companion Paper~II.
-
-This appendix derives equation~\eqref{eq:adiab-exact}---the complete first-order (on-shell
-\emph{plus} off-shell) adiabatic correction to the orbit shape---from the extended
-Hamiltonian in a metric-independent way, and closes it explicitly for the Vaidya
-branches so that a reader can reconstruct it without the accompanying code.
 
 \paragraph{Notation and the slow datum.} $\Ehat$ and $J=p_\varphi$ are the
 \emph{conserved} control charges (Kodama energy and axial costate). For Vaidya the slow

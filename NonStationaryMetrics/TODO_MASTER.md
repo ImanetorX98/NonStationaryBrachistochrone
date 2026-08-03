@@ -534,3 +534,13 @@ Fatto il cluster testuale/basso-rischio scelto dall'utente:
 - [x] **⑤ Bibliografia**: rimosso `\nocite{*}` → **69→44 voci (solo citate)**, 0 undefined.
 - Ricompilato Paper I 37pp, 0 undefined. Restano (parte strutturale, prossimo giro se serve): ② promuovere
       Theorem I.5 nel corpo, ③ shorten §4.4 (funzioni speciali→appendici), Table 1 Paper-I-only, figure/Table A2.
+
+### J-quaterdecies. Codex review — parte strutturale (2026-08-03)
+- [x] **② Theorem I.5 promosso nel corpo** (§4.4, dopo la componente on-shell): enunciato + eq:adiab-exact
+      ora nel body; App C diventa "This appendix proves Theorem I.5, stated in §..." (rimosso il duplicato).
+      Risolto l'ordine (I.5 non più sepolto in App C dopo I.6). 0 undefined/multiply.
+- [x] **Table 1 ridotta a Paper-I** (M5, non-distruttivo): righe TK (A(η),a,E_eff,J_eff,P_r,η) collassate in
+      UNA riga di rinvio marcata "Conformal Thakurta–Kerr notation (forward references only; companion Paper II)".
+- Restano (heavy, prossimo giro): ③ shorten §4.4 (macchina funzioni-speciali→App B/supplement, tenere i 5
+      oggetti nel corpo); figure/hierarchy (combinare FLRW, fig7→supplement, fig8-10 prima delle Conclusions);
+      Table A2 ricostruzione. + minori (m-list: define CKV, ripetizioni "genuinely/cleanly", ecc.).
