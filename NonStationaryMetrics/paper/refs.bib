@@ -53,7 +53,8 @@
   author = {Giannoni, Fabio and Piccione, Paolo and Verderesi, Jos\'e A.},
   title = {An approach to the relativistic brachistochrone problem by
            sub-{R}iemannian geometry},
-  journal = {J. Math. Phys.}, volume = {38}, pages = {6178}, year = {1997}}
+  journal = {J. Math. Phys.}, volume = {38}, pages = {6178}, year = {1997},
+  doi = {10.1063/1.532217}}
 
 @article{GiannoniPiccioneTausk2002,
   author = {Giannoni, Fabio and Piccione, Paolo and Tausk, Daniel V.},
@@ -114,7 +115,10 @@
            causality of spacetimes},
   journal = {Mem. Amer. Math. Soc.}, volume = {300}, number = {1501},
   year = {2024}, doi = {10.1090/memo/1501}, eprint = {1407.5494},
-  archivePrefix = {arXiv}}
+  archivePrefix = {arXiv},
+  note = {\emph{Wind Finslerian structures: from Zermelo's navigation to the
+          causality of spacetimes}, no.~1501,
+          \url{https://doi.org/10.1090/memo/1501}}}
 
 % ---- 3. Optimal control / calculus of variations ---------------------
 @book{Pontryagin,
@@ -181,57 +185,65 @@
   author = {Vaidya, P. C.},
   title = {The Gravitational Field of a Radiating Star},
   journal = {Proc. Indian Acad. Sci. A}, volume = {33}, pages = {264},
-  year = {1951}}
+  year = {1951}, doi = {10.1007/BF03173260}}
 
 @article{LindquistSchwartzMisner1965,
   author = {Lindquist, R. W. and Schwartz, R. A. and Misner, C. W.},
   title = {Vaidya's Radiating Schwarzschild Metric},
-  journal = {Phys. Rev.}, volume = {137}, pages = {B1364}, year = {1965}}
+  journal = {Phys. Rev.}, volume = {137}, pages = {B1364}, year = {1965},
+  doi = {10.1103/PhysRev.137.B1364}}
 
 @article{AshtekarKrishnan2003,
   author = {Ashtekar, Abhay and Krishnan, Badri},
   title = {Dynamical horizons and their properties},
-  journal = {Phys. Rev. D}, volume = {68}, pages = {104030}, year = {2003}}
+  journal = {Phys. Rev. D}, volume = {68}, pages = {104030}, year = {2003},
+  doi = {10.1103/PhysRevD.68.104030}}
 
 @article{Booth2005,
   author = {Booth, Ivan},
   title = {Black hole boundaries},
-  journal = {Can. J. Phys.}, volume = {83}, pages = {1073}, year = {2005}}
+  journal = {Can. J. Phys.}, volume = {83}, pages = {1073}, year = {2005},
+  doi = {10.1139/p05-063}}
 
 @article{NielsenYeom2009,
   author = {Nielsen, Alex B. and Yoon, Jong Hyuk},
   title = {Dynamical surface gravity},
   journal = {Class. Quantum Grav.}, volume = {25}, pages = {085010},
-  year = {2008}}
+  year = {2008}, doi = {10.1088/0264-9381/25/8/085010}}
 
 % ---- 7. Kodama vector / quasi-local mass -----------------------------
 @article{Kodama1980,
   author = {Kodama, Hideo},
   title = {Conserved Energy Flux for the Spherically Symmetric System and the
            Backreaction Problem in the Black Hole Evaporation},
-  journal = {Prog. Theor. Phys.}, volume = {63}, pages = {1217}, year = {1980}}
+  journal = {Prog. Theor. Phys.}, volume = {63}, pages = {1217}, year = {1980},
+  doi = {10.1143/PTP.63.1217}}
 
 @article{Hayward1996,
   author = {Hayward, Sean A.},
   title = {Gravitational energy in spherical symmetry},
-  journal = {Phys. Rev. D}, volume = {53}, pages = {1938}, year = {1996}}
+  journal = {Phys. Rev. D}, volume = {53}, pages = {1938}, year = {1996},
+  doi = {10.1103/PhysRevD.53.1938}}
 
 @article{MisnerSharp1964,
   author = {Misner, C. W. and Sharp, D. H.},
   title = {Relativistic Equations for Adiabatic, Spherically Symmetric
            Gravitational Collapse},
-  journal = {Phys. Rev.}, volume = {136}, pages = {B571}, year = {1964}}
+  journal = {Phys. Rev.}, volume = {136}, pages = {B571}, year = {1964},
+  doi = {10.1103/PhysRev.136.B571}}
 
 @article{AbreuVisser2010,
   author = {Abreu, Gabriel and Visser, Matt},
   title = {Kodama time: Geometrically preferred foliations of spherically
            symmetric spacetimes},
-  journal = {Phys. Rev. D}, volume = {82}, pages = {044027}, year = {2010}}
+  journal = {Phys. Rev. D}, volume = {82}, pages = {044027}, year = {2010},
+  doi = {10.1103/PhysRevD.82.044027}}
 
 @article{HaywardMukohyama1999,
   author = {Hayward, S. A. and Mukohyama, S. and Ashworth, M. C.},
   title = {Dynamic black-hole entropy},
-  journal = {Phys. Lett. A}, volume = {256}, pages = {347}, year = {1999}}
+  journal = {Phys. Lett. A}, volume = {256}, pages = {347}, year = {1999},
+  doi = {10.1016/S0375-9601(99)00225-X}}
 
 % ---- 8. Cosmological black holes / conformal / Thakurta / McVittie ---
 @article{Thakurta1981,
@@ -302,11 +314,12 @@
   note = {Release 1.2.7 of 2026-06-15, \url{https://dlmf.nist.gov/} (accessed 2026-07-23)},
   year = {2026}}
 
+% TODO(author): replace version/commit only after the final supporting Zenodo release is
+% published and verified against the submitted Paper I build.
 @misc{Rosignoli2026Code,
   author       = {Rosignoli, Iman},
-  title        = {{NonStationaryBrachistochrone}: numerical and symbolic
-                  codebase for constrained-worldline brachistochrones in
-                  non-stationary spacetimes},
+  title        = {{ImanetorX98/NonStationaryBrachistochrone}: First {Zenodo}
+                  Release},
   year         = {2026},
   version      = {v1.0},
   publisher    = {Zenodo},
@@ -333,8 +346,9 @@
   year         = {2026},
   howpublished = {\url{https://github.com/abelfunctions/abelfunctions}},
   note         = {Patched for {SageMath}~10.9 (\texttt{is\_*} API); the exact
-                  patched tree is archived in the reproducibility package
-                  \cite{Rosignoli2026Code}; accessed 2026-07-23}
+                  patched tree is archived in the reproducibility package at
+                  \url{https://doi.org/10.5281/zenodo.21707378}; accessed
+                  2026-07-23}
 }
 
 @article{NumPy,
@@ -430,6 +444,8 @@
   journal = {arXiv preprint},
   eprint  = {1110.6917}, archivePrefix = {arXiv}, primaryClass = {math.NT},
   year    = {2011},
+  note    = {\emph{Multiple elliptic polylogarithms},
+             \url{https://arxiv.org/abs/1110.6917}},
 }
 
 @Article{Chen1977,
