@@ -492,6 +492,9 @@ Status scientifico frozen; solo editoriale. Fatto:
 
 ### J-undecies. Final editorial checklist (2026-08-01) — pronti per submission
 - [x] #1 DOI companion verificati (I 21739998, II 21740000), nessun placeholder.
+      NB (2026-08-04): Paper I re-versionato → nuovo DOI **21781850** (aggiornati cover
+      letter I/II, companionI.bib, README); il titolo Zenodo di Paper II va allineato al
+      manoscritto (ergosphere trichotomy, separatrices, and adiabatic response).
 - [x] #2 Running header corto via \markboth (no più troncatura del titolo lungo). Verificato render.
 - [x] #3 η riservato al conforme: residui `T_br`/`T_τ` in Paper II (η(r) generico 303-305, "clock η" 330,
       tabella η=t/η=τ 597). Nessun η=proper-time residuo.
@@ -503,3 +506,82 @@ Status scientifico frozen; solo editoriale. Fatto:
       font della figura indicatrice aumentati (legend 6→8, assi 9, tick 8), rigenerata fig_indicatrici.
 - [x] #8 AI names esatti: OpenAI GPT-5.6 (Sol), Anthropic Claude (Opus 4.8).
 - [x] #9 Final pass: **0 undefined, 0 multiply-defined**, DOI/hyperlink/numerazione ok. Paper I 38pp, II 49pp.
+
+### J-duodecies. Mock CQG Associate Editor (desk-reject soft) — restructuring editoriale Paper I (2026-08-03)
+Verdetto: problema di presentazione/positioning, non di matematica. Fatto su Paper I:
+- [x] **Abstract** riscritto attorno a UNA domanda ("What is the fastest constrained worldline in a
+      spacetime that is itself evolving?"): gap (non-autonomo, niente energia conservata) → idea
+      (controlled-rail/Kodama) → fondamenti → 2 casi (FLRW, Vaidya). Tecnicismi (horizon dilogarithm,
+      S_D, weight-two, O(ε²)) tolti. 194 parole.
+- [x] **Introduzione** ristrutturata in 4 blocchi: (1) domanda/motivazione fisica, (2) gap + positioning
+      esplicito (stazionario vs dinamico), (3) idea controlled-rail/Kodama, (4) risultati + roadmap con
+      separazione framework(§2)/applicazioni(§3 FLRW, §4 Vaidya) + rinvio Paper II.
+- [x] **De-promozione**: "the unifying formalism"→"the shared construction", "Strikingly,"→tolto,
+      "We stress that"→tolto, "sharp probe"→"quantitative probe". "genuinely/a genuine" tecnici lasciati.
+- Conclusione: già chiude col significato fisico (frase quantitative-probe).
+- Ricompilato: Paper I 38pp, 0 undefined. Paper II: si aspetta la risposta CQG prima di replicare.
+
+### J-terdecies. Codex CQG editorial review (major-revision, resubmit) — cluster testuale-gating (2026-08-03)
+Review su paper1-11 (post mio restructuring): loda abstract-domanda/intro-4-blocchi, spinge oltre. 4 condizioni-cancello.
+Fatto il cluster testuale/basso-rischio scelto dall'utente:
+- [x] **① Novelty + literature positioning**: aggiunte le citazioni della linea diretta (Giannoni–Piccione–
+      Verderesi 1997, Giannoni–Piccione–Tausk 2002, Giannoni–Piccione 2002 arrival-time GR, Caponio–Javaloyes
+      2026 survey) in refs.bib + intro. Rimosso il claim assoluto "have not been addressed"; novità ristretta
+      (mantenimento attivo carica-rail in background non-autonomo + Kodama + free-arrival Pontryagin + FLRW/Vaidya).
+- [x] **Abstract calibrato** (M11): "legitimate Pontryagin problem" ora esplicita "global minimisation
+      conditional, not automatic"; "solve in closed form"→"derive the extremal equations and their closed
+      representations"; "cleanly separates"→separazione concreta (spatial-curvature FLRW vs mass-flow Vaidya).
+- [x] **④ Calibrazione claim/caption**: fig 3 "minimizes both"→"numerical perturbation check ... a local
+      check, not a global-minimality proof"; fig A2/verifmin "minimizes its own travel time"→"local
+      perturbation check"; body idem; Conclusions "well-posed" qualificato col dominio timelike/nondegenere.
+- [x] **⑤ Bibliografia**: rimosso `\nocite{*}` → **69→44 voci (solo citate)**, 0 undefined.
+- Ricompilato Paper I 37pp, 0 undefined. Restano (parte strutturale, prossimo giro se serve): ② promuovere
+      Theorem I.5 nel corpo, ③ shorten §4.4 (funzioni speciali→appendici), Table 1 Paper-I-only, figure/Table A2.
+
+### J-quaterdecies. Codex review — parte strutturale (2026-08-03)
+- [x] **② Theorem I.5 promosso nel corpo** (§4.4, dopo la componente on-shell): enunciato + eq:adiab-exact
+      ora nel body; App C diventa "This appendix proves Theorem I.5, stated in §..." (rimosso il duplicato).
+      Risolto l'ordine (I.5 non più sepolto in App C dopo I.6). 0 undefined/multiply.
+- [x] **Table 1 ridotta a Paper-I** (M5, non-distruttivo): righe TK (A(η),a,E_eff,J_eff,P_r,η) collassate in
+      UNA riga di rinvio marcata "Conformal Thakurta–Kerr notation (forward references only; companion Paper II)".
+- Restano (heavy, prossimo giro): ③ shorten §4.4 (macchina funzioni-speciali→App B/supplement, tenere i 5
+      oggetti nel corpo); figure/hierarchy (combinare FLRW, fig7→supplement, fig8-10 prima delle Conclusions);
+      Table A2 ricostruzione. + minori (m-list: define CKV, ripetizioni "genuinely/cleanly", ecc.).
+
+### J-quindecies. Codex review — batch strutturale/editoriale 2 (2026-08-03)
+- [x] **Float order (M7)**: `\clearpage` prima di \section{Conclusions} → le fig 8-10 non spezzano più le
+      Conclusions.
+- [x] **Table A2 ricostruita (M8)**: tolto l'header-prosa multicolumn che collideva con la riga dati e l'hash;
+      "complete first-order correction" ora riga normale; "paths under VaidyaMetric/" spostato in caption;
+      residual right-aligned; SHA in footnote.
+- [x] **CKV esteso (m3)**: titolo §2.3 e Conclusions "Killing--CKV--Kodama" → "Killing / conformal-Killing /
+      Kodama" (niente più sigla bare).
+- [x] **③ parziale + m24**: paragrafo rank-five/shuffle/Fay nel corpo §4.4 condensato in 2 frasi + rinvio al
+      reproducibility package (esperimento strutturale fuori dalla narrativa principale). "closed form"→
+      "closed representation" nella caption script-map.
+- [x] Fix overfull Table 1 (riga di rinvio TK come multicolumn che va a capo).
+- Ricompilato Paper I 38pp, 0 undefined, 0 overfull≥100pt.
+- DEFERRED (heavy, sessione nuova per budget): rigenerazione figure (combinare FLRW fig 2-3, fig 7→supplement,
+      line-styles greyscale), relocazione più ampia della macchina funzioni-speciali di §4.4→appendici,
+      restanti minori (m-list: ripetizioni "genuinely/cleanly", sub-arc/norm nelle caption, ecc.).
+
+### J-sexdecies. Codex ③ — §4.4 alleggerita (2026-08-03)
+Il punto ③ (era parziale) ora sostanzialmente fatto: spostata/condensata la macchina funzioni-speciali dal
+corpo §4.4, tenendo i 5 oggetti (orbita frozen, Theorem I.5, S_D=[rp_r]−λ, evaluabilità compatta + horizon
+weight-two, fig.10/numeri):
+- [x] Paragrafo "Fully explicit degeneration-family correction" (~45 righe: Mittag-Leffler, residui,
+      Hermite-Ostrogradsky, Kronecker-Eisenstein tilde-Gamma q-series) → ~18 righe, eq:vaidya-sep-G tenuta,
+      costruzione completa → rinvio a \ref{app:separatrix}.
+- [x] Blocco horizon-dilogarithm: divisore/residue-theorem/reference-length (~14→4) + riduzione numerica
+      genus-degeneration (~34→10, J_deg=7.0266/r_d/branch points/nome → App B). eq:horizon-dilog tenuta.
+- Ricompilato 38pp, 0 undefined/multiply, size scesa (~90 righe di dettaglio tolte dal corpo).
+- Restano solo le FIGURE (combinare FLRW fig 2-3, fig 7→supplement, line-styles greyscale) + minori m-list.
+
+### J-septendecies. Codex — figure (livello LaTeX) 2026-08-03
+- [x] **FLRW fig 2+3 combinate** in un unico float a due pannelli (a,b) via minipage; rinvio nel testo →
+      "figure~\ref{fig:flrw-kin}a,b"; entrambi i label tenuti. (Codex §6.7/§9.2)
+- [x] **Fig 7 (no-inversion)**: caption-disclaimer accorciata (~8 righe→4). (Codex Fig 7)
+- Ricompilato 37pp, 0 undefined/multiply (una pagina risparmiata dalla combinazione).
+- DEFERRED (richiede rigenerare gli script figura, sessione con budget): togliere i titoli in-plot verbosi
+      che duplicano le caption (es. fig Kodama), line-styles+marker per il greyscale, export vettoriale,
+      spostamento fisico di fig 7 nel supplement. + minori m-list (ripetizioni "genuinely/cleanly", sub-arc/norm).
