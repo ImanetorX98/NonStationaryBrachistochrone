@@ -1,0 +1,39 @@
+{
+  "title": "NonStationaryBrachistochrone: reproducibility package for controlled-rail brachistochrones in non-stationary spacetimes",
+  "description": "Symbolic derivations, numerical verification scripts, figure-generation code, and manuscript sources for controlled-rail brachistochrones in non-stationary spacetimes. The repository supports the companion studies of the FLRW and Vaidya sectors and of the conformal Kerr (Thakurta-Kerr) sector.",
+  "creators": [
+    {
+      "name": "Rosignoli, Iman",
+      "orcid": "0009-0004-4536-0285",
+      "affiliation": "University of Pavia"
+    }
+  ],
+  "version": "1.1.0",
+  "access_right": "open",
+  "license": "mit",
+  "upload_type": "software",
+  "keywords": [
+    "relativistic brachistochrone",
+    "controlled rail",
+    "non-stationary spacetimes",
+    "Kodama energy",
+    "Vaidya spacetime",
+    "FLRW spacetime",
+    "Thakurta-Kerr spacetime",
+    "optimal control",
+    "adiabatic perturbation theory",
+    "separatrix dynamics"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.21781850",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.21740000",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint"
+    }
+  ]
+}
