@@ -117,18 +117,22 @@ Spacetimes: Adiabatic Theory, Ergosphere Transitions and Hyperelliptic Closed Fo
 Remaining Codex action: in `companionII.bib`, keep the capitalization brace on `{Kerr}` and
 add a brace on `{Thakurta}` (currently rendered lower-case), leaving the wording as is.
 
-### M10 — Public snapshots older than the final build  *(Paper I DOI RESOLVED; code DOI pending)*
-The old Paper I preprint DOI `10.5281/zenodo.21739998` contained `paper1-10.pdf`, not the
-34-page build. **The author published a new immutable Paper I version:
-`10.5281/zenodo.21781850`.** All Paper-I self-citations have been updated to it:
-`cover_letter_paperI.tex`, `cover_letter_paperII.tex` (Paper-I mention), `companionI.bib`,
-and `README.md`. **Codex: use `10.5281/zenodo.21781850` for Paper I everywhere; do not
-reintroduce `21739998`.**
-Still pending *(author)*: the software DOI `10.5281/zenodo.21707378` (v1.0/MIT) predates the
-final Figure 1 and Figure 9 production wrappers — either publish a new code version and
-update ref [32] + the data statement + the Table A2 hash from *verified* new metadata, or
-confirm v1.0 still supports the submitted figures. Do not mutate a DOI by inference. Mark
-`% TODO(author)`.
+### M10 — Public snapshots older than the final build  *(Paper I + code DOIs RESOLVED)*
+- **Paper I preprint:** old `10.5281/zenodo.21739998` (`paper1-10.pdf`) → new immutable
+  version **`10.5281/zenodo.21781850`**. Updated in `cover_letter_paperI.tex`,
+  `cover_letter_paperII.tex`, `companionI.bib`, `README.md`. Codex: never reintroduce
+  `21739998`.
+- **Software/repo:** old `10.5281/zenodo.21707378` (v1.0) → new version
+  **`10.5281/zenodo.21782443`**. DOI updated in `refs.bib` (`Rosignoli2026Code` +
+  `abelfunctions` note), `paper1.tex`, `paper2.tex`, both cover letters. Codex: never
+  reintroduce `21707378`.
+
+**Still pending metadata sync on the code entry `Rosignoli2026Code`** (needs verified
+values from the author — DO NOT infer): the bib `title` still reads "First Zenodo Release",
+`version = {v1.0}`, and the `note` carries the old commit
+`52522c77ebdac6d367178b311330ff8cdee0d9c9`. Also the data-availability prose in
+`paper1.tex` and `paper2.tex` says "version~1.0". Update all four (title, version tag,
+commit hash, prose "version") once the new release's title/tag/commit are supplied.
 
 ---
 
