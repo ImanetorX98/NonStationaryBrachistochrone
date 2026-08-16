@@ -126,6 +126,13 @@ Print["  deg_r A^m = 5 ? ",
    - Exponent[Denominator[Together[AmTex]], rr] === 5];
 Do[ok["c_" <> ToString[k] <> " odd in J",
    Simplify[(ckTex[[k + 1]] /. JJ -> -JJ) + ckTex[[k + 1]]]], {k, 0, 4}];
+(* Lemma I.B: premises of the weight count, then the scaling itself *)
+scl[f_] := f /. {rr -> al rr, mm -> al mm, JJ -> al JJ};
+ok["S homogeneous of degree 6", Simplify[scl[S] - al^6 S]];
+ok["dS/dr homogeneous of degree 5", Simplify[scl[D[S, rr]] - al^5 D[S, rr]]];
+ok["K = J D_E homogeneous of degree 2 (NOT 1)", Simplify[scl[JJ DE] - al^2 JJ DE]];
+Print["   for contrast, degree 1 residual = ", Simplify[scl[JJ DE] - al^1 JJ DE]];
+ok["N_m homogeneous of degree nu = 7", Simplify[scl[NmS] - al^7 NmS]];
 Do[ok["c_" <> ToString[k] <> " scaling  c(a m, E, a J) = a^(1-k) c",
    Simplify[(ckTex[[k + 1]] /. {mm -> al mm, JJ -> al JJ})
      - al^(1 - k) ckTex[[k + 1]]]], {k, 0, 4}];

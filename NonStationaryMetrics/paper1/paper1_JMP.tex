@@ -1467,18 +1467,62 @@ $(r,m,\Ehat,J)$, which is the statement that they solve it.
 Three structural features are visible. Each $c_k^m$ is \emph{odd} in $J$ and depends on the
 energy only through $\mathfrak E=\Ehat^2$, as it must, since $N_m$ is odd in $J$ while $S$
 is even. The common denominator is the reduced discriminant, so
-by~\eqref{eq:det-disc} the reduction degenerates exactly where the curve does. And the
-joint homogeneity of $S$ (degree six), $K=JD_{\Ehat}$ (degree \emph{two}) and hence $N_m$
-(degree seven) forces the scaling
+by~\eqref{eq:det-disc} the reduction degenerates exactly where the curve does. The third
+feature is a scaling law, which is not a dimensional observation but a consequence of the
+uniqueness established in Lemma~\ref{lem:reduction}.
+
+\begin{auxlemma}[scaling of the reduction]\label{lem:ck-scaling}
+Let $\sigma_\alpha$ denote the scaling $(r,m,J)\mapsto(\alpha r,\alpha m,\alpha J)$,
+$\alpha>0$, let $S$ be homogeneous of degree six and $N_\lambda$ homogeneous of degree
+$\nu$, and assume the hypotheses of Lemma~\ref{lem:reduction}. Then the unique solution
+of~\eqref{eq:reduction-identity} is itself homogeneous, of degrees
 \begin{equation}
-   c^m_k(\alpha m,\Ehat,\alpha J)=\alpha^{1-k}\,c^m_k(m,\Ehat,J),
-   \qquad\text{i.e.}\qquad
-   c^m_k=m^{1-k}\,C_k\!\big(\Ehat^2,\,J/m\big),
+   \deg\mathcal{A}=\nu-5,\qquad \deg c_k=\nu-6-k .
    \label{eq:ck-scaling}
 \end{equation}
-which is the same homogeneity that fixes $\Jc=m\,j(\Ehat)$ in Lemma~\ref{lem:tracking}.
-Equations~\eqref{eq:ck-closed} were obtained by solving the $11\times11$ system
-symbolically in $(m,\Ehat,J)$ and agree with the numerical solve below to twelve digits.
+For the Vaidya mass reduction $K=JD_{\Ehat}$ is homogeneous of degree \emph{two}, hence
+$N_m=S\,\partial_mK-\tfrac12K\,\partial_mS$ is homogeneous of degree $\nu=7$, giving
+$\deg\mathcal{A}^m=2$ and $\deg c^m_k=1-k$, i.e.\
+$c^m_k(\alpha m,\Ehat,\alpha J)=\alpha^{1-k}c^m_k(m,\Ehat,J)$ and equivalently
+$c^m_k=m^{1-k}\,C_k(\Ehat^2,J/m)$.
+\end{auxlemma}
+
+\begin{proof}
+Fix $\alpha>0$ and define
+$\tilde{\mathcal{A}}:=\alpha^{5-\nu}\,\mathcal{A}\!\circ\!\sigma_\alpha$ and
+$\tilde c_k:=\alpha^{6+k-\nu}\,c_k\!\circ\!\sigma_\alpha$. These are admissible: $\sigma_\alpha$
+maps polynomials of degree at most five in $r$ to polynomials of degree at most five, and
+the $\tilde c_k$ remain independent of $r$. Evaluating~\eqref{eq:reduction-identity} at
+$\sigma_\alpha(r,m,J)$ and using $S\circ\sigma_\alpha=\alpha^6S$,
+$(\partial_rS)\circ\sigma_\alpha=\alpha^5\partial_rS$ and
+$N_\lambda\circ\sigma_\alpha=\alpha^\nu N_\lambda$ gives
+\[
+   2\,\alpha^{6}\,(\mathcal{A}'\!\circ\!\sigma_\alpha)\,S
+   -\alpha^{5}\,(\mathcal{A}\circ\sigma_\alpha)\,S'
+   +2S\sum_k\alpha^{6+k}\,(c_k\circ\sigma_\alpha)\,r^k
+   \;=\;2\,\alpha^{\nu}N_\lambda ,
+\]
+and dividing by $\alpha^{\nu}$ turns the left-hand side into
+$2\tilde{\mathcal{A}}'S-\tilde{\mathcal{A}}S'+2S\sum_k\tilde c_kr^k$, because
+$\tilde{\mathcal{A}}'=\alpha^{6-\nu}\,\mathcal{A}'\!\circ\!\sigma_\alpha$. Hence
+$(\tilde{\mathcal{A}},\tilde c)$ solves the same identity with the same data. By
+Lemma~\ref{lem:reduction} that solution is unique, so
+$\tilde{\mathcal{A}}=\mathcal{A}$ and $\tilde c_k=c_k$, which is~\eqref{eq:ck-scaling}.
+\end{proof}
+
+\begin{remark}
+The load-bearing step is uniqueness, not the exponent count: a linear problem whose data
+are equivariant under a group action has an equivariant solution only when that solution
+is unique. Accordingly~\eqref{eq:ck-scaling} holds exactly on the stratum where
+Lemma~\ref{lem:reduction} applies and says nothing on the degeneration locus, where the
+solution set is a line and the $c_k$ have poles. The same homogeneity of $S$, used through
+Euler's theorem instead, is what fixes $\Jc=m\,j(\Ehat)$ in Lemma~\ref{lem:tracking}.
+\end{remark}
+
+Equations~\eqref{eq:ck-closed} and~\eqref{eq:Am-closed} were obtained by solving the
+$11\times11$ system symbolically in $(m,\Ehat,J)$; substituted back
+into~\eqref{eq:reduction-identity} they annihilate it identically, and they reproduce the
+numerical solve below to twelve digits.
 A reference solution to check against (polynomial residual $0$ exactly):
 \begin{table}[htbp]
     \centering
