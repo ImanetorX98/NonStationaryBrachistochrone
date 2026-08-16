@@ -6,7 +6,9 @@
 
      Lemma I.A   rail indicatrix: tricotomy, Vaidya ellipse, support function
      Theorem I.1 (ii)  H_v is the support function of the indicatrix
-     Lemma I.4   det M = -32 (Ehat^2 - 1) disc_r S ; kernel at degeneration
+     Lemma I.4   nonsingularity; kernel at the degeneration locus
+     Lemma I.B   det M = 32 Res(S,S+) = -32 s6 disc_r S, for a generic sextic
+     Lemma I.C   scaling of the reduction (weights of A and c_k)
      Lemma I.6   Euler homogeneity of S ; N_tot(r_d) = 0
      Theorem I.5 Randers-Euler, self-similarity, Theta H_v, boundary form
 
@@ -71,6 +73,36 @@ Print["\ndeg_rr S = ", Exponent[S, rr], " , deg_rr P = ", Exponent[P, rr],
       " , matrix ", Dimensions[M]];
 ok["det M + 32 (Ehat^2-1) disc_r S",
    Factor[Det[M] + 32 (E2 - 1) Discriminant[S, rr]]];
+
+(* Lemma I.B: the same identity for a GENERIC sextic, which is what the
+   proof actually establishes.  det M = 32 Res(S,S') = -32 s6 disc_r S.   *)
+Sgen = Sum[ss[i] rr^i, {i, 0, 6}];
+Agen = Sum[Subscript[aa, i] rr^i, {i, 0, 5}];
+Cgen = Sum[Subscript[cc, k] rr^k, {k, 0, 4}];
+Pgen = Expand[2 D[Agen, rr] Sgen - Agen D[Sgen, rr] + 2 Sgen Cgen];
+Mgen = Table[Coefficient[Coefficient[Pgen, rr, n], v], {n, 0, 10}, {v, vars}];
+dgen = Det[Mgen];
+ok["generic sextic: det M - 32 Res(S,S')",
+   Simplify[dgen - Resultant[Sgen, D[Sgen, rr], rr] 32]];
+ok["generic sextic: Res(S,S') + s6 disc_r S",
+   Simplify[Resultant[Sgen, D[Sgen, rr], rr] + ss[6] Discriminant[Sgen, rr]]];
+ok["generic sextic: det M + 32 s6 disc_r S",
+   Simplify[dgen + 32 ss[6] Discriminant[Sgen, rr]]];
+ok["det M homogeneous of degree 11 in the s_i",
+   Simplify[(dgen /. ss[i_] :> lam ss[i]) - lam^11 dgen]];
+ok["det M vanishes when s6 = 0 (image drops into P_9)",
+   Simplify[dgen /. ss[6] -> 0]];
+Print["  constant fixed by one evaluation, S = r^6 - 1:"];
+Print["    disc = ", Discriminant[rr^6 - 1, rr], " , det M = ",
+  dgen /. {ss[6] -> 1, ss[0] -> -1, ss[1] -> 0, ss[2] -> 0, ss[3] -> 0,
+           ss[4] -> 0, ss[5] -> 0},
+  "  => c = -32"];
+(* explicit kernel at a repeated root, general construction *)
+Sk = Expand[(rr - 1)^2 (rr^4 + 1)];
+Qk = Expand[PolynomialQuotient[Sk, (rr - 1)^2, rr]];
+ok["kernel construction (A,C) = ((r-r_d)Q, -(r-r_d)Q'/2) annihilates T",
+   Simplify[2 D[Expand[(rr - 1) Qk], rr] Sk - Expand[(rr - 1) Qk] D[Sk, rr]
+     + 2 Sk (-(rr - 1) D[Qk, rr]/2)]];
 Print["    => nonsingular  <=>  S squarefree AND Ehat != 1"];
 
 (* kernel at the degeneration locus, E = 7/5, m = 1 *)

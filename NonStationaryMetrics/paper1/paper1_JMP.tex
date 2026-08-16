@@ -1399,23 +1399,70 @@ $2\mathcal{A}'S-\mathcal{A}S'=(r-r_d)\mathcal{A}\mathcal{A}'-\mathcal{A}^2
 =S\,(\mathcal{A}'-Q_4)$, and $\deg(\mathcal{A}'-Q_4)=4$, so
 $\big(\mathcal{A},\,\sum_kc_kr^k\big)=\big((r-r_d)Q_4,\,-\tfrac12(\mathcal{A}'-Q_4)\big)$
 is a nonzero admissible kernel vector: the system is singular, with a kernel of dimension
-one. Evaluating $\det M$ on the Vaidya sextic gives the closed
-form~\eqref{eq:det-disc}, whose second factor is $\operatorname{disc}_rS$ and whose first
-records the degree drop of $S$ at the marginal energy $\Ehat=1$, where
-$D_{\Ehat}=(\Ehat^2-1)r+2m$ ceases to contribute a root.
+one. The determinant formula~\eqref{eq:det-disc} is Lemma~\ref{lem:det-res} below.
+\end{proof}
+
+The determinant of the reduction system is not a Vaidya-specific quantity: it is the
+resultant of the radicand with its derivative, for any sextic whatsoever.
+
+\begin{auxlemma}[the reduction determinant is a resultant]\label{lem:det-res}
+Let $S=\sum_{i=0}^{6}s_ir^i$ be arbitrary and let $M$ be the $11\times11$ matrix, in the
+monomial bases, of the linear map
+\[
+   T:\ \mathbb{P}_5\times\mathbb{P}_4\longrightarrow\mathbb{P}_{10},
+   \qquad
+   T(\mathcal{A},C)=2\mathcal{A}'S-\mathcal{A}S'+2SC ,
+\]
+$\mathbb{P}_d$ denoting the polynomials of degree at most $d$. Then
+\begin{equation}
+   \det M=32\,\mathrm{Res}_r(S,S')=-32\,s_6\,\operatorname{disc}_rS .
+   \label{eq:det-res}
+\end{equation}
+In particular $T$ is invertible if and only if $\deg S=6$ and $S$ is squarefree. For the
+Vaidya sextic $s_6=\Ehat^2-1$, which is~\eqref{eq:det-disc}.
+\end{auxlemma}
+
+\begin{proof}
+Each column of $M$ collects the coefficients of $2(r^i)'S-r^iS'$ or of $2Sr^k$, so every
+entry of $M$ is linear in $(s_0,\dots,s_6)$ and $\det M$ is homogeneous of degree eleven in
+them. So is $\mathrm{Res}_r(S,S')$: the resultant of a form of degree six with one of
+degree five is of degree five in the coefficients of the first and six in those of the
+second, and the coefficients of $S'$ are themselves linear in the $s_i$. For degree six the
+classical relation reads $\mathrm{Res}_r(S,S')=(-1)^{6\cdot5/2}s_6\operatorname{disc}_rS
+=-s_6\operatorname{disc}_rS$.
+
+Next, $\det M$ vanishes on the zero locus of $s_6\operatorname{disc}_rS$. If $s_6=0$ then
+$\deg\big(T(\mathcal{A},C)\big)\le9$ for all arguments, so the image lies in the proper
+subspace $\mathbb{P}_9$ and $T$ is not surjective. If $s_6\neq0$ and $S$ has a repeated
+root $r_d$, write $S=(r-r_d)\mathcal{A}$ with $\mathcal{A}=S/(r-r_d)$ of degree five; since
+$r_d$ is at least a double root, $(r-r_d)\mid\mathcal{A}$, say $\mathcal{A}=(r-r_d)Q$ with
+$\deg Q=4$. Then
+\[
+   2\mathcal{A}'S-\mathcal{A}S'
+   =\mathcal{A}\big[(r-r_d)\mathcal{A}'-\mathcal{A}\big]
+   =(r-r_d)^3\,Q\,Q' ,
+\]
+so that $T\big(\mathcal{A},\,-\tfrac12(r-r_d)Q'\big)=0$ with $\deg(-\tfrac12(r-r_d)Q')=4$:
+a nonzero element of $\ker T$, whence $\det M=0$.
+
+Finally, $\operatorname{disc}_rS$ is irreducible over $\mathbb{Q}$ as a polynomial in the
+$s_i$, and it is coprime to $s_6$; both therefore divide $\det M$, hence so does their
+product, of degree $1+10=11$. Since $\det M$ is also of degree eleven and is not
+identically zero, $\det M=c\,s_6\operatorname{disc}_rS$ for a rational constant $c$, which
+a single evaluation fixes: at $S=r^6-1$ one has $\operatorname{disc}_rS=46656$, $s_6=1$
+and $\det M=-1492992=-32\cdot46656$, so $c=-32$.
 \end{proof}
 
 \begin{remark}[the reduction and the genus are governed by the same discriminant]
-Identity~\eqref{eq:det-disc} makes Lemma~\ref{lem:reduction} sharp: the depth-one
+Identity~\eqref{eq:det-res} makes Lemma~\ref{lem:reduction} sharp: the depth-one
 reduction is uniquely solvable exactly on the genus-two stratum
 $\operatorname{disc}_rS\neq0$ and fails exactly where the spectral curve degenerates,
 with the rank dropping by exactly one. This is the structural reason why the degeneration
-loci need the separate treatment of \ref{app:degeneration}. The identity and the kernel
-vector were verified in two independent computer-algebra systems: symbolically in
-\textsc{Mathematica}, where $\det M+32(\Ehat^2-1)\operatorname{disc}_rS$ reduces to zero
-identically in $(m,\Ehat,J)$, and in \textsc{SymPy} at sample parameter points; at
-$m=1$, $\Ehat=7/5$, $J=5/2$ the determinant is nonzero with $\gcd(S,S')=1$, while at
-$|J|=\Jc$ it vanishes with $\operatorname{rank}M=10$ and
+loci need the separate treatment of \ref{app:degeneration}. Independently of the proof
+above, the identity was confirmed symbolically in the seven generic coefficients
+$(s_0,\dots,s_6)$, and both it and the kernel vector were re-checked on the Vaidya family
+in two computer-algebra systems: at $m=1$, $\Ehat=7/5$, $J=5/2$ the determinant is nonzero
+with $\gcd(S,S')=1$, while at $|J|=\Jc$ it vanishes with $\operatorname{rank}M=10$ and
 $S=(r-r_d)^2Q_4$ exactly.
 \end{remark}
 
