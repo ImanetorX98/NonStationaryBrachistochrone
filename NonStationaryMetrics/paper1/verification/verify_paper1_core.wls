@@ -100,6 +100,39 @@ ok["C - (A' - Q4)", RootReduce[Expand[quot - (D[Aker, rr] - Q4)]]];
 Print["  deg C = ", Exponent[quot, rr], "  (must be <= 4)"];
 
 Print["\n=================================================================="];
+Print[" APPENDIX A -- closed forms of the reduction (eq:ck-closed, eq:Am-closed)"];
+Print["=================================================================="];
+(* transcribed verbatim from the manuscript *)
+Ef = E2;
+Dl = (Ef - 1)^3 JJ^4 + (Ef^2 - 20 Ef - 8) JJ^2 mm^2 - 16 mm^4;
+ckTex = {4 JJ mm^2 (3 (Ef - 1) JJ^2 + 4 mm^2)/Dl,
+   4 JJ mm (3 (Ef - 1) (Ef - 2) JJ^2 + 5 Ef mm^2)/Dl,
+   JJ ((Ef - 11) (Ef - 1)^2 JJ^2 + 4 (Ef^2 - Ef - 15) mm^2)/Dl,
+  -JJ ((Ef - 1)^3 JJ^2 + 3 (2 Ef^2 + 9 Ef - 20) mm^2)/(mm Dl),
+   2 (Ef - 1) (Ef + 8) JJ/Dl};
+AmTex = -(JJ rr DE/(mm Dl)) ((Ef - 1)^3 JJ^4
+    + JJ^2 ((Ef^2 - 8 Ef - 20) mm^2 + 2 (Ef - 1) (Ef - 4) mm rr
+            - (Ef - 1)^2 rr^2)
+    + mm rr (Ef (rr - 2 mm)^2 + 4 rr (2 rr - 5 mm)));
+NmS = Expand[S D[JJ DE, mm] - JJ DE D[S, mm]/2];
+ok["disc_r S - 2^18 (Ehat^2)^6 J^10 m^16 Delta",
+   Factor[Discriminant[S, rr] - 2^18 Ef^6 JJ^10 mm^16 Dl]];
+ok["reduction identity with the typeset A^m and c_k (identically in r,m,E,J)",
+   Together[Expand[2 D[AmTex, rr] S - AmTex D[S, rr]
+      + 2 S Sum[ckTex[[k + 1]] rr^k, {k, 0, 4}] - 2 NmS]] // Numerator //
+    Simplify];
+Print["  deg_r A^m = 5 ? ",
+  Exponent[Numerator[Together[AmTex]], rr]
+   - Exponent[Denominator[Together[AmTex]], rr] === 5];
+Do[ok["c_" <> ToString[k] <> " odd in J",
+   Simplify[(ckTex[[k + 1]] /. JJ -> -JJ) + ckTex[[k + 1]]]], {k, 0, 4}];
+Do[ok["c_" <> ToString[k] <> " scaling  c(a m, E, a J) = a^(1-k) c",
+   Simplify[(ckTex[[k + 1]] /. {mm -> al mm, JJ -> al JJ})
+     - al^(1 - k) ckTex[[k + 1]]]], {k, 0, 4}];
+ok["A^m weight two",
+   Simplify[(AmTex /. {rr -> al rr, mm -> al mm, JJ -> al JJ}) - al^2 AmTex]];
+
+Print["\n=================================================================="];
 Print[" LEMMA I.6 -- degeneration-family derivative"];
 Print["=================================================================="];
 ok["Euler:  rr S_rr + mm S_mm + JJ S_JJ - 6 S",

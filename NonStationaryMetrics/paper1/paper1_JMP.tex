@@ -1061,8 +1061,14 @@ $D_E\equiv(E^2-1)r+2m$. At a fixed reference slice the two normalizations satisf
 $\delta\varphi/\varepsilon=(m/M)\,\delta\varphi/\dot m$. The frozen family
 is the \emph{Schwarzschild} brachistochrone---the $a\to0$ limit of the
 Thakurta--Kerr forms---on the sextic
-$S=r(r-2m)D_E\,[r^2(r-2m)-J^2 D_E]$. Notably this sextic keeps six
-distinct roots: the constrained brachistochrone is genus \emph{two} even in
+$S=r(r-2m)D_E\,[r^2(r-2m)-J^2 D_E]$. Concretely it is the \emph{proper-time} branch
+$H_\tau$ of~\eqref{eq:Htau-vaidya}, on the orientation of increasing $r$ that renders
+$\sqrt S$ positive: solving $H_\tau=0$ for $p_r$ and forming
+$\varphi'=H_{\tau,J}/H_{\tau,p_r}$, $\dd v/\dd r=1/H_{\tau,p_r}$ and $\dd\tau/\dd r$
+returns exactly the three spectral expressions used below,
+$\varphi'=J D_E/\sqrt S$, equation~\eqref{eq:vaidya-clock} and
+$\dd\tau/\dd r=r^2(r-2m)/\sqrt S$ (checked to $10^{-25}$ at several radii). Notably this
+sextic keeps six distinct roots: the constrained brachistochrone is genus \emph{two} even in
 Schwarzschild (only the geodesics are elliptic; the genus drop occurs at the algebraic
 degeneration value $|J|=J_{\rm deg}$). The mass derivative reduces exactly, the horizon factor cancelling,
 \begin{equation}
@@ -1164,12 +1170,22 @@ the \emph{fully assembled} closed form (verified to $2\times10^{-13}$)
     ={}&A_m\,v
     -E\Big[\mathcal{I}_{\rm poly}-\alpha_0 U_3
         +\tfrac12\sum_{k=0}^4 c_k^m\big(U_kU_3-W_{3k}\big)\Big]\\
-    &{}-\Big[\mathcal{L}_{2m}-\alpha_0\,(v-E\,U_3)
+    &{}-\Big[\mathcal{L}_{2m}-\alpha_0\,\big(v-E\,U_3\big)\Big|_{r_0}^{\,r}
         +\sum_{k=0}^4 c_k^m\big(r\,U_k-U_{k+1}+2m\,\mathcal{D}_k\big)\Big],
 \end{aligned}
     \label{eq:vaidya-full}
 \end{equation}
-with the named building blocks: the abelian integrals $U_k=\int r^k/\sqrt S\,\dd r$;
+All blocks below are normalized to \emph{vanish at the lower limit} $r_0$, i.e.\ every
+integral is $\int_{r_0}^{r}$; this is what makes the boundary term of the integration by
+parts reduce to $A_m(r)\,v(r)$, since $A_m(r_0)=0$ by the choice of $\alpha_0$. The one
+elementary primitive that is not of this form is the tortoise term, which is why it is
+displayed with an explicit bracket $\big|_{r_0}^{\,r}$: evaluating it at the upper limit
+alone would spoil the identity by the constant
+$\alpha_0\,[r_0+2m\ln(r_0-2m)]$. With that convention the assembled
+right-hand side reproduces the quadrature of~\eqref{eq:vaidya-deltaphi} to $10^{-39}$ at
+$m=1$, $E=7/5$, $J=5/2$, $r_0=5$, $r=9$ (forty-digit arithmetic).
+
+The named building blocks are: the abelian integrals $U_k=\int r^k/\sqrt S\,\dd r$;
 the elementary rational-log primitive
 $\mathcal{I}_{\rm poly}=\int\mathcal{A}^m r^3/S\,\dd r$; the genus-two
 polylogarithms $W_{3k}=\int(U_3\dd U_k-U_k\dd U_3)$ \emph{at infinity};
@@ -1409,8 +1425,61 @@ fitted. For Vaidya $S$ is the
 Schwarzschild-seed sextic and the numerator is
 $N_m=S\,\partial_m K-\tfrac12K\,\partial_m S$; the advanced-time clock is entirely
 on-curve, its second-kind vector $b$ feeding the $W_{kj}$ of $S$ and its horizon part the
-third-kind $\ln\sigma$-quotients. One reference solution to check against (polynomial
-residual $0$ exactly):
+third-kind $\ln\sigma$-quotients.
+
+For the Vaidya mass reduction the linear solve can in fact be carried out once and for
+all. Writing $\mathfrak E\equiv\Ehat^{2}$ and introducing the \emph{reduced discriminant}
+\begin{equation}
+   \Delta\;\equiv\;(\mathfrak E-1)^3J^4+(\mathfrak E^2-20\,\mathfrak E-8)J^2m^2-16m^4,
+   \qquad
+   \operatorname{disc}_rS=2^{18}\,\mathfrak E^{6}\,J^{10}\,m^{16}\,\Delta,
+   \label{eq:reduced-disc}
+\end{equation}
+the solution of~\eqref{eq:reduction-identity} is
+\begin{equation}
+\begin{aligned}
+   c_0^m&=\frac{4Jm^2\big[3(\mathfrak E-1)J^2+4m^2\big]}{\Delta},&\qquad
+   c_4^m&=\frac{2(\mathfrak E-1)(\mathfrak E+8)J}{\Delta},\\[2pt]
+   c_1^m&=\frac{4Jm\big[3(\mathfrak E-1)(\mathfrak E-2)J^2+5\mathfrak Em^2\big]}{\Delta},\\[2pt]
+   c_2^m&=\frac{J\big[(\mathfrak E-11)(\mathfrak E-1)^2J^2
+     +4(\mathfrak E^2-\mathfrak E-15)m^2\big]}{\Delta},\\[2pt]
+   c_3^m&=-\frac{J\big[(\mathfrak E-1)^3J^2
+     +3(2\mathfrak E^2+9\mathfrak E-20)m^2\big]}{m\,\Delta}.
+\end{aligned}
+   \label{eq:ck-closed}
+\end{equation}
+The accompanying algebraic part is likewise explicit,
+\begin{equation}
+\begin{aligned}
+   \mathcal{A}^m&=-\frac{J\,r\,D_{\Ehat}}{m\,\Delta}\;\Pi_{\mathcal A},\\
+   \Pi_{\mathcal A}&=(\mathfrak E-1)^3J^4
+     +mr\big(\mathfrak E(r-2m)^2+4r(2r-5m)\big)\\
+   &\quad+J^2\big((\mathfrak E^2-8\mathfrak E-20)m^2
+     +2(\mathfrak E-1)(\mathfrak E-4)mr-(\mathfrak E-1)^2r^2\big),
+\end{aligned}
+   \label{eq:Am-closed}
+\end{equation}
+so that~\eqref{eq:dm-reduction} is completely printed: no linear solve is required to
+reproduce the Vaidya mass reduction. Substituting~\eqref{eq:ck-closed}
+and~\eqref{eq:Am-closed} into~\eqref{eq:reduction-identity} makes it vanish identically in
+$(r,m,\Ehat,J)$, which is the statement that they solve it.
+
+Three structural features are visible. Each $c_k^m$ is \emph{odd} in $J$ and depends on the
+energy only through $\mathfrak E=\Ehat^2$, as it must, since $N_m$ is odd in $J$ while $S$
+is even. The common denominator is the reduced discriminant, so
+by~\eqref{eq:det-disc} the reduction degenerates exactly where the curve does. And the
+joint homogeneity of $S$ (degree six), $K=JD_{\Ehat}$ (degree \emph{two}) and hence $N_m$
+(degree seven) forces the scaling
+\begin{equation}
+   c^m_k(\alpha m,\Ehat,\alpha J)=\alpha^{1-k}\,c^m_k(m,\Ehat,J),
+   \qquad\text{i.e.}\qquad
+   c^m_k=m^{1-k}\,C_k\!\big(\Ehat^2,\,J/m\big),
+   \label{eq:ck-scaling}
+\end{equation}
+which is the same homogeneity that fixes $\Jc=m\,j(\Ehat)$ in Lemma~\ref{lem:tracking}.
+Equations~\eqref{eq:ck-closed} were obtained by solving the $11\times11$ system
+symbolically in $(m,\Ehat,J)$ and agree with the numerical solve below to twelve digits.
+A reference solution to check against (polynomial residual $0$ exactly):
 \begin{table}[htbp]
     \centering
     \caption{Reference reduction coefficients, obtained by solving
@@ -1901,10 +1970,15 @@ $\tau$) close to $O(\varepsilon^2)$ against the true flow: least-squares log--lo
 $\approx1$ for the on-shell term alone versus $\approx2.0$ for the complete first-order
 term (figure~\ref{fig:vaidya-offshell}).
 
-\paragraph{Algebraic genus-degeneration limit ($J\to\Jc$).} The off-shell degeneration correction is simply
-the generic term at $J=\Jc$: the source coefficients are polynomials in $J$, hence finite
-there, while the spectral curve \emph{degenerates}, $S=(r-r_d)^2Q_4$ (double root $r_d$,
-genus two $\to$ genus one). Each hyperelliptic letter collapses,
+\paragraph{Algebraic genus-degeneration limit ($J\to\Jc$).} The degeneration form is
+\emph{not} obtained by substituting $J=\Jc$ into the generic expressions. The source
+\emph{numerator} $N_\lambda$ is polynomial in $J$ and hence perfectly finite at $\Jc$, but
+the reduction \emph{coefficients} $c_k$ are not: by~\eqref{eq:ck-closed} they carry the
+reduced discriminant $\Delta$ in the denominator, and $\Delta$ vanishes precisely at
+$|J|=\Jc$, so each $c_k$ has a simple pole there---the analytic counterpart of the rank
+drop of Lemma~\ref{lem:reduction}. The degeneration forms below are therefore constructed
+\emph{directly} on the degenerate curve, $S=(r-r_d)^2Q_4$ (double root $r_d$, genus two
+$\to$ genus one), and not as a limit of the genus-two formulas. Each hyperelliptic letter collapses,
 $U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\sqrt{Q_4}$
 (elliptic second kind, Weierstrass $\wp,\zeta$) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
 (third kind); the spurious poles at $r_d$ cancel in the physical combination (as
