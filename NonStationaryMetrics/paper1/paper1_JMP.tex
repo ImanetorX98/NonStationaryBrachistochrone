@@ -796,13 +796,20 @@ vector,
     n(\eta,r)=\frac1v=\frac{\Ehat}{\sqrt{\Ehat^2-a(\eta)^2}},
     \label{eq:flrwindex}
 \end{equation}
-is \emph{position-independent} at fixed $\eta$. The conformal-time functional
-$T_\eta=\int n\,\dd\ell_{\rm flat}$ is then minimized by a flat straight line
-(Fermat with a purely time-dependent index). The same curve minimizes $T_t$ and
-$T_\tau$: with $\dd t=a\,\dd\eta$ and $\dd\tau=a\sqrt{1-\dot{\vec x}^2}\,\dd\eta$,
-the monotone reparametrization $t(\eta)=\int a\,\dd\eta$ maps critical points to
-critical points, and the $\tau$-cost differs from the $\eta$-cost only by the
-same $\eta$-dependent weight. Hence
+is \emph{position-independent} at fixed $\eta$. The argument is then elementary and does
+not even need Fermat's principle: the rail fixes the comoving speed to $v(\eta)$, so the
+Euclidean arc length accumulated up to conformal time $\eta_f$ is
+$\int_{\eta_0}^{\eta_f}v\,\dd\eta$, a strictly increasing function of $\eta_f$ alone.
+Reaching the target therefore costs the least conformal time exactly when the comoving
+path is the shortest, i.e.\ a straight line. The same curve minimizes $T_t$ and $T_\tau$
+because on the rail \emph{every} clock is a function of $\eta$ alone: $\dd t=a\,\dd\eta$,
+while the rail-fixed speed makes the Lorentz weight collapse,
+\begin{equation}
+   \frac{\dd\tau}{\dd\eta}=a\sqrt{1-v^2}=\frac{a^2}{\Ehat},
+   \label{eq:flrw-dtau}
+\end{equation}
+so $t_f$ and $\tau_f$ are strictly increasing functions of $\eta_f$ and share its
+minimizer. Hence
 \begin{equation}
 \begin{split}
     \arg\min T_t&=\arg\min T_\tau=\arg\min T_\eta\\
@@ -830,6 +837,70 @@ it exhibits freezing at $a=\Ehat$ but, under perturbation, no branch structure
     $T_\tau$, consistent with the analytically proved branch degeneracy---a local check,
     not a global-minimality proof.}
     \label{fig:flrw-kin}\label{fig:flrw-var}
+\end{figure}
+
+\subsection{Arbitrary spatial curvature}
+\label{sec:flrw-curvature}
+Nothing above used spatial flatness. Write the slices with arbitrary curvature
+$k=+1,0,-1$ in the conformally static form
+\begin{equation}
+   g=a(\eta)^2\Big[-\dd\eta^2+\dd\chi^2+S_k(\chi)^2\dd\Omega^2\Big],
+   \qquad S_k(\chi)=\sin\chi,\ \chi,\ \sinh\chi ,
+   \label{eq:flrw-k}
+\end{equation}
+and keep the same conformal selector $W=\partial_\eta$. Then $W\cdot W=g_{\eta\eta}=-a^2$,
+so
+\begin{equation}
+   |W|=a(\eta)\qquad\text{for every }k :
+   \label{eq:Wnorm-k}
+\end{equation}
+the conformal factor multiplies the whole metric and $W$ points along the conformal time,
+so the spatial curvature never reaches the norm of the selector. By
+Lemma~\ref{lem:indicatrix} the indicatrix is therefore the same centred sphere of speed
+$v(\eta)=\sqrt{1-a^2/\Ehat^2}$ as in the flat case, the freezing surface is again
+$a=\Ehat$, and the clock relation~\eqref{eq:flrw-dtau} is unchanged. Every clock remains a
+strictly increasing function of $\eta$ alone, so the branch degeneracy~\eqref{eq:flrwdegen}
+persists and the minimiser is the shortest comoving path. Hence for all three curvatures
+\begin{equation}
+   \text{brachistochrone}=\text{spatial geodesic of the slice},
+   \qquad
+   \int_{\eta_0}^{\eta_f}v(\eta)\,\dd\eta=d_\gamma(x_0,x_f),
+   \label{eq:flrw-geodesic}
+\end{equation}
+with $d_\gamma$ the geodesic distance of the constant-curvature $3$-metric: curvature
+enters \emph{only} through that distance. The comoving shapes differ---great-circle arc,
+straight line, hyperbolic geodesic---as shown in
+figure~\ref{fig:flrw-curvature}(a).
+
+The closed case is not merely cosmetic: its slices are compact, and it supplies the
+simplest concrete instance of the obstruction that Proposition~\ref{prop:hjb} can only
+describe in the abstract. Two points of $S^3$ at geodesic distance $\pi$---antipodes---are
+joined by a whole $S^2$ of minimising geodesics, a textbook Maxwell set and cut locus.
+Whether the rail can reach it is quantitative: with $\Delta_{\max}$ the comoving distance
+accumulated up to freezing, the antipode is attainable iff $\Delta_{\max}\ge\pi$ in units
+of the comoving curvature radius $R_{\rm c}$. For de Sitter,
+$\Delta_{\max}=\big[\sqrt{\Ehat^2-1}+\arcsin(1/\Ehat)-\pi/2\big]/(\Ehat H)$, so the
+threshold is a condition on $HR_{\rm c}$ alone
+(figure~\ref{fig:flrw-curvature}(b)): a closed universe whose curvature radius is large
+compared with the Hubble radius keeps the minimiser unique, while a small enough one lets
+the extremal reach its own cut locus, where global optimality fails even though every
+competing arc is a perfectly good Pontryagin extremal. The open case $k=-1$ adds no such
+feature: the slices are non-compact, geodesics between two points are unique, and the
+structure is that of the flat case throughout.
+
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=\textwidth]{Immagini/fig_flrw_curvatura.pdf}
+    \caption{FLRW at arbitrary spatial curvature. (a)~Comoving brachistochrones with a
+    common closest approach $\chi_{\min}$ to a reference point $O$, drawn in the geodesic
+    polar map $(\chi,\varphi)$ of the slice: the flat geodesic is the horizontal line at
+    height $\chi_{\min}$, the closed one bends toward $O$ and the open one away from it.
+    Only the half $\varphi\ge0$ is shown; the curves are symmetric about the closest
+    approach. (b)~de Sitter reach before freezing, $\Delta_{\max}$ in comoving curvature
+    radii, against the antipodal distance $\pi$ of a closed slice. Above that line the cut
+    locus is attainable and the minimiser stops being unique---the Maxwell obstruction of
+    Proposition~\ref{prop:hjb} realised in the simplest member of the ladder.}
+    \label{fig:flrw-curvature}
 \end{figure}
 
 
