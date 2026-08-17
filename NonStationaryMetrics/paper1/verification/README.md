@@ -8,7 +8,8 @@ different systems, so an artefact of one simplifier cannot pass unnoticed.
 ```
 wolframscript -file verify_paper1_core.wls     # 55 checks
 python3       verify_paper1_core.py            # 22 checks, exit 1 on failure
-wolframscript -file verify_appB_residues.wls   # 9 checks (appendix B)
+wolframscript -file verify_appB_residues.wls   # 9 checks (appendix B residues)
+wolframscript -file verify_appB_blocks.wls     # 4 checks (appendix B block form)
 python3       verify_section44_closedform.py   # end-to-end quadrature of eq:vaidya-full
 ```
 
@@ -43,8 +44,16 @@ so it can be dropped into a regression run.
 | `r(z)` is even about a two-torsion point: `k_3 = k_5 = 0`, `k_4 != 0` | Lemma I.E(iii) | order matching at a simple root of `Q_4` |
 | `b_2^{e_i} = 4 N_m(e)/((e-r_d)^3 Q_4'(e)^2)` and no residue there | Lemma I.E(iii) | double-pole coefficient |
 
+| `r(z) = -1/(sqrt(a_4)(z-z_inf)) + B + ...` with `B = -a_3/(4 a_4)` | Lemma I.F | order matching at the pole |
+| `e_2^{z_inf} = 1/a_4` and `e_1^{z_inf} = -(2B + r_d - 2m)/sqrt(a_4)` | Lemma I.F | double-pole coefficient and residue of the clock integrand |
+| symmetrised by parts `Int A'B = AB/2 + Int(A'B - AB')/2` | Lemma I.F | differentiate both sides |
+
 Nothing Vaidya-specific enters these: they hold for any quartic `Q_4` and any
 numerator `F`, which is why they are stated as a lemma rather than as a table.
+
+`B` was used but never defined in the manuscript, and two coefficients were
+written with `m` set to 1 (`-2` where `-2m` belongs). Both are fixed in the
+current text; the scripts carry `m` symbolically so the omission cannot recur.
 
 ## Notes
 

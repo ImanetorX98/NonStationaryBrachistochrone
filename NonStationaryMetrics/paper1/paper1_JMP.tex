@@ -1929,10 +1929,51 @@ elliptic dilogarithms (Brown--Levin $\tilde\Gamma$), over the eight even blocks
 $\{1,Z_{z_d},P_{z_d},P'_{z_d},\wp(z),\wp(z{-}i\omega_{\rm im}),P_{z_\infty},
 Z_{z_\infty}\}$ with $Z_a=\zeta(z{-}a)-\zeta(z{+}a)$,
 $P_a=\wp(z{-}a)+\wp(z{+}a)$, $P'_a=\wp'(z{-}a)-\wp'(z{+}a)$. Coefficients: $c_i$ (the
-$\tilde G$ residues), $d_j$ (clock residues $e_1^{z_d}=(r_d^3-2r_d^2)/s_d$,
-$e_2^{z_\infty}=1/a_4$, $e_1^{z_\infty}=-(2B+r_d-2)/\sqrt{a_4}$) and the constant
-$C_e=(e_4^3-2e_4^2)/(e_4-r_d)+2e_1^{z_d}\zeta(z_d)-2e_2^{z_\infty}\wp(z_\infty)
+$\tilde G$ residues), $d_j$ (clock residues $e_1^{z_d}=(r_d^3-2m\,r_d^2)/s_d$,
+$e_2^{z_\infty}=1/a_4$, $e_1^{z_\infty}=-(2B+r_d-2m)/\sqrt{a_4}$, where
+$B=-a_3/(4a_4)$ is the constant term of $r(z)$ at $z_\infty$ and $a_3$ the cubic
+coefficient of $Q_4$) and the constant
+$C_e=(e_4^3-2m\,e_4^2)/(e_4-r_d)+2e_1^{z_d}\zeta(z_d)-2e_2^{z_\infty}\wp(z_\infty)
 +2e_1^{z_\infty}\zeta(z_\infty)$---all closed form.
+
+\begin{auxlemma}[block form of the first-order correction]\label{lem:blocks}
+Let $\tilde G$ be the antiderivative of $R$ constructed in
+Lemma~\ref{lem:residues}, let $T$ be any clock, and expand both in the even block
+basis, $\tilde G=\sum_ic_i\,\mathrm{Pe}_i$ and $T=\sum_jd_j\,\mathrm{Pe}_j$, with
+$\mathrm{Pe}$ the primitive of a block. Then
+\begin{equation}
+   \delta\varphi=\int R\,T\,\dd z
+   =\tfrac12\,\tilde G\,T+\tfrac12\sum_{i<j}(c_id_j-c_jd_i)\,A[e_i,e_j],
+   \qquad A[e_i,e_j]=\int(e_i\mathrm{Pe}_j-e_j\mathrm{Pe}_i)\,\dd z .
+   \label{eq:block-form}
+\end{equation}
+For $T=T_\tau=U_3-2mU_2$ the coefficients are those listed above; in particular
+$e_1^{z_d}=(r_d^3-2m\,r_d^2)/s_d$, $e_2^{z_\infty}=1/a_4$ and
+$e_1^{z_\infty}=-(2B+r_d-2m)/\sqrt{a_4}$ with $B=-a_3/(4a_4)$.
+\end{auxlemma}
+
+\begin{proof}
+Since $\tilde G'=R$, integrating by parts twice and averaging gives the elementary
+identity $\int\tilde G'T=\tfrac12\tilde GT+\tfrac12\int(\tilde G'T-\tilde GT')$, which is
+the displayed boundary term plus a manifestly antisymmetric integrand. Substituting the
+two expansions,
+$\tilde G'T-\tilde GT'=\sum_{i,j}c_id_j\,(e_i\mathrm{Pe}_j-\mathrm{Pe}_ie_j)$; the
+diagonal terms cancel and the transposed pair combines to $(c_id_j-c_jd_i)$, giving
+\eqref{eq:block-form}.
+
+For the clock coefficients, Lemma~\ref{lem:U0}(ii) gives
+$T_\tau=(V_3-2mV_2)+(r_d^3-2m\,r_d^2)\,U_0$, and $U_0$ carries residue $\rho=1/s_d$ at
+$z_d$, whence $e_1^{z_d}=(r_d^3-2m\,r_d^2)/s_d$. At $z_\infty$ expand the clock integrand
+$(r^3-2mr^2)/(r-r_d)$ using the local behaviour of $r(z)$: matching orders in
+$(\dd r/\dd z)^2=Q_4(r)$ gives
+\[
+   r(z)=-\frac{1}{\sqrt{a_4}\,(z-z_\infty)}+B+O(z-z_\infty),
+   \qquad B=-\frac{a_3}{4a_4},
+\]
+and reading off the double-pole coefficient and the residue returns $e_2^{z_\infty}=1/a_4$
+and $e_1^{z_\infty}=-(2B+r_d-2m)/\sqrt{a_4}$. The constant $C_e$ is then fixed exactly as
+$C_0$ was in Lemma~\ref{lem:residues}.
+\end{proof}
 
 \paragraph{First order, advanced-time branch (verified to $10^{-8}$).}
 Clock $v=E\,U_3+r+2m\ln(r-2m)$;
