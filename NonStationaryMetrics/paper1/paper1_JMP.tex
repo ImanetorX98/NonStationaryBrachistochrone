@@ -1809,8 +1809,49 @@ image $z=0$ ($r=e_4$) and horizon image $z=i\omega_{\rm im}$ ($r=e_3=2m$).
 \varphi_0(r)=\Jc\big[(E^2-1)z+((E^2-1)r_d+2m)\,U_0(z)\big],\;\;
 U_0=\rho[\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)]+C_{U_0}z,
 \end{equation}
-$\rho=1/\sqrt{Q_4(r_d)}$, $U_k=\int_{r_0}^r r^k/\sqrt S\,\dd r$ (explicit in
-$\sigma,\zeta$ by Hermite recursion).
+$\rho=1/\sqrt{Q_4(r_d)}$, $U_k=\int_{r_0}^r r^k/\sqrt S\,\dd r$. Both the shape of $U_0$
+and the constant $\rho$ are forced, and the higher $U_k$ reduce to it.
+
+\begin{auxlemma}[third-kind letter and Hermite reduction]\label{lem:U0}
+On the degenerate curve $S=(r-r_d)^2Q_4$, with Abel coordinate
+$z(r)=\int_{r_0}^r\dd r'/\sqrt{Q_4}$ and $\pm z_d$ the preimages of $r_d$:
+\begin{enumerate}
+\item[(i)] $\displaystyle U_0(z)=\rho\big[\ln\sigma(z-z_d)-\ln\sigma(z+z_d)\big]+C_{U_0}z$
+with $\rho=1/\sqrt{Q_4(r_d)}$;
+\item[(ii)] for $k\ge1$, $\;U_k=V_k+r_d^{\,k}\,U_0$, where
+$V_k=\int P_{k-1}(r(z))\,\dd z$ with $P_{k-1}$ the quotient of $r^k$ by $r-r_d$, an
+elliptic integral of the second kind reducible to $\zeta,\wp$ and their derivatives at
+$z_\infty$ (Hermite).
+\end{enumerate}
+\end{auxlemma}
+
+\begin{proof}
+Since $\sqrt S=(r-r_d)\sqrt{Q_4}$ and $\dd r=\sqrt{Q_4}\,\dd z$, every letter collapses to
+$U_k=\int r^k\,\dd z/(r-r_d)$. Dividing, $r^k/(r-r_d)=P_{k-1}(r)+r_d^{\,k}/(r-r_d)$, which
+is (ii), with (i) the remaining case $k=0$.
+
+For (i), differentiate: $U_0'(z)=1/(r(z)-r_d)$. Now $r(z)$ is elliptic of order two, so
+$U_0'$ is elliptic with simple poles exactly at the two preimages $\pm z_d$ of $r_d$; and
+because $r'(z)=\sqrt{Q_4(r)}$ by construction of $z$, the residues are
+\[
+   \operatorname*{Res}_{z=\pm z_d}\frac{1}{r(z)-r_d}=\frac{1}{r'(\pm z_d)}
+   =\pm\frac{1}{\sqrt{Q_4(r_d)}}=\pm\rho .
+\]
+The candidate $\rho\big[\zeta(z-z_d)-\zeta(z+z_d)\big]$ is elliptic---the quasi-period
+$2\eta$ cancels in the difference---and has simple poles at the same two points with the
+same residues $\pm\rho$. Their difference is therefore an elliptic function with no poles,
+hence a constant, which is $C_{U_0}$. Integrating and using $\zeta=(\ln\sigma)'$ gives
+(i); the constant $\rho$ is not fitted but is the residue itself.
+\end{proof}
+
+\begin{remark}
+Part (ii) is the degeneration statement quoted in \ref{app:firstorder}, $U_k\to V_k+
+r_d^{\,k}\Pi_{r_d}$, with $\Pi_{r_d}=U_0$ the third-kind letter: the whole tower of
+explicit coefficients below rests on the single residue computation above. It also
+explains the shape of $r(z)=c_r-a_4^{-1/2}[\zeta(z-z_\infty)-\zeta(z+z_\infty)]$: an
+order-two elliptic function is fixed by its two simple poles---here the preimages
+$\pm z_\infty$ of $r=\infty$---and the same difference-of-$\zeta$ construction applies.
+\end{remark}
 
 \paragraph{First order: source and antiderivative.}
 $\partial_m F=N_m/S^{3/2}$, $N_m=S\,\partial_mK-\tfrac12K\,\partial_mS$, $K=\Jc\,D_E$,
@@ -1832,7 +1873,50 @@ b_2^{e_i}&=\frac{4N_m(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
 \end{equation}
 ($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
 $R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
-b_3^a\wp'(z_\infty-a)]$.
+b_3^a\wp'(z_\infty-a)]$. None of these coefficients is fitted; each is a Laurent
+coefficient, as the following makes explicit.
+
+\begin{auxlemma}[residues of the source antiderivative]\label{lem:residues}
+With $\varepsilon=z-z_d$ and $s_d=\sqrt{Q_4(r_d)}$:
+\begin{enumerate}
+\item[(i)] $r-r_d=s_d\,\varepsilon\big(1+a_1\varepsilon+a_2\varepsilon^2+O(\varepsilon^3)\big)$
+with $a_1=Q_4'(r_d)/(4s_d)$ and $a_2=Q_4''(r_d)/12$;
+\item[(ii)] the Laurent coefficients of $R$ at $z_d$ are the $b_3^{z_d},b_2^{z_d},b_1^{z_d}$
+displayed above;
+\item[(iii)] at a simple root $e$ of $Q_4$ the function $r(z)$ is \emph{even} about the
+corresponding two-torsion point, so $R$ has there a double pole and \emph{no} residue,
+with coefficient $b_2^{e}=4N_m(e)/[(e-r_d)^3Q_4'(e)^2]$;
+\item[(iv)] $\tilde G'=R$ then holds with the displayed $C_0$.
+\end{enumerate}
+\end{auxlemma}
+
+\begin{proof}
+(i) Insert the ansatz into $(\dd r/\dd z)^2=Q_4(r)$, which defines $z$, and match orders in
+$\varepsilon$; the first two corrections come out as stated.
+
+(ii) Expanding $F=N_m/Q_4$ about $r_d$ and using (i),
+$F=h_0+h_1\varepsilon+h_2\varepsilon^2+O(\varepsilon^3)$ with exactly the $h_j$ displayed
+above---note $h_2=\tfrac12F''s_d^2+F's_da_1$ and $a_1s_d=Q_4'/4$, which is the second form
+given. Meanwhile
+$(r-r_d)^{-3}=(s_d^3\varepsilon^3)^{-1}\big[1-3a_1\varepsilon+(6a_1^2-3a_2)\varepsilon^2
++O(\varepsilon^3)\big]$. Multiplying the two series and reading off the coefficients of
+$\varepsilon^{-3},\varepsilon^{-2},\varepsilon^{-1}$ gives $b_3^{z_d},b_2^{z_d},b_1^{z_d}$.
+
+(iii) Near a simple root, $\delta=r-e$ obeys $(\dd\delta/\dd z)^2=Q_4'(e)\delta+O(\delta^2)$.
+Matching orders gives $\delta=Q_4'(e)\varepsilon^2/4+O(\varepsilon^4)$ with every
+\emph{odd} coefficient vanishing---at order $\varepsilon^3$ the matching reads
+$3Q_4'(e)k_3=Q_4'(e)k_3$, forcing $k_3=0$, and likewise at each odd order. Hence $r$, and
+therefore $R$, is even about that point: only even negative powers occur, so there is a
+double pole and no residue, and its coefficient follows from
+$Q_4(r)\simeq Q_4'(e)^2\varepsilon^2/4$.
+
+(iv) Differentiating term by term, $\dd(\ln\sigma)/\dd z=\zeta$, $\zeta'=-\wp$ and
+$\wp'(u)=-2u^{-3}+O(u)$, so the three families contribute principal parts
+$b_1^a(z-a)^{-1}$, $b_2^a(z-a)^{-2}$ and $b_3^a(z-a)^{-3}$ respectively: $\tilde G'$ and
+$R$ have identical principal parts at every pole, so their difference is a pole-free
+elliptic function, i.e.\ a constant. Evaluating at $z_\infty$, where $R$ vanishes, fixes it
+to the displayed $C_0$.
+\end{proof}
 
 \paragraph{First order, proper-time branch (verified to $10^{-9}$).}
 Clock $T_\tau=U_3-2mU_2$; block form

@@ -6,8 +6,10 @@ The two scripts are deliberately redundant: they verify the same claims in
 different systems, so an artefact of one simplifier cannot pass unnoticed.
 
 ```
-wolframscript -file verify_paper1_core.wls     # 17 checks
+wolframscript -file verify_paper1_core.wls     # 55 checks
 python3       verify_paper1_core.py            # 22 checks, exit 1 on failure
+wolframscript -file verify_appB_residues.wls   # 9 checks (appendix B)
+python3       verify_section44_closedform.py   # end-to-end quadrature of eq:vaidya-full
 ```
 
 Both print `[OK]` per claim, and every `[OK]` is an exact symbolic zero — not a
@@ -31,6 +33,18 @@ so it can be dropped into a regression run.
 | Self-similarity `r H_r + m H_m + J H_J = 0` — **identically, not only on shell** | `eq:selfsimilar` | direct and by explicit rescaling |
 | `Theta H_v` equals `eq:ThetaHv` | Appendix C | direct |
 | `d(r p_r)/dlambda - (1 + Theta H) = H`, hence `S_D = [r p_r] - lambda` on shell | `eq:SD-vaidya` | direct |
+
+### Appendix B (`verify_appB_residues.wls`)
+
+| Claim | Manuscript | Check |
+|---|---|---|
+| `r - r_d = s_d eps (1 + a_1 eps + a_2 eps^2 + ...)`, `a_1 = Q_4'(r_d)/(4 s_d)`, `a_2 = Q_4''(r_d)/12` | Lemma I.E(i) | order matching in `(dr/dz)^2 = Q_4(r)` |
+| Laurent coefficients `b_3, b_2, b_1` at the triple pole `z_d` | Lemma I.E(ii) | series product, generic `Q_4` and `F` |
+| `r(z)` is even about a two-torsion point: `k_3 = k_5 = 0`, `k_4 != 0` | Lemma I.E(iii) | order matching at a simple root of `Q_4` |
+| `b_2^{e_i} = 4 N_m(e)/((e-r_d)^3 Q_4'(e)^2)` and no residue there | Lemma I.E(iii) | double-pole coefficient |
+
+Nothing Vaidya-specific enters these: they hold for any quartic `Q_4` and any
+numerator `F`, which is why they are stated as a lemma rather than as a table.
 
 ## Notes
 
