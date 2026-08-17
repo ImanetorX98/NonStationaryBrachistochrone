@@ -59,6 +59,58 @@ ok["max_theta (pr r' + J phi') - 1 - H_v",
    FullSimplify[sup - 1 - Hv, Assumptions -> {r > 2 m, m > 0, Ehat > 1, J > 0}]];
 
 Print["\n=================================================================="];
+Print[" SECTIONS 4.1 and 4.3 -- Kodama rail and the turning-point laws"];
+Print["=================================================================="];
+xco = {vv, r, ph};
+fV = 1 - 2 mv[vv]/r;
+gV = {{-fV, 1, 0}, {1, 0, 0}, {0, 0, r^2}};
+gi = Inverse[gV];
+Ch = Table[(1/2) Sum[gi[[aa1, dd]] (D[gV[[dd, bb]], xco[[cc]]]
+     + D[gV[[dd, cc]], xco[[bb]]] - D[gV[[bb, cc]], xco[[dd]]]), {dd, 3}],
+   {aa1, 3}, {bb, 3}, {cc, 3}] // Simplify;
+Kup = {1, 0, 0}; Kdn = Simplify[gV . Kup];
+ok["K.K + f  (Kodama norm)", Simplify[Kup . gV . Kup + fV]];
+ok["div K", Sum[D[Sqrt[-Det[gV]] Kup[[aa1]], xco[[aa1]]], {aa1, 3}]];
+gK = Table[D[Kdn[[bb]], xco[[aa1]]] - Sum[Ch[[cc, aa1, bb]] Kdn[[cc]], {cc, 3}],
+   {aa1, 3}, {bb, 3}] // Simplify;
+symK = Simplify[(gK + Transpose[gK])/2];
+ok["geodesic Kodama drift  -u^a u^b grad_(a K_b) = -m'(v)(u^v)^2/r",
+   Simplify[-Sum[uvv uvv symK[[1, 1]], {1}] + mv'[vv] uvv^2/r]];
+ok["static limit: grad_(a K_b) = 0 for K = d_v",
+   Total[Flatten[Simplify[symK /. mv'[vv] -> 0]]]];
+Print["  Khat = K/Sqrt[f] in the static limit is NOT Killing: ",
+  Not[PossibleZeroQ[Total[Flatten[Simplify[
+     Table[D[(Kdn/Sqrt[fV])[[bb]], xco[[aa1]]]
+       - Sum[Ch[[cc, aa1, bb]] (Kdn/Sqrt[fV])[[cc]], {cc, 3}],
+      {aa1, 3}, {bb, 3}] /. mv'[vv] -> 0]]]]]];
+
+(* section 4.1: the two branch Hamiltonians from one support function *)
+fs = 1 - 2 ms/rs; ws = Es^2 - fs;
+hs[P_, Jv_] := P (fs - Es^2) + Sqrt[ws] Sqrt[Es^2 P^2 + Jv^2/rs^2];
+ok["H_v  - (h(p_r) - 1)", Simplify[(ps (fs - Es^2) - 1
+     + Sqrt[ws] Sqrt[Es^2 ps^2 + Js^2/rs^2]) - (hs[ps, Js] - 1)]];
+ok["H_tau - (h(p_r + 1/Ehat) - f/Ehat)",
+   Simplify[(ps (fs - Es^2) - Es
+     + Sqrt[ws] Sqrt[(Es ps + 1)^2 + Js^2/rs^2]) - (hs[ps + 1/Es, Js] - fs/Es)]];
+
+(* section 4.3: frozen t-parametrised indicatrix and the turning-point laws *)
+indT = Vr^2/fs^2 + Vp^2/fs - ws/Es^2;
+ok["frozen t-indicatrix from g(u,u) = -1",
+   Simplify[Together[(-Es^2/fs + (Vr Es/fs)^2/fs + (Vp Es/fs)^2 + 1) fs/Es^2]
+     - indT]];
+hT = Sqrt[(fs Sqrt[ws]/Es)^2 ps^2 + (Sqrt[fs] Sqrt[ws]/Es)^2 Js^2/rs^2];
+(* at the turning point p_r = 0 the shell reads  (f w/Ehat^2) J^2/r^2 = cost^2 *)
+hT0sq = Simplify[(hT^2 /. ps -> 0) /. Js^2 -> JJ2];
+ok["h^2 at p_r=0 equals (f w / Ehat^2) J^2 / r^2",
+   Simplify[hT0sq - fs ws JJ2/(Es^2 rs^2)]];
+ok["tau turning point: J^2 = f r^2 / w   [(E^2-f)J^2 = f r^2]",
+   Simplify[(JJ2 /. First@Solve[hT0sq == (fs/Es)^2, JJ2]) - fs rs^2/ws]];
+ok["t   turning point: J^2 = E^2 r^2/(f w)   [(E^2-f)J^2 = E^2 r^2/f]",
+   Simplify[(JJ2 /. First@Solve[hT0sq == 1, JJ2]) - Es^2 rs^2/(fs ws)]];
+ok["ratio J^2_t / J^2_tau - Ehat^2/f^2",
+   Simplify[(Es^2 rs^2/(fs ws))/(fs rs^2/ws) - Es^2/fs^2]];
+
+Print["\n=================================================================="];
 Print[" LEMMA I.4 -- the 11x11 reduction system"];
 Print["=================================================================="];
 
