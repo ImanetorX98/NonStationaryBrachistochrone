@@ -741,7 +741,65 @@ right-hand side of equation~\eqref{eq:cost} vanishes identically: $-u\cdot\xi$ i
 Noether-conserved and the rail is free. This is Perlick's stationary case
 \cite{Perlick1991}.
 
-\paragraph{Recovery of Perlick's stationary optics.} In the Killing limit
+\paragraph{The time-dependent optical metric, and Perlick's as its stationary member.}
+The rail does more than supply extremal equations: it produces an \emph{optical metric},
+and it does so whether or not the geometry is stationary. This is the precise sense in
+which the construction extends Perlick's.
+
+\begin{auxtheorem}[time-dependent optical metric]\label{thm:optical}
+Assume (H1)--(H2), let $\chi$ be adapted to the selector ($W=\partial_\chi$), write
+$f=|W|^2=-g_{\chi\chi}$, and put the metric in threading form
+$g=-f(\dd\chi-\omega_a\dd x^a)^2+h_{ab}\dd x^a\dd x^b$, where $f,\omega_a,h_{ab}$ may all
+depend on $\chi$. Then the rail arrival-time functional is the Randers-type Finsler
+function
+\begin{equation}
+   F(\chi,x,\nu)=\beta_a\nu^a+\sqrt{a_{ab}\nu^a\nu^b},
+   \qquad \beta_a=\omega_a,\qquad
+   a_{ab}=\frac{\Ehat^2\,h_{ab}}{f\,(\Ehat^2-f)},
+   \label{eq:optical-metric}
+\end{equation}
+and
+\begin{enumerate}
+\item[(i)] $a_{ab}$ is positive definite \emph{if and only if} $\Ehat>|W|$: Hypothesis
+\ref{hyp:convex} \emph{is} the positive-definiteness of the optical metric, whose conformal
+factor $\Ehat^2/[f(\Ehat^2-f)]$ diverges as $\Ehat\downarrow|W|$, the freezing surface;
+\item[(ii)] $\|\beta\|_a^2=\big[f(\Ehat^2-f)/\Ehat^2\big]\,|\omega|_h^2$, strictly
+increasing in $\Ehat$ with limit $f|\omega|_h^2$; hence the Randers condition
+$\|\beta\|_a<1$ is \emph{implied by} the null Fermat--Randers condition $f|\omega|_h^2<1$,
+for every $\Ehat$;
+\item[(iii)] if the data are $\chi$-independent, $F$ is Perlick's fixed-energy optical
+metric \cite{Perlick1991}, and $\Ehat\to\infty$ gives the Fermat--Randers metric
+$h_{ab}/f$ \cite{GibbonsWerner2008}.
+\end{enumerate}
+\end{auxtheorem}
+
+\begin{proof}
+Solving the rail $-u\cdot W=\Ehat$ jointly with $g(u,u)=-1$ for $\chi'=\dd\chi/\dd\sigma$
+gives a quadratic; substituting the right-hand side of~\eqref{eq:optical-metric} into it
+annihilates it, the rational part and the coefficient of the radical vanishing separately,
+and $f\,F-\omega_a\nu^a f=f\sqrt{a_{ab}\nu^a\nu^b}>0$ identifies it as the
+future-directed root. The computation is \emph{pointwise in the event}: no derivative of
+the metric appears, so the $\chi$-dependence of $(f,\omega,h)$ never enters, and the same
+algebra that yields Perlick's formula yields~\eqref{eq:optical-metric} verbatim. Part (i)
+is immediate since $h_{ab}$ is positive definite; part (ii) follows from
+$a^{ab}=f(\Ehat^2-f)h^{ab}/\Ehat^2$ and
+$\dd\big[f(\Ehat^2-f)/\Ehat^2\big]/\dd\Ehat=2f^2/\Ehat^3>0$; part (iii) is the
+specialization.
+\end{proof}
+
+\begin{remark}
+Two consequences are worth separating. First, the extension is not an analogy: the
+\emph{same} closed formula covers both regimes, and stationarity enters only by removing
+the $\chi$-argument. Second, it is not a reduction to Finsler geodesics either---because
+$F$ depends on $\chi$, the brachistochrone is \emph{not} a geodesic of a fixed Randers
+metric, which is exactly the non-autonomy that forces the Hamilton--Jacobi criterion of
+Proposition~\ref{prop:hjb} in place of Finsler geodesic theory. Perlick's case is the one
+where that argument collapses to the standard theory. Part (ii) adds that the rail
+structure is no worse behaved than the null one: wherever Fermat--Randers optics is
+defined, so is the rail optics, at every rail energy.
+\end{remark}
+
+\paragraph{Recovery of Perlick's stationary optics, explicitly.} In the Killing limit
 $W=\xi=\partial_t$ the controlled-rail arrival-time Finsler function is exactly a
 Randers metric, so the construction reduces to Perlick's fixed-energy optics rather
 than merely resembling it. Solving the rail $-u\cdot\xi=\Ehat$ jointly with

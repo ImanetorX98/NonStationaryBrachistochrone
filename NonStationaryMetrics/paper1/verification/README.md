@@ -11,6 +11,7 @@ python3       verify_paper1_core.py            # 22 checks, exit 1 on failure
 wolframscript -file verify_appB_residues.wls   # 9 checks (appendix B residues)
 wolframscript -file verify_appB_blocks.wls     # 4 checks (appendix B block form)
 wolframscript -file verify_perlick_recovery.wls # 6 checks (stationary limit)
+wolframscript -file verify_optical_metric.wls   # 4 checks (time-dependent optical metric)
 wolframscript -file verify_jacobi_conjugate.wls # 9 checks (conjugate points)
 python3       verify_section44_closedform.py   # end-to-end quadrature of eq:vaidya-full
 ```
@@ -89,6 +90,21 @@ Section 4.5, Theorem I.B and Remarks after it:
 The right-hand side of the polynomial identity is a pure total derivative, which
 is *why* the two reductions are proportional: it contributes no abelian letter,
 so the `U_k` coefficients must cancel.
+
+### Time-dependent optical metric (`verify_optical_metric.wls`)
+
+Section 2.3, Theorem I.B. The threading data `f, omega, h` are carried as free
+symbols and are never assumed independent of the adapted time:
+
+| Claim | Check |
+|---|---|
+| `beta_a = omega_a`, `a_ab = Ehat^2 h_ab/(f(Ehat^2-f))` | direct |
+| `a_ab > 0` iff `Ehat > |W|` — hypothesis (H2) is positive-definiteness | `h_ab > 0` and the sign of the conformal factor |
+| `||beta||_a^2 = [f(Ehat^2-f)/Ehat^2] |omega|_h^2` | inverse metric |
+| that norm increases with `Ehat`, limit `f |omega|_h^2` | derivative `2 f^2/Ehat^3 > 0` |
+
+So the rail Randers condition is implied by the null Fermat-Randers one at
+every rail energy: the rail optics never enlarges the null validity domain.
 
 ## Notes
 
