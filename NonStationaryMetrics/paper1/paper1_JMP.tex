@@ -715,8 +715,9 @@ checks, \emph{not} a complete global Hamilton--Jacobi certificate; beyond the fi
 obstruction the global optimum is selected by comparing arrival times across the competing
 extremals. On the frozen family both obstructions are located exactly in
 section~\ref{sec:vaidya-jacobi}: no conjugate point occurs before the turning point, so a
-Mayer field exists on every monotone arc and the criterion above does apply there, while
-the Maxwell set is the locus of axis crossings.
+Mayer field exists on every monotone arc and the criterion above does apply there, whereas
+an arc through periapsis develops a genuine caustic at a computable rail energy, and the
+Maxwell set is the locus of axis crossings.
 
 \paragraph{What is \emph{not} claimed inside the ergosphere.} Where the Killing
 selector $\xi$ becomes spacelike---inside the ergosphere---the invariant
@@ -1541,6 +1542,52 @@ Every Jacobi coefficient is therefore given by~\eqref{eq:ck-closed}
 and~\eqref{eq:Am-closed} already: the conjugate-point analysis and the adiabatic response
 run through the same $11\times11$ system, as they must, being the two partial derivatives
 of one homogeneous family.
+\end{remark}
+
+Theorem~\ref{thm:jacobi} does \emph{not} extend past the turning point, and the reason is
+structural rather than technical: on an arc through periapsis the positive
+integrand~\eqref{eq:jacobi-integrand} competes with the motion of the turning radius
+itself, and the competition is won by neither uniformly.
+
+\begin{auxtheorem}[a caustic of the apsidal family]\label{thm:caustic}
+Let $\Phi(J)$ be the azimuth swept by a frozen extremal over one radial excursion from
+radius $R$ through periapsis and back to $R$, the turning radius $r_t$ being the root of
+$C$ fixed by $J^2=r_t^2(r_t-2m)/D_{\Ehat}(r_t)$. Then $\Phi$ is smooth, strictly positive
+on $2m<r_t<R$, and tends to zero at both ends of that range. Consequently $\Phi$ attains an
+interior maximum, and at the corresponding $J_c$
+\begin{equation}
+   \Phi'(J_c)=0 :
+   \label{eq:caustic}
+\end{equation}
+the family develops a \emph{conjugate point} at the return radius.
+\end{auxtheorem}
+
+\begin{proof}
+Write $C(r)=(r-r_t)\,Q(r)$ with
+$Q(r)=r^2+(r_t-2m)r+\big[r_t(r_t-2m)-J^2(\Ehat^2-1)\big]$, the division being exact
+precisely because $J^2=r_t^2(r_t-2m)/D_{\Ehat}(r_t)$. Substituting $r=r_t+u^2$ turns
+$S=(r-r_t)P$ into $u^2P$ with $P(0)=r_t(r_t-2m)D_{\Ehat}(r_t)Q(r_t)\neq0$, so
+$G\,\dd r=2K\,\dd u/\sqrt P$ is regular at $u=0$: the apsidal integral is an ordinary
+smooth integral in $J$, and differentiation under the integral sign is legitimate.
+
+For the endpoints, $J^2=r_t^2(r_t-2m)/D_{\Ehat}(r_t)\to0$ as $r_t\to2m^+$, and the
+integrand carries the overall factor $K=JD_{\Ehat}$, so $\Phi\to0$: a radial plunge sweeps
+no azimuth. As $r_t\to R^-$ the integration range $[0,\sqrt{R-r_t}\,]$ shrinks to a point
+with bounded integrand, so $\Phi\to0$ again. A positive continuous function vanishing at
+both ends of an interval attains an interior maximum, where $\Phi'=0$.
+\end{proof}
+
+\begin{remark}[the caustic is a simple fold, and it binds first]\label{rem:caustic-num}
+Numerically the critical point is a nondegenerate maximum, $\Phi''(J_c)\neq0$, so the
+caustic is a simple fold: two extremals coalesce there and none exists beyond. At
+$m=1$, $R=10$ one finds $\Ehat=7/5$: $r_t=2.9789$, $J_c=1.3369$, $\Phi_{\max}=0.7432\pi$;
+$\Ehat=6/5$: $r_t=2.9387$, $J_c=1.5690$, $\Phi_{\max}=0.7142\pi$; and at $R=20$,
+$\Ehat=7/5$: $r_t=3.6876$, $J_c=2.0353$, $\Phi_{\max}=0.8074\pi$. In every sample
+$\Phi_{\max}<\pi$, so the fold is reached \emph{before} any axis crossing: for a single
+excursion the conjugate point, not the Maxwell point of Remark~\ref{rem:maxwell}, is the
+binding obstruction. Physically $\Phi_{\max}$ is the largest azimuth a single in-and-out
+brachistochrone can span from radius $R$; beyond it the endpoints must be joined by a
+multi-excursion extremal.
 \end{remark}
 
 \begin{remark}[where global optimality does end]\label{rem:maxwell}
