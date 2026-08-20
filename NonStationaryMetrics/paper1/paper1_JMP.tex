@@ -1559,7 +1559,8 @@ interior maximum, and at the corresponding $J_c$
    \Phi'(J_c)=0 :
    \label{eq:caustic}
 \end{equation}
-the family develops a \emph{conjugate point} at the return radius.
+the family develops a \emph{conjugate point} at the return radius. Moreover $\Phi$ is
+finite for every admissible $J$, because $C$ has no double root in $r>2m$.
 \end{auxtheorem}
 
 \begin{proof}
@@ -1575,6 +1576,17 @@ integrand carries the overall factor $K=JD_{\Ehat}$, so $\Phi\to0$: a radial plu
 no azimuth. As $r_t\to R^-$ the integration range $[0,\sqrt{R-r_t}\,]$ shrinks to a point
 with bounded integrand, so $\Phi\to0$ again. A positive continuous function vanishing at
 both ends of an interval attains an interior maximum, where $\Phi'=0$.
+
+Finiteness is the statement that the turning point is always a \emph{simple} root of $C$.
+Eliminating $J^2$ between $C=0$ and $C'=0$ gives $J^2=r(3r-4m)/(\Ehat^2-1)$, positive only
+for $r>4m/3$, and the locus $(\Ehat^2-1)r^2-m(\Ehat^2-4)r-4m^2=0$. That quadratic has
+positive leading coefficient with value $-4m^2<0$ at $r=0$ and
+$\tfrac49(\Ehat^2-1)m^2>0$ at $r=4m/3$, so its only positive root lies in $(0,4m/3)$,
+where $J^2<0$. Hence no double root occurs at physical $J$: the integrand behaves as
+$(r-r_t)^{-1/2}$ and $\Phi$ converges. This is the same computation that places the
+genus degeneration at $r_d<0$ in~\ref{app:degeneration}---the absence of a physical
+double root is what both keeps the curve genus two on the arc and keeps the apsidal
+integral finite.
 \end{proof}
 
 \begin{remark}[the caustic is a simple fold, and it binds first]\label{rem:caustic-num}
@@ -1582,12 +1594,23 @@ Numerically the critical point is a nondegenerate maximum, $\Phi''(J_c)\neq0$, s
 caustic is a simple fold: two extremals coalesce there and none exists beyond. At
 $m=1$, $R=10$ one finds $\Ehat=7/5$: $r_t=2.9789$, $J_c=1.3369$, $\Phi_{\max}=0.7432\pi$;
 $\Ehat=6/5$: $r_t=2.9387$, $J_c=1.5690$, $\Phi_{\max}=0.7142\pi$; and at $R=20$,
-$\Ehat=7/5$: $r_t=3.6876$, $J_c=2.0353$, $\Phi_{\max}=0.8074\pi$. In every sample
-$\Phi_{\max}<\pi$, so the fold is reached \emph{before} any axis crossing: for a single
-excursion the conjugate point, not the Maxwell point of Remark~\ref{rem:maxwell}, is the
-binding obstruction. Physically $\Phi_{\max}$ is the largest azimuth a single in-and-out
-brachistochrone can span from radius $R$; beyond it the endpoints must be joined by a
-multi-excursion extremal.
+$\Ehat=7/5$: $r_t=3.6876$, $J_c=2.0353$, $\Phi_{\max}=0.8074\pi$. Physically
+$\Phi_{\max}$ is the largest azimuth a single in-and-out brachistochrone can span from
+radius $R$; beyond it the endpoints must be joined by a multi-excursion extremal.
+
+Across a sweep of $\Ehat\in[1.001,10^2]$ and $R/m\in[3,10^7]$ we find
+$\Phi_{\max}<\pi$ throughout, the largest value encountered being $0.99959\pi$; when it
+holds, the fold is reached \emph{before} any axis crossing and the conjugate point, not
+the Maxwell point of Remark~\ref{rem:maxwell}, is the binding obstruction for a single
+excursion. We state this as a numerical finding rather than a theorem, and the reason the
+bound resists proof is instructive: it is \emph{sharp}. The critical turning radius scales
+as $r_t\simeq\sqrt{mR}$, so as $R\to\infty$ the caustic migrates into the asymptotically
+flat region, where the swept azimuth is that of a Euclidean chord,
+$2\arccos(r_t/R)=\pi-O(\sqrt{m/R})$; the supremum $\pi$ is therefore attained only in that
+limit. No crude comparison can capture it---in particular the pointwise bound against the
+flat chord \emph{fails}, the rail integrand exceeding the Euclidean one near periapsis by
+up to $25\%$ before falling below it further out, so the inequality holds only after
+integration.
 \end{remark}
 
 \begin{remark}[where global optimality does end]\label{rem:maxwell}
