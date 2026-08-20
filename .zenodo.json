@@ -1,6 +1,6 @@
 {
   "title": "NonStationaryBrachistochrone: reproducibility package for controlled-rail brachistochrones in non-stationary spacetimes",
-  "description": "Symbolic derivations, numerical verification scripts, figure-generation code, and manuscript sources for controlled-rail brachistochrones in non-stationary spacetimes. The repository supports the companion studies of the FLRW and Vaidya sectors and of the conformal Kerr (Thakurta-Kerr) sector.",
+  "description": "<p>Symbolic derivations, numerical verification scripts, figure-generation code, and manuscript sources for controlled-rail brachistochrones in non-stationary spacetimes. The repository supports the companion studies of the FLRW and Vaidya sectors and of the conformal Kerr (Thakurta-Kerr) sector.</p><p><strong>New in 1.2.0.</strong> A symbolic verification suite for the formal core of Paper I, under <code>paper1/verification/</code>: every algebraic step that the manuscript states as proved is re-derived independently in two computer-algebra systems (Mathematica and SymPy), each check returning an exact symbolic zero rather than a numerical tolerance. <code>verify_paper1_core.py</code> exits non-zero on failure and can be used as a regression gate. The suite covers the rail indicatrix and the time-dependent optical metric with Perlick's stationary metric as its limit; the reduction determinant identified as a resultant; the closed forms of the reduction coefficients; the appendix-B residues; and the conjugate-point and caustic analysis. <code>REPRODUCTION_section4.2.md</code> records a re-run of the archived trajectory scripts behind the phenomenology section. <code>paper1/build_paper1.sh</code> makes a clean checkout turnkey: it regenerates all thirteen figures from their scripts, collects them, and compiles the manuscript.</p>",
   "creators": [
     {
       "name": "Rosignoli, Iman",
@@ -8,7 +8,7 @@
       "affiliation": "University of Pavia"
     }
   ],
-  "version": "1.1.0",
+  "version": "1.2.0",
   "access_right": "open",
   "license": "mit",
   "upload_type": "software",
@@ -22,7 +22,12 @@
     "Thakurta-Kerr spacetime",
     "optimal control",
     "adiabatic perturbation theory",
-    "separatrix dynamics"
+    "separatrix dynamics",
+    "Finsler geometry",
+    "Randers metric",
+    "computer-algebra verification",
+    "conjugate points",
+    "reproducibility"
   ],
   "related_identifiers": [
     {
