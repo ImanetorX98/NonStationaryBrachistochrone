@@ -11,6 +11,7 @@ python3       verify_paper1_core.py            # 22 checks, exit 1 on failure
 wolframscript -file verify_appB_residues.wls   # 9 checks (appendix B residues)
 wolframscript -file verify_appB_blocks.wls     # 4 checks (appendix B block form)
 wolframscript -file verify_perlick_recovery.wls # 6 checks (stationary limit)
+wolframscript -file verify_jacobi_conjugate.wls # 9 checks (conjugate points)
 python3       verify_section44_closedform.py   # end-to-end quadrature of eq:vaidya-full
 ```
 
@@ -72,6 +73,22 @@ Section 2.3, `eq:perlick-randers`. Entirely symbolic, generic stationary metric:
 Substituting into the quadratic avoids comparing nested radicals, which no
 simplifier resolves without positivity assumptions; the identity is then exact
 rather than numerical.
+
+### Conjugate points (`verify_jacobi_conjugate.wls`)
+
+Section 4.5, Theorem I.B and Remarks after it:
+
+| Claim | Check |
+|---|---|
+| `N_J = S d_J K - K d_J S/2 = r^3 (r-2m)^2 D_E^2` | direct |
+| `G = K/sqrt(S)` has weight -1, so `m d_m G + J d_J G = -(rG)'` | Euler, in derivative form |
+| `m N_m + J N_J = (r K S' - 2 S (rK)')/2` | polynomial identity |
+| `c_k^J = -(m/J) c_k^m` for all five k | both reductions solved and compared |
+| `m A^m + J A^J = -rK` | same |
+
+The right-hand side of the polynomial identity is a pure total derivative, which
+is *why* the two reductions are proportional: it contributes no abelian letter,
+so the `U_k` coefficients must cancel.
 
 ## Notes
 

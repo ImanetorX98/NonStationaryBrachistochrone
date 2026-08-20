@@ -74,6 +74,7 @@
 % the numbers I.1-I.6 cited by the companion paper are never disturbed
 \theoremstyle{plain}
 \newtheorem{auxlemma}{Lemma}
+\newtheorem{auxtheorem}[auxlemma]{Theorem}
 \renewcommand{\theauxlemma}{I.\Alph{auxlemma}}
 % Remarks are deliberately unnumbered: they must not consume the shared
 % theorem counter, whose values are pinned to the stable labels I.1-I.6.
@@ -712,7 +713,10 @@ obstruction---the first such singularity of $V$. For the generic non-stationary
 trajectories treated here we establish PMP extremality and local numerical minimality
 checks, \emph{not} a complete global Hamilton--Jacobi certificate; beyond the first
 obstruction the global optimum is selected by comparing arrival times across the competing
-extremals.
+extremals. On the frozen family both obstructions are located exactly in
+section~\ref{sec:vaidya-jacobi}: no conjugate point occurs before the turning point, so a
+Mayer field exists on every monotone arc and the criterion above does apply there, while
+the Maxwell set is the locus of axis crossings.
 
 \paragraph{What is \emph{not} claimed inside the ergosphere.} Where the Killing
 selector $\xi$ becomes spacelike---inside the ergosphere---the invariant
@@ -1420,6 +1424,81 @@ $2\mathcal{B}_{\rm hor}=12.225$ (each $\times|\dot m|$).
 % ======================================================================
 % Flush pending floats so no figure interrupts the Conclusions.
 \FloatBarrier
+\subsection{Conjugate points, the field of extremals, and the Maxwell set}
+\label{sec:vaidya-jacobi}
+Proposition~\ref{prop:hjb} is a criterion; on the frozen family it can be \emph{applied},
+because the two obstructions it names---conjugate points and Maxwell points---are both
+computable in closed form, and the first turns out never to occur on a monotone arc.
+
+\begin{auxtheorem}[no conjugate point before the turning point]\label{thm:jacobi}
+Along the frozen family, with $G=K/\sqrt S$ the shape integrand of
+section~\ref{sec:vaidya-adiabatic},
+\begin{equation}
+   \frac{\partial G}{\partial J}=\frac{r^3(r-2m)^2D_{\Ehat}^{\,2}}{S^{3/2}},
+   \label{eq:jacobi-integrand}
+\end{equation}
+which is strictly positive on the regular domain $r>2m$, $\Ehat>1$, $S>0$. Hence
+$\partial\varphi/\partial J>0$ on any radial arc free of turning points: the map
+$J\mapsto\varphi(r;J)$ is strictly monotone, the extremals issuing from a common event do
+not focus, and no conjugate point occurs there.
+\end{auxtheorem}
+
+\begin{proof}
+$S=r(r-2m)D_{\Ehat}\,C$ with $C=r^2(r-2m)-J^2D_{\Ehat}$, so
+$\partial_JS=-2Jr(r-2m)D_{\Ehat}^{\,2}$ and
+\[
+   \partial_J\frac{JD_{\Ehat}}{\sqrt S}
+   =\frac{D_{\Ehat}}{\sqrt S}+\frac{J^2r(r-2m)D_{\Ehat}^{\,3}}{S^{3/2}}
+   =\frac{D_{\Ehat}\big[S+J^2r(r-2m)D_{\Ehat}^{\,2}\big]}{S^{3/2}} .
+\]
+The bracket collapses: $S+J^2r(r-2m)D_{\Ehat}^{\,2}
+=r(r-2m)D_{\Ehat}\big[C+J^2D_{\Ehat}\big]=r^3(r-2m)^2D_{\Ehat}$, which
+gives~\eqref{eq:jacobi-integrand}. The numerator is $r^3$ times a square, hence positive,
+and $S>0$ on the arc by assumption.
+\end{proof}
+
+Combined with strict convexity of the indicatrix (Lemma~\ref{lem:indicatrix}), which makes
+the Weierstrass excess function nonnegative, Theorem~\ref{thm:jacobi} embeds each monotone
+arc in a Mayer field of extremals: on the region that field covers, the Hilbert invariant
+integral constructs the verification function of Proposition~\ref{prop:hjb} implicitly, and
+the arc is a \emph{strong} minimizer there. No closed form for $V$ is needed.
+
+\begin{remark}[the Jacobi reduction is already known]\label{rem:jacobi-euler}
+Nothing new has to be reduced. The source of~\eqref{eq:jacobi-integrand} is
+$N_J=S\,\partial_JK-\tfrac12K\,\partial_JS$, the exact analogue of $N_m$, and the two are
+tied by Euler's theorem: $G=K/\sqrt S$ is homogeneous of degree $-1$ in $(r,m,J)$, so
+$m\,\partial_mG+J\,\partial_JG=-(rG)'$, i.e.
+\begin{equation}
+   m\,N_m+J\,N_J=\tfrac12\big[r\,K\,S'-2S\,(rK)'\big].
+   \label{eq:jacobi-euler}
+\end{equation}
+The right-hand side is a pure total derivative, so it contributes no abelian letter, and
+the two reductions must satisfy
+\begin{equation}
+   c^J_k=-\frac{m}{J}\,c^m_k,\qquad
+   \mathcal{A}^J=-\frac{rK+m\,\mathcal{A}^m}{J} .
+   \label{eq:jacobi-coeffs}
+\end{equation}
+Every Jacobi coefficient is therefore given by~\eqref{eq:ck-closed}
+and~\eqref{eq:Am-closed} already: the conjugate-point analysis and the adiabatic response
+run through the same $11\times11$ system, as they must, being the two partial derivatives
+of one homogeneous family.
+\end{remark}
+
+\begin{remark}[where global optimality does end]\label{rem:maxwell}
+The surviving obstruction is the Maxwell set, and the axial symmetry locates it exactly.
+Since $S$ is even in $J$, the shape integrand is odd and every clock---proper time
+$r^2(r-2m)/\sqrt S$ and advanced time~\eqref{eq:vaidya-clock} alike---is even. Hence
+$\varphi(r;-J)=-\varphi(r;J)$ at equal elapsed clock, and the turning radius, a root of
+$C$, is shared. The $\pm J$ pair therefore reaches a common point precisely at an axis
+crossing $\varphi\equiv0\ (\mathrm{mod}\ \pi)$, and reaches it in equal time: axis
+crossings are genuine Maxwell points, where $V$ develops its gradient shock. The closed-form
+extremal is thus certified up to its first axis crossing, and beyond it the optimum is
+selected by comparing arrival times across the competing windings---the mechanism already
+seen in closed FLRW, where the antipodal cut locus of section~\ref{sec:flrw-curvature} is
+the same phenomenon in its simplest form.
+\end{remark}
+
 \section{Conclusions}
 \label{sec:concl}
 \paragraph{Proved.} The non-stationary brachistochrone is a well-posed controlled-rail
