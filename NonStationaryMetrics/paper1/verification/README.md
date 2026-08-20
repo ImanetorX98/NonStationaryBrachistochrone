@@ -10,6 +10,7 @@ wolframscript -file verify_paper1_core.wls     # 55 checks
 python3       verify_paper1_core.py            # 22 checks, exit 1 on failure
 wolframscript -file verify_appB_residues.wls   # 9 checks (appendix B residues)
 wolframscript -file verify_appB_blocks.wls     # 4 checks (appendix B block form)
+wolframscript -file verify_perlick_recovery.wls # 6 checks (stationary limit)
 python3       verify_section44_closedform.py   # end-to-end quadrature of eq:vaidya-full
 ```
 
@@ -54,6 +55,23 @@ numerator `F`, which is why they are stated as a lemma rather than as a table.
 `B` was used but never defined in the manuscript, and two coefficients were
 written with `m` set to 1 (`-2` where `-2m` belongs). Both are fixed in the
 current text; the scripts carry `m` symbolically so the omission cannot recur.
+
+### Perlick recovery (`verify_perlick_recovery.wls`)
+
+Section 2.3, `eq:perlick-randers`. Entirely symbolic, generic stationary metric:
+
+| Claim | Check |
+|---|---|
+| `F_rail = beta.nu + sqrt(a.nu.nu)` solves the rail | substitute into the quadratic; rational part and the coefficient of the radical vanish separately |
+| it is the future-directed branch | `f F_rail - g_ta nu^a = f sqrt(...) > 0`, so the unsquared rail selects it |
+| `beta_a = omega_a` in threading form | direct |
+| `g_ta g_tb + f g_ab = f h_ab` | direct |
+| `a_ab = Ehat^2 h_ab/(f(Ehat^2-f))` — Perlick's fixed-energy optical metric | direct |
+| `Ehat -> infinity` gives `h_ab/f` — Fermat-Randers | limit |
+
+Substituting into the quadratic avoids comparing nested radicals, which no
+simplifier resolves without positivity assumptions; the identity is then exact
+rather than numerical.
 
 ## Notes
 
