@@ -106,6 +106,22 @@ symbols and are never assumed independent of the adapted time:
 So the rail Randers condition is implied by the null Fermat-Randers one at
 every rail energy: the rail optics never enlarges the null validity domain.
 
+## Rebuilding the manuscript from a clean checkout
+
+Figures are not tracked (the repository ignores `*.pdf` and `*.png`), and each
+generator writes into its own directory rather than into `paper/Immagini`, where
+the manuscript looks. `paper1/build_paper1.sh` runs the ten generators, collects
+their output, and compiles:
+
+```
+./build_paper1.sh              # figures + manuscript
+./build_paper1.sh --figures    # figures only
+./build_paper1.sh --paper      # compile, assuming figures already collected
+```
+
+Verified on a fresh clone of `main`: ten generators succeed, 13/13 figures land
+in `paper/Immagini`, and `paper1_JMP.pdf` builds.
+
 ## Notes
 
 - The genus-degeneration double root is **negative**, `r_d = -3.3637111847...`
