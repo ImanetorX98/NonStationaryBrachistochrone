@@ -1,0 +1,2667 @@
+% ======================================================================
+%  PAPER I of the two-paper split -- JMP VARIANT
+%  Controlled-rail brachistochrones in non-stationary spacetimes:
+%  conformal symmetry, Kodama energy, and Vaidya dynamics
+%  Target: Journal of Mathematical Physics (AIP Publishing)
+%  (spherically symmetric sector: FLRW + Vaidya; shared control-theory
+%   foundations live here and are cited by Paper II)
+%
+%  Difference from paper1.tex: the six shared results I.1-I.6 are cast as
+%  genuine amsthm environments with explicit hypotheses (H1)-(H3) and
+%  delimited proofs, plus a main-results roadmap and the AIP-required
+%  author declarations. Physics content is unchanged.
+% ======================================================================
+\documentclass[12pt]{iopart}
+
+% iopart pre-defines \equation*, which clashes with amsmath; free it first
+\makeatletter
+\expandafter\let\csname equation*\endcsname\relax
+\expandafter\let\csname endequation*\endcsname\relax
+\makeatother
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{iopams}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{placeins}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry, Kodama energy, and Vaidya dynamics},
+  pdfauthor={Iman Rosignoli},
+  pdfsubject={Journal of Mathematical Physics submission},
+  pdfkeywords={relativistic brachistochrone; controlled rail; Kodama energy; Vaidya spacetime; FLRW; optimal control; Pontryagin maximum principle; Hamilton-Jacobi verification; Randers-Zermelo geometry; abelian integrals}
+}
+
+% figures shared with the master/Paper II
+\graphicspath{{../paper/}}
+
+% prose placeholder helper
+\newcommand{\todo}[1]{{\color{red}\small[[#1]]}}
+
+% shortcuts
+\newcommand{\Ehat}{\hat E}
+\newcommand{\rp}{r_{+}}
+\newcommand{\re}{r_{e}}
+\newcommand{\Jc}{J_{\rm deg}}
+\newcommand{\Jpen}{J_{\rm pen}}
+\newcommand{\Af}{A_{\mathrm{freeze}}}
+\newcommand{\dd}{\mathrm{d}}
+
+% ----------------------------------------------------------------------
+%  Theorem environments.  The six shared results carry the fixed labels
+%  I.1-I.6 used by the companion Paper II, so they are NOT auto-numbered
+%  in order of appearance (I.4 and I.6 live in the appendices while I.5
+%  is stated in section 4).  Each environment is preceded by an explicit
+%  \setcounter so that the printed number is stable under any reordering.
+% ----------------------------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\renewcommand{\thetheorem}{I.\arabic{theorem}}
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}
+\renewcommand{\thehypothesis}{H\arabic{hypothesis}}
+% auxiliary results introduced by the present variant carry letters, so that
+% the numbers I.1-I.6 cited by the companion paper are never disturbed
+\theoremstyle{plain}
+\newtheorem{auxlemma}{Lemma}
+\newtheorem{auxtheorem}[auxlemma]{Theorem}
+\renewcommand{\theauxlemma}{I.\Alph{auxlemma}}
+% Remarks are deliberately unnumbered: they must not consume the shared
+% theorem counter, whose values are pinned to the stable labels I.1-I.6.
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+% \Ithm{k} fixes the number of the next theorem-like environment to I.k
+\newcommand{\Ithm}[1]{\setcounter{theorem}{\numexpr#1-1\relax}}
+
+\begin{document}
+
+\title{Controlled-rail brachistochrones in non-stationary spacetimes:
+conformal symmetry, Kodama energy, and Vaidya dynamics}
+
+\author{Iman Rosignoli}
+\address{Department of Physics, University of Pavia, Via A.\ Bassi 6, 27100 Pavia, Italy}
+\ead{iman.rosignoli01@universitadipavia.it}
+
+\begin{abstract}
+What is the fastest constrained worldline in a spacetime that is itself evolving? In a
+stationary spacetime the relativistic brachistochrone reduces to Fermat/Randers optics
+with a conserved rail energy supplied by a timelike Killing vector; in a dynamical
+spacetime no such conservation law exists and the variational problem becomes
+non-autonomous. We address this by formulating the brachistochrone as a
+\emph{controlled-rail} optimal-control problem, in which the invariant $-u\cdot W=\Ehat$ is
+actively maintained along the worldline by a selector $W$ that follows a Killing $\to$
+conformal-Killing $\to$ Kodama hierarchy and reduces to the \emph{Kodama} vector when no
+timelike Killing field survives. We show that this construction is a legitimate
+Pontryagin problem---establishing existence and normality on a regular timelike-selector
+domain and a non-autonomous Hamilton--Jacobi \emph{verification} criterion (global
+minimisation being conditional, not automatic)---and then derive the extremal equations
+and their closed representations in two spherically symmetric non-stationary cases:
+Friedmann--Lema\^itre--Robertson--Walker (FLRW) at arbitrary spatial curvature and the
+ingoing Vaidya dynamical black hole. For Vaidya we obtain the plunge phenomenology and a complete
+first-order adiabatic correction, verified against the true non-autonomous flow, that
+separates the homogeneous-expansion effects of the FLRW base from the radial
+spatial-gradient and mass-flow effects of the dynamical horizon. The rotating,
+axisymmetric conformal-Kerr (Thakurta--Kerr)
+application is developed in a companion paper.
+\end{abstract}
+
+\maketitle
+% Table of contents removed for the research-paper submission (the running
+% header no longer displays CONTENTS; the journal reformats the accepted article).
+% Concise running head to avoid truncation of the long title.
+\markboth{Controlled-rail brachistochrones in non-stationary spacetimes}%
+         {Controlled-rail brachistochrones in non-stationary spacetimes}
+
+% ======================================================================
+\section{Introduction}
+\label{sec:intro}
+The brachistochrone---the path of fastest descent---is a classical variational problem
+whose relativistic analogue asks for the fastest constrained ``rail'' worldline from a
+launch event to a fixed spatial target, at a \emph{free} value of the arrival clock. In a
+\emph{stationary} spacetime the answer is well understood: a timelike Killing vector
+supplies a conserved rail energy, and the problem reduces to Fermat's principle and to
+optical (Randers--Zermelo--Finsler) geometry
+\cite{Perlick1991,PerlickRayOptics,Kovner1990,Randers1941,GibbonsWerner2008,GibbonsRanders2009,BaoRoblesShen}.
+Existence, multiplicity and Morse theory for these stationary arrival- and travel-time
+brachistochrones, together with their sub-Riemannian and Fermat-principle formulations,
+are by now well developed
+\cite{GiannoniPiccioneVerderesi1997,GiannoniPiccioneTausk2002,GiannoniPiccione2002,CaponioJavaloyes2026}.
+The physically central regimes of gravitation, however---cosmological expansion,
+gravitational collapse, accretion---are \emph{not} stationary.
+
+These treatments all exploit stationarity---a prescribed observer-field energy, a
+conserved Killing charge, or a time-independent optical metric. When the background
+geometry itself evolves that structure disappears: there is no timelike Killing field, no
+conserved energy to label the extremals, and the reduced problem is genuinely
+non-autonomous, its ordinary Hamiltonian no longer an interior first integral. The
+difficulty we address is therefore specific: how to \emph{prescribe and maintain} a rail
+charge in an evolving spacetime, what field should supply it, and how time
+dependence---as opposed to spatial gradients---reshapes the optimal path.
+
+Our starting point is that the rail energy need not be a symmetry charge: it can be an
+invariant that is \emph{actively maintained} along the worldline. We formulate the
+brachistochrone as a \emph{controlled-rail} optimal-control problem in which
+$-u\cdot W=\Ehat$ is held fixed by a selector $W$ following a Killing $\to$
+conformal-Killing $\to$ Kodama hierarchy; in a dynamical spherically symmetric spacetime
+$W$ is the \emph{Kodama} vector, whose charge is conserved along the controlled worldline
+even where free fall is not. Pontryagin's maximum principle makes this a legitimate
+time-optimal control problem, supplying existence, normality and a non-autonomous
+Hamilton--Jacobi verification criterion in place of the stationary conservation law.
+
+We develop this general framework in section~\ref{sec:principle} and then apply it to two
+spherically symmetric non-stationary spacetimes: the spatially flat FLRW base
+(section~\ref{sec:flrw}) and the ingoing Vaidya dynamical black hole
+(section~\ref{sec:vaidya}). For Vaidya we obtain the plunge phenomenology and a
+first-order adiabatic correction in closed special-function form, verified against the
+true non-autonomous flow; the construction cleanly separates homogeneous expansion from
+radial spatial-gradient and mass-flow effects. The rotating, axisymmetric conformal-Kerr
+(Thakurta--Kerr) case---frame dragging, an ergosphere and genus-two closed forms---is
+developed in the companion Paper~II~\cite{PaperTwo}, which cites the foundations proved
+here.
+
+\paragraph{Main results and organization.} Six results carry the mathematical content of
+the paper and are labelled I.1--I.6 throughout, a numbering that the companion paper cites
+verbatim. All six are stated under the standing hypotheses (H1)--(H3) of
+section~\ref{sec:indicatrix}, which delimit the \emph{regular domain} by three checkable
+scalar inequalities: the selector timelike, the rail energy strictly above the local
+freezing value $|W|$, and that margin uniform on a compact domain. The geometric
+properties actually used---that the velocity indicatrix is a compact strictly convex
+ellipse and that the arrival-time functional is two-sidedly bounded---are not assumed but
+\emph{derived} from those inequalities in Lemma~\ref{lem:indicatrix}, which also identifies
+the freezing surface as the locus $\Ehat=|W|$ where the indicatrix collapses to a point.
+\begin{itemize}\itemsep2pt
+\item \textbf{Theorem~\ref{thm:rail}} (section~\ref{sec:indicatrix}) reduces the
+controlled-rail brachistochrone to a time-optimal control problem with compact control set
+$S^1$, whose maximized Hamiltonian is single-valued in closed form and requires no
+Filippov relaxation.
+\item \textbf{Theorem~\ref{thm:existence}} (section~\ref{sec:control-foundations})
+establishes existence of a minimizer by the direct method and the \emph{normality} of every
+regular extremal, so that the reduction to the rail invariant is never vacuous.
+\item \textbf{Proposition~\ref{prop:hjb}} (section~\ref{sec:control-foundations}) supplies
+the non-autonomous Hamilton--Jacobi verification criterion that upgrades a saturated
+extremal to a global minimizer, together with an explicit statement of what is
+\emph{not} certified.
+\item \textbf{Lemma~\ref{lem:reduction}} (\ref{app:reproduce}) shows that the whole
+adiabatic hierarchy collapses onto a single degree-ten polynomial identity, hence a
+nonsingular $11\times11$ linear system whose solution is rational in the metric
+parameters: every coefficient in the paper is solved for, none is fitted.
+\item \textbf{Theorem~\ref{thm:firstorder}} (section~\ref{sec:vaidya-adiabatic}, proved in
+\ref{app:firstorder}) gives the complete first-order response of the extremal to the slow
+drift---on-shell \emph{and} off-shell---in a metric-independent form whose source collapses
+to the universal boundary term $S_{\mathcal D}=[\,r\,p_r\,]-\lambda$.
+\item \textbf{Lemma~\ref{lem:tracking}} (\ref{app:tracking}) computes the derivative of the
+genus-degeneration family along the drifting locus and shows that it annihilates the
+leading (triple) pole of the source.
+\end{itemize}
+The remaining sections are applications of this apparatus: section~\ref{sec:flrw} treats
+the degenerate FLRW base, section~\ref{sec:vaidya} the ingoing Vaidya black hole, where
+the closed forms are abelian integrals on a genus-two curve completed by a horizon
+dilogarithm. Appendix~\ref{app:validation} records the reproducibility and consistency
+data, \ref{app:degeneration} the explicit forms on the genus-degeneration loci, and
+\ref{app:firstorder} the proof of Theorem~\ref{thm:firstorder}.
+
+\section{The controlled-rail principle}
+\label{sec:principle}
+% ----------------------------------------------------------------------
+
+\subsection{Rail constraint and the indicatrix}
+\label{sec:indicatrix}
+The rail is a constrained worldline with the invariant
+\begin{equation}
+    -\,u\cdot W \;=\; \Ehat ,
+    \label{eq:rail}
+\end{equation}
+actively maintained by an ideal rail force $f_\mu=Du_\mu/\dd\tau$ with
+$f\cdot u=0$ (automatic for a rest-mass--preserving force), which creates no rest
+mass but is free to exert power against the selector (see below).
+
+\begin{table}[htbp]
+    \centering\small
+    \caption{Notation used throughout. Rail charges $(\Ehat,J)$ are the conserved control
+    costates; rotating conformal normalizations are outside the scope of this paper.}
+    \label{tab:notation}
+    \begin{tabular}{@{}ll@{}}
+        \hline\hline
+        symbol & meaning\\
+        \hline
+        $\Ehat=-u\cdot W$ & rail energy invariant (conserved control charge)\\
+        $J=p_\varphi$ & axial control costate (conserved; \emph{not} $g(u,\partial_\varphi)$)\\
+        $L_{\rm mech}=g(u,\partial_\varphi)$ & mechanical angular momentum (\emph{not} conserved on the rail)\\
+        $m(v)$ & Vaidya Misner--Sharp mass\\
+        $M$ & fixed reference mass used for dimensionless Vaidya variables\\
+        $t,\tau,v$ & coordinate, proper, advanced-null clocks\\
+        $\chi$ & monotone background time coordinate included in the augmented state\\
+        $\mathcal T$ & selected cost clock; $\ell_{\mathcal T}=\dd\mathcal T/\dd\chi$\\
+        $\sigma$ & arbitrary monotone parameter used to describe a spatial arc\\
+        $s=v/M$ & dimensionless slow coordinate for the Vaidya expansion\\
+        $\lambda$ & elapsed clock from the free-arrival endpoint\\
+        $\dot m=\dd m/\dd v$ & Vaidya mass rate\\
+        $\varepsilon=M\dot m/m$ & dimensionless Vaidya adiabatic parameter\\
+        \hline\hline
+    \end{tabular}
+\end{table}
+
+\paragraph{The ellipse.} Fix an event and a time function adapted to $W$. The
+linear constraint~\eqref{eq:rail} fixes the $W$-component of $u$; the mass shell
+$u\cdot u=-1$ is a quadric; their intersection, projected onto the physical
+velocity plane $(\dd r,\,r\,\dd\varphi)$ per unit selector-time, is an ellipse
+\begin{equation}
+    \dot x(\theta)=c+R(\theta),\qquad \theta\in[0,2\pi),
+    \label{eq:ellipse}
+\end{equation}
+whose center $c$ is the Zermelo wind (zero for FLRW, ingoing radial for Vaidya,
+azimuthal---frame dragging---for Thakurta--Kerr) and whose axes $R$ shrink with
+the local speed as the freezing surface is approached (figure~\ref{fig:indicatrici}).
+Every cost clock---arrival/coordinate time $t$, proper time $\tau$, conformal time
+$\eta$---shares this \emph{same} indicatrix; the branches differ only in the cost
+one-form, i.e.\ in which clock measures the elapsed travel time. Two of these are
+\emph{not} independent spatial families: since $\dd t=A(\eta)\,\dd\eta$ with $A>0$ is
+a monotone reparametrization, the coordinate-time and conformal-time functionals are
+extremized by the \emph{same} spatial path ($\arg\min t_f=\arg\min\eta_f$), so $\eta$
+is the canonical conformal-time \emph{representation} of the arrival branch rather
+than a third independent brachistochrone. The genuinely distinct branch is the proper
+time $\tau$, whose cost carries the extra $\sqrt{1-v^2}$ weight; for Vaidya the native
+arrival clock is the advanced null time $v$, again distinct from $\tau$.
+
+\paragraph{Domain of the indicatrix.} The intersection~\eqref{eq:ellipse} is a
+compact, strictly convex oval---the hypothesis under which the Pontryagin reduction
+below applies---precisely where the selector $W$ is \emph{timelike} and the quadric
+intersection is nondegenerate. Three loci require separate treatment. (i) At the
+freezing surface the entire indicatrix collapses to a point, $R\to0$, and strict
+convexity is lost; this degeneration is distinct from a radial turning point and
+from a spectral separatrix, both treated separately below. (ii) At the horizon the
+radial metric coefficient degenerates. (iii) For the rotating conformal
+Thakurta--Kerr case, inside the \emph{ergosphere} $\partial_\eta$---hence
+$W$---becomes spacelike and the mass-shell intersection is no longer automatically a
+compact oval in the PMP sense; that regime, and the alternative timelike-congruence
+re-anchoring it would require, is developed in the companion Paper~II. The local
+theorems of this section are therefore stated in the timelike-$W$, nondegenerate
+domain.
+
+\paragraph{The optimal-control problem.} Precisely, let $x=(r,\varphi)$ denote the
+spatial position and let $\chi$ be a monotone background time coordinate ($\chi=\eta$
+for FLRW and $\chi=v$ for ingoing Vaidya). The full non-autonomous state is therefore
+$y=(\chi,x)$, even when only its spatial projection is displayed. An arbitrary monotone
+curve parameter is denoted by $\sigma$. The control is the unit spatial direction
+$\theta\in S^1$ on the rail indicatrix~\eqref{eq:ellipse}; using $\chi$ as parameter gives
+$\dd x/\dd\chi=f(x,\theta,\chi)$. A chosen clock $\mathcal T$ is the \emph{cost},
+\[
+    J_{\mathcal T}=\int \ell_{\mathcal T}(x,\theta,\chi)\,\dd\chi,
+    \qquad \ell_{\mathcal T}=\frac{\dd\mathcal T}{\dd\chi}.
+\]
+Thus $\ell_{\mathcal T}=1$ when the cost clock itself is the evolution coordinate,
+whereas for the Vaidya proper-time branch $\chi=v$ and
+$\ell_\tau=\dd\tau/\dd v$. The boundary data are a \emph{fixed initial event}
+$(\chi_0,x_0)$ and a \emph{fixed spatial target} $x_f$ (a point, or a target
+set/worldline), with the terminal background time $\chi_f$ free and the corresponding
+clock cost minimized. The Pontryagin transversality condition is
+$H|_{\chi=\chi_f}=0$ [equation~\eqref{eq:transversality}]---a free-final-clock condition,
+\emph{not} a two-event condition. We accordingly reserve ``fixed endpoints'' for a
+two-point boundary-value problem (BVP), in which both spatial endpoint positions are
+prescribed while the branch-dependent arrival clock is determined by the optimal
+solution and remains the quantity being compared.
+
+\paragraph{Standing hypotheses.} All statements labelled I.1--I.6 are made on a
+\emph{regular domain}, by which we mean the following three conditions. They are the
+precise form of the qualitative requirements listed above, and they are referred to
+collectively as (H).
+
+\begin{hypothesis}[timelike selector]\label{hyp:selector}
+The selector $W$ is timelike on the open domain $\Omega$ under consideration, so that the
+rail constraint $-u\cdot W=\Ehat$ cuts the unit-mass shell in a future-timelike locus.
+\end{hypothesis}
+
+\begin{hypothesis}[above freezing]\label{hyp:convex}
+The rail energy exceeds the selector norm pointwise on $\Omega$:
+$\Ehat>|W|$, where $|W|=\sqrt{-W\cdot W}$.
+\end{hypothesis}
+
+\begin{hypothesis}[uniform margin]\label{hyp:coercive}
+$\Omega$ is compact and the margin in Hypothesis~\ref{hyp:convex} is uniform,
+$\inf_\Omega(\Ehat-|W|)>0$, the metric and the rail one-form being smooth on $\Omega$.
+\end{hypothesis}
+
+Hypotheses~\ref{hyp:selector}--\ref{hyp:coercive} are scalar inequalities, directly
+checkable on any candidate domain; the geometric properties actually used below---that the
+velocity indicatrix is a compact, strictly convex oval, and that the arrival-time
+functional is two-sidedly bounded---are \emph{consequences}, derived in
+Lemma~\ref{lem:indicatrix}. Hypothesis~\ref{hyp:convex} is what fails at the freezing
+surface, Hypothesis~\ref{hyp:coercive} additionally at the horizon, and
+Hypothesis~\ref{hyp:selector} inside the ergosphere of the rotating case treated in
+Paper~II. The three loci are distinct and are never conflated below.
+
+\begin{auxlemma}[rail indicatrix]\label{lem:indicatrix}
+Fix an event at which $W$ is timelike and let $\Ehat>0$. The set
+$\mathcal I=\{u:\ u\cdot u=-1,\ u \text{ future-directed},\ -u\cdot W=\Ehat\}$ is
+\begin{enumerate}
+\item[(i)] empty if $\Ehat<|W|$;
+\item[(ii)] the single vector $u=W/|W|$ if $\Ehat=|W|$ \emph{(freezing)};
+\item[(iii)] if $\Ehat>|W|$, a round sphere of radius $\sqrt{\Ehat^2/|W|^2-1}$ inside the
+spacelike hyperplane $W^\perp$, hence compact, smooth and strictly convex.
+\end{enumerate}
+In case (iii) the induced set of physical velocities per unit selector time is the image of
+that sphere under an invertible affine map, hence a compact, strictly convex ellipse: this
+is~\eqref{eq:ellipse}, and its semi-axes vanish exactly as $\Ehat\downarrow|W|$.
+Consequently Hypotheses~\ref{hyp:selector}--\ref{hyp:convex} imply the convexity properties
+used throughout, and Hypothesis~\ref{hyp:coercive} implies the two-sided
+bound~\eqref{eq:coercive} with $\rho,R$ the (uniform) inradius and circumradius of the
+resulting ovals.
+\end{auxlemma}
+
+\begin{proof}
+Set $n=W/|W|$, a unit timelike vector, and split $u=\gamma\,n+\bar w$ with
+$\bar w\perp n$ spacelike. The rail constraint reads $-u\cdot W=|W|\,\gamma=\Ehat$, which
+fixes $\gamma=\Ehat/|W|$ with no freedom left; the normalization
+$u\cdot u=-\gamma^2+|\bar w|^2=-1$ then forces
+\[
+   |\bar w|^{2}=\gamma^{2}-1=\frac{\Ehat^{2}}{|W|^{2}}-1 .
+\]
+This is negative, zero or positive according as $\Ehat<|W|$, $\Ehat=|W|$ or $\Ehat>|W|$,
+giving (i), (ii) and (iii); in case (iii) the locus is the sphere of radius
+$\sqrt{\gamma^2-1}$ in the Euclidean space $W^\perp$, which is compact and strictly convex.
+Passing to physical velocities divides the $W^\perp$ components by the fixed component
+$\gamma$ and re-expresses them in the coordinate frame; both operations are invertible
+linear maps at the given event, and the composition with the translation generated by the
+non-orthogonality of $\partial_\chi$ and $n$ is an invertible affine map. The affine image
+of a sphere is an ellipsoid, and affine maps preserve compactness and strict convexity, so
+the physical velocity locus is a compact strictly convex ellipse whose centre is the
+Zermelo wind. Its semi-axes are proportional to $\sqrt{\gamma^2-1}$ and hence vanish as
+$\Ehat\downarrow|W|$. Finally the arrival-time Finsler function is the support-type
+function of that ellipse, so its inradius and circumradius furnish exactly the constants
+$\rho$ and $R$ of~\eqref{eq:coercive}; under Hypothesis~\ref{hyp:coercive} the margin is
+uniform on the compact $\Omega$ and so are $\rho>0$ and $R<\infty$.
+\end{proof}
+
+\begin{remark}[the Vaidya case, explicitly]\label{rem:vaidya-indicatrix}
+For ingoing Vaidya with the Kodama selector $W=K=\partial_v$ one has $|W|=\sqrt f$, so
+Hypothesis~\ref{hyp:convex} reads $w\equiv\Ehat^2-f>0$. Substituting
+$u=u^v\big(\partial_v+V^r\partial_r+(V^\varphi/r)\partial_\varphi\big)$ into
+$g(u,u)=-1$ and $-u_v=\Ehat$ and eliminating $u^v$ gives, with no further assumption,
+\[
+   \big(V^r+(\Ehat^2-f)\big)^2+\Ehat^2\,(V^\varphi)^2=\Ehat^2\,w ,
+\]
+an ellipse centred at the ingoing radial wind $f-\Ehat^2<0$ with semi-axes $\Ehat\sqrt w$
+and $\sqrt w$: this is precisely the parametrization~\eqref{eq:vaidya-ind} of
+section~\ref{sec:vaidya}, and the freezing surface is $w=0$. Because the maximum of a
+linear form over an ellipse of centre $c$ and semi-axes $(a_1,a_2)$ is
+$p\cdot c+\sqrt{(a_1p_1)^2+(a_2p_2)^2}$, the support function of this oval is exactly the
+branch Hamiltonian~\eqref{eq:Hv}, which is Theorem~\ref{thm:rail}(ii) made explicit. The
+elimination, the match with~\eqref{eq:vaidya-ind} and the identification of the support
+function with~\eqref{eq:Hv} were checked symbolically in \textsc{Mathematica}, all three
+residuals reducing to zero identically.
+\end{remark}
+
+\Ithm{1}
+\begin{theorem}[controlled-rail reduction]\label{thm:rail}
+Assume (H). Then minimizing the arrival clock subject to the rail
+constraint~\eqref{eq:ellipse} is a time-optimal control problem with control
+$\theta\in S^1$, and:
+\begin{enumerate}
+\item[(i)] for every nonzero costate $p$ the maximizer of the support function
+$p\cdot\dot x(\theta)$ over the indicatrix is unique, so the optimal control
+$\theta^\star(x,p)$ is single-valued and smooth and no Filippov relaxation is required;
+\item[(ii)] Pontryagin's maximum principle delivers the branch Hamiltonian
+$H(x,p)=\max_\theta p\cdot\dot x(\theta)$ in closed form;
+\item[(iii)] $p_\varphi=J$ is conserved, and the free-arrival-clock transversality
+condition forces the branch Hamiltonian to vanish at the free endpoint,
+\begin{equation}
+    H\big|_{\chi=\chi_f}=0 \qquad\text{(free arrival time).}
+    \label{eq:transversality}
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+By Hypothesis~\ref{hyp:convex} the velocity indicatrix~\eqref{eq:ellipse} is a compact,
+strictly convex \emph{closed curve} (the boundary of a convex region), and the control is
+its direction $\theta\in S^1$, itself a compact one-dimensional set. Maximizing the
+support function $p\cdot\dot x(\theta)$ over this curve has a \emph{unique} maximizer by
+strict convexity, which is (i): the control set $S^1$ is already compact and the maximizer
+single-valued, so \emph{no} Filippov relaxation is needed. We do \emph{not} claim the
+velocity locus is a convex \emph{subset} of the plane, nor convexify it (which would admit
+averaged velocities violating the unit-mass shell). Excluding $p=0$---legitimate by the
+normality statement of Theorem~\ref{thm:existence}, which is proved independently
+below---the optimal control $\theta^\star(x,p)$ is single-valued and smooth away from the
+freezing and horizon degeneracies, where Hypothesis~\ref{hyp:coercive} fails and which are
+treated separately. Pontryagin's maximum principle (PMP) \cite{Pontryagin,Liberzon} then
+delivers the branch Hamiltonian $H(x,p)=\max_\theta p\cdot\dot x(\theta)$, evaluated in
+closed form in section~\ref{sec:vaidya}, which is (ii). Finally $\varphi$ is cyclic, so
+$p_\varphi=J$ is conserved, and the terminal cost being the free arrival clock the
+transversality condition of the PMP reads $H|_{\chi=\chi_f}=0$, which
+is~\eqref{eq:transversality} and completes (iii).
+\end{proof}
+
+\begin{remark}[vakonomic, not nonholonomic]
+This is a genuine time-optimal control problem, for which the Pontryagin
+(vakonomic-type) reduction is the correct prescription; we do not invoke the nonholonomic
+d'Alembert principle, whose equations differ from the vakonomic ones unless the constraint
+distribution is integrable---a coincidence that convexity does not entail.
+\end{remark}
+
+\begin{remark}[the branch Hamiltonian is not a first integral]
+For a non-autonomous system $H$ is \emph{not} a global first integral: along the
+extremal $\dd H/\dd\chi=\partial_\chi H$, proportional to $m'(v)$ (Vaidya) or $A'(\eta)$
+(Thakurta--Kerr), so $H\neq0$ in the interior---consistently, $p_v(r_1)=0$ at the
+free arrival radius yet $p_v(r)\neq0$ along the path (figure~\ref{fig:vaidya-traj}).
+The globally conserved object is the extended Hamiltonian $\mathcal H=p_\chi+H=0$ on
+the enlarged phase space, with $p_\chi$ conjugate to the background coordinate $\chi$; only
+in the stationary limit is $H$ autonomous and $H\equiv0$ a genuine first integral.
+\end{remark}
+
+\paragraph{Cost of control.} For an accelerated worldline with rail four-force
+$a^\mu=Du^\mu/\dd\tau$, differentiating the invariant gives the \emph{exact}
+identity
+\begin{equation}
+    \frac{\dd(-u\cdot W)}{\dd\tau}=-\,a\cdot W-u^a u^b\,\nabla_{(a}W_{b)},
+    \label{eq:cost}
+\end{equation}
+whose two terms play distinct roles. The constraint $a\cdot u=0$ holds
+\emph{automatically} for any four-force that preserves the mass shell
+$u\cdot u=-1$ (it is the derivative of the shell condition); it is \emph{not} a
+special ``magnetic'' property and does not by itself imply that the rail performs no
+work relative to a physical observer. It means only that no rest mass is created;
+the rail is nonetheless free to exert power \emph{against the selector} $W$ (the term
+$a\cdot W$). One should distinguish (i) preservation of rest mass ($a\cdot u=0$),
+(ii) power measured by a chosen observer congruence, (iii) the constraint force
+itself, and (iv) the additional power needed to compensate non-stationarity.
+A free geodesic ($a=0$) would let $-u\cdot W$ drift at $-u^au^b\nabla_{(a}W_{b)}$,
+which vanishes for all $u$ iff $W$ satisfies the Killing equation; to hold
+$-u\cdot W=\Ehat$ fixed the rail supplies exactly $a\cdot W=-u^au^b\nabla_{(a}W_{b)}$,
+so that the left-hand side of~\eqref{eq:cost} is zero. This control power equals the
+failure of the Killing equation---the missing symmetry---which is why the
+non-stationary rail is legitimate but not free: $\Ehat$ is actively controlled, not
+conserved by a symmetry. The optical reductions of $H$
+reproduce the Randers/Zermelo structure
+\cite{GibbonsRanders2009,CaponioWind}.
+
+\paragraph{Operational reading: thrust.} Maintaining the controlled invariant generally
+requires nonzero \emph{proper} acceleration $a^\mu=Du^\mu/\dd\tau$ ($a=0$ only on a
+free-fall geodesic), so the rail force is the thrust per unit mass, spacelike
+($a\cdot u=0$) with $|a|$ diverging as the freezing/horizon surface is approached. The
+present variational problem minimizes the selected elapsed \emph{clock}, not thrust, fuel
+or integrated control effort, which define distinct optimal-control problems. In the
+non-stationary case the $a\cdot W$ term is the proper acceleration that maintains the rail
+against the non-stationary mass-rate drift.
+
+\paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
+independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and
+the \emph{eccentricity} of its semi-axes (the anisotropy of the local speed,
+$a_r\neq a_\varphi$)---and each governs a distinct feature of the
+brachistochrones, the same for every branch:
+\begin{itemize}\itemsep2pt
+\item eccentricity $\neq0$ (a spatial gradient $\partial_r f\neq0$)
+$\Rightarrow$ the $t$ and $\tau$ branches split in depth, $n_t/n_\tau=E/f\neq1$;
+\item azimuthal offset $c_\varphi\neq0$ (frame dragging)
+$\Rightarrow$ rotational plunge inversion becomes possible;
+\item radial offset $c_r\neq0$ (a non-stationary wind, $m'\neq0$)
+$\Rightarrow$ endpoint-sensitive memory, $p_v\neq0$ along the path;
+\item shrinking axes $R\to0$ (local speed $v\to0$) $\Rightarrow$ freezing and
+capture.
+\end{itemize}
+Eccentricity and center offset are \emph{separate} levers: the first switches on
+the $t/\tau$ split, the second the inversions. In particular the three branches
+\emph{degenerate}---the $t$, $\tau$ and $\eta$ brachistochrones coincide---iff the
+indicatrix is, up to a position-independent conformal scale, a rigid centered
+circle ($c=0$, $a_r=a_\varphi$, radius depending on the flow parameter alone),
+equivalently iff the optical cost ratios $n_t/n_\tau,\,n_t/n_\eta$ are
+position-independent. This is exactly spatial homogeneity: FLRW is the unique
+such case in our ladder (section~\ref{sec:flrw}), whereas any gradient or wind
+breaks it---even the static, non-rotating Schwarzschild ellipse, which is
+centered ($c=0$) yet eccentric, already splits $t$ from $\tau$. The indicatrix
+shape is thus the organizing thread of the paper: FLRW (circle) $\to$ Vaidya
+(radial wind) $\to$ Thakurta--Kerr (angular wind) is a progression of ellipse
+deformations, each switching on one further phenomenon.
+
+\begin{figure}[tbp]
+    \centering
+    % ALT: Two panels of closed curves in the local velocity plane: left, nested circles
+    %      centred on the origin and shrinking; right, ellipses displaced toward negative
+    %      radial velocity and elongated radially.
+    \includegraphics[width=\textwidth]{Immagini/fig_indicatrici.pdf}
+    \caption{Rail indicatrices (linear constraint $\cap$ normalization
+    $=$ ellipse) in the two spherically symmetric applications of this paper.
+    Left: spatially flat FLRW gives centered shrinking circles, so the three
+    clock branches remain degenerate. Right: ingoing Vaidya produces a radial
+    wind and an offset, eccentric indicatrix, switching on branch splitting and
+    endpoint-sensitive memory.}
+    \label{fig:indicatrici}
+\end{figure}
+
+\subsection{Existence, normality, and global optimality}
+\label{sec:control-foundations}
+The Pontryagin reduction above supplies only \emph{necessary} conditions. We
+record here the three complementary facts that make the constrained problem well
+posed for the non-stationary rail: an existence theorem for the minimizer, the
+normality of every regular extremal (so the reduction $-u\cdot W=\Ehat$ is never
+vacuous), and a Hamilton--Jacobi certificate that upgrades a saturated extremal to
+a \emph{global} optimum. All three are elementary under the standing hypothesis
+that the indicatrix is a compact, uniformly convex oval [equation~\eqref{eq:ellipse}].
+
+\Ithm{2}
+\begin{theorem}[existence and normality; direct method]\label{thm:existence}
+Assume (H), and let the spatial arc range over the compact regular domain $\Omega$. By
+Lemma~\ref{lem:indicatrix} the arrival-time Finsler function then obeys the uniform
+two-sided bound
+\begin{equation}
+  \rho\,|\nu| \le F(x,\nu) \le R\,|\nu|, \qquad 0<\rho\le R<\infty,
+  \label{eq:coercive}
+\end{equation}
+with $\rho,R$ the inradius and circumradius of the ovals. Then:
+\begin{enumerate}
+\item[(i)] \emph{(existence)} the arrival time
+$T[\gamma]=\int F(\gamma,\dot\gamma)\,\dd\sigma$ attains its infimum in the class of
+Lipschitz arcs joining the fixed endpoints;
+\item[(ii)] \emph{(normality)} every regular minimizer is a \emph{normal} extremal: the
+abnormal multiplier $p_0$ cannot vanish, hence normalizes to $-1$, and the costate $p$
+never vanishes along the extremal.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) Parametrize spatial arcs on $[0,1]$. The clock along an arc is not a datum but the
+solution of an ordinary differential equation: by construction
+\begin{equation}
+   \frac{\dd\chi}{\dd\sigma}=F\big(x(\sigma),\dot x(\sigma),\chi(\sigma)\big),
+   \qquad \chi(0)=\chi_0 ,
+   \label{eq:clock-ode}
+\end{equation}
+and the cost is $T[x]=\chi(1)-\chi_0$. We argue in three steps.
+
+\emph{A priori bounds.} Let $T_0$ be the cost of any admissible competitor. Along a
+minimizing sequence, $\rho\,\mathrm{length}(x_n)\le T[x_n]\le T_0$ by the left inequality
+of~\eqref{eq:coercive}, so the lengths are bounded by $\Lambda=T_0/\rho$. Reparametrizing
+each $x_n$ proportionally to arclength gives $|\dot x_n|\equiv\mathrm{length}(x_n)\le\Lambda$
+a.e., a uniform Lipschitz bound. The right inequality gives
+$0\le\dd\chi/\dd\sigma\le R\Lambda$, so the clocks $\chi_n$ are uniformly Lipschitz and
+uniformly bounded, and remain in a compact interval $[\chi_0,\chi_0+R\Lambda]$ on which,
+with $\Omega$ compact, $F$ is smooth.
+
+\emph{Gr\"onwall stability of the clock.} On $\Omega\times[\chi_0,\chi_0+R\Lambda]$ the
+function $F$ is $C^1$, hence Lipschitz in its slow argument: there is $L<\infty$ with
+$|F(x,\nu,\chi)-F(x,\nu,\chi')|\le L\,|\nu|\,|\chi-\chi'|$, the factor $|\nu|$ appearing
+because $F$ is positively homogeneous of degree one in $\nu$. Let $\chi,\tilde\chi$ solve
+\eqref{eq:clock-ode} for the same arc but different initial data, or for two arcs with the
+same velocity field; subtracting and using the above,
+\[
+   \big|\chi(\sigma)-\tilde\chi(\sigma)\big|
+   \le\big|\chi(0)-\tilde\chi(0)\big|
+   +L\Lambda\!\int_0^{\sigma}\!\big|\chi-\tilde\chi\big|\,\dd\sigma' ,
+\]
+so Gr\"onwall's inequality gives
+$\|\chi-\tilde\chi\|_\infty\le e^{L\Lambda}|\chi(0)-\tilde\chi(0)|$. In particular
+\eqref{eq:clock-ode} has a unique solution for each arc, the solution map
+$x\mapsto\chi_x$ is well defined, no trajectory escapes the compact set in which the
+bounds were derived, and $T$ depends on the arc only through that map.
+
+\emph{Existence.} Pass to the augmented state $y=(\chi,x)$ and the extended velocity set
+\[
+   \mathcal V(y)=\big\{(t,\nu):\ |\nu|\le\Lambda,\ \ F(x,\nu,\chi)\le t\le R\Lambda\big\},
+\]
+which is nonempty, compact and---because $F$ is convex in $\nu$, so that its epigraph is
+convex---\emph{convex}, and depends continuously on $y$ by the smoothness just used. The
+relaxed problem of minimizing $\chi(1)$ over trajectories of the differential inclusion
+$\dot y\in\mathcal V(y)$ therefore satisfies the hypotheses of the Filippov--Cesari
+existence theorem \cite{Cesari1983,Filippov1962}, and admits a minimizer. Since $\chi(1)$
+is monotone in $t$, any minimizer saturates $t=F(x,\nu,\chi)$ almost everywhere, hence
+solves~\eqref{eq:clock-ode} and is an admissible arc of the original problem with the same
+cost. Coercivity forbids the infimum from being attained by escape, and the two problems
+have the same infimum, so the minimizer of the relaxed problem is a minimizer of $T$.
+
+(ii) Suppose $p_0=0$. The maximized Hamiltonian would then read $\max_\nu p\cdot\nu=0$
+with $p\neq0$; but the support function of the oval obeys
+$h(p)=\max_{\nu\in\partial B}p\cdot\nu\ge\rho\,|p|>0$ by the left inequality
+of~\eqref{eq:coercive}, a contradiction. Hence $p_0$ normalizes to $-1$ and $p$ never
+vanishes.
+\end{proof}
+
+\begin{remark}[relaxation of the epigraph is not convexification of the indicatrix]
+\label{rem:no-convexification}
+The convexity invoked in the existence proof is that of the \emph{epigraph}
+$\{t\ge F(x,\nu,\chi)\}$ in the augmented variable $t$---the classical Cesari property---and
+it is used only to close the minimizing sequence. It is \emph{not} a convexification of the
+velocity indicatrix, which Theorem~\ref{thm:rail} deliberately avoids: replacing the oval
+by its convex hull would admit averaged velocities violating the unit-mass shell, whereas
+enlarging $t$ upwards only makes a competitor slower and is therefore discarded by the
+minimization itself (the saturation step above). The two statements are consistent: no
+relaxation survives in the minimizer.
+\end{remark}
+
+\begin{remark}[what normality buys, and where the hypotheses fail]
+Part (ii) is what makes the reduction to the branch Hamiltonian
+$H=\max_\theta p\cdot\dot x(\theta)$ together with the rail invariant $-u\cdot W=\Ehat$
+legitimate along the \emph{entire} extremal, and it is the control-theoretic content of
+``excluding $p=0$'' in the proof of Theorem~\ref{thm:rail}: nontriviality is not an
+assumption but a consequence of $\rho>0$. The two-sided bound~\eqref{eq:coercive} fails
+exactly at the freezing/horizon surfaces, where $\rho\to0$ and the velocity indicatrix of
+section~\ref{sec:indicatrix} degenerates; Theorem~\ref{thm:existence} therefore applies on
+any compact subdomain bounded away from them.
+\end{remark}
+
+\Ithm{3}
+\begin{proposition}[Hamilton--Jacobi verification]\label{prop:hjb}
+Assume (H). The value function of the non-autonomous problem obeys, in the cost-to-go
+convention, the Hamilton--Jacobi--Bellman equation
+\begin{equation}
+  \partial_\chi V+\min_{\theta\in S^1}\big\{\,\ell_{\mathcal T}(x,\theta,\chi)
+  +\nabla_x V\cdot f(x,\theta,\chi)\,\big\}=0
+  \label{eq:hjb}
+\end{equation}
+(equivalently, an autonomous HJB on the augmented state $y=(\chi,x)$; choosing
+$\mathcal T=\chi$ gives $\ell_{\mathcal T}=1$ and the usual minimum-time form).
+Let now $V$ be a Lipschitz \emph{calibration} on a region where it is single-valued,
+that is, a viscosity subsolution of~\eqref{eq:hjb} in the forward (accumulated-cost)
+convention:
+\begin{equation}
+  \partial_\chi V+\nabla_x V\cdot f(x,\theta,\chi)\;\le\;\ell_{\mathcal T}(x,\theta,\chi)
+  \qquad\text{for \emph{every} }\theta\in S^1 .
+  \label{eq:calibration}
+\end{equation}
+If a candidate PMP extremal \emph{saturates}~\eqref{eq:calibration}---equality along it,
+which in the stationary case is $\nabla V\cdot\dot x=F$ pointwise---then that extremal
+realizes the value function and is a \emph{global} minimizer on that region.
+\end{proposition}
+
+\begin{proof}
+The maximum principle is necessary but not sufficient: a PMP extremal is a
+\emph{candidate} minimizer, guaranteed only \emph{locally} optimal. The sufficient global
+certificate is the calibration~\eqref{eq:calibration}. Let $(x(\cdot),\theta(\cdot))$ be
+\emph{any} admissible competitor joining the data. Since~\eqref{eq:calibration} holds for
+every $\theta$, it holds in particular for the competitor's own control, so
+\[
+   \frac{\dd}{\dd\chi}\,V\big(\chi,x(\chi)\big)
+   =\partial_\chi V+\nabla_x V\cdot f\big(x,\theta(\chi),\chi\big)
+   \;\le\;\ell_{\mathcal T}\big(x,\theta(\chi),\chi\big).
+\]
+Integrating from $\chi_0$ to the arrival $\chi_f$ gives
+$V(\chi_f,x_f)-V(\chi_0,x_0)\le\int\ell_{\mathcal T}\,\dd\chi=J_{\mathcal T}$: the
+increment of $V$ between the prescribed data is a lower bound for the cost of every
+competitor. Along the candidate the inequality is an equality by hypothesis, so its cost
+equals that lower bound and no competitor can beat it. Finally
+$V(\chi_f,x_f)-V(\chi_0,x_0)$ therefore equals the value function, and the candidate
+realizes it. In the stationary case~\eqref{eq:calibration} reduces to
+$F^\ast(x,\nabla V)\le1$ with $F^\ast$ the dual (optical) norm, the familiar statement
+that $V$ is a subsolution of the eikonal equation, and saturation is
+$\nabla V\cdot\dot x=F$.
+\end{proof}
+
+\begin{remark}[scope of the certificate]
+We do \emph{not} construct such a global $V$ for generic non-stationary Kerr/Vaidya
+trajectories; in the stationary limit the closed-form optical (Randers) metric of
+section~\ref{sec:vaidya} supplies one on any region carrying a single-valued $V$, and
+elsewhere our statements are those of PMP extremals with local checks. Where $V$ turns
+multivalued the certificate localizes, as follows.
+\end{remark}
+
+\paragraph{Conjugate points, Maxwell set, cut locus.} Two mechanisms end
+optimality. A \emph{conjugate point} (Jacobi) ends \emph{local} minimality when
+the second variation degenerates; up to the first conjugate point the extremal is
+a strict local minimum. A \emph{Maxwell point}---two distinct extremals of equal
+arrival time---ends \emph{global} minimality earlier and is exactly a shock
+(gradient discontinuity) of $V$, i.e.\ a point of the cut locus. Strict convexity
+of the indicatrix removes Filippov relaxation but does \emph{not} exclude Maxwell
+points: distinct windings past the rotation axis, or the two $\pm J$ arcs reaching
+a common target, can tie. A closed-form extremal admitting a single-valued saturated
+verification function is globally certified only up to its first Maxwell or conjugate
+obstruction---the first such singularity of $V$. For the generic non-stationary
+trajectories treated here we establish PMP extremality and local numerical minimality
+checks, \emph{not} a complete global Hamilton--Jacobi certificate; beyond the first
+obstruction the global optimum is selected by comparing arrival times across the competing
+extremals. On the frozen family both obstructions are located exactly in
+section~\ref{sec:vaidya-jacobi}: no conjugate point occurs before the turning point, so a
+Mayer field exists on every monotone arc and the criterion above does apply there, whereas
+an arc through periapsis develops a genuine caustic at a computable rail energy, and the
+Maxwell set is the locus of axis crossings.
+
+\paragraph{What is \emph{not} claimed inside the ergosphere.} Where the Killing
+selector $\xi$ becomes spacelike---inside the ergosphere---the invariant
+$-u\cdot\xi=\Ehat$ no longer bounds a timelike-future cost and the indicatrix oval
+degenerates: a closed-form $\varphi(r)$ continued through $\re$ is a genuine
+\emph{analytic continuation} of the
+extremal, not a certified physical minimum. The existence and Hamilton--Jacobi
+statements above are asserted only outside the ergosphere, on the region where $F$
+is a bona fide convex indicatrix; inside, a timelike observer congruence or a different
+timelike selector would be required to formulate a compact future-timelike indicatrix,
+which we do not develop. Freezing (where
+$\rho\to0$), turning (where a semi-axis vanishes), and the separatrix (a double
+root of the radical) are distinct degeneracies and are not conflated.
+
+\subsection{Selecting $W$: the Killing / conformal-Killing / Kodama hierarchy}
+\label{sec:whierarchy}
+The selector $W$ is fixed by a hierarchy of decreasing symmetry, each level
+recovering the previous one in the appropriate limit.
+
+\emph{(a) Killing.} If a timelike Killing vector $\xi$ exists, $W=\xi$ and the
+right-hand side of equation~\eqref{eq:cost} vanishes identically: $-u\cdot\xi$ is
+Noether-conserved and the rail is free. This is Perlick's stationary case
+\cite{Perlick1991}.
+
+\paragraph{The time-dependent optical metric, and Perlick's as its stationary member.}
+The rail does more than supply extremal equations: it produces an \emph{optical metric},
+and it does so whether or not the geometry is stationary. This is the precise sense in
+which the construction extends Perlick's.
+
+\begin{auxtheorem}[time-dependent optical metric]\label{thm:optical}
+Assume (H1)--(H2), let $\chi$ be adapted to the selector ($W=\partial_\chi$), write
+$f=|W|^2=-g_{\chi\chi}$, and put the metric in threading form
+$g=-f(\dd\chi-\omega_a\dd x^a)^2+h_{ab}\dd x^a\dd x^b$, where $f,\omega_a,h_{ab}$ may all
+depend on $\chi$. Then the rail arrival-time functional is the Randers-type Finsler
+function
+\begin{equation}
+   F(\chi,x,\nu)=\beta_a\nu^a+\sqrt{a_{ab}\nu^a\nu^b},
+   \qquad \beta_a=\omega_a,\qquad
+   a_{ab}=\frac{\Ehat^2\,h_{ab}}{f\,(\Ehat^2-f)},
+   \label{eq:optical-metric}
+\end{equation}
+and
+\begin{enumerate}
+\item[(i)] $a_{ab}$ is positive definite \emph{if and only if} $\Ehat>|W|$: Hypothesis
+\ref{hyp:convex} \emph{is} the positive-definiteness of the optical metric, whose conformal
+factor $\Ehat^2/[f(\Ehat^2-f)]$ diverges as $\Ehat\downarrow|W|$, the freezing surface;
+\item[(ii)] $\|\beta\|_a^2=\big[f(\Ehat^2-f)/\Ehat^2\big]\,|\omega|_h^2$, strictly
+increasing in $\Ehat$ with limit $f|\omega|_h^2$; hence the Randers condition
+$\|\beta\|_a<1$ is \emph{implied by} the null Fermat--Randers condition $f|\omega|_h^2<1$,
+for every $\Ehat$;
+\item[(iii)] if the data are $\chi$-independent, $F$ is Perlick's fixed-energy optical
+metric \cite{Perlick1991}, and $\Ehat\to\infty$ gives the Fermat--Randers metric
+$h_{ab}/f$ \cite{GibbonsWerner2008}.
+\end{enumerate}
+\end{auxtheorem}
+
+\begin{proof}
+Solving the rail $-u\cdot W=\Ehat$ jointly with $g(u,u)=-1$ for $\chi'=\dd\chi/\dd\sigma$
+gives a quadratic; substituting the right-hand side of~\eqref{eq:optical-metric} into it
+annihilates it, the rational part and the coefficient of the radical vanishing separately,
+and $f\,F-\omega_a\nu^a f=f\sqrt{a_{ab}\nu^a\nu^b}>0$ identifies it as the
+future-directed root. The computation is \emph{pointwise in the event}: no derivative of
+the metric appears, so the $\chi$-dependence of $(f,\omega,h)$ never enters, and the same
+algebra that yields Perlick's formula yields~\eqref{eq:optical-metric} verbatim. Part (i)
+is immediate since $h_{ab}$ is positive definite; part (ii) follows from
+$a^{ab}=f(\Ehat^2-f)h^{ab}/\Ehat^2$ and
+$\dd\big[f(\Ehat^2-f)/\Ehat^2\big]/\dd\Ehat=2f^2/\Ehat^3>0$; part (iii) is the
+specialization.
+\end{proof}
+
+\begin{remark}
+Two consequences are worth separating. First, the extension is not an analogy: the
+\emph{same} closed formula covers both regimes, and stationarity enters only by removing
+the $\chi$-argument. Second, it is not a reduction to Finsler geodesics either---because
+$F$ depends on $\chi$, the brachistochrone is \emph{not} a geodesic of a fixed Randers
+metric, which is exactly the non-autonomy that forces the Hamilton--Jacobi criterion of
+Proposition~\ref{prop:hjb} in place of Finsler geodesic theory. Perlick's case is the one
+where that argument collapses to the standard theory. Part (ii) adds that the rail
+structure is no worse behaved than the null one: wherever Fermat--Randers optics is
+defined, so is the rail optics, at every rail energy.
+\end{remark}
+
+\paragraph{Recovery of Perlick's stationary optics, explicitly.} In the Killing limit
+$W=\xi=\partial_t$ the controlled-rail arrival-time Finsler function is exactly a
+Randers metric, so the construction reduces to Perlick's fixed-energy optics rather
+than merely resembling it. Solving the rail $-u\cdot\xi=\Ehat$ jointly with
+$g(u,u)=-1$ for the coordinate-time rate $t'=\dd t/\dd\sigma$ gives a quadratic whose
+future-directed root is
+\begin{equation}
+F_{\rm rail}=\beta_a \nu^a+\sqrt{a_{ab}\,\nu^a \nu^b},\quad
+\beta_a=\frac{g_{ta}}{f},\quad
+a_{ab}=\frac{\Ehat^2\bigl(g_{ta}g_{tb}+f\,g_{ab}\bigr)}{f^2(\Ehat^2-f)},
+\label{eq:perlick-randers}
+\end{equation}
+with $f=-g_{tt}$ and $\nu^a=\dd x^a/\dd\sigma$. In the threading form
+$g=-f(\dd t-\omega_a\dd x^a)^2+h_{ab}\dd x^a\dd x^b$ one has
+$g_{ta}g_{tb}+f\,g_{ab}=f\,h_{ab}$, so $\beta_a=\omega_a$ and
+$a_{ab}=\Ehat^2 h_{ab}/[f(\Ehat^2-f)]$---precisely Perlick's fixed-energy stationary
+optical metric \cite{Perlick1991}. The null/high-energy limit $\Ehat\to\infty$ gives
+$a_{ab}\to h_{ab}/f$, the standard Fermat--Randers optical metric of Kerr
+\cite{GibbonsWerner2008}. This is the functional equality $F_{\rm rail}=F_{\rm Perlick}$
+(stronger than coincidence of the Hamiltonian flows on $H=0$), verified against the
+directly solved $F_{\rm rail}$ on equatorial Kerr to machine precision.
+
+\emph{(b) Conformal Killing.} If the spacetime is conformally stationary,
+$g=\Omega^2\hat g$ with $\hat g$ stationary, the timelike conformal Killing
+vector $\partial_\eta$ selects the conformal-time branch; $-u\cdot W$ is exactly
+conserved for null rays and controlled up to the conformal factor for massive
+rails. FLRW and constant-$A$ Thakurta--Kerr live at this level.
+
+\emph{(c) Kodama.} In a spherically symmetric \emph{dynamical} spacetime with no
+Killing or conformal Killing vector, the Kodama vector
+$K^a=\varepsilon^{ab}\nabla_b r$ \cite{Kodama1980,Hayward1996} is the canonical
+replacement: it is divergence-free (equation~\eqref{eq:kodama}), reduces to $\xi$ in
+the static limit, and its flux $G^{ab}K_b$ is conserved with charge the
+Misner--Sharp mass. Vaidya is the paradigm (section~\ref{sec:kodama-energy}).
+
+\emph{(d) Convention.} Absent even spherical symmetry the Kodama construction
+fails and $W$ becomes a declared convention, with no distinguished normalization
+of the cost one-form. Levels (a)--(c) are what make the non-stationary rail
+canonical rather than arbitrary.
+
+
+% ======================================================================
+\section{FLRW: the degenerate base case}
+\label{sec:flrw}
+% ----------------------------------------------------------------------
+For spatially flat FLRW, $g=a(\eta)^2\eta_{\rm Mink}$, the rail uses the
+conformal Killing vector $\partial_\eta$; the local speed is
+\begin{equation}
+    v(\eta)=\sqrt{1-a(\eta)^2/\Ehat^{2}},
+    \label{eq:flrwspeed}
+\end{equation}
+vanishing at the freezing barrier $a=\Ehat$.
+\paragraph{Branch degeneracy.} Because $a=a(\eta)$ depends on conformal time
+alone (spatial homogeneity), the optical index built from the conformal Killing
+vector,
+\begin{equation}
+    n(\eta,r)=\frac1v=\frac{\Ehat}{\sqrt{\Ehat^2-a(\eta)^2}},
+    \label{eq:flrwindex}
+\end{equation}
+is \emph{position-independent} at fixed $\eta$. The argument is then elementary and does
+not even need Fermat's principle: the rail fixes the comoving speed to $v(\eta)$, so the
+Euclidean arc length accumulated up to conformal time $\eta_f$ is
+$\int_{\eta_0}^{\eta_f}v\,\dd\eta$, a strictly increasing function of $\eta_f$ alone.
+Reaching the target therefore costs the least conformal time exactly when the comoving
+path is the shortest, i.e.\ a straight line. The same curve minimizes $T_t$ and $T_\tau$
+because on the rail \emph{every} clock is a function of $\eta$ alone: $\dd t=a\,\dd\eta$,
+while the rail-fixed speed makes the Lorentz weight collapse,
+\begin{equation}
+   \frac{\dd\tau}{\dd\eta}=a\sqrt{1-v^2}=\frac{a^2}{\Ehat},
+   \label{eq:flrw-dtau}
+\end{equation}
+so $t_f$ and $\tau_f$ are strictly increasing functions of $\eta_f$ and share its
+minimizer. Hence
+\begin{equation}
+\begin{split}
+    \arg\min T_t&=\arg\min T_\tau=\arg\min T_\eta\\
+    &=\text{comoving straight line}.
+\end{split}
+    \label{eq:flrwdegen}
+\end{equation}
+The $t/\tau$ splitting that drives every later result is a gravitational-%
+\emph{gradient} effect ($\partial_r f\neq0$); it is absent whenever the metric
+functions depend on time only. FLRW is thus the degenerate base of the ladder:
+it exhibits freezing at $a=\Ehat$ but, under perturbation, no branch structure
+(figure~\ref{fig:flrw-kin}a,\,b).
+
+\begin{figure}[tbp]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}\centering
+        % ALT: Two stacked plots against cosmic time: four local-speed curves falling to
+        %      zero, each ending at its own vertical dotted line; below, four decaying
+        %      rail-redshift curves crossing a dashed unit line.
+        \includegraphics[width=\textwidth]{Immagini/fig_flrw_cinematica.pdf}\\{\footnotesize (a)}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}\centering
+        % ALT: Two travel-time curves against the amplitude of a sinusoidal path
+        %      deformation, both smooth with their minimum at zero amplitude.
+        \includegraphics[width=\textwidth]{Immagini/fig_flrw_variazionale.pdf}\\{\footnotesize (b)}
+    \end{minipage}
+    \caption{FLRW base case. (a)~Rail kinematics: local speed $v$ and rail redshift
+    $E_{\rm phys}=\Ehat/a$, with freezing at $a=\Ehat$. (b)~Numerical perturbation check:
+    sinusoidal deformations of the comoving straight line raise \emph{both} $T_t$ and
+    $T_\tau$, consistent with the analytically proved branch degeneracy---a local check,
+    not a global-minimality proof.}
+    \label{fig:flrw-kin}\label{fig:flrw-var}
+\end{figure}
+
+\subsection{Arbitrary spatial curvature}
+\label{sec:flrw-curvature}
+Nothing above used spatial flatness. Write the slices with arbitrary curvature
+$k=+1,0,-1$ in the conformally static form
+\begin{equation}
+   g=a(\eta)^2\Big[-\dd\eta^2+\dd\chi^2+S_k(\chi)^2\dd\Omega^2\Big],
+   \qquad S_k(\chi)=\sin\chi,\ \chi,\ \sinh\chi ,
+   \label{eq:flrw-k}
+\end{equation}
+and keep the same conformal selector $W=\partial_\eta$. Then $W\cdot W=g_{\eta\eta}=-a^2$,
+so
+\begin{equation}
+   |W|=a(\eta)\qquad\text{for every }k :
+   \label{eq:Wnorm-k}
+\end{equation}
+the conformal factor multiplies the whole metric and $W$ points along the conformal time,
+so the spatial curvature never reaches the norm of the selector. By
+Lemma~\ref{lem:indicatrix} the indicatrix is therefore the same centred sphere of speed
+$v(\eta)=\sqrt{1-a^2/\Ehat^2}$ as in the flat case, the freezing surface is again
+$a=\Ehat$, and the clock relation~\eqref{eq:flrw-dtau} is unchanged. Every clock remains a
+strictly increasing function of $\eta$ alone, so the branch degeneracy~\eqref{eq:flrwdegen}
+persists and the minimiser is the shortest comoving path. Hence for all three curvatures
+\begin{equation}
+   \text{brachistochrone}=\text{spatial geodesic of the slice},
+   \qquad
+   \int_{\eta_0}^{\eta_f}v(\eta)\,\dd\eta=d_\gamma(x_0,x_f),
+   \label{eq:flrw-geodesic}
+\end{equation}
+with $d_\gamma$ the geodesic distance of the constant-curvature $3$-metric: curvature
+enters \emph{only} through that distance. The comoving shapes differ---great-circle arc,
+straight line, hyperbolic geodesic---as shown in
+figure~\ref{fig:flrw-curvature}(a).
+
+The closed case is not merely cosmetic: its slices are compact, and it supplies the
+simplest concrete instance of the obstruction that Proposition~\ref{prop:hjb} can only
+describe in the abstract. Two points of $S^3$ at geodesic distance $\pi$---antipodes---are
+joined by a whole $S^2$ of minimising geodesics, a textbook Maxwell set and cut locus.
+Whether the rail can reach it is quantitative: with $\Delta_{\max}$ the comoving distance
+accumulated up to freezing, the antipode is attainable iff $\Delta_{\max}\ge\pi$ in units
+of the comoving curvature radius $R_{\rm c}$. For de Sitter,
+$\Delta_{\max}=\big[\sqrt{\Ehat^2-1}+\arcsin(1/\Ehat)-\pi/2\big]/(\Ehat H)$, so the
+threshold is a condition on $HR_{\rm c}$ alone
+(figure~\ref{fig:flrw-curvature}(b)): a closed universe whose curvature radius is large
+compared with the Hubble radius keeps the minimiser unique, while a small enough one lets
+the extremal reach its own cut locus, where global optimality fails even though every
+competing arc is a perfectly good Pontryagin extremal. The open case $k=-1$ adds no such
+feature: the slices are non-compact, geodesics between two points are unique, and the
+structure is that of the flat case throughout.
+
+\begin{figure}[tbp]
+    \centering
+    % ALT: Panel (a): three comoving curves leaving a common height above a marked point O,
+    %      the flat one horizontal, the closed one bending toward O, the open one away.
+    %      Panel (b): three saturating curves of reachable distance against rail energy,
+    %      with a horizontal line at pi and the region above it shaded.
+    \includegraphics[width=\textwidth]{Immagini/fig_flrw_curvatura.pdf}
+    \caption{FLRW at arbitrary spatial curvature. (a)~Comoving brachistochrones with a
+    common closest approach $\chi_{\min}$ to a reference point $O$, drawn in the geodesic
+    polar map $(\chi,\varphi)$ of the slice: the flat geodesic is the horizontal line at
+    height $\chi_{\min}$, the closed one bends toward $O$ and the open one away from it.
+    Only the half $\varphi\ge0$ is shown; the curves are symmetric about the closest
+    approach. (b)~de Sitter reach before freezing, $\Delta_{\max}$ in comoving curvature
+    radii, against the antipodal distance $\pi$ of a closed slice. Above that line the cut
+    locus is attainable and the minimiser stops being unique---the Maxwell obstruction of
+    Proposition~\ref{prop:hjb} realised in the simplest member of the ladder.}
+    \label{fig:flrw-curvature}
+\end{figure}
+
+
+% ======================================================================
+\section{Vaidya: dynamical black hole and the Kodama rail}
+\label{sec:vaidya}
+% ----------------------------------------------------------------------
+The ingoing Vaidya metric $\dd s^2=-f\,\dd v^2+2\,\dd v\,\dd r+r^2\dd\Omega^2$,
+$f=1-2m(v)/r$ \cite{Vaidya1951,LindquistSchwartzMisner1965}, has no timelike
+Killing vector; its trapping structure is that of a dynamical horizon
+\cite{AshtekarKrishnan2003,Booth2005,FaraoniBook}. The Kodama vector
+\cite{Kodama1980,Hayward1996,AbreuVisser2010}
+\begin{equation}
+    K^a=\varepsilon^{ab}\nabla_b r = \partial_v ,\qquad
+    \nabla_a K^a=0,
+    \label{eq:kodama}
+\end{equation}
+is divergence-free without any Killing symmetry, and its charge is the
+Misner--Sharp mass $m(v)$ \cite{MisnerSharp1964,HaywardMukohyama1999}.
+
+\subsection{Kodama energy is the rail invariant}
+\label{sec:kodama-energy}
+With the canonical selector $K=\partial_v$, the rail constraint~\eqref{eq:rail} is
+exactly $-u\cdot K=-u_v=\Ehat$, hence
+\begin{equation}
+    -\,u\cdot K \;=\; \Ehat \quad\text{identically along the brachistochrone.}
+    \label{eq:kodama-conserved}
+\end{equation}
+This is \emph{controlled} conservation, not Noether: for a geodesic
+$-u\cdot K$ would drift at rate $-m'(u^v)^2/r\propto m'$, exactly the
+right-hand side of equation~\eqref{eq:cost} for $W=K$. Only the unnormalized
+$K=\partial_v$ has zero control cost in the static limit; the normalized
+$\hat K=K/\sqrt f$ does not (discriminating test), which is why the Kodama
+vector, not a unit selector, is the canonical choice.
+
+\paragraph{Indicatrix and Hamiltonians.} With $w\equiv\Ehat^2-f$ the constraint
+$-u_v=\Ehat$ turns the admissible velocities at fixed $(v,r)$ into an ellipse,
+\begin{equation}
+    r'=(f-\Ehat^2)+\Ehat\sqrt w\,\cos\theta,\qquad
+    \varphi'=\frac{\sqrt w}{r}\sin\theta,
+    \label{eq:vaidya-ind}
+\end{equation}
+a Zermelo problem with ingoing radial wind $f-\Ehat^2<0$. Maximizing
+$p\cdot\dot x$ over $\theta$ at fixed $p_\varphi=J$ gives the closed-form branch
+Hamiltonians
+\begin{align}
+    H_v&=p_r(f-\Ehat^2)-1+\sqrt w\,\sqrt{\Ehat^2 p_r^2+J^2/r^2},
+    \label{eq:Hv}\\
+    H_\tau&=p_r(f-\Ehat^2)-\Ehat
+        +\sqrt w\,\sqrt{(\Ehat p_r+1)^2+J^2/r^2}.
+    \label{eq:Htau-vaidya}
+\end{align}
+Both branches are built from the \emph{same} support function of the same
+indicatrix~\eqref{eq:vaidya-ind},
+\begin{equation}
+   h(p_r,J)=p_r\,(f-\Ehat^2)+\sqrt w\,\sqrt{\Ehat^2p_r^2+J^2/r^2},
+   \label{eq:vaidya-support}
+\end{equation}
+and differ only in the cost subtracted from it: the $v$-branch has unit cost,
+$H_v=h(p_r,J)-1$, whereas the proper-time cost $\dd\tau/\dd v=(f-r')/\Ehat$ is itself
+control-dependent and is absorbed by shifting the radial momentum,
+\begin{equation}
+   H_\tau(p_r,J)=h\!\left(p_r+\tfrac1{\Ehat},\,J\right)-\frac{f}{\Ehat} .
+   \label{eq:tau-from-v}
+\end{equation}
+Carrying out the shift reproduces~\eqref{eq:Htau-vaidya}: the constant $-\Ehat$ there is
+the \emph{result} of combining $-f/\Ehat$ with the $(f-\Ehat^2)/\Ehat$ generated by the
+shift, not the cost itself. Non-stationarity is the explicit dependence
+$\dd H/\dd v=\partial_v H\propto m'(v)$; the \emph{endpoint-sensitive} (arising from the
+two-point boundary-value problem with a free future arrival---a costate memory, not a
+causal effect) momentum $p_v=-H$
+satisfies $p_v(r_1)=0$ at the free arrival radius yet $p_v(r)\neq0$ along the
+path, so the turning point \emph{anticipates future accretion}
+(figure~\ref{fig:vaidya-traj}).
+
+\paragraph{Branch costate vs mechanical angular momentum.} The conserved $J=p_\varphi$
+is the Noether \emph{costate} of the reduced control Hamiltonian---the canonical
+momentum conjugate to $\varphi$ in the arrival-time problem---\emph{not} the spacetime
+angular momentum $L_{\rm mech}=g(u,\partial_\varphi)$. Although $\partial_\varphi$ is a
+Killing vector, Noether's theorem for the \emph{control} symmetry returns the control
+costate, not the mechanical momentum: along a forced (rail-constrained, accelerated)
+worldline $L_{\rm mech}$ is \emph{not} conserved, since
+$\dd L_{\rm mech}/\dd\tau=a\cdot\partial_\varphi\neq0$. The two are therefore distinct
+objects. On the native Vaidya $v$-branch shell the Legendre map gives the exact
+relation
+\begin{equation}
+    L_{\rm mech}=r^2 u^\varphi=\frac{\Ehat^2-f(r)}{\Ehat}\,J,
+    \label{eq:costate-mech}
+\end{equation}
+which varies with $r$ while $J$ stays constant (they agree only at the isolated radius
+$f=\Ehat^2-\Ehat$). This follows from the indicatrix in two lines: at the maximizer
+$(\cos\theta^\star,\sin\theta^\star)\propto(\Ehat p_r,\,J/r)$, so with
+$N=\sqrt{\Ehat^2p_r^2+J^2/r^2}$ one gets
+$L_{\rm mech}=\sqrt w\,J/[\Ehat(N-\sqrt w\,p_r)]$, while the shell $H_v=0$ reads
+$\sqrt w\,N=1+p_rw$, i.e.\ $N-\sqrt w\,p_r=1/\sqrt w$; substituting
+gives~\eqref{eq:costate-mech}. The Legendre
+map is branch-specific, but on all Vaidya branches the conserved axial control costate is
+$J$ and the slow deformation is generated solely by $m\partial_m$; we reserve ``angular
+momentum'' for the mechanical $g(u,\partial_\varphi)$ and call $J$ the branch costate,
+$L_{\rm mech}$ being a derived, non-conserved quantity.
+
+\begin{figure}[ht]
+    \centering
+    % ALT: Two stacked plots against radius: above, on a logarithmic axis, a nearly flat
+    %      residual trace below 1e-15; below, a smooth nowhere-vanishing drift curve.
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_kodama_conservazione.pdf}
+    \caption{Kodama energy along the $\tau$-brachistochrone. Top: the
+    \emph{residual} $|{-}u\cdot K-\Ehat|$ on a \emph{log} scale, held below
+    $6.7\times10^{-16}$---an \emph{actively controlled} (rail-maintained) invariant,
+    not a Noether constant. Bottom: the free-particle Kodama drift $\propto m'$ that
+    the rail cancels (the missing symmetry).}
+    \label{fig:kodama}
+\end{figure}
+
+\paragraph{On-shell drift versus off-shell shell departure.} For the Vaidya family the frozen orbit shape
+$\mathrm{d}\varphi/\mathrm{d}r=F(r;\Ehat,J)$ depends on the mass modulus $m$, and its
+on-shell drift is generated by $m\partial_m$. Conservation of the Kodama rail charge
+$\Ehat$ does \emph{not} constrain the non-autonomous trajectory to the instantaneous
+$H=0$ shell---the costate equation is independent information---so the \emph{complete}
+first-order response adds the $p_v$-driven off-shell contribution
+[equation~\eqref{eq:adiab-exact}, section~\ref{sec:vaidya-adiabatic},
+Figure~\ref{fig:vaidya-offshell}].
+
+
+\subsection{Phenomenology: penetration, timing, bounce}
+\label{sec:vaidya-pheno}
+Three features distinguish the dynamical hole from its frozen-mass
+Schwarzschild limit.
+
+\emph{Penetration.} The $\tau$-brachistochrone reaches the apparent horizon
+$r=2m(v)$ only if $|J|$ lies below a threshold $\Jpen(v_0)$; accretion ($m'>0$)
+opens a \emph{finite} window $\Jpen>0$, whereas the negative-rate continuation
+($m'<0$ in the \emph{ingoing} metric---a formal continuation; physical evaporation is
+the \emph{outgoing} metric, section~\ref{sec:vaidya-plunge}) closes it to zero
+measure---an accretion/(negative-rate) asymmetry with no static analogue. The
+finite capture interval $J\in(0,\Jpen]$ is the analogue of the Kerr $t$-branch
+dichotomy, generated here by the \emph{dynamics}: grazing orbits linger near
+periapsis while the growing horizon closes the gap.
+
+\emph{Bounce.} The $r$-parametrization degenerates at periapsis
+($\dd v/\dd r\to\infty$); reparametrizing by $v$ makes the Euler--Lagrange
+problem regular at the turning point $r'=0$, so the trajectory is integrated
+straight \emph{through} the bounce---the same extremal, via the exact change of
+variable $(f v'-1)\dd r=(f-r')\dd v$. The $v$-flow reaches the periapsis exactly
+where the $r$-flow diverges ($r_{\min}=3.0105$ at $v=7.29$ for $\mu\equiv m'=0.01$),
+and the endpoint-sensitive memory $p_v(r)\propto m'$ measures the departure from the
+frozen-mass Schwarzschild curve (figure~\ref{fig:vaidya-bounce}).
+
+\emph{Timing and the orbit--horizon race.} Because $m$ grows along the path,
+$r_{\min}$ depends on \emph{when} the particle arrives, the epoch $v_1$---a
+genuinely non-stationary effect absent in Kerr. The absolute and
+relative penetration have \emph{opposite} winners
+(figure~\ref{fig:vaidya-timing}): under the negative-rate branch ($m'<0$) the absolute
+periapsis descends but the horizon $2m(v)$ retreats faster, so the relative penetration
+$r_{\min}/2m(v_{\rm peri})$ \emph{worsens} for later arrivals; under accretion the
+periapsis rises yet the horizon grows faster, so late arrivals graze the relative
+horizon. The orbit--horizon chase has reversed outcomes measured in $r$ versus in
+horizon units.
+
+\begin{figure}[ht]
+    \centering
+    % ALT: Two nearly coincident equatorial orbit shapes separating inward, and a second
+    %      panel showing the costate p_v against radius, zero at the outer endpoint and
+    %      nonzero along the inward path.
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_traiettorie.pdf}
+    \caption{$\tau$-brachistochrones for Schwarzschild and Vaidya, and $p_v(r)$,
+    at $E=1.2$, $J=1.3$, $r_1=10$, arrival time $v_1=40$, with
+    $m(v)=1+\mu v$ and $\mu\in\{0,0.01\}$. Transversality gives
+    $p_v(r_1)=0$, while Vaidya develops non-autonomous memory $p_v\propto m'$.}
+    \label{fig:vaidya-traj}
+\end{figure}
+
+
+\subsection{Plunge-radius law and the absence of inversion in the frozen-clock comparison}
+\label{sec:vaidya-plunge}
+The turning-point law has the static Schwarzschild form evaluated at the mass
+at periapsis, $f_*=1-2m(v_{\rm peri})/r_{\min}$:
+\begin{align}
+    \tau:&\quad (\Ehat^2-f_*)J^2 = f_* r_{\min}^2 ,\\
+    t:&\quad (\Ehat^2-f_*)J^2 = \Ehat^2 r_{\min}^2/f_* ,
+    \label{eq:vaidya-turn}
+\end{align}
+plus a genuine $O(m')$ correction from the endpoint-sensitive costate memory $p_v$. Both
+lines follow from Lemma~\ref{lem:indicatrix} in the frozen limit. Parametrizing by the
+Killing time, the rail $-u\cdot\partial_t=\Ehat$ gives $\dd t/\dd\tau=\Ehat/f$, and
+substituting into $g(u,u)=-1$ turns the admissible velocities
+$(V^r,V^\varphi)=(\dd r/\dd t,\ r\,\dd\varphi/\dd t)$ into the \emph{centred} ellipse
+\begin{equation}
+   \frac{(V^r)^2}{f^2}+\frac{(V^\varphi)^2}{f}=\frac{w}{\Ehat^2},
+   \qquad
+   a_r=\frac{f\sqrt w}{\Ehat},\quad a_\varphi=\frac{\sqrt{f\,}\sqrt w}{\Ehat},
+   \label{eq:frozen-ind-t}
+\end{equation}
+centred because the frozen metric is static: there is no wind, only eccentricity. Its
+support function is $h=\sqrt{a_r^2p_r^2+a_\varphi^2J^2/r^2}$, and the two branches differ
+only in the cost subtracted from it---unity for $t$, and $\dd\tau/\dd t=f/\Ehat$ for
+$\tau$, which in this parametrization is control-\emph{independent}, unlike the $v$-branch
+cost of~\eqref{eq:tau-from-v}. Setting $p_r=0$ at the turning point in
+$h=1$ and in $h=f/\Ehat$ returns the two lines of~\eqref{eq:vaidya-turn} respectively. The
+static ratio $J^2_t/J^2_\tau=\Ehat^2/f^2>1$ gives $r_{\min}^t<r_{\min}^\tau$
+(``$t$ deeper''), a \emph{branch-intrinsic} ordering set by $\Ehat/f>1$ alone---it
+does not depend on the sign of $m'$ nor on the ingoing/outgoing character of the
+flux. \emph{Physical} evaporation is the \emph{outgoing} Vaidya metric
+$\dd s^2=-f\dd u^2-2\dd u\,\dd r$ (retarded time $u$), not the ingoing metric with
+$m'<0$. The depth ordering $r_{\min}^t<r_{\min}^\tau$ is \emph{branch-intrinsic}: it
+follows from $\Ehat/f>1$ alone and is therefore independent of the sign of $m'$ and of
+the ingoing/outgoing character of the flux, so to this (static, frozen-clock) order it
+is unchanged under evaporation. The apparent linear-model ``inversion'' from flipping
+$m'<0$ in the \emph{ingoing} model is an unphysical extrapolation to $m\le0$. We do
+\emph{not} here solve the full outgoing optimal-control problem with its own
+Hamiltonians, costates and transversality: the advanced/retarded frozen-clock asymmetry
+[equation~\eqref{eq:vaidya-asymmetry}] is a clock decomposition ($v\!\leftrightarrow\!u$,
+the tortoise $r_*$ changing sign) of the frozen first-order correction, not a complete
+outgoing boundary-value solution. Accordingly we state the absence of an evaporative
+inversion as a property of the branch-intrinsic static ordering together with this
+frozen clock decomposition, and leave the full outgoing BVP---and a genuine outgoing
+trajectory to accompany figure~\ref{fig:vaidya-noinv}---to future work.
+
+\begin{figure}[ht]
+    \centering
+    % ALT: Two decreasing plunge-radius curves against the mass-rate parameter with a third
+    %      curve for their difference; the coordinate-time curve lies below throughout and
+    %      the gap widens toward positive rate.
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_plunge_t_tau.pdf}
+    \caption{Plunge radii $r_{\min}^{t,\tau}$ and their gap versus the ingoing
+    mass-rate parameter $\mu=m'$ for $E=1.2$, $J=8$, $r_1=15$, $v_1=40$ and
+    $m(v)=1+\mu v$. The $t$ branch remains deeper and accretion widens the gap.}
+    \label{fig:vaidya-plunge}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    % ALT: The branch gap against the mass-rate parameter, crossing zero only inside a
+    %      shaded unphysical negative-mass band, with a second curve approaching zero from
+    %      above without crossing.
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_no_inversione_evaporazione.pdf}
+    \caption{Absence of inversion in the ingoing, positive-mass model: the
+    linear-model sign change lies entirely in the unphysical $m<0$ region, and with
+    $m=e^{-\lambda v}>0$ the branch gap shrinks but does not invert. This is a
+    frozen-clock branch comparison at $E=1.2$, $J=8$, $r_1=15$, $v_1=40$, not a
+    solution of the outgoing-Vaidya boundary-value problem (which remains open).}
+    \label{fig:vaidya-noinv}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    % ALT: Radius against advanced time through the turning point, a smooth rounded minimum
+    %      continuing outward, overlaid on the radius-parametrised flow which terminates at
+    %      that minimum.
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_bounce.pdf}
+    \caption{Bounce through periapsis in the $v$-parametrization: the
+    Euler--Lagrange flow is regular at $r'=0$ and integrates through the turning
+    point, reaching $r_{\min}$ exactly where the $r$-parametrization diverges.
+    Parameters are $E=1.2$, $J=1.3$, $r_1=10$, $v_1=40$, and
+    $m(v)=1+\mu v$ with $\mu\in\{-0.01,0,0.01\}$.}
+    \label{fig:vaidya-bounce}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    % ALT: Two plots against arrival epoch, each with three curves for the three mass rates:
+    %      periapsis radius, and the same radius divided by the horizon radius; the ordering
+    %      of the curves reverses between the two.
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_timing.pdf}
+    \caption{Timing window: $r_{\min}$ depends on the arrival epoch $v_1$. The
+    orbit--horizon race has opposite winners in absolute ($r_{\min}$) and relative
+    ($r_{\min}/2m$) terms for accretion versus the negative-rate branch. Here
+    $E=1.2$, $J=1.3$, $r_1=10$, $v_1\in[25,70]$, and
+    $\mu=m'\in\{-0.01,0,0.01\}$ in the ingoing model. For the earliest arrivals the
+    periapsis falls at $v\simeq-7$, so the linear mass model is evaluated slightly before
+    $v=0$; it stays positive there ($m\ge0.93$), and no $m\le0$ extrapolation occurs.}
+    \label{fig:vaidya-timing}
+\end{figure}
+
+\subsection{Closed-form adiabatic correction and the horizon dilogarithm}
+\label{sec:vaidya-adiabatic}
+When $m(v)$ varies slowly we apply the general frozen-coefficient reduction of
+Lemma~\ref{lem:reduction} and the first-order response of Theorem~\ref{thm:firstorder} to the Vaidya mass modulus, with
+$\dot m=\dd m/\dd v$ the small rate and $\varepsilon=M\dot m/m$ its dimensionless
+bookkeeping parameter. In the spectral formulae from this point onward we abbreviate
+$E\equiv\Ehat$ and define the single polynomial factor
+$D_E\equiv(E^2-1)r+2m$. At a fixed reference slice the two normalizations satisfy
+$\delta\varphi/\varepsilon=(m/M)\,\delta\varphi/\dot m$. The frozen family
+is the \emph{Schwarzschild} brachistochrone---the $a\to0$ limit of the
+Thakurta--Kerr forms---on the sextic
+$S=r(r-2m)D_E\,[r^2(r-2m)-J^2 D_E]$. Concretely it is the \emph{proper-time} branch
+$H_\tau$ of~\eqref{eq:Htau-vaidya}, on the orientation of increasing $r$ that renders
+$\sqrt S$ positive: solving $H_\tau=0$ for $p_r$ and forming
+$\varphi'=H_{\tau,J}/H_{\tau,p_r}$, $\dd v/\dd r=1/H_{\tau,p_r}$ and $\dd\tau/\dd r$
+returns exactly the three spectral expressions used below,
+$\varphi'=J D_E/\sqrt S$, equation~\eqref{eq:vaidya-clock} and
+$\dd\tau/\dd r=r^2(r-2m)/\sqrt S$ (checked to $10^{-25}$ at several radii). Notably this
+sextic keeps six distinct roots: the constrained brachistochrone is genus \emph{two} even in
+Schwarzschild (only the geodesics are elliptic; the genus drop occurs at the algebraic
+degeneration value $|J|=J_{\rm deg}$). The mass derivative reduces exactly, the horizon factor cancelling,
+\begin{equation}
+    \partial_m F=\frac{N_m}{S^{3/2}},\quad N_m=S\,\partial_m K-\tfrac12 K\,\partial_m S,
+    \qquad
+    \partial_m\varphi_0=\frac{\mathcal{A}^m}{\sqrt S}+\sum_{k=0}^4 c_k^m U_k,
+    \label{eq:dm-reduction}
+\end{equation}
+with $U_k=\int r^k/\sqrt S\,\dd r$ and \emph{algebraic} constants $c_k^m$ (verified
+to $10^{-15}$). The clock is now the \emph{advanced time}: from $v=t+r_*$,
+\begin{equation}
+    \frac{\dd v}{\dd r}=\frac{E}{f}\frac{\dd\tau}{\dd r}+\frac1f
+    =\frac{E\,r^3}{\sqrt S}+\frac{r}{r-2m}
+    \;\Rightarrow\;
+    v=E\,U_3+r+2m\ln(r-2m),
+    \label{eq:vaidya-clock}
+\end{equation}
+the tortoise term injecting a \emph{horizon logarithm}. This is the advanced-time
+(native) branch; the \emph{proper-time} branch instead uses the second-kind clock
+$\dd\tau/\dd r=r^2(r-2m)/\sqrt S$, i.e.\ $T_\tau=U_3-2m\,U_2$, $b=(0,0,-2m,1,0)$ (no
+horizon log), and closes by the very same
+universal on-shell assembly established here (specialized to the Vaidya clock)---$\delta\varphi_\tau/\dot m=\tfrac12\sum_{k<j}Q_{kj}
+W_{kj}-T_\tau(\mathcal{A}^m/\sqrt S+\tfrac12\sum c_k^m U_k)+\sum_j b_j\mathcal{I}_j$ with
+$Q_{kj}=c_k^m b_j-c_j^m b_k$, all coefficients algebraic (verified to
+$10^{-14}$). The two canonical clocks of the ingoing problem are therefore the
+\emph{advanced null time} $v$ (adapted to the Kodama selector $K=\partial_v$, the
+native evolution parameter) and the \emph{proper time} $\tau$; the coordinate time
+$t$ that enters the static depth comparison~\eqref{eq:vaidya-turn} is the
+\emph{frozen} Schwarzschild-like time, a comparison device valid at frozen order and
+\emph{not} a canonical non-autonomous clock---once $m=m(v)$ the tortoise
+$r_*=r+2m\ln(r-2m)$ acquires $\dd m$ terms and no Killing time survives. The retarded
+time $u=t-r_*$ of the outgoing metric is a \emph{separate} outgoing-Vaidya problem
+(its own Hamiltonians, costates, and transversality), not a third clock of the ingoing
+family. The advanced-time first-order correction
+$\delta\varphi=\dot m\!\int\!\partial_m F\,v\,\dd r$ then integrates by parts into a
+fully explicit closed form (verified to $9\times10^{-14}$, coefficients given),
+\begin{equation}
+    \frac{\delta\varphi}{\dot m}
+    =A_m\,v-E\!\int\! A_m\,\frac{r^3}{\sqrt S}\,\dd r
+    -\int\! A_m\,\frac{r}{r-2m}\,\dd r,\qquad A_m\equiv\partial_m\varphi_0,
+    \label{eq:vaidya-deltaphi}
+\end{equation}
+This is the \emph{on-shell} component of the Vaidya first-order correction (the
+mass-drift of the frozen family).
+
+\Ithm{5}
+\begin{theorem}[complete first-order response]\label{thm:firstorder}
+Assume (H) and let the background depend on a single slow parameter with dimensionless
+rate $\varepsilon$. Linearizing the extended Hamiltonian $\mathcal H=p_\chi+H=0$ about the
+frozen extremal, in the original canonical variables $(r,p_r)$ with $\lambda$ the elapsed
+clock measured from the free-arrival endpoint, the momentum-shell shift is
+$\delta p_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{p_r}$ and the shape correction is
+\begin{equation}
+    \begin{aligned}
+    &\frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{p_r}G}{H_{p_r}}\,
+    \big(\lambda\,\Theta H-S_{\mathcal D}\big)-\lambda\,\Theta G\Big]\dd r,\qquad
+    G=\frac{H_J}{H_{p_r}}=\varphi',\\[2pt]
+    &S_{\mathcal D}(\lambda)=\!\int_0^{\lambda}\!\mathcal D H\,\dd\lambda',
+    \end{aligned}
+    \label{eq:adiab-exact}
+\end{equation}
+which closes the correction to $O(\varepsilon^2)$, uniformly on any compact sub-arc on
+which $|H_{p_r}|$ is bounded away from zero. Here $\Theta$ is the Euler operator
+generating the frozen-family drift and $\mathcal D$ is the drift generator, equal to
+$\Theta$ unless the slow parameter rescales the canonical momenta. For single-parameter
+Vaidya, $\mathcal D=\Theta=m\partial_m$ and the terminally-anchored source collapses to
+the universal boundary form
+\begin{equation}
+    S_{\mathcal D}=[\,r\,p_r\,]-\lambda .
+    \label{eq:universal-boundary}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The derivation is metric-independent and is carried out, then closed explicitly for the
+two Vaidya branches, in~\ref{app:firstorder}; the boundary form~\eqref{eq:universal-boundary}
+follows there from the Randers--Euler identity together with the degree-zero
+self-similarity of the frozen Hamiltonian, and the $O(\varepsilon^2)$ remainder from a
+Gr\"onwall estimate on the sub-arc.
+\end{proof}
+
+As in Thakurta--Kerr, the interior costate does not
+vanish---$p_v=-H_v=O(\dot m)$ with $p_v(r_1)=0$ only at the free arrival---so the
+\emph{complete} first-order term adds the off-shell piece given by the Vaidya analogue
+of equation~\eqref{eq:adiab-exact}, with the single-parameter operator $\Theta=m\partial_m$
+and $S_{\mathcal D}=\int_0^\lambda\Theta H_v\,\dd\lambda'$ terminally anchored; the extra term is
+$-\!\int(\partial_{p_r}G/H_{p_r})\,S_{\mathcal D}\,\dd r$, a length-two iterated integral of the
+same horizon-dilogarithm class. Applying the identical canonical perturbation theory
+to $H_v$ closes the Vaidya first order to $O(\dot m^2)$ (residual slope $\approx2$;
+\texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}). We display the on-shell
+component in closed form below;
+its two integrals expand into named building blocks with algebraic coefficients.
+Writing $A_m=\mathcal{A}^m/\sqrt S-\alpha_0+\sum_k c_k^m U_k$ with the constant
+$\alpha_0=\mathcal{A}^m(r_0)/\sqrt{S(r_0)}$, integration by parts in each factor gives
+the \emph{fully assembled} closed form (verified to $2\times10^{-13}$)
+\begin{equation}
+\begin{aligned}
+    \frac{\delta\varphi}{\dot m}
+    ={}&A_m\,v
+    -E\Big[\mathcal{I}_{\rm poly}-\alpha_0 U_3
+        +\tfrac12\sum_{k=0}^4 c_k^m\big(U_kU_3-W_{3k}\big)\Big]\\
+    &{}-\Big[\mathcal{L}_{2m}-\alpha_0\,\big(v-E\,U_3\big)\Big|_{r_0}^{\,r}
+        +\sum_{k=0}^4 c_k^m\big(r\,U_k-U_{k+1}+2m\,\mathcal{D}_k\big)\Big],
+\end{aligned}
+    \label{eq:vaidya-full}
+\end{equation}
+All blocks below are normalized to \emph{vanish at the lower limit} $r_0$, i.e.\ every
+integral is $\int_{r_0}^{r}$; this is what makes the boundary term of the integration by
+parts reduce to $A_m(r)\,v(r)$, since $A_m(r_0)=0$ by the choice of $\alpha_0$. The one
+elementary primitive that is not of this form is the tortoise term, which is why it is
+displayed with an explicit bracket $\big|_{r_0}^{\,r}$: evaluating it at the upper limit
+alone would spoil the identity by the constant
+$\alpha_0\,[r_0+2m\ln(r_0-2m)]$. With that convention the assembled
+right-hand side reproduces the quadrature of~\eqref{eq:vaidya-deltaphi} to $10^{-39}$ at
+$m=1$, $E=7/5$, $J=5/2$, $r_0=5$, $r=9$ (forty-digit arithmetic).
+
+The named building blocks are: the abelian integrals $U_k=\int r^k/\sqrt S\,\dd r$;
+the elementary rational-log primitive
+$\mathcal{I}_{\rm poly}=\int\mathcal{A}^m r^3/S\,\dd r$; the genus-two
+polylogarithms $W_{3k}=\int(U_3\dd U_k-U_k\dd U_3)$ \emph{at infinity};
+the \emph{second}-kind horizon integral
+$\mathcal{L}_{2m}=\int\mathcal{A}^m r/[(r-2m)\sqrt S]\,\dd r$---since
+$\mathcal{A}^m(2m)\ne0$ its integrand behaves as $(r-2m)^{-3/2}$, a double pole with
+\emph{no} residue at the horizon Weierstrass point, closed by the Kleinian
+$\zeta$/quasi-periods~\cite{BuchstaberEnolskii1997,BakerAbelian1897}, not by Fay; the
+genuinely \emph{third}-kind object is the horizon letter $\dd r/(r-2m)$ (the tortoise
+log, a simple pole of residue two at that Weierstrass point), which closes as a Fay
+$\theta$-ratio~\cite{Fay1973} centred at $r=2m$; and
+the \emph{horizon dilogarithms} $\mathcal{D}_k=\int U_k/(r-2m)\,\dd r$. Since $r=2m$
+is a branch point of $S$, in the local uniformiser $t=\sqrt{r-2m}$ one has
+$\dd r/(r-2m)=2\,\dd t/t$: a \emph{simple} pole of residue two, i.e.\ a genuine
+third-kind letter $\dd\log$ anchored \emph{at the horizon}. On the compact
+genus-two curve this letter carries the divisor $2\,(r{=}2m)-\infty_+-\infty_-$ (residues
+summing to zero) and closes as a Fay prime-form $\theta$-ratio; one integration by parts
+then closes $\mathcal{D}_k$ onto a \emph{single} weight-two letter (verified to
+$10^{-12}$). Displayed horizon logarithms carry a fixed reference length,
+$\ln(r-2m)\equiv\ln[(r-2m)/L]$, which cancels in every assembled result.
+\begin{equation}
+    \mathcal{D}_k=U_k\,\ln(r-2m)-\mathcal{G}_k,\qquad
+    \mathcal{G}_k=\int\ln(r-2m)\,\frac{r^k}{\sqrt S}\,\dd r,
+    \label{eq:horizon-dilog}
+\end{equation}
+where $\mathcal{G}_k$ is the horizon-anchored genus-two dilogarithm---the exact
+counterpart of the Kerr weight-two piece $W_{jk}$, in the same
+hyperelliptic-dilogarithm class (conjecturally irreducible to weight one, the
+theta-divisor obstruction $\Theta=W_{g-1}$ preventing the genus-one factorization),
+but with its $\dd\log$ letter sourced by the
+advanced-time divergence at the horizon $r=2m$ rather than by a third-kind dipole at
+infinity. At the genus-degeneration $|J|=J_{\rm deg}$ the sextic acquires a double root at $r=r_d$
+and the genus drops to one: the $U_k$ reduce to elliptic integrals and $\mathcal{G}_k$
+collapses to the tabulated elliptic (Bloch--Wigner/Zagier) dilogarithm
+\cite{Bloch2000,Zagier1990} on $E:\,w^2=Q_4(r)$. For spherical Vaidya this locus is
+\emph{algebraic} ($r_d<0$, a double root off the physical arc, not an external
+separatrix, and not to be conflated with the dynamical penetration threshold
+$\Jpen(v_0)$); the explicit Weierstrass $\sigma,\zeta$ reduction, with representative
+numerical values, is given in \ref{app:degeneration}. Every coefficient is algebraic
+(rational in $m,E,J$); the transcendence lives entirely in $W_{jk},\mathcal{G}_k$, so the
+correction is reusable by direct evaluation once $S$ and the $c_k^m$ are fixed.
+
+\paragraph{Explicit degeneration-family correction.} On the algebraic genus-degeneration
+locus $J=J_{\rm deg}$ (a double root at $r_d<0$, not a physical separatrix) the correction
+reduces to a finite basis of standard letters. The antiderivative of the source is a sum
+of Weierstrass letters,
+\begin{equation}
+    G(z)=\int\partial_m F=C_0\,z+\sum_a\Big[b_1^a\ln\sigma(z-a)-b_2^a\zeta(z-a)
+        -\tfrac12 b_3^a\wp(z-a)\Big],
+    \label{eq:vaidya-sep-G}
+\end{equation}
+with every residue $b_n^a$ closed in algebraic form over the poles
+$a\in\{\pm z_d,0,i\omega_{\rm im}\}$, while the weight-two blocks $W_{kj}$ are length-two
+iterated (Brown--Levin elliptic-polylogarithm~\cite{BrownLevin2011}) integrals evaluated by
+a convergent $q$-series. \ref{app:degeneration} gives the algebraic reduction,
+Mittag--Leffler block structure and residue formulae. Construction of the period data and
+numerical Kronecker--Eisenstein/$q$-series evaluation use the archived routine. Every
+coefficient is an algebraic function of $(m,E)$, so
+$\delta\varphi_\tau|_{\rm deg}$ is reconstructed on any curve by evaluating these formulae
+(checked to $10^{-9}$ against the direct integral across $E\in[1.3,1.6]$). The minimal
+dilogarithm-basis dimension and the irreducibility of the weight-two letters remain
+\emph{conjectural}; a secondary numerical rank experiment is in the reproducibility
+package.
+
+\paragraph{Advanced/retarded frozen-clock decomposition.} At first order $\delta\varphi$ is
+linear in $\dot m$, so na\"ively $\dot m\to-\dot m$ merely flips its sign. The
+formal advanced/retarded frozen-clock asymmetry is subtler: accretion ($\dot m>0$) is
+described by the \emph{ingoing} Vaidya model and its \emph{advanced} clock $v=t+r_*$,
+whereas the \emph{retarded} clock $u=t-r_*$ ($\dd s^2=-f\dd u^2-2\dd u\,\dd r$) belongs to
+the outgoing geometry. The frozen reduction $\partial_m F$ is identical
+(it depends only on $S$); only the clock changes, and $v\leftrightarrow u$ flips the
+sign of the tortoise $r_*$. Splitting the clock into its bulk and tortoise parts,
+$v=E\,U_3+r_*$ with $r_*=(r-r_0)+2m\ln\!\frac{r-2m}{r_0-2m}$,
+\begin{equation}
+    \frac{\delta\varphi}{\dot m}\Big|_{\rm adv}=\mathcal{A}_\infty+\mathcal{B}_{\rm hor},
+    \quad
+    \frac{\delta\varphi}{\dot m}\Big|_{\rm ret}=\mathcal{A}_\infty-\mathcal{B}_{\rm hor},
+    \quad
+    \mathcal{A}_\infty=\!\int\!\partial_m F\,E\,U_3\,\dd r,\;\;
+    \mathcal{B}_{\rm hor}=\!\int\!\partial_m F\,r_*\,\dd r,
+    \label{eq:vaidya-asymmetry}
+\end{equation}
+so that the retarded frozen-clock branch is
+$\delta\varphi_{\rm ret}=\dot m(\mathcal{A}_\infty-\mathcal{B}_{\rm hor})$; at equal
+rate magnitude the \emph{formal advanced/retarded frozen-clock difference} is
+$\delta\varphi_{\rm adv}-\delta\varphi_{\rm ret}=2|\dot m|\,\mathcal{A}_\infty$
+(carried by the infinity bulk), while the \emph{deviation from exact antisymmetry} is
+$\delta\varphi_{\rm adv}+\delta\varphi_{\rm ret}=2|\dot m|\,\mathcal{B}_{\rm hor}$,
+carried \emph{entirely by the tortoise/horizon}: the horizon term $\mathcal{B}_{\rm hor}$
+is exactly what breaks the na\"ive $\dot m\to-\dot m$ antisymmetry. This
+advanced/retarded split is a \emph{frozen-clock} comparison at first order, isolating the
+sign change of the tortoise contribution; it is \emph{not} a solution of the full
+outgoing-Vaidya optimal-control boundary-value problem, whose Hamiltonians, costates and
+transversality remain to be derived. Within
+$\mathcal{B}_{\rm hor}$ the transcendental, direction-sensitive content is precisely
+the horizon term $2m\!\int\!\partial_m F\ln(r-2m)\,\dd r$, which by parts is the
+horizon dilogarithm $\mathcal{D}_k$ of equation~\eqref{eq:horizon-dilog}. Thus the
+advanced/retarded frozen-clock asymmetry isolates the contribution of the
+horizon-anchored weight-two sector. For
+$m=1,E=1.4,J=2.5$: $\mathcal{A}_\infty=8.7276$, $\mathcal{B}_{\rm hor}=6.1127$ (of which
+$1.5301$ is the horizon-log dilogarithm sector), giving
+$\delta\varphi/\dot m|_{\rm adv}=14.840$ against
+$\delta\varphi/\dot m|_{\rm ret}=2.615$ (both verified to $10^{-15}$); the frozen-clock
+difference is then $2\mathcal{A}_\infty=17.455$ and the deviation from antisymmetry
+$2\mathcal{B}_{\rm hor}=12.225$ (each $\times|\dot m|$).
+
+
+\begin{figure}[htbp]
+    \centering
+    % ALT: A log-log scatter of residual against the adiabatic rate with two fitted straight
+    %      lines, one of slope close to one and a steeper one of slope close to two.
+    \includegraphics[width=0.72\textwidth]{Immagini/fig_vaidya_offshell.pdf}
+    \caption{Vaidya $v$-branch first-order correction, residual against the true
+    non-autonomous flow versus $\varepsilon=M\dot m/m$ (log--log). The on-shell term
+    alone (dropping the terminally anchored source $S_{\mathcal D}$) is $O(\varepsilon)$;
+    the complete extended-Hamiltonian term of equation~\eqref{eq:adiab-exact}, adding the
+    off-shell piece, closes the correction to $O(\varepsilon^2)$. Using five rates
+    $\varepsilon\in[2.5\times10^{-3},4.0\times10^{-2}]$, the plotted residual is the
+    $L^\infty$ orbit-shape norm on $r/M\in[8,11]$. Least-squares fits in
+    $(\ln\varepsilon,\ln R)$ give slopes $s_{\rm on}=1.003152$ and
+    $s_{\rm full}=1.999997$, with log-fit $L^2$ residuals $2.65\times10^{-3}$ and
+    $3.34\times10^{-3}$, respectively.
+    Generated by \texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}.}
+    \label{fig:vaidya-offshell}
+\end{figure}
+
+
+% ======================================================================
+% Flush pending floats so no figure interrupts the Conclusions.
+\FloatBarrier
+\subsection{Conjugate points, the field of extremals, and the Maxwell set}
+\label{sec:vaidya-jacobi}
+Proposition~\ref{prop:hjb} is a criterion; on the frozen family it can be \emph{applied},
+because the two obstructions it names---conjugate points and Maxwell points---are both
+computable in closed form, and the first turns out never to occur on a monotone arc.
+
+\begin{auxtheorem}[no conjugate point before the turning point]\label{thm:jacobi}
+Along the frozen family, with $G=K/\sqrt S$ the shape integrand of
+section~\ref{sec:vaidya-adiabatic},
+\begin{equation}
+   \frac{\partial G}{\partial J}=\frac{r^3(r-2m)^2D_{\Ehat}^{\,2}}{S^{3/2}},
+   \label{eq:jacobi-integrand}
+\end{equation}
+which is strictly positive on the regular domain $r>2m$, $\Ehat>1$, $S>0$. Hence
+$\partial\varphi/\partial J>0$ on any radial arc free of turning points: the map
+$J\mapsto\varphi(r;J)$ is strictly monotone, the extremals issuing from a common event do
+not focus, and no conjugate point occurs there.
+\end{auxtheorem}
+
+\begin{proof}
+$S=r(r-2m)D_{\Ehat}\,C$ with $C=r^2(r-2m)-J^2D_{\Ehat}$, so
+$\partial_JS=-2Jr(r-2m)D_{\Ehat}^{\,2}$ and
+\[
+   \partial_J\frac{JD_{\Ehat}}{\sqrt S}
+   =\frac{D_{\Ehat}}{\sqrt S}+\frac{J^2r(r-2m)D_{\Ehat}^{\,3}}{S^{3/2}}
+   =\frac{D_{\Ehat}\big[S+J^2r(r-2m)D_{\Ehat}^{\,2}\big]}{S^{3/2}} .
+\]
+The bracket collapses: $S+J^2r(r-2m)D_{\Ehat}^{\,2}
+=r(r-2m)D_{\Ehat}\big[C+J^2D_{\Ehat}\big]=r^3(r-2m)^2D_{\Ehat}$, which
+gives~\eqref{eq:jacobi-integrand}. The numerator is $r^3$ times a square, hence positive,
+and $S>0$ on the arc by assumption.
+\end{proof}
+
+Combined with strict convexity of the indicatrix (Lemma~\ref{lem:indicatrix}), which makes
+the Weierstrass excess function nonnegative, Theorem~\ref{thm:jacobi} embeds each monotone
+arc in a Mayer field of extremals: on the region that field covers, the Hilbert invariant
+integral constructs the verification function of Proposition~\ref{prop:hjb} implicitly, and
+the arc is a \emph{strong} minimizer there. No closed form for $V$ is needed.
+
+\begin{remark}[the Jacobi reduction is already known]\label{rem:jacobi-euler}
+Nothing new has to be reduced. The source of~\eqref{eq:jacobi-integrand} is
+$N_J=S\,\partial_JK-\tfrac12K\,\partial_JS$, the exact analogue of $N_m$, and the two are
+tied by Euler's theorem: $G=K/\sqrt S$ is homogeneous of degree $-1$ in $(r,m,J)$, so
+$m\,\partial_mG+J\,\partial_JG=-(rG)'$, i.e.
+\begin{equation}
+   m\,N_m+J\,N_J=\tfrac12\big[r\,K\,S'-2S\,(rK)'\big].
+   \label{eq:jacobi-euler}
+\end{equation}
+The right-hand side is a pure total derivative, so it contributes no abelian letter, and
+the two reductions must satisfy
+\begin{equation}
+   c^J_k=-\frac{m}{J}\,c^m_k,\qquad
+   \mathcal{A}^J=-\frac{rK+m\,\mathcal{A}^m}{J} .
+   \label{eq:jacobi-coeffs}
+\end{equation}
+Every Jacobi coefficient is therefore given by~\eqref{eq:ck-closed}
+and~\eqref{eq:Am-closed} already: the conjugate-point analysis and the adiabatic response
+run through the same $11\times11$ system, as they must, being the two partial derivatives
+of one homogeneous family.
+\end{remark}
+
+Theorem~\ref{thm:jacobi} does \emph{not} extend past the turning point, and the reason is
+structural rather than technical: on an arc through periapsis the positive
+integrand~\eqref{eq:jacobi-integrand} competes with the motion of the turning radius
+itself, and the competition is won by neither uniformly.
+
+\begin{auxtheorem}[a caustic of the apsidal family]\label{thm:caustic}
+Let $\Phi(J)$ be the azimuth swept by a frozen extremal over one radial excursion from
+radius $R$ through periapsis and back to $R$, the turning radius $r_t$ being the root of
+$C$ fixed by $J^2=r_t^2(r_t-2m)/D_{\Ehat}(r_t)$. Then $\Phi$ is smooth, strictly positive
+on $2m<r_t<R$, and tends to zero at both ends of that range. Consequently $\Phi$ attains an
+interior maximum, and at the corresponding $J_c$
+\begin{equation}
+   \Phi'(J_c)=0 :
+   \label{eq:caustic}
+\end{equation}
+the family develops a \emph{conjugate point} at the return radius. Moreover $\Phi$ is
+finite for every admissible $J$, because $C$ has no double root in $r>2m$.
+\end{auxtheorem}
+
+\begin{proof}
+Write $C(r)=(r-r_t)\,Q(r)$ with
+$Q(r)=r^2+(r_t-2m)r+\big[r_t(r_t-2m)-J^2(\Ehat^2-1)\big]$, the division being exact
+precisely because $J^2=r_t^2(r_t-2m)/D_{\Ehat}(r_t)$. Substituting $r=r_t+u^2$ turns
+$S=(r-r_t)P$ into $u^2P$ with $P(0)=r_t(r_t-2m)D_{\Ehat}(r_t)Q(r_t)\neq0$, so
+$G\,\dd r=2K\,\dd u/\sqrt P$ is regular at $u=0$: the apsidal integral is an ordinary
+smooth integral in $J$, and differentiation under the integral sign is legitimate.
+
+For the endpoints, $J^2=r_t^2(r_t-2m)/D_{\Ehat}(r_t)\to0$ as $r_t\to2m^+$, and the
+integrand carries the overall factor $K=JD_{\Ehat}$, so $\Phi\to0$: a radial plunge sweeps
+no azimuth. As $r_t\to R^-$ the integration range $[0,\sqrt{R-r_t}\,]$ shrinks to a point
+with bounded integrand, so $\Phi\to0$ again. A positive continuous function vanishing at
+both ends of an interval attains an interior maximum, where $\Phi'=0$.
+
+Finiteness is the statement that the turning point is always a \emph{simple} root of $C$.
+Eliminating $J^2$ between $C=0$ and $C'=0$ gives $J^2=r(3r-4m)/(\Ehat^2-1)$, positive only
+for $r>4m/3$, and the locus $(\Ehat^2-1)r^2-m(\Ehat^2-4)r-4m^2=0$. That quadratic has
+positive leading coefficient with value $-4m^2<0$ at $r=0$ and
+$\tfrac49(\Ehat^2-1)m^2>0$ at $r=4m/3$, so its only positive root lies in $(0,4m/3)$,
+where $J^2<0$. Hence no double root occurs at physical $J$: the integrand behaves as
+$(r-r_t)^{-1/2}$ and $\Phi$ converges. This is the same computation that places the
+genus degeneration at $r_d<0$ in~\ref{app:degeneration}---the absence of a physical
+double root is what both keeps the curve genus two on the arc and keeps the apsidal
+integral finite.
+\end{proof}
+
+\begin{remark}[the caustic is a simple fold, and it binds first]\label{rem:caustic-num}
+Numerically the critical point is a nondegenerate maximum, $\Phi''(J_c)\neq0$, so the
+caustic is a simple fold: two extremals coalesce there and none exists beyond. At
+$m=1$, $R=10$ one finds $\Ehat=7/5$: $r_t=2.9789$, $J_c=1.3369$, $\Phi_{\max}=0.7432\pi$;
+$\Ehat=6/5$: $r_t=2.9387$, $J_c=1.5690$, $\Phi_{\max}=0.7142\pi$; and at $R=20$,
+$\Ehat=7/5$: $r_t=3.6876$, $J_c=2.0353$, $\Phi_{\max}=0.8074\pi$. Physically
+$\Phi_{\max}$ is the largest azimuth a single in-and-out brachistochrone can span from
+radius $R$; beyond it the endpoints must be joined by a multi-excursion extremal.
+
+The critical turning radius scales as $r_t\simeq\sqrt{mR}$, so as $R\to\infty$ the caustic
+migrates into the asymptotically flat region and $\Phi_{\max}\to\pi$ from below: the bound
+of Theorem~\ref{thm:chord} is sharp, saturated only in the flat limit.
+\end{remark}
+
+\begin{auxtheorem}[the sweep never reaches $\pi$]\label{thm:chord}
+For every $m>0$, $\Ehat>1$ and $2m<r_t<R$,
+\begin{equation}
+   \Phi(r_t)\;\le\;2\arccos\!\big(J/\rho(R)\big)\;<\;\pi,
+   \qquad \rho(r)\equiv\sqrt{\mathcal J(r)}=r\sqrt{\frac{r-2m}{D_{\Ehat}(r)}},
+   \label{eq:chord-bound}
+\end{equation}
+with $\mathcal J(r)=r^2(r-2m)/D_{\Ehat}(r)$ the turning function and $J=\rho(r_t)$.
+Consequently the axis is never crossed on a single excursion: the caustic of
+Theorem~\ref{thm:caustic} is the \emph{only} obstruction there, and the Maxwell mechanism
+of Remark~\ref{rem:maxwell} requires more than one radial excursion.
+\end{auxtheorem}
+
+\begin{proof}
+Eliminating $J^2$ in favour of $\mathcal J$ gives the compact form
+$G^2=J^2/\big[r(r-2m)\big(\mathcal J(r)-J^2\big)\big]$. Reparametrizing by
+$\rho=\sqrt{\mathcal J}$, and using $r(r-2m)=\mathcal J D_{\Ehat}/r=\rho^2D_{\Ehat}/r$,
+\[
+   \Phi=4\int_{\rho(r_t)}^{\rho(R)}
+   \frac{J\,\sqrt{r/D_{\Ehat}}}{\mathcal J'(r)}\,
+   \frac{\dd\rho}{\sqrt{\rho^2-J^2}} ,
+\]
+so it suffices to prove the pointwise bound $2\rho\sqrt{r/D_{\Ehat}}\le\mathcal J'(r)$,
+which reduces $\Phi$ to the Euclidean chord integral
+$2\int J\,\dd\rho/(\rho\sqrt{\rho^2-J^2})=2\arccos(J/\rho(R))$.
+
+Writing $b=\Ehat^2-1$, one computes
+$\mathcal J'D_{\Ehat}^2=2r\big[br(r-m)+m(3r-4m)\big]$, positive on $r>2m$ since there
+$r-m>m$ and $3r-4m>2m$. The bound therefore squares to
+\begin{align*}
+   &\big[br(r-m)+m(3r-4m)\big]^2-(br+2m)^2\,r(r-2m)\\
+   &\qquad=m\big(2br^3+(b^2-6b+5)mr^2+(8b-16)m^2r+16m^3\big)\;\ge\;0 ,
+\end{align*}
+and substituting $r=2m+s$ with $s>0$ turns the bracket into a polynomial with manifestly
+nonnegative coefficients,
+\[
+   4(1+b)^2+4(1+b)^2\,\tilde s+(b+1)(b+5)\,\tilde s^{2}+2b\,\tilde s^{3},
+   \qquad \tilde s=s/m ,
+\]
+strictly positive for $b>0$, $s>0$. At $m=0$ the difference vanishes identically: the
+Euclidean chord is the flat limit, which is where the bound is attained. Finally
+$\arccos$ is bounded by $\pi/2$ and $J/\rho(R)>0$ strictly, so
+$2\arccos(J/\rho(R))<\pi$.
+\end{proof}
+
+\begin{remark}
+The comparison must be made in $\rho$, not in $r$: against the Euclidean chord in the
+radial variable the pointwise bound \emph{fails}, the rail integrand exceeding the
+Euclidean one near periapsis by up to $25\%$. The correct statement is that gravity
+strictly shortens the swept azimuth relative to the chord of the \emph{optical} radius
+$\rho$, and the deficit is governed by the polynomial above, which vanishes precisely at
+$m=0$.
+\end{remark}
+
+\begin{remark}[where global optimality does end]\label{rem:maxwell}
+The surviving obstruction is the Maxwell set, and the axial symmetry locates it exactly.
+Since $S$ is even in $J$, the shape integrand is odd and every clock---proper time
+$r^2(r-2m)/\sqrt S$ and advanced time~\eqref{eq:vaidya-clock} alike---is even. Hence
+$\varphi(r;-J)=-\varphi(r;J)$ at equal elapsed clock, and the turning radius, a root of
+$C$, is shared. The $\pm J$ pair therefore reaches a common point precisely at an axis
+crossing $\varphi\equiv0\ (\mathrm{mod}\ \pi)$, and reaches it in equal time: axis
+crossings are genuine Maxwell points, where $V$ develops its gradient shock. The closed-form
+extremal is thus certified up to its first axis crossing, and beyond it the optimum is
+selected by comparing arrival times across the competing windings---the mechanism already
+seen in closed FLRW, where the antipodal cut locus of section~\ref{sec:flrw-curvature} is
+the same phenomenon in its simplest form.
+\end{remark}
+
+\section{Conclusions}
+\label{sec:concl}
+\paragraph{Proved.} The non-stationary brachistochrone is a well-posed controlled-rail
+problem on the regular domain fixed by the two scalar inequalities $W$ timelike and
+$\Ehat>|W|$: there the velocity indicatrix is a compact strictly convex oval
+(Lemma~\ref{lem:indicatrix}), the invariant $-u\cdot W=\Ehat$ is legitimate via
+Pontryagin's principle, with $W$ fixed by the Killing / conformal-Killing / Kodama
+hierarchy and the Kodama energy conserved along the Vaidya rail even when free fall does
+not. Existence, normality, and the non-autonomous Hamilton--Jacobi verification criterion
+hold on that domain. FLRW is the degenerate base at every spatial curvature---freezing
+without branch splitting, the extremal being the geodesic of the slice---while in
+Vaidya the mass breaks the $t/\tau$ symmetry through its radial gradient.
+
+\paragraph{Conditional and numerical.} The ingoing plunge phenomenology (penetration,
+timing, bounce) and the absence of an inversion in the frozen advanced/retarded clock
+comparison hold; the negative-rate continuation ($m'<0$ in the ingoing metric) is a formal
+continuation, not physical evaporation (which belongs to the outgoing metric). The
+first-order adiabatic correction closes in a horizon dilogarithm and is verified against
+the true non-autonomous flow to $O(\varepsilon^2)$; its off-shell source has the
+universal boundary form $S_{\mathcal D}=[\,rp_r\,]-\lambda$.
+
+\paragraph{Outlook.} The full outgoing-Vaidya boundary-value problem---with its own
+Hamiltonians, costates and transversality---remains open, as does a genuine third
+(Kodama-observer) clock. The rotating Thakurta--Kerr case, its ergosphere trichotomy,
+closed-form separatrices and conformal plunge inversion, is developed in the companion
+paper. More broadly, the controlled-rail brachistochrone turns the comparison of
+arrival-time and proper-time optimal worldlines into a quantitative probe of how
+homogeneous expansion, radial spatial gradients and time-dependent mass flow shape causal
+transport in dynamical black-hole spacetimes.
+
+
+\appendix
+\section{Reproducibility and consistency}
+\label{app:validation}
+
+\subsection{Reproducing the reductions}
+\label{app:reproduce}
+\Ithm{4}
+\begin{lemma}[polynomial reduction]\label{lem:reduction}
+Let the slow derivative of the shape integrand have the form
+$\partial_\lambda F=N_\lambda/S^{3/2}$ with $S$ the sextic radicand and $N_\lambda$
+polynomial. Then the depth-one reduction
+$\partial_\lambda\varphi_0=\mathcal{A}/\sqrt S+\sum_{k=0}^4 c_k U_k$
+[equation~\eqref{eq:dm-reduction}] holds if and only if
+\begin{equation}
+    2\,\mathcal{A}'(r)\,S(r)-\mathcal{A}(r)\,S'(r)
+    +2\,S(r)\sum_{k=0}^4 c_k\,r^k \;=\; 2\,N_\lambda(r),
+    \qquad \mathcal{A}=\sum_{i=0}^5 a_i r^i,
+    \label{eq:reduction-identity}
+\end{equation}
+a polynomial identity of degree ten. Matching the eleven coefficients of
+$r^0,\dots,r^{10}$ gives an $11\times11$ linear system $M$ in the eleven unknowns
+$\{a_0,\dots,a_5,c_0,\dots,c_4\}$ whose determinant is, for the Vaidya sextic,
+\begin{equation}
+    \det M=-32\,(\Ehat^2-1)\,\operatorname{disc}_r S .
+    \label{eq:det-disc}
+\end{equation}
+The system is therefore nonsingular precisely when $S$ is squarefree and $\Ehat\neq1$,
+i.e.\ away from the genus-degeneration locus $|J|=\Jc$ and away from the marginal energy;
+there its solution is unique and returns the $c_k$ as \emph{rational} functions of the
+metric parameters.
+\end{lemma}
+
+\begin{proof}
+Differentiate the ansatz in $r$ and clear the radical using
+$\partial_\lambda F=N_\lambda/S^{3/2}$: the term $\mathcal{A}/\sqrt S$ contributes
+$(2\mathcal{A}'S-\mathcal{A}S')/(2S^{3/2})$ and each $U_k=\int r^k/\sqrt S\,\dd r$
+contributes $c_k r^k/\sqrt S$, so multiplying through by $2S^{3/2}$
+gives~\eqref{eq:reduction-identity}. Both sides are polynomials of degree ten in $r$
+(recall $\deg\mathcal{A}=5$, $\deg S=6$), so the identity is equivalent to the vanishing
+of eleven coefficients, a linear system in $\{a_i,c_k\}$.
+
+For nonsingularity consider the homogeneous problem
+$2\mathcal{A}'S-\mathcal{A}S'+2S\sum_k c_kr^k=0$. It gives $S\mid \mathcal{A}S'$. If $S$
+is squarefree then $\gcd(S,S')=1$, hence $S\mid\mathcal{A}$; but
+$\deg\mathcal{A}=5<6=\deg S$, forcing $\mathcal{A}=0$ and then $\sum_kc_kr^k=0$, i.e.\
+$c_k=0$. The kernel is trivial and the matrix invertible; Cramer's rule exhibits each
+$c_k$ as a ratio of determinants in the coefficients of $S$ and $N_\lambda$, hence as a
+rational function of the metric parameters.
+
+Conversely, if $S$ is not squarefree---on the degeneration locus, where
+$S=(r-r_d)^2Q_4$ with $\deg Q_4=4$---take $\mathcal{A}=(r-r_d)Q_4$, of degree five and
+hence admissible. Using $S=(r-r_d)\mathcal{A}$ one computes
+$2\mathcal{A}'S-\mathcal{A}S'=(r-r_d)\mathcal{A}\mathcal{A}'-\mathcal{A}^2
+=S\,(\mathcal{A}'-Q_4)$, and $\deg(\mathcal{A}'-Q_4)=4$, so
+$\big(\mathcal{A},\,\sum_kc_kr^k\big)=\big((r-r_d)Q_4,\,-\tfrac12(\mathcal{A}'-Q_4)\big)$
+is a nonzero admissible kernel vector: the system is singular, with a kernel of dimension
+one. The determinant formula~\eqref{eq:det-disc} is Lemma~\ref{lem:det-res} below.
+\end{proof}
+
+The determinant of the reduction system is not a Vaidya-specific quantity: it is the
+resultant of the radicand with its derivative, for any sextic whatsoever.
+
+\begin{auxlemma}[the reduction determinant is a resultant]\label{lem:det-res}
+Let $S=\sum_{i=0}^{6}s_ir^i$ be arbitrary and let $M$ be the $11\times11$ matrix, in the
+monomial bases, of the linear map
+\[
+   T:\ \mathbb{P}_5\times\mathbb{P}_4\longrightarrow\mathbb{P}_{10},
+   \qquad
+   T(\mathcal{A},C)=2\mathcal{A}'S-\mathcal{A}S'+2SC ,
+\]
+$\mathbb{P}_d$ denoting the polynomials of degree at most $d$. Then
+\begin{equation}
+   \det M=32\,\mathrm{Res}_r(S,S')=-32\,s_6\,\operatorname{disc}_rS .
+   \label{eq:det-res}
+\end{equation}
+In particular $T$ is invertible if and only if $\deg S=6$ and $S$ is squarefree. For the
+Vaidya sextic $s_6=\Ehat^2-1$, which is~\eqref{eq:det-disc}.
+\end{auxlemma}
+
+\begin{proof}
+Each column of $M$ collects the coefficients of $2(r^i)'S-r^iS'$ or of $2Sr^k$, so every
+entry of $M$ is linear in $(s_0,\dots,s_6)$ and $\det M$ is homogeneous of degree eleven in
+them. So is $\mathrm{Res}_r(S,S')$: the resultant of a form of degree six with one of
+degree five is of degree five in the coefficients of the first and six in those of the
+second, and the coefficients of $S'$ are themselves linear in the $s_i$. For degree six the
+classical relation reads $\mathrm{Res}_r(S,S')=(-1)^{6\cdot5/2}s_6\operatorname{disc}_rS
+=-s_6\operatorname{disc}_rS$.
+
+Next, $\det M$ vanishes on the zero locus of $s_6\operatorname{disc}_rS$. If $s_6=0$ then
+$\deg\big(T(\mathcal{A},C)\big)\le9$ for all arguments, so the image lies in the proper
+subspace $\mathbb{P}_9$ and $T$ is not surjective. If $s_6\neq0$ and $S$ has a repeated
+root $r_d$, write $S=(r-r_d)\mathcal{A}$ with $\mathcal{A}=S/(r-r_d)$ of degree five; since
+$r_d$ is at least a double root, $(r-r_d)\mid\mathcal{A}$, say $\mathcal{A}=(r-r_d)Q$ with
+$\deg Q=4$. Then
+\[
+   2\mathcal{A}'S-\mathcal{A}S'
+   =\mathcal{A}\big[(r-r_d)\mathcal{A}'-\mathcal{A}\big]
+   =(r-r_d)^3\,Q\,Q' ,
+\]
+so that $T\big(\mathcal{A},\,-\tfrac12(r-r_d)Q'\big)=0$ with $\deg(-\tfrac12(r-r_d)Q')=4$:
+a nonzero element of $\ker T$, whence $\det M=0$.
+
+Finally, $\operatorname{disc}_rS$ is irreducible over $\mathbb{Q}$ as a polynomial in the
+$s_i$, and it is coprime to $s_6$; both therefore divide $\det M$, hence so does their
+product, of degree $1+10=11$. Since $\det M$ is also of degree eleven and is not
+identically zero, $\det M=c\,s_6\operatorname{disc}_rS$ for a rational constant $c$, which
+a single evaluation fixes: at $S=r^6-1$ one has $\operatorname{disc}_rS=46656$, $s_6=1$
+and $\det M=-1492992=-32\cdot46656$, so $c=-32$.
+\end{proof}
+
+\begin{remark}[the reduction and the genus are governed by the same discriminant]
+Identity~\eqref{eq:det-res} makes Lemma~\ref{lem:reduction} sharp: the depth-one
+reduction is uniquely solvable exactly on the genus-two stratum
+$\operatorname{disc}_rS\neq0$ and fails exactly where the spectral curve degenerates,
+with the rank dropping by exactly one. This is the structural reason why the degeneration
+loci need the separate treatment of \ref{app:degeneration}. Independently of the proof
+above, the identity was confirmed symbolically in the seven generic coefficients
+$(s_0,\dots,s_6)$, and both it and the kernel vector were re-checked on the Vaidya family
+in two computer-algebra systems: at $m=1$, $\Ehat=7/5$, $J=5/2$ the determinant is nonzero
+with $\gcd(S,S')=1$, while at $|J|=\Jc$ it vanishes with $\operatorname{rank}M=10$ and
+$S=(r-r_d)^2Q_4$ exactly.
+\end{remark}
+
+The practical consequence is that every coefficient in the adiabatic corrections is fixed
+by a \emph{single} polynomial identity that the reader can solve directly; nothing is
+fitted. For Vaidya $S$ is the
+Schwarzschild-seed sextic and the numerator is
+$N_m=S\,\partial_m K-\tfrac12K\,\partial_m S$; the advanced-time clock is entirely
+on-curve, its second-kind vector $b$ feeding the $W_{kj}$ of $S$ and its horizon part the
+third-kind $\ln\sigma$-quotients.
+
+For the Vaidya mass reduction the linear solve can in fact be carried out once and for
+all. Writing $\mathfrak E\equiv\Ehat^{2}$ and introducing the \emph{reduced discriminant}
+\begin{equation}
+   \Delta\;\equiv\;(\mathfrak E-1)^3J^4+(\mathfrak E^2-20\,\mathfrak E-8)J^2m^2-16m^4,
+   \qquad
+   \operatorname{disc}_rS=2^{18}\,\mathfrak E^{6}\,J^{10}\,m^{16}\,\Delta,
+   \label{eq:reduced-disc}
+\end{equation}
+the solution of~\eqref{eq:reduction-identity} is
+\begin{equation}
+\begin{aligned}
+   c_0^m&=\frac{4Jm^2\big[3(\mathfrak E-1)J^2+4m^2\big]}{\Delta},&\qquad
+   c_4^m&=\frac{2(\mathfrak E-1)(\mathfrak E+8)J}{\Delta},\\[2pt]
+   c_1^m&=\frac{4Jm\big[3(\mathfrak E-1)(\mathfrak E-2)J^2+5\mathfrak Em^2\big]}{\Delta},\\[2pt]
+   c_2^m&=\frac{J\big[(\mathfrak E-11)(\mathfrak E-1)^2J^2
+     +4(\mathfrak E^2-\mathfrak E-15)m^2\big]}{\Delta},\\[2pt]
+   c_3^m&=-\frac{J\big[(\mathfrak E-1)^3J^2
+     +3(2\mathfrak E^2+9\mathfrak E-20)m^2\big]}{m\,\Delta}.
+\end{aligned}
+   \label{eq:ck-closed}
+\end{equation}
+The accompanying algebraic part is likewise explicit,
+\begin{equation}
+\begin{aligned}
+   \mathcal{A}^m&=-\frac{J\,r\,D_{\Ehat}}{m\,\Delta}\;\Pi_{\mathcal A},\\
+   \Pi_{\mathcal A}&=(\mathfrak E-1)^3J^4
+     +mr\big(\mathfrak E(r-2m)^2+4r(2r-5m)\big)\\
+   &\quad+J^2\big((\mathfrak E^2-8\mathfrak E-20)m^2
+     +2(\mathfrak E-1)(\mathfrak E-4)mr-(\mathfrak E-1)^2r^2\big),
+\end{aligned}
+   \label{eq:Am-closed}
+\end{equation}
+so that~\eqref{eq:dm-reduction} is completely printed: no linear solve is required to
+reproduce the Vaidya mass reduction. Substituting~\eqref{eq:ck-closed}
+and~\eqref{eq:Am-closed} into~\eqref{eq:reduction-identity} makes it vanish identically in
+$(r,m,\Ehat,J)$, which is the statement that they solve it.
+
+Three structural features are visible. Each $c_k^m$ is \emph{odd} in $J$ and depends on the
+energy only through $\mathfrak E=\Ehat^2$, as it must, since $N_m$ is odd in $J$ while $S$
+is even. The common denominator is the reduced discriminant, so
+by~\eqref{eq:det-disc} the reduction degenerates exactly where the curve does. The third
+feature is a scaling law, which is not a dimensional observation but a consequence of the
+uniqueness established in Lemma~\ref{lem:reduction}.
+
+\begin{auxlemma}[scaling of the reduction]\label{lem:ck-scaling}
+Let $\sigma_\alpha$ denote the scaling $(r,m,J)\mapsto(\alpha r,\alpha m,\alpha J)$,
+$\alpha>0$, let $S$ be homogeneous of degree six and $N_\lambda$ homogeneous of degree
+$\nu$, and assume the hypotheses of Lemma~\ref{lem:reduction}. Then the unique solution
+of~\eqref{eq:reduction-identity} is itself homogeneous, of degrees
+\begin{equation}
+   \deg\mathcal{A}=\nu-5,\qquad \deg c_k=\nu-6-k .
+   \label{eq:ck-scaling}
+\end{equation}
+For the Vaidya mass reduction $K=JD_{\Ehat}$ is homogeneous of degree \emph{two}, hence
+$N_m=S\,\partial_mK-\tfrac12K\,\partial_mS$ is homogeneous of degree $\nu=7$, giving
+$\deg\mathcal{A}^m=2$ and $\deg c^m_k=1-k$, i.e.\
+$c^m_k(\alpha m,\Ehat,\alpha J)=\alpha^{1-k}c^m_k(m,\Ehat,J)$ and equivalently
+$c^m_k=m^{1-k}\,C_k(\Ehat^2,J/m)$.
+\end{auxlemma}
+
+\begin{proof}
+Fix $\alpha>0$ and define
+$\tilde{\mathcal{A}}:=\alpha^{5-\nu}\,\mathcal{A}\!\circ\!\sigma_\alpha$ and
+$\tilde c_k:=\alpha^{6+k-\nu}\,c_k\!\circ\!\sigma_\alpha$. These are admissible: $\sigma_\alpha$
+maps polynomials of degree at most five in $r$ to polynomials of degree at most five, and
+the $\tilde c_k$ remain independent of $r$. Evaluating~\eqref{eq:reduction-identity} at
+$\sigma_\alpha(r,m,J)$ and using $S\circ\sigma_\alpha=\alpha^6S$,
+$(\partial_rS)\circ\sigma_\alpha=\alpha^5\partial_rS$ and
+$N_\lambda\circ\sigma_\alpha=\alpha^\nu N_\lambda$ gives
+\[
+   2\,\alpha^{6}\,(\mathcal{A}'\!\circ\!\sigma_\alpha)\,S
+   -\alpha^{5}\,(\mathcal{A}\circ\sigma_\alpha)\,S'
+   +2S\sum_k\alpha^{6+k}\,(c_k\circ\sigma_\alpha)\,r^k
+   \;=\;2\,\alpha^{\nu}N_\lambda ,
+\]
+and dividing by $\alpha^{\nu}$ turns the left-hand side into
+$2\tilde{\mathcal{A}}'S-\tilde{\mathcal{A}}S'+2S\sum_k\tilde c_kr^k$, because
+$\tilde{\mathcal{A}}'=\alpha^{6-\nu}\,\mathcal{A}'\!\circ\!\sigma_\alpha$. Hence
+$(\tilde{\mathcal{A}},\tilde c)$ solves the same identity with the same data. By
+Lemma~\ref{lem:reduction} that solution is unique, so
+$\tilde{\mathcal{A}}=\mathcal{A}$ and $\tilde c_k=c_k$, which is~\eqref{eq:ck-scaling}.
+\end{proof}
+
+\begin{remark}
+The load-bearing step is uniqueness, not the exponent count: a linear problem whose data
+are equivariant under a group action has an equivariant solution only when that solution
+is unique. Accordingly~\eqref{eq:ck-scaling} holds exactly on the stratum where
+Lemma~\ref{lem:reduction} applies and says nothing on the degeneration locus, where the
+solution set is a line and the $c_k$ have poles. The same homogeneity of $S$, used through
+Euler's theorem instead, is what fixes $\Jc=m\,j(\Ehat)$ in Lemma~\ref{lem:tracking}.
+\end{remark}
+
+Equations~\eqref{eq:ck-closed} and~\eqref{eq:Am-closed} were obtained by solving the
+$11\times11$ system symbolically in $(m,\Ehat,J)$; substituted back
+into~\eqref{eq:reduction-identity} they annihilate it identically, and they reproduce the
+numerical solve below to twelve digits.
+A reference solution to check against (polynomial residual $0$ exactly):
+\begin{table}[htbp]
+    \centering
+    \caption{Reference reduction coefficients, obtained by solving
+    equation~\eqref{eq:reduction-identity}, at $m{=}1$, $E{=}1.4$, $J{=}2.5$, for the Vaidya
+    mass reduction ($\partial_m$). Decimals are shown for readability; each $c_k$ is the
+    exact rational solution of a single linear solve (residual $0$ exactly), regenerated
+    by \texttt{reproduce\_reductions.py} (exact coefficients in the reproducibility
+    package).}
+    \label{tab:reduction-ck}
+    \small
+    \begin{tabular}{lrrrrr}
+        \hline\hline
+        reduction & $c_0$ & $c_1$ & $c_2$ & $c_3$ & $c_4$\\
+        \hline
+        Vaidya, $\partial_m$ & $-0.87153$ & $-0.35970$ & $1.03538$ & $0.21292$ & $-0.18939$\\
+        \hline\hline
+    \end{tabular}
+\end{table}
+
+Given the $c_k$, the weight-two assembly is mechanical: the clock supplies the vector
+$b$ (proper-time $T_\tau=U_3-2m\,U_2$, i.e.\ $b=(0,0,-2m,1,0)$), the algebraic
+weights are $Q_{kj}=c_kb_j-c_jb_k$, the weight-two
+letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
+$\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
+same steps with the advanced-time clock give the fully assembled
+form~\eqref{eq:vaidya-full}; the horizon dilogarithm closes by one integration by
+parts, equation~\eqref{eq:horizon-dilog}. Table~\ref{tab:script-map} maps each Vaidya result to
+the script in the repository~\cite{Rosignoli2026Code} that generates and verifies it.
+\begin{table}[htbp]
+    \centering
+    \caption{Result-to-script map with the achieved numerical residual, so each closed
+    representation can be regenerated and re-checked independently. Scripts are under
+    \texttt{VaidyaMetric/} in the archived repository~\cite{Rosignoli2026Code}.}
+    \label{tab:script-map}
+    \small
+    \begin{tabular}{@{}p{0.42\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}r@{}}
+        \hline\hline
+        result & script & residual\\
+        \hline
+        Vaidya reduction $c_k^m$
+            & \texttt{vaidya\_dMF\_reduction.py} & $10^{-15}$\\
+        Vaidya clock $v$; assembled $\delta\varphi$~\eqref{eq:vaidya-full}
+            & \texttt{vaidya\_fully\_explicit.py} & $2\times10^{-13}$\\
+        Vaidya $\tau$-branch assembly
+            & \texttt{vaidya\_tau\_assembly.py} & $10^{-14}$\\
+        horizon dilogarithm $\mathcal{D}_k=U_k\ln-\mathcal{G}_k$
+            & \texttt{vaidya\_horizon\_dilog.py} & $10^{-12}$\\
+        genus-degeneration elliptic form $U_0(\sigma,\zeta)$; $\tau$
+            & \texttt{vaidya\_ell\_dilog\_match.py} & $10^{-14}$\\
+        advanced/retarded frozen-clock decomposition $\mathcal{A}_\infty,\mathcal{B}_{\rm hor}$
+            & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
+        complete first-order correction~\eqref{eq:adiab-exact} (on-shell $+$ off-shell)
+            & \texttt{vaidya\_first\_\allowbreak order\_\allowbreak offshell.py} & slope $2.00$\\
+        \hline\hline
+    \end{tabular}
+    \\[2pt]
+    {\footnotesize SHA-256 (first 12 hex) of
+    \texttt{vaidya\_first\_order\_offshell.py}: \texttt{5dc9fe177f2f}.}
+\end{table}
+
+\subsection{Consistency residuals}
+\label{app:residuals}
+The closed forms and reductions above were checked symbolically and numerically. The
+Kodama energy is held to $|{-}u\cdot K-\Ehat|<7\times10^{-16}$ along the Vaidya rail; the
+stationary limit $m'=0$ reproduces the closed-form Schwarzschild ($a{=}0$ Kerr) orbit to
+$10^{-12}$ (figure~\ref{fig:vaidya-kerra0}); each branch is a local minimizer of its own
+travel time within the tested perturbation family, $t$ and $\tau$ being distinct curves
+(figure~\ref{fig:verifmin}); and the first-order
+adiabatic correction closes to $O(\varepsilon^2)$ against the true non-autonomous flow
+(figure~\ref{fig:vaidya-offshell}).
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[tbp]
+    \centering
+    % ALT: A numerically integrated orbit and a closed-form reference orbit plotted together
+    %      and visually indistinguishable, with their difference staying below 1e-12.
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_kerr_a0.pdf}
+    \caption{Stationary-limit check ($m'=0$): the numerical orbit matches the
+    closed-form Kerr $a=0$ solution to a sup-norm residual $<10^{-12}$.}
+    \label{fig:vaidya-kerra0}
+\end{figure}
+
+
+\begin{figure}[tbp]
+    \centering
+    % ALT: Travel time against perturbation amplitude, one smooth curve per clock branch,
+    %      each with a single minimum at zero amplitude and the two curves separated.
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_verifica_minimo_brachi.pdf}
+    \caption{Local perturbation check: within the tested family each branch is a minimizer
+    of its own travel time; $t$ and $\tau$ are distinct curves.}
+    \label{fig:verifmin}
+\end{figure}
+
+
+
+
+
+
+
+
+
+\section{Explicit adiabatic forms on the genus-degeneration loci}
+\label{app:degeneration}
+This appendix collects in one place the fully explicit first-order adiabatic
+brachistochrone on the loci where the branch sextic acquires a double root and drops to
+genus one. For \emph{spherical} Vaidya the relevant value $J=\Jc$ is the \emph{algebraic}
+genus-degeneration $J_{\rm deg}$---the double root sits at $r_d<0$
+(a negative-radius double root), so it is \emph{not} a physical, accessible separatrix,
+though the genus-two$\,\to\,$genus-one reduction is valid there all the same; we give both
+the proper-time ($\tau$) and advanced-time ($v$) branches with every coefficient in closed
+form. All objects live on
+the elliptic curve $E:\,w^2=Q_4(r)$ into which the branch sextic collapses. The adiabatic expansion is
+$\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$, $\lambda=m$.
+
+\paragraph{Curve and special functions.}
+$\Jc=5\sqrt{3011/3072+581\sqrt{249}/9216}$ (at $E=7/5,\,m=1$; in general $\Jc=m\,j(E)$),
+$S=(r-r_d)^2Q_4(r)$ with double root $r_d$ and quartic $Q_4$ (roots
+$e_1<e_2<e_3=2m<e_4$, leading coefficient $a_4$). The Abel coordinate is
+$z(r)=\int_{r_0}^r\dd r'/\sqrt{Q_4}$; $\sigma,\zeta,\wp$ are the Weierstrass functions
+of $E$ (periods $2\omega_1,2i\omega_{\rm im}$, built from $\theta_1$). Marked points:
+$\pm z_d$ (images of $r_d$), $\pm z_\infty$ (of $r=\infty$), the two-torsion turning
+image $z=0$ ($r=e_4$) and horizon image $z=i\omega_{\rm im}$ ($r=e_3=2m$).
+
+\paragraph{Zeroth order (frozen orbit), verified to $10^{-12}$.}
+\begin{equation}
+\varphi_0(r)=\Jc\big[(E^2-1)z+((E^2-1)r_d+2m)\,U_0(z)\big],\;\;
+U_0=\rho[\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)]+C_{U_0}z,
+\end{equation}
+$\rho=1/\sqrt{Q_4(r_d)}$, $U_k=\int_{r_0}^r r^k/\sqrt S\,\dd r$. Both the shape of $U_0$
+and the constant $\rho$ are forced, and the higher $U_k$ reduce to it.
+
+\begin{auxlemma}[third-kind letter and Hermite reduction]\label{lem:U0}
+On the degenerate curve $S=(r-r_d)^2Q_4$, with Abel coordinate
+$z(r)=\int_{r_0}^r\dd r'/\sqrt{Q_4}$ and $\pm z_d$ the preimages of $r_d$:
+\begin{enumerate}
+\item[(i)] $\displaystyle U_0(z)=\rho\big[\ln\sigma(z-z_d)-\ln\sigma(z+z_d)\big]+C_{U_0}z$
+with $\rho=1/\sqrt{Q_4(r_d)}$;
+\item[(ii)] for $k\ge1$, $\;U_k=V_k+r_d^{\,k}\,U_0$, where
+$V_k=\int P_{k-1}(r(z))\,\dd z$ with $P_{k-1}$ the quotient of $r^k$ by $r-r_d$, an
+elliptic integral of the second kind reducible to $\zeta,\wp$ and their derivatives at
+$z_\infty$ (Hermite).
+\end{enumerate}
+\end{auxlemma}
+
+\begin{proof}
+Since $\sqrt S=(r-r_d)\sqrt{Q_4}$ and $\dd r=\sqrt{Q_4}\,\dd z$, every letter collapses to
+$U_k=\int r^k\,\dd z/(r-r_d)$. Dividing, $r^k/(r-r_d)=P_{k-1}(r)+r_d^{\,k}/(r-r_d)$, which
+is (ii), with (i) the remaining case $k=0$.
+
+For (i), differentiate: $U_0'(z)=1/(r(z)-r_d)$. Now $r(z)$ is elliptic of order two, so
+$U_0'$ is elliptic with simple poles exactly at the two preimages $\pm z_d$ of $r_d$; and
+because $r'(z)=\sqrt{Q_4(r)}$ by construction of $z$, the residues are
+\[
+   \operatorname*{Res}_{z=\pm z_d}\frac{1}{r(z)-r_d}=\frac{1}{r'(\pm z_d)}
+   =\pm\frac{1}{\sqrt{Q_4(r_d)}}=\pm\rho .
+\]
+The candidate $\rho\big[\zeta(z-z_d)-\zeta(z+z_d)\big]$ is elliptic---the quasi-period
+$2\eta$ cancels in the difference---and has simple poles at the same two points with the
+same residues $\pm\rho$. Their difference is therefore an elliptic function with no poles,
+hence a constant, which is $C_{U_0}$. Integrating and using $\zeta=(\ln\sigma)'$ gives
+(i); the constant $\rho$ is not fitted but is the residue itself.
+\end{proof}
+
+\begin{remark}
+Part (ii) is the degeneration statement quoted in \ref{app:firstorder}, $U_k\to V_k+
+r_d^{\,k}\Pi_{r_d}$, with $\Pi_{r_d}=U_0$ the third-kind letter: the whole tower of
+explicit coefficients below rests on the single residue computation above. It also
+explains the shape of $r(z)=c_r-a_4^{-1/2}[\zeta(z-z_\infty)-\zeta(z+z_\infty)]$: an
+order-two elliptic function is fixed by its two simple poles---here the preimages
+$\pm z_\infty$ of $r=\infty$---and the same difference-of-$\zeta$ construction applies.
+\end{remark}
+
+\paragraph{First order: source and antiderivative.}
+$\partial_m F=N_m/S^{3/2}$, $N_m=S\,\partial_mK-\tfrac12K\,\partial_mS$, $K=\Jc\,D_E$,
+$D_E=(E^2-1)r+2m$; on the curve $\partial_m F\,\dd r=R(z)\,\dd z$ with
+$R=N_m(r(z))/[(r(z)-r_d)^3Q_4(r(z))]$ and $r(z)=c_r-a_4^{-1/2}[\zeta(z-z_\infty)-
+\zeta(z+z_\infty)]$. Its antiderivative is equation~\eqref{eq:vaidya-sep-G},
+$\tilde G(z)=C_0 z+\sum_{a}[b_1^a\ln\sigma(z-a)-b_2^a\zeta(z-a)-\tfrac12 b_3^a
+\wp(z-a)]$, $a\in\{\pm z_d,0,i\omega_{\rm im}\}$, with closed-form residues: at the
+triple pole $z_d$, writing $s_d=\sqrt{Q_4(r_d)}$, $F=N_m/Q_4$, $a_1=Q_4'(r_d)/(4s_d)$,
+$a_2=Q_4''(r_d)/12$, $h_0=F(r_d)$, $h_1=F'(r_d)s_d$,
+$h_2=\tfrac12F''(r_d)s_d^2+\tfrac14F'(r_d)Q_4'(r_d)$,
+\begin{equation}
+\begin{aligned}
+b_3^{z_d}&=\frac{h_0}{s_d^3},\qquad
+b_2^{z_d}=\frac{h_1-3a_1h_0}{s_d^3},\qquad
+b_1^{z_d}=\frac{h_2-3a_1h_1+(6a_1^2-3a_2)h_0}{s_d^3},\\
+b_2^{e_i}&=\frac{4N_m(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
+\end{aligned}
+\end{equation}
+($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
+$R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
+b_3^a\wp'(z_\infty-a)]$. None of these coefficients is fitted; each is a Laurent
+coefficient, as the following makes explicit.
+
+\begin{auxlemma}[residues of the source antiderivative]\label{lem:residues}
+With $\varepsilon=z-z_d$ and $s_d=\sqrt{Q_4(r_d)}$:
+\begin{enumerate}
+\item[(i)] $r-r_d=s_d\,\varepsilon\big(1+a_1\varepsilon+a_2\varepsilon^2+O(\varepsilon^3)\big)$
+with $a_1=Q_4'(r_d)/(4s_d)$ and $a_2=Q_4''(r_d)/12$;
+\item[(ii)] the Laurent coefficients of $R$ at $z_d$ are the $b_3^{z_d},b_2^{z_d},b_1^{z_d}$
+displayed above;
+\item[(iii)] at a simple root $e$ of $Q_4$ the function $r(z)$ is \emph{even} about the
+corresponding two-torsion point, so $R$ has there a double pole and \emph{no} residue,
+with coefficient $b_2^{e}=4N_m(e)/[(e-r_d)^3Q_4'(e)^2]$;
+\item[(iv)] $\tilde G'=R$ then holds with the displayed $C_0$.
+\end{enumerate}
+\end{auxlemma}
+
+\begin{proof}
+(i) Insert the ansatz into $(\dd r/\dd z)^2=Q_4(r)$, which defines $z$, and match orders in
+$\varepsilon$; the first two corrections come out as stated.
+
+(ii) Expanding $F=N_m/Q_4$ about $r_d$ and using (i),
+$F=h_0+h_1\varepsilon+h_2\varepsilon^2+O(\varepsilon^3)$ with exactly the $h_j$ displayed
+above---note $h_2=\tfrac12F''s_d^2+F's_da_1$ and $a_1s_d=Q_4'/4$, which is the second form
+given. Meanwhile
+$(r-r_d)^{-3}=(s_d^3\varepsilon^3)^{-1}\big[1-3a_1\varepsilon+(6a_1^2-3a_2)\varepsilon^2
++O(\varepsilon^3)\big]$. Multiplying the two series and reading off the coefficients of
+$\varepsilon^{-3},\varepsilon^{-2},\varepsilon^{-1}$ gives $b_3^{z_d},b_2^{z_d},b_1^{z_d}$.
+
+(iii) Near a simple root, $\delta=r-e$ obeys $(\dd\delta/\dd z)^2=Q_4'(e)\delta+O(\delta^2)$.
+Matching orders gives $\delta=Q_4'(e)\varepsilon^2/4+O(\varepsilon^4)$ with every
+\emph{odd} coefficient vanishing---at order $\varepsilon^3$ the matching reads
+$3Q_4'(e)k_3=Q_4'(e)k_3$, forcing $k_3=0$, and likewise at each odd order. Hence $r$, and
+therefore $R$, is even about that point: only even negative powers occur, so there is a
+double pole and no residue, and its coefficient follows from
+$Q_4(r)\simeq Q_4'(e)^2\varepsilon^2/4$.
+
+(iv) Differentiating term by term, $\dd(\ln\sigma)/\dd z=\zeta$, $\zeta'=-\wp$ and
+$\wp'(u)=-2u^{-3}+O(u)$, so the three families contribute principal parts
+$b_1^a(z-a)^{-1}$, $b_2^a(z-a)^{-2}$ and $b_3^a(z-a)^{-3}$ respectively: $\tilde G'$ and
+$R$ have identical principal parts at every pole, so their difference is a pole-free
+elliptic function, i.e.\ a constant. Evaluating at $z_\infty$, where $R$ vanishes, fixes it
+to the displayed $C_0$.
+\end{proof}
+
+\paragraph{First order, proper-time branch (verified to $10^{-9}$).}
+Clock $T_\tau=U_3-2mU_2$; block form
+\begin{equation}
+\delta\varphi_\tau=\tfrac12\,\tilde G(z)\,T_\tau(r)
++\tfrac12\sum_{i<j}(c_i d_j-c_j d_i)\,A[e_i,e_j],
+\end{equation}
+$A[e_i,e_j]=\int(e_i\,\mathrm{Pe}_j-e_j\,\mathrm{Pe}_i)\dd z$ the antisymmetric
+elliptic dilogarithms (Brown--Levin $\tilde\Gamma$), over the eight even blocks
+$\{1,Z_{z_d},P_{z_d},P'_{z_d},\wp(z),\wp(z{-}i\omega_{\rm im}),P_{z_\infty},
+Z_{z_\infty}\}$ with $Z_a=\zeta(z{-}a)-\zeta(z{+}a)$,
+$P_a=\wp(z{-}a)+\wp(z{+}a)$, $P'_a=\wp'(z{-}a)-\wp'(z{+}a)$. Coefficients: $c_i$ (the
+$\tilde G$ residues), $d_j$ (clock residues $e_1^{z_d}=(r_d^3-2m\,r_d^2)/s_d$,
+$e_2^{z_\infty}=1/a_4$, $e_1^{z_\infty}=-(2B+r_d-2m)/\sqrt{a_4}$, where
+$B=-a_3/(4a_4)$ is the constant term of $r(z)$ at $z_\infty$ and $a_3$ the cubic
+coefficient of $Q_4$) and the constant
+$C_e=(e_4^3-2m\,e_4^2)/(e_4-r_d)+2e_1^{z_d}\zeta(z_d)-2e_2^{z_\infty}\wp(z_\infty)
++2e_1^{z_\infty}\zeta(z_\infty)$---all closed form.
+
+\begin{auxlemma}[block form of the first-order correction]\label{lem:blocks}
+Let $\tilde G$ be the antiderivative of $R$ constructed in
+Lemma~\ref{lem:residues}, let $T$ be any clock, and expand both in the even block
+basis, $\tilde G=\sum_ic_i\,\mathrm{Pe}_i$ and $T=\sum_jd_j\,\mathrm{Pe}_j$, with
+$\mathrm{Pe}$ the primitive of a block. Then
+\begin{equation}
+   \delta\varphi=\int R\,T\,\dd z
+   =\tfrac12\,\tilde G\,T+\tfrac12\sum_{i<j}(c_id_j-c_jd_i)\,A[e_i,e_j],
+   \qquad A[e_i,e_j]=\int(e_i\mathrm{Pe}_j-e_j\mathrm{Pe}_i)\,\dd z .
+   \label{eq:block-form}
+\end{equation}
+For $T=T_\tau=U_3-2mU_2$ the coefficients are those listed above; in particular
+$e_1^{z_d}=(r_d^3-2m\,r_d^2)/s_d$, $e_2^{z_\infty}=1/a_4$ and
+$e_1^{z_\infty}=-(2B+r_d-2m)/\sqrt{a_4}$ with $B=-a_3/(4a_4)$.
+\end{auxlemma}
+
+\begin{proof}
+Since $\tilde G'=R$, integrating by parts twice and averaging gives the elementary
+identity $\int\tilde G'T=\tfrac12\tilde GT+\tfrac12\int(\tilde G'T-\tilde GT')$, which is
+the displayed boundary term plus a manifestly antisymmetric integrand. Substituting the
+two expansions,
+$\tilde G'T-\tilde GT'=\sum_{i,j}c_id_j\,(e_i\mathrm{Pe}_j-\mathrm{Pe}_ie_j)$; the
+diagonal terms cancel and the transposed pair combines to $(c_id_j-c_jd_i)$, giving
+\eqref{eq:block-form}.
+
+For the clock coefficients, Lemma~\ref{lem:U0}(ii) gives
+$T_\tau=(V_3-2mV_2)+(r_d^3-2m\,r_d^2)\,U_0$, and $U_0$ carries residue $\rho=1/s_d$ at
+$z_d$, whence $e_1^{z_d}=(r_d^3-2m\,r_d^2)/s_d$. At $z_\infty$ expand the clock integrand
+$(r^3-2mr^2)/(r-r_d)$ using the local behaviour of $r(z)$: matching orders in
+$(\dd r/\dd z)^2=Q_4(r)$ gives
+\[
+   r(z)=-\frac{1}{\sqrt{a_4}\,(z-z_\infty)}+B+O(z-z_\infty),
+   \qquad B=-\frac{a_3}{4a_4},
+\]
+and reading off the double-pole coefficient and the residue returns $e_2^{z_\infty}=1/a_4$
+and $e_1^{z_\infty}=-(2B+r_d-2m)/\sqrt{a_4}$. The constant $C_e$ is then fixed exactly as
+$C_0$ was in Lemma~\ref{lem:residues}.
+\end{proof}
+
+\paragraph{First order, advanced-time branch (verified to $10^{-8}$).}
+Clock $v=E\,U_3+r+2m\ln(r-2m)$;
+$\delta\varphi_v=\tilde G(z)\,v-\int_{z_0}^z\tilde G\,v_z\,\dd z$ with
+$v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term reproduces the proper-time
+dilogarithms; the second is odd on $E$ with a simple pole at $z=i\omega_{\rm im}$ and
+supplies the horizon dilogarithm.
+
+\subsection{Adiabatic derivative of the degeneration family}
+\label{app:tracking}
+As the slow parameter drifts, the genus-degeneration value itself moves,
+$J=\Jc(\lambda)$. This is \emph{not} the evolution of a single torque-free extremal:
+the axial costate $J$ is conserved along every extremal
+(section~\ref{sec:principle}), so one trajectory cannot follow the moving locus by
+changing $J$ unless an external azimuthal torque---a modified control law with
+$\dd J/\dd\lambda\neq0$---is supplied. The object below is instead the total
+$\lambda$-derivative of the \emph{one-parameter family of marginal (degeneration)
+solutions} along $J=\Jc(\lambda)$: the adiabatic derivative of the family, which
+packages how the closed form deforms as the locus drifts.
+
+\Ithm{6}
+\begin{lemma}[degeneration-family derivative]\label{lem:tracking}
+Let $r_d(\lambda)$ be the double root of $S$ along the degeneration locus
+$J=\Jc(\lambda)$, and set
+\begin{equation}
+N_{\rm tot}=N+\frac{\dd\Jc}{\dd\lambda}\,N_J,\qquad
+N_J=S\,\partial_JK-\tfrac12K\,\partial_JS.
+\label{eq:Ntot-track}
+\end{equation}
+Then the block form and residue formulae of \ref{app:degeneration} hold verbatim under
+$N\to N_{\rm tot}$, with $\varphi_0$, the clocks and the dilogarithm structure unchanged;
+and the tracked source vanishes at the double root,
+\begin{equation}
+N_{\rm tot}(r_d)=-\tfrac12K(r_d)\Big[\partial_\lambda S
++\tfrac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)
+=\tfrac12K(r_d)\,S'(r_d)\,\frac{\dd r_d}{\dd\lambda}=0,
+\label{eq:track-cancel}
+\end{equation}
+so that the triple-pole residue drops, $b_3^{\rm track}=0$.
+\end{lemma}
+
+\begin{proof}
+Evaluating~\eqref{eq:Ntot-track} at $r=r_d$, the terms proportional to $S$ drop because
+$S(r_d)=0$, leaving the first equality in~\eqref{eq:track-cancel}. For the second, note
+that the Vaidya sextic is \emph{jointly homogeneous of degree six} in $(r,m,J)$,
+\[
+   S(\alpha r,\alpha m,\alpha J)=\alpha^6\,S(r,m,J),
+   \qquad\text{hence}\qquad
+   r\,\partial_rS+m\,\partial_mS+J\,\partial_JS=6\,S
+\]
+by Euler's theorem. Homogeneity also fixes the scaling of the degeneration locus,
+$\Jc=m\,j(\Ehat)$ and $r_d=m\,\rho(\Ehat)$, so that $\dd\Jc/\dd m=\Jc/m$ and
+$\dd r_d/\dd m=r_d/m$. Evaluating Euler's identity at the double root, where both $S$ and
+$\partial_rS=S'$ vanish, leaves $m\,\partial_mS+J\,\partial_JS=0$, that is
+\[
+   \Big[\partial_mS+\frac{\Jc}{m}\,\partial_JS\Big](r_d)
+   =\Big[\partial_\lambda S+\frac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)=0 ,
+\]
+which is the bracket in~\eqref{eq:track-cancel}; equivalently it equals
+$-S'(r_d)\,\dd r_d/\dd\lambda$, obtained by differentiating the double-root condition
+$S(r_d(\lambda),\Jc(\lambda);\lambda)=0$ totally in $\lambda$, and this vanishes because
+$S'(r_d)=0$. Hence $N_{\rm tot}(r_d)=0$, and since the triple-pole residue is proportional
+to $N_{\rm tot}(r_d)$ it vanishes as well.
+\end{proof}
+
+\begin{remark}[independent verification]
+Euler's identity for $S$ was confirmed to reduce to zero identically in
+\textsc{Mathematica} and \textsc{SymPy}. At the concrete locus $m=1$, $\Ehat=7/5$---where
+$\Jc=5\sqrt{3011/3072+581\sqrt{249}/9216}=7.0266237403890\ldots$, reproducing the value
+quoted in \ref{app:degeneration}, and $r_d=-3.3637111847170\ldots$---one finds
+$N(r_d)=1.16239\times10^{4}$ and $N_J(r_d)=-1.65427\times10^{3}$ separately nonzero, while
+$N_{\rm tot}(r_d)=0$ exactly in both systems.
+\end{remark}
+
+Following the moving genus-degeneration locus therefore softens the strongest
+singularity, precisely where the double root travels. The cancellation is verified
+symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$. The two Vaidya
+branches (proper-time $\tau$ and advanced-time $v$) differ only in $\dd\Jc/\dd\lambda$
+and $N_J$.
+
+\paragraph{Vaidya ($\lambda=m$).}
+The linear scaling $\Jc=m\,j(E)$ gives $\dd\Jc/\dd m=\Jc/m$, with
+$N_J=S\,D_E+\Jc^2\,r(r-2m)D_E^3$ (verified to $10^{-8}$).
+
+\paragraph{Fully symbolic coefficients, generic-genus $q$-series, and independent checks.}
+Away from the degeneration locus (generic $J$, genus two) every block coefficient is a
+\emph{rational function of $(m,E,J)$}: the source coefficients $c_k$,
+$Q_{kj}=c_kb_j-c_jb_k$, and the canonical pole coefficients $g_i$ (Taylor
+coefficients of $q_6^{-1/2}$ at the odd-model infinity), with
+$g_0=1/\sqrt{E^2-1}$ and $g_1=(2E^2-3)/(E^2-1)^{3/2}$ set by the leading behaviour
+($E$-only), while $g_2$ and the $c_k$ carry the full $J$ dependence. The
+algebraic remainder is elementary in closed form,
+$T_{\rm alg}=P(r)+\sum_i\mathrm{res}_i\ln(r-r_i)$ over the six roots of $S$
+(three residues vanish, at $r=0,\,2m,\,2m/(1-E^2)$). The genus-two dilogarithm is a
+convergent \emph{nome ($q$-)series}: after Siegel reduction $\tau'=-\tau^{-1}$ (all
+nomes ${<}1$), $\Lambda=\int Q\,\dd\mathcal A+\int L\,\dd\mathcal A$ with $Q$
+elementary and $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ a genus-two
+Kronecker--Eisenstein series that converges geometrically (order $N{=}4$ already
+matches to $10^{-13}$) and does \emph{not} reduce to classical dilogarithms (there is
+no genus-two Jacobi product formula). All these symbolic statements are
+\emph{independently reproduced in Mathematica} (native $\wp$, Gröbner reduction,
+Laurent extraction): the degeneration residues to $10^{-16}$--$10^{-38}$, the generic-$J$
+reductions to an exact polynomial identity, and the tracking
+theorem~\eqref{eq:track-cancel}.
+
+\paragraph{Transcendence.}
+None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
+lives in $\sigma,\zeta,\wp$, and the weight-two content is the elliptic dilogarithm,
+conjecturally irreducible to weight one (theta-divisor obstruction $\Theta=W_{g-1}$). The
+advanced-time horizon logarithm is elementary only as a $\dd\log$ letter; integrated
+against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, of the
+same transcendental weight as the proper-time case---the horizon merely relocates the
+dilogarithm's anchor from infinity to the two-torsion point $r=2m$. The sole
+numerical ingredient anywhere is the optional compression of the weight-two content to
+an apparent minimal five-dimensional dilogarithm basis (a numerically stable rank five,
+singular values falling to $10^{-79}$---strong evidence, \emph{not} a proof, and
+curve-specific), which the block forms above do not require.
+
+\FloatBarrier
+
+
+\section{Complete first-order extended-Hamiltonian correction}
+\label{app:firstorder}
+
+This appendix proves Theorem~\ref{thm:firstorder}, stated in section~\ref{sec:vaidya-adiabatic}: it derives
+equation~\eqref{eq:adiab-exact}---the complete first-order (on-shell \emph{plus} off-shell)
+adiabatic correction to the orbit shape---from the extended Hamiltonian in a
+metric-independent way, and closes it explicitly for the Vaidya branches so that a reader
+can reconstruct it without the accompanying code. Here $\Theta$ is the Euler operator that
+generates the drift of the frozen family through the slow parameter, and the drift
+generator $\mathcal D$ equals $\Theta$ \emph{unless} the slow parameter rescales the
+canonical momenta, in which case it acquires a momentum-normalization term. For
+single-parameter Vaidya the mass is a metric modulus (no rescaling), so
+$\mathcal D=\Theta=m\partial_m$ and the source collapses to the universal boundary form
+$S_{\mathcal D}=[\,rp_r\,]-\lambda$ derived below. If a slow parameter also rescales a
+canonical momentum, the drift generator requires the corresponding dilation term; that
+different deformation class is not used in the Vaidya calculation below.
+
+\paragraph{Notation and the slow datum.} $\Ehat$ and $J=p_\varphi$ are the
+\emph{conserved} control charges (Kodama energy and axial costate). For Vaidya the
+background coordinate is the advanced time $v$. Before expanding, choose a fixed
+reference mass $M$ and introduce the dimensionless slow coordinate $s=v/M$; radii and
+masses in this appendix are likewise measured in units of $M$. We then write
+$m(s)=m_0(1+\varepsilon s+\cdots)$ with the unambiguous dimensionless rate
+\[
+    \varepsilon\equiv\frac{1}{m}\frac{\dd m}{\dd s}
+    =\frac{M\dot m}{m},\qquad \dot m\equiv\frac{\dd m}{\dd v}.
+\]
+The operator generating the drift of the frozen family is the
+Euler operator
+\begin{equation}
+    \Theta\equiv m\,\partial_m\quad(\text{Vaidya}),
+    \label{eq:theta-op}
+\end{equation}
+since $\dd m/\dd s=+\varepsilon m$ at leading order.
+
+\paragraph{Frozen data.} At fixed $s$ the frozen Hamiltonian $H_0(r,p_r;\lambda)=0$
+fixes: the \emph{ingoing} frozen momentum $p_{r0}(r)$, the root of $H_0=0$ with
+$H_{0,p_r}<0$ (the outgoing arc is its mirror across the turning point); the shape
+integrand $G_0(r)=\dd\varphi/\dd r=H_{0,J}/H_{0,p_r}$; and the clock density
+$\dd\lambda/\dd r=1/H_{0,p_r}$, with $\lambda$ oriented \emph{inward from the
+free-arrival endpoint}.
+
+\paragraph{Drift generator.} Adjoining the slow clock $s$ with conjugate $p_s$, the
+extended Hamiltonian $\mathcal H=p_s+H(r,p_r;\lambda(s))=0$ generates the \emph{canonical}
+flow $\dd r/\dd s=H_{p_r}$, $\dd p_r/\dd s=-H_r$, and the shell-departure rate is
+$\dd H/\dd s=-\varepsilon\,\mathcal D H$ with $\mathcal D$ the Euler operator generating
+the frozen-family drift. When the slow parameter enters only as a metric modulus
+(Vaidya) it does not rescale the momenta, so $\mathcal D=\Theta=m\partial_m$. When
+instead a slow parameter rescales a normalized momentum $P_r$, the rescaling is
+time-dependent (conformally symplectic), \emph{not} canonical: the chain rule adds a
+dilation term and promotes $\Theta$ to a full Euler operator containing
+$P_r\partial_{P_r}$. Here no such rescaling occurs: the canonical pair is $(r,p_r)$ and
+$\mathcal D=\Theta$.
+
+\paragraph{Extended system and first order.} Adjoining $s$ with conjugate $p_s$,
+$\mathcal H=p_s+H(r,p_r;\lambda(s))=0$; free-arrival transversality sets $H=0$ (hence
+$p_s=0$) at $\lambda=0$. Along the flow $\dd p_s/\dd\lambda=\varepsilon\,\mathcal D H$, so
+the \emph{terminally-anchored} source is
+\begin{equation}
+    p_s^{(1)}(\lambda)\equiv S_{\mathcal D}(\lambda)
+    =\int_0^{\lambda}\mathcal D H\,\dd\lambda',
+    \label{eq:pS-app}
+\end{equation}
+and, linearizing $H$ at fixed $r$, the momentum-shell shift
+\begin{equation}
+    \delta p_r=\frac{\lambda\,\Theta H-S_{\mathcal D}}{H_{p_r}},
+    \label{eq:dpr-app}
+\end{equation}
+the axial costate remaining conserved ($\delta J=0$). The shape varies as
+$\dd\varphi/\dd r=G_0+\varepsilon[\partial_{p_r}G_0\,\delta p_r-\lambda\,\Theta G_0]
++O(\varepsilon^2)$; integrating in $r$ gives equation~\eqref{eq:adiab-exact}. The reduction is
+non-uniform at the turning point ($H_{p_r}\to0$): it holds on compact sub-arcs, and all
+displayed residuals are taken there.
+
+\paragraph{The universal boundary form of the Vaidya source.} The source does not
+require a per-metric reduction to be written in closed form. Any arrival-time
+Hamiltonian is Randers, $H=\beta(r)\,J+\sqrt{A_{rr}(r)\,p_r^2+A_{\varphi\varphi}(r)\,J^2}-1$,
+homogeneous of degree one in $(p_r,J)$ apart from the $-1$, so Euler's theorem gives
+\begin{equation}
+    \big(J\,\partial_J+p_r\,\partial_{p_r}\big)H=H+1 .
+    \label{eq:finsler-euler}
+\end{equation}
+Second, $H_v$ of~\eqref{eq:Hv} is invariant under the simultaneous rescaling
+$(r,m,J)\mapsto(\alpha r,\alpha m,\alpha J)$ at fixed $p_r$---the Schwarzschild
+self-similarity of the frozen family---so it is homogeneous of degree zero in $(r,m,J)$ and
+Euler's theorem in those variables gives
+\begin{equation}
+    m\,\partial_m H=-\big(r\,\partial_r H+J\,\partial_J H\big)
+    \qquad\text{identically, not merely on the shell.}
+    \label{eq:selfsimilar}
+\end{equation}
+Combining the two turns the source integrand into a total derivative. Along the frozen
+flow $\dd r/\dd\lambda=H_{p_r}$ and $\dd p_r/\dd\lambda=-H_r$, so
+\[
+   \frac{\dd (r\,p_r)}{\dd\lambda}=p_r H_{p_r}-r H_r
+   \overset{\eqref{eq:finsler-euler}}{=}\big(H+1-J H_J\big)-r H_r
+   \overset{\eqref{eq:selfsimilar}}{=}1+\Theta H+H ,
+\]
+and the shell condition $H=0$ removes the last term, leaving
+$\Theta H=\dd(r\,p_r)/\dd\lambda-1$. Integrating from the terminal anchor gives the
+\emph{universal boundary form}
+\begin{equation}
+    S_{\mathcal D}(\lambda)=[\,rp_r\,]_0^{\lambda}-\lambda,
+    \label{eq:SD-vaidya}
+\end{equation}
+metric-independent up to the endpoint bracket. Identities~\eqref{eq:finsler-euler}
+and~\eqref{eq:selfsimilar}, the expression~\eqref{eq:ThetaHv} for $\Theta H_v$, and the
+combination $p_rH_{p_r}-rH_r-(1+\Theta H)=H$ were each verified symbolically in
+\textsc{Mathematica}, all four residuals reducing to zero identically in
+$(r,m,\Ehat,J,p_r)$; the numerical cross-check is
+\texttt{VaidyaMetric/universal\_SD\_source\_vaidya.py}. The explicit Vaidya on-shell and
+off-shell closed forms, with the horizon dilogarithm, are assembled in
+section~\ref{sec:vaidya-adiabatic}.
+
+\paragraph{The remainder is $O(\varepsilon^2)$.} The expansion above is an asymptotic
+statement about the Hamiltonian flow, and on the sub-arcs where the reduction is used it
+carries a genuine bound. Fix a compact sub-arc $[\lambda_-,\lambda_+]$ on which the frozen
+solution stays in a compact subset $\mathcal K$ of the regular domain and on which
+$|H_{p_r}|\ge\kappa>0$ (i.e.\ bounded away from the turning point). On a neighbourhood of
+$\mathcal K$ the extended Hamiltonian $\mathcal H=p_s+H(r,p_r;m(s))$ is $C^2$ with bounded
+derivatives, so writing $z=(r,p_r)$ and $z_\varepsilon$ for the exact flow, the exact and
+first-order flows obey
+\[
+   \big|z_\varepsilon(\lambda)-z_0(\lambda)-\varepsilon\,z_1(\lambda)\big|
+   \le C\,\varepsilon^{2}\,e^{L(\lambda-\lambda_-)} ,
+   \qquad \lambda\in[\lambda_-,\lambda_+],
+\]
+by the standard Gr\"onwall estimate applied to the difference between the exact flow and
+its first variation, with $L$ a bound for $\|\partial_z^2\mathcal H\|$ on $\mathcal K$ and
+$C$ depending on the same $C^2$ bounds. Dividing by $H_{p_r}$, legitimate since
+$|H_{p_r}|\ge\kappa$, transfers the estimate to $\dd\varphi/\dd r$ and, after integration
+over the sub-arc, to $\delta\varphi$; this is the precise sense in
+which~\eqref{eq:adiab-exact} closes the correction to $O(\varepsilon^2)$. The estimate
+degrades as $\kappa\to0$, which is why the reduction is non-uniform at the turning point
+and why all displayed residuals are taken on compact sub-arcs bounded away from it. The
+measured log--log slope $\approx2.0$ of figure~\ref{fig:vaidya-offshell} is the numerical
+confirmation of this exponent.
+
+\paragraph{Special-function class.} The building blocks form a strict transcendence
+hierarchy. The second-kind integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
+\emph{ordinary Abelian integrals} (weight one), reducible to the classical Kleinian
+$\zeta,\sigma$ basis (Baker~\cite{BakerAbelian1897}; section~\ref{sec:vaidya-adiabatic}),
+the same class as $\varphi_0$. The letters
+$W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$ are \emph{length-two iterated} Abelian
+integrals with algebraic coefficients---one transcendence level above the $U_k$ and
+\emph{not} reducible to the weight-one Kleinian class (their irreducibility to weight one
+is \emph{conjectural}). The third-kind letter at the horizon $r=2m$---the advanced-time
+$\dd\log$ letter, whose residue is nonzero, unlike the on-shell $\psi$ where it
+vanishes---adds a genus-two dilogarithm (descriptively, a hyperelliptic polylogarithm
+\cite{BauneEtal2024,DHokerHiddingSchlotterer2025}), evaluated by the geometrically
+convergent theta-nome series in the reproducibility package; its irreducibility and
+single-valued completion remain open. Thus the \emph{frozen} reduction
+$\partial_\lambda\varphi_0$ closes in the weight-one Abelian/Kleinian class, but already
+the \emph{on-shell} first-order response carries a genuine weight-two sector---the
+length-two iterated integrals $W_{jk}$; the off-shell term adds further length-two letters
+and one genus-two (horizon) dilogarithm. Reducibility of the $W_{jk}$ to weight one and a
+canonical single-valued completion remain conjectural.
+
+\paragraph{What is reconstructible from the text alone.} The manuscript fixes the
+algebraic reduction and the closed special-function representation without the
+repository: the frozen integrands
+$\dd\varphi/\dd r=\mathcal K/\sqrt S$ with their spectral radicals and numerators;
+the on-shell reduction (the polynomial identity $2A'S-AS'+2S\sum_k c_kr^k=2N_\lambda$
+and its $11\times11$ linear system---no fit); all block coefficients $c_k,g_i,Q_{kj}$;
+the Kleinian $\zeta,\sigma$ closed forms of the $U_k$ (Hermite recursion) and the assembly
+of the weight-two $W_{jk}$ from them (not reduced to the weight-one class); the elementary
+remainders; and the defining \emph{form} of the genus-two letter
+$L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ with its odd half-characteristic
+$\delta$. The text does \emph{not} print a standalone nome-series reconstruction recipe.
+Numerical evaluation of the genus-two $\theta$---constructing the period matrix
+$\tau$ from $Y^2=\mathcal S$, its Siegel reduction, and summing the geometrically
+convergent nome series (order $N{=}4$ already to $10^{-13}$) are performed by
+\texttt{Sage}$+$\texttt{abelfunctions} (\texttt{RiemannTheta}) in the reproducibility
+package~\cite{Rosignoli2026Code}. In short: the PDF is self-contained at the level of the
+algebraic reduction and closed special-function representation; period construction and
+genus-two numerical values require the archived routine.
+
+\paragraph{Branch forms.} For the \emph{Vaidya} $v$-branch the slow datum $m$ is a metric
+modulus, \emph{not} a conformal rescaling of momenta: there is no $p_r/A$ transformation
+and hence no dilation term, so $\mathcal D=\Theta=m\partial_m$ is complete and
+\begin{equation}
+    \Theta H_v=m\,\partial_m H_v
+    =m\!\left[-\frac{2p_r}{r}+\frac{\sqrt{\Ehat^2p_r^2+J^2/r^2}}{r\sqrt w}\right],
+    \qquad w=\Ehat^2-f;
+    \label{eq:ThetaHv}
+\end{equation}
+since $m$ \emph{increases} along the ingoing flow while the elapsed clock $\lambda$ is
+oriented inward from the free-arrival endpoint, $\lambda$ runs \emph{opposite} to the mass
+drift on this branch. This fixed orientation ($\mathrm{sgn}(\dd\lambda/\dd m)=-1$) is what
+inverts both source contributions in equation~\eqref{eq:adiab-exact}, i.e.\
+$\lambda\Theta H_0-S_{\mathcal D}\to S_{\mathcal D}-\lambda\Theta H_0$ and
+$-\lambda\Theta G_0\to+\lambda\Theta G_0$---a declared sign convention, not a change of
+result. The proper-time branch uses $H_\tau$ of equation~\eqref{eq:Htau-vaidya}. Both Vaidya branches (advanced-time $v$ and proper-time
+$\tau$) close to $O(\varepsilon^2)$ against the true flow: least-squares log--log slope
+$\approx1$ for the on-shell term alone versus $\approx2.0$ for the complete first-order
+term (figure~\ref{fig:vaidya-offshell}).
+
+\paragraph{Algebraic genus-degeneration limit ($J\to\Jc$).} The degeneration form is
+\emph{not} obtained by substituting $J=\Jc$ into the generic expressions. The source
+\emph{numerator} $N_\lambda$ is polynomial in $J$ and hence perfectly finite at $\Jc$, but
+the reduction \emph{coefficients} $c_k$ are not: by~\eqref{eq:ck-closed} they carry the
+reduced discriminant $\Delta$ in the denominator, and $\Delta$ vanishes precisely at
+$|J|=\Jc$, so each $c_k$ has a simple pole there---the analytic counterpart of the rank
+drop of Lemma~\ref{lem:reduction}. The degeneration forms below are therefore constructed
+\emph{directly} on the degenerate curve, $S=(r-r_d)^2Q_4$ (double root $r_d$, genus two
+$\to$ genus one), and not as a limit of the genus-two formulas. Each hyperelliptic letter collapses,
+$U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\sqrt{Q_4}$
+(elliptic second kind, Weierstrass $\wp,\zeta$) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
+(third kind); the spurious poles at $r_d$ cancel in the physical combination (as
+$S(r_d)=0$), leaving the weight-two block as a genuine \emph{elliptic}
+dilogarithm~\cite{BeilinsonLevin1994,BrownLevin2011} plus the horizon third kind. Thus the
+degeneration off-shell form is one degree \emph{lower} than the generic genus-two case;
+verified letter by letter to machine precision
+(\texttt{VaidyaMetric/vaidya\_sep\_offshell\_elliptic.py}). For Vaidya the double root is a
+branch point \emph{off} the physical arc and $\mathcal D=\Theta$ carries no dilation, so
+the degeneration limit is regular and elliptic (non-uniform only at $r_d$) and no
+orbit crosses it under the mass drift. The rotating case is qualitatively
+different---there the conformal dilation ray drives the orbit \emph{across} the moving
+separatrix, a Neishtadt separatrix-crossing problem
+\cite{Neishtadt1987,Neishtadt2013} treated in Appendix~C of Paper~II.
+
+
+
+\FloatBarrier
+
+
+% ---- back matter -----------------------------------------------------
+\section*{Author declarations}
+
+\subsection*{Conflict of interest}
+The author has no conflicts to disclose.
+
+\subsection*{Author contributions}
+\textbf{Iman Rosignoli}: Conceptualization (lead); Formal analysis (lead); Investigation
+(lead); Methodology (lead); Software (lead); Validation (lead); Visualization (lead);
+Writing --- original draft (lead); Writing --- review \& editing (lead).
+
+\subsection*{Ethics approval}
+Not applicable: this study involves no human participants and no animals.
+
+\subsection*{Funding}
+This research received no external funding.
+
+\section*{Data availability}
+% ==== AUTHOR ACTION REQUIRED BEFORE SUBMISSION ==============================
+% The Zenodo record must be re-released and the metadata below synchronised.
+% Since DOI 10.5281/zenodo.21782443 the package has gained:
+%   - paper1/verification/  : the symbolic verification suite (two CAS) for the
+%     results proved in sections 2, 4.5 and appendices A-C
+%   - FLRWmetric/genera_fig_flrw_curvatura.py : generator for the new figure
+% Steps: (1) cut a new Zenodo version containing these; (2) update the DOI and
+% the version number in the sentence below and in the \cite key
+% Rosignoli2026Code; (3) confirm the GitHub tag matches that release.
+% ============================================================================
+The data that support the findings of this study are openly available in the Zenodo
+repository \emph{NonStationaryBrachistochrone}, version~1.0, at
+\url{https://doi.org/10.5281/zenodo.21782443}, reference~\cite{Rosignoli2026Code}. This
+comprises the numerical data together with the symbolic and numerical code, released under
+the MIT licence; the development history is available in the associated GitHub repository
+\url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}.
+
+\ack
+The author thanks the University of Pavia for a stimulating environment. OpenAI
+GPT-5.6 (Sol) and Anthropic Claude (Opus~4.8) were used to assist with symbolic-algebra
+checks, numerical-code development, and language and structural editing of the manuscript;
+all AI-assisted output was critically reviewed and independently verified by the author,
+who takes full responsibility for the accuracy, originality and integrity of the work. The
+closed-form and hyperelliptic computations relied on \textsc{SageMath}~\cite{SageMath}
+with \textsc{abelfunctions}~\cite{abelfunctions}, and on
+\textsc{SymPy}~\cite{SymPy}, \textsc{NumPy}~\cite{NumPy}, \textsc{SciPy}~\cite{SciPy} and
+\textsc{Matplotlib}~\cite{Matplotlib}.
+
+\medskip\noindent\textit{ORCID iD:} Iman Rosignoli,
+\url{https://orcid.org/0009-0004-4536-0285}.
+
+\section*{References}
+\bibliographystyle{iopart-num}
+\bibliography{../paper/refs,../paper/companionII}
+
+\end{document}

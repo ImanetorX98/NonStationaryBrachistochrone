@@ -495,6 +495,9 @@ Status scientifico frozen; solo editoriale. Fatto:
       NB (2026-08-04): Paper I re-versionato → nuovo DOI **21781850** (aggiornati cover
       letter I/II, companionI.bib, README); il titolo Zenodo di Paper II va allineato al
       manoscritto (ergosphere trichotomy, separatrices, and adiabatic response).
+      NB (2026-08-04): repo/codice re-versionato → nuovo DOI **21782443** (aggiornati
+      refs.bib, paper1, paper2, cover letter I/II). Da completare con titolo/tag/commit
+      della nuova release nella voce bib Rosignoli2026Code e nel prose "version 1.0".
 - [x] #2 Running header corto via \markboth (no più troncatura del titolo lungo). Verificato render.
 - [x] #3 η riservato al conforme: residui `T_br`/`T_τ` in Paper II (η(r) generico 303-305, "clock η" 330,
       tabella η=t/η=τ 597). Nessun η=proper-time residuo.

@@ -1,0 +1,94 @@
+ALT TEXT FOR FIGURES — Paper I (JMP submission)
+"Controlled-rail brachistochrones in non-stationary spacetimes"
+Iman Rosignoli
+
+AIP Publishing requires alt text for every figure. Paste the text below into the
+corresponding field of the submission system. Alt text describes what is visible;
+it deliberately does not repeat the caption, which carries the interpretation.
+
+--------------------------------------------------------------------------------
+Fig. 1 — fig_indicatrici
+Two side-by-side panels plotting closed curves in the local velocity plane, radial
+velocity on the horizontal axis and azimuthal velocity on the vertical. The left
+panel shows a nested family of circles centred on the origin, each smaller than the
+last. The right panel shows ellipses whose centres are displaced from the origin
+toward negative radial velocity and which are elongated along the radial direction.
+
+--------------------------------------------------------------------------------
+Fig. 2 — fig_flrw_cinematica and fig_flrw_variazionale (two panels, a and b)
+Panel (a): two stacked line plots against cosmic time. The upper plot shows four
+local-speed curves falling from near unity to zero, each ending at its own vertical
+dotted line. The lower plot shows four decaying rail-redshift curves crossing a
+horizontal dashed reference line at unity. Panel (b): two travel-time curves plotted
+against the amplitude of a sinusoidal deformation of the path; both are smooth and
+attain their minimum at zero amplitude.
+
+--------------------------------------------------------------------------------
+Fig. 3 — fig_flrw_curvatura (two panels, a and b)
+Panel (a): three curves in a comoving map, all leaving the same point at the same
+height above a marked reference point O. The flat curve is a horizontal straight
+line, the closed curve bends downward toward O, and the open curve bends upward away
+from it; a dotted segment marks the common closest approach. Panel (b): three
+increasing, saturating curves of reachable comoving distance against rail energy,
+one per value of the curvature-to-Hubble ratio. A horizontal line marks the
+antipodal distance pi, and the region above it is shaded; only the uppermost curve
+enters that region.
+
+--------------------------------------------------------------------------------
+Fig. 4 — fig_kodama_conservazione
+Two stacked plots against radius. The upper plot, on a logarithmic vertical axis,
+shows the residual of the rail invariant as a nearly flat trace lying below 1e-15
+across the whole range. The lower plot shows the free-particle drift of the same
+quantity as a smooth curve that is nowhere zero.
+
+--------------------------------------------------------------------------------
+Fig. 5 — fig_vaidya_traiettorie
+Equatorial orbit shapes for the frozen Schwarzschild case and for Vaidya, plotted
+together and nearly coincident, with a visible separation growing inward. A second
+panel plots the costate p_v against radius: it is zero at the outer endpoint and
+departs from zero along the inward part of the path.
+
+--------------------------------------------------------------------------------
+Fig. 6 — fig_vaidya_plunge_t_tau
+Two decreasing curves of plunge radius plotted against the mass-rate parameter, one
+for each clock branch, together with a third curve for their difference. The
+coordinate-time curve lies below the proper-time curve throughout, and the gap
+between them widens toward positive mass rate.
+
+--------------------------------------------------------------------------------
+Fig. 7 — fig_vaidya_no_inversione_evaporazione
+The branch gap plotted against the mass-rate parameter. The curve crosses zero only
+inside a shaded band marking the unphysical negative-mass region. A second curve,
+for an exponentially decaying mass, approaches zero from above without crossing it.
+
+--------------------------------------------------------------------------------
+Fig. 8 — fig_vaidya_bounce
+Radius plotted against advanced time through the turning point, showing a smooth
+rounded minimum with the trajectory continuing outward. Overlaid is the
+radius-parametrised flow, which terminates abruptly at the same minimum instead of
+continuing through it.
+
+--------------------------------------------------------------------------------
+Fig. 9 — fig_vaidya_timing
+Two plots against arrival epoch, each carrying three curves for the three mass
+rates. The first plots the periapsis radius, the second the same radius divided by
+the horizon radius. The ordering of the three curves is reversed between the two
+plots.
+
+--------------------------------------------------------------------------------
+Fig. 10 — fig_vaidya_offshell
+A log-log scatter plot of residual against the dimensionless adiabatic rate, with
+two fitted straight lines of clearly different slope: the shallower line has slope
+close to one, the steeper line slope close to two.
+
+--------------------------------------------------------------------------------
+Fig. 11 — fig_vaidya_kerr_a0
+A numerically integrated orbit and a closed-form reference orbit plotted on the same
+axes; the two traces are visually indistinguishable. An inset or companion trace
+shows their difference, staying below 1e-12 across the range.
+
+--------------------------------------------------------------------------------
+Fig. 12 — fig_verifica_minimo_brachi
+Travel time plotted against the amplitude of a path perturbation, one curve per
+clock branch. Each curve is smooth with a single minimum at zero amplitude, and the
+two curves are separated from one another.

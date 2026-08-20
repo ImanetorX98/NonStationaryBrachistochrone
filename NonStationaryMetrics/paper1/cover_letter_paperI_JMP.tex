@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,top=1.4cm,bottom=1.3cm,left=2.2cm,right=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage{parskip}
+\setlength{\parskip}{0.38em}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+\thispagestyle{empty}
+
+% ---- Sender ---------------------------------------------------------------
+\noindent
+Iman Rosignoli\\
+Department of Physics, University of Pavia\\
+Via A.\ Bassi 6, 27100 Pavia, Italy\\
+\href{mailto:iman.rosignoli01@universitadipavia.it}{iman.rosignoli01@universitadipavia.it}\\
+ORCID: \href{https://orcid.org/0009-0004-4536-0285}{0009-0004-4536-0285}
+
+\vspace{0.6em}
+\noindent\today
+
+\vspace{0.6em}
+\noindent
+The Editors\\
+\emph{Journal of Mathematical Physics}\\
+AIP Publishing
+
+\vspace{0.6em}
+\noindent Dear Editors,
+
+\vspace{0.5em}
+I am pleased to submit the manuscript \textbf{``Controlled-rail brachistochrones in
+non-stationary spacetimes: conformal symmetry, Kodama energy, and Vaidya dynamics''} for
+consideration as a research article in the \emph{Journal of Mathematical Physics}.
+
+\vspace{0.3em}
+\noindent\textbf{The problem.} In a stationary spacetime the relativistic brachistochrone
+reduces to Fermat--Randers optics with a conserved rail energy supplied by a timelike
+Killing vector; this is the setting of Perlick's fixed-energy optical metric (1991). When
+the geometry itself evolves, no such conservation law exists, the reduced Hamiltonian
+ceases to be an interior first integral, and the variational problem becomes genuinely
+non-autonomous. The manuscript asks what replaces the Killing charge, and what survives of
+the optical-geometry picture.
+
+\vspace{0.3em}
+\noindent\textbf{Mathematical contributions.} The construction is a \emph{controlled-rail}
+optimal-control problem in which the invariant $-u\cdot W=\hat E$ is actively maintained by
+a selector $W$ following a Killing $\to$ conformal-Killing $\to$ Kodama hierarchy. The
+paper's results are:
+
+\begin{itemize}\itemsep2pt
+\item a \textbf{regularity criterion} reducing the admissible domain to two scalar
+inequalities---$W$ timelike and $\hat E>|W|$---from which the compact, strictly convex
+velocity indicatrix is \emph{derived} rather than assumed, with the freezing surface
+identified as the locus $\hat E=|W|$ where it collapses to a point;
+\item an \textbf{existence and normality theorem} (direct method, closed by a Gr\"onwall
+estimate on the clock and the Filippov--Cesari theorem on the augmented state) together
+with a \textbf{non-autonomous Hamilton--Jacobi verification criterion}, global optimality
+being stated as conditional rather than automatic;
+\item an \textbf{exact recovery of Perlick's stationary optics}: solving the rail jointly
+with the mass shell yields a Randers arrival-time functional whose threading form is
+precisely the fixed-energy optical metric $a_{ab}=\hat E^2h_{ab}/[f(\hat E^2-f)]$, with the
+standard Fermat--Randers metric $h_{ab}/f$ recovered as $\hat E\to\infty$. The
+non-stationary theory is thus a strict extension, not an analogy;
+\item a \textbf{reduction theorem} showing that the entire adiabatic hierarchy collapses
+onto one degree-ten polynomial identity, whose $11\times11$ determinant is
+$32\,\mathrm{Res}_r(S,S')=-32\,s_6\operatorname{disc}_rS$ for an arbitrary sextic; the
+reduction is therefore uniquely solvable exactly on the genus-two stratum and degenerates
+exactly where the spectral curve does;
+\item \textbf{closed forms}: all reduction coefficients as rational functions of
+$(\hat E^2,J,m)$ over the reduced discriminant, a complete first-order response with an
+$O(\varepsilon^2)$ remainder bound, and a universal boundary form
+$S_{\mathcal D}=[\,r\,p_r\,]-\lambda$ for the off-shell source.
+\end{itemize}
+
+\vspace{0.3em}
+\noindent\textbf{Applications.} The formalism is realised in two spherically symmetric
+non-stationary geometries: FLRW at arbitrary spatial curvature, where the extremal is the
+geodesic of the slice and the closed case supplies an explicit Maxwell set at the
+antipodal cut locus, and the ingoing Vaidya dynamical black hole, where the first-order
+adiabatic correction closes in a horizon dilogarithm on a genus-two curve degenerating to
+genus one.
+
+\vspace{0.3em}
+\noindent\textbf{Fit and verification.} The work sits in the scope of the \emph{Journal of
+Mathematical Physics}: optimal control and non-autonomous Hamilton--Jacobi theory, Finsler
+and Randers geometry, and exact special-function methods on hyperelliptic curves, applied
+to and developed for a problem in general relativity. Every closed form is derived
+symbolically and independently re-verified in two computer-algebra systems; the
+reproducibility package, including those verification scripts, is openly archived on
+Zenodo (DOI: \href{https://doi.org/10.5281/zenodo.21782443}{10.5281/zenodo.21782443}).
+Statements that remain conjectural---the irreducibility of the weight-two letters to
+weight one and the canonical single-valued completion of the genus-two dilogarithm---are
+labelled as such at the point of use and no result depends on them.
+
+\vspace{0.3em}
+\noindent\textbf{Companion manuscript.} This is the self-contained first part of a
+two-part series and establishes the general formalism with its spherically symmetric
+realisations. The rotating, axisymmetric conformal-Kerr (Thakurta--Kerr) application is
+developed in a \emph{distinct} companion manuscript, \emph{``Brachistochrones in conformal
+Kerr spacetimes: ergosphere trichotomy, separatrices, and adiabatic response''} (Zenodo
+DOI: \href{https://doi.org/10.5281/zenodo.21740000}{10.5281/zenodo.21740000}), currently
+under consideration at \emph{Classical and Quantum Gravity}. The two share authorship but
+not content, and the present submission can be assessed entirely on its own.
+
+\vspace{0.3em}
+\noindent\textbf{Declarations.} This manuscript is original, has not been published, and
+is not under consideration for publication elsewhere; as disclosed above, the separate
+companion manuscript is under consideration at another journal and does not overlap in
+content. There are no competing interests and the research received no external funding.
+In line with AIP Publishing's policy on generative artificial intelligence, I disclose
+that large language models (OpenAI GPT-5.6 and Anthropic Claude) were used for
+symbolic-algebra checks, numerical-code development, and language and structural editing;
+no AI tool is listed as an author, all AI-assisted output was independently verified, and
+I take full responsibility for the accuracy, originality and integrity of the work.
+
+\vspace{0.3em}
+Thank you for considering this submission. I look forward to the reviewers' comments.
+
+\vspace{0.3em}
+\noindent Yours faithfully,
+
+\vspace{0.9em}
+\noindent Iman Rosignoli
+
+\end{document}
