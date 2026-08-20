@@ -1598,19 +1598,63 @@ $\Ehat=7/5$: $r_t=3.6876$, $J_c=2.0353$, $\Phi_{\max}=0.8074\pi$. Physically
 $\Phi_{\max}$ is the largest azimuth a single in-and-out brachistochrone can span from
 radius $R$; beyond it the endpoints must be joined by a multi-excursion extremal.
 
-Across a sweep of $\Ehat\in[1.001,10^2]$ and $R/m\in[3,10^7]$ we find
-$\Phi_{\max}<\pi$ throughout, the largest value encountered being $0.99959\pi$; when it
-holds, the fold is reached \emph{before} any axis crossing and the conjugate point, not
-the Maxwell point of Remark~\ref{rem:maxwell}, is the binding obstruction for a single
-excursion. We state this as a numerical finding rather than a theorem, and the reason the
-bound resists proof is instructive: it is \emph{sharp}. The critical turning radius scales
-as $r_t\simeq\sqrt{mR}$, so as $R\to\infty$ the caustic migrates into the asymptotically
-flat region, where the swept azimuth is that of a Euclidean chord,
-$2\arccos(r_t/R)=\pi-O(\sqrt{m/R})$; the supremum $\pi$ is therefore attained only in that
-limit. No crude comparison can capture it---in particular the pointwise bound against the
-flat chord \emph{fails}, the rail integrand exceeding the Euclidean one near periapsis by
-up to $25\%$ before falling below it further out, so the inequality holds only after
-integration.
+The critical turning radius scales as $r_t\simeq\sqrt{mR}$, so as $R\to\infty$ the caustic
+migrates into the asymptotically flat region and $\Phi_{\max}\to\pi$ from below: the bound
+of Theorem~\ref{thm:chord} is sharp, saturated only in the flat limit.
+\end{remark}
+
+\begin{auxtheorem}[the sweep never reaches $\pi$]\label{thm:chord}
+For every $m>0$, $\Ehat>1$ and $2m<r_t<R$,
+\begin{equation}
+   \Phi(r_t)\;\le\;2\arccos\!\big(J/\rho(R)\big)\;<\;\pi,
+   \qquad \rho(r)\equiv\sqrt{\mathcal J(r)}=r\sqrt{\frac{r-2m}{D_{\Ehat}(r)}},
+   \label{eq:chord-bound}
+\end{equation}
+with $\mathcal J(r)=r^2(r-2m)/D_{\Ehat}(r)$ the turning function and $J=\rho(r_t)$.
+Consequently the axis is never crossed on a single excursion: the caustic of
+Theorem~\ref{thm:caustic} is the \emph{only} obstruction there, and the Maxwell mechanism
+of Remark~\ref{rem:maxwell} requires more than one radial excursion.
+\end{auxtheorem}
+
+\begin{proof}
+Eliminating $J^2$ in favour of $\mathcal J$ gives the compact form
+$G^2=J^2/\big[r(r-2m)\big(\mathcal J(r)-J^2\big)\big]$. Reparametrizing by
+$\rho=\sqrt{\mathcal J}$, and using $r(r-2m)=\mathcal J D_{\Ehat}/r=\rho^2D_{\Ehat}/r$,
+\[
+   \Phi=4\int_{\rho(r_t)}^{\rho(R)}
+   \frac{J\,\sqrt{r/D_{\Ehat}}}{\mathcal J'(r)}\,
+   \frac{\dd\rho}{\sqrt{\rho^2-J^2}} ,
+\]
+so it suffices to prove the pointwise bound $2\rho\sqrt{r/D_{\Ehat}}\le\mathcal J'(r)$,
+which reduces $\Phi$ to the Euclidean chord integral
+$2\int J\,\dd\rho/(\rho\sqrt{\rho^2-J^2})=2\arccos(J/\rho(R))$.
+
+Writing $b=\Ehat^2-1$, one computes
+$\mathcal J'D_{\Ehat}^2=2r\big[br(r-m)+m(3r-4m)\big]$, positive on $r>2m$ since there
+$r-m>m$ and $3r-4m>2m$. The bound therefore squares to
+\begin{align*}
+   &\big[br(r-m)+m(3r-4m)\big]^2-(br+2m)^2\,r(r-2m)\\
+   &\qquad=m\big(2br^3+(b^2-6b+5)mr^2+(8b-16)m^2r+16m^3\big)\;\ge\;0 ,
+\end{align*}
+and substituting $r=2m+s$ with $s>0$ turns the bracket into a polynomial with manifestly
+nonnegative coefficients,
+\[
+   4(1+b)^2+4(1+b)^2\,\tilde s+(b+1)(b+5)\,\tilde s^{2}+2b\,\tilde s^{3},
+   \qquad \tilde s=s/m ,
+\]
+strictly positive for $b>0$, $s>0$. At $m=0$ the difference vanishes identically: the
+Euclidean chord is the flat limit, which is where the bound is attained. Finally
+$\arccos$ is bounded by $\pi/2$ and $J/\rho(R)>0$ strictly, so
+$2\arccos(J/\rho(R))<\pi$.
+\end{proof}
+
+\begin{remark}
+The comparison must be made in $\rho$, not in $r$: against the Euclidean chord in the
+radial variable the pointwise bound \emph{fails}, the rail integrand exceeding the
+Euclidean one near periapsis by up to $25\%$. The correct statement is that gravity
+strictly shortens the swept azimuth relative to the chord of the \emph{optical} radius
+$\rho$, and the deficit is governed by the polynomial above, which vanishes precisely at
+$m=0$.
 \end{remark}
 
 \begin{remark}[where global optimality does end]\label{rem:maxwell}
