@@ -54,6 +54,7 @@ PRD) is retained as the reference version.
 | `VaidyaMetric/` | Vaidya (dynamical BH, parameter = mass `m`) analysis, closed forms, figures. |
 | `ThakurtaMetric/` | Thakurta–Kerr (conformal rotating, parameter = `A` via `E_eff=Ê/A`) analysis, closed forms, figures. |
 | `KerrSessionScripts/` | Genus-2 machinery + the **generic-J (genus-2) closure pipeline** used in this study. |
+| `paper1/` | Paper I sources. `paper1_JMP.tex` is the JMP variant, whose formal core is proved rather than asserted; `paper1/verification/` holds its symbolic verification suite. |
 | `reproduce_reductions.py` | One-file check of the algebraic heart. |
 | `paper_style.py` | Shared matplotlib style helper. |
 
@@ -61,6 +62,8 @@ PRD) is retained as the reference version.
 | File | What it collects |
 |------|------------------|
 | `VERIFICATION_STATUS.md` | **Master table** of every result and its verification (SYM / NUM / SAGE / Mathematica). Start here. |
+| `paper1/verification/README.md` | Symbolic verification of the formal core of Paper I: which claim, where it appears in the manuscript, and how it is checked. Every check is an exact symbolic zero, run in two independent CAS. |
+| `paper1/verification/REPRODUCTION_section4.2.md` | Re-run of the archived trajectory scripts behind section 4.2 (penetration threshold, bounce, timing), with the numbers obtained. |
 | `SEP_COEFF_SYMBOLIC.md` | Separatrix (genus-1) closed forms: symbolic `b1,b2,b3`, clock residues, `Ce,C0`, period-level hierarchy. |
 | `GENUS2_CLOSED_FORM.md` | Generic-J (genus-2) closed form: `δφ = ½Ê Σ Q_kj W_kj + G_alg`, symbolic coefficients, tabulated special functions. |
 | `progress.md` | Chronological log of the whole derivation, brick by brick. |
