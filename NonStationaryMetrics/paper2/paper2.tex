@@ -555,7 +555,33 @@ using $g(u,u)=-1$,
 \emph{independently of the four-velocity}. The rate at which an uncontrolled
 worldline loses the rail is exactly the adiabatic parameter: the control effort
 and the expansion parameter of section~\ref{sec:adiabatic} are the same
-quantity, and both vanish exactly at frozen $A$. (The companion paper's Vaidya
+quantity, and both vanish exactly at frozen $A$.
+
+This also makes precise the price of the rail. Along an arbitrary worldline with
+four-acceleration $a=\nabla_uu$,
+$\dd\Ehat/\dd\tau=-g(a,W)-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu$, so
+holding the rail forces $g(a,W)=\varepsilon$ by~\eqref{eq:tk-drift}. Since
+$g(a,u)=0$, only the part of $W$ orthogonal to $u$ contributes, and
+$|W_\perp|^2=g(W,W)+g(W,u)^2=\Ehat^2-A^2f=\Ehat^2\bar v^2$; Cauchy--Schwarz in
+the (positive definite) rest space of $u$ then gives the \emph{sharp} bound
+\begin{equation}
+    |a|\ \ge\ \frac{\varepsilon}{\Ehat\,\bar v},
+    \qquad \bar v^2=1-\frac{A^2f}{\Ehat^2},
+    \label{eq:thrust-bound}
+\end{equation}
+with equality when $a$ is parallel to $W_\perp$---the minimum-thrust control.
+The bound is uniform in the four-velocity and sharpens the qualitative remark of
+Paper~I into a statement with a definite locus: writing $A^2f=\Ehat^2(1-\delta)$,
+the minimum thrust behaves as $\varepsilon/(\Ehat\sqrt\delta)$, so it
+\emph{diverges} as an inverse square root at the freezing surface $\bar v\to0$,
+where hypothesis~\eqref{eq:two-inequalities} fails and the indicatrix collapses.
+It does \emph{not} diverge at the conformal stationary limit: there $f\to0$,
+$\bar v\to1$, and $|a|_{\min}\to\varepsilon/\Ehat$, finite. The two boundaries of
+the control domain are therefore of different kinds---one is a failure of
+compactness at finite cost, the other a divergence of cost---and the distinction
+is worth keeping in view. At frozen $A$ the bound vanishes: no thrust is needed,
+which is the stationary case again
+(\texttt{verification/verify\_thrust\_bound.wls}). (The companion paper's Vaidya
 sector sits one rung lower: there the Kodama selector has
 $(\mathcal L_Kg)_{vv}=2m'(v)/r$ with $\nabla\!\cdot\!K=0$, so it is Killing for
 $m'=0$ but not even conformal Killing otherwise, and the drift
