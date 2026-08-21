@@ -107,13 +107,7 @@ domain and a non-autonomous Hamilton--Jacobi \emph{verification} criterion (glob
 minimisation being conditional, not automatic)---and then derive the extremal equations
 and their closed representations in two spherically symmetric non-stationary cases:
 Friedmann--Lema\^itre--Robertson--Walker (FLRW) at arbitrary spatial curvature and the
-ingoing Vaidya dynamical black hole. The domain is delimited at the outset:
-$g(K,K)=-(1-2m(v)/r)$ for the Kodama selector, so the admissible-velocity set is
-compact only for $r>2m(v)$ and the compact-control problem \emph{ends} at $r=2m(v)$;
-what the Vaidya calculation establishes is an exterior approach and contact threshold
-rather than an interior optimal trajectory, and $m'(v)<0$ in the ingoing metric is a
-formal continuation, physical evaporation requiring the outgoing problem. For Vaidya we
-obtain the approach phenomenology and a complete
+ingoing Vaidya dynamical black hole. For Vaidya we obtain the plunge phenomenology and a complete
 first-order adiabatic correction, verified against the true non-autonomous flow, that
 separates the homogeneous-expansion effects of the FLRW base from the radial
 spatial-gradient and mass-flow effects of the dynamical horizon. The rotating,
@@ -679,11 +673,8 @@ realizes the value function and is a \emph{global} minimizer on that region.
 
 \begin{proof}
 The maximum principle is necessary but not sufficient: a PMP extremal is a
-\emph{candidate} minimizer only. Minimality implies the PMP, but the PMP implies
-neither global nor \emph{local} minimality---that would need a second-variation
-or conjugate-point argument (Theorem~\ref{thm:jacobi}) or another sufficient
-condition. The sufficient global certificate is the
-calibration~\eqref{eq:calibration}. Let $(x(\cdot),\theta(\cdot))$ be
+\emph{candidate} minimizer, guaranteed only \emph{locally} optimal. The sufficient global
+certificate is the calibration~\eqref{eq:calibration}. Let $(x(\cdot),\theta(\cdot))$ be
 \emph{any} admissible competitor joining the data. Since~\eqref{eq:calibration} holds for
 every $\theta$, it holds in particular for the competitor's own control, so
 \[
@@ -851,97 +842,6 @@ Misner--Sharp mass. Vaidya is the paradigm (section~\ref{sec:kodama-energy}).
 fails and $W$ becomes a declared convention, with no distinguished normalization
 of the cost one-form. Levels (a)--(c) are what make the non-stationary rail
 canonical rather than arbitrary.
-
-\subsection{The price of the rail, and where the optical metric ceases to descend}
-\label{sec:price}
-The hierarchy above is qualitative. Two quantitative statements make it sharp,
-and both are consequences of a single identity.
-
-\begin{auxlemma}[rail drift and the control force]\label{lem:drift}
-Along any worldline with four-velocity $u$ and four-acceleration
-$a=\nabla_uu$,
-\begin{equation}
-    \frac{\dd}{\dd\tau}\big(\!-\!g(u,W)\big)
-      =-g(a,W)-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu .
-    \label{eq:drift-general}
-\end{equation}
-In particular the rail charge is conserved along \emph{geodesics} if and only if
-$\mathcal L_Wg$ annihilates $u\otimes u$; and holding the rail on a non-geodesic
-forces $g(a,W)=-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu$.
-\end{auxlemma}
-
-At level (a) the right-hand side vanishes identically and the rail is free, which
-is the Noether statement already made. Below level (a) it does not, and
-\eqref{eq:drift-general} quantifies the cost. For ingoing Vaidya with the Kodama
-selector the only nonvanishing component is $(\mathcal L_Kg)_{vv}=2m'(v)/r$, with
-$\nabla\!\cdot\!K=0$, so $K$ is Killing exactly when $m'=0$ and is \emph{not} even
-conformal Killing otherwise; along a geodesic
-\begin{equation}
-    \frac{\dd\Ehat}{\dd\tau}\bigg|_{\rm geodesic}=-\frac{m'(v)\,(u^v)^2}{r} .
-    \label{eq:vaidya-drift}
-\end{equation}
-At level (b), where $\mathcal L_Wg=2\psi g$, the drift is $\psi$ itself,
-independent of the four-velocity.
-
-Equation~\eqref{eq:drift-general} also bounds the thrust. Since $g(a,u)=0$, only
-the part of $W$ orthogonal to $u$ contributes, and
-$|W_\perp|^2=g(W,W)+g(W,u)^2=\Ehat^2-|W|^2$; Cauchy--Schwarz in the rest space of
-$u$ gives the \emph{sharp} bound
-\begin{equation}
-    |a|\ \ge\ \frac{\big|\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu\big|}
-                   {\sqrt{\Ehat^2-|W|^2}},
-    \label{eq:thrust-general}
-\end{equation}
-attained when $a$ is parallel to $W_\perp$---the minimum-thrust control. The
-denominator is exactly the quantity that vanishes on the freezing surface
-$\Ehat=|W|$ of Hypothesis~\ref{hyp:convex}, so the minimum thrust \emph{diverges}
-there, as an inverse square root in the margin $\Ehat^2-|W|^2$. It does not
-diverge merely because $|W|\to0$. The two boundaries of the control domain are
-therefore of different kinds: one is a loss of compactness at finite cost, the
-other a divergence of cost, and only the second makes the rail physically
-unattainable before the problem ceases to be posed.
-
-\paragraph{Why Theorem~\ref{thm:optical} must carry a time argument.} The optical
-metric of Theorem~\ref{thm:optical} is not merely conveniently written with the
-adapted time in it; there is an obstruction to removing it. Projecting along the
-orbits of $W$ is a submersion, and giving the base the fixed-energy metric
-$a_{ab}=\Ehat^2h_{ab}/[f(\Ehat^2-f)]$ makes it \emph{horizontally conformal} with
-dilation
-\begin{equation}
-    \Lambda^2=\frac{\Ehat^2}{f\,(\Ehat^2-f)},
-    \label{eq:dilation-p1}
-\end{equation}
-the Perlick factor itself. That the rescaling is \emph{conformal} at all is not
-an accident: by the Fuglede--Ishihara dichotomy
-\cite{Fuglede1978,Ishihara1979,BairdWood2003} a semiconformal map is either
-identically zero or conformal on the complement of the kernel of its
-differential.
-
-What fails away from level (a) is that the structure should \emph{descend}. A
-conformal submersion admits a rescaling of the base turning it into a Clairaut
-Riemannian submersion only when its dilation is constant along the fibres
-\cite{MeenaZawadzki2024}, and by Bishop's theorem \cite{Bishop1972} a Riemannian
-submersion of complete manifolds with connected fibres is Clairaut---so that the
-transverse invariant is conserved along geodesics---if and only if its fibres are
-totally umbilical with mean curvature of gradient form. When $W$ is not Killing,
-$\Lambda$ varies along the fibres, the horizontal distribution ceases to be
-totally geodesic, and no metric on a quotient reproduces the arrival time. The
-optical geometry then exists only on the total space, with the adapted time as an
-explicit argument. That is the content of Theorem~\ref{thm:optical}, and the
-reason it cannot be stated on a quotient the way Perlick's can.
-
-\begin{remark}
-Two structures from the stationary theory are, for the same reason, unavailable
-here and are not assumed. The fixed-energy variational theory of
-\cite{CaponioCoronaGiamboPiccione2024} makes the set of curves of constant
-Noether charge a $C^1$ closed submanifold of the path space---but the argument
-uses conservation, which is what fails below level (a). And the Palais--Smale
-property established for the constraint $\langle\dot z,\dot z\rangle=a<0$ in
-\cite{GiannoniMasielloPiccione1998} is for a constraint the flow preserves, which
-the rail is not. Theorem~\ref{thm:existence} accordingly proceeds by the direct
-method on the augmented state rather than by restricting a functional to a
-constraint submanifold.
-\end{remark}
 
 
 % ======================================================================
