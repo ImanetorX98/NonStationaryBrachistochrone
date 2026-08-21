@@ -533,14 +533,33 @@ Along a geodesic the rail charge obeys
       =-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu ,
     \label{eq:rail-drift}
 \end{equation}
-so $\Ehat$ is a Noether--Clairaut invariant precisely when $W$ is Killing. For
-ingoing Vaidya with the Kodama selector $K=\partial_v$, the only nonvanishing
-component is $(\mathcal L_Kg)_{vv}=2m'(v)/r$, while $\nabla\!\cdot\!K=0$; hence
-$K$ is Killing for $m'=0$ but is \emph{not} even conformal Killing otherwise, and
+so $\Ehat$ is a Noether--Clairaut invariant precisely when $W$ is Killing.
+
+For Thakurta--Kerr the computation closes exactly, and identifies the control
+effort with the small parameter of the paper. Since $g=A(\eta)^2\bar g$ with
+$\bar g$ the $\eta$-independent Kerr seed, for which $\partial_\eta$ is Killing,
 \begin{equation}
-    \frac{\dd\Ehat}{\dd\tau}\bigg|_{\rm geodesic}=-\frac{m'(v)\,(u^v)^2}{r} .
-    \label{eq:vaidya-drift}
+    \mathcal L_Wg=\mathcal L_{\partial_\eta}\!\big(A^2\bar g\big)
+      =2AA'\,\bar g=\frac{2A'}{A}\,g ,
+    \label{eq:tk-ckv}
 \end{equation}
+so $W=\partial_\eta$ is a \emph{conformal Killing} vector of the full metric
+with conformal factor $\psi=A'/A=\varepsilon$ and $\nabla\!\cdot\!W=4\psi$: the
+middle rung of the Killing $\to$ conformal-Killing $\to$ Kodama hierarchy, here
+made quantitative. Substituting~\eqref{eq:tk-ckv} into~\eqref{eq:rail-drift} and
+using $g(u,u)=-1$,
+\begin{equation}
+    \frac{\dd\Ehat}{\dd\tau}\bigg|_{\rm geodesic}=\frac{A'}{A}=\varepsilon ,
+    \label{eq:tk-drift}
+\end{equation}
+\emph{independently of the four-velocity}. The rate at which an uncontrolled
+worldline loses the rail is exactly the adiabatic parameter: the control effort
+and the expansion parameter of section~\ref{sec:adiabatic} are the same
+quantity, and both vanish exactly at frozen $A$. (The companion paper's Vaidya
+sector sits one rung lower: there the Kodama selector has
+$(\mathcal L_Kg)_{vv}=2m'(v)/r$ with $\nabla\!\cdot\!K=0$, so it is Killing for
+$m'=0$ but not even conformal Killing otherwise, and the drift
+$-m'(v)(u^v)^2/r$ does depend on the four-velocity.)
 
 The controlled rail is what replaces the Clairaut relation when the submersion
 fails to be Clairaut. In the stationary case $-g(u,W)=\Ehat$ holds
@@ -551,8 +570,81 @@ exactly that deficit, $a\cdot W=\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu$. Th
 umbilical, Clairaut and conformal-Killing hypotheses are therefore not a
 framework this problem sits inside but the boundary of the region where it is
 non-trivial: the present programme lives in their complement, and the size of the
-failure is the control effort. Equations~\eqref{eq:dilation}--\eqref{eq:vaidya-drift}
+failure is the control effort. Equations~\eqref{eq:dilation}--\eqref{eq:tk-drift}
 are verified in \texttt{verification/verify\_submersion\_link.wls}.
+
+\paragraph{Soliton selectors: the drift is pure curvature.} There is one class of
+selector for which~\eqref{eq:rail-drift} closes in the curvature alone. A Ricci
+soliton is a vector field whose deformation tensor is prescribed by the geometry,
+$\tfrac12\mathcal L_Xg+\mathrm{Ric}=\lambda g$; substituting this
+into~\eqref{eq:rail-drift} and using $g(u,u)=-1$ gives, for $W=X$,
+\begin{equation}
+    \frac{\dd\Ehat}{\dd\tau}\bigg|_{\rm geodesic}
+      =\lambda+\mathrm{Ric}(u,u) .
+    \label{eq:soliton-drift}
+\end{equation}
+No derivative of $W$ survives: the effort required to hold the rail is the
+soliton constant plus the Raychaudhuri focusing scalar, that is, the energy
+density the traveller measures. In vacuum the drift is the constant $\lambda$;
+in vacuum \emph{and} steady ($\lambda=0$) one recovers $\mathcal L_Xg=0$, so $X$
+is Killing and the rail costs nothing---the stationary case. This places the
+controlled rail inside the soliton literature
+\cite{Hamilton1986,Lecian2026Yamabe,Lecian2026Solitons} in a precise way, and
+locates the present geometry relative to it. For a conformal Killing selector
+the soliton condition reads $\mathrm{Ric}=(\lambda-\psi)g$, that is, the
+spacetime would have to be \emph{Einstein}. Thakurta--Kerr is not: already at
+$a=0$ the conformal factor sources an imperfect fluid and
+$\mathrm{Ric}-\tfrac14Rg\neq0$ for generic $A(\eta)$, while the seed is
+Ricci-flat at $A$ constant. The soliton class therefore does not contain this
+selector, whereas the conformal-Killing class does---which is exactly why the
+hierarchy has three rungs and not two
+(\texttt{verification/verify\_tk\_ckv\_rail.wls},
+\texttt{verify\_soliton\_rail.wls}).
+
+\paragraph{Curvature of the optical base, and why Myers-type hypotheses are
+unavailable.} Since the extremals are geodesics of the optical metric and optical
+length is arrival time, a curvature bound on the base would bound the arrival
+time before a conjugate point. It is therefore worth recording what that
+curvature is. At frozen $A$ the conformal-Kerr optical geometry is the Kerr one
+at $E_{\rm eff}=\Ehat/A$ (section~\ref{sec:closed}); we record its
+non-rotating limit, where the base is Riemannian and the computation is closed.
+With $h=\dd r^2/f+r^2\dd\varphi^2$ and $a=\Lambda^2h$, and $\Ehat$ standing for
+$E_{\rm eff}$ throughout, the Gauss curvature of the fixed-energy optical
+surface is
+\begin{equation}
+    K=\frac{M\big[16M^3+2(9\Ehat^2\!-\!14)M^2r
+      +(3\Ehat^4\!-\!19\Ehat^2\!+\!16)Mr^2
+      -(2\Ehat^2\!-\!3)(\Ehat^2\!-\!1)r^3\big]}
+      {\Ehat^2r^5\big[2M+(\Ehat^2-1)r\big]} ,
+    \label{eq:optical-gauss}
+\end{equation}
+which reduces as $\Ehat\to\infty$ to the classical Fermat value
+$-(2M/r^3)(1-3M/2r)$. Its far-field behaviour carries a threshold that appears to
+be new:
+\begin{equation}
+    r^3K\ \longrightarrow\ -\frac{M(2\Ehat^2-3)}{\Ehat^2}
+    \qquad (r\to\infty),
+    \label{eq:optical-asym}
+\end{equation}
+so the distant optical geometry is \emph{focusing} for $\Ehat^2<3/2$ and
+\emph{defocusing} for $\Ehat^2>3/2$, the critical rail energy being
+$\Ehat=\sqrt{3/2}$, an asymptotic speed $v=1/\sqrt3$. At the critical value the
+leading term vanishes and $r^4K\to-23M^2/3$. Since focusing is what produces
+conjugate points, $\Ehat=\sqrt{3/2}$ separates two regimes for the global
+behaviour of distant extremals.
+
+For every $\Ehat$, however, $K\to0$ as $r\to\infty$. A Myers-type theorem
+\cite{Myers1941} requires $\mathrm{Ric}\ge(n-1)k>0$ \emph{uniformly}, and no such
+$k$ exists on an unbounded exterior: asymptotic flatness of the optical geometry
+is incompatible with the Myers hypothesis, so no diameter---hence no
+arrival-time---bound follows from it. The obstruction is stronger for the
+curvature operator, whose positivity forces the manifold to be a space form
+\cite{Hamilton1986,BoehmWilking2008}, which an asymptotically flat optical base
+is not. Conjugate points here must therefore be located directly from the Jacobi
+equation, as they are in Paper~I, rather than inferred from a curvature-operator
+or Myers-type hypothesis. Equations~\eqref{eq:optical-gauss}--\eqref{eq:optical-asym}
+and this conclusion are verified in
+\texttt{verification/verify\_myers\_optical.wls}.
 
 
 
