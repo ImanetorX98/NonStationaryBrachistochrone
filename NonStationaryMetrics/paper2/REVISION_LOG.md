@@ -1,5 +1,65 @@
 # Paper II — CQG-116884, revision log
 
+---
+
+## ▶ RESUME HERE (session of 2026-08-21)
+
+**State:** `main` at `91618c4`, four commits of revision work, **not pushed**.
+`paper2.pdf` builds clean: 57 pp, 0 unresolved refs, 0 floats too large, 8
+overfull boxes all pre-existing and outside the edited regions.
+
+**Done:** R1.1 · R1.2 · R1.4 · R1.5 · R1.6 (tiering) · R1.7 · R1.8 · R1.9 ·
+R1.10 (cap_full + manifest; env lock outstanding) · R1.12 · referee 2
+bibliography.
+
+**Next, in this order:**
+
+1. **M1–M10 sweep.** Highest value: M2 (state at first use that $J=p_\varphi$ is
+   a control costate — `prot:names` covers it, needs a pointer at first use),
+   M5 (units or "$M=1$" declared in *every* numerical caption and table),
+   M7 (keep $E,\hat E,E_{\rm eff},J,J_{\rm eff}$ distinct in every theorem and
+   caption — this one needs a real audit), M8 (say whether plotted errors are
+   absolute/relative/componentwise, and name the interval for every fitted
+   slope), M10 (shorten the conclusion — partly done).
+2. **R1.3**: propagate `prot:endpoint` into §2.3 and `sec:bvp`; check every
+   $t$/$\eta$ comparison actually uses $J_t=AJ_\eta$ and says so.
+3. **R1.11**: Paper I's incorrect PMP sentence is already fixed in
+   `paper1/paper1_JMP.tex`; port that fix (and the expanded existence/normality
+   statement) into `paper1/paper1.tex`, which is what Paper II cites.
+4. **R1.10 environment lock**: `NonStationaryMetrics/requirements-lock.txt`
+   exists — verify it is current and reference it from `MANIFEST.tsv`.
+5. **Author Response** (`response_to_referees_CQG.tex`). The big one. Sections
+   below are already written in the voice needed; lift them. Structure: one
+   numbered reply per referee-1 major (12), per minor (10), then referee 2.
+   **Tone on the two disagreements: concede-and-add, never contradict.**
+   - Referee 2's "trivial application of theorem T2": decline on the merits,
+     politely, after actually reading the preprint.
+   - Referee 2's Masiello/Verderesi slip: do **not** say "you are wrong". Cite
+     the paper correctly and add the genuine Giannoni–Masiello–Piccione works
+     (already in `refs.bib`). The correction then makes itself.
+6. **Highlighted PDF**: `latexdiff submitted_CQG_2026-08-01/paper2.tex
+   paper2.tex > paper2_highlighted.tex`. Expect to hand-fix the diff around the
+   new theorem environments and the `\input{provenance/...}` line.
+7. **Four submission files** per the CQG checklist, then a **new Zenodo
+   release** (must include `cap_full.py`, `provenance/`, the `verification/`
+   suite, and regenerated hashes) and a DOI bump in the manuscript.
+
+**Open author decisions:**
+- Whether to also port the corrected classification into `paper1.tex`/the JMP
+  variant, which state the old trichotomy in their cross-references.
+- Whether the JMP submission of Paper I should be told that Paper II's shared
+  numbered results have been renumbered/restated.
+
+**Traps re-learned this session** (do not repeat):
+- `grep -c Overfull` does not catch `Float too large for page`. Check both.
+- A generated `\newcommand` that already contains `$…$` must not be used inside
+  `$…$`. Cost one failed build.
+- `r_turn()` returned the grid point *inside* the forbidden region, silently
+  dropping a curve from a log-log panel with no error. Bracket and solve.
+- Hand-copied hashes and fitted slopes always drift. Generate them.
+
+---
+
 Internal working file. **Not** submitted to CQG. It is the source from which
 `response_to_referees_CQG.tex` (the Author Response) is written, and it records
 *why* each change was made so the two stay consistent.
