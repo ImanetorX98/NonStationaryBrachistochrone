@@ -1,6 +1,6 @@
 {
   "title": "NonStationaryBrachistochrone: reproducibility package for controlled-rail brachistochrones in non-stationary spacetimes",
-  "description": "<p>Symbolic derivations, numerical verification scripts, figure-generation code, and manuscript sources for controlled-rail brachistochrones in non-stationary spacetimes. The repository supports the companion studies of the FLRW and Vaidya sectors and of the conformal Kerr (Thakurta-Kerr) sector.</p><p><strong>New in 1.2.0.</strong> A symbolic verification suite for the formal core of Paper I, under <code>paper1/verification/</code>: every algebraic step that the manuscript states as proved is re-derived independently in two computer-algebra systems (Mathematica and SymPy), each check returning an exact symbolic zero rather than a numerical tolerance. <code>verify_paper1_core.py</code> exits non-zero on failure and can be used as a regression gate. The suite covers the rail indicatrix and the time-dependent optical metric with Perlick's stationary metric as its limit; the reduction determinant identified as a resultant; the closed forms of the reduction coefficients; the appendix-B residues; and the conjugate-point and caustic analysis. <code>REPRODUCTION_section4.2.md</code> records a re-run of the archived trajectory scripts behind the phenomenology section. <code>paper1/build_paper1.sh</code> makes a clean checkout turnkey: it regenerates all thirteen figures from their scripts, collects them, and compiles the manuscript.</p>",
+  "description": "<p>Symbolic derivations, numerical verification scripts, figure-generation code, and manuscript sources for controlled-rail brachistochrones in non-stationary spacetimes. The repository supports the companion studies of the FLRW and Vaidya sectors and of the conformal Kerr (Thakurta-Kerr) sector.</p><p><strong>New in 1.3.0 - referee-driven release.</strong> This version answers the reproducibility findings of the Classical and Quantum Gravity review of the conformal-Kerr manuscript (CQG-116884), and every one of them was correct.</p><ul><li><strong>Restored <code>cap_full.py</code>.</strong> The three computer-assisted-proposition runners open with <code>import cap_full</code>, but the module had been factored out of the prototype during development and never archived, so a fresh clone could not run the representative certificate at all. It is restored verbatim from the prototype, with a self-test.</li><li><strong>Fixed the import path in all thirteen figure generators.</strong> They inserted the repository root on <code>sys.path</code> while the shared style module lives one directory down, so on a fresh clone every one of them failed at import. This also exposed a silent bug in a turning-radius helper, which returned a grid point inside the forbidden region and dropped a curve from a published log-log panel with no error raised.</li><li><strong>Checksums and fitted slopes are now generated, not transcribed.</strong> The same two files had carried three different SHA-256 prefixes - one printed in the manuscript, one in the previous release, one in the working tree. A single command, <code>paper2/provenance/make_provenance.py</code>, now runs each validation script, parses the slopes and their covariance sigmas, reads the epsilon-window out of the source, hashes every script, and emits the LaTeX macros the manuscript uses. <code>MANIFEST.tsv</code> maps sixteen artefacts each to one command and one checksum, and the environment lockfile - now including the computer-algebra system version - is itself a manifest entry.</li><li><strong>New symbolic verification suite for the conformal-Kerr sector</strong> under <code>paper2/verification/</code>: 45 checks settling the local classification at the conformal stationary limit from the Hamilton equations, and 14 more certifying the exterior retrograde separatrix and its control-domain inequalities. Each check is an exact symbolic zero or a high-precision numerical convergence test, not a tolerance.</li></ul><p>The Paper I verification suite introduced in 1.2.0 (<code>paper1/verification/</code>, two computer-algebra systems, exact symbolic zeros) is unchanged, as is <code>paper1/build_paper1.sh</code>, which makes a clean checkout turnkey.</p>",
   "creators": [
     {
       "name": "Rosignoli, Iman",
@@ -8,7 +8,7 @@
       "affiliation": "University of Pavia"
     }
   ],
-  "version": "1.2.0",
+  "version": "1.3.0",
   "access_right": "open",
   "license": "mit",
   "upload_type": "software",
@@ -21,13 +21,19 @@
     "FLRW spacetime",
     "Thakurta-Kerr spacetime",
     "optimal control",
+    "Pontryagin maximum principle",
     "adiabatic perturbation theory",
     "separatrix dynamics",
     "Finsler geometry",
     "Randers metric",
+    "hyperelliptic curves",
+    "iterated Abelian integrals",
     "computer-algebra verification",
+    "computer-assisted proof",
+    "interval arithmetic",
     "conjugate points",
-    "reproducibility"
+    "reproducibility",
+    "research software provenance"
   ],
   "related_identifiers": [
     {
