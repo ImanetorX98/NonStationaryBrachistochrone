@@ -512,8 +512,59 @@ of mine: my own entry for that paper had the wrong page number, now corrected.
 \R{Curvature-operator eigenvalues, weighted manifolds, and generalised
 hyperplanes.}
 
-\reply I have now read the cited preprint, and with respect I do not think the
-requested characterisation can be made. Theorem~T2 there reads, in full:
+\reply This comment sent me back to the geometry, and it was worth it: there
+\emph{is} a precise structural relation between the two frameworks, which the
+manuscript had left implicit. I have made it explicit in a new
+section~\msSecSubmersion, \emph{Relation to conformal submersions}, and I am
+grateful for the prompt. I do not, however, think the relation is the one the
+comment states, and I set out below both what it is and why.
+
+\emph{What the relation is.} The optical reduction used throughout is a
+submersion. Writing a stationary metric in threading form and projecting along the
+orbits of the selector, the horizontal vectors satisfy $g(X,X)=h_{ab}X^aX^b$, and
+giving the base Perlick's fixed-energy optical metric makes the projection
+\emph{horizontally conformal} with dilation
+\[
+   \Lambda^2=\frac{\hat E^2}{f\,(\hat E^2-f)} ,
+\]
+which is the Perlick factor itself. So Theorem~T2---the Fuglede--Ishihara
+dichotomy, that a semiconformal map is either identically zero or conformal and
+surjective off the kernel of its differential---does bear on this work, and in a
+way I had not stated: it is the abstract reason why the optical metric must be a
+\emph{conformal} rescaling of the spatial metric rather than a general
+deformation. That is a real observation about the form of the theory, and the new
+section credits it.
+
+\emph{Why it is not an application, trivial or otherwise.} T2 supplies the
+existence of a conformal factor; it does not supply its value, which requires
+solving the rail jointly with the mass shell. More importantly, its hypotheses
+are exactly what the non-stationary problem gives up, and the loss is
+quantitative. For the induced structure to descend to a base the selector must be
+conformal Killing; and by Bishop's theorem---reference [14] of the cited
+preprint---a submersion is Clairaut, so that the transverse invariant is conserved
+along geodesics, if and only if its fibres are totally umbilical, which is the
+condition Theorem~T20 of that preprint imposes. Along a geodesic,
+\[
+   \frac{\dd}{\dd\tau}\big(\!-\!g(u,W)\big)
+     =-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu ,
+\]
+so the rail charge is a Noether--Clairaut invariant precisely when $W$ is Killing.
+For ingoing Vaidya with the Kodama selector the only nonvanishing component is
+$(\mathcal L_Kg)_{vv}=2m'(v)/r$ with $\nabla\!\cdot\!K=0$, so $K$ is not even
+conformal Killing once $m'\neq0$, and
+$\dd\hat E/\dd\tau|_{\rm geodesic}=-m'(v)(u^v)^2/r$.
+
+The controlled rail is what \emph{replaces} the Clairaut relation when the
+submersion fails to be Clairaut: in the stationary case the constraint holds
+automatically and there is nothing to control, while in the non-stationary case it
+fails at the rate above and must be enforced, the required four-acceleration
+supplying exactly that deficit. The umbilical, Clairaut and conformal-Killing
+hypotheses are thus not a framework this work sits inside, but the boundary of the
+region where it has content: the programme lives in their complement, and the size
+of the failure is the control effort. All of this is verified symbolically in the
+reproducibility package.
+
+For completeness, Theorem~T2 reads, in full:
 
 \begin{referee}
 either $\psi$ is the identically-zero map, or $\psi$ is conformal and it is
@@ -521,12 +572,10 @@ surjective on the complement of the $Ker[d\Psi_x]$,
 \end{referee}
 
 \noindent where (Definition~D1) $\psi$ is a \emph{semiconformal} map, that is a
-Lipschitz $C^1$ dense map $\psi:(P^m,g_{ij})\to(Q^n,h_{ij})$. This is the standard
-horizontal-weak-conformality dichotomy of harmonic-morphism theory, and it is a
-statement about the differential of a \emph{map between manifolds} at a point.
+Lipschitz $C^1$ dense map $\psi:(P^m,g_{ij})\to(Q^n,h_{ij})$.
 
-The specific claim is checkable, and I have checked it. Equation~(9) of the
-submitted manuscript is
+The specific claim attached to it is checkable, and I have checked it.
+Equation~(9) of the submitted manuscript is
 \[
   \big(E\partial_E+J\partial_J\big)F
    =\mathrm{d}_r\!\left[\frac{\mathcal A(r)}{\mathcal R}\right]
@@ -534,9 +583,10 @@ submitted manuscript is
 \]
 the Euler (scaling) reduction of the adiabatic source: a Hermite-type reduction
 of abelian differentials on a hyperelliptic curve to a total derivative plus a
-first-/second-kind basis. I can see no route from a dichotomy about semiconformal
-maps to a reduction of abelian integrals, and I do not believe the two belong to
-the same area.
+first-/second-kind basis. I can see no substitution carrying a qualitative
+dichotomy about the differential of a map into a reduction of abelian integrals,
+and it is that kind of short, exhibitable chain that ``trivial application'' would
+require.
 
 Beyond that specific point, the objects differ. A controlled-rail brachistochrone is not a geodesic of
 a metric, weighted or otherwise: it is an extremal of a time-optimal control

@@ -35,6 +35,7 @@ WANTED = {
     "sec:trichotomy":       "SecClassification",
     "sec:inversion":        "SecInversion",
     "sec:thakurta":         "SecThakurta",
+    "sec:submersion":       "SecSubmersion",
     "app:validation":       "AppValidation",
     "lem:compact":          "LemCompact",
     "prot:status":          "ProtStatus",

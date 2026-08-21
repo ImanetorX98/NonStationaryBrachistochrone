@@ -486,6 +486,74 @@ Hamiltonian~\eqref{eq:Heta} remains regular there; the limits $\Ehat\to\infty$
 (null Kerr optics), $A=1$ (stationary Perlick on Kerr), $a=0$
 (Thakurta--Schwarzschild) and $M=a=0$ ($n=1/v$, FLRW) are all recovered.
 
+% ----------------------------------------------------------------------
+\subsection{Relation to conformal submersions}
+\label{sec:submersion}
+% ----------------------------------------------------------------------
+The optical reduction just described is a submersion, and it is worth saying
+exactly which one, because that locates the controlled rail inside a body of
+existing geometry and---more usefully---identifies precisely which of its
+hypotheses the non-stationary problem gives up.
+
+Write a stationary metric in threading form,
+$g=-f(\dd t+\beta_a\dd x^a)^2+h_{ab}\dd x^a\dd x^b$ with $f=-g(K,K)>0$, and let
+$\pi:M\to S$ be the projection along the orbits of $K$. A vector is horizontal,
+i.e.\ $g$-orthogonal to $K$, iff $X^t=-\beta_aX^a$, and for such vectors
+$g(X,X)=h_{ab}X^aX^b$: with $h$ on the base, $\pi$ is a Riemannian submersion.
+Giving the base instead the fixed-energy optical metric
+$a_{ab}=\Ehat^2h_{ab}/[f(\Ehat^2-f)]$ of Perlick \cite{Perlick1991} makes $\pi$
+\emph{horizontally conformal}, with dilation
+\begin{equation}
+    \Lambda^2=\frac{a(\dd\pi X,\dd\pi X)}{g(X,X)}
+      =\frac{\Ehat^2}{f\,(\Ehat^2-f)} ,
+    \label{eq:dilation}
+\end{equation}
+that is, the Perlick factor itself; $\Lambda^2\to1/f$ as $\Ehat\to\infty$ gives
+the null Fermat case, and $\Lambda^2>0$ exactly above freezing.
+
+This is not incidental. By the Fuglede--Ishihara dichotomy
+\cite{Fuglede1978,Ishihara1979,BairdWood2003}---a semiconformal map is either
+identically zero or conformal and surjective on the complement of the kernel of
+its differential---the optical projection has no option but to rescale $h$
+\emph{conformally}. The dichotomy explains the \emph{form} of Perlick's metric;
+what it does not supply is the value~\eqref{eq:dilation} of the factor, which
+requires solving the rail jointly with the mass shell.
+
+The hypotheses of that framework are exactly what the non-stationary problem
+loses, and the loss is quantitative. For the induced structure to descend to a
+base at all, the horizontal conformal geometry must be invariant along the
+fibres, i.e.\ $W$ must be conformal Killing. Moreover, by Bishop's theorem
+\cite{Bishop1972} a submersion is Clairaut---so that the transverse invariant is
+conserved along geodesics---if and only if its fibres are totally umbilical, the
+condition organising the recent literature on Clairaut conformal submersions and
+on umbilical solitons \cite{MeenaZawadzki2024,Lecian2026Yamabe,Lecian2026Solitons}.
+Along a geodesic the rail charge obeys
+\begin{equation}
+    \frac{\dd}{\dd\tau}\big(\!-\!g(u,W)\big)
+      =-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu ,
+    \label{eq:rail-drift}
+\end{equation}
+so $\Ehat$ is a Noether--Clairaut invariant precisely when $W$ is Killing. For
+ingoing Vaidya with the Kodama selector $K=\partial_v$, the only nonvanishing
+component is $(\mathcal L_Kg)_{vv}=2m'(v)/r$, while $\nabla\!\cdot\!K=0$; hence
+$K$ is Killing for $m'=0$ but is \emph{not} even conformal Killing otherwise, and
+\begin{equation}
+    \frac{\dd\Ehat}{\dd\tau}\bigg|_{\rm geodesic}=-\frac{m'(v)\,(u^v)^2}{r} .
+    \label{eq:vaidya-drift}
+\end{equation}
+
+The controlled rail is what replaces the Clairaut relation when the submersion
+fails to be Clairaut. In the stationary case $-g(u,W)=\Ehat$ holds
+\emph{automatically} along geodesics and there is nothing to control; in the
+non-stationary case it fails at the rate~\eqref{eq:rail-drift}, and the
+constraint must be \emph{enforced}, the required four-acceleration supplying
+exactly that deficit, $a\cdot W=\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu$. The
+umbilical, Clairaut and conformal-Killing hypotheses are therefore not a
+framework this problem sits inside but the boundary of the region where it is
+non-trivial: the present programme lives in their complement, and the size of the
+failure is the control effort. Equations~\eqref{eq:dilation}--\eqref{eq:vaidya-drift}
+are verified in \texttt{verification/verify\_submersion\_link.wls}.
+
 
 
 \begin{figure}[ht]
