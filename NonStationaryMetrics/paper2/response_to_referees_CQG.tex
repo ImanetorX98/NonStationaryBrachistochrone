@@ -512,10 +512,33 @@ of mine: my own entry for that paper had the wrong page number, now corrected.
 \R{Curvature-operator eigenvalues, weighted manifolds, and generalised
 hyperplanes.}
 
-\reply I have considered this carefully and, with respect, I do not think the
-requested characterisation can be made, for two independent reasons.
+\reply I have now read the cited preprint, and with respect I do not think the
+requested characterisation can be made. Theorem~T2 there reads, in full:
 
-First, the objects differ. A controlled-rail brachistochrone is not a geodesic of
+\begin{referee}
+either $\psi$ is the identically-zero map, or $\psi$ is conformal and it is
+surjective on the complement of the $Ker[d\Psi_x]$,
+\end{referee}
+
+\noindent where (Definition~D1) $\psi$ is a \emph{semiconformal} map, that is a
+Lipschitz $C^1$ dense map $\psi:(P^m,g_{ij})\to(Q^n,h_{ij})$. This is the standard
+horizontal-weak-conformality dichotomy of harmonic-morphism theory, and it is a
+statement about the differential of a \emph{map between manifolds} at a point.
+
+The specific claim is checkable, and I have checked it. Equation~(9) of the
+submitted manuscript is
+\[
+  \big(E\partial_E+J\partial_J\big)F
+   =\mathrm{d}_r\!\left[\frac{\mathcal A(r)}{\mathcal R}\right]
+   +\sum_{k=0}^{4}c_k\,r^k/\mathcal R ,
+\]
+the Euler (scaling) reduction of the adiabatic source: a Hermite-type reduction
+of abelian differentials on a hyperelliptic curve to a total derivative plus a
+first-/second-kind basis. I can see no route from a dichotomy about semiconformal
+maps to a reduction of abelian integrals, and I do not believe the two belong to
+the same area.
+
+Beyond that specific point, the objects differ. A controlled-rail brachistochrone is not a geodesic of
 a metric, weighted or otherwise: it is an extremal of a time-optimal control
 problem with an actively enforced pointwise constraint $-g(u,W)=\hat E$, whose
 admissible set is a compact indicatrix and whose Hamiltonian is a support
@@ -525,12 +548,25 @@ rescaling of the metric; the revision makes this concrete by exhibiting a regime
 where the control set loses compactness and the problem ceases to be posed at
 all, which has no counterpart for geodesics of a weighted manifold.
 
-Second, the requested statement---that the results here are ``a trivial
-application'' of a theorem in a preprint---would be a claim about priority and
-logical dependence that I am not in a position to make, since I do not find that
-the cited theorem implies the controlled-rail construction, and since the works
-in question are, so far as I can determine, unrefereed preprints. I would of
-course reconsider on being shown the specific implication.
+A further difference is decisive for the physical reading. Remark~R4 of the
+cited preprint stresses that ``the photon follows the geodesics in GR'', and
+Theorem~T25 there constructs a \emph{Killing} vector field from the four-velocity.
+The controlled rail is neither: $W$ is in general \emph{not} a Killing field of
+the background---which is precisely why this programme needs a
+Killing\,$\to$\,conformal-Killing\,$\to$\,Kodama hierarchy at all---and the
+extremals are actively forced worldlines requiring proper acceleration, not
+geodesics.
+
+The companion claim, that $W$ of equation~(1) of Paper~I follows from the
+Hamiltonian analysis of a second preprint, concerns a different work which I have
+not been able to obtain. I note only that equation~(1) of Paper~I is the rail
+constraint $-u\cdot W=\hat E$, which is the \emph{definition} of the control
+problem rather than a derived result, so it is not clear to me what it would mean
+for it to be obtained from a prior analysis.
+
+For these reasons I am not in a position to state that the present results are a
+trivial application of Theorem~T2. I would of course reconsider on being shown
+the specific implication, step by step.
 
 If the editor considers the connection worth recording, I would be glad to add a
 neutral remark noting that weighted-manifold and curvature-operator methods
