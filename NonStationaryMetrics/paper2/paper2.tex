@@ -97,11 +97,41 @@ framework remains open.
 % ======================================================================
 \section{Introduction}
 \label{sec:intro}
-The relativistic brachistochrone---the fastest constrained ``rail'' worldline reaching a
-fixed spatial target at a free arrival clock---was formulated by Perlick for stationary
+The relativistic brachistochrone problem---to find the time-optimal constrained ``rail''
+worldline reaching a fixed spatial target at a free arrival clock---was formulated by
+Perlick for stationary
 spacetimes \cite{Perlick1991,PerlickRayOptics}, connecting to Fermat's principle and
 optical (Randers--Zermelo--Finsler) geometry
-\cite{Kovner1990,Randers1941,GibbonsWerner2008,GibbonsRanders2009,BaoRoblesShen}. In the
+\cite{Kovner1990,Randers1941,GibbonsWerner2008,GibbonsRanders2009,BaoRoblesShen}.
+
+\paragraph{What is established, and what is new here.} It is useful to state the division
+explicitly. \emph{Established:} the stationary problem itself, together with its reduction
+to a Finsler or Jacobi length functional on a spatial slice---Perlick's fixed-energy
+optical metric \cite{Perlick1991}, the sub-Riemannian formulation of Giannoni, Piccione and
+Verderesi \cite{GiannoniPiccioneVerderesi1997}, the arrival-time variational theory of
+Giannoni and Piccione \cite{GiannoniPiccione2002}, and, decisively for questions of global
+minimality, the Morse theory of Giannoni, Piccione and Tausk
+\cite{GiannoniPiccioneTausk2002}, which supplies the index-theoretic framework in which
+conjugate points and the number of connecting extremals are counted. The classical problem
+and its geometry are reviewed in \cite{HawsKiser1995}; ruled-surface constructions built
+from brachistochrones in stationary spacetimes have been developed recently by Ta\c{s}
+\cite{Tas2025}. All of this presupposes a timelike Killing field and a conserved energy.
+
+\emph{New here:} the object is not a geodesic of a fixed optical metric but an extremal of
+a control problem whose invariant $\Ehat=-g(u,W)$ is \emph{actively maintained} against a
+non-stationary background, with $W$ drawn from a Killing--CKV--Kodama hierarchy. Three
+consequences have no stationary counterpart: the admissible-velocity set can lose
+compactness, so the problem possesses a causal boundary at which it ceases to be posed
+(section~\ref{sec:domain}); the reduced Hamiltonian is not an interior first integral, so
+the optical metric acquires an explicit dependence on the adapted time; and the response to
+slow evolution of the background is a genuine first-order perturbation problem with its own
+hyperelliptic transcendental content. Our results should be read as extending the
+stationary theory in that direction, not as re-deriving it. Where global minimality is at
+issue we appeal to the conjugate-point and Morse-theoretic notions of
+\cite{GiannoniPiccioneTausk2002} rather than asserting optimality
+(Protocol~\ref{prot:status}).
+
+In the
 companion Paper~I~\cite{PaperOne} we established the shared control-theoretic
 foundations---the
 controlled-rail principle, an existence and normality theorem, the non-autonomous
@@ -314,6 +344,36 @@ different comparisons. The distinct two-spatial-endpoint comparison used in
 section~\ref{sec:bvp} is flagged there.
 \end{protocol}
 
+\begin{protocol}[Nomenclature]
+\label{prot:names}
+The following names are used without exception, because in a controlled,
+non-stationary problem the familiar words denote different objects.
+\begin{itemize}
+\item $\Ehat=-g(u,W)$ is the \emph{rail charge}: a quantity \emph{actively
+maintained} by the control. Outside a Killing case it is not the conserved
+energy of a freely falling test particle, and the rail generally requires proper
+acceleration, which can diverge near the freezing surface or the stationary
+limit.
+\item $J=p_\varphi$ is the \emph{axial control costate}, not the mechanical
+angular momentum $g(u,\partial_\varphi)$. At frozen $A$ the two branch costates
+obey $J_t=A\,J_\eta$ (Protocol~\ref{prot:endpoint}).
+\item The rail minimises a \emph{selected elapsed clock}. It does not minimise
+thrust, fuel, impulse, or integrated proper acceleration.
+\item $\re=2M$ is the \emph{conformal stationary limit}, and is where the
+compact-control problem ends (Lemma~\ref{lem:compact}); we avoid ``ergosphere''
+for it when the control-theoretic role is what matters.
+\item $\rp=M+\sqrt{M^2-a^2}$ is the \emph{seed Kerr null surface}, equivalently a
+\emph{conformal Killing-horizon candidate}. For time-dependent $A(\eta)$ neither
+the apparent (trapping) horizon nor the event horizon has been computed here, so
+we do not write ``the horizon'' for it. Where $\Delta=0$ labels a pole of an
+integrand we say ``third-kind letter at $\Delta=0$''.
+\item For $r<2M$, where $W$ is spacelike, we write ``continued orbit'', ``root
+pattern'' or ``analytic branch'', never ``capture'', ``plunge'' or ``bounce'':
+those words presuppose a control problem that is not posed there
+(Protocol~\ref{prot:status}, type~(A)).
+\end{itemize}
+\end{protocol}
+
 \paragraph{The conformal-time ($\eta$) brachistochrone.} The relation
 $\dd t=A(\eta)\,\dd\eta$ makes $\eta$ the canonical conformal clock and shows that the
 arrival branch carries no new content beyond $t$: the two are the \emph{same} spatial
@@ -328,7 +388,7 @@ any fixed-endpoint path the arrival time $t_f=\int_0^{\eta_f}A\,\dd\eta$ is a st
 increasing function of $\eta_f$ ($A>0$), so $\arg\min\eta_f=\arg\min t_f$ for
 \emph{every} $A(\eta)$. Hence the frozen, adiabatic and separatrix $\eta$-solutions are
 exactly the $t$-solutions of sections~\ref{sec:thakurta}--\ref{sec:closed}; there are
-\emph{two} distinct optimal families, not three---the arrival branch $t\equiv\eta$ and
+\emph{two} distinct extremal families, not three---the arrival branch $t\equiv\eta$ and
 the proper-time branch $\tau$. The $\eta$ gauge is nonetheless the natural one: $H_\eta$
 carries unit cost, the extended Hamiltonian $\mathcal H=p_\eta+H_\eta=0$ is the cleanest
 non-autonomous form, the drift enters as the single scalar $\varepsilon=A'/A$, and the
@@ -590,7 +650,13 @@ regularization, monodromy and single-valued completion---is the subject of recen
 \cite{BauneEtal2024,DHokerSchlotterer2024,DHokerHiddingSchlotterer2025,DHokerEnriquezSchlottererZerbini2026},
 and would be required before ``genus-two
 dilogarithm'' can be used as a theorem-level term; we therefore adopt the neutral name
-above and keep irreducibility and basis dimension conjectural. As iterated integrals
+above and keep irreducibility and basis dimension conjectural. Accordingly we fix the
+following convention, used without exception below: the neutral phrase
+\emph{length-two iterated Abelian integral on the genus-two hyperelliptic curve} is the
+only classification we claim, and wherever ``genus-two dilogarithm'' appears it is an
+explicitly \emph{descriptive shorthand} for that object---never a statement that a
+function class with specified kernels, relations, normalisation, monodromy or
+single-valued completion has been established. As iterated integrals
 they do \emph{not} reduce to a weight-one Kleinian $\zeta,\sigma$
 combination~\cite{BakerAbelian1897,BuchstaberEnolskii1997}, because for
 genus two the Abel image of single points lies on the theta divisor
@@ -677,8 +743,10 @@ and an \emph{off-shell}
 part driven by the dilation letter $\int P_r H_{P_r}\dd\lambda=\int p_{r0}\dd r$ (the
 radial action, reduced in closed form in \ref{app:firstorder},
 Equations~\eqref{eq:action-reduction}--\eqref{eq:ak}): a length-two iterated integral on the
-same spectral curve, closing in $\zeta,\sigma$ \emph{plus} one genus-two dilogarithm
-sourced by the third-kind letter at the seed Kerr null surface $\Delta=0$.
+same spectral curve, closing in $\zeta,\sigma$ \emph{plus} one further length-two
+iterated Abelian integral sourced by the third-kind letter at the seed Kerr null
+surface $\Delta=0$ (the object we call, descriptively only, a genus-two
+dilogarithm).
 
 \paragraph{Universal form of the off-shell source.} The source $S_{\mathcal D}$ does
 not, in fact, require the per-metric reduction to be written in closed form: it admits
@@ -1400,7 +1468,7 @@ reflection; the on-shell first-order response reduces to length-two iterated Abe
 integrals, a proved closed form of \emph{weight two} built on the weight-one Abelian
 primitives (their reduction to weight one conjectural). The arrival branch is
 $t\equiv\eta$ (a monotone
-reparametrization), leaving two genuinely distinct optimal families, arrival and proper
+reparametrization), leaving two genuinely distinct extremal families, arrival and proper
 time $\tau$.
 
 \paragraph{Conditional and numerical.} Rotation and the conformal factor invert the
@@ -1414,8 +1482,11 @@ conjectural.
 
 \paragraph{Outlook.} Open threads: a general theory of moving turning points and of
 adiabatic separatrices (a genuine crossing of a moving separatrix is a Neishtadt inner
-problem, beyond first order); interior-ergosphere optimality as a certified minimum; and a
-rigorous higher-genus polylogarithm framework with a canonical basis. The off-equatorial
+problem, beyond first order); a rigorous higher-genus polylogarithm framework with a
+canonical basis; and---a genuinely different problem rather than an unfinished part of
+this one---a control formulation valid inside $r=2M$, which would require a selector that
+is timelike there and would carry its own rail charge, indicatrix, cost and Hamiltonian
+(section~\ref{sec:domain}). The off-equatorial
 (three-dimensional) quasi-constant dynamics is deferred to a dedicated study.
 Taken with the companion paper, these results show how a single controlled-rail
 variational principle organizes time-optimal transport across non-stationary spacetimes,
@@ -1426,10 +1497,55 @@ encode that geometry in explicit hyperelliptic closed forms.
 \appendix
 \section{Validation and consistency checks}
 \label{app:validation}
-We collect the numerical checks that underpin the analytic results. The
-minimum principle is verified directly by perturbing the computed
-brachistochrones and confirming that both $T_t$ and $T_\tau$ are minimized
-(the spherical branches are treated in Paper~I). Stationary-limit residuals confirm
+Results in this paper rest on evidence of four different kinds, which are not
+interchangeable. We separate them explicitly, because conflating them is the
+commonest way for a computer-assisted result to overclaim.
+
+\begin{protocol}[Levels of evidence]
+\label{prot:evidence}
+\begin{enumerate}
+\item[\rm(I)] \emph{Exact symbolic identity.} A polynomial or rational identity
+returning an exact zero, in two independent computer-algebra systems, with no
+tolerance involved. This is a proof. Examples: $p_r^2=\mathcal S/(D_E^2\Delta^2)$;
+the factorisation~\eqref{eq:marginal-factor}; the reduction determinant as a
+resultant.
+\item[\rm(II)] \emph{Independent numerical agreement.} A quantity computed by
+two genuinely different routes---Hamiltonian ODE flow against an evaluated
+closed form, say---agreeing to a stated precision. This excludes transcription
+and bookkeeping error. It is \emph{not} a proof, and we never cite it as one.
+\item[\rm(III)] \emph{Recovery of established limits.} The formalism must
+reproduce results validated elsewhere: $a\to0$ gives Schwarzschild, $A\to1$ the
+stationary Kerr constants of Carter and Chandrasekhar
+\cite{Carter1968,Chandrasekhar}, $\Ehat\to\infty$ the Fermat--Randers metric,
+and the stationary rail reproduces Perlick's fixed-energy optical metric
+\cite{Perlick1991} exactly (Paper~I). These are falsifiable external constraints
+and are the closest analogue available, in a problem of this kind, to an
+independent experimental check.
+\item[\rm(IV)] \emph{Computer-assisted proposition.} A statement established by
+interval arithmetic or an equivalent certificate over an explicitly stated grid
+and window. It is a proof conditional on the arithmetic; its domain is always
+quoted with it.
+\end{enumerate}
+Each numbered claim below is tagged with the level it rests on.
+\end{protocol}
+
+\begin{remark}
+No level of \emph{experimental} validation is available, and we claim none.
+Thakurta--Kerr is a conformal deformation of Kerr whose central object is a
+compact object rather than a black hole, and the controlled rail is an actively
+forced worldline, not a geodesic: it is not the trajectory of any freely falling
+body that is observed. Level~(III) is what carries the external-consistency
+burden here.
+\end{remark}
+
+Perturbing a computed extremal and observing that the arrival clock increases is
+a level-(II) consistency check on the numerics. It does \emph{not} establish
+minimality, which would require a second-variation or conjugate-point argument,
+or a saturated Hamilton--Jacobi certificate over the same admissible class; a
+finite family of perturbations cannot certify a minimum in an
+infinite-dimensional class. We accordingly report such perturbations as
+consistency checks only (the spherical branches are treated in Paper~I).
+Stationary-limit residuals confirm
 that the non-stationary Hamiltonian flow reproduces the closed-form Kerr expressions
 as $A\to1$; the conformal-Killing rail charge $\Ehat$ is conserved to $\sim10^{-16}$ along the rail. The equatorial closed
 forms are validated end-to-end by the three-method superposition
@@ -2115,7 +2231,8 @@ $g_0=1/\sqrt{E^2-1}$ and $g_1=(2E^2-3)/(E^2-1)^{3/2}$ set by the leading behavio
 ($E$-only), while $g_2$ and the $c_k$ carry the full $(a,J)$ dependence. The
 algebraic remainder is elementary in closed form,
 $T_{\rm alg}=P(r)+\sum_i\mathrm{res}_i\ln(r-r_i)$ over the six roots of $S$
-(three residues vanish, at $r=0,\,2M,\,2M/(1-E^2)$). The genus-two dilogarithm is a
+(three residues vanish, at $r=0,\,2M,\,2M/(1-E^2)$). The weight-two block---the
+genus-two dilogarithm in the descriptive sense fixed above---is a
 convergent \emph{nome ($q$-)series}: after Siegel reduction $\tau'=-\tau^{-1}$ (all
 nomes ${<}1$), $\Lambda=\int Q\,\dd\mathcal A+\int L\,\dd\mathcal A$ with $Q$
 elementary and $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ a genus-two
@@ -2292,8 +2409,10 @@ single-valued completion remain open. Thus the \emph{frozen} reduction
 $\partial_\lambda\varphi_0$ closes in the weight-one Abelian/Kleinian class, but already
 the \emph{on-shell} first-order response carries a genuine weight-two sector---the
 length-two iterated integrals $W_{jk}$; the off-shell term adds further length-two letters
-and one genus-two dilogarithm. Reducibility of the $W_{jk}$ to weight one and a canonical
-single-valued completion remain conjectural.
+and one third-kind-sourced length-two iterated Abelian integral. Reducibility of the
+$W_{jk}$ to weight one and a canonical single-valued completion remain conjectural, so no
+function-class statement beyond ``length-two iterated Abelian integral on a genus-two
+hyperelliptic curve'' is asserted anywhere in this paper.
 
 \paragraph{What is reconstructible from the text alone.} Everything algebraic is fixed
 by the manuscript without the repository: the frozen integrands

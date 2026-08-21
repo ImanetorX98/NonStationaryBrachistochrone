@@ -181,21 +181,106 @@ figure captions, and relabel type-(A) curves in the figures themselves.
 
 ---
 
+## R1.2 — extremal vs minimizer — **DONE**
+
+- `remark` in `sec:domain`: PMP necessary not sufficient; "controlled-rail
+  extremal" is the default term; minimiser/optimal/fastest/brachistochrone
+  reserved for statements with a certificate.
+- **The sentence the referee asked to be removed is gone.** The old opening of
+  appendix A read: *"The minimum principle is verified directly by perturbing
+  the computed brachistochrones and confirming that both $T_t$ and $T_\tau$ are
+  minimized."* It now says such perturbations are level-(II) consistency checks
+  and explicitly cannot certify a minimum in an infinite-dimensional class.
+- "two distinct optimal families" -> "extremal families" (x2); intro reworded to
+  define the *problem* as time-optimal rather than describing our curves as
+  fastest; "interior-ergosphere optimality" removed from the open-problems list
+  (it is not an unfinished part of this problem but a different problem).
+
+## R1.7 / M9 — evidence levels — **DONE (structure)**
+
+New `prot:evidence` at the head of appendix A, four levels with distinct
+evidential status: (I) exact symbolic identity = proof; (II) independent
+numerical agreement = excludes transcription error, not a proof; (III) recovery
+of established limits (Schwarzschild, stationary Kerr, Fermat–Randers, Perlick)
+= the closest available analogue to an external experimental check;
+(IV) computer-assisted proposition with stated grid and window.
+
+Plus a `remark` stating plainly that **no experimental validation is available**
+and why (Thakurta–Kerr's central object is a compact object, not a black hole;
+the rail is actively forced, not a geodesic). This is also the answer to
+referee 2's demand for "techniques of experimental validation".
+
+Still TODO under R1.7: tag each numbered claim with its level; consolidate the
+adiabatic slope data (figure 3 gives 2.12±0.03, table A3 gives 1.95–2.16) into
+one archived command with a stated epsilon-window.
+
+## R1.8 — neutral higher-genus terminology — **DONE**
+
+The disclaimer was already present and correct. Made binding: added an explicit
+convention that "length-two iterated Abelian integral on the genus-two
+hyperelliptic curve" is the only classification claimed, and that "genus-two
+dilogarithm" is a *descriptive shorthand* wherever it appears. Converted the
+three theorem-level bare uses. Left "elliptic dilogarithm" alone — that one is
+an established object (Beilinson–Levin, Brown–Levin) and is not at issue.
+
+## R1.9 — physical dictionary — **DONE**
+
+New `prot:names`: rail charge vs energy; axial control costate vs mechanical
+angular momentum; the rail minimises a selected clock, not thrust/fuel/impulse;
+$r_e$ = conformal stationary limit; $r_+$ = seed Kerr null surface / conformal
+Killing-horizon candidate, with the explicit note that neither apparent nor
+event horizon has been computed for time-dependent $A(\eta)$; and inside $2M$,
+"continued orbit / root pattern / analytic branch" rather than
+capture/plunge/bounce.
+
+## R1.6 / R1.10 — `cap_full.py` — **DONE**
+
+The referee was right: three CAP runners open with `import cap_full as cf` and
+the module was never archived — it had been factored out of
+`no_inversion_schwarzschild_CAP.py` during development and lived only in the
+working tree. **A fresh clone could not run the representative
+computer-assisted proposition at all.**
+
+Restored as `NonStationaryMetrics/cap_full.py`, extracted verbatim from the
+prototype so the two cannot drift, with a self-test. Verified: the runner now
+imports and certifies a cell (`tag='S'` on $r_{\min}\in[5.00,5.03]$, 0.2 s/cell,
+matching the prototype's quoted ~0.26 s/cell).
+
+Still TODO under R1.10: the manifest mapping each equation/figure/table to one
+command and one checksum, the environment lock, and regenerating the printed
+hashes so they match the release.
+
+## R1.12 / referee 2 — literature positioning — **DONE**
+
+New introduction paragraph "What is established, and what is new here",
+separating the stationary theory (Perlick; Giannoni–Piccione–Verderesi;
+Giannoni–Piccione; Giannoni–Piccione–Tausk Morse theory; Haws–Kiser; Taş) from
+the three things with no stationary counterpart (loss of compactness and hence a
+causal boundary; the reduced Hamiltonian not being an interior first integral;
+first-order response as a genuine perturbation problem).
+
+**A bibliography error of ours, found while checking the referee's list:**
+`GiannoniPiccioneVerderesi1997` had `pages = {6178}`. The correct range is
+**6367–6381** (JMP 38(12); DOI 10.1063/1.532217 — verified). Fixed. The
+referee's own citation of that paper is wrong in the authors: it is Giannoni,
+Piccione and **Verderesi**, not Masiello. Say so politely in the response.
+
+Added: `HawsKiser1995`, `Tas2025` (arXiv:2512.08776, Ferhat Taş — the referee
+dates it 2026; it was posted December 2025). Added the arXiv id math-ph/9905007
+to the Morse-theory entry so the referee can see their item 5 and our
+`GiannoniPiccioneTausk2002` are the same work.
+
 ## Remaining referee 1 items — **TODO**
 
-R1.1 exterior/contact/continuation discipline · R1.2 extremal vs minimizer ·
-R1.3 endpoint protocol + costate relabelling · R1.5 exterior separatrix as the
-flagship · R1.6 tiered fixed-endpoint status + `cap_full.py` · R1.7 adiabatic
-scope + one traceable dataset · R1.8 neutral higher-genus terminology ·
-R1.9 physical dictionary · R1.10 dependency-complete archive · R1.11 Paper I
-dependencies · R1.12 positioning vs literature · M1–M10.
+R1.3 propagate the endpoint protocol through the comparison sections ·
+R1.5 exterior separatrix as the flagship · R1.6 tier the fixed-endpoint claims
+in abstract/conclusions · R1.7 tag claims, consolidate adiabatic data ·
+R1.10 manifest + hashes + environment lock · R1.11 Paper I dependencies ·
+M1–M10 sweep.
 
-## Referee 2 — **TODO**
-
-Accept: Perlick 1991; Giannoni–Masiello–Piccione 1997; Giannoni–Piccione–Tausk
-1999 (Morse theory) and 2002; Taş 2026; Haws–Kiser 1995. The Morse-theory item
-connects to R1.2 and to the conjugate-point/Maxwell material.
+## Referee 2 — remaining
 
 Decline, with argument, the requested characterisation of the results as "a
-trivial application of theorem T2" of an unrefereed preprint, and the demand for
-"experimental validation" of a mathematical result. See the Author Response.
+trivial application of theorem T2" of an unrefereed preprint. Note in passing
+that the demand for experimental validation is answered by `prot:evidence`
+level (III) and the accompanying remark.
