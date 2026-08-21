@@ -245,7 +245,13 @@ conformal-time, coordinate-time and proper-time Hamiltonians are
     \label{eq:Htau-tk}
 \end{align}
 with the conformal gravitomagnetic shift
-$\tilde p_\varphi=p_\varphi-2MaA^2/(r\Ehat)$. The arrival-time branch $H_t$ differs
+$\tilde p_\varphi=p_\varphi-2MaA^2/(r\Ehat)$. Here and throughout, $J:=p_\varphi$
+is the \emph{axial control costate} conjugate to $\varphi$ in the reduced
+problem---it is \emph{not} the mechanical angular momentum $g(u,\partial_\varphi)$
+of the extremal, and the two do not agree once the rail is enforced. Since
+$\varphi$ is cyclic, $J$ is constant along an extremal at frozen $A$; across
+branches it is relabelled by the conformal weight, $J_t=A\,J_\eta$
+(Protocol~\ref{prot:names}). The arrival-time branch $H_t$ differs
 from $H_\eta$ only in the unit cost ($-1\to-A$) and reduces to it for $A=1$; it is
 the branch compared with $\tau$ in the plunge inversion
 (section~\ref{sec:inversion}), where its turning potential
@@ -392,6 +398,27 @@ pattern'' or ``analytic branch'', never ``capture'', ``plunge'' or ``bounce'':
 those words presuppose a control problem that is not posed there
 (Protocol~\ref{prot:status}, type~(A)).
 \end{itemize}
+The five energy- and momentum-like symbols are kept distinct throughout and are
+never used interchangeably:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\hline
+$\Ehat$ & the maintained rail charge, $\Ehat=-g(u,W)$, a design parameter\\
+$E_{\rm eff}=\Ehat/A$ & the effective seed-Kerr energy at conformal factor $A$\\
+$E$ & shorthand for $E_{\rm eff}$ in the frozen sections, where $A$ is constant\\
+$J=p_\varphi$ & the axial control costate of the $\eta$-branch\\
+$J_{\rm eff}=J/A$ & its seed-Kerr counterpart; and $J_t=A\,J_\eta$ across branches\\
+\hline
+\end{tabular}
+\end{center}
+
+\emph{Units and error conventions.} All numerical values are in geometrised
+units with the seed mass normalised to $M=1$ unless a caption says otherwise, so
+radii are $r/M$ and momenta are per unit mass. Plotted deviations are
+\emph{absolute} unless labelled ``relative''; where a residual is a vector
+quantity we plot its Euclidean norm and say so. Every fitted slope is quoted
+with the interval it was fitted over and, for the adiabatic convergence, with
+the $\varepsilon$-window (\ref{app:validation}).
 \end{protocol}
 
 \paragraph{The conformal-time ($\eta$) brachistochrone.} The relation
@@ -871,8 +898,9 @@ map to the fixed-endpoint problem.
     \emph{leading} on-shell correction (dashed) and plus the \emph{exact}
     equation~\eqref{eq:adiab-exact} correction ($S_{\mathcal D}$, dotted), at $A'/A=0.04$.
     Right: the residual on a compact sub-arc bounded away from the turning point, for
-    \emph{both branches} and \emph{two parameter sets} ($t$: $a{=}0.9,\Ehat{=}1.4,J{=}6$;
-    $\tau$: $a{=}0.9,\Ehat{=}1.4,J{=}2.5$ scattering; $t$: $a{=}0.5,\Ehat{=}1.3,J{=}5$).
+    \emph{both branches} and \emph{two parameter sets} ($M{=}1$ throughout; $t$:
+    $a{=}0.9,\Ehat{=}1.4,J{=}6$; $\tau$: $a{=}0.9,\Ehat{=}1.4,J{=}2.5$ scattering;
+    $t$: $a{=}0.5,\Ehat{=}1.3,J{=}5$). Plotted residuals are absolute.
     The on-shell term alone (dotted; source $\int\Theta H\dd\lambda$ without the
     $P_r H_{P_r}$ dilation) has an $O(\varepsilon)$ physical error (least-squares
     log--log slope \provLeadSlope); the complete first-order term (solid; source
@@ -1253,9 +1281,12 @@ $\Jc^{\tau}=sA^2/\Ehat$.
 
 \subsection{Plunge inversion: rotational and conformal}
 \label{sec:inversion}
-Two mechanisms invert the $t/\tau$ ordering. Rotationally, in the $(a,J)$ plane,
-$\rho(r_*)^2=H_{t0}/H_{\tau0}$, extending the stationary Kerr analysis
-\cite{RosignoliKerr}. Conformally, the inversion locus is
+Throughout this section the comparison is protocol (P1) of
+section~\ref{sec:bvp}---same launch event, same initial data, free arrival---and
+the ordering it produces is a statement about that protocol, not about the
+extremals alone. Two mechanisms invert the $t/\tau$ ordering. Rotationally, in
+the $(a,J)$ plane, $\rho(r_*)^2=H_{t0}/H_{\tau0}$, extending the stationary Kerr
+analysis \cite{RosignoliKerr}. Conformally, the inversion locus is
 \begin{equation}
     \mathrm{cond}(r,A)=A^2 b\,Q-\bar P(\Ehat-A^2 f)=0,\quad
     Q=b\bar v^2+\sqrt{\bar v^2\Delta},
@@ -1290,14 +1321,32 @@ statement, holding in the stated energy/domain window rather than universally.
 
 \subsection{Fixed-endpoint comparison and protocol dependence}
 \label{sec:bvp}
-The statement ``branch $X$ plunges deeper'' is protocol dependent. With
-\emph{fixed initial data} (same $r_0,J,p_r$) the $t$-branch is deeper
-($r_{\min}^t<r_{\min}^\tau$). With \emph{fixed endpoints} (the genuine
-two-point brachistochrone), the two branches join the same $A,B$ but are
-distinct paths, and the ordering reverses: $r_{\min}^\tau<r_{\min}^t$. The
-optical-index ratio $n_t/n_\tau=E/f>1$ penalizes deep radii more heavily for
-the $t$-branch, so the $t$-brachistochrone bows outward while the $\tau$-branch
-dips. This must be specified when comparing depths.
+The statement ``branch $X$ reaches deeper'' is protocol dependent, and this
+section is the one place where the comparison is \emph{not} the default of
+Protocol~\ref{prot:endpoint}. Two distinct protocols are in play and must not be
+confused.
+
+\emph{(P1) Same launch.} Fixed launch event and fixed initial data
+$(r_0,J,p_r)$, free arrival: the $t$-branch reaches deeper,
+$r_{\min}^t<r_{\min}^\tau$. This is the protocol of
+section~\ref{sec:inversion}. Note that ``same $J$'' here means the same
+\emph{numerical} costate; comparing the $\eta$- and $t$-branches on the same
+spatial curve instead requires the relabelling $J_t=A\,J_\eta$
+(Protocol~\ref{prot:endpoint}), so (P1) at a common numerical $J$ compares
+different orbits by construction---which is precisely why the two protocols can
+disagree.
+
+\emph{(P2) Two fixed spatial endpoints.} Both branches join the same $A$ and $B$
+and are distinct paths; the ordering reverses, $r_{\min}^\tau<r_{\min}^t$. The
+optical-index ratio $n_t/n_\tau=E/f>1$ penalizes deep radii more heavily for the
+$t$-branch, so the $t$-extremal bows outward while the $\tau$-branch dips.
+
+Neither ordering is a property of the extremals alone; each is a property of the
+comparison. Every depth statement below names its protocol, and
+Table~\ref{tab:protocol} tabulates the resulting dependence. What is compared in
+either case is a pair of \emph{selected controlled-rail extremals}: an ordering
+between two selected extremals does not by itself show that either is the global
+minimiser in its branch, and no such claim is made.
 
 \begin{figure}[ht]
     \centering

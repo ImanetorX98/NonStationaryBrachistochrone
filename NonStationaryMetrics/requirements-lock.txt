@@ -14,3 +14,13 @@ sympy==1.13.3
 # --- SageMath (NOT pip-installable; used ONLY by the four .sage genus-2 scripts) ---
 # Reference: SageMath 10.9 (x86_64 build) with the abelfunctions library.
 # Only required for KerrScripts/*.sage (Riemann surface / theta / Abel map).
+
+# ---------------------------------------------------------------------------
+# Computer-algebra system used by the symbolic verification suite
+# (paper2/verification/*.wls).  Not installable by pip; recorded here so the
+# environment is fully specified (CQG-116884, referee major comment 10).
+#   Wolfram Mathematica 13.3.1 for Mac OS X ARM (64-bit), 24 July 2023
+#   invoked as: wolframscript -file <script>.wls
+# The Python stack above is sufficient for every figure, every numerical check
+# and the computer-assisted proposition; Mathematica is required only to
+# re-derive the exact symbolic identities (evidence level I).

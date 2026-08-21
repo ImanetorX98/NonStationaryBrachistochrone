@@ -282,6 +282,8 @@ MANIFEST: list[tuple[str, str, str]] = [
     ("Fig. (jcm-cap)", "python3 kerr_jcm_capture_figure.py",
      "KerrScripts/kerr_jcm_capture_figure.py"),
     ("shared figure style", "-", "NonStationaryMetrics/paper_style.py"),
+    ("environment lock (Python stack + CAS version)", "-",
+     "NonStationaryMetrics/requirements-lock.txt"),
 ]
 
 

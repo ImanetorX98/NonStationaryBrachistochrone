@@ -673,8 +673,11 @@ realizes the value function and is a \emph{global} minimizer on that region.
 
 \begin{proof}
 The maximum principle is necessary but not sufficient: a PMP extremal is a
-\emph{candidate} minimizer, guaranteed only \emph{locally} optimal. The sufficient global
-certificate is the calibration~\eqref{eq:calibration}. Let $(x(\cdot),\theta(\cdot))$ be
+\emph{candidate} minimizer only. Minimality implies the PMP, but the PMP implies
+neither global nor \emph{local} minimality---that would need a second-variation
+or conjugate-point argument (Theorem~\ref{thm:jacobi}) or another sufficient
+condition. The sufficient global certificate is the
+calibration~\eqref{eq:calibration}. Let $(x(\cdot),\theta(\cdot))$ be
 \emph{any} admissible competitor joining the data. Since~\eqref{eq:calibration} holds for
 every $\theta$, it holds in particular for the competitor's own control, so
 \[

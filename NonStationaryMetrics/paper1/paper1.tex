@@ -385,7 +385,15 @@ of $\rho>0$.
 
 \paragraph{Proposition~I.3 (Hamilton--Jacobi verification).} The maximum
 principle is necessary but not sufficient: a PMP extremal is a \emph{candidate}
-minimizer, guaranteed only \emph{locally} optimal. A sufficient global certificate
+minimizer only. The correct logical hierarchy is
+\[
+   \text{minimizer}\ \Longrightarrow\ \text{PMP extremal},
+   \qquad
+   \text{PMP extremal}\ \not\Longrightarrow\ \text{local minimizer},
+\]
+and no local-minimality guarantee follows from the maximum principle alone: that
+would require a second-variation or conjugate-point argument, or another
+sufficient condition. A sufficient global certificate
 comes from dynamic programming. In the \emph{stationary} (frozen) problem the value
 function solves the eikonal Hamilton--Jacobi--Bellman (HJB) equation
 $F^\ast(x,\nabla V)=1$ ($F^\ast$ the dual/optical norm); but the rail is
