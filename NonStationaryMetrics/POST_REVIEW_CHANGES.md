@@ -248,7 +248,9 @@ say so in the response. We cite it correctly and add the genuine
 Giannoni–Masiello–Piccione works; the correction makes itself.
 
 **On the "trivial application of T2" claim.** Both preprints were obtained and
-read. T2 is the Fuglede–Ishihara dichotomy. The response concedes the real
+read: `10.13140/RG.2.2.31647.21921` (contains T2) and
+`10.13140/RG.2.2.35935.37281` (the soliton/geodesic-paths one, whose Ricci-soliton
+definition produced the identity of §3.4). T2 is the Fuglede–Ishihara dichotomy. The response concedes the real
 relation (§3.6 above), then declines the stated one, narrowly: T2 gives the
 existence of a conformal factor, not its value; and its hypotheses — by Bishop's
 theorem, **reference [14] of that preprint itself** — are equivalent to totally
