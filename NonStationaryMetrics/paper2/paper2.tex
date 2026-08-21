@@ -672,6 +672,46 @@ or Myers-type hypothesis. Equations~\eqref{eq:optical-gauss}--\eqref{eq:optical-
 and this conclusion are verified in
 \texttt{verification/verify\_myers\_optical.wls}.
 
+\paragraph{Conjugate points and Maxwell points are separated by the same
+threshold.} On the frozen $\tau$-branch the optical geometry is Riemannian-pure,
+the gravitomagnetic wind cancelling (section~\ref{sec:thakurta}), so equatorial
+extremals are geodesics of a genuine Riemannian surface and the classical
+second-variation machinery applies verbatim: the Jacobi equation is
+$\ddot{\mathcal J}+K\mathcal J=0$ with $K$ as in~\eqref{eq:optical-gauss}, and
+$K<0$ on a domain precludes conjugate points there. The threshold
+of~\eqref{eq:optical-asym} turns out not to be merely asymptotic.
+
+\begin{proposition}[No conjugate points above the curvature threshold]
+\label{prop:noconj}
+For the frozen, non-rotating optical surface, $K(r)<0$ for \emph{every} $r>2M$
+if and only if $\Ehat^2\ge3/2$. Consequently, for $\Ehat^2\ge3/2$ no exterior
+$\tau$-branch extremal carries a conjugate point, and every such extremal is a
+local minimiser of the arrival time on the exterior domain.
+\end{proposition}
+
+Two facts fix the threshold. At the stationary limit the numerator
+of~\eqref{eq:optical-gauss} is $-4\Ehat^4M^4<0$ for \emph{every} $\Ehat$, so $K<0$
+near $r=2M$ always; and its cubic coefficient is
+$-(2\Ehat^2-3)(\Ehat^2-1)$, negative exactly when $\Ehat^2>3/2$. Below the
+threshold a region of positive curvature opens at large radius, and its inner
+edge runs off to infinity as $\Ehat^2\to(3/2)^-$: numerically it sits at
+$r/M=22.75,\,59.53,\,576.7,\,5751.7$ for $\Ehat^2=1.20,\,1.40,\,1.49,\,1.499$.
+
+Negative curvature does \emph{not}, however, give global minimality here, and the
+reason is worth stating because it is not a focusing effect. The optical surface
+is $\{r>2M\}\times S^1$, an annulus: it is not simply connected, so
+Cartan--Hadamard yields local minimality without uniqueness. The two extremals
+leaving a source with equal and opposite azimuthal costate are exchanged by
+$\varphi\to-\varphi$ and reconverge after a swept angle $\pi$; that antipodal
+locus is a \emph{Maxwell set}, and it survives however negative $K$ becomes.
+Hence, for $\Ehat^2\ge3/2$, the cut locus of the exterior optical surface is
+purely of Maxwell type: global minimality holds up to the first antipodal
+crossing and fails there by symmetry rather than by focusing. Below the
+threshold the two mechanisms coexist and conjugate points must be located
+directly from the Jacobi equation, as in Paper~I. These statements are verified
+in \texttt{verification/verify\_conjugate\_maxwell.wls}; they are established for
+the non-rotating frozen limit, and the rotating case is not claimed.
+
 
 
 \begin{figure}[ht]

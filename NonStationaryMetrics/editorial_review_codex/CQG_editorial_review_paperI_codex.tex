@@ -1,0 +1,1189 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=25mm,headheight=14pt]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\definecolor{CQGblue}{RGB}{31,74,125}
+\definecolor{DarkGreen}{RGB}{35,105,65}
+\definecolor{DarkRed}{RGB}{145,38,38}
+\definecolor{LightBlue}{RGB}{235,242,250}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=CQGblue,
+  urlcolor=CQGblue,
+  pdftitle={Editorial review of Paper I for Classical and Quantum Gravity},
+  pdfauthor={Codex editorial review}
+}
+
+\setstretch{1.13}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.58em}
+\setlist[itemize]{leftmargin=1.65em,itemsep=0.32em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.85em,itemsep=0.35em,topsep=0.4em}
+\renewcommand{\arraystretch}{1.14}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Editorial review --- Paper I}
+\rhead{CQG simulation}
+\cfoot{\thepage}
+
+\newcommand{\major}{\textcolor{DarkRed}{\textbf{Major}}}
+\newcommand{\minor}{\textcolor{CQGblue}{\textbf{Minor}}}
+\newcommand{\preserve}{\textcolor{DarkGreen}{\textbf{Preserve}}}
+\newcommand{\manuscript}{\emph{Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry, Kodama energy, and Vaidya dynamics}}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+  \centering
+  \vspace*{2.0cm}
+  {\Large\bfseries Editorial assessment for\\[0.4em] Classical and Quantum Gravity\par}
+  \vspace{1.5cm}
+  {\LARGE\bfseries \manuscript\par}
+  \vspace{1.1cm}
+  {\large Review of the 38-page file \texttt{paper1-11.pdf}\par}
+  \vspace{1.8cm}
+  \begin{minipage}{0.84\textwidth}
+    \colorbox{LightBlue}{\parbox{0.94\textwidth}{
+      \textbf{Simulated editorial decision: major editorial revision before external review.}
+      The manuscript is within CQG's scope and contains a potentially publishable,
+      distinctive contribution.  In its present form, however, the scientific story is
+      obscured by an overextended technical layer, incomplete positioning against the direct
+      relativistic-brachistochrone literature, and several visible inconsistencies between
+      carefully qualified body text and stronger captions or summary claims.
+    }}
+  \end{minipage}
+  \vfill
+  {\large Prepared as an editorial review, not as a substitute mathematical referee report\par}
+  \vspace{0.4cm}
+  {\large 3 August 2026\par}
+  \vspace{1.3cm}
+  {\small Codex-origin file; no manuscript source was changed during this assessment.\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\section{Mandate, material reviewed, and limits of this report}
+
+This report follows the supplied editorial-review brief.  I read the complete manuscript,
+including all three appendices, the data-availability statement, acknowledgements and the
+69-entry reference list.  I also rendered and inspected all 38 pages so that comments on
+figures, tables, page flow and typography are based on the actual PDF rather than only on
+extracted text.  The repository source was consulted to resolve cross-references, citation
+usage and the relationship to the companion paper.  Current CQG author guidance and IOP's
+generative-AI policy were checked, as was directly relevant relativistic-brachistochrone
+literature.
+
+The task is editorial.  I therefore assess scope, novelty presentation, readability,
+scientific narrative, claim calibration, figures, notation, bibliography, research-integrity
+statements and the probability of passing an initial editorial screen.  I do not rederive the
+Hamiltonians, certify the special-function reductions, or replace a specialist referee's
+judgement on the validity of Theorems I.1--I.5.  Where a mathematical statement creates an
+editorial problem, I identify the mismatch or ambiguity and recommend safer wording; I do not
+declare a new mathematical result.
+
+The authoritative object for this review is the supplied \path{paper1-11.pdf}.  The local
+\path{paper1/paper1.tex} source appears slightly ahead of that PDF in at least one
+cross-reference, so final production must include a clean recompilation and PDF-to-source
+comparison.
+
+\subsection*{Severity vocabulary}
+
+\begin{description}[leftmargin=1.8cm,style=nextline]
+  \item[\major] An issue likely to affect desk review, the perceived novelty, the central
+  narrative, or the reliability of the claims.  It should be resolved before submission.
+  \item[\minor] A clarity, consistency, presentation or metadata issue that should be fixed but
+  does not determine publishability by itself.
+  \item[\preserve] A feature that is already effective and should not be lost during revision.
+\end{description}
+
+\section{Executive summary}
+
+The manuscript asks a clear and worthwhile question: how should a relativistic
+brachistochrone be formulated when the spacetime itself evolves and no timelike Killing energy
+is available?  Its answer is to treat the rail as an active control constraint,
+$-u\!\cdot\!W=\hat E$, and to select $W$ through a Killing $\rightarrow$
+conformal-Killing $\rightarrow$ Kodama hierarchy.  It then develops a Pontryagin formulation,
+an existence/normality statement on a regular timelike-selector domain, a conditional
+Hamilton--Jacobi verification criterion, an FLRW base case and a detailed ingoing-Vaidya
+application.  The Vaidya material includes exact rail kinematics, arrival/proper-time branch
+structure, plunge and timing phenomena, and a first-order adiabatic correction whose complete
+on-shell plus off-shell form is checked against the true non-autonomous flow by the expected
+quadratic residual scaling.
+
+This is recognisably a CQG paper.  It concerns classical general relativity, dynamical black-hole
+geometry, constrained Hamiltonian systems and mathematical methods, all explicitly within the
+journal's remit.  The Kodama-based controlled invariant is a natural bridge between dynamical
+spacetime geometry and optimal control.  The manuscript also displays unusually good habits in
+several places: it distinguishes the conserved Pontryagin costate from mechanical angular
+momentum; states that the ordinary Hamiltonian is not an interior first integral; separates
+PMP extremality from global HJB certification; labels the negative-rate ingoing-Vaidya branch as
+a formal continuation rather than physical evaporation; archives code and data; and divides
+the conclusion into proved, conditional/numerical and open statements.
+
+The principal editorial problem is that two papers still coexist inside Paper I.  One is a
+broadly readable conceptual and physical article about controlled relativistic travel in FLRW
+and Vaidya.  The other is a specialist mathematical article about genus-two Abelian integrals,
+third-kind horizon letters, iterated integrals, elliptic degeneration, theta-nome series and
+conjectural transcendence.  Both may be valuable, but the second currently overwhelms the first
+in pages 19--22 and Appendices B--C.  The main physical result is consequently buried, and CQG's
+broad gravitational readership is asked to traverse the full special-function taxonomy before
+receiving a compact statement of what has been proved and what it means.
+
+A second major problem is literature positioning.  The introduction cites Perlick and general
+Randers/Zermelo sources but omits the direct sequence of relativistic-brachistochrone papers by
+Giannoni, Piccione, Verderesi and Tausk on sub-Riemannian formulations, existence, travel-time
+Morse theory and arrival-time brachistochrones.  The sentence that the existence question and
+the appropriate replacement invariant ``have not been addressed'' is therefore too broad.
+The novelty remains defensible, but it must be stated more precisely: the new element is the
+active maintenance of a selected rail charge in a genuinely non-autonomous background, the
+Kodama selector, the explicit free-arrival Pontryagin system and its FLRW/Vaidya realisation.
+
+The third major problem is internal hierarchy.  Theorem I.5, which supplies the complete
+first-order extended-Hamiltonian correction needed to close the earlier off-shell objection,
+appears only on page 32 in Appendix C.  Lemma I.6 appears before it on page 29, so results are
+encountered in the order I.4, I.6, I.5.  At the same time, captions for figures 3 and A2 use
+``minimizes'' after only a restricted perturbation check, although section 2 carefully explains
+that generic global optimality is not certified.  The final PDF also contains a stale-looking
+equation reference in the caption of figure 10.  These are exactly the kinds of inconsistencies
+that reduce an editor's confidence even when the underlying derivation is sound.
+
+Finally, the paper still leaks substantial Paper-II material.  The notation table contains the
+Thakurta factor, Kerr spin and conformally normalised momenta; figure 1 includes a Thakurta--Kerr
+panel; ergosphere caveats recur; and many unused Kerr/cosmological references are printed because
+the source ends with \verb|\nocite{*}|.  There are 69 listed references but only 40 explicitly
+cited keys in the Paper-I text.  This makes the split appear incomplete.
+
+The recommended revision is therefore not a new scientific programme.  It is a decisive
+editorial reassembly of results that are largely already present:
+
+\begin{enumerate}
+  \item rewrite the novelty paragraph around the precise controlled non-stationary contribution
+  and add the direct brachistochrone literature;
+  \item bring the statement and physical meaning of Theorem I.5 into the main text;
+  \item reduce the special-function body section to the result, class of representation and
+  validation, moving detailed construction to appendices or supplementary material;
+  \item remove most Paper-II-specific notation, imagery and uncited bibliography;
+  \item make every claim of minimisation consistent with the manuscript's own PMP/HJB hierarchy;
+  \item reorder floats so that the Conclusions are uninterrupted and rebuild the cramped
+  reproducibility table.
+\end{enumerate}
+
+After those changes, I would expect the paper to be a plausible candidate for external review.
+In its present form I would return it for substantial editorial revision rather than reject it
+for scope or lack of substance.
+
+\section{Simulated editorial decision}
+
+\subsection{Decision: major editorial revision before review}
+
+If acting as an Associate Editor at initial screening, I would not desk-reject the manuscript on
+scope.  The topic is appropriate, the paper has a coherent central idea, and the Vaidya result
+could interest both gravitational theorists and mathematical relativists.  I would, however,
+ask for a substantially revised manuscript before recruiting referees.
+
+The reason is practical as well as scientific.  A specialist referee must be able to identify the
+claim being reviewed.  Here the core claim changes scale several times: a well-posed controlled
+problem, local PMP extremals, conditional global HJB verification, frozen phenomenology,
+first-order non-autonomous closure, then detailed claims about transcendental classes.  The
+manuscript contains many correct caveats, but they are distributed across captions, appendices
+and parenthetical remarks.  The editorial burden of reconstructing the hierarchy is too high.
+
+\subsection{Desk-review risk profile}
+
+\begin{tabularx}{\textwidth}{@{}p{0.26\textwidth}X p{0.20\textwidth}@{}}
+\toprule
+Criterion & Assessment & Risk now \\
+\midrule
+Journal scope & Strong fit: classical GR, dynamical black holes, spacetime geometry and
+Hamiltonian control. & Low \\
+Original contribution & Potentially strong, but novelty is framed too broadly and not compared
+with direct predecessors. & Moderate--high \\
+Broad-reader motivation & Good opening question and physical applications; operational meaning
+of the rail appears too late. & Moderate \\
+Scientific claim hierarchy & Careful in section 2 and the conclusion, but not uniform in abstract,
+captions and appendix placement. & High \\
+Length and focus & No hard CQG limit is assumed here, but the content-to-length ratio and two-paper
+feel are problematic. & High \\
+Presentation quality & Generally clean typesetting; figures and tables need a journal-facing
+redesign and better float order. & Moderate \\
+Reproducibility/integrity & Strong archive and disclosure posture; exact snapshot and bibliography
+curation still need checking. & Low--moderate \\
+\bottomrule
+\end{tabularx}
+
+The likely current outcome depends on the handling editor.  A mathematically inclined editor
+might send it out because of the evident work and the careful qualifications.  A broad-scope
+editor might return or reject it because the novelty comparison is incomplete and the special
+function layer obscures the gravitational advance.  The proposed revision is aimed at removing
+that avoidable variance.
+
+\section{Principal strengths to preserve}
+
+\subsection{A distinctive organising idea}
+
+The selector hierarchy is memorable.  Killing, conformal Killing and Kodama structures are not
+presented as unrelated tricks but as progressively weaker geometric data used to define the
+controlled charge.  This gives the work a conceptual spine that can support a series of papers.
+The hierarchy should remain visible in the abstract and introduction, even if Paper-II-specific
+detail is reduced.
+
+\subsection{An explicit experimental protocol}
+
+The paper now states what is fixed and what is free: a launch event, a spatial target and a rail
+charge are prescribed, while the arrival clock is free.  Equation (3) is correctly identified as
+a free-final-clock transversality condition rather than an identity imposed throughout a
+non-autonomous arc.  This distinction was evidently hard won and should not be diluted during
+copy-editing.
+
+\subsection{Honest separation of necessary and sufficient optimality statements}
+
+Section 2 says plainly that PMP supplies necessary conditions, whereas an HJB value function is a
+sufficient global certificate.  It also discusses conjugate points, Maxwell sets and cut loci,
+and admits that a global value function is not constructed for generic non-stationary Vaidya or
+Kerr trajectories.  This is excellent scholarly hygiene.  The required revision is to make the
+rest of the paper obey the same vocabulary.
+
+\subsection{The Vaidya control interpretation}
+
+Using the Kodama vector as the unnormalised selector is physically and geometrically natural in
+spherical symmetry.  The manuscript does more than write down a formal charge: it distinguishes
+controlled conservation from Noether conservation and identifies the proper acceleration/power
+required to maintain the rail.  This makes the construction falsifiable as a protocol rather
+than merely a relabelling of geodesics.
+
+\subsection{Correction of the off-shell issue}
+
+The complete first-order response is now based on the extended Hamiltonian in the original
+canonical variables, includes the interior momentum-shell shift, and introduces the anchored
+source $S_{\mathcal D}$.  For Vaidya it collapses to the useful boundary form
+$S_{\mathcal D}=[r p_r]-\lambda$.  The log--log diagnostic in figure 10 distinguishes the
+$O(\varepsilon)$ residual of the on-shell-only term from the approximately
+$O(\varepsilon^2)$ residual of the complete first-order term.  Editorially, this is a major
+strength: it converts a previous objection into a clear narrative of correction and verification.
+
+\subsection{Result-tiered conclusion and open-problem discipline}
+
+The ``Proved / Conditional and numerical / Outlook'' division is worth preserving nearly
+verbatim in spirit.  The manuscript also resists presenting the negative-rate ingoing chart as a
+physical evaporating black hole, and states that the true outgoing-Vaidya boundary-value problem
+remains open.  That distinction protects the paper from a serious physical overclaim.
+
+\subsection{Reproducibility and AI disclosure}
+
+The data/code DOI, script map, reported residuals and explicit acknowledgement of AI-assisted
+symbolic, numerical and editorial work are positive features.  Current IOP guidance permits such
+uses when disclosed and critically verified by the author.  The statement already identifies
+models and purposes and assigns responsibility to the author; it should be retained, with only
+minor tightening.
+
+\section{Principal weaknesses and why they matter}
+
+\subsection{The manuscript has two centres of gravity}
+
+The controlled-rail/Kodama story and the higher-genus closure story compete rather than support
+each other.  A broad CQG reader needs only enough special-function information to know that the
+first-order response is explicit, evaluable, and structurally more complicated because of the
+horizon logarithm.  Instead, the main text develops local uniformisers, residue divisors,
+theta-ratio representations, elliptic degeneration data, rank-five numerical evidence and
+conjectural irreducibility.  This is specialist content, and some of it concerns a double root at
+negative radius explicitly declared nonphysical.
+
+The cost is not merely length.  It makes the physical advance look like motivation for a special-
+functions paper rather than the outcome of a gravitational-control paper.  It also forces the
+reader to remember whether each formula belongs to the on-shell component, the complete response,
+the algebraic degeneration family, the physical branch or a frozen advanced/retarded comparison.
+
+\subsection{The novelty claim is vulnerable}
+
+The phrase that the well-posedness question and appropriate invariant ``have not been addressed''
+is broader than the bibliography supports.  Earlier work studied relativistic brachistochrones
+with prescribed energy relative to observer fields, sub-Riemannian reductions, existence and
+multiplicity, and distinctions between travel and arrival time.  General Fermat principles also
+do not require stationarity in their most abstract spacetime formulation.
+
+None of this eliminates the manuscript's novelty.  It changes the comparison.  The paper should
+claim the controlled non-autonomous charge, canonical Kodama choice, explicit dynamic
+Hamiltonians and first-order response, not the invention of relativistic arrival-time
+variational theory.  Failure to make that distinction could trigger a desk rejection or an
+adverse first referee report even if all calculations are correct.
+
+\subsection{The central theorem is buried and out of order}
+
+The complete first-order response is central because it justifies the headline statement that the
+adiabatic correction has been closed including the off-shell term.  Yet Theorem I.5 first appears
+on page 32.  Before it, the reader encounters Lemma I.6 on page 29.  This ordering suggests that
+the appendices were assembled from separate development streams rather than designed around the
+final logic.
+
+The theorem statement belongs in the main text.  Its derivation may remain in an appendix.  The
+body should then cite an appendix for the proof, not ask the reader to discover the theorem after
+the conclusion and reproducibility appendix.
+
+\subsection{Qualification is not consistent across text and captions}
+
+Section 2 correctly says that a generic PMP extremal is not automatically a global minimiser.
+Nevertheless, figure 3 says the straight line ``minimizes both'' functionals after a displayed
+one-parameter perturbation, and figure A2 says each branch ``minimizes its own travel time.''  A
+restricted perturbation family establishes a useful sanity check, not global minimality over the
+full admissible class.
+
+The conclusion's opening ``well-posed'' statement also needs the compact-domain/timelike-selector
+qualification present in Theorem I.2.  These are editorial inconsistencies with mathematical
+consequences.  They can be fixed by disciplined vocabulary, without changing equations.
+
+\subsection{Paper-I/Paper-II leakage remains visible}
+
+Table 1 devotes rows to $A(\eta)$, Kerr spin, $E_{\rm eff}$, $J_{\rm eff}$ and $P_r$; figure 1
+contains a Thakurta--Kerr panel; and pages 4, 9, 10 and 32 revisit ergosphere or conformal-momentum
+issues.  A small amount of forward reference helps establish the series, but the current level
+suggests the split was performed mechanically.
+
+The bibliography confirms the impression.  Because \verb|\nocite{*}| is used with the shared
+bibliography, the PDF prints 69 entries although only 40 citation keys occur in the text.  Many
+uncited entries concern Kerr, Thakurta, McVittie or mathematical tools not invoked in Paper I.
+
+\subsection{Figures dominate the page flow without a single editorial hierarchy}
+
+The plots are useful for research verification, but not all are main-story figures.  Full-page
+panels interrupt text; verbose plot titles duplicate captions; and conclusion paragraphs are
+separated by figures 8--10.  Figure 7 spends more ink limiting its own interpretation than
+communicating a publishable result.  Figure 1 is too small to read comfortably, while figures 2
+and 3 are larger than their narrative weight warrants.  The current sequence resembles a lab
+notebook exported into a paper.
+
+\section{Section-by-section editorial comments}
+
+\subsection{Title and first page}
+
+The current title is accurate but long.  It combines a new term (controlled rail), a general
+geometric mechanism (conformal symmetry), a spherical dynamical mechanism (Kodama energy) and a
+specific application (Vaidya).  A reader cannot tell which is primary.  If the revised paper is
+application-led, I recommend \emph{Time-optimal controlled worldlines in FLRW and Vaidya
+spacetimes}.  If the selector hierarchy remains central, I recommend \emph{Controlled-rail
+brachistochrones in dynamical spacetimes: from conformal symmetry to Kodama flow}.
+
+The first page has substantial lower whitespace, but this is not itself an editorial defect: the
+IOP submission guide allows flexible formatting and production will re-typeset accepted work.
+Do not spend revision effort filling that space.  Spend it clarifying the title and abstract.
+
+The PDF has no keywords.  IOP collects them at submission, so this is not a formal omission in the
+manuscript, but the author should prepare a consistent set: relativistic brachistochrone; optimal
+control in general relativity; Kodama vector; Vaidya spacetime; Randers--Finsler geometry;
+non-autonomous Hamiltonian systems; dynamical horizons.
+
+\subsection{Abstract}
+
+The abstract is within the usual 300-word limit and is self-contained.  Its opening question is
+effective.  The problem is density and calibration.  Within a single paragraph it introduces the
+rail, selector, three-level hierarchy, PMP, existence, normality, HJB, FLRW, Vaidya, special
+functions, true-flow verification and the companion paper.
+
+Three phrases should be changed:
+
+\begin{itemize}
+  \item ``legitimate Pontryagin problem---with existence, normality, and a ... verification
+  criterion'' should not imply that generic global optimality has been proved;
+  \item ``solve two ... cases in closed form'' should be narrowed to the derivation of extremal
+  equations and closed representations at the levels actually established;
+  \item ``cleanly separates'' is evaluative; state the concrete separation between spatial-gradient
+  and mass-flow terms.
+\end{itemize}
+
+An alternative abstract is provided in section~\ref{sec:modeltext}.
+
+\subsection{Section 1: Introduction}
+
+The introduction is commendably brief and its four-paragraph structure is sound.  Preserve the
+opening stationary/dynamical contrast and the explicit paper map.  Revise the second paragraph,
+which presently turns a legitimate research gap into an absolute historical claim.
+
+The reader also needs the operational meaning of the rail before the formalism.  Add one sentence
+explaining that an ideal actuator supplies the proper acceleration needed to hold the chosen
+observer-relative energy fixed, and that the cost being minimised is elapsed clock time, not
+actuation energy.  This prevents a predictable objection: if arbitrary thrust is allowed, why is
+the problem not trivial?  The answer lies in the fixed indicatrix/charge constraint, but it should
+be visible immediately.
+
+The last paragraph gives too much promotional space to the companion paper.  One sentence is
+sufficient.  Paper I should end its introduction by foregrounding its own strongest result: the
+complete first-order Vaidya response and its true-flow test.
+
+\subsection{Section 2.1: Rail constraint and indicatrix}
+
+The sequence rail constraint $\rightarrow$ ellipse $\rightarrow$ domain $\rightarrow$ protocol
+$\rightarrow$ PMP is logical.  The distinction between the boundary of a convex region and a
+convex set is careful and should be preserved.  So should the statement that no relaxed control is
+needed because the maximising direction is unique on the strictly convex oval.
+
+The section is nonetheless too dense for the first encounter.  Table 1 arrives before the reader
+has seen either application and includes Paper-II notation.  Reduce it to $u,W,\hat E,J$,
+$L_{\rm mech}$, the clocks and the adiabatic parameter.  Introduce Vaidya-specific symbols at the
+start of section 4 and leave conformal Kerr symbols to Paper II.
+
+The ``Domain of the indicatrix'' paragraph simultaneously discusses freezing, horizons,
+ergospheres, analytic continuations and Doran/ZAMO alternatives.  Only the general timelike-selector
+and nondegeneracy assumptions are needed here.  Move the rotating caveat to the companion paper.
+
+The phrase ``fixed endpoints'' must be standardised.  The protocol is a fixed initial event plus a
+fixed spatial target/terminal worldline at free arrival time, not two fixed spacetime events.  When
+Theorem I.2 or figure A2 uses ``fixed endpoints'', specify ``fixed spatial endpoints'' or the exact
+terminal manifold so it cannot be confused with the companion two-event problem.
+
+\subsection{Section 2.2: Existence, normality and global optimality}
+
+This section contains essential corrections and is one of the strongest parts of the manuscript.
+The direct-method assumptions are stated; the freezing/horizon exclusion is visible; normality is
+argued from the positive support function; and the HJB result is identified as a verification
+theorem rather than an automatically available solution.
+
+Editorially, the proof detail can move to an appendix.  The main text needs a boxed theorem with
+the domain and conclusion, followed by one paragraph stating what is and is not globally
+certified.  The extended discussion of viscosity solutions, conjugate points, Maxwell sets and
+cut loci is useful for mathematical readers but slows the physical narrative before FLRW.  A
+compact summary in the body and a fuller appendix would preserve rigour while improving flow.
+
+Avoid the sentence ``a candidate extremal saturates it'' unless the saturation relation and
+regularity assumptions are immediately clear.  Broad readers may interpret HJB terminology as a
+completed global solution.  The most important sentence is already present: no global value
+function is constructed for generic non-stationary trajectories.  Bring it forward.
+
+\subsection{Section 2.3: Selector hierarchy and Perlick limit}
+
+This is conceptually valuable and should remain in the main text.  Recovery of Perlick's fixed-
+energy stationary optics is an important consistency check.  However, the derivation can be
+shortened after the equality of the Finsler functions is stated.  The hierarchy should be
+introduced as a convention for the controlled problem, not as the only possible physically
+canonical choice in all spacetimes.  The current final ``Convention'' item does this honestly;
+retain it.
+
+The conformal-Killing level should be described only to the extent needed for FLRW.  References to
+constant-$A$ Thakurta--Kerr and detailed conformal normalisation belong in the companion article.
+
+\subsection{Section 3: FLRW}
+
+The FLRW result is clear and appropriately simple: the position-independent optical index makes
+the straight comoving line the shared spatial path, with freezing but no branch splitting.  This
+serves as an effective base case for the Vaidya contrast.
+
+Two points need care.  First, equation (10) uses $\arg\min$ notation for all three clocks.  If the
+underlying argument proves the equality over the full admissible class, state its assumptions.  If
+figure 3 is merely a restricted perturbation check, do not use that figure as the proof.  Second,
+the phrase ``variational check: ... minimizes BOTH'' inside the plot and its caption overstates what
+a single family of sinusoidal perturbations establishes.  Use ``local perturbation check''.
+
+Figures 2 and 3 can be combined into a two-panel figure.  The section would then occupy roughly one
+page and function as the intended bridge rather than a two-page visual interlude.
+
+\subsection{Section 4.1: Vaidya invariant and Hamiltonians}
+
+The transition to Vaidya is effective.  The Kodama vector and Misner--Sharp mass are introduced with
+standard references, and the controlled/Noether distinction is explicit.  The branch Hamiltonians
+and exact map between the axial costate and mechanical angular momentum are essential; preserve
+them.
+
+The paragraph on on-shell drift versus off-shell shell departure is particularly important because
+it prepares the later adiabatic correction.  It should be connected more directly to Theorem I.5:
+state here that the full first-order response must include the induced costate displacement and
+give a forward reference to the theorem statement in the main text.
+
+Figure 4 should be assessed after the final layout at actual column size.  The information is
+useful, but the typography should match the later Vaidya figures and avoid a large explanatory
+headline inside the image.
+
+\subsection{Sections 4.2--4.3: Phenomenology and frozen-clock comparison}
+
+Penetration, arrival-epoch sensitivity and regular integration through periapsis are physically
+readable and likely to attract CQG readers.  These results should be narrated before the detailed
+algebraic machinery.  A compact summary table could distinguish: exact identity; frozen
+comparison; full non-autonomous numerical result; and open outgoing problem.
+
+The negative-rate branch is now correctly labelled as formal.  Even so, figures 7--9 grant it too
+much prominence.  Figure 7 in particular uses a full page to state that a sign change occurs only
+after entering an unphysical negative-mass region and that the outgoing problem is not solved.
+That conclusion can be conveyed in three sentences.  Move the plot to supplementary material or
+retain only one panel as a robustness check.
+
+The term ``absence of inversion'' should always carry ``in the frozen-clock comparison''.  The
+current subsection title does this; captions and conclusion should use the same qualifier.  Do not
+let a reader mistake the result for a theorem about physical evaporation.
+
+\subsection{Section 4.4: Closed first-order correction}
+
+This section contains both the paper's most important technical result and its greatest editorial
+obstacle.  The beginning is good: it identifies the frozen Schwarzschild family, the genus-two
+sextic, the mass derivative, the two clocks and the horizon logarithm.  The paragraph that labels
+equation (22) as the on-shell component and then explains the missing off-shell costate term is
+essential.
+
+The next several pages go too far for the main text.  A journal reader does not need all of the
+following before reaching the conclusion: the complete divisor of the horizon differential,
+local uniformisers, a sample negative-radius degeneration, Weierstrass sigma/zeta formulae, a
+rank-five numerical basis claim, Kronecker--Eisenstein series, shuffle reductions and a detailed
+advanced/retarded decomposition.  These are suitable for appendices, a supplement, or a separate
+mathematical methods paper.
+
+The main section should instead contain five objects:
+
+\begin{enumerate}
+  \item a precise definition of the frozen zeroth-order orbit;
+  \item a statement of the complete first-order theorem, including the off-shell source;
+  \item the Vaidya boundary reduction $S_{\mathcal D}=[r p_r]-\lambda$;
+  \item a compact statement that the result is evaluable in a finite Abelian/iterated-integral
+  basis, with the horizon logarithm adding a weight-two letter;
+  \item figure 10 and enough numerical detail to interpret the slopes.
+\end{enumerate}
+
+Use ``closed representation'' rather than ``closed form'' whenever evaluation still requires
+constructing a period matrix and using the archived theta routine.  The current paragraph ``What
+is reconstructible from the text alone'' is admirably honest and should be retained, preferably
+near the first use of ``closed'' rather than deep in Appendix C.
+
+Claims about irreducibility are correctly marked conjectural in several places.  Enforce that
+qualifier everywhere, including the abstract-level description if the transcendence class is
+mentioned at all.  The numerical rank-five observation should not appear in the main narrative;
+it is a secondary structural experiment.
+
+\subsection{Section 5: Conclusions}
+
+Preserve the three-tier structure but move every figure before the section.  In the supplied PDF,
+``Proved'' appears below figure 8 on page 23, ``Conditional and numerical'' below figure 9 on page
+24, and ``Outlook'' below figure 10 on page 25.  This fragments the final argument and makes the
+reader interpret plot captions between conclusion paragraphs.
+
+Qualify ``well-posed'' by the compact timelike-selector domain and stated endpoint protocol.
+Replace ``the first-order correction closes in a horizon dilogarithm'' with a formulation that
+distinguishes the complete response from the special-function representation of its components.
+End on the Vaidya conclusion; the companion rotating work should receive only a final sentence.
+
+\subsection{Appendix A: Reproducibility and consistency}
+
+The exact polynomial identity and script map are valuable.  They allow a referee to distinguish
+symbolic derivation from fitting.  Keep this appendix, but streamline it.
+
+Table A2 is visibly broken at the bottom: the extended-Hamiltonian row, script name, slope and hash
+are cramped and partly collide.  Rebuild it with one result per row, a fixed-width or
+\texttt{tabularx} description column, and separate columns for script, test quantity and achieved
+residual.  Put paths and hashes in a smaller monospaced font.  Verify that the script hash matches
+the exact Zenodo version cited by the paper.
+
+Figure A1 is a useful stationary-limit check.  Figure A2 again uses ``minimizes'' too strongly;
+change it to a restricted perturbation check.  If space is needed, move A2 to supplementary
+material because its message duplicates figure 3 at a different geometry.
+
+\subsection{Appendix B: Genus-degeneration loci}
+
+This appendix is mathematically rich but editorially overdeveloped relative to its physical role.
+It explicitly says that the Vaidya double root is at negative radius and is not a physical external
+separatrix.  The manuscript should therefore avoid calling this simply ``the separatrix'' in
+nearby prose or filenames.  Use $J_{\rm deg}$ and ``algebraic genus-degeneration locus''
+consistently; reserve ``separatrix'' for a dynamical boundary when one exists.
+
+The appendix would work better as supplementary mathematical material.  If it remains in the
+article, begin with a short statement of why a CQG reader needs it: it proves that the generic
+genus-two representation has a controlled genus-one limit and supplies an independent check.
+Then move implementation-level residue formulae and numerical-basis compression to the archive.
+
+Lemma I.6 appears before Theorem I.5.  Either reorder Appendices B and C, move the theorem statement
+to the body, or renumber the results in reading order.  The first option is easiest structurally;
+the second is best narratively.
+
+\subsection{Appendix C: Complete extended-Hamiltonian correction}
+
+The content of Appendix C is central, not optional.  Its theorem statement should be promoted to
+section 4.4 or to the end of section 2.  The appendix can then be titled ``Derivation of the
+complete first-order response'' and contain the canonical calculation, the drift generator, the
+boundary source, branch orientation and separatrix limit.
+
+The notation is demanding because $s$ is an evolution clock, $\lambda$ is elapsed from the
+free-arrival endpoint, and $m(v)=m_0(1+\varepsilon s+\cdots)$ uses both $v$ and $s$.  Add a one-line
+orientation diagram or a small table.  State the direction of integration once and reuse it.
+
+The paragraph on Thakurta--Kerr conformal momentum normalisation is more detailed than Paper I
+needs.  Replace it with a sentence saying the companion application adds a dilation term when
+normalised momenta are time-dependent.  This preserves the logical bridge without reproducing
+Paper II.
+
+\subsection{Back matter}
+
+The data-availability statement is strong.  Add the exact archive version or record version date
+if the DOI resolves to multiple versions.  The GitHub link may remain as development history, but
+the archived DOI must be sufficient to reproduce the submitted PDF.
+
+The AI acknowledgement is acceptable in substance under current IOP guidance.  A concise version
+could read: ``OpenAI GPT-5.6 (Sol) and Anthropic Claude (Opus 4.8) assisted with symbolic-algebra
+checks, numerical-code development, and language/structural editing.  The author critically
+reviewed and independently verified all outputs and takes responsibility for the work.''  Retain
+the software citations separately.
+
+The reference list must be regenerated without \verb|\nocite{*}| and checked against the actual
+text.  Companion-paper material should not be imported wholesale.
+
+\section{Literature positioning and novelty repair}
+
+\subsection{The missing direct lineage}
+
+The paper currently moves from Perlick (1991) to broad Randers/Zermelo and optimal-control sources.
+This omits work that is terminologically and variationally much closer to the present article.
+At minimum, the revised introduction should discuss:
+
+\begin{itemize}
+  \item Giannoni, Piccione and Verderesi (1997), on a sub-Riemannian formulation of the relativistic
+  brachistochrone;
+  \item Giannoni and Piccione (1998), on existence in stationary spacetimes;
+  \item Giannoni, Piccione and Tausk (2002), on travel-time brachistochrones, observer-field
+  conservation laws, first/second variation and Morse theory;
+  \item Giannoni and Piccione (2002), on arrival-time brachistochrones in a general relativistic
+  setting and the distinction from travel-time problems.
+\end{itemize}
+
+These sources do not obviously contain the controlled Kodama construction.  Their relevance is
+that they occupy the very conceptual territory currently described as unaddressed: observer-field
+constraints, prescribed energy, arrival/travel time, endpoints and existence.  Citing them allows
+the author to articulate the real advance with much greater credibility.
+
+\subsection{General Fermat principles are broader than stationary Randers reduction}
+
+The manuscript is correct that the stationary spatial reduction to a time-independent Randers or
+Jacobi geometry depends on symmetry.  It should not imply that general-relativistic Fermat
+principles themselves exist only in stationary spacetimes.  Arrival-time characterisations of
+null geodesics can be formulated on arbitrary spacetimes, and there are timelike extensions with
+prescribed proper time.  The controlled massive rail problem is different, but the distinction
+must be explicit.
+
+A useful 2026 survey by Caponio and Javaloyes synthesises these formulations and can anchor the
+terminology.  It may be cited as a survey rather than a priority claim.
+
+\subsection{Very recent adjacent work}
+
+The July 2026 preprint \emph{The brachistochrone problem for a constant velocity traveler in static
+and spherically symmetric spacetimes} studies a fixed local-speed protocol in stationary spherical
+geometries.  Because the supplied manuscript is dated August 2026, this work is recent but already
+visible.  It should be considered in the final literature search.  A short contrast would be
+enough: fixed local speed in a static observer frame is not the same admissible set as a fixed
+Killing/Kodama rail charge in a dynamical spacetime.
+
+Another recent paper on brachistochrone-ruled timelike surfaces uses stationary Finsler/Jacobi
+reductions.  It is adjacent rather than essential.  Cite it only if the revised introduction
+discusses current stationary applications; do not expand the bibliography merely for currency.
+
+\subsection{Proposed novelty statement}
+
+The following is both narrower and stronger than the current absolute claim:
+
+\begin{quote}
+Previous relativistic brachistochrone theories exploit stationarity, prescribed observer-field
+energy, or geodesic arrival-time principles.  We consider instead an actively controlled timelike
+worldline in a genuinely evolving geometry.  The control maintains a fixed charge relative to a
+geometrically selected field, using the Kodama vector in spherical symmetry, and leads to a
+non-autonomous free-arrival Pontryagin problem.  We derive this problem explicitly in FLRW and
+ingoing Vaidya and obtain its complete first-order adiabatic response.
+\end{quote}
+
+This statement invites a clean comparison rather than a historical challenge.
+
+\section{Recommended scientific narrative}
+
+The revised paper should be organised around a sequence of questions a CQG reader naturally asks.
+
+\subsection*{Question 1: what is the physical protocol?}
+
+Define the rail in operational terms.  An actuator maintains $-u\cdot W=\hat E$; the control is
+the direction on the resulting velocity indicatrix; the objective is a selected arrival or proper
+clock; thrust expenditure is not the cost.  State the endpoint data and domain.
+
+\subsection*{Question 2: why is the construction mathematically legitimate?}
+
+State the PMP reduction, existence/normality domain and free-arrival transversality.  Give the HJB
+criterion and immediately state that generic global certificates are not constructed.  Put proof
+detail in an appendix.
+
+\subsection*{Question 3: what geometric field supplies the charge?}
+
+Present the Killing/CKV/Kodama hierarchy and the Perlick stationary limit.  Use FLRW as the
+one-paragraph CKV example and Vaidya as the main Kodama example.  Mention Paper II only once.
+
+\subsection*{Question 4: what does time dependence change physically?}
+
+Lead with the Vaidya results: the radial wind offsets the indicatrix; arrival and proper-time
+branches split; penetration and periapsis depend on the epoch; bounce integration remains regular.
+Clearly label exact, frozen and numerical statements.
+
+\subsection*{Question 5: is the first-order response actually the true non-autonomous one?}
+
+State Theorem I.5 in the body.  Explain in plain language that differentiating the frozen shell is
+not enough because the interior trajectory is off that shell; the anchored costate source supplies
+the missing term.  Show the universal Vaidya boundary form and figure 10.  This is the natural
+climax of the paper.
+
+\subsection*{Question 6: how explicit is the answer?}
+
+Give a compact hierarchy:
+
+\begin{itemize}
+  \item algebraic coefficient reduction: exact;
+  \item weight-one Abelian/Kleinian terms: explicit;
+  \item weight-two iterated/horizon terms: closed representation with convergent numerical
+  evaluation;
+  \item irreducibility/minimal basis: conjectural or numerical evidence only.
+\end{itemize}
+
+Then refer to appendices/supplement for construction.  End with limitations and the physical
+outlook.
+
+\subsection{Concrete revised outline}
+
+\begin{longtable}{@{}p{0.08\textwidth}p{0.32\textwidth}p{0.52\textwidth}@{}}
+\toprule
+Part & Proposed heading & Purpose \\
+\midrule
+\endhead
+1 & Introduction & Problem, direct literature, operational rail, precise contributions. \\
+2 & Controlled-rail optimal control & Protocol, indicatrix, selector hierarchy, compact theorem
+statements and qualifications. \\
+3 & FLRW base case & One equation, one combined figure, branch degeneracy and freezing. \\
+4 & Kodama-controlled Vaidya brachistochrones & Invariant, Hamiltonians, costate map and physical
+phenomenology. \\
+5 & Complete first-order response & Theorem I.5, boundary source, special-function hierarchy and
+true-flow validation. \\
+6 & Discussion and limitations & Meaning of control cost, globality, outgoing Vaidya, domain and
+turning-point limitations. \\
+7 & Conclusions & Uninterrupted, result-tiered summary. \\
+A & Proofs of the general control statements & Direct method, normality, HJB and cut-locus detail. \\
+B & Reproducibility & Polynomial reduction, script map, residual specifications. \\
+C & Special-function construction & Generic genus-two basis and horizon letter. \\
+D & Algebraic degeneration (or supplement) & Negative-radius genus-one limit and detailed residue/
+nome machinery. \\
+\bottomrule
+\end{longtable}
+
+This structure leaves the science intact while making the main line legible.
+
+\section{Figures, tables and visual presentation}
+
+\subsection{Global visual assessment}
+
+The PDF is technically clean: there are no missing plots, clipped equations or visibly corrupted
+characters.  The body font is readable at full-page size and the running header is consistent.
+The main concern is proportionality and final-size legibility.  IOP advises authors to use clear,
+high-quality figures, text around 8--12 points at final size, and non-colour distinctions.  Several
+plots meet the data requirement but not yet the journal-design requirement.
+
+\subsection{Figure-by-figure recommendations}
+
+\begin{longtable}{@{}p{0.10\textwidth}p{0.22\textwidth}p{0.58\textwidth}@{}}
+\toprule
+Item & Current role & Editorial action \\
+\midrule
+\endhead
+Fig. 1 & Three indicatrix geometries & Redraw as vector schematic with larger labels.  Remove or
+visually demote Thakurta--Kerr.  Use panel labels and a single legend. \\
+Fig. 2 & FLRW freezing/redshift & Combine with figure 3.  Remove the long in-plot title; put the
+interpretation in the caption. \\
+Fig. 3 & FLRW perturbation check & Relabel as a restricted local perturbation test, not a proof of
+global minimisation. \\
+Fig. 4 & Vaidya indicatrix & Keep if it directly introduces the radial wind; harmonise fonts and
+colours with figure 1. \\
+Fig. 5 & Branch depth/penetration & Keep; make exact/numerical/frozen status explicit in caption. \\
+Fig. 6 & Timing/trajectory behaviour & Keep the strongest panel; ensure the formal branch is not
+visually equated with physical evaporation. \\
+Fig. 7 & No-inversion diagnostic & Move to appendix/supplement.  Its caption is mostly a disclaimer
+and the main result is negative. \\
+Fig. 8 & Bounce through periapsis & Keep, but place before the Conclusions and reduce plot title. \\
+Fig. 9 & Arrival-epoch timing & Keep or combine with figure 8; state that the blue branch is formal. \\
+Fig. 10 & Off-shell residual scaling & Definitely keep.  Add fit interval, fitted slopes with
+uncertainty, norm, tolerances and sub-arc.  Correct any stale equation reference. \\
+Fig. A1 & Stationary-limit residual & Keep in reproducibility appendix at smaller size. \\
+Fig. A2 & Branch perturbations & Move to supplement or re-caption as a local family check. \\
+\bottomrule
+\end{longtable}
+
+Use line styles and markers in addition to colour so that physical/static/formal branches remain
+distinguishable in greyscale.  Export line art as vector PDF/EPS where possible.  Avoid titles such
+as ``gap crosses 0 ONLY inside $m<0$'' inside the graphics; that sentence belongs in prose.
+
+\subsection{Float order}
+
+No figure should interrupt the Conclusions.  Insert a float barrier or explicit clear-page before
+section 5 after placing figures 8--10.  A better solution is to integrate figures 8 and 9 into the
+phenomenology subsections and place figure 10 at the end of the first-order section.  Then begin the
+Conclusions on a fresh page if necessary.
+
+\subsection{Tables}
+
+Table 1 should become a genuine Paper-I notation table.  Table A1 can be shortened.  Table A2 must
+be rebuilt because the final rows visibly collide.  Suggested columns are: Result; equation/
+figure; script; archived hash; verification quantity; achieved value.  Do not put a prose category
+header inside a row with data.
+
+\section{Notation and terminology consistency}
+
+The mathematical notation is mostly stable, but the number of clocks and nearby uses of the same
+symbols create an avoidable barrier.  A compact convention table should distinguish:
+
+\begin{tabularx}{\textwidth}{@{}p{0.14\textwidth}X@{}}
+\toprule
+Symbol & Required unambiguous use \\
+\midrule
+$t$ & Stationary/frozen coordinate time only; not a canonical clock after $m=m(v)$. \\
+$\eta$ & FLRW conformal time; do not reuse descriptively for a generic slow clock. \\
+$\tau$ & Proper time along the rail. \\
+$v$ & Advanced null coordinate and native ingoing-Vaidya evolution parameter. \\
+$u$ & Four-velocity in most of the paper; avoid using $u$ for retarded time without an explicit
+font/context warning. \\
+$s$ & Abstract selected evolution clock or slow parameter. \\
+$\lambda$ & Elapsed clock anchored at the free-arrival endpoint; always state orientation. \\
+$J$ & Conserved axial Pontryagin costate. \\
+$L_{\rm mech}$ & Mechanical angular momentum, generally not conserved on the controlled rail. \\
+$J_{\rm deg}$ & Algebraic genus-degeneration value in Vaidya; not automatically a physical
+separatrix. \\
+$J_c$ & Use only for a physically defined critical/capture threshold, or define explicitly if it
+is deliberately identified with $J_{\rm deg}$ in a restricted context. \\
+\bottomrule
+\end{tabularx}
+
+The manuscript sometimes uses ``arrival branch'', ``coordinate-time branch'', ``advanced-time
+branch'' and ``native branch'' close together.  Define branch names once per geometry.  For Vaidya,
+prefer ``advanced-time ($v$) branch'' and ``proper-time ($\tau$) branch''; call $t$ only the frozen
+Schwarzschild comparison clock.
+
+Use ``extremal'' for a PMP solution, ``locally minimizing within the tested family'' for a numerical
+perturbation check, and ``global minimizer'' only when the HJB/cut-locus conditions are supplied.
+Use ``closed representation'' when numerical periods/theta evaluation remain necessary, and
+reserve ``elementary/elliptic closed form'' for the stronger cases.
+
+The manuscript alternates ``non-stationary'' and ``non-autonomous''.  They are related but not
+synonymous: the former describes the geometry, the latter the reduced control system.  Maintain
+that distinction intentionally.
+
+\section{Bibliography, data and research-integrity audit}
+
+\subsection{Reference-list curation}
+
+The source currently calls \verb|\nocite{*}| and two bibliography databases.  This produces 69
+printed references, while only 40 keys are explicitly cited in the Paper-I source.  The unused set
+includes predecessor projects, Kerr geodesics, Thakurta/McVittie cosmological black holes,
+classical algebraic-geometry books and recent polylogarithm papers not invoked in Paper I.  This is
+not merely cosmetic: it makes the article look like an incompletely separated master manuscript.
+
+Remove \verb|\nocite{*}|.  Compile, inspect all undefined citations, and then add only works that
+are discussed in the text.  Replace irrelevant carry-over references with the missing direct
+brachistochrone literature.  The final list may be shorter while being substantively stronger.
+
+Every entry should be checked against the version of record.  Prefer DOI links; include titles if
+the selected IOP style permits or if they materially help a specialised bibliography.  Software
+references should identify exact versions and persistent archives.  If Paper II is not publicly
+available at submission, follow the journal's rule for unpublished material rather than treating
+it as an ordinary retrievable paper.
+
+\subsection{Data and software}
+
+The Zenodo DOI is an important strength.  Verify four things immediately before submission:
+
+\begin{enumerate}
+  \item the DOI resolves publicly without authentication;
+  \item the cited record/version contains every script named in Table A2;
+  \item the hashes printed in the PDF match that archive, not the development branch;
+  \item the environment records Python/Sage/Mathematica and package versions needed for the
+  period-matrix and theta calculations.
+\end{enumerate}
+
+The GitHub link should be supplementary to, not a replacement for, the immutable archive.
+
+\subsection{Generative-AI disclosure}
+
+The disclosure is broadly consistent with current IOP policy: it names systems and versions,
+describes uses, states critical review and assigns responsibility to the author.  Keep it.  The
+author should also retain private records sufficient to explain which reference metadata and
+symbolic outputs were independently verified, because IOP places responsibility for accuracy on
+the author and does not accept unverified AI-generated reference lists.
+
+No authorship or competing-interest concern is apparent from the reviewed material.  The single-
+author contribution statement is implicit; a short CRediT statement is optional rather than
+necessary.
+
+\section{Major-revision checklist}
+
+The following items are ordered by editorial impact.  Items 1--10 should be completed before
+submission; the remaining items are strongly recommended.
+
+\begin{enumerate}[label=\textbf{M\arabic*.}]
+  \item \textbf{Repair the novelty paragraph.}  Remove the absolute ``have not been addressed''
+  claim, add the direct 1997--2002 relativistic-brachistochrone literature, and state the controlled
+  non-autonomous/Kodama advance precisely.
+  \item \textbf{Promote Theorem I.5.}  Put its statement and interpretation in the main text;
+  retain the derivation in an appendix.  Restore result numbering in reading order.
+  \item \textbf{Shorten section 4.4.}  Keep the complete response, universal source, representation
+  hierarchy and true-flow validation in the body.  Move detailed divisor, degeneration, nome and
+  minimal-basis material out of the main narrative.
+  \item \textbf{Make optimality language uniform.}  Correct ``minimizes'' in figures 3 and A2 and
+  qualify ``well-posed''/``global'' everywhere by the assumptions already stated in section 2.
+  \item \textbf{Complete the Paper-I/Paper-II split.}  Remove most Thakurta--Kerr notation and
+  detailed ergosphere/conformal-momentum discussion from Paper I; retain only a concise ladder and
+  forward reference.
+  \item \textbf{Regenerate the bibliography.}  Delete \verb|\nocite{*}|, cite only relevant work,
+  add missing direct predecessors and validate all metadata.
+  \item \textbf{Rebuild figure hierarchy.}  Combine FLRW plots, move figure 7 to supplement, place
+  figures 8--10 before the Conclusions and make all labels legible at final size.
+  \item \textbf{Repair Table A2.}  Eliminate overlapping content, separate scripts/hashes/tests and
+  tie every row to the archived release.
+  \item \textbf{Clarify endpoint terminology.}  Use fixed launch event plus fixed spatial target at
+  free arrival clock consistently; distinguish this from a two-event fixed-spacetime-endpoint BVP.
+  \item \textbf{Calibrate ``closed form''.}  Use ``closed special-function representation'' where
+  period construction and archived numerical routines are still required; keep conjectural
+  irreducibility explicitly labelled.
+  \item \textbf{Re-centre the abstract.}  Reduce terminology, identify the physical Vaidya result,
+  and avoid implying an unconditional global minimisation theorem.
+  \item \textbf{Explain the rail operationally in the introduction.}  State what actuation is
+  allowed, what charge is fixed and which cost is minimised.
+  \item \textbf{Separate result levels in Vaidya.}  Mark exact, frozen, numerical, adiabatic and open
+  outgoing statements with a consistent visual/verbal scheme.
+  \item \textbf{Standardise $J_c$ versus $J_{\rm deg}$.}  Do not call a negative-radius algebraic
+  degeneration a physical separatrix.
+  \item \textbf{Recompile and compare.}  Resolve the stale equation reference seen in figure 10's
+  supplied-PDF caption and check every cross-reference after reordering.
+\end{enumerate}
+
+\section{Minor-revision checklist}
+
+\begin{enumerate}[label=\textbf{m\arabic*.}]
+  \item Choose one title and a stable five-to-seven-keyword set.
+  \item Use one spelling convention for ``non-stationary'' and consistent hyphenation for
+  ``controlled-rail'', ``free-arrival'' and ``first-order''.
+  \item Define CKV in words at first use in the body even if the abstract spells it out.
+  \item Reduce parenthetical caveats by moving them into short remarks or a limitations subsection.
+  \item Break long paragraphs in section 4.4; several contain multiple logical levels and formulas.
+  \item State whether $\dot m$ is dimensionful and how $\varepsilon=M\dot m/m$ is used in every
+  residual plot.
+  \item Give fit uncertainty and fitting interval for slopes in figure 10, not only ``approximately
+  2.00''.
+  \item Name the residual norm and integration sub-arc in each validation caption.
+  \item Use panel labels (a), (b) instead of relying on vertical position.
+  \item Replace all-caps emphasis inside plots with ordinary sentence case.
+  \item Ensure line styles, not colour alone, distinguish branches.
+  \item Export line art in vector form and confirm 8--12 pt final text.
+  \item Remove unused abbreviations and symbols from Table 1.
+  \item Give $W$, $s$ and the terminal manifold in one protocol box.
+  \item Make the orientation of $\lambda$ explicit in the first equation where it appears, not only
+  in Appendix C.
+  \item Avoid using $u$ both for four-velocity and retarded time in the same local discussion.
+  \item Distinguish ``horizon'', ``apparent horizon'', ``trapping horizon'' and algebraic branch
+  point according to the Vaidya assumptions.
+  \item Keep ``formal negative-rate continuation'' in every relevant legend/caption.
+  \item Shorten captions: describe what the reader should learn, not the full derivation and all
+  limitations.
+  \item Place computational provenance (script name/hash) in Appendix A rather than every main
+  caption, unless essential.
+  \item Make equation numbering stable after moving Theorem I.5; avoid hard-coded equation numbers
+  in plot artwork.
+  \item Add a single paragraph explaining why the genus-two structure is surprising physically,
+  rather than only contrasting it with geodesic ellipticity.
+  \item State once that additive constants/reference lengths in logarithms cancel in assembled
+  observables; do not repeat.
+  \item Move the rank-five numerical evidence to the archive or supplement and label its data set.
+  \item Verify that all manuscript software names use their official capitalisation.
+  \item Shorten the Paper-II discussion in the abstract, introduction, Table 1, figure 1, section 2,
+  Appendix C and Conclusions to avoid repetition.
+  \item Consider a dedicated ``Limitations'' subsection before Conclusions rather than distributing
+  caveats across captions.
+  \item Ensure the data-availability DOI points to the version corresponding to the final PDF.
+  \item Retain the AI disclosure but separate it typographically from software acknowledgements.
+  \item Run a final English copy-edit focused on article use, sentence length and repeated
+  ``genuinely'', ``cleanly'', ``exactly'' and ``universal''.
+\end{enumerate}
+
+\section{What should be left substantially unchanged}
+
+Revision should not flatten the paper into a generic optimal-control article.  The following
+elements are distinctive and already effective:
+
+\begin{itemize}
+  \item the fixed charge $-u\cdot W=\hat E$ as the central controlled-rail definition;
+  \item the Killing/CKV/Kodama selector hierarchy, presented as a declared geometric convention;
+  \item the explicit statement that the rail force may perform work against $W$ and is not free
+  fall;
+  \item the unique-maximising-direction PMP reduction on a compact strictly convex indicatrix;
+  \item the distinction between endpoint transversality $H(s_f)=0$ and the conserved extended
+  Hamiltonian;
+  \item the separation of $J=p_\varphi$ from mechanical angular momentum;
+  \item the conditional HJB verification language and cut/Maxwell qualification;
+  \item FLRW as the centred, branch-degenerate sanity check;
+  \item the unnormalised Kodama selector in ingoing Vaidya;
+  \item the distinction between the native advanced-time branch and the proper-time branch;
+  \item the formal/nonphysical status of the negative-rate ingoing continuation;
+  \item the complete on-shell plus off-shell first-order correction and its true-flow residual test;
+  \item the universal Vaidya boundary source $S_{\mathcal D}=[r p_r]-\lambda$;
+  \item the ``Proved / Conditional and numerical / Outlook'' result-tiering;
+  \item the immutable data/code archive and transparent AI-use disclosure.
+\end{itemize}
+
+These are the elements a revised article should make easier, not harder, to see.
+
+\section{Model editorial text}\label{sec:modeltext}
+
+The following examples illustrate claim calibration.  They are editorial proposals, not
+scientific rewrites, and should be checked against the final notation.
+
+\subsection{Suggested abstract}
+
+\begin{quote}
+We formulate a time-optimal controlled-worldline problem for spacetimes without a timelike
+Killing symmetry.  An ideal rail maintains the invariant $-u\cdot W=\hat E$, while the control is
+the direction on the resulting velocity indicatrix and the arrival clock is free.  The selector
+$W$ is chosen from a Killing--conformal-Killing--Kodama hierarchy, reducing to the Kodama vector in
+dynamical spherical symmetry.  On compact domains where the selector is timelike and the
+indicatrix is nondegenerate, we derive the normal Pontryagin extremals, establish existence under
+the stated coercivity assumptions, and give a time-dependent Hamilton--Jacobi criterion for global
+verification.  Spatially flat FLRW provides a branch-degenerate base case: the admissible
+indicatrix is centred and all considered clock functionals have the same straight comoving spatial
+path.  In ingoing Vaidya, radial mass flow shifts the indicatrix, separates the advanced-time and
+proper-time branches, and makes penetration depend on the arrival epoch.  For slowly varying mass
+we derive the complete first-order response, including the interior off-shell costate term.  Its
+Vaidya source reduces to a boundary expression, and the resulting Abelian/iterated-integral
+representation is verified against the full non-autonomous flow with an $O(\varepsilon^2)$
+residual.  The outgoing-Vaidya boundary-value problem is left open.
+\end{quote}
+
+This version is approximately the same length as the current abstract but removes Paper-II detail,
+states the domain and makes the physical result visible.
+
+\subsection{Suggested end of the novelty paragraph}
+
+\begin{quote}
+Relativistic brachistochrones and arrival-time principles have a substantial stationary and
+geometric variational literature.  The difficulty addressed here is different: the prescribed
+charge is actively maintained while the background geometry evolves, so the reduced control
+problem is non-autonomous and its ordinary Hamiltonian is not an interior first integral.  In
+spherical symmetry the Kodama vector supplies a canonical selector for this controlled problem.
+\end{quote}
+
+\subsection{Suggested claim-status box}
+
+\begin{quote}
+\textbf{Scope of the result.}  The PMP equations characterise normal extremals on the regular
+timelike-selector domain.  Global minimisation follows only where a single-valued HJB verification
+function or an explicit comparison across competing extremals is available.  The Vaidya
+negative-rate curves shown below are formal continuations in the ingoing chart and are not a model
+of physical evaporation.
+\end{quote}
+
+Placed near the end of section 2, this box would allow later captions to remain short.
+
+\subsection{Suggested conclusion core}
+
+\begin{quote}
+The controlled-rail constraint gives a well-defined non-autonomous time-optimal problem on compact
+domains where the selected field is timelike and the velocity indicatrix is nondegenerate.  FLRW
+is the centred base case, whereas the Kodama flow in Vaidya shifts the indicatrix radially and makes
+the optimal branches sensitive to the mass history and arrival epoch.  The complete first-order
+adiabatic response requires both the drift of the frozen family and the off-shell costate
+displacement.  For Vaidya the latter has a universal boundary source, and the assembled correction
+agrees with the full non-autonomous flow up to quadratic residuals.  Global HJB certification,
+turning-point uniformisation and the physical outgoing-Vaidya control problem remain open.
+\end{quote}
+
+\section{A practical revision sequence}
+
+The work can be revised efficiently without reopening the science in every section.
+
+\begin{enumerate}
+  \item \textbf{Freeze the claim hierarchy.}  Write a one-page internal sheet listing each main
+  result as proved, conditionally verified, numerical, conjectural or open.  Use that sheet to
+  audit the abstract, captions and conclusion.
+  \item \textbf{Repair literature and introduction first.}  This determines the exact novelty
+  claim and prevents later sections from being framed too broadly.
+  \item \textbf{Move Theorem I.5 next.}  Once the main theorem is in the body, reorganise section
+  4.4 around it and move technical derivations outward.
+  \item \textbf{Complete the paper split.}  Delete or condense Paper-II-specific notation and
+  passages before editing prose; otherwise the same material will be polished twice.
+  \item \textbf{Rebuild figures and tables.}  Decide which plots are main results, appendix checks
+  or supplementary diagnostics.  Then fix float order and captions.
+  \item \textbf{Regenerate references and cross-references.}  Remove \verb|\nocite{*}|, compile
+  twice, inspect warnings and compare the PDF against the archived code map.
+  \item \textbf{Perform a final broad-reader pass.}  Read only title, abstract, introduction,
+  first sentence of each section, captions and conclusion.  That reduced document should tell a
+  complete, accurately qualified story.
+\end{enumerate}
+
+This sequence is preferable to line-editing the current 38 pages from top to bottom because the
+main defects are structural.  Once the structure is fixed, the sentence-level edit will be much
+smaller.
+
+\section{Final recommendation}
+
+The manuscript should be revised, not abandoned.  The central controlled-rail idea is distinctive;
+the use of Kodama flow in a dynamical spherical spacetime is well matched to CQG; the endpoint and
+off-shell issues are treated far more carefully than in earlier development notes; and the
+true-flow residual provides a concrete validation target.  There is enough substance for a strong
+Paper I.
+
+I would not submit the supplied PDF unchanged.  Its present framing exposes the paper to avoidable
+criticism on novelty, global optimality language and physical interpretation, while its length and
+special-function density conceal the result that is most likely to interest the journal.  The
+unused 69-entry bibliography, Paper-II notation in Table 1, out-of-order theorem numbering,
+caption overclaims, broken Table A2 and figure-fragmented Conclusions reinforce the impression of a
+development snapshot rather than a final journal article.
+
+My simulated editorial recommendation is therefore:
+
+\begin{quote}
+\textbf{Return for major editorial revision, with encouragement to resubmit.}  A revised version
+should be suitable for external specialist review if it (i) positions the novelty against the
+direct relativistic-brachistochrone literature, (ii) centres the complete extended-Hamiltonian
+Vaidya response in the main narrative, (iii) moves most higher-genus construction detail out of
+the body, and (iv) aligns every claim, caption, figure and reference with the paper's carefully
+stated domain and optimality hierarchy.
+\end{quote}
+
+If those four conditions are met, the remaining issues are ordinary copy-editing and production
+work.  The author should then proceed with the physics rather than reopen already settled algebra
+unless a mathematical referee identifies a specific defect.
+
+\bigskip
+\section*{Sources consulted for the editorial assessment}
+\addcontentsline{toc}{section}{Sources consulted for the editorial assessment}
+
+\begin{itemize}
+  \item Classical and Quantum Gravity author guidelines and scope:
+  \url{https://publishingsupport.iopscience.iop.org/journals/classical-and-quantum-gravity/}
+  \item IOP generative-AI policy:
+  \url{https://publishingsupport.iopscience.iop.org/questions/generative-ai-tools/}
+  \item F. Giannoni, P. Piccione and D. V. Tausk, \emph{Morse theory for the travel time
+  brachistochrones in stationary spacetimes}, DCDS 8 (2002) 697--724,
+  \url{https://doi.org/10.3934/dcds.2002.8.697}
+  \item F. Giannoni and P. Piccione, \emph{The arrival time brachistochrones in general
+  relativity}, Journal of Geometric Analysis 12 (2002) 375--423,
+  \url{https://doi.org/10.1007/BF02922047}
+  \item E. Caponio and M. A. Javaloyes, \emph{On the formulations of the Fermat principle in
+  general relativity and beyond}, arXiv:2605.01532,
+  \url{https://arxiv.org/abs/2605.01532}
+  \item \emph{The brachistochrone problem for a constant velocity traveler in static and
+  spherically symmetric spacetimes}, arXiv:2607.29265,
+  \url{https://arxiv.org/abs/2607.29265}
+\end{itemize}
+
+\vfill
+\begin{center}
+  \small End of editorial report.
+\end{center}
+
+\end{document}

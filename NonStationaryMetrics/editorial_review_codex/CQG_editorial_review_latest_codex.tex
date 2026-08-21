@@ -1,0 +1,1082 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=25mm,headheight=14pt]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyhdr}
+\usepackage{xurl}
+\usepackage{hyperref}
+
+\definecolor{CQGblue}{RGB}{31,74,125}
+\definecolor{DarkGreen}{RGB}{35,105,65}
+\definecolor{DarkRed}{RGB}{145,38,38}
+\definecolor{Amber}{RGB}{160,94,0}
+\definecolor{LightBlue}{RGB}{235,242,250}
+\definecolor{LightGreen}{RGB}{236,247,239}
+\definecolor{LightAmber}{RGB}{252,245,229}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=CQGblue,
+  urlcolor=CQGblue,
+  pdftitle={Updated editorial assessment of Paper I for Classical and Quantum Gravity},
+  pdfauthor={Codex editorial review},
+  pdfsubject={Pre-submission editorial assessment},
+  pdfkeywords={Classical and Quantum Gravity; editorial review; controlled rail; Vaidya; brachistochrone}
+}
+
+\setstretch{1.05}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.47em}
+\setlist[itemize]{leftmargin=1.65em,itemsep=0.32em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.9em,itemsep=0.38em,topsep=0.4em}
+\renewcommand{\arraystretch}{1.17}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Updated editorial review --- Paper I}
+\rhead{CQG pre-submission assessment}
+\cfoot{\thepage}
+
+\newcommand{\must}{\textcolor{DarkRed}{\textbf{Must fix}}}
+\newcommand{\should}{\textcolor{Amber}{\textbf{Should fix}}}
+\newcommand{\preserve}{\textcolor{DarkGreen}{\textbf{Preserve}}}
+\newcommand{\paper}{\emph{Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry, Kodama energy, and Vaidya dynamics}}
+\newcommand{\Ehat}{\hat E}
+\newcommand{\SD}{S_{\mathcal D}}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+  \centering
+  \vspace*{1.5cm}
+  {\Large\bfseries Updated editorial assessment for\\[0.35em]
+  \emph{Classical and Quantum Gravity}\par}
+  \vspace{1.2cm}
+  {\LARGE\bfseries \paper\par}
+  \vspace{0.8cm}
+  {\large Complete review of the final 34-page production build\par}
+  \vspace{1.3cm}
+  \begin{minipage}{0.87\textwidth}
+    \colorbox{LightAmber}{\parbox{0.93\textwidth}{
+      \textbf{Simulated decision: short mandatory editorial revision, then external review.}
+      The manuscript is now a credible CQG Research Paper and the earlier major editorial
+      blockers have largely been removed. It should not be uploaded unchanged, however:
+      a compact set of notation, self-containedness, bibliography and archive-version
+      inconsistencies remains. None requires reopening the central off-shell derivation.
+    }}
+  \end{minipage}
+  \vfill
+  {\large Prepared as an Associate-Editor-style assessment, not as a substitute for\\
+  specialist mathematical peer review\par}
+  \vspace{0.45cm}
+  {\large 4 August 2026\par}
+  \vspace{1.1cm}
+  {\small Codex-origin report. The manuscript and its source were not edited during this assessment.\par}
+\end{titlepage}
+
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\section{Mandate, material reviewed, and limits}
+
+This report follows the supplied ``Instructions for Codex -- CQG Editorial Review''. The
+mandate is to read the manuscript completely as a simulated Associate Editor, assess its
+editorial readiness for \emph{Classical and Quantum Gravity} (CQG), and produce a full
+editorial report rather than a new mathematical referee report. The assessment therefore
+concentrates on scope, novelty presentation, readability, claim calibration, structure,
+figures, notation, bibliography, reproducibility and submission compliance.
+
+The authoritative manuscript is the current file \path{paper1/paper1.pdf}, compiled on
+4 August 2026. It contains 34 pages, nine numbered main figures, two appendix figures,
+two tables and 43 references. I read all pages, including Appendices A--C, the data
+availability statement, acknowledgements, funding and competing-interest statements,
+ORCID line and complete bibliography. I also inspected the current \LaTeX{} source,
+the production log, the result-to-script table, the cover-letter source, the prior
+editorial review and handoff documents, the public Zenodo/DataCite metadata for the three
+DOIs used in the submission package, and the current official CQG/IOP author guidance.
+
+The complete PDF was rendered and visually inspected page by page. Layout findings in this
+report therefore refer to the actual final rendering, not merely to extracted text. The
+build has no undefined references or citations, no duplicate labels and no overfull boxes.
+
+This remains an editorial assessment. I do not independently certify every Hamiltonian
+sign, the proof of normality, the exact residue formulae, the genus-two period
+construction, or the asserted error bounds. Those questions require specialist referees.
+Where the manuscript makes mutually inconsistent statements, uses an undefined object,
+or claims that a formula is printed when it is not, that is an editorially verifiable
+defect and is treated as such.
+
+\subsection*{Severity vocabulary}
+
+\begin{description}[leftmargin=2.1cm,style=nextline]
+  \item[\must] A concrete inconsistency likely to reduce referee confidence or obstruct
+  reproducibility. It should be corrected before submission.
+  \item[\should] A readability, positioning or production improvement that is unlikely to
+  determine validity by itself but materially improves desk-review prospects.
+  \item[\preserve] A feature already working well that should not be lost during cleanup.
+\end{description}
+
+\clearpage
+\section{Executive summary}
+
+The manuscript asks a clear question of genuine interest to CQG: how should a relativistic
+brachistochrone be formulated when the background geometry evolves and there is no timelike
+Killing energy? Its answer is a controlled rail on which the invariant
+$-u\!\cdot\!W=\Ehat$ is actively maintained, with $W$ selected through a Killing,
+conformal-Killing and, in spherical symmetry, Kodama hierarchy. The paper combines a
+Pontryagin formulation, regular-domain existence and normality, a conditional
+Hamilton--Jacobi verification criterion, an FLRW base case and a detailed ingoing-Vaidya
+application. The most important technical deliverable is the complete first-order
+adiabatic response, including the off-shell costate displacement, with a numerical
+$O(\varepsilon^2)$ residual test against the true non-autonomous flow.
+
+This is now recognisably a publishable CQG-shaped project. It lies within classical general
+relativity, dynamical black holes, constrained Hamiltonian systems and mathematical physics.
+It has a memorable conceptual mechanism, physically interpretable Vaidya phenomena,
+substantial analytic development and unusually explicit reproducibility support. The
+current abstract and conclusion are also disciplined about the difference between proved,
+conditional/numerical and open statements.
+
+The earlier review recommended major editorial revision before external review. That
+recommendation is no longer appropriate. The current build has addressed most of the
+previous blockers:
+
+\begin{itemize}
+  \item direct relativistic-brachistochrone and Fermat-principle predecessors are now cited;
+  \item Theorem I.5 is stated in the main text before Lemma I.6;
+  \item the complete on-shell plus off-shell correction is explicitly distinguished;
+  \item Figure 9 reports the fit interval, five samples, residual norm and fitted slopes;
+  \item $J_{\rm pen}$ and $J_{\rm deg}$ are mostly separated;
+  \item freezing, turning and spectral degeneration are no longer identified;
+  \item the Thakurta--Kerr panel has been removed from Figure 1 and preserved separately;
+  \item Table A2 no longer overlaps;
+  \item all 43 bibliography entries are cited and a References heading is present;
+  \item the conclusion is uninterrupted and the page count has fallen from 37 to 34;
+  \item PDF metadata is complete and all fonts are embedded.
+\end{itemize}
+
+The remaining defects are narrower, but several sit at high-leverage locations: the Kodama
+invariant begins from an undefined $T$; the notation changes from $\Ehat$ to $E$ without
+definition; $\varepsilon$ is both $\dot m$ and $M\dot m/m$; the off-shell source is both
+$\SD$ and $S$ even though $S$ is already the spectral sextic; and Appendix C claims that
+a nome series is printed in section 4.4 when it is absent. The public companion-paper title
+does not match reference [12], and the cover letter calls an older Zenodo PDF the present
+paper. These are not cosmetic in the dismissive sense: they affect whether a referee can
+unambiguously reconstruct what has been proved and which archived object is being reviewed.
+
+My simulated editorial decision is therefore:
+
+\begin{center}
+\colorbox{LightGreen}{\parbox{0.90\textwidth}{
+\textbf{Invite a short author revision, then send the paper to external review.}
+Do not desk-reject for scope, length or lack of substance. Do not upload the present files
+unchanged. Correct the ten mandatory consistency and snapshot items in section~\ref{sec:must},
+rebuild once, and then submit as a CQG Research Paper.
+}}
+\end{center}
+
+\clearpage
+\section{CQG fit and desk-review risk}
+
+CQG states that it welcomes original research across gravitational physics and spacetime
+theory, including classical general relativity, black holes, constrained Hamiltonian
+systems and differential geometry relevant to gravitation. It also requires Research
+Papers to report high-quality original research whose conclusions represent a significant
+advance, and asks that articles be interesting to its broad readership and place the result
+in the wider context of gravitational physics. The manuscript satisfies the subject-matter
+test without strain. Its desk-review risk comes from communication and internal consistency,
+not from journal mismatch.
+
+\begin{tabularx}{\textwidth}{@{}p{0.24\textwidth}X p{0.18\textwidth}@{}}
+\toprule
+Criterion & Current assessment & Risk before fixes \\
+\midrule
+Scope & Strong fit: dynamical black holes, optical geometry, constrained Hamiltonian
+control and exact methods in classical GR. & Low \\
+Originality & Distinctive controlled non-autonomous charge, Kodama selector and complete
+first-order Vaidya response. External referees must validate priority and mathematics. & Moderate \\
+Broad-reader interest & Clear opening question and physical phenomena, but the special-function
+layer remains dense and Paper-II references are frequent. & Moderate \\
+Claim hierarchy & Much improved; proved, conditional, numerical and open statements are usually
+distinguished. Several notation and reconstruction inconsistencies remain. & Moderate \\
+Reproducibility & Strong code DOI and script map, but final paper/figure-production files postdate
+the cited snapshots. & Moderate \\
+Presentation & Clean 34-page PDF, readable figures, no collisions. Visual style is still mixed
+between vector publication figures and raster research plots. & Low--moderate \\
+Bibliography & Relevant 43-entry list with no padding. Companion title and visible metadata need
+correction; DOI presentation is incomplete. & Moderate \\
+Ethics/back matter & Data, AI, funding, conflicts and ORCID statements are present and substantively
+aligned with current IOP policy. & Low \\
+\bottomrule
+\end{tabularx}
+
+The length is not itself disqualifying. CQG does not publish a simple page ceiling for Research
+Papers in the guidance consulted. The editorial question is whether 34 pages deliver enough
+physical and conceptual value for a broad readership. Here the answer can be yes, but only if
+the paper stops asking the reader to resolve avoidable symbol collisions and archive mismatches.
+
+The strongest desk-review pitch is not ``a new exact solution'' or ``a new special function''.
+It is: a well-defined controlled protocol for non-stationary relativistic travel; a geometrically
+motivated selector in spherical symmetry; a concrete Vaidya application; and a complete
+first-order response whose need for an off-shell costate term is exposed by a clean convergence
+test. The cover letter and abstract should keep that hierarchy.
+
+\clearpage
+\section{Principal strengths to preserve}
+
+\subsection{A memorable conceptual spine}
+
+The Killing $\rightarrow$ conformal-Killing $\rightarrow$ Kodama selector hierarchy gives the
+paper an identity. It connects stationary optical geometry to dynamical spherical spacetimes
+without pretending that the controlled energy is a Noether charge. The hierarchy is strongest
+when explicitly restricted: Kodama is the canonical spherical replacement, while in a general
+non-spherical spacetime the selector becomes a declared modelling choice.
+
+\subsection{Operational honesty about the rail}
+
+The paper explains that the rail supplies proper acceleration, may do work relative to the
+selector, preserves rest mass through $a\!\cdot\!u=0$, and does not minimise fuel or thrust.
+This prevents the common objection that arbitrary acceleration would trivialise the problem.
+The fixed-charge indicatrix, not unrestricted actuation, defines the admissible velocities.
+
+\subsection{Necessary versus sufficient optimality}
+
+Section 2.2 is editorially mature. It distinguishes Pontryagin extremality from a global HJB
+certificate, states regular-domain assumptions, identifies conjugate and Maxwell obstructions,
+and admits that no generic global value function is constructed. Figure 2 and Figure A2 now
+describe their numerical tests as local perturbation checks. This qualification should remain
+untouched.
+
+\subsection{Controlled versus mechanical charges}
+
+The distinction between $J=p_\varphi$ as a reduced-control costate and
+$L_{\rm mech}=g(u,\partial_\varphi)$ as mechanical angular momentum is important and clearly
+explained. Likewise, the paper correctly says that the ordinary non-autonomous Hamiltonian is
+not an interior first integral, while the extended Hamiltonian is the conserved object.
+
+\subsection{The complete first-order correction}
+
+Promoting Theorem I.5 to the main text was the right decision. The momentum-shell shift and the
+terminally anchored source make clear why the frozen-family derivative alone leaves an
+$O(\varepsilon)$ defect. Figure 9 now functions as a real validation figure: it identifies the
+norm, radial interval, five rates, regression variables and slopes 1.003152 and 1.999997. The
+unchanged numerical source has a recorded hash. This material is the paper's best response to a
+specialist sceptic and should not be compressed out of existence.
+
+\subsection{Physical caveat discipline}
+
+The manuscript consistently states that ingoing Vaidya with $m'<0$ is a formal continuation,
+not physical evaporation, and that the full outgoing-Vaidya boundary-value problem remains
+open. The conclusion's ``Proved / Conditional and numerical / Outlook'' structure is unusually
+helpful. Preserve it almost verbatim in spirit.
+
+\subsection{Reproducibility and disclosure}
+
+Table A2, the Zenodo software release, explicit residuals, script hash, software citations,
+data-availability statement, AI disclosure, funding statement, competing-interest declaration
+and ORCID collectively exceed the transparency of many theory submissions. The task is now to
+make the public snapshots match the final paper, not to reduce the disclosure.
+
+\clearpage
+\section{Mandatory corrections before submission}\label{sec:must}
+
+\subsection{Undefined $T$ at the start of the Kodama result}
+
+\must. On PDF page 11, section 4.1 starts from
+\[
+  -g(T,T)=(f u^v-1)^2/\Ehat^2,
+\]
+and says ``hence'' $-u\!\cdot\!K=\Ehat$. The manuscript never defines $T$. A global source
+search finds no other occurrence that supplies the missing definition. This is the first line
+of the central Vaidya invariant subsection, so a referee is likely to stop there.
+
+If $T$ is an auxiliary tangent, define its components and role before the identity and show the
+implication. If the controlled constraint is already $-u_v=\Ehat$ with $K=\partial_v$, the
+auxiliary identity may be unnecessary and can be deleted. This is a clarity repair, not an
+invitation to change equation (12).
+
+\subsection{Unannounced switch from $\Ehat$ to $E$}
+
+\must. The control charge is $\Ehat$ through equations (1), (7)--(18) and Table 1. Section 4.4
+then defines the sextic with $DE=(E^2-1)r+2m$, and Appendices A--B continue with $E$. No
+sentence states $E\equiv\Ehat$. Figure titles also use $E$.
+
+Define the identification at the first switch or use $\Ehat$ throughout. Consider replacing
+the visually ambiguous product-like symbol $DE$ by a named quantity such as $D_E$ or
+$\Delta_E$. At minimum, state that it is a single defined polynomial factor rather than the
+product of two previously defined variables.
+
+\subsection{Two incompatible definitions of $\varepsilon$}
+
+\must. Table 1 states $\varepsilon=\dot m$. Appendix C and Figure 9 state
+$\varepsilon=M\dot m/m$. The latter is dimensionless; the former is the coordinate mass rate.
+The expansion $m(v)=m_0(1+\varepsilon s+\cdots)$ then calls $s=v$ but does not say whether $s$
+has been scaled by $M$.
+
+Use $\dot m=dm/dv$ for the rate and reserve $\varepsilon=M\dot m/m$ for the dimensionless
+bookkeeping parameter. If units $G=c=M=1$ are used in a numerical subsection, say so. If the
+slow coordinate is $s=v/M$, print that definition before equation (C.1). This correction is
+essential because the central convergence plot is plotted against $\varepsilon$.
+
+\subsection{Collision between the sextic $S$ and the source $\SD$}
+
+\must. Equation (22) defines $\SD(\lambda)=\int_0^\lambda \mathcal D H\,d\lambda'$. The
+following paragraph nevertheless writes $S=\int\Theta H_v\,d\lambda'$, and the Figure 9
+caption says that the on-shell term drops ``the costate integral $S$''. In the same section,
+$S$ is the genus-two spectral sextic under every radical.
+
+Use $\SD$ in the paragraph, caption and any script-facing prose. The visual distinction is
+small but the mathematical objects are entirely different. This is precisely the kind of
+collision that creates sign or factor misunderstandings during peer review.
+
+\subsection{Path parameter, cost clock and augmented state}
+
+\must. Section 2.1 says the state is only $x=(r,\varphi)$ and the evolution parameter is the
+selected clock $s\in\{t,\tau,\eta,v\}$. It also says that all branches share an indicatrix per
+unit selector-time and differ in the cost one-form. For a Vaidya proper-time cost, however, the
+metric coefficients depend on the advanced time $v$. If $v$ is not the path parameter, it must
+be included in the state; if $v$ is the path parameter, $\tau$ is a cost and should not be
+listed as the evolution parameter of that Hamiltonian.
+
+Add one protocol paragraph or table that distinguishes:
+\begin{enumerate}
+  \item the monotone parameter used to describe the path;
+  \item the clock one-form being minimised;
+  \item the full state, including a time coordinate when the metric is non-autonomous;
+  \item the control, already named $\theta$.
+\end{enumerate}
+The HJB equation currently minimises over $u$, while $u$ already denotes the four-velocity and
+later the retarded coordinate. Replace that control variable by $\theta$ or another unused
+symbol. This is a formal clarity issue, not merely typography.
+
+\subsection{Incorrect claim that a nome series is printed}
+
+\must. Appendix C says that the genus-one nome series $g^{(1)}$ is ``printed in
+Section 4.4''. It is not present there or elsewhere. Section 4.4 also says that the full
+Kronecker--Eisenstein evaluation is given in Appendix B, while Appendix B provides the
+Weierstrass block form and residue data but not a complete standalone q-series evaluation
+recipe.
+
+Choose one honest level of self-containedness:
+\begin{itemize}
+  \item print the missing series, characteristic, period and normalisation conventions; or
+  \item state that the PDF fixes the algebraic reduction and special-function representation,
+  while period construction and numerical q-series evaluation require the archived routine.
+\end{itemize}
+The second option is shorter and already consistent with the final sentence of the same
+paragraph. Do not simultaneously claim full reconstruction from the PDF and reliance on an
+unprinted routine.
+
+\subsection{The Vaidya algebraic degeneration is still called a separatrix}
+
+\must. The main text and Appendix B correctly say that $J_{\rm deg}$ gives a double root
+$r_d<0$ off the physical arc and is not a physical external separatrix. The last paragraph of
+Appendix C is nonetheless titled ``Separatrix limit ($J\to J_{\rm deg}$)'' and repeatedly
+uses ``separatrix correction'' and ``separatrix form''.
+
+Rename this paragraph ``Algebraic genus-degeneration limit'' and use ``degeneration
+correction/form'' for Vaidya. Reserve $J_{\rm sep}$ and the word separatrix for an accessible
+dynamical boundary, primarily the rotating companion problem. This completes a correction that
+was already requested and only partially implemented.
+
+\subsection{Spatially flat FLRW is not a spatial-curvature effect}
+
+\must. The abstract says the correction ``separates the spatial-curvature effects of the FLRW
+base from the radial mass-flow effects''; the introduction similarly contrasts spatial
+curvature with radial flow. The chosen FLRW metric is spatially flat, and the paper's actual
+logic is that homogeneous time dependence produces freezing without a spatial gradient,
+whereas Vaidya introduces radial gradients and mass-flow memory.
+
+Use ``homogeneous expansion'' for FLRW and ``radial spatial-gradient and mass-flow effects'' for
+Vaidya. This makes the physical distinction sharper and removes an apparent contradiction from
+the abstract.
+
+\subsection{Reference [12] disagrees with its public DOI}
+
+\must. The manuscript and cover letter cite DOI
+\href{https://doi.org/10.5281/zenodo.21740000}{10.5281/zenodo.21740000} under the title
+``Brachistochrones in conformal Kerr (Thakurta) spacetimes: ergosphere trichotomy,
+separatrices, and adiabatic response''. The registered Zenodo/DataCite title is
+``Relativistic Brachistochrones in Conformal Kerr Spacetimes: Adiabatic Theory,
+Ergosphere Transitions and Hyperelliptic Closed Forms''.
+
+Bibliographic titles must match the retrievable object. Either update the citation and cover
+letter to the deposited title, or publish a new companion version with the intended title and
+cite that version. If ``Thakurta'' remains in a BibTeX title, protect its capitalization with
+braces; the current PDF renders it in lower case.
+
+\subsection{The public snapshots are older than the final build}
+
+\must. The cover letter calls DOI
+\href{https://doi.org/10.5281/zenodo.21739998}{10.5281/zenodo.21739998} ``the present paper'',
+but the public record contains \path{paper1-10.pdf}, not the 34-page build reviewed here. The
+software DOI \href{https://doi.org/10.5281/zenodo.21707378}{10.5281/zenodo.21707378} is active,
+findable, v1.0 and MIT licensed, but it was issued before the final production wrappers for
+Figures 1 and 9.
+
+Before journal submission, publish immutable final versions or remove claims that older records
+are the present files. The safest workflow is: finalise the source; create a new Zenodo version
+for Paper I and, if needed, Paper II and the code package; confirm filenames, titles, hashes and
+related-identifier links; then update the cover letter and bibliography. Do not mutate a DOI
+claim by inference.
+
+\clearpage
+\section{Section-by-section editorial assessment}
+
+\subsection{Title and first page}
+
+The title is accurate, searchable and consistent with the Paper-I Zenodo metadata. It is long,
+but every phrase describes a real component. A shorter title could improve memorability, yet a
+change now would force another synchronisation of the manuscript, cover letter, metadata and
+preprint record. My recommendation is to keep the current title unless the author has a strong
+strategic preference.
+
+The first page is clean. The lower whitespace is normal for the IOP class and abstract length;
+it is not a production defect. Author name, institution and email are present for a
+single-anonymous submission. If double-anonymous review is selected, a separate anonymised PDF
+must be generated; the present file is not anonymised.
+
+The abstract is comfortably below IOP's 300-word ceiling, contains no citations or equation
+numbers, defines FLRW, and reports method, application and conclusion. It correctly says that
+global minimisation is conditional. Two phrases need correction: Kodama should be qualified by
+``in spherical symmetry'', and ``spatial-curvature effects of the spatially flat FLRW base''
+should become a homogeneous-expansion/spatial-gradient contrast.
+
+\subsection{Section 1: Introduction}
+
+The introduction is concise and much better positioned than in the earlier build. It cites the
+stationary optical lineage, direct brachistochrone existence/Morse literature and the recent
+Fermat-principle survey. It no longer claims to invent relativistic arrival-time variational
+theory. The research gap is now defensible: active maintenance of a selected charge in a
+genuinely non-autonomous spacetime, a Kodama selector for spherical dynamics, explicit
+Hamiltonians and a complete first-order response.
+
+The final map paragraph should foreground Paper I and mention Paper II once. The manuscript
+currently contains roughly two dozen visible companion-paper forward references. Their
+cumulative effect is to make Paper I look dependent on a second submission even though its
+core is self-contained. The introduction is the right place for the formal companion citation;
+later repetitions should be pruned.
+
+The phrase contrasting ``time dependence'' with ``spatial curvature'' should be aligned with
+the actual result: FLRW supplies homogeneous expansion without spatial gradients; Vaidya adds
+radial geometry and mass flow. This correction will also strengthen the cover letter.
+
+\subsection{Section 2.1: Rail constraint and indicatrix}
+
+The sequence from controlled invariant to velocity indicatrix, domain, endpoint protocol and
+Pontryagin reduction is logical. The distinction between a strictly convex closed curve and a
+convex velocity set is careful. The statement that convexification would admit averaged
+off-shell velocities is useful. The fixed launch event, fixed spatial target and free arrival
+clock are now described more carefully than in early versions.
+
+The main weakness is parametric precision. ``Per unit selector-time'', ``selected clock'',
+``cost one-form'' and ``evolution parameter'' are used close together without a single master
+definition. This becomes consequential for the Vaidya $\tau$ branch. Resolve it in one protocol
+box rather than distributing clarifications across later appendices.
+
+Table 1 is now compact, but its first caption sentence still calls both $(\Ehat,J)$ ``conserved
+control costates'', whereas $\Ehat$ is introduced primarily as an actively maintained rail
+invariant/control charge. More importantly, its $\varepsilon=\dot m$ row conflicts with Figure 9
+and Appendix C. Correct that row. The final note about conformal normalisations is sufficient;
+no further Paper-II notation belongs here.
+
+Figure 1 is now legible and appropriately limited to the two spherical applications. The
+caption should end after explaining FLRW and Vaidya. The sentence that the Thakurta--Kerr
+indicatrix is ``retained separately'' describes the author's file management, not information
+available to a journal reader.
+
+\subsection{Section 2.2: existence, normality and global optimality}
+
+This section should remain substantially unchanged. The compact regular domain, two-sided
+coercivity bound, degeneration exclusions and support-function normality argument are visible.
+The manuscript does not pretend that a generic PMP extremal is globally minimal. It explains
+the role of an HJB verification function and the first Maxwell/conjugate obstruction.
+
+Three editorial refinements remain. First, define the abbreviations PMP and HJB explicitly at
+first use. Second, in Theorem I.2 the symbol $v$ denotes a velocity argument of $F(x,v)$ while
+$v$ elsewhere is Vaidya advanced time; use a neutral tangent variable. Third, equation (6)
+minimises over $u$, colliding with four-velocity and retarded time; use the already-defined
+control $\theta$.
+
+The rotating ergosphere paragraph is useful as a domain caveat but is longer than Paper I needs.
+One sentence can state that the timelike-selector hypothesis excludes regions treated in the
+companion paper. The repeated details of analytic continuation and alternative congruences are
+not necessary to establish the Vaidya theorem.
+
+\subsection{Section 2.3: selector hierarchy}
+
+Recovery of Perlick's fixed-energy stationary optics is an important consistency check. The
+hierarchy is stated honestly: Killing where available, conformal Killing in conformally
+stationary settings, Kodama in spherical dynamics, and a declared convention otherwise. Keep
+that final limitation visible so the abstract does not imply a universal Kodama construction.
+
+The derivation of the Randers data is appropriately technical for CQG. The conformal-Killing
+paragraph should serve FLRW directly; the Thakurta--Kerr sentence may be reduced to a citation.
+
+\subsection{Section 3: FLRW}
+
+FLRW functions effectively as the degenerate base: homogeneous expansion changes the local
+speed and produces freezing but does not create spatial branch splitting. Equation (10) states
+the shared comoving straight line, and Figure 2 is correctly described as a local numerical
+check rather than the proof. Preserve the analytical/numerical distinction.
+
+The section is compact enough. The only recommended clarification is to state the endpoint and
+regularity assumptions immediately around the three-way $\arg\min$ equality, so it is not read
+as a claim about every global topology or target set.
+
+\subsection{Section 4.1: Kodama rail and Hamiltonians}
+
+This is the conceptual heart of Paper I. The unnormalised Kodama choice, controlled-versus-Noether
+distinction, branch Hamiltonians and costate/mechanical-angular-momentum map are all valuable.
+The exact relation (16) makes the control meaning of $J$ concrete.
+
+Fix the undefined $T$ before submission. Also define prime notation at equation (13): the
+reader should not have to infer which clock parametrises $r'$ and $\varphi'$. The paragraph on
+on-shell versus off-shell departure is an effective bridge to Theorem I.5, but the surrounding
+Thakurta--Kerr implementation details can be reduced.
+
+Figure 3 is a strong numerical sanity check. Its residual and meaning are stated in the caption.
+Figure 4 contains useful trajectory and costate information, but the parameter values are mainly
+inside the plot. Move the essential values to the caption for accessibility and indexing.
+
+\subsection{Sections 4.2--4.3: phenomenology and frozen-clock comparison}
+
+Penetration, arrival-epoch sensitivity and regular integration through periapsis give the paper
+physical texture. The caveat that negative-rate ingoing Vaidya is formal is visible in prose,
+captions and legends. The absence-of-inversion result is correctly limited to a frozen-clock
+comparison, not presented as a solved outgoing evaporation problem.
+
+The claims should remain tiered. ``Accretion opens a finite window'' and the timing trends appear
+to be numerical/model-family results; captions or prose should state the parameter regime and
+avoid sounding like parameter-free theorems. Spell out ``boundary-value problem (BVP)'' before
+the first acronym.
+
+Figures 5--8 are readable but visually heterogeneous. Most use colour as the principal branch
+identifier and rely on small internal titles for parameters. Distinct line styles/markers and
+self-contained captions would improve print robustness without changing content.
+
+\subsection{Section 4.4: complete first-order response}
+
+The section now has the correct narrative pivot: the mass derivative of the frozen family is
+only the on-shell component; Theorem I.5 supplies the costate-driven off-shell component; the
+Vaidya source reduces to a boundary form; and Figure 9 shows that the full response closes the
+true-flow residual quadratically. That logical chain should be the main section's dominant
+message.
+
+The section remains the largest desk-review risk because it interleaves four layers:
+\begin{enumerate}
+  \item physical clock comparison and horizon behaviour;
+  \item generic first-order canonical perturbation theory;
+  \item genus-two Abelian/iterated-integral representation;
+  \item the negative-radius algebraic degeneration and Paper-II analogies.
+\end{enumerate}
+CQG can accommodate advanced mathematics, but the broad reader should be able to leave the
+main text knowing the physical result before encountering divisors, local uniformisers and
+nome-series implementation. A modest compression would help: keep equations (19)--(24),
+Theorem I.5, the boundary source, the representation hierarchy and Figure 9; move repeated
+degeneration and companion implementation discussion to the appendices.
+
+Do not weaken the explicit conjectural labels. The paper correctly admits that weight-one
+reducibility, a canonical single-valued completion and the minimal basis dimension remain open.
+Repair, however, the false statement that $g^{(1)}$ is printed and the collision between $S$ and
+$\SD$.
+
+\subsection{Section 5: Conclusions}
+
+The conclusion is concise, uninterrupted and logically tiered. ``Proved'' includes the regular
+timelike-selector qualification. ``Conditional and numerical'' contains the ingoing/frozen
+limits. ``Outlook'' identifies the full outgoing problem and companion rotation. This is the
+right ending architecture.
+
+Replace the spatial-curvature wording if it reappears during copy-editing. Keep the last
+companion-paper mention brief. The strongest final statement belongs to Paper I: non-stationary
+mass flow changes the controlled arrival problem through a genuine off-shell memory term that
+can be computed and tested.
+
+\subsection{Appendix A: reproducibility}
+
+Appendix A is now publication-ready in layout. Table A1 distinguishes exact algebraic reduction
+from displayed decimals. Table A2 maps results to scripts and includes the off-shell hash without
+collision. Figures A1 and A2 are explicitly local/stationary checks rather than universal
+optimality proofs.
+
+The remaining task is archive alignment. If the final source is released as v1.1 or v2, update
+Table A2 and the data citation only where the actual script or hash changes. The frozen numerical
+script used for Figure 9 should remain identifiable by its current hash.
+
+\subsection{Appendix B: algebraic genus degeneration}
+
+Appendix B is mathematically substantial and now states that $r_d<0$ is not a physical accessible
+separatrix. Its editorial role is an analytic degeneration check and an explicit genus-one limit,
+not Vaidya phenomenology. Begin and end the appendix with that role. Avoid importing the rotating
+separatrix vocabulary.
+
+The residue formula (B.2) now fits the page. The main concern is whether the q-series evaluation
+is actually specified or only named. Align the text with what a reader can reconstruct.
+
+\subsection{Appendix C: extended-Hamiltonian derivation}
+
+Appendix C is central and should remain. It supplies the derivation promised by Theorem I.5,
+states the turning-point non-uniformity and distinguishes metric-modulus drift from conformal
+momentum dilation. The Vaidya boundary reduction is an attractive structural result.
+
+The final ``Separatrix limit'' heading is the outstanding notation regression. Rename it. The
+path orientation and dimensionless slow variable also need one clean definition near equation
+(C.1), not piecemeal sign explanations several pages later. The ``What is reconstructible''
+paragraph should become the definitive and internally consistent statement of closedness.
+
+\subsection{Back matter}
+
+The data statement names an active DOI, version and licence and uses the DOI as the primary
+persistent identifier. The acknowledgement identifies the AI models and versions, their uses,
+critical review and author responsibility. This is substantively aligned with IOP's current
+generative-AI policy. Funding, competing interests and ORCID are present.
+
+Before submission, verify that the University of Pavia affiliation used in the manuscript,
+cover letter, ORCID and Zenodo records is accurate and authorised. The code-release DataCite
+metadata currently carries a different affiliation string from the preprint records; metadata
+consistency is preferable even when the underlying employment/academic situation is legitimate.
+
+\clearpage
+\section{Literature positioning and bibliography}
+
+\subsection{Positioning is now adequate}
+
+The introduction now contains the essential lineage: Perlick's fixed-energy optics; Kovner and
+Randers/Zermelo/Finsler geometry; the Giannoni--Piccione--Verderesi/Tausk work on relativistic
+brachistochrones, existence and Morse theory; and the recent Caponio--Javaloyes survey. This
+repairs the previous vulnerability that the paper appeared to claim the whole arrival-time
+problem as new.
+
+The novelty should remain phrased narrowly:
+\begin{quote}
+The new contribution is the active controlled maintenance of a selected rail charge in a
+genuinely non-autonomous spacetime, its canonical Kodama realisation in spherical symmetry,
+the resulting free-arrival Hamiltonian system in FLRW and Vaidya, and a complete first-order
+Vaidya response including the off-shell costate term.
+\end{quote}
+
+The special-function literature is sufficient for an editorial screen: Baker, Fay,
+Bloch/Zagier, Beilinson--Levin, Brown--Levin and recent higher-genus iterated-integral references
+are present. A mathematical referee may request a sharper definition of ``genus-two
+dilogarithm'' or additional priority citations. The manuscript already calls that terminology
+descriptive and marks irreducibility claims conjectural, which reduces editorial risk.
+
+\subsection{Citation audit}
+
+The final bibliography contains 43 entries and every entry is cited. The former shared-database
+inflation has not returned. The visible References heading appears once. Cross-references resolve.
+This is a strong improvement.
+
+Several entries remain weaker than the surrounding list:
+\begin{itemize}
+  \item Reference [12] has the wrong public title and lower-cases ``Thakurta''.
+  \item Reference [15] is rendered only as authors, year, \emph{Mem. Amer. Math. Soc.} 300 and
+  an arXiv number. The source BibTeX contains the title, issue 1501 and DOI
+  \href{https://doi.org/10.1090/memo/1501}{10.1090/memo/1501}; make the visible entry
+  independently locatable.
+  \item Reference [31] is rendered as ``arXiv preprint'' without its title. It should visibly
+  say Brown and Levin, ``Multiple elliptic polylogarithms'', arXiv:1110.6917.
+  \item Reference [32] should match the official Zenodo software-record title, or the record
+  metadata should be updated. Keep version v1.0 and exact commit only if that is the archive
+  actually supporting the submitted paper.
+  \item Reference [39] is a patched software tree. The archived snapshot is more important than
+  the live GitHub URL; typeset \texttt{is\_*} unambiguously and cite the precise archive.
+\end{itemize}
+
+IOP's style guide says article titles are optional for most journals, but a reference should
+give enough information to locate the work and include a permanent identifier when available.
+The old \texttt{iopart-num} bibliography style suppresses many DOI fields already present in the
+source. Production may normalise references later, but the author should perform a verified DOI
+pass before submission. Do not infer DOIs from titles. Prioritise the direct brachistochrone,
+Kodama/Vaidya, dynamical-horizon and software references.
+
+\subsection{Public-record audit}
+
+The three Zenodo identifiers checked are active and findable:
+\begin{itemize}
+  \item Paper I preprint: \href{https://doi.org/10.5281/zenodo.21739998}{10.5281/zenodo.21739998},
+  currently containing \path{paper1-10.pdf};
+  \item Paper II preprint: \href{https://doi.org/10.5281/zenodo.21740000}{10.5281/zenodo.21740000},
+  whose registered title differs from reference [12];
+  \item software v1.0: \href{https://doi.org/10.5281/zenodo.21707378}{10.5281/zenodo.21707378},
+  a 30 July 2026 MIT-licensed archive linked to GitHub tag v1.0.
+\end{itemize}
+
+These are real persistent objects, not invented citations. The problem is version alignment.
+The final journal package should not call an older PDF ``the present paper''. Create a new
+Zenodo version after the last edit and use the version DOI in the cover letter if exact
+immutability matters; retain the concept DOI where a moving all-versions citation is intended.
+
+\clearpage
+\section{Figures, tables and page design}
+
+\subsection{Global visual assessment}
+
+The current PDF is visually sound. No page contains clipped text, overlapping table cells,
+broken glyphs or an isolated float artefact. The previous near-empty pages have disappeared.
+The 34-page count is within the production target. Headers, page numbers, section hierarchy and
+equation placement are consistent.
+
+Figure 1 is now a successful journal figure: two relevant panels, page-width vector output,
+legible labels and differentiated line styles. Figure 9 is also successful: vector, grayscale
+safe, compact, and quantitatively documented. The old equation-number mismatch in its plot has
+been corrected to equation (22).
+
+Figures 2--8 and A1--A2 remain a mixture of raster outputs and research-diagnostic styles. They
+are readable at 100 percent, but they rely heavily on colour, internal titles and legends whose
+font size varies. CQG accepts colour, yet a consistent visual language would make the paper look
+less like a compilation of separate computational notebooks.
+
+\subsection{Figure-by-figure recommendations}
+
+\begin{longtable}{@{}p{0.12\textwidth}p{0.27\textwidth}p{0.53\textwidth}@{}}
+\toprule
+Figure & Status & Recommendation \\
+\midrule
+\endhead
+1 & Strong & Remove the file-management sentence about TK being retained separately. Add explicit
+panel labels (a), (b) if the plot itself is revised again. \\
+2 & Good & Keep the analytical/local-check distinction. Ensure panel labels and final fonts survive
+production scaling. \\
+3 & Good diagnostic & Preserve the residual threshold. A shorter in-plot title and vector export
+would improve consistency. \\
+4 & Useful & Put essential $(E,J,m',v_1,r_1)$ values in the caption; use line styles as well as
+colour. \\
+5 & Useful & State the parameter regime and whether curves are fits, exact frozen laws or numerical
+non-autonomous results. \\
+6 & Qualified result & Keep ``frozen-clock'' and ``not outgoing BVP'' in the caption, but avoid
+making a negative result occupy more visual emphasis than the main Vaidya response. \\
+7 & Strong physical illustration & Preserve the formal-negative-rate label. Differentiate all three
+orbits by pattern/marker and give units/conventions. \\
+8 & Strong timing illustration & Carry arrival and mass-law parameters in the caption; markers should
+remain distinguishable in grayscale. \\
+9 & Publication-ready & Preserve the current PDF, caption data, exact slopes and original numerical
+script hash. \\
+A1 & Good check & Vector export desirable; current caption correctly says stationary-limit check. \\
+A2 & Good local check & Preserve ``within the tested family'' and avoid any return to global
+``minimises'' language. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Tables}
+
+Table 1 is legible and useful, but the $\varepsilon$ row must be corrected. Table A1 is clear.
+Table A2 now wraps correctly; the script name, slope and SHA-256 line no longer collide. Keep
+monospaced paths and do not widen the table again.
+
+\subsection{PDF production}
+
+The PDF metadata contains the exact title, author, CQG subject and a useful keyword set. All
+fonts are embedded. There are a few benign underfull-box warnings from bibliography URLs and
+normal paragraph justification, but no overfull content. The final build should repeat these
+checks after notation and citation repairs.
+
+\clearpage
+\section{Notation and terminology audit}
+
+\begin{longtable}{@{}p{0.18\textwidth}p{0.31\textwidth}p{0.43\textwidth}@{}}
+\toprule
+Item & Current use & Required or recommended action \\
+\midrule
+\endhead
+$\Ehat$ versus $E$ & Controlled charge in early sections; bare $E$ in the sextic and appendices. &
+Define $E\equiv\Ehat$ once or use one symbol. \must \\
+$\varepsilon$ & Both $\dot m$ and $M\dot m/m$. & Reserve $\dot m$ for the rate and $\varepsilon$
+for the dimensionless parameter; scale the slow clock explicitly. \must \\
+$S$ versus $\SD$ & Spectral sextic and off-shell source. & Use $\SD$ for the source everywhere,
+including Figure 9. \must \\
+$T$ & Appears in $g(T,T)$ only. & Define or delete the auxiliary identity. \must \\
+$u$ & Four-velocity, HJB control and retarded time. & Keep $u^a$ for four-velocity, $u$ for retarded
+time only in the outgoing subsection, and use $\theta$ for control. \must \\
+$v$ & Advanced time and tangent variable in $F(x,v)$. & Rename the generic tangent variable. \should \\
+$s$ & Selected evolution clock and slow parameter. & Distinguish path parameter from dimensionless
+slow coordinate and optimised clock. \must \\
+$\lambda$ & Elapsed clock from the free endpoint, oriented inward. & Define orientation at first use
+in the main theorem and repeat compactly in Appendix C. \should \\
+$J_{\rm pen}$ & Physical/dynamical penetration threshold. & Current distinction is good; preserve. \\
+$J_{\rm deg}$ & Algebraic double-root value at $r_d<0$. & Call it genus degeneration, not Vaidya
+separatrix. \must \\
+$J_{\rm sep}$ & Potential accessible spectral separatrix, mainly Paper II. & Do not introduce in
+Paper I unless needed; reserve the word. \\
+$DE$ & Polynomial factor $(E^2-1)r+2m$. & Prefer $D_E$ or $\Delta_E$, or explicitly state that
+$DE$ is one named factor. \should \\
+$F$ & Optical cost, orbit integrand and later rational function. & Reuse is survivable but a subscript
+would reduce cognitive load in Appendices B--C. \should \\
+PMP/HJB/BVP & Used as abbreviations without a parenthetical definition. & Define each at first use;
+IOP asks acronyms to be defined in abstract and main text. \should \\
+``closed form'' & Sometimes means an evaluable representation requiring period construction/code. &
+Use ``closed special-function representation'' where appropriate and state the numerical layer honestly. \\
+``separatrix'' & Sometimes physical, sometimes algebraic degeneration. & Reserve for a dynamical
+boundary; use ``genus-degeneration locus'' for Vaidya $r_d<0$. \must \\
+\bottomrule
+\end{longtable}
+
+Hyphenation and spelling are otherwise consistent: ``non-stationary'', ``controlled-rail'',
+``first-order'', British ``minimisation'', and ``proper time'' are stable. Equation punctuation
+is generally good. Parenthetical density, rather than grammar, is the remaining prose issue.
+
+\clearpage
+\section{Scientific narrative and claim hierarchy}
+
+The paper now has a viable six-question narrative:
+
+\begin{enumerate}
+  \item \textbf{What is controlled?} A fixed observer/selector-relative rail charge restricts
+  the admissible timelike velocities to a compact indicatrix on the regular domain.
+  \item \textbf{Why is the optimisation legitimate?} Pontryagin gives the extremal system;
+  existence and normality hold under explicit compactness/coercivity hypotheses; global
+  optimality requires a separate HJB certificate.
+  \item \textbf{Which geometric field supplies the charge?} Killing in stationary geometry,
+  conformal Killing in the FLRW base, and Kodama in spherical dynamics.
+  \item \textbf{What does time dependence do?} FLRW gives homogeneous freezing without branch
+  splitting; Vaidya adds radial wind, costate memory, penetration and timing effects.
+  \item \textbf{Why is the frozen derivative insufficient?} The non-autonomous orbit leaves the
+  instantaneous shell through an interior costate; Theorem I.5 supplies that off-shell term.
+  \item \textbf{Can it be evaluated and checked?} The response has a finite Abelian/iterated
+  representation and the true-flow residual changes from first- to second-order scaling.
+\end{enumerate}
+
+This order should dominate the abstract, introduction, section headings and conclusion. The
+negative-radius degeneration and companion Kerr dilation are supporting structures, not equal
+headline results for Paper I.
+
+The claim-status vocabulary is mostly disciplined. The following wording should remain stable:
+\begin{itemize}
+  \item ``PMP extremal'' or ``candidate minimizer'' unless a verification function or global
+  comparison is actually supplied;
+  \item ``local perturbation check'' for Figures 2 and A2;
+  \item ``frozen-clock comparison'' for the advanced/retarded and no-inversion result;
+  \item ``formal negative-rate continuation'' for ingoing $m'<0$;
+  \item ``closed special-function representation'' when numerical periods are still needed;
+  \item ``conjectural'' for irreducibility/minimal-basis/single-valued-completion statements;
+  \item ``open'' for the full outgoing-Vaidya BVP and generic global optimality.
+\end{itemize}
+
+The word ``universal'' appears in several contexts. It is justified for the Vaidya boundary
+source only within the stated self-similar Hamiltonian class and canonical conventions. Avoid
+allowing the cover letter or abstract to broaden it to arbitrary non-stationary metrics.
+
+\clearpage
+\section{Reproducibility, data, software and AI policy}
+
+CQG has adopted IOP's research-data policy. IOP requires a data-availability statement and asks
+authors to cite public software/data with persistent identifiers. The manuscript complies in
+form: it has a data statement, an active software DOI, version, licence, GitHub development link,
+script map and software references.
+
+The software DOI metadata confirms an MIT-licensed v1.0 release issued on 30 July 2026 and linked
+to GitHub tag v1.0. Its description includes the controlled-rail Hamiltonians, first-order
+on/off-shell corrections, regression runner and Sage requirements. This supports the scientific
+claims. The final manuscript should, however, cite the exact version that includes the submitted
+source and final production scripts, or explicitly distinguish scientific computation from
+later editorial plotting.
+
+The current AI acknowledgement is acceptable in substance under IOP's August 2026 ethical
+guidance. It identifies OpenAI GPT-5.6 (Sol) and Anthropic Claude (Opus 4.8), says they assisted
+with symbolic-algebra checks, numerical-code development and language/structural editing, and
+states independent verification and author responsibility. Keep those four components. Do not
+list an AI system as an author. Do not let AI-origin bibliography entries remain unverified.
+
+Because the final Figure 1 and Figure 9 production wrappers were created after software v1.0,
+the acknowledgement is not the issue; archive completeness is. A final release should include:
+\begin{itemize}
+  \item the submitted \LaTeX{} source and bibliography;
+  \item the exact figure-generation wrappers and frozen numerical source;
+  \item environment/lock information;
+  \item the script hash quoted in Table A2;
+  \item a short README mapping paper figures/equations to scripts;
+  \item the final 34-page PDF or its precise preprint version.
+\end{itemize}
+
+The cover letter is strong in scope and contribution, but its DOI paragraph must be synchronised.
+The title it gives Paper II does not match the public DOI, and ``the present paper is DOI ...''
+points to an older PDF. Correct these before ScholarOne submission. The request for coordinated
+handling is reasonable, provided both papers are independently intelligible and their public
+records match their submitted titles.
+
+\clearpage
+\section{Major and minor action checklists}
+
+\subsection{Mandatory pre-submission checklist}
+
+\begin{enumerate}[label=\textbf{M\arabic*.}]
+  \item Define or remove $T$ in the first line of section 4.1.
+  \item Define $E\equiv\Ehat$ or standardise the energy symbol.
+  \item Standardise $\dot m$ and $\varepsilon=M\dot m/m$; define the dimensionless slow clock.
+  \item Replace the off-shell source $S$ by $\SD$ in prose and Figure 9.
+  \item Clarify path parameter, cost clock, non-autonomous state augmentation and control symbol.
+  \item Remove or repair the false claim that $g^{(1)}$ is printed; calibrate text-only
+  reconstructibility.
+  \item Rename the Appendix-C Vaidya ``Separatrix limit'' as algebraic genus degeneration.
+  \item Replace the spatial-curvature/FLRW wording in abstract and introduction.
+  \item Make reference [12] and the cover letter match the public Paper-II DOI title.
+  \item Publish or cite final matching Zenodo versions; do not call \path{paper1-10.pdf} the
+  present 34-page paper.
+\end{enumerate}
+
+\subsection{Strongly recommended editorial checklist}
+
+\begin{enumerate}[label=\textbf{S\arabic*.}]
+  \item Reduce companion-Paper-II forward references to approximately five strategically placed
+  mentions.
+  \item Remove the ``retained separately'' sentence from Figure 1's caption.
+  \item Define PMP, HJB and BVP at first use.
+  \item Rename the generic tangent argument of $F(x,v)$ to avoid collision with Vaidya time.
+  \item Move essential parameters from Figures 4--8 plot titles into captions.
+  \item Add line styles/markers and vector exports to remaining multi-curve figures where practical.
+  \item Make references [15], [31], [32] and [39] independently locatable in the rendered list.
+  \item Run a verified DOI pass without guessing identifiers.
+  \item Compress repeated special-function and Paper-II implementation prose in section 4.4 and
+  Appendices B--C.
+  \item Verify consistent author affiliation across manuscript, ORCID, cover letter and Zenodo.
+\end{enumerate}
+
+\subsection{Final production checklist}
+
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+  \item Full \texttt{pdflatex/bibtex} build with zero undefined references and zero overfull boxes.
+  \item Search the PDF and build files for ``??'', stale equation numbers and duplicate labels.
+  \item Confirm Theorem I.5 remains in the main text and equation (22) remains the Figure-9 target.
+  \item Confirm Table A2 and equation (B.2) remain within margins.
+  \item Re-render all pages and inspect figures, bibliography and page transitions.
+  \item Confirm PDF title, author, subject, keywords and embedded fonts.
+  \item Confirm the final DOI links resolve to the exact titles and versions stated.
+  \item Prepare the chosen single- or double-anonymous package consistently.
+\end{enumerate}
+
+\clearpage
+\section{What should not be reopened}
+
+The final cleanup should be narrow. Do not destabilise the manuscript by rederiving settled
+content without a concrete mathematical reason. Preserve:
+
+\begin{itemize}
+  \item the controlled invariant $-u\!\cdot\!W=\Ehat$ as the paper's central definition;
+  \item the selector hierarchy with its spherical-symmetry limitation;
+  \item the operational rail-force and control-power discussion;
+  \item the compact strictly convex indicatrix assumptions;
+  \item the fixed launch/fixed spatial target/free arrival protocol;
+  \item the distinction between endpoint transversality and an interior first integral;
+  \item the costate/mechanical-angular-momentum distinction;
+  \item the conditional HJB and cut/Maxwell caveats;
+  \item FLRW as the homogeneous branch-degenerate base;
+  \item the unnormalised Kodama selector for ingoing Vaidya;
+  \item the formal status of negative-rate ingoing continuation;
+  \item Theorem I.5 in the main text and its derivation in Appendix C;
+  \item the turning-point non-uniformity statement;
+  \item the Vaidya boundary source $\SD=[rp_r]-\lambda$ after notation cleanup;
+  \item Figure 9 and its exact regression values;
+  \item explicit conjectural/open labels for the special-function hierarchy;
+  \item the ``Proved / Conditional and numerical / Outlook'' conclusion;
+  \item the data DOI, script map and transparent AI disclosure, updated only for exact versioning.
+\end{itemize}
+
+\clearpage
+\section{Recommended final revision sequence}
+
+The safest sequence is short and mechanical:
+
+\begin{enumerate}
+  \item \textbf{Repair definitions first.} Fix $T$, $E/\Ehat$, $\varepsilon$, $S/\SD$,
+  path/cost/state conventions and control notation. Recompile and check equations (12), (22),
+  (C.1)--(C.6).
+  \item \textbf{Repair the special-function claims.} Remove the nonexistent printed $g^{(1)}$
+  claim, choose the honest reconstructibility wording, and rename the algebraic degeneration.
+  \item \textbf{Repair the public records.} Decide final titles, create new Zenodo versions as
+  needed, then update reference [12], reference [32] and the cover letter from verified metadata.
+  \item \textbf{Perform the bibliography pass.} Improve [15], [31] and [39], add only verified
+  permanent identifiers and keep all 43 entries cited.
+  \item \textbf{Trim Paper-II leakage.} Remove redundant forward comparisons without touching
+  Paper-I derivations.
+  \item \textbf{Polish captions and plots.} At minimum make parameters self-contained; vectorise
+  only if this does not risk numerical content.
+  \item \textbf{Build and render.} Repeat the clean 34--35-page production checks and inspect every
+  page.
+  \item \textbf{Submit.} Upload the complete PDF, relevant supplementary/code information and the
+  corrected cover letter; select the intended peer-review anonymity model.
+\end{enumerate}
+
+This sequence should take a focused editorial pass, not a new research cycle. The manuscript
+should not be delayed for the full outgoing-Vaidya problem, a proof of higher-genus
+irreducibility, or a global HJB solution, because it already labels those as open.
+
+\clearpage
+\section{Final recommendation}
+
+The present build is substantially stronger than the versions reviewed on 3 August 2026. It is
+within CQG's scope, contains a plausible significant advance, has a defensible novelty position,
+and presents its principal off-shell correction in the main text with a convincing numerical
+order test. The visual production is clean and the reproducibility posture is strong.
+
+It is not yet the version I would upload. The undefined $T$, unannounced $E/\Ehat$ switch,
+inconsistent $\varepsilon$, source/sextic symbol collision, ambiguous non-autonomous state
+formulation, false ``printed series'' claim, residual separatrix terminology and DOI/version
+mismatches are all concrete. Leaving them in would create avoidable doubt precisely where the
+paper asks a referee to trust a difficult formal construction.
+
+After those corrections, my simulated recommendation is:
+
+\begin{center}
+\colorbox{LightBlue}{\parbox{0.90\textwidth}{
+\textbf{Send for external peer review as a CQG Research Paper.}
+The paper is not editorially acceptance-ready---no pre-submission assessment can replace
+specialist review---but it should be desk-review-ready after the short mandatory pass. Its
+remaining risk will then be scientific rather than presentational: whether referees accept the
+optimal-control foundations, the first-order canonical signs and the claimed special-function
+closure.
+}}
+\end{center}
+
+In direct answer to ``is it ready?'': \textbf{almost, but not today}. Correct the ten mandatory
+items, synchronise the Zenodo records, and submit the resulting build. Further broad rewriting is
+not justified.
+
+\vspace{0.45em}
+{\large\bfseries Sources consulted\par}
+\addcontentsline{toc}{section}{Sources consulted}
+
+\begingroup
+\small
+\raggedright
+\setlist[itemize]{itemsep=0.12em,topsep=0.2em}
+\begin{itemize}
+  \item Current manuscript: \path{paper1/paper1.pdf}, 34 pages, built 4 August 2026.
+  \item Supplied brief: \path{Instructions_for_Codex_CQG_Editorial_Review.pdf}, 3 August 2026.
+  \item CQG scope, article types, peer review and data-policy page:\\
+  \url{https://publishingsupport.iopscience.iop.org/journals/classical-and-quantum-gravity/about-classical-quantum-gravity/}
+  \item IOP article structure guidance:\\
+  \url{https://publishingsupport.iopscience.iop.org/questions/structure-and-format-of-your-journal-article/}
+  \item IOP style guide for journal articles:\\
+  \url{https://publishingsupport.iopscience.iop.org/questions/style-guide-journal-articles/}
+  \item IOP submission checklist:\\
+  \url{https://publishingsupport.iopscience.iop.org/submission-checklist/}
+  \item IOP research-data policy:\\
+  \url{https://publishingsupport.iopscience.iop.org/iop-publishing-data-availability-policy/}
+  \item IOP ethical policy, including generative-AI guidance:\\
+  \url{https://publishingsupport.iopscience.iop.org/ethical-policy-journals/}
+  \item Caponio and Javaloyes, arXiv:2605.01532:\\
+  \url{https://arxiv.org/abs/2605.01532}
+  \item Brown and Levin, arXiv:1110.6917:\\
+  \url{https://arxiv.org/abs/1110.6917}
+  \item DataCite/Zenodo records for DOI 10.5281/zenodo.21739998,
+  10.5281/zenodo.21740000 and 10.5281/zenodo.21707378, accessed 4 August 2026.
+\end{itemize}
+\endgroup
+
+\end{document}

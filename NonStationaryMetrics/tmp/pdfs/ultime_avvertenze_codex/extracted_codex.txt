@@ -1,0 +1,353 @@
+FINAL CQG HANDOFF
+
+Ultime avvertenze editoriali e
+bibliografiche
+Istruzioni operative per Claude sulla build paper1-12. Il nucleo scientifico e la correzione
+adiabatica completa sono ora sostanzialmente presentabili; questo documento isola gli
+ultimi interventi necessari prima della submission.
+
+VERDETTO
+Non inviare ancora la build attuale. La revisione non richiede piu una ristrutturazione scientifica generale,
+ma contiene tre blocchi reali: una contraddizione sulle degenerazioni, un conflitto semantico fra J_c e
+J_deg, e una tabella sovrapposta. Dopo questi interventi e una breve pulizia Paper I/Paper II, la versione
+puo essere considerata pronta per il referee.
+
+AREA
+
+STATUS
+
+DECISION
+
+Core scientifico
+
+Substantially ready
+
+Preservare Teorema I.5 e Appendix C
+
+Notazione
+
+Blocking
+
+Separare J_cap, J_deg e J_sep
+
+Bibliografia
+
+Good, final cleanup
+
+43/43 citate; completare metadati e DOI
+
+Produzione PDF
+
+Blocking
+
+Riparare Table A2 e i float
+
+Documento ispezionato: 1-paper1-12.pdf, 37 pagine, generato il 3 August 2026. Controllo eseguito sul testo estratto e sul
+rendering integrale pagina per pagina.
+
+Codex editorial review - 3 August 2026
+
+Page 1
+
+PAPER I - CQG FINAL HANDOFF
+
+paper1-12
+
+1. Correzioni obbligatorie
+MUST FIX
+
+Contraddizione fra freezing, turning point e separatrix
+
+LOCATION
+
+PDF pages 4 and 9; section 2.1 and the domain discussion after Proposition I.3.
+
+PROBLEM
+
+Page 4 identifies the freezing surface with the turning-point/separatrix locus. Page 9 states,
+correctly, that freezing, turning and the double-root separatrix are distinct degeneracies. Both
+statements cannot remain.
+
+ACTION
+
+Keep the distinction stated on page 9. Replace the parenthesis on page 4 with: 'At the freezing
+surface the entire indicatrix collapses, R -> 0, and strict convexity is lost. This degeneration is
+distinct from a radial turning point and from a spectral separatrix, which are treated separately
+below.'
+
+MUST FIX
+
+J_c and J_deg currently denote different objects
+
+LOCATION
+
+Section 4.2 (page 14), section 4.4 (pages 17-20), Appendix B (pages 27-31), and Appendix C
+(pages 34-35).
+
+PROBLEM
+
+In the main text J_c(v_0) is the dynamical penetration/capture threshold. J_deg is the algebraic
+value at which the sextic develops a negative-radius double root. Appendix B then writes J = J_c =
+J_deg, and Appendix C calls J -> J_c a separatrix limit. This reuses one symbol for physically
+inequivalent loci.
+
+ACTION
+
+Do not perform a blind global replacement. Use J_cap(v_0) or J_pen(v_0) for the physical Vaidya
+capture threshold; use J_deg for the algebraic genus degeneration at r_d < 0; reserve J_sep for a
+physical accessible double-root separatrix (primarily Paper II). In Vaidya appendices, write 'algebraic
+degeneration locus' unless a physical separatrix has actually been established.
+
+MUST FIX
+
+Table A2 contains overlapping text
+
+LOCATION
+
+PDF page 26, last row of Table A2.
+
+PROBLEM
+
+The script name vaidya_first_order_offshell.py overlaps the residual entry 'slope 2.00'. The row is
+visibly broken at normal reading scale.
+
+ACTION
+
+Rebuild the table with a wrapping script column, a smaller monospaced size, or a two-line final row.
+Render the page and confirm that the filename, residual and SHA-256 line do not collide.
+
+SHOULD FIX
+
+Paper II material still interrupts the Vaidya argument
+
+LOCATION
+
+Table 1 and Figure 1; pages 4, 9, 13-14, 17-21; repeated appendix forward references.
+
+PROBLEM
+
+Paper I still carries a Thakurta-Kerr notation block, a full Thakurta-Kerr indicatrix panel, an
+ergosphere domain excursus and many implementation-level comparisons. The sentence on page
+21 equating the Vaidya horizon-weight sector with an ergosphere-penetration window is especially
+misleading because spherical Vaidya has no ergosphere.
+
+ACTION
+
+Retain only short forward references to Paper II. Delete the Thakurta-Kerr block from Table 1,
+remove or relocate the third panel of Figure 1, compress the ergosphere discussion to one domain
+caveat, and replace the page-21 analogy with: 'Thus the advanced/retarded frozen-clock asymmetry
+isolates the contribution of the horizon-anchored weight-two sector.'
+
+Codex editorial review - 3 August 2026
+
+Page 2
+
+PAPER I - CQG FINAL HANDOFF
+
+paper1-12
+
+2. Bibliografia: stato e interventi
+STATO POSITIVO DA PRESERVARE
+The current bibliography contains 43 entries and all 43 are explicitly cited in the manuscript. The former
+nocite-style inflation is no longer present. Do not reintroduce uncited entries, and do not remove references
+[8]-[11], which now supply the missing relativistic brachistochrone/Fermat context.
+
+ITEM
+
+WHAT CLAUDE SHOULD DO
+
+References heading
+
+Insert a visible References heading before item [1]. At present [1] follows the ORCID line
+without a section heading.
+
+DOI pass
+
+Where a DOI exists, add it after verifying it against the publisher or Crossref. IOP asks for a
+permanent identifier when available. Never infer a DOI from a title.
+
+Reference [11]
+
+Keep as a preprint unless a later published record is found. Verified title: On the formulations
+of the Fermat principle in general relativity and beyond; authors Erasmo Caponio and Miguel
+Angel Javaloyes; arXiv:2605.01532.
+
+Reference [15]
+
+Expand the incomplete Memoirs citation. Official metadata: Caponio E, Javaloyes M A and
+Sanchez M, Wind Finslerian Structures: From Zermelo's Navigation to the Causality of
+Spacetimes, Mem. Amer. Math. Soc. 300, no. 1501 (2024), 121 pp.
+
+Reference [31]
+
+Replace the generic 'arXiv preprint' wording with a locatable entry: Brown F C S and Levin A
+2011 Multiple Elliptic Polylogarithms arXiv:1110.6917.
+
+Reference [12]
+
+Protect proper-noun capitalization in BibTeX: {Thakurta}, {Kerr}, and {Paper II}. Keep the
+Zenodo DOI and avoid phrasing that reads like an unpublished result being used as external
+validation of Paper I.
+
+Reference [32]
+
+Keep the Zenodo DOI as the primary persistent identifier. The GitHub URL and exact commit
+may remain as secondary reproducibility information; prevent awkward line breaks around
+the DOI and commit hash.
+
+Reference [39]
+
+If the patched abelfunctions tree has an archived commit or snapshot identifier, cite that exact
+identifier. Typeset is_* as code so the asterisk is not interpreted as emphasis or a wildcard
+outside its API context.
+
+Consistency
+
+Use one consistent convention for preprints: either 'arXiv:xxxx.xxxxx' or '(Preprint
+xxxx.xxxxx)'. Preserve accents in Sanchez and other author names through BibTeX
+braces/UTF-8.
+
+Important: article titles are optional under the general IOP journal style, but journal, volume, page/article
+number and DOI (when available) should make each item independently locatable. Preprints must at least carry
+authors, year and preprint number.
+
+3. Produzione e leggibilita
+• Figure 1 on page 7 is too small at normal reading scale. If the Thakurta-Kerr panel is removed, enlarge the two
+Paper-I panels and harmonize legend/font sizes.
+
+• Pages 21, 31 and 35 are largely empty because of float/page-break behavior. Reflow the text and floats; this
+should remove roughly two to three pages without cutting scientific content.
+
+Codex editorial review - 3 August 2026
+
+Page 3
+
+PAPER I - CQG FINAL HANDOFF
+
+paper1-12
+
+• Figure 9 should state the epsilon fit interval, number of sampled points, residual norm and fitted slopes (with
+uncertainties if readily available). Preserve the current O(epsilon) versus O(epsilon^2) comparison.
+
+• Fill PDF metadata: title, author, subject and keywords are currently blank. All fonts are already embedded, so
+preserve that successful part of the build.
+
+• Run a final reference/cross-reference check after every notation change: no ?? markers, no stale equation
+numbers, and no accidental renumbering of Theorem I.5, equation (22), Figure 9 or Appendices B-C.
+
+4. Materiale da non alterare
+• Keep Theorem I.5 in the main text. It is the central complete on-shell plus off-shell result and should not be
+buried again in Appendix C.
+
+• Keep the explicit caveat that global minimization is conditional and not automatic. The current abstract and
+section 2.2 correctly distinguish PMP extremals, local checks and an HJB certificate.
+
+• Keep the statement that the first-order correction is non-uniform at the turning point and is verified on compact
+sub-arcs.
+
+• Keep the hierarchy of special-function classes and the explicit admission that weight-one reducibility and a
+canonical single-valued completion remain conjectural/open.
+
+• Keep Figure 9 and the slope-2 validation. Only improve its caption and physical size.
+• Keep the curated references [8]-[11], the Zenodo reproducibility citation [32], and the transparent AI-use
+disclosure unless the journal requests different placement.
+
+Codex editorial review - 3 August 2026
+
+Page 4
+
+PAPER I - CQG FINAL HANDOFF
+
+paper1-12
+
+5. Checklist di accettazione
+[]
+
+Page 4 no longer identifies freezing with turning/separatrix.
+
+[]
+
+J_cap/J_pen, J_deg and J_sep have distinct meanings everywhere.
+
+[]
+
+Appendices B-C no longer call the negative-radius algebraic degeneration a physical separatrix.
+
+[]
+
+Table A2 has no overlapping text at 100% zoom.
+
+[]
+
+The Vaidya discussion no longer depends on an ergosphere analogy.
+
+[]
+
+A visible References heading appears before item [1].
+
+[]
+
+References [11], [15], [31], [32] and [39] have complete, locatable metadata.
+
+[]
+
+All available DOIs added only after verification; all 43 references still cited.
+
+[]
+
+Figure 1 is legible; pages 21, 31 and 35 have been reflowed.
+
+[]
+
+Figure 9 caption specifies fit domain and residual definition.
+
+[]
+
+PDF metadata populated; fonts remain embedded.
+
+[]
+
+Fresh full-PDF rendering shows no collisions, clipping, empty float pages or stale links.
+
+6. Prompt pronto da incollare in Claude
+Revise Paper I using the attached Codex handoff as an authoritative scope list. Fix every MUST FIX
+item and implement the bibliographic cleanup, but do not rewrite or rederive the scientific core.
+Preserve Theorem I.5 in the main text, equation (22), Appendix C, Figure 9, all numerical
+residuals, and the conditional wording on global optimality. Distinguish semantically between the
+physical Vaidya capture threshold J_cap(v_0), the algebraic degeneration J_deg at r_d < 0, and any
+genuinely physical separatrix J_sep. Do not perform blind global replacements. Remove the false
+identification of freezing with turning/separatrix, repair Table A2, reduce Paper-II leakage, add
+a References heading, complete the specified bibliography entries, and add DOIs only when
+independently verified. After editing, compile the PDF and inspect every page at normal zoom.
+Report each changed source location, any equation/figure renumbering, and the final citation
+audit count. Do not change any coefficient, sign, residual or special-function claim unless you
+identify and explain a concrete inconsistency first.
+
+7. Fonti usate per il controllo bibliografico
+IOP Publishing, Style guide for journal articles
+https://publishingsupport.iopscience.iop.org/questions/style-guide-journal-articles/
+
+Caponio, Javaloyes and Sanchez, official AMS Memoirs record
+https://bookstore.ams.org/memo-300-1501
+
+Codex editorial review - 3 August 2026
+
+Page 5
+
+PAPER I - CQG FINAL HANDOFF
+
+paper1-12
+
+Brown and Levin, Multiple Elliptic Polylogarithms
+https://arxiv.org/abs/1110.6917
+
+Caponio and Javaloyes, Fermat principle survey
+https://arxiv.org/abs/2605.01532
+
+End of handoff. The next build should be reviewed from the compiled PDF, not only from the LaTeX source.
+
+Codex editorial review - 3 August 2026
+
+Page 6
+
+

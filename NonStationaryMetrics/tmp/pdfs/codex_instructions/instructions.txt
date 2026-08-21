@@ -1,0 +1,21 @@
+   Instructions for Codex – CQG Editorial Review
+Goal. Read paper1-11.pdf as a CQG Associate Editor. Produce an editorial review, not a
+mathematical referee report.
+
+Workflow.
+1. Read the manuscript completely.
+2. Save intermediate notes (Markdown or LaTeX) for: Abstract, Title, Keywords,
+Introduction, Literature, Formalism, Applications, Figures, Conclusions, Bibliography.
+3. Produce a final 20–30 page editorial report based on those notes.
+
+Include.
+Executive summary; simulated editorial decision; strengths; weaknesses;
+section-by-section comments; literature positioning; scientific narrative; figure
+assessment; notation consistency; major/minor revision checklist; final
+recommendation.
+
+Constraints.
+Do not invent new science. Do not rewrite the mathematics unless needed for clarity.
+Focus on editorial quality, readability, positioning within the literature and likelihood of
+passing CQG desk review.
+

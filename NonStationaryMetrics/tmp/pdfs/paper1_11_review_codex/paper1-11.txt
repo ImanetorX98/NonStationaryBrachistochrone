@@ -1,0 +1,1437 @@
+Controlled-rail brachistochrones in non-stationary
+spacetimes: conformal symmetry, Kodama energy,
+and Vaidya dynamics
+        Iman Rosignoli
+        Department of Physics, University of Pavia, Via A. Bassi 6, 27100 Pavia, Italy
+        E-mail: iman.rosignoli01@universitadipavia.it
+
+        Abstract. What is the fastest constrained worldline in a spacetime that is
+        itself evolving? In a stationary spacetime the relativistic brachistochrone reduces
+        to Fermat/Randers optics with a conserved rail energy supplied by a timelike
+        Killing vector; in a dynamical spacetime no such conservation law exists and the
+        variational problem becomes non-autonomous. We address this by formulating the
+        brachistochrone as a controlled-rail optimal-control problem, in which the invariant
+        −u · W = Ê is actively maintained along the worldline by a selector W that follows a
+        Killing → conformal-Killing → Kodama hierarchy and reduces to the Kodama vector
+        when no timelike Killing field survives. We prove that this construction is a legitimate
+        Pontryagin problem—with existence, normality, and a non-autonomous Hamilton–
+        Jacobi verification criterion in place of the stationary conservation law—and then
+        solve two spherically symmetric non-stationary cases in closed form: spatially flat
+        Friedmann–Lemaı̂tre–Robertson–Walker (FLRW) and the ingoing Vaidya dynamical
+        black hole. For Vaidya we obtain the plunge phenomenology and a first-order adiabatic
+        correction in closed special-function form, verified against the true non-autonomous
+        flow; the construction cleanly separates the effects of spatial curvature from those
+        of radial mass flow. The rotating, axisymmetric conformal-Kerr (Thakurta–Kerr)
+        application is developed in a companion paper.
+Controlled-rail brachistochrones in non-stationary spacetimes                            2
+
+1. Introduction
+
+The brachistochrone—the path of fastest descent—is a classical variational problem
+whose relativistic analogue asks for the fastest constrained “rail” worldline from a launch
+event to a fixed spatial target, at a free value of the arrival clock. In a stationary
+spacetime the answer is well understood: a timelike Killing vector supplies a conserved
+rail energy, and the problem reduces to Fermat’s principle and to optical (Randers–
+Zermelo–Finsler) geometry [1, 2, 3, 4, 5, 6, 7]. The physically central regimes of
+gravitation, however—cosmological expansion, gravitational collapse, accretion—are not
+stationary.
+     When the geometry itself evolves, the ingredients that make the stationary problem
+tractable disappear: there is no timelike Killing field, hence no conserved energy to label
+the extremals, and the variational problem is genuinely non-autonomous. Whether a
+well-posed fastest constrained worldline even exists in such spacetimes, what invariant
+should replace the Killing energy, and how time dependence—as opposed to spatial
+curvature—reshapes the optimal path, have not been addressed. This is the question
+the present paper answers.
+     Our starting point is that the rail energy need not be a symmetry charge: it can
+be an invariant that is actively maintained along the worldline. We formulate the
+brachistochrone as a controlled-rail optimal-control problem in which −u · W = Ê is
+held fixed by a selector W following a Killing → conformal-Killing → Kodama hierarchy;
+in a dynamical spherically symmetric spacetime W is the Kodama vector, whose charge
+is conserved along the controlled worldline even where free fall is not. Pontryagin’s
+maximum principle makes this a legitimate time-optimal control problem, supplying
+existence, normality and a non-autonomous Hamilton–Jacobi verification criterion in
+place of the stationary conservation law.
+     We develop this general framework in section 2 and then apply it to two spherically
+symmetric non-stationary spacetimes: the spatially flat FLRW base (section 3) and
+the ingoing Vaidya dynamical black hole (section 4). For Vaidya we obtain the plunge
+phenomenology and a first-order adiabatic correction in closed special-function form,
+verified against the true non-autonomous flow; the construction cleanly separates the
+effects of spatial curvature from those of radial mass flow. The rotating, axisymmetric
+conformal-Kerr (Thakurta–Kerr) case—frame dragging, an ergosphere and genus-two
+closed forms—is developed in the companion Paper II [8], which cites the foundations
+proved here.
+
+2. The controlled-rail principle
+
+2.1. Rail constraint and the indicatrix
+The rail is a constrained worldline with the invariant
+
+                                     − u · W = Ê,                                     (1)
+Controlled-rail brachistochrones in non-stationary spacetimes                            3
+
+actively maintained by an ideal rail force fµ = Duµ /dτ with f · u = 0 (automatic for a
+rest-mass–preserving force), which creates no rest mass but is free to exert power against
+the selector (see below).
+
+
+              Table 1. Notation used throughout. Rail charges (Ê, J) are conserved control
+              costates; the “eff” quantities are their optical/conformal normalizations.
+symbol                    meaning
+Ê = −u · W               rail energy invariant (conserved control charge)
+J = pϕ                    axial control costate (conserved; not g(u, ∂ϕ ))
+Lmech = g(u, ∂ϕ )         mechanical angular momentum (not conserved on the rail)
+A(η)                      Thakurta conformal factor, g = A2 gKerr
+m(v)                      Vaidya Misner–Sharp mass
+a                         Kerr spin
+Eeff = Ê/A, Jeff = J/A   conformally normalized charges (weight A−1 )
+Pr = pr /A                normalized radial momentum (conformally symplectic, not canonical)
+t, τ, η, v                coordinate, proper, conformal, advanced-null clocks
+s                         the selected evolution clock / slow parameter
+λ                         elapsed clock from the free-arrival endpoint
+ε                         adiabatic rate (A0 /A for Thakurta, ṁ for Vaidya)
+
+
+
+The ellipse. Fix an event and a time function adapted to W . The linear constraint (1)
+fixes the W -component of u; the mass shell u · u = −1 is a quadric; their intersection,
+projected onto the physical velocity plane (dr, r dϕ) per unit selector-time, is an ellipse
+
+                             ẋ(θ) = c + R(θ),     θ ∈ [0, 2π),                        (2)
+
+whose center c is the Zermelo wind (zero for FLRW, ingoing radial for Vaidya,
+azimuthal—frame dragging—for Thakurta–Kerr) and whose axes R shrink with the
+local speed as the freezing surface is approached (figure 1). Every cost clock—
+arrival/coordinate time t, proper time τ , conformal time η—shares this same indicatrix;
+the branches differ only in the cost one-form, i.e. in which clock measures the elapsed
+travel time. Two of these are not independent spatial families: since dt = A(η) dη
+with A > 0 is a monotone reparametrization, the coordinate-time and conformal-time
+functionals are extremized by the same spatial path (arg min tf = arg min ηf ), so η is
+the canonical conformal-time representation of the arrival branch rather than a third
+independent brachistochrone. The genuinely distinct branch is the proper time τ , whose
+                      √
+cost carries the extra 1 − v 2 weight; for Vaidya the native arrival clock is the advanced
+null time v, again distinct from τ .
+
+Domain of the indicatrix. The intersection (2) is a compact, strictly convex oval—
+the hypothesis under which the Pontryagin reduction below applies—precisely where
+the selector W is timelike and the quadric intersection is nondegenerate. Three loci
+require separate treatment. (i) At the freezing surface the oval collapses to a point,
+Controlled-rail brachistochrones in non-stationary spacetimes                             4
+
+R → 0 (the strict convexity degenerates; this is the turning-point/separatrix locus).
+(ii) At the horizon the radial metric coefficient degenerates. (iii) For Thakurta–Kerr
+inside the ergosphere, ∂η —hence W —becomes spacelike, so −u · W = Ê fixes a spatial
+component of u and the intersection with the mass shell is no longer automatically a
+compact oval in the PMP sense. The local theorems of this section are therefore stated
+in the timelike-W , nondegenerate domain. The interior expressions are the analytic
+continuation of these closed forms (the companion paper, where the penetrating t-branch
+is analyzed explicitly); we do not claim they are proved optimal-control solutions inside
+the ergosphere. A genuinely different, and inequivalent, construction—re-anchoring the
+constraint −u · W = Ê to a timelike congruence (Doran/ZAMO)—would change the
+selector W , the indicatrix, the cost, and the Hamiltonian, and is left to future work; a
+coordinate change alone (e.g. to Doran variables) does not alter the geometric selector
+and hence cannot substitute for it.
+
+The optimal-control problem. Precisely, the brachistochrone is the following time-
+optimal control problem. The state is the spatial position x = (r, ϕ) carried along
+the worldline; the evolution parameter is the selected clock s ∈ {t, τ, η, v}; the control
+is the unit spatial direction θ ∈ S 1 of the velocity on the rail indicatrix (2), with
+dynamics dx/ds = ẋ(θ; x, s) read off that indicatrix. The boundary data are a fixed
+initial event (s0 , x0 ) and a fixed spatial target xf (a point, or a target set/worldline),
+with the arrival clock sf left free; the cost is the elapsed clock sf − s0 . Because sf is
+free, the Pontryagin transversality condition is H|s=sf = 0 [equation (3)]—a free final-
+clock condition, not a two-event condition. We accordingly reserve “fixed endpoints” for
+the two-point boundary-value problem of the companion paper, in which both spatial
+endpoint positions are prescribed while the branch-dependent arrival clock is determined
+by the optimal solution and remains the quantity being compared; the default problem
+fixes the spatial target at a free arrival clock.
+
+Theorem I.1 (controlled-rail reduction). Minimizing travel time subject to (2) is a time-
+optimal control problem with control θ. The velocity indicatrix (2) is a compact, strictly
+convex closed curve (the boundary of a convex region), and the control is its direction
+θ ∈ S 1 , itself a compact one-dimensional set. Maximizing the support function p · ẋ(θ)
+over this curve has a unique maximizer by strict convexity, so no Filippov relaxation
+is needed—the control set S 1 is already compact and the maximizer single-valued; we
+do not claim the velocity locus is a convex subset of the plane, nor convexify it (which
+would admit averaged velocities violating the unit-mass shell). Excluding p = 0 by
+the nontriviality condition, the optimal control θ? (x, p) is single-valued and smooth
+(away from the freezing and horizon degeneracies, treated separately) and Pontryagin’s
+maximum principle [9, 10] delivers the branch Hamiltonian H(x, p) = maxθ p · ẋ(θ) in
+closed form (section 4 (and the companion paper for Thakurta–Kerr)). This is a genuine
+time-optimal control problem, for which the Pontryagin (vakonomic-type) reduction
+is the correct prescription; we do not invoke the nonholonomic d’Alembert principle,
+Controlled-rail brachistochrones in non-stationary spacetimes                             5
+
+whose equations differ from the vakonomic ones unless the constraint distribution
+is integrable—a coincidence that convexity does not entail. Two structural facts
+hold throughout: pϕ = J is conserved (axial symmetry), and the free-arrival-time
+transversality fixes the branch Hamiltonian to vanish at the free endpoint,
+
+                           H s=s = 0        (free arrival time).                        (3)
+                                 f
+
+
+For a non-autonomous system H is not a global first integral: along the extremal
+dH/ds = ∂s H, proportional to m0 (v) (Vaidya) or A0 (η) (Thakurta–Kerr), so H 6= 0
+in the interior—consistently, pv (r1 ) = 0 at the free arrival radius yet pv (r) 6= 0
+along the path (figure 5). The globally conserved object is the extended Hamiltonian
+H = ps + H = 0 on the enlarged phase space, with ps conjugate to the evolution
+parameter s; only in the stationary limit is H autonomous and H ≡ 0 a genuine first
+integral.
+
+Cost of control. For an accelerated worldline with rail four-force aµ = Duµ /dτ ,
+differentiating the invariant gives the exact identity
+
+                          d(−u · W )
+                                     = − a · W − ua ub ∇(a Wb) ,                        (4)
+                             dτ
+whose two terms play distinct roles. The constraint a · u = 0 holds automatically for
+any four-force that preserves the mass shell u · u = −1 (it is the derivative of the shell
+condition); it is not a special “magnetic” property and does not by itself imply that
+the rail performs no work relative to a physical observer. It means only that no rest
+mass is created; the rail is nonetheless free to exert power against the selector W (the
+term a · W ). One should distinguish (i) preservation of rest mass (a · u = 0), (ii) power
+measured by a chosen observer congruence, (iii) the constraint force itself, and (iv) the
+additional power needed to compensate non-stationarity. A free geodesic (a = 0) would
+let −u · W drift at −ua ub ∇(a Wb) , which vanishes for all u iff W satisfies the Killing
+equation; to hold −u · W = Ê fixed the rail supplies exactly a · W = −ua ub ∇(a Wb) , so
+that the left-hand side of (4) is zero. This control power equals the failure of the Killing
+equation—the missing symmetry—which is why the non-stationary rail is legitimate but
+not free: Ê is actively controlled, not conserved by a symmetry. The optical reductions
+of H reproduce the Randers/Zermelo structure [6, 11].
+
+Operational reading: thrust. Maintaining the controlled invariant generally requires
+nonzero proper acceleration aµ = Duµ /dτ (a = 0 only on a free-fall geodesic), so the
+rail force is the thrust per unit mass, spacelike (a · u = 0) with |a| diverging as the
+freezing/horizon surface is approached. The present variational problem minimizes the
+selected elapsed clock, not thrust, fuel or integrated control effort, which define distinct
+optimal-control problems. In the non-stationary case the a · W term is the proper
+acceleration that maintains the rail against the non-stationary mass-rate drift.
+Controlled-rail brachistochrones in non-stationary spacetimes                               6
+
+Geometric dictionary. The indicatrix (2) carries two independent data—its center
+c = (cr , cϕ ) (the Zermelo wind) and the eccentricity of its semi-axes (the anisotropy of
+the local speed, ar 6= aϕ )—and each governs a distinct feature of the brachistochrones,
+the same for every branch:
+  • eccentricity 6= 0 (a spatial gradient ∂r f 6= 0) ⇒ the t and τ branches split in depth,
+    nt /nτ = E/f 6= 1;
+  • azimuthal offset cϕ 6= 0 (frame dragging) ⇒ rotational plunge inversion becomes
+    possible;
+  • radial offset cr 6= 0 (a non-stationary wind, m0 6= 0) ⇒ endpoint-sensitive memory,
+    pv 6= 0 along the path;
+  • shrinking axes R → 0 (local speed v → 0) ⇒ freezing and capture.
+Eccentricity and center offset are separate levers: the first switches on the t/τ split,
+the second the inversions. In particular the three branches degenerate—the t, τ and η
+brachistochrones coincide—iff the indicatrix is, up to a position-independent conformal
+scale, a rigid centered circle (c = 0, ar = aϕ , radius depending on the flow parameter
+alone), equivalently iff the optical cost ratios nt /nτ , nt /nη are position-independent.
+This is exactly spatial homogeneity: FLRW is the unique such case in our ladder
+(section 3), whereas any gradient or wind breaks it—even the static, non-rotating
+Schwarzschild ellipse, which is centered (c = 0) yet eccentric, already splits t from
+τ . The indicatrix shape is thus the organizing thread of the paper: FLRW (circle)
+→ Vaidya (radial wind) → Thakurta–Kerr (angular wind) is a progression of ellipse
+deformations, each switching on one further phenomenon.
+
+2.2. Existence, normality, and global optimality
+The Pontryagin reduction above supplies only necessary conditions. We record here
+the three complementary facts that make the constrained problem well posed for the
+non-stationary rail: an existence theorem for the minimizer, the normality of every
+regular extremal (so the reduction −u · W = Ê is never vacuous), and a Hamilton–
+Jacobi certificate that upgrades a saturated extremal to a global optimum. All three are
+elementary under the standing hypothesis that the indicatrix is a compact, uniformly
+convex oval [equation (2)].
+
+Theorem I.2 (existence and normality; direct method). Let the spatial arc range over a
+compact, regular domain Ω on which the rail one-form and the metric are smooth and
+the arrival-time indicatrix obeys the uniform two-sided bound
+
+                       ρ |v| ≤ F (x, v) ≤ R |v|,     0 < ρ ≤ R < ∞,                       (5)
+
+with ρ, R the inradius and circumradius of the oval. Then the arrival time T [γ] =
+R
+  F (γ, γ̇) dσ attains its infimum in the class of Lipschitz arcs joining the fixed endpoints.
+The left inequality gives coercivity and a uniform Lipschitz—hence, by Arzelà–Ascoli,
+Controlled-rail brachistochrones in non-stationary spacetimes                                       7
+
+
+
+
+              Figure 1. Rail indicatrices (linear constraint ∩ normalization = ellipse): the shared
+              construction. FLRW gives shrinking circles (no wind, no eccentricity ⇒ degenerate
+              branches); Vaidya an ingoing radial wind (f − E 2 < 0, driven by m(v) ⇒ endpoint-
+              sensitive memory); Thakurta–Kerr an angular wind (frame dragging ⇒ rotational
+              inversion), the ellipse shrinking with A(η). Eccentricity switches on the t/τ split, the
+              center offset the inversions.
+Controlled-rail brachistochrones in non-stationary spacetimes                             8
+
+uniformly convergent—minimizing sequence; convexity of F in v gives sequential lower
+semicontinuity (Tonelli); and the non-autonomous coupling to the evolution parameter
+s (through m(v) or A(η)) is controlled by ODE stability and a Grönwall estimate, so
+the limit arc is admissible and minimizing. The two-sided bound (5) fails exactly at
+the freezing/horizon surfaces, where ρ → 0 and the velocity indicatrix of section 2.1
+degenerates; the theorem therefore applies on any compact subdomain bounded away
+from them.
+
+Normality (part of Theorem I.2). Every regular minimizer is a normal extremal—
+the abnormal multiplier p0 cannot vanish. If p0 = 0 the maximized Hamiltonian
+would read maxv p · v = 0 with p 6= 0; but the support function of the oval obeys
+h(p) = maxv∈∂B p · v ≥ ρ |p| > 0, a contradiction. Hence p0 normalizes to −1, the
+costate p never vanishes, and the reduction to the branch Hamiltonian H = maxθ p· ẋ(θ)
+together with the rail invariant −u · W = Ê is legitimate along the entire extremal. This
+is the control-theoretic content of “excluding p = 0” used in the Pontryagin reduction
+of section 2.1: nontriviality is not an assumption but a consequence of ρ > 0.
+
+Proposition I.3 (Hamilton–Jacobi verification). The maximum principle is necessary
+but not sufficient: a PMP extremal is a candidate minimizer, guaranteed only locally
+optimal. A sufficient global certificate comes from dynamic programming. In the
+stationary (frozen) problem the value function solves the eikonal Hamilton–Jacobi–
+Bellman equation F ∗ (x, ∇V ) = 1 (F ∗ the dual/optical norm); but the rail is non-
+autonomous (Vaidya m(v), Thakurta–Kerr A(η)), so the value function depends on the
+evolution clock s and obeys the time-dependent equation
+                                   
+                         ∂s V + min 1 + ∇x V · f (x, u, s)    =0                        (6)
+                                  u
+
+(equivalently, an autonomous HJB on the state extended by s). This is a verification
+theorem: if a Lipschitz viscosity subsolution V exists and a candidate extremal saturates
+it (∇V · ẋ = F pointwise), then that extremal realizes the value function and is a global
+minimizer on the single-valued region of V . We do not construct such a global V for
+generic non-stationary Kerr/Vaidya trajectories; in the stationary limit the closed-form
+optical (Randers) metric of section 4 (and the companion paper for Thakurta–Kerr)
+supplies one on any region carrying a single-valued V , and elsewhere our statements are
+those of PMP extremals with local checks. Where V turns multivalued the certificate
+localizes, as follows.
+
+Conjugate points, Maxwell set, cut locus. Two mechanisms end optimality. A conjugate
+point (Jacobi) ends local minimality when the second variation degenerates; up to the
+first conjugate point the extremal is a strict local minimum. A Maxwell point—two
+distinct extremals of equal arrival time—ends global minimality earlier and is exactly a
+shock (gradient discontinuity) of V , i.e. a point of the cut locus. Strict convexity of the
+Controlled-rail brachistochrones in non-stationary spacetimes                            9
+
+indicatrix removes Filippov relaxation but does not exclude Maxwell points: distinct
+windings past the rotation axis, or the two ±J arcs reaching a common target, can
+tie. A closed-form extremal admitting a single-valued saturated verification function
+is globally certified only up to its first Maxwell or conjugate obstruction—the first
+such singularity of V . For the generic non-stationary trajectories treated here we
+establish PMP extremality and local numerical minimality checks, not a complete global
+Hamilton–Jacobi certificate; beyond the first obstruction the global optimum is selected
+by comparing arrival times across the competing extremals.
+
+What is not claimed inside the ergosphere. Where the Killing selector ξ becomes
+spacelike—inside the ergosphere—the invariant −u · ξ = Ê no longer bounds a timelike-
+future cost and the indicatrix oval degenerates: the closed-form ϕ(r) continued through
+re (the companion paper) is a genuine analytic continuation of the extremal, not a
+certified physical minimum. The existence and Hamilton–Jacobi statements above are
+asserted only outside the ergosphere, on the region where F is a bona fide convex
+indicatrix; inside, a timelike observer congruence or a different timelike selector would
+be required to formulate a compact future-timelike indicatrix, which we do not develop.
+Freezing (where ρ → 0), turning (where a semi-axis vanishes), and the separatrix (a
+double root of the radical) are distinct degeneracies and are not conflated.
+
+2.3. Selecting W : the Killing–CKV–Kodama hierarchy
+The selector W is fixed by a hierarchy of decreasing symmetry, each level recovering the
+previous one in the appropriate limit.
+     (a) Killing. If a timelike Killing vector ξ exists, W = ξ and the right-hand side of
+equation (4) vanishes identically: −u · ξ is Noether-conserved and the rail is free. This
+is Perlick’s stationary case [1].
+
+Recovery of Perlick’s stationary optics. In the Killing limit W = ξ = ∂t the controlled-
+rail arrival-time Finsler function is exactly a Randers metric, so the construction reduces
+to Perlick’s fixed-energy optics rather than merely resembling it. Solving the rail
+−u · ξ = Ê jointly with g(u, u) = −1 for the coordinate-time rate t0 = dt/dσ gives
+a quadratic whose future-directed root is
+                                                               2
+                                                                                    
+                          a
+                            p                   gta         Ê    gta gtb  + f g ab
+              Frail = βa v + aab v a v b , βa =     , aab =                           , (7)
+                                                 f               f 2 (Ê 2 − f )
+
+with f = −gtt and v a = dxa /dσ. In the threading form g = −f (dt−ωa dxa )2 +hab dxa dxb
+one has gta gtb + f gab = f hab , so βa = ωa and aab = Ê 2 hab /[f (Ê 2 − f )]—precisely
+Perlick’s fixed-energy stationary optical metric [1]. The null/high-energy limit Ê → ∞
+gives aab → hab /f , the standard Fermat–Randers optical metric of Kerr [5]. This is
+the functional equality Frail = FPerlick (stronger than coincidence of the Hamiltonian
+Controlled-rail brachistochrones in non-stationary spacetimes                                10
+
+flows on H = 0), verified against the directly solved Frail on equatorial Kerr to machine
+precision.
+      (b) Conformal Killing. If the spacetime is conformally stationary, g = Ω2 ĝ with ĝ
+stationary, the timelike conformal Killing vector ∂η selects the conformal-time branch;
+−u · W is exactly conserved for null rays and controlled up to the conformal factor for
+massive rails. FLRW and constant-A Thakurta–Kerr live at this level.
+      (c) Kodama. In a spherically symmetric dynamical spacetime with no Killing or
+conformal Killing vector, the Kodama vector K a = εab ∇b r [12, 13] is the canonical
+replacement: it is divergence-free (equation (11)), reduces to ξ in the static limit, and
+its flux Gab Kb is conserved with charge the Misner–Sharp mass. Vaidya is the paradigm
+(section 4.1).
+      (d) Convention. Absent even spherical symmetry the Kodama construction fails
+and W becomes a declared convention, with no distinguished normalization of the cost
+one-form. Levels (a)–(c) are what make the non-stationary rail canonical rather than
+arbitrary.
+
+3. FLRW: the degenerate base case
+
+For spatially flat FLRW, g = a(η)2 ηMink , the rail uses the conformal Killing vector ∂η ;
+the local speed is                     q
+                                   v(η) =     1 − a(η)2 /Ê 2 ,                             (8)
+
+vanishing at the freezing barrier a = Ê.
+
+Branch degeneracy. Because a = a(η) depends on conformal time alone (spatial
+homogeneity), the optical index built from the conformal Killing vector,
+
+                                            1        Ê
+                                n(η, r) =     =q             ,                              (9)
+                                            v
+                                                Ê 2 − a(η)2
+                                                                       R
+is position-independent at fixed η. The conformal-time functional Tη = n d`flat is then
+minimized by a flat straight line (Fermat with a purely time-dependent
+                                                            p            index). The
+                                                                   ˙ 2
+same curve minimizes Tt and Tτ : with dt = a dη and dτ = a 1 − ~x dη, the monotone
+                           R
+reparametrization t(η) = a dη maps critical points to critical points, and the τ -cost
+differs from the η-cost only by the same η-dependent weight. Hence
+
+                           arg min Tt = arg min Tτ = arg min Tη
+                                                                                           (10)
+                                       = comoving straight line.
+
+The t/τ splitting that drives every later result is a gravitational-gradient effect (∂r f 6= 0);
+it is absent whenever the metric functions depend on time only. FLRW is thus the
+degenerate base of the ladder: it exhibits freezing at a = Ê (figure 2) but no branch
+structure (figure 3).
+Controlled-rail brachistochrones in non-stationary spacetimes                                     11
+
+
+
+
+              Figure 2. de Sitter FLRW rail kinematics: local speed v and rail redshift Ephys = Ê/a;
+              freezing at a = Ê.
+
+
+4. Vaidya: dynamical black hole and the Kodama rail
+
+The ingoing Vaidya metric ds2 = −f dv 2 + 2 dv dr + r2 dΩ2 , f = 1 − 2m(v)/r [14, 15],
+has no timelike Killing vector; its trapping structure is that of a dynamical horizon
+[16, 17, 18]. The Kodama vector [12, 13, 19]
+
+                            K a = εab ∇b r = ∂v ,       ∇a K a = 0,                             (11)
+
+is divergence-free without any Killing symmetry, and its charge is the Misner–Sharp
+mass m(v) [20, 21].
+Controlled-rail brachistochrones in non-stationary spacetimes                              12
+
+
+
+
+              Figure 3. Variational check: the comoving straight line minimizes both Tt and Tτ
+              (branch degeneracy).
+
+
+4.1. Kodama energy is the rail invariant
+From the rail constraint alone one finds the exact identity −g(T, T ) = (f uv − 1)2 /Ê 2 ,
+hence
+                − u · K = Ê identically along the brachistochrone.                 (12)
+This is controlled conservation, not Noether: for a geodesic −u · K would drift at
+rate −m0 (uv )2 /r ∝ m0 , exactly the right-hand side of equation (4) for W = K. Only
+the unnormalized K = ∂v has zero control cost in the static limit; the normalized
+         √
+K̂ = K/ f does not (discriminating test), which is why the Kodama vector, not a unit
+selector, is the canonical choice.
+
+Indicatrix and Hamiltonians. With w ≡ Ê 2 − f the constraint −uv = Ê turns the
+admissible velocities at fixed (v, r) into an ellipse,
+                                                           √
+                      0          2
+                                         √              0    w
+                    r = (f − Ê ) + Ê w cos θ,        ϕ =     sin θ,       (13)
+                                                            r
+Controlled-rail brachistochrones in non-stationary spacetimes                        13
+
+a Zermelo problem with ingoing radial wind f − Ê 2 < 0. Maximizing p · ẋ over θ at
+fixed pϕ = J gives the closed-form branch Hamiltonians
+                                            √
+                                              q
+                                  2
+                   Hv = pr (f − Ê ) − 1 + w Ê 2 p2r + J 2 /r2 ,               (14)
+                                            √
+                                              q
+                  Hτ = pr (f − Ê 2 ) − Ê + w (Êpr + 1)2 + J 2 /r2 .          (15)
+The τ -branch is the v-branch under pr → pr + 1/Ê with unit cost replaced by Ê. Non-
+stationarity is the explicit dependence dH/dv = ∂v H ∝ m0 (v); the endpoint-sensitive
+(arising from the two-point boundary-value problem with a free future arrival—a costate
+memory, not a causal effect) momentum pv = −H satisfies pv (r1 ) = 0 at the free arrival
+radius yet pv (r) 6= 0 along the path, so the turning point anticipates future accretion
+(figure 5).
+
+Branch costate vs mechanical angular momentum. The conserved J = pϕ is
+the Noether costate of the reduced control Hamiltonian—the canonical momentum
+conjugate to ϕ in the arrival-time problem—not the spacetime angular momentum
+Lmech = g(u, ∂ϕ ). Although ∂ϕ is a Killing vector, Noether’s theorem for the control
+symmetry returns the control costate, not the mechanical momentum: along a forced
+(rail-constrained, accelerated) worldline Lmech is not conserved, since dLmech /dτ =
+a · ∂ϕ 6= 0. The two are therefore distinct objects. On the native Vaidya v-branch
+shell the Legendre map gives the exact relation
+                                               Ê 2 − f (r)
+                             Lmech = r2 uϕ =             J,                         (16)
+                                                   Ê
+which varies with r while J stays constant (they agree only at the isolated radius
+f = Ê 2 − Ê); verified from the indicatrix (13). The Legendre map is branch-specific,
+but on all Vaidya branches the conserved axial control costate is J and the slow
+deformation is generated solely by m∂m ; we reserve “angular momentum” for the
+mechanical g(u, ∂ϕ ) and call J the branch costate, Lmech being a derived, non-conserved
+quantity. The conformal and gravitomagnetic costate maps—the frame-drag-shifted
+branch momentum p̃ϕ and the (Eeff , Jeff ) Euler source—are derived in the companion
+Paper II.
+
+On-shell drift versus off-shell shell departure. The analogous rail-energy sanity check
+for the axisymmetric Thakurta–Kerr rail—where the invariant is tied to the conformal
+Killing vector ∂η rather than a Kodama vector—is given in Paper II. For the Vaidya
+family the frozen orbit shape dϕ/dr = F (r; Ê, J) depends on the mass modulus m,
+and its on-shell drift is generated by m∂m . Conservation of the Kodama rail charge Ê
+does not constrain the non-autonomous trajectory to the instantaneous H = 0 shell—
+the costate equation is independent information—so the complete first-order response
+adds the pv -driven off-shell contribution [equation (C.1), section 4.4, Figure 10]. The
+conformal Euler source in (Eeff , Jeff ), the normalized momentum Pr = pr /A and the
+costate pη belong exclusively to the Thakurta–Kerr problem of Paper II.
+Controlled-rail brachistochrones in non-stationary spacetimes                                 14
+
+
+
+
+              Figure 4. Kodama energy along the τ -brachistochrone. Top: the residual |−u·K − Ê|
+              on a log scale, held below 6.7 × 10−16 —an actively controlled (rail-maintained)
+              invariant, not a Noether constant. Bottom: the free-particle Kodama drift ∝ m0
+              that the rail cancels (the missing symmetry).
+
+
+4.2. Phenomenology: penetration, timing, bounce
+Three features distinguish the dynamical hole from its frozen-mass Schwarzschild limit.
+    Penetration. The τ -brachistochrone reaches the apparent horizon r = 2m(v)
+only if |J| lies below a threshold Jc (v0 ); accretion (m0 > 0) opens a finite window
+Jc > 0, whereas the negative-rate continuation (m0 < 0 in the ingoing metric—a formal
+continuation; physical evaporation is the outgoing metric, section 4.3) closes it to zero
+measure—an accretion/(negative-rate) asymmetry with no static analogue. The finite
+Controlled-rail brachistochrones in non-stationary spacetimes                               15
+
+capture interval J ∈ (0, Jc ] is the analogue of the Kerr t-branch dichotomy, generated
+here by the dynamics: grazing orbits linger near periapsis while the growing horizon
+closes the gap.
+     Bounce.       The r-parametrization degenerates at periapsis (dv/dr → ∞);
+reparametrizing by v makes the Euler–Lagrange problem regular at the turning point
+r0 = 0, so the trajectory is integrated straight through the bounce—the same extremal,
+via the exact change of variable (f v 0 −1)dr = (f −r0 )dv. The v-flow reaches the periapsis
+exactly where the r-flow diverges (rmin = 3.0105 at v = 7.29 for µ ≡ m0 = 0.01), and
+the endpoint-sensitive memory pv (r) ∝ m0 measures the departure from the frozen-mass
+Schwarzschild curve (figure 8).
+     Timing and the orbit–horizon race. Because m grows along the path, rmin depends
+on when the particle arrives, the epoch v1 —a genuinely non-stationary effect absent in
+Kerr. The absolute and relative penetration have opposite winners (figure 9): under the
+negative-rate branch (m0 < 0) the absolute periapsis descends but the horizon 2m(v)
+retreats faster, so the relative penetration rmin /2m(vperi ) worsens for later arrivals; under
+accretion the periapsis rises yet the horizon grows faster, so late arrivals graze the relative
+horizon. The orbit–horizon chase has reversed outcomes measured in r versus in horizon
+units.
+
+4.3. Plunge-radius law and the absence of inversion in the frozen-clock comparison
+The turning-point law has the static Schwarzschild form evaluated at the mass at
+periapsis, f∗ = 1 − 2m(vperi )/rmin :
+
+                              τ : (Ê 2 − f∗ )J 2 = f∗ rmin
+                                                        2
+                                                            ,                             (17)
+                               t : (Ê 2 − f∗ )J 2 = Ê 2 rmin
+                                                           2
+                                                               /f∗ ,                      (18)
+
+plus a genuine O(m0 ) correction from the endpoint-sensitive costate memory pv . The
+static ratio Jt2 /Jτ2 = Ê 2 /f 2 > 1 gives rmin
+                                               t       τ
+                                                   < rmin   (“t deeper”), a branch-intrinsic
+ordering set by Ê/f > 1 alone—it does not depend on the sign of m0 nor on the
+ingoing/outgoing character of the flux. Physical evaporation is the outgoing Vaidya
+metric ds2 = −f du2 − 2du dr (retarded time u), not the ingoing metric with m0 < 0.
+                       t        τ
+The depth ordering rmin    < rmin  is branch-intrinsic: it follows from Ê/f > 1 alone and is
+therefore independent of the sign of m0 and of the ingoing/outgoing character of the flux,
+so to this (static, frozen-clock) order it is unchanged under evaporation. The apparent
+linear-model “inversion” from flipping m0 < 0 in the ingoing model is an unphysical
+extrapolation to m ≤ 0. We do not here solve the full outgoing optimal-control problem
+with its own Hamiltonians, costates and transversality: the advanced/retarded frozen-
+clock asymmetry [equation (25)] is a clock decomposition (v ↔ u, the tortoise r∗ changing
+sign) of the frozen first-order correction, not a complete outgoing boundary-value
+solution. Accordingly we state the absence of an evaporative inversion as a property
+of the branch-intrinsic static ordering together with this frozen clock decomposition,
+Controlled-rail brachistochrones in non-stationary spacetimes                               16
+
+
+
+
+              Figure 5. τ -brachistochrones Schwarzschild vs Vaidya, and pv (r): transversality
+              pv (r1 ) = 0, non-autonomous memory ∝ m0 .
+
+
+and leave the full outgoing BVP—and a genuine outgoing trajectory to accompany
+figure 7—to future work.
+
+4.4. Closed-form adiabatic correction and the horizon dilogarithm
+When m(v) varies slowly we apply the general frozen-coefficient reduction of Lemma I.4
+and the first-order response of Theorem I.5 to the Vaidya mass modulus, with
+ṁ = dm/dv the small parameter; the same general construction is specialized
+to the conformal Kerr family in Paper II. The frozen family is the Schwarzschild
+brachistochrone—the a → 0 limit of the Thakurta–Kerr forms—on the sextic S =
+Controlled-rail brachistochrones in non-stationary spacetimes                                  17
+
+
+
+
+                                      t,τ
+              Figure 6. Plunge radii rmin and gap vs µ = m0 ; t deeper, accretion widens the gap.
+
+
+r(r − 2m)DE [r2 (r − 2m) − J 2 DE], DE = (E 2 − 1)r + 2m. Notably this sextic keeps
+six distinct roots: the constrained brachistochrone is genus two even in Schwarzschild
+(only the geodesics are elliptic; the genus drop occurs at the algebraic degeneration
+value |J| = Jdeg ). The mass derivative reduces exactly, the horizon factor cancelling,
+                                                                              4
+               Nm                                                   Am X m
+        ∂m F = 3/2 ,     Nm = S ∂m K − 21 K ∂m S,           ∂m ϕ0 = √ +    ck Uk ,           (19)
+              S                                                      S k=0
+Controlled-rail brachistochrones in non-stationary spacetimes                                   18
+
+
+
+
+              Figure 7. This figure establishes only the absence of inversion within the ingoing,
+              positive-mass model and the frozen-clock branch decomposition; it does not exhibit
+              a solution of the outgoing-Vaidya boundary-value problem. The linear-model sign
+              change lies entirely in the unphysical m < 0 region; with m = e−λv > 0 the branch gap
+              shrinks but does not invert. The static/frozen branch ordering does not invert under
+              the outgoing-clock replacement; the full outgoing-Vaidya optimal-control boundary-
+              value problem remains open.
+
+          R     √                                             −15
+with Uk = rk / S dr and algebraic constants cm
+                                             k (verified to 10    ). The clock is now
+the advanced time: from v = t + r∗ ,
+
+        dv   E dτ  1  E r3    r
+           =      + = √ +         ⇒ v = E U3 + r + 2m ln(r − 2m),                             (20)
+        dr   f dr f     S  r − 2m
+Controlled-rail brachistochrones in non-stationary spacetimes                                 19
+
+the tortoise term injecting a horizon logarithm. This is the advanced-time (native)
+                                                                                           2
+      √ the proper-time branch instead uses the second-kind clock dτ /dr = r (r −
+branch;
+2m)/ S, i.e. Tτ = U3 − 2m U2 , b = (0, 0, −2m, 1, 0) (no horizon log), and closes
+by the very same universal on-shell assembly established     √          here (specialized to the
+                                 1                        m          1
+                                   P                                   P m         P
+Vaidya clock)—δϕτ /ṁ = 2 k<j Qkj Wkj − Tτ (A / S + 2 ck Uk ) + j bj Ij with
+                m                                                −14
+Qkj = cmk bj − cj bk , all coefficients algebraic (verified to 10    ). The two canonical clocks
+of the ingoing problem are therefore the advanced null time v (adapted to the Kodama
+selector K = ∂v , the native evolution parameter) and the proper time τ ; the coordinate
+time t that enters the static depth comparison (18) is the frozen Schwarzschild-like time,
+a comparison device valid at frozen order and not a canonical non-autonomous clock—
+once m = m(v) the tortoise r∗ = r + 2m ln(r − 2m) acquires dm terms and no Killing
+time survives. The retarded time u = t−r∗ of the outgoing metric is a separate outgoing-
+Vaidya problem (its own Hamiltonians, costates, and transversality), not a third clock
+                                                                                 R
+of the ingoing family. The advanced-time first-order correction δϕ = ṁ ∂m F v dr then
+integrates by parts into a fully explicit closed form (verified to 9 × 10−14 , coefficients
+given),
+                                        r3
+                                Z               Z
+            δϕ                                             r
+                = Am v − E Am √ dr − Am                         dr,       Am ≡ ∂m ϕ0 ,       (21)
+             ṁ                          S              r − 2m
+This is the on-shell component of the Vaidya first-order correction (the mass-drift of the
+frozen family). As in Thakurta–Kerr, the interior costate does not vanish—pv = −Hv =
+O(ṁ) with pv (r1 ) = 0 only at the free arrival—so the complete first-order term adds the
+off-shell piece given by the Vaidya analogue of equation (C.1), with the single-parameter
+                                    Rλ
+operator Θ = m∂m and S = 0 ΘHv dλ0 terminally anchored; the extra term is
+  R
+− (∂pr G/Hpr ) S dr, a length-two iterated integral of the same horizon-dilogarithm class.
+Applying the identical canonical perturbation theory to Hv closes the Vaidya first order
+to O(ṁ2 ) (residual slope ≈ 2; VaidyaMetric/vaidya first order offshell.py). We
+display the on-shell component in closed form below; its two integrals
+                                                                 √      expand into named
+                                                              m
+                                                                              P m
+building blocks with algebraicp  coefficients. Writing Am =  A  /  S −  α 0 +  k ck Uk with
+                       m
+the constant α0 = A (r0 )/ S(r0 ), integration by parts in each factor gives the fully
+assembled closed form (verified to 2 × 10−13 )
+                                              4
+             δϕ           h                  X                  i
+                                           1
+                = Am v − E Ipoly − α0 U3 + 2     cm
+                                                  k U U
+                                                     k 3 − W 3k
+             ṁ                              k=0
+                                                 4
+                                                                                            (22)
+                      h                          X                               i
+                    − L2m − α0 (v − E U3 ) +           cm
+                                                        k r Uk − Uk+1 + 2m Dk ,
+                                                 k=0
+                                                             R    √
+with the named building blocks: the abelian integrals Uk = rk / S dr; the elementary
+                                  R m 3
+rational-log primitive Ipoly =      A r /S dr; the genus-two polylogarithms W3k =
+R                                                                        R
+  (U3√dUk − Uk dU3 ) at infinity; the second -kind horizon integral L2m = Am r/[(r −
+2m) S] dr—since Am (2m) 6= 0 its integrand behaves as (r − 2m)−3/2 , a double pole
+with no residue at the horizon Weierstrass point, closed by the Kleinian ζ/quasi-
+periods [22, 23], not by Fay; the genuinely third -kind object is the horizon letter
+Controlled-rail brachistochrones in non-stationary spacetimes                               20
+
+dr/(r − 2m) (the tortoise log, a simple pole of residue two at that Weierstrass point),
+which closes as a Fay θ-ratio [24] centred at r = 2m (the horizon-anchored analogue
+of the third-kind letter L developed for the rotating case in Paper II, there anchored
+                                                    R
+at infinity); and the horizon dilogarithms Dk = Uk /(r − 2m) dr. Since r = 2m is a
+                                                  √
+branch point of S, in the local uniformiser t = r − 2m one has dr/(r − 2m) = 2 dt/t:
+a simple pole of residue two, i.e. a genuine third-kind letter d log anchored at the
+horizon. On the compact genus-two curve this pole cannot stand alone: by the residue
+theorem the differential dr/(r − 2m) carries residue +2 at the horizon Weierstrass point
+and compensating residues −1 at each of the two points at infinity ∞± of the sextic
+(dr/(r − 2m) ∼ −ds/s in s = 1/r on each sheet), so the residues sum to zero. “d log
+at the horizon” names the horizon part of this divisor; the Fay/prime-form (θ-ratio)
+representation of the third-kind differential carries the full divisor 2 (r=2m)−∞+ −∞− .
+                             R
+Its elementary primitive is dr/(r − 2m) = ln(r − 2m), so one integration by parts
+closes Dk onto a single weight-two letter (verified to 10−12 ). Throughout, displayed
+logarithms are to be read with a fixed reference length, ln(r − 2m) ≡ ln[(r − 2m)/L]
+(likewise ln[(r − 2M )/L]); the scale L is dimensionally required but shifts only the
+additive constants α0 and cancels in every assembled closed form, so we suppress it in
+the displayed primitives.
+
+                                                                        rk
+                                                       Z
+                Dk = Uk ln(r − 2m) − Gk ,        Gk = ln(r − 2m)       √    dr,     (23)
+                                                                          S
+where Gk is the horizon-anchored genus-two dilogarithm—the exact counterpart of the
+Kerr weight-two piece Wjk , in the same hyperelliptic-dilogarithm class (conjecturally
+irreducible to weight one, the theta-divisor obstruction Θ = Wg−1 preventing the genus-
+one factorization), but with its d log letter sourced by the advanced-time divergence
+at the horizon r = 2m rather than by a third-kind dipole at infinity. At the genus-
+degeneration |J| √ = Jdeg the√sextic develops a double root at r = rd and the genus
+drops to one: S = (r − rd ) Q4 with Q4 quartic, so the Uk reduce to elliptic integrals
+(verified to machine precision against the direct genus-two quadrature) and Gk collapses
+to the tabulated elliptic (Bloch–Wigner) dilogarithm on E : w2 = Q4 (r)—the maximally
+explicit, directly reusable form. For the representative m = 1, E = 1.4 one finds Jdeg =
+7.0266, rd = −3.3637, branch points {−2.083, 0, 2m, 8.727}, elliptic modulus k 2 = 0.6067
+and rectangular nome τ = 0.90597 i (agreeing to fifteen digits between the Legendre form
+τ = iK 0 /K and the Sage period lattice); the horizon r = 2m, being a branch point of
+Q4 , sits at a two-torsion point (half the imaginary period), so it carries the d log letter of
+the elliptic dilogarithm. At these parameters rd = −3.36 < 0: this locus is the algebraic
+genus-degeneration Jdeg (a double root of the sextic where the closed form drops to
+genus one), not a physical external separatrix—the Schwarzschild τ -brachistochrone at
+E = 1.4 has no double root at r > 2m, hence no external capture/scatter unstable
+circular orbit, and Jdeg must not be conflated with the dynamical penetration threshold
+Jc (v0 ). The genus-one Weierstrass reduction that follows is purely algebraic and valid
+regardless of the sign of rd (separatrix classification.py). Concretely, with the
+Controlled-rail brachistochrones in non-stationary spacetimes                                       21
+
+Weierstrass σ, ζ of E (built from τ with base at the Weierstrass point, so the involution
+is z → −z) the weight-one integrals close in closed form as third-kind elliptic p integrals,
+U0 = ρ [ln σ(z − zd ) − ln σ(z + zd )] + Cz with the residue ρ = 1/ Q4 (rd ) and
+C both algebraic (derived, not fitted; verified to 10−14 against direct quadrature),
+and one further integration against the horizon third-kind letter turns Gk into the
+                               R
+elliptic dilogarithm [25, 26] ln σ ζ dz, whose single-valued projection is the tabulated
+Zagier series [27] DE (z) =                n                n            2πiτ
+                                P                P
+                                  n≥0 D(q ζ) −      n≥1 D(q /ζ) (q = e        , D the Bloch–
+Wigner function). As in Kerr, every coefficient is algebraic (rational in m, E, J); the
+transcendence lives entirely in Wjk , Gk , so the correction is reusable by direct evaluation
+once S and the cm  k are fixed.
+
+
+Fully explicit degeneration-family correction and its minimal dilogarithm basis. For
+spherical Vaidya the value J = Jc is the algebraic genus-degeneration Jdeg (double
+root at rd < 0), not a physical separatrix; the reduction on this locus can nonetheless
+be pushed to a fully explicit form. Writing ∂m F dr = R(z) dz with R the elliptic
+function R = Nm (r(z))/[(r(z) − rd )3 Q4 (r(z))] on E (where r(z) is itself explicit,
+             −1/2
+r(z) = cr −a4 [ζ(z −z∞ )−ζ(z +z∞ )]), its Mittag–Leffler decomposition on the torus—
+principal parts extracted by contour residues, in closed algebraic form—integrates term
+by term to
+              Z                Xh                                                  i
+     G(z) = ∂m F = C0 z +          ba1 ln σ(z − a) − ba2 ζ(z − a) − 12 ba3 ℘(z − a) , (24)
+                                     a
+
+verified dG/dz = R to 10−13 , the poles a ∈ {±zd , 0, iωim } carrying respectively
+the third-, second- and higher-kind letters, and each residue ban given in closed form
+(the triple pole at zd from a Hermite–Ostrogradsky Laurent expansion, the double
+poles at the two-torsion turning points from b2 = 4Nm (ei )/[(ei − rd )3 Q04 (ei )2 ]; the
+additive constant closes at the regular point z∞ , where R vanishes as 1/r, giving
+C0 = − a [ba1 ζ(z∞ − a) + ba2 ℘(z∞ − a) − 21 ba3 ℘0 (z∞ − a)], and the analogous constant of
+           P
+
+the clock differential Tτ0 from its value at the regular turning image z = 0). The weight-
+                          R
+two blocks Wkj = 2 Uk dUj − Uk Uj close on the Brown–Levin elliptic polylogarithm,
+whose transcendental core is the length-two Kronecker–Eisenstein iterated integral [28]
+                     Ry               Rt                  
+Γ̃(1, 1; â, b̂; y) = 0 g (1) (t − â) 0 g (1) (s − b̂) ds dt with the tabulatable q-series g (1) (x) =
+                   P       q 2n
+π cot πx + 4π n≥1 1−q         2n sin 2πnx (agreeing with the direct nested quadrature, and with
+
+the GiNaC elliptic-polylog evaluation, to 10−18 ). This building-block form—G from
+Equation (24) plus the Wkj = Γ̃(1, 1)—is the reusable closed form: every coefficient
+in it (the residues ban , the mass constants cm          k , Jc itself) is given in closed form as an
+algebraic function of m, E, so a reader reconstructs δϕτ |deg for any (m, E) by evaluating
+those formulas on the corresponding curve—checked to 10−9 against the direct integral
+and, term by term for the closed-form coefficients, across E ∈ [1.3, 1.6] (each a distinct
+curve).
+      Beyond this reusable form there is a purely structural statement about the
+transcendental weight: the parity involution z → −z groups the raw terms into 24
+Controlled-rail brachistochrones in non-stationary spacetimes                             22
+
+blocks, the shuffle identity [29] recasts these as 21 antisymmetric elliptic dilogarithms,
+and the Weierstrass-addition (Fay) relations collapse them further, so that the entire
+weight-two content of δϕτ |deg appears to span a space of dimension five: a high-precision
+numerical reduction gives a stable rank five (the discarded singular values fall to 10−79
+in arbitrary precision). We state this as strong numerical evidence, not a proof—an
+exact bound on the dimension would require a motivic/Hodge basis-count or an explicit
+basis with a proven independence, which we do not carry out. The coefficients βb of any
+chosen five-element dilogarithm basis are curve-specific numbers—obtained per curve
+by a mechanical linear reduction (here, at m = 1, E = 1.4, to eighty digits), not a
+universal formula—and a closed symbolic form for them, which would require the full
+second-kind reduction of E, is left open. What makes the algebraic reduction possible is
+that every ei (z) entering the assembly is a rational function of ℘(z)—e.g. the third-kind
+combination ζ(z − a) − ζ(z + a) = −2ζ(a) + ℘0 (a)/[℘(z) − ℘(a)].
+
+Advanced/retarded frozen-clock decomposition. At first order δϕ is linear in ṁ, so
+naı̈vely ṁ → −ṁ merely flips its sign. The formal advanced/retarded frozen-clock
+asymmetry is subtler: accretion (ṁ > 0) is described by the ingoing Vaidya model
+and its advanced clock v = t + r∗ , whereas the retarded clock u = t − r∗ (ds2 =
+−f du2 − 2du dr) belongs to the outgoing geometry. The frozen reduction ∂m F is
+identical (it depends only on S); only the clock changes, and v ↔ u flips the sign
+of the tortoise r∗ . Splitting the clock into its bulk and tortoise parts, v = E U3 + r∗ with
+r∗ = (r − r0 ) + 2m ln rr−2m
+                         0 −2m
+                               ,
+                                                        Z                       Z
+δϕ                         δϕ
+         = A∞ +Bhor ,             = A∞ −Bhor , A∞ = ∂m F E U3 dr, Bhor = ∂m F r∗ dr,
+ ṁ adv                    ṁ ret
+                                                                                         (25)
+so that the retarded frozen-clock branch is δϕret = ṁ(A∞ − Bhor ); at equal rate
+magnitude the formal advanced/retarded frozen-clock difference is δϕadv − δϕret =
+2|ṁ| A∞ (carried by the infinity bulk), while the deviation from exact antisymmetry
+is δϕadv + δϕret = 2|ṁ| Bhor , carried entirely by the tortoise/horizon: the horizon term
+Bhor is exactly what breaks the naı̈ve ṁ → −ṁ antisymmetry. This advanced/retarded
+split is a frozen-clock comparison at first order, isolating the sign change of the tortoise
+contribution; it is not a solution of the full outgoing-Vaidya optimal-control boundary-
+value problem, whose Hamiltonians, costates and transversality remain to be derived.
+Within Bhor the transcendental, direction-sensitive content is precisely the horizon term
+    R
+2m ∂m F ln(r − 2m) dr, which by parts is the horizon dilogarithm Dk of equation (23).
+Thus the advanced/retarded frozen-clock asymmetry is the analytic face of the horizon
+weight-two piece, just as the ergosphere-penetration window (finite for one sign of J, of
+measure zero for the other) is the phenomenological face of the same horizon geometry.
+For m = 1, E = 1.4, J = 2.5: A∞ = 8.7276, Bhor = 6.1127 (of which 1.5301 is the
+horizon-log dilogarithm sector), giving δϕ/ṁ|adv = 14.840 against δϕ/ṁ|ret = 2.615
+(both verified to 10−15 ); the frozen-clock difference is then 2A∞ = 17.455 and the
+deviation from antisymmetry 2Bhor = 12.225 (each ×|ṁ|).
+Controlled-rail brachistochrones in non-stationary spacetimes                                       23
+
+
+
+
+              Figure 8. Bounce through periapsis in the v-parametrization: the Euler–Lagrange
+              flow is regular at r0 = 0 and integrates through the turning point, reaching rmin exactly
+              where the r-parametrization diverges.
+
+
+5. Conclusions
+
+Proved. The non-stationary brachistochrone is a well-posed controlled-rail problem:
+the invariant −u · W = Ê is legitimate via Pontryagin’s principle, with W fixed
+by the Killing–CKV–Kodama hierarchy and the Kodama energy conserved along the
+Vaidya rail even when free fall does not. Existence, normality, and the non-autonomous
+Hamilton–Jacobi verification criterion hold on the timelike-selector domain. FLRW
+is the degenerate base—freezing without branch splitting—while in Vaidya the mass
+breaks the t/τ symmetry through its radial gradient.
+Controlled-rail brachistochrones in non-stationary spacetimes                                       24
+
+
+
+
+              Figure 9. Timing window: rmin depends on the arrival epoch v1 . The orbit–horizon
+              race has opposite winners in absolute (rmin ) and relative (rmin /2m) terms for accretion
+              vs the negative-rate branch (m0 < 0, ingoing).
+
+
+Conditional and numerical. The ingoing plunge phenomenology (penetration, timing,
+bounce) and the absence of an inversion in the frozen advanced/retarded clock
+comparison hold; the negative-rate continuation (m0 < 0 in the ingoing metric) is a
+formal continuation, not physical evaporation (which belongs to the outgoing metric).
+The first-order adiabatic correction closes in a horizon dilogarithm and is verified against
+the true non-autonomous flow to O(ε2 ); its off-shell source has the universal boundary
+form SD = [ rpr ] − λ.
+Controlled-rail brachistochrones in non-stationary spacetimes                                           25
+
+
+
+
+                Figure 10. Vaidya v-branch first-order correction, residual against the true non-
+                autonomous flow versus ε = M ṁ/m (log–log). The on-shell term alone (dropping the
+                costate integral S) is O(ε) (slope ≈ 1.00); the complete extended-Hamiltonian term of
+                equation (C.1), adding the off-shell piece, closes the correction to O(ε2 ) (slope ≈ 2.00).
+                Generated by VaidyaMetric/vaidya first order offshell.py.
+
+
+Outlook. The full outgoing-Vaidya boundary-value problem—with its own Hamilto-
+nians, costates and transversality—remains open, as does a genuine third (Kodama-
+observer) clock. The rotating Thakurta–Kerr case, its ergosphere trichotomy, closed-
+form separatrices and conformal plunge inversion, is developed in the companion paper.
+More broadly, the controlled-rail brachistochrone turns the comparison of arrival-time
+and proper-time optimal worldlines into a quantitative probe of how spatial curvature
+and time-dependent mass flow shape causal transport in dynamical black-hole space-
+times.
+
+Appendix A. Reproducibility and consistency
+
+Appendix A.1. Reproducing the reductions
+Lemma I.4 (polynomial reduction). Every coefficient in the adiabatic corrections is fixed
+by a single polynomial identity that
+                                 √ the   reader can solve directly; nothing is fitted. The
+                                      P4
+depth-one reduction ∂λ ϕ0 = A/ S + k=0 ck Uk [equation (19)], differentiated in r and
+cleared of the radical using ∂λ F = Nλ /S 3/2 , is equivalent to
+                                              4
+                                              X                                     5
+                                                                                    X
+         0                    0                            k
+     2 A (r) S(r) − A(r) S (r) + 2 S(r)             ck r       = 2 Nλ (r),    A=           ai r i ,   (A.1)
+                                              k=0                                    i=0
+
+a polynomial identity of degree ten. Matching the eleven coefficients of r0 , . . . , r10 gives a
+nonsingular 11 × 11 linear system in the eleven unknowns {a0 , . . . , a5 , c0 , . . . , c4 }; solving
+Controlled-rail brachistochrones in non-stationary spacetimes                                     26
+
+it (one call to a linear solver) returns the ck rationally in the metric parameters. For
+Vaidya S is the Schwarzschild-seed sextic and the numerator is Nm = S ∂m K − 12 K ∂m S;
+the advanced-time clock is entirely on-curve, its second-kind vector b feeding the Wkj
+of S and its horizon part the third-kind ln σ-quotients. The identical identity reduces
+the rotating Thakurta–Kerr radicals (Sτ and R6 = r Q2 DE) with the combined-charge
+numerator in Paper II. One reference solution to check against (polynomial residual 0
+exactly):
+
+               Table A1. Reference reduction coefficients, obtained by solving equation (A.1), at
+               m=1, E=1.4, J=2.5, for the Vaidya mass reduction (∂m ). Decimals are shown for
+               readability; each ck is the exact rational solution of a single linear solve (residual
+               0 exactly), regenerated by reproduce reductions.py (exact coefficients in the
+               reproducibility package).
+             reduction            c0           c1          c2         c3          c4
+             Vaidya, ∂m     −0.87153     −0.35970     1.03538    0.21292    −0.18939
+
+     Given the ck , the weight-two assembly is mechanical: the clock supplies the vector
+b (proper-time Tτ = U3 − 2m U2 , i.e. b = (0, 0, −2m, 1, 0)), the algebraic weights are
+                                                          R
+Qkj = ck bj − cj bk , the weight-two letters are Wkj = (Uk dUj − Uj dUk ), and the
+                              R
+elementary remainders Ij = Arj /S dr integrate to logarithms. For Vaidya the same
+steps with the advanced-time clock give the fully assembled form (22); the horizon
+dilogarithm closes by one integration by parts, equation (23). Table A2 maps each
+Vaidya result to the script in the repository [30] that generates and verifies it (the
+Thakurta–Kerr map is in the companion paper).
+
+               Table A2. Result-to-script map with the achieved numerical residual, so each closed
+               form can be regenerated and re-checked independently.
+result                                        script                              residual
+Vaidya reduction ck  m                        vaidya dMF reduction.py             10−15
+Vaidya clock v; assembled δϕ (22)             vaidya fully explicit.py            2 × 10−13
+Vaidya τ -branch assembly                     vaidya tau assembly.py              10−14
+horizon dilogarithm Dk = Uk ln −Gk            vaidya horizon dilog.py             10−12
+separatrix elliptic form U0 (σ, ζ); τ         vaidya ell dilog match.py           10−14
+advanced/retarded frozen-clock decomposi- vaidya asymmetry.py                     10−15
+tion A∞ , Bhor
+First-order extended-Hamiltonian correction, equation (C.1) (on-shell + off-shell); paths under
+VaidyaMetric/:
+Vaidya v exact PT + figure 10                 vaidya first order offshell.pyslope 2.00
+           SHA-256 (first 12 hex): vaidya first order offshell.py = 5dc9fe177f2f.
+
+
+
+Appendix A.2. Consistency residuals
+The closed forms and reductions above were checked symbolically and numerically.
+The Kodama energy is held to |−u · K − Ê| < 7 × 10−16 along the Vaidya rail; the
+Controlled-rail brachistochrones in non-stationary spacetimes                                 27
+
+
+
+
+              Figure A1. Stationary-limit check (m0 = 0): the numerical orbit matches the closed-
+              form Kerr a = 0 solution to a sup-norm residual < 10−12 .
+
+
+stationary limit m0 = 0 reproduces the closed-form Schwarzschild (a=0 Kerr) orbit to
+10−12 (figure A1); each branch minimizes its own travel time, t and τ being distinct
+curves (figure A2); and the first-order adiabatic correction closes to O(ε2 ) against the
+true non-autonomous flow (figure 10). The rotating (Thakurta–Kerr) validations—
+Weierstrass separatrix, Kerr null Fermat data, Kerr constants—are reported in the
+companion paper.
+
+Appendix B. Explicit adiabatic forms on the genus-degeneration loci
+
+This appendix collects in one place the fully explicit first-order adiabatic brachistochrone
+on the loci where the branch sextic acquires a double root and drops to genus one. For
+spherical Vaidya the relevant value J = Jc is the algebraic genus-degeneration Jdeg —
+the double root sits at rd < 0 (a negative-radius double root), so it is not a physical,
+accessible separatrix, though the genus-two → genus-one reduction is valid there all the
+same; we give both the proper-time (τ ) and advanced-time (v) branches with every
+Controlled-rail brachistochrones in non-stationary spacetimes                                 28
+
+
+
+
+              Figure A2. Each branch minimizes its own travel time; t and τ are distinct curves.
+
+
+coefficient in closed form. (The rotating Thakurta–Kerr degeneration loci are treated in
+the companion paper.) All objects live on the elliptic curve E : w2 = Q4 (r) into which
+the branch sextic collapses. The adiabatic expansion is ϕ(r) = ϕ0 (r) + λ̇ δϕ(r) + O(λ̇2 ),
+λ = m.
+                                      q                  √
+Curve and special functions. Jc = 5 3011/3072 + 581 249/9216 (at E = 7/5, m = 1;
+in general Jc = m j(E)), S = (r − rd )2 Q4 (r) with double root rd and quartic Q4
+(roots e1 < e2 < e3 = 2m < e4 , leading coefficient a4 ). The Abel coordinate is
+        Rr      √
+z(r) = r0 dr0 / Q4 ; σ, ζ, ℘ are the Weierstrass functions of E (periods 2ω1 , 2iωim , built
+from θ1 ). Marked points: ±zd (images of rd ), ±z∞ (of r = ∞), the two-torsion turning
+Controlled-rail brachistochrones in non-stationary spacetimes                               29
+
+image z = 0 (r = e4 ) and horizon image z = iωim (r = e3 = 2m).
+
+Zeroth order (frozen orbit), verified to 10−12 .
+ϕ0 (r) = Jc (E 2 −1)z +((E 2 −1)rd +2m) U0 (z) , U0 = ρ[ln σ(z−zd )−ln σ(z+zd )]+CU0 z,
+                                                
+
+                                                                                 (B.1)
+       p               Rr k √
+ρ = 1/ Q4 (rd ), Uk = r0 r / S dr (explicit in σ, ζ by Hermite recursion).
+
+First order: source and antiderivative. ∂m F = Nm /S 3/2 , Nm = S ∂m K − 21 K ∂m S,
+K = Jc DE, DE = (E 2 − 1)r + 2m; on the curve ∂m F dr = R(z) dz with R =
+                                                         −1/2
+Nm (r(z))/[(r(z) − rd )3 Q4 (r(z))] and r(z) = cr − a4 [ζ(z − z∞ ) − ζ(z + z∞ )]. Its
+antiderivative is equation (24), G̃(z) = C0 z + a [b1 ln σ(z −a)−ba2 ζ(z −a)− 12 ba3p
+                                                P a
+                                                                                    ℘(z −a)],
+a ∈ {±zd , 0, iωim }, with closed-form residues: at the triple pole zd , writing s = Q4 (rd ),
+F = Nm /Q4 , a1 = Q04 (rd )/4s, a2 = Q004 (rd )/12, h0 = F (rd ), h1 = F 0 (rd )s, h2 =
+1 00
+2
+  F (rd )s2 + 14 F 0 (rd )Q04 (rd ),
+      h0            h1 − 3a1 h0          h2 − 3a1 h1 + (6a21 − 3a2 )h0          4Nm (ei )
+bz3d = 3 ,   bz2d =             ,    zd
+                                    b1 =                               ,   be2i =                 ,
+      s                s 3                           s 3                   (ei − rd )3 Q04 (ei )2
+                                                                                    (B.2)
+(ei = e4 , e3 the two-torsion poles) and the constant closing at z∞ , where R vanishes:
+C0 = − a [ba1 ζ(z∞ − a) + ba2 ℘(z∞ − a) − 21 ba3 ℘0 (z∞ − a)]. The identical Weierstrass
+          P
+
+assembly runs, with the conformal source N = ÊNE + JNJ in place of Nm , for the
+rotating Thakurta–Kerr separatrices of the companion Paper II.
+
+First order, proper-time branch (verified to 10−9 ). Clock Tτ = U3 − 2mU2 ; block form
+                                               X
+                    δϕτ = 12 G̃(z) Tτ (r) + 12  (ci dj − cj di ) A[ei , ej ],    (B.3)
+                                                i<j
+             R
+A[ei , ej ] = (ei Pej − ej Pei )dz the antisymmetric elliptic dilogarithms (Brown–Levin
+Γ̃), over the eight even blocks {1, Zzd , Pzd , Pz0d , ℘(z), ℘(z−iωim ), Pz∞ , Zz∞ } with Za =
+ζ(z−a) − ζ(z+a), Pa = ℘(z−a) + ℘(z+a), Pa0 = ℘0 (z−a) − ℘0 (z+a). Coefficients: ci (the
+                                                                                           √
+G̃ residues), dj (clock residues ez1d = (rd3 −2rd2 )/s, ez2∞ = 1/a4 , ez1∞ = −(2B +rd −2)/ a4 )
+and the constant Ce = (e34 − 2e24 )/(e4 − rd ) + 2ez1d ζ(zd ) − 2ez2∞ ℘(z∞ ) + 2ez1∞ ζ(z∞ )—all
+closed form.
+
+First order, advanced-time branch (verified to 10−8 ). Clock v = E U3 + r + 2m ln(r −
+                      Rz                                      √
+2m); δϕv = G̃(z) v − z0 G̃ vz dz with vz = E r3 /(r − rd ) + r Q4 /(r − 2m). The first
+term reproduces the proper-time dilogarithms; the second is odd on E with a simple
+pole at z = iωim and supplies the horizon dilogarithm.
+
+Appendix B.1. Adiabatic derivative of the degeneration family
+Lemma I.6 (degeneration-family derivative). As the slow parameter drifts, the genus-
+degeneration value itself moves, J = Jc (λ). This is not the evolution of a single torque-
+free extremal: the axial costate J is conserved along every extremal (section 2), so one
+Controlled-rail brachistochrones in non-stationary spacetimes                                    30
+
+trajectory cannot follow the moving locus by changing J unless an external azimuthal
+torque—a modified control law with dJ/dλ 6= 0—is supplied. The object below is
+instead the total λ-derivative of the one-parameter family of marginal (degeneration)
+solutions along J = Jc (λ): the adiabatic derivative of the family, which packages how
+the closed form deforms as the locus drifts,
+                                    dJc
+                     Ntot = N +         NJ ,        NJ = S ∂J K − 21 K ∂J S,                   (B.4)
+                                    dλ
+with the block form and residue formulae above holding verbatim under N → Ntot ;
+ϕ0 , the clocks and the dilogarithm structure are unchanged. The two Vaidya branches
+(proper-time τ and advanced-time v) differ only in dJc /dλ and NJ .
+
+Vaidya (λ = m). The linear scaling Jc = m j(E) gives dJc /dm = Jc /m, with
+NJ = S DE + Jc2 r(r − 2m)DE 3 (verified to 10−8 ). The rotating conformal analogue,
+with dJc /dEeff and a physical external separatrix (rd > 2M ), is developed in Paper II.
+
+The degeneration-family derivative cancels the leading pole. A clean structural
+consequence closes the logic: at the double root the tracked source vanishes,
+                                   h                  i                             drd
+           Ntot (rd ) = − 21 K(rd ) ∂λ S + dJ
+                                           dλ
+                                              c
+                                                ∂ J S   (rd ) = 21 K(rd ) S 0 (rd )     = 0,   (B.5)
+                                                                                    dλ
+because S 0 (rd ) = 0 (the separatrix double-root condition). Hence the triple-pole residue
+drops, btrack
+           3    = 0: following the moving separatrix softens the strongest singularity,
+precisely where the double root travels. This is verified symbolically in Mathematica,
+Ntot (rd ) ≡ 0 (mod S, S 0 ) (the same structural cancellation holds for the rotating case
+of Paper II).
+
+Fully symbolic coefficients, off-separatrix q-series, and independent checks. Off the
+separatrix (generic J, genus two) every block coefficient is a rational function of
+(m, E, J): the source coefficients ck , Qkj = ck bj −cj bk , and the canonical pole coefficients
+                            −1/2                                                 √
+gi (Taylor coefficients of q6    at the odd-model infinity), with g0 = 1/ E 2 − 1 and
+g1 = (2E 2 − 3)/(E 2 − 1)3/2 set by the leading behaviour (E-only), while g2 and
+the ck carry the full J dependence. The algebraic remainder is elementary in closed
+                       P
+form, Talg = P (r) + i resi ln(r − ri ) over the six roots of S (three residues vanish,
+at r = 0, 2m, 2m/(1 − E 2 )). The genus-two dilogarithm is a convergent nome (q-
+)series: after Siegel reduction τ 0 = −τ −1 (all nomes <1), Λ = Q dA + L dA with
+                                                                       R          R
+
+Q elementary and L = log[θ[δ](w − e+ )/θ[δ](w − e− )] a genus-two Kronecker–Eisenstein
+series that converges geometrically (order N =4 already matches to 10−13 ) and does
+not reduce to classical dilogarithms (there is no genus-two Jacobi product formula).
+All these symbolic statements are independently reproduced in Mathematica (native ℘,
+Gröbner reduction, Laurent extraction): the separatrix residues to 10−16 –10−38 , the
+generic-J reductions to an exact polynomial identity, and the tracking theorem (B.5).
+Controlled-rail brachistochrones in non-stationary spacetimes                           31
+
+Transcendence. None of these is elementary. The Uk are third-kind elliptic integrals,
+G̃ lives in σ, ζ, ℘, and the weight-two content is the elliptic dilogarithm, conjecturally
+irreducible to weight one (theta-divisor obstruction Θ = Wg−1 ). The advanced-time
+horizon logarithm is elementary only as a d log letter; integrated against the elliptic
+∂m F it yields the horizon elliptic dilogarithm, of the same transcendental weight as the
+proper-time case—the horizon merely relocates the dilogarithm’s anchor from infinity
+to the two-torsion point r = 2m. The sole numerical ingredient anywhere is the
+optional compression of the weight-two content to an apparent minimal five-dimensional
+dilogarithm basis (a numerically stable rank five, singular values falling to 10−79 —strong
+evidence, not a proof, and curve-specific), which the block forms above do not require.
+Controlled-rail brachistochrones in non-stationary spacetimes                         32
+
+Appendix C. Complete first-order extended-Hamiltonian correction
+
+Theorem I.5 (complete first-order response). The complete first-order correction
+linearizes the extended Hamiltonian H = ps + H = 0 about the frozen extremal, in
+the original canonical variables (r, pr ), with λ the elapsed clock from the free-arrival
+endpoint: the momentum-shell shift is δpr = (λ ΘH − SD )/Hpr and
+                    Z h
+              δϕ        ∂p r G                      i             HJ
+                                                                       = ϕ0 ,
+                                           
+                  =            λ ΘH − SD − λ ΘG dr,          G=
+               ε        Hpr                                       Hpr
+                       Z λ                                                         (C.1)
+                                  0
+              SD (λ) =     DH dλ ,
+                       0
+
+closing the correction to O(ε2 ). Here Θ is the Euler operator that generates the drift
+of the frozen family through the slow parameter, and the drift generator D equals Θ
+unless the slow parameter rescales the canonical momenta, in which case it acquires
+a momentum-normalization term. For single-parameter Vaidya the mass is a metric
+modulus (no rescaling), so D = Θ = m∂m and the source collapses to the universal
+boundary form SD = [ rpr ]−λ derived below. The conformal Thakurta–Kerr instance—
+where the time-dependent normalization Pr = pr /A adds the dilation term Pr ∂Pr , and
+the radial-action letter carries Kerr-specific coefficients—is developed in Appendix C of
+the companion Paper II.
+     This appendix derives equation (C.1)—the complete first-order (on-shell plus off-
+shell) adiabatic correction to the orbit shape—from the extended Hamiltonian in a
+metric-independent way, and closes it explicitly for the Vaidya branches so that a reader
+can reconstruct it without the accompanying code.
+
+Notation and the slow datum. Ê and J = pϕ are the conserved control charges
+(Kodama energy and axial costate). For Vaidya the slow datum is s = v (advanced
+time) and the metric modulus is the mass m(v); we write m(v) = m0 (1 + εs + · · · ) with
+the dimensionless rate ε = M ṁ/m. The operator generating the drift of the frozen
+family is the Euler operator
+                                Θ ≡ m ∂m (Vaidya),                                 (C.2)
+since dm/ds = +εm at leading order. For the conformal Thakurta–Kerr family the
+slow datum is instead the conformal factor A(η), acting through the effective charges
+Eeff = Ê/A, Jeff = J/A with Θ = Eeff ∂Eeff + Jeff ∂Jeff (Paper II).
+
+Frozen data. At fixed s the frozen Hamiltonian H0 (r, pr ; λ) = 0 fixes: the ingoing
+frozen momentum pr0 (r), the root of H0 = 0 with H0,pr < 0 (the outgoing arc is its
+mirror across the turning point); the shape integrand G0 (r) = dϕ/dr = H0,J /H0,pr ;
+and the clock density dλ/dr = 1/H0,pr , with λ oriented inward from the free-arrival
+endpoint.
+Controlled-rail brachistochrones in non-stationary spacetimes                          33
+
+Drift generator. Adjoining the slow clock s with conjugate ps , the extended
+Hamiltonian H = ps + H(r, pr ; λ(s)) = 0 generates the canonical flow dr/ds = Hpr ,
+dpr /ds = −Hr , and the shell-departure rate is dH/ds = −ε DH with D the Euler
+operator generating the frozen-family drift. When the slow parameter enters only
+as a metric modulus (Vaidya) it does not rescale the momenta, so D = Θ = m∂m .
+When instead the slow parameter is a conformal factor and one works in the normalized
+momentum Pr = pr /A (Thakurta–Kerr), the rescaling is time-dependent (conformally
+symplectic), not canonical: the chain rule along the canonical flow adds a dilation term
+−(A0 /A)Pr and promotes Θ to the full Euler operator D = Θ+Pr ∂Pr . That derivation is
+metric-specific and is carried out in Appendix C of Paper II; here we keep the canonical
+pair (r, pr ) and D = Θ.
+
+Extended system and first order. Adjoining s with conjugate ps , H = ps +
+H(r, pr ; λ(s)) = 0; free-arrival transversality sets H = 0 (hence ps = 0) at λ = 0.
+Along the flow dps /dλ = ε DH, so the terminally-anchored source is
+                                                 Z λ
+                               (1)
+                              ps (λ) ≡ SD (λ) =      DH dλ0 ,                   (C.3)
+                                                  0
+and, linearizing H at fixed r, the momentum-shell shift
+                                         λ ΘH − SD
+                                   δpr =           ,                                (C.4)
+                                            Hpr
+the axial costate remaining conserved (δJ = 0). The shape varies as dϕ/dr =
+G0 + ε[∂pr G0 δpr − λ ΘG0 ] + O(ε2 ); integrating in r gives equation (C.1). The reduction
+is non-uniform at the turning point (Hpr → 0): it holds on compact sub-arcs, and all
+displayed residuals are taken there.
+
+The universal boundary form of the Vaidya source. The source does not require a per-
+metric reduction
+              p to be written in closed form. Any arrival-time Hamiltonian is Randers,
+H = β(r) J + Arr (r) p2r + Aϕϕ (r) J 2 − 1, homogeneous of degree one in (pr , J) apart
+from the −1, so Euler’s theorem gives
+                                            
+                               J ∂J + pr ∂pr H = H + 1                            (C.5)
+(verified symbolically). For Vaidya D = Θ = m∂m , and the Schwarzschild self-similarity
+of the frozen family, m ∂m H = −(rHr +JHJ ) on the shell, converts the source integrand
+into a total derivative: with dλ = dr/Hpr one obtains the universal boundary form
+                                  SD (λ) = [ rpr ]λ0 − λ,                           (C.6)
+metric-independent up to the endpoint bracket and verified to machine precision
+(VaidyaMetric/universal SD source vaidya.py). The two deformation classes carry
+                                                                       Rλ
+different universal sources—the conformal family yields instead SD = λ+ 0 Eeff HEeff dλ0
+(Paper II)—yet both share the same ±λ Finsler skeleton of (C.5). The explicit Vaidya
+on-shell and off-shell closed forms, with the horizon dilogarithm, are assembled in
+section 4.4.
+Controlled-rail brachistochrones in non-stationary spacetimes                             34
+
+Special-function class. The building blocks    form a strict transcendence hierarchy. The
+                                        R k √
+second-kind integrals U0 , . . . , U3 = r / S dr are ordinary Abelian integrals (weight
+one), reducible to the classical Kleinian ζ,√
+                                            σ basis (Baker [23]; section 4.4), the same class
+                           R j         k
+as ϕ0 . The letters Wjk = (r Uk −r Uj )/ S dr are length-two iterated Abelian integrals
+with algebraic coefficients—one transcendence level above the Uk and not reducible to
+the weight-one Kleinian class (their irreducibility to weight one is conjectural ). The
+third-kind letter at the horizon r = 2m—the advanced-time d log letter, whose residue
+is nonzero, unlike the on-shell ψ where it vanishes—adds a genus-two dilogarithm
+(descriptively, a hyperelliptic polylogarithm [31, 32]), evaluated by the geometrically
+convergent theta-nome series in the reproducibility package; its irreducibility and single-
+valued completion remain open. Thus the frozen reduction ∂λ ϕ0 closes in the weight-one
+Abelian/Kleinian class, but already the on-shell first-order response carries a genuine
+weight-two sector—the length-two iterated integrals Wjk ; the off-shell term adds further
+length-two letters and one genus-two (horizon) dilogarithm. Reducibility of the Wjk to
+weight one and a canonical single-valued completion remain conjectural.
+
+What is reconstructible from the text alone. Everything algebraic is√fixed by the
+manuscript without the repository: the frozen integrands dϕ/dr = K/ S with their
+spectral radicals and numerators; the on-shell reduction (the polynomial identity 2A0 S −
+AS 0 + 2S k ck rk = 2Nλ and its 11 × 11 linear system—no fit); all block coefficients
+               P
+
+ck , gi , Qkj ; the Kleinian ζ, σ closed forms of the Uk (Hermite recursion) and the assembly
+of the weight-two Wjk from them (not reduced to the weight-one class); the elementary
+remainders; and the form of the genus-two letter L = log[θ[δ](w −e+ )/θ[δ](w −e− )] with
+its odd half-characteristic δ and the genus-one nome series g (1) printed in Section 4.4.
+What the text does not reproduce by hand is the numerical evaluation of the genus-two
+θ: constructing the period matrix τ from Y 2 = S, its Siegel reduction, and summing
+the geometrically convergent nome series (order N =4 already to 10−13 ) are performed
+by Sage+abelfunctions (RiemannTheta) in the reproducibility package [30]. In short:
+the symbolic reduction and the closed-form representation are reconstructible from the
+PDF; the genus-two numbers require the archived routine.
+
+Branch forms. For the Vaidya v-branch the slow datum m is a metric modulus, not a
+conformal rescaling of momenta: there is no pr /A transformation and hence no dilation
+term, so D = Θ = m∂m is complete and
+                                    q                     
+                                        Ê 2 p2 + J 2 /r 2
+                              2pr             r
+       ΘHv = m ∂m Hv = m−        +           √            , w = Ê 2 − f ;     (C.7)
+                                r            r w
+
+since m increases along the ingoing flow while the elapsed clock λ is oriented inward
+from the free-arrival endpoint, λ runs opposite to the mass drift on this branch. This
+fixed orientation (sgn(dλ/dm) = −1) is what inverts both source contributions in
+equation (C.1), i.e. λΘH0 − SD → SD − λΘH0 and −λΘG0 → +λΘG0 —a declared sign
+Controlled-rail brachistochrones in non-stationary spacetimes                           35
+
+convention, not a change of result. The proper-time branch uses Hτ of equation (15).
+Both Vaidya branches (advanced-time v and proper-time τ ) close to O(ε2 ) against the
+true flow: least-squares log–log slope ≈ 1 for the on-shell term alone versus ≈ 2.0 for
+the complete first-order term (figure 10).
+
+Separatrix limit (J → Jc ). The off-shell separatrix correction is simply the generic
+term at J = Jc : the source coefficients are polynomials in J, hence finite there,
+while the spectral curve degenerates, S = (r − rd )2 Q4 (double √root rd , genus two
+                                                                R
+→ genus one). Each hyperelliptic letter collapses, Uk = rk / S → Vk + rdk Πrd
+            R         √                                                          R
+with Vk = (poly)/ Q4 (elliptic second kind, Weierstrass ℘, ζ) and Πrd = dr/[(r −
+    √
+rd ) Q4 ] (third kind); the spurious poles at rd cancel in the physical combination (as
+S(rd ) = 0), leaving the weight-two block as a genuine elliptic dilogarithm [26, 28]
+plus the horizon third kind. Thus the separatrix off-shell form is one degree
+lower than the generic genus-two case; verified letter by letter to machine precision
+(VaidyaMetric/vaidya sep offshell elliptic.py). For Vaidya the double root is a
+branch point off the physical arc and D = Θ carries no dilation, so the separatrix limit is
+a regular elliptic degeneration (non-uniform only at rd ) and no orbit crosses it under the
+mass drift. The rotating case is qualitatively different—there the conformal dilation ray
+drives the orbit across the moving separatrix, a Neishtadt separatrix-crossing problem
+[33, 34] treated in Appendix C of Paper II.
+Controlled-rail brachistochrones in non-stationary spacetimes                                      36
+
+Data availability
+
+The numerical data and the symbolic and numerical code supporting the
+findings of this study are openly available under the MIT licence in the
+Zenodo repository NonStationaryBrachistochrone, version 1.0, at the persistent
+DOI [30] (https://doi.org/10.5281/zenodo.21707378). The development history
+is available in the associated GitHub repository https://github.com/ImanetorX98/
+NonStationaryBrachistochrone.
+
+Acknowledgments
+
+The author thanks the University of Pavia for a stimulating environment. OpenAI
+GPT-5.6 (Sol) and Anthropic Claude (Opus 4.8) were used to assist with symbolic-
+algebra checks, numerical-code development, and language and structural editing of the
+manuscript; all AI-assisted output was critically reviewed and independently verified by
+the author, who takes full responsibility for the accuracy, originality and integrity of
+the work. The closed-form and hyperelliptic computations relied on SageMath [35]
+with abelfunctions [36], and on SymPy [37], NumPy [38], SciPy [39] and
+Matplotlib [40].
+Funding: This research received no external funding.
+Competing interests: The author declares no competing interests.
+ORCID iD: Iman Rosignoli, https://orcid.org/0009-0004-4536-0285.
+ [1] Perlick V 1991 J. Math. Phys. 32 3148
+ [2] Perlick V 2000 Ray Optics, Fermat’s Principle, and Applications to General Relativity (Lecture
+       Notes in Physics Monographs vol 61) (Springer)
+ [3] Kovner I 1990 Astrophys. J. 351 114
+ [4] Randers G 1941 Phys. Rev. 59 195
+ [5] Gibbons G W and Werner M C 2008 Class. Quantum Grav. 25 235009
+ [6] Gibbons G W, Herdeiro C A R, Warnick C M and Werner M C 2009 Phys. Rev. D 79 044022
+ [7] Bao D, Robles C and Shen Z 2004 J. Diff. Geom. 66 377
+ [8] Rosignoli I 2026 Brachistochrones in conformal Kerr (thakurta) spacetimes: ergosphere trichotomy,
+       separatrices, and adiabatic response companion paper (Paper II); Zenodo preprint https:
+       //doi.org/10.5281/zenodo.21740000
+ [9] Pontryagin L S, Boltyanskii V G, Gamkrelidze R V and Mishchenko E F 1962 The Mathematical
+       Theory of Optimal Processes (Interscience)
+[10] Liberzon D 2011 Calculus of Variations and Optimal Control Theory: A Concise Introduction
+       (Princeton University Press)
+[11] Caponio E, Javaloyes M A and Sánchez M 2024 Mem. Amer. Math. Soc. 300 (Preprint 1407.5494)
+[12] Kodama H 1980 Prog. Theor. Phys. 63 1217
+[13] Hayward S A 1996 Phys. Rev. D 53 1938
+[14] Vaidya P C 1951 Proc. Indian Acad. Sci. A 33 264
+[15] Lindquist R W, Schwartz R A and Misner C W 1965 Phys. Rev. 137 B1364
+[16] Ashtekar A and Krishnan B 2003 Phys. Rev. D 68 104030
+[17] Booth I 2005 Can. J. Phys. 83 1073
+[18] Faraoni V 2015 Cosmological and Black Hole Apparent Horizons (Lecture Notes in Physics vol
+       907) (Springer)
+Controlled-rail brachistochrones in non-stationary spacetimes                                      37
+
+[19] Abreu G and Visser M 2010 Phys. Rev. D 82 044027
+[20] Misner C W and Sharp D H 1964 Phys. Rev. 136 B571
+[21] Hayward S A, Mukohyama S and Ashworth M C 1999 Phys. Lett. A 256 347
+[22] Buchstaber V M, Enolskii V Z and Leykin D V 1997 Reviews in Mathematics and Mathematical
+       Physics 10 1–125
+[23] Baker H F 1897 Abelian Functions: Abel’s Theorem and the Allied Theory of Theta Functions
+       (Cambridge University Press)
+[24] Fay J D 1973 Theta Functions on Riemann Surfaces (Lecture Notes in Mathematics vol 352)
+       (Springer)
+[25] Bloch S J 2000 Higher Regulators, Algebraic K-Theory, and Zeta Functions of Elliptic Curves
+       (CRM Monograph Series vol 11) (American Mathematical Society)
+[26] Beilinson A and Levin A 1994 The elliptic polylogarithm Motives (Proceedings of Symposia in
+       Pure Mathematics vol 55, Part 2) (American Mathematical Society) pp 123–190
+[27] Zagier D 1990 Mathematische Annalen 286 613–624
+[28] Brown F and Levin A 2011 arXiv preprint (Preprint 1110.6917)
+[29] Chen K T 1977 Bulletin of the American Mathematical Society 83 831–879
+[30] Rosignoli I 2026 NonStationaryBrachistochrone:              numerical and symbolic codebase
+       for constrained-worldline brachistochrones in non-stationary spacetimes Zenodo,
+       tagged release v1.0 https://doi.org/10.5281/zenodo.21707378;                   GitHub https:
+       //github.com/ImanetorX98/NonStationaryBrachistochrone,               release    v1.0    (commit
+       52522c77ebdac6d367178b311330ff8cdee0d9c9)
+[31] Baune K, Broedel J, Im G, Lisitsyn A and Zerbini F 2024 J. Phys. A: Math. Theor. 57 445202
+       (Preprint 2406.10051)
+[32] D’Hoker E, Hidding M and Schlotterer O 2025 Commun. Num. Theor. Phys. 19 355–413 (Preprint
+       2306.08644)
+[33] Neishtadt A I 1986 Soviet Journal of Plasma Physics 12 568–573
+[34] Neishtadt A I 2014 Russian Mathematical Surveys 69 771–843
+[35] The Sage Developers 2026 SageMath, the Sage Mathematics Software System (version 10.9)
+       https://www.sagemath.org (accessed 2026-07-23) release 10.9 (2026-05-04)
+[36] Swierczewski C et al. 2026 abelfunctions: A library for computing with Abelian functions, Riemann
+       surfaces, and algebraic curves https://github.com/abelfunctions/abelfunctions patched
+       for SageMath 10.9 (is * API); the exact patched tree is archived in the reproducibility package
+       [30]; accessed 2026-07-23
+[37] Meurer A et al. 2017 PeerJ Comput. Sci. 3 e103
+[38] Harris C R et al. 2020 Nature 585 357
+[39] Virtanen P et al. 2020 Nature Methods 17 261
+[40] Hunter J D 2007 Comput. Sci. Eng. 9 90
+[41] Rosignoli I 2026 Brachistochrones in coordinate time and in proper time in the Kerr geometry
+       Zenodo preprint https://doi.org/10.5281/zenodo.21139490
+[42] Rosignoli I 2026 Gravitational train in the interior Schwarzschild metric: NLO and NNLO
+       perturbative expansions Zenodo preprint, v2 https://doi.org/10.5281/zenodo.20678106
+[43] Rosignoli I 2026 Coordinate-time and proper-time brachistochrones in Tolman–Oppenheimer–
+       Volkoff stellar interiors Zenodo preprint https://doi.org/10.5281/zenodo.20708060
+[44] Frittelli S and Newman E T 1999 Phys. Rev. D 59 124001
+[45] Kerr R P 1963 Phys. Rev. Lett. 11 237
+[46] Carter B 1968 Phys. Rev. 174 1559
+[47] Chandrasekhar S 1983 The Mathematical Theory of Black Holes (Oxford University Press)
+[48] Hackmann E and Lämmerzahl C 2008 Phys. Rev. Lett. 100 171101
+[49] Hackmann E, Kagramanova V, Kunz J and Lämmerzahl C 2009 Europhys. Lett. 88 30008
+[50] Doran C 2000 Phys. Rev. D 61 067503
+[51] Martel K and Poisson E 2001 Am. J. Phys. 69 476
+Controlled-rail brachistochrones in non-stationary spacetimes                                     38
+
+[52] Natário J 2009 Gen. Relativ. Gravit. 41 2579–2586
+[53] Nielsen A B and Yoon J H 2008 Class. Quantum Grav. 25 085010
+[54] Thakurta S N G 1981 Indian J. Phys. 55B 304
+[55] McVittie G C 1933 Mon. Not. R. Astron. Soc. 93 325
+[56] Sultana J and Dyer C C 2005 Gen. Relativ. Gravit. 37 1347
+[57] Kaloper N, Kleban M and Martin D 2010 Phys. Rev. D 81 104044
+[58] Nolan B C 1998 Phys. Rev. D 58 064006
+[59] Mello M M C, Maciel A and Zanchin V T 2017 Phys. Rev. D 95 084031
+[60] Kottler F 1918 Ann. Phys. (Berlin) 361 401
+[61] Claudel C M, Virbhadra K S and Ellis G F R 2001 J. Math. Phys. 42 818
+[62] Whittaker E T and Watson G N 1927 A Course of Modern Analysis 4th ed (Cambridge University
+       Press)
+[63] Olver F W J, Daalhuis A B O, Lozier D W, Schneider B I, Boisvert R F, Clark C W,
+       Miller B R, Saunders B V, Cohl H S and McClain M A (eds) 2026 NIST Digital Library of
+       Mathematical Functions (National Institute of Standards and Technology) release 1.2.7 of 2026-
+       06-15, https://dlmf.nist.gov/ (accessed 2026-07-23)
+[64] Mumford D 1983 Tata Lectures on Theta I, II (Birkhäuser)
+[65] Born M and Fock V 1928 Zeitschrift für Physik 51 165–180
+[66] Bender C M and Orszag S A 1999 Advanced Mathematical Methods for Scientists and Engineers
+       (Springer)
+[67] Griffiths P and Harris J 1978 Principles of Algebraic Geometry (Wiley)
+[68] D’Hoker E and Schlotterer O 2024 arXiv preprint (Preprint 2407.11476)
+[69] D’Hoker E, Enriquez B, Schlotterer O and Zerbini F 2026 Commun. Math. Phys. 407 43 (Preprint
+       2501.07640)
+

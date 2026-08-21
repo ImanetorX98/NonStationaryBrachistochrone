@@ -118,6 +118,33 @@ different kinds — one a failure of compactness at finite cost, the other a
 divergence of cost. The referee's prose caveat is now a theorem with a sharper
 statement than the caveat had.
 
+### 3.7 Conjugate points and Maxwell points — **new** (R1 major 2)
+
+On the frozen $\tau$-branch the optical geometry is Riemannian-pure, so the
+classical second variation applies verbatim: $\ddot{\mathcal J}+K\mathcal J=0$.
+
+> **$K(r)<0$ for every $r>2M$ if and only if $\hat E^2\ge3/2$.**
+> Hence for $\hat E^2\ge3/2$ no exterior extremal carries a conjugate point, and
+> every one is a **local minimiser** of arrival time.
+
+Two facts fix it: the numerator of $K$ at the stationary limit is $-4\hat E^4M^4$,
+negative for every $\hat E$; and its cubic coefficient is
+$-(2\hat E^2-3)(\hat E^2-1)$. So the $\hat E^2=3/2$ threshold is **not merely
+asymptotic** — it is global. Below it, positive curvature opens at large radius
+whose inner edge runs to infinity as $\hat E^2\to(3/2)^-$: $r/M = 22.75,\,59.53,\,
+576.7,\,5751.7$ at $\hat E^2=1.20,\,1.40,\,1.49,\,1.499$.
+
+**But negative curvature does not give global minimality**, and not for a focusing
+reason. The optical surface is $\{r>2M\}\times S^1$ — an **annulus**, not simply
+connected. Cartan–Hadamard gives local minimality without uniqueness: the two
+extremals exchanged by $\varphi\to-\varphi$ reconverge at swept angle $\pi$. So
+for $\hat E^2\ge3/2$ the cut locus is **purely of Maxwell type**; global
+minimality holds up to the first antipodal crossing and fails there by symmetry,
+not by focusing. Below the threshold both mechanisms coexist.
+
+Scope: established for the non-rotating frozen limit; the rotating case is not
+claimed.
+
 ### 3.6 Curvature of the optical base — **new** (R2, and R1 major 2)
 
 The optical projection is a **horizontally conformal submersion** with dilation
@@ -190,6 +217,7 @@ here — now an argument with a computation behind it, not an omission.
 | `verify_tk_ckv_rail.wls` | 9 | TK conformal Killing, drift $=\varepsilon$ |
 | `verify_myers_optical.wls` | 9 | optical curvature, Myers |
 | `verify_thrust_bound.wls` | 13 | minimum thrust |
+| `verify_conjugate_maxwell.wls` | 9 | conjugate points, Maxwell set |
 
 ## 6. Paper I
 
@@ -246,13 +274,28 @@ underlining breaks across `\emph`, so use `--type=CFONT`; float-context markers
 land before `\hline` inside tabulars; one `\multicolumn` row carries a stray
 marker.
 
+## 8bis. Traps that cost real time
+
+- **`grep -c Overfull` does not catch `Float too large for page`.** Different
+  warning class. Check both.
+- **Wolfram Language terminates a statement at a newline** if what precedes is
+  syntactically complete. Writing
+  `f[x_] := a + b x^2` *newline* `- c x^3;` **silently drops the cubic term** —
+  no error, no warning, wrong answer. It cost a full debugging cycle here, and
+  the symptom was a scan that came out exactly inverted. Always end the
+  continued line with the operator.
+- **Mathematica comments nest**, so `(*)` inside a `(* ... *)` block opens a
+  comment that is never closed.
+- A generated `\newcommand` that already contains `$…$` must not be used inside
+  `$…$`.
+- `NSolve[... && 2 < r < 10^6, r, Reals]` can return unevaluated; for a
+  polynomial, take exact roots and filter.
+- Declaring a symbol positive in SymPy can make a degeneration locus vanish.
+
 ## 9. Still open
 
-1. **Maxwell points and cut locus** (R1 major 2) — Paper I has them (I.D, I.E),
-   Paper II does not. §3.4 is where they belong. The $\hat E^2=3/2$ threshold of
-   §3.6 makes this more tractable than it was.
-2. **Tag every numbered claim** with its evidence level — the three main results
+1. **Tag every numbered claim** with its evidence level — the three main results
    carry theirs; the rest do not yet.
-3. **Source bundle** for CQG (`.tex` + figures + `.cls`) not yet assembled.
-4. **The bibliography has never been audited** for whether cited works say what
+2. **Source bundle** for CQG (`.tex` + figures + `.cls`) not yet assembled.
+3. **The bibliography has never been audited** for whether cited works say what
    we attribute to them — a caveat inherited from Paper I, still true.
