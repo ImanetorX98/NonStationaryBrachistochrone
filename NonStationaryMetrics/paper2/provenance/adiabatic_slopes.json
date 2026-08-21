@@ -1,0 +1,132 @@
+{
+  "generated_utc": "2026-08-21T13:37:46+00:00",
+  "epsilon_window": [
+    0.001,
+    0.002,
+    0.004,
+    0.008,
+    0.016
+  ],
+  "validation": {
+    "script": "NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py",
+    "rows": [
+      {
+        "config": "$t$, $a{=}0.9,\\hat E{=}1.4,J{=}6$",
+        "leading_slope": 1.01,
+        "leading_sigma": 0.0,
+        "exact_slope": 2.12,
+        "exact_sigma": 0.03
+      },
+      {
+        "config": "$\\tau$, $a{=}0.9,\\hat E{=}1.4,J{=}2.5$",
+        "leading_slope": 1.02,
+        "leading_sigma": 0.01,
+        "exact_slope": 2.12,
+        "exact_sigma": 0.03
+      },
+      {
+        "config": "$t$, $a{=}0.5,\\hat E{=}1.3,J{=}5$",
+        "leading_slope": 1.02,
+        "leading_sigma": 0.01,
+        "exact_slope": 2.12,
+        "exact_sigma": 0.03
+      }
+    ],
+    "seconds": 13.1
+  },
+  "exact": {
+    "script": "NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py",
+    "slope": 2.15,
+    "residual_at": 0.0025,
+    "residual": 1.9e-06,
+    "robust_slope": 2.21,
+    "seconds": 8.7
+  },
+  "loci": {
+    "fit_interval_r_over_M": [
+      8.0,
+      11.0
+    ],
+    "excluded_loci": {
+      "conformal stationary limit r_e = 2M": 2.0,
+      "seed Kerr null surface r_+ (a=0.9)": 1.4358898943540672
+    },
+    "min_separation_r_over_M": 6.0
+  },
+  "hashes": {
+    "NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py": "d758be24d5fa",
+    "NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py": "3cd72fd798e3",
+    "NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py": "55fc540ecf17"
+  },
+  "subwindow": {
+    "available": true,
+    "configs": [
+      {
+        "config": "$t$, $a{=}0.9,\\hat E{=}1.4,J{=}6$",
+        "fits": [
+          {
+            "eps_max": 0.016,
+            "n_points": 5,
+            "slope": 2.1175
+          },
+          {
+            "eps_max": 0.008,
+            "n_points": 4,
+            "slope": 2.0683
+          },
+          {
+            "eps_max": 0.004,
+            "n_points": 3,
+            "slope": 2.0429
+          }
+        ],
+        "slope_full_window": 2.1175,
+        "slope_narrowest": 2.0429
+      },
+      {
+        "config": "$\\tau$, $a{=}0.9,\\hat E{=}1.4,J{=}2.5$",
+        "fits": [
+          {
+            "eps_max": 0.016,
+            "n_points": 5,
+            "slope": 2.1233
+          },
+          {
+            "eps_max": 0.008,
+            "n_points": 4,
+            "slope": 2.0721
+          },
+          {
+            "eps_max": 0.004,
+            "n_points": 3,
+            "slope": 2.0452
+          }
+        ],
+        "slope_full_window": 2.1233,
+        "slope_narrowest": 2.0452
+      },
+      {
+        "config": "$t$, $a{=}0.5,\\hat E{=}1.3,J{=}5$",
+        "fits": [
+          {
+            "eps_max": 0.016,
+            "n_points": 5,
+            "slope": 2.1217
+          },
+          {
+            "eps_max": 0.008,
+            "n_points": 4,
+            "slope": 2.0703
+          },
+          {
+            "eps_max": 0.004,
+            "n_points": 3,
+            "slope": 2.0441
+          }
+        ],
+        "slope_full_window": 2.1217,
+        "slope_narrowest": 2.0441
+      }
+    ]
+  }
+}

@@ -113,6 +113,21 @@ for name,Hb,M,a,E,J,r0,col,mk in cfgs:
     out[name]=(epss,rh,rx,sh,she,sx,sxe,col,mk,flow,phi0,ec,xc,rc)
     print(f"{name}: leading slope {sh:.2f}+/-{she:.2f}  exact slope {sx:.2f}+/-{sxe:.2f}")
 
+# Dump the raw (eps, residual) pairs so the figure, the table and any refit come
+# from ONE dataset (CQG-116884, referee major 7).  paper2/provenance reads this
+# file; nothing downstream re-runs the physics or re-types a number.
+_raw = {}
+for i, (name, *_rest) in enumerate(cfgs):
+    e, rh_, rx_, sh_, she_, sx_, sxe_ = out[name][:7]
+    _raw[f"eps_{i}"] = e
+    _raw[f"res_leading_{i}"] = rh_
+    _raw[f"res_exact_{i}"] = rx_
+    _raw[f"label_{i}"] = np.array(name)
+np.savez(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      'adiabatic_convergence_raw.npz'), **_raw)
+print(f"  raw convergence data -> adiabatic_convergence_raw.npz "
+      f"({len(cfgs)} configs x {len(out[cfgs[0][0]][0])} epsilon values)")
+
 # ---- figure ----
 fig,ax=plt.subplots(1,2,figsize=(2*COL,COL*0.95))
 # left: true dynamics for the main t-branch config

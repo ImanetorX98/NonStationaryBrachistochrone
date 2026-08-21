@@ -30,3 +30,7 @@ docs/
 *.nav
 *.snm
 *.vrb
+
+# generated provenance outputs are tracked (they are the manuscript's source of
+# truth for slopes and checksums); the raw convergence dump is not
+NonStationaryMetrics/ThakurtaMetric/adiabatic_convergence_raw.npz

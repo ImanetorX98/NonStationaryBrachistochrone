@@ -36,6 +36,11 @@
 % figures shared with the master/Paper I
 \graphicspath{{../paper/}}
 
+% Generated provenance macros (slopes, epsilon window, SHA-256 hashes).
+% Produced by provenance/make_provenance.py -- never edit by hand; see
+% CQG-116884 referee major comments 7 and 10 for why these are generated.
+\input{provenance/adiabatic_slopes.tex}
+
 % prose placeholder helper
 \newcommand{\todo}[1]{{\color{red}\small[[#1]]}}
 
@@ -870,13 +875,22 @@ map to the fixed-endpoint problem.
     $\tau$: $a{=}0.9,\Ehat{=}1.4,J{=}2.5$ scattering; $t$: $a{=}0.5,\Ehat{=}1.3,J{=}5$).
     The on-shell term alone (dotted; source $\int\Theta H\dd\lambda$ without the
     $P_r H_{P_r}$ dilation) has an $O(\varepsilon)$ physical error (least-squares
-    log--log slope $\approx1.0$); the complete first-order term (solid; source
-    $S_{\mathcal D}$) closes it to $O(\varepsilon^2)$, with slope $2.12\pm0.03$ for all
-    three curves---the legend reports the slopes from the same fit data used to draw the
-    plot (six $\varepsilon$ values per curve)---far above the algebraic
-    integration-by-parts floor of figure~\ref{fig:phi-closed}/Table~\ref{tab:adiab-valid}
-    ($\sim10^{-6}$). The $\sim2\%$ leading-term gap is precisely the off-shell (costate)
-    residual.}
+    log--log slope \provLeadSlope); the complete first-order term (solid; source
+    $S_{\mathcal D}$) closes it to $O(\varepsilon^2)$, with slope \provExactSlope\ for
+    all three curves. The window is \provEpsWindow\ and the fit is taken on
+    \provFitInterval, which stays \provLocusSep\ from the nearest excluded locus
+    (section~\ref{sec:domain}); the quoted uncertainty is the $1\sigma$ of the
+    least-squares covariance and measures fit quality, not the finite-window bias.
+    That bias is second-order in its own right: since the residual is
+    $c_2\varepsilon^2(1+k\varepsilon+\cdots)$ the local exponent is $2+O(\varepsilon)$,
+    and refitting on shrinking sub-windows gives \provSubwindowDrift, reaching
+    \provSubwindowNarrowest\ at $\varepsilon_{\max}=\provSubwindowEpsMax$ in every
+    configuration---so the measured exponent is the expected one. The residual is far
+    above the algebraic integration-by-parts floor of
+    figure~\ref{fig:phi-closed}/Table~\ref{tab:adiab-valid} ($\sim10^{-6}$). The
+    $\sim2\%$ leading-term gap is precisely the off-shell (costate) residual. Figure,
+    slopes, uncertainties and raw data all come from one archived command
+    (\ref{app:validation}).}
     \label{fig:phi-true-dynamic}
 \end{figure}
 
@@ -1600,6 +1614,26 @@ quoted with it.
 Each numbered claim below is tagged with the level it rests on.
 \end{protocol}
 
+\paragraph{One command, one dataset.} Every number in the adiabatic validation---the
+figure, the fitted slopes, their uncertainties, the raw convergence data and the file
+checksums---is emitted by the single archived command
+\begin{center}
+\texttt{python3 paper2/provenance/make\_provenance.py}
+\end{center}
+which runs each validation script as a subprocess, records the $\varepsilon$-window
+actually used, refits on sub-windows, hashes every script involved, and writes
+\texttt{adiabatic\_slopes.json} (machine-readable), \texttt{adiabatic\_slopes.tex} (the
+macros this manuscript uses for those numbers) and \texttt{MANIFEST.tsv}, which maps each
+equation, figure and table to one command and one checksum. The manuscript
+\texttt{\textbackslash input}s the generated fragment, so the printed values and hashes
+cannot drift from the archive. This replaces the hand-transcribed values of the previous
+version, which had done exactly that.
+
+The $\varepsilon$-window is \provEpsWindow. The fit is taken on \provFitInterval, which
+remains \provLocusSep\ from the nearest excluded locus, so the fitted interval is
+uniformly away from turning points, the freezing surface and the conformal stationary
+limit, as the local statement of the first-order theorem requires.
+
 \begin{remark}
 No level of \emph{experimental} validation is available, and we claim none.
 Thakurta--Kerr is a conformal deformation of Kerr whose central object is a
@@ -2092,15 +2126,16 @@ matching the direct double integral to $4\times10^{-15}$.
             extended-Hamiltonian correction, equation~\eqref{eq:adiab-exact} (on-shell
             $+$ off-shell); paths under \texttt{ThakurtaMetric/}:}}\\
         TK $t$ exact PT, $\delta\varphi$ vs true flow
-            & \texttt{adiabatic\_first\_order\_exact.py} & slope $1.95$\\
+            & \texttt{adiabatic\_first\_order\_exact.py} & slope \provExactRunSlope\\
         true-dynamics validation ($t,\tau$, 2 sets), figure~\ref{fig:phi-true-dynamic}
-            & \texttt{fig\_phi\_validation\_corrected.py} & slopes $1.95$--$2.16$\\
+            & \texttt{fig\_phi\_validation\_corrected.py} & slope \provExactSlope\\
         \hline\hline
     \end{tabular}
     \\[2pt]
-    {\footnotesize SHA-256 (first 12 hex):
-    \texttt{adiabatic\_first\_order\_exact.py} $=$\,\texttt{78ab24b5373c};
-    \texttt{fig\_phi\_validation\_corrected.py} $=$\,\texttt{a086a0692e8c}.}
+    {\footnotesize \provHashLine\ All entries in this table, the slopes above,
+    and these checksums are emitted by the single command
+    \texttt{python3 paper2/provenance/make\_provenance.py}, which also writes the
+    raw convergence data and \texttt{MANIFEST.tsv}; they are not transcribed.}
 \end{table}
 
 \subsection{Consistency residuals}
