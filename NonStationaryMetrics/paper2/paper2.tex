@@ -112,14 +112,29 @@ Verderesi \cite{GiannoniPiccioneVerderesi1997}, the arrival-time variational the
 Giannoni and Piccione \cite{GiannoniPiccione2002}, and, decisively for questions of global
 minimality, the Morse theory of Giannoni, Piccione and Tausk
 \cite{GiannoniPiccioneTausk2002}, which supplies the index-theoretic framework in which
-conjugate points and the number of connecting extremals are counted. The classical problem
-and its geometry are reviewed in \cite{HawsKiser1995}; ruled-surface constructions built
-from brachistochrones in stationary spacetimes have been developed recently by Ta\c{s}
-\cite{Tas2025}. All of this presupposes a timelike Killing field and a conserved energy.
+conjugate points and the number of connecting extremals are counted. The companion
+programme of Giannoni, Masiello and Piccione develops the timelike extension of Fermat's
+principle \cite{GiannoniMasielloPiccione1998}, a Morse theory covering \emph{massive}
+particles as well as photons \cite{GiannoniMasielloPiccione2000}, and---closest to the
+frozen-$A$ regime used throughout our section~\ref{sec:closed}---finiteness results on
+\emph{conformally stationary} spacetimes \cite{GiannoniMasielloPiccione2001}. Closest of
+all to the present variational structure is the fixed-energy theory of Caponio, Corona,
+Giamb\`o and Piccione \cite{CaponioCoronaGiamboPiccione2024}, in which solutions of an
+indefinite Lagrangian with an \emph{affine Noether charge} join a point to a flow line of
+the infinitesimal generator, extending the stationary Fermat principle. The classical
+problem and its geometry are reviewed in \cite{HawsKiser1995}; ruled-surface constructions
+built from brachistochrones in stationary spacetimes have been developed recently by
+Ta\c{s} \cite{Tas2025}. All of this presupposes a symmetry: the charge is \emph{conserved},
+by a Killing or conformal-Killing field of the background.
 
 \emph{New here:} the object is not a geodesic of a fixed optical metric but an extremal of
 a control problem whose invariant $\Ehat=-g(u,W)$ is \emph{actively maintained} against a
-non-stationary background, with $W$ drawn from a Killing--CKV--Kodama hierarchy. Three
+non-stationary background, with $W$ drawn from a Killing--CKV--Kodama hierarchy. The
+distinction from \cite{CaponioCoronaGiamboPiccione2024} is exactly this: there the charge
+is conserved because $K$ is a symmetry of the Lagrangian, whereas here $W$ is in general
+\emph{not} a symmetry of $g$, the rail is held by control at the cost of proper
+acceleration, and $\Ehat$ is a design parameter rather than an integral of the motion.
+Three
 consequences have no stationary counterpart: the admissible-velocity set can lose
 compactness, so the problem possesses a causal boundary at which it ceases to be posed
 (section~\ref{sec:domain}); the reduced Hamiltonian is not an interior first integral, so
@@ -1142,12 +1157,49 @@ to
     J_c^{-}=-\,\frac{\bar P}{\bar v\,(\sqrt\Delta-b\bar v)}\bigg|_{r_*}<0 .
     \label{eq:Jc-minus}
 \end{equation}
-For $a=0.9$, $E=1.2$ (and $A=1$) these give $J_+^{t}=3.43$ and $J_c^{-}=-8.05$
-($r_*=3.51$): the $t$-branch captures the wide, asymmetric band
-$J\in[J_c^{-},J_+^{t}]$, far more capture-prone on the retrograde side. A
-moderately retrograde orbit ($J=-5$, say) is therefore captured on the
-$t$-branch but scattered on the $\tau$-branch (figure~\ref{fig:master-pen}). For
-constant $A$ the results carry
+This retrograde saddle-node is the sharpest exact statement in the paper that
+lies wholly inside the control domain, and we record it as such.
+
+\begin{proposition}[Exterior retrograde separatrix]
+\label{prop:exterior-sep}
+At $M=1$, $a=0.9$, $E=1.2$, $A=1$ the system $N=N'=0$ has the solution
+\begin{equation}
+    r_d=3.513905124011657\,M,\qquad J_c^{-}=-8.053516003877019 ,
+    \label{eq:exterior-sep}
+\end{equation}
+a genuine double root of $N$, reproduced by the printed closed
+form~\eqref{eq:Jc-minus} to $10^{-12}$. It is an \emph{exterior} degeneration:
+$r_d>2M$, and at $r_d$ both control-domain inequalities
+of~\eqref{eq:two-inequalities} hold strictly,
+\begin{equation}
+    g(W,W)\big|_{r_d}=-0.430833<0,
+    \qquad \bar v^2\big|_{r_d}=0.700811>0 ,
+\end{equation}
+as they do on the whole approach arc $r\in[r_d,6M]$. It is therefore a
+type-(E) object in the sense of Protocol~\ref{prot:status}: a controlled-rail
+extremal, not an analytic continuation. Moreover $r_d>2M$ persists across the
+spin range: $r_d/M=2.857675,\,3.204756,\,3.513905,\,3.579494$ at
+$a=0.1,\,0.5,\,0.9,\,0.99$, so the exterior character is structural rather than
+an accident of the representative parameters.
+\end{proposition}
+
+\begin{remark}
+The same classification also produces a \emph{prograde} degeneration at
+$r_d=1.512292\,M$, $J=2.936351$. For this spin that radius lies outside the seed
+Kerr null surface $\rp=1.435890\,M$ but \emph{inside} $2M$, where
+$W=\partial_\eta$ is spacelike. It is an algebraic degeneration of the
+analytically continued frozen equations---type~(A)---and we do not call it a
+physical control separatrix for this selector. Both values, and the
+control-domain certificates above, are verified in
+\texttt{verification/verify\_exterior\_separatrix.wls}.
+\end{remark}
+
+For $a=0.9$, $E=1.2$ (and $A=1$) equation~\eqref{eq:Jplus-t} gives
+$J_+^{t}=3.43$, so with~\eqref{eq:exterior-sep} the $t$-branch crosses over the
+wide, asymmetric band $J\in(J_c^{-},J_+^{t})$, far more crossing-prone on the
+retrograde side. A moderately retrograde extremal ($J=-5$, say) therefore
+crosses on the $t$-branch but is scattered on the $\tau$-branch
+(figure~\ref{fig:master-pen}). For constant $A$ the results carry
 over by $E\to\Ehat/A$, $J\to J/A$ (spin $a$ retained); in particular
 $\Jc^{\tau}=sA^2/\Ehat$.
 
@@ -1460,24 +1512,43 @@ $N=\Ehat N_E+J N_J$ and $\dd\Jc/\dd E_{\rm eff}$ (\ref{app:tracking}).
 % ======================================================================
 \section{Conclusions}
 \label{sec:concl-II}
-\paragraph{Proved.} In the conformal Kerr (Thakurta--Kerr) geometry the controlled rail
-inherits the Killing--CKV--Kodama structure of the companion paper. On the equatorial
-sector we obtained closed-form separatrices in Weierstrass functions, continued through
-the ergosphere in Doran coordinates, and an analytic cusp theorem for the $|J|<\Jc$
-reflection; the on-shell first-order response reduces to length-two iterated Abelian
-integrals, a proved closed form of \emph{weight two} built on the weight-one Abelian
-primitives (their reduction to weight one conjectural). The arrival branch is
-$t\equiv\eta$ (a monotone
-reparametrization), leaving two genuinely distinct extremal families, arrival and proper
-time $\tau$.
+\paragraph{Where the problem lives.} The first result is negative and delimiting, and it
+governs everything else: for the selector $W=\partial_\eta$ one has
+$g(W,W)=-A^2(1-2M/r)$, so by Lemma~\ref{lem:compact} the admissible-velocity set is
+compact only for $r>2M$ and the controlled-rail problem \emph{ends} at the conformal
+stationary limit. Every curve in this paper is accordingly an exterior extremal, a
+limiting contact, or an explicitly labelled analytic continuation carrying no optimality
+claim (Protocol~\ref{prot:status}).
 
-\paragraph{Conditional and numerical.} Rotation and the conformal factor invert the
-$t/\tau$ plunge ordering under a same-launch comparison. The fixed-endpoint no-inversion
-is a \emph{theorem} for $r_0\le R_\ast(E,a)$ [equation~\eqref{eq:Rstar}], machine-certified at
-representative $r_0$, and a numerically supported conjecture in general. The complete
-first-order (on-shell $+$ off-shell) correction is verified against the true
-non-autonomous flow to $O(\varepsilon^2)$; the genus-two weight-two letters are evaluated
-by a convergent theta-nome series, their irreducibility and single-valued completion
+\paragraph{Proved, in the exterior domain.} The flagship exact result is the
+\emph{exterior} retrograde separatrix of Proposition~\ref{prop:exterior-sep}: a genuine
+double root of the $t$-branch turning function at
+$r_d=3.513905\,M$, $J_c^{-}=-8.053516$ for the representative parameters, lying strictly
+inside the control domain (both regularity inequalities hold on the whole approach arc)
+and remaining exterior across the spin range $a\in[0.1,0.99]$. Alongside it: closed-form
+equatorial separatrices in Weierstrass functions; and the complete local classification at
+the stationary limit (Proposition~\ref{prop:classification}), whose content is that the two
+marginal costates $\pm\Jc$ are \emph{dynamically inequivalent} even though the shape
+radical is even in $J$---the symmetry being broken by $\tilde p_\varphi(\re)=J-\Jc$, with
+the retrograde value approaching $\re$ only asymptotically and the prograde value crossing
+at a finite rate. The on-shell first-order response reduces to length-two iterated Abelian
+integrals on the genus-two curve, a proved closed form of \emph{weight two} built on the
+weight-one Abelian primitives (their reduction to weight one conjectural). The arrival
+branch is $t\equiv\eta$ (a monotone reparametrization), leaving two genuinely distinct
+extremal families, arrival and proper time $\tau$.
+
+\paragraph{Conditional and numerical, kept tiered.} Rotation and the conformal factor
+invert the $t/\tau$ ordering under a same-launch comparison. The fixed-endpoint
+no-inversion result is deliberately \emph{not} stated as a single claim: it is
+(i) an analytic integrand inequality; (ii) a \emph{theorem} for
+$r_0\le R_\ast(E,a)$ [equation~\eqref{eq:Rstar}]; (iii) an asymptotic result as
+$r_0\to\infty$ in the static case; (iv) a computer-assisted proposition certified at
+representative $r_0$ over a stated grid; and (v) a numerically supported \emph{conjecture}
+in full generality. These five have different evidential status
+(Protocol~\ref{prot:evidence}) and are not merged. The complete first-order (on-shell
+$+$ off-shell) correction is verified against the true non-autonomous flow to
+$O(\varepsilon^2)$ on compact regular subarcs; the weight-two letters are evaluated by a
+convergent theta-nome series, their irreducibility and single-valued completion
 conjectural.
 
 \paragraph{Outlook.} Open threads: a general theory of moving turning points and of
