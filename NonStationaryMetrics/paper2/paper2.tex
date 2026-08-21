@@ -800,7 +800,33 @@ Hence, for $\Ehat^2\ge3/2$, the cut locus of the exterior optical surface is
 purely of Maxwell type: global minimality holds up to the first antipodal
 crossing and fails there by symmetry rather than by focusing. Below the
 threshold the two mechanisms coexist and conjugate points must be located
-directly from the Jacobi equation, as in Paper~I. These statements are verified
+directly from the Jacobi equation, as in Paper~I.
+
+It is worth saying where this sits in the relativistic Morse theory the cited
+literature already provides, because that theory supplies the step from ``no
+conjugate point'' to ``local minimiser'', and also shows what a \emph{global}
+count would require. Giannoni, Masiello and Piccione
+\cite{GiannoniMasielloPiccione2000} work on precisely our variational data---a
+fixed launch event, arrival on a timelike curve, the arrival-time functional, and
+a pointwise constraint fixing $\langle\dot z,\dot z\rangle$---and prove that a
+curve is a critical point of the arrival time if and only if it is a timelike
+geodesic, with, at a nonconjugate endpoint, \emph{Morse index equal to the
+geometric index}: the number of conjugate points counted with multiplicity. Index
+zero is then a local minimum, which is the implication
+Proposition~\ref{prop:noconj} requires. The difference is that our critical
+points are extremals of a controlled problem rather than geodesics of $g$, so the
+index theorem we actually invoke is the classical one on the optical surface;
+their result is the relativistic precedent for the step.
+
+Their Morse relations also locate our Maxwell set structurally. They express the
+indexed count of connecting geodesics through the Poincar\'e polynomial of the
+path space, so it is the topology of that space that fixes how many connecting
+extremals exist. Here the optical surface is an annulus, its path space is
+accordingly organised by winding number, and the connecting extremals come in
+families---one per turn about the hole, exchanged in pairs by
+$\varphi\to-\varphi$. That is the Maxwell structure described above, seen from
+the topological side rather than the metric one. We do not verify the
+pseudo-coercivity their relations require, and make no global count here. These statements are verified
 in \texttt{verification/verify\_conjugate\_maxwell.wls}; they are established for
 the non-rotating frozen limit, and the rotating case is not claimed.
 

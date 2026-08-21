@@ -170,6 +170,66 @@ claimed.
 
 ---
 
+### 3.8 What the bibliographic audit produced — **new**
+
+Reading the sources rather than their metadata found two errors of ours and four
+results we then used. Ordered by what it changed:
+
+**Bishop 1972 (Clairaut submersions).** We stated the theorem as "Clairaut iff
+fibres totally umbilical". The theorem is: a Riemannian submersion **of complete
+manifolds with connected fibres** is Clairaut iff the fibres are totally
+umbilical **with mean curvature of gradient form**, $H=-\nabla\ln f$. Umbilicity
+alone is not the condition. Corrected in the manuscript and the response, and
+later confirmed from a primary source (Meena–Zawadzki's abstract).
+
+**Giannoni–Masiello–Piccione 2001.** Described as "closest to the frozen-$A$
+regime". Too generous: it concerns **null** geodesics and lensing, its machinery
+rests systematically on the **Killing** property, and the conformally stationary
+case enters as an extension under boundedness assumptions on the conformal
+factor. Corrected. Reading it also gave a better citation for the
+Cartan–Hadamard fact we rely on.
+
+**Lecian, curvature-operator eigenvalues.** Produced the weighted-seed
+correspondence of §3.4bis: with weight $e^{-2f^2}=A^{-2}$ the weighted metric
+**is** the Kerr seed, $W$ is a genuine Killing field of it and
+$\operatorname{div}_{\bar g}W=0$, matching their Eq. (32) verbatim. Their **T8**
+(strictly parallel weight ⟺ Einstein) then draws the line: our weight
+$f^2=\ln A$ is parallel iff $A$ is constant.
+
+**Caponio–Corona–Giambò–Piccione 2024.** Their arrival time is differentiated
+subject to the *semi-holonomic constraint defined by the Noether charge*. Our
+rail is a semi-holonomic constraint of exactly that type — the structural reason
+the theories look alike. Difference sharpened: there $K$ is a symmetry so the
+constraint is preserved automatically; here $W$ is conformal Killing but not
+Killing, and **a conformal Killing field conserves no charge along timelike
+worldlines**.
+
+**Meena–Zawadzki 2024.** Their Theorem 5 has **three** conditions, not one; we
+test only the necessary "dilation constant along fibres" and now say so, with a
+caveat that their setting is Riemannian-on-Riemannian while ours has a Lorentzian
+total space. Two consequences we had been asserting without support are now
+theirs: **Prop. 1**, horizontal distribution totally geodesic ⟺ dilation
+fibre-constant; and **Cor. 7**, the rescaling to a Clairaut *Riemannian*
+submersion exists only when $\lambda$ descends to the base. That is the precise
+reason the non-stationary optical structure does not live on a quotient.
+
+**Giannoni–Masiello–Piccione 2000 (Morse for massive particles).** Their
+variational data are ours minus the control: fixed launch event, arrival on a
+timelike curve, arrival-time functional, pointwise velocity constraint. Their
+Theorem 1.2 gives **Morse index = geometric index** at a nonconjugate endpoint,
+hence index zero ⟹ local minimum — the step Proposition (no conjugate points)
+needed. Their Morse relations also locate our Maxwell set: the count runs through
+the Poincaré polynomial of the path space, and our annulus organises connecting
+extremals by winding number. We do not verify their pseudo-coercivity and make no
+global count.
+
+**The five roles of $\psi=A'/A$.** Collected in §2.2: conformal factor of the
+selector; rail drift along a geodesic; minimum thrust; failure of the dilation to
+be fibre-constant (hence of Clairaut, of the horizontal distribution to be
+totally geodesic, and of descent to a quotient); and failure of the weight to be
+parallel (hence of Einstein). Five classically independent conditions coincide
+here and degenerate together at frozen $A$.
+
 ## 4. Discipline imposed throughout
 
 - **Protocol 1** (E)/(C)/(A): exterior extremal / limiting contact / analytic
@@ -218,6 +278,11 @@ claimed.
 | `verify_myers_optical.wls` | 9 | optical curvature, Myers |
 | `verify_thrust_bound.wls` | 13 | minimum thrust |
 | `verify_conjugate_maxwell.wls` | 9 | conjugate points, Maxwell set |
+| `verify_submersion_link.wls` | 14 | optical submersion, dilation |
+| `verify_soliton_rail.wls` | 10 | soliton drift identity |
+| `verify_tk_ckv_rail.wls` | 9 | TK conformal Killing, drift = epsilon |
+| `verify_weighted_seed.wls` | 9 | the weighted seed correspondence |
+| `verify_dilation_fibre.wls` | 4 | the Clairaut necessary condition |
 
 ## 6. Paper I
 
