@@ -204,6 +204,25 @@ constraint is preserved automatically; here $W$ is conformal Killing but not
 Killing, and **a conformal Killing field conserves no charge along timelike
 worldlines**.
 
+**Caponio–Corona–Giambò–Piccione 2024, read in full.** Their treatment of the
+semi-holonomic constraint is precise and marks the limit of what transfers.
+Because $K$ is a symmetry, the Noether charge is automatically constant along any
+critical point (their Lemma 3.3), so curves of constant charge are the only
+candidates; that set is then a **$C^1$ closed submanifold** of the path space with
+an explicit tangent space (Prop. 3.4), and critical points of the action are the
+critical points of its restriction (Prop. 3.5). Their Lorentz–Finsler setting
+also gives, for a *stationary Finsler spacetime*, the local product structure
+$L_F=F^2(y,v)+\omega_y(v)\tau-\tfrac12\tau^2$ — the general form of which our
+Randers reduction is an instance.
+
+**And a risk this closed.** Their constraint set is a submanifold *because* the
+charge is conserved. Ours is a single prescribed level $\{-g(u,W)=\hat E\}$, and
+that argument is unavailable once the charge is not conserved. We were adjacent
+to assuming the structure carries over. It does not, and the manuscript now says
+so — which is precisely why Paper I's existence theorem goes by the direct method
+on an augmented state (Grönwall + Filippov–Cesari) rather than by restricting a
+functional to a constraint submanifold.
+
 **Meena–Zawadzki 2024.** Their Theorem 5 has **three** conditions, not one; we
 test only the necessary "dilation constant along fibres" and now say so, with a
 caveat that their setting is Riemannian-on-Riemannian while ours has a Lorentzian
