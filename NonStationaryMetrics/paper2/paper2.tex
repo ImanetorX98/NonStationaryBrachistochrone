@@ -604,9 +604,16 @@ $(\mathcal L_Kg)_{vv}=2m'(v)/r$ with $\nabla\!\cdot\!K=0$, so it is Killing for
 $m'=0$ but not even conformal Killing otherwise, and the drift
 $-m'(v)(u^v)^2/r$ does depend on the four-velocity.)
 
-That failure can be checked directly against the necessary condition of
-\cite{MeenaZawadzki2024}, that a Clairaut conformal submersion have
-\emph{constant dilation along its fibres}. Our fibres are the orbits of
+That failure can be checked directly against the characterisation of
+\cite{MeenaZawadzki2024}: a conformal submersion with connected fibres and
+dilation $\lambda$ is Clairaut with $r=e^{\mathfrak f}$ if and only if
+\emph{three} conditions hold together---$\nabla\mathfrak f$ is horizontal, the
+fibres are totally umbilical with $H=-\nabla\mathfrak f$, and $\lambda$ is
+\emph{constant along the fibres}. We test the last, which is necessary on its
+own. (Their setting is a submersion between Riemannian manifolds; here the total
+space is Lorentzian and the horizontal space spacelike, so what follows is a
+statement about the horizontal structure, not a literal application of their
+theorem.) Our fibres are the orbits of
 $W=\partial_\eta$, and with the conformal factor in place the dilation reads
 $\Lambda^2=\Ehat^2/[A^2f(\Ehat^2-A^2f)]$, so
 \begin{equation}
@@ -618,6 +625,18 @@ $\Lambda^2=\Ehat^2/[A^2f(\Ehat^2-A^2f)]$, so
 which vanishes if and only if $\psi=A'/A=0$. The optical submersion is therefore
 Clairaut exactly at frozen $A$, and the obstruction is measured by the same
 scalar as everything else in this section.
+
+Two consequences follow from that failure, and they are exactly the two
+statements this section needs. First, by \cite[Prop.~1]{MeenaZawadzki2024} the
+horizontal distribution of a conformal submersion is totally geodesic if and only
+if $\lambda$ is constant on the fibres; so when $A$ runs the horizontal
+distribution of the optical submersion is \emph{not} totally geodesic. Second,
+their Corollary~7 turns a Clairaut conformal submersion into a Clairaut
+\emph{Riemannian} one by rescaling the base with $1/\lambda$---a construction
+available only when $\lambda$ descends to the base, that is, only when it is
+fibre-constant. This is the precise reason the optical structure of the
+non-stationary problem does not live on a quotient, and why the optical metric of
+Paper~I must instead carry an explicit dependence on the adapted time.
 
 The controlled rail is what replaces the Clairaut relation when the submersion
 fails to be Clairaut. In the stationary case $-g(u,W)=\Ehat$ holds
@@ -636,8 +655,9 @@ It is worth collecting what the single scalar $\psi=A'/A$ turns out to measure.
 It is the conformal factor of the selector, $\mathcal L_Wg=2\psi g$; the rate at
 which an uncontrolled worldline loses the rail,~\eqref{eq:tk-drift}; the
 minimum thrust needed to hold it,~\eqref{eq:thrust-bound}; the failure of the
-dilation to be constant along the fibres, hence of the optical submersion to be
-Clairaut,~\eqref{eq:dilation-fibre}; and the failure of the weight $f^2=\ln A$ to
+dilation to be constant along the fibres---hence of the optical submersion to be
+Clairaut, of its horizontal distribution to be totally geodesic, and of the
+optical structure to descend to a quotient,~\eqref{eq:dilation-fibre}; and the failure of the weight $f^2=\ln A$ to
 be parallel, hence of the associated soliton to be Einstein. Five conditions
 whose classical statements are independent coincide here, and all five degenerate
 together at frozen $A$.
