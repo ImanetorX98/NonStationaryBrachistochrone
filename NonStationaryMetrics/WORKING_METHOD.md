@@ -115,7 +115,7 @@ All 12 major + 10 minor comments of referee 1, and referee 2's bibliography,
 answered. Five errors caught by the review, four found while chasing them, five
 new results. See `POST_REVIEW_CHANGES.md`.
 
-### Bibliographic audit — 5 of 11 sources read
+### Bibliographic audit — 6 of 11 sources read
 
 | Source | Read | Produced |
 |---|---|---|
@@ -129,7 +129,7 @@ new results. See `POST_REVIEW_CHANGES.md`.
 | GMP 2001 | pp. 1–3 | characterisation corrected |
 | Axioms 15(4) 267 (Yamabe flow) | intro | confirms the weight construction; Birkhoff framing |
 | Axioms 14(12) 896 | **not opened** | |
-| Lecian T25/GEN2026 | **not opened** | |
+| Lecian, 2-planes solitons | intro | energy-dependence sharpens our threshold |
 
 ### Open
 

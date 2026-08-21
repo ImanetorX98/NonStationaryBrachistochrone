@@ -232,6 +232,21 @@ fibre-constant; and **Cor. 7**, the rescaling to a Clairaut *Riemannian*
 submersion exists only when $\lambda$ descends to the base. That is the precise
 reason the non-stationary optical structure does not live on a quotient.
 
+**Axioms 15(4) 267 (Yamabe flow).** Its Eq. (1), $G\to e^{-2f}G$, is the
+metrisation we had identified with the conformal factor — so that identification
+is standard in that literature, not an ad hoc device. It also supplied a
+classical framing for a result we had only verified: conformal Schwarzschild is
+not Einstein for generic $A$, and **Birkhoff's theorem** says why — a spherically
+symmetric vacuum solution is necessarily static, so no running conformal factor
+attaches to Schwarzschild without sourcing matter.
+
+**Lecian, 2-planes solitons.** Cites Gibbons on *energy-independent* Randers-type
+Finslerian metrics and the Gauss curvature of equatorial Schwarzschild sections.
+That sharpened our own threshold: in the energy-independent (null) case $K<0$
+throughout the exterior and **no threshold exists**. Ours appears only because the
+optical metric carries the rail energy — the leading far-field sign is that of
+$-(2\hat E^2-3)$, which cannot change in a family with no $\hat E$ to vary.
+
 **Giannoni–Masiello–Piccione 2000 (Morse for massive particles).** Their
 variational data are ours minus the control: fixed launch event, arrival on a
 timelike curve, arrival-time functional, pointwise velocity constraint. Their
@@ -314,6 +329,45 @@ here and degenerate together at frozen $A$.
 - Vaidya boundary qualification added to **both** abstracts: the problem ends at
   $r=2m(v)$, the calculation gives an exterior approach and contact threshold,
   and $m'(v)<0$ ingoing is a formal continuation.
+
+## 6bis. Paper I: what was ported back, and the frozen submitted text
+
+About half the mathematics developed while answering this review is **general**
+and belongs to Paper I, not to the conformal-Kerr manuscript where it happened to
+be written. Two versions now exist and must not be confused.
+
+| | |
+|---|---|
+| `paper1/submitted_JMP_2026-08/` | **frozen** — the text exactly as sent to JMP (from `91749fe`), with a README naming its one known defect and directing revisions elsewhere |
+| `paper1/paper1_JMP.tex` | working copy, 54 pp, the version archived on Zenodo |
+
+This lets the CQG response say that the conceptual corrections to the minimum
+principle are public and citable, without disturbing the JMP process. If JMP
+returns a report, revise the working copy.
+
+**Ported**, as a new subsection after the selector hierarchy:
+
+- **Lemma (rail drift and the control force).**
+  $\frac{d}{d\tau}(-g(u,W))=-g(a,W)-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu$.
+  At the Killing rung the right side vanishes and the rail is free; below it the
+  same identity **quantifies the cost of each rung**. Vaidya:
+  $-m'(v)(u^v)^2/r$. Conformal-Killing rung: $\psi$ itself.
+- **Sharp minimum-thrust bound**
+  $|a|\ge|\tfrac12(\mathcal L_Wg)(u,u)|/\sqrt{\hat E^2-|W|^2}$, attained when
+  $a\parallel W_\perp$. Diverges as an inverse square root at the freezing
+  surface — **but not merely because $|W|\to0$**. The two boundaries of the
+  control domain are of different kinds: loss of compactness at finite cost
+  versus divergence of cost.
+- **An obstruction theorem** for why the time-dependent optical metric cannot be
+  stated on a quotient the way Perlick's can. The optical projection is
+  horizontally conformal with dilation equal to the Perlick factor, and
+  conformality is *forced* by Fuglede–Ishihara; but descent needs fibre-constant
+  dilation (Meena–Zawadzki), equivalently umbilical fibres with gradient mean
+  curvature (Bishop), and that fails away from a Killing selector. This converts
+  a presentational choice into a theorem, and it was the weakest part of Paper I.
+- **A remark on two structures deliberately not assumed**: the constraint
+  submanifold of Caponio et al. (its construction uses conservation) and the
+  Palais–Smale property of GMP 1998 (its constraint is flow-preserved).
 
 ## 7. Bibliography
 
