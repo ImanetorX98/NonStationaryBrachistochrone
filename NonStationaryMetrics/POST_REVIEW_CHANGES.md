@@ -259,6 +259,18 @@ throughout the exterior and **no threshold exists**. Ours appears only because t
 optical metric carries the rail energy — the leading far-field sign is that of
 $-(2\hat E^2-3)$, which cannot change in a family with no $\hat E$ to vary.
 
+**GMP 2001, read properly.** Its Theorem 2.2 makes finiteness of the connecting
+geodesics a *theorem with hypotheses*: global hyperbolicity plus a strictly
+invariant, spatially proper **light-convex** function, whose closed sublevels are
+spatially compact and so confine the geodesics. A black-hole exterior supplies no
+such function — which is why lensing by a black hole gives, in principle, an
+unbounded sequence of relativistic images. **Our winding families are the
+controlled-rail counterpart of that sequence**, so the infinite count is the
+expected situation, not a pathology. It also identifies what a sufficient
+condition for global minimality would look like here: a convexity hypothesis
+(light-convexity being, for a $C^2$ function, positive semidefiniteness of the
+Hessian on the light cone). We establish none, and say so.
+
 **Giannoni–Masiello–Piccione 2000 (Morse for massive particles).** Their
 variational data are ours minus the control: fixed launch event, arrival on a
 timelike curve, arrival-time functional, pointwise velocity constraint. Their

@@ -115,7 +115,7 @@ All 12 major + 10 minor comments of referee 1, and referee 2's bibliography,
 answered. Five errors caught by the review, four found while chasing them, five
 new results. See `POST_REVIEW_CHANGES.md`.
 
-### Bibliographic audit — 7 of 11 sources read
+### Bibliographic audit — 8 of 11 sources read
 
 | Source | Read | Produced |
 |---|---|---|
@@ -126,7 +126,7 @@ new results. See `POST_REVIEW_CHANGES.md`.
 | Caponio et al. | core | semi-holonomic constraint; **risk closed** |
 | GMP 1998 (timelike Fermat) | core | third-party reading of Perlick; PS caveat |
 | Lecian, curvature eigenvalues | pp. 1–11 | the weighted-seed correspondence |
-| GMP 2001 | pp. 1–3 | characterisation corrected |
+| GMP 2001 | core | characterisation corrected; light-convexity frames the Maxwell count |
 | Axioms 15(4) 267 (Yamabe flow) | intro | confirms the weight construction; Birkhoff framing |
 | Axioms 14(12) 896 (Cauchy) | intro | independent boundary convergence; incompleteness contrast |
 | Lecian, 2-planes solitons | intro | energy-dependence sharpens our threshold |
