@@ -118,6 +118,29 @@ different kinds — one a failure of compactness at finite cost, the other a
 divergence of cost. The referee's prose caveat is now a theorem with a sharper
 statement than the caveat had.
 
+### 3.6 Curvature of the optical base — **new** (R2, and R1 major 2)
+
+The optical projection is a **horizontally conformal submersion** with dilation
+$\Lambda^2=\hat E^2/[f(\hat E^2-f)]$ — the Perlick factor itself. So the
+Fuglede–Ishihara dichotomy (R2's theorem T2) is the abstract reason the optical
+metric is a *conformal* rescaling of $h$. That is a real observation and §2.2
+credits it.
+
+Gauss curvature of the fixed-energy optical surface computed in closed form;
+reduces as $\hat E\to\infty$ to the classical $-(2M/r^3)(1-3M/2r)$. Far field:
+
+> $r^3K\ \longrightarrow\ -\dfrac{M(2\hat E^2-3)}{\hat E^2}$
+
+so the distant optical geometry **focuses** for $\hat E^2<3/2$ and **defocuses**
+for $\hat E^2>3/2$; critical rail energy $\hat E=\sqrt{3/2}$, asymptotic speed
+$1/\sqrt3$. At the critical value $r^4K\to-23M^2/3$. Focusing produces conjugate
+points, so this separates two regimes for distant extremals.
+
+But $K\to0$ at large $r$ for every $\hat E$: **asymptotic flatness is
+incompatible with the Myers hypothesis**, and positivity of the curvature
+operator would force a space form. Those frameworks are therefore unavailable
+here — now an argument with a computation behind it, not an omission.
+
 ### 3.7 Conjugate points and Maxwell points — **new** (R1 major 2)
 
 On the frozen $\tau$-branch the optical geometry is Riemannian-pure, so the
@@ -144,29 +167,6 @@ not by focusing. Below the threshold both mechanisms coexist.
 
 Scope: established for the non-rotating frozen limit; the rotating case is not
 claimed.
-
-### 3.6 Curvature of the optical base — **new** (R2, and R1 major 2)
-
-The optical projection is a **horizontally conformal submersion** with dilation
-$\Lambda^2=\hat E^2/[f(\hat E^2-f)]$ — the Perlick factor itself. So the
-Fuglede–Ishihara dichotomy (R2's theorem T2) is the abstract reason the optical
-metric is a *conformal* rescaling of $h$. That is a real observation and §2.2
-credits it.
-
-Gauss curvature of the fixed-energy optical surface computed in closed form;
-reduces as $\hat E\to\infty$ to the classical $-(2M/r^3)(1-3M/2r)$. Far field:
-
-> $r^3K\ \longrightarrow\ -\dfrac{M(2\hat E^2-3)}{\hat E^2}$
-
-so the distant optical geometry **focuses** for $\hat E^2<3/2$ and **defocuses**
-for $\hat E^2>3/2$; critical rail energy $\hat E=\sqrt{3/2}$, asymptotic speed
-$1/\sqrt3$. At the critical value $r^4K\to-23M^2/3$. Focusing produces conjugate
-points, so this separates two regimes for distant extremals.
-
-But $K\to0$ at large $r$ for every $\hat E$: **asymptotic flatness is
-incompatible with the Myers hypothesis**, and positivity of the curvature
-operator would force a space form. Those frameworks are therefore unavailable
-here — now an argument with a computation behind it, not an omission.
 
 ---
 
