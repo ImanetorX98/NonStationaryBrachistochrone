@@ -604,6 +604,21 @@ $(\mathcal L_Kg)_{vv}=2m'(v)/r$ with $\nabla\!\cdot\!K=0$, so it is Killing for
 $m'=0$ but not even conformal Killing otherwise, and the drift
 $-m'(v)(u^v)^2/r$ does depend on the four-velocity.)
 
+That failure can be checked directly against the necessary condition of
+\cite{MeenaZawadzki2024}, that a Clairaut conformal submersion have
+\emph{constant dilation along its fibres}. Our fibres are the orbits of
+$W=\partial_\eta$, and with the conformal factor in place the dilation reads
+$\Lambda^2=\Ehat^2/[A^2f(\Ehat^2-A^2f)]$, so
+\begin{equation}
+    \frac{\partial\Lambda^2}{\partial\eta}
+      =\frac{2\Ehat^2r^2\big[\Ehat^2r+(4M-2r)A^2\big]}
+             {(2M-r)A^2\big[\Ehat^2r+(2M-r)A^2\big]^2}\;\psi ,
+    \label{eq:dilation-fibre}
+\end{equation}
+which vanishes if and only if $\psi=A'/A=0$. The optical submersion is therefore
+Clairaut exactly at frozen $A$, and the obstruction is measured by the same
+scalar as everything else in this section.
+
 The controlled rail is what replaces the Clairaut relation when the submersion
 fails to be Clairaut. In the stationary case $-g(u,W)=\Ehat$ holds
 \emph{automatically} along geodesics and there is nothing to control; in the
@@ -614,7 +629,18 @@ umbilical, Clairaut and conformal-Killing hypotheses are therefore not a
 framework this problem sits inside but the boundary of the region where it is
 non-trivial: the present programme lives in their complement, and the size of the
 failure is the control effort. Equations~\eqref{eq:dilation}--\eqref{eq:tk-drift}
-are verified in \texttt{verification/verify\_submersion\_link.wls}.
+are verified in \texttt{verification/verify\_submersion\_link.wls} and
+\texttt{verify\_dilation\_fibre.wls}.
+
+It is worth collecting what the single scalar $\psi=A'/A$ turns out to measure.
+It is the conformal factor of the selector, $\mathcal L_Wg=2\psi g$; the rate at
+which an uncontrolled worldline loses the rail,~\eqref{eq:tk-drift}; the
+minimum thrust needed to hold it,~\eqref{eq:thrust-bound}; the failure of the
+dilation to be constant along the fibres, hence of the optical submersion to be
+Clairaut,~\eqref{eq:dilation-fibre}; and the failure of the weight $f^2=\ln A$ to
+be parallel, hence of the associated soliton to be Einstein. Five conditions
+whose classical statements are independent coincide here, and all five degenerate
+together at frozen $A$.
 
 \paragraph{Soliton selectors: the drift is pure curvature.} There is one class of
 selector for which~\eqref{eq:rail-drift} closes in the curvature alone. A Ricci
