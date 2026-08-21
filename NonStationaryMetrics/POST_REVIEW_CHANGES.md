@@ -240,6 +240,18 @@ not Einstein for generic $A$, and **Birkhoff's theorem** says why — a spherica
 symmetric vacuum solution is necessarily static, so no running conformal factor
 attaches to Schwarzschild without sourcing matter.
 
+**Axioms 14(12) 896 (Cauchy hypersurfaces).** Two things. Its Theorem 1 — the
+maximal region attached to a timelike $\zeta$, written with $|\zeta|$ as the
+lapse, is bounded exactly where $\zeta$ ceases to be timelike — reaches **our
+control-domain boundary by a different route**, via maximal extension rather than
+compactness of a control set. Independent confirmation that the criterion picks
+out geometry, not formalism.
+
+And a contrast we can now state sharply: the geodesic flow crosses $r=2M$ in
+finite parameter, whereas at $J=-J_c$ the **controlled-rail flow is incomplete
+there**. The rail is not a reparametrised geodesic congruence, and this is the
+cleanest demonstration of it.
+
 **Lecian, 2-planes solitons.** Cites Gibbons on *energy-independent* Randers-type
 Finslerian metrics and the Gauss curvature of equatorial Schwarzschild sections.
 That sharpened our own threshold: in the energy-independent (null) case $K<0$
