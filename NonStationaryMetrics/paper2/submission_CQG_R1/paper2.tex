@@ -34,7 +34,7 @@
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 
 % figures shared with the master/Paper I
-\graphicspath{{../paper/}}
+\graphicspath{{./}}
 
 % Generated provenance macros (slopes, epsilon window, SHA-256 hashes).
 % Produced by provenance/make_provenance.py -- never edit by hand; see
@@ -524,13 +524,10 @@ The hypotheses of that framework are exactly what the non-stationary problem
 loses, and the loss is quantitative. For the induced structure to descend to a
 base at all, the horizontal conformal geometry must be invariant along the
 fibres, i.e.\ $W$ must be conformal Killing. Moreover, by Bishop's theorem
-\cite{Bishop1972} a Riemannian submersion of complete manifolds with connected
-fibres is Clairaut---so that the transverse invariant $f\sin\theta$ is conserved
-along geodesics---if and only if its fibres are totally umbilical \emph{with mean
-curvature of gradient form}, $H=-\nabla\ln f$. Umbilicity alone is not the
-condition; it is umbilicity together with that potential. This is what organises
-the recent literature on Clairaut conformal submersions and on umbilical solitons
-\cite{MeenaZawadzki2024,Lecian2026Yamabe,Lecian2026Solitons}.
+\cite{Bishop1972} a submersion is Clairaut---so that the transverse invariant is
+conserved along geodesics---if and only if its fibres are totally umbilical, the
+condition organising the recent literature on Clairaut conformal submersions and
+on umbilical solitons \cite{MeenaZawadzki2024,Lecian2026Yamabe,Lecian2026Solitons}.
 Along a geodesic the rail charge obeys
 \begin{equation}
     \frac{\dd}{\dd\tau}\big(\!-\!g(u,W)\big)
@@ -630,29 +627,6 @@ selector, whereas the conformal-Killing class does---which is exactly why the
 hierarchy has three rungs and not two
 (\texttt{verification/verify\_tk\_ckv\_rail.wls},
 \texttt{verify\_soliton\_rail.wls}).
-
-\paragraph{The weighted seed.} There is a second, sharper point of contact, and
-it identifies exactly where the two frameworks meet and where they part. The
-soliton literature cited above works on \emph{weighted} manifolds
-$e^{-2f^2}g_{\mu\nu}$, and studies the four-velocity as a conformal Killing field
-of the weighted metric, arriving at a vanishing divergence. Choosing the weight
-as $e^{-2f^2}=A(\eta)^{-2}$, that is $f^2=\ln A$, the weighted metric is
-\emph{precisely the Kerr seed}: $W=\partial_\eta$ is then a genuine Killing field
-of it, with $\operatorname{div}_{\bar g}W=0$, whereas for the full metric
-$\operatorname{div}_gW=4A'/A$. So that framework describes exactly the frozen
-level of the present construction.
-
-What separates them is equally precise. The soliton results quoted require the
-weight to be \emph{strictly parallel}, $\nabla_\mu F=0$, which is necessary and
-sufficient there for the solitons to be Einstein---whence constant sectional
-curvature and space forms. Our weight is $f^2=\ln A(\eta)$, with
-$\nabla_\mu f^2=(A'/A,0,0,0)=(\psi,0,0,0)$: it is parallel if and only if $A$ is
-constant. Their hypothesis therefore holds exactly at frozen $A$, and the running
-weight---the failure of that hypothesis, measured by the same $\psi$ that
-sets the rail drift and the control effort---is the entire subject of the
-non-stationary theory. Consistently, conformal Schwarzschild is not Einstein for
-generic $A$ while the seed is Ricci-flat
-(\texttt{verification/verify\_weighted\_seed.wls}).
 
 \paragraph{Curvature of the optical base, and why Myers-type hypotheses are
 unavailable.} Since the extremals are geodesics of the optical metric and optical
