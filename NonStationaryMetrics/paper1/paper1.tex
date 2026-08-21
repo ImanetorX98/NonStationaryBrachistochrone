@@ -71,7 +71,13 @@ domain and a non-autonomous Hamilton--Jacobi \emph{verification} criterion (glob
 minimisation being conditional, not automatic)---and then derive the extremal equations
 and their closed representations in two spherically symmetric non-stationary cases:
 spatially flat Friedmann--Lema\^itre--Robertson--Walker (FLRW) and the ingoing Vaidya
-dynamical black hole. For Vaidya we obtain the plunge phenomenology and a complete
+dynamical black hole. The domain is delimited at the outset: since
+$g(K,K)=-(1-2m(v)/r)$ for the Kodama selector, the admissible-velocity set is compact
+only for $r>2m(v)$, so the compact-control problem \emph{ends} at $r=2m(v)$; what the
+Vaidya calculation establishes is an exterior approach and contact threshold, not an
+interior optimal trajectory, and $m'(v)<0$ in the ingoing metric is a formal
+continuation, physical evaporation requiring the outgoing problem. For Vaidya we obtain
+the approach phenomenology and a complete
 first-order adiabatic correction, verified against the true non-autonomous flow, that
 separates the homogeneous-expansion effects of the FLRW base from the radial
 spatial-gradient and mass-flow effects of the dynamical horizon. The rotating,
@@ -353,8 +359,46 @@ vacuous), and a Hamilton--Jacobi certificate that upgrades a saturated extremal 
 a \emph{global} optimum. All three are elementary under the standing hypothesis
 that the indicatrix is a compact, uniformly convex oval [equation~\eqref{eq:ellipse}].
 
+\paragraph{The admissible class, stated in full.} Because both papers lean on
+this theorem, we state its data explicitly rather than by implication.
+
+\emph{(a) Control domain.} A compact regular domain $\Omega$ on which the
+selector $W$ is \emph{timelike} and $\Ehat>|W|$. Timelikeness is not a
+convenience: by the regularity criterion of section~\ref{sec:indicatrix} it is
+exactly what makes the admissible-velocity set compact, and where it fails the
+support maximum defining $H$ is not attained and no time-optimal problem is
+posed. For ingoing Vaidya with the Kodama selector $K=\partial_v$ one has
+$g(K,K)=-(1-2m(v)/r)$, so the compact-control domain is $r>2m(v)$ and ends at
+$r=2m(v)$; for the conformal-Kerr selector of Paper~II it ends at $r=2M$.
+
+\emph{(b) Extended state and clock.} The state is the pair
+$(x,\chi)\in\Omega\times\mathbb R$, with $x$ the spatial arc and $\chi$ the
+background coordinate ($v$ for Vaidya, $\eta$ for conformal Kerr). The
+\emph{clock state} $\chi$ obeys the non-autonomous scalar equation
+$\dd\chi/\dd\sigma=F(x,\dot x;\chi)$ driven by the same control, so the pair is
+governed by one control system and the problem is a Mayer problem on the
+augmented state.
+
+\emph{(c) Admissible arcs.} Lipschitz arcs $x(\cdot)$ joining the fixed endpoints
+with $\dot x$ measurable and valued in the indicatrix, together with the
+absolutely continuous $\chi$ solving (b). Closure under the convergence used
+below is not automatic and is the point of the Gr\"onwall step: uniform
+convergence $x_n\to x$ with weak-$*$ convergence of $\dot x_n$ gives, by ODE
+stability for the scalar clock equation, uniform convergence $\chi_n\to\chi$, so
+the limit pair is again admissible and the cost is the limit of the costs.
+
+\emph{(d) Endpoint protocol.} Fixed launch event, fixed spatial target, free
+arrival clock; the transversality is therefore $H|_{\sigma_f}=0$
+(Protocol of Paper~II, section~2.1).
+
+\emph{(e) Excluded degeneracies.} The freezing surface $\Ehat=|W|$, where the
+indicatrix collapses to a point and $\rho\to0$; the boundary of the control
+domain, $r=2m(v)$ or $r=2M$; turning points of the reduced radial problem; and
+chart singularities. The theorem is asserted on compact subdomains bounded away
+from all of these.
+
 \paragraph{Theorem~I.2 (existence and normality; direct method).} Let the spatial arc range over a compact,
-regular domain $\Omega$ on which the rail one-form and the metric are smooth and
+regular domain $\Omega$ as in (a)--(e) above, on which the rail one-form and the metric are smooth and
 the arrival-time indicatrix obeys the uniform two-sided bound
 \begin{equation}
   \rho\,|\nu| \le F(x,\nu) \le R\,|\nu|, \qquad 0<\rho\le R<\infty,

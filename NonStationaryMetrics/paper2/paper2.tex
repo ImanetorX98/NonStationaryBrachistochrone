@@ -27,7 +27,7 @@
 \theoremstyle{definition}
 \newtheorem{protocol}{Protocol}
 \theoremstyle{remark}
-\newtheorem*{remark}{Remark}
+\newtheorem{remark}[proposition]{Remark}
 \usepackage{bm}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -231,8 +231,28 @@ $\Ehat=-u_\eta$ makes the indicatrix an ellipse with an \emph{azimuthal} wind
     R^2=f\bar v^2+\bar P\varphi_0'^2=\frac{\Delta\,\bar v^2}{\bar P},
     \label{eq:tk-ind}
 \end{equation}
-the last equality using the Kerr identity $fP+(2Ma/r)^2=\Delta$. The
-conformal-time, coordinate-time and proper-time Hamiltonians are
+the last equality using the Kerr identity $fP+(2Ma/r)^2=\Delta$.
+
+\begin{remark}[the control set is the boundary, and needs no convexification]
+\label{rmk:indicatrix}
+Two objects must be kept apart. The \emph{control set} is the indicatrix
+$\mathcal I_x$ itself---the sphere of admissible unit velocities cut out by the
+rail, which by Lemma~\ref{lem:compact} is the boundary $\partial\mathcal K_x$ of
+a compact convex body $\mathcal K_x$ and not that body. The Hamiltonians below
+are support functions of $\mathcal K_x$, i.e.\ $H(x,p)=\max_{v\in\mathcal
+I_x}\langle p,v\rangle-c(x)$, and the maximum of a linear functional over
+$\mathcal K_x$ is always attained on $\partial\mathcal K_x$. Hence taking the
+convex hull changes neither the maximum nor the maximiser, and no relaxation or
+convexification step is needed for the Pontryagin maximum principle or for the
+Filippov--Cesari existence argument of Paper~I: the velocity set is already
+compact, and the extremal controls it selects already lie in the physical set
+$\mathcal I_x$ rather than in a set of generalised (chattering) controls. The
+distinction matters only where $\mathcal K_x$ degenerates: at $\bar v^2=0$ the
+body collapses to a point and boundary and body coincide, which is the freezing
+surface.
+\end{remark}
+
+The conformal-time, coordinate-time and proper-time Hamiltonians are
 \begin{align}
     H_\eta&=p_\varphi\varphi'_0
         +R\sqrt{(\Delta/r^2)p_r^2+p_\varphi^2/\bar P}-1,
@@ -280,7 +300,7 @@ that set is compact---hence whether a time-optimal control problem exists---is
 decided pointwise by the causal character of the selector $W$, and not by any
 convenience hypothesis.
 
-\begin{lemma}[Compactness of the rail slice]
+\begin{lemma}[Compactness of the rail slice; evidence level~(I), proved below]
 \label{lem:compact}
 Let $(V,g)$ be a Lorentzian vector space of signature $(-,+,+,+)$, let $W\in V$
 be nonzero, let $\Ehat>0$, and set
@@ -1105,7 +1125,8 @@ $\dot r=R^2(\Delta/r^2)p_r/\mathcal T$,
 which vanishes if and only if $J=+\Jc$. Collecting these gives the following
 four-case classification, which replaces the trichotomy of the previous version.
 
-\begin{proposition}[Local classification at $\re$, $\tau$-branch, frozen $A$]
+\begin{proposition}[Local classification at $\re$, $\tau$-branch, frozen $A$;
+evidence level~(I), with level~(II) confirmation]
 \label{prop:classification}
 Let $\Jc=a/E$ and let the extremal be ingoing. Then, as $r\to\re^+$:
 \begin{enumerate}
@@ -1202,7 +1223,8 @@ to
 This retrograde saddle-node is the sharpest exact statement in the paper that
 lies wholly inside the control domain, and we record it as such.
 
-\begin{proposition}[Exterior retrograde separatrix]
+\begin{proposition}[Exterior retrograde separatrix; evidence level~(I) for the
+factorisation and the domain inequalities, level~(II) for the quoted roots]
 \label{prop:exterior-sep}
 At $M=1$, $a=0.9$, $E=1.2$, $A=1$ the system $N=N'=0$ has the solution
 \begin{equation}
