@@ -17,7 +17,11 @@ import sympy as sp
 from scipy.integrate import quad, solve_ivp
 from scipy.optimize import brentq
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _ROOT)
+# paper_style.py lives in NonStationaryMetrics/; a fresh clone must find it
+# without relying on an unarchived sibling directory (CQG-116884, major 10)
+sys.path.insert(0, os.path.join(_ROOT, "NonStationaryMetrics"))
 from paper_style import COL, set_style, savefig
 import matplotlib.pyplot as plt
 
@@ -59,6 +63,24 @@ def orbit_reflect(dphidr, r_stop, retro=False):
     phout = 2*phin[-1] - np.array([s*quad(dphidr, r, r0, limit=400)[0]
                                    for r in rout])
     return np.concatenate([rin, rout]), np.concatenate([phin, phout])
+
+
+def orbit_asymptote(dphidr, r_end, retro=False):
+    """Ingoing arc only.
+
+    At J = -Jc the radial momentum has a DOUBLE root at r_e while the approach
+    rate T(r_e) = -a(J-Jc)/Pbar_e does not degenerate, so dr/ds ~ C (r - r_e)
+    with C = -sqrt(4M^2+Jc^2)/(8M^2): the parameter diverges logarithmically and
+    r_e is an asymptotic endpoint, never attained.  The extremal therefore does
+    NOT reflect, and drawing a mirrored outgoing branch (as the previous version
+    did) is wrong.  dphi/dr stays finite there, so the arc terminates at a
+    definite angle with a definite tangent.  See CQG-116884 major comment 4 and
+    NonStationaryMetrics/paper2/verification/verify_marginal_hamilton.wls.
+    """
+    rr = np.linspace(r0, r_end, 700)
+    s = -1.0 if retro else 1.0
+    ph = np.array([s*quad(dphidr, r, r0, limit=400)[0] for r in rr])
+    return rr, ph
 
 
 def orbit_through(dphidr, r_end, retro=False):
@@ -137,7 +159,7 @@ def tau_orbit(J):
     if abs(J - Jc) < 1e-9:
         return orbit_through(g_cancel, rp + 0.01)
     if abs(J + Jc) < 1e-9:
-        return orbit_reflect(g_cancel, re, retro=True)
+        return orbit_asymptote(g_cancel, re, retro=True)
     return orbit_reflect(lambda r: dphidr_tau(r, J), tau_turn(J), retro=(J < 0))
 
 
@@ -149,11 +171,11 @@ def t_orbit(J):
     return clip_wind(rr, ph, phimax=2.2*np.pi)
 
 
-tau_cases = [(1.50, r'$J{=}1.5>J_c$', 'smooth bounce'),
-             (Jc,   r'$J{=}{+}J_c$', 'PENETRATES'),
-             (0.30, r'$-J_c{<}J{<}{+}J_c$', 'cusp bounce'),
-             (-Jc,  r'$J{=}{-}J_c$', 'cusp (retro)'),
-             (-1.50, r'$J{=}{-}1.5<{-}J_c$', 'smooth bounce')]
+tau_cases = [(1.50, r'$J{=}1.5>J_c$', 'smooth periapsis'),
+             (Jc,   r'$J{=}{+}J_c$', 'CROSSES'),
+             (0.30, r'$-J_c{<}J{<}{+}J_c$', 'cusp at $r_e$'),
+             (-Jc,  r'$J{=}{-}J_c$', 'asymptotic: not attained'),
+             (-1.50, r'$J{=}{-}1.5<{-}J_c$', 'smooth periapsis')]
 t_cases = [(5.0, r'$J{=}5>J_c^+$', 'smooth bounce'),
            (Jtp, r'$J{=}J_c^+$', 'tangent'),
            (3.0, r'$J_c^-{<}J{<}J_c^+$', 'PENETRATES'),
@@ -161,13 +183,31 @@ t_cases = [(5.0, r'$J{=}5>J_c^+$', 'smooth bounce'),
            (-9.0, r'$J{=}{-}9<J_c^-$', 'smooth bounce')]
 
 
-def panel(ax, rr, ph, col, ttl, sub, L, rstart):
+def panel(ax, rr, ph, col, ttl, sub, L, rstart, kind='plain'):
+    """kind: 'plain' | 'asymptote' | 'cross'.
+
+    'cross'     -- the segment at r < 2M is an ANALYTIC CONTINUATION of the
+                   frozen equations, not a controlled-rail extremal: there
+                   g(W,W) > 0 for W = d/d(eta), the admissible-velocity set is
+                   not compact, and no optimality is claimed.  Drawn dashed
+                   (Protocol 2.1 type (A), referee minor comment M6).
+    'asymptote' -- r_e is approached but never attained; mark the open endpoint.
+    """
     th = np.linspace(0, 2*np.pi, 300)
     ax.fill(re*np.cos(th), re*np.sin(th), color='0.92', zorder=0)
     ax.plot(re*np.cos(th), re*np.sin(th), 'b--', lw=0.7)
     ax.plot(rp*np.cos(th), rp*np.sin(th), 'k--', lw=0.6)
     if rr is not None:
-        ax.plot(rr*np.cos(ph), rr*np.sin(ph), col, lw=1.5)
+        x, y = rr*np.cos(ph), rr*np.sin(ph)
+        if kind == 'cross':
+            out = rr >= re
+            ax.plot(x[out], y[out], col, lw=1.5)
+            ax.plot(x[~out], y[~out], col, lw=1.1, ls=(0, (3, 2)), alpha=0.85)
+        else:
+            ax.plot(x, y, col, lw=1.5)
+        if kind == 'asymptote':
+            ax.plot(x[-1], y[-1], marker='o', ms=3.6, mfc='white',
+                    mec=col, mew=0.9, zorder=6)
         ax.plot(rstart, 0, 'ks', ms=2.5)
     ax.set_aspect('equal'); ax.set_xticks([]); ax.set_yticks([])
     ax.set_title(ttl + '\n' + sub, fontsize=5.6, pad=1.5)
@@ -185,15 +225,24 @@ def make_fig(branch):
     axes = axes.ravel()
     for i, (J, ttl, sub) in enumerate(cases):
         rr, ph = orbit(J)
-        panel(axes[i], rr, ph, cols[i], ttl, sub, L, rstart)
+        if branch == 'tau' and abs(J + Jc) < 1e-9:
+            kind = 'asymptote'
+        elif rr is not None and np.min(rr) < re - 1e-6:
+            kind = 'cross'
+        else:
+            kind = 'plain'
+        panel(axes[i], rr, ph, cols[i], ttl, sub, L, rstart, kind=kind)
     # ultimo pannello: didascalia riassuntiva del ramo
     axes[5].axis('off')
-    lab = (r'$\bf \tau$-branch''\n''(grey $=$ ergoregion)''\n\n'
-           'TRICHOTOMY:\npenetrates only\n'r'at $J{=}{+}J_c{=}0.75$'
+    lab = (r'$\bf \tau$-branch''\n'r'(grey: $r<2M$, $W$ spacelike)''\n\n'
+           'FOUR CASES:\ncrosses only\n'r'at $J{=}{+}J_c{=}0.75$'
+           '\n'r'($-J_c$: asymptotic)''\n\n'
+           'dashed inside $2M$:\ncontinuation,\nno optimality claimed'
            if branch == 'tau' else
-           r'$\bf t$-branch''\n''(grey $=$ ergoregion)''\n\n'
-           'DICHOTOMY:\npenetrates all\n'r'$(J_c^-,J_c^+)$'
-           '\n'r'$=(-8.05,3.43)$')
+           r'$\bf t$-branch''\n'r'(grey: $r<2M$, $W$ spacelike)''\n\n'
+           'DICHOTOMY:\ncrosses all\n'r'$(J_c^-,J_c^+)$'
+           '\n'r'$=(-8.05,3.43)$''\n\n'
+           'dashed inside $2M$:\ncontinuation,\nno optimality claimed')
     axes[5].text(0.5, 0.5, lab, ha='center', va='center', fontsize=6.4,
                  transform=axes[5].transAxes)
     fig.subplots_adjust(top=0.90, bottom=0.02, left=0.02, right=0.98,

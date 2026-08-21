@@ -22,7 +22,11 @@ from scipy.optimize import brentq
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _ROOT)
+# paper_style.py lives in NonStationaryMetrics/; a fresh clone must find it
+# without relying on an unarchived sibling directory (CQG-116884, major 10)
+sys.path.insert(0, os.path.join(_ROOT, "NonStationaryMetrics"))
 from paper_style import COL, set_style, savefig
 
 mp.mp.dps = 25

@@ -1,7 +1,7 @@
 % ======================================================================
 %  PAPER II of the two-paper split
 %  Brachistochrones in conformal Kerr spacetimes:
-%  ergosphere trichotomy, separatrices, and adiabatic response
+%  control domain, exterior separatrices, and adiabatic response
 %  IOP iopart class -- Classical and Quantum Gravity
 %  (axisymmetric sector: Thakurta-Kerr; control-theory foundations are
 %   cited from Paper I)
@@ -15,7 +15,19 @@
 \makeatother
 \usepackage{amsmath}
 \usepackage{iopams}
+\usepackage{amsthm}
 \usepackage{graphicx}
+
+% numbered statements: the referee asks that each result identify its object
+% (exterior extremal / limiting contact / analytic continuation) explicitly
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}[proposition]{Theorem}
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{definition}
+\newtheorem{protocol}{Protocol}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 \usepackage{bm}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -38,34 +50,41 @@
 \begin{document}
 
 \title{Brachistochrones in conformal Kerr spacetimes:
-ergosphere trichotomy, separatrices, and adiabatic response}
+control domain, exterior separatrices, and adiabatic response}
 
 \author{Iman Rosignoli}
 \address{Department of Physics, University of Pavia, Via A.\ Bassi 6, 27100 Pavia, Italy}
 \ead{iman.rosignoli01@universitadipavia.it}
 
 \begin{abstract}
-We develop the relativistic controlled-rail brachistochrone---the fastest constrained
+We develop the relativistic controlled-rail brachistochrone---the time-optimal constrained
 worldline reaching a fixed spatial target at a free arrival clock---in the rotating,
 axisymmetric Thakurta--Kerr spacetime, the conformal Kerr geometry $g=A(\eta)^2 g_{\rm
 Kerr}$. The controlled-rail principle, its existence/normality and non-autonomous
 Hamilton--Jacobi verification, and the Killing, conformal-Killing and Kodama selector
 hierarchy are established in the companion paper (with the spherically symmetric FLRW and
-Vaidya cases); here frame dragging, an ergosphere and genus-two spectral curves appear. We
-derive the breathing-indicatrix Hamiltonians and the conformal-time ($\eta$)
+Vaidya cases); here frame dragging, a conformal stationary limit and genus-two spectral
+curves appear. Since $g(\partial_\eta,\partial_\eta)=-A^2(1-2M/r)$, the admissible-velocity
+set is compact only for $r>2M$: the compact-control problem \emph{ends} at the stationary
+limit, and every curve is labelled an exterior controlled-rail extremal, a limiting
+contact, or an analytic continuation carrying no optimality claim. We derive the
+breathing-indicatrix Hamiltonians and the conformal-time ($\eta$)
 brachistochrone---the arrival branch $t\equiv\eta$, distinct from proper time $\tau$;
-closed-form equatorial separatrices in Weierstrass functions, continued through the
-ergosphere in Doran coordinates, with a trichotomy and an analytic cusp theorem; the
-rotational and conformal plunge inversion, and an existence theorem for the conformal
-inversion, under a same-launch comparison; and the first-order adiabatic correction,
-on-shell and off-shell, canonically re-derived from the extended Hamiltonian and verified
-against the true non-autonomous flow to $O(\varepsilon^2)$, its weight-two content a
-length-two iterated Abelian integral on the genus-two curve. The closed-form separatrices
-and cusp theorem and the on-shell reduction are proved; the fixed-endpoint no-inversion is
-established in the stated analytic domain ($r_0\le R_\ast(E,a)$) and machine-certified at
-representative $r_0$, while its unrestricted extension remains conjectural;
-interior-ergosphere optimality and a rigorous higher-genus polylogarithm framework remain
-open.
+closed-form equatorial separatrices in Weierstrass functions; a complete local
+classification at the stationary limit, in which the two marginal momenta $\pm J_c$ prove
+\emph{dynamically inequivalent} although the shape radical is even in $J$---the retrograde
+one has a finite limiting tangent and reaches $r=2M$ only asymptotically, the prograde one
+crosses at a finite rate; the exterior retrograde separatrix at $r_d=3.5139M$; the
+rotational and conformal plunge inversion, with an existence theorem for the latter under
+a same-launch comparison; and the first-order adiabatic response, on-shell and off-shell,
+canonically re-derived from the extended Hamiltonian on compact regular subarcs and
+verified against the true non-autonomous flow to $O(\varepsilon^2)$, its weight-two
+content a length-two iterated Abelian integral on a genus-two hyperelliptic curve. The
+separatrices, the local classification and the on-shell reduction are proved; the
+fixed-endpoint no-inversion is established in the stated analytic domain
+($r_0\le R_\ast(E,a)$) and machine-certified at representative $r_0$, while its
+unrestricted extension remains conjectural; a rigorous higher-genus polylogarithm
+framework remains open.
 \end{abstract}
 
 \maketitle
@@ -93,10 +112,18 @@ conformal Kerr spacetime $g=A(\eta)^2 g_{\rm Kerr}$, in which frame dragging, an
 ergosphere and genus-two spectral curves appear. We derive the breathing-indicatrix
 Hamiltonians and the conformal-time ($\eta$) brachistochrone (the arrival branch
 $t\equiv\eta$, distinct from proper time $\tau$); the closed-form equatorial separatrices
-in Weierstrass functions, continued through the ergosphere in Doran coordinates, with a
-trichotomy and an analytic cusp theorem; the rotational and conformal plunge inversion;
-and the first-order adiabatic correction, on-shell and off-shell, verified against the
-true non-autonomous flow.
+in Weierstrass functions; the complete local classification at the conformal stationary
+limit, with its exact normal forms; the exterior retrograde separatrix; the rotational and
+conformal plunge inversion; and the first-order adiabatic response, on-shell and
+off-shell, verified against the true non-autonomous flow.
+
+Because the selector fixes where the problem exists, we begin by delimiting it. For
+$W=\partial_\eta$ the admissible-velocity set is compact only outside $r=2M$
+(section~\ref{sec:domain}), so the compact-control problem ends at the conformal
+stationary limit, and formulae continued below it are algebraic continuations rather than
+extremals. Protocol~\ref{prot:status} fixes the resulting three-way labelling, and
+Protocol~\ref{prot:endpoint} the endpoint convention; both are used without exception in
+what follows.
 
 In the rotating case the ergosphere becomes not only a causal feature of the seed Kerr
 geometry but also a transition surface for the geometry of the controlled velocity
@@ -178,7 +205,114 @@ the horizon $\Delta=0$, which is therefore conformally invariant---independent o
 $A$ and $\Ehat$. The two spatial families share this ellipse: $t$ follows the same
 curves as $\eta$ through $t=\int A\,\dd\eta$, while $\tau$ is Riemannian-pure, the
 wind cancelling the gravitomagnetic term, so it survives the expansion
-(figure~\ref{fig:th-branches}).
+(figure~\ref{fig:th-branches}). Algebraic regularity of the printed Hamiltonians
+at $f=0$ is, however, a statement about formulae; it is separate from the
+question of where the underlying control problem exists at all, to which we now
+turn.
+
+% ----------------------------------------------------------------------
+\subsection{The control domain, and the status of continued formulae}
+\label{sec:domain}
+% ----------------------------------------------------------------------
+The controlled rail imposes the two constraints
+\begin{equation}
+    g(u,u)=-1,\qquad -g(u,W)=\Ehat ,
+    \label{eq:rail-constraints}
+\end{equation}
+and the admissible velocities at an event are their common solution set. Whether
+that set is compact---hence whether a time-optimal control problem exists---is
+decided pointwise by the causal character of the selector $W$, and not by any
+convenience hypothesis.
+
+\begin{lemma}[Compactness of the rail slice]
+\label{lem:compact}
+Let $(V,g)$ be a Lorentzian vector space of signature $(-,+,+,+)$, let $W\in V$
+be nonzero, let $\Ehat>0$, and set
+$\mathcal U=\{u\in V:\ g(u,u)=-1,\ -g(u,W)=\Ehat,\ u\ \text{future-directed}\}$.
+Then $\mathcal U$ is nonempty and compact if and only if $W$ is timelike and
+$\Ehat\ge|W|:=\sqrt{-g(W,W)}$, and it is a single point exactly when
+$\Ehat=|W|$. If $W$ is null or spacelike, $\mathcal U$ is either empty or
+noncompact.
+\end{lemma}
+
+\begin{proof}
+Work in a Lorentz-orthonormal frame. If $W$ is timelike, $W=|W|e_0$ and
+\eqref{eq:rail-constraints} give $u^0=\Ehat/|W|$ and
+$|\vec u\,|^2=\Ehat^2/|W|^2-1$: a Euclidean sphere, nonempty iff $\Ehat\ge|W|$,
+compact always, and degenerating to the single point $u=e_0$ at $\Ehat=|W|$. If
+$W$ is spacelike, $W=|W|e_1$ and the rail fixes $u^1=-\Ehat/|W|$ while
+$(u^0)^2=1+\Ehat^2/|W|^2+(u^2)^2+(u^3)^2$ leaves $(u^2,u^3)$ unbounded. If $W$ is
+null, $W=w(e_0+e_1)$ and the rail fixes only $u^0-u^1=\Ehat/w$, a paraboloid.
+Both are noncompact.
+\end{proof}
+
+For the selector $W=\partial_\eta$ used throughout, equatorially,
+\begin{equation}
+    g(W,W)=-A(\eta)^2\Big(1-\frac{2M}{r}\Big)=-A^2f ,
+    \label{eq:gWW}
+\end{equation}
+so $W$ is timelike exactly for $r>2M$, null at $r=2M$, and \emph{spacelike} for
+$r<2M$. By Lemma~\ref{lem:compact} the two scalar regularity inequalities of
+Paper~I---$W$ timelike and $\Ehat>|W|$---read here
+\begin{equation}
+    r>2M
+    \qquad\text{and}\qquad
+    \bar v^2=1-\frac{A^2f}{\Ehat^2}>0 ,
+    \label{eq:two-inequalities}
+\end{equation}
+the second failing on the freezing surface $A=\Af$ where the indicatrix collapses
+to a point. Consequently the compact-control problem for this selector
+\emph{ends} at $r=2M$. The region $\rp<r<2M$ may lie outside the seed Kerr null
+surface, but it is already outside the control domain: there $\mathcal U$ is
+noncompact, the support maximum defining the Hamiltonian is not attained, and no
+brachistochrone problem is posed.
+
+This is not repaired by a change of chart. Passing to Doran
+(horizon-penetrating) coordinates regularises the printed formulae at $\Delta=0$
+but leaves the scalar $g(W,W)$ unchanged, so it cannot make $W$ timelike where
+\eqref{eq:gWW} says it is not. A Doran- or ZAMO-anchored timelike selector would
+define a different rail charge, force, indicatrix, cost and Hamiltonian---a
+legitimate and interesting \emph{new} problem, which we do not treat here.
+
+\begin{protocol}[Status of every curve, figure and statement]
+\label{prot:status}
+Throughout, each object is one of the following three, and is named accordingly.
+\begin{enumerate}
+\item[\rm(E)] a \emph{controlled-rail extremal}: a normal Pontryagin extremal of
+the compact-control problem, on a compact region $r\ge2M+\delta$ with
+$\bar v^2>0$;
+\item[\rm(C)] a \emph{limiting contact}: a curve of type (E) whose closure meets
+$r=2M$, the limit being taken from $r>2M$;
+\item[\rm(A)] an \emph{analytic continuation}: a solution of the frozen
+Hamiltonian equations continued into $r<2M$, where the control set is not
+compact. No optimality of any kind---global, local, or PMP---is claimed for
+type-(A) curves, and they are drawn with a distinct line style and legend entry.
+\end{enumerate}
+\end{protocol}
+
+\begin{remark}
+Type-(E) does not by itself mean ``fastest''. The maximum principle is necessary,
+not sufficient: a minimiser is a PMP extremal, but a PMP extremal need not be
+even a local minimiser. We therefore reserve ``minimiser'', ``optimal'',
+``fastest'' and the unqualified ``brachistochrone'' for statements accompanied by
+a sufficient certificate over the same domain and endpoint protocol, and use
+``controlled-rail extremal'' otherwise. The Hamilton--Jacobi verification
+criterion of Paper~I is such a certificate; a numerical perturbation of a
+computed curve is not.
+\end{remark}
+
+\begin{protocol}[Endpoint protocol]
+\label{prot:endpoint}
+Unless a comparison explicitly states otherwise, all extremals share: a
+\emph{fixed launch event}; a \emph{fixed spatial target} on the same radial slice;
+a \emph{free arrival clock}; and the branch-dependent shooting condition that
+selects the extremal reaching that target. Comparisons between the $\eta$- and
+$t$-branches are made at the \emph{relabelled} costate $J_t=A\,J_\eta$, not at the
+same numerical value of $J$: at frozen $A$ the two branches trace the same spatial
+curve only under that relabelling, so ``same $J$'' and ``same endpoints'' are
+different comparisons. The distinct two-spatial-endpoint comparison used in
+section~\ref{sec:bvp} is flagged there.
+\end{protocol}
 
 \paragraph{The conformal-time ($\eta$) brachistochrone.} The relation
 $\dd t=A(\eta)\,\dd\eta$ makes $\eta$ the canonical conformal clock and shows that the
@@ -799,33 +933,126 @@ $2.8\times10^{-10}$ through the ergosphere, and general across parameters.
 \end{figure}
 
 
-\subsection{Trichotomy and the ergosphere cusp}
+\subsection{Local classification at the conformal stationary limit}
 \label{sec:trichotomy}
-For the equatorial $\tau$-branch, $\dd\varphi/\dd r\sim K\sqrt{r-\re}$ as
-$r\to\re$ (because $\sqrt f\to0$ while the turning radicand stays finite),
-giving
+The behaviour of an equatorial $\tau$-branch controlled-rail extremal at the
+conformal stationary limit $\re=2M$ is governed by \emph{two} independent data,
+and they must not be conflated. The \emph{shape} radical of the quadrature
+$\dd\varphi/\dd r=\mathcal K_\tau/\sqrt{\mathcal S}$ depends on $J$ only through
+$J^2$, so no argument based on it can ever distinguish $J=+\Jc$ from $J=-\Jc$.
+The Hamilton equations can, because the conformal gravitomagnetic momentum
+$\tilde p_\varphi=p_\varphi-2MaA^2/(r\Ehat)$ is \emph{linear} in $J$ and, at the
+stationary limit,
 \begin{equation}
-    \varphi-\varphi_e \sim \tfrac{2}{3}K\,(r-\re)^{3/2},
+    \tilde p_\varphi(\re)=J-\Jc,\qquad \Jc=a/E,
+    \label{eq:ptil-re}
+\end{equation}
+vanishing at the prograde marginal alone. Every asymmetry between the two
+marginal signs descends from~\eqref{eq:ptil-re}.
+
+Two exact identities organise the classification. First, the radial momentum
+obtained from $H_\tau=0$ is the shape radical up to a factor that is regular and
+nonvanishing at $\re$,
+\begin{equation}
+    p_r^2=\frac{\mathcal S(r)}{D_E(r)^2\,\Delta(r)^2},
+    \qquad D_E(r)=(E^2-1)r+2M ,
+    \label{eq:pr2-S}
+\end{equation}
+so the root structure of $p_r^2$ is exactly that of $\mathcal S$. Second, at the
+marginal value the turning bracket factorises exactly,
+\begin{equation}
+    r\Delta-\Jc^2 D_E(r)=(r-2M)\big(r^2+\Jc^2\big),
+    \label{eq:marginal-factor}
+\end{equation}
+so that $\mathcal S=r(r-2M)^2D_E\,(r^2+\Jc^2)=r^4f^2w\,(r^2+\Jc^2)$ with
+$w=\Ehat^2-f>0$: a perfect square times a positive factor. Hence at $|J|=\Jc$
+the reality wall $\sqrt{wf}$ is removed \emph{for both signs of $J$}, and $\re$
+is a \emph{double} root of $\mathcal S$ rather than a simple one. What separates
+the two marginal signs is therefore not reality but the \emph{rate} at which
+$\re$ is approached: with
+$\mathcal T(r)=f/E-\tilde p_\varphi\varphi_0'$ the denominator of
+$\dot r=R^2(\Delta/r^2)p_r/\mathcal T$,
+\begin{equation}
+    \mathcal T(\re)=-\frac{a\,(J-\Jc)}{\bar P_e},
+    \qquad \bar P_e=4M^2+2a^2+a^2/E^2 ,
+    \label{eq:T-at-re}
+\end{equation}
+which vanishes if and only if $J=+\Jc$. Collecting these gives the following
+four-case classification, which replaces the trichotomy of the previous version.
+
+\begin{proposition}[Local classification at $\re$, $\tau$-branch, frozen $A$]
+\label{prop:classification}
+Let $\Jc=a/E$ and let the extremal be ingoing. Then, as $r\to\re^+$:
+\begin{enumerate}
+\item[\rm(i)] $|J|>\Jc$: $p_r^2(\re)>0$ and the extremal reflects at a smooth
+periapsis $r_{\min}>\re$, the outer root of $r\Delta=J^2D_E$; the shape is
+regular, $r-r_{\min}\propto(\varphi-\varphi_{\min})^2$.
+\item[\rm(ii)] $|J|<\Jc$: $p_r^2$ has a \emph{simple} zero at $\re$ and
+$\mathcal T(\re)\neq0$, so $\dot r\sim-c\sqrt{r-\re}$ and $\re$ is attained in
+\emph{finite} parameter. The shape has a semicubical cusp,
+\begin{equation}
+    \varphi-\varphi_e=\tfrac{2}{3}K\,(r-\re)^{3/2}+O\big((r-\re)^{5/2}\big),
+    \qquad
+    K=\frac{EJ}{a^2}\sqrt{\frac{2M}{a^2-E^2J^2}} .
     \label{eq:cusp}
 \end{equation}
-a cusp with radial tangent. The trichotomy in $|J|$ (sign of $a^2-J^2E^2$):
-smooth periapsis above $\re$ ($|J|>\Jc$); marginal contact with $\re$
-($|J|=\Jc=a/E$, separatrix); cusp reflection at $\re$ ($|J|<\Jc$). Only the
-\emph{prograde} marginal $J=+\Jc$ actually crosses: inside $\re$ frame dragging
-forces co-rotation ($\dd\varphi/\dd\lambda>0$), so the retrograde marginal
-$J=-\Jc$, which would counter-rotate, reflects with a cusp instead. The crossing
-(prograde) branch is continued through $\re$ to the horizon in Doran
+\item[\rm(iii)] $J=-\Jc$: $p_r^2$ has a \emph{double} zero at $\re$ while
+$\mathcal T(\re)\neq0$, so $\dot r\simeq C\,(r-\re)$ with
+\begin{equation}
+    C=-\frac{\sqrt{4M^2+\Jc^2}}{8M^2},
+    \label{eq:retro-rate}
+\end{equation}
+and the parameter diverges logarithmically, $s\sim|C|^{-1}\ln[1/(r-\re)]$: the
+stationary limit is an \emph{asymptotic endpoint}, not attained in finite
+parameter and \emph{a fortiori} not crossed. The shape nevertheless has a finite
+one-sided tangent,
+\begin{equation}
+    \left.\frac{\dd\varphi}{\dd r}\right|_{\re^+}
+      =\frac{2MEJ}{a^2\sqrt{4M^2+\Jc^2}},
+    \label{eq:corner-slope}
+\end{equation}
+so the total swept angle is finite and the extremal converges to a single point
+of the circle $r=\re$ with a definite limiting direction.
+\item[\rm(iv)] $J=+\Jc$: $p_r^2$ has a double zero at $\re$ \emph{and}
+$\mathcal T$ a simple one; the two linear vanishings cancel and
+\begin{equation}
+    \dot r\big|_{\re}
+      =-\frac{a^2E^2\sqrt{4M^2+\Jc^2}}{2M\big[a^2(1+E^2)+4E^2M^2\big]}<0 ,
+    \label{eq:pro-rate}
+\end{equation}
+finite and strictly ingoing: $\re$ is reached in finite parameter and crossed.
+\end{enumerate}
+\end{proposition}
+
+Cases (ii) and (iii) are distinct local normal forms and must not be merged: the
+cusp amplitude $K$ in~\eqref{eq:cusp} \emph{diverges} as $|J|\to\Jc^-$, so the
+cusp family does not connect continuously to the marginal case. Case (iii)
+supersedes the statement, made in the previous version of this work, that the
+retrograde marginal reflects with a cusp because counter-rotation is forbidden
+inside $\re$; that argument is withdrawn. It was wrong in its detail as well as
+in its role---near $\re$ the retrograde marginal has $\dd\varphi/\dd r<0$ and
+$\dot r<0$, hence $\dot\varphi>0$, and is locally \emph{co}-rotating.
+Proposition~\ref{prop:classification} is verified symbolically and against
+high-precision numerics in \texttt{verification/verify\_cusp\_corner.wls} and
+\texttt{verification/verify\_marginal\_hamilton.wls}
+(\ref{app:validation}, tier~I and tier~II).
+
+Only case (iv) continues below $\re$. That continuation is carried out in Doran
 (horizon-penetrating) coordinates
 \cite{Doran2000,Natario2009,MartelPoisson2001},
-$\varphi_D=\varphi_{\rm BL}-\varphi_{\rm shift}$.
+$\varphi_D=\varphi_{\rm BL}-\varphi_{\rm shift}$, and---since $g(W,W)>0$ for
+$r<2M$ with the selector $W=\partial_\eta$---it is an \emph{analytic
+continuation of the frozen equations}, not a controlled-rail extremal: no
+optimality is claimed for it (section~\ref{sec:domain}).
 
-\paragraph{Retrograde branch and the $\tau/t$ asymmetry.} The trichotomy above is
-a $\tau$-branch statement. The set that \emph{reaches} $\re$ is symmetric in the
-sign of $J$---the doranTau factorization depends on $J$ only through $J^2$, so the
-ingoing orbit reaches $\re$ for $|J|\le\Jc=a/E$, prograde and retrograde sharing
-the same threshold despite frame dragging---but the set that \emph{penetrates} is
-not: only the single prograde $+\Jc$ crosses, the co-rotation constraint breaking
-the $\pm J$ symmetry at the wall. The $t$-branch is not protected. Its turning function (from
+\paragraph{Retrograde branch and the $\tau/t$ asymmetry.} The classification above
+is a $\tau$-branch statement. The set that \emph{reaches} $\re$ is symmetric in
+the sign of $J$---the doranTau factorization depends on $J$ only through $J^2$, so
+the ingoing extremal reaches $\re$ for $|J|<\Jc$, prograde and retrograde sharing
+the same threshold despite frame dragging---but the set that \emph{crosses} is
+not: only the single prograde $+\Jc$ crosses, the degeneracy
+\eqref{eq:T-at-re} of the approach rate breaking the $\pm J$ symmetry at the
+marginal value. The $t$-branch is not protected. Its turning function (from
 $H_\eta=0$ at $p_r=0$, with $b=2Ma/r$) is
 \begin{equation}
     N(r)=\big(\bar P-Jb\bar v^2\big)^2-J^2\Delta\bar v^2,
@@ -859,23 +1086,34 @@ $\Jc^{\tau}=sA^2/\Ehat$.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{Immagini/fig_master_penetration_taut.png}
-    \caption{Ergosphere behaviour of the two branches versus $J$
-    (Table~\ref{tab:penetration}). The $\tau$-branch (bottom bar) is a
-    \emph{trichotomy}: smooth bounce for $|J|>J_c$, cusp bounce at $r_e$ for
-    $|J|<J_c$ (red), and a \emph{single} penetrating value $J=+J_c$ (star)---the
-    reality wall $\sqrt{wf}$ and forced co-rotation block all others. The
-    $t$-branch (top bar) is a \emph{dichotomy}: it penetrates the whole interval
-    $(J_c^-,J_+^t)$ (green), reflecting smoothly outside.}
+    \caption{Behaviour at the conformal stationary limit for the two branches
+    versus $J$ (Table~\ref{tab:penetration}, Proposition~\ref{prop:classification}).
+    The $\tau$-branch (bottom bar) has \emph{four} cases, not three: smooth
+    periapsis outside $\re$ for $|J|>J_c$; a semicubical cusp at $\re$, reached in
+    finite parameter, for $|J|<J_c$ (red); the retrograde marginal $J=-J_c$
+    (open circle), for which $\re$ is an \emph{asymptotic} endpoint attained only
+    as the parameter diverges; and the single prograde marginal $J=+J_c$ (star),
+    the only value that reaches $\re$ in finite parameter and crosses. The
+    $t$-branch (top bar) is a \emph{dichotomy}: it crosses over the whole
+    interval $(J_c^-,J_+^t)$ (green), reflecting smoothly outside. Curves
+    continued to $r<2M$ are type~(A) of Protocol~\ref{prot:status}.}
     \label{fig:master-pen}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_cuspide_ergosfera.png}
-    \caption{Behaviour at the ergosphere: cusp reflection ($|J|<\Jc$), smooth
-    periapsis ($|J|>\Jc$), and the \emph{prograde} marginal $J=+\Jc$ crossing to
-    $\rp$ in Doran coordinates---only $+\Jc$ crosses, the retrograde $-\Jc$
-    cusping instead. Power law $2/3$ (cusp) vs $2$ (periapsis).}
+    \caption{The four local behaviours at the conformal stationary limit
+    (Proposition~\ref{prop:classification}): smooth periapsis outside $\re$
+    ($|J|>\Jc$, exponent $2$); semicubical cusp at $\re$ ($|J|<\Jc$, exponent
+    $3/2$, amplitude $K$ of~\eqref{eq:cusp}); the retrograde marginal $J=-\Jc$,
+    which has a \emph{finite} one-sided tangent~\eqref{eq:corner-slope} and
+    approaches $\re$ only asymptotically---it neither cusps nor reflects; and the
+    prograde marginal $J=+\Jc$, the single value crossing to $\rp$, drawn in
+    Doran coordinates. The $|J|<\Jc$ and $J=-\Jc$ cases are distinct normal
+    forms: $K$ diverges as $|J|\to\Jc^-$. Beyond $r=2M$ the prograde curve is an
+    analytic continuation, type~(A) of Protocol~\ref{prot:status}; optimality is
+    not claimed.}
     \label{fig:th-cusp}
 \end{figure}
 
@@ -1323,9 +1561,16 @@ $|J|=\Jc$ the factor $f^2$ (from $\Delta-\Jc^2w=f(r^2+c^2)$) makes $r_e$ a
 \emph{double} root of $\mathcal S$; the $(r-2M)$ in $\mathcal K_\tau$ cancels one
 factor, dropping the radical to the quartic $Q_4$---genus~1, the Weierstrass
 separatrix~\eqref{eq:sep-phi}. This double root is also why the retrograde
-marginal $J=-\Jc$ reflects with a \emph{corner} (finite $\dd\varphi/\dd r$)
-rather than a smooth grazing: only the prograde $+\Jc$, aided by co-rotation,
-threads through.
+marginal $J=-\Jc$ has a \emph{finite} one-sided tangent~\eqref{eq:corner-slope}
+rather than the divergent slope of a smooth grazing or the vanishing slope of a
+cusp. It does not, however, reflect: by
+Proposition~\ref{prop:classification}(iii) the double root also makes $\re$ an
+asymptotic endpoint of the radial flow, approached at the linear
+rate~\eqref{eq:retro-rate} and therefore never attained in finite parameter. Only
+the prograde $+\Jc$ threads through, and it does so because
+$\tilde p_\varphi(\re)=J-\Jc$ vanishes there, degenerating the approach rate
+$\mathcal T$ simultaneously with $p_r$ and resolving the resulting $0/0$ to the
+finite ingoing value~\eqref{eq:pro-rate}.
 
 \paragraph{$t$-branch closed form: generic integrand.} The coordinate-time
 brachistochrone has $\dd\varphi/\dd r=\mathcal K(r)/\sqrt{\mathcal R(r)}$ with the
@@ -1421,18 +1666,27 @@ reflects at a smooth periapsis $r_{\min}>r_e$, with \emph{no} cusp---because the
 frame-dragging term auto-tunes the effective momentum
 $\mathcal K(r_e)=fJ_t/E+2Ma/(rE)\to a/E$ to the critical value for \emph{all}
 $J_t$, so a whole family (retrograde included) is carried across. The
-$\tau$-branch obeys the opposite \emph{trichotomy}: its proper-time cost carries
-the reality wall $\sqrt{wf}$ ($w=\Ehat^2-f$), imaginary for $f<0$ inside $r_e$,
-which confines $\tau$-orbits to $r\ge r_e$ \emph{except} at the single fine-tuned
-prograde value $J=+a/E$, where $\sqrt f$ cancels [equation~\eqref{eq:sep-phi}] and the
-orbit crosses and spirals onto $r_+$. Off that value the $\tau$-orbit reflects:
-smoothly for $|J|>a/E$ (periapsis outside $r_e$), but with a semicubic \emph{cusp}
-at $r_e$ for $|J|<a/E$---the retrograde marginal $J=-a/E$ cusps too, counter-%
-rotation being forbidden inside $r_e$. The $\tau$ penetrating set is thus a single
-point, the $t$ one a finite interval: at coordinate time ergosphere penetration
-is the rule, at proper time the fine-tuned exception. Only the retrograde
-$t$-separatrix $J_c^-$ (the saddle-node) never reaches the ergosphere---it spirals
-onto $r_*=3.514>r_e$.
+$\tau$-branch obeys the four-case law of
+Proposition~\ref{prop:classification}: its proper-time cost carries the reality
+wall $\sqrt{wf}$ ($w=\Ehat^2-f$), imaginary for $f<0$ inside $r_e$, which
+confines $\tau$-extremals to $r\ge r_e$ \emph{except} at $|J|=a/E$, where the
+exact factorisation~\eqref{eq:marginal-factor} makes $\mathcal S=r^4f^2w(r^2+\Jc^2)$
+a perfect square times a positive factor and removes the wall---for \emph{both}
+signs. Reality is therefore not what selects the prograde value. The selection is
+dynamical: the approach rate $\mathcal T(\re)$ of~\eqref{eq:T-at-re} degenerates
+simultaneously with $p_r$ only at $J=+a/E$, so that value alone reaches $\re$ in
+finite parameter and crosses [equation~\eqref{eq:pro-rate}], while the retrograde
+marginal $J=-a/E$ approaches $\re$ at the linear rate~\eqref{eq:retro-rate} and
+takes infinite parameter to arrive. Off the marginal values the $\tau$-extremal
+reflects: smoothly for $|J|>a/E$ (periapsis outside $r_e$), and with a semicubical
+\emph{cusp} at $r_e$ for $|J|<a/E$. The $\tau$ crossing set is thus a single
+point, the $t$ one a finite interval: at coordinate time crossing the stationary
+limit is the rule, at proper time the fine-tuned exception. Both retrograde
+marginals are asymptotic endpoints, but of different kinds: at $J_c^-$ the
+$t$-branch has a double root at $r_*=3.514>r_e$ where $\mathcal K$ does \emph{not}
+vanish, so $\dd\varphi/\dd r$ diverges and the winding is infinite, whereas at
+$-a/E$ the $\tau$-branch has $\mathcal K_\tau$ vanishing linearly too, so the
+tangent stays finite~\eqref{eq:corner-slope} and the total swept angle converges.
 
 \begin{figure}[ht]
     \centering
@@ -1477,36 +1731,51 @@ $\sim10^{-9}$ (figure~\ref{fig:jcm-cap}).
 \begin{table}[ht]
     \centering
     \small
-    \caption{Ergosphere behaviour of the two branches. The $\tau$-branch is a
-    \emph{trichotomy} that penetrates only at the single prograde $J=+J_c$
-    ($J_c=a/E$): the reality wall $\sqrt{wf}$ confines it to $r\ge r_e$, and off
-    $+J_c$ it reflects---smoothly for $|J|>J_c$, with a semicubic cusp at $r_e$
-    for $|J|<J_c$ (the retrograde marginal $-J_c$ cusps too, counter-rotation
-    being forbidden inside $r_e$). The $t$-branch is a \emph{dichotomy} that
-    penetrates the whole interval $(J_c^-,J_+^t)$, frame dragging auto-tuning the
-    crossing; it never cusps. Values for $M=1$, $a=0.9$, $E=1.2$; orbit shapes in
-    figures~\ref{fig:atlas-tau} and~\ref{fig:atlas-t}.}
+    \caption{Behaviour of the two branches at the conformal stationary limit
+    $\re=2M$, at $M=1$, $a=0.9$, $E=1.2$ (so $J_c=a/E=0.75$); orbit shapes in
+    figures~\ref{fig:atlas-tau} and~\ref{fig:atlas-t}. The $\tau$-branch has
+    \emph{four} cases (Proposition~\ref{prop:classification}), distinguished by
+    the multiplicity of the root of $p_r^2$ at $\re$ and by whether the approach
+    rate $\mathcal T(\re)=-a(J-J_c)/\bar P_e$ degenerates with it. The two
+    marginal signs differ although the shape radical $\mathcal S$ is even in $J$:
+    what breaks the symmetry is $\tilde p_\varphi(\re)=J-J_c$. Only $J=+J_c$
+    reaches $\re$ in finite parameter and crosses; the crossing segment is
+    type~(A) of Protocol~\ref{prot:status}. The $t$-branch is a \emph{dichotomy}
+    that crosses over the whole interval $(J_c^-,J_+^t)$, frame dragging
+    auto-tuning the crossing; it never cusps.}
     \label{tab:penetration}
-    \begin{tabular}{lccc}
+    \footnotesize
+    \begin{tabular}{llccl}
     \hline
-    branch & penetrates & smooth bounce (outside $r_e$) & cusp bounce (at $r_e$) \\
+    branch & case & $p_r^2$ root & $\re$ attained & behaviour at $\re$ \\
     \hline
-    $\tau$ & only $J=+J_c=+0.75$ & $|J|>J_c$
-      & $|J|<J_c$ \ (and $J=-J_c$) \\
-    $t$ & $(J_c^-,J_+^t)=(-8.05,3.43)$ & $J\notin(J_c^-,J_+^t)$ & --- (none) \\
+    $\tau$ & $|J|>J_c$        & none & no      & periapsis at $r_{\min}>\re$ \\
+           & $|J|<J_c$        & simple & finite  & cusp, exponent $3/2$ \\
+           & $J=-J_c=-0.75$   & double & asympt. & finite tangent, not attained \\
+           & $J=+J_c=+0.75$   & double & finite  & regular crossing \\
     \hline
+    $t$    & $J\in(J_c^-,J_+^t)$    & ---    & finite  & crosses \\
+           & $J\notin[J_c^-,J_+^t]$ & ---    & no      & smooth periapsis \\
+           & $J=J_c^-=-8.05$        & double$^{\dagger}$ & asympt. & infinite winding \\
+    \hline
+    \multicolumn{5}{l}{\footnotesize $^{\dagger}$at $r_*=3.51M$, not at $\re$.}
     \end{tabular}
 \end{table}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth,height=0.40\textheight,keepaspectratio]{Immagini/fig_atlas_tau.png}
-    \caption{$\tau$-brachistochrones by regime (trichotomy). Each panel is one
-    momentum relative to $\pm J_c$ (integrated by adaptive Hamiltonian flow):
-    smooth bounce outside $r_e$ ($|J|>J_c$), the single penetrating $J=+J_c$
-    (crosses and spirals onto $r_+$), cusp bounce at $r_e$ ($|J|<J_c$), the
-    retrograde marginal $J=-J_c$ (also a cusp), and a smooth bounce for
-    $J<-J_c$. Grey disc: ergoregion; dashed circles $r_e,r_+$.}
+    \caption{$\tau$-branch controlled-rail extremals by regime, one momentum per
+    panel relative to $\pm J_c$ (adaptive Hamiltonian flow), following
+    Proposition~\ref{prop:classification}: smooth periapsis outside $\re$
+    ($|J|>J_c$); semicubical cusp at $\re$ ($|J|<J_c$); the retrograde marginal
+    $J=-J_c$, which approaches $\re$ asymptotically with a finite limiting
+    tangent and is truncated at the plotted parameter horizon rather than
+    reflecting; the single prograde $J=+J_c$, which crosses; and a smooth
+    periapsis for $J<-J_c$. Grey disc: the region $r<2M$, where $W=\partial_\eta$
+    is spacelike; the crossing segment there is type~(A) of
+    Protocol~\ref{prot:status} (dashed, optimality not claimed). Dashed circles
+    $\re,\rp$.}
     \label{fig:atlas-tau}
 \end{figure}
 
@@ -1540,15 +1809,17 @@ centrifugal potentials
 \end{equation}
 $\rho<1$ giving $t$ deeper, $\rho>1$ giving $\tau$ deeper.
 
-\paragraph{Conformal trichotomy.} With constant $A$ the separatrix momentum is
+\paragraph{Conformal form of the classification.} With constant $A$ the separatrix momentum is
 $\Jc=sA^2/\Ehat$, and above it the smooth periapsis is the outer root of
 \begin{equation}
     \Delta(r)-\Big(\tfrac{J}{A}\Big)^2\Big[\big(\tfrac{\Ehat}{A}\big)^2-f(r)\Big]=0,
     \label{eq:periapsis-root}
 \end{equation}
-while $|J|<\Jc$ reflects at a cusp $r_{\min}=\re$ (as does the retrograde
-marginal $-\Jc$, forced counter-rotation forbidding it inside $\re$), and only
-the prograde $+\Jc$ crosses to $\rp$.
+while $|J|<\Jc$ reflects at a cusp $r_{\min}=\re$; the retrograde marginal
+$-\Jc$ approaches $\re$ asymptotically with the finite
+tangent~\eqref{eq:corner-slope} and never attains it, and only the prograde
+$+\Jc$ reaches $\re$ in finite parameter and crosses towards $\rp$, the
+continuation below $2M$ being of type~(A) in Protocol~\ref{prot:status}.
 
 \subsection{Reproducing the reductions}
 \label{app:reproduce}
