@@ -578,10 +578,10 @@ The hypotheses of that framework are exactly what the non-stationary problem
 loses, and the loss is quantitative. For the induced structure to descend to a
 base at all, the horizontal conformal geometry must be invariant along the
 fibres, i.e.\ $W$ must be conformal Killing. Moreover, by Bishop's theorem
-\cite{Bishop1972} a Riemannian submersion of complete manifolds with connected
-fibres is Clairaut---so that the transverse invariant $f\sin\theta$ is conserved
-along geodesics---if and only if its fibres are totally umbilical \emph{with mean
-curvature of gradient form}, $H=-\nabla\ln f$. Umbilicity alone is not the
+\cite{Bishop1972} a Riemannian submersion with connected fibres is Clairaut with girth
+$f$---so that $f\sin\theta$ is conserved along geodesics---if and only if its
+fibres are totally umbilical \emph{with mean curvature of gradient form},
+$H=-\nabla\ln f$. Umbilicity alone is not the
 condition; it is umbilicity together with that potential. This is what organises
 the recent literature on Clairaut conformal submersions and on umbilical solitons
 \cite{MeenaZawadzki2024,Lecian2026Yamabe,Lecian2026Solitons}.
@@ -826,9 +826,19 @@ behaviour. Per unit $h$-length the two clocks advance by
     \label{eq:two-lambdas}
 \end{equation}
 differing by $\Ehat^2/f^2$, which is not constant: the two surfaces are not
-homothetic and their curvatures are unrelated. Equation~\eqref{eq:optical-gauss}
-is $\Lambda_t$, Perlick's factor, so it is the \emph{arrival}-time surface, and
-the statements below belong to the $t\equiv\eta$ branch. In the non-rotating
+homothetic and their curvatures are unrelated. Both are Perlick's
+\cite{Perlick1991}: in his notation, with $g(W,W)=-e^{2V}$ and specific energy
+$e^{\mathcal C}$, the proper-time factor is his $h_{\mathcal C}
+=h/(e^{2(\mathcal C-V)}-1)$ and the arrival-time factor his
+$\hat h_{\mathcal C}=e^{2\mathcal C-4V}h_{\mathcal C}$, which reduce to
+$\Lambda_\tau^2$ and $\Lambda_t^2$ exactly. He also notes that in the
+non-static case the $t$-problem acquires a one-form---``a sort of Coriolis
+force''---so that its extremals are $\hat h_{\mathcal C}$-geodesics only when
+that form is exact; that is precisely the Randers structure of
+section~\ref{sec:thakurta} and the reason the results below are stated in the
+non-rotating limit. Equation~\eqref{eq:optical-gauss} is $\Lambda_t$, so it is
+the \emph{arrival}-time surface, and the statements belong to the
+$t\equiv\eta$ branch. In the non-rotating
 frozen limit both branches are Riemannian---there is no wind at all---so the
 classical second-variation machinery applies to each: the Jacobi equation is
 $\ddot{\mathcal J}+K\mathcal J=0$, and $K<0$ on a domain precludes conjugate
@@ -1022,7 +1032,21 @@ Propositions~\ref{prop:noconj} or~\ref{prop:globalmin} is available there:
 conjugate points do occur, and locating them requires the Jacobi equation
 directly, as in Paper~I. The two branches, which section~\ref{sec:bvp} shows
 disagree already about which reaches deeper, thus disagree about global structure
-as well. Both computations are in
+as well.
+
+This asymmetry is visible in Perlick's own worked example, by a completely
+different route, and we had not noticed it there. Integrating both problems
+explicitly in Rindler space he reports that the $\tau$-brachistochrones
+\emph{have cut points}---``not all $h_{\mathcal C}$-geodesics \dots\ are
+brachistochrones in the strict sense meaning curves of \emph{minimal} travel
+time''---while the $t$-brachistochrones ``cover any point in
+$U_{\mathcal C}$ and are \emph{free of cut points}''
+\cite[\S3, Figs.~5--6]{Perlick1991}. Flat spacetime in an accelerated frame is
+about as far from Schwarzschild as one can get while keeping a static Killing
+field, and the conclusion is the same: the arrival branch is the one with the
+good global behaviour. What the curvature computation adds is the mechanism---%
+$K_\tau>0$ and incompleteness at the stationary limit---and the fact that it
+persists for every rail energy. Both computations are in
 \texttt{verification/verify\_two\_branch\_optics.wls}.
 
 It is worth saying where this sits in the relativistic Morse theory the cited
