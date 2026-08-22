@@ -885,6 +885,45 @@ paths on the exterior carries \emph{exactly one} controlled-rail extremal, and
 that extremal is the \emph{global} minimiser of arrival time within its class.
 \end{proposition}
 
+Two remarks sharpen what this gives. First, the certificate is of the kind the
+maximum principle needs, not merely an analogue: on the universal cover the
+distance $d(p,\cdot)$ is smooth away from $p$ and satisfies
+$|\nabla d|_a=1$ \emph{identically}, so it is a value function
+\emph{saturating} the eikonal Hamilton--Jacobi equation, and
+Proposition~\ref{prop:hjb-frozen} below records it in that language.
+
+\begin{proposition}[Saturated Hamilton--Jacobi certificate, frozen arrival branch]
+\label{prop:hjb-frozen}
+Under the hypotheses of Proposition~\ref{prop:globalmin}, the optical distance
+from a fixed launch point, lifted to the universal cover, is a smooth value
+function satisfying the eikonal equation with equality. Every controlled-rail
+extremal in a given homotopy class is calibrated by it, and is therefore the
+global minimiser of arrival time in that class.
+\end{proposition}
+
+Second, the condition is not all-or-nothing below the threshold. The numerator
+of~\eqref{eq:optical-gauss} is a cubic in $r$ whose leading coefficient factors
+as $-(\Ehat^2-1)(2\Ehat^2-3)$; for $\Ehat^2<3/2$ it has a single exterior root
+$r_c(\Ehat)$, and $K_t<0$ on the whole inner region $2M<r<r_c$. So for
+\emph{every} $\Ehat>1$ the extremals confined to $r<r_c(\Ehat)$ carry no
+conjugate point and are local minimisers; the threshold is the value at which
+$r_c$ becomes infinite and the statement extends to the whole exterior.
+Numerically $r_c/M=29.5,\,20.4,\,22.8,\,31.3,\,59.5,\,576.7$ at
+$\Ehat^2=1.02,\,1.10,\,1.20,\,1.30,\,1.40,\,1.49$: the region is never small, and
+$r_c$ is not monotone---it dips to a minimum near $\Ehat^2\simeq1.1$ before
+diverging as $\Ehat^2\to(3/2)^-$.
+
+\begin{remark}[why this does not extend to a running $A$ by continuity]
+\label{rmk:nodrift}
+It is worth saying why the frozen certificate does not simply perturb. It is
+\emph{saturated}: $|\nabla d|_a=1$ holds with equality, leaving no margin for a
+perturbation argument to consume. Producing a value function for the drifting
+problem is not a corollary of the frozen one but amounts to solving the
+perturbed Hamilton--Jacobi equation---that is, to the adiabatic expansion itself,
+whose first order is section~\ref{sec:adiabatic}. Global minimality under a
+genuine drift therefore remains open, and we claim it nowhere.
+\end{remark}
+
 Global minimality therefore holds \emph{within} homotopy classes and fails
 \emph{between} them---and the failure between them is precisely the Maxwell set.
 For $\Ehat^2\ge3/2$ the cut locus of the exterior optical surface is thus purely
