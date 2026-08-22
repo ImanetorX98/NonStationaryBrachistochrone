@@ -55,7 +55,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Gibbons et al. 2009 | — | pending (context citation) |
 | Bao–Robles–Shen 2004 | — | pending (context citation) |
 | Brown–Levin 2011 | — | pending (content claim: elliptic dilogarithm) |
-| Myers 1941 | — | pending |
+| Myers 1941 | full | **✗ +** our argument was a non sequitur — he *proves* sectional decay is not enough ($S^2\times S^2$, §4). Retested on Ric: $R_{\rm opt}<0$ pointwise at every energy, so the hypothesis fails by sign. His Lemma needs no completeness |
 | Filippov 1962 | full | **✗ +** bib entry was broken (DOI orphaned outside it); every Thm. 1 hypothesis re-checked and met with margin; his §III *proves* our no-relaxation claim, §V is the counterexample behind our remark, §IV explains why the domain is compact |
 | unidentified, 31 pp | — | pending (arrived with group 2) |
 

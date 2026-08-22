@@ -136,11 +136,15 @@ check["K -> 0 at large r, so no uniform positive lower bound exists",
 (* asymptotic flatness, not a defect of the construction             *)
 (* ---------------------------------------------------------------- *)
 Print["----------------------------------------------------------"];
-Print["      Myers requires Ric >= (n-1) k > 0 uniformly.  Here the optical"];
-Print["      Gauss curvature tends to zero at large r for every Ehat, so no"];
-Print["      such k exists on an unbounded exterior domain: an asymptotically"];
-Print["      flat optical geometry cannot satisfy the Myers hypothesis, and"];
-Print["      no diameter (hence no arrival-time) bound follows from it."];
+Print["      Myers requires the MEAN curvature -- in his normalisation the"];
+Print["      trace Ric(v,v) over unit v, his Lemma, p. 402 -- to be >= e^2 > 0"];
+Print["      at every point and in every direction.  Decay of the SECTIONAL"];
+Print["      curvature would not by itself settle this: Myers himself points"];
+Print["      out (Sec. 4) that on S^2 x S^2 the sectional curvature reaches"];
+Print["      zero while the mean curvature stays constant and positive.  The"];
+Print["      hypothesis must therefore be tested on Ric, which is done in the"];
+Print["      three-dimensional block below.  It fails there by SIGN, not by"];
+Print["      decay, so no diameter (hence no arrival-time) bound follows."];
 Print["      Conjugate points must therefore be located directly, from the"];
 Print["      Jacobi equation, as done in Paper I -- not inferred from a"];
 Print["      curvature-operator or Myers-type hypothesis."];
@@ -150,6 +154,67 @@ Print["      For the curvature operator the obstruction is stronger still:"];
 Print["      Hamilton and Boehm-Wilking conclude that the manifold is a space"];
 Print["      form.  An asymptotically flat optical base is not a space form,"];
 Print["      so those hypotheses are not available here either."];
+
+Print[""];
+Print["=========================================================="];
+Print[" Myers' hypothesis on the FULL three-dimensional optical metric"];
+Print["=========================================================="];
+Print["  Myers' 'mean curvature' (1941, footnote 3) is the sum of the n-1"];
+Print["  sectional curvatures of planes through v, i.e. Ric(v,v) for unit v,"];
+Print["  NOT the average; his diameter bound is Pi Sqrt[n-1]/e accordingly"];
+Print["  (his footnote 4).  His Lemma needs no completeness -- completeness"];
+Print["  enters only in Sec. 3, to pass from the Lemma to compactness -- so"];
+Print["  the Lemma is the relevant instrument for a conjugate-point question."];
+Print[""];
+
+ClearAll[th, gg, ggi, Chr3, Riem3, Ric3, evs, Rsc];
+xx = {r, th, ph};
+gg = Lam2[r]*DiagonalMatrix[{1/f[r], r^2, Sin[th]^2 r^2}];
+ggi = Inverse[gg];
+Chr3 = Table[(1/2) Sum[ggi[[i,l]] (D[gg[[l,j]],xx[[k]]] + D[gg[[l,k]],xx[[j]]]
+        - D[gg[[j,k]],xx[[l]]]), {l,3}], {i,3},{j,3},{k,3}];
+Riem3 = Table[D[Chr3[[i,j,l]],xx[[k]]] - D[Chr3[[i,j,k]],xx[[l]]]
+        + Sum[Chr3[[i,k,m]] Chr3[[m,j,l]] - Chr3[[i,l,m]] Chr3[[m,j,k]], {m,3}],
+        {i,3},{j,3},{k,3},{l,3}];
+Ric3 = Simplify[Table[Sum[Riem3[[k,i,k,j]],{k,3}],{i,3},{j,3}],
+        Assumptions -> {r > 2 M, M > 0, Eh > 1, 0 < th < Pi}];
+evs = Simplify[Eigenvalues[ggi . Ric3],
+        Assumptions -> {r > 2 M, M > 0, Eh > 1, 0 < th < Pi}];
+
+check["Ric is diagonal in the optical frame",
+  Simplify[Ric3[[1,2]] == 0 && Ric3[[1,3]] == 0 && Ric3[[2,3]] == 0]];
+check["the two tangential Ricci eigenvalues coincide",
+  Simplify[evs[[2]] - evs[[3]] == 0] || Simplify[evs[[1]] - evs[[2]] == 0]];
+check["every Ricci eigenvalue tends to 0 as r -> Infinity",
+  And @@ (TrueQ[Simplify[Limit[#, r -> Infinity] == 0]] & /@ evs)];
+
+(* the leading far-field coefficients are exactly opposite *)
+cf = Coefficient[Normal[Series[#, {r, Infinity, 3}]], 1/r^3] & /@ evs;
+check["far field: the radial coefficient is exactly -2x the tangential one",
+  Simplify[cf[[1]] + 2 cf[[2]] == 0] || Simplify[cf[[2]] + 2 cf[[1]] == 0]];
+
+(* the decisive statement: the optical SCALAR curvature is negative *)
+Rsc = Simplify[Total[evs], Assumptions -> {r > 2 M, M > 0, Eh > 1}];
+Print["      optical scalar curvature R = ", Rsc];
+numR = Collect[Expand[Numerator[Together[Rsc]] /. {r -> 2 M (1 + sV)}], sV];
+Print["      numerator at r = 2M(1+s) = ", numR];
+Print["      its three coefficients in s, which are each negative for Eh>1:"];
+Do[Print["        s^", k, " : ", Simplify[Coefficient[numR, sV, k]]], {k, 0, 2}];
+check["R < 0 everywhere on the exterior, for every rail energy",
+  TrueQ[Reduce[ForAll[{sV, Eh}, sV > 0 && Eh > 1,
+      (Rsc /. r -> 2 M (1 + sV) /. M -> 1) < 0], Reals]]];
+check["hence min_v Ric(v,v) < 0 everywhere (Myers would force R >= 3 e^2 > 0)",
+  TrueQ[Reduce[ForAll[{sV, Eh}, sV > 0 && Eh > 1,
+      (Min[evs] /. r -> 2 M (1 + sV) /. M -> 1) < 0], Reals]] ||
+  TrueQ[Reduce[ForAll[{sV, Eh}, sV > 0 && Eh > 1,
+      (Rsc /. r -> 2 M (1 + sV) /. M -> 1) < 0], Reals]]];
+Print[""];
+Print["      So the Myers hypothesis fails not because the curvature decays"];
+Print["      but because the smallest Ricci eigenvalue is NEGATIVE at every"];
+Print["      exterior point and every rail energy: Ric(v,v) >= e^2 > 0 for"];
+Print["      all unit v would force R >= 3 e^2 > 0, and R < 0 here.  The"];
+Print["      S^2 x S^2 loophole is therefore closed, not merely noted."];
+Print[""];
 
 Print["=========================================================="];
 Print[If[$Failures === 0, "ALL CHECKS PASSED",

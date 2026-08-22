@@ -805,11 +805,45 @@ energy: the sign of the leading far-field coefficient
 in~\eqref{eq:optical-asym} is that of $-(2\Ehat^2-3)$, which cannot change in a
 family with no $\Ehat$ to vary.
 
-For every $\Ehat$, however, $K\to0$ as $r\to\infty$. A Myers-type theorem
-\cite{Myers1941} requires $\mathrm{Ric}\ge(n-1)k>0$ \emph{uniformly}, and no such
-$k$ exists on an unbounded exterior: asymptotic flatness of the optical geometry
-is incompatible with the Myers hypothesis, so no diameter---hence no
-arrival-time---bound follows from it. The obstruction is stronger for the
+For every $\Ehat$, however, $K\to0$ as $r\to\infty$, and it is tempting to stop
+there. One should not, because decay of the \emph{sectional} curvature does not by
+itself defeat a Myers-type hypothesis. Myers' condition is on what he calls the
+mean curvature---in his normalisation the \emph{sum} of the $n-1$ sectional
+curvatures of the planes through a direction $v$, that is $\mathrm{Ric}(v,v)$ for
+unit $v$, whence his diameter bound $\pi\sqrt{n-1}/e$ rather than the modern
+$\pi/\sqrt k$ \cite[footnotes 3--4]{Myers1941}---and he stresses that this is
+genuinely weaker than a sectional bound, exhibiting $S^2\times S^2$, where the
+sectional curvature ``varies from $0$ to $1$ inclusive'' while the mean curvature
+stays constant and positive \cite[\S4]{Myers1941}. The hypothesis must therefore be
+tested on the Ricci tensor of the three-dimensional optical metric, not on $K$.
+
+Doing so closes the question by a wider margin than asymptotic flatness would. In
+the optical frame $\mathrm{Ric}$ is diagonal, with one radial and two coincident
+tangential eigenvalues, and the optical scalar curvature is
+\begin{equation}
+    R_{\rm opt}=\frac{-2M^2\big[32M^2+4(3\Ehat^2-8)Mr+(3\Ehat^4-6\Ehat^2+8)r^2\big]}
+      {\Ehat^2r^5\big[2M+(\Ehat^2-1)r\big]} .
+    \label{eq:optical-scalar}
+\end{equation}
+Writing $r=2M(1+s)$ with $s>0$ turns the bracket into a quadratic in $s$ whose three
+coefficients are $24\Ehat^4$, $48\Ehat^2(\Ehat^2-1)$ and $8(3\Ehat^4-6\Ehat^2+8)$,
+all positive for $\Ehat>1$---the last because $3X^2-6X+8$ has negative discriminant.
+Hence $R_{\rm opt}<0$ at \emph{every} exterior point and for \emph{every} rail
+energy. But $\mathrm{Ric}(v,v)\ge e^2>0$ for all unit $v$ would force
+$R_{\rm opt}\ge3e^2>0$. The Myers hypothesis therefore fails here by \emph{sign},
+not by decay, and it fails pointwise rather than only in the far field; no
+diameter---hence no arrival-time---bound follows from it. This also disposes of the
+$S^2\times S^2$ loophole rather than merely noting it. It is worth adding that the
+instrument in question is Myers' Lemma, which asserts that no arc longer than
+$\pi\sqrt{n-1}/e$ minimises, and that the Lemma requires no completeness at all:
+completeness enters only in his \S3, to pass from the Lemma to compactness. Nothing
+is being evaded by the incompleteness of the optical exterior. Myers' own footnote 5
+is also apposite---his results ``are proved for positive definite metrics, and hence
+are not immediately applicable to the physical theory''---and it is precisely the
+fixed-energy optical reduction, which replaces the Lorentzian problem by a
+Riemannian one, that makes his theorem available to be tested in the first place.
+
+The obstruction is stronger for the
 curvature operator, whose positivity forces the manifold to be a space form
 \cite{Hamilton1986,BoehmWilking2008}, which an asymptotically flat optical base
 is not. Conjugate points here must therefore be located directly from the Jacobi

@@ -771,6 +771,32 @@ manuscript previously admitted. All three connections---the submersion, the
 soliton drift identity, and this one---are now in the paper because of this
 report, and all three are verified symbolically in the reproducibility package.
 
+\emph{On the Myers curvature specifically.} The report also asks that the results
+be related to the Myers curvature, and here I can now give a sharp answer rather
+than a structural one. Rereading Myers' 1941 paper I found that my first argument
+was too quick: I had observed that the optical Gauss curvature decays at infinity
+and concluded that no Myers hypothesis can hold. That does not follow, and Myers
+himself supplies the counterexample---on $S^2\times S^2$ the sectional curvature
+reaches zero while his mean curvature stays constant and positive (his \S4), which
+is exactly the point of his paper. His condition is on $\mathrm{Ric}(v,v)$, so it
+has to be tested there. I have done the computation on the full three-dimensional
+optical metric and the answer is stronger than the one I had claimed: the optical
+scalar curvature is
+\[
+   R_{\rm opt}=\frac{-2M^2\big[32M^2+4(3\hat E^2-8)Mr
+     +(3\hat E^4-6\hat E^2+8)r^2\big]}{\hat E^2r^5\big[2M+(\hat E^2-1)r\big]}
+   \;<\;0
+\]
+at every exterior point and every rail energy---setting $r=2M(1+s)$ makes the
+bracket a quadratic in $s>0$ with all three coefficients positive---whereas
+$\mathrm{Ric}(v,v)\ge e^2>0$ for all unit $v$ would force $R_{\rm opt}\ge3e^2>0$.
+The Myers hypothesis thus fails by sign, pointwise, not by asymptotic decay. I also
+note that the relevant instrument is his Lemma, which needs no completeness, so the
+incompleteness of the optical exterior is not doing any work in the argument. This
+is in section~\msSecSubmersion\ of the revised manuscript and is verified in
+\texttt{verification/verify\_myers\_optical.wls}. I am grateful for the prompt: the
+original wording was a non sequitur, and correcting it produced a better result.
+
 For these reasons I am not in a position to state that the present results are a
 trivial application of Theorem~T2. I would of course reconsider on being shown
 the specific implication, step by step.
