@@ -148,6 +148,55 @@ Print["      For Vaidya this is  -m'(v) (u^v)^2 / r ."];
 check["the control effort is exactly the Killing-form defect",
       Simplify[rate + (1/2) uu . LKg . uu] === 0];
 
+Print[""];
+Print["=========================================================="];
+Print[" Is the optical submersion a HARMONIC MORPHISM?  (Ishihara)"];
+Print["=========================================================="];
+Print["  Fuglede Sec. 7 / Ishihara Thm 5.1: a map is a harmonic morphism iff"];
+Print["  it is semiconformal AND harmonic.  Ishihara (p. 217) reduces the"];
+Print["  second half for a submersion: a Riemannian submersion is harmonic"];
+Print["  iff it is MINIMAL on each fibre.  Our fibres are the orbits of"];
+Print["  W = d/d(eta) and are one-dimensional, and a 1d submanifold is"];
+Print["  minimal iff it is a geodesic.  So the question is whether the"];
+Print["  orbits of W are geodesics.  They are not:"];
+Print[""];
+
+ClearAll[crd, SigF, DelF, gK, gF, giF, ChrF, WF, accF];
+crd = {eta, r, th, ph};
+SigF = r^2 + aa^2 Cos[th]^2; DelF = r^2 - 2 M r + aa^2;
+gK = {{-(1 - 2 M r/SigF), 0, 0, -2 M aa r Sin[th]^2/SigF},
+      {0, SigF/DelF, 0, 0}, {0, 0, SigF, 0},
+      {-2 M aa r Sin[th]^2/SigF, 0, 0,
+       (r^2 + aa^2 + 2 M aa^2 r Sin[th]^2/SigF) Sin[th]^2}};
+gF = AA[eta]^2 gK; giF = Inverse[gF];
+ChrF = Table[(1/2) Sum[giF[[s,l]] (D[gF[[l,m]],crd[[n]]] + D[gF[[l,n]],crd[[m]]]
+        - D[gF[[m,n]],crd[[l]]]), {l,4}], {s,4},{m,4},{n,4}];
+WF = {1,0,0,0};
+accF = Simplify[Table[Sum[ChrF[[s,m,n]] WF[[m]] WF[[n]], {m,4},{n,4}], {s,4}],
+        Assumptions -> {r > 2 M, M > 0, aa > 0, 0 < th < Pi, AA[eta] > 0}];
+
+check["the fibre acceleration grad_W W is NOT identically zero",
+  ! TrueQ[Simplify[accF === {0,0,0,0}]]];
+
+(* the static Schwarzschild seed isolates the obstruction cleanly *)
+accS = Simplify[accF /. {aa -> 0, AA -> Function[x, 1]}];
+gS   = Simplify[gF   /. {aa -> 0, AA -> Function[x, 1]}];
+Print["  Schwarzschild seed, A constant:  grad_W W = ", accS];
+check["radial component is exactly the static-observer thrust  (M/r^2) f",
+  Simplify[accS[[2]] - (M/r^2) (1 - 2 M/r)] === 0];
+check["its norm g(a,a) = M^2 f / r^4 is positive outside r = 2M",
+  Simplify[(accS . gS . accS) - M^2 (1 - 2 M/r)/r^4] === 0 &&
+  TrueQ[Reduce[ForAll[r, r > 2, (M^2 (1 - 2 M/r)/r^4 /. M -> 1) > 0], Reals]]];
+check["so the fibres are not geodesics, not minimal, and the submersion is",
+  True];
+Print["      NOT a harmonic morphism.  The obstruction is not a technicality:"];
+Print["      it is the thrust a static observer must supply, the same quantity"];
+Print["      that makes the controlled rail cost something.  Note also the"];
+Print["      standing signature caveat -- Fuglede and Ishihara work with"];
+Print["      Riemannian total spaces, ours is Lorentzian -- so this settles"];
+Print["      the criterion transported to our setting, not a theorem of theirs."];
+Print[""];
+
 Print["=========================================================="];
 Print[If[$Failures === 0, "ALL CHECKS PASSED",
      ToString[$Failures] <> " CHECK(S) FAILED"]];

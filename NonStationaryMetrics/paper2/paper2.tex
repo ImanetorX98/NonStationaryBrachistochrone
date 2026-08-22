@@ -601,15 +601,35 @@ fact we \emph{verify} by computation, not one the abstract theory confers.
 
 What Fuglede and Ishihara \emph{prove} is a different statement, and it is the one
 that bears on the present question: a map is a \emph{harmonic morphism} if and only
-if it is both semiconformal and a harmonic map
-\cite[\S7]{Fuglede1978}, \cite{Ishihara1979,BairdWood2003}. Read in that direction
-the theorem is informative about what semiconformality does \emph{not} give. Our
-projection is semiconformal by construction, so it is a harmonic morphism exactly
-when its tension field vanishes as well---a further condition which we neither
-verify nor require. So the framework accounts for the \emph{form} of Perlick's
-metric, a conformal rescaling of $h$ rather than a general deformation; it supplies
-neither the value~\eqref{eq:dilation} of the factor, which requires solving the rail
-jointly with the mass shell, nor any harmonicity. One caveat belongs with it:
+if it is both semiconformal and a harmonic map \cite[\S7]{Fuglede1978}. Ishihara's
+own form is a genuine dichotomy, but with the hypothesis on the other side---a map
+\emph{preserving harmonic functions} is either constant or, on the open set where
+$\dd f\neq0$, a Riemannian submersion after a conformal change of metric
+\cite[Thm.~5.1]{Ishihara1979}, \cite{BairdWood2003}. Either way the content for us
+is the same: semiconformality is the half we have, and harmonicity is a separate
+condition.
+
+That second half can be settled here rather than left open, because Ishihara
+reduces it for a submersion---one is harmonic exactly when it is \emph{minimal} on
+each fibre \cite[\S1]{Ishihara1979}---and our fibres, the orbits of $W$, are
+one-dimensional, so minimality means simply that they are geodesics. They are not.
+For the Thakurta--Kerr family $\nabla_WW\neq0$, and in the cleanest case, a static
+conformal factor over a Schwarzschild seed, it reduces to
+\begin{equation}
+    \nabla_WW=\frac{M}{r^2}\,f\,\partial_r ,
+    \qquad g(\nabla_WW,\nabla_WW)=\frac{M^2f}{r^4}>0
+    \quad (r>2M),
+    \label{eq:fibre-accel}
+\end{equation}
+which is exactly the thrust a static observer must supply. So the optical
+projection is \emph{not} a harmonic morphism, and the obstruction is not a
+technicality of the abstract theory but the same quantity that makes the controlled
+rail cost something. The framework thus accounts for the \emph{form} of Perlick's
+metric, a conformal rescaling of $h$ rather than a general deformation, and for
+nothing further: neither the value~\eqref{eq:dilation} of the factor, which requires
+solving the rail jointly with the mass shell, nor harmonicity, which fails.
+Equation~\eqref{eq:fibre-accel} is verified in
+\texttt{verification/verify\_submersion\_link.wls}. One caveat belongs with it:
 Fuglede works throughout with \emph{Riemannian} manifolds, and his machinery is
 built on the Laplace--Beltrami operator, whereas our total space is Lorentzian. What
 transfers without question is the pointwise statement on the horizontal
