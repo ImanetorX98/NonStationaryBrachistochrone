@@ -115,7 +115,7 @@ All 12 major + 10 minor comments of referee 1, and referee 2's bibliography,
 answered. Five errors caught by the review, four found while chasing them, five
 new results. See `POST_REVIEW_CHANGES.md`.
 
-### Bibliographic audit — 8 of 11 sources read
+### Bibliographic audit — **complete**, 11 of 11
 
 | Source | Read | Produced |
 |---|---|---|
@@ -125,7 +125,7 @@ new results. See `POST_REVIEW_CHANGES.md`.
 | GMP 2000 (Morse, massive) | core | index = geometric index; Maxwell topologically |
 | Caponio et al. | core | semi-holonomic constraint; **risk closed** |
 | GMP 1998 (timelike Fermat) | core | third-party reading of Perlick; PS caveat |
-| Lecian, curvature eigenvalues | pp. 1–11 | the weighted-seed correspondence |
+| Lecian, curvature eigenvalues | full | the weighted-seed correspondence; weights vanishing |
 | GMP 2001 | core | characterisation corrected; light-convexity frames the Maxwell count |
 | Axioms 15(4) 267 (Yamabe flow) | intro | confirms the weight construction; Birkhoff framing |
 | Axioms 14(12) 896 (Cauchy) | intro | independent boundary convergence; incompleteness contrast |
@@ -133,7 +133,8 @@ new results. See `POST_REVIEW_CHANGES.md`.
 
 ### Open
 
-1. Finish the audit — the four unopened sources, one of which we cite.
-2. Regenerate all four CQG deliverables from the final source.
-3. Zenodo release from `v1.5.0`; update the DOI in manuscript and cover letter.
-4. The ~90 pre-existing references have never been audited.
+1. Regenerate all four CQG deliverables from the final source.
+2. Zenodo release from `v1.5.0`; update the DOI in manuscript and cover letter.
+3. The ~90 **pre-existing** references have never been audited. The eleven audited
+   here were the ones added or leaned on during the revision; the older ones
+   remain the largest untested surface.
