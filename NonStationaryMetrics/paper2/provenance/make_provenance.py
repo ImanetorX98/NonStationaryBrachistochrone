@@ -284,6 +284,11 @@ MANIFEST: list[tuple[str, str, str]] = [
     ("shared figure style", "-", "NonStationaryMetrics/paper_style.py"),
     ("environment lock (Python stack + CAS version)", "-",
      "NonStationaryMetrics/requirements-lock.txt"),
+    ("bibliography audit against the DOI registry", "python3 audit_refs.py",
+     "NonStationaryMetrics/paper2/provenance/audit_refs.py"),
+    ("bibliography audit by title, for entries with no DOI",
+     "python3 audit_by_title.py",
+     "NonStationaryMetrics/paper2/provenance/audit_by_title.py"),
 ]
 
 

@@ -91,6 +91,8 @@ public on Zenodo without disturbing the JMP process.
 | `NSolve[… && 2 < r < 10^6, r, Reals]` | can return unevaluated; for a polynomial take exact roots and filter |
 | SymPy `positive=True` | can make a degeneration locus vanish |
 | `latexdiff` | `ulem` breaks across `\emph` → use `--type=CFONT`; markers land before `\hline` in tabulars; one `\multicolumn` row needs hand repair |
+| a DOI can resolve to somebody else's paper | `Perlick1991` pointed at Bengtsson, JMP 32 **3158**; `MeenaZawadzki2024` at Liu–Zhao. Neither is visible in the compiled PDF |
+| a branch label can silently attach to the wrong metric | the coordinate-time and proper-time optical factors differ by $\hat E^2/f^2$ and have **opposite** curvature sign; a result was attributed to the wrong branch |
 | off-by-one in a bracketing helper | `r_turn()` returned the grid point *inside* the forbidden region — a curve vanished from a published panel with no error |
 
 ---
@@ -135,6 +137,7 @@ new results. See `POST_REVIEW_CHANGES.md`.
 
 1. Regenerate all four CQG deliverables from the final source.
 2. Zenodo release from `v1.5.0`; update the DOI in manuscript and cover letter.
-3. The ~90 **pre-existing** references have never been audited. The eleven audited
-   here were the ones added or leaned on during the revision; the older ones
-   remain the largest untested surface.
+3. The pre-existing references are now machine-audited against the DOI registry
+   (`provenance/audit_refs.py`, `audit_by_title.py`). What that cannot check is
+   whether a cited work **says** what we attribute to it; that still needs
+   reading, and has been done for the eleven the revision leans on.
