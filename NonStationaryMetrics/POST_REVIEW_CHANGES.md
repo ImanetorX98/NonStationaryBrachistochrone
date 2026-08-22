@@ -143,7 +143,7 @@ here — now an argument with a computation behind it, not an omission.
 
 ### 3.7 Conjugate points and Maxwell points — **new** (R1 major 2)
 
-On the frozen $\tau$-branch the optical geometry is Riemannian-pure, so the
+On the frozen **arrival-time** branch the optical geometry is Riemannian, so the
 classical second variation applies verbatim: $\ddot{\mathcal J}+K\mathcal J=0$.
 
 > **$K(r)<0$ for every $r>2M$ if and only if $\hat E^2\ge3/2$.**

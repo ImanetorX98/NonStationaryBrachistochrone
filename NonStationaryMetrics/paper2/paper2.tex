@@ -815,23 +815,35 @@ or Myers-type hypothesis. Equations~\eqref{eq:optical-gauss}--\eqref{eq:optical-
 and this conclusion are verified in
 \texttt{verification/verify\_myers\_optical.wls}.
 
-\paragraph{Conjugate points and Maxwell points are separated by the same
-threshold.} On the frozen $\tau$-branch the optical geometry is Riemannian-pure,
-the gravitomagnetic wind cancelling (section~\ref{sec:thakurta}), so equatorial
-extremals are geodesics of a genuine Riemannian surface and the classical
-second-variation machinery applies verbatim: the Jacobi equation is
-$\ddot{\mathcal J}+K\mathcal J=0$ with $K$ as in~\eqref{eq:optical-gauss}, and
-$K<0$ on a domain precludes conjugate points there. The threshold
-of~\eqref{eq:optical-asym} turns out not to be merely asymptotic.
+\paragraph{Conjugate points and Maxwell points, and which branch they belong to.}
+It matters here which clock the optical length measures, because the two branches
+carry \emph{different} optical metrics and, as it turns out, opposite global
+behaviour. Per unit $h$-length the two clocks advance by
+\begin{equation}
+    \Lambda_t^2=\frac{\Ehat^2}{f(\Ehat^2-f)},
+    \qquad
+    \Lambda_\tau^2=\frac{f}{\Ehat^2-f},
+    \label{eq:two-lambdas}
+\end{equation}
+differing by $\Ehat^2/f^2$, which is not constant: the two surfaces are not
+homothetic and their curvatures are unrelated. Equation~\eqref{eq:optical-gauss}
+is $\Lambda_t$, Perlick's factor, so it is the \emph{arrival}-time surface, and
+the statements below belong to the $t\equiv\eta$ branch. In the non-rotating
+frozen limit both branches are Riemannian---there is no wind at all---so the
+classical second-variation machinery applies to each: the Jacobi equation is
+$\ddot{\mathcal J}+K\mathcal J=0$, and $K<0$ on a domain precludes conjugate
+points there. The threshold of~\eqref{eq:optical-asym} turns out not to be merely
+asymptotic.
 
-\begin{proposition}[No conjugate points above the curvature threshold;
-evidence level~(I) for the curvature and its sign, level~(II) for the quoted
-sign-change radii]
+\begin{proposition}[No conjugate points on the arrival branch above the
+threshold; evidence level~(I) for the curvature and its sign, level~(II) for the
+quoted sign-change radii]
 \label{prop:noconj}
-For the frozen, non-rotating optical surface, $K(r)<0$ for \emph{every} $r>2M$
-if and only if $\Ehat^2\ge3/2$. Consequently, for $\Ehat^2\ge3/2$ no exterior
-$\tau$-branch extremal carries a conjugate point, and every such extremal is a
-local minimiser of the arrival time on the exterior domain.
+For the frozen, non-rotating \emph{arrival-time} optical surface,
+$K_t(r)<0$ for \emph{every} $r>2M$ if and only if $\Ehat^2\ge3/2$. Consequently,
+for $\Ehat^2\ge3/2$ no exterior $t$-branch extremal carries a conjugate point,
+and every such extremal is a local minimiser of the arrival time on the exterior
+domain.
 \end{proposition}
 
 Two facts fix the threshold. At the stationary limit the numerator
@@ -861,11 +873,12 @@ end is at infinite optical distance, logarithmically, and the outer end at
 infinite distance, linearly. Both ends of the exterior are therefore infinitely
 far in arrival time.
 
-\begin{proposition}[Global minimality within a homotopy class]
+\begin{proposition}[Global minimality within a homotopy class, arrival branch]
 \label{prop:globalmin}
-For the frozen, non-rotating optical surface with $\Ehat^2\ge3/2$: the surface is
-complete with $K<0$, so its universal cover $\{r>2M\}\times\mathbb R$ is complete,
-simply connected and nonpositively curved. By the Cartan--Hadamard theorem the
+For the frozen, non-rotating \emph{arrival-time} optical surface with
+$\Ehat^2\ge3/2$: the surface is complete with $K_t<0$, so its universal cover
+$\{r>2M\}\times\mathbb R$ is complete, simply connected and nonpositively
+curved. By the Cartan--Hadamard theorem the
 exponential map there is a diffeomorphism, so any two points are joined by
 exactly one geodesic, which minimises. Projecting back, each homotopy class of
 paths on the exterior carries \emph{exactly one} controlled-rail extremal, and
@@ -879,6 +892,28 @@ of Maxwell type: minimality is lost at the first antipodal crossing by symmetry
 rather than by focusing, and never by focusing at all. Below the
 threshold the two mechanisms coexist and conjugate points must be located
 directly from the Jacobi equation, as in Paper~I.
+
+\paragraph{The proper-time branch behaves oppositely.} None of this transfers to
+the $\tau$-branch, and the contrast is a result rather than a caveat. Its optical
+factor is $\Lambda_\tau$ of~\eqref{eq:two-lambdas}, and the corresponding Gauss
+curvature satisfies
+\begin{equation}
+    r^3K_\tau\ \longrightarrow\ +M \qquad (r\to\infty),
+    \label{eq:ktau-asym}
+\end{equation}
+\emph{positive for every rail energy}: there is no threshold, and the distant
+proper-time optical geometry always focuses. A scan over the exterior finds
+$K_\tau>0$ on all but a negligible set. Nor is that surface complete: the radial
+element tends to $1/\Ehat$ at $r\to2M$ rather than developing a pole, so the
+stationary limit lies at \emph{finite} proper-time distance---as it must, a
+falling worldline reaching it in finite proper time. Both hypotheses of
+Cartan--Hadamard therefore fail on the $\tau$-branch, and no analogue of
+Propositions~\ref{prop:noconj} or~\ref{prop:globalmin} is available there:
+conjugate points do occur, and locating them requires the Jacobi equation
+directly, as in Paper~I. The two branches, which section~\ref{sec:bvp} shows
+disagree already about which reaches deeper, thus disagree about global structure
+as well. Both computations are in
+\texttt{verification/verify\_two\_branch\_optics.wls}.
 
 It is worth saying where this sits in the relativistic Morse theory the cited
 literature already provides, because that theory supplies the step from ``no
