@@ -32,6 +32,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Perlick 1991 | core | **✓ +** two optical factors are exactly his Eqs. (42), (46); his Rindler example already shows the branch asymmetry; he uses "brachistochrone" for *stationary* travel time |
 | Bishop 1972 (via Singh–Gupta) | thm + proof | **✗** we had added a completeness hypothesis the theorem does not require |
 | Neishtadt 2014 | intro + ToC | **✗** it is about resonance passage, not separatrix crossing; citation narrowed |
+| Neishtadt–Vasiliev 1999 | intro + refs | **✗ +** *not* the paper we cite (3D volume-preserving, and they state the two problems "cannot be reduced to one another"). Its ref. [3] confirms our target exactly, and dates it **1986** — our key said 1987. Supplied the two companion jump-formula papers |
 | Gibbons–Werner 2008 | core | **✓ +** their Eq. (8) reproduces our null limit identically; Gauss–Bonnet gives a second topological reading of the Maxwell set |
 | Meena–Zawadzki 2024 | core | **✗ +** Thm 5 has *three* conditions, not one; Prop. 1 and Cor. 7 supplied two results we had been asserting |
 | Caponio et al. 2024 | core | **+** the semi-holonomic constraint; and a risk closed — their submanifold argument uses conservation, which we do not have |
@@ -90,6 +91,9 @@ free substitute for Giannoni–Piccione–Verderesi.
   DOI. Load-bearing for Paper I's existence theorem.
 - **Thakurta 1981**, Indian J. Phys. **55B**, 304. No DOI, journal not indexed.
   It is the metric the whole of Paper II is built on.
+- **Neishtadt 1986**, Sov. J. Plasma Phys. **12** 568–73. Still missing; the copy
+  obtained was Neishtadt–Vasiliev, *Nonlinearity* **12** (1999) 303, a different
+  problem class. Bibliographic data confirmed from that paper's reference list.
 - **Bishop 1972** in the original. Currently carried by Singh–Gupta's statement
   *with proof* and by Meena–Zawadzki, which agree.
 
