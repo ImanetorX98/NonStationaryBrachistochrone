@@ -2426,7 +2426,34 @@ Because $Q_4(2M)=4M^2(4E^2M^2+a^2)>0$, equation~\eqref{eq:sep-phi} is regular
 third-kind logarithms at the horizons. The conformal case is
 $E\to E_{\rm eff}=\Ehat/A$ in every parameter.
 
-\paragraph{Doran continuation through the horizon.} The Boyer--Lindquist form
+\paragraph{Doran continuation through the horizon.} The shift used here is not an
+ansatz: it is Doran's own azimuthal transformation composed with the
+Boyer--Lindquist-to-Eddington step. Doran's \cite[Eq.~(21)]{Doran2000} carries
+advanced Eddington--Finkelstein to his chart by
+$\dd\varphi=\dd\bar\varphi-a\,\dd r/[r^2+a^2+\sqrt{2Mr(r^2+a^2)}]$, while
+$\dd\bar\varphi=\dd\varphi_{\rm BL}+a\,\dd r/\Delta$. Using
+$r^2+a^2-\Delta=2Mr$ the two combine to
+\begin{equation}
+    \frac{a}{\Delta}-\frac{a}{r^2+a^2+\sqrt{2Mr(r^2+a^2)}}
+      =\frac{a}{\Delta}\sqrt{\frac{2Mr}{r^2+a^2}} ,
+    \label{eq:doran-shift}
+\end{equation}
+which is the $\varphi_{\rm shift}$ used below---an exact identity, not an
+approximation.
+
+\begin{remark}
+It is worth noting \emph{why} this chart cannot rescue the control problem below
+$r=2M$, since the temptation is natural. Doran's construction is built on
+\emph{free-falling} observers: his time coordinate records the proper time of
+observers falling from rest at infinity along trajectories of constant
+$\theta,\varphi$ \cite{Doran2000}. The vector field it privileges is therefore
+the free-fall four-velocity, not our selector $\partial_\eta$, and changing chart
+leaves the scalar $g(\partial_\eta,\partial_\eta)$ untouched. The chart is
+horizon-penetrating and the formulae are regular across $\Delta=0$; the control
+domain is unaffected (section~\ref{sec:domain}).
+\end{remark}
+
+The Boyer--Lindquist form
 $\varphi(r)$ winds logarithmically at $\rp$ (the standard BL artifact); adding the
 Doran shift $\dd\varphi_{\rm shift}=2Mar\,\dd r/(\Delta\sqrt{C_3})$ with the cubic
 $C_3=2Mr(r^2+a^2)$ regularizes it. This is a \emph{second} elliptic curve, in
