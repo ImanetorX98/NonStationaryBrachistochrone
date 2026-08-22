@@ -60,6 +60,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Baird–Wood 2003 | abstract | **✓** independently confirms the corrected Fuglede statement verbatim: harmonic morphisms *are* harmonic maps that are semiconformal; and it lists Killing-field submersions as examples |
 | Sultana–Dyer 2005 | §1 | **✓ ++** supplies the *published* necessary-and-sufficient criterion for our own terminology: a CSLS is a conformal Killing horizon iff the congruence twist vanishes there. Applied to TK it **fails**, twist $=-a/2M$ equatorially, conformally invariantly — so $r_e$ is not a horizon, independently of $A(\eta)$ |
 | Born–Fock 1928 | §§1–2 | **✗** category error: their theorem is *quantum* — energy operator, Schrödinger equation, transition probabilities — and we cited it for a classical asymptotic expansion. Their own p. 165 attributes the classical action-variable statement to **Ehrenfest** |
+| Haws–Kiser 1995 | full | **✗** it is a *pedagogy* article — a Mathematica package for racing curves, pre-calculus upward — not a review of "the classical problem and its geometry". Its one substantive part, §3, is the brachistochrone **with kinetic friction**, i.e. the elementary case where the conserved energy fails |
 | Randers 1941 | full | **✓ +** attribution correct; and he *names* the gauge freedom $b\mapsto b+d\phi$ (his "$k$ transformation", distinguished from Weyl's) that our Doran remark relies on, and states the exactness criterion our non-rotating restriction turns on |
 | Kovner 1990 | core §§1–2 | **✗✗ +** *not* a context citation — his abstract covers "arbitrary, stationary, and **nonstationary** metrics, for **massive** and massless particles". We had bundled him under the stationary case, a live priority risk. Now distinguished on three grounds: his extremals are *geodesics*, his only constraint is the mass shell, and he asks for extremality not minimality |
 | Gibbons et al. 2009 | core §§1–2, 3.4 | **✗ +** their triality is for *null* geodesics, so our "reproduces Randers/Zermelo" needed narrowing to the form; **+** their Finsler condition $|b|_a<1$ fails exactly on the ergosurface, and the Randers data are conformal invariants — a fourth independent route to our control domain |
@@ -85,7 +86,7 @@ the reports are answered against them.
 | Lecian ×5 | ✓ |
 | **Giannoni–Piccione–Verderesi 1997**, sub-Riemannian (JMP 38, 6367) | ✗ paywalled |
 | **Giannoni–Piccione–Tausk 2002**, arrival-time (DCDS 8, 697) | ✗ paywalled |
-| **Haws–Kiser 1995**, Amer. Math. Monthly 102, 328 | ✗ paywalled |
+| **Haws–Kiser 1995**, Amer. Math. Monthly 102, 328 | ✓ **read** |
 | **Hamilton 1986**, four-manifolds with positive curvature operator | ✗ paywalled |
 | **Cesari 1983** (referee 1's existence machinery) | ✗ book |
 
