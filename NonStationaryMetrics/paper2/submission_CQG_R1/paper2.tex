@@ -120,13 +120,43 @@ minimality, the Morse theory of Giannoni, Piccione and Tausk
 conjugate points and the number of connecting extremals are counted. The companion
 programme of Giannoni, Masiello and Piccione develops the timelike extension of Fermat's
 principle \cite{GiannoniMasielloPiccione1998}, a Morse theory covering \emph{massive}
-particles as well as photons \cite{GiannoniMasielloPiccione2000}, and---closest to the
-frozen-$A$ regime used throughout our section~\ref{sec:closed}---finiteness results on
-\emph{conformally stationary} spacetimes \cite{GiannoniMasielloPiccione2001}. Closest of
+particles as well as photons \cite{GiannoniMasielloPiccione2000}, and, on
+\emph{conformally stationary} spacetimes, finiteness results for the number of
+light rays joining a source to an observer \cite{GiannoniMasielloPiccione2001}.
+That last is the nearest published setting to the frozen-$A$ regime of
+section~\ref{sec:closed}, though the questions differ: it concerns \emph{null}
+geodesics and gravitational lensing, its machinery rests systematically on the
+Killing property, and the conformally stationary case enters as an extension
+under boundedness assumptions on the conformal factor. Closest of
 all to the present variational structure is the fixed-energy theory of Caponio, Corona,
 Giamb\`o and Piccione \cite{CaponioCoronaGiamboPiccione2024}, in which solutions of an
-indefinite Lagrangian with an \emph{affine Noether charge} join a point to a flow line of
-the infinitesimal generator, extending the stationary Fermat principle. The classical
+indefinite Lagrangian invariant under an infinitesimal symmetry $K$, with fixed energy,
+join a point to a flow line of $K$; the arrival time is then differentiated on the
+manifold of connecting paths subject to the \emph{semi-holonomic constraint defined by
+the Noether charge}, and for a Lagrangian $2$-homogeneous in the velocities this extends
+Fermat's principle in a stationary spacetime. The rail constraint $-g(u,W)=\Ehat$ is a
+semi-holonomic constraint of exactly that type, which is the structural reason the two
+theories look alike. Their treatment of it is instructive and worth stating precisely,
+because it also marks the limit of what transfers. Because $K$ is a symmetry, the Noether
+charge is automatically constant along any critical point, so the curves of constant
+charge are the only candidates; that set is then shown to be a $C^1$ closed submanifold
+of the path space with an explicitly characterised tangent space, and critical points of
+the action coincide with critical points of its restriction to that submanifold. Their
+Lorentz--Finsler setting also yields, for a stationary Finsler spacetime, the local
+product structure $L_F=F^2(y,v)+\omega_y(v)\tau-\tfrac12\tau^2$ with $F$ a Finsler metric
+on the slice---the general form of which the Randers reduction of
+section~\ref{sec:thakurta} is an instance. The timelike extension of Fermat's principle
+\cite{GiannoniMasielloPiccione1998} is the closest precedent for the analytical side of
+the problem, and two of its findings bear directly on ours. Its authors describe Perlick's
+construction, in their own words, as the study of critical points of the arrival time for
+curves satisfying a conservation law with respect to a fixed timelike Killing observer
+field, reduced by stationarity to a purely spatial Riemannian problem through a
+Maupertuis--Jacobi principle---an independent reading of the structure the present
+programme sets out to extend. Technically, they prove that for a \emph{timelike} pointwise
+constraint on the velocity the space of admissible curves is a $C^1$ Banach manifold,
+which the lightlike case is not, and that the arrival time then satisfies the
+Palais--Smale condition on a class of manifolds including all globally hyperbolic ones.
+The classical
 problem and its geometry are reviewed in \cite{HawsKiser1995}; ruled-surface constructions
 built from brachistochrones in stationary spacetimes have been developed recently by
 Ta\c{s} \cite{Tas2025}. All of this presupposes a symmetry: the charge is \emph{conserved},
@@ -135,10 +165,25 @@ by a Killing or conformal-Killing field of the background.
 \emph{New here:} the object is not a geodesic of a fixed optical metric but an extremal of
 a control problem whose invariant $\Ehat=-g(u,W)$ is \emph{actively maintained} against a
 non-stationary background, with $W$ drawn from a Killing--CKV--Kodama hierarchy. The
-distinction from \cite{CaponioCoronaGiamboPiccione2024} is exactly this: there the charge
-is conserved because $K$ is a symmetry of the Lagrangian, whereas here $W$ is in general
-\emph{not} a symmetry of $g$, the rail is held by control at the cost of proper
-acceleration, and $\Ehat$ is a design parameter rather than an integral of the motion.
+distinction from \cite{CaponioCoronaGiamboPiccione2024} is exactly this: there $K$ is an
+infinitesimal symmetry of the Lagrangian, so the Noether charge is conserved and the
+semi-holonomic constraint is preserved automatically. Here $W$ is in general \emph{not} a
+symmetry of $g$---for conformal Kerr it is conformal Killing but not Killing, and a
+conformal Killing field conserves no charge along \emph{timelike} worldlines---so the
+same constraint must be held by control, at the cost of proper acceleration, and $\Ehat$
+is a design parameter rather than an integral of the motion. The consequences are
+structural, not cosmetic. Their constraint set is the union over all values of the
+charge, and is a submanifold \emph{because} the charge is conserved; ours is a single
+prescribed level $\{-g(u,W)=\Ehat\}$, and the argument that makes theirs a submanifold is
+unavailable once the charge is not conserved. This is why the existence theorem of
+Paper~I proceeds by the direct method on an augmented state, closing the non-autonomous
+clock equation by a Gr\"onwall estimate and invoking Filippov--Cesari, rather than by
+restricting a functional to a constraint submanifold. We do not import that structure,
+and say so here to forestall the assumption that it carries over. The same caution
+applies to the compactness available in the stationary theory: the Palais--Smale property
+established in \cite{GiannoniMasielloPiccione1998} is for the constraint
+$\langle\dot z,\dot z\rangle=a<0$, which is preserved by the flow, and we neither verify
+nor assume its analogue for the rail.
 Three
 consequences have no stationary counterpart: the admissible-velocity set can lose
 compactness, so the problem possesses a causal boundary at which it ceases to be posed
@@ -351,6 +396,15 @@ but leaves the scalar $g(W,W)$ unchanged, so it cannot make $W$ timelike where
 define a different rail charge, force, indicatrix, cost and Hamiltonian---a
 legitimate and interesting \emph{new} problem, which we do not treat here.
 
+The location of that boundary is not an artefact of the control formulation. In
+the static case the maximal region attached to a timelike vector field
+$\zeta$---the largest domain of its integral curves, written with $|\zeta|$ as
+the lapse---is bounded exactly where $\zeta$ ceases to be timelike
+\cite{Lecian2025Cauchy}. That is the same surface, reached by an argument about
+maximal extension rather than about compactness of a control set, which is some
+reassurance that the criterion of Lemma~\ref{lem:compact} picks out a feature of
+the geometry rather than of our formalism.
+
 \begin{protocol}[Status of every curve, figure and statement]
 \label{prot:status}
 Throughout, each object is one of the following three, and is named accordingly.
@@ -524,10 +578,13 @@ The hypotheses of that framework are exactly what the non-stationary problem
 loses, and the loss is quantitative. For the induced structure to descend to a
 base at all, the horizontal conformal geometry must be invariant along the
 fibres, i.e.\ $W$ must be conformal Killing. Moreover, by Bishop's theorem
-\cite{Bishop1972} a submersion is Clairaut---so that the transverse invariant is
-conserved along geodesics---if and only if its fibres are totally umbilical, the
-condition organising the recent literature on Clairaut conformal submersions and
-on umbilical solitons \cite{MeenaZawadzki2024,Lecian2026Yamabe,Lecian2026Solitons}.
+\cite{Bishop1972} a Riemannian submersion of complete manifolds with connected
+fibres is Clairaut---so that the transverse invariant $f\sin\theta$ is conserved
+along geodesics---if and only if its fibres are totally umbilical \emph{with mean
+curvature of gradient form}, $H=-\nabla\ln f$. Umbilicity alone is not the
+condition; it is umbilicity together with that potential. This is what organises
+the recent literature on Clairaut conformal submersions and on umbilical solitons
+\cite{MeenaZawadzki2024,Lecian2026Yamabe,Lecian2026Solitons}.
 Along a geodesic the rail charge obeys
 \begin{equation}
     \frac{\dd}{\dd\tau}\big(\!-\!g(u,W)\big)
@@ -588,6 +645,40 @@ $(\mathcal L_Kg)_{vv}=2m'(v)/r$ with $\nabla\!\cdot\!K=0$, so it is Killing for
 $m'=0$ but not even conformal Killing otherwise, and the drift
 $-m'(v)(u^v)^2/r$ does depend on the four-velocity.)
 
+That failure can be checked directly against the characterisation of
+\cite{MeenaZawadzki2024}: a conformal submersion with connected fibres and
+dilation $\lambda$ is Clairaut with $r=e^{\mathfrak f}$ if and only if
+\emph{three} conditions hold together---$\nabla\mathfrak f$ is horizontal, the
+fibres are totally umbilical with $H=-\nabla\mathfrak f$, and $\lambda$ is
+\emph{constant along the fibres}. We test the last, which is necessary on its
+own. (Their setting is a submersion between Riemannian manifolds; here the total
+space is Lorentzian and the horizontal space spacelike, so what follows is a
+statement about the horizontal structure, not a literal application of their
+theorem.) Our fibres are the orbits of
+$W=\partial_\eta$, and with the conformal factor in place the dilation reads
+$\Lambda^2=\Ehat^2/[A^2f(\Ehat^2-A^2f)]$, so
+\begin{equation}
+    \frac{\partial\Lambda^2}{\partial\eta}
+      =\frac{2\Ehat^2r^2\big[\Ehat^2r+(4M-2r)A^2\big]}
+             {(2M-r)A^2\big[\Ehat^2r+(2M-r)A^2\big]^2}\;\psi ,
+    \label{eq:dilation-fibre}
+\end{equation}
+which vanishes if and only if $\psi=A'/A=0$. The optical submersion is therefore
+Clairaut exactly at frozen $A$, and the obstruction is measured by the same
+scalar as everything else in this section.
+
+Two consequences follow from that failure, and they are exactly the two
+statements this section needs. First, by \cite[Prop.~1]{MeenaZawadzki2024} the
+horizontal distribution of a conformal submersion is totally geodesic if and only
+if $\lambda$ is constant on the fibres; so when $A$ runs the horizontal
+distribution of the optical submersion is \emph{not} totally geodesic. Second,
+their Corollary~7 turns a Clairaut conformal submersion into a Clairaut
+\emph{Riemannian} one by rescaling the base with $1/\lambda$---a construction
+available only when $\lambda$ descends to the base, that is, only when it is
+fibre-constant. This is the precise reason the optical structure of the
+non-stationary problem does not live on a quotient, and why the optical metric of
+Paper~I must instead carry an explicit dependence on the adapted time.
+
 The controlled rail is what replaces the Clairaut relation when the submersion
 fails to be Clairaut. In the stationary case $-g(u,W)=\Ehat$ holds
 \emph{automatically} along geodesics and there is nothing to control; in the
@@ -598,7 +689,19 @@ umbilical, Clairaut and conformal-Killing hypotheses are therefore not a
 framework this problem sits inside but the boundary of the region where it is
 non-trivial: the present programme lives in their complement, and the size of the
 failure is the control effort. Equations~\eqref{eq:dilation}--\eqref{eq:tk-drift}
-are verified in \texttt{verification/verify\_submersion\_link.wls}.
+are verified in \texttt{verification/verify\_submersion\_link.wls} and
+\texttt{verify\_dilation\_fibre.wls}.
+
+It is worth collecting what the single scalar $\psi=A'/A$ turns out to measure.
+It is the conformal factor of the selector, $\mathcal L_Wg=2\psi g$; the rate at
+which an uncontrolled worldline loses the rail,~\eqref{eq:tk-drift}; the
+minimum thrust needed to hold it,~\eqref{eq:thrust-bound}; the failure of the
+dilation to be constant along the fibres---hence of the optical submersion to be
+Clairaut, of its horizontal distribution to be totally geodesic, and of the
+optical structure to descend to a quotient,~\eqref{eq:dilation-fibre}; and the failure of the weight $f^2=\ln A$ to
+be parallel, hence of the associated soliton to be Einstein. Five conditions
+whose classical statements are independent coincide here, and all five degenerate
+together at frozen $A$.
 
 \paragraph{Soliton selectors: the drift is pure curvature.} There is one class of
 selector for which~\eqref{eq:rail-drift} closes in the curvature alone. A Ricci
@@ -622,11 +725,40 @@ the soliton condition reads $\mathrm{Ric}=(\lambda-\psi)g$, that is, the
 spacetime would have to be \emph{Einstein}. Thakurta--Kerr is not: already at
 $a=0$ the conformal factor sources an imperfect fluid and
 $\mathrm{Ric}-\tfrac14Rg\neq0$ for generic $A(\eta)$, while the seed is
-Ricci-flat at $A$ constant. The soliton class therefore does not contain this
+Ricci-flat at $A$ constant. That this must be so is Birkhoff's theorem: a
+spherically symmetric solution of the vacuum field equations is necessarily
+static, so no running conformal factor can be attached to Schwarzschild without
+sourcing matter. The verified statement and the classical one agree, and the
+obstruction is therefore structural rather than an artefact of the ansatz. The soliton class therefore does not contain this
 selector, whereas the conformal-Killing class does---which is exactly why the
 hierarchy has three rungs and not two
 (\texttt{verification/verify\_tk\_ckv\_rail.wls},
 \texttt{verify\_soliton\_rail.wls}).
+
+\paragraph{The weighted seed.} There is a second, sharper point of contact, and
+it identifies exactly where the two frameworks meet and where they part. The
+soliton literature cited above works on \emph{weighted} manifolds
+$e^{-2f^2}g_{\mu\nu}$, and studies the four-velocity as a conformal Killing field
+of the weighted metric, arriving at a vanishing divergence. Choosing the weight
+as $e^{-2f^2}=A(\eta)^{-2}$, that is $f^2=\ln A$, the weighted metric is
+\emph{precisely the Kerr seed}: $W=\partial_\eta$ is then a genuine Killing field
+of it, with $\operatorname{div}_{\bar g}W=0$, whereas for the full metric
+$\operatorname{div}_gW=4A'/A$. So that framework describes exactly the frozen
+level of the present construction.
+
+What separates them is equally precise. The soliton results quoted require the
+weight to be \emph{strictly parallel}, $\nabla_\mu F=0$, which is necessary and
+sufficient there for the solitons to be Einstein---whence constant sectional
+curvature and space forms. Our weight is $f^2=\ln A(\eta)$, with
+$\nabla_\mu f^2=(A'/A,0,0,0)=(\psi,0,0,0)$: it is parallel if and only if $A$ is
+constant. The requirement is in fact stronger still in that framework, where the
+admissible weights are taken constant and indeed vanishing, so a running $A$ is
+excluded there twice over. Their hypothesis therefore holds exactly at frozen $A$, and the running
+weight---the failure of that hypothesis, measured by the same $\psi$ that
+sets the rail drift and the control effort---is the entire subject of the
+non-stationary theory. Consistently, conformal Schwarzschild is not Einstein for
+generic $A$ while the seed is Ricci-flat
+(\texttt{verification/verify\_weighted\_seed.wls}).
 
 \paragraph{Curvature of the optical base, and why Myers-type hypotheses are
 unavailable.} Since the extremals are geodesics of the optical metric and optical
@@ -659,6 +791,16 @@ $\Ehat=\sqrt{3/2}$, an asymptotic speed $v=1/\sqrt3$. At the critical value the
 leading term vanishes and $r^4K\to-23M^2/3$. Since focusing is what produces
 conjugate points, $\Ehat=\sqrt{3/2}$ separates two regimes for the global
 behaviour of distant extremals.
+
+The threshold is a genuinely finite-energy phenomenon, and this is worth making
+explicit because the Gaussian curvature of equatorial sections of Schwarzschild is
+classical in the \emph{energy-independent} setting---the Randers-type Finslerian
+metrics of null optics \cite{GibbonsWerner2008}. There $K<0$ throughout the
+exterior, as the limit $\Ehat\to\infty$ of~\eqref{eq:optical-gauss} confirms, and
+no threshold exists. It appears only once the optical metric carries the rail
+energy: the sign of the leading far-field coefficient
+in~\eqref{eq:optical-asym} is that of $-(2\Ehat^2-3)$, which cannot change in a
+family with no $\Ehat$ to vary.
 
 For every $\Ehat$, however, $K\to0$ as $r\to\infty$. A Myers-type theorem
 \cite{Myers1941} requires $\mathrm{Ric}\ge(n-1)k>0$ \emph{uniformly}, and no such
@@ -703,15 +845,87 @@ $r/M=22.75,\,59.53,\,576.7,\,5751.7$ for $\Ehat^2=1.20,\,1.40,\,1.49,\,1.499$.
 Negative curvature does \emph{not}, however, give global minimality here, and the
 reason is worth stating because it is not a focusing effect. The optical surface
 is $\{r>2M\}\times S^1$, an annulus: it is not simply connected, so
-Cartan--Hadamard yields local minimality without uniqueness. The two extremals
+Cartan--Hadamard yields local minimality without uniqueness. (On a \emph{simply
+connected} manifold of nonpositive sectional curvature there is exactly one
+geodesic between any two points, the fact underlying the finiteness results of
+\cite{GiannoniMasielloPiccione2001}; the annular topology is precisely what
+removes it here.) The two extremals
 leaving a source with equal and opposite azimuthal costate are exchanged by
 $\varphi\to-\varphi$ and reconverge after a swept angle $\pi$; that antipodal
 locus is a \emph{Maxwell set}, and it survives however negative $K$ becomes.
-Hence, for $\Ehat^2\ge3/2$, the cut locus of the exterior optical surface is
-purely of Maxwell type: global minimality holds up to the first antipodal
-crossing and fails there by symmetry rather than by focusing. Below the
+This can be sharpened into a genuine global statement, because the optical surface
+is not merely negatively curved but \emph{complete}. The radial element is
+$\dd s=\Ehat\,\dd r/[f\sqrt{\Ehat^2-f}]$, which has a simple pole with residue
+$2M$ at $r=2M$ and tends to $\Ehat/\sqrt{\Ehat^2-1}>0$ as $r\to\infty$: the inner
+end is at infinite optical distance, logarithmically, and the outer end at
+infinite distance, linearly. Both ends of the exterior are therefore infinitely
+far in arrival time.
+
+\begin{proposition}[Global minimality within a homotopy class]
+\label{prop:globalmin}
+For the frozen, non-rotating optical surface with $\Ehat^2\ge3/2$: the surface is
+complete with $K<0$, so its universal cover $\{r>2M\}\times\mathbb R$ is complete,
+simply connected and nonpositively curved. By the Cartan--Hadamard theorem the
+exponential map there is a diffeomorphism, so any two points are joined by
+exactly one geodesic, which minimises. Projecting back, each homotopy class of
+paths on the exterior carries \emph{exactly one} controlled-rail extremal, and
+that extremal is the \emph{global} minimiser of arrival time within its class.
+\end{proposition}
+
+Global minimality therefore holds \emph{within} homotopy classes and fails
+\emph{between} them---and the failure between them is precisely the Maxwell set.
+For $\Ehat^2\ge3/2$ the cut locus of the exterior optical surface is thus purely
+of Maxwell type: minimality is lost at the first antipodal crossing by symmetry
+rather than by focusing, and never by focusing at all. Below the
 threshold the two mechanisms coexist and conjugate points must be located
-directly from the Jacobi equation, as in Paper~I. These statements are verified
+directly from the Jacobi equation, as in Paper~I.
+
+It is worth saying where this sits in the relativistic Morse theory the cited
+literature already provides, because that theory supplies the step from ``no
+conjugate point'' to ``local minimiser'', and also shows what a \emph{global}
+count would require. Giannoni, Masiello and Piccione
+\cite{GiannoniMasielloPiccione2000} work on precisely our variational data---a
+fixed launch event, arrival on a timelike curve, the arrival-time functional, and
+a pointwise constraint fixing $\langle\dot z,\dot z\rangle$---and prove that a
+curve is a critical point of the arrival time if and only if it is a timelike
+geodesic, with, at a nonconjugate endpoint, \emph{Morse index equal to the
+geometric index}: the number of conjugate points counted with multiplicity. Index
+zero is then a local minimum, which is the implication
+Proposition~\ref{prop:noconj} requires. The difference is that our critical
+points are extremals of a controlled problem rather than geodesics of $g$, so the
+index theorem we actually invoke is the classical one on the optical surface;
+their result is the relativistic precedent for the step.
+
+Their Morse relations also locate our Maxwell set structurally. They express the
+indexed count of connecting geodesics through the Poincar\'e polynomial of the
+path space, so it is the topology of that space that fixes how many connecting
+extremals exist. Here the optical surface is an annulus, its path space is
+accordingly organised by winding number, and the connecting extremals come in
+families---one per turn about the hole, exchanged in pairs by
+$\varphi\to-\varphi$. That is the Maxwell structure described above, seen from
+the topological side rather than the metric one. We do not verify the
+pseudo-coercivity their relations require, and make no global count here.
+
+That the count should be infinite rather than finite is, however, the expected
+situation and not a pathology. In the stationary theory finiteness of the
+connecting geodesics is a \emph{theorem with hypotheses}: global hyperbolicity
+together with a strictly invariant, spatially proper \emph{light-convex}
+function, whose closed sublevels are spatially compact and therefore confine the
+connecting geodesics to a compact set \cite{GiannoniMasielloPiccione2001}. It is worth
+being precise about which hypothesis fails for us, since the two are independent:
+the Schwarzschild exterior \emph{is} globally hyperbolic, so that half is
+satisfied. What is missing is the convex function. A black-hole exterior supplies
+none---which is why gravitational lensing by a black hole produces, in principle,
+an unbounded sequence of relativistic images rather than finitely many. Our winding families are the
+controlled-rail counterpart of that sequence: the extremals are timelike and
+actively forced rather than null, so the correspondence is structural rather than
+literal, but the mechanism---an annular exterior admitting no confining convex
+function---is the same. It also identifies what a sufficient condition for global
+minimality would have to look like here. The available ones in this literature
+are convexity hypotheses, light-convexity being equivalent, for a $C^2$ function,
+to positive semidefiniteness of its Hessian on the light cone. We establish no
+such hypothesis and claim no global minimality beyond the first antipodal
+crossing. These statements are verified
 in \texttt{verification/verify\_conjugate\_maxwell.wls}; they are established for
 the non-rotating frozen limit, and the rotating case is not claimed.
 
@@ -1388,6 +1602,11 @@ one-sided tangent,
 \end{equation}
 so the total swept angle is finite and the extremal converges to a single point
 of the circle $r=\re$ with a definite limiting direction.
+This is worth contrasting with the geodesic flow, which crosses $r=2M$ in finite
+parameter: at the marginal retrograde value the \emph{controlled-rail} flow is
+incomplete at a surface the geodesic flow passes through without difficulty. The
+rail is not a reparametrised geodesic congruence, and this is the sharpest way to
+see it.
 \item[\rm(iv)] $J=+\Jc$: $p_r^2$ has a double zero at $\re$ \emph{and}
 $\mathcal T$ a simple one; the two linear vanishings cancel and
 \begin{equation}
