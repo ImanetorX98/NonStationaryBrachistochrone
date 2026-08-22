@@ -134,7 +134,8 @@ conjugate-point argument, or another sufficient condition.
 Beyond the terminology, the revision supplies the sufficient conditions
 themselves, in the regime where they hold. On the frozen \emph{arrival-time} branch the
 optical geometry is Riemannian, and its Gauss curvature is negative throughout
-the exterior exactly when $\hat E^2\ge3/2$; there are then no conjugate points,
+the exterior exactly when $\hat E^2\ge3/2$; there are then no conjugate points
+\emph{for equatorial perturbations},
 and by the index theorem---in the relativistic form of
 \cite{GiannoniMasielloPiccione2000}, where the Morse index of the arrival time
 equals the geometric index---every exterior extremal is a \emph{local} minimiser.
@@ -142,7 +143,24 @@ The optical surface is moreover \emph{complete}: the radial element has a simple
 pole at $r=2M$ and a positive limit at infinity, so both ends lie at infinite
 arrival time. Cartan--Hadamard on the universal cover then gives a \emph{global}
 statement: each homotopy class carries exactly one extremal, and it globally
-minimises the arrival time within that class. Global minimality thus holds within
+minimises the arrival time within that class of equatorial competitors.
+
+The equatorial restriction is stated because it cannot be removed, and the
+reason is itself a result. The optical geometry is three-dimensional, and a
+geodesic in the equatorial plane has a second, out-of-plane normal direction
+governed by a different sectional curvature $K_{\rm tan}$. That one is not
+negative: writing the metric as $A\,\dd r^2+B\,\dd\Omega^2$ gives
+$K_{\rm tan}=(1-B'^2/4AB)/B$, so at the circular controlled-rail orbit, where
+$B'=0$---a radius that exists for every rail energy and reduces to the photon
+sphere as $\hat E\to\infty$---one has $K_{\rm tan}=1/B>0$ identically; and in the
+far field $K_{\rm tan}\sim-2K_t$, so one of the two is positive whichever side of
+the threshold one is on. The three-dimensional optical metric is therefore never
+everywhere non-positively curved, and Cartan--Hadamard does not apply to it.
+
+This is the same obstruction we identify from the topological side, seen
+metrically: focusing near a photon sphere is what produces the unbounded sequence
+of relativistic images in lensing, and it is why no unrestricted global claim is
+available. Global minimality thus holds within
 homotopy classes and fails between them, the failure being exactly the Maxwell
 set.
 

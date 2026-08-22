@@ -841,9 +841,10 @@ quoted sign-change radii]
 \label{prop:noconj}
 For the frozen, non-rotating \emph{arrival-time} optical surface,
 $K_t(r)<0$ for \emph{every} $r>2M$ if and only if $\Ehat^2\ge3/2$. Consequently,
-for $\Ehat^2\ge3/2$ no exterior $t$-branch extremal carries a conjugate point,
-and every such extremal is a local minimiser of the arrival time on the exterior
-domain.
+for $\Ehat^2\ge3/2$ no exterior $t$-branch extremal carries a conjugate point
+\emph{for equatorial perturbations}, and every such extremal is a local minimiser
+of the arrival time among equatorial competitors. The restriction is necessary
+and is discussed after Proposition~\ref{prop:globalmin}.
 \end{proposition}
 
 Two facts fix the threshold. At the stationary limit the numerator
@@ -881,8 +882,9 @@ $\{r>2M\}\times\mathbb R$ is complete, simply connected and nonpositively
 curved. By the Cartan--Hadamard theorem the
 exponential map there is a diffeomorphism, so any two points are joined by
 exactly one geodesic, which minimises. Projecting back, each homotopy class of
-paths on the exterior carries \emph{exactly one} controlled-rail extremal, and
-that extremal is the \emph{global} minimiser of arrival time within its class.
+equatorial paths carries \emph{exactly one} controlled-rail extremal, and that
+extremal is the \emph{global} minimiser of arrival time within its class of
+equatorial competitors.
 \end{proposition}
 
 Two remarks sharpen what this gives. First, the certificate is of the kind the
@@ -895,10 +897,11 @@ Proposition~\ref{prop:hjb-frozen} below records it in that language.
 \begin{proposition}[Saturated Hamilton--Jacobi certificate, frozen arrival branch]
 \label{prop:hjb-frozen}
 Under the hypotheses of Proposition~\ref{prop:globalmin}, the optical distance
-from a fixed launch point, lifted to the universal cover, is a smooth value
-function satisfying the eikonal equation with equality. Every controlled-rail
-extremal in a given homotopy class is calibrated by it, and is therefore the
-global minimiser of arrival time in that class.
+from a fixed launch point on the equatorial surface, lifted to its universal
+cover, is a smooth value function satisfying the eikonal equation with equality.
+Every controlled-rail extremal in a given homotopy class is calibrated by it, and
+is therefore the global minimiser of arrival time among equatorial competitors in
+that class.
 \end{proposition}
 
 Second, the condition is not all-or-nothing below the threshold. The numerator
@@ -924,8 +927,44 @@ whose first order is section~\ref{sec:adiabatic}. Global minimality under a
 genuine drift therefore remains open, and we claim it nowhere.
 \end{remark}
 
-Global minimality therefore holds \emph{within} homotopy classes and fails
-\emph{between} them---and the failure between them is precisely the Maxwell set.
+\paragraph{Why ``equatorial'' cannot be dropped: the tangential curvature.}
+The restriction in Propositions~\ref{prop:noconj}--\ref{prop:hjb-frozen} is not a
+technicality, and it is worth being explicit because the statements would
+otherwise read as stronger than they are. The optical geometry is
+three-dimensional, $a=\Lambda_t^2(\dd r^2/f+r^2\dd\Omega^2)$, and a geodesic in
+the equatorial plane has \emph{two} independent normal directions. The equatorial
+plane is totally geodesic, so by the Gauss equation the in-plane one is governed
+by $K_t$ of~\eqref{eq:optical-gauss}, which is what the propositions use. The
+out-of-plane direction is governed by a second sectional curvature,
+\begin{equation}
+    K_{\rm tan}=\frac{M\big[{-}64M^3+8(11-6\Ehat^2)M^2r
+      +(9\Ehat^4\!-\!44\Ehat^2\!+\!40)(-M)r^2
+      +2(2\Ehat^2\!-\!3)(\Ehat^2\!-\!1)r^3\big]}
+      {\Ehat^2r^5\big[2M+(\Ehat^2-1)r\big]} ,
+    \label{eq:ktan}
+\end{equation}
+and this one is \emph{not} negative. Two facts settle it. Writing the metric as
+$a=A\,\dd r^2+B\,\dd\Omega^2$, one has $K_{\rm tan}=(1-B'^2/4AB)/B$, so wherever
+$B'=0$---the radius of the circular controlled-rail orbit, which exists for every
+$\Ehat$ and reduces to the photon sphere $r=3M$ as $\Ehat\to\infty$---one gets
+$K_{\rm tan}=1/B>0$ identically. And in the far field the two coefficients are
+exactly opposite, $K_{\rm tan}\sim-2K_t$, so whichever side of $\Ehat^2=3/2$ one
+is on, one of the two is positive at large radius. The three-dimensional optical
+metric is therefore never everywhere non-positively curved, at any rail energy,
+and Cartan--Hadamard is unavailable for it.
+
+This is not a defect of the construction but the same physics identified above
+from the topological side. Positive tangential curvature at the circular-orbit
+radius is focusing, and focusing near a photon sphere is exactly what produces
+the unbounded sequence of relativistic images in black-hole lensing. The
+obstruction to an unrestricted global claim thus has two independent expressions,
+the absence of a light-convex function and the positivity of $K_{\rm tan}$, and
+they describe the same phenomenon. Equations~\eqref{eq:ktan} and the sign
+statements are verified in \texttt{verification/verify\_3d\_sectional.wls}.
+
+Within the equatorial plane, global minimality therefore holds \emph{within}
+homotopy classes and fails \emph{between} them---and the failure between them is
+precisely the Maxwell set.
 For $\Ehat^2\ge3/2$ the cut locus of the exterior optical surface is thus purely
 of Maxwell type: minimality is lost at the first antipodal crossing by symmetry
 rather than by focusing, and never by focusing at all. Below the
