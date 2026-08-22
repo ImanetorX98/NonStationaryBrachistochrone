@@ -150,10 +150,16 @@ Print["      Jacobi equation, as done in Paper I -- not inferred from a"];
 Print["      curvature-operator or Myers-type hypothesis."];
 
 (* the same conclusion, stated for the curvature operator *)
-Print["      For the curvature operator the obstruction is stronger still:"];
-Print["      Hamilton and Boehm-Wilking conclude that the manifold is a space"];
-Print["      form.  An asymptotically flat optical base is not a space form,"];
-Print["      so those hypotheses are not available here either."];
+Print["      The curvature-operator hypotheses fail for the SAME computed"];
+Print["      reason.  Boehm-Wilking Thm 1 is about a COMPACT manifold with a"];
+Print["      2-POSITIVE curvature operator (sum of the two smallest"];
+Print["      eigenvalues positive -- weaker than positive); Hamilton 1982 is"];
+Print["      the three-dimensional result, Hamilton 1986 the four-dimensional"];
+Print["      one, so 1986 is not the applicable citation for a 3d optical"];
+Print["      base.  Independently of compactness: 2-positivity forces the"];
+Print["      trace of the curvature operator to be positive, hence R > 0."];
+Print["      We proved R < 0 everywhere, so the curvature condition itself"];
+Print["      is excluded, not merely its compactness hypothesis."];
 
 Print[""];
 Print["=========================================================="];
@@ -215,6 +221,13 @@ Print["      exterior point and every rail energy: Ric(v,v) >= e^2 > 0 for"];
 Print["      all unit v would force R >= 3 e^2 > 0, and R < 0 here.  The"];
 Print["      S^2 x S^2 loophole is therefore closed, not merely noted."];
 Print[""];
+
+(* 2-positivity of the curvature operator forces positive scalar curvature:
+   with eigenvalues l1<=l2<=l3, l1+l2>0 forces l2>0 (else l1<=l2<=0 gives
+   l1+l2<=0), hence l3>=l2>0 and the trace l1+l2+l3 > 0. *)
+check["2-positive curvature operator => positive trace (so R>0), excluded here",
+  TrueQ[Reduce[ForAll[{l1, l2, l3}, l1 <= l2 <= l3 && l1 + l2 > 0,
+      l1 + l2 + l3 > 0], Reals]]];
 
 Print["=========================================================="];
 Print[If[$Failures === 0, "ALL CHECKS PASSED",

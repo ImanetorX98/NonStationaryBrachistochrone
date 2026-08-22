@@ -46,6 +46,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Lecian, 2-planes | intro | **+** energy-dependence localises our threshold as new |
 | Doran 2000 | full | **✓ +** our azimuthal shift is exactly his Eq. (21) composed with BL→EF, verified symbolically; his chart is built on *free-falling* observers, which is why it cannot rescue the control domain |
 | Kodama 1980 | core | **✓ +** claims confirmed for our normalisation; his own K differs in *norm* (his Eq. 3.6), now noted; **he states K is timelike outside the apparent horizon** — third independent route to our control-domain boundary |
+| Böhm–Wilking 2008 | thm 1 + intro | **✗ +** their Thm 1 needs a *compact* manifold and *2-positive* operator; and their intro dates the results — Hamilton **1982** is the 3d one, 1986 the 4d one, so we were citing the wrong Hamilton for a 3d base |
 | Hayward 1996 | — | pending |
 | Abreu–Visser 2010 | — | pending |
 | Ashtekar–Krishnan 2003 | — | pending |
@@ -69,9 +70,9 @@ the reports are answered against them.
 | Perlick 1991 | ✓ read |
 | Giannoni–Piccione–Tausk 1999, Morse for travel-time brachistochrones (`math-ph/9905007`) | ✓ arXiv |
 | Taş, brachistochrone-ruled timelike surfaces (`2512.08776`) | ✓ arXiv — note the copy is **v3, Apr 2026**; our bib cites the Dec 2025 v1 |
-| Böhm–Wilking 2008, positive curvature operators (`math/0606187`) | ✓ arXiv |
-| Myers 1941 | ✓ |
-| Filippov 1962 | ✓ |
+| Böhm–Wilking 2008, positive curvature operators (`math/0606187`) | ✓ **read** |
+| Myers 1941 | ✓ **read** |
+| Filippov 1962 | ✓ **read** |
 | Lecian ×5 | ✓ |
 | **Giannoni–Piccione–Verderesi 1997**, sub-Riemannian (JMP 38, 6367) | ✗ paywalled |
 | **Giannoni–Piccione–Tausk 2002**, arrival-time (DCDS 8, 697) | ✗ paywalled |
