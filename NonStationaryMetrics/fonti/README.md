@@ -5,6 +5,13 @@ under publisher copyright (APS, IOP, AIP, Springer, Elsevier). `.gitignore`
 excludes `fonti/*.pdf`. This file is tracked and records what was collected and
 what was checked, so the audit is reproducible from the DOIs alone.
 
+**Naming convention.** Every file is `Author-Year-topic.pdf`: first author's
+surname (or concatenated surnames for two or three authors, `EtAl` beyond that),
+four-digit year, then a short hyphenated topic. No download identifiers, no arXiv
+numbers. Preprints with no year on the title page use `undated` rather than a
+guessed one. The directory holds **54 files, one per work, no duplicates** — a
+`sha256` pass removed 44 duplicate downloads on 2026-08-23.
+
 Verification scripts referenced below are in `../paper2/verification/`; the
 machine check of the bibliography against the DOI registry is
 `../paper2/provenance/audit_refs.py`.
@@ -56,6 +63,18 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Abreu–Visser 2010 | — | pending |
 | Ashtekar–Krishnan 2003 | — | pending |
 | Hayward–Mukohyama–Ashworth 1999 | — | pending |
+| McVittie 1933 | — | pending |
+| Nolan 1998 | — | pending |
+| Kaloper–Kleban–Martin 2010 | — | pending |
+| Mello–Maciel–Zanchin 2017 | — | pending |
+| Vaidya 1951 | — | pending |
+| Kerr 1963 | — | pending |
+| Carter 1968 | — | pending |
+| Taş 2025 | — | pending |
+| Giannoni–Piccione–Tausk 1999 | — | pending |
+| Piccione–Tausk 2000 | — | collected as a substitute for GPV 1997, not cited |
+| Ichikawa 2023 | — | collected as adjacent to the genus-2 cluster, not cited |
+| D'Hoker–Enriquez–Schlotterer–Zerbini 2026 | — | pending |
 | Caponio–Javaloyes–Sánchez 2024 | abstract + ToC | **+** their *wind* Finslerian structures exist precisely for $|W|\ge1$ — the regime past our control-domain boundary. §4 causal $K$, §5 arbitrary $K$, §8.3 $K$-horizons. So the geometry continues past $r_e$; our compact-control problem does not |
 | Baird–Wood 2003 | abstract | **✓** independently confirms the corrected Fuglede statement verbatim: harmonic morphisms *are* harmonic maps that are semiconformal; and it lists Killing-field submersions as examples |
 | Sultana–Dyer 2005 | §1 | **✓ ++** supplies the *published* necessary-and-sufficient criterion for our own terminology: a CSLS is a conformal Killing horizon iff the congruence twist vanishes there. Applied to TK it **fails**, twist $=-a/2M$ equatorially, conformally invariantly — so $r_e$ is not a horizon, independently of $A(\eta)$ |
@@ -71,7 +90,6 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Brown–Levin 2011 | — | pending (content claim: elliptic dilogarithm) |
 | Myers 1941 | full | **✗ +** our argument was a non sequitur — he *proves* sectional decay is not enough ($S^2\times S^2$, §4). Retested on Ric: $R_{\rm opt}<0$ pointwise at every energy, so the hypothesis fails by sign. His Lemma needs no completeness |
 | Filippov 1962 | full | **✗ +** bib entry was broken (DOI orphaned outside it); every Thm. 1 hypothesis re-checked and met with margin; his §III *proves* our no-relaxation claim, §V is the counterexample behind our remark, §IV explains why the domain is compact |
-| unidentified, 31 pp | — | pending (arrived with group 2) |
 
 ## Referee-proposed reading
 
@@ -90,7 +108,7 @@ the reports are answered against them.
 | **Giannoni–Piccione–Verderesi 1997**, sub-Riemannian (JMP 38, 6367) | ✗ paywalled |
 | **Giannoni–Piccione–Tausk 2002**, arrival-time (DCDS 8, 697) | ✗ paywalled |
 | **Haws–Kiser 1995**, Amer. Math. Monthly 102, 328 | ✓ **read** |
-| **Hamilton 1986**, four-manifolds with positive curvature operator | ✗ paywalled |
+| **Hamilton 1986**, four-manifolds with positive curvature operator | ✗ paywalled — but the statement we needed is quoted in Böhm–Wilking's introduction, which we read |
 | **Cesari 1983** (referee 1's existence machinery) | ✗ book |
 
 Also collected, not proposed but adjacent: Piccione–Tausk, *Variational aspects of
@@ -109,9 +127,22 @@ free substitute for Giannoni–Piccione–Verderesi.
 - **Bishop 1972** in the original. Currently carried by Singh–Gupta's statement
   *with proof* and by Meena–Zawadzki, which agree.
 
-## The ~60 references not yet examined
+## Coverage against the two manuscripts
 
-Mostly classical background (Kerr, Carter, Chandrasekhar, Baker, Mumford, Fay,
-DLMF, Whittaker–Watson) cited for standard facts. The machine audit confirms
-they exist and are correctly identified; it cannot confirm they say what we
-attribute to them.
+Counting every work cited by `paper1_JMP.tex` or `paper2.tex`, excluding software
+and our own Zenodo deposits: **79 cited works, 50 held here, 29 not held.**
+
+The 29 not held are books and classical background — Cesari, Pontryagin, Liberzon,
+Chandrasekhar, Whittaker–Watson, Baker, Mumford, Griffiths–Harris, Faraoni,
+Bender–Orszag, Baird–Wood — together with short classical notes cited for standard
+facts (Misner–Sharp 1964, Lindquist–Schwartz–Misner 1965, Martel–Poisson 2001,
+Natário 2009, Hackmann 2008/2010, Booth 2005), the genus-two background
+(Beilinson–Levin, Bloch, Chen, Zagier, Buchstaber–Enolskii), the two Hamilton
+papers, Timofeev 1978, and the three listed under *Still missing* below. The
+machine audit confirms these exist and are correctly identified; it cannot confirm
+they say what we attribute to them, which is why the reading has concentrated on
+the claim-bearing tail instead.
+
+Two files here are deliberately **not** cited: Piccione–Tausk 2000, collected as
+the closest free substitute for the paywalled Giannoni–Piccione–Verderesi 1997,
+and Ichikawa 2023, adjacent to the genus-two cluster.
