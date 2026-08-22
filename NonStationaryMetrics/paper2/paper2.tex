@@ -289,6 +289,31 @@ null expansions and the global causal structure, not computed here). With that
 caveat, $\rp$ is rigid, $\re=2M$ is crossed regularly, and the freezing surface
 $A^2 f=\Ehat^2$ breathes.
 
+The status of $\re$ can in fact be settled, and by a published criterion rather
+than by our own argument. Sultana and Dyer, whose terminology we are using, define
+the conformal stationary limit surface as the hypersurface on which the conformal
+Killing field becomes null, and state the necessary and sufficient condition for it
+to be a \emph{conformal Killing horizon}: the rotation of the conformal Killing
+congruence must vanish there, the surface being non-degenerate
+\cite[\S1]{SultanaDyer2005}. That condition is testable here, and it fails. Twist
+vanishing is equivalent to $\xi\wedge\dd\xi=0$, a test that is conformally
+invariant---under $\xi_a\mapsto A^2\xi_a$ one gets
+$(A^2\xi)\wedge\dd(A^2\xi)=A^4\,\xi\wedge\dd\xi$---so the question reduces to the
+seed, for \emph{any} $A(\eta)$. On the seed CSLS the twist survives, and on the
+equatorial surface it is exactly
+\begin{equation}
+    \big(\xi\wedge\dd\xi\big)\big|_{\re}=-\frac{a}{2M} ,
+    \label{eq:twist-csls}
+\end{equation}
+nonzero precisely when the seed spins. So for $a\neq0$ the Thakurta--Kerr CSLS is
+not a conformal Killing horizon, and no choice of conformal factor can make it one.
+This is an independent route to the reading used throughout---$\re$ is a
+control-domain boundary, not a horizon---and it also explains why the
+conformal-\emph{Schwarzschild} constructions in the same literature
+\cite{SultanaDyer2005} do obtain one: there the twist vanishes identically.
+Equation~\eqref{eq:twist-csls} is verified in
+\texttt{verification/verify\_conformal\_killing\_horizon.wls}.
+
 \paragraph{Sanity check: rail energy along the Thakurta--Kerr rail.} The geometry being
 only axisymmetric, no Kodama vector exists and the rail invariant is instead tied to the
 conformal Killing vector $\partial_\eta$ (with factor $A'/A$). Along a \emph{geodesic} the
