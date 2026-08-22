@@ -29,6 +29,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 
 | Source | Read | Outcome |
 |---|---|---|
+| Perlick 2000, *Ray Optics* (book) | full ToC | **✗** the monograph is entirely about **light rays** — no timelike or brachistochrone chapter — yet Paper II cited it for "the brachistochrone was formulated by Perlick". Split from the 1991 paper and now cited by section for the ray-optical/Fermat machinery only |
 | Perlick 1991 | core | **✓ +** two optical factors are exactly his Eqs. (42), (46); his Rindler example already shows the branch asymmetry; he uses "brachistochrone" for *stationary* travel time |
 | Bishop 1972 (via Singh–Gupta) | thm + proof | **✗** we had added a completeness hypothesis the theorem does not require |
 | Neishtadt 2014 | intro + ToC | **✗** it is about resonance passage, not separatrix crossing; citation narrowed |
