@@ -2562,6 +2562,29 @@ structure of its seed, and the Finsler condition fails on the \emph{seed}
 ergosurface---equatorially $r_e=2M$---independently of $A(\eta)$. That is the
 boundary of section~\ref{sec:domain}, obtained without reference to the selector at
 all, and it explains structurally why the conformal factor does not move it.
+
+The Zermelo side of the duality gives the same condition a physical name. Bao,
+Robles and Shen pose the navigation problem for a ship of unit speed in a wind $W$
+on a Riemannian landscape $(M,h)$ subject to $|W|_h<1$, and call the region where
+that holds the \emph{maximal domain} of the navigation data
+\cite[\S0.1]{BaoRoblesShen}; the two constraints are the same number, since
+$h_{ij}W^iW^j=a_{ij}b^ib^j$ \cite[\S2.1]{GibbonsRanders2009}. Our control domain is
+that maximal domain, and the failure at $r_e$ reads as the wind outrunning the
+ship: inside the stationary limit the frame dragging exceeds what a unit-speed
+navigator can counter, which is the same statement as the loss of a timelike
+selector in Lemma~\ref{lem:compact}, arrived at from navigation rather than from
+causality.
+
+One further rung is worth noting, since it bears on the selector hierarchy of
+section~\ref{sec:intro}. Bao, Robles and Shen show that a strongly convex Randers
+metric has constant flag curvature exactly when $h$ has constant sectional
+curvature and $W$ is an \emph{infinitesimal homothety}, $\mathcal L_Wh=-\sigma h$
+with $\sigma$ constant \cite[Thm.~3.1]{BaoRoblesShen}. That is the rung between
+Killing and conformal Killing. Our selector sits strictly above it: $\partial_\eta$
+is conformal Killing with $\psi=A'/A$, and $\psi$ is constant only for
+$A\propto e^{\psi\eta}$. So the constant-flag-curvature theory does not cover the
+Thakurta--Kerr rail except in that degenerate case, which is a limitation of the
+available Finsler classification rather than of the construction.
 Equation~\eqref{eq:finsler-condition} and the conformal invariance are verified in
 \texttt{verification/verify\_randers\_finsler.wls}.
 \end{remark}
