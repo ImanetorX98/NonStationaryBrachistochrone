@@ -2472,6 +2472,34 @@ Because $Q_4(2M)=4M^2(4E^2M^2+a^2)>0$, equation~\eqref{eq:sep-phi} is regular
 third-kind logarithms at the horizons. The conformal case is
 $E\to E_{\rm eff}=\Ehat/A$ in every parameter.
 
+\begin{remark}[the Finsler condition marks the same boundary]
+\label{rmk:finsler-domain}
+There is a fourth, and entirely independent, derivation of the control-domain
+boundary, and it comes from the Randers side. Gibbons, Herdeiro, Warnick and Werner
+write a conformally stationary metric in threading form and read off Randers data
+$a_{ij}=V^{-2}\gamma_{ij}$, $b_i=-\omega_i$, noting that
+$F=\sqrt{a_{ij}v^iv^j}+b_iv^i$ is a genuine Finsler norm---positive, with positive
+definite fundamental tensor---precisely under the \emph{Finsler condition}
+$|b|^2_a=a^{ij}b_ib_j<1$, which they observe ``breaks down at an ergo-surface''
+\cite[\S2.1, \S3.4]{GibbonsRanders2009}. For the Kerr seed this is explicit: in the
+equatorial plane
+\begin{equation}
+    |b|^2_a=\frac{4a^2M^2}{r^2\,(r^2-2Mr+a^2)} ,
+    \label{eq:finsler-condition}
+\end{equation}
+whose numerator and denominator make $1-|b|^2_a$ vanish at $r=2M$ exactly, and at
+every latitude $1-|b|^2_a$ shares its zero set with $g_{tt}$. Two features then
+combine. First, the Randers data are \emph{conformal invariants}: under
+$g\mapsto A^2g$ both $V^2$ and $\gamma_{ij}$ carry the same factor, so $a_{ij}$ and
+$b_i$ are unchanged. Second, therefore, Thakurta--Kerr carries exactly the Randers
+structure of its seed, and the Finsler condition fails on the \emph{seed}
+ergosurface---equatorially $r_e=2M$---independently of $A(\eta)$. That is the
+boundary of section~\ref{sec:domain}, obtained without reference to the selector at
+all, and it explains structurally why the conformal factor does not move it.
+Equation~\eqref{eq:finsler-condition} and the conformal invariance are verified in
+\texttt{verification/verify\_randers\_finsler.wls}.
+\end{remark}
+
 \paragraph{Doran continuation through the horizon.} The shift used here is not an
 ansatz: it is Doran's own azimuthal transformation composed with the
 Boyer--Lindquist-to-Eddington step. Doran's \cite[Eq.~(21)]{Doran2000} carries
@@ -2496,7 +2524,14 @@ $\theta,\varphi$ \cite{Doran2000}. The vector field it privileges is therefore
 the free-fall four-velocity, not our selector $\partial_\eta$, and changing chart
 leaves the scalar $g(\partial_\eta,\partial_\eta)$ untouched. The chart is
 horizon-penetrating and the formulae are regular across $\Delta=0$; the control
-domain is unaffected (section~\ref{sec:domain}).
+domain is unaffected (section~\ref{sec:domain}). The same point has a published
+form on the Randers side: Gibbons \emph{et al.} exhibit two apparently different
+Zermelo structures for Schwarzschild---a radial wind $\mathbf W=-\sqrt{2M/r}\,
+\partial_r$ on flat space in Painlev\'e--Gullstrand coordinates, and no wind at all
+in Schwarzschild coordinates---and observe that they differ by a \emph{gauge
+transformation} of $b_i$, obvious in the Randers picture and not in the Zermelo one
+\cite[Eqs.~(32)--(34)]{GibbonsRanders2009}. Doran's chart is the Kerr analogue of
+that move, and it changes $b_i$ by a gauge, not the trajectories.
 \end{remark}
 
 The Boyer--Lindquist form

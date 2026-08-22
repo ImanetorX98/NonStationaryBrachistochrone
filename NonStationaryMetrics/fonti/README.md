@@ -53,7 +53,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Hayward–Mukohyama–Ashworth 1999 | — | pending |
 | Randers 1941 | — | pending (context citation) |
 | Kovner 1990 | — | pending (context citation) |
-| Gibbons et al. 2009 | — | pending (context citation) |
+| Gibbons et al. 2009 | core §§1–2, 3.4 | **✗ +** their triality is for *null* geodesics, so our "reproduces Randers/Zermelo" needed narrowing to the form; **+** their Finsler condition $|b|_a<1$ fails exactly on the ergosurface, and the Randers data are conformal invariants — a fourth independent route to our control domain |
 | Bao–Robles–Shen 2004 | — | pending (context citation) |
 | Brown–Levin 2011 | — | pending (content claim: elliptic dilogarithm) |
 | Myers 1941 | full | **✗ +** our argument was a non sequitur — he *proves* sectional decay is not enough ($S^2\times S^2$, §4). Retested on Ric: $R_{\rm opt}<0$ pointwise at every energy, so the hypothesis fails by sign. His Lemma needs no completeness |
