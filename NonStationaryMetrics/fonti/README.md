@@ -53,7 +53,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Ashtekar–Krishnan 2003 | — | pending |
 | Hayward–Mukohyama–Ashworth 1999 | — | pending |
 | Randers 1941 | — | pending (context citation) |
-| Kovner 1990 | — | pending (context citation) |
+| Kovner 1990 | core §§1–2 | **✗✗ +** *not* a context citation — his abstract covers "arbitrary, stationary, and **nonstationary** metrics, for **massive** and massless particles". We had bundled him under the stationary case, a live priority risk. Now distinguished on three grounds: his extremals are *geodesics*, his only constraint is the mass shell, and he asks for extremality not minimality |
 | Gibbons et al. 2009 | core §§1–2, 3.4 | **✗ +** their triality is for *null* geodesics, so our "reproduces Randers/Zermelo" needed narrowing to the form; **+** their Finsler condition $|b|_a<1$ fails exactly on the ergosurface, and the Randers data are conformal invariants — a fourth independent route to our control domain |
 | Bao–Robles–Shen 2004 | — | pending (context citation) |
 | Brown–Levin 2011 | — | pending (content claim: elliptic dilogarithm) |
