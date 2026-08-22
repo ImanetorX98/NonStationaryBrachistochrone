@@ -48,6 +48,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Doran 2000 | full | **✓ +** our azimuthal shift is exactly his Eq. (21) composed with BL→EF, verified symbolically; his chart is built on *free-falling* observers, which is why it cannot rescue the control domain |
 | Kodama 1980 | core | **✓ +** claims confirmed for our normalisation; his own K differs in *norm* (his Eq. 3.6), now noted; **he states K is timelike outside the apparent horizon** — third independent route to our control-domain boundary |
 | Böhm–Wilking 2008 | thm 1 + intro | **✗ +** their Thm 1 needs a *compact* manifold and *2-positive* operator; and their intro dates the results — Hamilton **1982** is the 3d one, 1986 the 4d one, so we were citing the wrong Hamilton for a 3d base |
+| Cary–Escande–Tennyson 1986 | core §§I–II | **✗ +** corrected my own wording of a day earlier: the jump is *deterministic at lowest order* (area of the final lobe), phase dependence only at $O(\varepsilon\ln\varepsilon)$. Supplies the mechanism — the frozen period diverges on the separatrix, so $\delta=\varepsilon T_0$ is large however small $\varepsilon$ |
 | Hayward 1996 | — | pending |
 | Abreu–Visser 2010 | — | pending |
 | Ashtekar–Krishnan 2003 | — | pending |
