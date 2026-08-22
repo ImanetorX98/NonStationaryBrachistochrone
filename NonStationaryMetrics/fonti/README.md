@@ -58,6 +58,30 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Filippov 1962 | — | pending (load-bearing for Theorem I.2) |
 | unidentified, 31 pp | — | pending (arrived with group 2) |
 
+## Referee-proposed reading
+
+Referee 2's list, and the two books referee 1 leans on, tracked separately since
+the reports are answered against them.
+
+| Proposed | Here? |
+|---|---|
+| Perlick 1991 | ✓ read |
+| Giannoni–Piccione–Tausk 1999, Morse for travel-time brachistochrones (`math-ph/9905007`) | ✓ arXiv |
+| Taş, brachistochrone-ruled timelike surfaces (`2512.08776`) | ✓ arXiv — note the copy is **v3, Apr 2026**; our bib cites the Dec 2025 v1 |
+| Böhm–Wilking 2008, positive curvature operators (`math/0606187`) | ✓ arXiv |
+| Myers 1941 | ✓ |
+| Filippov 1962 | ✓ |
+| Lecian ×5 | ✓ |
+| **Giannoni–Piccione–Verderesi 1997**, sub-Riemannian (JMP 38, 6367) | ✗ paywalled |
+| **Giannoni–Piccione–Tausk 2002**, arrival-time (DCDS 8, 697) | ✗ paywalled |
+| **Haws–Kiser 1995**, Amer. Math. Monthly 102, 328 | ✗ paywalled |
+| **Hamilton 1986**, four-manifolds with positive curvature operator | ✗ paywalled |
+| **Cesari 1983** (referee 1's existence machinery) | ✗ book |
+
+Also collected, not proposed but adjacent: Piccione–Tausk, *Variational aspects of
+the geodesic problem in sub-Riemannian geometry* (`math/9911215`) — the closest
+free substitute for Giannoni–Piccione–Verderesi.
+
 ## Still missing
 
 - **Cesari 1983**, *Optimization — Theory and Applications*, Springer. Book, no
