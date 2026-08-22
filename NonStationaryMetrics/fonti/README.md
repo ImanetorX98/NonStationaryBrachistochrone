@@ -45,6 +45,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Lecian, Yamabe (Axioms) | intro | **+** metrisation is standard; Birkhoff explains why conformal Kerr is not Einstein |
 | Lecian, Cauchy (Axioms) | intro | **+** independent route to our control-domain boundary; rail flow incomplete where geodesics are not |
 | Lecian, 2-planes | intro | **+** energy-dependence localises our threshold as new |
+| Fuglede 1978 | §§5–8 + intro | **✗✗ +** what we called "the Fuglede–Ishihara dichotomy" is his **definition** of semiconformal (§5), not a theorem — the argument built on it was circular. The real theorem (§7) is *harmonic morphism ⟺ semiconformal + harmonic*, which says what semiconformality does **not** give. Also: his machinery is Riemannian, our total space Lorentzian |
 | Doran 2000 | full | **✓ +** our azimuthal shift is exactly his Eq. (21) composed with BL→EF, verified symbolically; his chart is built on *free-falling* observers, which is why it cannot rescue the control domain |
 | Kodama 1980 | core | **✓ +** claims confirmed for our normalisation; his own K differs in *norm* (his Eq. 3.6), now noted; **he states K is timelike outside the apparent horizon** — third independent route to our control-domain boundary |
 | Böhm–Wilking 2008 | thm 1 + intro | **✗ +** their Thm 1 needs a *compact* manifold and *2-positive* operator; and their intro dates the results — Hamilton **1982** is the 3d one, 1986 the 4d one, so we were citing the wrong Hamilton for a 3d base |
