@@ -44,7 +44,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Lecian, Yamabe (Axioms) | intro | **+** metrisation is standard; Birkhoff explains why conformal Kerr is not Einstein |
 | Lecian, Cauchy (Axioms) | intro | **+** independent route to our control-domain boundary; rail flow incomplete where geodesics are not |
 | Lecian, 2-planes | intro | **+** energy-dependence localises our threshold as new |
-| Kodama 1980 | — | pending |
+| Kodama 1980 | core | **✓ +** claims confirmed for our normalisation; his own K differs in *norm* (his Eq. 3.6), now noted; **he states K is timelike outside the apparent horizon** — third independent route to our control-domain boundary |
 | Hayward 1996 | — | pending |
 | Abreu–Visser 2010 | — | pending |
 | Ashtekar–Krishnan 2003 | — | pending |
