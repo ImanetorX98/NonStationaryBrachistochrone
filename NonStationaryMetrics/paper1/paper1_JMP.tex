@@ -433,7 +433,14 @@ strictly convex \emph{closed curve} (the boundary of a convex region), and the c
 its direction $\theta\in S^1$, itself a compact one-dimensional set. Maximizing the
 support function $p\cdot\dot x(\theta)$ over this curve has a \emph{unique} maximizer by
 strict convexity, which is (i): the control set $S^1$ is already compact and the maximizer
-single-valued, so \emph{no} Filippov relaxation is needed. We do \emph{not} claim the
+single-valued, so \emph{no} Filippov relaxation is needed. This is not merely an
+observation about our indicatrix: it is exactly the situation of Filippov's
+\cite[\S III]{Filippov1962}, where a \emph{strictly} convex velocity set---one whose
+every support plane meets it in a single point---together with a one-to-one
+correspondence between velocities and controls is shown to make the maximizer, and
+hence the optimal control, depend continuously on the costate. Hypothesis~(H)
+supplies both conditions, so continuity of $\theta^\star$ is a published theorem and
+only its smoothness is ours. We do \emph{not} claim the
 velocity locus is a convex \emph{subset} of the plane, nor convexify it (which would admit
 averaged velocities violating the unit-mass shell). Excluding $p=0$---legitimate by the
 normality statement of Theorem~\ref{thm:existence}, which is proved independently
@@ -617,7 +624,20 @@ which is nonempty, compact and---because $F$ is convex in $\nu$, so that its epi
 convex---\emph{convex}, and depends continuously on $y$ by the smoothness just used. The
 relaxed problem of minimizing $\chi(1)$ over trajectories of the differential inclusion
 $\dot y\in\mathcal V(y)$ therefore satisfies the hypotheses of the Filippov--Cesari
-existence theorem \cite{Cesari1983,Filippov1962}, and admits a minimizer. Since $\chi(1)$
+existence theorem \cite{Cesari1983,Filippov1962}, and admits a minimizer. It is worth
+recording that each hypothesis of \cite[Thm.~1]{Filippov1962} is met with margin. The
+velocity set is required only to be \emph{upper semicontinuous with respect to
+inclusion}, whereas ours depends continuously on $y$. The growth condition
+$y\cdot\dot y\le C(|y|^2+1)$ is immediate from the uniform bounds
+$|\nu|\le\Lambda$ and $0\le\dd\chi/\dd\sigma\le R\Lambda$ established above, which make
+$\mathcal V$ uniformly bounded outright. Nonemptiness of the admissible class---an
+explicit hypothesis there, not a conclusion---holds because $\Omega$ is a connected
+regular domain, so its fixed endpoints are joined by at least one Lipschitz arc.
+Finally, the state constraint $x\in\Omega$ places the problem in Filippov's general
+formulation \cite[\S IV]{Filippov1962}, which requires the admissible region to be
+\emph{closed} precisely so that the limit of a minimizing sequence of curves lying in
+it again lies in it; the compactness of $\Omega$ assumed in the theorem is that
+requirement, and is the reason the domain is not taken to be the open exterior. Since $\chi(1)$
 is monotone in $t$, any minimizer saturates $t=F(x,\nu,\chi)$ almost everywhere, hence
 solves~\eqref{eq:clock-ode} and is an admissible arc of the original problem with the same
 cost. Coercivity forbids the infimum from being attained by escape, and the two problems
@@ -640,6 +660,18 @@ by its convex hull would admit averaged velocities violating the unit-mass shell
 enlarging $t$ upwards only makes a competitor slower and is therefore discarded by the
 minimization itself (the saturation step above). The two statements are consistent: no
 relaxation survives in the minimizer.
+
+That the epigraph convexity cannot simply be dropped is shown by Filippov's own
+counterexample \cite[\S V]{Filippov1962}: for
+$\dot x=-y^2+u^2,\ \dot y=u,\ |u|\le1$ steered from the origin to $(1,0)$ in minimal
+time, the velocity set is not convex and \emph{no} optimal control exists---every
+minimizing sequence chatters between $u\simeq+1$ and $u\simeq-1$ and converges to a
+sliding regime whose velocity lies in the convex hull of the velocity set but not in
+the set itself. The distinction drawn in this remark is therefore the operative one:
+convexifying the \emph{indicatrix} would manufacture exactly such sliding
+velocities---superluminal averages violating the unit-mass shell---while convexifying
+the \emph{epigraph} in the augmented clock variable adds only slower competitors and
+is undone by the saturation step.
 \end{remark}
 
 \begin{remark}[what normality buys, and where the hypotheses fail]
