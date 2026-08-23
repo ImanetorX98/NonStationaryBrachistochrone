@@ -42,3 +42,6 @@ NonStationaryMetrics/paper2/paper2_highlighted.tex
 # publisher copyright (APS, IOP, AIP, Springer): kept locally, never committed.
 # Fonti/README.md IS tracked -- it records what is there and what was checked.
 NonStationaryMetrics/Fonti/*.pdf
+
+# Private reading notes -- working document, deliberately untracked.
+NonStationaryMetrics/LETTURA_FONTI_NOTE.md

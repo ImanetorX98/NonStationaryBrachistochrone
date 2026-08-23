@@ -73,7 +73,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Hayward–Mukohyama–Ashworth 1999 | §§1–2 | **✓** their $k=*\dd r$ is our Kodama vector, "a dynamic analogue of a stationary Killing vector"; and they state plainly that "Misner & Sharp originally defined $E$", confirming that attribution |
 | McVittie 1933 | — | pending |
 | Nolan 1998 | — | pending |
-| Kaloper–Kleban–Martin 2010 | — | pending |
+| Kaloper–Kleban–Martin 2010 | §§I–III | **✗ +** McVittie is **not** a conformal rescaling — its lapse carries no scale factor and its mass is constant ("there is no accretion"). Thakurta belongs to the *conformal* class instead. They also show Nolan's central assertion is **incorrect**, and call that literature "riddled with basic errors" |
 | Mello–Maciel–Zanchin 2017 | — | pending |
 | Vaidya 1951 | §§1–3 | **✗** his paper is the **radiating** star — outgoing, emitting. The ingoing accreting form we use is its time-reverse; standard, and standardly called his, but not what he computes |
 | Kerr 1963 | — | pending |
