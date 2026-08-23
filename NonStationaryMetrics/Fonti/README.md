@@ -78,7 +78,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Vaidya 1951 | §§1–3 | **✗** his paper is the **radiating** star — outgoing, emitting. The ingoing accreting form we use is its time-reverse; standard, and standardly called his, but not what he computes |
 | Kerr 1963 | — | pending |
 | Carter 1968 | — | pending |
-| Taş 2025 | — | pending |
+| Taş 2025 | abstract + §1 | **✓ +** description accurate; but a real overlap to declare — his Schwarzschild reduction *is* our arrival-time optical metric, and he reaches transverse-variation/stability too. They agree because in a static spacetime the controlled rail *is* the fixed-energy geodesic |
 | Giannoni–Piccione–Tausk 1999 | — | pending |
 | Piccione–Tausk 2000 | — | collected as a substitute for GPV 1997, not cited |
 | Ichikawa 2023 | — | collected as adjacent to the genus-2 cluster, not cited |
