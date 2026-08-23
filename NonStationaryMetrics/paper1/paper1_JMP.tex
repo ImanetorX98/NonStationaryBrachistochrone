@@ -1224,7 +1224,7 @@ structure is that of the flat case throughout.
 \label{sec:vaidya}
 % ----------------------------------------------------------------------
 The ingoing Vaidya metric $\dd s^2=-f\,\dd v^2+2\,\dd v\,\dd r+r^2\dd\Omega^2$,
-$f=1-2m(v)/r$ \cite{Vaidya1951,LindquistSchwartzMisner1965}, has no timelike
+$f=1-2m(v)/r$ \cite{Vaidya1951}, has no timelike
 Killing vector; for $m'(v)>0$ its trapping structure is that of a dynamical horizon
 \cite{AshtekarKrishnan2003,Booth2005,FaraoniBook}. The restriction is not
 decorative: Ashtekar and Krishnan make \emph{space-like} part of the definition of a
@@ -1237,7 +1237,12 @@ tangent $T=\partial_v+2m'(v)\partial_r$ with
 so it is spacelike, null or timelike exactly as $m'(v)$ is positive, zero or
 negative. Accretion gives a dynamical horizon; the evaporating sign gives the
 timelike tube they treat separately, which is the analytic continuation referred to
-in section~\ref{sec:intro} and not a case we claim.
+in section~\ref{sec:intro} and not a case we claim. It is worth noting which sign
+the classical analysis treats: Lindquist, Schwartz and Misner study the
+\emph{outgoing} form $\dd s^2=-[1-2m(u)/r]\dd u^2-2\,\dd u\,\dd r+r^2\dd\Omega^2$
+in retarded time, where positivity of the radiated energy density forces
+$\dd m/\dd u\le0$ \cite[\S III]{LindquistSchwartzMisner1965}---a radiating star,
+the time-reverse of the accreting case used here.
 Equation~\eqref{eq:tube-signature} is verified in
 \texttt{../paper2/verification/verify\_vaidya\_tube.wls}. The Kodama vector
 \cite{Kodama1980,Hayward1996,AbreuVisser2010}
@@ -1261,7 +1266,12 @@ in its norm''. With the present normalisation the agreement is exact: for the
 ingoing chart one finds $K=\partial_v$ and $g(K,K)=-f$ identically, so in the
 static limit $K$ reduces to $\xi=\partial_t$ in norm as well as direction. And
 Kodama states there that $K$ is timelike \emph{outside the apparent horizon}
-$\Phi=0$. That is precisely the boundary at which the compact-control problem
+$\Phi=0$. We follow the numerical-relativity usage of that term throughout---the
+outermost marginally trapped surface on a slice, here $r=2m(v)$---rather than the
+Hawking--Ellis definition as the boundary of the trapped region; the two are
+routinely conflated, and both Ashtekar and Krishnan
+\cite[footnote~1]{AshtekarKrishnan2003} and Booth
+\cite[\S1]{Booth2005} take care to separate them. That is precisely the boundary at which the compact-control problem
 ends (Paper~II, Lemma on compactness of the rail slice): the selector ceases to
 be timelike exactly where the original construction says it does, which is a
 third independent route to the same surface.

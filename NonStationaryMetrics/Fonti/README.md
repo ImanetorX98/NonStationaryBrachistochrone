@@ -66,8 +66,8 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Ashtekar–Krishnan 2003 | §§I–II, Def. 1 | **✗ +** *space-like* is part of their **definition** of a dynamical horizon, and they exclude the timelike case only under the DEC. Our unconditional claim for ingoing Vaidya needed $m'(v)>0$: on the tube $g(T,T)=4m'(v)$, so accretion gives a dynamical horizon and evaporation their separately-treated timelike tube |
 | Misner–Sharp 1964 | §I | **✓** their Eq. (1.11) defines the mass function as "an appropriate *total energy* of each fluid sphere" — the attribution is right |
 | Hayward 1996 | abstract + §II | **✓ +** states our claim verbatim: "the conserved Kodama current has charge $E$", with $E=\tfrac12r[1-g^{-1}(\dd r,\dd r)]$ (his Eq. 4); his trapping criterion $E\gtrless r/2$ puts the marginal sphere at $r=2m(v)$ |
-| Lindquist–Schwartz–Misner 1965 | — | pending |
-| Booth 2005 | — | pending |
+| Lindquist–Schwartz–Misner 1965 | §§I–III | **✗** they analyse the **outgoing** (retarded) Vaidya form, where positivity of the radiated energy forces $\dd m/\dd u\le0$ — the *opposite* mass-rate sign to the ingoing accreting case we cite them for |
+| Booth 2005 | §§1–2 | **✓ +** a review, appropriate for the bundle; and he flags (with Ashtekar–Krishnan, independently) that "apparent horizon" in numerical relativity is *not* the Hawking–Ellis term. Paper I now says which sense it uses |
 | Abreu–Visser 2010 | §§I–III | **✗ +** crediting Kodama himself: the Kodama vector does *not* in general reduce to the Killing vector in a static spacetime, only to something **parallel** to it. We wrote "reduces to $\xi$". In fact $K=\partial_t/(EL)$, equal iff $g_{tt}g_{rr}=-1$ — true for Schwarzschild and Vaidya, false for a general static interior |
 | Ashtekar–Krishnan 2003 | — | pending |
 | Hayward–Mukohyama–Ashworth 1999 | — | pending |
