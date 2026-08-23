@@ -1206,8 +1206,21 @@ structure is that of the flat case throughout.
 % ----------------------------------------------------------------------
 The ingoing Vaidya metric $\dd s^2=-f\,\dd v^2+2\,\dd v\,\dd r+r^2\dd\Omega^2$,
 $f=1-2m(v)/r$ \cite{Vaidya1951,LindquistSchwartzMisner1965}, has no timelike
-Killing vector; its trapping structure is that of a dynamical horizon
-\cite{AshtekarKrishnan2003,Booth2005,FaraoniBook}. The Kodama vector
+Killing vector; for $m'(v)>0$ its trapping structure is that of a dynamical horizon
+\cite{AshtekarKrishnan2003,Booth2005,FaraoniBook}. The restriction is not
+decorative: Ashtekar and Krishnan make \emph{space-like} part of the definition of a
+dynamical horizon \cite[Def.~1]{AshtekarKrishnan2003}, and the tube $r=2m(v)$ has
+tangent $T=\partial_v+2m'(v)\partial_r$ with
+\begin{equation}
+    g(T,T)\big|_{r=2m(v)}=4\,m'(v) ,
+    \label{eq:tube-signature}
+\end{equation}
+so it is spacelike, null or timelike exactly as $m'(v)$ is positive, zero or
+negative. Accretion gives a dynamical horizon; the evaporating sign gives the
+timelike tube they treat separately, which is the analytic continuation referred to
+in section~\ref{sec:intro} and not a case we claim.
+Equation~\eqref{eq:tube-signature} is verified in
+\texttt{../paper2/verification/verify\_vaidya\_tube.wls}. The Kodama vector
 \cite{Kodama1980,Hayward1996,AbreuVisser2010}
 \begin{equation}
     K^a=\varepsilon^{ab}\nabla_b r = \partial_v ,\qquad

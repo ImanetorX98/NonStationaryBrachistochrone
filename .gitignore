@@ -40,5 +40,5 @@ NonStationaryMetrics/paper2/paper2_highlighted.tex
 
 # Source PDFs collected for the bibliographic audit. Published papers under
 # publisher copyright (APS, IOP, AIP, Springer): kept locally, never committed.
-# fonti/README.md IS tracked -- it records what is there and what was checked.
-NonStationaryMetrics/fonti/*.pdf
+# Fonti/README.md IS tracked -- it records what is there and what was checked.
+NonStationaryMetrics/Fonti/*.pdf

@@ -2,7 +2,7 @@
 
 The PDFs in this directory are **not committed** — they are published papers
 under publisher copyright (APS, IOP, AIP, Springer, Elsevier). `.gitignore`
-excludes `fonti/*.pdf`. This file is tracked and records what was collected and
+excludes `Fonti/*.pdf`. This file is tracked and records what was collected and
 what was checked, so the audit is reproducible from the DOIs alone.
 
 **Naming convention.** Every file is `Author-Year-topic.pdf`: first author's
@@ -63,6 +63,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Hamilton 1982 | Thm 1.1 | **✓** confirmed at the source, not just via Böhm–Wilking: *compact* 3-manifold, strictly positive Ricci ⟹ admits constant positive curvature |
 | Hamilton 1986 | Thm 1.1 | **✓** *compact* four-manifold, positive curvature operator ⟹ diffeomorphic to $S^4$ or $\mathbb{RP}^4$. Both Hamilton attributions now rest on the primary sources |
 | Chen 1977 | §1.1 + refs | **✗** he attributes the **shuffle** to **Ree** (his ref. [57] = Ann. of Math. 68 (1958) 210), not to himself; we had credited Chen. Ree added to the bibliography |
+| Ashtekar–Krishnan 2003 | §§I–II, Def. 1 | **✗ +** *space-like* is part of their **definition** of a dynamical horizon, and they exclude the timelike case only under the DEC. Our unconditional claim for ingoing Vaidya needed $m'(v)>0$: on the tube $g(T,T)=4m'(v)$, so accretion gives a dynamical horizon and evaporation their separately-treated timelike tube |
 | Misner–Sharp 1964 | — | pending |
 | Lindquist–Schwartz–Misner 1965 | — | pending |
 | Booth 2005 | — | pending |
