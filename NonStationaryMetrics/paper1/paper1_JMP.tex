@@ -1725,8 +1725,14 @@ of Weierstrass letters,
 \end{equation}
 with every residue $b_n^a$ closed in algebraic form over the poles
 $a\in\{\pm z_d,0,i\omega_{\rm im}\}$, while the weight-two blocks $W_{kj}$ are length-two
-iterated (Brown--Levin elliptic-polylogarithm~\cite{BrownLevin2011}) integrals evaluated by
-a convergent $q$-series. \ref{app:degeneration} gives the algebraic reduction,
+iterated integrals on the elliptic curve, evaluated by a convergent $q$-series. They
+belong to the \emph{classical} elliptic polylogarithms
+\cite{BeilinsonLevin1994,Zagier1990}: single-variable, length and weight two. Brown
+and Levin's \emph{multiple} elliptic polylogarithms
+\cite{BrownLevin2011} are the several-variable generalisation, functions on the
+configuration space of $n+1$ marked points, and supply the systematic
+iterated-integral framework---built on Chen's reduced bar construction
+\cite{Chen1977}---rather than the object itself. \ref{app:degeneration} gives the algebraic reduction,
 Mittag--Leffler block structure and residue formulae. Construction of the period data and
 numerical Kronecker--Eisenstein/$q$-series evaluation use the archived routine. Every
 coefficient is an algebraic function of $(m,E)$, so
@@ -2905,7 +2911,7 @@ $U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\
 (elliptic second kind, Weierstrass $\wp,\zeta$) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
 (third kind); the spurious poles at $r_d$ cancel in the physical combination (as
 $S(r_d)=0$), leaving the weight-two block as a genuine \emph{elliptic}
-dilogarithm~\cite{BeilinsonLevin1994,BrownLevin2011} plus the horizon third kind. Thus the
+dilogarithm~\cite{BeilinsonLevin1994,Zagier1990} plus the horizon third kind. Thus the
 degeneration off-shell form is one degree \emph{lower} than the generic genus-two case;
 verified letter by letter to machine precision
 (\texttt{VaidyaMetric/vaidya\_sep\_offshell\_elliptic.py}). For Vaidya the double root is a
