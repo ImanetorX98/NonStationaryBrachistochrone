@@ -70,12 +70,12 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Booth 2005 | §§1–2 | **✓ +** a review, appropriate for the bundle; and he flags (with Ashtekar–Krishnan, independently) that "apparent horizon" in numerical relativity is *not* the Hawking–Ellis term. Paper I now says which sense it uses |
 | Abreu–Visser 2010 | §§I–III | **✗ +** crediting Kodama himself: the Kodama vector does *not* in general reduce to the Killing vector in a static spacetime, only to something **parallel** to it. We wrote "reduces to $\xi$". In fact $K=\partial_t/(EL)$, equal iff $g_{tt}g_{rr}=-1$ — true for Schwarzschild and Vaidya, false for a general static interior |
 | Ashtekar–Krishnan 2003 | — | pending |
-| Hayward–Mukohyama–Ashworth 1999 | — | pending |
+| Hayward–Mukohyama–Ashworth 1999 | §§1–2 | **✓** their $k=*\dd r$ is our Kodama vector, "a dynamic analogue of a stationary Killing vector"; and they state plainly that "Misner & Sharp originally defined $E$", confirming that attribution |
 | McVittie 1933 | — | pending |
 | Nolan 1998 | — | pending |
 | Kaloper–Kleban–Martin 2010 | — | pending |
 | Mello–Maciel–Zanchin 2017 | — | pending |
-| Vaidya 1951 | — | pending |
+| Vaidya 1951 | §§1–3 | **✗** his paper is the **radiating** star — outgoing, emitting. The ingoing accreting form we use is its time-reverse; standard, and standardly called his, but not what he computes |
 | Kerr 1963 | — | pending |
 | Carter 1968 | — | pending |
 | Taş 2025 | — | pending |
