@@ -148,6 +148,41 @@ are by now well developed
 The physically central regimes of gravitation, however---cosmological expansion,
 gravitational collapse, accretion---are \emph{not} stationary.
 
+\paragraph{Where this problem parts company with the established one.} The
+relation to Giannoni and Piccione's arrival-time brachistochrone
+\cite{GiannoniPiccione2002} is worth stating exactly, because it locates the
+present contribution more sharply than a novelty claim can. Their trial paths are
+timelike, as ours are, and they constrain the four-acceleration to be perpendicular
+to the plane spanned by $\dot\sigma$ and the observer field $Y$---a
+\emph{frictionless slide}, in which the constraint force does no work against $Y$
+\cite[Eqs.~(1.5)--(1.6)]{GiannoniPiccione2002}. Differentiating the charge along
+the curve gives, for any $W$ and any timelike $u$,
+\begin{equation}
+    \frac{\dd}{\dd\tau}\big(\!-g(u,W)\big)
+      = -\,g(a,W)-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu ,
+    \label{eq:gp-fork}
+\end{equation}
+so under their condition $g(a,W)=0$ the charge drifts at exactly the Killing
+defect---the same rate as for a free geodesic. Their constraint force cannot hold
+it. The two problems therefore coincide precisely when $W$ is Killing, where the
+defect vanishes and their energy relation $g(\dot\sigma,Y)=-k\mathcal T_\sigma$
+\cite[Eq.~(1.7)]{GiannoniPiccione2002} \emph{is} the rail invariant; and they
+diverge as soon as it is not.
+
+That divergence has a consequence the same authors record. They observe that in the
+non-stationary case it is ``not even clear whether the non-stationary
+brachistochrones are solutions to a second-order differential equation'', that the
+Lagrange multipliers cannot be eliminated ``unless in the stationary case'', and
+that the brachistochrones there appear to be governed by an integro-differential
+rather than a differential equation \cite[\S1]{GiannoniPiccione2002}. The
+controlled rail is the other branch of~\eqref{eq:gp-fork}: instead of keeping
+$g(a,W)=0$ and losing the charge, it keeps the charge and pays
+$g(a,W)=-\tfrac12(\mathcal L_Wg)_{\mu\nu}u^\mu u^\nu$, which is the thrust. That
+substitution is what leaves the non-stationary problem a second-order control
+system with a compact control set, and it is the reason a maximum principle applies
+here at all. Equation~\eqref{eq:gp-fork} is verified in
+\texttt{verification/verify\_gp2002\_fork.wls}.
+
 A word is owed to Kovner's Fermat principle \cite{Kovner1990}, which is not confined
 to the stationary case and must therefore be distinguished carefully rather than
 bundled with it. He states his principle for ``arbitrary, stationary, and

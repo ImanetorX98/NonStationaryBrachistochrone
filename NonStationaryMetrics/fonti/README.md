@@ -59,6 +59,10 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Kodama 1980 | core | **✓ +** claims confirmed for our normalisation; his own K differs in *norm* (his Eq. 3.6), now noted; **he states K is timelike outside the apparent horizon** — third independent route to our control-domain boundary |
 | Böhm–Wilking 2008 | thm 1 + intro | **✗ +** their Thm 1 needs a *compact* manifold and *2-positive* operator; and their intro dates the results — Hamilton **1982** is the 3d one, 1986 the 4d one, so we were citing the wrong Hamilton for a 3d base |
 | Cary–Escande–Tennyson 1986 | core §§I–II | **✗ +** corrected my own wording of a day earlier: the jump is *deterministic at lowest order* (area of the final lobe), phase dependence only at $O(\varepsilon\ln\varepsilon)$. Supplies the mechanism — the frozen period diverges on the separatrix, so $\delta=\varepsilon T_0$ is large however small $\varepsilon$ |
+| Giannoni–Piccione 2002 | §1 | **✓ +++** the best novelty statement in the audit. Their trial paths are *timelike* like ours; they impose $g(a,Y)=0$ (frictionless slide), which by $\dd_\tau(-g(u,W))=-g(a,W)-\tfrac12(\mathcal L_Wg)(u,u)$ leaves the charge drifting at the Killing defect. They then state that non-stationary brachistochrones may not solve a *second-order* equation at all, multipliers being eliminable "unless in the stationary case". Our rail is the other branch: hold the charge, pay the thrust |
+| Misner–Sharp 1964 | — | pending |
+| Lindquist–Schwartz–Misner 1965 | — | pending |
+| Booth 2005 | — | pending |
 | Hayward 1996 | — | pending |
 | Abreu–Visser 2010 | — | pending |
 | Ashtekar–Krishnan 2003 | — | pending |
