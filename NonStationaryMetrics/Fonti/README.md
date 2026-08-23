@@ -79,7 +79,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Kerr 1963 | — | pending |
 | Carter 1968 | — | pending |
 | Taş 2025 | abstract + §1 | **✓ +** description accurate; but a real overlap to declare — his Schwarzschild reduction *is* our arrival-time optical metric, and he reaches transverse-variation/stability too. They agree because in a static spacetime the controlled rail *is* the fixed-energy geodesic |
-| Giannoni–Piccione–Tausk 1999 | — | pending |
+| Giannoni–Piccione–Tausk 2002 (= the 1999 preprint) | §1 | **✗ +** it is the **travel**-time theory, ours the arrival branch — they say the two problems are "essentially different", so the branch must be matched where we appeal to their Morse theory. Also carries the non-stationary obstruction three years before GP 2002, there as the stated reason for restricting to stationary |
 | Piccione–Tausk 2000 | — | collected as a substitute for GPV 1997, not cited |
 | Ichikawa 2023 | — | collected as adjacent to the genus-2 cluster, not cited |
 | D'Hoker–Enriquez–Schlotterer–Zerbini 2026 | — | pending |
@@ -114,7 +114,7 @@ the reports are answered against them.
 | Filippov 1962 | ✓ **read** |
 | Lecian ×5 | ✓ |
 | **Giannoni–Piccione–Verderesi 1997**, sub-Riemannian (JMP 38, 6367) | ✗ paywalled |
-| **Giannoni–Piccione–Tausk 2002**, arrival-time (DCDS 8, 697) | ✗ paywalled |
+| **Giannoni–Piccione–Tausk 2002**, *travel*-time Morse theory (DCDS 8, 697 = `math-ph/9905007`) | ✓ **read** |
 | **Haws–Kiser 1995**, Amer. Math. Monthly 102, 328 | ✓ **read** |
 | **Hamilton 1986**, four-manifolds with positive curvature operator | ✗ paywalled — but the statement we needed is quoted in Böhm–Wilking's introduction, which we read |
 | **Cesari 1983** (referee 1's existence machinery) | ✗ book |
