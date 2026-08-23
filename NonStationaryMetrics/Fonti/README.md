@@ -74,7 +74,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | McVittie 1933 | — | pending |
 | Nolan 1998 | — | pending |
 | Kaloper–Kleban–Martin 2010 | §§I–III | **✗ +** McVittie is **not** a conformal rescaling — its lapse carries no scale factor and its mass is constant ("there is no accretion"). Thakurta belongs to the *conformal* class instead. They also show Nolan's central assertion is **incorrect**, and call that literature "riddled with basic errors" |
-| Mello–Maciel–Zanchin 2017 | — | pending |
+| Mello–Maciel–Zanchin 2017 | abstract + §§I–II | **✓✓ ++** they analyse **our metric**. Published result: for increasing unbounded $a(t)$ Thakurta "does **not** describe a cosmological black hole" — independent confirmation of our reading. Also: Thakurta is a *generalised* McVittie at the boundary case $\dot m/m=\dot a/a$, and is **not** Sultana–Dyer (factor in $\eta$ vs EF advanced time), a confusion they flag |
 | Vaidya 1951 | §§1–3 | **✗** his paper is the **radiating** star — outgoing, emitting. The ingoing accreting form we use is its time-reverse; standard, and standardly called his, but not what he computes |
 | Kerr 1963 | — | pending |
 | Carter 1968 | — | pending |

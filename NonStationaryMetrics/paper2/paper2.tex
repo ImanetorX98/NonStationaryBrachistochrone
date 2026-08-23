@@ -296,11 +296,22 @@ criterion, not an automatic global guarantee. We do not reprove these; we specia
 construction to the conformal Kerr geometry.
 
 Thakurta--Kerr is conformal Kerr, $g=A(\eta)^2 g_{\rm Kerr}$
-\cite{Thakurta1981,Kerr1963}. It belongs to the \emph{conformal} class of
-cosmological black hole geometries, with Sultana--Dyer and the constructions of
-Mello, Maciel and Zanchin \cite{SultanaDyer2005,MelloMaciel2017}, and it is worth
-separating that class from McVittie's, with which it is often bracketed
-\cite{McVittie1933,FaraoniBook}. McVittie's metric is not a conformal rescaling of
+\cite{Thakurta1981,Kerr1963}. Its place among the cosmological
+geometries repays being stated precisely, because the neighbouring solutions are
+routinely conflated with it and the differences bear on the reading used here.
+McVittie's own metric is \emph{not} a conformal rescaling: written as
+$\dd s^2=-[(1-\mu)/(1+\mu)]^2\dd t^2+(1+\mu)^4a(t)^2\dd\vec x^{\,2}$ with
+$\mu=m/2a(t)|\vec x|$, its lapse carries no scale factor and its mass parameter is
+constant---``there is no accretion \dots\ an odd property for a physical black hole
+in a universe full of matter or radiation'' \cite[\S I]{Kaloper2010}. Thakurta is a
+\emph{generalised} McVittie, with time-dependent mass parameter $m(t)=m\,a(t)$, and
+sits exactly at the boundary case $\dot m/m=\dot a/a$ where the standard analyses of
+that family do not apply, since they assume the strict inequality
+\cite[\S II\,A]{MelloMaciel2017}. Nor is it the Sultana--Dyer metric, though both
+are conformal to Schwarzschild: the two differ in what the conformal factor depends
+on---conformal time $\eta$ for Thakurta, Eddington--Finkelstein advanced time
+$u=\eta+2m\ln|r-2m|$ for Sultana--Dyer---a confusion those authors flag explicitly
+\cite[\S II\,A]{MelloMaciel2017}. McVittie's metric is not a conformal rescaling of
 a seed: written as
 $\dd s^2=-[(1-\mu)/(1+\mu)]^2\dd t^2+(1+\mu)^4a(t)^2\dd\vec x^{\,2}$ with
 $\mu=m/2a(t)|\vec x|$, its lapse carries no scale factor at all, and its mass
@@ -347,6 +358,14 @@ This is an independent route to the reading used throughout---$\re$ is a
 control-domain boundary, not a horizon---and it also explains why the
 conformal-\emph{Schwarzschild} constructions in the same literature
 \cite{SultanaDyer2005} do obtain one: there the twist vanishes identically.
+
+The conclusion is moreover the published one for this very metric. Mello, Maciel
+and Zanchin analyse the Thakurta spacetime in detail and find that for increasing
+and unbounded $a(t)$, the cosmological case, it ``does not describe a cosmological
+black hole but rather an inhomogeneous expanding universe'', an event horizon at
+$r=2m$ appearing only for \emph{bounded} $a(t)$ and under further sufficient
+conditions \cite[abstract, \S I]{MelloMaciel2017}. Their route is global and causal
+where ours is the local twist criterion, and the two agree.
 Equation~\eqref{eq:twist-csls} is verified in
 \texttt{verification/verify\_conformal\_killing\_horizon.wls}.
 
