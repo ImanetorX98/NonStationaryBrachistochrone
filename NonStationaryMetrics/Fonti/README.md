@@ -71,13 +71,13 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Abreu–Visser 2010 | §§I–III | **✗ +** crediting Kodama himself: the Kodama vector does *not* in general reduce to the Killing vector in a static spacetime, only to something **parallel** to it. We wrote "reduces to $\xi$". In fact $K=\partial_t/(EL)$, equal iff $g_{tt}g_{rr}=-1$ — true for Schwarzschild and Vaidya, false for a general static interior |
 | Ashtekar–Krishnan 2003 | — | pending |
 | Hayward–Mukohyama–Ashworth 1999 | §§1–2 | **✓** their $k=*\dd r$ is our Kodama vector, "a dynamic analogue of a stationary Killing vector"; and they state plainly that "Misner & Sharp originally defined $E$", confirming that attribution |
-| McVittie 1933 | — | pending |
+| McVittie 1933 | §§I–II | **✓** confirms Kaloper at the source: his Eq. (1) is Schwarzschild in *isotropic* coordinates, and he builds the solution by requiring the matter to be "at rest" in his system — zero coordinate velocity and momentum, i.e. the "no accretion" property |
 | Nolan 1998 | — | pending |
 | Kaloper–Kleban–Martin 2010 | §§I–III | **✗ +** McVittie is **not** a conformal rescaling — its lapse carries no scale factor and its mass is constant ("there is no accretion"). Thakurta belongs to the *conformal* class instead. They also show Nolan's central assertion is **incorrect**, and call that literature "riddled with basic errors" |
 | Mello–Maciel–Zanchin 2017 | abstract + §§I–II | **✓✓ ++** they analyse **our metric**. Published result: for increasing unbounded $a(t)$ Thakurta "does **not** describe a cosmological black hole" — independent confirmation of our reading. Also: Thakurta is a *generalised* McVittie at the boundary case $\dot m/m=\dot a/a$, and is **not** Sultana–Dyer (factor in $\eta$ vs EF advanced time), a confusion they flag |
 | Vaidya 1951 | §§1–3 | **✗** his paper is the **radiating** star — outgoing, emitting. The ingoing accreting form we use is its time-reverse; standard, and standardly called his, but not what he computes |
-| Kerr 1963 | — | pending |
-| Carter 1968 | — | pending |
+| Kerr 1963 | — | attribution of the seed metric; standard, no claim beyond it |
+| Carter 1968 | abstract + §1 | **✓ +** exactly our claim: the fourth constant comes "from the unexpected separability of the Hamilton–Jacobi equation". Also corroborates the twist computation — the principal null congruences "have nonzero rotation (except when $a$ vanishes)" |
 | Taş 2025 | abstract + §1 | **✓ +** description accurate; but a real overlap to declare — his Schwarzschild reduction *is* our arrival-time optical metric, and he reaches transverse-variation/stability too. They agree because in a static spacetime the controlled rail *is* the fixed-energy geodesic |
 | Giannoni–Piccione–Tausk 2002 (= the 1999 preprint) | §1 | **✗ +** it is the **travel**-time theory, ours the arrival branch — they say the two problems are "essentially different", so the branch must be matched where we appeal to their Morse theory. Also carries the non-stationary obstruction three years before GP 2002, there as the stated reason for restricting to stationary |
 | Piccione–Tausk 2000 | — | collected as a substitute for GPV 1997, not cited |
