@@ -68,7 +68,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | Hayward 1996 | abstract + §II | **✓ +** states our claim verbatim: "the conserved Kodama current has charge $E$", with $E=\tfrac12r[1-g^{-1}(\dd r,\dd r)]$ (his Eq. 4); his trapping criterion $E\gtrless r/2$ puts the marginal sphere at $r=2m(v)$ |
 | Lindquist–Schwartz–Misner 1965 | — | pending |
 | Booth 2005 | — | pending |
-| Abreu–Visser 2010 | — | pending |
+| Abreu–Visser 2010 | §§I–III | **✗ +** crediting Kodama himself: the Kodama vector does *not* in general reduce to the Killing vector in a static spacetime, only to something **parallel** to it. We wrote "reduces to $\xi$". In fact $K=\partial_t/(EL)$, equal iff $g_{tt}g_{rr}=-1$ — true for Schwarzschild and Vaidya, false for a general static interior |
 | Ashtekar–Krishnan 2003 | — | pending |
 | Hayward–Mukohyama–Ashworth 1999 | — | pending |
 | McVittie 1933 | — | pending |

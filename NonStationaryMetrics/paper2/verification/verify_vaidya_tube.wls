@@ -38,6 +38,23 @@ Print["      m' > 0 accretion  -> spacelike -> dynamical horizon (Def. 1)"];
 Print["      m' = 0            -> null      -> isolated / Killing horizon"];
 Print["      m' < 0 evaporation-> timelike  -> NOT a dynamical horizon"];
 
+(* Kodama vs Killing in a GENERAL static spherically symmetric metric.
+   Abreu-Visser (PRD 82, 044027, Sec. III), crediting Kodama himself: the Kodama
+   vector does NOT in general reduce to the Killing vector in a static spacetime,
+   only to something parallel to it. *)
+ClearAll[EE, LL, g2, g2i, epsDn, epsUp, Kst];
+g2 = {{-EE[r]^2, 0}, {0, LL[r]^2}};
+g2i = Inverse[g2];
+epsDn = Sqrt[-Det[g2]] {{0, 1}, {-1, 0}};
+epsUp = Simplify[g2i . epsDn . Transpose[g2i]];
+Kst = Simplify[epsUp . {0, 1}, Assumptions -> {EE[r] > 0, LL[r] > 0}];
+Print["      general static:  K = ", Kst[[1]], " d/dt"];
+check["K = (1/(E L)) d/dt, hence parallel to the Killing field, equal iff E L = 1",
+  Simplify[Kst[[1]]^2 - 1/(EE[r] LL[r])^2] === 0];
+check["Schwarzschild/Vaidya have E L = 1, so there K = d/dt exactly",
+  Simplify[(Kst[[1]]^2 /. {EE -> Function[r, Sqrt[1 - 2 M/r]],
+                           LL -> Function[r, 1/Sqrt[1 - 2 M/r]]}) - 1] === 0];
+
 Print[If[$Failures === 0, "ALL CHECKS PASSED",
      ToString[$Failures] <> " CHECK(S) FAILED"]];
 If[$Failures > 0, Exit[1], Exit[0]];

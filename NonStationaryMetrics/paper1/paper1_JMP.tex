@@ -969,9 +969,23 @@ rails. FLRW and constant-$A$ Thakurta--Kerr live at this level.
 \emph{(c) Kodama.} In a spherically symmetric \emph{dynamical} spacetime with no
 Killing or conformal Killing vector, the Kodama vector
 $K^a=\varepsilon^{ab}\nabla_b r$ \cite{Kodama1980,Hayward1996} is the canonical
-replacement: it is divergence-free (equation~\eqref{eq:kodama}), reduces to $\xi$ in
-the static limit, and its flux $G^{ab}K_b$ is conserved with charge the
-Misner--Sharp mass. Vaidya is the paradigm (section~\ref{sec:kodama-energy}).
+replacement: it is divergence-free (equation~\eqref{eq:kodama}), is \emph{parallel}
+to $\xi$ in the static limit, and its flux $G^{ab}K_b$ is conserved with charge the
+Misner--Sharp mass. The qualification matters and is Kodama's own, emphasised by
+Abreu and Visser: the Kodama vector ``does \emph{not} in general reduce to the
+Killing vector in a static spacetime; all that one can say in general is that in
+static spacetimes it is \emph{parallel} to the Killing vector''
+\cite[\S III]{AbreuVisser2010}. For a static metric
+$-E(r)^2\dd t^2+L(r)^2\dd r^2+r^2\dd\Omega^2$ one finds
+\begin{equation}
+    K=\frac{1}{E(r)L(r)}\,\partial_t ,
+    \label{eq:kodama-norm}
+\end{equation}
+so $K=\xi$ exactly when $g_{tt}g_{rr}=-1$. Schwarzschild and Vaidya satisfy that,
+which is why the identification is safe throughout this paper; a general static
+interior, where $e^{\Phi+\Lambda}\neq1$, does not, and there the two differ by that
+factor. Equation~\eqref{eq:kodama-norm} is verified in
+\texttt{../paper2/verification/verify\_vaidya\_tube.wls}. Vaidya is the paradigm (section~\ref{sec:kodama-energy}).
 
 \emph{(d) Convention.} Absent even spherical symmetry the Kodama construction
 fails and $W$ becomes a declared convention, with no distinguished normalization
