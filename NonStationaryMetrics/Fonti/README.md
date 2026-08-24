@@ -91,6 +91,7 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 | D'Hoker–Hidding–Schlotterer 2025 | §§4.5–4.7 + abstract | **✓ ++** vindicates our hedge with the authors' own words: from genus two the **meromorphic** sector (where our third-kind letter lives) admits no two-point meromorphic analogue "without additional marked points" (§4.5), and closure under primitives is offered as *evidence*, not proof (§4.6) |
 | D'Hoker–Schlotterer 2024 | via [69] of DHHS | **✓** resolved without the PDF: DHHS cite it as where the higher-genus Fay identities "and their proof" are given (§5). Corrected my own sentence calling them "still being developed" |
 | Baune et al. 2024 | abstract + §§5.5–7 | **✓ +** author names confirmed against the title page (the earlier Konstantin/Egor fix holds). Their test curve is genus-2 real hyperelliptic with real roots — our class. They state plainly that convergence is *argued*, no error estimates, code unreleased, prototype: strong support for our hedge, and a clean contrast with our archived theta-nome evaluation |
+| Giannoni–Piccione–Verderesi 1997 | §I | **✓ ++** their $U_k=\{\beta<k^2\}$, i.e. $|Y|<k$ (their Eqs. 2–3), **is our control domain** — Lemma 2's $\hat E>|W|$, with their strict inequality matching where our slice degenerates. A thirty-year precedent for the boundary referee 1's Major 1 is about. Also a third independent source for "the two variational problems are essentially different" |
 | Randers 1941 | full | **✓ +** attribution correct; and he *names* the gauge freedom $b\mapsto b+d\phi$ (his "$k$ transformation", distinguished from Weyl's) that our Doran remark relies on, and states the exactness criterion our non-rotating restriction turns on |
 | Kovner 1990 | core §§1–2 | **✗✗ +** *not* a context citation — his abstract covers "arbitrary, stationary, and **nonstationary** metrics, for **massive** and massless particles". We had bundled him under the stationary case, a live priority risk. Now distinguished on four grounds: his extremals are *geodesics*, his only constraint is the mass shell, he asks for extremality not minimality, and his one genuinely non-stationary application is *perturbative lensing* — a static lens rippled by a weak gravitational wave (§§IV–V), asking where images form, not what the time-optimal constrained worldline is |
 | Gibbons et al. 2009 | core §§1–2, 3.4 | **✗ +** their triality is for *null* geodesics, so our "reproduces Randers/Zermelo" needed narrowing to the form; **+** their Finsler condition $|b|_a<1$ fails exactly on the ergosurface, and the Randers data are conformal invariants — a fourth independent route to our control domain |
@@ -116,7 +117,7 @@ citations". Nothing in that report asks for a source we do not already cite.
 | Proposed by referee 2 | Here? |
 |---|---|
 | 1) Perlick 1991, JMP **32**(11) 3148–3157 | ✓ read |
-| 2) *Giannoni, Masiello & Piccione* 1997, JMP **38**(12) 6367–6381 | ✗ **the only item missing** — DOI `10.1063/1.532217`, paywalled. Note the referee's author list is wrong: CrossRef gives Giannoni, Piccione, **Verderesi**, which is what our bibliography already has |
+| 2) *Giannoni, Masiello & Piccione* 1997, JMP **38**(12) 6367–6381 | ✓ **read** — the referee's author list is wrong: the title page gives Giannoni, Piccione, **Verderesi**, which is what our bibliography already had |
 | 3) *Giannoni, Piccione & Tausk* 2002, "The arrival time brachistochrones", *Class. Quantum Grav.* | ✓ read — but the referee has conflated two papers. "The arrival time brachistochrones in general relativity" is **Giannoni & Piccione**, *J. Geom. Anal.* **12** (2002) 375 (`10.1007/BF02922047`); the Tausk paper is the *travel*-time Morse theory, DCDS **8** 697. We hold and cite both |
 | 4) Taş 2026, `arXiv:2512.08776` | ✓ read (v3) |
 | 5) Giannoni–Piccione–Tausk 1999, `arXiv:math-ph/9905007` | ✓ read (= the DCDS paper above) |
@@ -131,8 +132,7 @@ citations". Nothing in that report asks for a source we do not already cite.
 | Lecian, *Pseudo-Riemannian solitons after umbilicity conditions* (T2) | ✓ read |
 | Lecian, *Generalized Schwarzschild solitons, spherically-symmetric weights* | ✓ read |
 
-So: **fifteen of the sixteen items are held and read.** The exception is the 1997
-sub-Riemannian paper of Giannoni, Piccione and Verderesi.
+So: **all sixteen items are held and read.**
 
 Two items previously recorded here were my own reconstruction and are wrong:
 Cesari 1983 was never proposed by either referee, and neither was Filippov 1962 —
