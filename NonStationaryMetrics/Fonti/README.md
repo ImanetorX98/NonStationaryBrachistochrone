@@ -101,23 +101,43 @@ Legend — **✓** confirmed · **✗** correction made · **+** produced new ma
 
 ## Referee-proposed reading
 
-Referee 2's list, and the two books referee 1 leans on, tracked separately since
-the reports are answered against them.
+Taken from the reports themselves (`Response/PaperII/CQG response/`), not
+reconstructed. The two referees differ sharply on this point.
 
-| Proposed | Here? |
+**Referee 1** (`report_CQG_116884.pdf`) proposes *nothing*. Major comment 12 states
+that the reference coverage is "broadly current and appropriate" and that the
+remaining issue is "a matter of positioning rather than a request for additional
+citations". Nothing in that report asks for a source we do not already cite.
+
+**Referee 2** (`CQGReviewerstask2026I.pdf`) gives an explicit numbered list under
+*Items of bibliography to be presented in the introductory text*, plus references
+[1]–[11] in the body.
+
+| Proposed by referee 2 | Here? |
 |---|---|
-| Perlick 1991 | ✓ read |
-| Giannoni–Piccione–Tausk 1999, Morse for travel-time brachistochrones (`math-ph/9905007`) | ✓ arXiv |
-| Taş, brachistochrone-ruled timelike surfaces (`2512.08776`) | ✓ arXiv — note the copy is **v3, Apr 2026**; our bib cites the Dec 2025 v1 |
-| Böhm–Wilking 2008, positive curvature operators (`math/0606187`) | ✓ **read** |
-| Myers 1941 | ✓ **read** |
-| Filippov 1962 | ✓ **read** |
-| Lecian ×5 | ✓ |
-| **Giannoni–Piccione–Verderesi 1997**, sub-Riemannian (JMP 38, 6367) | ✗ paywalled |
-| **Giannoni–Piccione–Tausk 2002**, *travel*-time Morse theory (DCDS 8, 697 = `math-ph/9905007`) | ✓ **read** |
-| **Haws–Kiser 1995**, Amer. Math. Monthly 102, 328 | ✓ **read** |
-| **Hamilton 1986**, four-manifolds with positive curvature operator | ✗ paywalled — but the statement we needed is quoted in Böhm–Wilking's introduction, which we read |
-| **Cesari 1983** (referee 1's existence machinery) | ✗ book |
+| 1) Perlick 1991, JMP **32**(11) 3148–3157 | ✓ read |
+| 2) *Giannoni, Masiello & Piccione* 1997, JMP **38**(12) 6367–6381 | ✗ **the only item missing** — DOI `10.1063/1.532217`, paywalled. Note the referee's author list is wrong: CrossRef gives Giannoni, Piccione, **Verderesi**, which is what our bibliography already has |
+| 3) *Giannoni, Piccione & Tausk* 2002, "The arrival time brachistochrones", *Class. Quantum Grav.* | ✓ read — but the referee has conflated two papers. "The arrival time brachistochrones in general relativity" is **Giannoni & Piccione**, *J. Geom. Anal.* **12** (2002) 375 (`10.1007/BF02922047`); the Tausk paper is the *travel*-time Morse theory, DCDS **8** 697. We hold and cite both |
+| 4) Taş 2026, `arXiv:2512.08776` | ✓ read (v3) |
+| 5) Giannoni–Piccione–Tausk 1999, `arXiv:math-ph/9905007` | ✓ read (= the DCDS paper above) |
+| [5] Haws & Kiser 1995, Amer. Math. Monthly **102** 328–336 | ✓ read |
+| [9] Hamilton 1986, JDG **24** 153–179 | ✓ read |
+| [10] Böhm & Wilking 2008, Annals **167** 1079–1097 | ✓ read |
+| [11] Lecian, *Eigenvalues of the curvature of Einsteinian weighted solitons* | ✓ read |
+| Myers 1941, Duke Math. J. **8**(2) 401–404 | ✓ read |
+| Lecian, *New Geodesics 2-planes solitons connected at infinity* | ✓ read |
+| Lecian, *Geodesics completeness and Cauchy hypersurfaces*, Axioms **14**(12) 896 | ✓ read |
+| Lecian, Axioms **15**(4) 267 (Yamabe) | ✓ read |
+| Lecian, *Pseudo-Riemannian solitons after umbilicity conditions* (T2) | ✓ read |
+| Lecian, *Generalized Schwarzschild solitons, spherically-symmetric weights* | ✓ read |
+
+So: **fifteen of the sixteen items are held and read.** The exception is the 1997
+sub-Riemannian paper of Giannoni, Piccione and Verderesi.
+
+Two items previously recorded here were my own reconstruction and are wrong:
+Cesari 1983 was never proposed by either referee, and neither was Filippov 1962 —
+both entered our bibliography on our own initiative. They are listed under
+*Still missing* only because we could not obtain them, not because a referee asked.
 
 Also collected, not proposed but adjacent: Piccione–Tausk, *Variational aspects of
 the geodesic problem in sub-Riemannian geometry* (`math/9911215`) — the closest
