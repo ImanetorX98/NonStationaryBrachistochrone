@@ -2,7 +2,7 @@
 Prop. 3.1 (local classification at r_e), shape	wolframscript -file verify_cusp_corner.wls	NonStationaryMetrics/paper2/verification/verify_cusp_corner.wls	5503d6a6ea56b2bce9e23f714d8edb2260aef24b2e8c0755b8459ac74d20992d
 Prop. 3.1 (local classification at r_e), dynamics	wolframscript -file verify_marginal_hamilton.wls	NonStationaryMetrics/paper2/verification/verify_marginal_hamilton.wls	47344e49f7f6aa7e5af9b55b26bd123d3fd4dd5c30fb649bfee14f7191b5433d
 Prop. 3.2 (exterior retrograde separatrix), eq. (exterior-sep)	wolframscript -file verify_exterior_separatrix.wls	NonStationaryMetrics/paper2/verification/verify_exterior_separatrix.wls	daeda4c0969343ec479191357fb78386377569012f5d530b1d18fee704a97681
-Fig. (phi-true-dynamic) and Table A3 slopes	python3 make_provenance.py	NonStationaryMetrics/paper2/provenance/make_provenance.py	7bf1c67d958a047cafe5936ffbc7d1ec95e53d2c44be1fd2dabd4075df7167e2
+Fig. (phi-true-dynamic) and Table A3 slopes	python3 make_provenance.py	NonStationaryMetrics/paper2/provenance/make_provenance.py	90280f884bea3f6317a8a7a4765fdb486aac7227fc0319b9187383199118af02
 true-dynamics validation run	python3 fig_phi_validation_corrected.py	NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py	d758be24d5fae53aa2f7b20ee81e86314178eb4ed04502c32213a9a55fc19882
 exact first-order PT run	python3 adiabatic_first_order_exact.py	NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py	3cd72fd798e3879dd8889eafbddd7452ee222cab98b1c934888f998627dc1a1b
 CAP interval-arithmetic library	python3 cap_full.py	NonStationaryMetrics/cap_full.py	75175d8a46725da5f0e4caebd1aa7979567a0566e0a3527b7cc230c793858441
@@ -15,3 +15,5 @@ Fig. (jpt-g2)	python3 kerr_jpt_genus2_figure.py	KerrScripts/kerr_jpt_genus2_figu
 Fig. (jcm-cap)	python3 kerr_jcm_capture_figure.py	KerrScripts/kerr_jcm_capture_figure.py	504b11ef089596a0a57663f6ec2d8606198f3a052839a15dc5f20f04ea0bafa0
 shared figure style	-	NonStationaryMetrics/paper_style.py	d7f763e2c2a2f777e3f0a1f865e3fe65961137e3b00713cfdafd70a6ad313964
 environment lock (Python stack + CAS version)	-	NonStationaryMetrics/requirements-lock.txt	3adb5ba37ea921e3d1170dd74bf9043905be25d8fad10930082c4470e36080b8
+bibliography audit against the DOI registry	python3 audit_refs.py	NonStationaryMetrics/paper2/provenance/audit_refs.py	421d8633a9fbc9deb9a31715e33ed3b3bc14aac546c25cbb9a48156921e4d609
+bibliography audit by title, for entries with no DOI	python3 audit_by_title.py	NonStationaryMetrics/paper2/provenance/audit_by_title.py	69e5f5186d6eb342dc93739bbd891b70afbf167fe86e7586a50c03c9f6ca7380

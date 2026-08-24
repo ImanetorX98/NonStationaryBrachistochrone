@@ -2627,6 +2627,20 @@ equation, figure and table to one command and one checksum. The manuscript
 cannot drift from the archive. This replaces the hand-transcribed values of the previous
 version, which had done exactly that.
 
+The archive also carries its own verification. The generated JSON records a
+\emph{content digest}
+\begin{center}
+    \ProvenanceDigest\ (SHA-256, first 16 hex digits)
+\end{center}
+taken over the reproducible content only---slopes, windows, loci, script
+hashes---while the generation instant and wall-clock timings are segregated in an
+\texttt{environment} block and excluded from it. Those two are the only quantities
+that legitimately differ between machines, and leaving them inside a digest is what
+makes an otherwise faithful archive appear to disagree with itself. A fresh clone
+run on unrelated hardware reproduces the digest exactly, timings differing; that
+check was performed before this version was released, and it is the check we
+invite.
+
 The $\varepsilon$-window is \provEpsWindow. The fit is taken on \provFitInterval, which
 remains \provLocusSep\ from the nearest excluded locus, so the fitted interval is
 uniformly away from turning points, the freezing surface and the conformal stationary

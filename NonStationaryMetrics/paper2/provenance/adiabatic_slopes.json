@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-21T13:37:46+00:00",
+  "generated_utc": "2026-08-24T09:48:42+00:00",
   "epsilon_window": [
     0.001,
     0.002,
@@ -31,16 +31,14 @@
         "exact_slope": 2.12,
         "exact_sigma": 0.03
       }
-    ],
-    "seconds": 13.1
+    ]
   },
   "exact": {
     "script": "NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py",
     "slope": 2.15,
     "residual_at": 0.0025,
     "residual": 1.9e-06,
-    "robust_slope": 2.21,
-    "seconds": 8.7
+    "robust_slope": 2.21
   },
   "loci": {
     "fit_interval_r_over_M": [
@@ -58,6 +56,12 @@
     "NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py": "3cd72fd798e3",
     "NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py": "55fc540ecf17"
   },
+  "environment": {
+    "validation_seconds": 13.1,
+    "exact_seconds": 8.7,
+    "note": "wall-clock timings; excluded from content_sha256"
+  },
+  "content_sha256": "5ddfa9130887f96783e7d9e9875598413b315a98e8217e70a38feeb48e925ce8",
   "subwindow": {
     "available": true,
     "configs": [

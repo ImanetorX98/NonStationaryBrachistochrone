@@ -313,6 +313,20 @@ def tex_escape(s: str) -> str:
     return s.replace("_", r"\_")
 
 
+def content_digest(d: dict) -> str:
+    """SHA-256 over the reproducible content only.
+
+    Excludes the generation instant and the "environment" block, which hold the
+    only quantities that legitimately vary between machines.  Everything a
+    reader would check -- slopes, windows, loci, script hashes -- is inside.
+    """
+    core = {k: v for k, v in d.items()
+            if k not in ("generated_utc", "environment", "content_sha256")}
+    return hashlib.sha256(
+        json.dumps(core, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+
+
 def write_tex(data: dict) -> None:
     v = data["validation"]
     e = data["exact"]
@@ -337,6 +351,10 @@ def write_tex(data: dict) -> None:
         "% why these numbers are generated rather than transcribed",
         "% (CQG-116884, referee major comments 7 and 10).",
         f"% generated {data['generated_utc']}",
+        f"% content digest (reproduces on any machine; timings excluded): "
+        f"{data.get('content_sha256', 'pending')}",
+        r"\newcommand{\ProvenanceDigest}{\texttt{"
+        + str(data.get("content_sha256", "pending"))[:16] + r"}}",
         "% ---------------------------------------------------------------",
         r"\newcommand{\provEpsWindow}{$\varepsilon\in\{"
         + ",\\,".join(f"{x:g}" for x in win) + r"\}$}",
@@ -430,15 +448,26 @@ def main(argv: list[str]) -> int:
         if p.exists() and p.suffix == ".py" and "ThakurtaMetric" in path:
             hashes[path] = short(p)
 
+    # Machine-dependent facts are kept, but segregated: they are recorded under
+    # "environment" and excluded from content_sha256, so that a fresh clone on a
+    # different machine reproduces the verifiable digest exactly.  Referee major
+    # comment 10 turned on printed hashes not matching a release; wall-clock
+    # timings and the generation instant are the only things that legitimately
+    # differ between runs, and they must not enter the digest.
     data = {
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "epsilon_window": win,
-        "validation": {"script": rel(VALIDATION), "rows": rows,
-                       "seconds": round(dt_v, 1)},
-        "exact": {"script": rel(EXACT), **ex, "seconds": round(dt_e, 1)},
+        "validation": {"script": rel(VALIDATION), "rows": rows},
+        "exact": {"script": rel(EXACT), **ex},
         "loci": sep,
         "hashes": hashes,
+        "environment": {
+            "validation_seconds": round(dt_v, 1),
+            "exact_seconds": round(dt_e, 1),
+            "note": "wall-clock timings; excluded from content_sha256",
+        },
     }
+    data["content_sha256"] = content_digest(data)
     (HERE / "adiabatic_slopes.json").write_text(json.dumps(data, indent=2) + "\n")
     write_tex(data)
     print(f"   wrote {rel(HERE / 'adiabatic_slopes.json')}")
@@ -446,6 +475,7 @@ def main(argv: list[str]) -> int:
 
     sub = subwindow_drift()
     data["subwindow"] = sub
+    data["content_sha256"] = content_digest(data)
     (HERE / "adiabatic_slopes.json").write_text(json.dumps(data, indent=2) + "\n")
     write_tex(data)
 
