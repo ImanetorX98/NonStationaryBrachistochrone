@@ -721,7 +721,43 @@ which is nonempty, compact and---because $F$ is convex in $\nu$, so that its epi
 convex---\emph{convex}, and depends continuously on $y$ by the smoothness just used. The
 relaxed problem of minimizing $\chi(1)$ over trajectories of the differential inclusion
 $\dot y\in\mathcal V(y)$ therefore satisfies the hypotheses of the Filippov--Cesari
-existence theorem \cite{Cesari1983,Filippov1962}, and admits a minimizer. It is worth
+existence theorem \cite{Cesari1983,Filippov1962}, and admits a minimizer.
+
+\emph{Saturation.} Passing from the relaxed minimizer back to an admissible arc
+requires a comparison argument rather than the observation that $\chi(1)$ increases
+with $t$, because $F$ depends on $\chi$ as well.
+
+\begin{lemma}[scalar comparison for the clock]\label{lem:comparison}
+Fix a spatial arc $x$ with $|\dot x|\le\Lambda$ a.e. Let $\chi$ solve
+$\dot\chi=F(x,\dot x,\chi)$ with $\chi(0)=\chi_0$, and let $\tilde\chi$ be
+absolutely continuous with $\dot{\tilde\chi}\ge F(x,\dot x,\tilde\chi)$ a.e.\ and
+$\tilde\chi(0)=\chi_0$. Then $\tilde\chi\ge\chi$ on $[0,1]$.
+\end{lemma}
+
+\begin{proof}
+Both clocks remain in $[\chi_0,\chi_0+R\Lambda]$, where $F$ is Lipschitz in its slow
+argument with $|F(x,\nu,\chi)-F(x,\nu,\chi')|\le L|\nu||\chi-\chi'|$, as established
+above. Put $w=\tilde\chi-\chi$, so $w(0)=0$, and suppose $w(\sigma_0)<0$ for some
+$\sigma_0$. Let $\sigma_1=\sup\{\sigma<\sigma_0:\ w(\sigma)\ge0\}$, which is well
+defined since $w(0)=0$. On $(\sigma_1,\sigma_0)$ one has $w<0$, hence
+\[
+   \dot w\ \ge\ F(x,\dot x,\tilde\chi)-F(x,\dot x,\chi)\ \ge\ -L|\dot x|\,|w|
+       \ =\ L|\dot x|\,w ,
+\]
+so $\big(w\,e^{-\int_0^\sigma L|\dot x|}\big)^{\!\textstyle\cdot}\ge0$ there. That
+quantity is therefore non-decreasing on $(\sigma_1,\sigma_0)$ and vanishes at
+$\sigma_1$ by continuity, giving $w(\sigma_0)\ge0$---a contradiction.
+\end{proof}
+
+Along a relaxed trajectory $\dot\chi=t\ge F(x,\dot x,\chi)$ pointwise, so
+Lemma~\ref{lem:comparison} applies with $\tilde\chi$ the relaxed clock: replacing it
+by the saturated solution of~\eqref{eq:clock-ode} on the same spatial arc leaves the
+endpoints unchanged and does not increase $\chi(1)$. A relaxed minimizer therefore
+admits a saturated representative of no greater cost, which is an admissible arc of
+the original problem. The lemma is checked numerically in
+\texttt{../paper2/verification/verify\_clock\_comparison.wls}, including families in
+which $F$ \emph{decreases} in $\chi$---the case in which the terminal clock is not
+monotone in the pointwise value of $\dot\chi$ and the naive argument would fail. It is worth
 recording that each hypothesis of \cite[Thm.~1]{Filippov1962} is met with margin. The
 velocity set is required only to be \emph{upper semicontinuous with respect to
 inclusion}, whereas ours depends continuously on $y$. The growth condition
@@ -734,11 +770,9 @@ Finally, the state constraint $x\in\Omega$ places the problem in Filippov's gene
 formulation \cite[\S IV]{Filippov1962}, which requires the admissible region to be
 \emph{closed} precisely so that the limit of a minimizing sequence of curves lying in
 it again lies in it; the compactness of $\Omega$ assumed in the theorem is that
-requirement, and is the reason the domain is not taken to be the open exterior. Since $\chi(1)$
-is monotone in $t$, any minimizer saturates $t=F(x,\nu,\chi)$ almost everywhere, hence
-solves~\eqref{eq:clock-ode} and is an admissible arc of the original problem with the same
-cost. Coercivity forbids the infimum from being attained by escape, and the two problems
-have the same infimum, so the minimizer of the relaxed problem is a minimizer of $T$.
+requirement, and is the reason the domain is not taken to be the open exterior. Coercivity forbids the infimum from being attained by escape, and the two
+problems have the same infimum, so the minimizer of the relaxed problem is a
+minimizer of $T$.
 
 (ii) Suppose $p_0=0$. The maximized Hamiltonian would then read $\max_\nu p\cdot\nu=0$
 with $p\neq0$; but the support function of the oval obeys
