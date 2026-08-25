@@ -52,3 +52,12 @@ NonStationaryMetrics/LETTURA_FONTI_NOTE.md
 NonStationaryMetrics/tmp/
 **/citation_audit_codex/
 *.pdf.txt
+
+# Sibling projects, each with its own repository and its own submission
+# timeline.  They live beside this one on disk and must not be published here.
+/InternalSchwarzschildMetric/
+/KerrMetric/
+/RindlerMetric/
+/SdSMetric/
+/TOVInternalMetric/
+/tmp/
