@@ -45,3 +45,10 @@ NonStationaryMetrics/Fonti/*.pdf
 
 # Private reading notes -- working document, deliberately untracked.
 NonStationaryMetrics/LETTURA_FONTI_NOTE.md
+
+# Extracted full text of copyrighted papers -- never commit.  The PDFs in
+# Fonti/ are already excluded for the same reason; text extractions of them
+# are the same material in another format.
+NonStationaryMetrics/tmp/
+**/citation_audit_codex/
+*.pdf.txt

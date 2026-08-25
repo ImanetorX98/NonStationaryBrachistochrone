@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="520" viewBox="0 0 1250 520">
+<style>
+text{font-family:Helvetica,Arial,sans-serif;fill:#111}
+.tick{font-size:12px}.label{font-size:14px}.tag{font-size:15px;font-weight:700}
+</style>
+<rect x="0" y="0" width="1250" height="520" fill="white"/>
+<clipPath id="clip_tov_0"><rect x="112.50" y="88.40" width="487.50" height="343.20"/></clipPath>
+<line x1="142.97" y1="88.40" x2="142.97" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="142.97" y1="431.60" x2="142.97" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="142.97" y="449.60" text-anchor="middle">20</text>
+<line x1="264.84" y1="88.40" x2="264.84" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="264.84" y1="431.60" x2="264.84" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="264.84" y="449.60" text-anchor="middle">60</text>
+<line x1="386.72" y1="88.40" x2="386.72" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="386.72" y1="431.60" x2="386.72" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="386.72" y="449.60" text-anchor="middle">100</text>
+<line x1="508.59" y1="88.40" x2="508.59" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="508.59" y1="431.60" x2="508.59" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="508.59" y="449.60" text-anchor="middle">140</text>
+<line x1="600.00" y1="88.40" x2="600.00" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="600.00" y1="431.60" x2="600.00" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="600.00" y="449.60" text-anchor="middle">170</text>
+<line x1="112.50" y1="373.27" x2="600.00" y2="373.27" stroke="#ececec" stroke-width="1"/>
+<line x1="108.50" y1="373.27" x2="112.50" y2="373.27" stroke="#111" stroke-width="1"/>
+<text class="tick" x="104.50" y="377.27" text-anchor="end">2</text>
+<line x1="112.50" y1="308.32" x2="600.00" y2="308.32" stroke="#ececec" stroke-width="1"/>
+<line x1="108.50" y1="308.32" x2="112.50" y2="308.32" stroke="#111" stroke-width="1"/>
+<text class="tick" x="104.50" y="312.32" text-anchor="end">4</text>
+<line x1="112.50" y1="243.37" x2="600.00" y2="243.37" stroke="#ececec" stroke-width="1"/>
+<line x1="108.50" y1="243.37" x2="112.50" y2="243.37" stroke="#111" stroke-width="1"/>
+<text class="tick" x="104.50" y="247.37" text-anchor="end">6</text>
+<line x1="112.50" y1="178.43" x2="600.00" y2="178.43" stroke="#ececec" stroke-width="1"/>
+<line x1="108.50" y1="178.43" x2="112.50" y2="178.43" stroke="#111" stroke-width="1"/>
+<text class="tick" x="104.50" y="182.43" text-anchor="end">8</text>
+<line x1="112.50" y1="113.48" x2="600.00" y2="113.48" stroke="#ececec" stroke-width="1"/>
+<line x1="108.50" y1="113.48" x2="112.50" y2="113.48" stroke="#111" stroke-width="1"/>
+<text class="tick" x="104.50" y="117.48" text-anchor="end">10</text>
+<rect x="112.50" y="88.40" width="487.50" height="343.20" fill="none" stroke="#111" stroke-width="1.1"/>
+<polyline points="112.50,350.16 120.12,340.93 127.73,332.65 135.35,325.08 142.97,318.09 150.59,311.56 158.20,305.41 165.82,299.59 173.44,294.06 181.05,288.77 188.67,283.71 196.29,278.84 203.91,274.15 211.52,269.62 219.14,265.24 226.76,261.00 234.38,256.88 241.99,252.88 249.61,248.99 257.23,245.21 264.84,241.51 272.46,237.91 280.08,234.40 287.70,230.97 295.31,227.61 302.93,224.34 310.55,221.13 318.16,217.99 325.78,214.92 333.40,211.92 341.02,208.98 348.63,206.09 356.25,203.27 363.87,200.50 371.48,197.80 379.10,195.15 386.72,192.56 394.34,190.01 401.95,187.52 409.57,185.09 417.19,182.72 424.80,180.39 432.42,178.11 440.04,175.89 447.66,173.72 455.27,171.61 462.89,169.56 470.51,167.56 478.12,165.61 485.74,163.72 493.36,161.89 500.98,160.12 508.59,158.42 516.21,156.78 523.83,155.20 531.45,153.69 539.06,152.26 546.68,150.91 554.30,149.64 561.91,148.45 569.53,147.36 577.15,146.36 584.77,145.48 592.38,144.71 600.00,144.05" fill="none" stroke="#0072B2" stroke-width="1.65" stroke-linejoin="round" stroke-linecap="round"  clip-path="url(#clip_tov_0)"/>
+<polyline points="112.50,375.95 120.12,369.75 127.73,364.29 135.35,359.39 142.97,354.95 150.59,350.87 158.20,347.10 165.82,343.61 173.44,340.35 181.05,337.29 188.67,334.43 196.29,331.73 203.91,329.19 211.52,326.79 219.14,324.51 226.76,322.36 234.38,320.31 241.99,318.37 249.61,316.52 257.23,314.76 264.84,313.09 272.46,311.49 280.08,309.97 287.70,308.53 295.31,307.15 302.93,305.83 310.55,304.58 318.16,303.38 325.78,302.23 333.40,301.15 341.02,300.11 348.63,299.11 356.25,298.16 363.87,297.26 371.48,296.40 379.10,295.58 386.72,294.80 394.34,294.06 401.95,293.35 409.57,292.67 417.19,292.03 424.80,291.42 432.42,290.84 440.04,290.29 447.66,289.77 455.27,289.28 462.89,288.82 470.51,288.38 478.12,287.96 485.74,287.57 493.36,287.20 500.98,286.85 508.59,286.53 516.21,286.24 523.83,285.96 531.45,285.70 539.06,285.47 546.68,285.25 554.30,285.05 561.91,284.88 569.53,284.72 577.15,284.58 584.77,284.46 592.38,284.36 600.00,284.28" fill="none" stroke="#D55E00" stroke-width="1.65" stroke-linejoin="round" stroke-linecap="round"  stroke-dasharray="7.0,4.0" clip-path="url(#clip_tov_0)"/>
+<text class="label" x="356.25" y="472.60" text-anchor="middle">&#916; [deg]</text>
+<text class="label" x="61.50" y="260.00" text-anchor="middle" transform="rotate(-90 61.50 260.00)">travel time</text>
+<rect x="479.00" y="97.40" width="112.00" height="54.00" fill="white" stroke="#cccccc" stroke-width="1" opacity="0.94"/>
+<line x1="488.00" y1="112.40" x2="515.00" y2="112.40" stroke="#0072B2" stroke-width="1.65" stroke-linecap="round"/>
+<text class="tick" x="522.00" y="116.40">t c / R</text>
+<line x1="488.00" y1="130.40" x2="515.00" y2="130.40" stroke="#D55E00" stroke-width="1.65" stroke-linecap="round" stroke-dasharray="7.0,4.0"/>
+<text class="tick" x="522.00" y="134.40">&#964; c / R</text>
+<rect x="115.50" y="91.40" width="76.00" height="20.00" fill="white" opacity="0.88"/>
+<text class="tag" x="119.50" y="106.40">(a)</text>
+<clipPath id="clip_tov_1"><rect x="750.00" y="88.40" width="425.00" height="343.20"/></clipPath>
+<line x1="776.56" y1="88.40" x2="776.56" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="776.56" y1="431.60" x2="776.56" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="776.56" y="449.60" text-anchor="middle">20</text>
+<line x1="882.81" y1="88.40" x2="882.81" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="882.81" y1="431.60" x2="882.81" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="882.81" y="449.60" text-anchor="middle">60</text>
+<line x1="989.06" y1="88.40" x2="989.06" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="989.06" y1="431.60" x2="989.06" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="989.06" y="449.60" text-anchor="middle">100</text>
+<line x1="1095.31" y1="88.40" x2="1095.31" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="1095.31" y1="431.60" x2="1095.31" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="1095.31" y="449.60" text-anchor="middle">140</text>
+<line x1="1175.00" y1="88.40" x2="1175.00" y2="431.60" stroke="#ececec" stroke-width="1"/>
+<line x1="1175.00" y1="431.60" x2="1175.00" y2="435.60" stroke="#111" stroke-width="1"/>
+<text class="tick" x="1175.00" y="449.60" text-anchor="middle">170</text>
+<line x1="750.00" y1="382.55" x2="1175.00" y2="382.55" stroke="#ececec" stroke-width="1"/>
+<line x1="746.00" y1="382.55" x2="750.00" y2="382.55" stroke="#111" stroke-width="1"/>
+<text class="tick" x="742.00" y="386.55" text-anchor="end">1.4</text>
+<line x1="750.00" y1="289.19" x2="1175.00" y2="289.19" stroke="#ececec" stroke-width="1"/>
+<line x1="746.00" y1="289.19" x2="750.00" y2="289.19" stroke="#111" stroke-width="1"/>
+<text class="tick" x="742.00" y="293.19" text-anchor="end">1.6</text>
+<line x1="750.00" y1="195.84" x2="1175.00" y2="195.84" stroke="#ececec" stroke-width="1"/>
+<line x1="746.00" y1="195.84" x2="750.00" y2="195.84" stroke="#111" stroke-width="1"/>
+<text class="tick" x="742.00" y="199.84" text-anchor="end">1.8</text>
+<line x1="750.00" y1="102.48" x2="1175.00" y2="102.48" stroke="#ececec" stroke-width="1"/>
+<line x1="746.00" y1="102.48" x2="750.00" y2="102.48" stroke="#111" stroke-width="1"/>
+<text class="tick" x="742.00" y="106.48" text-anchor="end">2</text>
+<rect x="750.00" y="88.40" width="425.00" height="343.20" fill="none" stroke="#111" stroke-width="1.1"/>
+<polyline points="750.00,375.95 756.64,372.73 763.28,369.44 769.92,366.07 776.56,362.67 783.20,359.19 789.84,355.67 796.48,352.10 803.12,348.49 809.77,344.83 816.41,341.14 823.05,337.39 829.69,333.63 836.33,329.80 842.97,325.97 849.61,322.07 856.25,318.19 862.89,314.22 869.53,310.27 876.17,306.28 882.81,302.25 889.45,298.24 896.09,294.18 902.73,290.10 909.38,286.02 916.02,281.92 922.66,277.79 929.30,273.68 935.94,269.54 942.58,265.39 949.22,261.26 955.86,257.12 962.50,252.98 969.14,248.83 975.78,244.70 982.42,240.58 989.06,236.47 995.70,232.38 1002.34,228.29 1008.98,224.23 1015.62,220.19 1022.27,216.18 1028.91,212.21 1035.55,208.27 1042.19,204.36 1048.83,200.48 1055.47,196.66 1062.11,192.89 1068.75,189.17 1075.39,185.52 1082.03,181.93 1088.67,178.44 1095.31,175.01 1101.95,171.65 1108.59,168.39 1115.23,165.23 1121.88,162.20 1128.52,159.32 1135.16,156.57 1141.80,153.97 1148.44,151.55 1155.08,149.33 1161.72,147.33 1168.36,145.56 1175.00,144.05" fill="none" stroke="#111111" stroke-width="1.65" stroke-linejoin="round" stroke-linecap="round"  clip-path="url(#clip_tov_1)"/>
+<text class="label" x="962.50" y="472.60" text-anchor="middle">&#916; [deg]</text>
+<text class="label" x="699.00" y="260.00" text-anchor="middle" transform="rotate(-90 699.00 260.00)">time ratio</text>
+<rect x="753.00" y="91.40" width="76.00" height="20.00" fill="white" opacity="0.88"/>
+<text class="tag" x="757.00" y="106.40">(b)</text>
+</svg>
