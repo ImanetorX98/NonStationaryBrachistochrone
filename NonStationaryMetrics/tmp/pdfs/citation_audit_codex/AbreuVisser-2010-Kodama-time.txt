@@ -1,0 +1,817 @@
+                                            PHYSICAL REVIEW D 82, 044027 (2010)
+      Kodama time: Geometrically preferred foliations of spherically symmetric spacetimes
+                                                Gabriel Abreu* and Matt Visser†
+     School of Mathematics, Statistics, and Operations Research, Victoria University of Wellington, Wellington, New Zealand
+                (Received 21 April 2010; revised manuscript received 16 June 2010; published 12 August 2010)
+                In a general time-dependent (3 þ 1)-dimensional spherically symmetric spacetime, the so-called
+             Kodama vector is a naturally defined geometric quantity that is timelike outside the evolving horizon
+             and so defines a preferred class of fiducial observers. However the Kodama vector does not by itself define
+             any preferred notion of time. We first extract as much information as possible by invoking the ‘‘warped
+             product’’ structure of spherically symmetric spacetime to study the Kodama vector, and the associated
+             Kodama energy flux, in a coordinate-independent manner. Using this formalism we construct a general
+             class of conservation laws, generalizing Kodama’s energy flux. We then demonstrate that a preferred time
+             coordinate—which we shall call Kodama time—can be introduced by taking the additional step of
+             applying the Clebsch decomposition theorem to the Kodama vector. We thus construct a geometrically
+             preferred coordinate system for any time-dependent spherically symmetric spacetime, and explore its
+             properties. We study the geometrically preferred fiducial observers, and demonstrate that it is possible to
+             define and calculate a generalized notion of surface gravity that is valid throughout the entire evolving
+             spacetime. Furthermore, by building and suitably normalizing a set of radial null geodesics, we can show
+             that this generalized surface gravity passes several consistency tests and has a physically appropriate static
+             limit.
+
+             DOI: 10.1103/PhysRevD.82.044027                                            PACS numbers: 04.70.Bw, 04.70.Dy
+
+
+                                                                      independent manner. In particular we can use this formal-
+                   I. INTRODUCTION
+                                                                      ism to easily generate a generalized Kodama flux.
+   Black holes are an iconic part of Einstein’s general                  By furthermore taking the extra step of invoking the
+relativity. While we have a very detailed understanding               Clebsch decomposition [2–4] on the (1 þ 1)-dimensional
+of static and stationary black holes (the Schwarzschild,              radial-temporal plane, we shall demonstrate that the
+Reissner-Nordström, Kerr, and Kerr-Newman black holes),              Kodama vector field can indeed be used to construct a
+the situation with regard to evolving black holes (evolving           preferred time coordinate, and more importantly a pre-
+either due to accretion or Hawking radiation or both) is              ferred coordinate system. The absence of any (asymptoti-
+much more opaque. In particular, the rather limited number            cally timelike) Killing vector in evolving spacetimes has
+of currently known exact evolving solutions                           made it difficult to achieve any consensus about best way
+(Oppenheimer-Snyder collapse, the Vaidya solution)                    to define such fundamental quantities as the surface grav-
+makes it much more difficult to fully describe an evolving            ity. Over the years, several different attempts have been
+black hole in any analytic detail. A fundamental feature of           made to extend the concept of surface gravity from static
+the geometry of an evolving time-dependent spacetime is               (and stationary) to time-dependent spacetimes. For in-
+the lack of any (asymptotically timelike) Killing vector              stance, Hayward [5] uses the Kodama vector itself as a
+field, which seems to leave us without a preferred time               substitute for the Killing vector, since it certainly provides
+coordinate with which to study the problem.                           a preferred direction and it is parallel to the Killing vector
+   In 1980 Kodama made significant progress in this regard            in the static case (as well as at spatial infinity if one
+when he constructed a geometrically natural divergence-               assumes the evolving spacetime is asymptotically flat).
+free preferred vector field that is guaranteed to exist in any        Others (see [6,7] and references therein) have appealed to
+time-dependent spherically symmetric spacetime [1]. This              the freedom of normalization of the null geodesics to
+so-called ‘‘Kodama vector’’ defines a natural timelike di-            ensure their definitions reduce to known results in the static
+rection in the region exterior to the black hole, and addi-           case [8].
+tionally induces an unexpected conserved current, but does               The layout of the current article is as follows. In Sec. II
+not (in and of itself) define any naturally preferred time            we briefly summarize key properties of warped product
+coordinate. By considering the ‘‘warped product’’ form of             spacetimes. In Sec. III we present a quick review of the
+the spacetime metric for any spherically symmetric ge-                Kodama vector and Kodama’s unexpected conservation
+ometry we are able to investigate the Kodama vector (and              law, and then significantly generalize Kodama’s energy
+the associated Kodama energy flux) in a coordinate-                   flux in Sec. IV. Next, in Sec. V, a Clebsch decomposition
+                                                                      of the Kodama vector is made—in order to build a natural
+ *gabriel.abreu@msor.vuw.ac.nz                                        geometrically preferred coordinate system for any spheri-
+ †
+   matt.visser@msor.vuw.ac.nz                                         cally symmetric time-dependent spacetime. In Secs. VI
+
+
+
+1550-7998= 2010=82(4)=044027(10)                               044027-1                          Ó 2010 The American Physical Society
+GABRIEL ABREU AND MATT VISSER                                                             PHYSICAL REVIEW D 82, 044027 (2010)
+and VII we explore the Riemann and Einstein tensors in               In the specific situation we are interested in the base
+this geometrically preferred coordinate system, being care-       space is two-dimensional, so in terms of the Ricci scalar of
+ful to connect the discussion back to the general warped          the radial-temporal plane we have the specific simplifica-
+product formalism of Sec. II. Furthermore, in Sec. VIII we        tion
+review Kodama’s conservation law in these preferred co-                                          B
+                                                                                                     R B B
+ordinates. In Sec. IX we calculate the Brown-York quasi-                           BR
+                                                                                     ijkl ¼            ð gik gjl  B gil B gjk Þ:          (5)
+local mass and in Sec. X present our extended definition of                                          2
+surface gravity. Section XI deals with the naturally induced      Furthermore the fiber is a constant curvature sphere of
+notions of apparent and trapping horizon. Lastly, we add a        radius unity, so
+brief discussion.                                                              F
+                                                                                   R ¼ ðF g F g  F g F g Þ:                   (6)
+
+       II. WARPED PRODUCT SPACETIMES                              Thus we now have on purely geometrical grounds
+                                                                                               B
+ Any (possibly time-dependent) spherically symmetric                                            R B B
+                                                                                   Rijkl ¼        ð gik gjl  B gil B gjk Þ;               (7)
+metric can be written in the form                                                               2
+    ds2 ¼ gab dxa dxb
+                                                                                        Rij ¼ rfri rj rgF g ;                         (8)
+        ¼ Bg   ij   ðxÞdxi dxj þ rðxÞ2 fd2 þ sin2 d2 g
+        ¼ gij ðxÞdxi dxj þ rðxÞ2 F g dx dx :
+           B
+                                                            (1)        R ¼ r2 f1  jrrj2 gðF g F g  F g F g Þ:                (9)
+                                                                  It is also common in spherical symmetry to define the
+Here the two coordinates xi run over the radial-temporal
+                                                                  Hawking-Israel/Hernandez-Misner/Misner-Sharp quasilo-
+plane, while the two coordinates x ( and ) run over the
+                                                                  cal mass [15,16] by
+surfaces of spherical symmetry. The discussion can be
+generalized to (d þ 1) dimensions with (d  1)-                                                            2m
+dimensional spherical symmetry, but for now we are just                                        1             ¼ jrrj2 ;                   (10)
+                                                                                                            r
+working in (3 þ 1) dimensions. (For higher-dimensional
+                                                                  where both mðxi Þ and rðxi Þ are scalar functions on the base
+generalizations in a Gauss-Bonnet context see [9,10].)
+                                                                  space. We now have
+Independent of the total dimensionality, B gij is a (1 þ 1)-
+                                                                                               B
+dimensional Lorentzian metric.                                                                  R B B
+                                                                                   Rijkl ¼        ð gik gjl  B gil B gjk Þ;              (11)
+   Geometrically this is called a ‘‘warped product’’ mani-                                      2
+fold, with the radial-temporal plane being referred to as the
+‘‘base space,’’ the surfaces of spherical symmetry being                                Rij ¼ rfri rj rgF g ;                        (12)
+referred to as the ‘‘fibers,’’ and the function rðxÞ which
+depends only on the base space coordinates being referred                    R ¼ 2mrðF g F g  F g F g Þ:                     (13)
+to as the ‘‘warp factor.’’ It is a standard computation to
+show that (up to the usual permutation symmetries for the         It is often useful to go to an orthonormal basis, in which
+indices) the only nonzero components of the Riemann               case
+tensor (in any warped product spacetime) are                                                         B
+                                                                                                       R
+                          Rijkl ¼ Rijkl ;
+                                   B                                                Ri^ j^ k^ l^ ¼       ð ^ ^  ^ ^  i^ l^j^ k^ Þ;   (14)
+                                                            (2)                                        2 ik jl
+
+                    Rij ¼ rfri rj rgF g ;              (3)                                                fri^rj^rg
+                                                                                        Ri^ ^ j^ ^ ¼                  ^ ^ ;         (15)
+                                                                                                                   r
+ R ¼ r2 fF R  jrrj2 ðF g F g  F g F g Þg:                                      2m
+                                                                               R^ ^ ^ ^ ¼       ð^ ^ ^ ^  ^ ^ ^ ^ Þ:     (16)
+                                                            (4)                                  r3
+An abstract computation along these lines can be found in         For the Ricci tensor we have
+O’Neill [11] while more explicit computations can be                                               B
+                                                                                                     RB         fri rj rg
+found in [12–14]. Note that the covariant derivatives ap-                             Rij ¼             gij  2           ;               (17)
+pearing above are covariant derivatives in the base space.                                           2              r
+But because rðxÞ depends only on the (1 þ 1)-dimensional
+base space coordinates, and because of the specific form of                                                Ri ¼ 0;                       (18)
+the warped product metric, these derivatives can be ‘‘boot-                                                         
+                                                                                                           2m
+strapped’’ to covariant derivatives in the total warped                                R ¼                   rr2 r F g ;             (19)
+product spacetime.                                                                                          r
+
+
+
+                                                            044027-2
+KODAMA TIME: GEOMETRICALLY PREFERRED . . .                                           PHYSICAL REVIEW D 82, 044027 (2010)
+and for the Ricci scalar                                        temporal plane one can choose ka to be (asymptotically)
+                                                                future-pointing. It can also be defined by the more abstract
+                               r2 r 4m
+                 R ¼ BR  4        þ 3 ;                (20)    statement
+                                r    r
+where the Laplacians above are in the (1 þ 1)-dimensional                                  k ¼ ð2 drÞ] ;                      (26)
+sense on the base space. The Einstein tensor takes the form     where by this one means ‘‘calculate the one-form dr, apply
+                                 2                            the (1 þ 1)-dimensional radial-temporal Hodge star opera-
+                   2fri rj rg    2r r 2m B
+         Gij ¼               þ        3 gij ;         (21)    tion, and use the metric to convert the resulting one-form to
+                      r           r      r
+                                                                a contravariant vector.’’ At this point it is necessary to
+                                                                emphasize, as originally pointed out by Kodama himself,
+                           Gi ¼ 0;                     (22)
+                                                                that the Kodama vector does not in general reduce to the
+                    B 2                                       Killing vector in a static spacetime; all that one can say in
+                      Rr
+              G ¼     þ rr2 r F g :                (23)    general is that in static spacetimes it is parallel to the
+                      2                                         Killing vector. In regions where the Kodama vector is
+These are all purely geometrical statements—while one           timelike (and we shall [informally at this stage] refer to
+has chosen coordinates xa ¼ ðxi ; x Þ to make the warped       this as the black hole exterior region, i.e., the domain of
+product structure manifest, these results are completely        outer communication) the Kodama vector defines a pre-
+independent of one’s choice of coordinates xi on the            ferred class of fiducial observers (FIDOs) [17] specified by
+radial-temporal plane (the base space), and for that matter     the unit timelike four-vector
+are completely independent of one’s choice of coordinates                                            k
+x on the spherically symmetric fibers.                                                     V¼           :                     (27)
+                                                                                                   jjkjj
+            III. THE KODAMA MIRACLE                             Although the Kodama vector provides a preferred ‘‘time
+                                                                direction,’’ and simplifies the evolution equations of a
+   It is well known that in a time-dependent spacetime,         dynamical spherically symmetric system [18,19], it does
+there is no (asymptotically timelike) Killing vector to         not at this stage define a preferred ‘‘time coordinate.’’ We
+define a preferred time coordinate. The calculation of          shall subsequently use the Kodama vector plus the Clebsch
+important quantities such as the four-acceleration and the      decomposition theorem to construct a geometrically natu-
+surface gravity become much more ambiguous.                     ral preferred time coordinate.
+Additionally, there is no general consensus on the ‘‘best’’        To prove that the Kodama vector is divergence free the
+form of the metric, nor on the best choice of the coordinate    best strategy (with hindsight) is to consider the quantity
+system.
+   An interesting insight on this problem is given by                         2       1           pﬃﬃﬃﬃﬃﬃﬃﬃﬃ ab 2
+                                                                     ra ðab
+                                                                          ? =r Þ ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃ @a ð g4 ? =r Þ
+Kodama [1], who proved the existence of a divergence-                                g4
+free vector field for any time-dependent spherically sym-                                                     "          #
+metric metric. The Kodama vector, ka , lies in the (1 þ 1)-                             1            pﬃﬃﬃﬃﬃﬃﬃﬃﬃ ij     0
+                                                                                 ¼ 2 pﬃﬃﬃﬃﬃﬃﬃﬃﬃ @a g2 ?
+dimensional radial-temporal plane, so that ka ¼ ðki ; 0; 0Þ.                       r g2                         0 0
+More precisely                                                                                                          
+                                                                                          1           pﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                 ¼ 2 pﬃﬃﬃﬃﬃﬃﬃﬃﬃ @i g2 ij       ?   ; 0; 0
+                       ka ¼ ab
+                             ? rb r;                    (24)                         r g2
+                                                                                                         
+                                                                                   1
+where the tensor ab? is the (1 þ 1)-dimensional Levi-                           ¼ 2 B ri ij   ? ; 0; 0 ¼ 0:                  (28)
+Civita tensor in the radial-temporal plane, denoted ij                            r
+                                                     ?,
+canonically embedded into (3 þ 1) dimensions according          Note that the last covariant derivative is a base space
+to the prescription                                             covariant derivative which vanishes since the (1 þ 1)-
+                          "        #                            dimensional Levi-Civiata tensor is covariantly constant
+                             ij 0
+                    ? ¼
+                     ab       ?     :              (25)         with respect to the (1 þ 1)-dimensional covariant deriva-
+                              0 0                               tive. But this (3 þ 1)-dimensional result, ra ðab  2
+                                                                                                                ? =r Þ ¼ 0
+It is straightforward to check that ka ra r ¼ 0. Furthermore,   can easily be rearranged to give
+if we define a positive semidefinite norm by jjkjj2 ¼                                         r
+jgðk; kÞj ¼ jg1 ðk[ ; k[ Þj, then jjkjj ¼ jjrrjj. (We shall                              ka ¼ rb ab
+                                                                                                   ?;                          (29)
+                                                                                              2
+use the superscripted symbol [ to denote the process of
+turning a vector into a covector by ‘‘lowering the index,’’     which now implies
+and use the superscripted symbol ] to denote the inverse                                    ra ka ¼ 0;                         (30)
+process of turning a covector into a vector by ‘‘raising the
+index.’’) By appropriate choice of orientation on the radial-   so the Kodama vector itself is conserved. In addition,
+
+
+
+                                                          044027-3
+GABRIEL ABREU AND MATT VISSER                                                       PHYSICAL REVIEW D 82, 044027 (2010)
+Kodama also proved that in time-dependent spherically             Thus conservation of the Kodama flux is a subtle result
+symmetric spacetimes there is another (somewhat unex-             deeply connected with the warped product nature of the
+pected) conserved current. In terms of the Einstein tensor        spacetime. We have presented this derivation in some de-
+and the Kodama vector we have J a ¼ Gab kb , with                 tail because it is now possible to rapidly generalize the
+                                                                  result in a significant manner.
+                    ra J a ¼ ra ðGab kb Þ ¼ 0:            (31)
+This is a purely geometrical statement, ultimately due to                  IV. GENERALIZED KODAMA FLUX
+the warped product form of the metric—it is not related to
+the Bianchi identities. Let us specifically compute                   Consider an arbitrary function ðm; rÞ of the two quan-
+                                                                  tities mðxi Þ and rðxi Þ. Now construct the current
+                  J a ¼ Gab kb ¼ ðGij kj ; 0; 0Þ:         (32)
+                                                                          a
+                                                                         J ¼ f@m ðm; rÞGab  2@r ðm; rÞgab gkb :        (41)
+Now working on the radial-temporal base space we have
+                                 2                              This current is conserved in any spherically symmetric
+               ri rj r jk        2r r 2m i                        spacetime. To prove this note that by the definition of the
+   Gij kj ¼ 2        ? rk r þ        3 k:      (33)
+                  r               r      r                        Kodama vector and the geometrical identity proved above
+                                                                  we have
+But using the fact that in (1 þ 1) dimensions
+                                                                              ab
+                         r½i r?jk ¼ 0;                  (34)          a
+                                                                       J ¼ 2 ?2 f@m ðm; rÞrb m þ @r ðm; rÞrb rg
+                                                                               r
+we have                                                                       ab
+                                                                          ¼ 2 ?2 rb ðm; rÞ:                              (42)
+ ri rj rjk                                                                    r
+         ? rk r ¼ r ri r?jk r r ¼ r fri r?jk gr r
+                   j          k     j            k
+
+                                                                  Conservation of this four-vector is then obvious from the
+                  ¼ rj frj r?ki  rk r?ij grk r
+                                                                  last expression. Note, in particular, that by the above argu-
+                             1                                    ment any flux of the form
+                  ¼ þr2 rki  ?ij rj fjrrj2 g:           (35)
+                             2                                                   a
+                                                                                J12 ¼ ff1 ðmÞGab þ f2 ðrÞgab gkb           (43)
+Combining these results
+                                                                  [for arbitrary f1 ðmÞ and f2 ðrÞ] will automatically be
+                        1                2   2m i                 conserved.
+            Gij   kj ¼ þ     ?ij r fjrrj g  3 k :
+                                   j                      (36)
+                          r                      r                   Formally, there is an even more general conserved cur-
+But in view of the definition of the Hawking-Israel/              rent one can write down: For any arbitrary scalar function
+Hernandez-Misner/Misner-Sharp quasilocal mass [15,16]             ðxi Þ defined on the radial-temporal base space the quan-
+we then have                                                      tity
+
+                     1                2m                                                       ab
+                                                                                                ?
+           Gij kj ¼  ?ij rj f2m=rg  3 ki :             (37)
+                                                                                         a
+                                                                                        J ¼       rb ;                   (44)
+                     r                 r                                                       r2
+That is                                                           is conserved. Though this result is more general, it is
+                                                                  somewhat less geometrical, and does not have the same
+                               2                                  flavor as the above. If (and only if) the functions rðxi Þ and
+                    Gij kj ¼  2 ?ij rj m:               (38)
+                              r                                   mðxi Þ are functionally independent (so that one can use m
+This computation has been performed using the (1 þ 1)-            and r as coordinates on the radial-temporal base space)
+dimensional covariant derivative in the radial-temporal           then these two notions (J and J ) can be made to coin-
+base space, but at this stage we can safely use the symme-        cide. In particular,  ! 2mðr; tÞ gives us Kodama’s
+tries of the situation to lift this equality to the full space-   conserved flux J a , while  ! 13 r3 is just the statement
+time                                                              that the Kodama vector itself is conserved, ra ka ¼ 0. (For
+                                                                  related comments in a higher-dimensional Gauss-Bonnet
+                                   2                              context see [9,10].)
+                  J a ¼ Gab kb ¼  2 ab rb m:            (39)
+                                  r ?
+This is a purely geometrical statement—fundamentally                                 V. KODAMA TIME
+connected with the warped product nature of the space-
+time—that underlies the unexpected conservation of the               The Kodama vector has been used before in several
+Kodama current. In view of the fact that we have already          aspects of the time-dependent gravitational collapse prob-
+proven ra ðab  2                                                 lem. However it has not been used to obtain a preferred
+            ? =r Þ ¼ 0 we finally see
+                                                                  time coordinate, nor a preferred coordinate system for the
+                          2                                       metric of a dynamic spacetime. Fortunately, in (1 þ 1)
+               ra J a ¼  2 ab ra rb m ¼ 0:              (40)
+                         r ?                                      dimensions it is possible to use the lesser known but classic
+
+
+
+                                                            044027-4
+KODAMA TIME: GEOMETRICALLY PREFERRED . . .                                            PHYSICAL REVIEW D 82, 044027 (2010)
+                                                                                                          
+Clebsch decomposition theorem, a result complementary                                              2mðr; tÞ 1
+to the more usual Helmholtz decomposition theorem, (see                           grr ðr; tÞ ¼ 1                             (50)
+                                                                                                     r
+for instance [2–4]) to assert that there are two unique
+scalars  and  such that the Kodama covector k[ takes           for the radial-radial part of the metric tensor. Doing so will
+the form                                                         automatically give the quantity mðr; tÞ a natural interpre-
+                                                                 tation in terms of the Hawking-Israel/Hernandez-Misner/
+                         k[ ¼ d:                       (45)    Misner-Sharp quasilocal mass [15,16]. Since the radial-
+                                                                 temporal plane by definition has Lorentzian signature, this
+Now in the ‘‘normal’’ exterior region where dr is spacelike
+                                                                 choice then guarantees that it is possible to write the
+(i.e., in the domain of outer communication), the Kodama
+                                                                 temporal-temporal component of the metric tensor in the
+vector and covector are both timelike, so in this region the
+                                                                 form
+one-form d is guaranteed to be timelike. This very
+                                                                                                                 
+strongly suggests that  should be adopted as a preferred                                                 2mðr; tÞ
+‘‘time coordinate.’’ In fact, relabeling the scalar  as a                   gtt ðr; tÞ ¼ e2ðr;tÞ 1            :      (51)
+                                                                                                             r
+coordinate  ! t, and relabeling the integrating factor as
+ ! F, we write                                                  We finally have the (quite standard) result
+                                                                                               
+                          k[ ¼ Fdt:                      (46)                          2mðr; tÞ 2            dr2
+                                                                 ds2 ¼ e2ðr;tÞ 1             dt þ
+                                                                                           r           1  2mðr; tÞ=r
+This naturally induces a geometrically preferred time co-
+ordinate t—which we shall refer to as the Kodama time.                  þ r2 fd2 þ sin2 d2 g;                              (52)
+Using this time coordinate is at least as natural as using r
+                                                                 where in addition we know
+for the radial coordinate. (This key step, though mathe-
+matically elementary, goes well beyond anything in                                 ra r ¼ ðdrÞa ¼ ð0; 1; 0; 0Þ;               (53)
+Kodama’s original paper [1], or the various papers that
+have subsequently sought to use Kodama’s formalism.)             and the equivalent contravariant result
+As we shall soon see, this choice of Kodama time coor-                                                       
+                                                                                               2mðr; tÞ
+dinate is the unique choice that makes integral curves of                     ðdrÞa ¼ 0; 1             ; 0; 0 :              (54)
+                                                                                                   r
+the vector @t coincide with integral curves of the Kodama
+vector. That is                                                  Furthermore, the components of the Kodama vector and
+                                                                 covector in these coordinates are
+                            k / @t :                     (47)
+                                                                            ka ¼ eðr;tÞ ð1; 0; 0; 0Þ;
+Ultimately, adopting these coordinates (no matter how
+                                                                                                                            (55)
+natural they appear) is of course a choice, and will be                                             2mðr; tÞ
+                                                                            ka ¼ eðr;tÞ 1                 ð1; 0; 0; 0Þ:
+‘‘justified’’ only insofar as they turn out to be useful.                                              r
+   Adopting these ðt; rÞ coordinates as preferred coordi-
+nates on the radial-temporal plane, and without any loss         As previously mentioned, the squared norm of the Kodama
+of generality, the metric can be written as                      vector is equal to that of rr:
+                                                                                                             
+ds2 ¼ gtt ðr; tÞdt2 þ 2gtr ðr; tÞdrdt þ grr ðr; tÞdr2
+                                                                                                
+                                                                                                
+                                                                                                    2mðr; tÞ 
+                                                                                                              
+                                                                                                              
+                                                                                                              
+                                                                             jjkjj2 ¼ jjrrjj2 ¼ 
+                                                                                                
+                                                                                                1           
+                                                                                                              :     (56)
+                                                                                                      r      
+       þ r2 fd2 þ sin2 d2 g:                          (48)
+                                                                 In these coordinates it is useful to define the time trans-
+However, since the Kodama vector k is orthogonal to dr,          lation vector, T , which is not a Killing vector unless the
+then also dt is orthogonal to dr, and so the cross term in the   geometry happens to be static, as
+metric is zero. Thus in these preferred coordinates the
+metric is diagonal,                                                            T ¼ @t ;      T a ¼ ð1; 0; 0; 0Þ;
+                                                                                                       
+ ds2 ¼ gtt ðr; tÞdt2 þ grr ðr; tÞdr2 þ r2 fd2 þ sin2 d2 g:                     2ðr;tÞ      2mðr; tÞ                      (57)
+                                                                            Ta ¼ e          1            ð1; 0; 0; 0Þ:
+                                                         (49)                                      r
+                                                                 The squared norm of T is equal to the absolute value of the
+This relatively long argument has ultimately led us back to
+                                                                 temporal-temporal component of the metric, jgtt j, and
+one of the simplest, and arguably most obvious, forms of
+                                                                 proportional to the squared norm of the Kodama vector:
+the metric—a simple diagonal metric in Schwarzschild
+                                                                                                         
+curvature coordinates. (Of course now we can argue that                2            2ðr;tÞ
+                                                                                             
+                                                                                             
+                                                                                             
+                                                                                                2mðr; tÞ 
+                                                                                                          
+                                                                                                          
+                                                                                                          
+                                                                 jjT jj ¼ jgtt j ¼ e         
+                                                                                             1          
+                                                                                                           ¼ e2ðr;tÞ jjkjj2 :
+we have a geometrically natural reason for adopting this                                           r     
+particular set of coordinates.)
+                                                                                                                          (58)
+  When using the Schwarzschild radial coordinate r it is
+natural to choose the parametrization                            That is,
+
+
+
+                                                           044027-5
+GABRIEL ABREU AND MATT VISSER                                                                      PHYSICAL REVIEW D 82, 044027 (2010)
+
+                         jjT jj2                           jjT jj             These three quantities are easily seen to be proportional to
+         e2ðr;tÞ ¼             ;            eðr;tÞ ¼          :   (59)    ri rj r. (In fact they equal fri^rj^rg=r.) Finally
+                          jjkjj2                            jjkjj
+In the static situation it is the time translation vector T that                                                        2m
+                                                                                                       R^ ^ ^ ^ ¼      :               (64)
+will reduce to the (asymptotic) timelike Killing vector:                                                                r3
+T ! K Þ k. Because the normalizations of T and k                              Note that the particularly simple formula for R^ ^ ^ ^ under-
+differ, then if the Kodama vector is used simply as a
+                                                                              lies the identification of mðr; tÞ as the Hernandez-Misner
+substitute for the Killing vector when attempting to calcu-
+                                                                              quasilocal mass [15].
+late quantities such as the surface gravity [5], one is likely
+to encounter normalization issues when taking the static
+limit.                                                                                         VII. EINSTEIN TENSOR
+   Specifically, to obtain a finite value of the four-
+                                                                                For the Einstein tensor, working in an orthonormal basis,
+acceleration near a possible horizon, as measured by an
+                                                                              the single most important result is
+observer at infinity, it is necessary to multiply by a suitably
+defined normalizing factor [20,21]. In the static case this                                                      2m0 ðr; tÞ
+                                                                                                      Gt^ t^ ¼              :              (65)
+normalizing factor is just jgtt j, and coincides with the                                                          r2
+squared norm of the Killing vector. However, in the time-
+                                                                              Here the primes denote differentiation with respect to r,
+dependent case, not only does the geometry not possess a
+                                                                              and the dots with respect to t. This result is utterly standard,
+Killing vector, but also the squared norm of the Kodama
+                                                                              with the only novelty being that this formula for Gt^ t^
+vector does not coincide with jgtt j. This leaves us with a
+                                                                              continues to hold in the time-dependent case (subject of
+somewhat ambiguous situation with respect to the normal-
+                                                                              course to the coordinate choices made above). This result
+izing factor and the surface gravity of a time-dependent
+                                                                              for Gt^ t^ is intimately related to the physical interpretation of
+metric tensor, and means that we will have to exercise
+                                                                              mðr; tÞ as the Hawking-Israel quasilocal mass.
+some care in defining the surface gravity of a time-
+                                                                                A second important result is more subtle:
+dependent geometry.
+                                                                                                              2 _mðr; tÞeðr;tÞ
+                                                                                                   Gt^ r^ ¼                       :        (66)
+                  VI. RIEMANN TENSOR                                                                          r2 ð1  2mðr;tÞ
+                                                                                                                        r Þ
+
+    It is now a standard exercise to calculate the various                    We shall soon see that this formula for Gt^ r^ is central to the
+components of the Riemann tensor (for instance, by using                      coordinate-based verification of Kodama’s unexpected
+MAPLE). We note that the Riemann tensor is considerably                       conservation law, and that it is intimately related to the
+less fearsome than one might suppose. Only one compo-                         Brown-York quasilocal mass [22].
+nent is in any sense ‘‘difficult.’’ Temporarily suppressing                     For completeness we indicate
+the ðr; tÞ arguments for conciseness, and working in an
+orthonormal basis we have                                                                        2m0 ðr; tÞ 20 ðr; tÞð1  2mðr;tÞ
+                                                                                                                             r Þ
+                                                                                    Gr^ r^ ¼         2
+                                                                                                                                  :       (67)
+                                                                                                 r                   r
+                 2m m00 2m0                2m
+Rt^ r^ t^ r^ ¼  3       þ 2 þ 1                ½00 þ ð0 Þ2             This result is quite standard (see for instance Eq. (2.65) of
+                 r     r      r              r
+                                                                            [23]), with the only novelty being that this formula for Gr^ r^
+                              e         _me
+               þ 3ðm=rÞ0 0      @t               :           (60)           continues to hold in the time-dependent case. This now
+                                r      ð1  2m
+                                             r Þ
+                                                2
+                                                                              implies the useful result
+In view of the warped product formalism, we know that this                                                      20 ðr; tÞð1  2mðr;tÞ
+                                                                                                                                 r Þ
+rather messy quantity has a direct and simple physical/                                   Gt^ t^ þ Gr^ r^ ¼                           :   (68)
+                                                                                                                           r
+mathematical interpretation: As may be verified by direct
+computation it is simply B R=2, one half the Ricci scalar of                     Finally, now suppressing the ðr; tÞ arguments for con-
+the (1 þ 1)-dimensional radial-temporal plane.                                ciseness, we have
+   The remaining components are much simpler:                                 G^ ^ ¼ G^ ^
+                                                                                                                                   
+                                   m  rm0        2m 0                                         2m                      1             m m0
+     Rt^ ^ t^ ^ ¼ Rt^ ^ t^ ^ ¼           1        ; (61)                       ¼ 1             00 þ 0 0           30 2 
+                                     r3            r r                                           r                      r            r    r
+                                                                                             00         2                2    _     
+                                                   _me                                  m            e         €
+                                                                                                                m   4ð _mÞ       m_
+             Rt^ ^ r^ ^ ¼ Rt^ ^ r^ ^ ¼                 ;                                           2m 2
+                                                                                                                  þ       2m
+                                                                                                                                      : (69)
+                                             r2 ð1  2m=rÞ
+                                                                      (62)                 r       ð1  r Þ r rð1  r Þ           r
+                                                                              The first two lines here are again quite standard, and appear
+                                               m  rm0                        also in static situations. (See for instance Eq. (2.66) of
+               Rr^ ^ r^ ^ ¼ Rr^ ^ r^ ^ ¼          :              (63)
+                                                 r3                           [23].) All the time derivatives have been isolated in the
+
+
+
+                                                                        044027-6
+KODAMA TIME: GEOMETRICALLY PREFERRED . . .                                                            PHYSICAL REVIEW D 82, 044027 (2010)
+third line. With a little more work this can be somewhat                               IX. BROWN-YORK QUASILOCAL MASS
+tidied up as follows:
+                                                                                 With the coordinate system developed above, the notion
+G^ ^ ¼ G^ ^                                                               of quasilocal internal energy arises naturally as the Brown-
+                                                                          York quasilocal mass [22]. To prove this, first let us take
+          m00        e                        2m 3=2  0                    some imaginary spherical surface r ¼ r0 , and hold r0 fixed
+     ¼        pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ @r r 1        e 
+           r    r 1  2m=r                      r                             in time. Then the total energy inside this spherical surface
+                                                                            depends on the net flux across the surface. To calculate the
+          e       _me
+          @t                     :                        (70)               net flux we need the Gtr component of the Einstein tensor,
+           r     ð1  2m r Þ
+                             2
+                                                                              in an orthonormal basis. That is
+This rather complicated expression can be verified to equal                                                         2 _mðr; tÞ
+B R=2 þ r2 r=r, the result we expect based on the warped                                    Gt^ r^ ðr; tÞ ¼    2
+                                                                                                                                  eðr;tÞ ;               (76)
+                                                                                                               r ð1  2mðr; tÞ=rÞ
+product formalism. We note that the time derivative con-
+tributions to the Einstein tensor are quite isolated, and in                  whence, via the Einstein equations 8 Gab ¼ Tab , we have
+this geometrically preferred coordinate system occur only                     the flux density
+in the G^ ^ ¼ G^ ^ and Gt^ r^ components. This ultimately is
+                                                                                                                1      _mðr; tÞ
+one of the key reasons we will find the Kodama time to be                          fðr; tÞ ¼ Tt^ r^ ðr; tÞ ¼      2
+                                                                                                                                    eðr;tÞ : (77)
+so useful.                                                                                                     4 r ð1  2mðr; tÞ=rÞ
+                                                                              Now the total net flux across the imaginary surface at r ¼
+      VIII. COORDINATE-BASED VERSION OF                                       r0 , in an amount of proper time , is
+         KODAMA’S CONSERVATION LAW                                                                    Z
+                                                                                ðnet fluxÞttfinal
+                                                                                            initial
+                                                                                                    ¼   fðr0 ; tÞ  ðareaÞ  d
+  Kodama’s conservation law can now be studied in more
+explicit coordinate-based detail. First, based only on                                                  Z
+spherical symmetry and the definition of the Kodama                                                 ¼       fðr0 ; tÞ  ð4 r20 Þ
+vector, the unexpected conserved current J a takes the form                                                          sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                                            ðr0 ;tÞ           2mðr0 ; tÞ
+ J a ¼ gab Gbc kc ¼ fk^a k^b þ ðdrÞ
+                                  ^ a ðdrÞ
+                                        ^ b gGbc k^c jjkjj; (71)                                         e            1                            dt: (78)
+                                                                                                                                       r0
+whence, since by construction jjkjj ¼ jjdrjj, we see                          That is
+                      J a ¼ Gt^ t^ka þ Gt^ r^ ðdrÞa :                (72)                                     Z
+                                                                                                              _mðr0 ; tÞ
+                                                                                       ðnet fluxÞttfinal
+                                                                                                   initial
+                                                                                                           ¼qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ dt
+But we have already explicitly calculated the quantities                                                     1  2mðrr 0 ;tÞ
+Gt^ t^, Gt^ r^ , ka , and ðdrÞa . We obtain                                                                    sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                     ðr;tÞ 0                                                                           
+                              m ðr; tÞ eðr;tÞ _mðr; tÞ                                                                     2mðr0 ; tÞ tfinal
+        J ¼2 
+         a              e
+                                      ;                 ; 0; 0 : (73)                                    ¼ r0 1                                     :   (79)
+                             r2              r2                                                                                    r0        tinitial
+
+This vector is now obviously conserved since the four-                        Then, if initially there is no mass inside r ¼ r0 , at time tfinal
+divergence is simply                                                          we have
+                                                                                                           sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+               1            pﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                                                                  2mðr0 ; tfinal Þ
+    ra J a ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃ @a g4 J a                                                            tfinal
+                                                                                  ðnet fluxÞtinitial ¼ r0 1  1                                  : (80)
+              g4                                                                                                                 r0
+                       2
+           ¼       ðr;tÞ 2
+                                @a ½ðm0 ðr; tÞ; _mðr; tÞ; 0; 0Þa            In this situation, the only meaningful definition of internal
+                  e        r                                                  energy at t ¼ tinitial is to set Uðr0 ; tinitial Þ ¼ 0. Hence, at any
+                       2                                                      subsequent time t the internal energy Uðr0 ; tÞ is equal to the
+           ¼                    ½m_ 0 ðr; tÞ þ m_ 0 ðr; tÞ ¼ 0:     (74)
+                  eðr;tÞ r2                                                 net incoming flux and so it makes sense to define
+                                                                                                                sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+Equivalently we note that from this coordinate-based cal-                                                                  2mðr0 ; tÞ
+culation we explicitly recover                                                             Uðr0 ; tÞ ¼ r0 1  1                              : (81)
+                                                                                                                                  r0
+                                       ab rb m
+                      J a ¼ Gab kb ¼ 2 ? 2 :                         (75)    This internal energy is just the Brown-York quasilocal
+                                          r                                   mass for the spacetime geometry with metric (52); see
+This relation is somewhat miraculous in the present                           [22]. We can rearrange this (as pointed out in [22]) to yield
+coordinate-based calculation, and as we have seen has a
+                                                                                                                                 U2 ðr0 ; tÞ
+deeper justification in terms of the warped product form of                                      mðr0 ; tÞ ¼ Uðr0 ; tÞ                      :            (82)
+the spacetime geometry.                                                                                                            2r0
+
+
+
+                                                                        044027-7
+GABRIEL ABREU AND MATT VISSER                                                                PHYSICAL REVIEW D 82, 044027 (2010)
+                                                                                                                           
+Here mðr0 ; tÞ retains its interpretation as the Hawking-                                           ðrH Þ    1  2m0 ðrH Þ
+Israel (and Hernandez-Misner/Misner-Sharp [15,16]) qua-                                 staticjH ¼ e                          :    (86)
+                                                                                                                   2rH
+silocal mass. The difference between the two notions of
+energy is just the self interacting Newtonian gravitational             When bootstrapping to the dynamic case a plausible gen-
+potential of a massive shell of radius r0 . Both energies               eralization (which we shall subsequently buttress by also
+coincide at spatial infinity with the Arnowitt-Deser-Misner             considering the radial null geodesics) is to replace jjKjj !
+(ADM) mass.                                                             jjT jj, which at least has the virtue of maintaining the
+                                                                        correct static limit. Under this hypothesis the appropriate
+                                                                        object to consider is the near horizon limit of
+                  X. SURFACE GRAVITY
+                                                                                      V ¼ jjAjjjjT jj ¼ jjrT Vjj
+   Several attempts at calculating the surface gravity for a                                                        
+time-dependent metric have been made using the Kodama                                                mðr; tÞ m0 ðr; tÞ
+                                                                                        ¼ eðr;tÞ      2
+                                                                                                            
+vector instead of the Killing vector [5], with results quali-                                      r             r
+                                                                                                                 
+tatively similar to those in the static case; even to the extent                                 2mðr; tÞ 0
+of deriving some form of the first law of (black hole)                                       1            ðr; tÞ ;              (87)
+                                                                                                   r
+thermodynamics.
+                                                                        which on the evolving horizon has the limit
+                                                                                                                0          
+                                                                                             ðrH ðtÞ;tÞ 1  2m ðrH ðtÞ; tÞ :
+       A. Surface gravity from fiducial observers
+                                                                                  VjH ðtÞ ¼ e                                      (88)
+   The most intuitive way of calculating the surface gravity                                                   2rH ðtÞ
+is by working in the exterior region and considering the
+                                                                        However, this proposed definition presents us with a po-
+four-velocity V parallel to the Kodama vector. Calculate
+                                                                        tential ambiguity—what is the physically most appropriate
+the four-acceleration A ¼ rV V. Then explicitly comput-
+                                                                        choice for the normalizing factor? The choice of jjT jj as
+ing the magnitude of this four-acceleration we see
+                                                                        normalizing factor as advocated above is certainly plau-
+             a ¼ jjAjj                                                  sible, and has the correct static limit. Furthermore it is
+                                                                      intimately related to the Kodama time introduced in this
+                         1              mðr; tÞ m0 ðr; tÞ               article, rather than the Kodama vector k. Nevertheless, it is
+               ¼ qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ             
+                  1  2mðr;tÞ              r2            r              useful to see if we can come up with other plausible
+                               r
+                    sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                          candidates for surface gravity in an evolving spacetime,
+                                2mðr; tÞ 0                              and see whether they agree with (or are closely related to)
+                  1                           ðr; tÞ:        (83)    the above proposal, and whether they possess the correct
+                                      r
+                                                                        static limit.
+(Note that near spatial infinity we have the sensible
+Newtonian result a ! m=r2 .) The surface gravity can be                      B. Surface gravity from radial null geodesics
+defined as the acceleration of an observer near the evolving
+                                                                           There are other, possibly less ambiguous, ways to use-
+horizon, which we implicitly define by rH ðtÞ ¼
+                                                                        fully define the sought-after surface gravity. More specifi-
+2mðrH ðtÞ; tÞ, as measured by another observer at infinity.
+                                                                        cally, we can parametrize the strength of the gravitational
+Thus, at this point it is necessary to multiply by a normal-
+                                                                        field throughout the entire spacetime geometry by using
+izing factor, often referred to as a redshift factor. In the
+                                                                        the inaffinity properties of the radial null geodesics.
+(asymptotically flat) static case there is no doubt that the
+                                                                        Consider (temporarily) the following null vectors:
+appropriate normalizing factor is
+                                     pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                       ka þ ra r
+          jjKjj ¼ jgtt j1=2 ¼ eðrÞ 1  2mðrÞ=r                                                ‘~ 
+                                                                                                   a ¼            :                (89)
+                                                                 (84)                                      2
+and that the appropriate object to consider is the near                 In the exterior region (where k is timelike) these null
+horizon limit of                                                        vectors are both outward-pointing, ‘~þ is future-pointing,
+                                                                        and ‘~ is past-pointing. (Note that ‘~ is then inward
+   static ¼ jjAjjjjKjj ¼ jjrK Vjj                                       pointing; these specific conventions have been chosen to
+                                                 
+                     mðrÞ m0 ðrÞ         2mðrÞ 0                        simplify the computations below as far as possible.) These
+        ¼ eðrÞ                   1          ðrÞ  :                are arguably the simplest radial null vectors one could
+                      r2   r               r
+                                                                        write down using only the Kodama vector. It is easy to
+                                                    (85)
+                                                                        check that ‘~þ  ~a   1      2
+                                                                                      a ‘ ¼ 2 jjkjj . Since we are working with
+The location of the horizon is in the static case implicitly            spherical symmetry, both radial null vectors must satisfy
+defined by rH ¼ 2mðrH Þ, and this is now a true Killing                 the geodesic equation (in its nonaffine parametrized form):
+horizon and also an event horizon, at which we have the
+standard result [8]                                                           ‘~ b rb ‘~a ¼ ~‘ ‘~a ;      r‘ ‘ ¼ ~‘ ‘~ ;   (90)
+
+
+
+                                                                  044027-8
+KODAMA TIME: GEOMETRICALLY PREFERRED . . .                                                  PHYSICAL REVIEW D 82, 044027 (2010)
+                                                                                                                        
+where ~‘ are scalars defined everywhere throughout the                               ðrH ðtÞ;tÞ    1  2m0 ðrH ðtÞ; tÞ   1 _
+spacetime. By contracting these equations with ‘~                      ‘ jH ðtÞ ¼ e                                       ðrH ðtÞ; tÞ:
+                                                 a , we can                                                2rH ðtÞ          2
+explicitly compute ~‘ , to yield                                                                                                    (97)
+    ~ ‘þ ¼ ~‘
+                                                                 This is not quite equal to VjH —though it does share with
+           mðr; tÞ m0 ðr; tÞ 1   2mðr; tÞ 0                          VjH the desirable property of having the correct static
+         ¼                  1            ðr; tÞ:
+            r2         r     2     r                               limit. An improved proposal is to average over past- and
+                                                  (91)             future-pointing null geodesics and take
+(Note that near spatial infinity we have ~‘ ! m=r2 .) At                                               1
+the evolving horizon this would reduce to the tentative                                       null ¼      ½  þ     ‘ :              (98)
+                                                                                                        2 ‘þ
+definition
+                             1  2m0 ðrH ðtÞ; tÞ                   Then null ¼ V . That is: If one takes future-pointing and
+                 ~ H ðtÞ ¼                       :         (92)    past-pointing outward null geodesics, normalized to
+                                  2rH ðtÞ
+                                                                   Kodama time, and averages the resulting inaffinity parame-
+Unfortunately this does not reduce to the known result in          ters, then one obtains the same V that we tentatively
+the static case—there is a missing factor of eðrH ðtÞ;tÞ !       identified based on the four-acceleration of the FIDOs
+eðrH Þ . This makes the above definition not suitable for        that follow the Kodama flow.
+calculating the Hawking temperature. (We emphasize that               In short: By using Kodama time in addition to the
+in static situations the standard Wick-rotation trick of           Kodama vector we have now developed a geometrically
+going to Euclidean signature, demanding the absence of             preferred notion of surface gravity for spherically symmet-
+any conical singularity at rH , and interpreting the Hawking       ric evolving spacetimes that can meaningfully be extended
+temperature in terms of periodicity in imaginary time,             throughout the entire spacetime, and in addition exhibits a
+uniquely enforces Eq. (86) as the only physically accept-          good static limit.
+able candidate for the surface gravity [8].) The source of
+the difficulty is, since eðr;tÞ ¼ jjT jj=jjkjj, ultimately due                   XI. THE EVOLVING HORIZON
+to the fact that jjT jj Þ jjkjj in general.
+   These considerations do suggest an improved strategy:             With the calculations presented so far, it is not possible
+Since we have seen how to use the Clebsch decomposition            to conclude too much about the evolving horizon at
+to deduce the natural existence of a Kodama time, in               rH ðtÞ ¼ 2mðt; rH Þ. To relate this to a trapping horizon, in
+addition to a Kodama vector, then it would seem appro-             the Hayward sense [5,6], it is necessary to compute the
+priate to use the Kodama time as the natural (nonaffine)           expansions, ‘~ and ‘ , of the radial null vectors. Let us
+parameter for these radial null curves. (That is, we now           use the following definitions for the expansion [7]:
+parametrize the null curves by Kodama time, rather than
+the usual Killing time used in the static case.) This is                  ‘~ ¼ ra ‘~a  ~‘ ;            ‘ ¼ ra ‘a     ‘ :    (99)
+tantamount to choosing
+                                                                 A brief computation yields
+             1            jjT jj
+      ‘   ¼     T     þ         r r   ¼ eðr;tÞ ‘~
+                                                     a:     (93)
+        a
+             2        a
+                           jjkjj a                                                                        
+                                                                                           1      2mðr; tÞ
+                                        1                                             ‘~ ¼   1           ;
+This time, the inner product is ‘þ              2
+                                 a ‘ ¼ 2 jjT jj . These
+                                    a
+                                                                                           r        r
+‘‘Kodama time normalized’’ radial null vectors are again                                                                           (100)
+                                                                                           1      2mðr; tÞ ðr;tÞ
+tangent to the radial null geodesics and so satisfy                                   ‘ ¼ 1              e      :
+                                                                                           r        r
+                     ‘b rb ‘a ¼         a
+                                      ‘ ‘ :              (94)
+                                                                   In particular both ‘~þ and ‘þ change sign at the evolving
+A brief calculation yields                                         horizon rH ðtÞ. This is sufficient to guarantee that the evolv-
+                 ‘ ¼ e
+                       ðr;tÞ ~
+                                 ‘  ‘ ra ;
+                                       a                   (95)    ing horizon at rH ðtÞ ¼ 2mðt; rH ðtÞÞ is an apparent horizon.
+                                                                   However rH ðtÞ is not a trapping horizon in the Hayward
+whence                                                             sense [5], nor an ‘‘Ashtekar horizon’’ [24], since in addi-
+                                  0                             tion ‘~ and ‘ also both vanish on the evolving horizon.
+            ¼ eðr;tÞ mðr; tÞ  m ðr; tÞ
+         ‘
+                         r2           r                            This is not critical for our purposes, since ultimately a
+                                                                trapping horizon is not needed to have Hawking radiation
+                       2mðr; tÞ 0         1
+               1                ðrÞ  _ðr; tÞ:         (96)    [25–27].
+                         r                2                           For completeness, we have also computed ‘~a ra ‘~þ and
+At the evolving horizon,      ‘ reduces to                        ‘a ra ‘þ . At the evolving horizon we have
+
+
+
+                                                             044027-9
+GABRIEL ABREU AND MATT VISSER                                                          PHYSICAL REVIEW D 82, 044027 (2010)
+                             _mðrH ðtÞ; tÞ ðrH ðtÞ;tÞ             conserved fluxes appropriate to any spherically symmetric
+        ð‘~a ra ‘~þ ÞH ¼                e            ;
+                               rH ðtÞ2                             spacetime.
+                                                           (101)      Furthermore, we have successfully used the Kodama
+                         _mðrH ðtÞ; tÞ ðrH ðtÞ;tÞ
+        ð‘a ra ‘þ ÞH ¼              e             :              vector field, plus the Clebsch decomposition, to obtain a
+                           rH ðtÞ2                                 preferred Kodama time coordinate, and have then pro-
+Thus for both normalizations we have most (but not all) of         ceeded to construct a geometrically preferred coordinate
+the key properties of an outer trapping horizon at rH ðtÞ          system for describing spherically symmetric time-
+when _mðt; rH ðtÞÞ > 0, i.e., when the overall mass increases      dependent spacetimes. The resulting metric is one of the
+in time.                                                           most simple forms of the metric of a spherically symmetric
+                                                                   spacetime—a diagonal metric in Schwarzschild curvature
+                                                                   coordinates. With these coordinates there are very simple
+                     XII. DISCUSSION
+                                                                   physical interpretations for both the Hawking-Israel
+   We have used the warped product formalism to inves-             (Hernandez-Misner/Misner-Sharp) and Brown-York quasi-
+tigate the geometry of time-dependent spherically symmet-          local masses. Although the definition of surface gravity
+ric spacetimes, developing relatively straightforward              remains somewhat ambiguous, by using the Kodama time
+arguments for the covariant conservation of the Kodama             as an integral part of the construction, we have identified
+vector itself and the associated Kodama flux. This con-            some very good geometrically preferred candidates that are
+struction has allowed us to construct a very general class of      compatible with known results in the static limit.
+
+
+
+
+ [1] H. Kodama, Prog. Theor. Phys. 63, 1217 (1980).                      Geometry and Its Applications, Prague, 2004 (Charles
+ [2] H. Lamb, Hydrodynamics (Dover, New York, 1945), 6th                 University, Prague, Czech Republic 2005), p. 109.
+     ed.; see especially Sec. 167 on p. 248.                        [15] W. C. Hernandez and C. W. Misner, Astrophys. J. 143, 452
+ [3] S. Deser, R. Jackiw, and A. P. Polychronakos, Phys. Lett.           (1966); see especially Eq. (13).
+     A 279, 151 (2001).                                             [16] C. W. Misner and D. H. Sharp, Phys. Rev. 136, B571
+ [4] S. E. Perez Bergliaffa, K. Hibberd, M. Stone, and M.                (1964).
+     Visser, Physica (Amsterdam) 191D, 121 (2004).                  [17] Black Holes: The Membrane Paradigm, edited by K. S.
+ [5] S. A. Hayward, Phys. Rev. D 49, 6467 (1994); 53, 1938               Thorne, R. H. Price, and D. A. MacDonald (Yale
+     (1996); Classical Quantum Gravity 15, 3147 (1998); Phys.            University, New Haven, CT, 1986).
+     Rev. D 49, 831 (1994).                                         [18] I. Racz, Classical Quantum Gravity 23, 115 (2006).
+ [6] A. B. Nielsen and J. H. Yoon, Classical Quantum Gravity        [19] P. Csizmadia and I. Racz, Classical Quantum Gravity 27,
+     25, 085010 (2008); A. B. Nielsen and D. H. Yeom, Int. J.            015001 (2010).
+     Mod. Phys. A 24, 5261 (2009); A. B. Nielsen, J. Korean         [20] S. M. Carroll, An Introduction to General Relativity
+     Phys. Soc. 54, 2576 (2009); Gen. Relativ. Gravit. 41, 1539          Spacetime and Geometry (Addison Wesley, Reading,
+     (2009); arXiv:0711.0313; Int. J. Mod. Phys. D 17, 2359              MA, 2004).
+     (2008).                                                        [21] R. M. Wald, General Relativity (University of Chicago,
+ [7] A. B. Nielsen and M. Visser, Classical Quantum Gravity              Chicago, 1984).
+     23, 4637 (2006).                                               [22] J. D. Brown and J. W. York, Phys. Rev. D 47, 1407 (1993).
+ [8] M. Visser, Phys. Rev. D 46, 2445 (1992).                       [23] M. Visser, Lorentzian Wormholes: From Einstein to
+ [9] H. Maeda and M. Nozawa, Phys. Rev. D 77, 064031                     Hawking (AIP Press, Woodbury, 1995).
+     (2008).                                                        [24] A. Ashtekar and G. J. Galloway, Adv. Theor. Math. Phys.
+[10] H. Maeda, Phys. Rev. D 81, 124007 (2010).                           9, 1 (2005); A. Ashtekar and B. Krishnan, Living Rev.
+[11] B.     O’Neill,    Semi-Riemannian      Geometry      (with         Relativity 7, 10 (2004), http://relativity.livingreviews.org/
+     Applications to Relativity) (Academic, New York, 1983),             Articles/lrr-2004-10; A. Ashtekar, J. Engle, T. Pawlowski,
+     p. 210.                                                             and C. Van Den Broeck, Classical Quantum Gravity 21,
+[12] J. Carot and J. da Costa, Classical Quantum Gravity 10,             2549 (2004).
+     461 (1993).                                                    [25] M. Visser, Int. J. Mod. Phys. D 12, 649 (2003).
+[13] Y. Agaoka, I.-B. Kim, B. H. Kim, and D. J. Yeom, On            [26] C. Barceló, S. Liberati, S. Sonego, and M. Visser, Phys.
+     Doubly Warped Product Manifolds, http://ir.lib.hiroshima-           Rev. Lett. 97, 171301 (2006).
+     u.ac.jp/metadb/up/niikiyo/KJ00000197381.pdf.                   [27] C. Barceló, S. Liberati, S. Sonego, and M. Visser,
+[14] Z. Sentürk, Proceedings of the Conference on Differential          Classical Quantum Gravity 23, 5341 (2006).
+
+
+
+
+                                                             044027-10
+

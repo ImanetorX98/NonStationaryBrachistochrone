@@ -1,0 +1,1295 @@
+        We are IntechOpen,
+  the world’s leading publisher of
+         Open Access books
+  Built by scientists, for scientists
+
+
+  5,600
+Open access books available
+                                       138,000
+                                       International authors and editors
+                                                                                        170M
+                                                                                         Downloads
+
+
+
+
+                                           Our authors are among the
+
+
+
+      154
+  Countries delivered to
+                                         TOP 1%
+                                             most cited scientists
+                                                                                   12.2%
+                                                                            Contributors from top 500 universities
+
+
+
+
+                            Selection of our books indexed in the Book Citation Index
+                                   in Web of Science™ Core Collection (BKCI)
+
+
+
+
+               Interested in publishing with us?
+          Contact book.department@intechopen.com
+                           Numbers displayed above are based on latest data collected.
+                                For more information visit www.intechopen.com
+Chapter
+
+Clairaut Submersion
+Sanjay Kumar Singh and Punam Gupta
+
+
+
+Abstract
+
+   In this chapter, we give the detailed study about the Clairaut submersion. The
+fundamental notations are given. Clairaut submersion is one of the most interesting
+topics in differential geometry. Depending on the condition on distribution of
+submersion, we have different classes of submersion such as anti-invariant, semi-
+invariant submersions etc. We describe the geometric properties of Clairaut anti-
+invariant submersions and Clairaut semi-invariant submersions whose total space is
+a Kähler, nearly Kähler manifold. We give condition for Clairaut anti-invariant
+submersion to be a totally geodesic map and also study Clairaut anti-invariant
+submersions with totally umbilical fibers. We also give the conditions for the
+semi-invariant submersions to be Clairaut map and also for Clairaut semi-invariant
+submersion to be a totally geodesic map. We also give some illustrative example of
+Clairaut anti-invariant and semi-invariant submersion.
+
+Keywords: Riemannian submersion, nearly Kähler manifolds, Kähler manifolds,
+anti-invariant submersion, semi-invariant submersion, clairaut submersion, totally
+geodesic maps
+
+
+1. Introduction
+
+    Riemannian submersion between two Riemannian manifolds was first intro-
+duced by O’Neill [1] and Gray [2]. After that Watson [3] introduced almost
+Hermitian submersions. Later, the notion of anti-invariant submersions and
+Lagrangian submersion from almost Hermitian manifolds onto Riemannian mani-
+folds were introduced by Sahin [4] and studied by Taştan [5, 6], Gündüzalp [7],
+Beri et al. [8], Ali and Fatima [9], in which the fibers of submersion are anti-
+invariant with respect to the almost complex structure of total manifold. After that
+several new types of Riemannian submersions were defined and studied such as
+semi-invariant submersion [10, 11], slant submersion [12, 13], generic submersion
+[14–17], hemi-slant submersion [18], semi-slant submersion [19], pointwise slant
+submersion [20–22] and conformal semi-slant submersion [23]. Also, these kinds of
+submersions were considered in different kinds of structures such as nearly Kähler,
+Kähler, almost product, para-contact, Sasakian, Kenmotsu, cosymplectic and etc. In
+book [24], we find the recent developments in this field.
+    In 1735, A.C. Clairaut [25] obtained the very important result in the theory of
+surfaces, which is Clairaut’s theorem and stated that for any geodesic α on a
+surface of revolution S, the function r sin θ is constant along α, where r is the
+distant from a point on the surface to the rotation axis and θ is the angle between
+α and the meridian through α. Bishop [26] introduced the idea of Riemannian
+submersions and gave a necessary and sufficient conditions for a Riemannian sub-
+mersion to be Clairaut. Allison [27] considered Clairaut semi-Riemannian
+
+1
+Advanced Topics of Topology
+
+
+submersions and showed that such submersions have interesting applications in the
+static space-times.
+    In [28], Tastan and Gerdan gave new Clairaut conditions for anti-invariant sub-
+mersions whose total manifolds are Sasakian and Kenmotsu and got many interest-
+ing results. In [29], Tastan and Aydin studied Clairaut anti-invariant submersions
+whose total manifolds are cosymplectic. Gündüzalp [30] introduced Clairaut anti-
+invariant submersions from a paracosymplectic manifold and gave characterization
+theorems. In [31], Lee et al. studied Clairaut anti-invariant submersions whose total
+manifolds are Kähler.
+    Kähler manifolds [32, 33] have an especially rich geometric and topological
+structure because of Kähler identity. Kähler manifolds are very important in differ-
+ential geometry, which has applications in several different fields such as super-
+symmetric gauge theory and superstring theory in theoretical physics, signal
+processing in information geometry. The simplest example of Kähler manifold is a
+complex Euclidean space ℂn with the standard Hermitian metric.
+    Nearly Kähler manifolds introduced by Gray and Hervella [32], are the geometrically
+interesting class among the sixteen classes of almost Hermitian manifolds. The geomet-
+rical meaning of nearly Kähler condition is that the geodesics on the manifolds are
+holomorphically planar curves. Gray [2] studied nearly Kähler manifolds broadly and
+gave example of a non-Kählerian nearly Kähler manifold, which is 6-dimensional sphere.
+    Motivated by this, the authors [34] studied Clairaut anti-invariant submersions
+from nearly Kähler manifolds onto Riemannian manifolds with some examples and
+obtained conditions for Clairaut Riemannian submersion to be totally geodesic map.
+The authors investigated conditions for the Clairaut anti-invariant submersions to
+be a totally umbilical map. The authors [34] studied Clairaut semi-invariant sub-
+mersions from Kähler manifolds onto Riemannian manifolds with some examples.
+The authors also obtained conditions for Clairaut semi-invariant Riemannian
+submersion to be totally geodesic map and investigated conditions for the
+semi-invariant submersion to be a Clairaut map.
+
+
+2. Almost complex manifold
+
+    An almost complex structure on a smooth manifold M is a smooth tensor field φ
+of type ð1, 1Þ such that φ2 ¼ I. A smooth manifold equipped with such an almost
+complex structure is called an almost complex manifold. An almost complex mani-
+fold ðM, φÞ endowed with a chosen Riemannian metric g satisfying
+
+                                g ðφX, φY Þ ¼ g ðX, Y Þ                          (1)
+
+    for all X, Y ∈ TM, is called an almost Hermitian manifold.
+    An almost Hermitian manifold M is called a nearly Kähler manifold [2] if
+
+                               ð∇X φÞY þ ð∇Y φÞX ¼ 0                             (2)
+
+  for all X, Y ∈ TM. If ð∇X φÞY ¼ 0 for all X, Y ∈ TM, then M is known as Kähler
+manifold [33]. Every Kähler manifold is nearly Kähler but converse need not be true.
+
+
+3. Riemannian submersion
+
+   Definition 1.1 [1, 35] Let M, g m and N, g n be Riemannian manifolds, where
+                                            
+
+dimðMÞ ¼ m, dimðN Þ ¼ n and m > n. A Riemannian submersion π : M ! N is a
+map of M onto N satisfying the following axioms:
+
+2
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+       i. π has maximal rank.
+
+      ii. The differential π ∗ preserves the lengths of horizontal vectors.
+
+   For each q ∈ N, π 1 ðqÞ is an ðm nÞ-dimensional Riemannian submanifold of M.
+The submanifolds π 1 ðqÞ, q ∈ N, are called fibers. A vector field on M is called
+vertical if it is always tangent to fibers. A vector field on M is called horizontal if it is
+always orthogonal to fibers. A vector field X on M is called basic if X is horizontal
+and π-related to a vector field X 0 on N, that is, π ∗ X p ¼ X 0π ∗ ðpÞ for all p ∈ M: We
+denote the projection morphisms on the distributions kerπ ∗ and ðkerπ ∗ Þ⊥ by V and
+H, respectively. The sections of V and H are called the vertical vector fields and
+horizontal vector fields, respectively. So
+                                                                   ⊥
+                        V p ¼ T p π 1 ðqÞ ,        Hp ¼ T p π 1 ðqÞ :
+                                                         
+
+
+    The second fundamental tensors of all fibers π 1 ðqÞ, q ∈ N gives rise to tensor
+field T and A in M defined by O’Neill [1] for arbitrary vector field E and F, which is
+
+                                 T E F ¼ H∇M         M
+                                           VE VF þ V∇VE HF,                           (3)
+                                 AE F ¼ H∇M         M
+                                          HE VF þ V∇HE HF,                            (4)
+
+   where V and H are the vertical and horizontal projections.
+   To discuss geodesics, we need a linear connection. We denote the Levi-Civita
+connection on M by ∇ ^ and the adapted connection of the submersion by ∇. From
+Eqs. (3) and (4), we have
+
+                                                  ^ V W,
+                                   ∇V W ¼ T V W þ ∇                                   (5)
+                                   ∇V X ¼ H∇V X þ T V X,                              (6)
+                                   ∇X V ¼ AX V þ V∇X V,                               (7)
+                                   ∇X Y ¼ H∇X Y þ AX Y,                               (8)
+
+   for all V, W ∈ Γðkerπ ∗ Þ and X, Y ∈ Γðkerπ ∗ Þ⊥ , where V∇V W ¼ ^ ∇V W: If X is
+basic, then AX V ¼ H∇V X:
+   It is easily seen that for p ∈ M, U ∈ V p and X ∈ Hp the linear operators
+
+                                    T U , AX : T p M ! T p M
+
+    are skew-symmetric, that is,
+
+                 g ðAX E, FÞ ¼    gðE, AX F Þ and g ðT U E, FÞ ¼   g ðE, T U F Þ,     (9)
+
+    for all E, F ∈ T p M: We also see that the restriction of T to the vertical distribu-
+tion Tjkerπ ∗ kerπ ∗ is exactly the second fundamental form of the fibers of π. Since T U
+is skew-symmetric,     therefore  π has totally geodesic fibers if and only if T  0.
+    Let π : M, gm ! N, g n be a smooth map between Riemannian manifolds.
+                          
+
+Then the differential π ∗ of π can be observed as a section of the bundle
+HomðTM, π 1 TN Þ ! M, where π 1 TN is the bundle which has fibers ðπ 1 TN Þx ¼
+T f ðxÞ N. HomðTM, π 1 TN Þ has a connection ∇ induced from the Riemannian con-
+nection ∇M and the pullback connection ∇N [36, 37]. Then the second fundamental
+form of π is given by
+
+3
+Advanced Topics of Topology
+
+
+
+          ð∇π ∗ ÞðE, FÞ ¼ ∇N           π ∗ ∇M
+                                            E F , for all E, F ∈ ΓðTMÞ:          (10)
+                                              
+                           Eπ∗F
+
+
+    We also know that π is said to be totally geodesic map [36] if ð∇π ∗ ÞðE, FÞ ¼ 0,
+for all E, F ∈ ΓðTMÞ.
+
+
+
+4. Clairaut submersion from Riemannian manifold
+
+    Let S be a revolution surface in 3 with rotation axis L. For any p ∈ S, we denote
+by rðpÞ the distance from p to L. Given a geodesic α : J ⊂  ! S on S, let θðtÞ be the
+angle between αðtÞ and the meridian curve through αðtÞ, t ∈ I. A well-known
+Clairaut’s theorem [25] named after Alexis Claude de Clairaut, says that for any
+geodesic on S, the product r sin θ is constant along α, i.e., it is independent of t. For
+proof, see [38, p.183]. In the theory of Riemannian submersions, Bishop [26] intro-
+duced the notion of Clairaut submersion in the following way: 
+    Definition 1.2 [26] A Riemannian submersion π : ðM, g Þ ! N, g n is called a
+                                                                          
+
+Clairaut submersion if there exists a positive function r on M, which is known as the
+girth of the submersion, such that, for any geodesic α on M, the function ðr ∘ αÞ sin θ
+is constant, where, for any t, θðtÞ is the angle between α_ ðtÞ and the horizontal space
+at αðtÞ.
+    For further use, we are stating one important result of Bishop.
+    Theorem 1.1 [26] A curve h in M is a geodesic if and only if X_ þ 2AX U þ T U U ¼ 0
+and ∇E U þ T U X ¼ 0, where h_ ðtÞ ¼ E ¼ X þ U, X is horizontal and U is vertical.
+    Bishop also gave the following necessary and sufficient condition for a
+Riemannian submersion to be a Clairaut    submersion,   which is
+    Theorem 1.2 [26] Let π : ðM, g Þ ! N, g n be a Riemannian submersion with
+                                              
+
+connected fibers. Then, π is a Clairaut submersion with r ¼ e f if and only if each
+fiber is totally umbilical and has the mean curvature vector field H ¼ gradf , where
+gradf is the gradient of the function f with respect to g.
+    Proof: Let π : M ! N be a Riemannian submersion. For a geodesic h in M, we
+                                                                             _ 2
+                                                                                
+     _
+use hðsÞ ¼ E ¼ X þ U, where X is horizontal and U is vertical. and ℓ ¼ hðsÞ . Let
+θðsÞ be the angle between h_ ðsÞ and the horizontal space at hðsÞ. Then
+
+                               g ðX ðsÞ, X ðsÞÞ ¼ ℓ cos 2 θðsÞ,                   (11)
+
+                               g ðU ðsÞ, U ðsÞÞ ¼ ℓ sin 2 θðsÞ:                  (12)
+
+    Differentiating (12), we get
+                                                                dθðsÞ
+                     g ∇ _hðsÞ U ðsÞ, U ðsÞ ¼ ℓ sin θðsÞ cos θðsÞ       :        (13)
+                                                                   ds
+
+    Using Theorem 1.1, (13) becomes
+
+                                                                   dθðsÞ
+                      g T U ðsÞ X ðsÞ, U ðsÞ ¼ ℓ sin θðsÞ cos θðsÞ               (14)
+                                           
+                                                                         :
+                                                                    ds
+
+    Since T U is skew-symmetric, so form above equation, we have
+
+                                                                 dθðsÞ
+                     g T UðsÞ U ðsÞ, X ðsÞ ¼ ℓ sin θðsÞ cos θðsÞ                  (15)
+                                         
+                                                                       :
+                                                                  ds
+
+4
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+    Now, π is a Clairaut submersion with r ¼ e f if and only if dsd e f ∘ h sinθ ¼ 0:
+                                                                               
+
+    Using (12, 15) in dsd e f ∘ h sinθ ¼ 0, we have
+                                     
+
+
+                                    d
+                                      ð f ∘ hÞðsÞ þ g T U ðsÞ U ðsÞ, X ðsÞ ¼ 0,       (16)
+                                                                         
+                   g ðU ðsÞ, U ðsÞÞ
+                                   ds
+                  g ðU ðsÞ, U ðsÞÞg ðgradf , EðsÞÞ þ g T UðsÞ U ðsÞ, X ðsÞ ¼ 0:       (17)
+                                                                          
+
+
+   Consider any geodesic h on M with initial vertical tangent vector, so gradf turns
+out to be horizontal. Therefore, the function f is constant on any fiber, the fibers
+being connected. Therefore (17) reduces to
+
+                  g ðU ðsÞ, U ðsÞÞg ðgradf , X ðsÞÞ þ g T UðsÞ U ðsÞ, X ðsÞ ¼ 0,      (18)
+                                                                          
+
+                            g ðU ðsÞ, U ðsÞÞgradf þ T UðsÞ U ðsÞ ¼ 0:                 (19)
+
+   Setting U ¼ U 1 þ U 2 , where U 1 , U 2 are vertical vector fields and using the fact
+that T is symmetric for vertical vector fields, we obtain
+
+                                g ðU 1 , U 2 Þgradf þ T U1 U 2 ¼ 0                    (20)
+
+    holds for all vertical vector fields U 1 , U 2 :.
+    Since the restriction of T to the vertical distribution Tjkerπ ∗ kerπ ∗ is exactly the
+second fundamental form of the fibers of π: It means that any fiber is totally
+umbilical with mean curvature vector field H ¼ gradf :
+    Conversely, suppose the fibers are totally umbilic with normal curvature vector
+field H ¼ gradf so that we have
+
+                                      g ðU, U ÞH þ T U U ¼ 0:                         (21)
+
+    Since gradf is orthogonal to fibers, so
+
+                 g ðU, U Þg ðgradf , EÞ ¼    g ðU, U Þg ðH, X Þ ¼    g ðT U U, X Þ:   (22)
+
+   Since (18) holds. so ðr ∘ hÞsinθ is constant along any geodesic h.
+   Example 1.1 [24] Consider the warped product manifold M1  f M2 of Riemannian
+manifolds M1 , g 1 and M2 , g 2 , where f : M1 ! ð0, ∞Þ. The fibers of the first
+                             
+
+projection p1 : M1  f M2 ! M1 are totally umbilical with mean curvature vector field
+                   
+H ¼ grad logf 1=2 . Thus, if M2 is connected, p1 is a Clairaut submersion with r ¼ f 1=2.
+
+
+
+
+5. Anti-invariant Riemannian submersion
+
+    Definition 1.3 [39] Let ðM, φ, g Þ be an almost Hermitian manifold and N be a
+Riemannian manifold with Riemannian metric g n . Suppose that there exists a
+Riemannian submersion π : M ! N, such that the vertical distribution kerπ ∗ is
+anti-invariant with respect to φ, i.e., φkerπ ∗ ⊆ kerπ ⊥∗ . Then, the Riemannian sub-
+mersion π is called an anti-invariant Riemannian submersion. We will briefly call
+such submersions as anti-invariant submersions.
+ Let π be an anti-invariant Riemannian   submersion      from nearly Kähler manifold
+ M, φ, g m onto Riemannian manifold N, g n . For any arbitrary tangent vector
+                                                
+
+fields U and V on M, we set
+
+5
+Advanced Topics of Topology
+
+
+
+                                     ð∇U φÞV ¼ PU V þ Q U V                      (23)
+
+   where PU V, Q U V denote the horizontal and vertical part of ð∇U φÞV,
+respectively. Clearly, if M is a Kähler manifold then P ¼ Q ¼ 0.
+   If M is a nearly Kähler manifold then P and Q satisfy
+
+                           PU V ¼          PV U,   QUV ¼         Q V U:         (24)
+
+    Consider
+
+                                     ðkerπ ∗ Þ⊥ ¼ φkerπ ∗ ⊕ μ,
+
+    where μ is the complementary distribution to φkerπ ∗ in ðkerπ ∗ Þ⊥ and φμ ⊂ μ.
+    For X ∈ Γðkerπ ∗ Þ⊥ , we have
+
+                                           φX ¼ αX þ βX,                         (25)
+
+    where αX ∈ Γðkerπ ∗ Þ and βX ∈ ΓðμÞ. If μ ¼ 0, then an anti-invariant submersion
+is known as Lagrangian submersion.
+
+5.1 Anti-invariant Clairaut submersions from nearly Kähler manifolds
+
+    In this section, we give new Clairaut conditions for anti-invariant submersions
+from nearly Kähler manifolds after giving some auxiliary results.
+    Theorem 1.3 [34] Let π be an anti-invariant submersion       from a nearly Kähler
+manifold ðM, φ, gÞ onto a Riemannian manifold N, g n . If h : J ⊂  ! M is a regular
+                                                         
+
+curve and U ðsÞ and X ðsÞ are the vertical and horizontal parts of the tangent vector
+field h_ ðsÞ ¼ W of hðsÞ, respectively, then h is a geodesic if and only if along h
+
+          AX φU þ AX βX þ T U βX þ V∇X αX þ T U φU þ ^
+                                                     ∇U αX ¼ 0,                 (26)
+
+                        H ∇ _h φU þ ∇h_ βX þ AX αX þ T U αX ¼ 0:                 (27)
+                                         
+
+
+   Proof: Let π be an anti-invariant submersion from a nearly Kähler manifold
+ðM, φ, g Þ onto a Riemannian manifold N, g n . Since φ2 h_ ¼ h.
+                                                             _ Taking the covariant
+                                           
+
+derivative of this and using (2), we have
+                                                     
+                                         _          _            _              (28)
+                                      
+                                  ∇h_ φ φh þ φ ∇h_ φh ¼      ∇h_ h:
+
+    Since U ðsÞ and X ðsÞ are the vertical and horizontal parts of the tangent vector
+field h_ ðsÞ ¼ W of hðsÞ, that is, h_ ¼ U þ X. So (28) becomes
+
+          ∇h_ h_ ¼ φð∇UþX φðU þ X ÞÞ þ P _h φh_ þ Q h_ φh_
+
+               ¼ φð∇U φU þ ∇X φU þ ∇U φX þ ∇X φX Þ þ Ph_ φh_ þ Q h_ φh_
+                                                                                (29)
+               ¼ φð∇U φU þ ∇X φU þ ∇U ðαX þ βX Þ þ ∇X ðαX þ βX ÞÞ
+
+               þPh_ φh_ þ Q h_ φh:
+                                _
+
+    Using (5)–(8) in (29), we get
+
+6
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+
+     ∇h_ h_ ¼ φ H ∇h_ φU þ ∇h_ βX þ AX αX þ AX βX þ AX φU
+                               
+                                                                                          (30)
+                                                  ^ U αX þ P _ φh_ þ Q _ φh:
+                                                                          _
+                                                        
+             þT U βX þ T U αX þ V∇X αX þ T U φU þ ∇         h          h
+
+
+    Let Y, Z ∈ TM. Since φ2 Z ¼           Z, on differentiation, we have
+
+                                 φð∇Y φZ Þ þ ð∇Y φÞφZ ¼          ∇Y Z,
+                       φ2 ð∇Y Z Þ þ φð∇Y φÞZ þ ð∇Y φÞφZ ¼                  ∇Y Z,
+
+    using (23) in above, we obtain
+
+                            φðPY Z þ Q Y Z Þ ¼          PY φZ     Q Y φZ:                 (31)
+
+    By (31), we have
+                                                    
+                                 φ Ph_ φh_ þ Q h_ φh_ ¼ Ph_ h_ þ Q h_ h,
+                                                                      _
+
+    since P and Q are skew-symmetric, so
+                                                          
+                                       φ Ph_ φh_ þ Q h_ φh_ ¼ 0:                          (32)
+
+    Using (32) and equating the vertical and horizontal part of (30), we obtain
+
+            Vφ∇ _h h_ ¼ AX φU þ AX βX þ T U βX þ V∇X αX þ T U φU þ ∇   ^ U αX,
+
+                      Hφ∇ _h h_ ¼ H ∇h_ φU þ ∇ _h βX þ AX αX þ T U αX:
+                                                   
+
+
+    By using above equations, we can say that h is geodesic if and only if (26, 27) hold.
+    Theorem 1.4 [34] Let π be an anti-invariant submersion     from a nearly Kähler
+manifold ðM, φ, g Þ onto a Riemannian manifold N, g n . Also, let h : J ⊂  ! M be a
+                                                         
+
+regular curve and U ðsÞ and X ðsÞ are the vertical and horizontal parts of the tangent
+vector field h_ ðsÞ ¼ W of hðsÞ. Then π is a Clairaut submersion with r ¼ e f if and only
+if along h
+                                                                             
+           gðgradf , X Þg ðU, U Þ ¼ g H∇h_ βX þ AX αX þ T U αX þ Ph_ ðsÞ U, φU :
+                                                              2
+    Proof: Let h : J ⊂  ! M be a geodesic on M and ℓ ¼ h_ ðsÞ . Let θðsÞ be the
+                                                              
+
+angle between h_ ðsÞ and the horizontal space at hðsÞ. Then
+
+                                     g ðX ðsÞ, X ðsÞÞ ¼ ℓ cos 2 θðsÞ,                     (33)
+                                     g ðU ðsÞ, U ðsÞÞ ¼ ℓ sin 2 θðsÞ:                     (34)
+
+    Differentiating (34), we get
+                                                                  dθðsÞ
+                     2g ∇ _hðsÞ U ðsÞ, U ðsÞ ¼ 2ℓ sin θðsÞ cos θðsÞ       :               (35)
+                                                                     ds
+    Using (1) in (35), we have
+                                                                                dθðsÞ
+     g H∇h_ ðsÞ φU ðsÞ, φU ðsÞ        g ∇h_ ðsÞ φ U ðsÞ, φU ðsÞ ¼ ℓ sin θðsÞ cos θðsÞ       :
+                                                                                       ds
+
+
+7
+Advanced Topics of Topology
+
+
+      Now by use of (23), we have
+                                                                                      dθðsÞ
+     g H∇h_ ðsÞ φU ðsÞ, φU ðsÞ     g Ph_ ðsÞ U þ Q h_ ðsÞ U, φU ðsÞ ¼ ℓ sin θðsÞ cos θðsÞ       :
+                                                                                           ds
+
+      Along the curve h, using Theorem 1.3, we obtain
+                                                                          dθðsÞ
+       g H∇h_ βX þ AX αX þ T U αX þ Ph_ ðsÞ U, φU ðsÞ ¼ ℓ sin θðsÞ cos θðsÞ       :
+                                                                             ds
+
+  Now, π is a Clairaut submersion with r ¼ e f if and only if dsd e f sin θ ¼ 0.
+                                                                          
+
+Therefore
+                                                                       
+                                         f       df               dθ
+                                     e              sin θ þ cos θ           ¼ 0,
+                                                 ds               ds
+                                                            
+                             fdf       2                  dθ
+                           e      ℓ sin θ þ ℓ sin θ cos θ      ¼ 0:
+                               ds                         ds
+
+      So, we obtain
+
+       df                                                                       
+          ðhðsÞÞg ðU ðsÞ, U ðsÞÞ ¼ g H∇h_ βX þ AX αX þ T U αX þ Ph_ ðsÞ U, φU ðsÞ :   (36)
+       ds
+                                       
+            df
+      Since ds ðhðsÞÞ ¼ g gradf , h_ ðsÞ ¼ g ðgradf , X Þ. Therefore by using (36), we get
+the result.
+   Theorem 1.5 [34] Let π be an Clairaut anti-invariant submersion from a nearly
+Kähler manifold ðM, φ, g Þ onto a Riemannian manifold N, gn with r ¼ e f . Then
+                                                           
+
+
+                                  AφW φX þ Q W φX ¼ X ð f ÞW
+
+   for X ∈ ðkerπ ∗ Þ⊥ , W ∈ kerπ ∗ and φW is basic.
+   Proof: Let π be an anti-invariant submersion from a nearly Kähler manifold
+ðM, φ, g Þ onto a Riemannian manifold N, g n with r ¼ e f . We know that any fiber
+                                            
+
+of Riemannian submersion π is totally umbilical if and only if
+
+                                      T V W ¼ g ðV, W ÞH,                                   (37)
+
+   for all V, W ∈ Γðkerπ ∗ Þ, where H denotes the mean curvature vector field of any
+fiber in M. By using Theorem 1.2 and (37), we have
+
+                                   TV W ¼             g ðV, W Þgradf :                      (38)
+
+      Let X ∈ μ and V, W ∈ Γðkerπ ∗ Þ, then by using (1) and (2), we have
+
+    g ð∇V φW, φX Þ ¼ gðφ∇V W þ ð∇V φÞW, φX Þ ¼ g ð∇V W, X Þ þ g ðPV W þ Q V W, φX Þ:
+                                                                                            (39)
+
+      By using (1), we have
+
+                                    gðφY, Z Þ ¼           g ðY, φZ Þ,
+
+      where Y, Z ∈ TM. Taking covariant derivative of above, we get
+
+8
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+                             g ðð∇X φÞY, Z Þ ¼     g ðY, ð∇X φÞZ Þ,
+
+    using (23), we get
+
+                         g ðPX Y þ Q X Y, Z Þ ¼    g ðY, PX Z þ Q X Z Þ
+                                                                                 (40)
+                                              ¼ g ðY, PZ X þ Q Z X Þ:
+
+    Using (40), we have
+
+                     g ðPW φX þ Q W φX, V Þ ¼ g ðφX, PV W þ Q V W Þ:             (41)
+
+    Using (5), (38), (41) in (39), we have
+
+                 g ð∇V φW, φX Þ ¼      g ðV, W Þðgradf , X Þ þ g ðV, Q W φX Þ:
+
+    Since φW is basic, so H∇V φW ¼ AφW V, therefore we have
+
+                 g AφW V, φX ¼ g ðV, W Þðgradf , X Þ þ g ðV, Q W φX Þ,
+                           
+
+                  g V, AφW φX þ g ðV, Q W φX Þ ¼ g ðV, W Þðgradf , X Þ           (42)
+                             
+
+
+   because A is skew-symmetric. By using (42), we get the result.
+   Theorem 1.6 [34] Let π be a Clairaut anti-invariant submersion from a nearly
+Kähler manifold ðM, φ, g Þ onto a Riemannian manifold N, gn with r ¼ e f and
+                                                               
+
+gradf ∈ φkerπ ∗ . Then either f is constant on φkerπ ∗ or the fibers of π are
+1-dimensional.
+   Proof: Using (5) and (38), we have
+
+                         g ð∇V W, φU Þ ¼      g ðV, W Þg ðgradf , φU Þ,
+
+    where U, V, W ∈ Γðkerπ ∗ Þ. Since gðW, φU Þ ¼ 0. therefore we have
+
+                          g ðW, ∇V φU Þ ¼ gðV, W Þg ðgradf , φU Þ:               (43)
+
+    By use of (1) and (23) in (43), we get
+
+                  g ðW, Q V U Þ    g ðφW, ∇V U Þ ¼ g ðV, W Þg ðgradf , φU Þ:
+
+    By using (5), we obtain
+
+                  g ðW, Q V U Þ    g ðφW, T V U Þ ¼ g ðV, W Þg ðgradf , φU Þ:
+
+    Now, using (38), we get
+
+          g ðW, Q V U Þ þ g ðV, U Þg ðgradf , φW Þ ¼ g ðV, W Þg ðgradf , φU Þ    (44)
+
+    Take V ¼ U in (44), we have
+
+                      g ðV, V Þg ðgradf , φW Þ ¼ g ðV, W Þg ðgradf , φV Þ:       (45)
+
+    Interchange V with W in (45), we have
+
+                     g ðW, W Þg ðgradf , φV Þ ¼ g ðV, W Þg ðgradf , φW Þ:        (46)
+
+
+9
+Advanced Topics of Topology
+
+
+     By (45) and (46), we have
+
+                g 2 ðV, W Þg ðgradf , φV Þ ¼ g ðV, V Þg ðW, W Þg ðgradf , φV Þ:
+
+    Therefore either f is constant on φkerπ ∗ or V ¼ aW, where a is constant (by
+using Schwarz’s Inequality for equality case).
+    Corollary 1.1 [34] Let π be a Clairaut anti-invariant submersion from a nearly
+Kähler manifold ðM, φ, g Þ onto a Riemannian manifold N, gn with r ¼ e f and
+                                                                  
+
+gradf ∈ φkerπ ∗ . If dimðkerπ ∗ Þ > 1, then the fibers of π are totally geodesic if and
+only if AφW φX þ Q W φX ¼ 0 for W ∈ kerπ ∗ such that φW is basic and X ∈ μ.
+    Proof: By Theorem 1.5 and Theorem 1.6, we get the result.
+    Corollary 1.2 [34] Let π be an Clairaut Lagrangian submersion from a nearly
+Kähler manifold ðM, φ, g Þ onto a Riemannian manifold N, gn with r ¼ e f . Then
+                                                                  
+
+either the fibers of π are 1-dimensional or they are totally geodesic.
+    Proof: Let π be an Clairaut Lagrangian submersion from a Kähler manifold
+ðM, φ, g Þ onto a Riemannian manifold N, g n with r ¼ e f . Then μ ¼ f0g, so
+                                               
+
+AφW φX þ Q W φX ¼ 0 always.
+    Now, we discuss some examples for Clairaut anti-invariant submersions from a
+nearly Kähler manifold.
+    Example 1.2 [34] Let 4 , φ, g be a nearly Kähler manifold endowed with
+                                   
+
+Euclidean metric g on 4 given by
+
+                                             4
+                                                    dx2i
+                                             X
+                                        g¼
+                                              i¼1
+
+
+     and canonical complex structure
+
+                                                           j ¼ 1, 3
+                                         (
+                                            x jþ1
+                               φ xj ¼                                 :
+                                             xj 1          j ¼ 2, 4
+                 n                        o
+   The φ-basis is ei ¼ ∂xi ji ¼ 1, 2, 3, 4 . Let 3 , g 1 be a Riemannian manifold
+                        ∂
+                                                        
+
+endowed with metric g 1 ¼ 3i¼1 dy2i .
+                             P
+
+
+        i. Consider a map π : 4 , φ, g ! 3 , g 1 defined by
+                                               
+
+                                                                  
+                                                    x1 þ x2
+                          π ðx1 , x2 , x3 , x4 Þ ¼    pﬃﬃ , x3 , x4 :
+                                                        2
+
+     Then by direct calculations, we have
+                                             
+                                       ∂   ∂
+                 kerπ ∗ ¼ span X 1 ¼              ,
+                                      ∂x1 ∂x2
+                                             
+                       ⊥               ∂   ∂            ∂          ∂
+              ðkerπ ∗ Þ ¼ span X 2 ¼     þ      , X3 ¼     , X4 ¼
+                                      ∂x1 ∂x2          ∂x3        ∂x4
+
+   and φX 1 ¼ X 2 , therefore φðkerπ ∗ Þ ⊂ ðkerπ ∗ Þ⊥ . Thus, we can say that π is an
+anti-invariant Riemannian submersion. Since the fibers of π are 1-dimensional,
+therefore fibers are totally umbilical.
+   Consider the Koszul formula for Levi-Civita connection ∇ for 4
+
+
+10
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+2g ð∇X Y, Z Þ ¼ Xg ðY, Z Þ þ Yg ðZ, X Þ            Zg ðX, Y Þ      g ð½Y, Z , X Þ    g ð½X, Z , Y Þ þ g ð½X, Y , Z Þ
+
+     for all X, Y, Z ∈ 4 . By simple calculations, we obtain
+
+                                   ∇ei e j ¼ 0        for all i, j ¼ 1, 2, 3, 4:
+
+   Hence T X Y ¼ T Y X ¼ T X X ¼ 0 for all X, Y ∈ Γðkerπ ∗ Þ. Therefore fibers of π are
+totally geodesic. Thus π is Clairaut trivially.
+
+        ii. Consider a map π :                4 , φ, g ! 3 , g 1 defined by
+                                                               
+
+                                                    qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ  
+                           π ðx1 , x2 , x3 , x4 Þ ¼      2         2
+                                                      x1 þ x2 , x3 , x4 :
+
+     Then by direct calculations, we have
+                      (                                                              !)
+                                              x2           ∂        x1           ∂
+       kerπ ∗ ¼ span X 1 ¼                    2         2
+                                          pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                    2         2
+                                                                pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ          ,
+                                           x1 þ x2 ∂x1           x1 þ x2 ∂x2
+                      (                                                           !                      )
+                                              x2           ∂       x1           ∂          ∂          ∂
+     ðkerπ ∗ Þ⊥ ¼ span X 2 ¼                                 þ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ    , X3 ¼     , X4 ¼
+                                           x21 þ x22 ∂x1        x21 þ x22 ∂x2
+                                          pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                          ∂x3        ∂x4
+
+   and φX 1 ¼ X 2 , therefore φðkerπ ∗ Þ ⊂ ðkerπ ∗ Þ⊥ . Thus, we can say that π is an
+anti-invariant Riemannian submersion. Since the fibers of π are 1-dimensional,
+therefore fibers are totally umbilical. By using Koszul formula, we obtain
+
+                                   ∇ei e j ¼ 0        for all i, j ¼ 1, 2, 3, 4:
+
+     Hence
+                                                                                       !
+                                                   x2           ∂       x1           ∂
+                      T X1 X 1 ¼                                  þ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ     :
+                                                x21 þ x22 ∂x1        x21 þ x22 ∂x2
+                                               pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+
+                                                pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+     Now, for the function f ¼ ln                 x21 þ x22 on 4 , φ, g , the gradient of f with
+                                                                       
+
+respect to g is given by
+
+                          4
+                          X               ∂f ∂           x2           ∂       x1           ∂
+                gradf ¼            g ij            ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ   þ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ   :
+                          i, j¼1
+                                          ∂xi ∂x j    x21 þ x22 ∂x1        x21 þ x22 ∂x2
+
+    Therefore for X 1 ∈ Γðkerπ ∗ Þ, T X1 X 1 ¼ gradf . Since kX 1 k ¼ 1, so
+T X1 X 1 ¼ kX 1 k2 gradf . By using Theorem 1.2, we can say that π is an proper Clairaut
+                                                   pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                         f
+anti-invariant submersion with r ¼ e for f ¼ ln          x21 þ x22 .
+   Remark: From all results of this section, we can easily find conditions for
+anti-invariant Clairaut Submersions from Kähler manifolds.
+
+
+6. Semi-invariant Riemannian submersion
+
+   Definition 1.4 Let ðM, φ, g Þ be an almost Hermitian manifold and N be a
+Riemannian manifold with Riemannian metric g n . A Riemannian submersion
+
+11
+Advanced Topics of Topology
+
+
+π : M ! N is called a semi-invariant Riemannian submersion [11] if there is a
+distribution D1 ⊆ kerπ ∗ such that
+
+               kerπ ∗ ¼ D1 ⊕ D2 and φðD1 Þ ¼ D1 ,             φðD2 Þ ⊆ ðkerπ ∗ Þ⊥ ,
+
+   where D2 is orthogonal complementary to D1 in kerπ ∗ . For V ∈ Γðkerπ ∗ Þ, we
+have
+
+                                     φV ¼ ϕV þ ωV,                                    (47)
+
+   where ϕV ∈ ΓðD1 Þ and ωV ∈ ΓðφD2 Þ.
+   Definition 1.5 A semi-invariant Riemannian submersion π is said to be a
+Lagrangian Riemannian submersion [4] if φðkerπ ∗ Þ ¼ ðkerπ ∗ Þ⊥ . Hence, if π is a
+Lagrangian Riemannian submersion then for any V ∈ Γðkerπ ∗ Þ, φV ¼ ωV, ϕV ¼ 0
+and for X ∈ Γðkerπ ∗ Þ⊥ , φX ¼ αX, βX ¼ 0.
+
+6.1 Semi-invariant Clairaut submersions from Kähler manifolds
+
+      In this section, we give new Clairaut conditions for semi-invariant submersions
+from Kähler manifolds after giving some auxiliary results.
+      Theorem 1.7 [40] Let π be a semi-invariant submersion from a Kähler manifold
+ðM, φ, g Þ onto a Riemannian manifold N, g n . If h : J ⊂  ! M is a regular curve
+                                          
+
+and U ðsÞ and X ðsÞ are the vertical and horizontal parts of the tangent vector field
+h_ ðsÞ ¼ W of hðsÞ, respectively, then h is a geodesic if and only if along h
+
+                                       ^ U ϕU þ T U βX þ T U ωU þ ∇
+     V∇X ϕU þ V∇X αX þ AX ωU þ AX βX þ ∇                          ^ U αX ¼ 0,
+                                                                          (48)
+
+          AX ϕU þ AX αX þ H ∇ _h ωU þ ∇h_ βX þ T U ϕU þ T U αX ¼ 0:                   (49)
+                                           
+
+
+    Proof: Let π be a semi-invariant submersion from a Kähler manifold ðM, φ, g Þ
+onto a Riemannian manifold N, g n . Since φ2 h_ ¼ h.
+                                                   _ Taking the covariant deriva-
+                                   
+
+tive of this and using (2), we have
+                                             
+                                    φ ∇ _h φh_ ¼   ∇ _h _h:                           (50)
+
+    Since U ðsÞ and X ðsÞ are the vertical and horizontal parts of the tangent vector
+field h_ ðsÞ ¼ W of hðsÞ, that is, h_ ¼ U þ X. So (50) becomes
+
+       ∇h_ h_ ¼ φð∇UþX φðU þ X ÞÞ
+
+           ¼ φð∇U φU þ ∇X φU þ ∇U φX þ ∇X φX Þ
+
+           ¼ φð∇U ðϕU þ ωU Þ þ ∇X ðϕU þ ωU Þ þ ∇U ðαX þ βX Þ þ ∇X ðαX þ βX ÞÞ:
+                                                                                      (51)
+
+     Using (5)–(8) in (51), we get
+
+                 ∇h_ h_ ¼ φ H ∇h_ φU þ ∇h_ βX þ AX αX þ AX βX þ AX φU
+                                           
+                                                                                      (52)
+                                                              ^ U αX :
+                                                                    
+                         þT U βX þ T U αX þ V∇X αX þ T U φU þ ∇
+
+12
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+     Equating the vertical and horizontal part of (52), we obtain
+
+Vφ∇ _h h_ ¼ V∇X ϕU þ V∇X αX þ AX ωU þ AX βX þ ∇  ^ U ϕU þ T U βX þ T U ωU þ ∇
+                                                                            ^ U αX,
+
+           Hφ∇h_ h_ ¼ AX ϕU þ AX αX þ H ∇h_ ωU þ ∇ _h βX þ T U ϕU þ T U αX:
+                                                       
+
+
+      By using above equations, we can say that h is geodesic if and only if (48) and
+(49) hold.
+      Theorem 1.8 [40] Let π be a semi-invariant
+                                                submersion from a Kähler manifold
+ðM, φ, g Þ onto a Riemannian manifold N, g n . Also, let h : J ⊂  ! M be a regular
+                                          
+
+curve. U ðsÞ and X ðsÞ are the vertical and horizontal parts of the tangent vector field
+h_ ðsÞ ¼ W of hðsÞ. Then π is a Clairaut submersion with r ¼ e f if and only if along h
+
+           g ðgradf , X ÞgðU, U Þ ¼ g H∇ _h βX þ AX αX þ T U αX, ωU
+                                                                   
+
+                                   þg V∇X αX þ AX βX þ T U βX þ ^
+                                                                           
+                                                                   ∇U αX, ϕU :
+                                                               2
+     Proof: Let h : J ⊂  ! M be a geodesic on M and ℓ ¼ h_ ðsÞ . Let θðsÞ be the
+                                                               
+
+angle between h_ ðsÞ and the horizontal space at hðsÞ. Then
+
+                                  g ðX ðsÞ, X ðsÞÞ ¼ ℓ cos 2 θðsÞ,                           (53)
+
+                                  g ðU ðsÞ, U ðsÞÞ ¼ ℓ sin 2 θðsÞ:                           (54)
+
+     Differentiating (54), we get
+                                                                  dθðsÞ
+                     2g ∇h_ ðsÞ U ðsÞ, U ðsÞ ¼ 2ℓ sin θðsÞ cos θðsÞ       :                  (55)
+                                                                     ds
+
+     Using (1) in (55), we have
+                                                                    dθðsÞ
+                     g ∇h_ ðsÞ φU ðsÞ, φU ðsÞ Þ ¼ ℓ sin θðsÞ cos θðsÞ       :
+                                                                       ds
+
+     Now by use of (47), we have
+                                                                              dθðsÞ
+        g ∇h_ ðsÞ ϕU ðsÞ, φU ðsÞ þ g ∇h_ ðsÞ ωU ðsÞ, φU ðsÞ ¼ ℓ sin θðsÞ cos θðsÞ
+                                                                                   ds
+
+     Along the curve h, using Theorem 1.7 and (5)–(8), we obtain
+
+                              dθðsÞ
+        ℓ sin θðsÞ cos θðsÞ
+                                                                             
+                                    ¼           g H∇h_ βX þ AX αX þ T U αX, ωU ðsÞ
+                               ds
+                                                                            ^ U αX, ϕU ðsÞ
+                                                                                     
+                                                g V∇X αX þ AX βX þ T U βX þ ∇
+
+  Now, π is a Clairaut submersion with r ¼ e f if and only if dsd e f sin θ ¼ 0.
+                                                                          
+
+Therefore
+                                                                         
+                                            f       df               dθ
+                                        e              sin θ þ cos θ          ¼ 0,
+                                                    ds               ds
+                                                            
+                              df
+                              f        2                  dθ
+                           e      ℓ sin θ þ ℓ sin θ cos θ      ¼ 0:
+                               ds                         ds
+
+
+13
+Advanced Topics of Topology
+
+
+     So, we obtain
+
+     df                                                        
+        ðhðsÞÞg ðU ðsÞ, U ðsÞÞ ¼ g H∇h_ βX þ AX αX þ T U αX, ωU ðsÞ
+     ds                                                                                 (56)
+                                                               ^ U αX, ϕU ðsÞ,
+                                                                        
+                                þg V∇X αX þ AX βX þ T U βX þ ∇
+                                                   
+           df
+     Since ds ðhðsÞÞ ¼ h_ ½g ðsÞ ¼ g gradf , h_ ðsÞ ¼ g ðgradf , X Þ. Therefore by using (56),
+we get the result.
+   Theorem 1.9 [40] Let π be a Clairaut semi-invariant submersion from a Kähler
+manifold ðM, φ, g Þ onto a Riemannian manifold N, g n with r ¼ e f . Then
+                                                    
+
+
+                                                                  ^ V ϕW, αX
+                                                                            
+          g ðAωW V, βX Þ þ g ðH∇V ϕW, βX Þ þ g ðV∇V ωW, αX Þ þ g ∇
+             ¼ g ðV, W ÞðXf Þ
+
+   for X ∈ Γμ, V, W ∈ ΓðD2 Þ and ωW is basic.
+   Proof: Let π be a Clairaut semi-invariant submersion from a Kähler manifold
+ðM, φ, g Þ onto a Riemannian manifold N, g n with r ¼ e f . We know that any fiber
+                                           
+
+of Riemannian submersion π is totally umbilical if and only if
+
+                                     T V W ¼ g ðV, W ÞH,                                (57)
+
+   for all V, W ∈ Γðkerπ ∗ Þ, where H denotes the mean curvature vector field of any
+fiber in M. By using Theorem 1.2 and (57), we have
+
+                                   TV W ¼      g ðV, W Þgradf :                         (58)
+
+     Let X ∈ μ and V, W ∈ Γðkerπ ∗ Þ, then by using (1) and (2), we have
+
+            g ð∇V φW, φX Þ ¼ g ðφ∇V W þ ð∇V φÞW, φX Þ ¼ g ð∇V W, X Þ:                   (59)
+
+     Using (5), (58) in (59), we have
+
+                           gð∇V φW, φX Þ ¼       g ðV, W Þðgradf , X Þ:
+
+     Since ωW is basic, so H∇V ωW ¼ AωW V, therefore we have
+
+                                                              ^ V ϕW, αX
+                                                                        
+      g ðAωW V, βX Þ þ g ðH∇V ϕW, βX Þ þ g ðV∇V ωW, αX Þ þ g ∇
+         ¼ gðV, W Þðgradf , X Þ:                                                        (60)
+
+   Theorem 1.10 [40] Let π be a Clairaut semi-invariant submersion from a Kähler
+manifold ðM, φ, g Þ onto a Riemannian manifold N, g n with r ¼ e f and
+                                                     
+
+V, W ∈ ΓðD1 Þ Then gradf ∈ Γðφkerπ ∗ Þ.
+   Proof: Let V, W ∈ ΓðD1 Þ and X ∈ ΓðμÞ. Using (5), (47) and (58) in
+
+                                 ∇V φU ¼ φ∇V U þ ð∇V φÞU,
+
+     we have
+
+                T V ϕU þ V∇V ϕU ¼ αT V U þ βT V U þ ϕV∇V U þ ωV∇V U,
+
+     which gives
+
+                         g ðV, ϕU Þg ðgradf , X Þ ¼ gðV, U Þg ðgradf , φX Þ:            (61)
+
+
+14
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+   By interchanging U and V in (61) and adding the resulting equation with (61),
+we get
+
+                                   gðV, U Þg ðgradf , φX Þ ¼ 0,
+
+   which gives gðgradf , φX Þ ¼ 0. Therefore gradf ∈ Γðφkerπ ∗ Þ.
+   Theorem 1.11 [40] Let π be a Clairaut semi-invariant submersion from a Kähler
+manifold ðM, φ, g Þ onto a Riemannian manifold N, g n with r ¼ e f and
+                                                       
+
+gradf ∈ Γðφkerπ ∗ Þ. Then either f is constant on φkerπ ∗ or the fibers of π are
+1-dimensional.
+   Proof: Let U, V ∈ ΓðD2 Þ. Using (5) and (58), we have
+
+                           g ð∇V U, φU Þ ¼     g ðV, U Þg ðgradf , φU Þ,
+
+     which gives
+
+                            gðφ∇V U, U Þ ¼ g ðV, U Þg ðgradf , φU Þ,
+
+     since kerπ ∗ is integrable, so we have
+
+                            g ðφ∇U V, U Þ ¼ g ðV, U Þg ðgradf , φU Þ,
+
+     which equals to
+
+                      g ð∇U φV     ð∇U φÞV, U Þ ¼ g ðV, U Þg ðgradf , φU Þ:
+
+     Since g ðφV, U Þ ¼ 0. therefore we have
+
+                           g ðφV, ∇U U Þ ¼      gðV, U Þg ðgradf , φU Þ:             (62)
+
+     By using (5) in (62), we obtain
+
+                           g ðφV, T U U Þ ¼     g ðV, U Þg ðgradf , φU Þ:
+
+     Now, using (58), we get
+
+                        g ðU, U Þg ðgradf , φV Þ ¼ g ðV, U Þg ðgradf , φU Þ:         (63)
+
+     Interchanging V and U in (63), we have.
+
+                        g ðV, V Þg ðgradf , φU Þ ¼ g ðV, U Þg ðgradf , φV Þ:         (64)
+
+     By (63) and (64), we have
+
+                   g 2 ðV, U Þg ðgradf , φU Þ ¼ g ðV, V Þg ðU, U Þg ðgradf , φU Þ:
+
+   Therefore either f is constant on φkerπ ∗ or V ¼ aU, where a is constant (by
+using Schwarz’s Inequality for equality case).
+   Since kerπ ∗ is CR-submanifold of Kähler manifold ðM, φ, g Þ, therefore by using
+[41], Theorem 6.1, p. 96], we can state that.
+   Theorem 1.12 [40] Let π be a Clairaut semi-invariant submersion from a Kähler
+manifold ðM, φ, g Þ onto a Riemannian manifold N, g n with r ¼ e f . If dim D2 > 1,
+                                                    
+
+then fibers are totally geodesic.
+
+15
+Advanced Topics of Topology
+
+
+   Corollary 1.3 [40] Let π be a Clairaut Lagrangian submersion from a Kähler
+manifold ðM, φ, g Þ onto a Riemannian manifold N, g n with r ¼ e f . Then either the
+                                                      
+
+fibers of π are 1-dimensional or they are totally geodesic.
+   Lastly, we discuss some examples for Clairaut semi-invariant submersions [40]
+from a Kähler manifold.
+   Example 1.3 Every Clairaut anti-invariant submersion from a Kähler manifold
+onto a Riemannian manifold is a Clairaut semi-invariant submersion with D1 ¼ f0g.
+   Example 1.4 Let 6 , φ, g be a Kähler manifold endowed with Euclidean metric
+                             
+
+g on 6 given by
+
+                                                    6
+                                                           dx2i
+                                                    X
+                                              g¼
+                                                    i¼1
+
+
+     and canonical complex structure
+
+                                                 x jþ1     j ¼ 1, 3, 5
+                                φ xj ¼                                     :
+                                                 xj 1        j ¼ 2, 4, 6
+                   n                        o
+     The φ-basis is ei ¼ ∂x∂ i ji ¼ 1, … , 6 . Let 3 , g 1 be a Riemannian manifold
+                                                          
+
+                          3
+endowed with metric g 1 ¼    dy2i .
+                          P
+
+                      6 i¼1 
+   Consider a map π :  , φ, g ! 3 , g1 defined by
+                                       
+
+                                                                               
+                                                                 x1 þ x2
+                        π ðx1 , x2 , x3 , x4 , x5 , x6 Þ ¼         pﬃﬃ , x3 , x4 :
+                                                                     2
+
+     Then by direct calculations, we have
+                                           
+                                     ∂    ∂           ∂           ∂
+              kerπ ∗ ¼ span X 1 ¼             , X2 ¼     , X3 ¼        ,
+                                    ∂x1 ∂x2          ∂x5         ∂x6
+                                               
+                       ⊥                ∂    ∂             ∂          ∂
+              ðkerπ ∗ Þ ¼ span V 1 ¼      þ      , V2 ¼      , V3 ¼
+                                       ∂x1 ∂x2           ∂x3         ∂x4
+
+   and φX 1 ¼ V 1 , φX 2 ¼ X 3 , φX 3 ¼ X 2 therefore D1 ¼ spanfX 2 , X 3 g and
+D2 ¼ spanfX 1 g. Thus, we can say that π is a semi-invariant Riemannian submersion.
+   Consider the Koszul formula for Levi-Civita connection ∇ for 6
+
+2g ð∇X Y, Z Þ ¼ Xg ðY, Z Þ þ Yg ðZ, X Þ       Zg ðX, Y Þ     g ð½Y, Z , X Þ   g ð½X, Z , Y Þ þ g ð½X, Y , Z Þ
+
+     for all X, Y, Z ∈ 6 : By simple calculations, we obtain
+
+                                ∇ei e j ¼ 0      for all i, j ¼ 1, … , 6:
+
+   Hence T X Y ¼ T Y X ¼ T X X ¼ 0 for all X, Y ∈ Γðkerπ ∗ Þ. Therefore fibers of π are
+totally geodesic. Thus π is Clairaut trivially.
+
+
+
+Classification
+
+     2010 mathematics subject classification. 53C12, 53C15, 53C20, 53C55
+
+16
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+
+
+
+Author details
+
+Sanjay Kumar Singh1* and Punam Gupta2
+
+1 Indian Institute of Science Education and Research, Bhopal, India
+
+2 Dr. Harisingh Gour University, Sagar, India
+
+*Address all correspondence to: sanjayks@iiserb.ac.in
+
+
+
+© 2021 The Author(s). Licensee IntechOpen. This chapter is distributed under the terms
+of the Creative Commons Attribution License (http://creativecommons.org/licenses/
+by/3.0), which permits unrestricted use, distribution, and reproduction in any medium,
+provided the original work is properly cited.
+
+17
+Advanced Topics of Topology
+
+
+
+References
+
+[1] O’Neill B. The fundamental            [11] Sahin B. Semi-invariant submersion
+equations of a submersion. Michigan       from almost Hermitian manifolds.
+Mathematical Journal. 1966;13:458-469     Canadian Mathematical Bulletin. 2011;
+                                          56:173-182
+[2] Gray A. Nearly Kähler manifolds.
+Journal of Differential Geometry. 1970;   [12] Küpeli Erken I, Murathan C. On slant
+6:283-309                                 submersions for cosymplectic manifolds.
+                                          Bulletin of the Korean Mathematical
+[3] Watson B. Almost Hermitian            Society. 2014;51(6):1749-1771
+submersions. Journal of Differential
+Geometry. 1976;11:147-165                 [13] Sahin B. Slant submersions from
+                                          almost Hermitian manifolds. Bulletin
+[4] Sahin B. Anti-invariant Riemannian    mathématique de la Société des Sciences
+submersion from almost Hermitian          Mathématiques de Roumanie. 2011;54
+manifolds. Central Europian Journal of    (102)(1):93-105
+Mathematics. 2010;8(3):437-447
+                                          [14] Akyol MA. Generic Riemannian
+[5] Tastan HM. On Lagrangian              submersions from almost product
+submersions. Hacettepe Journal of         Riemannian manifolds. GUJ Sci. 2017;
+Mathematics and Statistics. 2014;43(6):   30(3):89-100
+993-1000
+                                          [15] Ali S, Fatima T. Generic Riemannian
+[6] Tastan HM, Özdemir F, Sayar C. On     submersions. Tamkang Journal of
+anti-invariant Riemannian submersions     Mathematics. 2013;44(4):395-409
+whose total manifolds are locally
+product Riemannian. Journal of            [16] Chen BY. Differential geometry of
+Geometry. 2017;108:411-422                real submanifolds in Kähler manifold.
+                                          Monatshefte für Mathematik. 1981;91:
+[7] Gündüzalp Y. Anti-invariant
+                                          257-274
+Riemannian submersions from almost
+product Riemannian manifolds.
+                                          [17] Ronsse GB. Generic and skew CR-
+Mathematical Sciences and Applications
+                                          submanifolds of a Kähler manifold.
+E-Notes. 2013;1:58-66
+                                          Bulletin of the Institute of Mathematics,
+                                          Academia Sinica. 1990;18:127-141
+[8] Beri A, Kupeli EI, Murathan C.
+Anti-invariant Riemannian submersions
+                                          [18] Tastan HM, Sahin B, Yanan S. Hemi-
+from Kenmotsu manifolds onto
+                                          slant submersions. Mediterranean Journal
+Riemannian manifolds. Turkish
+                                          of Mathematics. 2016;13(4):2171-2184
+Journal of Mathematics. 2016;40(3):
+540-552
+                                          [19] Park KS, Prasad R. Semi-slant
+[9] Ali S, Fatima T. Anti-invariant       submersions. Bulletin of the Korean
+Riemannian submersions from nearly        Mathematical Society. 2013;50(3):951-962
+Kähler manifolds. Univerzitet u Nišu.
+2013;27:1219-1235                         [20] Aykurt SA, Ergüt M. Pointwise slant
+                                          submersions from cosymplectic
+[10] Özdemir F, Sayar C, Tastan HM.       manifolds. Turkish Journal of
+Semi-invariant submersions whose total    Mathematics. 2016;40(3):582-593
+manifolds are locally product
+Riemannian. Quaestiones                   [21] Chen BY, Garay O. Pointwise
+Mathematicae. 2017;40(7):909-926          slant submanifolds in almost Hermitian
+
+18
+Clairaut Submersion
+DOI: http://dx.doi.org/10.5772/intechopen.101427
+
+manifolds. Turkish Journal of                      Journal of Mathematics. 2015;19(4):
+Mathematics. 2012;364:630-640                      1145-1160
+
+[22] Lee JW, Sahin B. Pointwise                    [32] Gray A, Hervella M. The sixteen
+slant submersions. Bulletin of the Korean          classes of almost Hermitian manifolds
+Mathematical Society. 2014;51:1115-1126            and their linear invariants. Annali di
+                                                   matematica pura ed applicata. 1980;123:
+[23] Akyol MA. Conformal semi-slant                35-58
+submersions. International Journal of
+Geometric Methods in Modern Physics.               [33] Yano K. Structures on manifolds,
+2017;14(7):1750114                                 Series in Pure Mathematics, 3.
+                                                   Singapore: World Scientific; 1984
+[24] Sahin B. Riemannian Submersions,
+Riemannian Maps in Hermitian Geometry              [34] Gupta P, Rai AK. Clairaut anti-
+and their Applications. Cambridge:                 invariant submersion from nearly Kähler
+Elsevier Academic Press; 2017                      manifold. arXiv. Mat. Vesnik, Accepted.
+                                                   2020. 2010.05552
+[25] Clairaut AC. Mémoires de
+l'Académie royale des sciences. Mem.               [35] O’Neill B. Semi-Riemannian
+Acad. Paris Pour. 1735;1733:86                     Geometry with Application to Relativity.
+                                                   New York: Academic Press; 1983
+[26] Bishop RL. Clairaut submersions,
+Differential Geometry (in Honor of                 [36] Baird P, Wood JC. Harmonic
+Kentaro Yano). Tokyo: Kinokuniya;                  Morphisms Between Riemannian
+1972. pp. 21-31                                    Manifolds, London Mathematical
+                                                   Society Monographs. Vol. 29. Oxford:
+[27] Allison D. Lorentzian Clairaut                Oxford University Press, The Clarendon
+submersions. Geometriae Dedicata.                  Press; 2003
+1996;63(3):309-319
+                                                   [37] Bejancu A. Geometry of CR-
+[28] Tastan HM, Gerdan S. Clairaut                 Submanifolds. Dordrecht: Kluwer
+anti-invariant submersions from                    Academic Publishers; 1986
+Sasakian and Kenmotsu manifolds.
+Mediterranean Journal of Mathematics.              [38] Pressley A. Elementary Differential
+2017;14(6):235. 17 pp                              Geometry. Springer-Verlag London:
+                                                   Springer Undergraduate Mathematics
+[29] Tastan HM, Aydin SG. Clairaut                 Series; 2001
+anti-invariant submersions from
+cosymplectic manifolds. Honam                      [39] Lee JW. Anti-invariant ξ⊥ -
+Mathematical Journal. 2019;41(4):                  Riemannian submersions from almost
+707-724                                            contact manifolds. Hacettepe Journal of
+                                                   Mathematics and Statistics. 2013;42(3):
+[30] Gündüzalp Y. Anti-invariant                   231-241
+pseudo-Riemannian submersions and
+Clairaut submersions from                          [40] Gupta P, Singh SK. Clairaut semi-
+paracosymplectic manifolds.                        invariant submersion from Kähler
+Mediterranean Journal of Mathematics.              manifold. Afrika Mat. Accepted. 2020.
+2019;16(4):94. 18 pp                               DOI: 10.13140/RG.2.2.30240.30725
+
+[31] Lee J, Park JH, Shahin B, Song DY.            [41] Yano K, Kon M. CR-Submanifolds
+Einstein conditions for the base of                of Kählerian and Sasakian Manifolds.
+anti-invariant Riemannian submersions              Progress in Mathematics, 30.
+and Clairaut submersions. Taiwanse                 Birkhäuser, Boston: Mass; 1983
+
+19
+

@@ -1,0 +1,1011 @@
+P H YS ICAL     REVIEW                            VOLUM E 174, NUM B ER                 5                      25 OCTOBER           1968
+
+                     Global Structure of the Kerr Family of Gravitational                                Fields
+                                                          BRANDON    CARTER*
+              Department   of Applied Mathematics arid Theoretical Physics, Umieersity of Cambridge, Cambridge, Prtglartd
+                                                      (Received 29 March 1968)
+
+               The Kerr family of solutions of the Einstein and Einstein-Maxwell equations is the most general class
+            of solutions known at present which could represent the field of a rotating neutral or electrically charged
+            body in asymptotically flat space. When the charge and specific angular momentum are small compared
+            with the mass, the part of the manifold which is stationary in the strict sense is incomplete at a Killing
+            horizon. Analytically extended manifolds are constructed in order to remove this incompleteness. Some
+            general methods for the analysis of causal behavior are described and applied. It is shown that in all except
+            the spherically symmetric cases there is nontrivial causality violation, i.e. , there are closed timelike lines
+            which are not removable by taking a covering space; moreover, when the charge or angular momentum is
+            so large that there are no Killing horizons, this causality violation is of the most flagrant possible kind in
+            that it is possible to connect any event to any other by a future-directed timelike line. Although the sym-
+            metries provide only three constants of the motion, a fourth one turns out to be obtainable from the un-
+            expected separability of the Hamilton-Jacobi equation, with the result that the equations, not only             «
+            geodesics but also of charged-particle orbits, can be integrated completely in terms of explicit quadratures.
+            This makes it possible to prove that in the extended manifolds all geodesics which do not reach the central
+            ring singularities are complete, and also that those timelike or null geodesics which do reach the singularities
+            are entirely confined to the equator, with the further restriction, in the charged case, that they be null with
+            a certain uniquely determined direction. The physical significance of these results is briefly discussed.
+
+
+                     INTRODUCTION                                        The significance of these results depends on the as
+'                                                                     yet unanswered question whether exterior fields of the
+    PROBABLY the most important problems in general                   Kerr type could or would result as the final state in a
+      relativity today are those concerning the singulari-
+                                                                      dynamical treatment of the collapse of a rotating body.
+ties and other pathological features arising in gravita-
+                                                                      A hint that this question may have a positive answer
+tional collapse. Because of the scanty nature of the
+                                                                      comes from the recent demonstration by Israel' that
+experimental evidence in its favor, the acceptability or
+                                                                      the Schwarzschild solution is unique among asymp-
+the unacceptability of Einstein's theory must depend
+                                                                      totically-Rat static-vacuum solutions in being bounded
+largely on whether its theoretical predictions seem
+reasonable or not.                                                    by a simple nonsingular Killing horizon ("simple"
+                                                                      meaning that the constant-time cross sections are topo-
+   A great deal is now known about the gravitational
+                                                                      logically spherical), which suggests that the family of
+collapse to a curvature singularity of a spherically
+                                                                      stationary axisymmetric asymptotically Rat vacuum
+symmetric body. However, virtually nothing is known
+                                                                      solutions with the same property may also be very
+about collapse in more general circumstances, where
+                                                                      restricted. It can be conjectured that the low-angular-
+angular momentum is present for example, except that
+                                                                      momentum Kerr fields may be the only examples. If
+by the results of Penrose' and Hawking' 4 singular
+                                                                      this is the case, or even if there are other examples
+behavior of some sort must be expected to remain.
+                                                                      provided that these also have pathological behavior
+   For this reason it is interesting to examine the proper-
+                                                                      similar to that of the Kerr fields, then grave doubt will
+ties of the Kerr family of gravitational fields from this
+                                                                      have been cast on the validity of Einstein's theory in
+point of view since these are the only solutions of
+                                                                      its present form.
+Einstein's equations known at present which could
+represent the exterior field of a rotating body in                                                                       STRUCTURE
+asymptotically Oat space.
+                                                                      1. PHYSICAL           AND TOPOLOGICAL
+   It will be shown that the ringlike curvature singulari-                                    A. Metric Form
+ties in the inner parts of the Kerr fields are comparatively
+innocuous (they are in fact invisible except in the                      The original and, for many purposes, the most useful
+equatorial direction) in contrast with the all-embracing              form of the Kerr family of solutions of the source-free
+curvature singularity in the Schwarzschild solution. On               Einstein-Maxwell equations is given in terms of co-
+the other hand, there is a very complicated topological               ordinates I, r, 0, and y which can be interpreted most
+                                                                      simply and naturally on a manifold formed by taking
+behavior and a complete and unavoidable breakdown
+of the causality principle.                                           the topological product of a 2-plane on which      and r  I
+                                                                      are Cartesian coordinates running from —oa to           oa    +
+                                                                      and a 2-sphere on which 8 and p are ordinary    spherical
+   *Present address: Institute of Theoretical Astronomy, Cam-         coordinates (y is periodic with period 2sr, and 0 runs
+bridge, England.
+   ' R. Penrose, Phys. Rev. Letters 14, 57 (1965).                    from 0 to sr). The covariant form of the metric tensor is
+   ' S. W. Hawking,  Proc. Roy. Soc. (London) A294, 511 (1966).
+   ' S. W. Hawking, Proc. Roy. Soc. (London) A295, 490 (1966).
+    'S. W. Hawking, Proc. Roy. Soc. (London) A300, 187 (1967).          5   W. Israel, Phys. Rev. 164, 1776 (1967).
+                                                             174     1559
+i560                                               B RAN DON           CARTE R
+expressed in terms of three parameters,          m, e, and a, by      fore are not hypersurface-orthogonal.    It was by making
+                                                                      use of these structural properties of the Acyl tensor,
+ds'= p'd0'     2a—
+                 sin'0drd q7+2drdu                                    and speci6cally looking for non-hypersurface-orthogonal
+                                                                      solutions, that the empty space metrics of the family
+        +p s[(r'+a')' —Aa' sin'0$ sin'0dp'                            were derived by Kerr. ' Subsequently         these metrics
+        —2ap '(2mr —e') sin'0d pdu                                    were derived by Kerr and Schild, ' from a systematic
+                            —[1—p '(2mr —e') ]du',              (1)   study of empty solutions whose metric tensor is
+and the corresponding covariant form of the electro-                  (locally) the sum of a Rat-space metric tensor and the
+                                                                      tensor product of a null vector with itself. The charged
+magnetic field tensor is
+                                                                      solutions are also of this form, as can be seen by making
+F = 2ep '[(r'      as coss0—
+                           ) dr n du     'r cos0 sin0d0 n, du
+                                       2a—                            the coordinate transformation
+                 —a sin'0(r' —a' cos'8)dr A dq
+                                                                             x+iy= (r+sa)e'" sin0,                z=r cos0, t=u r,—(6)
+                       +2ar(r'+a') cos0 sin0d0A dy j,           (2)
+                                                                      which gives the metric tensor as
+where the abbreviations
+                      p'= r'+ a' cos'0                                                                    25$t'   —8
+                                                                      ds'= dx'+dy'+dz'             dt'+           —r'
+                      6 = r' 2mr+ a'+ 'e—                                                                 r4+a2z2
+
+have been used, and where the usual symbol, n, has                                    (r(xdx+ydy)         a(xdy     ydx—
+                                                                                                                       )   sds-
+been used for the operation of taking the antisym-                               xj                                     + +dt,       (7)
+metrized tensor product. (When e=o the electromag-                                                  r +as
+netic 6eld vanishes and the metric satis6es the vacuum
+Einstein equations. )                                                 where r is determined           implicitly in terms of x, y, s, by
+   These solutions are clearly stationary and axisym-                                   r4   —(x'+ y'+ s' —a') r' —a'z'= 0.
+metric with Killing vectors 0/0u and 0/Bq, and it is
+also apparent that they are invariant under the discrete              However, this Kerr-Schild form of coordinate system
+transformation of inversion about the equatorial hyper-               is rather awkward for studying global structures, be-
+plane tI=-,'~. Both the Inetric and the electromagnetic               cause (as the price of imposing a flat-space background
+field forms are analytic except on the stationary ring                metric on a manifold with the topology described above)
+r=0, 0= —,'x, where p' vanishes. In fact, the curvature               each set of values of the x, y, 2, , t coordinates corre-
+itself becomes singular as p' — + 0 except in the special             sponds to two different points, distinguished by the two
+case where e and m both vanish. In this special case                  different real values of r determined by (7). These
+there must still be a singularity of the geometry at                  coordinates have the further disadvantage that the
+p'=0, although the metric is then Qat everywhere else.                axis symmetry is no longer manifest, but there is the
+In all cases the metric and the electromagnetic field                 compensating advantage that the degeneracy on the
+are well behaved throughout the rest of the manifold,                 axis itself is removed.
+except for the usual trivial degeneracy of spherical                     The generalization of the solutions to include an elec-
+coordinates at 0=0, 0=x.                                              tromagnetic field was originally achieved not by a
+   In all these spaces the Weyl tensor is of type D in                systematic logical method but by an algebraic trick
+the Petrov-Pirani classification, the two double prin-                discovered by Newman and Janis's who succeeded in
+cipal null vectors being given by                                     obtaining the empty-space Kerr solutions by transfor-
+                                0/Br,          —                      mation from the Schwarzschild solution (to which they
+                                                                (5)   reduce in the case when a vanishes). The charged
+                (r'+ a') 0/Bu+ a0/0 (p+ 6 0/0r                        generalization of the empty-space Kerr metrics was
+                                   generalization' of the             obtained by Newman, Couch, Chinnapared, Kxton,
+By the Kundt and Trumper
+Goldberg-Sachs theorem~ these are integrable to give                  Prakash, and Torrence" who applied an analogous trans-
+two shear-free null geodesic congruences. The first of                formation to the charged spherical solution of Reissner
+these (which is ingoing in the sense that r decreases in              and Nordstrom (which is likewise the limiting case to
+the time direction determined by increasing u) consists               which the charged solutions reduce when a vanishes).
+simply of the curves on which I, 0, and q, are all con-                  Alternative systematic derivations of these solutions
+stant, while the outgoing congruence is less simple in                from diferent points of view, and with more explicit
+these coordinates. The principal null congruences have
+nonzero rotation (except when a vanishes, in which                           R. P. Kerr, Phys. Rev. Letters 11, 237 (1963).
+case the solutions are spherically symmetric) and there-                11
+                                                                             R. P. Kerr and A. Schild, Am. Math. Soc. Symposium,    New
+                                                                      York, 1964.
+  6   W. Kundt and M. Trumper, Akad. Wiss. Lit. Mainz 12 (1962).        ' E. T. Newman and A. I. Janis, J. Math. Phys. 6, 915 (1965).
+  7
+      J. N. Goldberg and R. K. Sachs, Acta Phys. Polon. 22, Suppl.       'E. T. Newman, E. Couch, R. Chinnapared, A. Exton, A,
+13 (1962).                                                            Prakash, and R. Torrence, J. Math. Phys. 6, 918 i1965).
+                                       STRUCTURE OF KERR F IELDS                                                               156i
+
+information about the curvature,          have been given by         It is also clear that the spaces are asymptotically Qat, in
+Carter" and Ernst.    "                                              both the local and the global sense, in the limits of large
+                                                                     positive or negative values of r. The Boyer-Lindquist
+             B. Rotating Body Interpretation                         form is ideal for the examination of the asymptotic
+                                                                     behavior of the fields, on which the physical interpreta-
+   Despite its many advantages         the coordinate system         tion of the parameters is based.
+(1) (which will subsequently be referred to as the Kerr-                It can be easily seen from (10) and (11) by analogy
+Newman form) has the drawback that it does not dis-
+                                                                     with the Schwarzschild and Reissner-Nordstrom             solu-
+ play the full symmetry of the space.                                tions that (in unrationalized units with Newton s con-
+    Papapetrou'4has shown that any connected stationary
+                                                                     stant G and the speed of light e both set equal to unity)
+axisymmetric solution of Einstein s empty-space equa-
+                                                                     m represents the mass and e the charge in the limit of
+tions must have an additional discrete symmetry under
+                                                                     large positive r, and that the mass and charge are,
+                                                                     respectively, —   m and —
+simultaneous     inversion of the axial and stationary
+                                                                                                 e in the limit of large negative r.
+Killing vectors, while Boyer and Lindquist" have inde-
+                                                                     There is no loss of generality in assuming, as we shall do
+pendently discovered a specific transformation which                 from now on, that m is positive; this is simply equivalent
+ casts the empty-space Kerr metrics into a form which                to choosing which of the two asymptotically Qat regions
+is manifestly invariant under such an inversion. Carter"
+                                                                     we shall label with positive values of r.
+has shown that Papapetrou's result can be generalized
+                                                                        The interpretation of the parameter u requires more
+to include cases where the space is nonempty, provided
+                                                                     care, since its effects are of asymptotically higher order.
+that the matter tensor is itself invariant under simul-              In con6rmation of a remark originally made by Kerr, '
+taneous inversion of the time and axial angle and that
+                                                                    Boyer and Price" have shown, by a careful examination
+this situation holds automatically if the only contribu-
+                                                                    of the geodesics in the equatroial plane in the uncharged
+tion to the matter tensor comes from a source-free
+                                                                    case, that it gives rise to Coriolis-type forces which are
+electromagnetic field. (It would not necessarily hold
+                                                                    asylnptotically     identical to those which one would
+in the presence of a perfect fiuid. ) Thus Papapetrou's
+                                                                    expect from a rotating body with angular momentum
+result generalizes directly to the solutions of the source-
+free Maxwell-Einstein equations, and hence applies to
+                                                                    ma in the weak-field limit (cf. also Cohen.        ").  As the
+                                                                    eGects of the charge on the metric are of asymptotically
+the charged Kerr solutions.
+                                                                    higher order than those of the mass, it can be seen that
+   The specific transformation needed to obtain a mani-             this conclusion still stands in the charged case. Thus u is
+festly invertible form is an immediate generalization of
+                                                                    what Inay be called the specific angular moInentum.
+the one given by Boyer and Lindquist; thus introducing
+                                                                    The metric form used here has been adjusted so that a
+new time and angle coordinates t and p dehned by
+                                                                    positive value of a corresponds to a positive sense of
+                         —(r'+ a') 6 'dr,
+                   dt = du
+                                                         —          rotation (it turned out to be the other way round in the
+                                                                    form used by Boyer and Price).
+                  dq"=dy —aA 'dr,
+                                                                        It is the presence of rotational effects which gives the
+we obtain the metric tensor form as                                 Kerr solutions their importance. This family includes
+                             ' sin'8Ladt —(r'+a')d&pf'              all solutions yet known which could represent the ex-
+ds'= p 6 'dr'+ p'd8'+p
+                                                                    terior fields of rotating charged or uncharged bodies,
+                                p 'amdt        '8d-P j',
+                                           asin—             —
+                                                             (10)   other asymptotically Qat solutions such as those of
+where the cross terms between the ignorable coordinates             WeyP' or Papapetrou" being either static or massless.
+and the others have been eliminated. The electromag-                Whether physically natural interior material solutions
+netic Geld tensor now takes the form                                exist (e.g. , a simply rotating perfect-fluid body) of
+                                                                    which these are the exterior fields is not yet known.
+F=2ep 4(r                         —
+              acos 8)dr A ddt asin 8        dP)—                    Boyer" has given conditions which the surface of a
+                 c—
+          4ep 4ar o s8 sin8d8A stadt (r'+a')dP       j. (—
+                                                         11)        perfect-Quid interior would have to satisfy. Zel'dovich
+                                                                    and Novikov" attempted to argue from the apparent
+In this system (which will be subsequently referred to
+                                                                    absence of simultaneous inversion symmetry (at a time
+as the Boyer-Lindquist form) it is immediately clear
+                                                                    when the Boyer-Lindquist transformation had not yet
+how the metrics reduce to the familiar forms of the
+                                                                    been published) that such a body must contain meri-
+Schwarzschild and Reissner-Nordstrom       solutions when           dional circulation. Now that the inversion symmetry is
+u vanishes. (That the metrics are fiat when both e and
+m vanish can be seen more easily from the Kerr-Schild                 '7 R. H. Boyer and T. G. Price, Proc. Camb. Phil. Soc. 61, 531
+form unless one is familiar with spheroidal coordinates. )          (1965).
+  "B.                                                                    J. M. Cohen, J. Math. Phys. 8, 1477 (1967).
+  " Carter, J. Math. Phys. (to be published).
+   F. J. Ernst, Phys. Rev. 167, 1175 (1968); 168, 1415 (1968).
+                                                                      + W. Weyl, Ann. Physik 54, 117 (1917).
+                                                                      '0 A. Papapetrou, Ann. Physik 12, 309 (1953).
+  "A. Papapetrou, Ann. Inst. H. Poincar6 4, 83 (1966).                2' R. H. Boyer, Proc. Camb. Phil. Soc. 61, 527 (1965).
+  "R. H. Boyer and R. W. Lindquist, J. Math. Phys. 8, 265             22
+                                                                         Ya. B. Zel'dovich and I. D. Novikov, Zh. Eksperim i Teor.
+(1967).
+  "B.Carter, Comm. Math. Phys. (to be published).
+                                                                                                                  —
+                                                                    49, 170 (1965) LEnglish transl. : Soviet Phys. JETP 22, 122
+                                                                    (1966)3.
+1562                                         8 RAN DON CARTE R
+known, one might be tempted to argue the other way           above remains incomplete as r tends to r+ since there
+round. However, the results of Papapetrou and Carter         are geodesics for which the coordinate 0 becomes un-
+which have just been mentioned show that no such             bounded within a finite affine distance. In Sec. C, the
+deductions can be made at all since the invertibility        analytic extensions required to remedy this defect will
+of the exterior is inevitable in any case.                   be discussed and, subsequently,       when the geodesic
+    Just as the parameter a couples with the mass to give    equations have beep. integrated, it will be shown that
+the angular momentum, also (as can be seen from the          the extended manifolds so obtained are in fact geode-
+form (11) of the field] it couples with the charge to give   sically complete, again with the exception of the
+an asymptotic magnetic dipole moment ea. There is no         geodesics which reach the singularities at p'=0.
+freedom of variation of the gyromagnetic ratio which
+is simply e/m. It is noteworthy that this is exactly the                   C. Maximal Analytic Extension
+same as the gyromagnetic ratio predicted for a spinning
+particle by the simple Dirac equation, which is obeyed          The most suitable basic unit for building up the ex-
+to quite a high accuracy by the electron. Therefore,         tended manifold is the original Kerr-Newman coordi-
+despite the fact that the parameters of the solutions        nate patch (1) which is connected to the invertible
+contain only two adjustable ratios, it is possible to        Boyer-Lindquist form (10) by the transformation (9).
+choose them in such a way that they agree with the           The starting point for the extension is the remark that
+corresponding parameters for an electron, for which, in      the invertible form can be extended in a symmetric
+units with A=1, the mass, angular momentum, and              manner in an inverted direction in terms of new time
+squared charge are given by m=10     ",  ma= —'„e'=1/137     and angle coordinates m and g by the transformation
+from which we obtain u=~m '=10", e= —,', . The value
+                                                                               dt= —dw+ (r'+a')6 'dr,
+of the length scale determined by a is therefore quite                                                                 (14)
+large, in fact, about the same as the Compton radius.                          d(p=   d(p+aA—'dr
+On the other hand, the value of m is so small that the
+                                                             The resulting form for the metric is
+field differs very little from the limiting case m=0,
+with e and u as the only parameters.                         ds'= p'd8'          '8dr d j+2dr dw
+                                                                           2a sin—
+   Despite its great elegance the Boyer-Lindquist form
+                                                                          +p '[(r'+a')'  Aa' sin'8] —
+                                                                                                    sin'8d8
+unfortunately fails where 0 vanishes. This will occur
+whenever m is greater than the critical value
+                                                                          —2ap '(2mr —e') sin'8d dw   &p
+
+                                                                                     —L1 —p '(2mr —e')]dw',            (15)
+                       m'= a'+e'                      (12)
+                                                             which is formally identical to the original Kerr-Newman
+in which case 5 has a zero at each of the two values of
+                                                             form. The transformation        between the two Kerr-
+r (both positive) defined by                                 Newman. forms can be given directly as
+                 r =m&(m'       a'     '"—
+                                     e')—             (13)                     du+dw=2(r'+a')6             'dr,        (16)
+and is negative in between them. In the intermediate
+region the solution changes character. It can be seen
+                                                                               d&p+dp=2ad      'dr.                    (»)
+clearly from the form (10) that this region cannot be          In the case when the zeros of & coincide, i.e. , when
+regarded as stationary in the strict sense since there are   a'+e2=m' so that r+     r=m, we ca—   n proceed directly
+no longer any timelike vectors in the planes (r= const,      to the extended manifold. The transformations (16)
+8= const) of the Killing vectors, but instead r has taken    and (17) give rise to complete ranges of the new coordi-
+over the role of a tirnelike variable. As a consequence      nates in each of the regions r)m and r(m, and they
+of the simultaneous inversion symmetry, the hyper-           therefore describe two distinct extensions applying to
+surfaces bounding this region must be null, by a theorem     each of these regions separately. By performing these
+given by Carter" and must, moreover, satisfy the strict      two types of extension alternately, one can build up an
+definition of a Killing horizon given in that reference.     extended manifold consisting of an infinite sequence of
+In the limiting case when u and e both vanish, the inner     (N, r, 8, y) patches, labelled     . , (ri, —), (v+1, —),
+horizon collapses onto the central singularity and the       linked transversely by a symmetrically            arranged se-
+outer horizon becomes the well-known Schwarzschild           quence of (w, r, 8, p) patches, labelled               ( — N)
+horizon at r=2m. When the equality (12) is satisfied           —,
+                                                             ( v+1),             with overlaps alternately in the regions
+the two horizons coalesce at r=m. When a'+e')m'              r (m and     r)  m. The overlap region between (e, —      ) and
+there are no Killing horizons and, as will subsequently      ( —,l) will be denoted (N, l). By adjusting the relative
+be proved, the manifold is geodesically complete except      values of e and l one can arrange that the Donempty
+for those geodesics which reach the central singularity      overlaps (n, l) are such that N= l (for a region r(m) or
+at p'=0. However, when a'+e'(m' although the local           ri= l+1 (for a region    r)   m). It will be shown in a sub-
+failure of the metric can be cured by reverting to the       sequent section that the manifold so obtained is in fact
+Kerr-Newman coordinate system, the manifold defined          geodesically complete, except for those geodesics which
+                                          STRUCTURE OF KERR FIELDS                                                               1563
+
+reach the singularities at P2=1, i.e., it is a maximal             it as a function of n and w given implicitly (once the
+extension.                                                         region   I, II, or III has been specified) by
+   In the general case when the zeros of & are distinct,
+i.e., when a'+e'(m', the extension is more difficult.                                       P(«) = I+w,
+One can start in the same way as in the previous case,             where by (16) we have
+except that (16) and (17) now give rise to three distinct
+transformations instead of two, corresponding to the                        F(r)=2r+K+ 'ln~r          «y~+—K   'ln~« —»          (19)
+                                     r;
+                                                                                                                             ~
+
+
+
+
+regions I; r&r+, II: r+&r)          and III: r &r; it is
+                                                                   with the constants ~~ defined by
+therefore natural to build up an extended manifold
+again consisting of an infinite sequence of (n, «, 8, &p)                           ~+=5(»+'+~') '(»+ —«+).                      (20)
+patches labelled, (n, —        ), (n+1, —    ),      over-
+lapping a symmetric sequence of (w, «, 8, p) patches
+                                                                  We also use the device, introduced by Boyer and
+labelled, ( —,n), ( —,n+1),            is such a way that         Lindquist" for dealing with the uncharged case, of
+the overlap region (n, l) is nonempty only if n=l (in             defining a new angle variable, constant along the
+which case it is of the type II) or if n= 1+1 (in which           trajectories of that particular Killing vector field which
+case it is of the type I if m is odd and l even, and of           coincides with the null generators on the Killing horizon.
+type III if it is the other way around) (cf. the illustra-
+                                                                  From (5) we see that this Killing vector field is
+tions given by Carter" in a discussion of the restriction         («~'+a')B/Bn+aB/By in terms of the original Kerr-
+of this manifold to the axis of symmetry).                        Newman coordinates (1), which unfortunately depends
+   However, the manifold just described still has an in-          on which of the Killing horizons r = r~ is under consider-
+completeness associated with the Killing horizons; there          ation. Thus we shall need two alternative new angle
+are 2-surfaces missing where u and m both tend to                 coordinates which we shall denote by p+ and which
+infinity together. The crux of the extension program is           can be defined by
+the construction of new coordinate patches to include                       2d y+= dip   dj          +a')—
+                                                                                                a(«+'—    '(du     dw) .          —
+                                                                                                                                 (21)
+these missing 2-surfaces. In preparation for this con-
+struction we introduce the I, and zv coordinates simul-           Thus we obtain the symmetric double quasi-null-metric
+taneously, and drop r as a coordinate, instead treating           foITl1:
+
+
+                  p'  p~' ) (»' —«+')u' sin'8                   P          P+
+ds2= p ~g~
+             t
+                    +                         (dN +dw )+p 6            +          —(dl dw)+p2d82
+             («2+ g2 «2+ g2)
+                               I
+
+                                   («2+
+                                 g2)   2+ g2)
+                                          (»                —(«'+ii')'   (V+&')'-
+                                                  2                                r 2—r2                               «2
+                 —P 2ha sin28 a sin28dq +— P+           (dl —dw) dq++p sin28 a
+                                                                      — 2
+                                                                            ~
+
+                                                                                            i2(du   —dw) —(»2+ g2)dq+            (22)
+                                               «+'+a'                             «+'+ a'
+
+where the obvious abbreviation p~' —«~'+a' cos'8 has              have t, o be gradually changed in between, which would
+been introduced.                                                  destroy the manifest axisymmetry of the manifold.
+   This form is in itself even more limited in range than         Instead of doing this we shall be content with covering
+the Kerr-Newman form from which we started; in. fact,             the missing pieces one at a time. With this more limited
+it covers the same patches as the Boyer-Lindquist                 objective it is possible to choose a coordinate transfor-
+form, depending on which of the regions I, II, and III            mation which is very simple indeed.
+the solution of (18) is specified to lie in. However, we             We introduce new coordinates x, y and construct a
+are now in a position to give a direct generalization of          patch with coordinates (x,y, 8, y+) to cover the four
+the method used by Carter" for the symmetry axis.                 (u, w, 8, q+) patches adjacent to a missing region at
+When this method was originally devised a rather com-             «=«+. LTwo of these patches will have the form
+plicated transformation was used whose purpose was                (n, n+1), (n+1, n) and will cover regions of type II,
+not only to cover the missing regions separately, but             and the other two will have the form (n, n), (n+ 1, n+1)
+also to cover the whole manifold by a single coordinate           and will cover regions of type I or type III according to
+patch. This was worthwhile when the symmetry axis                 whether «+ or» is under consideration.            ]
+                                                                                                                  The new
+                                                                  coordinates are defined by the simple transformation
+alone was under consideration; it could also be done
+here (except that there would remain the trivial de-                              x= (W)e"+, y= (~)e"+                           (23)
+generacy at 8= 0, 8= m and the curvature singularities at
+p'=0) but it would be a messy process because the                 where the sign      (+)     in the definition of x changes
+angular coordinates p+ required at the two horizons               between the two (u, «, 8, y) patches involved, and the
+are different, so that the angular coordinate would               sign (~) in the definition of y changes between the two
+                                                                  (w, «, 8, &p) patches involved. We shall choose the signs so
+ "B.Carter, Phys. Rev. 141, 1242 (1966).                          that the product xy is positive in the two regions where
+                                                       8 RAN DON CARTE R
+
+r r+—
+    is positive, and negative in the other two. (This                 where G~(r) is defined by
+still leaves an arbitrary choice of sign in the definition
+of x and y but because of the inversion symmetry it                                     Gy(r) = s "y" y —
+                                                                                                       [
+                                                                                                         y                              (25)
+will not be necessary to make it explicitly. )
+   By (18) and (19), r will now be determined in terms                Thus r is an analytic function of x and y since in the
+of x and yby                                                          whole (x,y) plane r lies between y~ and & ee. Thus we
+                   xy= (r —      —
+                            r~)G~ '(r),                (24)           obtain the new metric form
+
+
+                         p+'
+                         ~         (y   —«+)(y+y+)a»n'~                                ( P           P+
+d~   =p            +                                     «+'G+'(r)s (X'dx'+x'dy")+p 'I           +
+              r'+a' r +a')              (r'+a') (r '+a )                               ((«2+ a2)2 (y 2+ a2)s)
+                               ~
+
+
+
+
+                                                                                    2
+
+          )& (r   —r~) s+sG~(r) s (dx dy)+ p'd8' —p 'a sin'|l~ Da sinsedqr+ — p           (r r~) G~(—
+                                                                                                    r)s~ (ydx       xdy)    —
+                                                                                                                            y+
+                                                                                                                           ~d
+
+
+
+
+                                                                          (                  y'+yy
+                                                                                                                         —xdy) . (26)
+                                                               +p 'sin'8~ (r'+a')dq++a                lrgGg(r)-', (ydx              ~
+
+
+
+
+                                                                                              ye+a'                             r
+
+This metric is clearly analytic everywhere on the                     closed timelike lines homotopic to zero as unavoidable
+ (x,y, 8, &p+) patch except at the curvature singularities            since in this case it could only be removed by altering
+p'=0. It must also be checked that it is nondegenerate                the local structure of the space, not merely its global
+on the Killing horizons at x = 0 and y= 0 since the trans-            con. nectivity properties. Some of the possibilities of
+formation we have used is singular there. This is also                trivial causality violation in members of this family
+immediately verifiable. It follows that it is nondegen-               have been discussed previously. Fuller and Wheeler'4
+erate everywhere except at the curvature singularities                considered the possibility of causality violation re-
+and (trivially) at 8=0, 8=s.                                          sulting from multiconnectedness      introduced when the
+   With the additional points on the 2-surfaces @=0,                  two asymptotically Qat backgrounds in the analytically
+y= 0 in the new coordinate patches, the extension that                extended Schwarzschild space are identified so that
+we have obtained is maximal, since it is now geodesically             the Kruskal throat becomes a wormhole; they showed
+complete except for geodesics which reach the ring                    that, in fact, causality violation cannot arise in this way.
+singularity. We shall be able to prove this in Sec. 38                On the other hand, the author"" pointed out that
+after the integrals of the geodesic equations have been               identifications of this kind could lead to causality
+obtained.                                                             violations in the Reissner-Nordstrom       and Kerr solu-
+   Although the fact that it exists is of importance, the             tions (the argument in the latter case depending purely
+form (26) is too complicated to have much practical                   on the properties of the sytnmetry axis). However, in
+use. However, it does clearly show the existence of                   all these cases the causality violation being contem-
+spacelike hypersurfaces x=E'y, where E is any real                    plated results from unnecessary identifications which
+nonvanishing constant, which extend right across the                  produce multiconnectedness. In this section, we shall be
+manifold, one such hypersurface passing through each                  considering causality violation of the unavoidable kind
+point of the regions r&r+. Analogous hypersurfaces in                 first studied in Godel's universe.
+the regions    r(r   do not exist, because of the curvature              We have seen in Sec. 1 that, by the mode of its
+singularity    at p'= 0.                                              construction, the extended spaces consist of a com-
+                                                                      bination of patches of type I (y)r~) or III (r(r )
+                         2. CAUSALITY                                 in which the surfaces of transitivity are everywhere
+                                                                      timelike and of type II (r &r&r+) in which the sur-
+A. Causally Well-Behaved Parts of the Kerr Solutions                  faces of transitivity are everywhere spacelike, and that
+   In this discussion the causality principle means the               these patches are separated by null hypersurfaces-
+condition that there exist no closed. causal (i.e. , time-            the Killing horizons. Provided we do not unnecessarily
+like or null) curves in the space under consideration.                identify some of these patches, but piece them together
+This condition can be violated in two ways: We shall                  exactly in the manner described in Sec. 1 and illustrated
+refer to the violation as trivial if none of the closed               in the diagrams of Ref. 23, a causal curve which leaves
+causal curves are homotopic to zero, since in this case               one of these patches can never re-enter. It follows that
+we may construct a covering space in which the                        insofar as we are considering only nontrivial causality
+causality principle is satisfied, and we may use the
+covering space for purposes of physical interpretation;                 "R.
+we shall refer to causality violation where there exist                 " W. Fuller and J. A. Wheeler, Phys. Rev. 128, 919 (1962).
+                                                                         B. Carter, Phys. Letters 21, 423 (1966).
+                                         STRUCTURE OF KE RR                        F I EL DS                                   iS6S
+
+violation we can consider each of these patches                         form in each surface of transitivity is everywhere space-
+separately.                                                             like or null, then the whole space is a single nontrivially
+   A very useful criterion for the nonexistence of closed               vicious set. In a terminology which generalizes the
+causal curves in a time-oriented space is the presence                  concept of a closed timelike curve (considered as a
+of a spacelike hypersurface which is a properly im-                     vicious cycle), a vicious set is defined as a set in which
+mersed submanifold in the sense of Sternberg" since                     any point can be connected to any other point by both
+it is impossible for a closed causal curve to intersect                 a future and a past directed timelike curve, i.e., it is
+such a hypersurface if the curve is homotopic to zero                   one in which the causality principle is violated in the
+and therefore impossible altogether iii a simply con-                   most Qagrant conceivable manner; by nontrivially
+nected space. (This follows from the fact that since                    vicious it is meant that the same property holds in any
+the immersion is proper, the number of times the curve                  covering space so that the implied causality violation is
+crosses the hypersurface can change only by two at a                    nontrivial in the sense used in the previous section.
+time under the homotopy, so that if the homotopy
+starts from zero there will at all stages be a one-one
+                                                                                                                    j
+                                                                           Now the group generated by 8/gt, g/8 in the Boyer-
+                                                                        Lindquist form satisfies the required conditions for
+correspondence between the crossings in the forward                     applying this criterion in the regions r & r when
+and backward time directions, whereas a causal curve                    u'+e'~& m' and in the whole manifold when a'+e') m')
+can cross only in the forward time direction. ) Hawking'                i.e., in the regions where the previous criterion failed.
+and Geroch'7 have given (different) constructions by                    Choosing a Lie algebra covector means in effect choosing
+which a covering space can be constructed which pre-
+serves the topology of such a spacelike hypersurface
+                                                                        a differential form ~=Kdt+Ld
+                                                                        transitivity where   E
+                                                                                                            j   on the surfaces of
+                                                                                                 and L are arbitrary constants.
+but at the same time removes all closed causal curves                   The criterion will be satisfied if it is not possible to
+through it by unwinding them. This shows explicitly                     choose E, L so that co is everywhere spacelike with
+that a space with a properly immersed spacelike hyper-                  respect to the induced metric in the surfaces of transi-
+surface through each point cannot have nontrivial                       tivity. It is easy to see that the most obvious choice, t
+causality violation.                                                    itself, is spacelike everywhere except in the subregion
+   Ke can apply this criterion to the Kerr solutions.                   where
+Thus we saw in Sec. 1 that when a'+e'&m' such a                                       t'2+a2+p 2(2etr e2)a2 sin2g &—0.           (27)
+spacelike hypersurface exists through any point in
+region I (r) r+) and it is clear from the Boyer-Lindquist               However, it can easily be checked that no choice of +
+form (10) that the hypersurfaces r=const through any                    satisfies the required conditions over the whole region
+point of the regions II (r           (r(r~)
+                                          also satisfy the              except in the spherically symmetric cases. Therefore
+required conditions. Therefore each connected region                    in the case when a'+e'~&m' (a/0) each region r &r
+r&r in the manifold we have constructed can have                        is a vicious set and the boundaries r=r are causality
+no nontrivial causality violation; furthermore, since                   horizons; in the case when a'+e') m' (a&0) the whole
+ each such region is simply connected, the possibility                  space is a single vicious set. The essential details of this
+of trivial causality violation does not arise and hence                 causality violation may be understood as follows.
+ the whole of each region r&r is causally well behaved.                     In the uncharged case, condition (27) is satisfied in
+ If a'+e'=re' the surfaces t=const in the Boyer-Lind-                   a small region of negative r in the immediate neighbor-
+ quist form also satisfy the required condition, so that                hood of the singularity p'=0, and in the charged case
+we can conclude in this case also that each region                      it is satisfied in a larger region including positive values
+r)r     (=m) is causally well behaved.                                  of ~, although never extending beyond a point where
+                                                                        r' is equal to e' on the positive r side, or where r' is
+    On the other hand, even when a'+e'&    ~mm we cannot
+ draw such conclusions for the regions             r(r,
+                                                    and we              equal to the greatest of u', e', or 4m' on the negative r
+cannot apply this criterion anywhere when a'+ e') m2.                   side. In this region the vector g/gq is timelike, so the
+                                                                        circles i=const, r=const, 0=const, are themselves
+      B. Causality Violation in the Kerr Solutions                      closed timelike lines. However, although it is necessary
+                                                                        that any closed timelike lines should enter the region
+   In a separate paper" the author has derived a cri-                   defined by (27), our application of the criterion of
+terion for causal bad behavior which is applicable to                   Ref. 28 shows that they are by no means restricted to
+any space with an Abelian isometry group which is                       it but can extend to any part of one of the regions
+everywhere     transitive over timelike surfaces. This                  r&r or over the whole space when u'+e')m'. This
+criterion states that if there does not exist a Lie algebra              criterion also implies that they cannot be removed by
+covector (i.e., a linear map of the Lie algebra onto the                 taking a covering space.
+real numbers) such that the corresponding differential                      Actually, since the manifold as a whole, as it has been
+  '6 S. Sternberg, I ectures on Differential Geometry (Prentice-Hall,    described so far, is simply connected, there is no proper
+Inc. , Englewood CliGs,  ¹
+                             J., 1964).
+  '7 R. Geroch, J. Math. Phys. S, 782 (1967).
+                                                                         covering space, but because the geometry is singular at
+      B. Carter, Ph. D. thesis, University of Cambridge, England,       p'=0, one might just as well consider the manifold
+1967 (unpublished).                                                      from which these ring singularities have been excluded,
+i566                                         8 RAN DON         CARTER
+ as far as the physics is concerned. Since there would        the null hypersurface r=r is a causality horizon, for
+then be curves not homotopic to zero, looping around          by (irreversibly) crossing it a timelike path can enter
+the ring singularities, it would be possible to construct     a region where causality is violated just as in the
+numerous covering spaces by partially or totally un-          previous case.
+winding them. When a'+e') m' the universal covering
+space will consist of a simple infinite linear sequence,                  3. GEODESICS AND ORBITS
+but when a'+e'~&m' it will have an extremely com-
+                                                                A. Integration   of Geodesic and Orbit Equations
+plicated unendingly      branching    topology. However,
+since the closed timelike lines do not need to loop round       The equations of motion of a test particle of mass p,
+the ring, their existence is not affected by this process.    and charge e are given by
+   A more drastic way of obtaining a covering space
+                                                                           D'x'/Dr'= (e/p)Fg'(Dx'/Dr),                       (29)
+would be to cut out the symmetry axis 0=0, 8=x and
+upwind the remaining space by treating q as a non-            where    D/Dr denotes covariant differentiation with
+periodic coordinate. This would not be a physically           respect to the proper time r, and F is the electromag-
+reasonable process because it would create an artificial      netic field tensor. These equations may be derived from
+singularity in the limit 0 — + 0 or 8 — + m. However, even    the Lagrangian
+this would not be sufficient to remove the closed time-                          L= ', g, ,x'x'+-eA;x'
+like lines, because the impossibility of finding a suitable                                                                  (3o)
+combination co does not depend on the presence of the         where the covariant vector potential        3 has been intro-
+axis. (The simple circles described above would of            duced, satisfying
+course cease to exist. )
+   It is fairly easy to understand the general nature of                                 F=2dA,                              (31)
+the more complicated closed timelike lines. Outside the       and where a dot over a symbol denotes ordinary differ-
+region (27) the coordinate t must increase continually        entation with respect to an alone parameter A. In order
+along a timelike line, although r and 0 may be varied         to obtain (29), X must be related to the proper time by
+in any direction at will in the region under considera-
+tion (r&r or the whole space for a'+e') nz') as may P                                                                        (32)
+also except in a limited region satisfying the condition      which is    equivalent     to imposing      the        normalizing
+                                                              condition
+                    p'+ e' —2mr &0,                   (2g)
+                                                                                       g;;S'X'= —p, .                        (33)
+where cl/8& becomes spacelike. In order to make up            By taking zero and negative values of p,' in (33) and
+literally for lost time the path must enter the region        setting &= 0, the same Lagrangian (30) can be used to
+ (27). Here time can be gained, but only at the expense       give null and spacelike geodesics. [When there is no
+of clocking up a large change (negative for   a) 0) in the    charge, the actual value of the mass has no significance,
+angle y. It can be seen that in all cases the least upper     and so we may obtain timelike and spacelike geodesics
+bound to the time that can be saved per unit change in
+angle is ~a~. However, this does not prevent the line
+                                                              with X as a metric parameter by setting p'= &1 in (33) .
+                                                                 In order to transform to a Hamiltonian formulation,
+                                                                                                                                   ]
+from being closed even when the symmetry axis is              we introduce the momenta obtained from (30) as
+removed and the coordinate y made nonperiodic, be-
+cause by letting the line proceed to within a suKciently                               p;=g;, &+eA,                          (34)
+small but finite distance from the symmetry axis, all the     and thus obtain the Hamiltonian
+lost angle can be made up at a very small cost in time.
+   To sum up, in the case when a'+e') m', the central                       II= ,'g'&(p,      eA;) (p,   cA;)   —.       ——
+                                                                                                                          (35)
+region has the properties of a time machine. It is            Since it does not depend explicitly on P, the Hamil-
+possible, starting from any point in the outer regions        tonian is automatically a constant of the motion, and it
+of the space, to travel into the interior, move back-         is apparent that it is this constant which is determined
+wards in time (t) as far as desired, at a rate up to          by the normalizing condition (33). Thus we have
+2' a~ per revolution about the axis, and then return
+to the original position. (By keeping the motion at all                                                                      (36)
+stages suKciently close to the light cone, the proper            We shall work with the Kerr-Newman form of the
+time involved in the process could be kept below any          metric since it is simple and since the corresponding
+given nonzero limit, although this would not be possible      coordinate patches cover the whole manifold except
+if some sort of bound were to be placed on the allowed        for the 2-surfaces (x = 0, y = 0) in the form (26) .
+acceleration. )                                                  The simplest vector potential giving rise to the field
+  In the case when a'+e'~&m' the outer parts of the
+                                                              (2) by (») is
+space on the positive r side are causally well behaved,
+and there is even a partial Cauchy surface. However,                          A = ep 'r (dn   —u sin'Od y) .                 (37)
+174                                       STRUCTURE OF KERR FIELDS                                                                 i567
+
+Thus from (1) we obtain the mornenta                                  choice of gauge (37). (The method would also work in
+                                                                      in the Boyer-Lindquist coordinates with the analogous
+p„= —  $1 —
+            '—
+          p (2mr
+                   —e')5u —ap '(2mr —e')
+                                                                      choice of vector potential, but a transformation     in-
+                                  &&sin'0 j+r'+ep        'r,          volving the nonignorable coordinates r, 0 would destroy
+p„= —ap —'(2mr —e') sin'0 u                                           the separability. )
+               +p '$(r'+a')' —Aa sin'0] sin'0 j                          By (35) the general form of the Hamilton-Jacobi
+                                                                      equation is
+                             —a sin'oi —ep 'ar sin'0,
+p„=u —a sin'0                                                          BS/B) = 2 g"$(BS/Bx')
+                   j,                                          (40)
+                                                                                                     e—
+                                                                                                      A;)$(BS/Bx')   e—
+                                                                                                                      A;$,         (46)
+
+Pe= p'0                                                        (41)   where    S is the Jacobi action.
+                                                                        If there is a separable solution, then in terms of the
+The inverse of the metric (1) is                                      already known constants of the motion it must take
+(B/Bs) = p      (B/Bg)'+2p '(r'+a') (B/Br) (B/Bu)                     the form
+          +2p 'a(-B/Br) (B/Bq )+2p 'a(B/-Bu)(B/Bq )                               S = 'p2) Eu—+—Cy—
+                                                                                             ,      +Se+S„           (47)
+          +p   2a sin2g(B/Bu)2   +p   2
+                                          sin20(B/B~)2                where S& and S„are, respectively, functions of 0 and r
+                                            +p 'a(B/Br)'- (42)        only. Inserting this in (43), we see that the equation
+from which we obtain the Hamiltonian                                  can in fact be separated in the form
+
+      'p '&~p'+-2t (r'+a')P +ap              «r)P-                    (dSg/dg)'+ a'p, ' cos'0
+                   + pP+ $a sin8p„+sin 'gp~)') . (43)                             + (aE sing —C sin '8)'=           r)'
+                                                                                                             h(dS„/d—
+                                                                                       +2t (r'+a')E aC+ «r]d—
+                                                                                                            S„/dr     p,   'r'.    (4g—
+                                                                                                                                      )
+   From the symmetries we immediately obtain two
+constants of the motion corresponding to conservation                 Thus both sides must be equal to a new constant of the
+of energy, E, and angular momentum about the sym-                     motion, which we shall denote by X. It can be seen
+rnetry axis, 4; thus we have                                          from the form of the right-hand side that X must be
+                                                                      positive whenever p is real, i.e. , for all particle orbits
+                                                                      and timelike or null geodesics. Using the relations
+                                                               (45)   P&= BS/Bg and P„= BS/Br, it may be related directly to
+                                                                      the momenta in the form
+In addition, we automatically have the constant of the
+motion given by (36), corresponding to conservation of                        pg'+ (aE sing —C sin '0)'+a'p, ' cos'0= X
+rest mass.
+   These three first integrals are suf6cient to determine                 Ap, '        2$(r'+a')E— aC. +«r]p„—
+                                                                                                             +p, 'r = —X. (5p)
+the motion only when some restriction is imposed which
+reduces the problem effectively to three or fewer di-                 These together with (44) and (45) provide a complete
+mensions. This situation holds for the spherical cases,               set of first integrals of the motion. )It is easy to verify
+                                                                      directly, without considering the action, that expressions
+                                           ""
+for which a thorough analysis in the uncharged case
+has been carried out by Darwin,           and for which a             (49) and (50) are indeed constant, since it is almost
+                                                                      immediately apparent that their Poisson brackets with
+discussion of the charged cases has been given by
+                      "
+Graves and Brill. It also applies to suitable subspaces               the Hamiltonian (43) vanish.       ]
+in the fully general cases, namely, the symmetry axis,                   Equation (48) can be solved completely by quadra-
+                                            "
+which has been analyzed by Carter, and the equatorial                 tures. It splits up to give two ordinary differential
+symmetry plane, which has been analyzed by Boyer                      equations:
+and Price" in the asymptotically Qat limit, and by                                         dSe/dg=+0,                              (51)
+Boyer and Lindquist" in the inner regions (all these
+applying to the empty-space cases only).
+                                                                                           dS,/dr= 6 '(P+gR),                      (52)
+   In order to tackle the general case, a fourth first                where the functions O(8), P(r), R(r) are defined by
+integral of the motion is needed which cannot come
+from the obvious symmetries of the metric. However,                               O~= Q —cos20ga2(p2 —E2)+CP sin ~0)               (53)
+it turns out that it is possible to obtain such an integral
+by taking advantage of the unexpected fact that the                               P = E(r'+a') Ca+ «r,                            —(54)
+Hamilton-Jacobi equation can be solved by separation
+of variables in the coordinate system (1), and with the
+                                                                                  R = P' A(p'r'+     X)—                           (55)
+                                                                      and where it has been convenient       to define a new con-
+                                                                      stant Q related to the others by
+  "S. C. D       i,
+                  Pm . Ro . So . (Lo do ) A249, 180 (1958)
+   S. C. Darwin, Proc. Roy. Soc. (I,ondon) A263, 39 (1961).
+  "J.C. Graves and D. R. Brill, Phys. Rev. 120, 1507 (1960).                                 Q =X
+                                                                                                    —(C —aE)'.                     (56)
+                                                              B RAN DON          CARTE R
+ Thus the final solution for the Jacobi action is                                               3. Geodesic Completeness
+     'p'A —
+ 5= ——     Eu+4 p                                                                 %e are now in a position to demonstrate that the
+                                                                               analytic extensions obtained in Sec. 1. C are indeed
+              8                     r                 r
+                                                                               maximal, in the sense that the only geodesics which are
+                  (ge)d8+               a iPdr+           a i(QR)dr,    (57)   incomplete are those which reach the ring singularity,
+                                                                               so that they cannot possibly be imbedded as subspaces
+where the signs of the two square roots are independent                        of any larger manifold.
+of each other, and where the lower limits of integration                          A geodesic is complete if it can be extended to un-
+need not be specified, since only changes of the action                        boUnded values of the alone parameter X. It is apparent
+are important.                                                                 that any geodesic can be extended indefinitely unless it
+   The integrated forms of the geodesic and orbit equa-                        reaches the singularity or unless one of the integrals
+tions can now be obtained automatically by using the                           in the Eqs. (58), (60), or (61) diverges. The latter can
+fact that the partial derivatives of the Jacobi action with                    occur only where 6 has a zero, or where O~ or R has a
+respect to the constants of the motion are themselves                          double zero.
+constant.                                                                         If 0 or R has a double zero, then the integrals for X
+   Thus by differentiating with respect to X, p, , E, C,                       will diverge, and ) itself will be unbounded except in
+we obtain, respectively,                                                       the cases of geodesics which reach the singularity, for
+                                                                               which the divergent integrals for X may be able to
+                                                                               cancel each other out, This can be seen more easily
+       QQia                                                             (58)   from the form
+
+                   ~   c' cos'Od8                                                                      de%= p&(d8/QQte )                         (66)
+                                                                        (59)
+                                                                                                       dX = p'(dr/QR),                           (67)
+                         QO
+                         a(aE sin'8 —')
+                                     C— d8                                     of the Eqs. (62) and (63), than from (58) and (59)
+                                                                               directly. Thus although this coupled form is not suitable
+                                                                               for explicit evaluation, it shows clearly that no question
+                                                                               of incompleteness can arise where        or R has a double
+                                                                                                                         O~
+
+
+
+                                                                        (gp)   zero except for geodesics reaching the singularity p =0
+                                                                )g» )
+                                                                                  Therefore in considering incompleteness away from
+                   ' —(aE —C sin '8)d8                                         singularity we need only consider the cases where d has
+                                                                               a zero, which can occur only for strictly positive values
+                                                                               of r. Possible divergences occur only in the equations
+                                            "at P                              for u and q, which may be written in diGerential form as
+                                          + —1 — dr,                    (61)
+                                                                                             a(aE sin'8 —C) —  r'+a'(
+                                                  ~
+
+
+
+
+                                                                                  dl=                      d8+        1—   I
+                                                                                                                                      —
+                                                                                                                                          ~«(68)
+where +O~ and gR may take either sign independently,                                            QQss                gR)
+but where, once a choice has been made, it must be                                         —(aE —C sin '8) a      P )
+used consistently in all four equations, and where the                                                    d8+ —1 — ~dr.
+lower limits of integration may be chosen quite inde-
+pendently in each term.
+  For many purposes this information is more con-                              These equations can be reexpressed in terms of the
+veniently expressed in terms of the first-order differ-                        (m, r, 8, tp) coordinates given by (16) and (17) as
+ential system:
+                                p28      QQst                           (62)               +a(aE sin'8 —C)       r'+a'f             P ~
+                                                                                  dm   =                     d8+ —         i   1+    —
+                                                                                                                                          idr,   (70)
+                                p'r =QR,                                (63)
+       = —a(aE sin'8 —C)+ (r'+a')&-'$(gR) —Pj,                                             +(aE—C sin '8)         af           P
+p2g,                                                                    (64)
+                                                                                                             d8+ —1+ ~
+                                                                                                                                    dr.          (71)
+p'tp= —(aE             Csin '8)+ad 'L(QR) ——
+                                           Pj,                          (65)
+                                                                               Now provided that I' is nonzero where 6 = 0, we obtain
+which    may be obtained either from the explicitly                            from (54) and (55) the expansion
+integrated form t'(58) to (61)) or else directly from
+(44), (45), (48), and (50), and where again the signs of
+QO~ and gR may be chosen independently,        but once
+                                                                                                                                                 (72)
+chosen must be used consistently.
+                                   STRUCTURE OF KERR F IELDS                                                              i569
+
+where the sign depends on which choice of gR is under        with the function obtained in the limit of field-free
+consideration. It can be seen from this that only one        Qat space.
+pair of the expressions (68) and (69), or (70) and (71),        Useful information about the orbits, and restrictions
+contains a genuine divergence at 6=0; in the other           on the values which can be taken by the constants of
+pair the divergent terms cancel out. Thus, although the      the motion, may be obtained by examining the extent
+geodesic leaves one of the Kerr-Newman coordinate            of the allowed regions where 0~ is non-negative. The
+patches, it can be continued on an overlapping patch.        results may be summarized as follows:
+   The case in which P vanishes where 6=0 remains
+to be considered. In this case it follows from (55) that                              Case (1), Q) 0
+                                                 8
+E must have at least a single zero there. If has a
+                                                                                                                      I
+
+
+                                                                In this case there are always real solutions in which 8
+double zero, there is no problem, because as we have
+                                                             ranges over a region straddling the equator, cos8=0.
+seen the integral for ) will then diverge anyway; this
+                                                             This region extends to the axis of symmetry sin8=0,
+must necessarily be the case if 6 has a double zero, which
+                                                             if and only if C = 0 and Q+ a'(E' —  p2) & 0.
+shows why an analytic extension consisting only of
+                                                                In addition there is a solution in which 8 is constant
+Kerr-Newman patches is sufhcient in this case.
+                                                             at the axis value, sin8=0, when C =0 and
+   Thus we can restrict our attention to the case where
+P vanishes where 6= 0 and where 6 and R have only a                                  Q+ a2(E2    &2)     —0
+single root there. In this case we have
+                                                                                      Case (Z), Q= 0
+                    P/QR= O()V~2)                     (73)
+                                                               In this case there are always real solutions in which
+in the limit as the zero of 6 is approached, so the co-      8 is constantat the equatorial value, cos8= 0.
+ordinates N and w diverge to     +~      or—   ~ together.      There are real solutions in which 8 varies if and only
+This simply means that the geodesic reaches one of the       if the energy is su@ciently high, i.e.,
+points x=0, y=0 in one of the (x, y, 8, v2+) patches
+ (26). Since the immediate neighborhoods of these points                              a2(E2    ~2)   ) @2                 (74)
+are well behaved, such a geodesic can straightforwardly      If this is satisfied,
+                                                                                 0 varies over a range touching the
+be continued on the other side.                              equator on one side or other. The range extends to the
+   By working with the geodesic equations in the Kerr-       axis of symmetry if and only if 4 =0.
+Newman coordinate system, we have left out of account          The only other case where there are real solutions is
+the possibility that there may be goedesics confined en-     that in which C = 0 and a'(E' —&2) = 0, when 8 may take
+tirely to the 2-surfaces x= 0, y=0. In fact, it is obvious   any constant value whatsoever.
+from the symmetry of the form (26) that such geodesics
+do exist. Nevertheless no question of incompleteness                                   Case (3) Q(0
+arises because the surfaces @ =0, y=0 are topologically
+2-spheres, and, as can be seen at once from (26), they         In this case there are no real solutions at all unless
+are spacelike. It is well known that a compact spacelike     (74) is satisfied, and, in addition,
+manifold cannot possibly be incomplete.                                      Q) —(La'(E' —~')5'" —~'I ) 2     I
+                                                                                                                  ~
+   This completes our demonstration that the analytic
+extensions of Sec. 1C. are maximal, and that only geod-      If (75) is satisfied as a strict inequality,
+                                                                                                        0 varies over a
+esics which strike the singularity are incomplete. As a      range which does not touch the equatorial plane and
+by-product we have shown that the charged-particle           which ext'ends to the symmetry axis if, and only if,
+orbits have the same property. It is widely conjectured      4=0. If equality holds in (75), then 0 takes a fixed
+that this ought to follow automatically from the com-        value which lies strictly between the equatorial plane
+pleteness of the geodesics, but no rigorous theorem about    and the symxnetry axis, except when C = 0 in which case
+this question is known to the author, so it is perhaps       it lies on the symmetry axis.
+worth mentioning that this is not a counterexample.             It is not easy to give such a complete description of
+                                                             the motion of the r coordinate, because the correspond-
+                                                             ing governing function R(r) is a quartic in the full sense:
+C. Some Qiialitative Properties of Geodesics and Orbits
+                                                             The odd-power terms do not drop out as they do for
+   It is possible to see quite easily how the 8 coordinate   0~(8). Nevertheless, it is possible without much trouble
+varies during the geodesic and orbital motions, due to       to reach some interesting conclusions.
+the remarkable simplicity of the function 0 by which            The function R(r) may be expanded in the form
+the variation of 8 is governed. It can be seen from (53)
+that not only is the form of 0' quite independent of the     R = (E'   p2)   r'+ 2 (p22—
+                                                                                       22+ eeE) r'
+presence of electric charge either on the test particle                + Pa2E2 —c 2+ (e2 —p2) —a2p2 —Q5r2
+                                                                                          e2
+
+or in the field, but it is even independent of the mass                + 2$2N (aE 4)'+ sea(a—E C')+2NQ5r-
+parameter of the field. In other words, 0~ is identical                                   —"(aE-C)'—(a'+e')Q              (76)
+ 1570                                           BRAN DON           CA RTE R
+
+    From the form of the quartic term it can be seen that        approaches zero, with the implication that the geodesic
+ no orbit or geodesic can escape to the asymptotically           or orbit only approaches the equator asymptotically as
+ Oat regions of large positive or negative r if it has less      r tends to infinity.
+ than the escape energy, i.e. , if E'(p', as one would              Thus we reach the conclusion that a timelike or null
+ expect.                                                         geodesic or orbit cannot reach the singularity under any
+    From the form of the constant term in (76) it can be         circumstances except in the case where it is confined
+ seen that no geodesic or orbit can possibly cross the           to the equator, cosa=0.
+ hypersurface r=0 which extends across the mouth of                 The restriction can be carried even further than this.
+ the singular ring if Q is positive. Nor can it do so if it is   An examination of the equatorial geodesics iD the case
+ confined to the equator since the way would be blocked          where the solution is uncharged (e=O) has already
+ by the ring singularity itself. Therefore the hypersurface      been made by Boyer and Lindquist,         "
+                                                                                                           who have shown
+r=0 cannot be crossed unless the inequality (74) is              that there is in general a finite range of angular momen-
+satisfied.                                                       tum within which a geodesic of a given sufficiently high
+   Thus we reach the conclusion that no orbit or geodesic        energy from a general point on the positive-r side of the
+can pass through the ring between regions of positive            equator can reach the singularity. However, when the
+and negative r unless its energy is greater than some            solution is charged (or if one is considering approach
+minimum which is certainly not less than the escape              from the negative-r side) the restriction. is considerably
+energy.                                                          more severe because (78) must be satisfied. In other
+   This repulsive property of the gravitational field            words, a geodesic or charged particle orbit with a
+across the mouth of the ring has already been noted by           given energy can only reach the singularity if it has a
+Carter" insofar as it applies to the symmetry axis, and          uniquely determined angular momentum. Even this is
+the exact height of the energy barrier on the symmetry           not quite sufficient as can be seen from the form to
+axis is calculated in this reference. In general, the            which (76) reduces when (77) and (78) are satisfied,
+minimum energy for passing through the ring will de-             which is
+pend on the angular momentum, etc. , possibly in a               R= (E' p')r4+—2 (p'm+ peE)r'
+complicated way. We shall not investigate the matter
+further here, but only remark that geodesics and                                               y L$2 (e2 p2)    g2p2]$2    (79)
+particles with suKciently high energy can clearly pass           It is clear that aD additional necessary condition for the
+through without difhculty.                                       singularity to be attainable is that the coefficient of the
+                                                                 quadratic term be Don-negative; in other words, the
+        D. Geodesic Structure of Ring Singularity                charge on the test particle must be large enough to
+   The results of Sec. 3C can be used to give very               satisfy
+stong restrictions on the geodesics and orbits which may                              e'& (1+a'/e') p'.                 (80)
+reach the singularity p'=0. Thus we have seen that r
+                                                                  If this holds as a strict inequality, it is a sufhcient condi-
+cannot reach the value zero if Q is positive and that
+                                                                  tion for the singularity to be attainable from suKciently
+cosg cannot reach the value zero if Q is negative, and
+                                                                  close points on the equator on either side, whereas if
+hence a necessary condition for an orbit or geodesic to
+                                                                  it holds as an equality the singularity will in general be
+reach the singularity is
+                                                                  attainable from one side only (although there will be
+                             =0.                        (77)      exceptional cases when the energy is such that either
+                                                                  the quartic or the cubic term vanishes). In the par-
+   Moreover, from the form of the constant term in (76)
+                                                                  ticular case of timelike geodesics (e=O, p')0), the
+it is apparent that when Q is zero it will still be im-
+                                                                  inequality (80) cannot be satisfied at all except in the
+possible for r to reach the value zero unless either the
+                                                                  Schwarzschild limit when e and a both vanish. In the
+equality
+                                                                 case of null geodesics (e=O, p=O), strict equality holds
+                                                        (78)
+                                                                 in (80) but the singularity can be reached from either
+ is satisfied, or alternatively the charge e of the solution     side because the cubic term in (79) vanishes.
+vanishes. In the timelike and null cases, i.e. , when                Thus we conclude that when the solution is charged,
+p'~) 0, (78) is incompatible with (74), and therefore if         no timelike geodesics can reach the singularity, while
+ the motion is not to be confined to the equator (78) may        Dull geodesics reach the singularity if, and only if, they
+not hold, but instead the charge e must vanish. Now              lie in the equator and have a uniquely determined
+under these circumstances the remaining coefficients in          angular momentum given by (78). Even when the
+ (76) are all strictly positive, and therefore the parameter     solution is uncharged, the only timelike or null geodesics
+r can only reach zero by approaching from and returning          which can reach the singularity are those confined to
+to asymptotically large values on the positive side, and         the equator, but as Boyer and Lindquist have shown,
+the integral on the right-hand side of (58) remains              in this case both nuB and timelike ones reach the
+finite during this process; on the other hand, the               singularity and their angular momentum may lie in a
+integral on the left-hand side of (58) diverges as cosg          finite range.
+                                       STRUCTURE OF KERR FIELDS                                                               1571
+
+   The significance of this for an observer studying the            knows) an analytic study of a curvature singularity has
+singularity visually, i.e. , by receiving photons which             been made (although the separability which has made
+have come out from the singularity along null geodesics,            this possible is itself a symmetry of a kind), and the
+is as follows: If he observes from a point on the equator           results of the previous section seem to lend a certain
+then when the field is uncharged the singularity is                 amount of support to this last idea. Thus as the sym-
+visible as a finite one-dimensional line, as one would             metry is progressively       reduced, starting from the
+expect for a ring seen edgewise on (except that by the              Schwarzschild solution, the extent of the class of geo-
+results of Boyer and Lindquist" the line may sometimes              desics reaching the singularity is steadily reduced like-
+consist of two disconnected parts); however, if the                 wise, until in the case with both charge and rotation
+field is charged then the singularity is visible from the           there are almost none at all, which suggests that after
+equator only as a point, and in either case if the observer        further reduction of the symmetry, incomplete geodesics
+moves off the equator the singularity will become                  might cease to exist altogether. Even if a few incomplete
+totally invisible to him.                                          geodesics remain in the fully general case, their im-
+                                                                   portance is overshadowed by the causal pathology,
+                    4. IMPLICATIONS                                which seems to increase as the symmetry is reduced.
+                                                                   (However, in spite of this apparent effect the existence
+   The fact that there are closed timelike lines looping
+                                                                   or lack of symmetry may not be as important as it
+through the interior does got affect the reasonableness
+                                                                   appears, for the Taub-N. U. T. space which has been
+of interpreting the Kerr solutions as the exterior fields
+                                                                   discussed by Misner" is much more highly symmetric
+of rotating bodies, since a source body might be ex-
+                                                                   than the Kerr solution, aod yet its global behavior is in
+pected to block off these regions in any case. However,
+                                                                   some ways worse: It has geodesics which are incomplete
+it does hint (although it certainly does not prove) that           in a region which is locally nonsingular, and it also has
+causality breakdown may be expected to result from
+                                                                   closed timelike lines confined within any neighborhood,
+the collapse of a rotating body. The theorems of
+PeDrose' and Hawking'          'indicate that something
+                                                                   no matter how thin, of the causality horizon of the well-
+                                                                   behaved part, whereas in the Kerr solutions, in the
+pathological must be expected to occur in a situation of
+                                                                   cases when there are causality horizons (at r= r ), any
+gravitational collapse of a rotating body, but different
+                                                                   closed timelike line must at some stage penetrate deeply
+opinions may be held about the nature of the break-
+down. From a physical point of view the least serious
+                                                                   into the bad part beyond these horizons.        )
+                                                                      All these things suggest that the breakdown          in
+kind of breakdown would be the local development of
+                                                                   general relativity may be of a global rather than (or as
+density or curvature singularities, and this is also the
+                                                                   well as) of a local nature, in which case it is very
+kind of breakdown which has been considered most
+                                                                   serious indeed. If this turns out to be the case then one
+widely in the past. The reason why this would not be
+                                                                   will not be able to expect to cure the trouble by minor
+very serious is that og.e would expect in any case that
+                                                                   modifications significant only in regions of high curva-
+general relativity would need to be modified in condi-
+                                                                   ture, so that the whole theory might have to be
+tions of extreme curvature, in order to accommodate
+                                                                   abandoned, or at least drastically reformulated.
+quantum theory, and one might be sanguine enough
+to hope that the necessary modifications would cure
+                                                                                     ACKNOWLEDGMENTS
+the trouble. However, it is also conceivable, as has been
+suggested by Lifshitz and Khalatnikov,           "
+                                                that the             The author would like to thank Dr. S. W. Hawking,
+curvature singularities which are familiar in highly               Dr. R. W. Lindquist, Professor C. W. Misner, Dr.
+symmetric solutions do not exist in more general cases.            R. Penrose, and Dr. D. W. Sciama for many useful
+   The Kerr solutions have a lower symmetry group                  discussions and ideas. He is also grateful for the en-
+than any other solutions in which (as far as the author            couragement and suggestions of the late Dr. R. H. Boyer.
+  "K. M. Lifshitz and I. M. Khalatnikov, Zh. Eksperim i Teor.        "C.    W. Misner, in ReLativity Theory and Astrophysics: Rela-
+                                                —
+Fiz. 89, 149 (1960) LEnglish transl. : Soviet Phys. JETP 12, 108   tivity und Cosmology, edited by  J.
+                                                                                                     Ehlers (American Mathematical
+(1961)j.                                                           Society, Providence,   1967), Vol. 8, p. 160.
+

@@ -1,0 +1,485 @@
+PHYSICAL REVIEW                                   VOLUME         136, NUMBER 2B                                   26 OCTOBER 1964
+
+
+    Relativistic Equations for Adiabatic, Spherically Symmetric Gravitational                                              Collapse*
+                                                         CHARLEs      W. MIsNER
+                        Department   of Physics and Astronomy,   University   of 3faryland, College Park, Maryland
+                                                                   AND
+
+                                                           DAVID   H. SHARPt
+                               Palmer Physical   I.aboratory, Princeton University, Princeton, Sezo Jersey
+                                                        (Received 15 June 1964)
+
+                The Einstein equations for a spherically symmetrical distribution of matter are studied. The matter is
+             described by the stress-energy tensor of an ideal Quid (heat Qow and radiation are therefore excluded). In this
+             case, the Einstein equations give a generalization of the Oppenheimer-VolkoR          equations of hydrostatic
+             equilibrium so as to include an acceleration term and a contribution to the eRective mass of a shell of matter
+             arising from its kinetic energy. A second equation also appears in this time-dependent case; it gives the rate of
+             change of an appropriate "total energy" m(r, t) of each Quid sphere in terms of the work done on this sphere
+             by the Quid surrounding it. These equations would be an appropriate starting point for a study of relativistic
+             gravitational collapse in which an adiabatic equation of state more realistic than the p =0 form of Oppen-
+             heimer and Snyder could be used.
+
+
+          I. INTRODUCTION            AND SUMMARY                         where nI' is the four-velocity field of the Quid, e is the
+                                                                         internal energy of the Quid per unit proper rest volume,
+     HE original discussion of an idealized problem of
+                                                                         and p is the pressure. Because this tensor is diagonal in
+        gravitational collapse due to Oppenheimer and
+                                                                         the local rest frame of the Quid, it cannot describe the
+Snyder' assumes a spherically symmetric distribution
+of matter, adiabatic flow (no viscosity, heat conduction,                energy Qow associated with heat conduction or radia-
+                                                                         tion. Using Eq. (1.1) in the statement u„T&"., „=0 of
+or radiation), the equation of state p=O, and simple
+                                                                         local energy conservation shows that the entropy of
+initial conditions. In this note we maintain the assump-
+                                                                         each particle in the Quid is constant, m&s, „=0.We sum-
+tions of spherical symmetry and adiabatic Qow, and
+                                                                         marize here the equations in the isentropic case, where
+consider the introduction of pressure gradient forces
+                                                                         one further assumes s, „=0, so that the specific entropy
+into the equations. Our purpose is to cast the equations
+                                                                         is constant throughout the volume of the Quid.
+into as simple and physically transparent a form as we
+                                                                            The metric is chosen to have the diagonal form
+can, preliminary to their numerical solution.
+   Much of the recent interest2 in gravitational collapse                                ds'=                   +R'dQ'
+                                                                                                   e'&dfs~ e"dr'—                      (1.2)
+centers about the possibility (in a stage of collapse where              where
+the gravitational binding energy GM'/R becomes com-                                             dQs=- d8'+sin'ed&ad'.                  (1.3)
+parable to the rest energy Mcs) of a large energy outPut
+of a star, a discussion of which falls outside the scope                 Here p, X, and R are each functions of r and t to be
+of the equations derived here. Nevertheless, a study of                  determined by the Einstein held equations. We shall
+these equations may provide a useful first step in a                     worl» in a system of coordinates moving at each point
+more realistic analysis of the gravitational collapse of                 with the material located at that point (comoving or
+     —
+stars which would presumably include the effects of                      Lagrangian coordinates). The components of the four-
+rotation, departures from spherical symmetry, and                        velocity are thus
+      —
+radiation     as well as some insight into the issues of
+principle involved in gravitational collapse. '
+   In the remaining paragraphs of this section we will
+summarize our results. These are derived in the succeed-
+                                                                         Then the hydrodynamic            equations          „=0 give the
+                                                                                                                        TI"",.
+ing sections.
+                                                                         result
+   Associated with an ideal Quid is a stress energy given
+by the tensor
+                   T "= (p+e)u u"+pg"                         (1.1)      where    h=u+pv= (e+p)/n is the specific enthalpy or
+  * Supported in part by NASA Grant No. NsG 436.                         heat function for a unit amount of fluid (the amount
+  f' NSF Postdoctoral   Fellow, 1963—64.                                 containing a mole of baryons). LThe specific internal
+   ' J. R. Oppenheimer and H. Snyder, Phys. Rev. 56, 455 (1939).
+   'W. A. Fowler, Rev. Mod. Phys. 36, 549 (1964); F. Hoyle,
+                                                                         energy   I and the specific volume v are related to the
+                                                                         matter density or baryon number density n(r, f) by
+W. A. Fowler, G. R. Burbidge and E. M. Burbidge, Astrophys.                =uaensd v=1/n. We choose units of n(r, t) so that
+J. 139, 909 (1964); H. Y. Chin Ann. Phys. 26, 364 (1964); F. C.
+Michel, Astrophys. J. 138, 109I (1963); S. A. Colgate and R. H.
+White, Bull. Am. Phys. Soc. 8, 306 {1963).
+                                                                         e—  + n and h —+ 1 as p    ~ ]
+                                                                                                    0. In order to compute h, it is
+                                                                         sufficient to specify the adiabatic equation of state
+   J. A. Wheeler, in Gravitation and Relativity, edited by H. V.
+Chiu and W. F. Hoffmann (W. A. Benjamin Company, Inc. ,
+1964), Chap. 10.                                                                                      6=6 N                            (1.6)
+                                                                   8571
+                                     C. K. M ISNER                          AN D     D. H. SHARP
+for then the pressure equation p(n) can be deduced via                          m(r, 0), and U(r, 0). Equation (1.13) then defines e(r, 0)
+the thermodynamic relation                                                      which gives the values of p, n, and ts through an equa-
+                                                                                tion of state and thus allows the time derivatives of E,
+                                                                                m, and U to be obtained from Eqs. (1.12). One thus
+                                                                       (1 7)    obtains a solution for all times without invoking Eq.
+                                                                                (1.14); but this equation merely defines dA/dr initially,
+and from h= (e+ p)/n one finds that                                             and it is possible to show that the time derivative of the
+                                                                                left member of Eq. (1.14) vanishes as a consequence
+                                                                                of Eqs. (1.12), (1.13), (1.5), and (1.7). Thus, Eq. (1.14)
+                                                                                is a first integral of this system of equations.
+                                                                                   The above system of equations is to be solved subject
+   The remaining Geld equations for this problem take                           to the boundary condition that
+a simple form if one defines a quantity V which gives
+the relative velocity Vd8 of adjacent Quid particles on                                         p =0   at r = r, = constant,             (1.15)
+the same sphere of constant r,                                                  where   r, deGnes the outer boundary of the distribution
+                            —e &R.                                              of matter.   It is then evident from. Eq. (1.12-m) that
+                       V=DgE=
+                                                                                                         m(r. , t) =M                    (1.16)
+Here D& is the comoving proper-time              derivative
+                                                                                is a constant  and, in fact, the interior metric (1.2)
+                             B                                                  can be joined smoothly at the surface r, to an exterior
+                  D&    u"       =-—
+                                   e &l    —
+                                        trB)
+                                             .
+                                             l
+                                                                      (1.10)    Schwarzschild metric whose mass 3f is given by Eq.
+                             Bx"       ~   Bt),                                 (1.16).
+                                                                                   It is also necessary to require that at r=o the func-
+One also uses in place of X(r, t) a function m(r, t) defined                    tions R, m, and V all vanish.
+by
+                                   2m(r, t)--'        BR)'
+       e"&''&=g    = 1+U' —                                         . (1.11)              II. THERMODYNAMIC PRELIMINARIES
+                                                          Brj
+                                                                l
+
+
+                                      R                                            Local properties of a Quid such as pressure, tempera-
+                                                                                ture, specific entropy, internal energy density, etc. ,
+The full set of Geld equations are then the three Grst-
+                                                                                which are scalars in nonrelativistic physics can all be
+order dynamical    equations
+                                                                                defined in special and general relativity so that they are
+D,E.= V,                                                            (1.12-R.)   again scalars. For, to be scalars, they need merely
+
+D,m = —4srR'p U,
+
+           1+U'     2mR
+
+                  e+P
+                             ' tBp —
+                               (BR(
+                                     )-g
+                                                                    (1.12-m)
+                                                                                have a well-defined value at any event, independent of
+                                                                                every arbitrary choice of a coordinate system. One
+                                                                                achieves this by defining these quantities to have (in any
+                                                                                coordinate system) the values measured by an observer
+                                                                                who is at rest relative to the chosen small piece of Quid
+                                                                                at the time in question.
+                                      (m+4srR'p)
+
+
+two equations free from time derivatives,                  namely,
+                                                                    (1.12-U)
+
+                                                                         Eq.
+                                                                                   The basic law of thermodynamics4
+                                                                                                       dl = Tds       pd8—
+                                                                                applies to a fixed amount of matter which, for con-
+                                                                                                                                           (2. 1)
+
+ (1.5) and the equation                                                         venience, we take to be a unit amount. The fact that
+                                                                                the amount of matter does not change can be expressed
+                        (Bm)                                                    by introducing the particle number density n= (1/n)
+                                   4srR'e,                            (1.13)
+                        EBRi,                                                   and requiring it to satisfy a continuity equation:
+
+and the equation of continuity (nn&), „=0. The con-                                                       (nu&).,   „=0.                   (2.2)
+tinuity equation can be written in a form                                       This law of co+servation of matter in hydro'dynamics
+                   4srR'n           BR           dA                             can be derived from the microscopic law of conservation
+                                                      i               (1.14)    of baryons.
+            (1+U' —2mR ')'t' Br                  dr   j   g=s
+                                                                                   4The discussion in Secs. II and III is based on that of L.
+                                                                                Landau and E. Litshits, Fled 3Iechanscs (Addison-Wesley
+appropriate to our comoving coordinates, where the                              Publishing Company, Inc. , Reading, Massachusetts, 1959), Chap.
+amount of matter dA in any spherical shell deGned by a                          XV, especially in its emphasis on the continuity equation (2.2).
+Gxed coordinate range dr is independent of time.                                For more complete discussions of the subject see: (i) A, Lich-
+                                                                                nerowicz, Theories Relativistes de Le &avitation et de L'E/ectro-
+  Solutions to the above system of equations can be                             mugnetisme (Masson et Cie, Paris, 1955); (ii) J. L. Synge, Rela-
+obtained by specifying arbitrary initial values for R (r, 0),                   tivistic Hydrodynamics, Proc. London Math. Soc. 43, 376 (1937).
+              SPHERI CALLY                      S YM METRI C     GRAVITATIONAL                      COLLAPSE
+  When Eq. (2.1) is rewritten in terms of the energy             and the surrounding empty space in order that the
+density e=u/v and particle number density e, it reads            interior metric (1.2) can be joined smoothly to the
+                                                                 exterior Schwarzschild metric
+                    de = NTds+ (e+ p)      s drz         (2.3)
+and gives Eq. (1.7) in the case ds=0. Thus, e=e(s, e) is            ds'= —(1       2M—R      ') dt'+                 +R'dQ'.    (4.3)
+a convenient fundamental thermodynamic relationship                                                    1   —2MB. '
+for describing a Quid; it immediately gives the pressure
+equation p(s, rt) via Eq. (1.7). By differentiating the          These conditions will serve to relate the exterior coordi-
+definition of specific enthalpy, h=u+pv=(e+p)/ri,                nates R and t to the interior t coordinate and interior
+and employing Eq. (2.1) or (2.3), one obtains a relation         metric component ggg=R'(r, t). Assume that in the
+                                                                 exterior E,t coordinates the interface is described by
+                       dh      dp         Tds                    an equation
+                                                         (2.4)
+                                                                                                                      (4 4)
+                       h     (e+p)         h
+                                                                 The metric on the interface is obtained by inserting
+which will be useful later.
+                                                                 this in Eq. (4.3), or alternatively by setting r =r, = const
+                                                                 in Eq. (1.2). By equating these two expressions,
+            III. HYDRODYNAMICS REVIEW
+                                                                                     2M
+   The equations of motion of a Quid described by the            (ds'). „,s= —(1—            ds'+                +R,'dB'
+stress-energy tensor4 Tl"" of Eq. (1.1) and an equation                               R,            i —2MR, '
+of state e= e(s, e) are T&", „=0. One of . these four equa-
+tions„namely, I„'lI"".„=0, reduces as a consequence of                                        = —(e'4') dt'+R'(r        t)dn'   (4 5)
+Eqs. (2.2) and (2.3) to the heat transfer equation for
+an ideal Quid, which is the condition of adiabatic Qow           we find an equation          for the interface in the exterior
+                                                                 coordinates.   It reads
+                            NI s   q=0.                  (3.1)
+                                                                                      R=R, (t) =R(r„t),                         (4.6)
+The remaining equations can be reduced to the form of
+relativistic Euler equations:                                    provided that we insist that the interior and exterior
+                                                                 time coordinates agree on the surface. This boundary
+                                                                 condition on t then leads to one on e&, namely,
+                      u"= —(g "+u u") p,
+                                                 e
+                u                                        (3.2)
+                                                                       „,
+                                                                    (e&)  , = L1 —
+                                                                                 =2MR, 'jL1+ U, 2 —2MR        —'t',     'j
+                                                                                                                    (4.7)
+   In the special case of isemtropic gou(, where one             where we have defined
+assumes the specific entropy s to be constant throughout
+the Quid s, „=0, the Euler equation can be rewritten as                                                        BR)
+                                                                                  U. = (e e).B.=
+                                                                                               —(e e                            (4g)
+               u' u" = —(g""+u"u") (lnh), ,              (3.3)                                                 at),
+by use of Eq. (2.4).                                             The function U, (t) is the rate of change of R, with
+  It is evident that in the isentropic case we may               respect to the proper time of a comoving observer. The
+consider e, p, and h as functions of the particle number         conditions derived from the continuity of the deriva-
+density n alone, i.e. , e= e(rs), p= p(u), h=h(e).               tives of the metric can best be considered later.
+
+           IV. COORDINATES AND METRIC                                                V. EULER EQUATION
+
+   The metric (1.2) must satisfy certain conditions at             In the comoving coordinates delned by Eq. (1.4),
+the origin r=0 to assure regularity there. The first is          one obtains from Eq. (3.2) only one nontrivial Euler
+                                                                 equation, which reads:
+                        R(0, t) =0.                      (4.1)
+                                                                                 cjoy'/~r   = —L1/( +P) j~p/~r.                 (5.1)
+  Next, in order for the usual I,orentz-Minkowski
+geometry to be valid in an infinitesimal neighborhood            In the isentropic case we may use Eq. (2.4) to integrate
+of the origin, we must require that the circumference            Eq. (5.1). With the boundary condition (4.7), one finds
+2+E. of an infinitesimal sphere about the origin be just
+2m times its proper radius e~"dr, or
+                                                                                                 1—/2M/R,        (t)]
+                                                                                                                                (5 2)
+                 e" = (8R/Br)'       at         —0.
+                                               r=
+  Other conditions must hold at the interface between            when h is normalized so that h= 1 at the surface r= r, .
+the region occupied by matter (defined by a certain              However, the coordinate conditions (1.4) and the
+constant coordinate value r = r,, for the inf:erior solution)    diagonal form of the metric (1.2) are preserved by
+                                       C. K. MISNER            AN D     D. H. SHARP
+transformations of the interior time coordinate t of the           of Oppenheimer    and Volkoff ~ in the static case,
+form t —  + f(t), so it is possible to change e4' by a factor      where e "= 1   —2'  ', indicates something of the form
+which is an arbitrary function of time. Consequently,              the solution might take. But the boundary condition
+the solution (1.5) is also acceptable. IJse of Eq. (1.5)           (4.2) suggests some modifications of this. The form
+synchronizes     the interior time coordinate with the             e ~=X' 2  —2m' ' satis6es these boundary conditions if
+proper time of a comoving observer at the interface                (m/R)  ~0     as r —+0, but it is inappropriate for di-
+r=-r„and prevents the interior time coordinate from                mensional reasons: The Lagrangian coordinate r is
+inheriting the singularities of the exterior time coordi-          arbitrary at time /=0, and therefore can be assigned
+nate when the surface falls through the Schwarzschild              a dimension independent of all other quantities in the
+"singularity" (R, (t) —2M)        ~0.                              problem, while m/R is dimensionless. This leads us to
+   When different layers in the body are allowed to have           try the form e "=R' '(1+f) which simplifies Eq. (6.5)
+different adiabatic equations of state e(is), it is not            so that it reads
+possible to integrate Eq. (5.1) in terms of the specific
+enthalpy, but an integrated form such as                                            87reR'=8 (RU'        Rf)—
+                                                                                                            /BR              (6.6)
+
+                      g=+
+                              g
+                                  —1
+
+                                  e+p
+                                       —
+                                        Bp
+                                       BR
+                                             dR                    and thus yields the solution   U' —
+                                                                                                    f= 2mR ' as given in
+                                                                   Eqs. (1.11) and (1.13). To interpret Eq. (1.13) it is
+                                                                   best to rewrite the integral
+can of course be written. The boundary condition in-
+corporated into Eq. (5.3) makes e&=1 at the surface
+R=R, as in Eq. (1.5). The analogous generalization of                                  m(r, t) =    4irR'edR                 (6.7)
+Eq. (5.2) is evident.
+             VL INITIAL VALUE EQUATIONS                            in terms of the element of proper volume
+
+  The Einstein equations corresponding            to the metric                          V3V =4~x~~»2'                       (6.8)
+(1.2) can be found in Landau and Lifshitz. ' Since one             to obtain
+knows' that the I'0' and T equations will contain no
+second time derivatives, one may hope to 6nd some-                                                                           (6.9)
+thing simple in them for a starting point. In the present
+case, the T„' equation is the simplest. It reads
+                                                                   This last form reminds us that when considered as an
+                         e   6.=2U'/R',                    (6 1)
+                                                                   energy, m includes contributions from the kinetic energy
+where we use dots and primes to indicate the partial               and the gravitational potential energy.
+derivatives with respect to f and r, respectively, and               It is now possible to rewrite the constraint (6.4) in
+define U by Eqs. (1.6) and (1.7). We may use the                   an interesting form by substituting for X from Eq.
+differential operators                                             (1.11). The computation involves interchanging the
+                                                                   operators Di and 8/Br to write
+                      ci/aR= (1/R') (8/Br),                (6.2)
+and                                                                                                BU     Bp
+                              —                                                               = +U
+                         D, =e e(8/Bt)„                    (6.3)                       D, lnR'—                             (6.10)
+                                                                                               8E  I9R
+to rewrite the initial value equation (6.1) in the form
+                                                                   Using this identity and Eq. (5.1) gives
+                        Dies=2(BU/BR) .
+This equation may then be used to eliminate A from all                             (           2' 'I' = — 1 Bp
+the other Einstein equations. When it is used in the To'                       D, ln~ 1+U' —               U            .   (6.11)
+equation, one 6nds                                                                                             e+p aR
+87reRs= 1+ U +R(BUs/ciR)                                           This equation is a useful erst integral in the cases con-
+                      —L2RR"+R"].-~ —RR'(e-&)'.            (6.5)   sidered by Oppenheimer and Snyder' and by Bondi
+                                                                   where p=0. For then, since e&= 1 by Eq. (1.5), it reads
+Since this equation is of erst order, and even linear,             -,'8' — (nz/R) =E=const and will give Newtonian free
+in e " we try to solve it for this function. The work              fall for R(i) when we later discover that m(t) is constant
+                                                                   with this special p=0 equation of state.
+   'L. Landau and E. Lifshitz, The Classical Theory of Fields
+ (Addison-Wesley   Publishing Company, Inc. , Reading, Massa-
+chusetts, 1951), Sec. 11-7, Problem 5.                               7
+                                                                       J. R. Oppenheimer and G. M. Volkoff, Phys. Rev. 55, 374
+    Y. Bruhat, in Gravitation: An Introduction to Current Re-      (1939).
+                                                      ¹w
+seorch, edited by L. Witten (John Wiley 8r Sons, Inc. ,
+1962l, Eq. (4-1.8l.
+                                                         York,       8 H. Bondi, 3Eonthly Notices
+                                                                   107, 410 (1947).
+                                                                                                  of the Royal Astronomical Society
+                    SPHERICALLY SYMMETRIC GRAVITATIONAL                                                                 COLLAPSE
+                   VII. EQUATION OF MOTION                                        Because we have rather thoroughly reshu8. ed the
+     It is known' that the Einstein equations                                  Einstein equations of the metric (1.2) in obtaining a
+                                                                               system of equations for independent field variables E., m,
+                   R'r = 8~(T'i kg— 'i T".)                          (7.1)     and U, it may be of interest to prove directly that for
+                                                                               each r, Eq. (8.3) gives a constant of motion for the
+for i,   j=1, 2, 3 contain as leading terms just BK;;/Bt,                      system of equations (5.1), (1.12), and (1.13) supple-
+where      K;; is the second            fundamental        form of the
+                                                                               mented by an adiabatic equation of state e(m) for
+t=const surface. Equivalently, the only second time
+                                                                               each r. The computation begins by forming the loga-
+derivative that appears in Eq. (7.1) is B'g;;/BP Th.us,
+                                                                               rithmic derivative of Eq. (8.3)
+the R„„equation will contain just X and will be an
+identity since we have eliminated X from our scheme                            D]A'   D,n        2D, E D,E'                                    2m
+by solving Eq. (6.5). The Rg& and R«eq uati ons will be                                     +           +   —-,'B, lr (l.               + U'—        (8 4)
+equivalent (by symmetry) and each will contain just                             A'     e          R     E.'                                     R)
+B. They read                                                                   In the second term of Eq. (8.4) we can write by (1.12-R)
+6
+—                                                                              that D&R= U; the third term has been rewritten in
+     4irR (e —p) =e &B(RRe &)/Bt+~e '&RRX                                      Eq. (6.10); the derivatives in the last term can all be
+c'
+                                                                               evaluated from Eqs. (1.12) and give Eq. (6.11) which,
+                      +1 e"'2B(—
+                               RR'e "~')/Br                e   ERR—
+                                                                  'rt'
+                                                                               by (5.1), reads
+                                        = Reg   = (sin'8) —'R„„.     (7.2)
+                                                                                                                         2m)'~'          BP
+In this equation we introduce the operator                      D& of Eq.                        D l ~1+U —                         =U               (8.5)
+(1.10) and, for some intermediate                   computations,        the                                                 Rj~
+
+
+
+                                                                                                                                         BR
+operator
+                                                                               %e thus obtain the reduced form
+               D       —
+                      e x/2          ] +U2                           (7 3)
+                                                                                                  DA'
+                              Bt'               R         gR                                                  Dm
+                                                                                                                         — (R'U) .
+                                                                                                                        +Z2                          (8.6)
+Then X is eliminated using Eq. (6.4), is replaced by  8                                                                       aZ
+U via Eq. (1.9), and p' with p' via Eq. (5.1).This result
+is Eq. (1.12-U) which includes the well-known Oppen-                           Because of the adiabatic condition D~s=O, changes in
+heimer-Volkov~ equation of hydrostatic equilibrium in                          density are related according to Eq. (2.3) by
+the limiting case U=0.
+   Using the main equation (1.12-U) we can carry out                                                          De             D]c
+                                                                                                                                                     (8.7)
+some of the differentiations in Eq. (6.11) to reduce it                                                        rl        e+p
+to the form (1.12-m). Et is this form which shows that
+m=0 in the case of a p=0 equation of state.                                    In the reduced system of equations for E, m, and U,
+                                                                               the density e is given by Eq. (1.13) which we differ-
+               VIII. EQUATIGN GF CGNTINUITY                                    entiate to obtain D&e.
+  The continuity equation (2.2) implies quite generally
+                                                                                                       81Ã
+that the integral                                                                                            = 8rrRUe+4rrR2Dge.
+                                                                                                  Di
+                         A=         iiu'( —g)'t'd'x                  (8.1)
+                                                                                                       (9E.
+
+                                                                               To evaluate the left-hand side of this equation we need
+taken over a /=const surface is independent of t. Its                          the commutator
+value A is analogous to the mass number of a nucleus
+                                                                                             B- Bg(
+and represents the total amount of matter, or total
+number of baryons, in the system. In comoving coordi-                                       D„=   BR
+                                                                                                    —
+                                                                                                              BR&
+                                                                                                                    i
+                                                                                                                        Di     U
+                                                                                                                                   B
+
+                                                                                                                                   BR
+                                                                                                                                          BU B
+                                                                                                                                          BR BR
+                                                                                                                                                      (8.9)
+nates satisfying Eq. (1.4) the corresponding integral
+over any fixed domain of the spatial coordinates                               in which BP/BR can be eliminated using Eq. (5.1). We
+x'(i=1, 2, 3) is time-independent, since Eq. (2.2) then                        find then with the use of Eqs. (1.12-m) and (1.13) that
+reads
+                   B (riu'g —g)/Bt = 0.
+For our problem we can insert expressions for
+                                                   (8.2)
+                                                                   I' and                   Di
+                                                                                                 Bm
+
+                                                                                                 BR
+                                                                                                      — 8+RpU                 4mR'(e+—   p)—  BU
+                                                                                                                                              R
+                                                                                                                                                     (8.10)
+Q —g here to obtain the statement that
+              4~m~R'/tt1+ U'             2mR     rjrt2=A'(r)—- which allows us to rewrite Eq. (8.8) in the form
+                                                                                                                             1 8
+is time-i~deperiderit.
+                                                                                                  D, e = —(e+ p)             —' (R'U) .              (8.11)
+     9 Reference
+                   6, Eq. (4-1.9).                                                                                           E. BR
+                                     C. K. M ISNEk AK 0 D. H.                              SHAPEUP
+
+
+Combining    this with Eqs. (8.7) and (8.6) then gives               hypersurface    r=r, one has
+                            DfA'=0                          (8.12)             Kg. g. = —R, 'L1+ U,' —(2gg4/R. )]t",         (9.3)
+as we wished to show.                                                while   the exterior metric gives, for the hypersurface
+                                                                     R=R, (1),
+              IX. BOUNDARY CONDITIONS
+                                                                                   K   ~   = —R 'L1+ U ' —(2M/R, )]"         (9.4)
+  The condition, previously       discussed, that the metric
+or first fundamental       form of the boundary surface              Matching these components of 4 therefore gives M = m,
+should be the same whether obtained from the interior                which is Eq. (1.16). Since M is a constant this equation
+or exter ior metric, guarantees that for some coordinate             can be differentiated with respect to t with r = r, to
+system the metric components g„„will be continuous                   give m, =0 which implies, through Eq. (1.12-m), that
+across the surface. In order to guarantee that coordi-               p, U, = 0. The correct boundary condition is more
+nates can be introduced for which the first derivatives              specifically
+of the metric, g„„, , are continuous, it is sufhcient that the                               —p(r„t) =0,
+                                                                                          p, =                           (9 5)
+second fundamental        form be the same whether the
+                                                                     as can be seen by comparing the interior and exterior
+boundary surface is considered imbedded in the in-
+                                                                     components K«and using the field equation (1.12-U).
+terior or the exterior space-time. ' For any hypersurface
+                                                                     The interior computation gives
+s with unit normal vector eI", the second fundamental
+form 4 is defined as"                                                                                  2M~'I'    1     rip
+                                                                                   Ks c    = — 1+U'—                         (9.6)
+                     4= (                                                                              R )
+                                                                                               I
+
+
+
+
+                             gg„;,dx "dg—
+                                        g"), ,               (9.1)                                              e+pBR
+                                                                     while the exterior gives
+where the subscript s means that one of the coordinate
+differentials is to be eliminated using the equation of
+the surface. For example, one sets (dR A, dt), =0— in the                     IC       +
+                                                                                                     2M~-'~' M
+                                                                                           +(1+U' — =I
+                                                                                                   R1           R'
+                                                                                                                     +D, U . (9.7)—
+exterior coordinates of our problem. For comparison
+purposes, we write                                                   The difference of these two, using Eq. (1.12-U) and
+                                                                     m   M is
+@=Kg g. (egdt)s+Kg g DR, d8)s+ (R, sin8dq)']                 (9 )
+                                                                     K, ,+    K, , = —L— U, s— (2M/R, —
+                                                                                               1+         'l'4grP, R, . (9.8)
+                                                                                                                )]
+and compute      from the interior       solution     that for the
+                                                                                            ACKNOWLEDGMENTS
+  ' D. L. Beckedorff, thesis, Princeton University,
+                                                  Mathematics
+Department, 1961 (unpublished);    and C. W. Misner and D. L.           We thank Dr. Stirling Colgate, Dr. Richard Lind-
+Beckedorff (unpublished).
+  "E.   Cartan, Lecons szsr la Geometric des EsPaces de Riemunn      quist, and Professor J. A. Wheeler for discussions con-
+(Gauthier-Villars, Paris, 1951), Sec. 207.                           cerning this problem.
+

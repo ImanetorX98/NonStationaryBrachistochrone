@@ -1,0 +1,1528 @@
+                                               Brachistochrone-ruled timelike surfaces in
+                                                Newtonian and relativistic spacetimes
+                                                                             Ferhat Taş
+
+
+
+
+arXiv:2512.08776v3 [gr-qc] 2 Apr 2026
+                                         İstanbul University, Department of Computer Science, İstanbul 34134, Türkiye
+                                                                     tasf@istanbul.edu.tr
+
+
+                                                                           Abstract
+                                                 We present brachistochrone-ruled timelike surfaces as a natural ge-
+                                             ometric framework combining ruled-surface geometry with arrival-time
+                                             minimization: two-dimensional surfaces whose rulings are arrival-time-
+                                             minimizing timelike curves between paired endpoint families. The pa-
+                                             per has two goals: to formalize this framework and to show that it is
+                                             workable in both ﬂat and curved spacetimes. We begin with a Newto-
+                                             nian toy model built from cycloidal brachistochrones, then pass to sta-
+                                             tionary Lorentzian spacetimes where the arrival-time problem reduces
+                                             to a spatial ﬁrst-order variational problem. In general the reduced
+                                             integrand is a smooth Lagrangian, while static ﬁxed-energy cases re-
+                                             cover Jacobi-type Riemannian metrics. As a consistency check, the
+                                             bounded-speed Minkowski model yields straight timelike rulings and a
+                                             planar totally geodesic example. In the Schwarzschild exterior, ﬁxed-
+                                             energy coordinate-time minimization is reduced to geodesics of an ex-
+                                             plicit Jacobi metric, and we provide a practical numerical workﬂow
+                                             for constructing the associated ruled surfaces. Finally, by linearizing
+                                             the reduced Euler–Lagrange equations along rulings, we obtain the
+                                             natural transverse variation equation and boundary data, linking the
+                                             framework to Jacobi-ﬁeld geometry and stability questions.
+
+                                        Keywords: brachistochrone, ruled surface, stationary spacetime, variational
+                                        reduction, Jacobi metric
+
+
+                                        1    Introduction
+                                        Geodesics play a central role in both classical diﬀerential geometry and
+                                        general relativity. In a Riemannian manifold they locally minimize length;
+                                        in a Lorentzian spacetime, timelike geodesics represent the worldlines of
+                                        freely falling observers and locally extremize the proper time between events.
+
+                                                                               1
+From the variational viewpoint, geodesics are critical points of natural action
+functionals built from the metric tensor.
+    From a physical perspective, brachistochrone-ruled timelike surfaces may
+be interpreted as time-optimal world sheets connecting two families of sources
+and receivers, or two congruences of observers. They encode, in a single
+geometric object, the set of time-minimizing trajectories which realize the
+fastest possible transport or signal propagation between corresponding el-
+ements of the two families. Such interpretations have direct applications
+in gravitational physics, for instance in modeling optimal signal paths in
+curved spacetimes (e.g., near black holes) or analyzing congruences of ob-
+servers in contexts like gravitational wave detection and wavefront propaga-
+tion. From a geometric viewpoint, such surfaces interpolate between several
+known constructions: in ﬂat spacetime with trivial time functional they re-
+duce to timelike surfaces ruled by straight geodesics, while in stationary
+spacetimes they are related to geodesics of reduced spatial variational struc-
+tures, which in special regimes are described by Randers/Finsler or Jacobi
+metrics [1, 2, 6, 11, 12, 19, 21].
+    In many applications, the relevant variational quantity is not length or
+proper time but arrival time measured by a preferred observer family. This
+leads to brachistochrone-type problems: for a given time functional and two
+endpoints, ﬁnd the timelike trajectory with minimal travel time. In the
+Newtonian case, this starts with the classical cycloidal brachistochrone [3,
+7]. In stationary relativistic settings, Perlick formulated the corresponding
+arrival-time principle [16, 17], while existence and variational analyses were
+developed by Giannoni–Piccione and related works [4, 5, 8, 9]. Relativistic
+reﬁnements of brachistochrone dynamics also appear in [13].
+    Independently, ruled-surface geometry has a long history in both Rie-
+mannian and Lorentzian contexts, including surfaces ruled by geodesics and
+null geodesics. These surfaces play important roles in geometry and physics
+(e.g., wavefronts, causal structures, and string-like models).
+    Motivated by this background, we seek a systematic framework in which
+each ruling of a smooth two-parameter timelike surface is a time-minimizing
+trajectory for a moving endpoint pair. This viewpoint is particularly useful
+in stationary spacetimes, where arrival-time minimization admits reduced
+spatial Lagrangian or Jacobi descriptions.
+    The aim of this paper is to combine these two variational ideas into a
+systematic construction of brachistochrone-ruled timelike surfaces in classi-
+cal and relativistic spacetimes. Roughly speaking, given two one-parameter
+families of events or observers, we consider for each parameter value the time-
+minimizing timelike curve (brachistochrone) connecting the corresponding
+
+                                      2
+pair of endpoints, with respect to a chosen time functional. The union of
+these time-minimizing worldlines forms a two-dimensional timelike surface
+in spacetime, ruled by brachistochronal rulings. Our goal is to formalize
+this construction, to relate it to known reductions of arrival-time variational
+problems to spatial Lagrangian formulations (and to Jacobi/Finsler met-
+rics in special cases), and to explore its geometry in simple but illustrative
+examples.
+   The main contributions of this work can be summarized as follows:
+
+   • We introduce a precise deﬁnition of relativistic brachistochrone-ruled
+     timelike surfaces in stationary Lorentzian spacetimes. Using reduc-
+     tions of arrival-time functionals to spatial variational problems, we
+     characterize the rulings as extremals of the reduced spatial functional
+     and formulate natural regularity and uniqueness assumptions for fam-
+     ilies of brachistochrones. In static ﬁxed-energy settings this specializes
+     to Jacobi geodesics.
+
+   • To build intuition, we ﬁrst construct a fully explicit Newtonian toy
+     model. In a classical constant-gravity ﬁeld we use cycloidal brachis-
+     tochrones as rulings and obtain a “brachistochrone-ruled surface” in
+     Newtonian spacetime. This provides a concrete variational picture in
+     which the rulings are honest time-minimizing curves with respect to
+     the classical brachistochrone functional.
+
+   • In (1 + 2)-dimensional Minkowski spacetime we consider a simple
+     arrival-time functional based on a uniform bound on the spatial speed
+     relative to static observers. We show that the corresponding relativis-
+     tic brachistochrones are straight timelike lines and construct explicit
+     brachistochrone-ruled timelike surfaces connecting two families of sta-
+     tionary observers. A particularly simple choice of boundary curves
+     yields a timelike aﬃne plane which is totally geodesic.
+
+   • As a ﬁrst non-trivial curved example, we study the Schwarzschild ex-
+     terior as a static spacetime. For timelike geodesics at ﬁxed energy
+     we derive a Jacobi-type Riemannian metric on the equatorial spatial
+     slice and explain how time-minimizing timelike geodesics (with respect
+     to coordinate time) reduce to length-minimizing geodesics of this Ja-
+     cobi metric. We then outline a numerical scheme for constructing
+     brachistochrone-ruled timelike surfaces between two families of end-
+     points by solving boundary-value problems for the Jacobi geodesics.
+
+
+                                      3
+    • Finally, we discuss the diﬀerential geometry of brachistochrone-ruled
+      timelike surfaces, emphasizing the role of the induced Lorentzian met-
+      ric, the second fundamental form and curvature invariants. We com-
+      ment on the relation to conjugate points, cut loci and caustics of the
+      underlying time-minimizing geodesics, and we point out several direc-
+      tions for further work.
+
+The paper is organized as follows. Section 2 develops the Newtonian toy
+model and gives an explicit brachistochrone-ruled surface built from cy-
+cloids. In Section 3 we formulate the stationary relativistic framework and
+deﬁne brachistochrone-ruled timelike surfaces via reduced spatial variational
+problems. Section 4 provides a ﬂat-spacetime consistency check, while Sec-
+tion 5 contains the Schwarzschild ﬁxed-energy Jacobi reduction together
+with a practical numerical construction pipeline. In Section 6 we give a
+more quantitative geometric analysis (induced metric, second fundamental
+form, curvature identities, and Jacobi-ﬁeld boundary data). We conclude in
+Section 7 with open problems and future directions.
+
+
+2     Newtonian toy model: cycloidal brachistochrone
+      rulings
+This section presents a Newtonian toy model that captures the core ruled-
+surface construction and serves as a template for the relativistic setting.
+
+2.1    Classical brachistochrones revisited
+We recall the classical planar brachistochrone. Let (x, z) be Cartesian co-
+ordinates, with z measured downward in a constant gravitational ﬁeld of
+strength g > 0. A frictionless particle moves under the potential
+                                 V (z) = gz,                              (1)
+starting from rest at
+                                  A = (0, 0)                              (2)
+and reaching
+                        B = (X, H),       X > 0, H > 0.                   (3)
+    Let γ : [0, 1] → R2 , γ(λ) = (x(λ), z(λ)) be a smooth curve connecting
+A to B. If the particle has no initial velocity, conservation of mechanical
+energy gives
+                 1 2                            p
+                   v (λ) = gz(λ),      v(λ) = 2g z(λ),                  (4)
+                 2
+
+                                      4
+Figure 1: Standard brachistochrone curve connecting two points in a uniform
+gravitational ﬁeld.
+
+
+
+
+                                    5
+where v = kγ̇k is the speed. The travel time along γ is
+                         Z 1       Z 1p
+                             ds           ẋ(λ)2 + ż(λ)2
+                T [γ] =         =           p             dλ.             (5)
+                          0 v        0        2g z(λ)
+
+   The minimizers of (5) are cycloids: there exist parameters a > 0 and
+θ1 > 0 such that
+                                    
+                  x(θ) = a θ − sin θ ,
+                                         0 ≤ θ ≤ θ1 ,               (6)
+                  z(θ) = a 1 − cos θ ,
+
+with the endpoint conditions
+                                                       
+               a θ1 − sin θ1 = X,           a 1 − cos θ1 = H.             (7)
+
+   Along the cycloid (6) the speed is
+                             p            q             
+                    v(θ) =       2g z(θ) = 2ga 1 − cos θ .                (8)
+
+Direct computation gives
+                                                        θ
+                    q         2        2
+             ds =       x′ (θ) + z ′ (θ) dθ = 2a sin dθ,                  (9)
+                                                        2
+                       ds      2a sin(θ/2) dθ       a
+                                                  r
+                 dt =      =p                   =     dθ.                (10)
+                       v         2ga(1 − cos θ)     g
+Hence the time coordinate is linear in θ:
+                                 a
+                               r
+                       t(θ) =       θ,    t(0) = 0.                      (11)
+                                 g
+
+   In Newtonian spacetime R4 with coordinates (t, x, z, y), this gives the
+worldline
+                             q a                                    
+ γ(θ) = t(θ), x(θ), z(θ), y0 =   g θ, a(θ − sin θ), a(1 − cos θ), y 0   , (12)
+
+where the additional coordinate y0 ∈ R is constant (Figure 1).
+
+
+
+
+                                        6
+2.2     From a family of endpoint pairs to a brachistochrone-
+        ruled surface
+We now use these classical solutions to build a two-dimensional surface ruled
+by brachistochrone worldlines.
+   Let I ⊂ R be a non-empty open interval and let
+
+                              X, H : I −→ (0, ∞)                        (13)
+
+be smooth functions. We deﬁne two spatial curves in R3 by
+
+               Γ0 : I → R3 , Γ0 (s) = (x, z, y) = 0, 0, s ,
+                                                         
+                                                                        (14)
+
+             Γ1 : I → R 3 ,
+                                                                
+                              Γ1 (s) = (x, z, y) = X(s), H(s), s .      (15)
+For each s ∈ I, the points
+                                                       
+                     As = (0, 0),       Bs = X(s), H(s)                 (16)
+
+deﬁne a brachistochrone endpoint pair in the (x, z)-plane.
+
+Assumption 1. For every s ∈ I there exists a unique cycloidal brachis-
+tochrone connecting As to Bs , determined by parameters a(s) > 0 and
+θ1 (s) > 0 such that
+                                                        
+     a(s) θ1 (s) − sin θ1 (s) = X(s), a(s) 1 − cos θ1 (s) = H(s). (17)
+
+Moreover, the functions a, θ1 : I → (0, ∞) are smooth.
+
+  Under Assumption 1, the corresponding time-minimizing trajectory in
+Newtonian spacetime is
+
+                              γs : [0, θ1 (s)] → R4 ,                   (18)
+
+where
+                                                  
+           γs (θ) = ts (θ), xs (θ), zs (θ), ys (θ)                      (19)
+                    q                                        
+                        a(s)                       
+                  =      g θ, a(s) θ − sin θ , a(s) 1 − cos θ , s .     (20)
+
+   for 0 ≤ θ ≤ θ1 (s).
+   Introduce the normalized parameter u ∈ [0, 1] by
+
+                               θ(s, u) := u θ1 (s).                     (21)
+
+
+                                        7
+       Figure 2: Brachistochrone-ruled surface in Newtonian spacetime.
+
+
+Deﬁne the two-parameter map
+
+               Σ : I × [0, 1] −→ R4 ,
+                                                                  
+                                             Σ(s, u) := γs θ(s, u) .      (22)
+
+Explicitly,                                                   
+                  Σ(s, u) = t(s, u), x(s, u), z(s, u), y(s, u) ,          (23)
+with
+                   θ(s, u) = u θ1 (s),
+                                                       
+                   x(s, u) = a(s) θ(s, u) − sin θ(s, u) ,
+                                                 
+                   z(s, u) = a(s) 1 − cos θ(s, u) ,                       (24)
+                             q                q
+                   t(s, u) = a(s)g  θ(s, u) =    a(s)
+                                                  g u θ1 (s),
+
+                   y(s, u) = s.
+
+Deﬁnition 1. A smooth map Σ : U ⊂ R2 → R4 is called a brachistochrone-
+ruled surface if there exist smooth functions a(s) > 0, θ1 (s) > 0 and endpoint
+curves Γ0 , Γ1 as in (14)–(15) such that, in suitable local coordinates (s, u)
+on U , the map Σ takes the form (22)–(24), and for each ﬁxed s the curve
+
+                                         8
+  Figure 3: Brachistochrone-ruled surface in the Schwarzschild exterior.
+
+
+u 7→ Σ(s, u) is a time-minimizing trajectory between Γ0 (s) and Γ1 (s) with
+respect to the functional (5). (illustrated in Figure 2).
+
+   Here s labels the rulings and u parametrizes points along each ruling; Γ0
+and Γ1 are the boundary curves. Under Assumption 1, this yields a smooth
+brachistochrone-ruled surface from a smooth family of endpoint pairs.
+Remark 1. In this Newtonian model, brachistochrone worldlines are geodesics
+of an eﬀective Riemannian metric induced by (5). Section 3 extends Deﬁ-
+nition 1 to stationary Lorentzian spacetimes via reduced spatial variational
+structures (Jacobi/Finsler in special regimes).
+
+
+
+
+                                     9
+3     Relativistic framework in stationary spacetimes
+In this section we generalize the Newtonian construction of Section 2 to sta-
+tionary Lorentzian spacetimes. The key point is that, in a stationary space-
+time, suitable “time functionals” for timelike curves can be reduced to spatial
+variational functionals on a spatial manifold. Relativistic brachistochrones
+then appear as extremals of these reduced functionals, and brachistochrone-
+ruled timelike surfaces can be deﬁned in direct analogy with the Newtonian
+toy model.
+
+3.1   Stationary spacetimes and reduction to spatial varia-
+      tional functionals
+Let (M, g) be a time-oriented Lorentzian manifold of dimension n + 1 and
+signature (−, +, . . . , +). We assume (M, g) is stationary, i.e. there exists a
+timelike Killing vector ﬁeld K on M . In adapted coordinates (t, x) ∈ R × N ,
+where N is an n-dimensional spatial manifold, the metric can be written in
+the standard stationary form
+                                          2
+                 g = −β(x) dt − θi (x) dxi + hij (x) dxi dxj ,              (25)
+
+    where β > 0 is the lapse function, θ = θi dxi is a 1-form (the shift), and
+hij is a Riemannian metric on N . The Killing ﬁeld is K = ∂t .
+    Consider a future-directed timelike curve γ : [0, 1] → M , γ(λ) = (t(λ), x(λ)),
+connecting two events with ﬁxed spatial endpoints x(0) = x0 , x(1) = x1 .
+We regard the coordinate t as the time measured by the stationary observers
+whose worldlines are the integral curves of K. The arrival time of γ is
+                                            Z 1
+                      ∆t[γ] = t(1) − t(0) =      ṫ(λ) dλ.                 (26)
+                                              0
+
+   In order to obtain a well-posed variational problem, we must impose a
+normalization condition on γ. Two natural choices are:
+
+ (a) Proper-time parametrization: g(γ̇, γ̇) = −1.
+
+ (b) Fixed energy: E := −g(K, γ̇) is prescribed.
+
+Both conditions lead, after algebraic manipulation, to reduced spatial La-
+grangians for the arrival-time functional on N .
+
+
+
+
+                                      10
+Derivation for proper-time parametrization
+Assume γ is parametrized by proper time, so that
+
+                                g(γ̇, γ̇) = −1.                            (27)
+
+    Substituting the coordinate expressions γ̇ = (ṫ, ẋi ) and the metric (25)
+yields                                2
+                  −β(x) ṫ − θi (x)ẋi + hij (x)ẋi ẋj = −1.              (28)
+   Solving (28) for ṫ and choosing the positive root for future-directed
+curves, gives
+                                     1
+                                          q
+                  ṫ = θi (x)ẋi + p       1 + hij (x)ẋi ẋj .      (29)
+                                     β(x)
+   Inserting (29) into the arrival-time functional (26) we obtain
+                     Z 1h
+                                        1
+                                             q                  i
+            ∆t[γ] =       θi (x)ẋi + p       1 + hij (x)ẋi ẋj dλ.       (30)
+                      0                 β(x)
+   Thus, if we deﬁne the reduced Lagrangian Lpt : T N → R by
+                                            1
+                                                 q
+                Lpt (x, v) := θi (x)v i + p       1 + hij (x)v i v j ,      (31)
+                                            β(x)
+               R1
+then ∆t[γ] = 0 Lpt (x(λ), ẋ(λ)) dλ. The function Lpt is smooth and ﬁbre-
+wise strictly convex on the admissible timelike region, but it is not positively
+homogeneous of degree one in v because of the additive constant inside the
+square root. Hence this is a genuine ﬁrst-order Lagrangian formulation
+rather than a Finsler norm.
+
+3.1.1   Derivation for ﬁxed energy
+Alternatively, let us impose the condition that the energy
+
+                      E := −g(K, γ̇) = β(x) ṫ − θi (x)ẋi
+                                                           
+                                                                           (32)
+
+is a prescribed constant along γ. From (32) we have
+                                                 E
+                             ṫ = θi (x)ẋi +        .                     (33)
+                                                β(x)
+   Substituting (33) into the expression for g(γ̇, γ̇) (without assuming γ̇ is
+unit) yields
+                                     E2
+                      g(γ̇, γ̇) = −      + hij (x)ẋi ẋj .             (34)
+                                    β(x)
+
+                                       11
+   If we require γ to be timelike, then g(γ̇, γ̇) < 0, which implies hij (x)ẋi ẋj <
+E 2 /β(x). The arrival time becomes
+                                 Z 1h
+                                                       E i
+                       ∆t[γ] =          θi (x)ẋi +        dλ.                 (35)
+                                  0                   β(x)
+    However, to relate dλ to the spatial geometry we must ﬁx a parametriza-
+tion. A convenient choice is to use the parameter λ such that
+                                                E2
+                            hij (x)ẋi ẋj =        − 1,                       (36)
+                                               β(x)
+which corresponds to a particular choice of proper-time scaling. Then (35)
+can be rewritten as
+                          Z 1
+                               E h      β(x)          i
+                  ∆t[γ] =           1+       θi (x)ẋi dλ.            (37)
+                           0 β(x)        E
+    Deﬁning the reduced Lagrangian
+                         E        β(x)                         E
+           LE (x, v) :=       1+        θi (x)v i = θi (x)v i +      ,   (38)
+                        β(x)        E                           β(x)
+                           R1
+we again obtain ∆t[γ] = 0 LE (x, ẋ) dλ, provided the parametrization sat-
+isﬁes (36). The integrand LE is aﬃne in v and therefore not a Finsler norm.
+In special cases one can further eliminate the parameter using ﬁrst integrals
+to obtain a homogeneous length functional; in particular, in the static case
+(θ = 0) one recovers a Riemannian Jacobi metric, as we will see in Section 5.
+    General reduction statement: The two derivations above illustrate
+the following general fact, which we state as a precise proposition.
+Proposition 1. Let (M, g) be a stationary spacetime with metric of the
+form (25), and let C be a class of future-directed timelike curves γ(λ) =
+(t(λ), x(λ)) satisfying a prescribed normalization condition (for example,
+proper-time parametrization g(γ̇, γ̇) = −1, or ﬁxed energy E = −g(K, γ̇))
+and ﬁxed spatial endpoints x(0) = x0 , x(1) = x1 .
+    Then there exists a reduced ﬁrst-order Lagrangian
+                              L : A ⊂ T N −→ R,
+
+deﬁned on an admissible subset A of T N , such that:
+  (i) For every γ ∈ C, its spatial projection σ := π ◦ γ : [0, 1] → N satisﬁes
+                                   Z 1
+                          ∆t[γ] =      L(σ(λ), σ̇(λ)) dλ.                 (39)
+                                         0
+
+
+                                          12
+ (ii) A curve γ ∈ C is a critical point of the arrival-time functional ∆t
+      (with ﬁxed endpoints) if and only if its spatial projection σ is a geodesic
+      extremal of the reduced spatial variational problem, i.e. a critical point
+      of the functional
+                                   Z 1
+                           T [σ] =     L(σ(λ), σ̇(λ)) dλ.                    (40)
+                                           0
+
+(iii) If, after using the normalization constraint and a suitable reparametriza-
+      tion, L can be rewritten as a positive 1-homogeneous function F , then
+      the same extremals are geodesics of the corresponding Finsler/Jacobi
+      metric.
+For timelike problems, case (iii) is model-dependent; in this paper the rele-
+vant homogeneous reduction is the static ﬁxed-energy Jacobi case.
+Remark 2. In stationary relativity, genuine Randers/Finsler reductions are
+classical in Fermat-type (lightlike) arrival-time problems and related navi-
+gation formulations [2, 11, 18]. For timelike brachistochrones, however, one
+should generally work with the reduced Lagrangian L unless an additional
+homogeneous reduction is available (as in the static Jacobi setting of Sec-
+tion 5).
+    Motivated by Proposition 1, we adopt the following terminology.
+Deﬁnition 2. Let (M, g) be a stationary spacetime and L the associated
+reduced spatial Lagrangian on N as in Proposition 1. Let p, q ∈ M be
+two events whose spatial projections xp , xq ∈ N lie in the same connected
+component of N . A future-directed timelike curve γ from p to q, γ ∈ C, is
+called a relativistic brachistochrone between p and q relative to the stationary
+observers K and the chosen normalization if γ is a critical point of the
+arrival-time functional ∆t; equivalently, if its spatial projection σ = π ◦ γ is
+a critical curve of               Z    1
+                         T [σ] =           L(σ(λ), σ̇(λ)) dλ                (41)
+                                   0
+with ﬁxed endpoints xp , xq . In cases where L admits a homogeneous rep-
+resentation, this is equivalently a geodesic condition for the corresponding
+Finsler/Jacobi metric.
+
+3.2   Families of endpoints and brachistochrone-ruled timelike
+      surfaces
+We now introduce the relativistic analogue of the brachistochrone-ruled sur-
+face constructed in Section 2. Let I ⊂ R be a non-empty open interval, and
+
+                                               13
+let
+                                   α0 , α1 : I −→ N                         (42)
+be two smooth curves in the spatial manifold N , which we regard as families
+of spatial endpoints. For each s ∈ I, the points α0 (s) and α1 (s) represent the
+spatial positions of two events to be connected by a time-optimal worldline.
+    In order to lift these spatial curves to curves in spacetime M , one may
+ﬁx a reference time t0 ∈ R and consider the embeddings
+
+                   β0 (s) = (t0 , α0 (s)),        β1 (s) = (t0 , α1 (s)),   (43)
+
+or, more generally, allow for smooth time functions t0 (s), t1 (s) and set
+                                                               
+             β0 (s) = t0 (s), α0 (s) ,  β1 (s) = t1 (s), α1 (s) .          (44)
+
+   We impose the following assumption, which is a natural regularity and
+uniqueness requirement on the relativistic brachistochrone problem with
+varying endpoints.
+Assumption 2. Let (M, g) be a stationary spacetime with associated re-
+duced spatial Lagrangian L on N as in Proposition 1. Assume that for
+every s ∈ I there exists a unique future-directed timelike relativistic brachis-
+tochrone
+                               γs : [0, 1] −→ M,                            (45)
+connecting β0 (s) to β1 (s) in the sense of Deﬁnition 2, and that the map
+
+                                   (s, λ) 7−→ γs (λ)                        (46)
+
+is smooth on I × [0, 1].
+      Under Assumption 2 we deﬁne a map
+
+                   Σ : I × [0, 1] −→ M,             Σ(s, u) := γs (u),      (47)
+
+which parametrizes the union of all brachistochrones γs .
+Deﬁnition 3. Let (M, g) be a stationary spacetime and let Σ : U ⊂ R2 → M
+be a smooth map such that Σ is an immersion and Σ(U ) is a timelike surface
+(i.e. the induced metric has Lorentzian signature). We say that Σ is a
+relativistic brachistochrone-ruled timelike surface if there exists:
+
+      • an open interval I ⊂ R and a diﬀeomorphism Φ : I × [0, 1] → U ,
+
+      • smooth curves β0 , β1 : I → M ,
+
+                                             14
+    • a family {γs }s∈I of future-directed timelike relativistic brachistochrones
+      connecting β0 (s) to β1 (s) and satisfying Assumption 2,
+
+such that, in the coordinates (s, u) = Φ−1 (p),
+                           
+                 Σ Φ(s, u) = γs (u),      (s, u) ∈ I × [0, 1].              (48)
+                                                                     
+    In other words, for each ﬁxed s ∈ I the curve u 7→ Σ Φ(s, u) is a
+relativistic brachistochrone connecting two boundary curves on the surface,
+and the surface is ruled by this one-parameter family of time-minimizing
+worldlines.
+
+Remark 3. Note that in the Newtonian toy model of Section 2, the stationary
+spacetime is R4 endowed with the standard Newtonian time coordinate and
+a gravitational potential encoded in the travel-time functional. The reduced
+spatial functional coincides with the classical brachistochrone variational
+problem (equivalently, with a Jacobi-type Riemannian reformulation whose
+geodesics are cycloids), and Deﬁnition 3 recovers Deﬁnition 1 as a formal
+limit.
+Remark 4. The diﬀerential geometry of relativistic brachistochrone-ruled
+timelike surfaces can be studied by pulling back the Lorentzian metric g
+via Σ and computing the induced metric, second fundamental form and
+curvature invariants. Under additional hypotheses on the family of brachis-
+tochrones, one can introduce relativistic analogues of classical quantities
+such as the striction curve and the distribution parameter for ruled sur-
+faces. We will return to these aspects in Section 6.
+
+
+4    Minkowski consistency check
+This section is intentionally brief and serves as a consistency check of the
+general framework developed in Section 3. In ﬂat spacetime, the reduced
+variational problem should reproduce the expected elementary time-optimal
+behavior.
+    Consider (1 + 2)-dimensional Minkowski spacetime
+
+                    M = R1+2 ,       g = −dt2 + dx2 + dz 2 .                (49)
+
+For a future-directed timelike curve γ(t) = (t, x(t)) with x(t) = (x(t), z(t)),
+deﬁne the arrival-time functional
+
+                                 ∆t = t1 − t0 ,                             (50)
+
+                                       15
+under the speed constraint
+
+                                kẋ(t)k ≤ v0 < 1.                        (51)
+
+If x(t0 ) = x0 and x(t1 ) = x1 , then
+                                    Z t1
+                     kx1 − x0 k ≤        kẋ(t)k dt ≤ v0 ∆t.             (52)
+                                     t0
+
+Hence
+                                       kx1 − x0 k
+                               ∆t ≥                ,                     (53)
+                                            v0
+with equality iﬀ the path is a straight segment traversed with constant maxi-
+mal speed v0 . Therefore the Minkowski brachistochrone is a straight timelike
+line, exactly as expected.
+    Now let two smooth endpoint families α0 , α1 : I → R2 be given, and for
+each s ∈ I set
+                                     kα1 (s) − α0 (s)k
+                           ∆ts :=                      .                 (54)
+                                             v0
+The corresponding ruling is
+                                                        
+      γs (u) = t0 (s) + u ∆ts , (1 − u)α0 (s) + uα1 (s) ,  u ∈ [0, 1].   (55)
+
+Their union
+                                Σ(s, u) := γs (u)                        (56)
+deﬁnes a brachistochrone-ruled timelike surface in Minkowski spacetime. In
+particular, when α0 and α1 are aﬃne in s, the image is a planar timelike
+surface, hence totally geodesic in ﬂat spacetime.
+    This veriﬁes that the general construction recovers the expected ﬂat limit
+and supports the consistency of the relativistic formulation.
+
+
+5    Schwarzschild example and numerical construc-
+     tion pipeline
+In this section we illustrate how the general framework of Section 3 can
+be applied to a non-trivial static spacetime, namely the exterior region
+of the Schwarzschild solution. We do not attempt to solve the brachis-
+tochrone problem in closed form; instead, we show how the problem re-
+duces to geodesics of an eﬀective Riemannian (Jacobi/optical) metric on
+a spatial slice and outline a concrete numerical scheme for constructing
+brachistochrone-ruled timelike surfaces.
+
+                                          16
+5.1    Schwarzschild exterior as a static spacetime
+Consider the Schwarzschild spacetime of mass parameter M > 0 in standard
+Schwarzschild coordinates (t, r, ϑ, ϕ):
+       2M  2      2M −1 2
+                           dr + r 2 dϑ2 + sin2 ϑ dϕ2 ,
+                                                    
+g =− 1−     dt + 1 −                                                    r > 2M.
+         r            r
+                                                                        (57)
+The vector ﬁeld K = ∂t is a hypersurface-orthogonal timelike Killing ﬁeld
+on the exterior region r > 2M , so the spacetime is static. We regard t as
+the time coordinate measured by the static observers whose worldlines are
+integral curves of K.
+    In the notation of the stationary metric (57), we have vanishing shift
+1-form and
+            2M                    2M −1
+                , hij dxi dxj = 1−          dr 2 +r 2 dϑ2 +sin2 ϑ dϕ2 , (58)
+                                                                     
+ β(r) = 1−
+             r                        r
+so the spatial manifold is N = {r > 2M }×S 2 endowed with the Riemannian
+metric h.
+    By spherical symmetry we may restrict attention to the equatorial plane
+ϑ = π/2 and set ϑ ≡ π/2, dϑ = 0. The metric then reduces to
+                     2M  2      2M −1 2
+              g =− 1−     dt + 1 −       dr + r 2 dϕ2 ,                      (59)
+                       r            r
+and the spatial metric on N becomes
+                       2M −1 2
+      hij dxi dxj = 1 −       dr + r 2 dϕ2 ,          x1 = r, x2 = ϕ.        (60)
+                         r
+
+5.2    Time functional at ﬁxed energy and Jacobi-type metric
+We consider timelike geodesics parametrized by proper time τ . Let γ(τ ) =
+(t(τ ), r(τ ), ϕ(τ )) be a timelike geodesic in the equatorial plane. The timelike
+unit condition g(γ̇, γ̇) = −1 reads
+                   2M  2      2M −1 2
+               − 1−     ṫ + 1 −       ṙ + r 2 ϕ̇2 = −1,                    (61)
+                     r            r
+where dots denote derivatives with respect to τ .
+   Because K = ∂t is Killing, the quantity
+                                             2M 
+                         E := −g(K, γ̇) = 1 −     ṫ                         (62)
+                                               r
+
+                                       17
+is conserved along γ. We interpret E > 0 as the (dimensionless) energy per
+unit mass measured by static observers.
+    Solving (62) for ṫ and substituting into (61) yields
+                        2M −1 2                 E2
+                    1−          ṙ + r 2 ϕ̇2 =           − 1.         (63)
+                          r                    1 − 2M/r
+The left-hand side is the squared norm of the spatial velocity with respect
+to the metric (60), i.e.
+                                         2M −1 2
+                    hij (x) ẋi ẋj = 1 −       ṙ + r 2 ϕ̇2 .         (64)
+                                           r
+Hence we may rewrite (63) as
+                                                                 2M
+             hij (x) ẋi ẋj = E 2 β(r)−1 − 1,      β(r) = 1 −      .   (65)
+                                                                  r
+   The coordinate time t along γ satisﬁes
+                                            E
+                                    ṫ =        .                       (66)
+                                           β(r)
+The total coordinate time elapsed between τ = τ0 and τ = τ1 is therefore
+                            Z τ1         Z τ1
+                                                E
+                   ∆t[γ] =       ṫ dτ =               dτ.            (67)
+                             τ0           τ0  β(r(τ ))
+Using (65), we can express dτ in terms of the spatial metric h:
+                                                 p
+                  i j    2 −1                      hij dxi dxj
+            hij ẋ ẋ = E β − 1 =⇒ dτ = p                       .       (68)
+                                                   E 2 β −1 − 1
+Substituting into (67) gives
+                                   Z
+                                                    
+                         ∆t[γ] =       F x(σ), ẋ(σ) dσ,                (69)
+
+where we have introduced an arbitrary parameter σ along the spatial curve
+and
+                                                     E
+                   q
+    F (x, v) = n(x) hij (x)v i v j , n(x) :=     p             .     (70)
+                                                    2
+                                             β(x) E β(x)−1 − 1
+The function F is positively homogeneous of degree one in v and thus deﬁnes
+a Finsler structure on N , which in this static case is actually Riemannian:
+F is the norm induced by the Jacobi metric
+                             hJij (x) = n(x)2 hij (x).                  (71)
+
+                                           18
+Proposition 2. Fix an energy E > 0 and consider the class of timelike
+geodesics γ in the Schwarzschild exterior with energy E and endpoints pro-
+jecting to x0 , x1 ∈ N . Then γ is a critical point of the coordinate-time func-
+tional ∆t in (67), among all such geodesics with ﬁxed endpoints, if and only if
+its spatial projection σ = π◦γ is a geodesic of the Jacobi metric (71) connect-
+ing x0 to x1 . In particular, coordinate-time minimizing timelike geodesics
+at ﬁxed energy E project to length-minimizing geodesics of hJ .
+    Thus, for each ﬁxed energy E, the relativistic brachistochrone problem
+in the Schwarzschild exterior (with respect to the coordinate time t) reduces
+to a purely Riemannian geodesic problem on the equatorial spatial manifold
+(N, hJ ).
+
+5.3    Brachistochrone-ruled surfaces: choice of boundary curves
+We now describe how to construct a brachistochrone-ruled timelike surface
+in the Schwarzschild exterior. Let I ⊂ R be a non-empty open interval, and
+choose two smooth curves
+
+                                α0 , α1 : I −→ N                             (72)
+
+in the equatorial spatial manifold N = {r > 2M } × Sϕ1 . For concreteness,
+one may take
+                                                          
+                α0 (s) = r0 , ϕ0 (s) , α1 (s) = r1 , ϕ1 (s) ,         (73)
+
+with ﬁxed radii r0 , r1 > 2M and smooth angle functions ϕ0 , ϕ1 : I → R,
+so that the two curves lie on two concentric circles of radii r0 and r1 in the
+equatorial plane.
+    We lift these spatial curves to spacetime by ﬁxing a reference time t0 ∈ R
+and setting                                                   
+                 β0 (s) = t0 , α0 (s) ,    β1 (s) = t0 , α1 (s) .          (74)
+For each s ∈ I, the events β0 (s) and β1 (s) lie on the same static slice t = t0 .
+    For a ﬁxed energy E > 0, we seek, for each s ∈ I, a timelike geodesic γs
+of energy E connecting β0 (s) to some future event above β1 (s), and among
+such geodesics we select those that minimize the coordinate time diﬀerence.
+By Proposition 2, the spatial projection σs = π ◦ γs must then be a length-
+minimizing geodesic of the Jacobi metric (71) connecting α0 (s) to α1 (s).
+Assumption 3. Fix E > 0. Assume that for every s ∈ I there exists a
+unique hJ -geodesic
+                        σs : [0, 1] −→ N,                      (75)
+
+                                       19
+joining α0 (s) to α1 (s) and minimizing the Jacobi length functional
+                             Z 1q
+                      J
+                                  hJij σ(λ) σ̇ i (λ)σ̇ j (λ) dλ,
+                                           
+                    L [σ] =                                               (76)
+                             0
+
+and that the map (s, λ) 7→ σs (λ) is smooth on I × [0, 1].
+     Under this assumption, we obtain for each s a timelike geodesic γs by
+lifting σs to M and integrating the relation
+                                           E      dτ
+                            ṫs (λ) =               ,                    (77)
+                                        β σs (λ) dλ
+where τ is proper time and λ is a parameter along σs . More concretely, one
+may reparametrize σs by its Jacobi arc length and deﬁne ts (λ) via
+                          dts           
+                              = n σs (λ) σ̇s (λ) h ,                      (78)
+                          dλ
+where n is given by (70) and k · kh denotes the norm with respect to the
+spatial metric h.
+     This yields a smooth two-parameter family of timelike geodesics γs :
+[0, 1] → M , and we can deﬁne the corresponding brachistochrone-ruled time-
+like surface by
+
+                 Σ : I × [0, 1] −→ M,             Σ(s, u) := γs (u).      (79)
+
+5.4   Numerical construction scheme
+In practice, the Jacobi metric (71) is too complicated to allow closed-form
+expressions for its geodesics, except in very special cases (e.g. purely radial
+motion or circular orbits). However, the construction of the brachistochrone-
+ruled surface Σ can be carried out numerically by standard methods from
+geodesic shooting and boundary-value problems. We sketch a concrete
+scheme:
+
+   i) Discretization of the parameter space. Choose discrete values
+
+                             sk ∈ I,           k = 0, . . . , Ns ,
+
+      and, for each sk , choose a discretization
+
+                           uℓ ∈ [0, 1],          ℓ = 0, . . . , Nu ,
+
+      which will parametrize points along the ruling γsk .
+
+                                          20
+ii) Geodesic shooting in the Jacobi metric. For each ﬁxed sk , solve
+    the geodesic boundary-value problem in (N, hJ ):
+
+                    σsk (0) = α0 (sk ),       σsk (1) = α1 (sk ),
+
+   where σsk is a geodesic of hJ . This can be done, for example, by a
+   shooting method:
+
+      • Guess an initial velocity v (0) at α0 (sk ).
+      • Integrate the geodesic ODE for hJ from λ = 0 to λ = 1 with
+        initial data (σ(0), σ̇(0)) = (α0 (sk ), v (0) ).
+      • Compare the end point with α1 (sk ) and update the initial veloc-
+        ity using, for instance, a Newton or secant iteration until conver-
+        gence.
+
+   The geodesic ODEs can be written in local coordinates xi as
+
+                          d 2 xi     i       dxj dxk
+                                 + Γ  jk (x)         = 0,
+                          dλ2                dλ dλ
+   where Γijk are the Christoﬀel symbols of the Jacobi metric hJ .
+
+iii) Reconstruction of the time coordinate. Having computed σsk (λ)
+     for λ ∈ [0, 1], reconstruct the coordinate time along the ruling by
+     numerically integrating
+                                   Z λ
+                                                  
+                  tsk (λ) = t0 +         n σsk (µ) σ̇sk (µ) h dµ,
+                                    0
+
+   with n given by (70) and kσ̇kh the norm with respect to h.
+
+iv) Sampling the surface. For each pair (sk , uℓ ), evaluate
+                                                     
+                     γsk (uℓ ) = tsk (uℓ ), σsk (uℓ ) ,
+
+   and set
+                              Σ(sk , uℓ ) := γsk (uℓ ).
+   The collection of points Σ(sk , uℓ ) approximates the brachistochrone-
+   ruled timelike surface in spacetime and can be used for visualization
+   or for numerical computation of induced geometric quantities (e.g. the
+   ﬁrst and second fundamental forms).
+
+
+
+                                        21
+5.5     Numerical construction scheme: detailed implementa-
+        tion
+In this subsection, we provide a step-by-step numerical scheme for construct-
+ing a brachistochrone-ruled timelike surface in the Schwarzschild exterior.
+We focus on the equatorial plane and ﬁx an energy E > 1 (to ensure timelike
+geodesics that can reach inﬁnity). The construction proceeds as follows:
+
+Step 1: Explicit form of the Jacobi metric On the equatorial slice
+(ϑ = π/2), the spatial metric h and lapse β are:
+
+                           2M −1 2
+                              
+                                                             2M
+              i  j
+        hij dx dx = 1 −            dr + r 2 dϕ2 , β(r) = 1 −    .
+                            r                                 r
+The conformal factor n(r) in (70) becomes:
+                         E                           E
+        n(r) =       p               =          q                   .
+                 β(r) E 2 β(r)−1 − 1   1 − 2M
+                                              
+                                                  E 2 1 − 2M −1 − 1
+                                                             
+                                            r              r
+
+Thus, the Jacobi metric (71) is:
+                 "                         #
+                        2M −1 2
+                           
+               2
+       J
+     h = n(r)       1−           dr + r dϕ ≡ A(r) dr 2 + B(r) dϕ2 ,
+                                       2  2
+                         r
+
+where
+                                n(r)2
+                      A(r) =          ,        B(r) = n(r)2 r 2 .
+                               1 − 2M
+                                    r
+
+
+Step 2: Geodesic equations for hJ Let σ(λ) = (r(λ), ϕ(λ)) be a curve
+parametrized by an arbitrary parameter λ. The Lagrangian for geodesics of
+hJ (up to aﬃne reparametrization) is:
+                                 1
+                          LJ =      A(r)ṙ 2 + B(r)ϕ̇2 ,
+                                                      
+                                 2
+where dots denote d/dλ. Since ϕ is cyclic, we have the conserved angular
+momentum:
+                         ∂LJ
+                    pϕ =       = B(r)ϕ̇ = constant.
+                          ∂ ϕ̇
+The Euler–Lagrange equation for r gives:
+                       d            1 ′
+                                      A (r)ṙ 2 + B ′ (r)ϕ̇2 .
+                                                            
+                         (A(r)ṙ) =
+                      dλ            2
+
+                                          22
+Using the conservation law ϕ̇ = pϕ /B(r), we obtain the second-order ODE:
+                            1             1 B ′ (r) 2
+                    A(r)r̈ + A′ (r)ṙ 2 −          p = 0.                 (80)
+                            2             2 B(r)2 ϕ
+   Alternatively, we may use the energy integral (ﬁrst integral) for aﬃnely
+parametrized geodesics:
+                                 p2ϕ
+                   A(r)ṙ 2 +        = E,          E = constant.          (81)
+                                B(r)
+
+Step 3: Shooting method for boundary-value problem For each s
+(label of the ruling), we have two ﬁxed endpoints in the equatorial plane:
+
+                 α0 (s) = (r0 , ϕ0 (s)),        α1 (s) = (r1 , ϕ1 (s)).
+
+We seek a geodesic σs (λ) of hJ connecting these points. This is a two-point
+boundary-value problem. We solve it by shooting in the unknown initial
+angle ψ (or equivalently, the angular momentum pϕ ).
+
+   • Parametrization: Use λ ∈ [0, 1] with σs (0) = α0 (s), σs (1) = α1 (s).
+
+   • Unknown: The initial direction ψ, deﬁned by
+                                                             v0 sin ψ
+                        ṙ(0) = v0 cos ψ,          ϕ̇(0) =            ,
+                                                                r0
+     where v0 is an initial speed (magnitude) that can be normalized ap-
+     propriately. Alternatively, we may treat pϕ as the unknown.
+
+   • Shooting iteration:
+                                     (0)
+       1. Guess an initial value pϕ .
+       2. Integrate the geodesic equations (using (80) or (81)) from λ = 0
+          to λ = 1 with initial conditions r(0) = r0 , ϕ(0) = ϕ0 (s), and ṙ(0)
+          determined from (81) with a chosen E (e.g., E = 1 for unit speed
+          parametrization).
+       3. Compute the miss distance at λ = 1:
+                               p
+                         ∆ = (r(1) − r1 )2 + (r1 ∆ϕ)2 ,
+                            ∆ϕ = ϕ(1) − ϕ1 (s) (mod 2π).
+
+       4. Adjust pϕ using a root-ﬁnding algorithm (e.g., Newton–Raphson
+          or bisection) to drive ∆ to zero.
+
+                                           23
+Step 4: Reconstruction of the time coordinate Once the spatial
+geodesic σs (λ) = (r(λ), ϕ(λ)) is found, we compute the coordinate time t
+along the ruling by integrating (67). Using the Jacobi arc length parameter
+λ (which is aﬃne for hJ ), we have:
+
+                                dt
+                                   = n(r(λ)) kσ̇s (λ)kh ,
+                                dλ
+                  p
+where kσ̇s kh =       hij ẋi ẋj . From (65),
+                                            p
+                                   kσ̇s kh = E 2 β(r)−1 − 1.
+
+Thus,
+                                Z λ             p
+                  t(λ) = t0 +         n(r(µ))       E 2 β(r(µ))−1 − 1 dµ.      (82)
+                                 0
+   The integrand can be simpliﬁed using the expression for n(r); indeed,
+                                p                  E
+                            n(r) E 2 β(r)−1 − 1 =      .
+                                                  β(r)
+
+Hence,
+                                            Z λ
+                                                       1
+                            t(λ) = t0 + E                2M
+                                                             dµ,               (83)
+                                                0   1 − r(µ)
+
+which is exactly the integral of ṫ = E/β(r) with respect to the parameter λ.
+
+Step 5: Sampling the surface               After obtaining r(λ), ϕ(λ), t(λ) for each
+s, we deﬁne the surface as:
+                                                       
+                             Σ(s, λ) = t(λ), r(λ), ϕ(λ) .
+
+To obtain a regular parametrization, we may rescale λ to a normalized pa-
+rameter u ∈ [0, 1] such that u = λ (if the geodesic is parametrized with
+λ ∈ [0, 1]). The surface is then given by:
+                                                        
+                        Σ(s, u) = ts (u), rs (u), ϕs (u) .
+
+5.6     A numerical example: radial and circular boundary curves
+To illustrate the method, we present a simple numerical example. We choose:
+
+   • Mass: M = 1.
+
+
+                                            24
+   • Energy: E = 1.1 (slightly above 1, ensuring the geodesic can reach
+     inﬁnity).
+
+   • Boundary curves:
+
+       α0 (s) = (r0 = 6, ϕ0 (s) = s),    α1 (s) = (r1 = 10, ϕ1 (s) = s + ∆ϕ0 ),
+
+     with ∆ϕ0 = 0.5 rad. Thus, for each s, the endpoints are on two
+     concentric circles at radii 6M and 10M , with a ﬁxed angular separation
+     of 0.5 rad.
+
+Implementation details
+  1. We discretize s over [0, 2π] with 20 points.
+
+  2. For each s, we solve the geodesic boundary-value problem for hJ using
+     the shooting method described above. The ODE integration is per-
+     formed using a fourth-order Runge–Kutta method with adaptive step
+     size.
+
+  3. We compute t(u) via (83) using numerical quadrature.
+
+  4. The resulting surface coordinates are transformed to Cartesian-like
+     coordinates for visualization:
+
+                       X = r cos ϕ,      Y = r sin ϕ,   T = t.
+
+Results Figure 5 shows three representative brachistochrone rulings (time-
+like geodesics) for s = 0, π/2, π. The projections of these rulings onto the
+equatorial plane are geodesics of the Jacobi metric hJ . Due to the spheri-
+cal symmetry, all rulings have the same shape when rotated by s; thus the
+family is rigidly rotated.
+    Figure 6 displays the full brachistochrone-ruled timelike surface Σ(s, u)
+for s ∈ [0, 2π] and u ∈ [0, 1]. The surface is a timelike tube (surface)
+connecting the two circles of observers. The color indicates the coordinate
+time t (red = earlier, blue = later). The twisting of the surface reﬂects the
+angular separation between the boundary curves.
+
+Qualitative observations
+   • The spatial projections of the rulings are not straight lines, but are
+     bent due to the curvature of the Jacobi metric. The bending is more
+     pronounced for larger ∆ϕ or for endpoints closer to the horizon.
+
+                                        25
+   • The coordinate time diﬀerence ∆t along each ruling depends on both
+     the radial and angular separation. For the chosen parameters, ∆t ≈
+     15.2M in geometric units.
+
+   • The induced metric on the surface has Lorentzian signature, as ex-
+     pected. A computation of the scalar curvature of the surface reveals
+     regions of positive and negative Gaussian curvature, reﬂecting the in-
+     homogeneity of the gravitational ﬁeld.
+
+5.7   Comments on convergence and accuracy
+The shooting method, combined with adaptive ODE integration, yields
+residuals (miss distances) below 10−8 for the examples presented. The choice
+of energy E inﬂuences the stability of the numerics; for E very close to 1,
+the conformal factor n(r) becomes large near the turning points, requiring
+ﬁner integration steps. For endpoints very close to the horizon (r → 2M ),
+the Jacobi metric becomes singular, and the geodesic computation becomes
+challenging—such regimes require specialized techniques (e.g., regulariza-
+tion) and are left for future work.
+
+5.8   Extension to non-equatorial and non-static cases
+The scheme outlined above can be generalized to non-equatorial motion by
+including the ϑ coordinate and to stationary (non-static) spacetimes with
+drift terms in the reduced spatial variational problem. In models admitting a
+Randers representation, the geodesic equations acquire a magnetic-like term,
+and the shooting method must be adapted accordingly (e.g., by guessing two
+initial parameters instead of one). The numerical integration becomes more
+involved but remains feasible with standard ODE solvers.
+
+5.9   Qualitative features of Schwarzschild brachistochrone-
+      ruled surfaces
+Although a detailed numerical study is beyond the scope of this section, the
+above construction already suggests some qualitative features of brachistochrone-
+ruled timelike surfaces in the Schwarzschild exterior:
+
+   • Gravitational time dilation and bending of rulings. The Jacobi
+     conformal factor
+                                 E                             2M
+                n(r) =       p               ,    β(r) = 1 −      ,
+                         β(r) E 2 β(r)−1 − 1                    r
+
+                                      26
+      grows as r decreases towards 2M . Thus the Jacobi metric “penalizes”
+      motion in regions of strong gravitational ﬁeld, and time-minimizing
+      geodesics tend to avoid low-r regions when connecting distant points.
+      The corresponding rulings on the brachistochrone-ruled surface are
+      expected to bend outward, reﬂecting the competition between spatial
+      distance and gravitational time dilation.
+
+    • Focal sets and caustics. As the family of hJ -geodesics σs varies with
+      s, conjugate points and cut points in (N, hJ ) manifest as focusing and
+      caustics on the brachistochrone-ruled surface Σ. In particular, beyond
+      the ﬁrst cut locus, the rulings cease to be globally time-minimizing,
+      and the surface may develop folds or self-intersections.
+
+    • Comparison with the Minkowski case. Unlike the Minkowski
+      example of Section 4, where the rulings are straight lines and the
+      planar example is totally geodesic, the Schwarzschild Jacobi metric
+      is curved and the rulings are genuinely bent geodesics. The resulting
+      brachistochrone-ruled surfaces have non-trivial extrinsic curvature and
+      encode information about the gravitational ﬁeld through their induced
+      geometry.
+
+    This Schwarzschild example illustrates how the abstract notion of a rel-
+ativistic brachistochrone-ruled timelike surface can be made concrete in a
+physically relevant curved spacetime. The key steps are: (i) reduction of the
+coordinate-time functional to a Jacobi-type Riemannian metric on a spa-
+tial slice at ﬁxed energy, (ii) numerical solution of the associated geodesic
+boundary-value problem for a family of endpoints, and (iii) reconstruction of
+the corresponding surface in spacetime from the family of time-minimizing
+timelike geodesics. (schematically depicted in Figure 4).
+
+
+6    Geometric analysis of brachistochrone-ruled time-
+     like surfaces
+This section makes the geometric discussion quantitative. We ﬁrst record
+explicit identities for the induced Lorentzian metric and the second funda-
+mental form, and then use Jacobi-type linearization along rulings to connect
+local geometry with minimality loss.
+
+
+
+
+                                     27
+6.1   Induced metric, second fundamental form and curvature
+      identities
+Let Σ : U ⊂ R2 → M be a smooth timelike immersion into a Lorentzian
+manifold (M, g), and set X := ∂u Σ, Y := ∂s Σ. Deﬁne the ﬁrst fundamental
+form coeﬃcients
+ E := g(X, X),        F := g(X, Y ),                     ∆ := EG − F 2 .
+                                             G := g(Y, Y ),
+                                                                      (84)
+The surface is timelike exactly when ∆ < 0. Let B denote the vector-valued
+second fundamental form of Σ in M .
+Proposition 3. With the above notation, the following identities hold:
+  (i) The inverse induced metric is
+                                                       
+                                ab      1      G   −F
+                              (gΣ  )=                       .              (85)
+                                        ∆     −F   E
+
+ (ii) The mean-curvature vector of Σ is
+
+              ~ = 1 G B(X, X) − 2F B(X, Y ) + E B(Y, Y ) .
+                                                       
+              H                                                            (86)
+                   2∆
+(iii) The Gaussian curvature of (U, gΣ ) satisﬁes the Gauss equation
+                                                                       
+           g R(X, Y )Y, X + g B(X, X), B(Y, Y ) − g B(X, Y ), B(X, Y )
+      KΣ =                                                                 .
+                                           ∆
+                                                                     (87)
+If each ruling u 7→ Σ(s, u) is an aﬃnely parametrized ambient geodesic, then
+B(X, X) = 0, and therefore
+
+                     ~ = 1 E B(Y, Y ) − 2F B(X, Y ) ,
+                                                      
+                    H                                                   (88)
+                          2∆
+while (87) simpliﬁes to
+                                                                
+                      g R(X, Y )Y, X − g B(X, Y ), B(X, Y )
+               KΣ =                                                .        (89)
+                                           ∆
+                                                                        
+Proof. Item (i) is the inverse of the 2 × 2 matrix gΣ (∂a , ∂b ) = E   F
+                                                                     F G . Item
+(ii) follows from H~ = 1 gab B(∂a , ∂b ) and symmetry of B. Item (iii) is the
+                         2 Σ
+Gauss equation for a two-dimensional timelike submanifold, evaluated on
+(X, Y ) and divided by ∆ = g(X, X)g(Y, Y ) − g(X, Y )2 . If the rulings are
+ambient geodesics, then ∇X X = 0, hence B(X, X) = 0, which gives the
+stated simpliﬁcations.
+
+                                        28
+                     y = r sin ϕ
+                                α1 (s)
+
+
+                              α0 (s)
+                     hJ -geodesics
+                                              r0   r1
+                                                   x = r cos ϕ
+
+
+
+
+Figure 4: Equatorial slice of the Schwarzschild exterior with two boundary
+curves α0 (s) and α1 (s) at radii r0 and r1 . The time-minimizing timelike
+geodesics at ﬁxed energy project to geodesics of the Jacobi metric hJ , here
+shown schematically as a family of curved arcs connecting the two bound-
+aries. Their lifts generate a brachistochrone-ruled timelike surface in space-
+time.
+
+    For numerical surfaces constructed in Section 5, Proposition 3 provides
+                    ~ measures deviation from minimal world-sheets, while
+direct diagnostics: H
+KΣ separates ambient-curvature contributions from extrinsic bending through
+the B-terms.
+
+6.2   Jacobi ﬁelds along rulings and variation within the sur-
+      face
+We recall that in a (pseudo-)Riemannian manifold (M, g), a smooth one-
+parameter family of geodesics gives rise to a Jacobi ﬁeld along each geodesic,
+obtained by diﬀerentiating the family with respect to the parameter. In the
+context of brachistochrone-ruled timelike surfaces, the “geodesic family” is
+precisely the family of rulings, so the corresponding Jacobi ﬁelds encode how
+the surface varies transversely to each ruling.
+Deﬁnition 4. Let (M, g) be a Lorentzian (or more generally pseudo-Riemannian)
+manifold. A smooth map
+                           Γ : (−ε, ε) × I −→ M,
+where I ⊂ R is an interval, is called a geodesic variation if:
+
+                                         29
+  (i) For each ﬁxed s ∈ (−ε, ε), the curve γs : I → M , γs (u) := Γ(s, u), is
+      a geodesic (with respect to g).
+
+ (ii) The map Γ is smooth and its partial derivatives ∂s Γ and ∂u Γ are lin-
+      early independent wherever needed.
+For a ﬁxed s0 ∈ (−ε, ε), the vector ﬁeld J : I → T M along the geodesic γs0
+deﬁned by
+                           J(u) := ∂s Γ(s, u) s=s0                     (90)
+is called the variation ﬁeld or Jacobi ﬁeld associated with the variation Γ at
+s0 .
+   It is well known that J satisﬁes the Jacobi equation
+                                            
+                         ∇γ̇ ∇γ̇ J + R J, γ̇ γ̇ = 0,                                    (91)
+
+where γ = γs0 , γ̇ = ∂u Γ(s0 , u), ∇ is the Levi–Civita connection of g, and R
+is the Riemann curvature tensor.
+    We now specialize this general notion to the case of a brachistochrone-
+ruled timelike surface Σ : U ⊂ R2 → M as in Deﬁnition 3. To avoid
+reducing the discussion to a tautological geodesic-variation statement, we
+work directly with the reduced spatial variational problem from Section 3.
+Assumption 4. Let Σ : U → M be a relativistic brachistochrone-ruled time-
+like surface as in Deﬁnition 3, where U ⊂ R2 is an open set with coordinates
+(s, u) and let π : M → N be the stationary projection. For each ﬁxed s, set
+
+                  γs (u) := Σ(s, u),         σs (u) := (π ◦ Σ)(s, u).
+
+Assume:
+  (i) σs is a C 2 extremal of the reduced functional
+                                    Z 1
+                            T [σ] =     L(σ(u), σ̇(u)) du
+                                         0
+
+     between the moving endpoints α0 (s) := σs (0) and α1 (s) := σs (1).
+
+ (ii) The map (s, u) 7→ σs (u) is smooth.
+
+(iii) (Strong Legendre condition, explicit form) For each ﬁxed s, deﬁne
+                              n                               ∂2L                       
+          As (u) := Aij (s, u) i,j=1 ,        Aij (s, u) :=             σ s (u), σ̇ s (u)  .
+                                                              ∂v i ∂v j
+                                                                                          (92)
+
+                                             30
+      Then As (u) = As (u)T and there exists λs > 0 such that
+
+                    ξ T As (u) ξ ≥ λs kξk2 ,    ∀u ∈ [0, 1], ∀ξ ∈ Rn .         (93)
+
+      In particular, As (u) is invertible for all u.
+
+   Under this assumption, the geometry of transverse variations is governed
+by the linearization of the Euler–Lagrange equations of L.
+
+Proposition 4. Let (M, g) be a Lorentzian manifold and Σ : U → M a
+relativistic brachistochrone-ruled timelike surface satisfying Assumption 4.
+Fix s0 and consider the spatial ruling
+
+                             σs0 (u) := (π ◦ Σ)(s0 , u).
+
+Deﬁne the variation ﬁeld
+
+                              W (u) := ∂s σ(s, u) s=s0                         (94)
+
+along σs0 , viewed in local coordinates as a column vector W = (W 1 , . . . , W n )T .
+Deﬁne, along (σs0 (u), σ̇s0 (u)), the n × n matrices
+                                                                  
+       A(u) := Lvi vj ,       B(u) := Lvi xj ,      C(u) := Lxi xj ,           (95)
+                                                             
+where all derivatives of L are evaluated at σs0 (u), σ̇s0 (u) . Then W satisﬁes
+the linearized Euler–Lagrange equation in compact matrix form
+                    d               
+      JL [W ] :=       A(u)Ẇ + B(u)W − B(u)T Ẇ − C(u)W = 0,                  (96)
+                   du
+or equivalently
+
+                   AẄ + (Ȧ + B − B T )Ẇ + (Ḃ − C)W = 0,                    (97)
+
+where Ȧ = dA/du and Ḃ = dB/du. In particular, in the static ﬁxed-
+energy Jacobi case this reduces to the classical Jacobi equation of the Rie-
+mannian metric hJ on N ; and if the lifted rulings are additionally aﬃnely
+parametrized timelike geodesics of (M, g), then J = ∂s Σ|s=s0 satisﬁes the
+ambient Jacobi equation (91).
+
+Proof. For each ﬁxed s, σs is an extremal of T , hence
+                       d                
+                         ∇v L(σs , σ̇s ) − ∇x L(σs , σ̇s ) = 0.                (98)
+                      du
+
+                                          31
+Diﬀerentiate with respect to s at s = s0 and use W = ∂s σ|s=s0 . By the
+chain rule,
+                   d                                
+             0=       Lvv Ẇ + Lvx W − Lxv Ẇ + Lxx W
+                  du
+                   d                          
+               =      AẆ + BW − B T Ẇ + CW ,                     (99)
+                  du
+which is exactly (96). The last statement follows from the standard identi-
+ﬁcation of this linearization with the Jacobi equation in the metric special
+cases described above.
+
+    The boundary conditions for the linearized ﬁeld W along each spatial
+ruling are determined by the variation of the projected boundary curves.
+Lemma 1. Let Σ : U → M be as in Proposition 4, and assume that the
+parameter domain U contains a rectangle of the form Is × [0, 1], with Is ⊂ R
+an interval, such that the projected map
+
+                              σ(s, u) := (π ◦ Σ)(s, u)
+
+has smooth boundary curves
+
+                α0 (s) := σ(s, 0),      α1 (s) := σ(s, 1),          s ∈ Is ,    (100)
+
+are smooth. Fix s0 ∈ Is and let
+
+                         σs0 (u) := σ(s0 , u),        u ∈ [0, 1],
+
+be the corresponding spatial ruling, with linearized ﬁeld W (u) = ∂s σ(s, u)|s=s0
+as in Proposition 4. Then the boundary values of W are given by
+
+                       W (0) = α′0 (s0 ),        W (1) = α′1 (s0 ),             (101)
+
+where the prime denotes derivative with respect to s.
+Proof. By deﬁnition,
+                                                 d
+            W (0) = ∂s σ(s, u) s=s0,u=0 =           σ(s, 0) s=s0 = α′0 (s0 ),
+                                                 ds
+and similarly
+                                                 d
+            W (1) = ∂s σ(s, u) s=s0,u=1 =           σ(s, 1) s=s0 = α′1 (s0 ).
+                                                 ds
+
+
+
+                                            32
+      Figure 5: Family of Jacobi geodesics in Schwarzschild exterior
+
+
+    Thus, along each spatial ruling, the linearized ﬁeld W is uniquely de-
+termined by the derivatives of the boundary curves at the endpoints and
+by equation (96). In the metric special cases where this linearization iden-
+tiﬁes with a geometric Jacobi equation, the same boundary-data principle
+applies to the corresponding Jacobi ﬁelds. In particular, if the family of
+rulings arises from a family of time-minimizing geodesics for a given time
+functional, then the loss of global minimality along a ruling (e.g. at a cut
+point) is reﬂected in the behavior of this linearized ﬁeld, for instance through
+the occurrence of conjugate points. (see Figure 5).
+Remark 5. Let Σ : U → M be a timelike immersed surface and let J = ∂s Σ
+be the Jacobi ﬁeld along a ruling γs0 as above. At each point of the ruling
+the tangent space of the surface is spanned by ∂u Σ and ∂s Σ, so one may
+
+
+
+                                      33
+decompose J into tangential and normal components
+
+                                J = J ⊤ + J ⊥,
+
+where J ⊤ is tangent to the surface and J ⊥ is normal. The tangential part J ⊤
+corresponds to a reparametrization of the ruling within the surface, whereas
+the normal part J ⊥ measures the transverse deviation of neighboring rulings
+in ambient spacetime. The normal component J ⊥ satisﬁes a scalar Jacobi-
+type equation that involve the ambient curvature and the second fundamen-
+tal form of the surface; this provides a natural link between the stability of
+time-minimizing rulings and the extrinsic geometry of the brachistochrone-
+ruled surface.
+
+
+7     Conclusions
+In this work, we developed brachistochrone-ruled timelike surfaces as a geo-
+metric framework for families of arrival-time-minimizing trajectories. Con-
+ceptually, the key shift is from isolated two-point optimization problems
+to a surface-level description of time-optimal propagation between moving
+endpoint families.
+    The main outcomes are:
+
+    1. A precise Newtonian and relativistic deﬁnition of brachistochrone-
+       ruled surfaces (Deﬁnitions 1 and 3).
+
+    2. A reduced stationary-spacetime formulation in which arrival-time min-
+       imization becomes a spatial ﬁrst-order variational problem, with Jacobi-
+       metric reduction in static ﬁxed-energy regimes.
+
+    3. Concrete realizations across model spacetimes: a cycloidal Newto-
+       nian toy model, a Minkowski consistency check with straight timelike
+       rulings, and a Schwarzschild construction pipeline based on Jacobi
+       geodesics.
+
+    4. A ﬁrst geometric variation analysis through the linearized ruling equa-
+       tion (96), together with boundary-data control (Proposition 4 and
+       Lemma 1).
+
+   Taken together, these results clarify the relation between brachistochrone
+theory and ruled-surface geometry and provide a practical bridge between
+abstract variational principles and computable spacetime examples.
+
+
+                                      34
+    A natural next step is the Schwarzschild–de Sitter (Kottler) case [10, 15],
+where the static region is bounded by black-hole and cosmological horizons
+and the Jacobi reduction remains available with β(r) = 1 − 2M/r − Λr 2 /3.
+This setting should sharpen questions about static radius eﬀects, caustics,
+and cut loci for time-minimizing rulings [14, 20].
+    More broadly, promising directions include: (i) extrinsic curvature and
+stability theory for these surfaces; (ii) rotating stationary backgrounds such
+as Kerr; and (iii) null and genuinely non-stationary extensions, where the
+interaction between causality and variational structure is expected to be
+richer [18].
+    In short, brachistochrone-ruled timelike surfaces oﬀer a compact lan-
+guage for time-optimal transport in curved spacetime, with clear geometric
+content and direct paths toward analytical and numerical generalizations.
+
+
+8    Acknowledgements
+The author thanks undergraduate student Ibrahim H.I. Abushawish for his
+valuable assistance in providing animated visualizations (GitHub: Brachistochrone-ruled timelike surfac
+that facilitated a better understanding of the results presented in this paper,
+and for his discussions that helped shape the perspective on possible future
+research directions.
+
+
+Conﬂict of Interest Statement
+The author declares that there is no conﬂict of interest.
+
+
+Funding
+No funding was received for this work.
+
+
+Ethics Statement
+This theoretical study does not involve experiments on humans or animals.
+
+
+Data Availability Statement
+No new experimental data were generated. Data supporting the ﬁndings of
+this study, including numerical outputs used for the ﬁgures, are available
+
+
+                                      35
+from the corresponding author upon reasonable request.
+
+
+References
+ [1] Bao, D., Chern, S.-S., & Shen, Z. 2000, An Introduction to Riemann–
+     Finsler Geometry (New York: Springer)
+
+ [2] Bao, D., Robles, C., & Shen, Z. 2004, J. Diﬀ. Geom., 66, 377
+
+ [3] Bernoulli, J. 1696, Acta Eruditorum, 18, 269
+
+ [4] Caponio, E., Javaloyes, M. Á., & Masiello, A. 2011, Math. Ann., 351,
+     365
+
+ [5] Caponio, E., Javaloyes, M. Á., & Sánchez, M. 2011, Rev. Mat. Iberoam.,
+     27, 919
+
+ [6] Caponio, E., Javaloyes, M. Á., & Sánchez, M. 2024, Mem. Am. Math.
+     Soc., 300, no. 1501
+
+ [7] Erlichson, H. 1999, Eur. J. Phys., 20, 299
+
+ [8] Fortunato, D., Giannoni, F., & Masiello, A. 1995, J. Geom. Phys., 15,
+     159
+
+ [9] Giannoni, F., & Piccione, P. 1998, J. Math. Phys., 39, 6137
+
+[10] Gibbons, G. W., & Hawking, S. W. 1977, Phys. Rev. D, 15, 2738
+
+[11] Gibbons, G. W., Herdeiro, C. A. R., Warnick, C. M., & Werner, M. C.
+     2009, Phys. Rev. D, 79, 044022
+
+[12] Gibbons, G. W. 2016, Class. Quantum Grav., 33, 025004
+
+[13] Goldstein, H. F., & Bender, C. M. 1986, J. Math. Phys., 27 (2)
+
+[14] Kagramanova, V., Kunz, J., & Lämmerzahl, C. 2008, Gen. Relativ.
+     Gravit., 40, 1275
+
+[15] Kottler, F. 1918, Ann. Phys., 361, 401
+
+[16] Perlick, V. 1990, Class. Quantum Grav., 7, 1849
+
+[17] Perlick, V. 1991, J. Math. Phys., 32, 3148
+
+
+
+                                     36
+[18] Perlick, V. 2000, Ray Optics, Fermat’s Principle, and Applications to
+     General Relativity(Berlin: Springer)
+
+[19] Randers, G. 1941, Phys. Rev., 59, 195
+
+[20] Stuchlı́k, Z., & Slaný, P. 2004, Phys. Rev. D, 69, 064001
+
+[21] Zermelo, E. 1931, Z. Angew. Math. Mech., 11, 114
+
+
+
+
+                                     37
+

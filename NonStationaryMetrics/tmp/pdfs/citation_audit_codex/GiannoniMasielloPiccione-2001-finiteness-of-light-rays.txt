@@ -1,0 +1,1139 @@
+General Relativity and Gravitation, Vol. 33, No. 3, 2001
+
+
+
+
+On the Finiteness of Light Rays Between a Source
+and an Observer on Conformally Stationary
+Space-Times
+
+Fabio Giannoni,1 Antonio Masiello,2 and Paolo Piccione3
+               Received May 4, 2000
+
+               We use a convexity condition to prove the finiteness of the number of light rays
+               joining a pointlike source with a pointlike observer in a stationary relativistic
+               spacetime. The result is extended to the case of conformally stationary metrics under
+               suitable boundedness assumptions on the conformal factor. We discuss our hypotheses
+               in some explicit examples of standard static and stationary Lorentzian manifolds.
+
+               KEY WORDS: Gravitational lensing
+
+
+
+1. INTRODUCTION
+The gravitational lensing phenomenon in Astrophysics is the effect by which an
+observer detects more than one image of the same source, due to the deflection
+of the light rays caused by the gravitational field. For a comprehensive exposi-
+tion of theoretical and observational material on gravitational lenses we refer for
+instance to [18]. It is well known as a theoretical possibility that the number of
+observed images of the source can be either finite, or countable or even a whole
+continuum of images, like in the case of the so called ‘Einstein rings’. Actually,
+all the observed phenomena of Gravitational Lensing show only a finite number
+of images or a continuum of images. This second case corresponds to the case
+where the observer is in the caustic of the source (conjugate case). From this
+point of view, one can ask whether there exists some topological or metrical
+
+1 Dipartimento di Matematica e Fisica, Universitá di Camerino, Italy. e-mail: giannoni@campus.
+ unicam.it
+2 Dipartimento Interuniversitario di Matematica, Politecnico di Bari, Italy. e-mail: masiello@pascal.
+ dm.uniba.it
+3 Departamento de Matemática, Universidade de São Paulo, Brazil. e-mail: piccione@ime.usp.br
+
+
+                                                  491
+
+                                          0001-7701/ 01/ 0300-0491$19.50/ 0  2001 Plenum Publishing Corporation
+492                                                   Giannoni, Masiello, and Piccione
+
+properties of the spacetime that guarantee the finiteness of the observed images
+in the nonconjugate case.
+      This kind of analysis complements the mathematical description of the mul-
+tiple quasar phenomenon by Ljusternik–Schnirelmann Theory done in [4], and by
+Morse Theory done in [5] and [7]. In Reference [6] the authors have studied a sim-
+ilar problem under the assumption that the Lorentzian metric is standard static,
+by a reduction to a purely Riemannian problem. Here we consider the case of the
+larger class of conformally stationary metrics (which are not necessarily in stan-
+dard form) motivated by the fact that many physically interesting examples are of
+this kind. We will assume that the source and the observer are pointlike and (M , g)
+is a (conformally) stationary Lorentzian manifold, i.e. there is a smooth (confor-
+mal) Killing timelike vector field Y on M . Moreover, we will assume that the time-
+like curve g representing the source is an integral curve of Y, i.e. the light source
+is at rest with respect to the distinguished observer field. The light rays emanat-
+ing from the source towards the observer are represented in this model by past-
+pointing lightlike geodesics between p and g; exchanging past and future, finite-
+ness of observed images correspond to the finiteness of future-pointing lightlike
+geodesics between the event p and the timelike curve g. This problem is somewhat
+analogous to the corresponding problem in Riemannian geometry of the finiteness
+of geodesics between two fixed points; there are classical results in this direction
+involving assumptions on the curvature of the manifold [2, 9]. If a Riemannian
+manifold has nonpositive sectional curvature, then between any two points there
+exists one and only one geodesic; in [6] the authors prove that if the Riemannian
+manifold admits a strictly convex function, the number of geodesics joining two
+nonconjugate points is finite. In this paper we introduce the concept of light-con-
+vex function, we give examples of static and stationary metrics that admit this kind
+of function, and we prove that the existence of a light convex function implies the
+finiteness of the future pointing light rays between p and g (Theorem 2.2).
+
+2. LIGHT CONVEX FUNCTIONS—FINITENESS OF THE NUMBER
+   OF LIGHTLIKE GEODESICS IN STATIONARY MANIFOLDS
+     For the reader’s convenience, we recall here a few basic facts and defini-
+tions from Lorentzian geometry; the basic references for further details are the
+classical textbooks [1, 15].
+     We will assume throughout this section that (M , g) is a stationary
+Lorentzian manifold, i.e. M is a finite-dimensional real C ∞ connected manifold
+of dimension greater than two, whose topology satisfies the second countability
+axiom and the Hausdorff separation axiom. Moreover g is a semi-Riemannian
+C ∞ metric of signature (+, . . . , +, − ) on M that admits a globally defined time-
+like Killing vector field, denoted by Y. The physically interesting case is, of
+course, dim(M ) c 4.
+On the Finiteness of Light Rays                                                         493
+
+
+      A non zero tangent vector v ∈ TM is said to be timelike, lightlike or space-
+like according to whether g(v, v) is negative, null or positive respectively. By
+convention, the null vectors are considered spacelike. A causal vector is a vec-
+tor which is either timelike or lightlike. An absolutely continuous curve g : I @b
+M is said to be timelike, lightlike, spacelike or causal if so is ġ(t) for (almost)
+all t ∈ I.
+      We will consider the time orientation on M induced by Y: a causal vector
+v ∈ TM is future pointing if g(v, Y ) < 0, a smooth causal curve g(t) is future
+pointing if ġ(t) is future pointing everywhere. Given any q ∈ M , we will denote
+by g q the maximal integral line of Y through q, which is the maximal solution
+of the initial value problem:
+
+                                  ġ c Y(g),     g(0) c q.
+
+We denote by w : A @b M the flow of Y, where A is an open subset of M × R
+containing M × {0}, i.e., for (q, t) ∈ A, w(q, t) is the value g q (t).
+      The Killing property of Y, which is crucial in most of the results presented in
+this paper, will be used systematically in our computations through the following
+three facts:
+     1. the quantity g(Y, Y ) is constant along each flow line of Y,
+     2. the differential dx w(q, t 0 ) : T q M @b T w(q, t 0 ) M of the map w(., t 0 ) is an
+        isometry for all t 0 , or, equivalently, for all t 0 the map q @b w(q, t) is a
+        local isometry of M ;
+     3. g(∇vY, w) c − g(∇w Y, v) for all pair of vectors v and w; in particular,
+        for all v ∈ TM , we have g(∇vY, v) c 0.
+     Observe that the second or the third condition above is in fact equivalent
+to the Killing property of Y (see [15, Proposition 9.25]).
+     Let M̃ denote the set of flow lines of Y, i.e., M̃ is the quotient of M by
+the equivalence relation x ∼ y ⇔ y c w(x, t) for some t.
+     We denote by pY : M @b M̃ the projection onto the quotient and we endow
+M̃ with the quotient topology. When (M , g) is interpreted as a relativistic space-
+time, we may think of the space M̃ as the spatial part of M . Observe that M̃
+may fail to be a smooth manifold; indeed, M̃ may also fail to be a Hausdorff
+space. We say that a subset K of M is spatially compact if the projection pY (K )
+is compact in M̃ .
+     A function F : M @b R is said to be (spatially) proper if for all b ∈ R, the
+closed sublevel:
+
+                                  F b c {x ∈ M : F(x) ≤ b}
+
+is (spatially) compact. F is said to be Y-invariant if F is constant along each
+494                                                            Giannoni, Masiello, and Piccione
+
+integral line of Y; observe that every Y-invariant function defines a function F̃
+on the quotient M̃ .
+      If f : M @b R is a smooth function, we denote by ∇f and H f respectively the
+gradient field and the Hessian operator of f, which are defined respectively by
+g(∇f ( p), .) c df ( p)[.] and g(H f ( p)v1 , v2 ) c g(∇v1 ∇f , v2 ) for all v1 , v2 ∈ T p M ,
+where ∇ is the Levi–Civita connection of g. We also write g(H f ( p)v1 , v2 ) c
+H f ( p)[v1 , v2 ].
+      We denote by R the curvature tensor of ∇, chosen with the following sign
+convention: R(X, Y ) c ∇X ∇Y − ∇Y ∇X − ∇[X, Y ] . Let z :[0, 1] @b M be a geodesic
+in M ; Jacobi field along z is a smooth vector field J along z that satisfies the
+Jacobi equation
+
+                                   ∇ż2 J + R(ż, J )ż c 0.                               (1 )
+
+      A point z(t 0 ) is said to be conjugate to z(0) along z if there exists a non zero
+Jacobi field J along z satisfying J(0) c J(t 0 ) c 0; a point p and a timelike curve
+g in M are said to be conjugate by lightlike geodesics if there exists a lightlike
+geodesic z :[0, 1] @b M , with z(0) c p, z(1) ∈ g and such that z(1) is conjugate
+to z(0) along z. The set of conjugate points to a given point p ∈ M correspond
+to the critical values of the exponential map expp ; by Sard’s Theorem, such a
+set has measure zero. In particular, the condition that a point p and a timelike
+curve g be non conjugate by lightlike geodesics is generic, i.e., it is satisfied by
+almost every choice of p and g.
+      A Lorentzian manifold M is said to be causal if it does not contain any
+closed causal curve. The manifold M is strongly causal if given any point p ∈ M
+and any neighborhood V of p there exists a neighborhood U ⊂ V of p such that
+all the causal curves with endpoints in U remain inside V.
+      For a pair p, q of points of M , the causality relation p < q means that there
+exists a future pointing causal curve from p to q. Two points p and q are causally
+related if either p < q or q < p.
+      The relation p ≤ q means that either p < q or p c q. The causal future I + ( p)
+and the causal past I − ( p) of p are the sets:
+
+                 I + ( p) c {q ∈ M : p ≤ q},          I − ( p) c {q : q ≤ p}.
+
+     Finally, the manifold M is said to be globally hyperbolic if it is strongly
+                                                                 U
+causal and if, for every pair of points p, q ∈ M the set I + ( p) I − (q) is compact
+in M . Equivalently, if M is strongly causal, then it is globally hyperbolic if for
+every pair of causally related points p < q and every sequence zn of future point-
+ing causal curves from p to q there exists a subsequence znk which is uniformly
+convergent, up to a reparameterization. We will also use another characteriza-
+On the Finiteness of Light Rays                                                     495
+
+
+tion of the global hyperbolicity: a Lorentzian manifold is globally hyperbolic
+if and only if it admits a Cauchy surface (see [10]). We recall that a Cauchy
+surface is an embedded spacelike hypersurface S of M with the property that
+every inextendible causal curve in M meets S exactly once.
+      We now give the main definitions of convexity that will be used in the
+article. We recall that a real function f : I @b R is said to be convex on the
+interval I ⊆ R if, for every pair of points x, y ∈ I and every l ∈ [0, 1], it is
+
+                       f (lx + (1 − l)y) ≤ lf (x) + (1 − l)f ( y).
+
+       The function f is strictly convex if the above inequality is strict for all l ∈
+]0, 1[. In the course of the paper, we will use some well known basic properties
+of convex functions in one variable.
+       Definition 2.1. A function F : M @b R is said to be (strictly) light-convex if
+for all (non constant) lightlike geodesic z : I ⊆ R @b M the composition F 8 z : I
+@b R is (strictly) convex.
+       It is easy to see that, if F is a light-convex function on M such that F 8 z
+ is non constant for all non constant lightlike geodesic z in M , then, given any
+ increasing and strictly convex function w : R @b R, the composition w 8 F is
+ strictly light-convex in M . If F : M @b R is a map of class C 2 , then F is light
+convex if and only if the Hessian H F is positive semidefinite on the light cone,
+i.e., if H F (x)[v, v] ≥ 0 for all x ∈ M and all lightlike vector v ∈ T x M . If H F (x)
+is strictly positive definite on the light cone, then F is strictly light convex. We
+remark, however, that a light convex function need not be of class C 2 . In our
+main results, no assumptions are made concerning the regularity of the convex
+functions involved.
+       Theorem 2.2. Let (M , g) be a stationary Lorentzian manifold and Y a
+smooth timelike Killing vector field. Suppose that the following assumptions
+hold:
+     • (M , g) is globally hyperbolic;
+     • there exists a strictly light-convex function F : M @b R which is Y-invari-
+       ant and spatially proper.
+      Then, given any event p ∈ M and every g :R @b M maximal integral curve
+of Y that are not conjugate by lightlike geodesics, the number of future-pointing
+lightlike geodesics joining p and g in M is positive and finite.
+
+     Clearly, if one is interested in obtaining a finiteness result for future pointing
+light rays from a given event p to a given timelike curve g, then the existence
+of a strictly light convex function can be required to hold only in an open subset
+                                            U
+of M containing the intersection I + ( p) I − (g). Observe that such a set is, in
+general, not spatially compact also in the globally hyperbolic case.
+496                                                            Giannoni, Masiello, and Piccione
+
+      We remark that the result of finiteness given in Theorem 2.2 can be extended
+by minor modifications of the arguments to the case of light rays between a spa-
+tially extended light source and a spatially extended receiver, provided that one
+assumes the spatial compactness of the source and the receiver. A Fermat prin-
+ciple for light rays between a spacelike submanifold and a timelike submanifold
+of an arbitrary Lorentzian manifold is proven in [16].
+      Towards the proof of Theorem 2.2, we present a couple of preliminary
+results. We consider an arbitrarily fixed auxiliary Riemannian metric g(r) on M ,
+which will be needed in the arguments presented below; let || . || denote the cor-
+responding norm on each tangent space. For convenience, we will consider the
+following Riemannian metric g(r) on M , which is associated to the timelike vec-
+tor field Y:
+
+                                                   g(Y( p), v1 )g(Y( p), v2 )
+                g() (v1 , v2 ) c g(v1 , v2 ) − 2                              ,            (2)
+                                                       g(Y( p), Y( p))
+
+for p ∈ M and v1 , v2 ∈ T p M . By the wrong-way Schwartz’s inequality
+
+                     g(v, Y)2 ≥ g(v, v)g(Y, Y ),             ∀v ∈ TM ,                     (3 )
+
+it is easy to observe that g(r) is indeed positive definite; moreover, Y is Killing
+also with respect to g(r) .
+      We denote by dist(., .) the distance function on M induced by such Rie-
+mannian structure; dist(., .) also gives a pseudo-metric on the quotient M̃ , which
+induces the quotient topology. For g 1 , g 2 ∈ M̃ , i.e., if g 1 and g 2 are two maxi-
+mal integral lines of Y, it is:
+
+                         dist(g 1 , g 2 ) c inf dist(g 1 (s), g s (t)).
+                                            s, t
+
+
+      We will also denote by || . || the norm induced by the positive definite inner
+product given by r (r) .
+      Thanks to classical results, the existence of at least one lightlike geodesic
+between p and g is easily established:
+      Lemma 2.3. Let (M , g) be a (connected) globally hyperbolic, stationary
+Lorentzian manifold and let Y be a smooth timelike Killing vector field on M .
+Given any event p and any maximal integral line g of Y, there exists at least one
+lightlike future pointing geodesic in M joining p and g.
+      Proof. By the stationarity assumption on (M , g), we have that for all p and
+           U
+g, J + ( p) g ⬆ ∅.
+      Namely, since M is connected, we can find a smooth curve w :[0, 1] @b M ,
+not necessarily causal, joining p and g. Recalling that we denote by w the flow
+of Y, if we set
+On the Finiteness of Light Rays                                                             497
+
+
+                                      z(t) c w(w(t), l w (t)),
+
+where l w is defined by
+
+                                            f
+                      t
+                          − g(ẇ, Y(w)) +       g(ẇ, Y(w))2 − g(ẇ, ẇ)g(Y(w), Y(w))
+      l w (t) c
+                  ∫   0                           g(Y(w), Y(w))
+                                                                                      ds,
+
+
+it is easy to check that z is a future pointing lightlike curve joining p and g. For
+this, one needs to use the Killing property of Y, namely the isometric property of
+the flow w generated by Y. Observe also that the quantity under the square root
+in (5) is non negative by the wrong way Schwartz’s inequality (3). This proves
+         U
+T + ( p) g ⬆ ∅.
+       Therefore by standard results on globally hyperbolic Lorentz manifolds (see
+for instance [10]) there exists at least one future pointing lightlike geodesic from
+p to g.                                                                            R
+       Lemma 2.4. Assume that (M , g) is a stationary Lorentzian manifold, Y is
+a timelike Killing vector field on M and that there exists a strictly light-con-
+vex function F : M @b R which is Y-invariant and spatially proper. Then, in the
+notations of Theorem 2.2, all the lightlike geodesics between p and g remain
+inside a spatially compact subset of M .
+       Proof. Under our assumptions, the closed sublevels of the light convex
+function F are spatially compact. If we set:
+
+                                      d c max{F( p), F̃(g)},
+
+then all the lightlike geodesics between p and g have image inside the closed
+sublevel F d . Namely, if z :[0, 1] @b M is any such geodesic, then g(t) c F(z(t))
+is a convex function on [0, 1], and therefore it attains its maximum at either t c
+0 or t c 1, so g(t) ≤ d. This concludes the proof.                              R
+      Observe that in Lemma 2.4 it was not assumed the global hyperbolicity of
+(M , g).
+      Given any absolutely continuous curve z :[a, b] @b M , let L(c) denote the
+length of c with respect to the metric g(r) , defined by:
+
+                                                  b f
+                                     L(z) c
+                                              ∫   a
+                                                        g(r) (ż, ż) dt.                   (6)
+
+
+       Lemma 2.5. Under the assumptions and in the notations of Lemma 2.4,
+there exist two positive constants M 1 , M 2 , depending on p and g, such that for
+every affinely parameterized lightlike geodesic z :[0, 1] @b M between p and g,
+it is:
+498                                                                         Giannoni, Masiello, and Piccione
+
+
+                                 M 1 . || ż(0) || ≤ L(z) ≤ M 2 . || ż(0) || .                           (7 )
+
+Proof. Since g(Y, Y ) is constant along each integral line of Y, it defines a con-
+tinuous function of the quotient M̃. By Lemma 2.4 all the lightlike geodesics
+between p and g remain inside a spatially compact subset K of M , hence, by
+continuity, we have the existence of two positive constants n, m ∈ R+ such that:
+
+                        0 < n ≤ − g(Y(q), Y(q)) ≤ m < +∞,                       ∀q ∈ K.                   (8 )
+
+    Let now z :[0, 1] @b M be an affinely parameterized lightlike geodesic
+between p and g; since g(ż, Y ) is constant, from (2) we have:
+
+                                                              1
+
+                                                          ∫
+                                                                             dt
+                      L(z) c 2 | g(ż(0), Y( p)) | .              f                                       (9 )
+                                                              0       − g(Y(z(t)), Y(z(t)))
+
+By (8), it is:
+
+                                          1
+
+                                      ∫
+                              1                          dt                1
+                            f    ≤            f                         ≤ f ,                            (10)
+                               m          0       − g(Y(z(t)), Y(z(t)))     n
+
+and since ż(0) is lightlike, from (2) we obtain:
+
+                      f                           f
+      || ż(0) || c       g(r) (ż(0), ż(0)) c       2 | g(Y( p), Y( p)) | 1/ 2 | g(ż(0), Y( p)) | .   (11)
+
+Finally, (7) follows immediately from (9), (10) and (11).                                                  R
+
+     We prove now a general result concerning the convergence of lightlike
+geodesics. Given a timelike curve g in a Lorentzian manifold, we will use the
+arrival time functional t g (cf. [12]) which is defined on the set of curves z :[0, 1]
+@b M with final endpoint on g setting:
+
+                                          t g (z) c g − 1 (z(1)) ∈ R,                                    (12)
+
+i.e., t g (z) is the value of the parameter of g at the point where z meets g.
+       Lemma 2.6. Let (M , g) be a time-oriented globally hyperbolic Lorentzian
+manifold, let p be an event of M and let g : I ⊂ R @b M be an inextendible
+timelike curve. Let zn : [0, 1] @b M be a sequence of future pointing lightlike
+geodesics with zn (0) c p, zn (1) ∈ g(I ) and suppose that t g (zn ) is bounded from
+On the Finiteness of Light Rays                                                  499
+
+
+above. Then, there is a subsequence znk of zn that converges in the C 2 -topology
+to a future pointing lightlike geodesic z from p to g. In particular, p and g are
+conjugate by lightlike geodesics.
+      Proof. The first observation is that t g (zn ) is also bounded from below. This
+follows from the fact that g is inextendible and (M , g) is globally hyperbolic.
+Then, by the global hyperbolicity, there exists a compact subset K ⊂ M and a
+continuous curve z̃ : [0, 1] @b K such that the images zn ([0, 1]) are contained
+in K for all n, and, up to reparameterization, a subsequence znk is uniformly
+convergent to z̃. Now, by the strong causality of M , it is possible to construct a
+smooth time function T defined in an open neighborhood of the image of z̃, with
+the property that T(z̃(s)) c s for all s ∈ [0, 1]. Recall that a C1 -map T defined in
+an open subset of a Lorentzian manifold is called a time function if its gradient
+field ∇T is timelike everywhere. For n large enough, the image of zn will be
+contained in the domain of T. We reparameterize a small portion of the curve
+g in a neighborhood of the point z̃(1) in such a way that T(g(s)) c s for all
+s ∈]1 − e, 1 + e[. In this way, for n large enough, we have:
+
+                                            1
+                             t g (zn ) c
+                                           ∫ g(∇T(z ), ż ) dt.
+                                            0
+                                                          n   n                 (13)
+
+
+     By our assumptions on the upper boundedness of t g (zn ), we have that the
+above integral is bounded.
+     Now, we consider the Riemannian metric defined in a neighborhood of the
+image of z given by formula (2), where Y is replaced by ∇T. Since the images of
+the curves we are interested in lie inside a compact set, we can assume that such
+Riemannian metric is complete. Moreover, using formula (2) it is easy to see that
+the length functional relative to this metric computed at the lightlike curves zn
+coincides precisely with the integral (13). Thus the curves zn are smooth curves
+in a complete Riemannian manifold with fixed initial point and bounded length.
+This implies easily that there exists a sequence sk in [0, 1] such that znk (sk )
+is convergent to some p0 ∈ M and żnk (sk ) is also convergent to some future
+pointing lightlike vector v0 ∈ T p0 M .
+     Then, by the continuous dependence on the data for a system of ordinary
+differential equations, it follows that znk is convergent in the C 2 -topology to the
+solution z of the Cauchy problem:
+
+                         ∇ż ż c 0,        z(0) c p0 ,           ż0 c v0 ,
+
+which is of course a future pointing lightlike geodesic in M . This concludes the
+proof.                                                                            R
+      A statement similar to that of Lemma 2.6 clearly holds also for past-pointing
+lightlike geodesics.
+500                                                             Giannoni, Masiello, and Piccione
+
+      We are now ready to prove Theorem 2.2:
+      Proof of Theorem 2.2. Let p and g be non conjugate by lightlike geodesics;
+suppose by contradiction that {zn }n ∈ N is an infinite sequence of future pointing
+lightlike geodesics joining p and g affinely parameterized on the interval [0, 1].
+      By the global hyperbolicity of M and the non conjugacy assumption, from
+Lemma 2.6 we deduce that:
+                                   lim t g (zn ) c +∞,                                     (14)
+                                  nr ∞
+
+
+where t g is defined in (12). Now, (14) implies:
+
+                                    lim L(zn ) c +∞,                                       (15)
+                                   nr ∞
+
+
+otherwise, by Lemma 2.5 we would have || żn (0) || bounded. This would imply
+that zn is convergent to z in the C 2 -topology, up to reparametrizations, and con-
+sequently t g (zn ) would be bounded.
+     Hence, by Lemma 2.5 we obtain
+
+                                  lim
+                                 nr ∞
+                                          || żn (0) || c +∞.                              (16)
+
+
+      We set bn c || żn (0) || ; we reparameterize affinely each geodesic zn by setting
+
+
+                                                                   冢b 冣.
+                                                                      t
+                    wn : [0, L(zn )] @b M ,         wn (t) c zn                            (17)
+                                                                      n
+
+
+      Since || ẇn (0) || ≡ 1, up to subsequences we can assume that:
+
+                                     lim ẇn (0) c v,                                      (18)
+                                    nr ∞
+
+
+where v is a non zero future pointing lightlike vector in T p M . Let wv the maximal
+lightlike geodesic through p with initial tangent vector v:
+
+                             wv(t) c expp (tv),           t ≥ 0.
+
+Here we denote by expp : T p M r M the exponential map with respect to the
+Lorentzian metric g. By (17) and (18), wv is defined over the entire half line
+[0, +∞[, moreover wn converges to wv uniformly on each compact subset of
+[0, +∞[.
+     As we have seen in Lemma 2.4, if we set d c max{F( p), F(g)}, for all
+n ∈ N we have sup F(zn ) c sup F(wn ) ≤ d, hence:
+On the Finiteness of Light Rays                                                    501
+
+
+                                    sup         F(wv(t)) ≤ d.                     (19)
+                                  t ∈ [0, +∞[
+
+
+      The function r(t) c F(wv(t)) is strictly convex on [0, +∞[; to conclude the
+proof we now show that it cannot be bounded, producing a contradiction with
+(19).
+      To this aim, we argue as follows. Let S be any fixed Cauchy surface in
+M and let K be a spatially compact subset of M containing all the lightlike
+                                                        U
+geodesics between p and g (see Lemma 2.4). Then, S K is a compact subset
+                                                                U
+of M ; for all q ∈ K we define a projection pS (q) of q onto S K by setting:
+
+             pS (q) c unique point of intersection between g q and S.
+
+     Observe that there exists a map l : K @b R such that:
+
+                                   pS (q) c w(q, l(q));
+
+such a map is only continuous, in general.
+     Since wv is defined in [0, +∞[, we can consider the sequences wv(n) ∈ M
+and ẇv(n) ∈ TM . Up to subsequences, by compactness we can assume that qn
+                                         U
+c pS (wv(n)) is convergent to some q̂ ∈ S K̂ and that the sequence:
+
+                          vn c d x w(wv(n), l(wv(n)))[ẇv(n)]
+
+is convergent to some v̂ ∈ T q̂ M . We claim that v̂ is a non zero lightlike vector
+in T q̂ M ; namely, observe that ẇv(n) is lightlike and d x w is an isometry, so v̂ is
+lightlike. Moreover, by (2) and the Killing property of Y, it is easy to see that
+
+                                        || ẇv(n) || ⬆ 0.
+Since d x w is an isometry also with respect to the Riemannian metrix g(r) it fol-
+lows that || dx w(wv(n), l(wv(n))) [ẇv(n)] || ⬆ 0 and so v̂ ⬆ 0. Define ŵn (t) c
+expqn (tvn ), t ∈ [ − n, +∞[.
+       Finally, we consider the maximal lightlike geodesic zv̂ passing through q̂
+with tangent vector v̂. By construction, zv̂ is defined over the whole real line,
+and it is the uniform limit on compacta of the sequence of lightlike geodesics
+ŵn . Since F is constant on the flow lines of Y and Y is Killing, then F(ŵn (t)) c
+F(wv(t − n)) ≤ d, and so F(zv̂(t)) ≤ d for all t ∈ R. But r̂(t) c F(zv̂(t)) is strictly
+convex on R, and therefore it cannot be bounded.
+       This concludes the proof.                                                     R
+       In the next Proposition we show that the spatial properness hypothesis for
+502                                                                Giannoni, Masiello, and Piccione
+
+the convex function F in Theorem 2.2 is automatically satisfied if F admits a
+(local) minimum point.
+      Proposition 2.7. Suppose that the stationary Lorentzian manifold (M , g)
+is globally hyperbolic and let F : M @b R be a Y-invariant strictly light-convex
+function that has a (local) minimum point in M̃ . Then F is spatially proper.
+      Proof. Let {g n }n be a sequence of integral curves of Y going to infinity,
+i.e., g n is eventually outside of every (spatially) compact subset of M . Let q be
+chosen in such a way that g q is a local minimum point for F in M̃ . As we have
+                                                                  U
+observed in the proof of Lemma 2.3, for all n we have I + (q) g n ⬆ ∅, hence,
+by the global hyperbolicity, we can find a sequence zn :[0, 1] @b M of future
+pointing lightlike geodesics from q to g n , for n sufficiently large. We claim that
+
+                                 lim
+                                nr ∞
+                                         || żn (0) || c +∞;                                  (20)
+
+
+for, otherwise, up to subsequence it would be limn r ∞ żn (0) c v∞ for some on
+zero lightlike vector v∞ ∈ T q M . If we set z∞ (t) c expq (t .v∞ ), by continuity z∞
+is defined over the interval [0, 1], and it must be limn r ∞ zn (1) c z∞ (1).
+      This is clearly impossible, because zn (1) ∈ g n is eventually outside every
+compact subset of M , which proves (20).
+      Arguing as in the proof of Theorem 2.2 (see formula (16)), we can repa-
+rameterize affinely each zn obtaining a sequence of future pointing lightlike
+geodesics wn :[0, Ln ] @b M from p to g, and satisfying:
+
+
+                              || ẇn (t) || ≡ || ẇn (0) || c 1.                              (21)
+
+
+      Up to subsequences, we therefore have:
+
+                                    lim ẇn (0) c v
+                                   nr ∞
+
+
+
+for some lightlike vector v ∈ T q M . Let zv :[0, +∞[@b M be the future pointing
+lightlike geodesic starting at q with initial tangent vector v. If F(g n ) ≤ d for
+some d ∈ R, then by continuity it would be F(zv(t)) ≤ d for all t ∈ [0, +∞[. But
+r(t) c F(zv(t)) is a strictly convex function on [0, +∞[ that has a local minimum
+at t c 0, hence it cannot be bounded on [0, +∞[. This concludes the proof. R
+      Remark 2.8. It is easy to produce counterexamples to the thesis of Propo-
+sition 2.7 if the assumption of the existence of a minimum for the function F is
+not satisfied. For instance, consider the manifold M c M0 × R ⊂ R4 , where M0
+is the hyperboloid of parametric equations:
+On the Finiteness of Light Rays                                                      503
+
+
+                                                1
+        x c v cos u,      y c v sin u,     zc     ,      (v, u) ∈ R+ × [0, 2p[,
+                                                v
+
+and M is endowed with the flat Minkowski metric g c dx 2 + dy2 + dz2 - dt 2 .
+      The function F(x, y, z, t) c z − 1 is strictly light convex in M (because its
+restriction to the Riemannian manifold M0 is strictly convex, see [6, Example
+2.9]), and it is clearly invariant on the flow lines of the Killing vector field Y c
+∂/ ∂t. Nevertheless, F is not spatially proper, because F − 1 ([0, c]) is never spatially
+compact for all c > 0.
+      We conclude the section with the observation that the existence of a strict
+light-convex function of the kind considered in Theorem 2.2 has a strong con-
+sequence on the topology of the manifold:
+      Proposition 2.9. Let (M , g) be a stationary Lorentzian manifold satisfying
+the hypothesis of Theorem 2.2. Then, M is contractible.
+      Proof. If (M , g) is globally hyperbolic and M is not contractible, then there
+exist infinitely many (future-pointing) lightlike geodesics between any pair p and
+g (see for instance [7]). By Theorem 2.2 there can only be a finite number of
+such geodesics, hence M is contractible.                                               R
+      The example in Remark 2.8 shows that also for Proposition 2.9 the assump-
+tion of spatial properness cannot be omitted.
+      Proposition 2.9 is the Lorentzian counterpart of a well known fact in Rie-
+mannian geometry: a complete Riemannian manifold admitting a proper, strictly
+convex function is diffeomorphic to Rn (see for instance [14, Proposition 2.6]).
+Clearly, the same conclusion does not hold in general if one does not assume
+the global hyperbolicity of the Lorentzian manifold, like in the Riemannian case
+the assumption of completeness cannot be omitted to prove the contractibility.
+      Some questions concerning the global hyperbolicity of stationary Lorent-
+zian manifolds are studied in reference [8].
+
+
+3. THE CONFORMALLY STATIONARY CASE
+      In this Section we will extend the results of Section 2 to the more general
+case of conformally stationary Lorentzian manifolds.
+      Recall that a smooth map f : M @b M on a Lorentzian manifold (M , g)
+is said to be conformal if its differential preserves the metric tensor g up to a
+conformal factor. A conformal Killing vector field is a smooth vector field on M
+whose flow x @b w(x, t) is a conformal map for all t. A conformally stationary
+Lorentzian manifold is a Lorentzian manifold that admits a timelike conformal
+Killing vector field. Alternatively, (M , gc ) is conformally stationary if and only
+if there exists a stationary Lorentzian metric g on M and a smooth map f : M
+@b R+ such that gc c f . g.
+504                                                           Giannoni, Masiello, and Piccione
+
+      It is well known that the lightlike geodesics of a Lorentzian manifold are
+invariant, up to reparameterizations, by a conformal change of the metric (see
+for instance [1, Lemma 9.17]). In particular, the number of (future-pointing)
+lightlike geodesics joining an event p and a timelike curve g is not affected by
+conformal changes of the spacetime metric and it is natural to ask whether the
+conclusions of Theorem 2.2 can be obtained also in the case of a conformally
+stationary Lorentzian manifold.
+      To answer this question one needs to understand whether the hypotheses of
+Theorem 2.2 are invariant by conformal changes of the metric. As to the global
+hyperbolicity, it is known that this property is conformally stable (see [1, Theo-
+rem 7.2]). Observe that also the property of a subset of M to be spatially proper
+is not affected by conformal changes of the metric. The conformal stability of the
+existence of a spatially proper strictly light-convex function is a more delicate
+issue, which is settled in the next Proposition.
+      Proposition 3.1. Let (M , g) be a conformally stationary Lorentzian mani-
+fold and Y a timelike conformal vector field on M . Let f : M @b R+ be a smooth
+map and g1 be another conformally stationary metric tensor on M given by f . g.
+Let p be an event of M and g : I ⊂ R @b M a timelike curve; suppose that the
+derivative of the map log f is bounded on each portion of integral line of Y that
+                   U
+intercepts I + ( p) I − (g). Then, (M , g) admits a smooth, strictly light-convex,
+                                                               U
+spatially proper function defined in an open subset of I + ( p) I − (g) if and only if
+(M , g1 ) does.
+      Proof. Clearly, the role of the metrics g and g1 is perfectly symmetric in
+the statement of the Proposition,4 hence it is enough to prove one of the two
+implications in the thesis.
+      To this aim, suppose that F : M @b R is a smooth, strictly light convex and
+spatially proper function for (M , g). We look for a strictly light convex spatially
+proper function for (M , g1 ) of the form:
+
+                                         F 1 c W 8 F,                                      (22)
+
+where W :R @b R is a suitable strictly increasing smooth function to be deter-
+mined with the property that limr r +∞ 4(2) c +∞. Observe that any such function
+F 1 is constant on each integral line of the vector field Y, which is conformally
+Killing for both (M , g) and (M , g1 ). Moreover, since W is strictly increasing
+and limr r +∞ 4(r) c +∞, then the spatial properness of F implies that also F 1 is
+spatially proper.
+      Let ∇ denote the Levi–Civita covariant derivative of the metric g, the
+
+4 Observe that g c f− 1 g                                    − 1 only differ by the sign, so that
+                       1 and that the logarithm of f and of f
+ the condition on the boundedness of the derivative of the logarithm of the conformal factor is
+ symmetric.
+On the Finiteness of Light Rays                                                    505
+
+
+inner product induced by the metric g will be denoted by 〈., .〉 and by || . || we
+will denote the norm induced by the Riemannian metric (2); moreover, given
+a smooth function r on M , we denote by ∇r and H r respectively the gradient
+and the Hessian of r with respect to the metric g. The Hessian H r (q) of r at
+the point q ∈ M will be seen as a g-symmetric linear operator on T q M defined
+by:
+
+
+                                      d 2 ||
+                 〈H r (q)[v], v〉 c                  r(g v(t)),        v ∈ TqM ,
+                                      d t2 || t c 0
+
+where g v is the unique geodesic in M satisfying g(0) c q and ġ(0) c v.
+      Given any (non constant) affinely parameterized lightlike geodesic g : [0, 1]
+@b M in (M , g1 ), there exists a unique affinely parameterized (non constant)
+lightlike geodesic l : [0, 1] @b M in (M , g) such that
+
+                           g(t) c l(j (t)),            ∀t ∈ [0, 1],               (23)
+
+where j is the solution of the Cauchy problem
+
+                          j̇ (t) c c . f(g(t)) − 1 ,           j (0 ) c 0         (24)
+
+and c is the positive constant given by:
+
+                                          1                      −1
+                               cc    冢∫   0
+                                              f(g(t)) − 1 dt   冣 .
+     Differentiating (24) we obtain:
+
+                                       c2
+                       j̈ (t) c −            〈∇f(g(t)), l ′ (j (t))〉.             (25)
+                                    f(g(t))3
+
+The condition that F 1 be strictly light-convex in (M , g1 ) is that
+
+                                      d2
+                                           F 1 (g(t)) > 0
+                                      dt 2
+
+for all lightlike geodesic g in (M , g1 ). From (22) and (23) we get:
+506                                                                 Giannoni, Masiello, and Piccione
+
+
+  d2
+       F 1 (g) c W′′ (F(l(j )))(〈∇F(l(j )), l ′ (j )〉j̇ )2
+  dt 2
+                   + W′ (F(l(j )))[〈H F (l(j ))[l ′ (j )], l ′ (j )〉j̇ 2 + 〈∇F(l(j )), l ′ 〉j̈ ].
+
+                                                                                                         (26)
+
+      Substituting (24) and (25) into (26), we get:
+
+
+      d2
+      dt 2
+           F 1 (g) c
+                        c2
+                     f(l(j ))2          [   F ′′ (F(l(j )))〈∇F(l(j )), l ′ (j )〉2
+
+                        + W′ (F(l(j )))〈H F (l(j ))[l ′ (j )], l ′ (j )〉
+
+                         − W′ (F(l(j )))〈∇F(l(j )), l ′ (j )〉       冓   ∇f(l(j ))
+                                                                        f(l(j ))
+                                                                                  , l ′ (j ) 冔]      .
+
+                                                                                                         (27)
+
+      Hölder’s inequality gives us the following:
+
+
+
+                   冓                冔                                      冓                 冔
+                                                                                                 2
+ |
+ | 〈∇F(l), l ′ 〉       ∇f(l)            |
+                                        | ≤ 1 〈∇F(l), l ′ 〉2 + e
+                                                                 2
+                                                                               ∇f(l)
+ |                           , l′       |      2
+                                                                                     , l′            , (28)
+ |                     f(l)             |   2e                 2               f(l)
+
+for all e > 0. By Lemma 2.4, the future pointing lightlike geodesics from p to g
+lie in a spatially compact subset of M ; since ∇f/ f is by hypothesis bounded on
+                                             U
+each integral line of Y intercepting I + ( p) I − (g), then by continuity we have
+the existence of a positive constant M such that:
+
+                                             || ∇f(l) ||
+                                             || f(l) || ≤ M,
+                                             ||       ||                                                 (29)
+                                             ||       ||
+
+for all lightlike future pointing geodesic l from p to g. Hence, since F is strictly
+light convex, there exists e > 0 sufficiently small such that:
+
+
+                                                             冓                冔
+                                                                                  2
+                                                        e2       ∇f(l)
+               〈H F (l(j ))[l ′ (j )], l ′ (j )〉 −                     , l′           > 0,               (30)
+                                                        2        f(l)
+
+for all lightlike future pointing geodesic l from p to g.
+     Using (27), (28) and (30), we obtain:
+On the Finiteness of Light Rays                                                 507
+
+
+                                                            W′ (F(l))
+                                                   冢                    冣.
+           d2              c2
+              2
+                F 1 (g) >       〈∇F(l), l ′ 〉2 W′′ (F(l)) −                    (31)
+           dt             f(l)2                                2e 2
+
+Thus the function F 1 will be strictly light convex with respect to the conformal
+metric g1 provided that the following inequality be satisfied by the function W:
+
+                                                 W′ (r)
+                                     W′′ (r) ≥          .                      (32)
+                                                  2e 2
+
+For instance, one can take the following strictly increasing and strictly convex
+function W on R:
+
+                                                        r
+                                  W(r) c 2e 2 exp 冢
+                                                       2e 2 冣
+                                                              ,
+
+
+and this concludes the proof.                                                     R
+
+
+4. SOME EXAMPLES
+     In this section we will discuss some examples of stationary Lorentzian man-
+ifolds that admit (strictly) light convex functions. In particular, we will consider
+the case of standard static and stationary manifolds.
+
+4.1. Standard Static Manifolds
+     We recall that a standard static Lorentzian manifold is a product manifold
+of the form M c M0 × I, where I ⊂ R is an interval, (M0 , g0 ) is a Riemannian
+manifold, and the Lorentzian metric g on M is given by:
+
+                          g((y, t), (y, t)) c g0 (y, y) − b(x)t 2 ,            (33)
+
+where (y, t) ∈ TM0 × R and b : M0 @b R+ is a smooth function. The integrable
+timelike vector field Y c ∂/ ∂t is Killing; if a curve z(s) c (x(s), t(s)) in M is
+a lightlike geodesic, then the spatial part x(s) is a pre-geodesic in the Rieman-
+nian manifold (M0 , b− 1 g0 ). Hence, for standard static Lorentzian manifolds the
+existence of a light convex function which is constant along the flow lines of
+the vector field Y reduces to the existence of a convex function the manifold M0
+endowed with the Riemannian metric g0 . b− 1 . Hence we have the following
+immediate corollary of Theorem 2.2:
+     Corollary 4.1. Let M c M0 × I be endowed with the standard static
+508                                                         Giannoni, Masiello, and Piccione
+
+Lorentzian metric (33). Assume that the Riemannian manifold (M0 , g0 . b− 1 ) is
+complete and that it admits a strictly convex function. Then, if x 0 and x 1 are
+non conjugate in (M0 , g0 . b− 1 ), then, for all t 0 ∈ I, there exists only a finite
+number of ( future-pointing) lightlike geodesics between the even p c (x 0 , t 0 ) and
+the timelike curve g in M , g(t) c (x 1 , t), t ∈ I.                                  R
+      The result of Corollary 4.1 generalizes [6, Proposition 4.1, Proposition 4.3],
+where it is considered only the case of smooth convex functions on standard
+static Lorentzian manifolds. The problem of existence of non smooth convex
+functions is studied in [14]; we recall some of the results proven in this preprint.
+      If a complete and non compact Riemannian manifold M0 has positive sec-
+tional curvature, then M0 admits a convex function F which is non constant along
+any nonconstant geodesic (take the infimum of all Busemann functions of rays
+starting at a fixed point p). The sublevels F c are compact (see [2] or [9]) and
+Corollary 4.1 applies. Another way to apply Corollary 4.1 is to observe, as in
+[9, p. 205], that if we consider a nondecreasing strictly convex function w :R @b
+R, then w 8 F is strictly convex on M0 , and it admits a strict local minimum at
+p. Hence we have the following:
+      Corollary 4.2. Let M c M0 × I be endowed with the standard static
+Lorentzian metric (33). Assume that the Riemannian manifold (M0 , g0 . b− 1 ) is
+complete and that it has positive sectional curvature. Then, if x 0 and x 1 are non
+conjugate in (M0 , g0 . b− 1 ), then, for all t 0 ∈ I, there exists only a finite number
+of ( future-pointing) lightlike geodesics between the even p c (x 0 , t 0 ) and the
+timelike curve g in M , g(t) c (x 1 , t), t ∈ I.                                      R
+      So, Riemannian manifolds with positive sectional curvature admit strictly
+convex functions; moreover, it is well known that in a simply connected Rie-
+mannian manifold (M0 , h) with negative sectional curvature, for all x 0 ∈ M0 the
+function x @b dist(x 0 , x) is strictly convex. However, strictly convex functions
+on Riemannian manifolds may exist also when the sectional curvature changes
+its sign. Examples may be obtained using the notion of radial curvature in Rie-
+mannian manifolds.
+      Example 4.3. Let M0 c (R2 , ds2 ), where ds2 c dr 2 + f (r)2 dv 2 in the polar
+coordinates (r, v). Here f (r) is any smooth function satisfying
+
+                f (0 ) c 0 ,     f ′ (0 ) c 1 ,    f (r) > 0,         if r > 0.
+
+Given a point x ∈ M0 with the distance d(x, o) c r, and a vector v ∈ T x M0
+which is orthogonal to the ray ox, it is well-known that for the distance function
+r(x) c dist(x, o) and for the sectional curvature K(x) it holds that
+
+                                       f ′ (r)                  f ′′ (r)
+                        H r (v, v) c           ,   K(x) c −
+                                        f (r)                    f (r)
+On the Finiteness of Light Rays                                                   509
+
+
+      So, if we assume that f is increasing and that f ′′ changes sign, we obtain that
+the function r is convex with a strict minimum at o, and r is not constant along
+any geodesic. Thus by a standard way we can obtain a strictly convex function
+F with a minimum. For this it suffices to take any increasing and strictly convex
+real function J. Then F c J 8 r is the desired function.
+      Given a complete manifold M we recall that the radial curvature K min    o   ≥c
+(respectively, K min
+                 o   ≤ c) means that there exists a base point o in M such that, for
+any minimal geodesic g starting at o, and any plane j which is tangent to g, the
+sectional curvature associated with j satisfies K j ≥ c (respectively, K min o   ≤ c).
+This notion of curvature was introduced by Klingenberg in [11]; see [14] and
+the reference therein for further bibliographical information. In the following
+examples, we use the radial curvature to obtain another examples of manifolds
+with convex functions and with sectional curvature changing sign. The details
+are found in Reference [14].
+      Example 4.4. Let (M0 , h) be a complete manifold with a pole o and satis-
+fying K min
+        o    ≤ 0 and the sectional curvature K(o) < 0. Then there exists a strictly
+convex function in M0 with a minimum at o. The metric h of M0 can be chosen
+in such a way that the sectional curvatures are positive in some directions.
+      Example 4.5. Let (M0 , h) be a complete manifold with a pole o and satis-
+fying K min
+        o    ≥ 0 and the sectional curvature K min
+                                                0   > 0 outside a compact set. Then
+there exists a strictly convex function in M0 with a minimum at o. The metric
+h of M0 can be chosen in such a way that the sectional curvatures are negative
+in some directions.
+
+4.2. Standard Stationary Manifolds
+       A standard stationary Lorentzian manifold is a Lorentzian manifold of the
+form M c M0 × I, where M0 is a manifold endowed with a Riemannian metrix
+g0 , I ⊂ R is an interval, and the metric g of M is of the form:
+
+                 g((y, t), (y, t)) c g0 (y, y) + 2g0 (d(x), y)t − b(x)t 2 ,      (34)
+
+where d is a smooth vector field on M0 , b : M0 @b R+ is a smooth map, x ∈ M0 ,
+y ∈ T x M0 and t ∈ R. We observe that every stationary Lorentzian manifold is
+locally isometric to a standard one; however, it is simple to construct examples
+of stationary manifolds which are not (globally) standard.
+      In the rest of this section we show that the existence of a strictly light-
+convex function is a property which is stable by sufficiently small stationary
+perturbations of a static Lorentzian metric. This fact allows to build non trivial
+examples of strictly light-convex functions in stationary manifolds that are not
+static. The proof presented is based on a variational characterization of the light-
+like geodesics in a standard stationary Lorentzian manifold proven in [3] (see
+510                                                           Giannoni, Masiello, and Piccione
+
+also [17]), which extends to the general relativistic context the classical Fermat’s
+Principle for light rays in classical Optics.
+     We start with the following:
+     Lemma 4.6. Let (M0 , g0 ) be a Riemannian manifold and let f :R a C 2
+function with strictly positive definite Hessian Hf, say:
+
+            Hf(x)[v, v] ≥ l 0 (x)g0 (v, v),        ∀x ∈ M0 ,           v ∈ T x M0 ,      (35)
+
+where l 0 : M0 @b R+ is a continuous function.
+      Let r : M0 @b R+ be a smooth function and H 0 be the conformal metric on
+M0 given by h0 c er g0 .
+      If the squared norm g0 (∇r, ∇r) is sufficiently small in C0 (M0 , R), then f
+is strictly convex also with respect to the metric h0 .
+      Proof. An easy calculation shows that the geodesics in the conformal metric
+h0 are the solutions of the differential equation:
+
+                                 1
+                      ∇ẋ ẋ c     g0 (ẋ, ẋ)∇r(x) − g0 (∇r(x), ẋ)ẋ.                  (36)
+                                 2
+
+      Let x : [a, b] @b M0 be an h0 -geodesic; we set f (s) c f(x(s)) and we compute
+f ′′ as follows:
+
+                f ′′ (s) c Hf(x(s))[ẋ(s), ẋ(s)] + g0 (∇f(x(s)), ∇ẋ ẋ(s)).            (37)
+
+      We substitute (36) into (37), obtaining:
+
+                                 1
+           f ′′ c Hf[ẋ, ẋ] +     g0 (ẋ, ẋ)g0 (∇r, ∇f) − g0 (ẋ, ∇f)g0 (∇r, ẋ)
+                                 2
+                                    3
+                  ≥ Hf[ẋ, ẋ] −      g0 (∇r, ∇r)1/ 2 g0 (∇f, ∇f)1/ 2 g0 (ẋ, ẋ).       (38)
+                                    2
+
+      From (37) and (38) it follows easily that, if
+
+                                  4
+         g0 (∇r(x), ∇r(x)) <        l 0 (x)2 g0 (∇f(x), ∇f(x)) − 1 ,       ∀x ∈ M0 ,
+                                  9
+
+then f ′′ > 0 and f is strictly convex with respect to the metric h0 .     R
+     We can now prove the stability of the light-convexity:
+     Proposition 4.7. Let (M0 , g0 ) be a Riemannian manifold, f : M0 @b R be
+a C 2 function with strictly positive definite Hessian as in (35).
+On the Finiteness of Light Rays                                                                   511
+
+
+     Let d be a vector field on M0 , b : M0 @b R+ be a smooth function and let
+(M , g) be the standard stationary Lorentzian manifold with M c M0 × R and
+the metric g is given by (34).
+     If d is sufficiently C1 -small, i.e. if there exists a sufficiently small function
+e ∈ C 0 (M0 , R+ ) such that:
+
+    g0 (d(x), d(x)) ≤ e(x),               and        g0 (∇vd(x), ∇vd(x)) ≤ e(x)g0 (v, v),        (39)
+
+for all x ∈ M0 and all v ∈ T x M0 , and if g0 (∇b/ b, ∇b/ b) is sufficiently small in
+C 0 (M0 , R), then the function:
+
+                                               f̃(x, t) c f(x)                                   (40)
+
+is strictly ( future or past) light-convex in (M , g).
+      Proof. We consider only the case of future light-convexity, being the other
+case totally analogous. Let us first take into consideration the case that b ≡ 1.
+Using the Fermat’s Principle for light rays in stationary Lorentzian manifolds
+proven in [3], (cf. also [13, 17]) we know that a curve (x, t) : [0, 1] @b M0 × R is
+a future pointing lightlike geodesic from the event (x 0 , t 0 ) to the timelike curve
+g(r) c (x 1 , r), r ∈ R, if and only if:
+
+                                  s                      f
+              t(s) c t 0 +
+                              ∫   0
+                                      [g0 (d(x), ẋ) +       g0 (d(x), ẋ)2 + g0 (ẋ, ẋ)] dv,
+
+
+and x is a critical point of the functional:
+
+                                                    i
+                         1                                1
+            Q(x) c
+                     ∫   0
+                             g0 (d(x), ẋ) dv +
+                                                         ∫ [ g (d(x), ẋ) + g (ẋ, ẋ)] dv
+                                                          0
+                                                                 0
+                                                                             2
+                                                                                   0             (41)
+
+
+in the space of smooth curves joining the points x 0 and x 1 in M0 . The func-
+tional Q is smooth, and its critical points are smooth curves satisfying the Euler-
+Lagrange equations of Q given by:
+
+                − ∇ẋ ẋ + g0 (d(x), ẋ)(∇d(x))*[ẋ] − ∇ẋ ( g0 (d(x), ẋ)d(x))
+                      + V x ((∇d(x))*[ẋ] − ∇ẋ d(x)) c 0,                                       (42)
+
+where:
+512                                                                      Giannoni, Masiello, and Piccione
+
+                                       i
+                                            1
+                                Vx c
+                                           ∫ [ g (d(x), ẋ) + g (ẋ, ẋ)] dv
+                                            0
+                                                  0
+                                                              2
+                                                                     0
+
+
+
+and (d(x))* denotes the adjoint of the covariant derivative of d, which is the
+(1, 1)-tensor field on M0 defined by:
+
+                     g0 ((d(x))*[a], b) c g0 (∇b d(x), a),               ∀a, b ∈ T x M0 .
+
+        From (42) we obtain:
+
+       ∇ẋ ẋ + g0 (d(x), ∇ẋ ẋ)d(x)
+               c g0 (d(x), ẋ)[(∇d(x))*[ẋ] − g0 (d(x), ẋ)∇ẋ d(x) − g0 (∇ẋ d(x), ẋ)d(x)]
+                 + V x ((∇d(x))*[ẋ] − ∇ẋ d(x)).                                            (43)
+
+      A straightforward calculation that uses the equation (42) shows that, if x is a
+critical point of Q, then the quantity g0 (d(x), ẋ)2 + g0 (ẋ, ẋ) is constant along x:
+
+                                       g0 (d(x), ẋ)2 + g0 (ẋ, ẋ) ≡ V x2 .                        (44)
+
+     The function f̃ defined in (40) is strictly future light-convex if the following
+inequality is satisfied:
+
+         d2
+             f(x(s)) c Hf(x(s))[ẋ(s), ẋ(s)] + g0 (∇f(x(s)),                    ∇ẋ ẋ(s)) > 0     (45)
+         ds2
+
+for all curve x : [0, 1] @b M0 solution of the differential equation (43).
+     Let us assume e(x) < 1 on M0 , where e(x) is the function defined in (39);
+using (39), (43) and (44) we obtain the following estimate:
+
+      g0 (∇ẋ ẋ, ∇ẋ ẋ)1/ 2
+                     1
+              ≤            g0 [∇ẋ ẋ + g0 (d(x), ∇ẋ (ẋ)d(x), ∇ẋ ẋ + g0 (d(x), ∇ẋ ẋ)d(x)]1/ 2
+                  1 − e(x)
+                                f
+                5e(x) + 2 e(x)
+              ≤                g0 (ẋ, ẋ).                                                         (46)
+                   1 − 3e(x)
+
+     From (35), (45) and (46), it follows that f̃ is strictly future light-convex in
+(M , g) if e(x) satisfies the following inequality:
+On the Finiteness of Light Rays                                                                513
+
+
+                       f
+            5e(x) + 2 e(x)
+                           < l 0 (x)g0 (∇f(x), ∇f(x)) − 1/ 2 ,                   ∀x ∈ M0 ,
+               1 − e(x)
+
+which concludes the first part of the proof.
+     Let us now consider the case that b is not constant. By the Fermat’s Princi-
+ple of [3], the spatial part of the future pointing lightlike geodesics is a critical
+point of the functional:
+
+                                                    i
+                           1                             1
+             Q̃(x) c
+                       ∫   0
+                               h0 (d(x), ẋ) dv +
+                                                        ∫ [h (d(x), ẋ) + h (ẋ, ẋ)] dv,
+                                                         0
+                                                             0
+                                                                       2
+                                                                             0
+
+
+
+where h0 is the conformal Riemannian metric on M0 given by g0 . b− 1 . By
+Lemma 4.6, if g0 (∇(log b), ∇(log b)) c g0 (∇b/ b, ∇b/ b) is sufficiently small,
+the function f0 is convex in M0 also with respect to the metric h0 . Then, we
+can repeat verbatim the first part of the proof to obtain that, if d is sufficiently
+C1 -small, the function f̃ is strictly future light-convex in the Lorentzian metric
+(34).                                                                             R
+
+ACKNOWLEDGEMENTS
+    The third author is partially sponsored by CNPq (Brazil), Processo n.
+301410/ 95.
+
+REFERENCES
+ 1. Beem, J. K., Ehrlich, P. E., and Easley, K. L. (1996). Global Lorentzian Geometry, (Marcel
+    Dekker, Inc., New York and Basel).
+ 2. Cheeger, J., and Gromoll, D. (1972). On the Structure of Complete Manifolds of Nonnegative
+    Curvature, Ann. Math. 96, 2, 413–443.
+ 3. Fortunato, D., Giannoni, F., and Masiello, A. (1994). A Fermat Principle for Stationary Space-
+    Times and Applications to Light Rays, J. Geom. Phys. 515, 1–30.
+ 4. Giannoni, F., Masiello, A., and Piccione, P. (1997). A Variational Theory for Light Rays on
+    Stably Causal Lorentzian Manifolds: Regularity and Multiplicity Results, Commun. Math. Phys.
+    187, 375–415.
+ 5. Giannoni, F., Masiello, A., and Piccione, P. (1998). A Morse Theory for Light Rays on Stably
+    Causal Lorentzian Manifolds, A. Inst. H. Poincaré, Physique Theorique 69, 359–412.
+ 6. Giannoni, F., Masiello, A., and Piccione, P. (1999). Convexity and the Finiteness of the Number
+    of Geodesics. Applications to the Multiple Image Effect, Class. Quantum Grav. 16, 731–748.
+ 7. Giannoni, F., Masiello, A., and Piccione, P. A. (2000). Morse Theory for Massive Particles and
+    Photons in General Relativity, Journal of Geometry and Physics 35, 1–34.
+ 8. Giannoni, F., and Piccione, P. (1999). An Intrinsic Approach to the Geodesical Connectedness
+    of Stationary Lorentzian Manifolds, Commun. Anal. Geom. 7, 157–197.
+ 9. Gromoll, D., and Meyer, W. (1969). On Complete Open Manifolds of Positive Curvature, Ann.
+    Math. 90, 75–90.
+514                                                             Giannoni, Masiello, and Piccione
+
+10. Hawking, S. W., and Ellis, G. F. (1973). The Large Scale Structure of Space-Time (Cambridge
+    Univ. Press, London, New York).
+11. Klingenberg, W. (1963). Manifolds with Restricted Conjugate Locus, Ann. Math. 78, 527–547.
+12. Kovner, I. (1990). Fermat Principes in Arbitrary Gravitational Fields, Astrophys. J. 351,
+    114–120.
+13. Masiello, A. (1994). Variational Methods in Lorentzian Geometry (Pitman Research Notes in
+    Mathematics 309, Longman, London).
+14. Mendonça, S., and Piccione, P. Convexity, Curvature and Geodesics in Riemannian Geometry
+    (preprint 1999).
+15. O’Neill, B. (1983). Semi-Riemannian Geometry with Applications to Relativity (Academic
+    Press, New York).
+16. Perlick, V., and Piccione, P. (1998). A General-Relativistic Fermat Principle for Extended Light
+    Sources and Extended Receivers, General Relativity and Gravitation 30, 1461–1476.
+17. Piccione, P. (1997). On the Existence of Lightlike Geodesics on Conformally Stationary
+    Lorentzian Manifolds, J. Nonlinear Analysis: TMA 28, 611–623.
+18. Schneider, P., Ehlers, J., and Falco, E. (1992). Gravitational Lensing (Springer, Berlin).
+

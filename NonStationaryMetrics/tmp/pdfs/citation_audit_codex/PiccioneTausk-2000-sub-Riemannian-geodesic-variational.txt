@@ -1,0 +1,1147 @@
+                                                   VARIATIONAL ASPECTS OF THE GEODESIC PROBLEM IN
+
+
+
+
+arXiv:math/9911215v3 [math.DG] 23 May 2000
+                                                             SUB-RIEMANNIAN GEOMETRY
+
+                                                                      PAOLO PICCIONE AND DANIEL V. TAUSK
+
+
+                                                      A BSTRACT. We study the local geometry of the space of horizontal curves with
+                                                      endpoints freely varying in two given submanifolds P and Q of a manifold
+                                                      M endowed with a distribution D ⊂ T M. We give a different proof, that
+                                                      holds in a more general context, of a result by Bismut [2, Theorem 1.17] stat-
+                                                      ing that the normal extremizers that are not abnormal are critical points of the
+                                                      sub-Riemannian action functional. We use the Lagrangian multipliers method
+                                                      in a Hilbert manifold setting, which leads to a characterization of the abnormal
+                                                      extremizers (critical points of the endpoint map) as curves where the linear con-
+                                                      straint fails to be regular. Finally, we describe a modification of a result by Liu
+                                                      and Sussmann [9] that shows the global distance minimizing property of suffi-
+                                                      ciently small portions of normal extremizers between a point and a submanifold.
+
+
+
+
+                                                                                   1. I NTRODUCTION
+                                                A sub-Riemannian manifold consists of a smooth n-dimensional manifold M,
+                                             and a smooth distribution D ⊂ T M on M of constant rank n − k, endowed with
+                                             a smoothly varying positive definite metric tensor g. The length is defined only for
+                                             horizontal curves in M, i.e., curves which are everywhere tangent to D. It was
+                                             proven in [9] that a horizontal curve which minimizes length is either a normal
+                                             extremal or an abnormal extremal, where the two possibilities are not mutually
+                                             exclusive. This proof is obtained as an application of the Pontryagin maximum
+                                             principle of Optimal Control Theory; an alternative proof of this fact obtained by
+                                             variational methods is given in this paper (Corollary 5.8).
+                                                A normal extremal is defined as a curve in M that is a solution of the sub-
+                                             Riemannian Hamiltonian H(p) = 21 g −1 (p|D , p|D ) on T M∗ , i.e., a curve that is
+                                             the projection on M of an integral line of the Hamiltonian flow H.   ~ Such curves
+                                             are automatically horizontal. An abnormal extremal can be defined as a curve
+                                             which is the projection on M of a non zero characteristic curve in the annihilator
+                                             D o ⊂ T M∗ ; a characteristic curve is a curve in D o which is tangent to the kernel
+                                             of the restriction to D o of the canonical symplectic form of T M∗ .
+                                                As in the case of Riemannian geodesics, sufficiently small segments of a normal
+                                             extremal is length minimizing (see [9]); however, “most” abnormal extremals do
+
+                                               Date: May 2000.
+                                               2000 Mathematics Subject Classification. 37J05, 37J50, 37J60, 53C17, 70H03, 70H05.
+                                               The first author is partially sponsored by CNPq (Brazil) and the second author is sponsored by
+                                             FAPESP (São Paulo, Brazil).
+                                                                                              1
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                       2
+
+not have any sort of minimizing property (observe that the definition of abnormal
+minimizer does not involve the metric g).
+   The first example of a length minimizer which is not a normal extremal was
+given in [11]. The goal of this paper is to discuss the theory of extremals by tech-
+niques of Calculus of Variations and to give the basic instruments to develop a vari-
+ational theory (Morse Theory, Ljusternik–Schnirelman theory) for sub-Riemannian
+geodesics. The results of this paper are used in [4], where the authors consider the
+problem of existence and multiplicity of geodesics joining a point and a line in a
+sub-Riemannian manifold (M, D, g), with codim(D) = 1.
+   In [2, Theorem 1.17] it is proven that the normal sub-Riemannian extremals
+between two fixed points of a sub-Riemannian manifold are critical points of the
+sub-Riemannian action functional. The proof is presented in the context of the
+Malliavin calculus, employed to study some problems connected with the asymp-
+totics of the semi-group associated with a hypoelliptic diffusion. For this purposes,
+the author’s proof is restricted to the case that the image of the normal extremal
+be contained in an open subset of M on which the distribution D is globally gen-
+erated by n − k smooth vector fields. In this paper we reprove the result of [2,
+Theorem 1.17] under the more general assumptions that:
+     • the vector bundle D is not necessarily trivial around the image of the nor-
+       mal extremizer;
+     • the endpoints of the normal extremizers are free to move on two submani-
+       folds of M.
+As to the first generalization of the extremizing property of the normal extremizers,
+it is interesting to observe that in the proof it is employed the Lagrangian multipli-
+ers technique that uses time-dependent referentials of D defined in a neighborhood
+of the graph of any continuous curve in M. The existence of such referentials is
+obtained by techniques of calculus with affine connections, and it is likely that the
+method of time-dependent referentials may be applied to other situations where
+global geometrical results are to be proven. For instance, in [7] the author proves
+a Morse Index Theorem for normal extremizers, but in his proof he implicitly as-
+sumes the triviality of the vector bundle D in a neighborhood of the curve. How-
+ever, the arguments presented could be made more precise by a systematic use of
+time-dependent referentials.
+    Another observation that is worth making about the Lagrangian multipliers is
+that, in the functional setup of the method, the constraint is given by the kernel
+of a suitable submersion (see formula (3)) from the set of H 1 -curves in an open
+subset of M taking values in the Hilbert space of IRk -valued L2 -functions. This
+submersion is defined using time-dependent referentials of the annihilator D o of D
+in the cotangent bundle T M∗ , and the surprising result is that such map fails to
+be a submersion precisely at the abnormal extremizers. We therefore obtain a new
+variational description of the abnormal extremizers in a sub-Riemannian manifold.
+    Finally, it is important to emphasize the role of the endmanifolds P and Q in
+the development of the theory. An interesting result is that, if either one of the
+two is everywhere transversal to D, then the set of horizontal curves between P
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                         3
+
+and Q does not contain singularities (Proposition 5.4); in particular, all the sub-
+Riemannian extremizers between P and Q are normal. This fact can be used in
+several circumstances: for instance, in Corollary 5.6 we obtain some information
+about the geometry of sub-Riemannian balls; moreover, it is possible to obtain
+also some criteria to establish the smoothness for abnormal extremizers (see Re-
+mark 5.7).
+   We outline briefly the contents of each section of this article.
+   In Section 2 we study the local geometry of the space of horizontal curves join-
+ing two fixed points q0 and q1 of M by two different techniques. On one hand, this
+space can be described as the set of curves γ joining q0 and q1 satisfying θi (γ̇) = 0,
+where θ1 , . . . , θk is a local time-dependent referential for the annihilator D o of D.
+On the other hand, the same space can be obtained as the inverse image of q1 by the
+endpoint mapping restricted to the set of horizontal curves emanating from q0 . We
+show that these two constraints have the same regular points; such curves are called
+regular and a suitable neighborhood of them in the space of horizontal curves join-
+ing q0 and q1 has the structure of an infinite dimensional Hilbert manifold.
+   In Section 3 we define the normal extremals, also called normal geodesics, in a
+sub-Riemannian manifold, using the Hamiltonian setup.
+   In Section 4 we study the image of the differential of the endpoint mapping; to
+this aim we introduce an atlas on the space of horizontal curves starting at q0 .
+   Finally, in Section 5 we prove that a regular curve is a critical point of the sub-
+Riemannian action functional if and only if it is a normal geodesic. We also study
+the case of curves with endpoints varying in two submanifolds of M. If we con-
+sider the space of horizontal curves joining the submanifolds P and Q, then, pro-
+vided that either P or Q is transversal to D, this set is always a Hilbert manifold.
+Moreover, the critical points of the sub-Riemannian action functional in this space
+are those normal geodesics between P and Q whose Hamiltonian lift annihilates
+the tangent spaces of P and Q at its endpoints.
+   To conclude the paper, we present two short appendices. In Appendix A we
+prove that every horizontal curve can be obtained as the reparameterization of an
+affinely parameterized horizontal curve. In Appendix B we adapt a proof of local
+optimality of normal geodesics due to Liu and Sussmann [9, Appendix C] to prove
+that sufficiently small portions of normal geodesics are length minimizers between
+an initial submanifold and a point.
+
+            2. T HE DIFFERENTIABLE STRUCTURE OF THE SPACE OF
+                                HORIZONTAL CURVES
+
+   We give a couple of preliminary results needed to the study of the geometry of
+the set of horizontal paths in a sub-Riemannian manifold. The main reference for
+the geometry of infinite dimensional manifolds is [8]; for the basics of Riemannian
+geometry we refer to [3].
+   Recall that a smooth map f : M 7→ N between Hilbert manifolds is a submer-
+sion at x ∈ M if the differential df (x) : Tx M 7→ Tf (x) N is surjective; f is a
+submersion if it is a submersion at every x ∈ M .
+                 NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                              4
+
+Lemma 2.1. Let M , M1 and M2 be Hilbert manifolds and let f : M 7→ M1 ,
+g : M 7→ M2 be submersions. Let p1 ∈ M1 , p2 ∈ M2 and choose x ∈
+f −1 (p1 ) ∩ g −1 (p2 ). Then, f |g−1 (p2 ) is a submersion at x if and only if g|f −1 (p1 ) is
+a submersion at x.
+Proof. We need to show that df (x)|Ker(dg(x)) is surjective onto Tf (x) M1 if and
+only if dg(x)|Ker(df (x)) is surjective onto Tg(x) M2 . This follows from a general
+fact: if T : V 7→ V1 and S : V 7→ V2 are surjective linear maps between vector
+spaces, then T |Ker(S) is surjective if and only if Ker(T ) + Ker(S) = V . Clearly,
+this relation is symmetric in S and T , and we obtain the thesis.                
+    We give one more introductory result concerning the existence of time-depen-
+dent local referentials for vector bundles defined in a neighborhood of a given
+curve. We need the following definition:
+Definition 2.2. Let (M, g) be a Riemannian manifold and x ∈ M. A positive
+number r ∈ IR+ is said to be a normal radius for x if expx : Br (0) 7→ Br (x)
+is a diffeomorphism, where exp is the exponential map of (M, g), Br (0) is the
+open ball of radius r around 0 ∈ Tx M and Br (x) is the open ball of radius r
+around x ∈ M. We say that r is totally normal for x if r is a normal radius for all
+y ∈ Br (x).
+    By a simple argument in Riemannian geometry, it is easy to see that if K ⊂ M
+is a compact subset, then there exists r > 0 which is totally normal for all x ∈ K.
+    Given an vector bundle π : ξ 7→ M of rank k over a manifold M, a time-
+dependent local referential of ξ is a family of smooth maps Xi : U 7→ ξ, i =
+1, . . . , k, defined on an open subset U ⊆ IR × M such that {Xi (t, x)}ki=1 is a
+basis of the fiber ξx for all (t, x) ∈ U .
+Lemma 2.3. Let M be a finite dimensional manifold, let π : ξ 7→ M be a vector
+bundle over M and let γ : [a, b] 7→ M be a continuous curve. Then, there exists an
+open subset U ⊆ IR × M containing the graph of γ and a smooth time-dependent
+local referential of ξ defined in U .
+Proof. We first consider the case that γ is a smooth curve. Let us choose an ar-
+bitrary connection in ξ, an arbitrary Riemannian metric g on M and a smooth
+extension γ : [a − ε, b + ε] 7→ M of γ, with ε > 0. Since the image of γ is com-
+pact in M, there exists r > 0 which is a normal radius for all γ(t), t ∈ [a−ε, b+ε].
+We define U to be the open set:
+                n                                                       o
+           U = (t, x) ∈ IR × M : t ∈ ]a − ε, b + ε[, x ∈ Br (γ(t)) .
+
+Let now X 1 , . . . , X k be a referential of ξ along γ; for instance, this referential can
+be chosen by parallel transport along γ relative to the connection on ξ. Finally, we
+obtain a time-dependent local referential for ξ in U by setting, for (t, x) ∈ U and
+for i = 1, . . . , k, Xi (t, x) equal to the parallel transport (relative to the connection
+of ξ) of X i (t) along the radial geodesic joining γ(t) and x.
+   The general case of a continuous curve is easily obtained by a density argument.
+For, let γ : [a, b] 7→ M be continuous and let r > 0 be a totally normal radius
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                         5
+
+for γ(t), for all t ∈ [a, b]. Let γ1 : [a, b] 7→ M be any smooth curve such that
+dist(γ(t), γ1 (t)) < r for all t, where dist is the distance induced by the Riemann-
+ian metric g on M. Then, if we repeat the above proof for the curve γ1 , the open
+set U thus obtained will contain the graph of γ, and we are done.                 
+   Let us now consider a sub-Riemannian manifold, that is a triple (M, D, g)
+where M is a smooth n-dimensional manifold, D is a smooth distribution in M of
+codimension k and g is smoothly varying positive inner product on D.
+   A curve γ : [a, b] 7→ M is said to be D-horizontal, or simply horizontal, if it is
+absolutely continuous and if γ̇(t) ∈ D for almost all t ∈ [a, b]. As we did in the
+proof of Lemma 2.3, we will use sometimes auxiliary structures on M, which are
+chosen (in a non canonical way) once for all. We therefore assume that g is a given
+Riemannian metric tensor on M such that g|D = g, that D1 is a k-dimensional dis-
+tribution in M which is complementary to D (for instance, D1 is the g-orthogonal
+distribution to D), and we also assume that ∇ is a linear connection in T M which
+is adapted to the decomposition D ⊕ D1 , i.e., the covariant derivative of vector
+fields in D (resp., in D1 ) belongs to D (resp., to D1 ). For the construction of these
+objects, one can consider an arbitrary Riemannian metric ge on M. Then, one de-
+fines D1 as the ge-orthogonal complement of D and g|D1 = ge|D1 ; for the connection
+∇, it suffices to choose any pair of connections ∇0 and ∇1 respectively on the vec-
+tor bundles D and D1 and then one sets ∇ = ∇0 ⊕∇1 . Observe that the connection
+∇ constructed in this way is not torsion free; we denote by τ the torsion of ∇:
+                        τ (X, Y ) = ∇X Y − ∇Y X − [X, Y ].
+   Using Lemma 2.3, we describe D locally as the kernel of a time-dependent IRk -
+valued 1-form:
+Proposition 2.4. Let γ : [a, b] 7→ M be a continuous curve. Then, there exists an
+open subset U ⊆ IR × M containing the graph of γ and a smooth time-dependent
+IRk -valued 1-form θ defined in U , with θ(t,x) : Tx M 7→ IRk a surjective linear
+map and Dx = Ker(θ(t,x) ) for all (t, x) ∈ U .
+Proof. Let ξ be the subbundle of the cotangent bundle T M∗ given by the annihi-
+lator D o of D. Apply Lemma 2.3 to ξ and set θ = (θ1 , . . . , θk ), where {θi }ki=1 is a
+time-dependent local referential of ξ defined in an open neighborhood of the graph
+of γ.                                                                                  
+  Observe that, since D1 is complementary to D, for all (t, x) ∈ U the map
+                                  θ(t,x) : D1 7−→ IRk
+is an isomorphism.
+   Let us now consider the following spaces of curves in M.
+   We denote by L2 ([a, b], IRm ) the Hilbert space of Lebesgue square integrable
+IR -valued maps on [a, b] and by H 1 ([a, b], IRm ) the Sobolev space of all abso-
+   m
+
+lutely continuous maps x : [a, b] 7→ IRm with derivative in L2 ([a, b], IRm ). Fi-
+nally, we denote by H 1 ([a, b], M) the set of curves x : [a, b] 7→ M such that
+for any local chart (U, φ) on M, with φ : U ⊂ M 7→ IRn , and for any closed
+interval I ⊂ x−1 (U ), the map φ ◦ (x|I ) is in H 1 (I, IRm ). It is well known that
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                         6
+
+H 1 ([a, b], M) is an infinite dimensional smooth manifold modeled on the Hilbert
+space H 1 ([a, b], IRn ) (see for instance [12] for a recent reference on these issues).
+   For all pairs of points q0 , q1 ∈ M, we define the following sets of curves in M:
+                             n                                  o
+        Hq10 ([a, b], M) = x ∈ H 1 ([a, b], M) : x(a) = q0 ;
+                               n                                              o
+        Hq10,q1 ([a, b], M) = x ∈ H 1 ([a, b], M) : x(a) = q0 , x(b) = q1 ;
+                               n                                              o
+(1)
+        H 1 ([a, b], D, M) = x ∈ H 1 ([a, b], M) : ẋ(t) ∈ D a.e. on [a, b] ;
+       Hq10 ([a, b], D, M) = H 1 ([a, b], D, M) ∩ Hq10 ([a, b], M);
+       Hq10,q1 ([a, b], D, M) = H 1 ([a, b], D, M) ∩ Hq10,q1 ([a, b], M).
+We prove that the sets Hq10 ([a, b], M), Hq10,q1 ([a, b]; M), H 1 ([a, b], D, M) and
+Hq10 ([a, b], D, M), are smooth submanifolds of H 1 ([a, b], M) for all q0 , q1 ∈ M.
+However, in general, the space Hq10,q1 ([a, b], D, M), consisting of horizontal curves
+joining the two fixed points q0 and q1 , is not a submanifold of Hq10 ,q1 ([a, b]; M),
+and this fact is precisely the origin of difficulties when one tries to develop a vari-
+ational theory for sub-Riemannian geodesics.
+  In order to see that Hq10 ([a, b], M) and Hq10 ,q1 ([a, b], M) are submanifolds of
+H 1 ([a, b], M), simply observe that the map
+                               Ea,b : γ 7→ (γ(a), γ(b))
+is a submersion of H 1 ([a, b], M) into M × M.
+                                −1                                        −1
+   Then, Hq10 ([a, b], M) = Ea,b   ({q0 } × M) and Hq10,q1 ([a, b], M) = Ea,b (q0 , q1 )
+                                 1
+are smooth submanifolds of H ([a, b], M).
+   As to the regularity of Hq10 ([a, b], D, M), we will now show that this set can be
+covered by a family of open subset {Uα } of Hq10 ([a, b], M) such that each inter-
+section Hq10 ([a, b], D, M) ∩ Uα is the inverse image of a submersion of Uα in the
+Hilbert space L2 ([a, b], IRk ). The regularity of H 1 ([a, b], D, M) will follow by a
+similar argument.
+   To this aim, let γ0 be a fixed curve in Hq10 ([a, b], M) and let Uγ0 ⊂ IR × M
+be an open set containing the graph of γ0 and that is the domain of the map θ of
+Proposition 2.4. Denote by Hq10 ([a, b], M, Uγ0 ) the open subset of Hq10 ([a, b], M)
+consisting of those curves whose graphs is contained in Uγ0 :
+(2)
+                        n                                                           o
+Hq10 ([a, b], M, Uγ0 ) = γ ∈ Hq10 ([a, b], M) : (t, γ(t)) ∈ Uγ0 , for all t ∈ [a, b] .
+
+Let Θ : Hq10 ([a, b], M, Uγ0 ) 7→ L2 ([a, b], IR k ) be the smooth map defined by:
+(3)                           Θ(γ)(t) = θ(t,γ(t)) (γ̇(t)).
+Clearly, Hq10 ([a, b], M, Uγ0 ) ∩ Hq10 ([a, b], D, M) = Θ−1 (0).
+Proposition 2.5. Θ is a submersion.
+                 NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                                  7
+
+Proof. Clearly Θ is smooth because θ is smooth. To compute the differential of Θ
+we use the connection ∇ adapted to the decomposition T M = D ⊕ D1 introduced
+above. Let γ ∈ Hq10 ([a, b], M, Uγ0 ) be fixed and let V ∈ Tγ Hq10 ([a, b], M), i.e.,
+V is a vector field of class H 1 along γ with V (a) = 0. We write V = VD + VD1
+with VD (t) ∈ D and VD1 (t) ∈ D1 for all t; using the properties of ∇ we compute
+easily:
+(4)
+dΘ(γ)[V ](t) = [∇V θ](t,γ(t)) (γ̇(t)) + θ(t,γ(t)) (∇γ̇(t) V ) + θ(t,γ(t)) (τ (V (t), γ̇(t))),
+
+where ∇V θ is the covariant derivative of θ(t,·) .
+   Let now f ∈ L2 ([a, b], IRk ) be fixed; for the surjectivity of dΘ(γ) we want to
+solve the equation in V : dΘ(γ)[V ] = f . To this aim, we choose VD0 = 0, and we
+get:
+(5)
+                           h       i
+  θ(t,γ(t)) (∇γ̇(t) VD1 ) + ∇VD1 θ               (γ̇(t)) + θ(t,γ(t)) (τ (VD1 (t), γ̇(t))) = f.
+                                      (t,γ(t))
+
+Since θ(t,γ(t)) : (D1 )γ(t) 7→ IRk is an isomorphism, (5) is equivalent to a first
+order linear differential equation in VD1 , that admits a unique solution satisfying
+VD1 (a) = 0. Observe that since γ ∈ H 1 ([a, b], M), by (5) we get that V is also of
+class H 1 , and we are done.                                                       
+
+Corollary 2.6. H 1 ([a, b], D, M) and Hq10 ([a, b], D, M) are smooth submanifolds
+of H 1 ([a, b], M).                                                            
+   We now consider the endpoint mapping end : Hq10 ([a, b], M) 7→ M given by:
+
+                                     end(γ) = γ(b).
+It is easy to see that end is a submersion, hence we have the following:
+Corollary 2.7. Let γ0 ∈ Hq10 ([a, b], M) be fixed and let Hq10 ([a, b], M, Uγ0 ), Θ be
+defined as in (2) and (3).
+   Then, for all γ ∈ Θ−1 (0) ∩ end−1 (q1 ) = Hq10,q1 ([a, b], D, M), the restric-
+tion Θ|Hq1 ([a,b],M,Uγ0 )∩Hq1 ,q ([a,b],M) is a submersion if and only if the restriction
+          0                  0 1
+end|Hq1 ([a,b],D,M) is a submersion.
+       0
+
+
+Proof. It follows immediately from Lemma 2.1 and Proposition 2.5.                                
+
+Definition 2.8. A curve γ ∈ Hq10 ,q1 ([a, b], D, M) is said to be regular if the re-
+striction end|Hq1 ([a,b],D,M) is a submersion at γ. If γ is not regular, then it is called
+                 0
+an abnormal extremal.
+   Observe that the notion of abnormal extremality is not related to any sort of
+extremality with respect to the length or the action functional, but rather to lack
+of regularity in the geometry of the space of horizontal paths. The smoothness of
+length minimizing abnormal extremals is an open question.
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                          8
+
+                              3. N ORMAL G EODESICS
+    In order to define the normal geodesics in a sub-Riemannian manifold we intro-
+duce a Hamiltonian setup in T M∗ as follows.
+    Let us consider the cotangent bundle T M∗ endowed with its canonical sym-
+plectic form ω. Recall that ω is defined by ω = −dϑ, ϑ being the canonical
+1-form on T M∗ given by ϑp (ρ) = p(dπp (ρ)), where π : T M∗ 7→ M is the
+projection, p ∈ T M∗ and ρ ∈ Tp T M∗ . Let H : T M∗ 7→ IR be a smooth
+function; we call such a function a Hamiltonian in (T M∗ , ω). The Hamiltonian
+vector field of H is the smooth vector field on T M∗ denoted by H          ~ and defined
+by the relation dH(p) = ω( ~                                      ~ are called the solu-
+                                 H(p), ·); the integral curves of H
+tions of the Hamiltonian H. With a slight abuse of terminology, we will say that a
+smooth curve γ : [a, b] 7→ M is a solution of the Hamiltonian H if it admits a lift
+Γ : [a, b] 7→ T M∗ that is a solution of H.
+    More in general, one can consider time-dependent Hamiltonian functions on
+T M∗ , which are smooth maps defined on an open subset U of IR × T M∗ . In
+this case, the Hamiltonian flow H     ~ is a time-dependent vector field in T M∗ , and its
+                            ∗
+integral curves in T M are again called the solutions of the Hamiltonian H.
+    A symplectic chart in T M∗ is a local chart taking values in IRn ⊕ IRn∗ whose
+differential at each point is a symplectomorphism from the tangent space Tp (T M∗ )
+to IRn ⊕ IRn∗ endowed with the canonical symplectic structure. Given a chart
+q = (q1 , . . . , qn ) in M, we get a symplectic                            ∗
+                                                 chart (q, p) on nT M where   o p =
+                                                 ∂                       ∂    ∂
+(p1 , . . . , pn ) is defined by pi (α) = α ∂qi . We denote by ∂qi , ∂pj , i, j =
+1, . . . , n, the corresponding local referential for T (T M∗ ), and by {dqi , dpj } the
+local referential of T (T M∗ )∗ . We have:
+                       Xn                      Xn                        
+                                         ~           ∂H ∂       ∂H ∂
+                  ω=       dqi ∧ dpi , H =                   −              .
+                                                     ∂pi ∂qi    ∂qi ∂pi
+                   i=1                      i=1
+
+In the symplectic chart (q, p), a solution Γ(t) = (q(t), p(t)) of the Hamiltonian H
+is the solution of the Hamilton equations:
+                                  
+                                    dq       ∂H
+                                  
+                                        =       ,
+                                   dt        ∂p
+(6)
+                                  
+                                    dp       ∂H
+                                  
+                                        =−      .
+                                      dt      ∂q
+Definition 3.1. A normal geodesic in the sub-Riemannian manifold (M, D, g) is
+a curve γ : [a, b] 7→ M that admits a lift Γ : [a, b] 7→ T M∗ which is a solution of
+the sub-Riemannian Hamiltonian H : T M∗ 7→ IR given by:
+                                        1 −1
+(7)                           H(p) =      g (p|D , p|D ),
+                                        2
+where g−1 is the induced inner product in D ∗ . In this case, we say that Γ is a
+Hamiltonian lift of γ.
+                 NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                      9
+
+   The Hamilton equations for the sub-Riemannian Hamiltonian (7) will be com-
+puted explicitly in Section 5 (formula (31)). It will be seen that the first of the
+two equations means that the solutions in M are horizontal curves and that Γ|D =
+g(γ̇, ·) (see remark 5.3).
+   We remark that a normal geodesic need not be regular in the sense of Defini-
+tion 2.8, hence there are geodesics that are at the same time normal and abnor-
+mal. Observe also that, in general, a normal geodesic γ may admit more than one
+Hamiltonian lift Γ. This phenomenon occurs precisely when γ is at the same time
+a normal geodesic and an abnormal extremizer.
+
+
+           4. A BNORMAL EXTREMALS AND THE ENDPOINT MAPPING
+   In this section we give necessary and sufficient conditions for a curve to be an
+abnormal extremal in terms of the symplectic structure of the cotangent bundle
+T M∗ . We describe a coordinate system in the Hilbert manifold Hq10 ([a, b], M)
+which is compatible with the submanifold Hq10 ([a, b], D, M). This will provide an
+explicit description of the tangent space Tγ Hq10 ([a, b], D, M) which will allow us
+to compute the image of the differential of the restriction of the endpoint mapping
+to Hq10 ([a, b], D, M).
+   Let M be a manifold endowed with a distribution D, with dim(M) = n and
+codim(D) = k. The sub-Riemannian metric will be irrelevant in the theory of this
+section. Let U ⊂ IR × M be an open set and let X1 , . . . , Xn be a time-dependent
+referential of T M defined in U . We say that such referential is adapted to the
+distribution D if X1 , . . . , Xn−k form a referential for D.
+   It follows easily from Lemma 2.3 that, given a continuous curve γ : [a, b] 7→ M,
+there exists an open set U ⊂ IR × M containing the graph of γ and a referential of
+T M defined in U which is adapted to D. Namely, one chooses a vector subbundle
+D1 ⊂ T M such that T M = D ⊕ D1 and then apply Lemma 2.3 to both D and
+D1 .
+   Given a time-dependent referential of T M defined in an open set U ⊂ IR × M,
+we are going to associate to it a map
+
+                      B : H 1 ([a, b], M, U ) 7−→ L2 ([a, b], IRn ),
+
+where H 1 ([a, b], M, U ) denotes the open set in H 1 ([a, b], M) consisting of curves
+whose graph is contained in U . We define B by:
+
+(8)                                     B(γ) = h,
+
+where h = (h1 , . . . , hn ) is given by
+                                       n
+                                       X
+(9)                          γ̇(t) =         hi (t)Xi (t, γ(t)),
+                                       i=1
+
+for almost all t ∈ [a, b]. The map B is smooth. It’s differential is computed in the
+following:
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                        10
+
+Lemma 4.1. Let γ ∈ H 1 ([a, b], M, U ) and v be an H 1 vector field along γ. Set
+h = B(γ), z = dBγ (v). We define a time-dependent vector field in U by
+                                 n
+                                 X
+(10)                 X(t, x) =         hi (t)Xi (t, x),    (t, x) ∈ U
+                                 i=1
+and a vector field w along γ by
+                                       n
+                                       X
+(11)                         w(t) =          zi (t)Xi (t, γ(t)).
+                                       i=1
+
+Given a chart (q1 , . . . , qn ) defined in an open set V ⊂ M, denote by ṽ(t), X̃(t, q)
+and w̃(t) the representation in coordinates of v, X and w respectively. Then, the
+following relation holds:
+                         d          ∂ X̃
+(12)                        ṽ(t) =      (t, γ(t))ṽ(t) + w̃(t),
+                         dt         ∂q
+for all t ∈ [a, b] such that γ(t) ∈ V .
+Proof. Simply consider a variation of γ with variational vector field v and differen-
+tiate relation (9) with respect to the variation parameter, using the local chart. 
+Corollary 4.2. The restriction of the map B to the set
+             Hq10 ([a, b], M, U ) = Hq10 ([a, b], M) ∩ H 1 ([a, b], M, U )
+is a local chart, taking values in an open subset of L2 ([a, b], IRn ).
+Proof. For γ ∈ Hq10 ([a, b], M) the tangent space Tγ Hq10 ([a, b], M) consists of
+those H 1 vector fields v along γ such that v(a) = 0. For a fixed z ∈ L2 ([a, b], IRn ),
+formula (12) is a first order linear differential equation for ṽ; Lemma 4.1 and stan-
+dard results of existence and uniqueness of solutions of linear differential equations
+imply that the differential of B at any γ ∈ Hq10 ([a, b], M, U ) maps the tangent
+space Tγ Hq10 ([a, b], M) isomorphically onto L2 ([a, b], IRn ). It follows from the
+inverse function theorem that B is a local diffeomorphism in Hq10 ([a, b], M, U ).
+Finally, by standard results on uniqueness of solutions of differential equations, we
+see that the restriction of B to Hq10 ([a, b], M, U ) is injective.                  
+   If the referential X1 , . . . , Xn defining B is adapted to D, then a curve γ in
+Hq10 ([a, b], M, U ) is horizontal if and only if B(γ) = h satisfies hn−k+1 = . . . =
+hn = 0. This means that B is a submanifold chart for Hq10 ([a, b], D, M). This ob-
+servation will provide a good description of the tangent space Tγ Hq10 ([a, b], D, M).
+   Let γ ∈ Hq10 ([a, b], M, U ) and set h = B(γ). Define a time-dependent vector
+field X in U as in (10). By Lemma 4.1, the kernel Ker dBγ is the vector subspace
+of Tγ H 1 ([a, b], M) consisting of those v whose representation in coordinates ṽ
+satisfy the homogeneous part of the linear differential equation (12), namely:
+                             d          ∂ X̃
+(13)                            ṽ(t) =      (t, γ(t))ṽ(t).
+                             dt         ∂q
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                       11
+
+By the uniqueness of the solution of a Cauchy problem, it follows that, for all
+t ∈ [a, b], the evaluation map
+                          Ker dBγ ∋ v 7→ v(t) ∈ Tγ(t) M
+is an isomorphism. Therefore, for every t ∈ [a, b] we can define a linear isomor-
+phism Φt : Tγ(a) M 7→ Tγ(t) M by:
+(14)                     Φt (v(a)) = v(t),    v ∈ Ker dBγ .
+Using the maps Φt we can give a coordinate free description of the differential of
+B, based on the “method of variation of constants” for solving non homogeneous
+linear differential equations.
+Lemma 4.3. Let γ ∈ Hq10 ([a, b], M, U ) and v ∈ Tγ Hq10 ([a, b], M). Set h =
+B(γ) and z = dBγ (v). Define the objects X, w and Φt as in (10), (11) and (14)
+respectively. Then, the following equality holds:
+                                       Z t
+(15)                         v(t) = Φt     Φ−1
+                                             s w(s)ds.
+                                         a
+
+Proof. The right side of (15) vanishes at t = a, therefore, to conclude the proof,
+one only has to show that its representation in local coordinates satisfies the differ-
+ential equation (12). This follows by direct computation, observing that the rep-
+resentation in local coordinates of the maps Φt is a solution of the homogeneous
+linear differential equation (13).                                                   
+Corollary 4.4. Suppose that the referential X1 , . . . , Xn defining B is adapted to
+D. Let γ be an horizontal curve in Hq10 ([a, b], M, U ). Then, the tangent space
+Tγ Hq10 ([a, b], D, M) consists of all vector fields v of the form (15), where w runs
+over all L2 horizontal vector fields along γ.
+Proof. Follows directly from Lemma 4.3, observing that B is a submanifold chart
+for Hq10 ([a, b], D, M), as remarked earlier.                                
+   We now relate the differential of the endpoint map with the symplectic structure
+of T M∗ . We denote by D o ⊂ T M∗ the annihilator of D. The restriction ω|Do of
+the canonical symplectic form of T M∗ to D o is in general no longer nondegenerate
+and its kernel Ker(ω|Do )(p) at a point p ∈ D o may be non zero. We say that an
+absolutely continuous curve η : [a, b] 7→ D o is a characteristic curve for D if
+                              η̇(t) ∈ Ker(ω|Do )(η(t)),
+for almost all t ∈ [a, b].
+   We take a closer look at the kernel of ω|Do . Let Y be a horizontal vector field in
+an open subset of M. We associate to it a Hamiltonian function HY defined by
+                                 HY (p) = p(Y (x)),
+where x = π(p). We can now compute the ω-orthogonal complement of Tp D o
+                         ~ Y denotes the corresponding Hamiltonian vector field in
+in Tp T M∗ . Recall that H
+TM . ∗
+                 NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                          12
+
+Lemma 4.5. Let p ∈ T M∗ and set x = π(p). The ω-orthogonal complement of
+Tp D o in Tp T M∗ is mapped isomorphically by dπp onto Dx . Moreover, if Y is a
+                                                                        ~ Y (p) is
+horizontal vector field defined in an open neighborhood of x in M, then H
+                                                       o
+the only vector in the ω-orthogonal complement of Tp D which is mapped by dπp
+into Y (x).
+Proof. The function HY vanishes on D o and therefore ω(H ~ Y , ·) = dHY vanishes
+       o
+on Tp D . The conclusion follows by observing that, since ω is nondegenerate, the
+ω-orthogonal complement of Tp D o in Tp T M∗ has dimension n − k = dim(Dx ).
+                                                                               
+Corollary 4.6. The projection of a characteristic curve of D is automatically hor-
+izontal. Moreover, let γ : [a, b] 7→ M be a horizontal curve, let X1 , . . . , Xn
+be a time-dependent referential of T M adapted to D, defined in an open subset
+U ⊂ IR × M containing the graph of γ. Define a time-dependent vector field X
+in U as in (10). Let η : [a, b] 7→ D o be a curve with π ◦ η = γ. Then η is a
+                                                                   ~ X.
+characteristic curve of D if and only if η is an integral curve of H
+Proof. For p ∈ D o , the kernel of the restriction of ω to Tp D o is equal to the in-
+tersection of Tp D o with the ω-orthogonal complement of Tp D o in Tp T M∗ . By
+Lemma 4.5, it follows that the kernel of ω|Do projects by dπ into D, and therefore
+the projection of a characteristic is always horizontal.
+   For the second part of the statement, observe that for t ∈ [a, b], X(t, ·) is a
+horizontal vector field in an open neighborhood of γ(t) whose value at γ(t) is γ̇(t).
+                                                                    ~ X (η(t)).
+Therefore η̇(t) is ω-orthogonal to Tη(t) D o if and only if η̇(t) = H              
+Corollary 4.7. Let γ : [a, b] 7→ M be a horizontal curve and let X1 , . . . , Xn be
+a time-dependent referential of T M adapted to D, defined in an open subset U ⊂
+IR×M containing the graph of γ. Let X be defined as in (10). A curve η : [a, b] 7→
+D o with π ◦ η = γ is a characteristic of D if and only if its representation η̃(t) ∈
+IRn∗ in any coordinate chart of M satisfies the following first order homogeneous
+linear differential equation:
+                            d            ∂ X̃
+(16)                           η̃(t) = −      (t, γ(t))∗ η̃(t),
+                            dt           ∂q
+where X̃ is the representation in coordinates of X.
+                                                                    ~ X in coor-
+Proof. Simply use Corollary 4.6 and write the Hamilton equations of H
+dinates.                                                                      
+   Differential equation (16) is called the adjoint system of (13). It is easily seen
+that η̃ is a solution of (16) if and only if η̃(t)ṽ(t) is constant for every solution ṽ of
+(13). From this observation we get:
+Lemma 4.8. Let γ : [a, b] 7→ M be a horizontal curve and suppose that the refer-
+ential X1 , . . . , Xn defining Φt in (14) is adapted to D. Then a curve η : [a, b] 7→
+D o with π ◦ η = γ is a characteristic for D if and only if η(t) = (Φ∗t )−1 (η(a)) for
+every t ∈ [a, b].
+               NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                                13
+
+Proof. By Corollary 4.7 and the observation above we get that η is a characteristic
+if and only if η(t)v(t) is constant for every v ∈ Ker dBγ . The conclusion follows.
+                                                                                 
+   We can finally prove the main theorem of the section.
+Theorem 4.9. The annihilator of the image of the differential of the restriction of
+the endpoint mapping to Hq10 ([a, b], D, M) is given by:
+                                           o
+             Im d(end|Hq1 ([a,b],D,M))(γ) =
+                            0
+(17)              n                                                  o
+                    η(b) : η is a characteristic for D and π ◦ η = γ
+
+Proof. By Lemma 4.4, we have:
+                                  
+       Im d(end|Hq1 ([a,b],D,M))(γ) =
+                   0
+(18)        Z b                                                        
+                     −1                 2
+            Φb     Φs w(s) ds : w is a L horizontal vector field along γ .
+                    a
+By Lemma 4.8, if η is a characteristic with π ◦ η = γ then η(b) annihilates the right
+hand side of (18). Namely:
+           Z b                                    Z b                 
+                    −1                  ∗ −1                  −1
+     η(b) Φb       Φs w(s) ds = (Φb ) (η(a)) Φb             Φs w(s) ds
+                a                                               a
+                                        Z b                        Z b
+(19)                         = η(a)            Φ−1
+                                                s w(s) ds       =          η(a)Φ−1
+                                                                                s w(s) ds
+                                           a                          a
+                                 Z b                                Z b
+                             =         (Φ∗s )−1 η(a)w(s) ds =             η(s)w(s) ds = 0.
+                                  a                                  a
+We have to prove that if η0 ∈ Tγ(b) M∗ annihilates the righthand side of (18) then
+there exists a characteristic η with π ◦ η = γ and η(b) = η0 .
+   Define η by η(t) = (Φ∗t )−1 (Φ∗b (η0 )) for all t ∈ [a, b]. By Lemma 4.8, we only
+have to prove that η([a, b]) ⊂ D o . Computing as in (19), we see that, since η0
+annihilates the righthand side of (18), then:
+                                 Z b
+                                     η(s)w(s)ds = 0,
+                                 a
+
+for any horizontal L2 vector field w along γ. The conclusion follows.                    
+Corollary 4.10. The image of the differential of the restriction of the endpoint
+mapping to Hq10 ([a, b], D, M) contains Dγ(b) .
+Proof. By Theorem 4.9, the annihilator of the image of the differential of the re-
+striction of the endpoint mapping to Hq10 ([a, b], D, M) is contained in the annihi-
+lator of Dγ(b) . The conclusion follows.                                          
+   The next corollary, which is obtained easily from (17), gives a characterization
+of singular curves in terms of characteristics:
+                 NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                          14
+
+Corollary 4.11. An H 1 curve γ : [a, b] 7→ M is singular if and only if it is the
+projection of a non zero characteristic of D.                                      
+   Observe that by Lemma 4.8 a characteristic either never vanishes or is identically
+zero.
+
+                5. T HE NORMAL GEODESICS AS CRITICAL POINTS
+                            OF THE ACTION FUNCTIONAL
+
+   In this section we prove that the normal geodesics in (M, D, g) correspond to
+the critical points of the sub-Riemannian action functional defined in the space of
+horizontal curves joining two subsets of M. To this aim, we need to introduce a
+Lagrangian formalism that will be be related to the Hamiltonian setup described in
+Section 3 via the Legendre transform.
+   We consider the sub-Riemannian action functional EsR defined in the space
+H 1 ([a, b], D, M):
+                                        Z
+                                       1 b
+(20)                         EsR (γ) =      g(γ̇, γ̇) dt.
+                                       2 a
+The problem of minimizing the action functional EsR is essentially equivalent to
+the problem of minimizing length (see Lemma 5.5 and Corollary A.3).
+   By Corollary 2.7, given q0 , q1 ∈ M, the set Hq10,q1 ([a, b], D, M) has the struc-
+ture of a smooth manifold around the regular curves. It is easy to prove that
+EsR is smooth in any open subset of Hq10,q1 ([a, b], D, M) which has the struc-
+ture of a smooth manifold; such an open set will be called a regular subset of
+Hq10,q1 ([a, b], D, M). We will say that a curve γ ∈ Hq10 ,q1 ([a, b], D, M) is a crit-
+ical point of EsR if it lies in a regular subset of Hq10 ,q1 ([a, b], D, M) and if it is a
+critical point of the restriction of EsR to this regular subset. The purpose of this
+section is to prove that the normal geodesics coincide with the critical points of the
+EsR in Hq10,q1 ([a, b], D, M).
+   To this goal, we will consider an extension E of EsR to the smooth manifold
+   1
+H ([a, b], M) defined in terms of the Riemannian extension g of the sub-Rieman-
+nian metric g that was introduced in Section 2:
+                                          Z
+                                       1 b
+                               E(γ) =        g(γ̇, γ̇) dt,       γ ∈ H 1 ([a, b], M).
+                                       2 a
+Let γ ∈ Hq10,q1 ([a, b], D, M) be a regular curve and let θ be the map defined in
+a neighborhood of the graph of γ given in Proposition 2.4. By the method of
+Lagrange multipliers, we know that γ is a critical point of EsR if and only if there
+exists λ ∈ L2 ([a, b], IR n ) such that γ is a critical point in Hq10 ,q1 ([a, b], M) of the
+action functional:
+                                        Z b
+(21)               Eλ (γ) = E(γ) −           λ(t) · θ(t,γ(t)) (γ̇(t)) dt.
+                                          a
+We will see in the proof of Proposition 5.2 below that the Lagrange multiplier λ
+associated to a critical point of EsR is indeed a smooth map.
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                         15
+
+   Eλ is the action functional of the time-dependent Lagrangian Lλ defined on an
+open subset of T M, given by:
+                           1
+(22)           Lλ (t, v) = g(v, v) − λ(t) · θ(t,m) (v), v ∈ Tm M.
+                           2
+The Lagrangian Lλ is L1 in the variable t, moreover, for (almost) all t ∈ [a, b],
+the map v 7→ Lλ (t, v) is smooth. Therefore the critical points of Eλ are curves
+satisfying the Euler–Lagrange equations; in a chart q = (q1 , . . . , qn ), the equations
+are:
+                               ∂Lλ       d ∂Lλ
+(23)                                 −          = 0.
+                                ∂q      dt ∂ q̇
+We recall that if L : U ⊂ IR × T M is a time-dependent Lagrangian defined on an
+open subset of IR×T M, the fiber derivative of L is the map FL : U 7→ IR×T M∗
+given by:
+                         FL(t, v) = (t, d(L|U ∩Tπ(v) M )(v)),
+where π : T M 7→ M is the projection. For t ∈ IR, we denote by Ut the open
+subset of T M consisting of those v’s such that (t, v) ∈ U . The Lagrangian L is
+said to be regular if, for each t, the map v 7→ FL(t, v) is a local diffeomorphism;
+L is said to be hyper-regular if v 7→ FL(t, v) is a diffeomorphism between Ut
+and an open subset of T M∗ . Associated to a hyper-regular Lagrangian L in U ⊂
+IR × T M one has a Hamiltonian H defined on the open subset FL(U ) by the
+formula:
+                        H (FL(t, v)) = FL(t, v)v − L(t, v),        (t, v) ∈ U.
+This procedure is called the Legendre transform (see [1, Chapter 3]). If L is a
+hyper-regular Lagrangian and H is the associated Hamiltonian, then the solutions
+of the Euler–Lagrange equations (23) of L correspond, via FL, to the solutions of
+the Hamilton equations of H, i.e., a smooth curve γ : [a, b] 7→ M is a solution of
+(23) if and only if Γ = FL ◦ (γ, γ̇) is a solution of the Hamiltonian H.
+   Let us show now the this formalism applies to the case of the Lagrangian Lλ of
+(22):
+Lemma 5.1. The Lagrangian Lλ is hyper-regular.
+Proof. From (22), the fiber derivative FLλ is easily computed as:
+(24)               FLλ (t, v) = g(v, ·) − λ(t) · θ(t,m) ∈ Tm M∗ .
+For each t ∈ [a, b], the map FLλ (t, ·) : Tm M 7→ Tm M∗ is clearly a diffeomor-
+phism, whose inverse is given by:
+                                                    
+(25)             Tm M∗ ∋ p 7→ g −1 p + λ(t) · θ(t,m) ∈ Tm M.
+                                                                                      
+   We are finally ready to prove the following:
+Proposition 5.2. Let γ be a regular curve in Hq10 ,q1 ([a, b], D, M). Then, γ is
+a critical point of EsR if and only if it is a normal sub-Riemannian geodesic in
+(M, D, g).
+                 NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                           16
+
+Proof. A critical point of EsR is a curve satisfying the Euler–Lagrange equations
+(23) associated to the Lagrangian Lλ of (22). By Lemma 5.1, Lλ is hyper-regular,
+hence the solutions of (23) correspond, via FLλ to the solutions of the associated
+Hamiltonian Hλ , computed as follows. First, for v ∈ Tm M we have:
+   FLλ (t, v) v − Lλ (t, v) =
+                                            1                              1
+         = g(v, v) − λ(t) · θ(t,m) (v) −      g(v, v) + λ(t) · θ(t,m) (v) = g(v, v).
+                                            2                              2
+Then, using (25), we compute:
+                             1                                          
+(26)          Hλ (t, q, p) = g −1 p + λ(t) · θ(t,q) , p + λ(t) · θ(t,q) .
+                             2
+For the proof of the Proposition, we need to show that if γ is an absolutely continu-
+ous curve in M, then γ is horizontal and it is a solution for the Hamilton equations
+associated to the Hamiltonian Hλ for some λ if and only if it is a solution of the
+Hamilton equations associated to the sub-Riemannian Hamiltonian H of formula
+(7).
+   The Hamilton equations of Hλ are computed as follows:
+                 
+                    dq
+                 
+                        = g −1 (p + λ(t) · θ(t,q) );
+                  dt
+(27)
+                 
+                    dp                  ∂θ(t,q)                     
+                 
+                        = −g −1 λ(t) ·           , p + λ(t) · θ(t,q) .
+                     dt                     ∂q
+From the horizontality of dq
+                          dt , using the first equation of (27) we get:
+                                               
+                              p + λ(t) · θ(t,q) D1 = 0,
+
+and since θ|D1 is an isomorphism, we get an explicit expression for the Lagrange
+multiplier λ:
+                                        h         i−1
+(28)                     λ(t) = −p(t) ◦ θ(t,q) D1     .
+Observe that, by a standard boot-strap argument, from (28) it follows easily that λ
+is smooth.
+   We now write the Hamilton equations of the sub-Riemannian Hamiltonian and
+of Hλ using a suitable time-dependent referential X1 , . . . , Xn of T M. The choice
+of the referential is done as follows. Let θ1 , . . . , θk be a time-dependent referen-
+                                           ∗
+tial of the annihilator D o = D ⊥ which is orthonormal with respect to g−1 .
+For the orthogonality, it suffices to consider any referential of D o and then to or-
+thonormalize it by the method of Gram-Schmidt. Then, let Xn−k+1 , . . . , Xn be
+the referential of D ⊥ obtained by dualizing θ1 , . . . , θk . Finally, let X1 , . . . , Xn−k
+be any orthonormal referential of D, time-dependent or not.
+   In the referential X1 , . . . , Xn , for i = 1, . . . , n − k we have:
+            h           i−1  ∂θ
+                                   (t,q)
+                                              X  ∂θj
+                                                 k                    
+(29)          θ(t,q) D1                  Xi =                (t, q) Xi · Xn−k+j .
+                                 ∂q                     ∂q
+                                              j=1
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                                 17
+
+We can rewrite (27) as:
+(30)
+  
+         n−k
+          X                   Xn
+  
+    dq
+  
+       =      p(X i ) Xi +         (p(Xi ) + λi−n+k ) Xi ,
+  
+   dt
+         i=1               i=n−k+1
+
+ 
+         n−k                             n                                         
+ 
+  dp     X              ∂Xi                X                                    ∂Xi
+ 
+     = −     p(X  ) p         −                    2 (p(Xi ) + λi−n+k ) p                 ,
+ 
+  dt            i
+                          ∂q                                                      ∂q
+               i=1                        i=n−k+1
+
+where λ = (λ1 , . . . , λk ). On the other hand, the Hamilton equations for H are
+written as:
+                                  n−k
+                         
+                            dq    X
+                         
+                               =      p(Xi ) Xi ,
+                         
+                          dt
+                         
+                                   i=1
+(31)
+                         
+                                    n−k                 
+                         
+                            dp      X                ∂Xi
+                         
+                               =  −     p(X    ) p         .
+                          dt                 i
+                                                       ∂q
+                                      i=1
+Now, if γ is horizontal and it satisfies (30) for some λ it follows that the second sum
+of the first equation in (30) is zero, and therefore γ satisfies also (31). Conversely,
+if γ satisfies (31), then γ is horizontal, and defining λ by (28), it is easily seen that
+γ is a solution of (27).                                                               
+Remark 5.3. It follows easily from (31) that if γ is a normal geodesic and Γ is a
+Hamiltonian lift of γ, then Γ|D = g(γ̇, ·).
+   We now consider the case of sub-Riemannian geodesics with endpoints varying
+in two submanifolds of M.
+Proposition 5.4. Let (M, D, g) be a sub-Riemannian manifold, let P, Q ⊂ M be
+smooth submanifolds of M and assume that Q is transversal to D, i.e., Tq Q+Dq =
+Tq M for all q ∈ Q. Then, the set
+                             n                                            o
+        1
+     HP,Q ([a, b], D, M) = x ∈ H 1 ([a, b], D, M) : x(a) ∈ P, x(b) ∈ Q
+
+is a smooth submanifold of H 1 ([a, b], M). Moreover, the critical points of the sub-
+Riemannian action functional EsR in HP,Q 1 ([a, b], D, M) are precisely the normal
+
+geodesics γ joining P and Q that admit a lift Γ : [a, b] 7→ T M∗ satisfying the
+boundary conditions:
+(32)                 Γ(a) ∈ Tγ(a) P o ,     and   Γ(b) ∈ Tγ(b) Qo .
+                        1 ([a, b], D, M) is a smooth manifold follows easily from
+Proof. The fact that HP,Q
+the transversality of Q and Corollary 4.10.
+    The proof of the second part of the statement is analogous to the proof of Propo-
+sition 5.2, keeping in mind that the critical points of the action functional associated
+to a hyper-regular Lagrangian in the space of curves joining P and Q are the so-
+lutions of the Hamilton equations whose Hamiltonian lift vanishes on the tangent
+spaces of P and Q.                                                                    
+               NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                      18
+
+   Obviously, the role of P and Q in Proposition 5.4 can be interchanged, and the
+same conclusion holds in the case that P is transversal to D.
+   As a consequence of Proposition 5.4 we get some information on the geometry
+of sub-Riemannian balls. Given a horizontal curve γ : [a, b] 7→ M, we define ℓ(γ)
+to be its length:
+                                     Z b
+                                                   1
+                             ℓ(γ) =      g(γ̇, γ̇) 2 dt.
+                                       a
+For q0 , q1 ∈ M, we set
+                     n                                                o
+ dist(q0 , q1 ) = inf ℓ(γ) : γ is a horizontal curve joining q0 and q1 ∈ [0, +∞],
+where such number is infinite if q0 and q1 cannot be joined by any horizontal curve.
+A horizontal curve γ : [a, b] 7→ M is said to be length minimizing between two
+subsets P and Q of M if γ(a) ∈ P, γ(b) ∈ Q and
+                             ℓ(γ) = inf dist(q0 , q1 ).
+                                     q0 ∈P
+                                     q1 ∈Q
+
+A horizontal curve γ is said to be affinely parameterized if g(γ̇, γ̇) is almost ev-
+erywhere constant. Every horizontal curve is the reparameterization of an affinely
+parameterized horizontal curve (see Corollary A.3). Since the sub-Riemannian
+Hamiltonian is constant on its integral curves, it follows that every normal geo-
+desic is affinely parameterized. Moreover, using the Hamilton equations (31), it is
+easy to see that an affine reparameterization of a normal geodesic is again a normal
+geodesic.
+   We relate the problem of minimization of the length and of the action functional
+by the following:
+Lemma 5.5. Let γ : [a, b] 7→ M be an horizontal curve joining the submanifolds
+P and Q. Then, γ is a minimum of EsR in HP,Q    1 ([a, b], D, M) if and only if γ is
+
+affinely parameterized and γ is a length minimizer between P and Q.
+Proof. By Cauchy–Schwartz inequality we have:
+                            ℓ(γ)2 ≤ 2(b − a)EsR (γ)2 ,
+where the equality holds if and only if γ is affinely parameterized. If γ is affinely
+parameterized and it minimizes length, then, for any µ ∈ HP,Q1 ([a, b], D, M), we
+
+have:
+                                ℓ(γ)2        ℓ(µ)2
+                   EsR (γ) =            ≤             ≤ EsR (µ).
+                              2(b − a)      2(b − a)
+Hence, γ is a minimum of EsR .
+   Conversely, suppose that γ is a minimum of EsR . There exists an affinely pa-
+rameterized horizontal curve µ : [a, b] 7→ M such that γ is a reparameterization of
+µ (see Corollary A.3). We have:
+                                      ℓ(µ)2       ℓ(γ)2
+             EsR (γ) ≤ EsR (µ) =              =           ≤ EsR (γ),
+                                    2 (b − a)   2 (b − a)
+               NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                      19
+
+hence the above inequalities are indeed equalities, and γ is affinely parameterized.
+   Now, assume by contradiction that ρ : [a, b] 7→ M connects P and Q and satis-
+fies ℓ(ρ) < ℓ(γ). By Corollary A.3, we can assume that ρ is affinely parameterized,
+hence EsR (ρ) < EsR (γ). This is a contradiction, and we are done.                
+  For q0 ∈ M and r ∈ IR+ , the open ball Br (q0 ) is defined by:
+                                n                       o
+                    Br (q0 ) = q1 : dist(q0 , q1 ) < r .
+Corollary 5.6. Suppose that there exists an affinely parameterized length mini-
+mizer γ : [a, b] 7→ M between q0 and q1 which is not a normal extremal; set
+r = dist(q0 , q1 ). Then, any submanifold Q through q1 which is transversal to D at
+q1 has non empty intersection with the open ball Br (q0 ).
+Proof. By contradiction, suppose that we can find a submanifold Q through q1
+which is transversal to D at q1 and disjoint from the open ball Br (q0 ). It follows
+that γ is a length minimizer between the point q0 and the submanifold Q, hence, by
+Lemma 5.5, γ is a minimum point for the action functional in Hq10 ,Q ([a, b], D, M).
+By possibly considering a small portion of Q around q1 , we can assume that Q
+is everywhere transversal to D. From Proposition 5.4 it follows then that γ is a
+normal geodesic, which is a contradiction.                                        
+Remark 5.7. Proposition 5.4 can also be used to establish the smoothness of ab-
+normal extremizers, which is in general an open question. Observe indeed that its
+statement can be rephrased as follows. Let γ : [a, b] → M be an affinely parame-
+terized length-minimizer connecting q0 and q1 in M; set r = dist(q0 , q1 ). If there
+exists a manifold Q transverse to D passing through q1 which does not intercept
+the open ball B(q0 ; r) then γ is a normal extremal and consequently it is smooth.
+   As a corollary of Proposition 5.2, we also obtain an alternative proof of a result
+of [9] that gives necessary conditions for length minimizing:
+Corollary 5.8. An affinely parameterized length minimizer is either an abnormal
+minimizer or a normal geodesic.
+Proof. It follows immediately from Definition 2.8, Proposition 5.2 and the fact that
+affinely parameterized length minimizers are minima of the sub-Riemannian action
+functional.                                                                       
+   The solutions of sub-Riemannian geodesic problem with variable endpoints in
+the case that the end-manifold is one-dimensional has a physical interpretation in
+the context of General Relativity (see [5, 6]). Such geodesics can be interpreted
+as the solution of a general relativistic brachistochrone problem in a stationary
+Lorentzian manifold.
+
+    A PPENDIX A. A FFINE PARAMETERIZATION OF HORIZONTAL CURVES
+   In this appendix we show that every horizontal curve in a sub-Riemannian man-
+ifold can be obtained as the reparameterization of an affinely parameterized hori-
+zontal curve.
+                NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                         20
+
+   Given two absolutely continuous curves γ : [a, b] 7→ M and µ : [c, d] 7→ M,
+we say that γ is a reparameterization of µ if there exists an absolutely continuous,
+nondecreasing and surjective map σ : [a, b] 7→ [c, d] such that γ = µ ◦ σ. It can be
+proven that in this case γ̇ = (µ̇ ◦ σ) σ̇ almost everywhere.
+Proposition A.1. Let (M, g) be a Riemannian manifold, γ : [a, b] 7→ M an abso-
+lutely continuous curve. Then, there exists a unique pair of absolutely continuous
+maps µ : [0, L] 7→ M and σ : [a, b] 7→ [0, L], with σ nondecreasing and surjective,
+such that g(µ̇(t), µ̇(t)) ≡ 1 almost everywhere on [0, L] and γ = µ ◦ σ.
+Proof. Suppose that the pair µ, σ satisfying the thesis is found; then we obtain
+easily
+                                           Z t
+                                                         1
+(33)                  σ(t) = ℓ(γ|[a,t] ) =     g(γ̇, γ̇) 2 dt.
+                                               a
+Since σ is surjective, this proves the uniqueness of the pair.
+   As to the existence, set L = ℓ(γ) and define σ as in (33). Obviously, σ is
+absolutely continuous, nondecreasing and surjective.
+   Suppose that σ(s) = σ(t) for some s, t ∈ [a, b], with s < t. Then, ℓ(γ|[s,t] ) = 0,
+and therefore γ(s) = γ(t). It follows that there exists a function µ : [0, L] 7→ M
+with µ ◦ σ = γ. The curve µ is Lipschitz continuous, hence absolutely continuous;
+for, if s, t ∈ [0, L], let s1 , t1 ∈ [a, b] be such that σ(s1 ) = s and σ(t1 ) = t. Then,
+dist(µ(s), µ(t)) = dist(γ(s1 ), γ(t1 )) ≤ ℓ(γ|[s1 ,t1 ] ) = |σ(s1 ) − σ(t1 )| = |s − t|.
+We are left with the proof that g(µ̇, µ̇) ≡ 1 almost everywhere. To see this, let
+t ∈ [0, L] be chosen and let t1 ∈ [a, b] be such that t = σ(t1 ). Then, we have:
+               Z t
+                             1
+(34)               g(µ̇, µ̇) 2 dr = ℓ(µ|[0,t] ) = ℓ(γ|[a,t1 ] ) = σ(t1 ) = t.
+                0
+The conclusion follows by differentiating (34) with respect to t.                     
+Lemma A.2. Let M be a smooth manifold and D ⊂ T M be a smooth distri-
+bution. Let µ : [a, b] 7→ M be an absolutely continuous curve; if µ admits a
+reparameterization which is horizontal, then µ is horizontal.
+Proof. Let σ : [c, d] 7→ [a, b] an absolutely continuous nondecreasing surjective
+map with γ = µ ◦ σ horizontal. Define:
+             n                                                           o
+        X = t ∈ [c, d] : the equality γ̇(t) = µ̇(σ(t))σ̇(t) fails to hold ,
+             n                      o
+        Y = t ∈ [c, d] : σ̇(t) = 0 .
+Clearly, µ is horizontal outside σ(X ∪ Y ); to conclude the proof it suffices to show
+that σ(X ∪ Y ) has null measure. To see this, observe that X has null measure and
+therefore σ(X) has null measure. Moreover, since σ̇ = 0 in Y , it is not difficult to
+show that σ(Y ) has null measure, and we are done.                                  
+Corollary A.3. Let (M, D, g) be a sub-Riemannian manifold and γ a horizontal
+curve in M. Then, γ is the reparameterization of a unique horizontal curve µ :
+[0, L] 7→ M such that g(µ̇, µ̇) ≡ 1 almost everywhere.
+               NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                     21
+
+Proof. Let g be any Riemannian extension of g and apply Proposition A.1. The
+curve µ thus obtained is horizontal by Lemma A.2.                         
+
+         A PPENDIX B. L OCAL MINIMALITY OF NORMAL GEODESICS
+   The aim of this section is to prove that a sufficiently small segment of a sub-
+Riemannian normal geodesic is a distance minimizer between an initial submani-
+fold and a point. We will simply adapt the proof of local optimality presented in
+[9, Appendix C].
+Proposition B.1. Let (M, D, g) be a sub-Riemannian manifold, P ⊂ M a sub-
+manifold and γ : [a, b] 7→ M a normal geodesic with γ(a) ∈ P and such that
+there exists a Hamiltonian lift Γ : [a, b] 7→ T M∗ of γ with Γ(a)|Tγ(a) P = 0. Then,
+for ε > 0 small enough, γ|[a,a+ε] is a length minimizer between P and γ(a + ε).
+Proof. We can assume without loss of generality that g(γ̇, γ̇) = 1. Let S ⊂ M
+be a codimension 1 submanifold containing a neighborhood of γ(a) in P and such
+that Γ(a)|Tγ(a) S = 0. The existence of such a submanifold is easily proved using a
+coordinate system in M adapted   to P around γ(a). Observe that, by Remark 5.3,
+we have g−1 Γ(a)|D , Γ(a)|D = 1.
+    Let λ : S 7→ TM∗ be a 1-form in M along S such that λ(x)|Tx S = 0,
+g −1  λ(x)|D , λ(x)|D = 1 for all x ∈ S and such that λ(γ(a)) = Γ(a). Let U ⊂ S
+be a sufficiently small open subset containing γ(a) and let ε > 0 be sufficiently
+small. Consider the map Φ : ] a − ε, a + ε [×U 7→ T M∗ such that t 7→ Φ(t, x) is a
+solution of the sub-Riemannian Hamiltonian H defined in (7) and Φ(a, x) = λ(x)
+for all x ∈ U . Let F = π ◦ Φ, where π : T M∗ 7→ M is the projection.
+By Remark 5.3, Γ(a)(γ̇(a)) = 1, which implies that Tγ(a) M = Tγ(a) S⊕(IRγ̇(a)).
+It follows easily that the differential of F at (a, γ(a)) is an isomorphism, and by
+the Inverse Function Theorem, by possibly passing to smaller ε and U , F is a
+diffeomorphism between ] a − ε, a + ε [×U and an open neighborhood V of γ(a)
+in M. By possibly taking a smaller V , we can assume that V ∩ P ⊂ S.
+    We define a vector field X, a 1-form λ and a smooth map τ on V by setting:
+                                         d                       
+       τ F (t, x) = t, X F (t, x) =           F (t, x), λ F (t, x) = Φ(t, x),
+                                           dt
+for all (t, x) ∈ ] a − ε, a + ε [×U . Since H ◦ Φ does not depend on t, it follows
+easily that
+                                               
+(35)                             g−1 λ|D , λ|D = 1.
+   We prove next that λ = dτ . To this aim, let ΨX denote the flow of X, defined on
+an open subset of IR × V ; for s ∈ IR we set ΨsX = ΨX (s, ·). Clearly, t 7→ F (t, x)
+is an integral curve of X, and therefore we have τ ◦ ΨsX = s + τ , hence dτ is
+invariant by the flow of X, i.e.,
+                                (ΨsX )∗ (dτ ) = dτ.
+We show that λ is also invariant by the flow of X; the equality λ = dτ will follow
+from the fact that these two 1-forms coincide on S. For the invariance of λ, we
+                 NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                            22
+
+argue as follows: let x ∈ U , v0 ∈ Tx M and v(t) = dΨt−a            X (x)[v0 ]; it suffices to
+prove that λ(F (t, x))(v(t)) is constant in t.
+   In local coordinates q = (q1 , . . . , qn ), v satisfies the following linear differential
+equation:
+                                      dv       ∂X
+(36)                                       =        (v).
+                                       dt       ∂q
+For t ∈ ] − ε, ε[ fixed, let X1 , . . . , Xn−k be an orthonormal frame for D around
+F (t, x); by Remark 5.3 we have Φ(t, x)|D = g(X(F (t, x)), ·), from which it
+follows:
+                                          n−k
+                                          X
+(37)                                 X=         λ(Xi ) Xi .
+                                          i=1
+                             P           2
+From (35) it follows that        i λ(Xi ) = 1, and differentiating this expression we
+obtain:
+                               n−k
+                               X              ∂
+(38)                                 λ(Xi )      (λ(Xi )) = 0.
+                                              ∂q
+                               i=1
+From (37) and (38), it follows:
+                                n−k
+                                   X                
+                            ∂X                   ∂Xi
+(39)                    λ        =    λ(Xi ) λ         .
+                            ∂q                    ∂q
+                                          i=1
+Using the second Hamilton equation in (31), we finally get:
+                                                   
+                        d                      ∂X
+(40)                       λ F (t, x) = −λ             .
+                        dt                       ∂q
+Using (36) and (40) it is easily seen that λ(F (t, x))v(t) is constant in t, and λ is
+invariant by the flow of X.
+   The equality λ = dτ is thus proven, and by (35) we obtain:
+                                               
+(41)                          g−1 dτ |D , dτ |D = 1.
+Let now µ : [a, a + ε] 7→ V be a horizontal curve with µ(a) ∈ P and µ(a + ε) =
+γ(a + ε). Using (41), the length of µ is estimated as follows:
+          Z a+ε            Z a+ε
+  L(µ) =         kµ̇k dt ≥       dτ (µ̇(t)) dt = τ (µ(a + ε)) − τ (µ(a)) = ε =
+             a                  a
+                                        
+                           = L γ|[a,a+ε] .
+This implies that γ|[a,a+ε] is a length minimizer between P and γ(a + ε) among
+all the horizontal curves with image in V . The conclusion of the proof will follow
+from the next Lemma, by possibly considering a smaller ε.                         
+Lemma B.2. Let (M, D, g) be a sub-Riemannian manifold and let V ⊂ M be
+an open subset. Given x ∈ U there exists r > 0 such that every horizontal curve
+µ : [a, b] 7→ M with µ(a) = x and L(µ) < r satisfies µ([a, b]) ⊂ V .
+                  NORMAL EXTREMIZERS IN SUB-RIEMANNIAN MANIFOLDS                                  23
+
+Proof. We compare the sub-Riemannian metric g with the Euclidean metric rela-
+tive to an arbitrary coordinate system around x. Let ϕ : W 7→ W    f be a coordinate
+                                                f
+system in M with x ∈ W , W ⊂ V and W is an open neighborhood of 0 in
+IRn . Let B ⊂ W be the inverse image through ϕ of a closed ball of radius s,
+B[ϕ(x); s] ⊂ W  f . For m ∈ W and v ∈ Tm M, denote by kvke the Euclidean norm
+of the vector dφ(m)[v]. The set of vectors v ∈ D that are tangent to the points of
+B with kvke = 1 form a compact subset of T M, in which the continuous function
+              1
+v 7→ g(v, v) 2 = kvk attains a positive minimum k. Observe that for all v ∈ D
+tangent to some point of B, it is kvk ≥ k · kvke .
+   Take r = ks > 0. If µ : [a, b] 7→ M is a horizontal curve with µ(a) = x
+and µ([a, b]) 6⊂ V , then there exists c ∈ ]a, b [ with µ([a, c] ⊂ B and γ(c) ∈ ∂B.
+Therefore,
+                                                         
+                  L(µ) ≥ L(µ|[a,c] ) ≥ kLe ϕ ◦ µ|[a,c] ≥ ks = r,
+where Le denotes the Euclidean length of a curve. This concludes the proof.                       
+
+                                         R EFERENCES
+ [1] R. Abraham, J. E. Marsden, Foundations of Mechanics, 2nd Edition, Benjamin/Cummings,
+     Advanced Book Program, Reading, Mass., 1978.
+ [2] J.-M. Bismut, Large Deviations and the Malliavin Calculus, Progress in Mathematics,
+     Birkhäuser, Boston - Basel - Stuttgart, 1984.
+ [3] M. do Carmo, Riemannian Geometry, Birkhäuser, Boston, 1992.
+ [4] R. Giambó, F. Giannoni, P. Piccione, Existence, Multiplicity and Regularity for sub-Riemannian
+     Length Minimizers by Variational Methods, preprint 1999.
+ [5] F. Giannoni, P. Piccione, An Existence Theory for Relativistic Brachistochrones in Stationary
+     Spacetimes, J. Math. Phys. 39, vol. 11 (1998), p. 6137–6152.
+ [6] F. Giannoni, P. Piccione, J. A. Verderesi, An Approach to the Relativistic Brachistochrone Prob-
+     lem by sub-Riemannian Geometry, J. Math. Phys. 38, n. 12 (1997), 6367–6381.
+ [7] I. Kishimoto, The Morse Index Theorem for Carnot–Carathéodory Spaces, J. Math. Kyoto
+     Univ. 38, n. 2 (1998), 287–293.
+ [8] S. Lang, Differential Manifolds, Springer-Verlag, Berlin, 1985.
+ [9] W. Liu, H. J. Sussmann, Shortest Paths for sub-Riemannian Metrics of Rank 2 Distributions,
+     Memoirs of the Amer. Math. Soc. 564, 118 (1995).
+[10] R. Montgomery, A Survey of Singular Curves in sub-Riemannian Geometry, J. Dynam. Control
+     Systems 1 (1995), no. 1, 49–90.
+[11] R. Montgomery, Abnormal Minimizers, SIAM J. Control Optim. 32 (1994), no. 6, 1605–1620.
+[12] P. Piccione, D. V. Tausk, On the Banach Differentiable Structure for Sets of Maps on Non
+     Compact Domains, to appear in Nonlinear Analysis: Series A, Theory and Methods.
+
+   D EPARTAMENTO DE M ATEM ÁTICA ,
+   I NSTITUTO DE M ATEM ÁTICA E E STAT ÍSTICA
+   U NIVERSIDADE DE S ÃO PAULO , B RAZIL
+   E-mail address: piccione@ime.usp.br, tausk@ime.usp.br
+   URL: http://www.ime.usp.br/˜piccione,
+          http://www.ime.usp.br/˜tausk
+

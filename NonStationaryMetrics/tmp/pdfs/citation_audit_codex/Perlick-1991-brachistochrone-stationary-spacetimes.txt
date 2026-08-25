@@ -1,0 +1,626 @@
+            The brachistochrone problem in a stationary spacetime
+            V. Perlick
+
+
+            Citation: Journal of Mathematical Physics 32, 3148 (1991); doi: 10.1063/1.529472
+            View online: http://dx.doi.org/10.1063/1.529472
+            View Table of Contents: http://scitation.aip.org/content/aip/journal/jmp/32/11?ver=pdfcov
+            Published by the AIP Publishing
+
+
+            Articles you may be interested in
+            An existence theory for relativistic brachistochrones in stationary space–times
+            J. Math. Phys. 39, 6137 (1998); 10.1063/1.532619
+
+            The multipole structure of stationary spacetimes
+            J. Math. Phys. 24, 1163 (1983); 10.1063/1.525846
+
+            Multipole moments of stationary spacetimes
+            J. Math. Phys. 15, 46 (1974); 10.1063/1.1666501
+
+            Spinor Treatment of Stationary SpaceTimes
+            J. Math. Phys. 11, 3383 (1970); 10.1063/1.1665138
+
+            SpaceTime Correlations in Stationary Isotropic Turbulence
+            Phys. Fluids 1, 462 (1958); 10.1063/1.1724368
+
+
+
+
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+         The brachistochrone                       problem in a stationary                       space-time
+                   V. Perlick
+                   Institut ftir Theoretische Physik der TU Berlin, Sekr. PN 7-1, Hardenbergstrasse 36, IO00 Berlin 12,
+                   Germany
+                    (Received 14 May 1991; acceptedfor publication 2 July 1991)
+                   In a stationary space-timethe brachistochroneproblem can be formulated in two different
+                   ways, viz., to find the path of shortest travel time with prescribedspecific energy from one
+                   space-pointto another (i) measuredin terms of proper time or (ii) measuredin terms of the
+                   time coordinate distinguished by the stationarity assumption. It is shown that in the static case
+                   both brachistochrone problems can be reducedto geodesicproblems of appropriate
+                   Riemannian three-metrics, in close analogy to the brachistochroneproblem in a Newtonian
+                   potential. In the stationary but nonstatic case,however, this is true only for the proper time
+                   brachistochrones,whereasthe coordinate time brachistochronesare influenced by a sort of
+                   Coriolis force. These results are illustrated by calculating the brachistochronesin Rindler,
+                   Schwarzschild, and Giidel space-times.
+
+
+
+
+         1. INTRODUCTION                                                              context of a stationary Lorentzian space-time,viz., to mini-
+               In 1696, Johann Bernoulli challenged the mathemati-                    mize the travel time (i) measuredin terms of proper time
+         ciansof that time to solve the following problem. “Given two                 and (ii) measured in terms of the global time coordinate
+         points A and B in a vertical plane, to find for the movable                  distinguished by the stationarity assumption. It is the main
+         particleM the path AM& descendingalong which by its own                      goal of this article to discuss the different features of these
+         gravity, and beginning to be urged from the point A, it may in               two types of brachistochrones,and to illustrate the general
+         the shortest time reach the point B.” Here, the gravitational                results by a couple of examples.
+         field is assumed to be homogeneous,and friction is to be                          This article is meant as an extension and, in part, as a
+         ignored.This is called the brachimchrone problem, derived                    correction of two earlier articles4s5on relativistical brachis-
+         from the Greek brachistos ( = shortest) and chronos                          tochrone problems. Goldstein and Bender4 determinedthe
+          ( = time), and it is very well known nowadaysthat the solu-                 brachistochronesin a homogeneousNewtonian gravitation-
+         tion curve is a cycloid. Johann Bernoulli himself found this                 al field taking the special relativistical mass increaseof the
+         solution by an optical analogy, whereasJakob Bernoulli, in                   test particle into account. Such a transplantation of Newto-
+         responseof his brother’s challenge,provided a detailed ana-                  nian gravity into specialrelativity is a little bit unsatisfactory
+         lytical solution. (Newton, Leibniz, and de 1’Hospital sub-                   since gravity is not treated in a Lorentz covariant manner.
+         mitted correct solutions, too.) A few decadeslater, Euler                    Kamath’ calculated the brachistochrones in linearized
+         generalizedJakob Bernoulli’s ideas and establishedthe fun-                   Schwarzschildspace-timein isotropic coordinates.Unfortu-
+         damentalsof variational calculus, followed by Lagrangeand                    nately, there is a mistake in his calculations that leads to a
+         others. For this historical reason,the brachistochroneprob-                  wrong differential equation for the brachistochrone. The
+         lem is taken as the starting point in almost all textbooks on                correct equation is given in example 3.3 below.
+         variational calculus. In addition, many textbooks (see,e.g.,                      But, to pave the way for the relativistic problem, let us
+         Forsyth,’ Pars,’ Troutman ) also treat some generalized                      revisit its Newtonian counterpart first.
+         brachistochrone problems, such as: (i) replacing the homo-
+         geneousgravitational field by an arbitrary Newtonian poten-                  II. THE BRACHISTOCHRONE                PROBLEM IN A
+         tial; (ii) taking friction into account; and (iii) letting one               NEWTONIAN POTENTIAL
+         end point (or both) vary along a curve or along a surface.
+               In this article, we are interestedin another version of the                  The brachistochroneproblem in a Newtonian potential
+         brachistochroneproblem. As in the original version, friction                 has been treated extensively in the literature, for various
+         is ignored and the end points are kept fixed, but the homoge-                types of potentials (see,e.g.,Denman and earlier references
+         neousNewtonian gravitational field is replacedwith a time-                   given therein). It is the purposeof this section to give a pre-
+         independent(but otherwise arbitrary) gravitational field ac-                 sentation that may serveas a guide for the relativistic prob-
+         cording to general relativity. In other words, we are going to               lem to be given in Sec.III below. Special emphasisis put on
+         treat the brachistochrone problem in a stationary Lorent-                    the reduction of the brachistochroneproblem to the geodesic
+         zian space-time.This is a somewhatacademicproblem, ad-                       problem of an appropriately defined Riemannian metric.
+         mittedly, in view of applications. (Someremarks on possible                        Let V: U-+ W be a C m function on someopen subsetUof
+         applications are given in Sec. IV below.) Nonetheless, a                     R3, to be interpreted as Newtonian gravitational potential,
+          thorough treatment of this problem is an instructive exercise               i.e., the force acting on a particle of mass m is assumedto be
+          to illustrate some theoretical aspectsof general relativity.                 - m grad V. We fix a real number C and define
+         There are two different brachistochrone problems in the                            UC: = bdfl       V(a) CC}.                                    (1)
+         3148        J. Math. Phys. 32 (1 l), November 1991          0022-2488/91/l   13148-10$03.00         @ 1991 American Institute of Physics        3148
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+        We fix two points a, and a, in Uc and consider all C”                             h, =2(C-       v>(dx2+dy2+d2)                        (7)
+        curves r: [ 0, T ] + Uc such that                                            on U,. Along each such free fall trajectory, time c corre-
+             r(O) = aI, r(T) = a,,                                          (2)      sponds to ho-arc length, with hc given by (6).
+             jli(t)12 + v(r(t)) = C for all &[O,T].                (3)                    Comparison of Proposition 2.1 and Proposition 2.2
+                                                                                     shows that the brachistochrones of specific energy C in the
+         (Here, the length Tof the time interval is not fixed.) Let us               potential V geometrically coincide with the free fall trajec-
+        denote this set of curves by Y ( C,a, ,a, ) momentarily. Each                tories of specific energy z in the potential
+        curve in x( C,a, ,a, ) may be interpreted as the trajectory of
+        a particle of mass m, moving from a, to a, with a constant                        j%z-gc-           0-1,                               (8)
+        energy mC. Thus the particle is influenced by the gravita-                   at least locally. (The restriction to local considerations may
+        tional force - m grad Vand, possibly, by additional forces                   be dropped if we agree to give the name “brachistochrone”
+        which only change the direction but not the speed of the                     to any curve of stationary travel time, not only to a curve of
+        motion. We may think of such additional forces as constraint                 minimal travel time,) By (4), the speedv in the brachistoch-
+        forces supplied by a frictionless slide. Note that (3) deter-                rone problem is related to the speed ii in the corresponding
+        mines the speed u = Ii(t) ] as a function of the position                    free fall problem by vp = 1; cf. Forsyth,’ p. 44, Exercise 6.
+        a = r(f), viz.,                                                                   Let us illustrate these general results by a couple of ex-
+             v2 = 2(C - V(a)).                                                       amples before proceeding to the relativistical problem.
+                                                                  (4)
+                                                                                          Example 2. I: The homogeneous gravitational field. In
+       In particular, all the curves in X( C,a, ,a, ) have the same                  this first example, we want to see how Bernoulli’s classical
+       initial speed, v,,* = 2(C- V(a, )).                                           brachistochrone problem fits into our geometrical setting.
+             The curve r&?( C,a, ,a2) that has minimal T is called                   To that end we have to consider the potential V(x,v,z) = Kx
+       the brachistochrone of specific energy ( = energy divided by                  on U = B3, with K denoting a real constant. Let us calculate
+       mass) C from a, to a, in the potential V. The existence of                    the brachistochrones for particles releasedfrom rest at some
+       such a curve is, of course, not guaranteed, even if we exclude                level x = x0, which are brachistochrones of specific energy
+       the trivial case Y/( C,a, ,a2) = 0.                                           C = Kx, . By Proposition 2.1, these are the geodesicsof the
+             We are now ready to show that the brachistochrones are                  metric
+       the geodesicsof an appropriately defined Riemannian met-
+       ric. Each element r&Y ( C,a, ,a2) satisfies (3 ), which can be                     h iux, = (dx2 + dy2 + &)/2K(x,       - x)              (9)
+       rewritten as                                                                   on the half-space
+             Ii(r) 12/[2C- 2V(r(t))]        = 1.                            (5)                                                              (10)
+                                                                                          u,, = {(X,Y,4EIlg31X<X,~.
+       Thus time t is arc length with respect to the metric                          Owing to the symmetry of the problem, we may restrict our
+             h, = (dx* + d’+         &)/2(C-         v),                    (6)      considerations to the x-y plane; there, the arc-length-para-
+       which is, indeed, a (positive definite) Riemannian metric on                  metrized geodesicsof the metric (9) are determined by the
+       U,. Consequently, the curve of minimal T in the set                           following two constants of motion:
+       X( C,a, ,a, ) is the curve of minimal h,-arc length in this                        (i2 +Y)/2K(x,    -x> = 1                           (11)
+       set. Since any smooth curve from a, to a2 in U, can be                              y/(x0   -x)    = k.                                          (12)
+       reparametrized to give a curve in X( C,a, ,a2), this proves
+       the following proposition.                                                    With initial conditions x( 0) = x,, andy(0) = 0, integration
+            Proposition 2. I: The brachistochrones of specific energy                of (11) and (12) yields
+       C in the Newtonian potential Vare the minimal geodesicsof                           x(t) =x,, + k -2K(~~~(kt)           - l),
+       the metric h,, defined by (6) on U,. Along each such bra-                          y(t) = k - *K(kt - sin( kt)),                        (13)
+       chistochrone, time c corresponds to hc-arc length.
+            In particular, there is a brachistochrone of specific ener-              with t ranging from 0 to 2a-/] k I. Figure 1 shows these maxi-
+       gy C from a, EU= to a,&, if and only if there is a minimal                    mal geodesicsissuing from the point (x,,O>dU,,          which
+       h,-geodesic from a1 to a*. Note that U, is the domain where                   are, of course, the familiar cycloids.
+       particles with specific energy C have a velocity different                          According to our general results, the same curves are
+       from zero, and the boundary r3U, C U is the domain where                      traced out by freely falling particles with specific energy
+       such particles are at rest. Thus any h,-geodesic that reaches                 ?! = 0 in the potential v(x,y,z) = - +K - ‘(x0 - x) - ‘.
+       the boundary G’U, C U within finite h,-arc length (in the                     Along such free fall trajectories, time t is arc length with
+       senseof a limit process) may be interpreted as brachistoch-                   respect to the metric h, = 2K(x, - x) (dx2 + dy* + &?).
+       rone for particles releasedfrom rest at the corresponding                          Example 2.2: The Kepler potential. As our next exam-
+       boundary point.                                                               ple               choose       the       Kepler      potential
+            For the sake of comparison, let us recall Jacobi’s version                V(x,y,z)w=e - M(X2 + y + 2) - l’* on U = R’\{O], with
+       of Maupertuis’ principle of least action (cf., e.g., Arnold,’ p.              M denoting a positive constant. We want to determine the
+       247).                                                                         brachistochrones for particles releasedfrom rest at some dis-
+            Proposition 2.2 (MaupertuisJacobi):    A particle of mass                tance r,, from the origin, which are brachistochrones of spe-
+       m moving with energy mC under the influence of a force                        cific energy C = - M/r,. Thus we have to calculate the
+        - m grad Yalone, traces out a geodesicof the Jacobi metric                   geodesicsof the metric
+
+        3149        J. Math. Phys., Vol. 32, No. 11, November 1991                                                                         V. Perlick     3149
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+                                                         X
+
+
+
+
+                                                                                      FIG. 2. In the Kepler potential the brachistochrones of specific energy
+                                                                                      C= 0 issuing from (X = m,y= 0,z= 0) do not cover all of
+                                                                                      u, = R’ - (01.
+
+
+
+        FIG. 1. In an homogeneous Newtonian gravitational field the classical bra-
+        chistochrones (cycloids) of specific energy C= Kx, issuing from the point          Example 2.3: The centrifugal potential. Finally, we ap-
+        0 = x,,,~ = 0,~ = 0) cover the half-space - CO<x <x0 completely with-        ply our results to a problem that was treated, among others,
+        out cut points.                                                              by McKinley,8 viz., to the brachistochrone problem in the
+                                                                                     potential V(x,y,z) = - a* (x2 + 3) on U, = W3,with w de-
+                                                                                     noting a real constant. This is equivalent to the brachistoch-
+                                                                                     rone problem in a reference frame rotating with constant
+                                 dx* f dy* + d22                                     angular velocity w about the z axis of an inertial system. [As
+              h-                                                           (14)      a matter of fact, in such a reference frame, there are two
+                   M’r, = 2M((x2 +y +2) -*‘*-r,               -I)
+                                                                                     forces acting upon particles, viz. (i) the centrifugal force
+         in the punctured ball 0 <x2 + 3 + 2 < r, 2. Without loss of                 which can be derived from the above given potentiah and
+        generality we restrict our considerations to the x-y-plane;                  (ii ) the Coriolis force which is perpendicular to the velocity
+        there, the arc length parametrized geodesicsof the metric                    and, thus, irrelevant for the brachistochrone problem. ] Let
+        ( 14) are determined, in polar coordinates, by the following                 us calculate the brachistochrones for particles releasedfrom
+        two constants of motion.                                                     rest at a distance r, from thez axis, i.e., the brachistochrones
+              (f2+r2Q)2)/2M(r     -‘-roe’)    = 1,              (15)                 of specific energy C = - 02r02. These are the geodesicsof
+              r*@/(r-*-row*)=k.                                            (16)      the metric
+       In general, the integration of ( 15) and ( 16) leads to an ellip-                  h, = (dx* + dy* + d22)/202(x2            + 3 - r02)    (19)
+       tic integral. In the limiting case r,, = CQ(i.e., C = 0), how-                in the region x2 + 3 > r, 2. In cylindrical polars ( r,p,z) , the
+       ever, the integral can be evaluated elementarily. With initial                geodesicsof the metric ( 19) are determined by the following
+       conditions r( - co) = co and pp( - 00) = 0, the solution                      three constants of motion:
+       curves are
+                                                                                          (i2+r2Q,2+i2)/2u2(r2-r02)           = 1,               (201
+              r(t) = (( 1/2M)(k2       + 9M2t2))“3,
+                                                                                          r*+/(r’-ro2)         =k,                                      (21)
+              p(t) = $ arccot(3Mr/k),                                      (17)          i/(r * - r,*) = b.                                   c22r
+       with t ranging from - COto + ~0; see Fig. 2. If we are                        Let us restrict, for simplicity, to the geodesicsin the z = 0
+       interested only in the geometrical shape of the brachistoch-                  plane, which are easily found by integrating ( 20) and (2 1) .
+       rone (and not in its time parametrization), we may eliminate                  If we go back to Cartesian coordinates, the solution curves
+       t from ( 17), which results in                                                with initial conditionsx(0) = r, andy(0) = 0 read
+            r3sin2(3e,/2) =k*.                                 (18)                       x(t) = r, cos(kt)       cos(dmt)
+       Along each maximal geodesicwith k # 0, the azimuthal an-
+       gle (p ranges over an interval of length 27~/3.Thus there are                                -t (rok/dm)               sin(kt) sin(J),
+        pairs (a, ,a2) of points in U, = R3\{O) that cannot be                       y(t) = r, sin(kt) cos(,/ni)
+       joined by a C = 0 brachistochrone. In such a case, T is still
+       bounded from below on X( C,a, ,a, ), but it does not attain                             - (r,k/dw)               cos(kt) sin(dmt);
+       its greatest lower bound.                                                                                                                       (23)
+
+       3150         J. Math. Phys., Vol. 32, No. 1 I, November 1991                                                                    V. Perlick      3150
+
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+      see Fig. 3. In the case k 2> 2w2 the time parameter t ranges                    i.e., a C m Lorentzian manifold (M,g) with a timelike Killing
+      from 0 to 7r(k ’ - 2w2) - “2; the curve (23), which is an                       vector field W. The flow lines of Wmay be viewed as world-
+      epicycZoidin this case,returns to r = r,, after reaching a max-                 lines of a distinguished family of observers.Let us assume,in
+      imal t. In the case k 2 < 2w2 (23) should be rewritten using                    addition, that (M,g, W) is regular in the sensethat it admits a
+      the identities - i sin(iu> = sinh u and cos(iu) = cash u; t                     globally well-defined 3 + 1 decomposition adapted to W,
+      ranges from 0 to co in this case, and the radial coordinate                     that is, a global C m diffeomorphism
+      increasesmonotonically from r, to infinity. In the borderline                          (7rJ):M-t u XR,
+      casek’ = 2w2, the Bernoulli-l’HGspita1 rule should be ap-
+      plied to (23), (l/u) sin(ut) +t for u-+0; the curve (23)                                   P--MP),t(P)),                                         (24)
+      traces out the involute of the circle of radius r, in this case.                such that dt( IV) = 1 and Trr( IV) = 0 (dt is the exterior de-
+      Figure 3 clearly shows that thesegeodesicsare not free of cut                   rivative of t, and Tn- is the tangent map of v). The three-
+      paints; thus not all of them give a brachistochrone in the                      dimensional manifold U may be identified with the set of
+      strict sensemeaning a curve of minimum travel time.                             flow lines of W. The same symbol U was used in Sec. II for
+            Incidentally, the calculations presented in this example                  the subset of R3, where the potential V was defined. Quite
+      also apply to the brachistochrone problem in a (two-dimen-                      generally we will use the same symbols in the relativistical as
+      sional)      harmonic       oscillator    potential      U&Y>                   in the Newtonian caseto emphasize analogies. In the relati-
+       = K 2(x2 + y2). We only have to replace the negative con-                      vistical case, U is, of course, an arbitrary three-dimensional
+      stant - w2 with a positive constant K2. With this replace-                      manifold and not necessarily an open subset of R3.
+      ment, (23) gives the brachistochrones of specific energy                             Since W is a timelike Killing field, we can define a scalar
+      C = K 2r,,2 on the disc x2 + 3 < r02; these are hypocycloids;                   fiel V, a one-form @,and a Riemannian metric h on U by
+      cf. Refs. 6 and 8.
+                                                                                          g(W,W)=:-e*“‘“,                                              (25)
+      III. THE BRACHISTOCHRONE                  PROBLEM IN A
+      STATIONARY SPACE-TIME                                                               g(w,.)/g(W,W)          -dt=:r*qb,                            (26)
+          Keeping the results of Sec. II in mind, we turn now to                          g-   k(w,.)     @g(w,.)]/g(w,w)          =:n=h.              (27)
+      general relativity. Let us consider a stationary space-time,
+                                                                                      (The star* denotes the pullback of covariant tensor fields.)
+                                                                                      Our global regularity assumption assuresthat the stationary
+                                                                                      space-time model (M,g, IV) can be uniquely (up to isome-
+                                                                                      tries, of course) reconstructed from the three-geometry
+                                                                                      ( U,h, V,qb); in terms of these three-dimensional quantities,
+                                                                                      the space-time metric g is given as
+                                                                                           g = 7r.h - e21T*  “( a’* + dt)2.                      (28)
+                                                                                      If the reader prefers a coordinate notation, he or she should
+                                                                                      read
+                                                                                           g = h,dx’ d9 - e2”( gi dx’ + dt)2                     (29)
+                                                                                      instead of (28)) with summation over i and j from 1 to 3 to
+                                                                                      be understood, with h,, V, and rji being functions of x1, x2,
+                                                                                      x3. It is, however, not necessaryfor our purpose to assume
+                                                                                      that U admits a global coordinate system (x1,x2,x3).
+                                                                                            Note that the 3 + 1 decomposition (24) is determined
+                                                                                      by (M,g, W) uniquely up to gauge transformations:
+                                                                                            (~,tb-+(~,t + r’u),                                  (30)
+                                                                                      with an arbitrary C m function u: U-+ R. Under such a gauge
+                                                                                      transformation II, changes according to the rule
+                                                                                            $4 - du,                                             (31)
+                                                                                      whereas h and V are gauge invariant. (The name “gauge
+                                                                                      transformation” is taken from an obvious analogy to the Ka-
+                                                                                      luza-Klein version of electromagnetism.) If $ happens to be
+                                                                                      exact, it can be made to zero by an appropriate gauge trans-
+                                                                                      formation, such that, in the resulting gauge, the hypersur-
+                                                                                      faces t = constant are perpendicular to W. This is equiva-
+      FIG. 3. In the centrifugal potential the brachistochrones of specific energy    lent, at least locally, to the flow lines of W being
+      C = - 02r0* issuing from (x = r,,y = 0) cover the area r> r,, . There are
+                                                                                      irrotational, i.e., to the static case.More generally, the rota-
+      various cut points. The brachistochrones with k2 > 20’ are epicycloids, i.e.,
+      they return to r E r,. The brachistochrones with k “(20~ spiral on and on to    tion ( = vorticity) of this preferred congruence of world-
+      r= Q).                                                                          lines is given by the two-form r* (e”d$), whereas its proper
+
+      3151         J. Math. Phys., Vol. 32, No. 11, November 1991                                                                        V. Perlick     3151
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+           acceleration is given by the one-form IT’(d v) . Note that ex-
+           pansion and shear of this congruence vanish since W is a
+                                                                                                        W
+           Killing field.
+                 Let us consider a C rr,curve y:I-+ M with g ( i,i) = - 1,                               t
+           where I is a real interval and y:I+ TM denotes the tangent
+           field along y. This is interpreted as the worldline of a particle
+                                                                                                                               M
+           parametrized by proper time. The four-velocity ; may be
+           decomposedinto components perpendicular and parallel to
+            W, respectively, viz.,
+                  i=&jl’=jL+              k(w,j~/g(K~lw.                      (32)
+                                                                                           P/
+           In the referenceframe defined by W, the speedv of the parti-
+           cle is given by
+
+                  v2 = g(&jt)/      - g(j”,j”)   = 1 - g( W,w>/g( w,k)‘.
+                                                                      (33)
+
+           along y. Note that timelike vectors satisfy the “wrong way
+           Schwarz inequality” such that (33) implies O<u2.c 1. (We                     FIG. 4. The set X(C,a, ,u2 ) of “trial paths” for the relativistic brachis-
+           use units making c = 1 throughout.) Geometrically, v may                     tochrone problem is composed of timelike curves in M. Their projections to
+           be visualized by the pseudo-Euclidean angle ,B between y                     U join o, and uz.
+           and W,cosh2p= (1 -u’)-*.
+                If the rest mass of the particle is m, its four-momentum
+           is given by the one-form m g( i,.) along y. With respect to
+           our preferred reference frame, this four-momentum can be                     In particular, all curves in X ( C,al ,a2 ) have the sameinitial
+           decomposedinto three-momentum and energy, the latter be-                     sped, vo2 = 1 - e2(v(0t) - c)+, i.e., they hit the integral curve
+           ing given by                                                                 of Wrepresented by a, at the same angle.
+                                                                       (34)                  Now the following two brachistochrone problems can
+                E= -mg(i,W
+                                                                                        be formulated.
+           along y. Note that B> 0 if yis assumedto be future pointing                       (i) Find the curve FX( C,a, ,a, ) that has minimal T
+           with respect to W. The Killing property of W immediately                     (“arrival as young as possible”). Its projection VJ y to U is
+           implies that E is constant along y for any geodesicy, i.e., for              called the 4rachistochrone of specific energy ec from a, to
+           any freely falling particle. It is the validity of this conserva-            a, in the regular stationary space-time (M,g, W) .
+           tion law that permits a formulation of the brachistochrone                        (ii) Find the curve yEx( C,a, ,a, ) that has minimal
+           problem completely analogous to the Newtonian case. We                       t(r( Y’)) ( “arrival as early as possible”). Its projection 7py to
+           are now ready to present this formulation.                                   Uis called the t-brachistochrone of specific energy e’from a,
+                Let us fix a real number C, and define                                  to a, in the regular stationary space-time (M,g, W) .
+                U,: = {aEU 1V(a) <Cl.                                  (35)                  Let us consider the r-brachistochrone problem iirst.
+           Then, let us fix two points a, and a, in U,, and denote by                   This can be reduced to a geodesic problem, similar to the
+           X( C,a, ,a2 ) the set of all C m curves y: [ 0, 7-J-+Msuch that              Newtonian case,in the following way. Ifwe use the represen-
+                                                                                        tation (28) of the space-time metric g, (36) and (39) imply
+               g(&r),&r))      = - 1, for all nz[O,T],                 (36)
+                                                                                                h((noy)‘(~),(rroy)‘(7))/(e2C-2”“(y”’)’            - 1) = 1
+                  4y(O)) = a,,       t(y(O)) = 0,                             (37)                                                               (41)
+                  n(y(T))=a,,                                                 (38)      for all pyEx( C,a, ,a, ). This shows that along the projected
+                  g(i(7-),Wy(rj)= - eC, for all 7~[0,T].              (39)              curve nay proper time r is arc length with respect to the
+           The length T of the time interval is, of course, not fixed,                  metric
+           Equation (36) expresses the fact that all curves                                     h, = h /(ezcc-      v, - I),                      (42)
+           rGY( C,al ,a2 ) are timelike and parametrized by proper                      which is, indeed, a (positive definite) Riemannian metric on
+           time. Equation (37) says that they all start simultaneously                   U,. This proves the following relativistical analog of Propo-
+           at the space-point a,, whereas (38) saysthat they ail arrive,                sition 2.1.
+           sooner or later, at the space-point a, ; see Fig. 4. Equation                     Proposition 3.1: For a regular stationary space-time
+           (39) is the relativistical analog of (3); it says that y may be              (M,g, w> with three-geometry ( U,h, V&L), the r-brachis-
+           interpreted as the worldline of a particle with rest mass m                  tochrones of specific energy ec are the minimal geodesicsof
+           whose energy (34) in the preferred reference frame is given                  the metric h,-, defined by (42) on Uc. Along each such bra-
+           by the constant E = met. Similarly to the Newtonian case,                    chistochrone, proper time r coincides with h,-arc length,
+           this energy condition implies a relation between speed u [in                      Note that li(ldoes not enter into the metric h, at all. In
+           the senseof ( 33) ] and position aeU, viz.,                                  this sense,the rotation of the distinguished reference frame
+                  v2 = 1 -e2w’a’    -c)                                                 has no influence on the r-brachistochrones. This is closely
+                                                                              (4-O)
+
+           3152         J. Math. Phys., Vol. 32, No. 11, November 1991                                                                      V. Perlick        3152
+
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+     related to the fact, mentioned in Example 2.3 above, that, in
+     Newtonian theory, the Coriolis force has no influence on the                       ~CG)
+                                                                                          =I.:’ [ &&>,k(~))                     - $4&s))] ds         (48)
+     brachistochrones.
+          As for the t-brachistochrones, things are a little bit more             stationary with respect to variations keeping the end points
+     complicated. Here, we have to minimize the quantity                          fixed. Here, the metric h, is defined by
+                                                                                       i, = (e-2v- ew2=)h.                               (49)
+          t(r(T)) = pmd,                                                (43)      Along each such free fall trajectory, proper time is h,-arc
+                            0
+
+     for @Y( C,a, ,a, ). By (28) and (39), the integrand can be                   length, with h, given by (42).
+     rewritten as                                                                      Comparison of Propositions 3.1,3.2, and 3.3 shows that
+                                                                                  the brachistochrone problem in any stationary space-time is
+         d&r))    = ec-Z”(rr(y(r))) - 7J~((*y)‘(r)).       (4.4)                  equivalent to the free fall problem in some other stationary
+     On the other hand, any y&Y( C,a, ,a, ) satisfies (41). This                  space-time. More specifically, the t-brachistochrones of spe-
+     inserted into (44) gives                                                     cific energy ec in the three-geometry ( U,h, V,$) coincide
+                                                                                  geometrically with the free fall trajectories of specific energy
+          dt(i(d)    = Jj;,((?roy)‘(r),(~oy).(r))                                 e’ in the three-geometry ( U,h,F,$), where vis given by
+                     - tM(7J-v)‘(r)),                                   (45)           e -27 =e -2-c+e2C-2V/(e2C-2v-          1).
+                                                                                                                                              (50)
+     where we introduced the new Riemannian metric
+                                                                                  Similarly, the r-brachistochrones of specific energy ec in the
+        if,: = ,2c-4vhc =e==-4vh/(e2C--v-    1)                   (46)            three-geometry ( U,h, V,?,b) coincide geometrically with the
+     on U, . Insertion of ( 45 ) into (43 ) yields the following prop-            free fall trajectories of specific energy e’ in the three-geome-
+     osition.                                                                     try ( U,h,F,$ = 0), where Fis given by
+          Proposition 3.2: Let (M,g, W) be a regular stationary                             -27        -273+   (e2c-2v-   1)   --I
+                                                                                        e         =e
+     space-time with three-geometry ( U,h, F’,$). Then a curve 6:
+     [s, ,s, ] + U is a t-brachistochrone of specific energy ec if                 this time.
+     and only if 4 minimizes the functional                                             Another interesting comparison concerns the limit
+                                                                                   C+ 03. Since
+          3&,=r [a&~,,&,)
+                       - tiW]ds,
+                      Jr,
+                                                                        (47)            A, =fi,         =e-2vh,                                       (52)
+
+     with respect to variations keeping the end points fixed.                      t-brachistochrones and free fall trajectories coincide in this
+     Along each such r-brachistochrone, proper time r coincides                    limit case, which, by (40), corresponds to particles moving
+     with h,-arc length, with h, given by (42).                                    at the speedof light. Proposition 3.3. gives Fermat ‘sprinciple
+           If q is exact (i.e., in the static case), the t-brachistoch-            in this limit case,and the metric (52) is properly called Fer-
+     rones are the &geodesics. In the rotating case,however, the                   mat metric” or optical reference geometry.‘* (For Fermat’s
+     t-brachistochrones are influenced by a sort of Coriolis force,                principle in space-times without stationarity assumption,
+     which causesa t-brachistochrone from a, EU~ to a,EU, to                       the reader is referred to Ref. 13.) As for the metric h, and,
+     trace out a different path than a t-brachistochrone of the                    thus, for the r-brachistochrones the limit C-+ 03 is nonsensi-
+     same specific energy ec from a2 to a,. This dependenceon                      cal. This is in correspondencewith the fact that “proper time
+     rotation is the most distinguishing feature in comparison to                  stands still along lightlike curves.”
+     the r-brachistochrones.                                                             Propositions 3.1 and 3.2 show that t-brachistochrones
+           It is interesting to note that the variational functional               and r-brachistochrones coincide geometrically if and only if
+     (47) has the same mathematical structure as that for a                        Ic,is exact and V is constant, i.e., if and only if the preferred
+     charged particle moving in a magnetostatic field d$ on a                      referenceframe is irrotational and freely falling. In any other
+     curved background ( U,h, ) . Thus the t-brachistochrones                      case, t-brachistochrones and r-brachistochrones are differ-
+     are the solution curves of a sort of Lorentz force equation if                ent. Let us assume, however, that in some region of U both
+     they are reparametrized by &-arc length. (In general, this                    the rotation and the proper acceleration of the preferred ob-
+     parameter gives neither t-travel time nor r-travel time.) It is               servers ( = flow lines of IV) are very small. In this region, t-
+     helpful to keep this analogy in mind, which reflects the fa-                  brachistochrones and r-brachistochrones of specific energy
+     miliar similarity of Coriolis and Lorentz force, since it im-                 ec differ but little if C is close to the value of V (which, by
+     plies several characteristic features of the t-brachistochrones               assumption, is nearly constant). By (40)) this condition as-
+      (e.g., their gauge invariance).                                              sures that the particle moves at a speed small compared to
+           For the sake of comparison, let us recall the relativistical            that of light. This line of thought can be made into a rigour-
+     counterpart of Proposition 2.2, i.e., Maupertuis’ principle                   ous argument to show that T-brachistochrones and t-bra-
+     for stationary space-times. For the static case, this dates                   chistochrones have the same Newtonian limit.
+     back to Levi-Civita9 and Weyl.”                                                     Finally, let us illustrate these general results by some
+           Proposition 3.3: Let (M,g, W) be a regular stationary                   examples.
+     space-time with three-geometry ( U,h, V,q). Then, a curve <:                        Example 3.1: Rindler’s model. Let us consider the
+      [s, ,s2] -t U is the trajectory of a freely falling particle with            three-geometry
+     specific energy ec if and only if 6 makes the functional                               u= kw,z)ER31x>o~,                                         (53)
+
+      3153         J. Math. Phys., Vol. 32, No. 11, November 1991                                                                        V. Perlick     3153
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+                h = dx* + dJ + dt,                                          (54)
+                V= lnx,                                                     (55)
+              $ = 0,                                                        (56)
+          which correspondsto the space-timemetric
+                g=dx2+dy2+d2-x2dt2                                          (57)
+          onM= UxRThemap
+                (x,y,z,t)-(X =x cash t,jj=y,S=z,?= xsinh t) (58)
+          givesan isometric embeddingof this model into Minkowski
+          space.Thus we are dealing with flat space-timeviewed fror
+          an acceleratedreferenceframe W = 8 /at. Here, (M,g, WI is
+          known as Rindler’s model; seeRefs. 14 and 15 for more de-
+          tails.
+               Let us calculate the r-brachistochronesfor particles re-
+          leasedfrom rest at some height x0 > 0, i.e., the r-brachis-
+          tochrones of specific energy ec = x0. By Proposition 3.1,
+          theseare the geodesicsof the metric
+                h, = (x2/(xo2 - x2))(dx2 + dfl f d2)                        (59)
+          on UC = C(x,y,z)~iR~(O<x <x0}. In the x-y plane, they are
+          determinedby the following two constants of motion:                          FIG. 5. In Rindler space-time the r-brachistochrones of specific energy
+                                                                                       ec = x,, issuing from the point (X = x,,y = 0,~ = 0) cover only part of the
+              (x*/(x,* -X2))(i2+y)    = 1,                    (60)                     region 0 < x <x0. For k -, 0 their maximal distance from the x axis shrinks
+                                                                                       to zero. The figure clearly shows the existenceof cut points,
+                x2j/(xo2 - x2) = k.                                         (61)
+         Here, the dot meansderivative with respectto he-arc length
+         or, what is the same,with respectto proper time. If this curve
+         parameteris eliminated from (60) and (61), the geometrical
+         shapeof the corresponding geodesicis determined by the
+         following elliptic integral:
+               dy= t,/mdx/,/(l+k                -2)x2-x02           (62)
+          Figure 5 shows the solution curves issuing from the bound-
+         ary point (x0 ,O). Qualitatively, they differ from the classical
+         brachistochrones of Fig. 1 in two respects.First, there are
+         cut points, i.e., not all h,-geodesics given in Fig. 5 are bra-
+         chistochronesin the strict sensemeaning curves of minimal
+         travel time. Second, their range in y direction is bounded;
+         thus there are pairs (a, ,a2 ) of points in UC that cannot be
+         joined by an h, geodesic.For such pairs the travel time T is
+         still bounded from below on X( C,a, ,a2), but it does not
+         attain its greatest lower bound.
+               Let us turn to the t-brachistochrones,i.e., to the geode-
+         sics of the metric
+               i;, = [xo2/x2(xo* -x*)](dx’+dyZ+diL).               (63)
+         A derivation analogousto that of (62) now yields
+         dy = t kx,/mdx/&o                  2 - k 2x2(xo ’ - x2),          (64)
+         which, again, is an elliptic integral. The solution curves issu-
+         ing from the boundary point (x0,0) are sketched in Fig. 6.
+         Unlike the r-brachistochronesof Fig. 5, they reach any point
+         in UC and they are free of cut points. But then they display a
+         new feature, namely, an equilibrium level at x = x,/d.                       FIG. 6. In Rindler space-time the r-brachistochrones of specific energy
+         There are also &,-geodesics that never leave the region                      ec = X, issuing from the point (X = x,,y = 0,~ = 0) cover the region
+                                                                                      0 <x <x0 completely without cut points. As long ask ’> 4/x,‘, they return
+         0 < x < x0 /ti (dashed lines in Fig. 6). They alone survive in               to x = x0. For k * < 4/x,,‘, however, they terminate at x = 0. The borderline
+         the limit C- CO(i.e., x0 -* 03), which gives the t-brachis-                  brachistochrones with k * = 4/xoz approach x = x,/v’2 asymptotically,
+         tochronesand, at the same time, the free fall trajectories for               The figure also shows some brachistochrones of the same specific energy
+         lightlike particles. The corresponding limit geometry                        ec = x0 that never reach the region x&2 < x < x,, (dashed curves).
+
+         3154        J. Math. Phys., Vol. 32, No. 11, November 1991                                                                         V. Perlick       3154
+
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+     ( U, ,h m ) is PoincarC’shalf-space; the i; m -geodesicsare half
+     circles hitting the x = 0 plane perpendicularly; cf. Ref. 11,
+     Example A.2.
+          If we restrict our considerations to a sufficiently small
+     region x,, - Ax <x <x0, both the r-brachistochrones of Fig.
+     5 and the t-brachistochrones of Fig. 6 differ arbitrarily little
+     from the Newtonian brachistochrones (cycloids) of Fig. 1.
+     To prove this analytically, we substitute
+          w = 1 - x/x,                                          (65)
+     for x. Since (40) here takes the special form v2 = 1 - x2/x, *
+     w is related to the speed v by
+           w= 1 -&7=p+o(v4).                                            (66)
+     Thus small w corresponds to small v. In the coordinates w, y,
+     z, the metrics (59) and (63) may be rewritten as
+           h, = (1 + O(w)) [ (Xo%WZ+ dy2 + &)/2w]                       (67)
+     and
+                                                                                   FIG. 7. In Schwarzschild space-time the T-brachistochrones of specific en-
+           j;c=Xo-*(1+O(W))[(X~*d~*+dy*+dZ2)/2~],                                  ergy ec = 1 issuing asymptotically from (x = 00g = 0,~ = 0) all return to
+                                                                        (68)       r = 00 after passing through a minimal distance from the center. For large
+                                                                                   values of k ’ they remain in the region r) 2M and differ but little from the
+     respectively, whereas the same substitution (65) puts the                     classical brachistochrones in the Kepler potential; cf. Fig. 2.
+     metric (9) for the Newtonian brachistochrones into the
+     form
+          h, = K%) -‘[(x0 *dw2+dy2+dz2)/2w].                     (69)                  As for the t-brachistochrones, we have to turn to the
+     If the O(w) terms are neglected, the three metrics (67)-                      metric
+     (69) differ only by constant factors. In this approximation                       I; = (1 -2M/r)-‘dr2+r2df12
+     their geodesicscoincide geometrically, and the correspond-                          0                                              (75)
+                                                                                                 (2M/r) (1 - 2M/r)        .
+     ing arc lengths are affinely related. In other words, the differ-
+     ence in parametrization can be removed by an appropriate                      Instead of (74)) this leads to
+     readjustment of time units.
+          Example 3.2: Schwarzschild space-time. Now let us                                              fJ;;du
+                                                                                         dq =                                                            (76)
+     turn to the relativistical counterpart of Example 2.2, viz., to                            \/4M*k-*+u4-u3’
+     the Schwarzschild metric
+          g= (1 -2M/r)-‘dr2+rZdiY-                 (1 -2M/r)dt2,                   which, again, is an hyperelliptic integral. The solution
+                                                                         (70)      curves are sketched in Fig. 8. In a rough sense,Fig. 8 looks
+                                                                                   like a rolled-up version of Fig. 6, whereas Fig. 7 looks like a
+     with ds1* = sin* t? ds, * + dt? *. Let us restrict to the C = 0               rolled-up version of Fig. 5.
+     case, i.e., to particles at rest at infinity, as we did in the                     In a region of sufficiently large r, rg2M, both the r-
+     Kepler problem. By Proposition 3.1, the r-brachistochrones                    brachistochrones of Fig. 7 and the t-brachistochrones of Fig.
+     of specific energy ec = 1 are the geodesicsof the metric                      8 differ arbitrarily little from the Newtonian brachistoch-
+          h = (1-2M/r)-‘dr*+r*df-l*                                                rones in the Kepler potential; see Fig. 2. To prove this ana-
+            0                                                   (71)               lytically, the corresponding calculation at the end of Exam-
+                     (1-22M/r)-‘-1
+     on U,, which is the region where 2il4 < r < 00. In the equa-                  ple 3.1 may serve as a guideline.
+     torial plane ?9= 7r/2, they are determined by the following                        Example 3.3: Kamath’s brachistochrone problem. As
+                                                                                   already mentioned in the Introduction, Kamath’ consid-
+     two constants of motion:
+                                                                                   ered the brachistochrone problem in the metric
+           (1 -2M/r)-‘~2+r2Q,2=1
+                                                                         (72)           g = ( 1 + 2M/r) (dr * $- r * da*) - ( 1 - 2M/r)dt*,
+                 (l-2M/r)-‘-          1          ’                                                                                                       (77)
+                      r2@
+                                          k                              (73)       which is the linearized Schwarzschild metric in isotropic
+           (l--M/r)-‘-        l=                                                    form. More specifically, he calculated what we call the
+      If we substitute u = 2&f/r for r, (72) and (73) imply                         t-brachistochrones with C = 0 for this metric. According to
+                                                                                    our general results, these are the geodesicsof the metric
+           dp=                   fJ;;du
+                                                                         (74)            i; = (1+2M/r)(dr*+r*dCl*)
+                    Jr,/4M*k          -*( I-    u) - u3 ’                                 0                                                              (78)
+                                                                                                  (2&f/r) (1 - 2M/r)        *
+      which is an hyperelliptic integral. Figure 7 gives an idea how                In the equatorial plane ti = r/2, their geometrical shape is
+      the solution curves look like.                                                determined by
+
+      3155         J. Math. Phys., Vol. 32, No. 11, November 1991                                                                        V. Perlick     3155
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+                                                                                         sentation due to Kundt, i6 the three-geometryof this model
+                                                                                         is given by
+                                                                                             u= c(x,Y?d~~3(x>oh                                          (83)
+                                                                                             h = (dx* + d$)/2w,        ‘x2 + dt,                         (841
+                                                                                             v= 0,                                                       (85)
+                                                                                             z,h= dy/oox,                                                (863
+                                                                                         where w. denotesa positive real number. The r-brachistoch-
+                                                                                         ronesof specificenergyec ( C> 0, necessarily) are the geode-
+                                                                                         sics of the metric
+                                                                                              h, = (ezc-- l)-‘((dx2+d~)/2w02~+d~)               (87)
+                                                                                         on U, = U. In the x-y half plane they trace out the half
+                                                                                         circles
+                     /
+                                                                                             x*-f- (y-yo)*=k         -*,                                 (88)
+                 /
+                                                                                         where y,& and k&t are integration constants. Equation
+          FIG. 8. In Schwarzschild space-time the t-brachistochronesof specific en-      (88) gives the well-known geodesics of Poincar& half-
+          ergy ec = 1 issuing asymptotically from (x = 00,y = 0,~ = 0) cover the re-     plane; C is irrelevant for the geometrical shapesof the r-
+          gion r> ZMcompletely, with lots of cut points. For k * 7 &‘: = 44(2P~f)‘//3~   brachistochrones,but brachistochronesof different C have,
+          they return to r = CQ.For k * = /co2they approach the sphereat r = 8&f/3       of course, different proper time parametrizations.
+          asymptotically spiraling on and on forever. For kZ < b2 they terminate at          The t-brachistochrones, on the other hand, are easily
+          r = 2M. The figure also shows some brachistochrones of the same specific
+          energy that never reach the region r> 8M/3 (dashed curves).                    determinedfrom Proposition 3.2. In thex-y half-plane,the r-
+                                                                                         brachistochronesof specific energy ec trace out the circles
+                                                                                              (y-ye)*+      (X-xo)2=j(l       -e-2c)-‘xo*         (89)
+                                                                                         in a counterclockwise sense,where yo& and x0& + are
+                                                                                         integration constants.Proper time is given by arc length with
+                                                                                         respect to the metric (87). Similarly, by Proposition 3.3,
+                                                            (79)                         freely falling particles with specific energy ec trace out the
+                                                                                         circles
+          Following Kamath’s calculations, however, this equation
+          should read                                                                         (y-yo)2+      (x-x0)*=1(1       -e-2c)xo2           (90)
+                                                                                         in a counterclockwise sense.Note that (89) and (90) coin-
+                                     &k     -2r5 ( 1 + y)*(l       -$y.                  cide in the limit C- CO,where they give the paths of light
+                                                                              (80)       rays in the x-y haff-plane (cf., e.g., Ref. 11, exampleA.5 ).
+          [This is Eq. (9”) in Ref. 5, adapted to our choice of units
+          making c = G = I. ] Clearly, there is a discrepancyby a fac-                   IV. CONCLUDING REMARKS
+          tor ( 1 + 2M/r) between (79) and (80). As a matter of fact,                          As mentioned in the Introduction, the motivation of this
+          this is due to a mistake in Kamath’s derivation. In his Eq.                    article was to illustrate some theoretical aspects of general
+          (3) the symbol v is used for the particle velocity in the sense                relativity. Nonetheless,it would be nice to have a practical
+          of                                                                             application. The usual interpretation of the energy condition
+                                                                                          [i.e., Eq. (3 ) in the Newtonian and Eq. ( 39) in the relativis-
+                                                                                         tical case] is to think of a particle guided by a fiictionless
+          In his Eq. (4)) however, v is used for                                         slide. With this interpretation in mind, there is hardly a real-
+                                                                                         istic situation imaginable where general relativistic effects
+                                                                               (82)      play any role. But the samecondition is satisfied as well by a
+                                                                                         rocket equipped with jet nozzles for steering but moving
+          The incorrect equation (80) results upon equating thesetwo                     without propulsion. Our results also apply to this situation,
+          different v’s.                                                                 provided that the mass loss due to the stream of exhaust
+               As we have seenin Example 3.2 above,the brachistoch-                      gasesis negligible. This is still a rather academic situation,
+          rone problem in the Schwarzschild metric is not more com-                      but this reinterpretation indicates that our calculations
+          plicated than that in the linearized metric (77). Kamath’s                     might serve as a preparatory exercisefor the following, less
+          remarks, at the end of Ref. 5, on technical difficulties with                  academic, problem. To find for a rocket, equipped with jet
+          the Schwarzschild metric (and with its linearized version in                   nozzles for propulsion and for manuevering, the flight path
+          Schwarzschild coordinates) are based on his above-men-                         of shortest (proper) time in a stationary space-time; with
+          tioned error.                                                                  starting point and arrival point prescribedin the three-space
+               Exampie 3.4: Giidel’s cosmos. Let us conclude with a                      of the stationary space-time;with a given fuel supply; and
+          rotating example, namely, with Godel’s cosmos. In a repre-                     with the mass loss taken into account. This, ,of course, is no
+
+          3156           J. Math. Phys., Vol. 32, No. 11, November 1991                                                                   V. Perlick      3156
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+       longer a simple exercise in variational calculus such as our                   4H. F. Goldstein and C. M. Bender, J. Math. Phys. 27, 507 ( 1985).
+       brachistochrone problem but rather an optimal control                          ‘S. G. Kamath, J. Math. Phys. 29, 2268 ( 1988).
+                                                                                      6H. H. Denman, Am. J. Phys. 53,224 (1985).
+       problem. (Efflux velocity and mass act as control func-                        ‘V. I. Arnold, Mathematical Methods of Classical Mechanics (Springer,
+       tions.) In Newtonian theory, problems like that are very                         New York, 1978).
+       well known (see, e.g., Athans and Falb,” Chap. 6), and a                       s J. M. McKinley, Am. J. Phys. 47,81 ( 1979).
+       relativistic formulation should be possible, using some ideas                  9 T. Levi-Civitl, Rend. R. Accad. Lint. 26,464 ( 1917).
+                                                                                     ‘OH. Weyl, Ann. Phys. 54, 117 (1917).
+       of this article as a guide. (For referenceson relativistic rock-              ” V. Perlick, Class. Quant. Grav. 7, 1849 (1990).
+       et theory, the reader is referred to the detailed bibliograph-                ‘*M. A. Abramovitz, B. Carter, and J. P. Lasota, Gen. Rel. Gravit. 20,1173
+       ical notes in Ref. 18, p. 234).                                                 (1988).
+                                                                                     13V. Perlick, Class. Quant. Gravit. 7, 1319 (1990).
+                                                                                     “W. Rindler, Am. J. Phys. 34, 1174 ( 1966).
+        ’A. R. Forsyth, Calculus of Variations (Dover, New York, 1960).              “W. Rindler, Essential Relativity (Springer, New York, 1977).
+        ’ L. A. Pars, An Introduction to the Calculus of Variations (Heinemann,      l6 W. Kundt, 2. Phys. 145,611 (1956).
+         London, 1962).                                                              “M Athans and P. Falb, Optimal Control (McGraw-Hill, New York,
+        3J. L. Troutman, Variational Calculus with Elementary Convexity (Spring-       19ti6).
+         er, New York, 1983).                                                        “H. Arzelies, Relativistic Point Dynamics (Pergamon, Oxford, 1972).
+
+
+
+
+       3157         J. Math. Phys., Vol. 32, No. 11, November 1991                                                                        V. Perlick     3157
+This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to IP:
+                                                           165.123.34.86 On: Wed, 21 Jan 2015 16:36:33
+

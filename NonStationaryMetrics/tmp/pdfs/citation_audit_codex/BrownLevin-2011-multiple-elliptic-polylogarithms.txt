@@ -1,0 +1,2360 @@
+                                                           MULTIPLE ELLIPTIC POLYLOGARITHMS
+
+                                                                      FRANCIS BROWN AND ANDREY LEVIN
+
+
+
+
+arXiv:1110.6917v2 [math.NT] 20 Jun 2013
+                                                  Abstract. We study the de Rham fundamental group of the configuration space
+                                                  E (n) of n + 1 marked points on a complex elliptic curve E, and define multiple
+                                                  elliptic polylogarithms. These are multivalued functions on E (n) with unipotent
+                                                  monodromy, and are constructed by a general averaging procedure. We show
+                                                  that all iterated integrals on E (n) , and in particular the periods of the unipotent
+                                                  fundamental group of the punctured curve E\{0}, can be expressed in terms of
+                                                  these functions.
+
+
+
+
+                                                                                     1. Introduction
+                                          1.1. Motivation. Iterated integrals on the moduli space M0,n of curves of genus 0
+                                          with n ordered marked points can be expressed in terms of multiple polylogarithms.
+                                          These are defined for n1 , . . . , nr ∈ N by
+                                                                                             X          xk11 . . . xkr r
+                                          (1.1)      Lin1 ,...,nr (x1 , . . . , xr ) =                                     where |xi | < 1 ,
+                                                                                                        k1n1 . . . krnr
+                                                                                         0<k1 <...<kr
+
+                                          and have many applications from arithmetic geometry to quantum field theory. By
+                                          specializing (1.1) at xi = 1, one obtains the multiple zeta values
+                                                                                         X          1
+                                          (1.2)                    ζ(n1 , . . . , nr ) =                      ,
+                                                                                              k1n1 . . . krnr
+                                                                                              0<k1 <...<kr
+
+                                          which converges for nr ≥ 2. These are of particular interest since they are the periods
+                                          of the fundamental group of P1 \{0, 1, ∞}, and generate the periods of all mixed Tate
+                                          motives over Z.
+                                              The goal of this paper is to construct the elliptic analogues of the multiple poly-
+                                          logarithms and to set up the necessary algebraic and analytic background required to
+                                          study multiple elliptic zeta values. The former are iterated integrals on the configu-
+                                          ration space E (n) of n + 1 marked points on a complex elliptic curve, i.e., the fiber of
+                                          the map M1,n+1 → M1,1 , where M1,m denotes the moduli space of curves of genus
+                                          1 with m marked points. They generalize the classical elliptic polylogarithms studied
+                                          in [13], and are the universal periods of unipotent variations of mixed elliptic Hodge
+                                          structures.
+                                              In a sequel to this paper, we shall study the multiple elliptic zeta values, obtained
+                                          by specializing multiple elliptic polylogarithms to the zero section of the universal
+                                          elliptic curve. They define multivalued functions on M1,1 which degenerate to ordinary
+                                          multiple zeta values at the cusp. The existence of these functions sheds light on
+                                          the structural relations between ordinary multiple zeta values, and in particular, the
+                                          relation between double zetas and period polynomials for cusp forms [9].
+
+                                          1.2. The rational case. Firstly we recall the definition of iterated integrals [6]. Let
+                                          M be a smooth real manifold, and let ω1 , . . . , ωn denote smooth 1-forms on M . Let
+                                                                                                 1
+2                             FRANCIS BROWN AND ANDREY LEVIN
+
+
+γ : [0, 1] → M be a smooth path, and write γ ∗ ωi = fi (t)dt for some smooth functions
+fi : [0, 1] → R, where 1 ≤ i ≤ n. The iterated integral of ω1 , . . . , ωn is defined by
+                 Z               Z
+(1.3)              ω1 . . . ωn =             f1 (t1 ) . . . fn (tn ) dt1 . . . dtn .
+                 γ                    0≤tn ≤...≤t1 ≤1
+
+Now let M = P1 \{0, 1, ∞}, and let ω0 = dz                          dz
+                                                   z and ω1 = 1−z . Let 0 < z < 1, and denote
+the straight path from 0 to z by γz . The initial point γ(0) does not in fact lie in M ,
+but the following iterated integral still makes sense nonetheless, and gives
+                Z
+(1.4)               ω0 . . . ω0 ω1 . . . ω0 . . . ω0 ω1 = Lin1 ,...,nr (1, . . . , 1, z) .
+                 γz | {z }               | {z }
+                         nr −1              n1 −1
+
+This is easily proved by a series expansion of the forms ω1 . The periods of the fun-
+damental torsor of paths of M from 0 to 1 (with tangential basepoints 1, −1), are
+obtained by taking the limit as z → 1. In the case nr ≥ 2, this yields
+                    Z 1
+(1.5)                   ω0 . . . ω0 ω1 . . . ω0 . . . ω0 ω1 = ζ(n1 , . . . , nr ) ,
+                     0 | {z }                | {z }
+                              nr −1             n1 −1
+
+as first observed by Kontsevich. Similarly, one can define the regularized iterated
+integral from 0 to 1 of any word in the one-forms ω0 , ω1 , and in every case, it is easy
+to show that it is a linear combination of multiple zeta values.
+   To verify that all (homotopy invariant) iterated integrals on M are expressible in
+terms of multiple polylogarithms requires Chen’s reduced bar construction. By Chen’s
+general theory, the iterated integrals on a manifold M are described by the zeroth
+cohomology of the bar construction on the de Rham complex of M . To write this
+down explicitly for M = P1 \{0, 1, ∞}, we can use the rational model
+                        Q ⊕ (Q ω0 ⊕ Q ω1 ) ֒→ Ω·DR (P1 \{0, 1, ∞}; Q)
+which is a quasi-isomorphism of differential graded algebras. From this one deduces
+that H 0 (B(Ω·DR (P1 \{0, 1, ∞}; Q))) ∼
+                                      = T c(Q ω0 ⊕ Q ω1 ), where B is the bar complex,
+       c
+and T denotes the tensor coalgebra. This is the Q-vector space generated by words
+in the forms ω0 , ω1 (equipped with the shuffle product and the coproduct for which
+ω0 , ω1 are primitive), and leads to integrals of the form (1.5). The upshot is that the
+periods of the unipotent fundamental groupoid π1un (P1 \{0, 1, ∞}, 0+, z) are multiple
+polylogarithms (1.4), and the periods of π1un (P1 \{0, 1, ∞}, 0+, 1− ) are multiple zetas
+(1.2).
+   We need to generalize this picture to higher dimensions as follows. For r ≥ 1, let
+(1.6)                M0,r+3 (C) = {(t1 , . . . , tr ) ∈ Cr : ti 6= 0, 1 , ti 6= tj }
+denote the moduli space of genus 0 curves with r + 3 marked points. One can likewise
+write down a rational model for the de Rham complex in terms of the one-forms
+                                      dti − dtj    dti     dti
+                                                ,        ,
+                                       ti − tj    1 − ti    ti
+which satisfy certain quadratic relations due to Arnold. Forgetting a marked point
+defines a fibration M0,r+3 → M0,r+2 , and by general properties of the bar construction
+of fibrations, one can likewise write down all homotopy invariant iterated integrals on
+M0,r+3 [4] and show that they are expressible in terms of the functions
+                                                                  t1       tr−1 
+(1.7)               In1 ,...,nr (t1 , . . . , tr ) = Lin1 ,...,nr    ,...,     , tr .
+                                                                  t2        tr
+                          MULTIPLE ELLIPTIC POLYLOGARITHMS                                   3
+
+
+   The purpose of this paper is to generalize the above picture for P1 \{0, 1, ∞} to the
+case of a punctured complex elliptic curve E × . In particular, we compute the periods
+of π1un (E × , ̺, ξ), where ρ, ξ ∈ E × are finite basepoints (the case of tangential basepoints
+is similar and will be postponed to a later paper). There are two parts: first, to write
+down the iterated integrals generalizing the left hand side of (1.4) using Chen’s general
+theory, and the second is to construct multiple elliptic polylogarithm functions which
+correspond to the right-hand side of (1.4). In so doing, we are forced to consider the
+higher-dimensional configuration spaces E (n) to construct the functions on E × .
+1.3. The elliptic case. Let E be an elliptic curve, viewed as the analytic manifold
+C/Zτ ⊕ Z, where τ ∈ C satisfies Im (τ ) > 0. We first require a model for the de Rham
+complex on E × . For this, we construct a universal family of smooth one-forms
+(1.8)                       ν, ω (0) , ω (1) , ω (2) , . . .   ∈ A1 (E × ) ,
+where ω (0) , ν are closed and form a basis of H 1 (E × ) which is compatible with its Hodge
+structure. The forms ω (i) , i ≥ 1 can be viewed as higher Massey products satisfying
+                             dω (i) = ν ∧ ω (i−1)              for i ≥ 1 .
+                      ×
+Note that a priori E has no natural Q-structure on its de Rham complex. However,
+the forms (1.8) have good modularity and rationality properties as a function of the
+moduli τ , and there are good reasons to take
+                   X = graded Q-algebra spanned by the ν, ω (i) , i ≥ 0
+as a Q-model for the C ∞ -de Rham complex on E × , (indeed, X ⊗Q C ֒→ A· (E × ) is a
+quasi-isomorphism). We also define a higher-dimensional model for the configuration
+space E (n) of n + 1 points on E. It is an elliptic version of Arnold’s theorem describing
+the cohomology of the configuration space of n points in P1 .
+   The next stage is to write down the bar construction of X, which defines a Q-
+structure on the iterated integrals on E × . The bar construction has a filtration by the
+length, and the associated graded is just the tensor coalgebra on ω (0) and ν:
+(1.9)                       grℓ H 0 (B(X)) ∼
+                                           = T c (Q ω (0) ⊕ Q ν) .
+The Massey products ω (i) , for i ≥ 1, give a canonical way to lift an element of (1.9) to
+H 0 (B(X)), and thus enable us to write down explicitly all the iterated integrals on E × .
+These are indexed by any word in the two one-forms ω (0) and ν. The Hodge filtration
+on the space of iterated integrals is related to the number of ν’s. This completes the
+algebraic description of the iterated integrals on E × .
+   The main problem is then to write down explicit formulae for these iterated integrals,
+and for this we write the elliptic curve via its Jacobi uniformization
+                                       E∼= C× /q Z ,
+where q = exp(2πiτ ). In order to construct multivalued functions on E × , the basic
+idea is to average a multivalued function on C× with respect to multiplication by q as
+was done for the classical polylogarithms [2, 13]. However, applying this idea naively
+to the multiple polylogarithms in one variable (1.4) does not lead to elliptic functions.
+Instead, the correct approach is to view the multiple polylogarithms in r variables
+(1.1), or rather their variants (1.7), as multivalued functions on
+                           M0,r+3 ∼=C   ×
+                                            . . × C×} \diagonals
+                                      | × .{z
+                                                       r
+
+and average with respect to the group q × . . . × q Z (r factors). Since polylogarithms
+                                                   Z
+
+have logarithmic singularities at infinity, the straightforward average diverges, and so
+4                          FRANCIS BROWN AND ANDREY LEVIN
+
+
+instead one must take a weighted average with respect to some auxilliary parameters
+ui to dampen the singularities. In short, one considers the functions
+                      X
+(1.10)                       um         mr
+                               1 . . . ur In1 ,...,nr (q
+                                 1                       m1
+                                                            t1 , . . . , q m r tr )
+                    m1 ,...,mr ∈Z
+
+which converge uniformly under some conditions on the ui . A considerable part of this
+paper is devoted to studying the structure of the poles of (1.10) in the ui variables,
+which are related to the geometry of M0,r+3 and the asymptotics of the polylogarithms
+(1.7) at infinity. Finally, writing ui = exp(2iπαi ) for 1 ≤ i ≤ r, the multiple elliptic
+polylogarithms are defined to be the coefficients of (the finite part of) (1.10) with
+respect to the αi . The analysis involved in this averaging procedure is quite general
+and should apply to a class of functions of finite determination and moderate growth
+on certain toric varieties.
+   The functions obtained in this way are multivalued functions on E (n) . By allowing
+some of the arguments ti of (1.10) to degenerate to 1, we obtain multivalued functions
+on E × . By computing the differential equations satisfied by these functions, we see
+that they are iterated integrals in the forms (1.8) and, using the description of the bar
+construction of X, we deduce that all the iterated integrals on E × are of this form.
+   An important caveat is that the rational structure that we define on the de Rham
+fundamental group on E × is the correct Q-structure from the point of view of averaging
+functions in genus zero, but does not coincide with the canonical Q-structure in the
+special case when E is defined over Q (see §5 of [14]).
+
+1.4. Plan of the paper. First, §2 consists of reminders on multiple polylogarithms
+and the moduli space of curves of genus 0 which are used throughout the paper. There-
+after, the exposition splits into two parts - the first part, consisting of sections 3,4, and
+5, concerns the de Rham complex of differential forms on E (n) . The second, consisting
+of sections 6, 7 and 8, concerns the procedure for averaging multiple polylogarithms.
+Since this is quite involved, we give a separate overview of the method in §6.1.
+   In §3 we use the Kronecker series (Proposition-Definition 4) to define the fundamen-
+tal one-forms (1.8). In §4, we define some differential graded algebras Xn and prove
+by a Leray spectral sequence argument that they are Q-models for the de Rham com-
+plex on E (n) . In §5 we use the models Xn to study Chen’s reduced bar construction
+on E (n) , and hence obtain an algebraic description for the iterated integrals on E (n) .
+Some of the results of this section require some generalities on the bar construction of
+differential graded algebras which we decided to relegate to a separate paper [3].
+   In §6, we study the general averaging procedure for functions on M0,n (C). This re-
+quires constructing a certain partial compactification of M0,n and analyzing the asymp-
+totics of series in the neighbourhood of boundary divisors. We apply this formalism
+to the classical multiple polylogarithms in §7. In §8, which is logically independent
+from the rest of the paper, we compute the asymptotics of the Debye polylogarithms at
+infinity in terms of a certain coproduct. The Debye multiple polylogarithms (definition
+1) are essentially generating series of multiple polylogarithms and are useful for sim-
+plifying many formulae. In §9, we treat the case of the classical elliptic polylogarithms
+(depth 1) and the double elliptic polylogarithms (depth 2) in detail. The two parts
+of the story recombine in §10 where we prove that all iterated integrals on E × , with
+respect to finite basepoints, are obtained by averaging.
+
+1.5. Related work. One of many motivations for this paper is the study of mixed
+elliptic motives. Since the Beilinson-Soulé conjectures are currently unavailable in this
+case, our goal was to tease out the elementary consequences of such a theory, and in
+                               MULTIPLE ELLIPTIC POLYLOGARITHMS                                                                       5
+
+
+particular, write down the underlying numbers and functions in the belief that they
+will find applications in other parts of mathematics. We learned at a conference in
+Bristol in 2011 that there has been recent progress in constructing categories of mixed
+elliptic motives [12, 17], and universal elliptic motives [10] with similar goals. In this
+paper we completely neglected the Betti side, which is dual to the bar construction,
+and its relation to quantum groups and stable derivations. This is treated in [5, 8, 18].
+Somewhat further afield, it may also be helpful to point out related work in the profi-
+nite setting [16], and possible diophantine applications [11].
+
+  Acknowledgements. The first author is partially supported by ERC grant 257368.
+The second author is partially supported by ‘the National Research University Higher
+School of Economics’ academic fund number 11-01-0133 for 2012-2013, and also AG
+Laboratory GU-HSE, RF government grant, ag. 11 11.G34.31.0023. We thank the
+Fondation des Sciences Mathématiques de Paris, the Institut Poncelet in Moscow, the
+MPIM, and Humboldt University for support and hospitality.
+
+                            2. Preliminaries: the rational case
+2.1. Standard coordinates on M0,n+3 . Let M0,n+3 denote the moduli space of
+curves of genus 0 with n + 3 ordered marked points. By placing three of the marked
+points at 0, 1, ∞, it can be identified with an affine hyperplane complement:
+(2.1)                  M0,n+3 ∼
+                              = {(t1 , . . . , tn ) ∈ P1 \{0, 1, ∞} : ti 6= tj } .
+We refer to the coordinates ti as simplicial coordinates. We will often write tn+1 = 1.
+There is a smooth compactification M0,n+3 , such that the complement M0,n+3 \M0,n+3
+is a normal crossing divisor. Its irreducible components are indexed by partitions S ∪T
+of the set of marked points, which we denote by S|T , or, T |S, where S ∩ T = ∅ and
+|S|, |T | ≥ 2. The corresponding divisor is isomorphic to M0,|S|+1 × M0,|T |+1 .
+
+2.2. Multiple polylogarithms. These are defined for n1 , . . . , nr ∈ N by
+                                                                    X            xk11 . . . xkr r
+(2.2)                    Lin1 ,...,nr (x1 , . . . , xr ) =
+                                                                                 k1n1 . . . krnr
+                                                               0<k1 <...<kr
+
+which converges absolutely for |xi | < 1, and therefore defines a family of holomorphic
+functions in the neighbourhood of the origin. We can also write these functions in
+simplicial coordinates, using standard notations:
+                                                                t
+                                                                   1       tr−1 
+(2.3)             In1 ,...,nr (t1 , . . . , tr ) = Lin1 ,...,nr      ,...,     , tr .
+                                                                 t2         tr
+We denote the quantities N = n1 + . . . + nr and r by the weight and the depth,
+respectively. There is an iterated integral representation
+                                                   Z
+                                                                    dσ1          dσN
+(2.4)       In1 ,...,nr (t1 , . . . , tr ) = (−1)r                         ...         ,
+                                                                  σ
+                                                    0≤σ1 ≤...σr ≤1 1 − ρ 1     σN − ρN
+
+where (ρ1 , . . . , ρN ) = (t−1
+                             1 ,0
+                                  n1 −1 −1 n2 −1
+                                       , t2 , 0  , . . . , t−1
+                                                            r ,0
+                                                                 nr −1
+                                                                       ), N = n1 + . . . + nr , and
+ n
+0 denotes a string of n 0’s. This is easily proved by expanding the integrand into
+a geometric series. One can deduce that they extend to multivalued functions on
+M0,n+3 (C) ⊂ (C× )n . The following differential equation is easily verified from (2.2).
+                                         n
+                                         X           t                   t       
+                                                           k                     k
+  (2.5) dI1,...,1 (t1 , . . . , tn ) =         dI1                 − dI1                  I1,...,1 (t1 , . . . , tbk , . . . , tn )
+                                                      tk+1                  tk−1
+                                         k=1
+6                                FRANCIS BROWN AND ANDREY LEVIN
+
+
+where by convention we take dI1 (t1 /0) = 0, tn+1 = 1 and t0 = 0. The differential
+equations for the multiple polylogarithms In1 ,...,nr (t1 , . . . , tr ) in the general case are
+easily computed and left to the reader, since they are not required in the sequel.
+
+Definition 1. The generating series of multiple Debye polylogarithms is:
+                                                            X
+Λr (t1 , . . . , tr ; β1 , . . . , βr ) = t1−β1 . . . t−β
+                                                       r
+                                                          r
+                                                              Im1 ,...,mr (t1 , . . . , tr )β1m1 −1 . . . βrmr −1
+                                                           m1 ,...,mr ≥1
+
+    One easily verifies from dLin (t) = t−1 Lin−1 (t), valid for n ≥ 2, that
+
+                                             dΛ1 (t; β) = t−β dLi1 (t) .
+
+In general, they satisfy a differential equation which is entirely analogous to equation
+(2.5) for the multiple 1-logarithm. Namely, dΛr (t1 , . . , tr ; β1 , . . , βr ) =
+                   r
+                   X            t           
+                                     k
+              =          dΛ1             , βk Λr−1 (t1 , . . , tbk , . . , tr ; β1 , . . , βk + βk+1 , . . , βr )
+                                tk+1
+                   k=1
+                   Xr           t           
+                                     k
+(2.6)         −          dΛ1             , βk Λr−1 (t1 , . . , b
+                                                               tk , . . , tr ; β1 , . . , βk−1 + βk , . . , βr )
+                                tk−1
+                   k=2
+
+where βr+1 = 0, so the last term in the first line is dΛ1 (tr ; βr )Λr−1 (t1 , . . , tr−1 ; β1 , . . , βr−1 ).
+
+2.3. Asymptotics of regular nilpotent connections. Let X be a smooth projec-
+tive complex variety, let D ⊂ X be a simple normal crossing divisor, and let U = X\D.
+Let V ⊂ X be a simply connected open set and let z1 , . . . , zn denote local coordinates
+on V such that V ∩ D = ∪ki=1 {zi = 0}, for some k ≤ n.
+
+Definition 2. Let f be a multivalued holomorphic function on U (i.e. f is holomorphic
+on a covering of U ). We say that f has locally unipotent mondromy (or is locally
+unipotent) on V if it admits a finite expansion:
+                                   X
+(2.7)       f (z1 , . . . , zn ) =     logi1 (z1 ) . . . logik (zk )fI (z1 , . . . , zn ) ,
+                                         I=(i1 ,...,ik )
+
+
+where fI (z1 , . . . , zn ) is holomorphic on V . We say that a multivalued function f on
+X\D is unipotent if it is everywhere locally unipotent.
+
+   The main class of functions which are studied in this paper, and in particular the
+multiple polylogarithms, are unipotent. The expansion (2.7) can be characterized by
+a property that f has ‘moderate’ growth near D (in particular, no poles), and that
+for sufficiently large N , (Mi1 − id) . . . (MiN − id)f = 0 for all i1 , . . . , iN ∈ {1, . . . , k},
+where Mi denotes analytic continuation around a small loop encircling zi = 0.
+
+
+                                  3. Differential forms on E (n)
+3.1. Basic notations. Let e(z) denote the function e(z) = exp(2πiz). In accordance
+with [19], Greek letters ξ and η denote coordinates on C, the letter α will denote
+a formal variable, and τ will denote a point of the upper half-plane H = {τ ∈ C :
+Im (τ ) > 0}. Put z = e(ξ), w = e(η) and q = e(τ ). Then z, w ∈ C∗ , and 0 < |q| < 1.
+                           MULTIPLE ELLIPTIC POLYLOGARITHMS                                                  7
+
+
+3.2. Uniformization. We represent a complex elliptic curve E = C/(τ Z + Z), where
+τ ∈ H, and q = e(τ ), via its Jacobi uniformization
+                                             ∼
+                                         E −→ C∗ /q Z .
+
+Let ξ (resp. z = e(ξ)) denote the coordinate on E (resp. C∗ ). The punctured curve
+E × = E\{0} is isomorphic to C∗ \{q Z }/q Z . For n ≥ 1, let E (n) denote the configuration
+space of n + 1 distinct points on E modulo translation by E. Thus
+
+                  E (n) ∼
+                        = {(ξ1 , . . . , ξn ) ∈ (E\{0})n : ξi 6= ξj for i 6= j} ,
+and has an action of Sn+1 which permutes the marked points. Setting ti = e(ξi ) for
+1 ≤ i ≤ n, and setting tn+1 = 1, gives an isomorphism
+                                                                                               n
+            E (n) ∼
+                  = {(t1 , . . . , tn ) ∈ C∗ , ti ∈
+                                                  / q Z tj for 1 ≤ i < j ≤ n + 1}/q Z .
+
+The set on the right-hand side is the largest open subset of M0,n+3 (C) stable under
+                  n
+translation by q Z . The symmetry group Sn+1 of E (n) can thus be identified with the
+subgroup of Aut(M0,n+3 (C)) ∼    = Sn+3 which fixes the marked points 0 and ∞.
+    In order to fix branches when considering multivalued functions, and to ensure
+convergence when averaging functions on M0,n+3 (C), we must fix certain domains in
+E (n) . Let D be the standard open fundamental domain for Z + τ Z (the parallelogram
+with corners 0, 1, τ, 1 + τ ), and let
+
+(3.1)               U = {(ξ1 , . . . , ξn ) ∈ Dn : Im (ξn ) < . . . < Im (ξ1 )}
+
+3.3. Elliptic functions. Let θ(ξ, τ ) denote “two thirds of the Jacobi triple formula”:
+                                                 ∞
+                                                 Y                   ∞
+                                                                     Y                       θ11 (ξ, τ )
+(3.2)      θ(ξ, τ ) = q 1/12 (z 1/2 − z −1/2 )         (1 − q j z)       (1 − q j z −1 ) =               ,
+                                                 j=1                 j=1
+                                                                                               η(τ )
+
+where θ11 (ξ, τ ) isQthe standard odd elliptic theta function and η(τ ) is the Dedekind
+                     ∞
+η-function q 1/24 j=1 (1 − q j ). Recall from [19] that the Eisenstein summation of a
+double series (am,n )m,n∈Z is defined by:
+
+                        X                                   N
+                                                            X         M
+                                                                      X
+                              e am,n = lim        lim                         am,n
+                                        N →∞ M→∞
+                        m,n                                n=−N m=−M
+
+Define the Eisenstein functions Ej (ξ, τ ) and the Eisenstein series ej (τ ), for j ≥ 1, by
+                              X         1                                  X′      1
+               Ej (ξ, τ ) =       e              ,          ej (τ ) =         e            ,
+                              m,n
+                                  (ξ + m + nτ )j                           m,n
+                                                                               (m +  nτ )j
+
+where ′ means that we omit (m, n) = (0, 0) in the summation.
+
+Lemma 3. It follows from the definitions that for j ≥ 1,
+               ∂                                ∂
+                  Ej (ξ, τ ) = −jEj+1 (ξ, τ ) ,    log(θ(ξ, τ )) = E1 (ξ, τ ),
+               ∂ξ                               ∂ξ
+                         P∞
+and E1 (α, τ ) = 1/α − k=0 ek+1 (τ )αk . The series ej (τ ) vanish for odd indices j.
+
+   The Weierstrass function ℘ is equal to E2 − e2 , and ℘′ = −2E3 . The coefficients of
+                           2
+the Weierstrass equation ℘′ = 4℘3 − g2 ℘ − g3 are given by g2 = 60e4 , g3 = 140e6.
+8                                FRANCIS BROWN AND ANDREY LEVIN
+
+
+3.4. The Kronecker function. See also [13, 14, 20] for further details.
+Proposition-Definition 4. The following three definitions are equivalent:
+                                   θ′ (0)θ(ξ + η)
+      i)     F (ξ, η, τ )    =                    ,
+                                       θ(ξ)θ(η)
+                                                                                                          !
+                                        z      1       X
+     ii)     F (ξ, η, τ )    = −2πi        +       +         (z m wn − z −m w−n )q mn                         ,
+                                      1 − z 1 − w m,n>0
+                                                                      
+                               1         X (−α)j
+    iii)     F (ξ, α, τ )    =   exp −          (Ej (ξ, τ ) − ej (τ )) .
+                               α             j
+                                                j≥1
+
+   The equivalence of (i) and (ii) is proved in [19]. The equivalence of (i) and (iii)
+follows by computing the logarithmic derivative of F , from the relationship between
+E1 and log(θ) (lemma 3), and the Taylor expansion of E1 at a point α. The following
+properties of the Kronecker function F will be important for the sequel.
+Proposition 5. F (ξ, η, τ ) has the following properties:
+  i) Quasi-periodicity with respect to ξ 7→ ξ + 1 and ξ 7→ ξ + τ :
+                 F (ξ + 1, η, τ ) = F (ξ, η, τ )         F (ξ + τ, η, τ ) = w−1 F (ξ, η, τ )
+    ii) The mixed heat equation:
+                                                    ∂F   ∂ 2F
+                                              2πi      =      .
+                                                    ∂τ   ∂ξ∂η
+    iii) The Fay identity:
+F (ξ1 , η1 , τ )F (ξ2 , η2 , τ ) = F (ξ1 , η1 +η2 , τ )F (ξ2 −ξ1 , η2 , τ )+F (ξ2 , η1 +η2 , τ )F (ξ1 −ξ2 , η1 , τ ) .
+Proof. The quasi-periodicity is immediate from the first definition of F . The mixed
+heat equation follows from the second definition of F . The last statement is a conse-
+quence of the third representation of F , and the Fay trisecant equation (see [15]). 
+    The following formula is an easy corollary of iii):
+(3.3)      F (ξ, α1 )F2′ (ξ, α2 ) − F2′ (ξ, α1 )F (ξ, α2 ) = F (ξ, α1 + α2 )(E2 (α1 ) − E2 (α2 )) ,
+where F2′ denotes the derivative of F with respect to its second argument.
+3.5. Massey products on E (n) . We use the Eisenstein-Kronecker series F to write
+down some explicit one-forms on E (n) . First consider a single elliptic curve E × with
+coordinate ξ as above. Write ξ = s + rτ , where r, s ∈ R and τ is fixed, and let ω = dξ
+and ν = 2πidr. The classes [ω], [ν] form a basis for H 1 (E × ; C).
+Lemma 6. The form Ω(ξ; α) = e(αr)F (ξ; α)dξ is invariant under elliptic transfor-
+mations ξ 7→ ξ + τ and ξ 7→ ξ + 1, and satisfies d Ω(ξ; α) = να ∧ Ω(ξ; α).
+Proof. Straightforward calculation using proposition 5i).                                                         
+   We can view Ω(ξ; α) as a generating series of one-forms on E × . Let ξ1 , . . . , ξn denote
+the usual holomorphic coordinates on E × × . . . × E × and set νi = 2iπdri .
+                                                                   (k)
+Definition 7. Let ξ0 = 0 and define one forms ωi,j ∈ A1 (E (n) ) for all 0 ≤ i ≤ j ≤ n
+and k ≥ 0 of type (1, 0) by the generating series:
+                                              X (k)
+(3.4)                        Ω(ξi − ξj ; α) =   ωi,j αk−1 .
+                                                          k≥0
+                              MULTIPLE ELLIPTIC POLYLOGARITHMS                                            9
+
+                        (k)                   (k)                (k)
+   We clearly have ωi,i = 0 and ωi,j + (−1)k ωj,i = 0 for all i, j, k. The leading terms
+ (0)
+ωi,j are equal to dξi − dξj and therefore satisfy the relations:
+                                  (0)         (0)          (0)
+(3.5)                           ωi,j + ωj,k = ωi,k               for all i, j, k .
+                       (k)
+The higher terms ωi,j can be viewed as Massey products via the equation:
+                                 (k+1)                            (k)
+(3.6)                         d ωi,j     = (νi − νj ) ∧ ωi,j for k ≥ 0 ,
+which follows from lemma 6. The Fay identity implies that
+(3.7)       Ω(ξi − ξℓ ; α) ∧ Ω(ξj − ξℓ ; β)               + Ω(ξj − ξi ; β) ∧ Ω(ξi − ξℓ ; α + β)
+                                                          + Ω(ξj − ξℓ ; α + β) ∧ Ω(ξi − ξj ; α)   =   0
+                                                                                        (k)
+which gives rise to infinitely many quadratic relations between the ωi,j . Finally, the
+definition of F shows that the residues of these forms are given by
+                                                           (k)
+(3.8)                                   Resξi =ξj ωi,j = 2iπ δ1k ,
+where δ denotes the Kronecker delta. Now consider the projection E (n) → E (n−1) given
+by (ξ1 , . . . , ξn ) → (ξ1 , . . . , ξn−1 ). Its fibers EFn are isomorphic to the punctured elliptic
+                                                                   (k)
+curve E × \{ξ1 , . . . , ξn−1 } with coordinate ξn . Let ω i,j (resp. ν n ) denote the relative
+                                        (k)                                           (0)
+forms obtained by restricting ωi,j (resp. νn ) to the fiber. Clearly ω n,i = dξn for all i.
+                                                    (k)
+Lemma 8. The 1-forms {ν n , dξn , ω n,i for k ≥ 1, all i} ⊂ A1 (EFn ), and the 2-forms
+                                                    (k)
+(3.9)                {ν n ∧ dξn , ν n ∧ ωn,i for k ≥ 1, all i} ⊂ A2 (EFn )
+are linearly independent over C.
+Proof. Since the ω’s are of type (1, 0) and ν n is not, it follows from (3.8) that the forms
+        (1)             (1)
+dξn , ω n,0 , . . . , ω n,n−1 , ν n are linearly independent. Consider a non-trivial relation
+                                     X              (k)
+                                             ci,k ω n,i = 0 , where ci,k ∈ C ,
+                             0≤i<n, k≤w
+                                              P             (k−1) 
+and w is minimal. Differentiating gives ν n ∧    i,k ci,k ω n,i     = 0, by (3.6). Since ν n
+has a non-zero component of type (0, 1), the wedge product by ν n on (1, 0)-forms is
+                                    P                  (k)
+injective, giving a smaller relation i,k≤w−1 ci,k+1 ωn,i = 0, which is a contradiction.
+The same argument proves that (3.9) are linearly independent.                             
+
+             4. A rational model for the de Rham complex on E (n)
+  We construct a differential graded algebra Xn over Q which is defined by generators
+and quadratic relations, along with a quasi-isomorphism Xn ⊗Q C ֒→ An , where An =
+A• (E (n) ) is the C ∞ -de Rham complex on the configuration space of n + 1 points on E.
+We show that Xn carries a mixed Hodge structure and give a presentation for H • (E (n) )
+which is an elliptic analogue of Arnold’s theorem in the genus 0 case.
+4.1. Differential graded algebras and fibrations. Let k be a field of characteristic
+zero. L
+      Recall that a (positively-graded) DGA over k is a graded-commutative algebra
+A = n≥0 An with a differential d : A → A of degree +1 which satisfies the Leibniz
+rule. It is said to be connected if A0 ∼= k. We shall consider algebras A which are
+either finite-dimensional in each degree, or else carry a second grading (called the
+weight grading) for which they are finite-dimensional in every bidegree.
+10                          FRANCIS BROWN AND ANDREY LEVIN
+
+
+     Let AT be such a DGA with differential dT , and let AB ⊂ AT be a sub-DGA. Define
+(4.1)                                      AF = AT /A≥1
+                                                     B AT ,
+which inherits a differential dF from dT . We call the triple AB , AT , AF a fibration
+if AT is a free AB -module. The indices T, B, F stand for the total space, base, and
+fiber. Now suppose that we are given a splitting iF : AF → AT of A0B -modules. When
+AB , AT , AF is a fibration, the map iF defines an isomorphism of AB -modules:
+                                             L
+(4.2)                    AT ∼= AB ⊗A0 AF =     B
+                                                   Ai ⊗A0 AF ,
+                                                           i≥0         B         B
+
+which does not necessarily respect the differential or algebra structure.
+4.2. The model Xn . We consider the differential graded algebra Xn generated by
+symbols corresponding to the forms considered in §3.5. By abuse of notation, we use
+the same symbol to denote the generators in Xn and their images in An = A• (E (n) ).
+This will be justified when we show that Xn → An is injective (corollary 16).
+Definition 9. Let Xn be the Q-differential graded algebra generated by elements
+                             (k)
+                           ωi,j              for k ≥ 0 and 0 ≤ i ≤ j ≤ n
+                              νi             for 1 ≤ i ≤ n
+in degree 1, modulo the graded-commutative ideal generated by the relations (3.5) and
+                                                                   (0)
+the coefficients of (3.7). The differential is given by dνi = 0, dωi,j = 0, and (3.6) in all
+other cases. It is a simple calculation to check that the differential ideal generated by
+the Fay identity (3.7) is equal to the (usual) ideal it generates.
+                                              +
+  There is an obvious map Xn−1 → Xn . Let Xn−1    be the ideal in Xn generated by the
+                                                                     +
+images of elements of Xn−1 of positive degree, and let XFn = Xn /Xn−1   . Denote the
+             (k)                                                                          (k)
+images of ωi,j and νi under the natural map Xn → XFn by ω i,j and ν i , respectively.
+                                                                                                                    (k)
+Lemma 10. XFn is isomorphic to the Q-differential graded algebra generated by ω n,i
+                                                          (0)              (0)
+and ν n in degree 1, subject to the relations: ω n,i = ωn,j for all i, j; ν n ∧ ν n = 0; and
+                                   (k)        (ℓ)
+(4.3)                         ω n,i ∧ ωn,j = 0               ∀     i, j, k, ℓ .
+                                     (0)                                   (k+1)                 (k)
+The differential is given by d ω n,i = d ν n = 0 and d ω n,i                         = ν n ∧ ω n,i     for k ≥ 1.
+Proof. All the relations are obvious except for (4.3). It follows from the Fay identity
+                                                    +
+(3.7) that Ω(ξn − ξi , α) ∧ Ω(ξn − ξj , β) ≡ 0 mod Xn−1 .                            
+In particular, XFn is concentrated in degrees 0, 1, and 2. Let iFn : XFn → Xn denote
+the splitting of the quotient map Xn → XFn defined by:
+                                                                 (k)             (k)       (k)
+                     iFn (ν n ) = νn               ,   iFn (ωn,i ) = ωn,i − ω0,i .
+4.3. Mixed Hodge structure on Xn . The complex of C ∞ forms on E (n) with log-
+arithmic singularities carries a Hodge and weight filtration. The weight filtration on
+1-foms is concentrated in degrees 1 and 2. But it turns out that there is a refined
+weight filtration on Xn . To define it, set W0 Xn1 = 0 and
+                                             (k)
+                      Wℓ Xn1 = hνi , ωi,j : k < ℓi                 for all             ℓ≥1,
+and extend it by multiplication to Xn . It is well-defined because the relations implied
+by (3.7) are homogeneous for the weight. This filtration is induced by the grading for
+                            (k)
+which νi has weight 1 and ωij has weight k + 1. The Hodge filtration is given by
+                                                             (k)
+                   F 0 Xn1 = Xn1         ⊃     F 1 Xn1 = hωi,j i            ⊃          F 2 Xn1 = 0
+                         MULTIPLE ELLIPTIC POLYLOGARITHMS                               11
+
+
+and extends to Xn in the same way. One easily verifies that this defines a mixed Hodge
+structure on Xn such that d : Xn → Xn is homogeneous for the weight. Likewise XFn
+inherits a mixed Hodge structure which is compatible with the map iFn .
+
+4.4. Quadratic Algebras. We give a sufficient criterion for an algebra defined by
+quadratic relations to be a fibration. We shall only apply this in the case of Xn .
+                                                                                    V
+Definition 11. Let V be a finite dimensional vector space over a field k. Let R ⊆ 2 V
+be a subspace (the space of relations). The associated quadratic algebra is
+                                         V
+                                    Y · = · V /hRi ,
+             V·
+where hRi ⊆      V is the ideal generated by R. We have Y 0 = k, Y 1 = V .
+  Now suppose that VB ⊆ V is a subspace, and let VF = V /VB . Choose a splitting
+                                   V = VB ⊕ VF ,
+                          V2     V2                 V               V         V
+which induces a splitting   V =     VB ⊕(VB ⊗k VF )⊕ 2 VF . Let πF : 2 V → 2 VF
+denote projection onto the last component. Assume that the space of relations splits:
+                                   R = RB ⊕ RF ,
+             V2                               V2                V·
+where RB ⊆        VB , and RF ⊆ (VB ⊗k VF ) ⊕    VF . Let YB· =    VB /hRB i.
+Proposition 12. Suppose that
+                                       V2
+(4.4)                    πF : RF −→      VF is an isomorphism.
+                                                              V
+In this case, the relations RF define the graph of a map α : 2 VF → VB ⊗k VF , where
+                                                V 2
+α = id − πF−1 . Extend α to a map VF⊗2 →            VF → VB ⊗k VF . Consider the two
+different ways of composing α with itself, namely
+          (1)       α⊗idV                   idVB ⊗α                V2
+        α3 : VF⊗3 −→F VB ⊗k VF ⊗k VF −→              VB⊗2 ⊗k VF −→    VB ⊗k VF
+and
+ (2)     idVF ⊗α                                idVB ⊗α           V2
+α3 : VF⊗3 −→     VF ⊗k VB ⊗k VF ∼
+                                = VB ⊗k VF ⊗k VF −→ VB⊗2 ⊗k VF −→    VB ⊗k VF
+satisfy the associativity condition
+                                 (1)    (2)
+(4.5)                           α3 − α3 ∈ RB ⊗k VF .
+Then YB → Y is injective, and a fibration, with fibers YF , where YF0 = k, and YF1 ∼
+                                                                                   = VF ,
+and YFk = 0 for k ≥ 2. Thus there is an isomorphism of YB -modules:
+                          = YB ⊗k YF ∼
+                        Y ∼             = YB ⊕ (YB ⊗k VF ) .
+Proof. There is an obvious natural map
+                               i : YB ⊕ (YB ⊗k VF ) −→ Y .
+We construct an inverse to i by defining by induction a sequence of linear maps
+                         Vn
+                    αn :     VF −→ YBn−1 ⊗k VF        for n ≥ 2 ,
+such that i ◦ αn (ξ) ≡ ξ mod hRi. For this, let α2 be the map α = id − πF−1 defined
+above, and let αn be the map obtained by composing α with itself n − 1 times. By
+the associativity property (4.5), αn is well-defined. It is clear from the definition that
+i ◦ α2 ≡ id mod R, and from this we deduce that i ◦ αn ≡ id mod hRi for all n by
+induction. Now write
+                           Vn      Ln Vi            Vn−i
+                              V = i=0        VB ⊗k         VF .
+12                         FRANCIS BROWN AND ANDREY LEVIN
+
+
+If we set α0 : k → k and α1 : VF → VF to be the identity maps, we deduce a map
+                      Mn
+                           i           Vn
+                  ρ=      πB  ⊗ αn−i :    V −→ YB ⊗k (YB ⊗k VF ) ,
+                       i=0
+       i
+             Vi
+where πB :   VB → YB is the natural map. Since αn (hRi) = 0 for all n, and since
+R = RB ⊕ RF , the map ρ passes to the quotient to define a map
+                                ρ : Y −→ YB ⊕ (YB ⊗k VF )
+which satisfies ρ ◦ i = id by definition and i ◦ ρ is an isomorphism since i ◦ αn ≡ id
+mod hRi. Thus i is an isomorphism.                                                  
+Remark 13. In the previous discussion, we can also replace V with a graded vector
+space which is of finite dimension in every degree, and R by a graded subspace.
+4.5. Structure of Xn . We show that Xn−1 , Xn , XFn is a fibration of DGA’s.
+Lemma 14. There is an isomorphism of graded-commutative algebras
+                          ^
+                     Xn ∼= (Qν1 ⊕ . . . ⊕ Qνn ) ⊗Q Zn ,
+                                                                    (k)
+where Zn is the subalgebra of Xn spanned by the elements ωi,j . Likewise,
+                                    ^
+                              XFn ∼
+                                  = (Qν n ) ⊗Q ZFn ,
+                                                         (k)
+where ZFn is the subalgebra of XFn spanned by ωn,i . Note that these isomorphisms do
+not respect the differential structures on Xn and XFn .
+Proof. All defining relations of Xn have Hodge filtration ≥ 1, so Xn /F 1 Xn is iso-
+morphic to the free graded-commutative algebra spanned by ν1 , . . . , νn . An identical
+argument gives the corresponding isomorphism for XFn .                                
+Lemma 15. The map Xn−1 → Xn is injective, and Xn is a free Xn−1 -module.
+Proof. We must prove that Xn−1 ֒→ Xn and Xn ∼     = Xn−1 ⊗Q XFn as Xn−1 -modules.
+By lemma 14 this is equivalent to showing that Zn−1 ֒→ Zn and Zn ∼   = Zn−1 ⊗Q ZFn as
+Zn−1 -modules. Since Zn is quadratic, it is enough to verify the criteria of proposition
+12. The quadratic relations R are defined by (3.7) and so RF is generated by
+(4.6)     (i, n; α) ∧ (j, n, β) + (j, n; α + β) ∧ (i, j; α) + (j, i; β) ∧ (i, n; α + β) = 0
+                                                                                       (k)    (ℓ)
+where i, j ≤ n − 1 and (i, n; α) denotes Ω(ξi − ξn ; α), etc. Since every term ωn,i ∧ ωn,j
+for k, ℓ ≥ 1 occurs exactly once in the Taylor expansion of the first term of (4.6), the
+condition (4.4) is verified. The cases where k or ℓ = 0 are trivial to check. To verify
+(4.5), apply the identity (4.6) four times to get:
+                                        
+          (i, n; α) ∧ (j, n; β) ∧ (k, n; γ) = (j, i; β) ∧ (k, i; γ) ∧ (i, n; α + β + γ)
+                                            +     (k, j; γ) ∧ (i, j; α) ∧ (j, n; α + β + γ)
+                                            +     (i, k; α) ∧ (j, k, β) ∧ (k, n; α + β + γ)
+Since the right-hand side is antisymmetric, the left hand side clearly does not depend
+on the bracketing, and the analogue of proposition 12 holds in the infinite graded case
+(remark 13), where the grading is given by the weight grading of §4.3.               
+   Let us write AFn = An /A+  n−1 and let φ denote the natural map Xn → An . The
+choice of coordinate ξn on the fiber of E (n) → E (n−1) gives an isomorphism
+(4.7)                          An−1 ⊗A0 AF ∼n−1
+                                                   = An .
+                                                     n
+                                 MULTIPLE ELLIPTIC POLYLOGARITHMS                                                     13
+
+
+Corollary 16. The map φ is injective.
+Proof. By lemma 10, XFn is concentrated in degrees at most two, so it follows from
+lemma 8 that XFn → AFn is injective. The injectivity of X1 → A1 is a special case.
+The lemma follows by induction on n using the previous lemma and (4.7).          
+4.6. Proof that Xn is a model. We now show that φ : Xn ⊗Q C → An is a quasi-
+isomorphism. First we compute H 1 (XFn ) and the Gauss-Manin connection on it.
+Lemma 17. We have H 0 (XFn ) = Q, H k (XFn ) = 0 if k ≥ 2, and
+                                (0)
+                                                        M        (1)     (1)
+   grW  1       ∼                       grW  1       ∼
+     1 H (XFn ) = Q[ν n ] ⊕ Q[ω n,0 ] ,   2 H (XFn ) =        Q[ωn,i − ω n,0 ] ,
+                                                                                       1≤i≤n−1
+
+where H (XFn ) ∼
+         1
+               = grW  1           W  1
+                   1 H (XFn ) ⊕ gr2 H (XFn ).
+
+Proof. For all k ≥ 3, XFkn = 0 and so H k (XFn ) = 0. By (4.3) and ν n ∧ ν n = 0, any
+two-form in XFn can be written
+              X                (k)
+                                       X         (k+1) 
+                 ckn,i ν n ∧ ω n,i = d   ckn,i ω n,i     where ckn,i ∈ Q ,
+                 k,i                                 k,i
+                                                                                    (0)
+so is exact. Thus H (XFn ) = 0 and clearly H 0 (XFn ) ∼
+                             2
+                                                           = XF0n = Q. Since ν and ωn,0
+are closed, it suffices by lemma 10 to consider a one-form
+                      X              (k)
+             η=              ckn,i ω n,i where ckn,i ∈ Q , such that dη = 0 .
+                    k≥1,0≤i<n
+                                          P             k     (k−1) 
+This implies that dη = ν n ∧                 k≥1,0≤i<n cn,i ω n,i     = 0. By lemma 14 we have
+                                              X                    (k−1)
+                                                           ckn,i ωn,i          =0.
+                                          k≥1,0≤i<n
+                       (k)                     (0)
+Since the forms ω n,i , k ≥ 1 and ω n,0 are linearly independent in XFn by lemma 8, and
+        (0)               (0)
+since ω n,n−1 = . . . = ω n,0 , we conclude that the closed forms in XF1n are spanned by
+                   (0)
+                                                   X               (1)
+                                                                                             X
+          ν n , ω n,0 ,          and {η =                  c1n,i ω n,i    such that                    c1n,i = 0} .
+                                                  0≤i<n                                    0≤i<n
+
+This implies the result, along with the definition of the mixed Hodge structure §4.3. 
+   Since Xn is a fibration, we can easily compute the Gauss-Manin connection on
+H 1 (XFn ) (see [3] for further details). It is a priori nilpotent since the weight filtration
+is defined on all of Xn , and satisfies W0 Xn−1 = 0. Explicitly, it is
+                                                              1
+(4.8)                             H 1 (XFn ) →               Xn−1 ⊗Q H 1 (XFn )
+                                 (1)        (1)                          (0)         (0)
+                             ∇[ω n,0 − ωn,i ]        =       νi ⊗ [ωn,0 ] + ωi,0 ⊗ [ν n ]
+                                           (0)
+                                       ∇[ω n,0 ]     =       0
+                                         ∇[ν n ]     =       0
+                     (0)    (0)    (0)
+Using the fact that ωn,i = ωn,0 − ωi,0 , the first line follows from the calculation
+                         (1)      (1)                (1)         (1)       (1)
+                iFn (ω n,i − ω n,0 ) =             ωn,i − ω0,i − ωn,0
+                       (1)       (1)                                     (0)               (0)              (0)
+             d(iFn (ω n,i − ωn,0 ))        =       (νn − νi ) ∧ ωn,i − νi ∧ ωi,0 − νn ∧ ωn,0 ,
+                                                                 (0)             (0)
+                                           =       −νi ∧ ωn,0 − νn ∧ ωi,0 .
+                                                                                                 (0)
+The second and third lines of (4.8) follow from the fact that ωn,0 and νn are exact.
+14                          FRANCIS BROWN AND ANDREY LEVIN
+
+                                          W  1
+Lemma 18. H 1 (φ) : grW  1
+                      · H (XFn ) ⊗Q C → gr· H (AFn ) is an isomorphism.
+
+Proof. The differential graded algebra AFn computes the de Rham cohomology of the
+fiber of the map E (n) → E (n−1) , which is isomorphic to E minus n points. Furthermore,
+it carries a Hodge and weight filtration which induce the corresponding filtrations on
+H 1 (E\{n points}). The Gysin sequence gives:
+                  0 → H 1 (E; C) → H 1 (E\{n points}; C) → C(−1)n−1 → 0 ,
+where the third map is given by the residue. Therefore grW   1        ∼ 1
+                                                         1 H (AFn ) = H (E) and
+             ∼       n−1                                                        (0)
+grW  1
+  2 H (AFn ) = C(−1)     . The lemma follows from the fact that [φ(ν n )], [φ(ω n,0 )] is
+                            (1)
+a basis of H 1 (E) and φ(ω n,i ) has residue 2πi at ξn = ξi , by (3.8).                
+
+Theorem 19. φ : Xn ⊗Q C ֒→ An is a quasi-isomorphism.
+Proof. The case n = 1 follows from the previous lemma. The case n > 1 follows by
+induction by a standard Leray spectral sequence argument. Details are given in [3]. 
+
+  In conclusion, Xn is a model for the de Rham complex on E (n) and provides a
+universal Q-structure on its cohomology.
+
+4.7. A simplified model. Although we shall not use it, one can consider a finitely-
+generated DGA model Yn for the cohomology of a configuration of elliptic curves.
+Definition 20. Let Yn be the commutative graded Q-algebra defined by generators
+ωi , νi for 1 ≤ i ≤ n and ωij for 1 ≤ i ≤ j ≤ n in degree one such that
+(4.9)                                             ωij − ωji     =   0
+                                                    ω i ∧ νi    =   0
+                                        ωij ∧ ωi + ωji ∧ ωj     =   0
+                                        ωij ∧ νi + ωji ∧ νj     =   0
+                          ωiℓ ∧ ωjℓ + ωjℓ ∧ ωij + ωji ∧ ωil     =   0
+and define a differential d : Yn → Yn by dωi = dνi = 0 and
+(4.10)                            dωij = ωi ∧ νj + ωj ∧ νi .
+                                                          (0)             (1)
+     There is a surjective map Xn → Yn which sends ωi,0 to ωi and ωi,j to ωij , νi to νi
+           (k)
+and all ωi,j for k ≥ 2, to zero. We can define a mixed Hodge structure on Yn in the
+same way as for Xn , i.e., ωi , νi have weight one and ωij weight two.
+Theorem 21. The map Xn → Yn is a quasi-isomorphism, i.e., H • (Yn ) ∼
+                                                                    = H • (E (n) ).
+Proof. (Sketch) Follow the steps of the proof that Xn → An is a quasi-isomorphism:
+                            +
+first define YFn to be Yn /Yn−1  and check that it is a fibration. Then apply the Leray
+spectral sequence argument, noting that (4.10) exactly corresponds to the Gauss-Manin
+connection on H 1 (XFn ) ∼= H 1 (YFn ).                                              
+
+   The model Yn kills all higher Massey products in Xn . Since Yn is finitely generated
+it may be useful for explicit implementation of the algebra H • (E (n) ). We have quasi-
+isomorphisms Yn ← ← Xn ֒→ An but note that there is no map from Yn to An .
+
+                 5. Bar construction of the de Rham complex of E (n)
+     The model Xn enables us to put a Q-structure on the bar construction of An .
+                                  MULTIPLE ELLIPTIC POLYLOGARITHMS                                                     15
+
+
+5.1. Reminders on the bar construction. See [7], §1 for further details. Let A be
+a DGA as in §4.1, and further assume that A has an augmentation map ε : A → k. Let
+s : A → A denote the map s(a) = (−1)deg a a. Let A+ = ker ε denote the augmentation
+ideal of A and let T (A+ ) = k ⊕ A+ ⊕ A+⊗2 ⊕ . . . denote the tensor algebra on A+ ,
+where all tensor products are over k. We write the element a1 ⊗ . . . ⊗ an ∈ A⊗n using
+the bar notation [a1 | . . . |an ]. Recall that T (A+ ) is a commutative Hopf algebra for the
+shuffle product (Σ(r, s) denotes the set of r, s shuffles):
+                                                        X
+            [a1 | . . . |ar ] x [ar+1 | . . . |ar+s ] =    ε(σ)[aσ(1) | . . . |aσ(r+s) ] ,
+                                                           σ∈Σ(r,s)
+
+where the sign ε(σ) also depends on the degrees of the ai ’s but is always equal to 1 if
+all ai are of degree 1. The coproduct ∆ : T (A+ ) → T (A+ ) ⊗k T (A+ ) is given by
+                                            r
+                                            X
+                     ∆([a1 | . . . |ar ]) =   [a1 | . . . |ai ] ⊗ [ai+1 | . . . |ar ] .
+                                                   i=1
+The length filtration is the increasing filtration associated to the tensor grading
+                                               M
+                                Fn T (A+ ) =        A+⊗i .
+                                                           0≤i≤n
+
+The bar complex is the double complex with terms (A+⊗p )q (elements of total degree
+q and length p in T (A+ )), and with one differential (−1)p di : (A+⊗p )q → (A+⊗p )q+1 :
+                                      X
+             di ([a1 | . . . |ap ]) =   (−1)i [sa1 | . . . |sai−1 |dai |ai+1 | . . . |ap ]
+                                           1≤i≤p
+
+and a second differential de : (A+⊗p )q → (A+⊗p−1 )q where:
+                                  X
+         de ([a1 | . . . |ap ]) =   (−1)i+1 [sa1 | . . . |sai−1 |sai ∧ ai+1 |ai+2 | . . . |ap ]
+                                     1≤i<p
+                                                                  L
+The bar construction B(A) is defined to be the total complex (A+⊗p )q with total
+differential D = di + de . Note that the total degree of elements in B(A) is given by
+(5.1)                     deg([a1 | . . . |ap ]) = deg(a1 ) + . . . + deg(ap ) − p .
+                  0
+Let V (A) = H (B(A)) be the zeroth cohomology. It is a commutative Hopf algebra.
+5.2. Connected case.L    When A is connected, this construction simplifies. The aug-
+mentation ideal A+ = n≥1 An is the set of elements of positive degree. It is clear
+from (5.1) that only elements of A of degree 1 contribute to V (A) = H 0 (B(A)), so
+let T (A1 ) denote the tensor algebra generated by elements of degree 1. Note that
+(A+⊗p )q = 0 if p > q and the total degree (5.1) is non-negative. The total differential
+−D = di + de reduces to D : T (A1 ) → T (A):
+                          r
+                          X                                                    r−1
+                                                                               X
+ D([w1 | . . . |wr ]) =         [w1 | . . . |wi−1 |dwi |wi+1 | . . . |wr ] +         [w1 | . . . |wi ∧ wi+1 | . . . |wr ]
+                          i=1                                                  i=1
+where we changed the overall sign for convenience. We can simply write
+                                                        
+(5.2)                   V (A) = ker D : T (A1 ) → T (A) .
+We say that elements ξ ∈ T (A1 ) satisfying Dξ = 0 are integrable.
+Definition 22. Define the bar construction of E (n) to be V (Xn ) = H 0 (B(Xn )), where
+Xn is our model (§4.2). It is a commutative Hopf algebra over Q, filtered by the length.
+   By (5.2), V (Xn ) is the subalgebra of T (Xn1 ) given by the integrable words in Xn1 .
+Since Xn carries a mixed Hodge structure, so too does V (Xn ).
+16                            FRANCIS BROWN AND ANDREY LEVIN
+
+
+5.3. Description of V (XFn ). We first give an explicit description of the bar con-
+struction of an elliptic curve with punctures. By the general theory, the length-graded
+                                             M
+                              grℓ V (XFn ) ∼
+                                           =   H 1 (EFn )⊗ℓ ,
+                                                     ℓ≥0
+
+since there is no integrability condition for one-dimensional varieties. The right-hand
+side is just the set of words in the generators of H 1 (EFn ). These generators are repre-
+                                   (0)                 (1)     (1)
+sented by the closed one-forms ω n , ν n and ηi := ω n,i − ω n,0 , for 1 ≤ i < n.
+                                                       (0)
+Proposition 23. Any word in the letters [ω n ], [ν n ], [ηi ] of length ℓ can be canonically
+                                                                 (k)
+lifted to an integrable element in V (XFn ) using the forms ωn,i for k < ℓ.
+
+Proof. Use Chen’s formal power series connections [6]. Let S = Qhhx0 , x1 , y1 , . . . , yn−1 ii
+denote the ring of non-commutative formal power series in symbols x0 , x1 , y1 , . . . , yn−1
+and let α = −ad(x0 ). Consider the formal 1-form [5, 14]:
+                                         n−1
+                                         X                                
+          J = ν x0 + α Ω(ξn ; α)x1 +            Ω(ξn − ξi ; α) − Ω(ξn ; α) yi ∈ XFn ⊗Q S
+                                          i=1
+
+It is well-defined since all polar terms in α cancel, and is of the form
+
+        J = ν n x0 + ω (0)
+                       n x1 + η1 y1 + . . . + ηn−1 yn−1 + higher order terms in x’s,y’s
+
+One easily checks from lemma 10 that dJ = −J ∧ J. It follows that the formal element
+Ξ = [J] + [J|J] + [J|J|J] + . . . lies in V (XFn ) ⊗Q S. The topological dual of S may be
+identified with the tensor coalgebra T c (U ), where U is the Q-vector space spanned by
+the alphabet {x0 , x1 , y1 , . . . , yn−1 } dual to {x0 , x1 , y1 , . . . , yn−1 }. Thus we can view
+
+                                    Ξ ∈ Hom(T (U ), V (XFn )) .
+
+On the other hand, consider the element
+                                                                                     ∨
+          J (1) = [ν n ] x0 + [ω (0)                                      1
+                                 n ]x1 + [η1 ]y1 + . . . + [ηn−1 ]yn−1 ∈ H (XFn ) ⊗ U .
+
+                                = H 1 (XFn ), and hence j : T c (U ) ∼
+It defines an isomorphism j : U ∼                                    = T c(H 1 (XFn )).
+             −1
+Composing j with Ξ gives a map
+
+                          grℓ (V (XFn )) ∼
+                                         = T c (H 1 (XFn )) −→ V (XFn )
+
+which splits the quotient map. Note that it follows from the proof that this splitting
+has integral coefficients.                                                           
+
+   It follows that V (XFn ) is canonically isomorphic to the tensor coalgebra spanned
+by [ω], [ν], [ηi ], equipped with the shuffle product. The Hodge and weight filtrations
+are induced from the corresponding filtrations on Xn . More precisely we have
+
+(5.3)             [x1 | . . . |xn ] ∈ F r V (XFn )    if     {i : xi = ν} ≤ n − r .
+
+The weight comes from a grading w : grℓ V (XFn ) → N which is defined by
+
+(5.4)                       w([x1 | . . . |xn ]) = n + {i : xi ∈ {ηj }} ,
+
+and is obtained by giving ω (0) and ν weight 1, and the ηi ’s weight 2.
+                           MULTIPLE ELLIPTIC POLYLOGARITHMS                                17
+
+
+5.3.1. Example: the bar construction on E × . In the case of a single puncture:
+                          grℓ V (X1 ) ∼
+                                 ·    = T (Q[ω (0) ] ⊕ Q[ν]) .
+The formal power series connection J reduces in this case to
+               J    = ν x0 + Ω(ξ, −ad(x0 )) x1            ∈       X 1 hhx0 , x1 ii
+                    = ν x0 + x1 ω (0) − [x0 , x1 ]ω (1) + [x0 , [x0 , x1 ]]ω (2) + . . .
+and gives an explicit way to lift any word in the letters [ω (0) ], [ν] to V (X1 ).
+Corollary 24. The weight and the length filtrations on V (X1 ) coincide.
+Examples 25. The elements of V (X1 ) of length at most one are 1, [ω (0) ], [ν]. In length
+≤ 2 we also have: [ω (0) |ω (0) ], [ω (0) |ν] + [ω (1) ], [ν|ω (0) ] − [ω (1) ], and [ν|ν].
+5.4. Structure of V (Xn ). One of the main results of [3] implies:
+Theorem 26. There is an isomorphism of algebras
+                                     n
+                                     O
+(5.5)                      V (Xn ) ∼
+                                   =    V (XFi ) .
+                                                 i=1
+The length and weight filtrations on V (Xn ) coincide.
+                                                               1
+Proof. The bar Gauss-Manin connection ∇B : V (XFn ) → Xn−1         ⊗Q V (XFn ), which is
+defined in [3], is nilpotent with respect to the weight grading. It implies the existence
+of a map V (XFn ) → V (Xn ) and an isomorphism V (Xn ) ∼     = V (Xn−1 ) ⊗Q V (XFn ) of
+algebras, from which the statement follows by induction (see [3] for the proofs).      
+   Note that (5.5) does not respect the Hopf algebra, or differential structures on Xn .
+It is however a complete algebraic description of all iterated integrals on E (n) , and in
+particular, enables one to write down a basis for them.
+Remark 27. Theorem 26 is proved in [3] by first showing that the bar-de Rham coho-
+mology of Xn is trivial. This is equivalent to the exactness of the sequence:
+  0 −→ Q −→ Xn0 ⊗Q V (Xn ) −→ Xn1 ⊗Q V (Xn ) −→ . . . −→ Xnn ⊗Q V (Xn ) −→ 0 .
+One way to think of the refined weight grading on Xn is as follows. It defines a
+weight grading on T c (Xn ) with the property that the inclusion V (Xn ) ֒→ T c (Xn ) is
+compatible with the weight filtration on V (Xn ).
+
+                                       ∗          ∗           ∗
+18                          FRANCIS BROWN AND ANDREY LEVIN
+
+
+                          6. Averaging unipotent functions
+6.1. Introduction. The main idea for constructing multivalued functions on an ellip-
+tic curve is to use the Jacobi uniformization
+                                           E = C× /q Z
+and average a function on C× with respect to multiplication by q. Consider the example
+of the multivalued function Li1 (z) = − log(1 − z). Let q ∈ C× such that |q| < 1 and
+z ∈ C× such that 1 ∈ / q R z. The spiral q R z can be lifted to a universal covering space
+of C\{0, 1}, and the function Li1 (z) has a well-defined analytic continuation along
+it. Near the origin, the function Li1 (z) vanishes, but at the point z = ∞ it has a
+logarithmic singularity, so the naive average diverges. One way to ensure convergence
+is to consider the generating series
+                                           X
+                               E(z; u) =        um Li1 (q m z)
+                                             m∈Z
+
+where u−1 is chosen small enough to dampen the logarithmic singularity at infinity,
+but not so small as to wreck the convergence at the origin. For m ≪ 0, the asymptotic
+is um log(q m z), which is bounded if u > 1. For m ≫ 0 the terms are asymptotically
+um q m z, which is bounded if u < |q|−1 . Thus for 1 < u < |q|−1 the series E(z; u)
+converges absolutely, and is almost periodic with respect to multiplication by q.
+   From this one can easily show that E(z; u) has a simple pole at u = 1. Now one
+must view E(z; u) as a function of ξ and α, where u = e(α) and z = e(ξ). Thus the
+pole at u = 1 contributes a pole at α = 0 which can be removed to obtain
+                                                        1
+                                E reg (ξ; α) = E(ξ; α) − .
+                                                        α
+This function now admits a Taylor expansion at the point α = 0. The procedure for
+constructing multivalued functions on the elliptic curve E × is to take the coefficients
+of αi , i ≥ 0 in this Taylor expansion.
+   The situation is more complicated in the case of several complex variables. Suppose
+that we have a function f (t1 , t2 ) on M0,5 (C) = {(t1 , t2 ) : t1 , t2 6= 0, 1, t1 6= t2 }, with
+singularities along the removed hyperplanes. We wish to average the function
+                               X
+(6.1)                                 um 1 m2
+                                        1 u2 f (q
+                                                  m1
+                                                     t1 , q m 2 t2 )
+                               m1 ,m2 ∈Z
+
+The first problem that we encounter is that the function f (t1 , t2 ) is simply not well-
+defined as t1 , t2 → ∞ since its singularities ti = ∞, t1 = t2 do not cross normally at
+that point, and so the limit depends on the direction in which it is approached. The
+standard solution is to blow-up the points (0, 0), (∞, ∞), as below:
+
+                         t2 = ∞
+
+
+
+                         t2 = 1
+
+
+
+
+                                             t1 = 1       t1 = ∞
+                                 MULTIPLE ELLIPTIC POLYLOGARITHMS                                               19
+
+
+   Note that we do not need to blow up the point t1 = t2 = 1, which is also a non-
+normal crossing point, because there are only finitely many lattice points {(q Z t1 , q Z t2 )}
+in its neighbourhood. The domain of summation naturally decomposes into the six
+sectors pictured above, each of which is homeomorphic to a square [0, 1] × [0, 1]. By
+analysing the behaviour of f (t1 , t2 ) in the neighbourhood of each sector, one finds
+necessary and sufficient conditions on u1 , u2 to ensure the absolute convergence of
+(6.1). It turns out that the poles in the u1 , u2 plane are in one-to-one correspondence
+with the boundary divisors in the figure, and depend on the local asymptotic behaviour
+of f . One can then remove poles in the αi plane (where ui = e(αi )) and compute Taylor
+expansions to extract multivalued functions on E (2) with unipotent monodromy.
+   The plan of the second, analytic, part of this paper is as follows.
+     (1) First we construct an explicit partial compactification of M0,n which is adapted
+         to this averaging procedure.
+     (2) By studying the analytic properties of the multiple polylogarithms (2.3) we find
+         necessary and sufficient conditions on the dual variables ui to ensure absolute
+         convergence of the averaging function:
+                        X
+                               um        mr
+                                1 . . . ur In1 ,...,nr (q
+                                  1                       m1
+                                                             t1 , . . . , q m r tr )
+                          m1 ,...,mr ∈Z
+
+     (3) From its differential equation, we compute the pole structure in the ui coordi-
+         nates. The multiple elliptic polylogarithms can be defined as the coefficients
+         in its regularized Taylor expansion at α1 = . . . = αr = 0, where ui = e(αi ).
+         Note that, since the singularities in the space of αi parameters are not normal
+         crossing, the regularization must be performed with some care. We do not
+         address the question of explicit regularization in the present paper.
+   The entire procedure from (1) to (3) will work more generally for any functions
+satisfying some growth conditions on certain toric varieties. Section §6 covers the
+general steps (1) and (2). The definition of the multiple elliptic polylogarithms is
+completed in §7, with examples given in §9. In §8, which is independent from the rest
+of the paper, we show how to compute the asymptotics of the Debye polylogarithms
+explicitly at infinity using a certain coproduct. Finally, in §10 we prove that all iterated
+integrals on a punctured elliptic curve can be obtained by this averaging procedure.
+
+6.2. Preliminaries. Let q = e(τ ), where τ is in the upper-half plane, and let ti =
+e(ξi ), for i = 1, . . . , r, where ξ1 , . . . , ξr are in the domain U defined by (3.1), in §3.2.
+   Consider the following preparation map to a universal covering of M0,r+3 (C):
+
+                                          σ : Rn         f0,r+3 (C)
+                                                      −→ M
+                                 (s1 , . . . , sr )    7→        (q s1 t1 , . . . , q sr tr ) ,
+
+where we view M0,r+3 (C) ⊂ Cr in simplicial coordinates. Suppose that we have a
+multivalued function f (t1 , . . . , tr ) on M0,r+3 (C), with a fixed branch in the neighbour-
+hood of some (t1 , . . . , tr ) such that ti t−1  j ∈/ q R for i 6= j and ti ∈    / q R . Then f (t1 , . . . , tr )
+                                                                                n
+admits a unique analytic continuation to the image of σ(R ), and in particular, the
+values f (q n1 t1 , . . . , q nr tr ) are well-defined for all (n1 , . . . , nr ) ∈ Zr .
+   We apply this to the multiple polylogarithm functions
+                                                      X                       ta1 1 . . . tann
+(6.2)        Im1 ,...,mn (t1 , . . . , tn ) =                                                            ,
+                                                                am
+                                                                 1 (a1 + a2 )
+                                                                   1         m2 . . . (a + . . . + a )mn
+                                                                                            1       n
+                                                a1 ,...,an ≥1
+20                         FRANCIS BROWN AND ANDREY LEVIN
+
+
+which give rise to multivalued unipotent functions on M0,r+3 (C) ⊂ Cr , and vanish
+along the divisors ti = 0. The power series expansion above defines a canonical branch
+in the neighbourhood of the origin.
+
+6.3. Compactification of the hypercube. Let S = {1, . . . , n} and let us write P1S
+for Hom(S, P1 ) ∼ = (P1 )n . Let n ⊂ P1S denote the real hypercube [0, ∞]n . For any
+disjoint pair of subsets I, J ⊂ S, let
+                                \             \
+                          FIJ =    {ti = 0} ∩   {tj = ∞} ⊆ P1S
+                                i∈I               j∈J
+
+denote the corresponding coordinate linear subspace. The sets FIJ ∩ n give the stan-
+dard stratification of the hypercube by its faces.
+  Working first in simplicial coordinates, consider the divisor
+                              [                     [
+                       X=          {ti − tj = 0} ∪      {ti = 1} ,
+                            1≤i<j≤n                       1≤i≤n
+
+which meets the set of faces FIJ non-normally.   Let us write FI = FI∅ , F J = F∅J and
+call such divisors of type 0 or type ∞, respectively. Consider the sets of faces:
+                     F 0 = {FI : |I| > 1} ,       F ∞ = {F J : |J| > 1} ,
+of codimension ≥ 2. Following the standard practice for blowing up linear subspaces,
+we blow up the set of faces in F 0 of smallest dimension, followed by the strict transforms
+of faces FI where |I| = n − 1, and so on, in increasing order of dimension, until the
+strict transforms of all elements in F 0 have been blown up. Now repeat the same
+procedure with F ∞ , and denote the corresponding space by PS , with
+(6.3)                                    π : PS −→ P1S
+It does not depend on the chosen order of blowing-up.
+   Let us denote the strict transform of any face FI (resp. F J ) by DI (resp. DJ ),
+for all |I|, |J| ≥ 2. Let Di (resp. Dj ) denote the strict transform of the divisor Fi∅
+(resp. F∅j ) which corresponds to a facet of the original hypercube, and let us denote
+          S
+by D = |K|≥1 DK ∪ DK , the union of all the above. The strict transform of n is a
+certain polytope Cn , whose facets are in bijection with the irreducible components of
+D, which number 2 × (2n − 1). Let X ′ ⊂ PS denote the strict transform of X.
+Proposition 28. The divisor D ∪ X ′ ⊂ PS is locally normal crossing near D.
+   The proof will be given by computing explicit normal coordinates in every local
+neighbourhood of D, using a decomposition into sectors.
+
+6.4. Sector decomposition. Let us view M0,n (R) in simplicial coordinates as the
+complement of divisors of the form ti = tj and ti = 1 in (R× )n . Then n ∩ M0,n+3 (R)
+admits a decomposition into (n + 1)! connected components:
+                         ∆π = {0 < tπ(1) < . . . < tπ(n+1) < ∞} ,
+where π is a permutation of (1, . . . , n + 1), the ti are simplicial coordinates on each
+component of (P1 )n , and where tn+1 = 1. The permutation π should be viewed as a
+dihedral ordering of the n + 3 marked points 0, 1, ∞, t1 , . . . , tn on P1 (R). To every such
+π we associate local ‘sector’ coordinates on M0,n+3 (C) as follows:
+                                      tπ(1)                  tπ(n)
+(6.4)                        sπ1 =          , . . . , sπn =         .
+                                      tπ(2)                 tπ(n+1)
+                         MULTIPLE ELLIPTIC POLYLOGARITHMS                               21
+
+
+The coordinates sπi give a homeomorphism from ∆π to the unit cube (0, 1)n . When
+π is the trivial permutation, the coordinates sπi are the same coordinates xi used to
+define the multiple polylogarithms in §2.2. For each π, we define the open affine scheme
+                                                     Y
+                  Uπ = Spec Z[sπ1 , . . . , sπn , {(   sπk − 1)−1 }1≤i≤j≤n ] .
+                                            i≤k≤j
+
+Note that the Uπ are all canonically isomorphic, and (0, 1)n ⊂ Uπ (R).
+Lemma 29. For every π, Uπ defines an affine chart on M0,n+3 :
+                                   M0,n+3 ⊂ Uπ ⊂ M0,n+3
+Proof. Consider the set of forgetful maps (or ‘cross-ratios’) fT : M0,n+3 → M0,4 ∼= P1 ,
+where T is a subset of any 4 of the n + 3 marked points. Then M0,n+3 ⊂ M0,n+3 is the
+open subscheme where all fT ’s are non-zero. It suffices to check that Uπ is isomorphic
+to the open subschemeQ     of M0,n+3 where some of the fT ’s are non-zero. For this, one
+can write each sπk and i≤k≤j sπk − 1 as cross-ratios, and conversely every cross-ratio
+as a function of the sπi . We omit the details.                                       
+                               S
+Definition 30. Let Un = π Uπ ⊂ M0,n+3 be the scheme obtained by gluing all
+charts Uπ together. Viewing Sn+1 as the stabilizer of 0, ∞ in Aut(M0,n+3 ) ∼    = Sn+3 ,
+we have                                   [
+                                   Un =         π(Uid ) ,
+                                         π∈Sn+1
+where Uid corresponds to the trivial permutation.
+   The smooth scheme Un ⊂ M0,n+3 is equipped with a set of normal crossing divisors
+defined in each chart by the vanishing of the sπk .
+Example 31. Let n = 2. The coordinate square (0, ∞) × (0, ∞) ⊂ M0,5 (R) is covered
+by six sectors ∆π as shown below after blowing up F12 = (0, 0), F 12 = (∞, ∞).
+
+                              D1
+                       D2
+                                                  ∆π0          D12
+
+
+                     t2 = 1
+
+
+                       D12
+
+                                                               D2
+                                          t1 = 1          D1
+
+Consider the sector denoted ∆π0 , where π0 = (1, t1 , t2 ), which corresponds to the
+dihedral ordering 0 < 1 < t1 < t2 < ∞ on the marked points of M0,5 (R). Its sector
+coordinates are sπ1 0 = t−1   π0                        π0
+                         1 , s2 = t1 /t2 . The divisor s2 = 0 corresponds to the partition
+                                               π0
+{0, 1, t1}|{t2 , ∞} on M0,5 , and the divisor s1 = 0 corresponds to {0, 1}|{t1, t2 , ∞}.
+  In the general case, we have:
+22                             FRANCIS BROWN AND ANDREY LEVIN
+
+
+Lemma 32. The divisor sπk = 0 corresponds on Uπ ⊂ M0,n+3 to the partition (§2.1)
+                         {0, tπ(1) , . . . , tπ(k) } {tπ(k+1) , . . . , tπ(n+1) , ∞} .
+Therefore the scheme Un is the complement in M0,n+3 of the set of divisors A corre-
+sponding to partitions in which the marked points 0 and ∞ lie in the same component.
+    The simplicial coordinates t1 , . . . , tn give a canonical map Un → (P1 )n , which iden-
+tifies Un with the blow-up PS of (P1 )n defined in §6.3. Thus, we have
+                               PS \X ′ ∼    = M0,n+3 \A ∼= Un .
+This identifies the following divisors on PS \X ′ , M0,n+3 \A, and Un , respectively:
+                                     / I} ↔ sπ|I| = 0 on every Uπ st π(I) = I
+  DI ↔ {0, tk : k ∈ I} {∞, 1, tk : k ∈
+ DJ ↔ {0, 1, tk : k ∈
+                    / J} {∞, tk : k ∈ J} ↔ sπn+1−|J| = 0 on every Uπ st π(J) = J
+                                                                                                              ′
+We deduce that DI ∩ DI ′ 6= ∅ if and only if I ⊆ I ′ or I ′ ⊆ I (and likewise for DJ , DJ )
+and DI ∩ DJ 6= ∅ if and only if I ∩ J = ∅.
+Proof. Straightforward. One must only verify that the sector coordinates sπk are pre-
+cisely the local coordinates that one obtains when one blows up (P1 )n along divisors
+FI and F J in order of increasing dimension.                                       
+   In conclusion, we have three descriptions of the space Un : first, as a certain blow-up
+of (P1 )n along the boundary of the hypercube; second, as the gluing together of affine
+schemes Uπ ; and third, as the complement in M0,n+3 of a certain family of divisors.
+Corollary 33. Let D ⊂ Un be an irreducible divisor defined locally by the vanishing
+of an sπk . Then D ∼ = Uk−1 × Un−k , where U0 is a point. It follows that the polytope
+Cn (which was defined to be the strict transform π −1 (n ) ) has the following product
+structure on its facets: Cn ∩ DI ∼
+                                 = C|I|−1 × Cn−|I| and similarly for Cn ∩ DJ .
+6.5. Absolute convergence of multivalued series. Let
+(6.5) S = {(q, t1 , . . . , tn ) : 0 < |q| < |t1 | < . . . < |tn | < 1,          ti t−1
+                                                                                     j ∈/ q R , ti ∈
+                                                                                                   / qR } ,
+and let f be a unipotent function on (C× )n \{ti = tj }, i.e., a multivalued function on
+M0,n+3 (C) ⊂ M0,n+3 (C) with everywhere local unipotent monodromy around bound-
+ary divisors (definition 2). Consider a sum
+                                       X
+(6.6)        F (t1 , . . . , tn ; q) =    um        mn
+                                           1 . . . un f (q
+                                             1             m1
+                                                              t1 , . . . , q m n tn ) ,
+                                      m1 ,...,mn ∈Z
+
+By §6.2, the values f (q t1 , . . . , q mn tn ) are well-defined if we fix a branch of f near
+                             m1
+
+some point (t1 , . . . , tn ), where (q, t1 , . . . , tn ) ∈ S. We give sufficient conditions on the
+auxilliary variables ui to ensure the absolute convergence of such a series, by bounding
+the terms of F in different sectors.
+Definition 34. For 0 < ε ≪ 1, let Uπε ⊂ Uπ (C) denote the open set of points
+     {(sπ1 , . . . , sπn ) ∈ Uπ (C) : |sπi | < 1 for all i, and |sπi | < ε for some 1 ≤ i ≤ n} ,
+                   S
+and let U ε = π∈Sn+1 Uπε .
+     Let K be a compact subset of S defined in (6.5).
+Lemma 35. For (q, t1 , . . . , tn ) in K, there are only finitely many m = (m1 , . . . , mn )
+such that (q m1 t1 , . . . , q mn tn ) lies in the complement of Uε , and f (q m1 t1 , . . . , q mn tn ) is
+uniformly bounded for such m.
+                               MULTIPLE ELLIPTIC POLYLOGARITHMS                                                 23
+
+
+Proof. The first part follows since the complement of U ε in M0,n+3 is compact, and
+does not contain the total transform of any divisors ti = 0, ∞. The definition of S
+ensures that q mi ti 6= q mj tj and q mi ti 6= 1 for all mi , mj , i 6= j, and since these are the
+possible singularities of f (q m1 t1 , . . . , q mn tn ), it is uniformly bounded on K.         
+
+  All the remaining terms of (6.6) lie in some sector Uπε . Let us fix one such per-
+mutation π and work in local sector coordinates sπ1 , . . . , sπn . Then Uπε can be further
+decomposed into smaller pieces as follows. For any non-empty A ⊆ {1, . . . , n}, let
+           NAπ = {(sπ1 , . . . , sπn ) : |sπi | < ε for i ∈ A,            1 > |sπi | ≥ ε for i ∈
+                                                                                               / A} .
+We clearly have:
+                                                           [
+                                           Uπε =                        NAπ .
+                                                      ∅6=A⊆{1,...,n}
+
+
+                                      1
+
+
+                                                N1π
+
+                                      ε
+                                                 π
+                                                N12             N2π
+                                                      ε                    1
+
+Proposition 36. There is a constant C ∈ R such that for all (sπ1 , . . . , sπn ) ∈ NAπ ,
+                                              Y          
+                 |f (sπ1 , . . . , sπn )| ≤ C   κi (sπi ) fA ((sπj )j /
+                                                                     ∈A ) ,
+                                                          i∈A
+                                                                T      π
+where fA (sπj )j /
+                ∈A is a unipotent function on                    i∈A {si = 0}, and
+
+                                           κi (s) = |s|Mi logw |s| ,
+where f vanishes along sπi = 0 to order Mi ≥ 0, and w is some integer ≥ 0.
+Proof. This follows immediately from the local expansion of a unipotent multivalued
+function in the neighbourhood of a normal crossing divisor (definition (2.7)).    
+
+   Recall from definition (6.4) that sπi = tπ(i) t−1
+                                                  π(i+1) . Thus the action of the summation
+                                                                                π
+index (m1 , . . . , mn ) ∈ Z on the sector coordinate sπi is given by sπi 7→ q pi sπi , where
+                            n
+
+
+(6.7)                                      pπi = mπ(i) − mπ(i+1) .
+By lemma 32, the divisor sπk = 0 corresponds to a divisor DI or DJ . Let us define
+                              Y                      Y
+(6.8)                  vkπ =     ui     or     vkπ =     u−1
+                                                          j
+                                          i∈I                               j∈J
+
+accordingly, where ui are the parameters in (6.6). One verifies that
+                                           π               π
+                                   (v1π )p1 . . . (vnπ )pn = um        mn
+                                                              1 . . . un
+                                                                1
+                                                                          .
+Thus, for the terms of (6.6) which lie in the sector Uπ , we can write
+                                                                    π             π    π              π
+        um        mn
+         1 . . . un f (q
+           1             m1
+                            t1 , . . . , q mn tn ) = (v1π )p1 . . . (vnπ )pn f (q p1 sπ1 , . . . , q pn sπn )
+in local coordinates. Dropping cluttersome π’s from the notation, we have:
+24                               FRANCIS BROWN AND ANDREY LEVIN
+
+
+Corollary 37. For all (q, t1 , . . . , tn ) ∈ K, there exists a constant C such that
+                                                                    Y
+               v1p1 . . . vnpn f (q p1 sπ1 , . . . , q pn sπn ) ≤ C   |vi q Mi |pi |pi |w
+                                                                       i∈A
+                             n
+for all (p1 , . . . , pn ) ∈ Z   such that (q p1 sπ1 , . . . , q pn sπn ) ∈ NAπ .
+Proof. Consider the bound in proposition 36. The function fA on           T the right-hand side
+can be uniformly bounded by a version of lemma 35, applied to i∈A {sπi = 0}, which
+is isomorphic to a product of Uk ’s. Since logw |q pi sπi | = (pi log |q| + log |sπi |)w ≤ Ci |pi |w
+for some constant Ci , for all i ∈ A, we deduce the bound stated above.                            
+Theorem 38. Suppose that the chosen branch of f vanishes along all divisors DI of
+type 0 with multiplicity |I|. Then (6.6) converges absolutely on compacta of the polydisc
+                                           1 < u1 , . . . , un < |q|−1
+Proof. Consider first a divisor DI of type 0. Then, in the previous corollary, the divisor
+DI = {sπk = 0} in some chart Uπ will correspond in the right-hand side to terms of the
+form |vkπ q |I| |p pw , where p is large and positive. The assumptions on ui imply that
+                                                   Y       p
+                                |vkπ q |I| |p pw =    |ui q| pw < 1 ,
+                                                        i∈I
+
+and therefore |vkπ q |I| |p pw tends to zero exponentially fast in p. Now consider a divisor
+DJ of type ∞. It corresponds to terms of the form |vkπ q Mk |p pw , where p is large and
+positive and Mk , w ≥ 0. But by the assumptions on ui , we have
+                                              Y     
+                                     |vkπ | =    u−1
+                                                  j    <1,
+                                                      j∈J
+
+and so once again, |vkπ q Mk |p pw tends to zero exponentially fast in p.                         
+6.6. Structure of the poles. We first make some general remarks about the pole
+structure as follows from the proof of theorem 38. In §7.4 we shall refine this result in
+the case of the multiple elliptic polylogarithms by exploiting their differential equation.
+Corollary 39. Let f satisfy the conditions of theorem 38. For every I 6= ∅, let wI de-
+note the order of the logarithmic singularity of f along DI . Every codimension h face of
+the polytope Cn corresponds to a flag I1 ( I2 ( . . . ( Ih , where I1 , . . . , Ih ⊆ {1, . . . , n},
+and is contained in the intersection E = DI1 ∩ . . . ∩ DIh . Let s1 , . . . , sh , sh+1 , . . . , sn
+denote local normal coordinates in which DIk is given by sk = 0 for 1 ≤ k ≤ h. Then
+in the neighbourhood of E, the function f has an expansion of the form
+                       X
+            f=                   fi1 ,...,ih (sh+1 , . . . , sn ) logi1 (s1 ) . . . logih (sh ) ,
+                    i1 ≤wI1 ,...,ih ≤wIh
+
+where (sh+1 , . . . , sn ) are coordinates on E. After averaging, each term in the sum
+which is indexed by i1 , . . . , ih contributes singularities to (6.6) of the form
+                                Y                      Y
+                              (     uk − 1)−j1 . . . (   uk − 1)−jh ,
+                                 k∈I1                         k∈Ih
+
+with j1 ≤ i1 + 1, . . . , jh ≤ ih + 1. In particular, the term f0,...,0 (sh+1 , . . . , sn ) which is
+constant in s1 , . . . , sh , contributes a simple pole of the form
+                                  Y                     Y
+                                (     uk − 1)−1 . . . (   uk − 1)−1 .
+                                   k∈I1                       k∈Ih
+                              MULTIPLE ELLIPTIC POLYLOGARITHMS                                                25
+
+
+Proof. Following the method of proof of the previous theorem, one sees that the state-
+ment reduces to a local computation in the one-dimensional situation. In this case, it
+is clear that the averaging procedure applied to logi z, for i ≥ 0, gives
+                      X                   X
+                          um logi q m z =   um (m log q + log z)i ,
+                          m≥0                      m≥0
+
+which has a pole at u = 1 of order at most i + 1.                                                             
+
+Remark 40. Corollary 39 gives an upper bound on the singularities which occur: it
+can happen that summing over one sector gives rise to spurious poles in the ui ’s, which
+cancel on taking the total contribution over all sectors.
+
+   The upshot of the previous corollary is that if we know the differential equations
+satisfied by f , then we can deduce the pole structure of F completely from these
+differential equations, up to constants of integration (see §9 below). The corollary
+states that the constants of integration necessarily contribute simple poles, and these
+are in bijection with the n! maximal flags I1 ( I2 ( . . . ( In−1 ( In .
+
+Example 41. In the case n = 2, we have poles along ui = 1 coming from logarithmic
+singularites along Di , for i = 1, 2, and along u1 u2 = 1 coming from D12 . The typical
+contribution from D1 , for example, is of the form
+                                            w
+                                            X Ri (ξ2 ; u2 )
+                                             i=0
+                                                   (u1 − 1)i+1
+
+where Ri (ξ2 ; u2 ) is the result of averaging a function of t2 . The two maximal flags
+{1} ⊂ {1, 2} and {2} ⊂ {1, 2} which correspond to the corners D1 ∩ D12 and D2 ∩ D12 ,
+give constant contributions of the form
+                               c1,12                                c2,12
+                                                    and
+                        (u1 − 1)(u1 u2 − 1)                  (u2 − 1)(u1 u2 − 1)
+
+where c1,12 (resp. c2,12 ) is the regularized limit of f at D1 ∩ D12 (resp. D2 ∩ D12 ).
+For an explicit computation of such a pole structure, see §9.2.
+
+
+                           7. Elliptic multiple polylogarithms
+   In this section, we apply the results of §6 to prove the following theorem.
+
+Theorem 42. The series obtained by averaging the classical multiple polylogarithm
+                                                    X
+ En1 ,...,nr (ξ1 , . . . , ξr ; u1 , . . . , ur ) =   um        mr
+                                                       1 . . . ur In1 ,...,nr (q
+                                                         1                       m1
+                                                                                    t1 , . . . , q m r tr )
+                                             m1 ,...,mr ∈Z
+
+converges for 1 < u1 , . . . , ur < |q|−1 , and (q, t1 , . . . , tr ) ∈ S. It defines a (generating
+series) of functions on E (r) with poles given by products of consecutive ui ’s only:
+                                                 Y
+         ui = |q|−1 for 1 ≤ i ≤ r ,        and         uk = 1 for all 1 ≤ i ≤ j ≤ r .
+                                                     i≤k≤j
+
+   In order to extract a convergent Taylor expansion in the variables αi , where ui =
+e(αi ), it suffices to know the exact asymptotic behaviour of In1 ,...,nr (t1 , . . . , tr ) at
+infinity. This is carried out for the Debye polylogarithms in §7.
+26                                FRANCIS BROWN AND ANDREY LEVIN
+
+
+7.1. Analytic continuation of polylogarithms. The function In1 ,...,nr (t1 , . . . , tr )
+has a convergent Taylor expansion at the origin, and so defines the germ of a multival-
+ued analytic function on M0,n+3 (C) ⊂ Cn . As is well-known, it is unipotent by (2.5),
+has a canonical branch at the origin, and vanishes along the divisors ti = 0.
+   It therefore extends by analytic continuation to a multivalued function on the blow-
+up Un \X(C), and can have at most logarithmic divergences along the boundary com-
+ponents DJ and DI of X. It turns out that for some of these components D, there is
+no logarithmic divergence and we can speak of the continuation Im1 ,...,mn (t1 , . . . , tn ) D
+of Im1 ,...,mn (t1 , . . . , tn ) to D. This is not well-defined, since the function is multivalued.
+However, if D also meets the strict transform of a divisor ti = 0, for some i, there is a
+canonical branch which vanishes at {ti = 0} ∩ D, and defined in a neighbourhood of
+{ti = 0}. The following lemma is the key to the absolute convergence of (7.1).
+Lemma 43. Let DI be of type 0. Then Im1 ,...,mn (t1 , . . . , tn ) DI vanishes to order |I|.
+Proof. The sum (6.2) converges in the neighbourhood of the origin and locally defines
+a holomorphic function which vanishes along the divisors ti = 0. It therefore vanishes
+on any exceptional divisor DI lying above the origin to order |I|.                  
+     Setting f (t1 , . . . , tn ) = Im1 ,...,mn (t1 , . . . , tn ) proves the first part of theorem 42.
+Lemma 44. Let J ⊂ {1, . . . , n} be non-empty, and 1 ∈        / J. Let J c = {1, . . . , n}\J and
+       c
+write J = {i1 , . . . , ik } where 1 = i1 < . . . < ik . Then
+                    Im1 ,...,mn (t1 , . . . , tn ) DJ = (−1)|J| Im′1 ,...,m′k (ti1 , . . . , tik ) ,
+where m′1 = mi1 + . . . + mi2 −1 , m′2 = mi2 + . . . + mi3 −1 ,. . . , m′k = mik + . . . + mn .
+Proof. This follows immediately from the iterated integral representation (2.4).                          
+Corollary 45. Every multiple polylogarithm Im1 ,...,mn (t1 , . . . , tn ) is the analytic con-
+tinuation to some exceptional divisor of a multiple logarithm I1,...,1 (t1 , . . . , tN ).
+   Thus we can restrict ourselves to considering only multiple logarithms if we wish.
+Another way to interpret lemma 44 is to notice that the terms I DJ are in one-to-one
+correspondence with the terms in the so-called stuffle product formula.
+7.2. Elliptic Multiple Polylogarithms. The functions obtained by averaging mul-
+tiple polylogarithms satisfy differential equations which are easily deduced from (2.5).
+                                                                                z
+Lemma 46. The function F (ξ; u) is the averaged weighted generating series for z−1 :
+                                        X q z  n
+                       F (ξ; u) = −2πi               un .
+                                            1 − qn z
+                                                           n∈Z
+Proof. By decomposing the domain of summation into various parts we obtain:
+      X qn z             X −q −n z −1            X           z      X qn z
+                     n                       n         n
+                   u   =           −n z −1
+                                           u   −     u   +       +               un
+          1 − qn z       n<0
+                             1 − q               n<0
+                                                           1 − z    n>0
+                                                                        1 − q nz
+      n∈Z
+                         XX                                       z        1
+                                   mn      −m −n        m n
+                       =         q (−z u + z u ) +                    +
+                         n>0 m>0
+                                                                1 − z    1 − u
+which is the definition of the Eisenstein-Kronecker series −(2iπ)−1 F (ξ; u).                             
+Lemma 47. The averaged weighted generating series for dLi1 (z) is:
+                       X
+                           dLi1 (zq n )un = F (ξ; u)dξ .
+                                      n∈Z
+
+Likewise, the result of averaging z −s dLi1 (z) is e(−ξs)F (ξ; u)dξ.
+                                     MULTIPLE ELLIPTIC POLYLOGARITHMS                                                      27
+
+                                                                 1 dz
+Proof. Follows from the previous lemma using the fact that dξ = 2iπ z .                                                    
+  Let us define the (unregularized) multiple elliptic polylogarithm to be:
+                                                    X
+ En1 ,...,nr (ξ1 , . . . , ξr ; α1 , . . . , αr ) =   um        mr
+                                                       1 . . . ur In1 ,...,nr (q
+                                                         1                       m1
+                                                                                    t1 , . . . , q m r tr ) .
+                                                    m1 ,...,mr ∈Z
+
+where ui = e(αi ) for 1 ≤ i ≤ r.
+Theorem 48. The total derivative dE1,...,1 (ξ1 , . . . , ξn ; α1 , . . . , αn ) equals
+             n
+             X
+        =           dE1 (ξk − ξk+1 ; αk )E1,...,1 (ξ1 , . . . , ξbk , . . . , ξn ; α1 , . . . , αk + αk+1 , . . . , αn )
+             k=1
+             Xn
+        −           dE1 (ξk − ξk−1 ; αk )E1,...,1 (ξ1 , . . . , ξbk , . . . , ξn ; α1 , . . . , αk−1 + αk , . . . , αn )
+             k=2
+where ξn+1 = 0, αn+1 = 0, and dE1 (ξ; α) = F (ξ; α)dξ.
+Proof. Since it converges uniformly, we can differentiate term by term in the definition
+of E1,...,1 . The differential equation then follows from the corresponding differential
+equation (2.5) for I1,...,1 (t1 , . . . , tn ). The key observation is that a term such as
+            X          q mk t            
+                                   k                                    mk t , . . . , q mn t ) u m1 . . . u mn
+                  dI1 mk+1                 I1,...,1 (q m1 t1 , . . . , q\   k                n    1          n
+                        q        tk+1
+        m1 ,...,mn ∈Z
+
+can be rewritten in the form
+      X                           tk  mk −mk+1
+                   dI1 q mk −mk+1      uk
+                                  tk+1
+   m1 ,...,mn ∈Z
+
+                        ×                                  mk t , . . . , q mn t ) um1 . . . (u u
+                              I1,...,1 (q m1 t1 , . . . , q\                                          mk+1
+                                                                                                           . . . um
+                                                                                               k k+1 )
+                                                                                                                    n
+                                                               k                n   1                             n
+and the region of summation decomposes into a product after a triangular change of
+basis of the summation variables (m1 , . . . , mn ) 7→ (m1 , . . . , mk − mk+1 , . . . , mn ). 
+7.3. Elliptic Debye polylogarithms. Recall the definition of the classical Debye
+polylogarithms (definition 1). Let us write α = (α1 , . . . , αr ) and likewise for β.
+Definition 49. The generating series of elliptic Debye polylogarithms is:
+                             X
+ Er (ξ1 , . . , ξr ; α, β) =   e(m1 α1 + · · · + mr αr )Λr (q1m1 t1 , . . , qrmr tr ; β1 , . . , βr )
+                                 m1 ,. . ,mr ∈Z
+
+The absolute convergence of the series is guaranteed by theorem 38.
+  One of the main reasons for considering such a generating series is because of a
+mysterious modularity property relating the parameters α and β (see [13] when r = 1).
+Proposition 50. Let r ≥ 2. The differential d Er (ξ1 , . . , ξr ; α, β) is equal to
+            n
+            X
+   =              d E1 (ξk − ξk+1 ; αk , βk ) Er−1 (ξ1 , . . , ξbk , . . , ξr ; α1 , . . , αk + αk+1 , . . , αn , β1 , . . )
+            k=1
+            Xn
+   −              d E1 (ξk − ξk−1 ; αk , βk ) Er−1 (ξ1 , . . , ξbk , . . , ξr ; α1 , . . , αk−1 + αk , . . , αn , β1 , . . )
+            k=2
+where ξn+1 = αn+1 = βn+1 = 0, and in the right-hand side, the arguments in the β’s
+are of the same form as those for the α’s. In the case r = 1, we have
+(7.1)                               d E1 (ξ; α; β) = e(−βξ) F (ξ; α − τ β)dξ .
+   The proof follows immediately from theorem 48.
+28                             FRANCIS BROWN AND ANDREY LEVIN
+
+
+7.4. The structure of the poles of elliptic polylogarithms. Let us write
+(7.2)                              γi = αi − τ βi         for 1 ≤ i ≤ r .
+Proposition 51. The Debye elliptic polylogarithms (definition 49) have at most simple
+poles along the divisors which have consecutive indices only:
+                         X                         X
+                             γi = 0     and             αj = 0 .
+                            i≤j≤k                                i≤j≤k
+
+The multiple elliptic    P polylogarithm Em1 ,. . ,mn (ξ1 , . . , ξn ; α1 , . . , αn ) has poles along divi-
+sors of the form i≤j≤k αj = 0 of order at most m1 + . . . + mn + 1.
+                                                                                      P
+Proof. By induction. Suppose that Er has simple poles along i≤j≤k αj = 0, and
+P
+   i≤j≤k γj = 0 with consecutive indices only. This is automatically true for r ≤ 2.
+It follows from the shape of P                the differential equation
+                                                                    P (proposition 50), that d Er+1
+only has simple poles along                           α
+                                                i≤j≤k j   =  0  and    i≤j≤k γj = 0. Thus the same
+conclusion also holds for Er+1 , except that the constants of integration might give
+rise to supplementary poles. To see that such constants of integration must be zero,
+let I be a set of non-consecutive indices. The divisor DI meets a divisor of the form
+tj = 0, for j ∈  / I, along which the function Λ(t1 , . . . , tn ; s1 , . . . , sn ) vanishes. It follows
+from the discussion above that Λ has P                  no divergence inPthe neighbourhood of DI ∩
+{tj = 0}, and hence no pole in either i∈I αi = 0 or i∈I γi = 0. This proves the
+result for the generating series Er . The corresponding statement for its coefficients
+Em1 ,. . ,mr (ξ1 , . . , ξr ; α1 , . . , αr ) follows on taking a series expansion in the βi .            
+     This method for computing the pole structure is illustrated below (§9.2).
+
+                       8. Asymptotics of Debye polylogarithms.
+   In the previous section we showed that the polar contributions in the averaging pro-
+cess come from the asymptotic expansion of polylogarithms at infinity. This expansion
+can be computed explicitly in terms of a combinatorially defined coproduct.
+8.1. The coproduct for Debye polylogarithms. The Debye multiple polyloga-
+rithms are defined by iterated integrals, and so by the general theory [6] admit a
+coproduct which is dual to the composition of paths. We describe it explicitly below.
+Definition 52. Let n ≥ 1. Let I = {1, P        . . . , n} be an ordered set of indices and let
+β1 , . . . , βn be formal variables satisfying ni=1 βi = 0. Define a string in I to be a
+consecutive subsequence S = (i1 , i2 , . . . , il ) of length 2 ≤ l < n, which is either in
+increasing or decreasing order and such that i1 6= n. Let
+                                    βS = βi1 + βi2 + . . . + βil−1 .
+For any such string S = (i1 , . . . , il ), let AS denote the symbol
+(8.1)                  AS = (ti1 : ti2 : . . . : til ; βi1 , βi2 , . . . , βil−1 , −βS ) .
+Let Hn denote the commutative ring over Z generated by all symbols AS as S ranges
+over the set of strings in 1, 2, . . . , n. The length of a string defines a grading on Hn .
+   The Debye polylogarithm defines a map from Hn to generating series of multivalued
+functions. If a string S is given by (8.1) then we have
+                                t t           ti                              
+                                   i   i
+(8.2)             Λ(AS ) = Λl−1 1 , 2 , . . . , l−1 ; βi1 , βi2 , . . . , βil−1 .
+                                  tiℓ tiℓ       tiℓ
+   Denote the last element of a string by ℓ(i1 , i2 , . . . , il ) = il , and define the sign ε(S)
+of S to be 1 if S is in increasing order, or (−1)l−1 if it is in decreasing order.
+                                  MULTIPLE ELLIPTIC POLYLOGARITHMS                                               29
+
+
+Definition 53. A finite collection S = {Sα } of strings is admissible if the strings
+intersect at most in their last indices, i.e., if Sα , Sβ are in S and α 6= β then either
+                             (1) Sα ∩ Sβ = ∅
+                      or     (2) Sα ∩ Sβ = {ℓ} ,              where ℓ = ℓ(Sα ) = ℓ(Sβ ) .
+Given an admissible set of strings S = {Sα }, define the set of remaining indices
+                                       [  [
+                             RS = I \ Sα ∪          ℓ(Sα )
+with the ordering induced from I, and define the corresponding quotient sequence
+                             QS = (tj1 : tj2 : . . . : tjm ; β̃j1 , β̃j2 , . . . , β̃jm ) ,
+                                                        P
+where (j1 , j2 , . . . , jm ) = RS and β̃j = βj + α,ℓ(Sα )=j βSα .
+Definition 54. Define a map ∆′ : Hn −→ Hn ⊗ Hn by
+                            X
+(8.3)           ∆′ AJ =             ε(S1 )AS1 . . . ε(Sk )ASk ⊗ QS
+                                      S={S1 ,...,Sk }
+
+where J ⊆ {1, . . . , n}, and the sum is over all non-empty admissible collections of
+strings S in J such that QS has at least two elements.
+                                                                          β        βi
+   Consider the map which sends AS of (8.1) to ti1i1 . . . til l , with βil = −βS , and
+extend by multiplicativity. Then each term in (8.3) maps to ±t1β1 . . . tβnn .
+Example 55. Writing βij for β{i,j} = βi + βj , and so on, formula (8.3) gives:
+(8.4)            ∆′ (t1 : t2 : t3 ; β1 , β2 , β3 )    = (t1 : t2 ; β1 , −β1 ) ⊗ (t2 : t3 ; β12 , β3 )
+                                                      − (t2 : t1 ; β2 , −β2 ) ⊗ (t1 : t3 ; β12 , β3 )
+                                                      + (t2 : t3 ; β2 , −β2 ) ⊗ (t1 : t3 ; β1 , β23 ) .
+In general, a typical term in ∆′ (t1 : . . . : t6 ; β1 , . . . ; β6 ) is
+         (t1 : t2 : t3 ; β1 , β2 , −β12 )(t4 : t3 ; β4 , −β4 )(t5 : t6 ; β5 , −β5 ) ⊗ (t3 : t6 ; β1234 , β56 )
+Proposition 56. Let ∆ : Hn → Hn ⊗ Hn be ∆ = 1 ⊗ id + id ⊗ 1 + ∆′ . Then Hn ,
+equipped with ∆, is a commutative graded Hopf algebra.
+Proof. We omit the proof. In fact it suffices to show that the 1-part of the coproduct
+coincides with the differential for the Debye polylogarithms (lemma 57 below).      
+                                                                                                       (m+1)
+  Let ∆(m+1) : Hn → Hn⊗m+1 denote the m-fold iteration of ∆. Let ∆⋆,...,⋆,1,⋆,...,⋆
+denote its component whose corresponding tensor factor contains only strings of length
+two. Thus ∆1,⋆ extracts all ordered pairs of neighbouring indices except (n, n − 1).
+Lemma 57. The differential equation for Λ can be rewritten as
+                                         d Λ = µ ◦ (dΛ ⊗ Λ) ◦ ∆1,⋆ ,
+where µ denotes the multiplication map.
+Proof. Follows from the definition of Λ together with the differential equation (2.6).                           
+Example 58. For any i 6= j, let t[i,j] = (ti : . . . : tj ) denote the tuple of consecutive
+elements. Contributions to ∆1,⋆ are of the following kinds (omitting indices βi ):
+(8.5)               (ti−1 : ti ) ⊗        (t1 : . . . : b
+                                                        ti−1 : . . . : tn )             1<i≤n
+(8.6)               (ti : ti−1 ) ⊗                      b
+                                          (t1 : . . . : ti : . . . : tn )               1<i<n
+30                              FRANCIS BROWN AND ANDREY LEVIN
+
+
+Contributions to ∆⋆,1 are of the following kinds:
+(8.7)                        t[1,n−1]      ⊗ (tn−1 : tn )
+(8.8)                           t[2,n]     ⊗ (t1 : tn )
+(8.9)                        t[n−1,1]      ⊗ (t1 : tn )
+(8.10)                 t[i,1] t[i+1,n]     ⊗ (t1 : tn )                   1<i<n−1
+(8.11)           t[1,k] t[i,k] t[i+1,n]    ⊗ (tk : tn )                   1<k <i<n−1
+8.2. Asymptotic of the Debye polylogarithms. Let J be a subset of {1, 2, . . . , n}.
+We study the asymptotics of Λ(A1,...,n ), as defined by (8.2) when tj for j ∈ J simulta-
+neously tend to infinity: i.e., for some finite values t01 , . . . , t0n , we set:
+(8.12)           tj = T t0j ,     for j ∈ J ,         tk = t0k        for k ∈
+                                                                            / J , and let T → ∞ .
+Caveat 59. The Debye polylogarithms are multivalued, and so their asymptotics are
+only well-defined up to monodromy. For divisors of the form DI , where I ( {1, . . . , n},
+and i 6= I, there is a canonical branch in the neighbourhood of ti = 0, where it vanishes
+(see §7.1). Only for the divisor D{1,...,n} must one make some choice. In the following
+theorem, this ambiguity is contained in the constant C in equation (8.13).
+   We call a string S = (i1 , i2 , . . . , il ) essential if il ∈
+                                                                / J and i1 , . . . , il−1 ∈ J, and
+regular if: either all indices belong to J, or none of its indices belongs to J. Set
+                                        
+                           reg               Λ(AS ) if S is regular ,
+                         Λ (AS ) =
+                                             0         otherwise ,
+and likewise define Φ(AS ) to be 0 if S is non-essential and
+                                    −β      −β           −β
+                                  ti1 i1 ti2 i2 . . . tin in
+                  Φ(AS ) =                                                if S is essential .
+                                βi1 βi1 ,i2 . . . βi1 ,i2 ,...,in−1
+Theorem 60. With the assumptions (8.12) above, for any 0 < ε << 1 we have
+(8.13)     Λ(t1 : t2 : . . . : tn ; β1 , β2 , . . . , βn ) = µ3 ◦ (Φ ⊗ Λreg ⊗ C) ◦ ∆(3) + O(T ε−1 )
+for some functions C(t1 : t2 : . . . : tn ; β1 , β2 , . . . , βn ) = C(β1 , β2 , . . . , βn ) which are
+constant in the t’s, and where µ3 denotes the triple product.
+Proof. Induction on the depth n. For n = 2 this theorem reduces to the well-known
+asymptotics of the classical Debye polylogarithm. For strings of length two
+                            dΛ(t1 : t2 ; β1 , β2 ) = t−β
+                                                      1
+                                                         1 −β2
+                                                          t2 d Li1 (t1 /t2 )
+where β1 + β2 = 0. It follows from this that for S = (1, 2), AS = (t1 : t2 ; β1 , β2 ),
+                           
+                            dΦ(AS ) + O(T ε−1 ) if S is essential ,
+               dΛ(AS ) =      dΛreg (AS )           if S is regular ,
+                           
+                              O(T ε−1 )             otherwise .
+This follows from the fact that Λ diverges at most logarithmically at infinity, and
+log(T )a O(T ε−1 ) = O(T ε−1 ). Hence, by lemma 57 it follows that asymptotically
+(8.14)              dΛ ∼ µ ◦ (d Φ ⊗ Λ) ◦ ∆1,⋆ + µ ◦ (d Λreg ⊗ Λ) ◦ ∆1,⋆ ,
+where a ∼ b means that a − b = O(T ε−1 ). For the induction step, we first check that
+the differential of the difference between both sides of (8.13) vanishes. By induction
+hypothesis, we replace Λ in (8.14) by (8.13):
+                                                                                                (4)
+(8.15)        dΛ ∼ µ4 ◦ (d Φ ⊗ Φ ⊗ Λreg ⊗ C + d Λreg ⊗ Φ ⊗ Λreg ⊗ C) ◦ ∆1,⋆,⋆,⋆ .
+                               MULTIPLE ELLIPTIC POLYLOGARITHMS                                         31
+
+
+Now compute the differential of the right-hand side of (8.13),
+                                                                                             (4)
+(8.16)          µ3 ◦ (d Φ ⊗ Λreg ⊗ C) ◦ ∆(3) + µ4 ◦ (Φ ⊗ d Λreg ⊗ Λreg ⊗ C) ◦ ∆⋆,1,⋆,⋆ .
+where in the second term we used lemma 57 applied to dΛreg . In order to show that
+(8.16) and the right-hand side of (8.15) coincide, it suffices to use the coassociativity
+of the coproduct and to show that the following expression vanishes:
+          Ω = d Φ + µ2 ◦ (Φ ⊗ d Λreg ) ◦ ∆⋆,1 − µ2 ◦ (d Φ ⊗ Φ + d Λreg ⊗ Φ) ◦ ∆1,⋆
+as the difference of (8.16) and (8.15) is µ3 ◦ (Ω ⊗ Λreg ⊗ C) ◦ ∆(3) . We will prove that
+                                                                                     
+(8.17) d Φ = µ2 ◦ − (Φ ⊗ d Λreg ) ◦ ∆⋆,1 + (d Φ ⊗ Φ) ◦ ∆1,⋆ + (d Λreg ⊗ Φ) ◦ ∆1,⋆
+applied to ξ, where ξ = (t1 : t2 : . . . : tn ; β1 , β2 , . . . , βn ).
+   Case when ξ is essential. Then J = {1, . . . , n − 1}. It follows from example 58
+that the only quotient sequences arising from ∆1,⋆ are of the form (ti : tn ) for some
+i < n, and are therefore not regular. Thus the first term in the right-hand side of
+(8.17) vanishes. The only contributions to the second summand come from the string
+(tn−1 , tn ); only the strings (ti−1 , ti ) and (ti , ti−1 ), for 1 < i < n, contribute to the last
+summand. For such a string a, let ξ/a denote its quotient. From the definitions:
+         (d Λreg ⊗ Φ)(a ⊗ ξ/a) = β1,2,...,i−1 d Li(ti−1 t−1
+                                                         i ) Φ(ξ)                 if a = (ti−1 , ti )
+         (d Λ   reg
+                      ⊗ Φ)(a ⊗ ξ/a) =        β1,2,...,i−1 d Li(ti t−1
+                                                                   i−1 ) Φ(ξ)   if a = (ti , ti−1 )
+Using the fact that d Li(ti−1 t−1           −1
+                               i )−d Li(ti ti−1 ) = d log(ti )−d log(ti−1 ) a straightforward
+calculation shows that both sides of (8.17) agree on ξ.
+    Case when ξ is non-essential. Either n ∈ J or some i < n is not in J. Suppose
+first that n ∈ J. The first term of (8.17) vanishes as either the argument of Φ is not
+essential, or the argument of Λreg is not regular. The second and third summands
+vanish since the arguments of Φ are non-essential. Hereafter, we assume n ∈     / J.
+    Now suppose that J c contains at least 3 elements J c ⊇ {i, j, n}. Then the entire
+right-hand side of (8.17) vanishes, since every argument of Φ is always non-essential.
+    It only remains to check the equality of (8.17) when J c consists of two elements
+{k, n} for some k < n. Consider the second and third terms on the right-hand side
+of (8.17). The quotient sequences of (8.5) and (8.6) are essential only for the strings
+(tk : tk+1 ) and (tk : tk−1 ). These are non-essential so the second factor dΦ⊗ Φ vanishes
+for all possible values of k. The third factor dΛreg ⊗Φ is non-trivial only when k = n−1
+on the term (tn−1 : tn ). In fact, in the case k = n − 1, we have contributions from
+Φ ⊗ dΛreg (8.7) and dΛreg ⊗ Φ applied to (8.5), for i = n − 1. They cancel.
+    Thus in all remaining cases k < n only the first term Φ ⊗ dΛreg of (8.17) can be
+non-zero. If k = 1 then we get terms in the first summand corresponding to (8.8),
+(8.9), (8.10). The cancellation of these terms follows from the equality
+                                    n−1
+                                    X
+(8.18)                                     (−1)i−1 a−1     −1
+                                                    [i,2] b[i+1,n−1] = 0
+                                     i=1
+where a[i,j] = βi (βi + βi−1 ) . . . (βi + . . . + βj ), if i ≥ j and is equal to 1 otherwise, and
+b[i,j] = βi (βi + βi+1 ) . . . (βi + . . . + βj ), if i ≤ j and is equal to 1 otherwise. The general
+case 1 < k < n − 1 is similar, and equivalent to
+                              X
+                                                                −1       −1
+(8.19)                                (−1)k−i−1 b−1    [1,k−1] a[i,k+1] b[i+1,n−1] = 0
+                          1<k<i<n−1
+
+Both identities (8.18) and (8.19) are easily checked by taking the residues along the
+divisors βi + . . . + βn−1 = 0 and induction.
+32                             FRANCIS BROWN AND ANDREY LEVIN
+
+
+   In conclusion, we have proved that Ω vanishes, and hence, by induction hypothesis,
+the differential of the difference between both sides of (8.13) is O(T ε−1 ). Thus the
+difference between both sides is a constant plus O(T ε−1 ), which proves the theorem. 
+8.3. Asymptotics in depths 1 and 2. In depth 1 we have,
+                             Λ(t; β) ∼ β −1 t−β + C(β)           as t → ∞ ,
+                                     −1
+where C(β) = 2iπ (1 − e(β)) (see lemma 62 below).
+  Let β12 = β1 + β2 , t12 = t−1       −1
+                             21 = t1 t2 . In depth two, the coproduct (8.4) yields
+
+                                    t−β
+                                     12
+                                        1
+
+         Λ(t1 , t2 ; β1 , β2 ) ∼          Λ(t2 ; β12 ) + Λ(t2 ; β2 ) C(β1 ) + C1 as t1 → ∞
+                                     β1
+                                    t−β 2                                 
+                             ∼       2
+                                           Λ(t1 ; β1 ) − tβ1 2 Λ(t1 ; β12 ) + C2 as t2 → ∞
+                                     β2
+                                     −β1 −β2                                  
+                                    t1 t2
+(8.20)                       ∼                  + Λ(t12 ; β1 ) − Λ(t21 ; β2 ) C(β12 )
+                                      β1 β12
+                                        t−β2
+                                      + 2 C(β1 ) + C12            as t1 , t2 → ∞
+                                         β2
+where C1 , C2 , C12 are constant power series in β1 , β2 to be determined. The constant
+C1 is clearly zero as can be seen by letting t2 → 0 in the first equation of (8.20). The
+same holds for C2 (let t1 → 0). The constant C12 can be computed as follows.
+8.3.1. Limit at D2 ∩ D12 . From the second line of (8.20), we deduce that
+(8.21)                 constant part of lim           lim Λ(t1 , t2 ; β1 , β2 ) = 0 ,
+                                             t1 →∞ t2 →∞
+
+since C2 = 0. Now let t1 , t2 → ∞ and then let t2 /t1 → ∞. The third line gives a
+constant contribution C12 (β1 , β2 ) − C(β2 )C(β12 ). It follows that
+(8.22)                               C12 (β1 , β2 ) = C(β2 )C(β12 ) .
+8.3.2. Limit at D1 ∩ D12 . From the first line of (8.20), we deduce that
+(8.23)          constant term of lim          lim Λ(t1 , t2 ; β1 , β2 ) = C(β1 )C(β2 ) .
+                                        t2 →∞ t1 →∞
+
+Now let t1 , t2 → ∞ and then let t1 /t2 → ∞. The third line gives the constant
+contribution C(β1 )C(β12 )+C12 (β1 , β2 ), which yields a second equation for C12 (β1 , β2 ).
+Note however, that the two limit computations are for different branches (see caveat
+59), and differ by the monodromy of the third line of (8.20) around the point t1 = t2 on
+D12 . The monodromy of Λ(t; β) (resp. Λ(t−1 ; β)) is πi (resp. −πi) around a positive
+upper semi-circle from 1− to 1+ . Therefore, by equating the two different formulae for
+C12 (β1 , β2 ) gives rise to an associator, or pentagon, equation:
+                                                
+(8.24)                    C(β1 ) + C(β2 ) − 2iπ C(β12 ) = C(β1 )C(β2 )
+                                     2πi
+which is indeed satisfied by C(β) = 1−e(β) .
+8.4. Rationality of the constants. The argument above generalizes:
+Proposition 61. Let v ∈ Un be a vertex of Un , i.e., v is an intersection of bound-
+ary divisors DI of dimension 0. Then there is a branch of the Debye polylogarithm
+Λ(t1 , . . . , tn ; β1 , . . . , βn ) in a neighbourhood of v which is locally of the form
+                                       X
+                                              fI (s1 , . . . , sn ) logi1 s1 . . . login sn
+                           I=(i1 ,...,in )
+
+where fI (0, . . . , 0) ∈ Q[πi], and s1 , . . . , sn are local sector coordinates at v = (0, . . . , 0).
+                         MULTIPLE ELLIPTIC POLYLOGARITHMS                                 33
+
+
+Proof. It suffices to show that the constant coefficients lie in Q[πi]. But this follows
+from a standard associator argument: the 1-skeleton of the polytope Cn ⊂ Un (R) is
+connected, and the restriction of Λ to a one-dimensional stratum is a depth one Debye
+polyogarithm, whose limiting values at infinity have the desired property, by (9.4).
+By analytic continuation around the one-dimensional edges of Cn , we deduce that the
+constants at v are expressible as sums and products of the coefficients of C(β).      
+
+                             9. Examples in depths 1,2
+9.1. Depth 1: the classical elliptic polylogarithms. Let q = e(τ ) with Im (τ ) > 0,
+and let z = e(ξ) with ξ in the fundamental domain D (§3.2). Consider the multivalued
+generating series of polylogarithms of depth one:
+                                         X
+                               L(z; β) =    Lin (z)β n−1 ,
+                                           n≥1
+
+which we wish to average over the spiral (0, ∞) ∼   = q R z in the universal covering space
+of M0,4 (C). The calculations are simplified if one considers the Debye generating series
+Λ(z; β) = z −β L(z; β). Since d Lin (z) = z −1 Lin−1 (z)dz for n ≥ 2, we have:
+(9.1)                            dΛ(z; β) = z −β dLi1 (z) .
+Note that Λ(z; β) vanishes at z = 0, and so by theorem 38 the series
+                                          X
+(9.2)                        E(z; u, β) =    un Λ(q n z; β)
+                                             n∈Z
+                                      −1
+converges absolutely for 1 < u < |q| , and may have poles at u = 1, which are given
+by the asymptotics of Λ(z; β) at z = ∞. Since d Li(z) is asymptotically −d log(z) at
+infinity, we deduce from (9.1) that there is some constant C(β) such that:
+(9.3)                          Λ(z; β) ∼ β −1 z −β + C(β) .
+Lemma 62. The constant at infinity is given by
+                                   X                            2iπ
+(9.4)       C(β) = −β −1 + iπ +         2 ζ(2n)β 2n−1 =                .
+                                                              1 − e(β)
+                                           n≥1
+
+Proof. The following functional equation follows from (9.1) and differentiating:
+(9.5)                   Λ(z; β) + Λ(z −1 ; −β) = β −1 z −β + C(β)
+Evaluating at z = 1 gives the expression for C(β), since Lin (1) = ζ(n), for n ≥ 2.       
+  The corresponding constants in all higher dimensions are explicitly computable from
+C(β). It follows from (9.3) that the singular part of E(z; u, β) comes from:
+   1 X n n −β                        z −β       C(β)         e(−βξ)       C(β)
+         u (q z) + C(β) =            −β
+                                               +        =               +         .
+   β n<0                          β(q u − 1) u − 1         β(e(γ) − 1) e(α) − 1
+
+where u = e(α), and γ = α − βτ . The second expression defines a Taylor series in β
+with coefficients in Q[u, (1 − u)−1 , log q, iπ]. Thus the singular part of E(ξ; α, β) is
+                                                 e(−ξβ) C(β)
+(9.6)                       Esing (ξ; α; β) =          +     .
+                                                   βγ    α
+In conclusion, the regularized generating series for the classical elliptic polylog is:
+                              X                           e(−ξβ) C(β)
+(9.7)        Ereg (ξ; α; β) =   e(αn)Λ(e(ξ + nτ ), β) −            −         ,
+                                                            βγ          α
+                             n∈Z
+34                             FRANCIS BROWN AND ANDREY LEVIN
+
+
+which admits a Taylor expansion in α, β at the origin. Thus we write
+                                        X
+                       Ereg (ξ; α; β) =     ΛE           m n
+                                             m,n (ξ; τ )α β ,
+                                                   m,n≥0
+
+where ΛE
+       m,n (ξ; τ )are the classical elliptic polylogarithms of [13], and equal to the
+functions denoted (−1)n Λm,n (ξ; τ ) in loc. cit., Definition 2.1.
+Remark 63. In order to retrieve the explicit formula of [13], Definition 2.1, one can write
+ΛEm,n (ξ; τ ) as an average of certain modified (and regularized) Debye polylogarithms.
+For this, one simply replaces the term α−1 in (9.6) by the expression
+                                   1           X
+(9.8)                                = P (α) −     e(mα)
+                                  α            m>0
+
+where P is a power series whose coefficients are related to Bernoulli numbers. Replacing
+the term in γ −1 by a similar expression to (9.8) leads to the required result.
+9.2. Depth 2: the double elliptic polylogarithms. Consider the generating series
+of depth two Debye multiple polylogarithms:
+                                             X
+           Λ(t1 , t2 ; β1 , β2 ) = t−β
+                                    1
+                                       1 −β2
+                                        t2     Im1 ,m2 (t1 , t2 )β1m1 −1 β2m2 −1 .
+                                                   m1 ,m2 ≥1
+
+The generating series of elliptic multiple polylogarithms is:
+                                              X
+(9.9)     E2 (ξ1 , ξ2 ; u1 , u2 , β1 , β2 ) =   um 1 m2
+                                                 1 u2 Λ(q
+                                                          m1
+                                                              t1 , q m 2 t2 ; β 1 , β 2 )
+                                                 m1 ,m2 ∈Z
+
+which converges absolutely for 1 < u1 , u2 < |q|−1 by theorem 38, and has poles along
+u1 = 1, u2 = 1, u1 u2 = 1 corresponding to logarithmic singularities of Λ(t1 , t2 ) along
+D1 , D2 , D12 . Let γi = αi − τ βi , where e(αi ) = ui , and q = e(τ ).
+                                                                                             sing(1)   sing(2)
+Lemma 64. The singular part of E2 (ξ1 , ξ2 ; α1 , α2 , β1 , β2 ) is Esing
+                                                                     2    = E2 + E2                              ,
+       sing(i)
+where E2       comes from singularities along divisors of codimension i. We have
+ sing(2)       e−β1 ξ1 −β2 ξ2 e−β1 ξ12 C(β12 ) e−β2 ξ21 C(β12 ) e−β2 ξ2 C(β1 )       C1,12
+E2         =                 +                −                +               +
+                β1 β12 γ1 γ2    β1 γ1 α12        β2 γ2 α12        β2 γ2 α1       α1 (α1 + α2 )
+where C1,12 = C(β1 )C(β2 ) and C(β) is the power series defined by (9.4), and
+                               sing(1)        R1      R2     A1   A12
+                              E2         =         +       +    +     ,
+                                             β1 γ1   β2 γ2   α1   α12
+where
+               A1    =   Ereg (ξ2 ; α12 , β2 ) C(β1 ) α1 =0
+                                                                        
+               A12   =    Ereg (ξ12 ; α1 , β1 ) − Ereg (ξ21 ; −α1 , β2 ) C(β12 ) α12 =0
+               R1    =   e−β1 ξ12 Ereg (ξ2 ; α12 ; β12 ) γ1 =0
+               R2    =   e−β2 ξ2 Ereg (ξ1 ; α1 , β1 ) − e−β2 ξ21 Ereg (ξ1 ; α12 , β12 ) γ2 =0 .
+Here, ea = e(a), α12 = α1 + α2 , β12 = β1 + β2 , and ξ12 = −ξ21 = ξ1 − ξ2 .
+Proof. We can compute the singularities of E2 from the differential equation
+(9.10) d E2 (ξ1 , ξ2 ; α1 , α2 , β1 , β2 ) =       d E1 (ξ1 − ξ2 ; α1 , β1 ) E1 (ξ2 ; α1 + α2 , β1 + β2 )
+                                           −       d E1 (ξ2 − ξ1 ; α2 , β2 ) E1 (ξ1 ; α1 + α2 , β1 + β2 )
+                                             +     d E1 (ξ2 ; α2 , β2 ) E1 (ξ1 ; α1 , β1 )
+                             MULTIPLE ELLIPTIC POLYLOGARITHMS                                         35
+
+
+The fact that d2 E2 (ξ1 , ξ2 , α1 , α2 ; β1 , β2 ) = 0 reduces to the Fay identity. Substituting
+the singular parts Esing (given by (9.6)) into (9.10) yields the pole structure of E2 .
+Using (f g)sing = (f g sing + f sing g) − f sing g sing , the differential equation for E1 (7.1) and
+                                                                            sing(1)      sing(2)
+the additivity of the exponential function, we have Esing         2     = E2        − E2          , where
+                  e−ξ1 β1 −ξ2 β2       e −ξ12 β1
+                                                   C(β12 ) e     −ξ21 β2
+                                                                         C(β12 ) e     −β2 ξ2
+                                                                                               C(β1 ) 
+   d Esing(2) = d                   +                       −                     +
+                    β1 β12 γ1 γ2            β1 γ1 α12              β2 γ2 α12            β2 γ2 α1
+                h                                              i C(β )                           C(β1 )
+       sing(1)                                                       12
+    d E2       = d E1 (ξ12 ; α1 , β1 ) − d E1 (ξ21 ; α2 , β2 )            + d E1 (ξ2 , α2 , β2 )
+                                                                  α12                              α1
+                                κ12 |γ1 +γ2 =0       κ1 |γ1 =0    κ2 |γ2 =0
+                             +                    +            +
+                                    β12 γ12           β1 γ1         β2 γ2
+where γ12 = γ1 + γ2 and
+                                                    
+          κ12 = F (ξ12 , γ1 ) + F (ξ21 , γ2 ) e−β1 ξ1 −β2 ξ2 dξ12
+            κ1   =    e−β1 ξ1 −β2 ξ2 F (ξ2 , γ2 ) dξ2 − β1 e−β1 ξ12 E1 (ξ2 ; α12 ; β12 ) dξ12
+            κ2   =    β2 e−β2 ξ21 E1 (ξ1 ; α12 , β12 ) dξ12 − β2 e−β2 ξ2 E1 (ξ1 ; α1 ; β1 ) dξ2
+It follows from the expansion (iii) of Proposition-Definition 4 plus the fact that E1 (ξ, τ )
+is an odd function of ξ that κ12 |γ1 +γ2 = 0, and therefore does not contribute. There is
+                  sing(2)
+an obvious of d E2        . By integrating, we deduce that:
+                           sing(1)    R1       R2     A1     A12
+                        E2         =       +        +    +         ,
+                                     β1 γ1    β2 γ2   α1   α1 + α2
+since d Ereg and d E are equal up to higher order poles. It remains to add the constants
+of integration. Since these give at most simple poles in the α’s and correspond to the
+limiting values in the corners, they contribute
+                                     C1,12           C2,12
+                                               +             ,
+                                 α1 (α1 + α2 ) α2 (α1 + α2 )
+where C1,12 and C2,12 are the constant part of the asymptotic of the Debye double
+polylogarithm near D1 ∩ D12 and D2 ∩ D12 given by (8.21) and (8.23).                      
+   As in the depth 1 case, we therefore define the depth 2 multiple elliptic polyloga-
+rithms to be the coefficients in the Taylor expansion:
+                            X
+            E2 − Esing
+                  2    =          ΛE                                    m1 m2 n1 n2
+                                    (m1 ,m2 ),(n1 ,n2 ) (ξ1 , ξ2 ; τ ) α1 α2 β1 β2 ,
+                              mi ,nj ≥0
+
+where E2 is given by (9.9), and Esing
+                                 2    by the previous lemma.
+9.3. Singular part computed from the coproduct. Another way to arrive at
+lemma 64 is from the computation of the asymptotic of the depth 2 Debye polyloga-
+rithms given in example 8.3. In general, we have:
+Corollary 65. The singular structure of the elliptic Debye polylogarithm En is ob-
+tained by averaging the asymptotic of the ordinary Debye polylogarithms. In particular,
+it is explicitly computable from the coproduct (8.3) and the constant terms C.
+   In fact, the asymptotic of the Debye polylogarithms in the neighbourhood of bound-
+ary divisors of all codimensions can be computed from the coproduct in two different
+ways. The first, via theorem 60, is to compute the asymptotic in the neighbourhood
+of codimension 1 divisors, and by induction apply the theorem to the arguments of
+Λ to obtain the asymptotic in all codimensions. The other, is directly from formula
+(8.13) which immediately gives the asymptotic in all codimensions, provided that the
+definition of ‘essential’, ‘regular’, and the constants C are modified accordingly.
+36                                  FRANCIS BROWN AND ANDREY LEVIN
+
+
+                                      10. Iterated integrals on E ×
+   We compute the integrable words corresponding to the elliptic Debye polylogarithms
+viewed as functions of one variable, and compare with the bar construction. From this
+we deduce that all iterated integrals on E × are obtained by averaging.
+10.1. Projective coordinates and degeneration. Let Gm = P1 \{0, ∞}, let n ≥ 1,
+and write ∆ ⊂ Gn+1
+                m  for the union of all the diagonals. There is an isomorphism
+                                                                  ∼
+(10.1)                                   (Gn+1
+                                           m \∆)/Gm −→ M0,n+3 .
+
+If we write homogeneous coordinates on the left-hand side as (t1 : . . . : tn+1 ), then the
+isomorphism is given by (t1 : . . . : tn+1 ) 7→ (t1 t−1                −1
+                                                     n+1 , . . . , tn tn+1 ). Let β1 , . . . , βn+1 be
+formal parameters satisfying β1 + . . . + βn+1 = 0. Recall that we set:
+                                                                     −1
+(10.2)             Λ(t1 : . . . : tn+1 ; β1 , . . . , βn+1 ) = Λ(t1 tn+1 , . . . , tn t−1
+                                                                                       n+1 ; β1 , . . . , βn )
+
+ Forgetting the marked point tn+1 gives rise to a fibration
+(10.3)                                           M0,n+3        → M0,n+2
+                                      (t1 : . . . : tn+1 )     7→ (t1 : . . . : tn )
+whose fiber over the point (t1 : . . . : tn ) of M0,n is isomorphic to Gm \{t1 , . . . , tn }. The
+functions (10.2), when restricted to each fiber, have a particularly simple description.
+Lemma 66. For constant t1 , . . . , tn (i.e., dti = 0 for i ≤ n), we have
+     dΛ(t1 : . . . : tn+1 ; β1 , . . . , βn+1 ) = dΛ(tn : tn+1 ; βn , −βn )               ×
+
+(10.4)                                           Λ(t1 : . . . : tn−1 : tn+1 ; β1 , . . . , βn−1 , βn + βn+1 )
+For 1 ≤ i < j ≤ n, let Mij denote analytic continuation along a small loop around
+ti = tj . Then the functions (10.2) are single-valued around ti = tj for i, j ≥ 1:
+                 (Mij − id) Λ(t1 : . . . : tn+1 ; β1 , . . . , βn+1 ) = 0               if     i, j ≤ n .
+Proof. The differential equation (10.4) follows from the differential equation for Λ. To
+prove the singlevaluedness, note that Mij commutes with ∂/∂tn+1 for i, j ≤ n. From
+(10.4) the result follows by induction plus the fact that Λ(t1 : . . . : tn+1 ) vanishes as
+tn+1 tends to ∞. Alternatively, via (2.3), the Taylor expansion (2.2) of the function
+Im1 ,...,mn (t1 , . . . , tn ) at the origin shows that it has trivial monodromy around ti = tj
+for i < j ≤ n. Thus the same is true of Λ(t1 : . . . : tn+1 ) by definition.                 
+   The elliptic analogue of (10.1) is as follows. Letting ∆ ⊂ E n+1 denote the union of
+all diagonals, and using the notation (ξ1 : . . . : ξn+1 ) for coordinates on E n /E, we have:
+                                                    ∼
+(10.5)                      (E n+1 \∆)/E −→ E (n)
+                         (ξ1 : . . . : ξn+1 ) 7→ (ξ1 − ξn+1 , . . . , ξn − ξn+1 ) .
+Again, forgetting the marked point ξn+1 gives rise to a fibration
+(10.6)                                              E (n)       → E (n−1)
+                                     (ξ1 : . . . : ξn+1 )      7→ (ξ1 : . . . : ξn )
+whose fiber over the point (ξ1 : . . . : ξn ) is isomorphic to E\{ξ1 , . . . , ξn }.
+Definition 67. Define the elliptic Debye hyperlogarithm to be the generating series:
+Gn (ξ; ξ1 , . . . , ξn , α1 , . . . , αn , β1 , . . . , βn ) = En (ξ1 − ξ, . . . , ξn − ξ; α1 , . . . , αn , β1 , . . . , βn )
+viewed as a multivalued function of the single variable ξ ∈ E\{ξ1 , . . . , ξn }.
+                                     MULTIPLE ELLIPTIC POLYLOGARITHMS                                           37
+
+
+  It follows from equation (10.4) that, for constant ξ1 , . . . , ξn (i.e., dξi = 0),
+(10.7)         dGn (ξ; ξ1 , . . . , ξn ; α1 , . . . , αn , β1 , . . . , βn ) = d E1 (ξn − ξ; αn , βn )
+                                       × Gn−1 (ξ; ξ1 , . . . , ξn−1 ; α1 , . . . , αn−1 , β1 , . . . , βn−1 )
+Remark 68. There is no obvious way to determine the constant of integration in (10.7)
+since the averaging process introduces constant terms related to Bernoulli numbers.
+On the other hand, one natural normalization for an iterated integral on E (n) is for it
+to vanish along a tangential base point at 1 on the Tate curve at infinity, which is not
+the case for the averaged functions En . Thus, the comparison between the averaged
+functions En and such iterated integrals must take into account the constants.
+  In order to circumvent this issue, let ̺ ∈ E\{ξ1 , . . . , ξn } be any point. Consider the
+n + 1 square matrix Mij with 1’s along the diagonal, 0’s below the diagonal, and
+  Mij = Gj−i (ξ; ξi , . . . , ξj−1 ; αi , . . . , αj−1 , βi , . . . , βj−1 )        for    1≤i<j ≤n+1 .
+Denote this matrix by Mξ , viewed as a function of ξ. The differential equation (10.7)
+translates into an equation of the form dMξ = Mξ Ω for some square matrix Ω of
+1-forms. It follows that M̺−1 Mξ satisfies the same equation. Therefore, we define
+         G̺i (ξ; ξ1 , . . . , ξi ; α1 , . . . , αi , β1 , . . . , βi ) = (M̺−1 Mξ )1,i+1   for 0 ≤ i ≤ n
+These functions satisfy the differential equation (10.7) and vanish at ξ = ̺ if i ≥ 1.
+10.2. Reminders on iterated integrals. Given a smooth manifold M over R, a
+smooth path γ : [0, 1] → M , and smooth one-forms ω1 , . . . , ωn on M , the iterated
+integral of ω1 , . . . , ωn along γ is defined to be 1 if n = 0, and for n ≥ 1:
+                   Z                   Z
+                         ω1 . . . ωn =             γ ∗ (ω1 )(t1 ) . . . γ ∗ (ωn )(tn ) .
+                       γ                      0≤tn ≤...≤t1 ≤1
+                   ∞
+Let A be the C de Rham complex on M , and let V (A) denote the zeroth cohomology
+of the reduced bar complex of A. Choose a basepoint ̺ ∈ M , and let IM denote the
+differential R-algebra of multivalued holomorphic functions on M with global unipotent
+monodromy. A theorem due to Chen [6] states that the map V (A) → V (M ) given by
+                      X                                 X Z
+(10.8)                        cI [ωi1 | . . . |ωin ] 7→  cI ωi1 . . . ωin
+                           I=(i1 ,...,in )                              I       γ
+
+is an isomorphism, where γ is any path from ̺ to z, and the iterated integrals are viewed
+as functions of the endpoint z. In particular, they only depend on the homotopy class
+of γ relative to its endpoints. The differential with respect to z is
+                             Z                            Z
+                    ∂ X                         X
+(10.9)                    cI    ωi1 . . . ωin =   cI ωi1 ∧ ωi2 . . . ωin .
+                    ∂z        γ                            γ
+                                 I                            I
+By successive differentiation, and using formula (10.9), we can reconstruct a bar ele-
+ment in V (A) which corresponds via (10.8) to any given function in I(M ). We shall
+apply this in the following situation. Suppose that X ֒→ A is a connected Q-model for
+A, so we have an isomorphism V (X)⊗Q R ∼    = V (A). Denote the image of the map V (X)
+in I(M ) by I(M )Q . It defines a Q-structure on the algebra I(M ). If F ∈ I(M )Q , its
+bar element in V (X) will be a unique element of T (X 1 ) by (5.2) (since X is connected).
+In the sequel, M will be a single elliptic curve with several punctures. We have a fam-
+ily of functions F ⊂ I(M ), which are the functions obtained by averaging, and want
+to show that F = I(M )Q . For this we shall write the elements of F as elements of
+V (X) ⊗Q R by computing their differential equations, and check that: firstly they lie
+in V (X), and secondly, using our explicit description of V (X), that they span V (X).
+38                               FRANCIS BROWN AND ANDREY LEVIN
+
+
+10.3. Integrable words corresponding to the elliptic polylogarithms.
+Definition 69. Define the shuffle exponential to be the formal power series:
+                        X αn          X
+            e x (αν) =         ν xn =     αn [ν| . . . |ν] ∈ T (Q[ν])[[α]] .
+                            n!                | {z }
+                                  n≥0                 n≥0
+                                                                     n
+The leading term in the series (n = 0) is the empty word. Note that if w0 , . . . , wn are
+symbols and x = e x (αw0 ) then we have
+(10.10)                    x x [w1 |w2 | . . . |wn ] = [x|w1 |x|w2 | . . . |x|wn |x]
+as an equality of power series in α with coefficients in T (Qw0 ⊕ Qw1 ⊕ . . . ⊕ Qwn ).
+Lemma 70. Let ̺, ξ ∈ E, and let α, β be formal parameters, and γ = α − τ β. Then
+we have the following equality of generating series of multivalued functions:
+                                                    Z ξ
+                                                
+(10.11) e(β̺ + γr̺ ) E1 (ξ; α, β) − E1 (̺; α, β) =      [Ω(ξ; γ)|e x (−β ′ ω (0) − γν)]
+                                                                         ̺
+
+where we write ̺ = s̺ + r̺ τ (recall that ξ = s + r τ ).
+Proof. Recall that ω (0) = dξ and ν = 2πidr. Let β ′ = 2πiβ. It therefore follows
+immediately from definition 69 and the shuffle product for iterated integrals that
+                                            Z ξ
+                 e(−βξ − γr + β̺ + γr̺ ) =      e x (−β ′ ω (0) − γν) .
+                                                              ̺
+We have d E1 (ξ; α, β) = e(−βξ)F (ξ; γ)dξ and Ω(ξ; γ) = e(γr)F (ξ; γ)dξ. Hence
+                                 d E1 (ξ; α, β) = e(−βξ − γr) Ω(ξ; γ) .
+Combining these two facts, we see that, by (10.9),
+                                            Z ξ
+               d(LHS of (10.11)) = Ω(ξ; γ)      e x (−β ′ ω (0) − γν) ,
+                                                                 ̺
+
+so the differentials of both sides of (10.11) agree, and both vanish at ξ = ̺.                                      
+   It is straightforward to verify that the coefficients in the right-hand side of (10.11)
+are integrable words in V (X1 ) ⊗Q C. For n ≥ 1, let us define
+(10.12) Hn (ξ; α; β) = e(β1,...,n ̺ + γ1,...,n r̺ ) G̺n (ξ; ξ1 , . . . , ξn ; α1 , . . . , αn , β1 , . . . , βn )
+where we recall that β1,...,n = β1 + . . . + βn , and likewise for γ. By construction, the
+coefficients of H are combinations of elliptic multiple polylogs.
+  Recall that Xn is our rational model for the de Rham complex of E (n) , and a 7→ a :
+Xn → XFn is the restriction to the fiber. For any a1 , . . . , ak ∈ Xn , let us write
+                                   [a1 | . . . |ak ] = [a1 | . . . |ak ] ∈ XF⊗k
+                                                                              n
+                                                                                ,
+and extend this definition in the obvious way for formal power series in T (Xn ).
+Proposition 71. The generating series of functions Hn is the iterated integral:
+                                         Z ξ
+(10.13)                   Hn (ξ; α, β) =     W n (ξ) ,
+                                                             ̺
+
+on the fiber E\{ξ1 , . . . , ξn } of (10.6), where W1 (ξ) = [Ω(ξ1 − ξ; γ1 )|e x (−β1′ ω (0) − γ1 ν)],
+and Wn is defined inductively for n ≥ 2 by
+                   Wn (ξ) = [Ω(ξn − ξ; γn )|e x (−βn′ ω (0) − γn ν) x Wn−1 (ξ)] .
+Formula (10.13) also remains valid in the case when the marked points ξi , 1 ≤ i ≤ n,
+are not necessarily distinct.
+                            MULTIPLE ELLIPTIC POLYLOGARITHMS                                    39
+
+
+Proof. The case n = 1 is essentially equation (10.11). For n > 1, we have by (10.7):
+                   dHn (ξ) = e(βn ̺ + γn r̺ )d E1 (ξn − ξ; αn , βn ) Hn−1 (ξ)
+and furthermore, Hn (̺) = 0. The proof of the proposition in the generic case, i.e.,
+when all ξi are distinct follows by induction just as lemma 70. Finally, it follows from
+lemma 66 that Hn (ξ; α, β) has no singularities along ξi = ξj for 1 ≤ i < j ≤ n, and so
+equation (10.13) remains true after degeneration of the arguments ξi .                 
+   Note that both sides of (10.13) have simple poles in the variables γ1 , . . . , γn . Here-
+after, extracting the coefficients of a generating series such as either side of (10.13) will
+mean multiplying by γ1 . . . γn and taking the Taylor expansion in αi , βi .
+10.4. Comparison theorem. Let Σ = {σ0 , . . . , σm } be distinct points on E, where
+σ0 = 0. Fix a basepoint ̺ ∈ E\Σ. Define F̺ (E\Σ) to be the Q-algebra of multivalued
+functions spanned by the function r − r̺ , and the coefficients of the functions
+(10.14)            Hn (ξ; ξ1 , . . . , ξn ; α, 0), for all n ≥ 1, where ξ1 , . . . , ξn ∈ Σ .
+                                        (i)
+  For every σ ∈ Σ, let us write ωσ for the coefficients of
+                                          X
+                            Ω(ξ − σ; α) =     ωσ(i) αi−1 ,
+                                                     n≥0
+              (1)  (1)
+and set ησ = ωσ − ωσ0 , for σ 6= 0.    Recall that our model XFn for the punctured
+                                              (i)
+elliptic curve E\Σ is generated by ν and the ωσ for i ≥ 0, σ ∈ Σ (lemma 10).
+                          Rξ
+Theorem 72. The map ̺ : V (XFn ) → F̺ (E\Σ) is an isomorphism.
+
+Proof. By (10.10), the integrand W n (ξ) of proposition 71 can also be written:
+(10.15)      [Ω(ξn − ξ; γn )|Pn |Ω(ξn−1 − ξ; γn,n−1 )|Pn−1 | . . . |Ω(ξ1 − ξ; γn,...,1 )|P1 ]
+                    ′
+where Pi = e x (−βn,...,i ω (0) −γn,...,i ν) for 1 ≤ i ≤ n. The functions (10.14) correspond
+to the constant terms in (10.15) with respect to βi , namely the iterated integrals:
+             Z ξ
+(10.16)          [Ω(ξn − ξ; αn )|e x (−αn ν)| . . . |Ω(ξ1 − ξ; αn,...,1 )|e x (−αn,...,1 ν)] .
+               ̺
+
+One easily checks that (10.16) is integrable, but this also follows from equation (10.13),
+since the iterated integral only depends on the endpoint ξ, and not the path of inte-
+gration chosen. Thus the coefficients of (10.16) with respect to α lie in V (XFn ).
+   It suffices to show that the iterated integral of every element of V (XFn ) arises in
+this way. For this, choose any numbers ε1 , . . . , εn ∈ {0, 1}. By the multilinearity of
+bar elements, the iterated integral from ̺ to ξ of any integrable word of the form
+(10.17)        [Ω(ξn − ξ; αn ) − εn Ω(ξ; αn )|e x (−αn ν)| . . .
+                        . . . |Ω(ξ1 − ξ; αn,...,1 ) − ε1 Ω(ξ; αn,...,1 )|e x (−αn,...,1 ν)]
+also lies in F̺ (E\Σ). Now let πℓ : V (XFn ) → grℓ V (XFn ) be the map which projects
+onto the associated graded for the length filtration, and extended to power series in
+the obvious way. It kills all Massey products of weight ≥ 2. In particular,
+                                                       
+                        πℓ Ω(σ − ξ; α) − Ω(ξ; α) = −η σ
+                                                       
+                                     πℓ Ω(σ − ξ; α) = ω (0) α−1
+Applying πℓ to (10.17) (multiplied by α1 . . . αn to clear the poles in αi ) gives a gener-
+ating series in α1 , . . . , αn whose coefficients are all words of the form
+(10.18)                               mk ν ik . . . m2 ν i2 m1 ν i1
+40                           FRANCIS BROWN AND ANDREY LEVIN
+
+
+where i1 , . . . , ik are any non-negative integers, and
+                                         
+                                            η ξi   if εi = 1
+                                   mi =       (0)
+                                            ω      if εi = 0
+It is easy to verify that every word in {ν, ω (0) , η σ1 , . . . , η σm }× is a linear combination
+of shuffle products of ν . . . ν with elements (10.18). It follows from the description (see
+proposition 23 and preceding discussion):
+                  grℓ V (XF ) ∼
+                             n   = T (Qν ⊕ Qω(0) ⊕ Qη ⊕ . . . ⊕ Qη ) ,
+                                                           σ1             σm
+
+that the iterated integral of every element in V (XFn ) appears a linear combination of
+products of the function
+                                               Z ξ
+                                      r − r̺ =     ν
+                                                     ̺
+with coefficients of (10.17). This completes the proof.                                          
+   In particular, every iterated integral on E × can be obtained in this way. Our model
+V (X1 ) defines a Q-structure on the de Rham fundamental groupoid of E × , hence:
+Corollary 73. The periods of the prounipotent fundamental groupoid ̺ Πξ (E × ) for any
+initial point ̺ ∈ E × and endpoint ξ ∈ E × , lie in the Q-algebra generated by r − r̺ , and
+the coefficients of (10.14) with respect to the αi ’s.
+Remark 74. The previous corollary concerns a general complex elliptic curve. If E ×
+happens to be defined over Q, then the Q-structure on the de Rham fundamental
+groupoid induced from the Q-structure on E × is is not the same as the one we consid-
+ered above. These two Q-structures could in principle be compared using [14], §5.
+10.5. Generalizations. One can extend theorem 72 to the case where ̺ is a tangen-
+tial basepoint at one of the points σ ∈ Σ. As a result, a higher-dimensional version
+of theorem 72 can also be deduced from theorem 26, which states that the iterated
+integrals on the configuration space E (n) are products of iterated integrals on the fibers
+of the map E (n) → E (n−1) , which is the one-dimensional case treated above. Therefore
+all iterated integrals on E (n) can be obtained from our averaging procedure.
+
+
+                                          References
+ [1] A. Beilinson, A. Levin: Elliptic Polylogarithms, Proceedings of Symposia in Pure Mathemat-
+     ics, Vol. 55 (1994), Part 2, pp. 126-196.
+ [2] S. Bloch: Higher regulators, algebraic K-theory and zeta-functions of elliptic curves, Lecture
+     Notes, U.C. Irvine, 1977.
+ [3] F. Brown, A. Levin: On the Bar-de Rham complex, in preparation.
+ [4] F. Brown: Multiple zeta values and periods of moduli spaces M0,n , Ann. ÉNS 42 (2009), 371-
+     489.
+ [5] D. Calaque, B. Enriquez, P. Etingof: Universal KZB equations: the elliptic case, Algebra,
+     arithmetic, and geometry: in honor of Yu. I. Manin. Vol. I, 165-266, Progr. Math., 269, (2009).
+ [6] K. T. Chen: Iterated path integrals, Bull. Amer. Math. Soc. 83, (1977), 831-879.
+ [7] K. T. Chen: Circular bar construction, J. Algebra 57 (1979), no. 2, 446-483.
+ [8] B. Enriquez: Elliptic associators, arXiv:1003.1012 (2010)
+ [9] H. Gangl, M. Kaneko, D. Zagier: Double zeta values and modular forms, Automorphic
+     forms and zeta functions, 71-106, World Sci. Publ., (2006).
+[10] R. Hain, M. Matsumoto: Universal elliptic motives, Talks given at RIMS, Kyoto (2010) and
+     Heillbronn institute, Bristol (2011).
+[11] M. Kim: Massey products for elliptic curves of rank 1, J. Amer. Math. Soc. 23 (2010), 725-747.
+[12] K. Kimura, T. Terasoma : Relative DGA and mixed elliptic motives, arXiv:1010.3791v3
+     (2010).
+                           MULTIPLE ELLIPTIC POLYLOGARITHMS                                   41
+
+
+[13] A. Levin: Elliptic polylogarithms: an analytic theory, Compositio Math. 106 (1997), 267-282.
+[14] A. Levin, G. Racinet: Towards multiple elliptic polylogarithms, arXiv:0703237v1 (2007).
+[15] D. Mumford: Tata lectures on theta. II, Progress in Mathematics, 43. Birkhuser (1984)
+[16] H. Nakamura: On arithmetic monodromy representations of Eisenstein type in fundamental
+     groups of once punctured elliptic curves, RIMS preprint 1691, (2010).
+[17] O. Patashnick:       A Candidate for the abelian category of mixed elliptic motives,
+     arXiv:1010.4685v1 (2010).
+[18] A. Pollack: Special derivations and period polynomials of modular forms, Talk given at a
+     orkshop on Multiple Zeta Values, Modular Forms and Elliptic Motives, Heilbronn Institute,
+     Bristol (2011).
+[19] A. Weil: Elliptic functions according to Eisenstein and Kronecker, Ergebnisse der Mathematik
+     Band 88, Springer (1976)
+[20] D. Zagier: Periods of modular forms and Jacobi theta functions, Invent. Math., 104 (1991),
+     449-465.
+

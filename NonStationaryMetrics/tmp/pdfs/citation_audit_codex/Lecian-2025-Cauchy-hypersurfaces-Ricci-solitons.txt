@@ -1,0 +1,820 @@
+Article
+
+Goedesics Completeness and Cauchy Hypersurfaces of Ricci
+Solitons on Pseudo-Riemannian Hypersurfaces at the Fictitious
+Singularity: Schwarzschild-Soliton Geometries and
+Generalized-Schwarzschild-Soliton Ones
+Orchidea Maria Lecian 1,2
+
+                                         1   Department of Clinical and Molecular Medicine, Sapienza University of Rome, Viale Regina Elena 324,
+                                             00185 Rome, Italy; lecian@icra.it or omlecian@gmail.com
+                                         2   ICRA—International Center for Relativistic Astrophysics, c/o Physics Department, Sapienza University of
+                                             Rome, Piazzale Aldo Moro 5, 00185 Rome, Italy
+
+                                         Abstract
+                                         The methodology is developed here to write Ricci solitons on the newly found structure of
+                                         the pseudo-spherical cylinder. The methodology is specified for Schwarzschild solitons and
+                                         for Generalized-Schwarzschild solitons. Accordingly, a new classification is written for the
+                                         Schwarzschild solitons and for the Generalized-Schwarzschild solitons. The rotational field
+                                         is spelled out. The potential for a tangent vector field is used. The conditions are recalled
+                                         to discriminate which submanifold of a Ricci manifold is a soliton or is an almost-Ricci
+                                         soliton. It is my aim to prove that a concurrent vector field is uniquely determined after
+                                         the 4-velocity vector of a Schwarzschild soliton. As a result, the analytically specified
+                                         manifold, which is a spacelike submanifold of the Schwarzschild spacetime that admits
+                                         Ricci solitons. The rotational killing fields are tangent to the event horizon. The conditions
+                                         that are needed to match the new aspects are spelled out analytically. As a result, the two
+                                         manifolds described in the work of Bardeen et al. about the requested mass of a stationary,
+                                         axisymmetric solution of the Einstein Field Equations of the spacetime, which contains
+Academic Editor: Angel Ricardo           a blackhole surrounded with matter from the new results obtained after correcting the
+Plastino                                 work of Hawking 1972 about would-be point ’beyond the conjugate point’ on the analytic
+Received: 21 October 2025                continuation of the would-be geodesics: they are proven here to become the tangent
+Revised: 22 November 2025                manifold (which is expressed from the tangent bundle in General-Relativistic notation).
+Accepted: 26 November 2025
+                                         The prescription here is based on one of the books of Landau et al., that the matter is not put
+Published: 2 December 2025
+                                         into the metric tensor, not even in the ultra-Relativistic limit. This way, the pseudo-spherical
+Citation: Lecian, O.M. Goedesics
+                                         cylinder is one implemented from the Minkowskian description and whose asymptotical
+Completeness and Cauchy
+Hypersurfaces of Ricci Solitons on
+                                         limit is proven. The new methodology allows one to describe the outer region of the
+Pseudo-Riemannian Hypersurfaces at       blackhole as one according to which the (union of the trapped) regions is one with null
+the Fictitious Singularity:              support. For the purpose of the present investigation, the definition of concurrent vector
+Schwarzschild-Soliton Geometries and     fields in General-Relativity is newly developed. As a further new result, the paradigm is
+Generalized-Schwarzschild-Soliton
+                                         implemented for the shrinking case, which admits as subcase the Schwarzschild manifolds
+Ones. Axioms 2025, 14, 896. https://
+                                         and the Generalized-Schwarzschild manifolds. The Penrose 1965 Theorem is discussed
+doi.org/10.3390/axioms14120896
+                                         for the framework outlined here; in particular, the presence of trapped hypersurfaces is
+Copyright: © 2025 by the author.
+                                         discarded. The no-hair theorem can now be discussed.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+                                         Keywords: Schwarzschild manifold; Ricci solitons; spacetime hypersurfaces
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license
+                                         MSC: 83C20
+(https://creativecommons.org/
+licenses/by/4.0/).
+
+
+
+
+Axioms 2025, 14, 896                                                                                        https://doi.org/10.3390/axioms14120896
+Axioms 2025, 14, 896                                                                                             2 of 14
+
+
+
+                       1. Introduction
+                            In the work of Israel [1], static, asymptotically flat spacetimes in vacuum are analyzed,
+                       which are endowed with simply-connected equipotential surfaces.
+                            In the work of Hawking [2], the result is recalled—that a stationary blackhole has
+                       topologically spherical boundary.
+                            From the work of Bardeen et al. [3], the Schwarzschild manifolds are studied according
+                       to the possibility of selecting Schwarzschild cylindrical manifolds from them, which are
+                       asymptotically flat at infinity.
+                            These manifolds here are selected according their possibility to admit a Schwarzschild
+                       soliton. Such Schwarzschild soliton is characterized here. New insight is gained on the
+                       generalized-Schwarzschild solitons.
+                            The geometrical analysis is organized after developing new results from [4–11].
+                            In the work of Barros et al. [7], the immersion of an almost-Ricci soliton into a
+                       Riemannian manifold is studied. The relevant prescription from [10] is scrutinized.
+                            In the work of Chen et al. [8], a Ricci soliton is studied, according to its concurrent
+                       vector fields.
+                            In the work [11], some of the necessary and sufficient conditions are worked out, for a
+                       hypersurface of a Euclidean space to be a gradient Ricci soliton are given.
+                            In the work of Bektas’ Demirci [4], the classification of Ricci solitons on pseudo-
+                       Riemannian hypersurfaces on a 4-dimensional Minkowski space is achieved. The suitable
+                       potential vector fields are taken, for which it is possible to prove the necessary and sufficient
+                       condition for the pseudo-Riemannian surface to admit a Ricci soliton. As a result, three
+                       kinds of manifolds are selected, i.e., the manifolds admitting shrinking Ricci solitons with
+                       the chosen potential vector filed are the totally umbilical isoperimetrical hypersurfaces,
+                       the hyperbolic hypersurfaces, and the pseudo-spherical cylinder in the Minkowski 4-
+                       dimensional Minkowski space.
+                            From the previous literature, new methods are developed in the present paper to
+                       be applied to the Schwarzschild solitons and to the Generalized-Schwarzschild solitons
+                       from [12] for the Penrose Theorem [13] to be applied.
+                            In the present work, the procedures requested from [7] are used for Schwarzschild
+                       manifolds, for which the presented results are proven to hold under stronger conditions.
+                            In the present paper, the pseudo-spherical cylinder in general relativity is newly
+                       developed.
+                            After the definition of the new geometrical structures, the tasks in the present work are
+                       accomplished to study the geodesics completeness of the chosen geometries at the fictitious
+                       singularity r = rS following the new study of the Cauchy hypersurfaces. Furthermore,
+                       the new structures of concurrent vector fields are in the present work, being newly built
+                       and studied.
+                            As a result, the outside region of the blackhole objects are studied as far as the presence
+                       of the union of trapped regions of null support is concerned.
+                            The novel implications regarding the Penrose 1965 Theorem [13] are newly implemented.
+                            The Penrose 1965 Theorem [13] is discussed in the framework outlined here. In
+                       particular, the presence of trapped hypersurfaces is discarded. The no-hair theorem can
+                       now be discussed.
+                            As a result, the structures are studied in the cases of shrinking solitons, which
+                       are recently proven to be a subcase the Schwarzschild manifolds and the Generalized-
+                       Schwarzschild manifolds. The corresponding manifolds are therefore newly metrized here.
+                            The paper is organized as follows.
+Axioms 2025, 14, 896                                                                                              3 of 14
+
+
+
+                            In Section 1, the outline of the work is presented, and the concepts about the space-
+                       time structure of the Schwarzschild solitons, which are developed in the present paper,
+                       are proven.
+                            In Section 2, the introductory material is presented.
+                            In Section 3, the spacetime structure of a blackhole is introduced.
+                            In Section 5, the spacetime structure of a blackhole is newly refined.
+                            In Section 7, Ricci solitons on Riemannian submanifolds are newly prepared.
+                            In Section 8, pseudo-Riemannian hypersurfaces admitting Ricci solitons are newly
+                       discussed.
+                            In Section 9, new theorems for Schwarzschild solitons are exposed.
+                            In Section 10, a new classification of the Ricci solitons is provided; as a result, the
+                       Killing vector fields of Schwarzschild spacetimes are analyzed.
+                            In Section 11, new theorems about the Schwarzschild solitons are introduced.
+                            In Appendix C, the scalings of the metric are discussed.
+                            The Outlook is presented in Section 13.
+                            In Appendix A, the Christoffel symbols used to perform the calculations of Schwarzschild
+                       solitons are written.
+                            In Appendix B, the Christoffel symbols used to perform the calculations of Generalized-
+                       Schwarzschild solitons are written.
+                            In Appendix C, the geometrical objects to discuss the scaling invariances and the
+                       weight functions are written for the Schwarzschild solitons.
+
+                       2. Introductory Material
+                            From the work of Bektas’ Demirci [4], one recalls that, on a pseudo-Riemannian
+                       manifold M, with X being the position vector, the position vector acts as a concurrent
+                       vector field as
+                                                            ˜ XX = X
+                                                            ∇                                              (1)
+
+                            The work [7–9] are outlined as follows.
+                            From [7], the immersion of a Ricci soliton into a Riemannian manifold is considered.
+                       This paper admits a Ricci soliton with potential vector field.
+                            From [7], the shrinking Ricci solitons are proven apt to be immersed into a space with
+                       constant means curvature as a Gauss soliton.
+                            As an intermediate step, Ricci solitons on Euclidean manifolds are recalled here to be
+                       classified with potential vector field arising from the position vector field of a Euclidean
+                       hypersurface.
+
+                       About the Killing Vector Field of the Schwarzschild Spacetime(s)
+                             The velocity vector field of a Schwarzschild spacetime is characterized according to
+                       the work of Bardeen et al. [3].
+                             In [3], the stationary, axisymmetric, asymptotically flat space of a blackhole spacetime
+                       is recalled to be the description of the asymptotical limit admitted after Schwarzschild-
+                       blackhole spacetime.
+                             The vector filed is K µ , which admits the condition
+
+                                                                 k a k a = −1                                        (2)
+
+                       i.e., it is timelike.
+                              There exists a unique rotational Killing vector K̃ µ (i.e., one with non-vanishing rotor),
+                       which is normalized as
+                                                                 K̃ µ K̃µ = −1                                       (3)
+Axioms 2025, 14, 896                                                                                             4 of 14
+
+
+
+                              The components of the velocity are characterized as
+
+                                                                               1
+                                                                    v[ρ;µν] = − Rσρµν vσ                            (4)
+                                                                               2
+                            The surface elements are defined as follows: the surface element of ∂S is dΣµν , and the
+                       surface element of S is dΣµ as in
+                                                       Z                              Z
+                                                                    [µ;ν]σ                     µ
+                                                                k            dΣµν =           R ν kν dΣµ            (5)
+                                                           ∂S                             S
+
+                               For calculation, a spacelike surface is taken, which is asymptotically flat, tangent to
+                       K̃ µ , and it intersects the Killing horizon as indicated in [2].
+
+                       3. Selected Topics from the Previous Investigations
+                            Selected investigation lines from [2] and from the pertinent items of bibliography are
+                       summarized here.
+                            From ibidem, the result shows that a stationary blackhole has a topologically spherical
+                       boundary; furthermore, it is demonstrated that rotating blackholes are axisymmetric.
+                            From ibidem, a blackhole on a spacelike surface is defined as the connected component
+                       of the surface bounded after the event horizon. The region of the surface bounded after the
+                       event horizon is taken.
+                            Ibidem, the three requests are stated as follows:
+                       (1)    The surface of a Relativistic star, which undergoes gravitational collapse, is described
+                              as ’passing’ the Schwarzschild fictitious singularity;
+                       (2)    The spacetimes admits a singularity;
+                       (3)    The observers from the outer region do not observe the singularity.
+                            The outer region is described such that the singularity is not observed by the observers,
+                       which are outside the gravitational radius. In the outer region, the future is forecast from
+                       Cauchy data on a spacelike surface.
+                            Ibidem, the study of the stability is performed after the perturbations. Small perturba-
+                       tions are studied in [14]. In [2], the conjecture that a blackhole establishes a Kerr solution of
+                       the EFEs is taken.
+                            Ibidem, the surface of a blackhole is shown not to decrease with time.
+
+                       4. New Introductory Results
+                       The Structure of a Blackhole Spacetime
+                             The spacetime structure of a blackhole is introduced as follows, and will be refined in
+                       Section 5.
+                             The fictitious singularity is characterized from [1] as in the following outline.
+                             The 3-dimensional part of the manifold of the fictitious singularity is prescribed in
+                       relation to the 4-dimensional metric as
+
+                                                   ds2 = gij ( x1 , x2 , x3 )dxi dx j − V 2 (t)dt2 ,                (6)
+
+                       with
+                                                                        V 2 =| ζ µ ζ µ | .                          (7)
+
+                           The surface Σ is taken as the three-dimensional part of a four-dimensional manifold,
+                       which corresponds to the slides x0 = const.
+                           This way, it is proven that
+Axioms 2025, 14, 896                                                                                                   5 of 14
+
+
+
+                       Theorem 1. Σ is the only maximal extension of V 2 with respect to the vector field ζ µ when
+
+                                                                     ζ µ ζ µ < 0.                                         (8)
+
+                       Proof of Theorem 1. The surface Σ is the largest domain of the integral curves of ζ µ when
+                       Equation (8) is requested. The vector field ζ µ is at least smooth, and there exists no strictly
+                       larger manifolds compatible with the construction of such maximal extension.
+
+                              The following description now holds and the definitions are therefore equivalent.
+                              The gravitational potential V is taken from a Schwarzschild spacetime such that
+                                                                          √
+                                                                    V=        g00 .                                       (9)
+
+                           The Killing vector field ζ µ characterizes a static spacetime manifold as it is static over
+                       a domain, in which it is hypersurface-orthogonal.
+                           The surface Σ is proven to be characterized as one with
+
+                                                               gij = δij + O(r − 1),                                     (10)
+
+                       with
+                                                                 ∂k gij = O(r −2 ).                                      (11)
+
+                              The limit r → ∞ is accomplished as the limit of r ≡
+                                                                                        p
+                                                                                            | ⃗r |2 and defines V as
+                                                                             m
+                                                                V = 1−            +κ                                     (12)
+                                                                           | ⃗r |
+
+                       where the properties of κ from [1] follow.
+                             A weakly continuous, asymptotically simple space is taken from [14] of a spacetime
+                       manifold M with metric gµν . M is then embedded in a larger manifold M̃ with metric g̃µν
+                       as g̃µν Ω2 gµν (the metric g̃µν is further discussed in Section 11 and in Section 13).
+
+                       5. New Results
+                       Concurrent Vector Fields in General Relativity
+                           The concurrent vector fields are characterized as follows from [15].
+                           Let Rm be an m-dimensional Riemannian manifold, with non-vanishing Christoffel
+                       symbols that define the covariant derivative D , And let Rm an immersed manifold of an
+                       n-dimensional n-dimensional manifold Mn into Rm : the following definition is given.
+
+                       Definition 1. X µ is a concurrent vector field if it is defined as
+
+                                                                  dx + D X = 0                                           (13)
+
+                       with x being the differential of the immersion.
+
+                           The concurrent vector fields are further studied in [16]. Ibidem, complete linear
+                       connection on the manifold which is called standard connection on the manifold is recalled.
+                       Concurrency with respect to the standard connection is ibidem discussed.
+                           From [16], the following theorem is worked out.
+
+                       Theorem 2. A Riemannian connection is uniquely determined after the Riemannian metric.
+
+                       Proof of Theorem 2. The Christoffel symbols are unique. Furthermore, there is no torsion,
+                       no non-metric object, and no metric-asymmetricity object.
+Axioms 2025, 14, 896                                                                                                6 of 14
+
+
+
+                            Furthermore,
+
+                       Definition 2. A vector is concurrent with respect to the metric tensor if it is concurrent with
+                       respect to the corresponding Riemannian connection.
+
+                             Some of the properties of the submanifold of a Riemannian manifold admitting a Ricci
+                       soliton are studied in section 3 from [10] Section 3 ibidem. In the present paper, the concept
+                       is developed into pseudo-Riemannian manifolds.
+                             The Riemann immersions will be discussed in future work.
+
+                       6. New Construction of the Spacetime
+                            The space part of the manifold M is taken from [1], from which a thin-sandwich
+                       conjecture can be implemented in a straightforward manner as with [17].
+                            The boundaries of M are two null hypersurfaces J + and J − . J ∗ + and J − , which
+                       have the topology of S2 ; J − is the past infinity, J + is the future infinity. The possibility of
+                       forecasting events in the neighborhood of J + is now investigated.
+                            The following definition is taken:
+
+                       Definition 3. A weakly asymptotically simple space is ’future-asymptotically predictable’ if there
+                       exists a spacelike Cauchy surface S which does not intersect any non-spacelike curve more than once.
+
+                             Let D + S be the set of all points q such that, as requested in the guidelines from [2],
+                       ’every past-directed non-spacelike curve from the set {q} intersects S if D + (S) is extended
+                        far enough’. An asymptotically predictable space J ± is defined as follows:
+
+                       Definition 4. In an asymptotically predictable space J ± , there are no naked singularities if the
+                       future infinity is J + (S), and there exists at least one closed trapped surface T in D + S .
+
+                            The following aspect of blackhole spacetimes is now fixed:
+
+                       Theorem 3. The union of the closed trapped surfaces T of D + S is a null support.
+
+                            From [2], the case of non-rotating blackholes is chosen here.
+                            Different from [2], the blackhole spacetime regions from a connected component of
+                       the region of the boundary after the event horizon is investigated. The singularities that
+                       happen inside the fictitious singularity are not observed by the observer.
+                            The property is newly defined as 3bis. The outer region is requested to be endowed
+                       with at least one observer (i.e., the outsider) who is not ’observing’ the singularity.
+                            The statement 3bis is now proven to be equivalent to the choice of the surface on the
+                       boundary as one single point π.
+                            The limit is now studied, in which a ’small portion’ of the surface area sets the Cauchy
+                       data on the outsider spacelike surface.
+                            The ’small portion of the surface area’ considered here therefore consists of one
+                       single point π (whose area will not nevertheless decrease): the outsider spacelike region
+                       considered here is therefore one accessed after the pertinent Cauchy data.
+                            This way, the closure of M (rather that the closure of M̃) of D + (S) is therefore taken
+                       into account.
+                            Accordingly, the new theorem holds as follows:
+
+                       Theorem 4. Points of the geodesics p of the closure of M of D + (S), which are located ’beyond’
+                       the conjugate point, are unpredictable.
+Axioms 2025, 14, 896                                                                                                7 of 14
+
+
+
+                       Proof of Theorem 4. There should be one unique ’would-be’ geodesics line passing
+                       through one chosen point from the future, through the point π on the fictitious singularity
+                       and through the would-be point ’beyond the conjugate point’ on the analytic continuation
+                       of the would-be geodesics; differently, the would-be point σ would be accessed starting
+                       from the future in the would-be geodesics.
+
+                             Intermediate study of a ’thin’ manifold M is thus analogous to that of a thin-
+                       sandwich conjecture.
+                             The would-be point σ not being accessible implies that there no accessed geodesics
+                       lines passing through it.
+                             The points beyond which the analytical continuation is in Einstein–Hilbert GR are
+                       therefore defined: they consist of the bases of the tangent cylinder.
+                             The tagent cylinder here is newly proven to consist of exactly all the geodesics that
+                       access (attain at) the point from the future and on the point π on the fictitious singular-
+                       ity. Therefore,
+
+                       Theorem 5. The tangent cylinder is geodesically complete.
+
+                            Therefore,
+
+                       Theorem 6. An unperturbed Schwarzschild solution of the EFE’s establishes a Schwarzschild blackhole.
+
+                       Proof of Theorem 6. All the cylinders tangent to the Schwarzschild blackhole are geodesi-
+                       cally complete.
+
+                       7. About Ricci Solitons on Riemannian Submanifolds
+                             From [4], the results of [8,9] are recalled, according to which it is possible to write the
+                       equations of the Ricci tensor of a submanifold in a Riemannian manifold. It admits a Ricci
+                       soliton with potential vector field as the tangential part of the concurrent vector field.
+                             As a result, Ricci solitons on Euclidean surfaces are classified with a potential vector
+                       field arising from the position vector field of a Euclidean hypersurface.
+                             The hypersurface in the Euclidean space is made to be a gradient Ricci soliton, for
+                       which the necessary and sufficient conditions are spelled in [11].
+                             The conditions for a submanifold of a Ricci soliton to be a Ricci soliton are studied
+                       in [10].
+                             The use of concurrent vector fields for Ricci solitons is discussed in [18].
+                             The methodologies connected to the concurrent vector fields will subsequently be
+                       specified to Schwarszchild solitons and to Generalized-Schwarszchild solitons from [19].
+                       Ibidem, the uniqueness of the Schwarzschild solitons is studied. The Ricci flow is reconciled
+                       with the EFE’s. The scaling functions are used to investigate the rotational properties of the
+                       geometrical objects and are utilized to spell out the determinant of the metric tensor.
+
+                       8. About Pseudo-Riemannian Hypersurfaces Admitting Ricci Soliton
+                            From the work of Bektas’ Demirci [4], the classification theorems of Ricci solitons on
+                       pseudo-Riemannian hypersurfaces are used on on a 4-dimensional Minkowski space E1 4 .
+                            The new methodology developed here is summarized as follows.
+                            The potential vector field is taken as the tangent component of the position vector of
+                       the pseudo-Riemannian hypersurfaces.
+                            The theorems needed for the constructions are now enunciated.
+
+                       Theorem 7. The potential vector fields are unique.
+Axioms 2025, 14, 896                                                                                               8 of 14
+
+
+
+                       Proof of Theorem 7. The 4-velocity is unique.
+
+                       Theorem 8. The tangent component of the position vector of the pseudo-Riemannian hypersurfaces
+                       is unique.
+
+                       Proof of Theorem 8. The connection is unique, and the concurrent vector field is unique.
+
+                       Theorem 9. For a pseudo-Riemannian hypersurface, the necessary and sufficient condition given
+                       for it to admit a Ricci soliton is the uniqueness of the connections.
+
+                       Proof of Theorem 9. The Christoffel symbols that define the connection are unique.
+
+                             From [9], the position vector field is selected as a concurrent vector field.
+                             Accordingly, the 4-velocity corresponds to the time-derivative of the 4-position.
+
+                       9. Schwarzschild Solitons: New Theorems
+                             The new result is here presented, according to which
+
+                       Theorem 10. The position concurrent vector field of a Schwarzschild soliton is uniquely determined
+                       after the 4-velocity.
+
+                       Proof of Theorem 10. The 4-velocity vector uniquely determines a manifold, which is
+                       tangent to the Killing horizon.
+
+                             Accordingly,
+
+                       Theorem 11. From the hypotheses of [11], a unique hypersurface exists, which uniquely defines a
+                       Schwarzschild manifold.
+
+                             The gradient Ricci solitons can therefore be newly analyzed.
+                             In particular, the following Theorem holds.
+
+                       Theorem 12. A non-compact gradient Ricci soliton exists and is unique, whose curvature operator
+                       is pseudo-Riemannian (i.e., it is defined after a pseudo-Riemannian metric).
+
+                             Furthermore, from the hypotheses ibidem, the following Theorem is given as follows:
+
+                       Theorem 13. A Schwarzschild manifold is a gradient Ricci soliton.
+
+                       10. Spelling of the New Construction of the Solitons
+                             The vector field ξ µ is here chosen.
+                             The Lie derivative of the metric tensor with respect to ξ µ defines the manifolds:
+
+                                                            £ξ gµν + Rµν = λgµν .                                    (14)
+
+                             Equation (14) is studied here to produce the following solitons.
+                       (1)   The solitons with vanishing derivative of the metric tensor with respect to the vector
+                             field ξ µ is as follows:
+                                                                  £ξ gµν ≡ 0                                   (15)
+
+                             i.e., according to which the Steady Ricci Schwarzschild solitons are described as
+
+                                                                       λ = 0.                                        (16)
+Axioms 2025, 14, 896                                                                                             9 of 14
+
+
+
+                       (2)   The steady Generalized-Schwarzschild solitons such that
+
+                                                                       Rµν ≡ 0                                     (17)
+
+                             (when they are found).
+
+                       (3)   The soliton
+                                                                       Rµν ̸= 0,                                   (18)
+
+                             with
+                                                                    Rµν = λgµν .                                   (19)
+
+                            Now, the solitons (1)–(3) are constructed by imposing the most general sets of condi-
+                       tions on the weight functions f of
+                                                                 ∇ f = ξ,                                    (20)
+
+                       i.e., which is spelled as
+                                                                  ∇µ f = ξ µ ,                                     (21)
+
+                       with ξ µ being a Killing vector field. The Killing vector field ξ µ is proven to correspond
+                       with the 4-velocity field. The velocity v is a concurrent vector field; it is unique because the
+                       Ricci scalar can be constructed from the unique Christoffel symbols. More specifically, the
+                       uniqueness of the (radial part of the) 4-velocity is taken as an example in [16].
+                            The conditions from Equation (21) that are compatible with the Schwarzschild mani-
+                       folds are
+
+                                                                  ∇t f = ξ t ,                                   (22a)
+                                                                  ∇r f = ξ r ,                                   (22b)
+                                                                  ∇ϕ f = 0,                                      (22c)
+                                                                  ∇θ f = 0.                                      (22d)
+
+                       10.1. Equations of the Spacelike Submanifold of Pseudo-Spherical Cylinders
+                            The spacelike submanifold of pseudo-spherical cylinders is described after integration
+                       of Equation (22) as
+
+                                                         ∇0 f α = ξ 0 = Γ0α
+                                                                         σ
+                                                                            fσ ,                                 (23a)
+                                                         ∇r f α = ξ r = ∂r f α + Γrα
+                                                                                  σ
+                                                                                     fσ .                        (23b)
+
+                             Furthermore, one of them has
+                                                                   ∂θ f θ = 0                                      (24)
+
+                       and
+                                                                   ∂θ f ϕ = 0.                                     (25)
+
+                       10.2. The Killing Vector Fields for Schwarzschild Spacetime
+                             From Equation (2), the Killing vector field is taken as kµ such that
+
+                                                                  k µ k µ = −1                                     (26)
+
+                       where the killing vector field comes from the r component of the 4-velocity; it is defined
+                       here as
+                                                               k µ ≡ ∇ µ vr                                   (27)
+Axioms 2025, 14, 896                                                                                               10 of 14
+
+
+
+                            There exists a further degrees of freedom associated with the manifolds, which is
+                       defined after the further vector field as
+
+                                                                  K µ ≡ ∇ µ v0                                        (28)
+
+                       i.e., from the t-component of the 4-velocity.
+                              The corresponding unique rotational vectors are therefore studied.
+
+                       11. Schwarzschild Solitons: Further New Theorems
+                            The results from [10] are here newly studied in the case of a pseudo-Riemannian manifold.
+
+                       Theorem 14. The condition of a gradient Ricci soliton
+
+                                                                   Vµ = ∇ f µ                                         (29)
+
+                       are studied here based on the framework of [2]; in particular, a 1-dimensional submanifold tangent
+                       to the event horizon exists, and it is written after the potential of a tangent vector field Φµ
+
+                                                                            ∂Φµ
+                                                                 V µ = vν        .                                    (30)
+                                                                            ∂x ν
+
+                            Accordingly, the following theorem holds.
+
+                       Theorem 15. For a Schwarzschild soliton, the event horizon corresponds to the Killing horizon.
+
+                            According to the paradigm presented here, the following Theorem holds.
+
+                       Theorem 16. The immersion of a shrinking Ricci soliton (Mm , g, λ) into a space form with
+                       constant mean curvature is for Schwarzschild manifolds of a shrinking Ricci soliton (Mn , g, λ),
+                       from which the construction of a Gaussian solitons always holds.
+
+                            Furthermore,
+
+                       Corollary 1. The transformations that leave the soliton (Mm , g, λ) invariant [20] are the transfor-
+                       mations which leave the metric g invariant in General Relativity.
+
+                       Corollary 2. The transformations that leave the metric of (Mm , g, λ) invariant are the diffeomor-
+                       phisms, i.e. (Mm , g, λ) is always upgraded to (Mn , g, λ).
+
+                       Corollary 3. The diffeomorphism that leave the metric of a Schwarzschild soliton invariant are the
+                       coordinate transformations.
+
+                       Remark 1. The diffeomorphisms discussed for a Schwarzschild solitons are the General-Relativistic
+                       transformations.
+
+                            This present analysis allows one to work out that
+
+                       Corollary 4. The scalings of the metric are always trivial for Schwarzschild solitons.
+
+                            The local scalings of the metric are studied in [19], from which the consiitons from [2]
+                       are now discussed in the Table in Appendix C. Indeed, from [2], the scalings of the metric
+                       are written as g̃µν as g̃µν = Ω2 gµν , where, ibidem, the function Ω is described to be a
+                       smooth function equal to zero with a non-vanishing gradient on the boundaries of M. The
+                       geometrical objects are summarized from [19] and in Appendix C.
+Axioms 2025, 14, 896                                                                                             11 of 14
+
+
+
+                       12. Generalized-Schwarzschild Solitons: Further New Theorems
+                            The following relevant results are provided as far as the Generalized-Schwarzschild
+                       solitons are concerned.
+                            The definition of concurrent vector fields and the consequent analysis of the 4-velocity
+                       vector allows one to establish the characterization of the fictitious singularity.
+
+                       Theorem 17. For a Generalized-Schwarzschild soliton, the event horizon corresponds to the
+                       Killing horizon.
+
+                            Moreover, the local conformal invariance is analyzed.
+
+                       Theorem 18. The scaling of the metric are always trivial for Generalized-Schwarzschild solutions,
+                       which admit R = 0 even with Rµν ̸= 0.
+
+                       13. Outlook
+                            From [10], the relation between the intrinsic invariants and the extrinsic invariants are
+                       studied for a Riemannian submanifold to admit a Ricci soliton.
+                            It is recalled that Ricci solitons are solitons for which
+
+                                                           Rµν + [H( f )]µν = ρgµν                                  (31)
+
+                       with Hµν being the Hessian matrix operator.
+                           The implication from [6] can now be newly analyzed.
+
+                       Theorem 19. Schwarzschild solitons are asymptotic solitons.
+
+                            The concurrent vector fields of immersed manifolds are discussed in [21]; ibidem, the
+                       concurrent vector field of immersed manifolds and with constant length are investigated.
+                       The case of Riemannian immersions is specified in [22] for the present purposes.
+                            The presented findings are apt to be inscribed within the research lines outlined in [23].
+                       The phenomenological evidences are searched for in [24] from [25].
+                            Applications of the present findings are proposed in [26]. Ibidem, the presence of
+                       spacetime singularities is studied from ibidem; this presence is ascribed to the incom-
+                       pleteness of timelike geodesics or to that of null geodesics. The existence of the (global)
+                       Cauchy hypersurface is not requested for these discussions. The modern Astrophysical
+                       implementation is proposed in the work of Israel [27].
+                            The possible role of J − (J + ) is discussed in the work of Tipler [28].
+                            In the work of Senovilla et al. [29], the perspective studies about particular non-
+                       compact Cauchy hypersurfaces are envisaged.
+                            The possible definitions of blackhole are compared in the work of Curiel [27].
+                            The modern perspectives are discussed in [30].
+                            The no-hair theorem can start being discussed in [13]; in the case presented here, the
+                       Penrose Theorem is applied to the framework developed here.
+
+                       Theorem 20. The inconsistency is removed from [2]. Indeed, the trapped surface does not exist in
+                       (M, g) as T (or the union of all the trapped hypersurfaces) is now newly outlined to be one with
+                       null support.
+
+                       14. Concluding Remarks and Perspective Studies
+                             It is now possible to comment on the results about the cylindricity properties of Ricci
+                       solitons discussed in [31]. It is straightforward to conclude that the Definition from ibidem
+Axioms 2025, 14, 896                                                                                               12 of 14
+
+
+
+                       does not apply to Schwarzschild solitons; for this reason, Theorem 1.2 from ibidem does
+                       not hold for Schwarzschild solitons, and therefore, the coincidence of Bryant Schwarszchild
+                       solitons with Brendle Schwarzschild solitons is not only an improvement in the under-
+                       standing of the rotational symmetries of the Schwarzschild spacetime, but it also opens the
+                       investigation of the properties of the tangent cones from [32].
+                             In contrast, the spacetime structure of the Generalized-Schwarzschild solitons allow for
+                       the consideration of implementing curvature estimates from the Definition from ibidem in
+                       order to develop the needed new concepts for a comparison with Theorem 1.2 from ibidem.
+                             The properties of gravitational solitons arising from the topological aspects of the
+                       spacetime were introduced to be investigated in [33]; ibidem, the results are also suggested
+                       to be extended the case of asymptotically non-flat spacetimes: the instance can be therefore
+                       taken for Schwarzschild spacetimes, which are asymptotically flat according to the Birkhoff
+                       Theorem, and to Generalized-Schwarszchild solitons, which are asymptotically non-flat
+                       according to [19].
+                             From [33], the no-hair theorem is recalled to let the found solitons be defined after the
+                       three quantities M, Q, and J; the Bekenstein–Hawking [34,35] formula is invoked.
+                             We recall here that the Bekenstein–Hawking entropy formula holds for Schwarzschild
+                       solitons, as with the study of the scaling functions from [19]; diversely, the entropy formula
+                       will be studied for the Generalized-Schwarzschild cases in future work according to the area
+                       formula in General Relativity, with respect to the rotational invariance of the Generalized-
+                       Schwarzschild spacetimes.
+
+                       Funding: This research received no external funding.
+
+                       Institutional Review Board Statement: Not applicable.
+
+                       Informed Consent Statement: Not applicable.
+
+                       Data Availability Statement: The original contributions presented in this study are included in the
+                       article. Further inquiries can be directed to the corresponding author.
+
+                       Conflicts of Interest: The author declares no conflicts of interest.
+
+                       Appendix A. Christoffel Symbols of the Schwarzschild Metric
+                            For the Schwarzschild metric, the following non-vanishing Christoffel symbols
+                       are reported:
+
+                                                                    1      rS
+                                                             Γ00r =                ,                                (A1a)
+                                                                    2 r (r − r S )
+                                                              r     1 rS
+                                                             Γ00  =       (r − r S ),                              (A1b)
+                                                                    2 r3
+                                                                      1r       1
+                                                             Γrrr = − S              ,                              (A1c)
+                                                                      2 r r − rS
+                                                             Γrθθ = rS − r,                                        (A1d)
+                                                             Γrϕϕ = −(r − rS )(sinθ )2 ,                            (A1e)
+                                                                    1
+                                                             Γrθ
+                                                              θ
+                                                                 =    ,                                             (A1f)
+                                                                    r
+                                                             Γθϕϕ = −(sinθ )(cosθ ),                               (A1g)
+                                                                   1
+                                                             Γrϕ =
+                                                              ϕ
+                                                                     ,                                             (A1h)
+                                                                   r
+                                                                   cosθ
+                                                             Γθϕ =
+                                                              ϕ
+                                                                        :                                           (A1i)
+                                                                   sinθ
+                       they need to be specified for their cylindrical symmetry, i.e., to be evaluated at r = const ≡ R.
+Axioms 2025, 14, 896                                                                                                           13 of 14
+
+
+
+                                  Appendix B. Christoffel Symbols of the Generalized-Schwarzschild Metric
+                                       For a generalized-Schwarzschild metric of line element specified after
+
+                                                                                     rS
+                                                                         g00 = 1 −      + Ψ (r )                                  (A2)
+                                                                                      r
+                                  the Christoffel symbols are calculated as
+
+                                                                      1 rS + r2 dΨ
+                                                               Γ00r =               dr
+                                                                                         ,                                      (A3a)
+                                                                      2 r (r − rs + rΨ)
+                                                                r     1 1                         dΨ
+                                                               Γ00  =       (r − rS + rΨ)(rS + r2    ),                         (A3b)
+                                                                      2 r3                        dr
+                                                                        1 1 rS + r2 dΨ
+                                                               Γrrr = −                dr
+                                                                                            ,                                   (A3c)
+                                                                        2 r r (r − rs + rΨ)
+                                                               Γrθθ = −rΨ − r + rS ,                                            (A3d)
+                                                               Γrϕϕ = −(rΨ + r − rS )(sinθ )2 ,                                 (A3e)
+                                                                      1
+                                                               Γrθ
+                                                                 θ
+                                                                   = ,                                                           (A3f)
+                                                                      r
+                                                               Γθϕϕ = −(sinθ )(cosθ ),                                          (A3g)
+                                                                     1
+                                                               Γrϕ =
+                                                                 ϕ
+                                                                       ,                                                        (A3h)
+                                                                     r
+                                                                     cosθ
+                                                               Γθϕ =
+                                                                ϕ
+                                                                          :                                                      (A3i)
+                                                                     sinθ
+                                  they need to be specified for the cylindrical symmetry, i.e., to be evaluated at r = const ≡ R.
+
+                                  Appendix C. Tools for the Rescaling of the Metric: The Weight Functions
+                                  of the Schwarzschild Spacetime
+                                       In the case of local conformal rescaling of the metric, one recalls from [19] that the
+                                  local rescalings of the metric can be rewritten as
+
+                                                                           G̃µν = e−2 f (r) gµν                                   (A4)
+
+                                  for which the weight functions of the Schwarzschild solitons spacetimes are defined (from
+                                  the determinant of the metric) and must obey the constraint on the vanishing of the Ricci
+                                  scalar as
+                                                              "                               2                 #
+                                                           6              d2 f                df               df
+                                              R = 0 = 2 −2 f r ( r − r S ) 2 − r ( r − r S )      + (2r − rS )          (A5)
+                                                        r e               dr                  dr               dr
+
+                                  from which it is studied that the (interrogated-about) non-vanishing gradients of the
+                                  scale function µ = e−2 f do not contribute to the Ricci tensor, to the Ricci scalar, and
+                                  to the Riemann tensor. The definition of weight function therefore follows for the
+                                  Schwarzschild solitons.
+
+References
+1.    Israel, W. Event Horizons in Static Vacuum Space-Times. Phys. Rev. 1967, 164, 1776–1779. [CrossRef]
+2.    Hawking, S.W. Black holes in general relativity. Commun. Math. Phys. 1972, 25, 152–166. [CrossRef]
+3.    Bardeen, J.M.; Carter, B.; Hawking, S.W. The four laws of black hole mechanics. Commun. Math. Phys. 1973, 31, 161–170. [CrossRef]
+4.    Demirci, B.B. Ricci solitons on pseudo-Riemannian hypersurfaces of 4-dimensional Minkowski space. J. Geom. Phys. 2022, 174,
+      104451. [CrossRef]
+5.    Landau, L.D.; Lifshitz, E.M. Course of Theoretical Physics. In Fluid Mechanics, 2nd ed.; Pergamon Press: Oxford, UK, 2013;
+      Volume 6.
+Axioms 2025, 14, 896                                                                                                             14 of 14
+
+
+
+6.    Chan, P.-Y.; Ma, Z.; Zhang, Y. Ancient Ricci flows with asymptotic solitons. arXiv 2021, arXiv:2106.06904. [CrossRef]
+7.    Barros, A.; Gomes, J.N.; Ribeiro, E. Immersion of almost Ricci solitons into a Riemannian manifold. Mat. Contemp. 2011, 40,
+      91–102. [CrossRef]
+8.    Chen, B.Y.; Deshmukh, S. Classification of Ricci solitons on Euclidean hypersurfaces. Int. J. Math. 2014, 25, 1450104. [CrossRef]
+9.    Chen, B.Y.; Deshmukh, S. Ricci solitons and concurrent vector fields. Balk. J. Geom. Its Appl. 2015, 20, 14–25.
+10.   Meric, S.E.; Kilic, E. On submanifolds of Riemannian manifolds admitting a Ricci soliton. Mem. Sci. Sect. Rom. Acad. 2019, 42,
+      59–66.
+11.   Al-Sodais, H.; Alodan, H.; Deshmukh, S. Hypersurfaces of Euclidean space as gradient Ricci solitons. Analele Stiintifice Ale Univ.
+      Al. Cuza Din Iasi Mat. 2014. [CrossRef]
+12.   Lecian, O.M. The new Generalized Schwarzschild-spacetimes trivial Ricci solitons and the new smooth metric space. J. Appl.
+      Math. 2025, 3, 2901. [CrossRef]
+13.   Penrose, R. Gravitational collapse and space-time singularities. Phys. Rev. Lett. 1965, 14, 57–59. [CrossRef]
+14.   Penrose, R. Structure of space-time. In Battelle Rencontres; de Witt, C.M., Wheeler, J.A., Eds.; Benjamin Incorporated: New York,
+      NY, USA, 1968.
+15.   Schoutem, J.A.; Yano, K. On invariant subspace in the almost complex X2n. Indag. Math. 1955, 17, 261–269. [CrossRef]
+16.   Brickell, F.; Yano, K. Concurret vector fields and Minkowski structures. Kodai Math. Sem. Rep. 1974, 26, 22–28. [CrossRef]
+17.   Christodoulou, D.; Francaviglia, M. Remarks about the thin sandwich conjecture. Rep. Math. Phys. 1977, 11, 377–382. [CrossRef]
+18.   Chen, B.-Y.; Deshmukh, S. Ricci solitons and concurrent vector fields. arXiv 2014. [CrossRef]
+19.   Lecian, O.M. About Uniqueness of Steady Ricci Schwarzschild Solitons. Axioms 2025, 14, 770. [CrossRef]
+20.   Perelman, G. The entropy formula for the Ricci flow and its geometric applications. arXiv 2002, arXiv:math/0211159. [CrossRef]
+21.   Yano, K.; Chen, B. On the concurrent vector fields of immersed manifolds. Kodai Math. Sem. Rep. 1971, 23, 343–350. [CrossRef]
+22.   Chen, B.-Y. Submanifolds of a euclidean hypersphere. Proc. Am. Math. Soc. 1971, 27, 627–628. [CrossRef]
+23.   Landsman, K. Penrose’s 1965 singularity theorem: From geodesic incompleteness to cosmic censorship. Gen. Relativ. Gravit. 2022,
+      54, 115. [CrossRef]
+24.   Urso, I.; Vincent, F.H.; Wielgus, M.; Paumard, T.; Perrin, G. Gravity versus astrophysics in black hole images and photon rings:
+      equatorial emissions and spherically symmetric spacetimes. arXiv 2025, arXiv:2506.13482. [CrossRef]
+25.   Penrose, R. Gravitational Collapse: The Role of General Relativity. Nuovo Cimento Riv. Ser. 1969, 1, 252.
+26.   Hawking, S.W.; Penrose, J. The Singularities of Gravitational Collapse and Cosmology. Proc. R. Soc. Lond. Ser. A Math. Phys. Sci.
+      1970, 314, 529–548.
+27.   Curiel, E. The many definitions of a black hole. Nat. Astron. 2019, 3, 27–34. [CrossRef]
+28.   Tipler, F.J.; Clarke, C.J.S.; Ellis, G.F.R. Singularities and horizons—A review article. In General Relativity and Gravitation: One
+      Hundred Years After the Birth of Albert Einstein; Held, A., Ed.; Plenum Press: New York, NY, USA, 1980; Volume 2, pp. 97–206.
+29.   Senovilla, J.M.M.; Garfinkle, D. The 1965 Penrose singularity theorem. Class. Quantum Gravity 2015, 32, 124008. [CrossRef]
+30.   Landsman, K. Singularities, black holes, and cosmic censorship: A tribute to Roger Penrose. Found. Phys. 2021, 51, 42. [CrossRef]
+31.   Brendle, S. Rotational symmetry of Ricci solitons in higher dimensions. J. Differ. Geom. 2014, 97, 191–214. [CrossRef]
+32.   Lecian, O.M. Riemannian (Trivial) Immersion(s) of Schwarzschild Solitons and of Generalized-Schwarzschild Solitons; Researchgagte:
+      Berlin, Germany, 2025.
+33.   Bouzikas, A. Gravitational Solitons from Topology. Master’s Thesis, Utrecht University, Utrechtm, The Netherlands, 2016.
+      Available online: https://studenttheses.uu.nl/handle/20.500.12932/21719 (accessed on 20 October 2025).
+34.   Bekenstein, J.D. Black holes and entropy. Phys. Rev. 1973, 7, 2333. [CrossRef]
+35.   Hawking, S.W. Particle Creation by Black Holes. Commun. Math. Phys. 1975, 43, 199. [CrossRef]
+
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+

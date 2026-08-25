@@ -1,0 +1,710 @@
+                                                                                     165
+
+
+
+
+                         Beweis         des   Adiabatensatzes.
+                         Von M. Born und V. Foek in GSttingen.
+                              (Eingegangen am 1. August 1928.)
+Der Adiabatensatz in der neuen Quantenmechanik wird ftir den Fall des Punkt-
+spektrums in raathematiseh strenger Weise bewiesen, wobei er sich auch bei einer
+    vortibergehenden Entartung des mechanisehen Systems als giiltig erweist.
+
+     ~n tier al~en Quantenmeehanlk besagte der yon E h r e n f e s t auf-
+gestellte Adiabatensatz, ~dal] die gequantelten W i r k u n g s v a r i a b l e n J ~ n h
+gegeniiber einer unendlieh langsamen (adiabatisehen) Anderung des
+meehanisehen Systems i n v a r i a n t sind *. Daraus konnte man [olgern, dal],
+falls das System vor der adiabatischen ~ n d e r u n g in einem durch be-
+stlmmte Quantenzahlen eharakterisierten Zustand slch befand, sein
+Zustalld nach der _~nderung dutch dieselben Quantenzahlen charak-
+terisiert i s t
+      Analoges besagt der Adiabatensatz aueh in tier neuen Quanten-
+mechanlk. Numeriert man die Zust~nde eines Systems mit den Nummern
+der entspreehenden Energienlveaus, so behauptet tier Adiabatensatz, dal],
+falls das System sich anfangs in einem Z u s t a n d m i t einer bestimmten
+Nummer be~and, bei einer adlabatisehen )~nderung die Wahrseheinliehkeit
+des [Tbergangs des Systems in einen Zustand mit einer anderen Nummer
+unendlieh klein ist, trotzdem die Energieniveaus nach der )~nderung sich
+yon ihren Anfangswerten um endliche Gr~l~en unterscheiden kSnnen.
+      Der Adiabatensatz ist in die neue Quantenmechanik voa einem der
+Verfasser** bere~ts im Jahre 1926 iibertragen worden. Jedoch ist sowohl
+der urspri~ngliche als auch der yon F e r m i und P e r s i c o * * * gegebene
+Beweis mathematisch nieht einwandfrei.            Belde Beweise beziehen sieh
+nur auf den Fall, wo w~hrend der adiabatischen Anderung keine der
+Frequenzen verschwindet, d . h . keine E n t a r t u n g eintritt. Es fehlte also
+die Verallgemeinerung, welche der yon L a u e * * * * ftir die alte Quanten-
+mechanik entspr~che.
+
+      * Die Literatur tiber den Adiabatensatz in der alten Quantenmeehaaik ist im
+Literaturverzeiehnis am Ende dieser Arbeit angegeben.
+     ** Yr. Born, Das Adiabatenprinzip in der Quantenmeehanik, ZS. f. Phys. 40,
+167, 1926.
+    *** E. F e r m i und F. P e r s i e o , I1 prinzipio delle adiabatiche e la nozione de
+forza vivo nella nuova meecanica ondulatoria. Lincei Rend. (6) 4, 452--457, 1926.
+  **** ~[. v. L a u e , Ann. d. Phys. 76, 619, 1925.
+   Zeltschriit fiir Physik.   Bd. 51.                                      1~
+lt~(i                              M. Born uud V. Foek,
+
+      .In dieser Arbeit wh'd versucht, einen in mathematischer ltinsicht
+befriedigenderen und a]]gemeineren Beweis dieses Satzes zu geben.
+      w l. Wir betrachten ein mechanisches System, dessen Energie-
+operator I[ die Zei~ explizite enth~lt und mit der Zeit langsam verhnder-
+lich ist. Die Langsamkeit der Veranderung bringen wir dadurch zum
+Ausdruck, dalJ wir die Abtfiingigkeit yon der Zeit in der Form
+                                                                   t
+                                 tI~        H(~);          s ~     ~,             (1)
+
+ansetzen, wo T ein grol]er Parameter yon der Dimension der Zeit ist und
+die Ableitungen nach s der Koeffizienten im Operator H und seiner
+Eigenfunktionen end]ich bleiben sollen.
+     Die Eigenfunktlonen des Operators t[(s) seien
+                                 ~l(q, s),          ~ (q, s), . . .
+Sie geniigen also der Gleichung
+                         i f ( s ) ~,, (~, s)   =      w,~ (s) ~0~ (q, s).        (2)
+Da in dieser Gleiehung aueh die Zeit (als Parameter) auftritt, kOnnen die
+willldirliehen Phasenfaktoren der Eigenfunktionen die Zeit enthalten. Wir
+wollen diese Phasenfaktoren dureh die Forderung* festlegen, dal3 iede
+der Eigenfunktionen zu ihrer Ableitung naeh der Zeit t (und also aueh
+naeh dem Parameter s) orthogonal ist
+
+
+
+[p (q) Dichtefunktion im q-Raum]. Dann sind die Eigenfunktionen bis
+an[ konsts,nte Phasenfaktoren bestimmt.
+      Neben den Eigenfunktionen des Energieoperators betrachten wir ein
+System yon Funktionen
+                                 ~31 (q' t),        ~)fl (q, ~), ...,
+die der S c h r S d i n g e r s e h e n Gleichung
+                                        h O ~,~ __ 0                              (4)
+                               HV'~ + 2 ~ i 0 t
+geniigen und fiir t ~        0 mit den r              zusammenfallen:
+                                  W (q, 0) =            ~n (q, 0).                (5)
+Das Funktionensystem ~ (q, t) ist fiir alle t vollstandig, normiert und
+or~hogonal *.
+
+     * V. Foek, I~ber die Beziehung zwischen den Integralen der quanten-
+meehanisehen Bewegungsgteiehungea and der S e h r 5 d i n g e r sehen Wellengleichung.
+Anhang, ZS. f. Phys. 49. 323, 1928.
+                         Beweis des Adiabatensatzes.                         167
+
+     w 2. Wir gehen nun yon den Eigenfunktionen zu den Matrizen ~iber.
+Die Matrizen kSnnen wit mit Hilfe eines ieden d e r drei einge[~ihrten
+volls~indigen Funktionensysteme
+                            ~ (q, O) =       ~ (q, O)                          (a)
+oder
+                                    r (q, s)                                   (b)
+oder
+                                     ~, (q, t)                                 (e)
+darstellen. Den mit ttilfe yon (a) dargestellten Matrizen Iiigen wir oben
+den Index o an, den mit (b) dargestellten den Index s u n d die mit (e)
+dargestellten sehreiben wir ohne Index. Z.B. sehreiben wir
+                    g~ ~ =     ~ ~* (q, 0) H (0) W, (q, 0) 0 d q,            (6 a)
+                =   g~ ~         ~* (q, s) 1t (s) op. (q, s) e d q,
+                    H~     = ~ ~*~ (q, t) H (s) , ~ (q, t) o d q.            ((; e)
+Die Da?stellung (a) charakterisiert sich dadurch, dal] konstante (zeitfreie)
+Operatoren dureh konstante Matrizen ausgedriickt werden, die Darstellnng
+(b) dadurch, da~ die Energiematrix die Diagonalform hat, and die Dar-
+stellung (c) dadurch, dug die Bewegungsgleichungen gelten:
+                                 2zi                     /
+
+                                                                               (7)
+                           i,=-2~h (Hp--~H). I
+Der Ubergang yon der einen Darstellung zur anderen wird bekanntlieh
+durch unitire Matrizen geleistet, die wir hier mit U, V und Y bezeichnen
+wollen. (Bezeichnet man, wie fiblieh, mit U+ dis ,,transponiert-koniu-
+gierte" oder , ad~ungierte" Matrix, d.h.
+
+
+so ist die Matrix U unitir, wenn sie den Glelehungen
+                           UU + =      1;     U+U=- 1
+geniigt.) Die Matrizendarstellungea H ~ W u n d               H des Operators H
+sind also durch die Relationen
+                                H - ~ U+ H ~ U,                             (Sac)
+                                W=          V+H ~                           (8ab)
+                                H=          Y+ W Y                          (8be)
+verbunden.   Die Matrix Y drtiekt sieh dutch U und V wie folgt aus:
+                                  Y =        V+ r:.                            (9)
+                                                                      12.
+168                         M. Born und V. Foek,
+
+Diese Relationen sind an Hand der expliziten Ausdriicke tiir die Matrix-
+elemente
+                    U,~ = .Iq~*~(q'O)~P~(q't)odq' I
+                    V~n --~ ]cp* (q,O)~p~(q,s)Qdq, I                      (10)
+                                                          /
+                    Y,~n ~--- ]~p* (q,s)~p~(q,t)qdq       J
+leich~ zu verifizieren.
+      w 3. Wie yon einem der Verfasser* angegeben wurde, haben die
+Matrixelemen~e Y ~ die folgende physikalische Bedeutung. Das Absolu~-
+quadra~ [Ymnl ~ is~ die Wshrscheinlichkeit dafiir, dal~ das mechanische
+System, welches zur Zeit t - - ~ 0 im Zustand n sich be~and [d. h. das
+Energieniveau ~7n (0) hatte], zur Zeit t im Zustand m ist [d. h. das
+Energ'ieniveau Wqnff/T) besitzt]. Diese Bedeutung der Gr6Be lYmnl 2
+folgt, wie von dem anderen Verfasser** neulich gezelg~ wurde, aueh aus
+der Diracschen statistischen Gleichung, wenn man annimmt, dab die
+Gesamtheit aus einem einzigea System besteht Der Adiabatensatz be-
+hauptet nun, daft bei einer unendlich langsamen s           des Systems,
+d. h. bei einem unendlieh grol~en Wert des Parameters T der Formel (1),
+die ~bergangswahrscheinlichkeit 1Ymn Is (m =r n) (die eine Funktion der
+                                           t
+Zeit ist) auch ftir endliche Wer~e yon s = ~ unendlich klein bleibt.
+     Diese Behauptung wollen wit unter einigen einsehr~nkenden Be-
+dingungen beweisen, indem wir die Differentialgleichungen untersuchen,
+denen die Grl/Be Ymn geniig~.
+     w 4. Zuni~ehst wollen wir die Differentialgleichung ffir die Trans-
+formationsmatrix U aufstellen.
+     Die Matrizen q und p gentigen den Bewegungsgleichungen
+
+                                   h (Hq--qH),
+                                                      (                     (7)
+                                                     /
+                          b - 2~i
+                               h (H~--pH),
+                                           ]
+und die konstanten Matrizen qO und io~ sind mit den q und 1~ durch die
+Relationen
+                               q = U+q~ I
+                                                                          (11)
+                               p _=__ U + pO U I
+      * ~. Born, Das Adiabatenprinzip in der Quantenmeehanik, ZS. f. Phys. 40,
+167, 1926.
+     ** V. F o c k , Vera[lgemeinerung und Ltisung der Diracschen statistischen
+Gleichung, ZS. f. Phys. 4:9, 339, 1928.
+                              Beweis des Adiabatensatzes.              169
+
+verkniipft; die Relation         zwischen den Darstellungen H und t I ~ des
+Energieoperators ist
+                                      lI =       U + H ~ U.            (12)
+Wir benutzen die Ausdriieke fiir q, p und H dutch qo, pC und H ~ und
+bereehnen die Abieitungen ~ und ~).
+                              ,~ _     d~ qo g + g +~o i4
+                              i, =     ~+ ~,~ u + rsvp o (7.
+Nun ist aber wegen U + U =             1
+                                 ir~ =       -    u+5" u*
+und fo]glich
+                  0=          u +{ -    du+q ~ + s ~        * } r~ I   (13)
+                  s~ =       u + {-      ~-7u+~o + :oo b rs + } u.
+Andererseits isf wegen der gewegungsgleiehnngen
+                                2~i
+                    ~1 ~ -       ]~--V+{H~176176176
+                                2~ i                                   (14)
+                    ])--         h U+{H~176176176
+
+Bezeiehnen wir mit K ~ die hermitesche Matrix
+
+                              K~ =         H~        ~h   b~+,         (15)
+
+und vergleichen wir die Ausdri~cke (13) und (14), so erhal~en wir die
+Gleichungen                    K ~ S~ - - S~ K ~ =        0,
+                               K~      ~ --p~176 =        O. t         (16)
+Die Matrix K ~ ist also mit S~ nnd pc vertausehbar. Sic muf~ also, wenn die
+qO und 2 0 ein irreduzibles System von Matrizen bilden, ein ~[ultiphm der
+Einheigsmatrix sein, und wir kbnnen sic einfach gleieh .Null setzen. Wit
+erhalten dann fiir die Transformationsmatrix U die Gleiehung
+
+                                 h      Lr+H oU=              0,       (17)
+
+welches niehts anderes als die SehrSdingergleichung in der Matrizen-
+darstellung ist.
+     Wgren die Matrizea qO und pc nieht, wie bisher vorausgesetzt,
+konstant, so wiirden sic dea BewegungsgMchungen
+                           o_        2 ~ i ( K o qo _ qo Ko), ]
+                                      h              (
+                                     2~ i            /                 (18)
+                         ~o           h (KOpO__~OKO)               J
+170                             ~. Born und V. Foek,
+
+mit der , H a m i l t o n s c h e n Matrix" K ~ geniigen. Die Betrachtungen dieses
+Paragraphen enthalten also die Theorie der allgemeinen (zeitabh~ngigen)
+kanonlschen Transformation der quantenmechanischen Bewegungs-
+gleichungea.
+      w 5. Aus der Differentialglelehung (17) fiir die Matrix U lai3t slch
+leicht diejenige ~iir die Matrix Y ableiten. Wir haben
+                                       yz       V+U
+und
+                               /~ ~     v + r ) + #+ ~r.                     (19)
+Wenn wir nun in (17) H ~ mit Hilfe yon (8ab) dureh die Diagonal-
+matrix W ausdriicken, erhalten wir
+
+                           h (/+VWV+U~O,
+                          2~ri
+oder
+                               gT __         2 7r i
+                                                      V WY.                  (20)
+                                               h
+Andererseits ist
+                                       U-~      VY.                          (21)
+Setzt man die Ausdriicke (20) uad (21) fiir U und U in (19) ein, so
+bekommt man
+                        /~ __          2~i    WY+       /r+ V Y              (22)
+                                        h
+- - die gesuehte Differentialgleiehung.
+    Die Punkte bedeuten bier (wie iiberall) Ableitungen nach der Zeit.
+                                                         t
+Wir wollen ietzt aber start der Zeit die Griil~e s ----- ~ der Formel (1)
+einfiihren:
+                      dY              2~iT      WY     + d V+
+                      ds - -            h                ~    VY.            (22')
+Ferner setzen wir:
+                                       .dV §                 dV
+                        Q --~ - - ,      ~   V =        i V +-    (23)
+                                               ds
+Da die Transformafionsmatrix V uniti~r ist, ist die soeben eingefiihrte
+Matrix Q hermitisch.    Ihre Elemente driicken sich durch die Eigen-
+funktionen des Energieoperators wie folgt aus:
+
+                      Qm, --= i f ~* (q' s) a r 0 s(q, s) @d q.              (24)
+        Wir bemerken, dal~ wegen der Normierung (3) der Eigenfunktionen
+r     (q, s) alle Diagonalelemente der Matrix Q verschwinden.
+                               Beweis des Adiabatensatzes.                       171
+
+      Wir wollen hier einen anderen Ausdruck far die Elemente yon Q
+ableiten. Di~ferenziert man die Gleichung (8 a b) nach dem Parameter s,
+so bekommt man
+
+             dW         dV+HoV+               V+HodV               v+dH~
+              ds   --     ds                           ~Ts +          -d~   V.   (2,D
+
+Der Ausdruck V + d~ -H- V~       ist die Matrix (in dem Matrizensehema, wo die
+
+Energiematrix Diagona]form hat) ~iir die Ableitung des Energieoperators
+nach s; wit wollen die.sen Ausdruck ktirzer mit H ' bezeichnen:
+
+                                 H ' ---- V + d H ~ V.                           (26)
+
+Nun folgt aus (8 a b) :
+                        H~             VW;         V ~ H ~ ~--- W V +.           (27)
+Setz~ man (27) in (25) ein und berficksichtigt man die Definitions-
+gleichungen (23) and (26) ffir Q und H', so bekommt man
+                         dW
+                          gs - - i(Q W - - W Q ) + H'.                           (28)
+
+W i r betrachten ein au6erhalb der Diagonale stehendes Element der
+Matrix (28). Da W eine Diagonalmatrix ist, folgt aus (28) fiir m 7-+ n :
+                        i Q~, (W~-- Win) + H/,,~ - - 0
+oder
+                                                      iH,~n
+                                Q~      ~    -- W~--        V~'                  (29)
+wo /L'mn die Bedeutung
+                                H~. ~        t'~ o~
+                                                 -Os ~o. e d q                   (30)
+hat.   Ffir m ~ - n ist, wle wit bereits [estgestellt haben, Q~ ~ ~ 0.
+      Es sei hier bemerkt, da6 Q ~ aueh in dem Falle endlich bleibt,
+wenn fib" einen speziellen Wert yon s die Differenz W~ (s) - - Wn (s) ver-
+schwindet; das folgt aus dem Ausdruek (24) ffir Q ~ .
+      W i r kehren nun zur Differentialgleiehung (22') ~iir die Matrix Y
+zuriick, die wir ietzt in der Form
+                         dY                 2ziT
+                          ds     ~     -- ~h-       - wY   + ~Q y                (31)
+sehreiben. (Jehen wir yon den Matrizen zu ihren Elementen fiber, so
+bekommen wir das Gleichungssystem
+              d Y.~                  2~i T
+                d s --                 h   ~I%,Y,~,~ + i ~          y~ k Y~ n"   (32)
+                                                               k
+172                                ~. Born und V. Rock,
+
+Wir betrachten daneben das Gleichungssys~em*
+                dym                  2~iT
+                        -   -        - -        W,~m + ~ Q , ~ k y ~ .     (33)
+                 ds                    h
+Beachten wlr, daft wegen (5) und (10) die Matrix Y fiir t ~ 0, s ~ 0
+eine Einheitsmatrix wird, so kSnnen wir die Matrixelemente einer
+Spalte
+
+als dieienlge Liisung
+                              Y, Y2-" Ym
+des Gleichungssystems (33) auffassen, welche den Anfangsbedingungen
+                      Ym ~        Ym~, ~        (}ran ~iir       s ~   0   (34)
+gentigt.  Durch die Differentialgleichungen (33) und die Anfangs-
+bedingungen (34) sind die Gr~ifen y~ eindeutig definiert.
+     w 6. Wit wollen ~etzt ein VeHahren zur L~isung der Gleichungen (33)
+andeuten.
+     Wir setzen zur Abkiirzung
+
+                                cok (s) ----            W~ (s) d s         (35)
+                                                    o
+und ftihren in (33) start der Yk neue Variablen
+                                     ck ~      ykeir~'k                    (36)
+ein.   Die Griifen ck be~riedigen die DiHerentialgleichungen
+
+                                   dcm _ _ i ~          -Pink ck,          (37)
+                                    ds
+wo zur Abktirzung
+                                ~k     ~       Q~k e~ r ( ~ - ~ k )        (38)
+gesetzt ist. Der Unterschied der neuen Gleichungen (37) yon den ur-
+spriinglichen (33) ist nun der, daf erstens der Koeffizient von cm gleich
+Null ist, wi~hrend der Koeffizient yon Ym proportional dem grofen Para-
+meter T war, and zweitens, daf die P ~ wegen des mit T behafteten
+Exponentialfaktors schnell oszillieren, wiihrend die ~mk langsam ver-
+~nderliche Grii~en waren.
+      Wir bezelchnen mit Cm~ (s) dieienigen LSsungen yon (37), die den
+Anfangsbedingungen
+                             c ~ (0) ~ ~                             (39)
+geniigen, d. h. die GrSfien
+                                 c~ n (s) ---~ Y ~ ~ e~ r ~ .              (40)
+     * Vgl. V. Rock, Verallgemeinerung uad L6sung usw., Formeln (18) and (19)
+sowie Satz 1.
+                             Beweis des Adiabatensatzes.                                   178
+
+Ihre Absolutquadrate sind gleich denienigen der Y.~,; es sind also (~ber-
+gangswahrscheinlichkeiten.
+     Wie man sich leicht tiberzeugt, sind die Differentialgleichungen (37)
+mit den Anfangsbedingungen (39) dem System yon Integralgleichungen
+                                                                  8
+
+                   c~,,(~) = ~ . + i ~ / p ~ ( s ) c ~ , , ( ~ ) ~ s                       (41)
+                                                   ka)*
+                                                             0
+gquivalent. Diese Integralgleichungen kann man nun nach der Methode
+der sukzessiven Naherungen au~lBsen. Als nullte N~herung hat man dabei
+                                      .(0)
+                                     Cmn       ~          (~m~
+
+zu setzen, als erste Ngherung das Resultat der Substitution der nullten
+N~herung in die rechte Seite yon (41), d. h.
+
+                           (1)                               t'
+                           c~ ~ ~             + ijP~(~)ds,
+                                                         0
+und allgemein                                        8
+                                                   ,m
+                      _-   8~176                  ),
+                                               0
+A]s Schlul]resultat bekommt man die unendllche Reihe
+                                         s         8k                     "~2
+
+
+
+                             k~-I    J
+                                    0         0                       o
+                                             9 {2 @:) .P (~_ ~)... 2, (s,) },,, n.         (48)
+Bisher haben wir yon Konvergenzbetrachtungen abgesehen.            Um die
+Konvergenz des Verfahrens zu sichern, miissen wir eine Voraussetzung
+fiber die Beschaf[enheit der Matrix _P (s) einfiihren. W i r wollen voraus-
+setzen, da~ die Matrix 2 ( s ) [iir alle s absolut beschrgnkt* ist und eine
+konstante beschrgnkte Matrix M als Mgiorante zulg~t:
+           [-P~ ~ (s)[ ~--- [ Qm ~ (s) ] ~.~ M~ ~ ;                   (M~,,) beschr~nkt.   (44)
+
+      * Eine 5'[atrix (~'m,n) heillt beschr~inkt, wean fiir alle Wertsysteme xn, yn,
+die der Gleichung
+
+
+geniigen, die Doppelsumme
+
+                                    m~
+konvergiert und absolut unterhalb einer vonder speziellen Wahl der x n Yn unab-
+h~ngigen Schranke liegt. Eine h[atrix heiJ~t abso]ut beschr~nkt, wenn die aus
+den Absolutwerten ihrer Elemente gebildete Matrix beschr~nkt ist.
+174                               M. Born und V. Foek,
+
+Dann besltzt* das majorante Glelehungssystem
+                              d bm~
+                              -ds        :   ~ :~,~kbk,~                       (45)
+                                              k
+eine den Anfangsbedlngungen
+                                    b ~ (0) :     ~
+geniigende LSsung:
+                                                             k
+
+
+die eine best~ndig konvergente Potenzreihe in s darstellt.
+     Man iiberzeugt sieh leicht, indem man in (43)P, an durch M~n ersetzt,
+dal~ der absolute Betrag jedes Gliedes der Reihe (43) nicht griil]er als
+das entspreehende Glied der Reihe (46) ist. Daraus erhellt sofort, dal~
+die Bedingungen (44) tiir die Konvergenz der Reihe (43) hinreichend sind.
+      Ob die Matrix Q ~ in einem bestimmten Problem wirklicb absolut
+beschrankt ist, lal~t sich in einigen F~llen mit gilfe der folgenden (hin-
+reiehenden) Kriterien beurteilen. Nach einem Satze von S c h u r * * ist
+es sicher der Fall, wenn die Reihe
+
+                                  z~ =       ~lQ~kl                            (47)
+                                             k
+konvergiert und unterhalb einer yon m unabhangigen Schranke liegt.
+Nach der Formel (29) iiir Qmn ist diese Summe gleich
+
+
+
+
+wo der Strich am Summenzeiehen audeutet, daft das Glied mit k =                  m
+fortzulassen ist.
+     Nehmen wir nun an, daft die Reihe
+                      ~m = ~ '         1
+                                              ( W, __ Wk)~                     (49)
+konvergiert, und bezeichnen wir mlt / ~ den Ausdruck
+
+                                                  f OHcp ~~
+                              k
+so k(innen wir die Summe z~n mit Hilfe der S c h w a r z s e h e n Ungleichung
+abschatzen :
+                          zm .~ V",~ fl,~.                                 (51)
+
+       * W. L. Hart, Amer. Journ. 39, 407--424, 1917.
+      ** J. Schur, BeschrEnkte Bilinearformen, Crelles Journ. 140, 1, 1911 (Satz 1).
+                          Beweis des hdiabateasatzes.                     175
+
+Somit erhalten wir die folgende hinreiehende Bedingung ffir die absolute
+Beschranktheit der Matrix Q: das Produkt a m / ~ soll far alle m unter-
+halb einer yon m unabhgngigen Schranke A liegen:
+                                 am ~ ~< A.                               (52)
+      Wcnn die Eigenwerte Wn (wie im Falle eines harmonischen Oszil-
+lators) proportional n waehsen, so konvergiert dis Reihe (49), und ihre
+Summe am bleibt kleiner als eine yon m unabh~ngige Zahl. Dann ge-
+nagt far die absolute Besehr~nktheit der Matrix Q die Endlichkeit des
+Ausdrucks fl~ (50), was immer der Fall sein wird, wenn die Ableitnng
+tier StSrungsenergie naeh der Zeit eine besehrgnkte Funl~tion ist.
+      Wean das meehanisehe System in eine Halle eingeschlossen ist, so
+dal3 der q-Raum endlieh ist, so waehsen dis Eigenwerte Wn (far einen
+                                                                     1
+Freiheitsgrad) proportional n s. Dann nehmen die GrS~en ~m wie m--i
+
+ab, und es genagt, vorauszusetzen, dal~ die GrS~en tim nicht sehnelter uls
+proportional m~ waehsen, was bei sehr allgemeinen Voraussetzungen fiber
+die S~rungsenergie zutrifft.
+      w 7. Wit kommen nun zu unserem eigentlichen Problem - - Beweis
+des Adiabatensatzes. Wir mfissen folgendes beweisen: Falls der Para-
+meter T [Formeln (1), (27), (32) und (34)] genagend grog ist, unter-
+seheiden sich die Absolutquadrate I Y m n l ~ = [cmnl2 far endliche s be-
+liebig wenig yon ihren Anfangswerten ~mn- Die genauen Bedingungen,
+unter denen der Satz gilt, wollen wir erst sparer e~dgaltig formulieren.
+      Zun~chst stellen wir den folgenden Hilfssatz auf:
+      H i l f s s a t z . Es seien die folgenden Voraussetzungen in einem end-
+lichen Intervall 0 ~ s ~ s' erfallt.
+      1. Es gilt die Ungteiehung
+                      IQ~.(s)[ _--- IP=~(s) l < ~ . .
+     2. Jede Funktion (Freqnenz)
+                        d tom       d con
+                                                    2~vm~(s)
+                         ds         ds
+                                            -   -
+
+
+
+
+besitzt im Intervall hSchstens N~ Nullstellen von hSchstens r-ter Ordnung
+(Entartungszustande des mechanischen Systems), und in der N~he ieder
+Nullstelle so gilt die Abschatzung
+                                1                     A
+176                                      ){. Born und V. Fock.
+
+      3. Der reelle und der imaginare Teil der Funktlon
+
+                                                   t2~ ~ (s)
+                                                    .,~, ~ (s)
+
+sind sttickweise monoton; die Anzahl der Strecken, wo sle monoton sind,
+set hSchstens gleich N 2.
+      Dann gilt die Abschi~tzung
+                                                                                         r~-I
+ s'              ,          s'                                                            ./~
+
+
+
+
+Den Beweis des Hilfssatzes geben wlr im Anhang an.
+     Mit Hilfe des ttilfssatzes laBt sich nun auch der Adiabatensatz leicht
+beweisen.
+     Wir ftihren im k-ten G[ied der Reihe (43) die erste Integration
+(nach sl) aus und schatzen das Resultat mit ttilfe der Formel (53) ab*.
+   Die iibrigen Integrationen ftihren wir ans, indem wlr ~~                                      durch
+Mmn erse~zen. Wir erhalten dann:
+                                                        r+l
+                                                                             Sk--1
+                     --                                              "k~l(Z~ 5)! (Mk)mn
+                                                        r+l
+
+                                 ----4(N I + N ~ ) [             T    ds '                         (54)
+      dbmn
+wo ~           die Ab]eitung der LSsung (46) der ttilfsgleichungen (45) ist.
+
+Diese GrSfie bleibt ebenso wie der Faktor der Wurzel in (54) fiir end-
+liches endlich, die Wurzel strebt aber fiir unendliche T gegen Null.
+       Wir haben somit den folgenden mathematischen Satz bewiesen:
+         [ s t die M a t r i x Q a b s o l u t b e s c h r a n k t , und s i n d die Vor-
+a u s s e t z u n g e n des H i l f s s a t z e s e r f i i l l t , so i s t d i e D i f f e r e n z
+c ~ n - - ~ , a n Iiir e n d l i c h e    s und unendlich grol]e T vonder
+
+0 r d n u n g T -~'4 f "
+                                                                 (       1)**
+                                   c,~ ~- ~             + 0 T-~                                    (55)
+
+Diese Differenz strebt also fiir unendlich wachsende T gegen Null.
+
+       * Man beachte, dad Qnn z 0 isL
+      ** Die S c h r e i b w e i s e x --~ 0 (~) b e d e u t e t :   x ist y o n der GrSflenordnung a.
+                             Beweis des Adiabatensat~es.                         177
+
+    Aus diesem Satze [olgt nun unmittelbar, da~ die Wahrseheinlichkeit des
+Ubergangs n --> m au[ ein anderes Energieniveau v o n d e r GrS~enordnung
+
+T   r + l is~:
+
+                       i x ~ L '~ =       1~,~,~1~ =       o T-~,                (sG)
+                                      1
+also z. B. v o n d e r Ordnung ~-~, wenn keine der Frequenzen vmn w~hrend
+
+der adiabatischen Xnderuag versehwindet.
+     Fiir die Wahrschelnliehkeit lymph [~ dafiir, da~ das System in dem
+urspriingliehen Zustand m bleibt, erhalten WiT mit Hilfe der Relation
+
+                                          ~t
+den Ausdruek
+
+                 IY~l~ =      ~-      E'tyo,,I~ =             1-o(~-&).          (57)
+Diese Wahrseheinliehkeit unterseheidet sieh also yon der Eiaheit eben-
+                                         9
+lalls um Gr~i]en yon der Ordnung T r§
+      Bisher haben wir Ms Anfangszustand immer einea ,,seharfen" Zustand
+betraehte% d.h. einen solehen, wo alas System ein bestimmtes Energie-
+niveau W~ mit der Wahrseheinliehkeit Eins und die iibrigen mit der
+Wahrseheinliehkeit Null hat. Sind dagegen zur Zei~ t - ~ 0 alle Energie-
+niveaus Wn mit den Wahrseheinliehkeiten Ib.~l~ vertreten, so kSnnen
+wit die Wahrseheinliehkeiten I b;A ~ versehiedener Niveaus zur Zeit t naeh
+der Formel
+
+
+bereehnen.       Nach (55) erhalten wir
+
+                              bm :
+                                  ,                    (
+                                               bm@ 0 T -~'+'
+                                                               ')                (59)
+und folglich
+
+                 Ib~l ~ = jb~t ~ + o ~ T - ~ §                ~enn   ~,,~ ~ o,
+                              /            2 _,,                                 (60)
+
+
+      Die Abweichung der Wahrscheinlichkeit Ib,:nl2 des Zustands m yon
+ihrem Anfangswert Ibm[~ ist also yon verschledener GrSl]enordnung, ie
+nachdem dieser Anfangswert gleich oder nicht glelch Null ist, and zwar
+ist im ersteren Falle die Abweiehung ira allgemeinen* kleiner, d. h. yon
+hSherer Ordnung in 1/T.
+
+      * Vgl. dagegen die Formel (57).
+178                                ~I. Born und V. Rock,
+
+       Zum Schlusse sei noch bemerkt, dab der Adiabatensatz ouch in
+Fallen gelten kann, ffir die er hier nieht bewiesen ist. Als Beispiel ffir
+seine Gfiltigkeit im Falle wo die Matrix Q nieht beschrankt und dos
+LSsungsverfahren des w 6 nicht anwendbar ist, kann der yon einem der
+Verfasser behandelte* gestSrte harmonische 0szillator dienen.
+       Yermutlieh bleibt der Adiabatensatz im wesentliehen auch dann
+gfiltig, wenn neben dem Punktspektrum aueh ein Streckenspektrnm vor-
+handen ist.
+
+                                         Anhang.
+      Beweis des Hilfssatzes                  in w    Um dos Integral
+                              8t
+
+
+
+
+                          0
+
+abzuschRtzen, bezeichnen wit abkfirzend den reellen (odor den imagin~ren)
+Teil der Funktioa Q,~7~(s) mit f(s) und die Differenz co~ (s) - - o~n (s)
+mit g (s) und betrachten dos Integral
+                                             8t
+
+
+                              J ~--- I f ( s ) etTg (8)ds.
+                                         o
+Wir teilen dos Integrationsintervall (0, s') in zwei Gruppen, E 1 und Es,
+yon TeiIintervallen, nRmlich erstens (E~) die Umgebungen
+
+
+der Nullstellen as der Ableitung g' (s) and zweitens (Es) der_ iibrigen
+Teil yon (0, s').
+     Dos Integral fiber E 1
+                              J1 ~ ~f(s) ~i T g (s) ds
+                                         El
+geniigt of[enbar der Ungleichung
+
+                       tJ f <                 Ses =
+                                         Et
+wo N 1 die Anzahl der Nullstellen as Yon g' (S) und M dos Maximum des
+absoluten Betrages von f (s) ist.
+     Dos Integral fiber E s sehreiben wir in tier Form
+
+                       J" = I f(s!
+                                (s)
+                                    ~2
+
+      * V. Rock, ~ber die Bez.iehung usw. Hier wird die StSrungsencrgie fiir
+x --~ ~ wie x '~ unendlioh.
+                                 Beweis des Adiabatensatzes.                   179
+
+             1
+In E~ ist g - ~        endlich, und zwar kann man wegen der in der N~he der
+l~ullstellen giiltigen Absch~tzungen
+                                            1          A
+                                        Ir (8) I < ~-;
+annehmen.
+     Indem wir den zweiten Mittelwertsatz der Integralrechnung
+
+                 ~ (s) r (~) d ~ = ~ (~) f * (8) d ~ + r (~) I * (~) d 8~
+
+mit
+                                                 f (s)
+                                       r (s) - - g, (s)
+und
+                                   (s) = g' (s) cos IT ~ (s)]
+oder
+                                 ~p (s) ~   g' (s) sin [T g (s)]
+                                                              f (s)
+auf iedes der hr~ Teilintervalle anwenden, wo g - ~ monoton ist, gelangen
+wlr wegen                               f (s) ~     "
+                                                    MA
+                                        g' (s)      ~
+und
+
+                  f           sin [T g (s)] d s =       ~sin               2
+                       g' (s) cos                      g!eos [T g] d g ~ y
+                  al
+
+zur Ungleichung
+                                                 8MA
+
+
+Zusammen mit der Ungleichung iiir das erste Integral ergibt das
+
+                                          er T
+Die Wahl yon ~ blieb bisher willkiirlich (nur dab es klein sein soUte).
+W~hlen wir nun                          1
+
+
+
+so erhalten wir die gewiinschte Absch~tzung
+                                                           rq-1
+180               ~[. Born und V. Fock, Beweis des Adiabatensatzes.
+
+Der imagini~re Tell yon Qmn (s) k a n n ein~ach dureh Multiplikation der
+Absch~ttzung mit 2 berticksichtigt werden.                   Somit ist die Formel (53)
+bewiesen.
+
+        u                     d e r L i t e r a t u r fiber den A d i a b a t e n s a t z i n der
+                                      alten Quantenmeehanik.
+       1. P. E h r e n f e s t , Adiabatisehe Invarianten u. Quantentheorie, Ann. d. Phys.51,
+327, 1916.
+       2. J. M. B u r g e r s , Die adiabatisehen Invarianten bedingt periodiseher Systeme,
+ebenda 52, 195, 1917;" ferner: Verslagen Amsterdam 25, 25, 918 u. 1055, 1917.
+       3. G. Kr ut k o w, Contribution to the theory of adiabatic invariants, Proceedings
+Akad. Amsterdam 21, 1112, 1919; feraer: On the determination of quanta conditions
+by means of adiabatic invariants, cbenda 28, 826, 1920.
+       4. P. E h r e n f e s t , Adiabatisehe Transformationen in der Quantentheorie und
+ihre Behandlung dureh Niels Bohr, Naturwissenseh. 11, 543, 1923.
+       5. V. F o ek, Conditionally periodic systems with commensurabilities and
+their adiabatic invariants, Transactions of the Optical Institute in Petrograd.
+Berlin 1923.
+       6. G. K r u t k o w und V. Foek, Uber das Rayleighsehe Pendel: ZS. f. Phys.
+13, 195, 1923.
+       7. H. K n e s e r , Die adiabatisehe Invarianz des Phasenintegrals bei einem
+Freiheitsgrad, Math. Ann. 91, 155, 1924.
+       8. M. v. L au e, Zum Prinzip der meehanisehen Transformierbarkeit (Adiabaten-
+hypothese), Ann. d. Phys. 76, 619, 1925.
+       9. P. A. M. Dirae, The Adiabatic Invariance of the Quantum Integrals,
+Proe. Roy. Soe. (A) 107, 725, 1925; ferner: The adiabatic hypothesis for magnetic
+fields, Proe. Cambridge Philos. Soe. 28, 69, 1925.
+      10. A. ~f. ~ l o s h a r r a f a , On the Quantum Dynamics of Degenerate Systems,
+Proe. Roy. Soe. (A) 107, 237, 1925.
+

@@ -1,0 +1,808 @@
+                                            MANIFOLDS WITH POSITIVE CURVATURE OPERATORS ARE
+                                                              SPACE FORMS
+
+
+
+
+arXiv:math/0606187v1 [math.DG] 8 Jun 2006
+                                                               CHRISTOPH BÖHM AND BURKHARD WILKING
+
+
+
+                                               The Ricci flow has been introduced by Hamilton in 1982 [H1] in order to prove
+                                            that a compact three-manifold admitting a Riemannian metric of positive Ricci
+                                            curvature is a spherical space form. In dimension four Hamilton showed that com-
+                                            pact four-manifolds with positive curvature operators are spherical space forms as
+                                            well [H2]. More generally, the same conclusion holds for compact four-manifolds
+                                            with 2-positive curvature operators [Che]. Recall that a curvature operator is called
+                                            2-positive, if the sum of its two smallest eigenvalues is positive. In arbitrary dimen-
+                                            sions Huisken [Hu] described an explicit open cone in the space of curvature opera-
+                                            tors such that the normalized Ricci flow evolves metrics whose curvature operators
+                                            are contained in that cone into metrics of constant positive sectional curvature.
+                                               Hamilton conjectured that in all dimensions compact Riemannian manifolds with
+                                            positive curvature operators must be space forms. In this paper we confirm this
+                                            conjecture. More generally, we show the following
+                                            Theorem 1. On a compact manifold the normalized Ricci flow evolves a Rie-
+                                            mannian metric with 2-positive curvature operator to a limit metric with constant
+                                            sectional curvature.
+                                               The theorem is known in dimensions below five [H3], [H1], [Che]. Our proof
+                                            works in dimensions above two: we only use Hamilton’s maximum principle and
+                                            Klingenberg’s injectivity radius estimate for quarter pinched manifolds. Since in
+                                            dimensions above two a quarter pinched orbifold is covered by a manifold (see
+                                            Proposition 5.2), our proof carries over to orbifolds.
+                                               This is no longer true in dimension two. In the manifold case it is known that
+                                            the normalized Ricci flow converges to a metric of constant curvature for any initial
+                                            metric [H3], [Cho]. However, there exist two-dimensional orbifolds with positive
+                                            sectional curvature which are not covered by a manifold. On such orbifolds the
+                                            Ricci flow converges to a nontrivial Ricci soliton [CW].
+                                               Let us mention that a 2-positive curvature operator has positive isotropic curva-
+                                            ture. Micallef and Moore [MM] showed that a simply connected compact manifold
+                                            with positive isotropic curvature is a homotopy sphere. However, their techniques
+                                            do not allow to get restrictions for the fundamental groups or the differentiable
+                                            structure of the underlying manifold.
+                                               We turn to the proof of Theorem 1. The (unnormalized) Ricci flow is the geo-
+                                            metric evolution equation
+                                                                             ∂g
+                                                                                 = −2 Ric(g)
+                                                                             ∂t
+                                            for a curve gt of Riemannian metrics on a compact manifold M n . Using moving
+                                            frames, this leads to the following evolution equation for the curvature operator Rt
+                                              The first author was supported by the Deutsche Forschungsgemeinschaft.
+                                                                                        1
+2                         CHRISTOPH BÖHM AND BURKHARD WILKING
+
+
+of gt (cf. [H2]):
+                          ∂R
+                              = ∆ R +2(R2 + R# ) .
+                           ∂t
+Here Rt : Λ2 Tp M → Λ2 Tp M and identifying Λ2 Tp M with so(Tp M ) we have
+                                   R# = ad ◦ (R ∧ R) ◦ ad∗ ,
+where ad : Λ2 (so(Tp M )) → so(Tp M ) is the adjoint representation. Notice that in
+our setting the curvature operator of the round sphere of radius one is the identity.
+                     2
+   We denote by SB     (so(n)) the vectorspace of curvature operators, that is the
+vectorspace of selfadjoint endomorphisms of so(n) satisfying the Bianchi identity.
+Hamilton’s maximum principle asserts that a closed convex O(n)-invariant subset
+       2
+C of SB  (so(n)) which is invariant under the ordinary differential equation
+                                  dR
+(1)                                   = R2 + R#
+                                  dt
+defines a Ricci flow invariant curvature condition; that is, the Ricci flow evolves met-
+rics on compact manifolds whose curvature operators at each point are contained
+in C into metrics with the same property.
+   In dimensions above four there are relatively few applications of the maximum
+principle, since in these dimensions the ordinary differential equation (1) is not
+well understood. By analyzing how the differential equation changes under linear
+equivariant transformations, we provide a general method for constructing new
+invariant curvature conditions from known ones.
+   Any equivariant linear transformation of the space of curvature operators re-
+spects the decomposition
+                                2
+                               SB (so(n)) = hIi ⊕ hRic0 i ⊕ hWi
+into pairwise inequivalent irreducible O(n)-invariant subspaces. Here hIi denotes
+multiples of the identity, hWi the space of Weyl curvature operators and hRic0 i are
+the curvature operators of traceless Ricci type. Given a curvature operator R we let
+RI and RRic0 denote the projections onto hIi and hRic0 i, respectively. Furthermore
+let Ric : Rn → Rn denote the Ricci tensor of R and Ric0 the traceless part of Ric.
+Theorem 2. For a, b ∈ R consider the equivariant linear map
+              2            2
+      la,b : SB (so(n)) → SB (so(n)) ; R 7→ R +2(n − 1)a RI +(n − 2)b RRic0
+and let
+                                   l−1          2          #
+                                                               − R2 − R# .
+                                                             
+                    Da,b      :=    a,b (la,b R) + (la,b R)
+
+Then
+                    (n − 2)b2 − 2(a − b) Ric0 ∧ Ric0 +2a Ric ∧ Ric + 2b2 Ric20 ∧ id
+                                        
+      Da,b   =
+                           tr(Ric20 )
+                                       nb2 (1 − 2b) − 2(a − b)(1 − 2b + nb2 ) I .
+                                                                             
+                    +
+                        n + 2n(n − 1)a
+   The key fact about the difference Da,b of the pulled back differential equation
+and the differential equation itself is that it does not depend on the Weyl curvature.
+   Let us now explain why Theorem 2 allows us to construct new curvature condi-
+tions which are invariant under the ordinary differential equation (1): We consider
+the image of a known invariant curvature condition C under the linear map la,b for
+       MANIFOLDS WITH POSITIVE CURVATURE OPERATORS ARE SPACE FORMS                       3
+
+
+suitable constants a, b. This new curvature condition         is invariant under the ordi-
+nary differential equation, if l−1
+                                a,b (l a,b R)2
+                                               + (l a,b R) #
+                                                              lies in the tangent cone TR C
+of the known invariant set C. By assumption R + R# lies in that tangent cone,
+                                                         2
+
+and hence it suffices to show Da,b ∈ TR C. Since this difference does not depend on
+the Weyl curvature, it can be solely computed from the Ricci tensor.
+   Using this technique we construct a continuous family of invariant cones join-
+ing the invariant cone of 2-positive curvature operators and the invariant cone of
+positive multiples of the identity operator. Then a standard ode-argument shows
+that from any such family a generalized pinching set can be constructed – a con-
+cept which is slightly more general than Hamiltons concept of pinching sets in [H2].
+In Theorem 5.1 we show that Hamilton’s convergence result carries over to our
+situation, completing the proof of Theorem 1.
+   We expect that Theorem 2 and its Kähler analogue should give rise to further
+applications. This will be the subject of a forthcoming paper.
+
+
+                            1. Algebraic Preliminaries
+  For a Euclidean vector space V we let Λ2 V denote the exterior product of V . We
+endow Λ2 V with its natural scalar product; if e1 , . . . , en is an orthonormal basis of
+V then e1 ∧ e2 , ..., en−1 ∧ en is an orthonormal basis of Λ2 V . Notice that two linear
+endomorphisms A, B of V induce a linear map
+      A ∧ B : Λ2 V → Λ2 V ; v ∧ w 7→ 12 A(v) ∧ B(w) + B(v) ∧ A(w) .
+                                                                            
+
+We will identify Λ2 Rn with the Lie algebra so(n) by mapping the unit vector ei ∧ ej
+onto the linear map L(ei ∧ ej ) of rank two which is a rotation with angle π/2 in
+the plane spanned by ei and ej . Notice that under this identification the scalar
+product on so(n) corresponds to hA, Bi = −1/2 tr(AB).
+   For n ≥ 4 there is a natural decomposition of
+                    S 2 (so(n)) = hIi ⊕ hRic0 i ⊕ hWi ⊕ Λ4 (Rn )
+into O(n)-invariant, irreducible and pairwise inequivalent subspaces. An endomor-
+phism R ∈ S 2 (so(n)) satisfies the first Bianchi identity if and only if R is an element
+     2                                                                       2
+in SB  (so(n)) = hIi ⊕ hRic0 i ⊕ hWi . Given a curvature operator R ∈ SB       (so(n)) we
+let RI , RRic0 and RW , denote the projections onto hIi, hRic0 i and hWi, respectively.
+Moreover, let
+                                      Ric : Rn → Rn
+denote the Ricci tensor of R, Ric0 the traceless Ricci tensor and
+(2)                 λ̄ := tr(Ric)/n    and    σ := k Ric0 k2 /n .
+Then
+                     λ̄                                 2
+(3)          RI =       id ∧ id       and    RRic0 =       Ric0 ∧ id .
+                    n−1                                n−2
+Hamilton observed in [H2] that next to the map (R, S) 7→ 12 (R S + S R) there is a
+second natural O(n)-equivariant bilinear map
+
+              # : S 2 (so(n)) × S 2 (so(n)) → S 2 (so(n)) ; (R, S) 7→ R # S
+4                     CHRISTOPH BÖHM AND BURKHARD WILKING
+
+
+given by
+                                            N
+                                      1 X
+(4)          h(R # S)(h), hi      =       h[R(bα ), S(bβ )], hi · h[bα , bβ ], hi
+                                      2
+                                          α,β=1
+
+for h ∈ so(n) and an orthonormal basis b1 , ..., bN of so(n). The factor 1/2 stems from
+that fact that we are using the scalar product −1/2 tr(AB) instead of − tr(AB) as
+in [H2]. We would like to mention that R # S = S # R can be described invariantly
+                             R #S = ad ◦ (R ∧ S) ◦ ad∗ ,
+where ad: Λ2 so(n) → so(n), u ∧ v 7→ [u, v] denotes the adjoint representation and
+ad∗ is its dual. Following Hamilton we set
+                                      R# = R # R .
+    We will also consider the trilinear form
+                                                                       
+(5)          tri(R1 , R2 , R3 )   = tr (R1 R2 + R2 R1 +2 R1 # R2 ) · R3 .
+The authors learned from Huisken that tri is symmetric in all three components.
+In fact using (4) it is straightforward to check that
+                                      N
+                                      X
+        tr(2(R1 # R2 ) · R3 ) =           h[R1 (bα ), R2 (bβ )], R3 (bγ )i · h[bα , bβ ], bγ i .
+                                  α,β,γ=1
+
+Since the right hand side is clearly symmetric in all three components this gives the
+desired result. Huisken also observed that the ordinary differential equation (1) is
+the gradient flow of the function
+                                  1                 1
+                       P (R) =      tr(R3 + R R# ) = tri(R, R, R) .
+                                  3                 6
+   Finally we recall that if e1 , . . . , en denotes an orthonormal basis of eigenvectors
+of Ric, then
+                                                X
+(6)                    Ric(R2 + R# )ij =            Rickk Rkijk
+                                                  k
+
+where Rkijk = hR(ei ∧ ek ), ej ∧ ek i, see [H1], [H2].
+
+           2. A new Algebraic Identity for Curvature Operators
+  The main aim of this section is to prove Theorem 2. A computation using (3)
+                                  2            2
+shows that the linear map la,b : SB (so(n)) → SB (so(n)) given in Theorem 2 satisfies
+                   la,b (R) =      R +2b Ric ∧ id +2(n − 1)(a − b) RI .
+The bilinear map # induces a linear O(n)-equivariant map given by R 7→ R #I.
+The normalization of our parameters is related to the eigenvalues of this map.
+                    2
+Lemma 2.1. Let R ∈ SB (so(n)). Then
+                                                n−2
+                R + R #I = (n − 1) RI +             RRic0 = Ric ∧ id .
+                                                 2
+       MANIFOLDS WITH POSITIVE CURVATURE OPERATORS ARE SPACE FORMS                        5
+
+
+Proof. One can write
+                               1
+                                    (R +I)2 + (R +I)# − (R −I)2 − (R −I)# .
+                                                                         
+(7)         R + R #I    =      4
+The result on the eigenvalues of the map corresponding to the subspaces hRic0 i and
+hIi now follows from equation (6) by a straightforward computation. For n = 4 one
+verifies directly that hWi is in the kernel of the map R 7→ R + R #I. Since there
+                                                              2
+is a natural embedding of the Weyl curvature operators in SB    (so(4)) to the Weyl
+                         2
+curvature operators in SB (so(n)) this implies the same result for n ≥ 5.         
+  We say that a curvature operator R is of Ricci type, if R = RI + RRic0 .
+                        2
+Lemma 2.2. Let R ∈ SB     (so(n)) be a curvature operator of Ricci type, and let λ̄
+and σ be as in (2). Then
+                       1                      2λ̄                  2
+      R2 + R#   =            Ric0 ∧ Ric0 +          Ric0 ∧ id −          (Ric20 )0 ∧ id
+                     n−2                    (n − 1)             (n − 2)2
+                         λ̄2         σ
+                     +        I+         I.
+                       n−1         n−2
+Moreover
+                                1
+            R2 + R# W
+                                               
+                            =       Ric0 ∧ Ric0 W
+                              n−2
+                                  2             n−2
+           Ric(R2 + R# )    = −     (Ric20 )0 +     λ̄ Ric0 +λ̄2 id +σ id .
+                                n−2             n−1
+Proof. By equation (3)
+                                     λ̄         2
+                    R = RI + RRic0 =      I+         Ric0 ∧ id .
+                                  (n − 1)    (n − 2)
+Using the abbreviation R0 = RRic0 we have
+                                      2λ̄                     λ̄2
+         R2 + R# = R20 + R#
+                          0 +               (R0 + R0 #I) +           (I + I # ) .
+                                    (n − 1)                (n − 1)2
+Since the last two summands are known by Lemma 2.1, we may assume that
+R = RRic0 . Let λ1 , . . . , λn denote the eigenvalues of Ric0 corresponding to an
+orthonormal basis e1 , . . . , en of Rn . The curvature operator R is diagonal with
+                                                              λi +λj
+respect to e1 ∧ e2 , ..., en−1 ∧ en and we denote by Rij = n−2        the corresponding
+eigenvalues for 1 ≤ i < j ≤ n. Inspection of (4) shows that also R2 + R# is diagonal
+with respect to this basis. We have
+                                      X
+         (R2 + R# )ij = R2ij +             Rik Rjk
+                                        k6=i,j
+
+                                   (λi + λj )2      1     X
+                           =                   +            (λi + λk )(λj + λk )
+                                    (n − 2)2     (n − 2)2
+                                                         k6=i,j
+
+                                    λi λj    nσ − λ2i − λ2j
+                           =               +
+                                   (n − 2)     (n − 2)2
+
+as claimed.
+   The second identity follows immediately from the first. To show the last identity
+notice that the Ricci tensor of Ric0 ∧ Ric0 is given by − Ric20 . A computation shows
+the claim.                                                                         
+6                    CHRISTOPH BÖHM AND BURKHARD WILKING
+
+
+Proof of Theorem 2. We first verify that D = Da,b does not depend on the Weyl
+curvature of R. We view D as quadratic form in R. Then
+                      B(R, S) := 41 D(R + S) − D(R − S)
+                                                       
+
+is the corresponding bilinear form.
+                                                                            2
+    Let S = W ∈ hWi. We have to show B(R, W) = 0 for all R ∈ SB               (so(n)).
+We start by considering R ∈ hWi. Then la,b (R ± W) = R ± W. It follows from
+formula (6) for the Ricci curvature of R2 + R# that (R ± W)2 + (R ± W)# has
+vanishing Ricci tensor. Hence (R ± W)2 + (R ± W)# is a Weyl curvature operator
+and accordingly fixed by l−1a,b .
+    Next we consider the case that R = I is the identity. Using the polarization
+formula (7) for W we see that B(I, W) is a multiple of W + W #I, which is zero
+by Lemma 2.1.
+    It remains to consider the case of R ∈ hRic0 i. Using the symmetry of the trilinear
+form tri defined in (5) we see for each W2 ∈ hWi that
+                         tri(W, R, W2 ) = tri(W, W2 , R) = 0
+as W W2 + W2 W +2 W # W2 lies in hWi and R ∈ hRic0 i. Combining this with
+tri(W, R, I) = 0 gives that W R + R W +2 W # R ∈ hRic0 i. Using once more that
+l := la,b is the identity on hWi we see that
+         l(W) l(R) + l(R) l(W) + 2 l(W)# l(R) = l(W R + R W +2 W # R) .
+This clearly proves B(R, W) = 0.
+   Thus, for computing D we may assume that RW = 0. So let R = RI + RRic0 .
+We next verify that both sides of the equation have the same projection to the
+space hWi of Weyl curvature operators. Recall that l−1   a,b induces the identity on
+hWi and that Ric0 (la,b (R)) = (1 + (n − 2)b) Ric0 . Then using the second identity
+in Lemma 2.2 we see that
+                             1
+                                ((1 + (n − 2)b)2 − 1) Ric0 ∧ Ric0 W
+                                                                  
+                DW =
+                          n−2
+                     = (n − 2)b2 + 2b Ric0 ∧ Ric0 W .
+                                                      
+
+It is straightforward to check that the right hand side in the asserted identity for
+D has the same projection to hWi.
+   It remains to check that both sides of the equation have the same Ricci tensor.
+Because of Ric(la,b (R)) = (1 + (n − 2)b) Ric0 +(1 + 2(n − 1)a)λ̄ id, the third identity
+in Lemma 2.2 implies
+          Ric(D) =      −2b(Ric20 )0 + 2(n − 2)aλ̄ Ric0 +2(n − 1)aλ̄2 id
+                            2(n − 2)b + (n − 2)2 b2 − 2(n − 1)a
+                        +                                       σ id
+                                      1 + 2(n − 1)a
+(8)                 =   −2b Ric20 +2(n − 2)aλ̄ Ric0 +2(n − 1)aλ̄2 id
+                            2(n − 1)b + (n − 2)2 b2 − 2(n − 1)a(1 − 2b)
+                        +                                               σ id .
+                                          1 + 2(n − 1)a
+A straightforward computation shows that the same holds for the Ricci tensor of
+the right hand side in the asserted identity for D. This completes the proof. 
+      MANIFOLDS WITH POSITIVE CURVATURE OPERATORS ARE SPACE FORMS                        7
+
+
+Corollary 2.3. We keep the notation of Theorem 2, and let σ, λ̄ be as in (2).
+Suppose that λ1 , . . . , λn are the eigenvalues of Ric0 corresponding to an orthonormal
+basis e1 , . . . , en . Then ei ∧ ej (i < j) is an eigenvector of Da,b corresponding to the
+eigenvalue
+      dij = (n − 2)b2 − 2(a − b) λi λj + 2a(λ̄ + λi )(λ̄ + λj ) + b2 (λ2i + λ2j )
+                                             
+
+                              σ
+                                        nb2 (1 − 2b) − 2(a − b)(1 − 2b + nb2 ) .
+                                                                              
+                     +
+                        1 + 2(n − 1)a
+Furthermore, ei is an eigenvector of the Ricci tensor of Da,b with respect to the
+eigenvalue
+             ri   =   −2bλ2i + 2aλ̄(n − 2)λi + 2a(n − 1)λ̄2
+                              σ
+                                       n2 b2 − 2(n − 1)(a − b)(1 − 2b) .
+                                                                      
+                      +
+                        1 + 2(n − 1)a
+   Notice that λi + λ̄ are the eigenvalues of the Ricci tensor Ric. The first formula
+follows immediately from Theorem 2, the second from (8).
+
+                               3. New Invariant Sets
+                                                  2
+   We call a continuous family C(s)s∈[0,1) ⊂ SB     (so(n)) of closed convex O(n)-
+invariant cones of full dimension a pinching family, if
+    (1) each R ∈ C(s) \ {0} has positive scalar curvature,
+    (2) R2 + R# is contained in the interior of the tangent cone of C(s) at R for
+        all R ∈ C(s) \ {0} and all s ∈ (0, 1),
+    (3) C(s) converges in the pointed Hausdorff topology to the one-dimensional
+        cone R+ I as s → 1.
+   The main aim of this section is to prove
+Theorem 3.1. There is a pinching family C(s)s∈[0,1) of closed convex cones such
+that C(0) is the cone of 2-nonnegative curvature operators.
+   As before a curvature operator is called 2-nonnegative if the sum of its small-
+est two eigenvalues is nonnegative. It is known that the cone of 2-nonnegative
+curvature operators is invariant under the ordinary differential equation (1) (see
+[H4]). The pinching family that we construct for this cone is defined piecewise by
+three subfamilies. Each cone in the first subfamily is the image of the cone of 2-
+nonnegative curvature operators under a linear map. In fact we have the following
+general result.
+                                 2
+Proposition 3.2. Let C ⊂ SB        (so(n)) be a closed convex O(n)-invariant subset
+which is invariant under the ordinary differential equation (1). Suppose that C \{0}
+is contained in the half space of curvature operators with positive scalar curvature,
+that each R ∈ C has nonnegative Ricci curvature and that C contains all nonnega-
+tive curvature operators of rank 1. Then for n ≥ 3 and
+                     √
+                       2n(n−2)+4−2 
+              b ∈ 0,      n(n−2)        and 2a = 2b + (n − 2)b2
+
+the set la,b (C) is invariant under the vector field corresponding to (1) as well. In
+fact, it is transverse to the boundary of the set at all boundary points R 6= 0.
+8                    CHRISTOPH BÖHM AND BURKHARD WILKING
+
+
+   Using the Bianchi identity it is straightforward to check that a nonnegative cur-
+vature operator of rank 1 corresponds up to a positive factor and a change of basis
+in Rn to the curvature operator of S2 × Rn−2 . The condition that C contains all
+these operators is equivalent to saying that C contains the cone of geometrically
+nonnegative curvature operators. A curvature operator is geometrically nonnega-
+tive if it can be written as the sum of nonnegative curvature operators of rank 1.
+In dimensions above 4 this cone is strictly smaller than the cone of nonnegative
+curvature operators. Although we will not need it, we remark that the cone of
+geometrically nonnegative curvature operators is invariant under (1) as well.
+
+Proof. We have to prove that for each R ∈ C the curvature operator
+(9)                      Xa,b   = l−1           2          #
+                                   a,b (la,b (R) + la,b (R) )
+
+lies in the tangent cone TR C of C at the point R. Notice that by assumption we
+have R2 + R# ∈ TR C. Thus it suffices to show that Da,b = Xa,b − R2 − R# lies
+in TR C. Since C contains all nonnegative curvature operators of rank 1, we can
+establish this by showing that Da,b is positive for b > 0. Looking at the formula
+for the eigenvalues of Da,b in Corollary 2.3 this amounts to showing that
+                   0 ≤ b2 n(1 − 2b) − (n − 2)(1 − 2b + nb2 )
+                                                               
+
+holds in the given range. This is a straightforward computation.                     
+
+  Let us remark that the intersection of two closed convex O(n)-invariant cones,
+which are invariant under the ordinary differential equation (1), have the same
+properties as the given cones.
+Corollary 3.3. In order to prove Theorem 3.1, it suffices to establish the existence
+of a pinching family C(s)s∈[0,1) with C(0) being the cone of nonnegative curvature
+operators.
+Proof. Suppose n ≥ 4. Notice that the cone C of 2-nonnegative curvature operators
+satisfies the assumptions of Proposition 3.2. We plan to show that the family of
+closed invariant cones from Proposition 3.2 can be extended to a pinching family.
+By the above remark it suffices to show that la(b),b (C \ {0}) is contained in the open
+cone of positive curvature operators where b is the maximal allowed value from
+Proposition 3.2. In fact then we can extend the family from Proposition 3.2 to a
+pinching family by defining it on the second part of the interval as a reparameteri-
+zation of the pinching family (C(s) ∩ C ′ )s∈[0,1) where C ′ := la(b),b (C).
+   Let R ∈ C \ {0}. Recall that by (7) we have la,b (R) = R +2b Ric ∧ id +h RI
+for h := 2(n − 1)(a − b). The smallest eigenvalue of R is by a standard estimate
+                             2 tr(R)
+larger than or equal to − n(n−1)−2   . Moreover, since the sum of the two smallest
+eigenvalues of R is nonnegative the smallest eigenvalue of Ric is bounded from
+below by (n − 3) times the absolute value of the smallest eigenvalue of R. Thus in
+                                                                          n(n−1)
+order to show that la,b (R) > 0 it is sufficient to prove h > (1 − 2b) n(n−1)−2  . This
+is equivalent to
+                                                     n
+                         (n − 2)b2 > (1 − 2b)                 .
+                                               (n + 1)(n − 2)
+By the definition of b we have (n − 2)b2 = n2 (1 − 2b). This shows the claim for
+n ≥ 4. For n = 3 Theorem 3.1 is well known.                                   
+       MANIFOLDS WITH POSITIVE CURVATURE OPERATORS ARE SPACE FORMS                   9
+
+
+  It remains to construct a pinching family for the cone of nonnegative curvature
+operators. This pinching family will be defined up to parameterization piecewise
+by two subfamilies in the next two lemmas.
+
+Lemma 3.4. For b ∈ [0, 1/2] put
+                       (n − 2)b2 + 2b                          (n − 2)b2
+                a=                               and    p=                 .
+                       2 + 2(n − 2)b2                        1 + (n − 2)b2
+Then the set
+                                                                             
+                    la,b             2
+                                R ∈ SB (so(n)) R ≥ 0, Ric ≥ p(b) tr(Ric)
+                                                                    n
+
+is invariant under the vector field corresponding to (1). In fact, for b ∈ (0, 1/2] it
+is transverse to the boundary of the set at all boundary points R 6= 0.
+
+Proof. Put
+                                2
+                                  (so(n)) R ≥ 0, Ric ≥ p(b) tr(Ric)
+                          
+                   C(p) := R ∈ SB                              n    .
+
+It suffices to check that for R ∈ C(p) \ {0} the pulled back vector field Xa,b defined
+in (9) is in the interior of the tangent cone of C(p) at R.
+   In the first step we verify that Xa,b is positive definite for b ∈ (0, 1/2]. Since
+R2 + R# is positive semi-definite, we can establish Xa,b > 0 by showing Da,b > 0.
+Since by assumption R ∈ C(p) we have the following estimate for the eigenvalues
+of Ric0 :
+                                             λi ≥ −(1 − p)λ̄ .
+Next, observe that
+                                                  1 − 2b
+                                 2(a − b) =                  (n − 2)b2 .
+                                               1 + (n − 2)b2
+We use the notation of Theorem 2 and Corollary 2.3. Rewriting dij gives
+                      2a                                           2    2 2      2
+(10)     dij   =     1−p ((1 − p)λ̄ + λi )((1 − p)λ̄ + λj ) + 2apλ̄ + b (λi + λj )
+                       n(1 + (n − 2)b2 ) − (n − 2)(1 − 2b + nb2 ) 2
+                     +                                               σb (1 − 2b)
+                             (1 + 2(n − 1)a)(1 + (n − 2)b2 )
+                             2 + 2(n − 2)b
+               >                                     σb2 (1 − 2b)
+                     (1 + 2(n − 1)a)(1 + (n − 2)b2 )
+               ≥     0.
+
+In the second step we must show that the above Ricci pinching is preserved by the
+ordinary differential equation (1). Let Ric(Xa,b ) denote the Ricci tensor of Xa,b .
+Assume that λi = −(1 − p)λ̄. We have to show that
+                            scal(Xa,b )                        (1 + (n − 2)b)2 
+                                        = p 1 + 2(n − 1)a λ̄2 +
+                                                         
+       Ric(Xa,b )ii > p                                                        σ
+                                 n                               1 + 2(n − 1)a
+holds for b ∈ (0, 1/2]. We first observe that by (6)
+                               X                 X
+            Ric(R2 + R# )ii =      Rickk Rkiik ≥     pλ̄ Rkiik = p2 λ̄2 .
+                                      k6=i                 k6=i
+10                      CHRISTOPH BÖHM AND BURKHARD WILKING
+
+
+Using formula (10) for dij and λi = −(1 − p)λ̄ we see that
+                                X
+       Ric(Xa,b )ii ≥ p2 λ̄2 +     dij
+                                        j6=i
+
+                            = p λ̄ + 2(n − 1)apλ̄2 + (n − 2)b2 (1 − p)2 λ̄2 + nb2 σ
+                                 2 2
+
+                                      (n − 1)σb2 (1 − 2b)                      
+                              +                             2
+                                                                2 + 2(n − 2)b .
+                                (1 + 2(n − 1)a)(1 + (n − 2)b )
+By our choice for b and p it is straightforward to check that
+                                   p2 + (n − 2)b2 (1 − p)2 = p .
+This shows that in the asserted inequality the λ̄2 -terms cancel each other. Since
+σ > 0 it remains to verify
+                    (n − 1)b2 (1 − 2b)                           (1 + (n − 2)b)2
+     nb2 +
+                                                           
+                                             2 + 2(n − 2)b   > p                 .
+             (1 + 2(n − 1)a)(1 + (n − 2)b2 )                      1 + 2(n − 1)a
+The identity
+                                                1 + 2(n − 1)b + n(n − 2)b2
+                       (1 + 2(n − 1)a) =
+                                                       1 + (n − 2)b2
+shows that this is equivalent to
+           0 <     n(1 + 2(n − 1)b + n(n − 2)b2 ) − (n − 2)(1 + (n − 2)b)2
+                                                  
+                   +(n − 1)(1 − 2b) 2 + 2(n − 2)b
+               =   2n + 2n(n − 2)b .
+This shows the claim.                                                                 
+
+   We remark that the above sets remain in fact invariant for all b > 0. For b → +∞
+they converge to an invariant set of Einstein curvature operators.
+   We will now finish the proof of Theorem 3.1 by showing that the cone from
+Lemma 3.4 for b = 1/2 can be joined by a continuous family of invariant cones with
+arbitrarily small cones around the identity.
+Lemma 3.5. Assume b = 1/2 and put for s ≥ 0
+                                  1+s                            4
+                             a=                and p = 1 −              .
+                                   2                         n + 2 + 4s
+Then the set
+                                                                          
+                la,b             2
+                            R ∈ SB (so(n)) | R ≥ 0, Ric ≥ p(s) tr(Ric)
+                                                                  n    }
+
+is invariant under the vector field corresponding to (1). In fact, it is transverse to
+the boundary of the set at all boundary points R 6= 0.
+  Notice that lims→∞ a1 la,b (R) = 2(n−1)RI . Consequently the cones of the lemma
+converge to R+ I for s → ∞.
+
+Proof. Notice that the formulas in Corollary 2.3 simplify:
+                 1                                                   1   2    2
+                              
+       dij =     4 (n − 2) − s λi λj + (s + 1)(λ̄ + λi )(λ̄ + λj ) + 4 (λi + λj )
+                        σns
+                −
+                  4n + 4(n − 1)s
+        MANIFOLDS WITH POSITIVE CURVATURE OPERATORS ARE SPACE FORMS                           11
+
+
+and
+                                                                                σn2
+        ri     =       −λ2i + (s + 1)λ̄(n − 2)λi + (s + 1)(n − 1)λ̄2 +                    .
+                                                                           4n + 4(n − 1)s
+We first verify that Xa,b does preserve the Ricci pinching. We may suppose that
+λi = −(1 − p)λ̄. We have to show
+        0    ≤ p2 λ̄2 − (1 − p)2 λ̄2 − (s + 1)λ̄2 (n − 2)(1 − p) + (s + 1)(n − 1)λ̄2
+                        σn2                                         n2        
+               +                    − p (n + (n − 1)s)λ̄2 +                  σ .
+                 4n + 4(n − 1)s                               4n + 4(n − 1)s
+Because of σ ≥ 0 we can neglect the terms with σ. Dividing by λ̄2 gives
+      p2 − (1 − p)2 + (s + 1) + (s + 1)p(n − 2) − p(n + (n − 1)s) = s(1 − p) ,
+which is clearly positive. Notice that this calculation is independent of p. As before
+we can complete the proof by showing that Da,b is positive definite. Using
+                                                            16(n − 1)λ̄2
+                               σ ≤ (n − 1)(1 − p)2 λ̄2 =
+                                                           (n + 2 + 4s)2
+we see that
+               n+2            4λ̄           4λ̄                        8λ̄
+         dij       = (λi +         )(λj +        ) + sλ̄(λi + λj +             )
+                 4          n+2            n+2                     n + 2 + 4s
+                 1                n−2 2       n − 6 + 4s 2           σns
+               + (λ2i + λ2j ) +        λ̄ + s             λ̄ −
+                 4                n+2         n + 2 + 4s        4n + 4(n − 1)s
+               n − 2      n − 6 + 4s                16(n − 1)ns           
+           ≥           +s                −                                  λ̄2
+                n+2        n + 2 + 4s (4n + 4(n − 1)s)(n + 2 + 4s)2
+                                                λ̄2
+           > 5 + s(n − 6) + 4s2 − 4s
+                                          
+                                                         > 0
+                                            n + 2 + 4s
+where we used n ≥ 3 in the last two inequalities.                                             
+
+      4. Constructing a generalized Pinching Set from a Family of
+                             invariant Cones
+    We show how to construct from a family of invariant cones a generalized pinch-
+ing set, similar to Hamilton’s concept in [H2]. Let us recall that we denoted by
+  2
+SB  (so(n)) the space of curvature operators.
+                                    2
+Theorem 4.1. Let C(s)s∈[0,1) ⊂ SB     (so(n)) be a continuous family of closed convex
+SO(n)-invariant cones of full dimension, such that C(s) \ {0} is contained in the
+half space of curvature operators with positive scalar curvature. Suppose that for
+R ∈ C(s) \ {0} the vector field X(R) = R2 + R# is contained in the interior of the
+tangent cone of C(s) at R for all s ∈ (0, 1). Then for ε, h0 > 0 there exists a closed
+                                       2
+convex SO(n)-invariant subset F ⊂ SB     (so(n)) with the following properties:
+      (1) F is invariant under the vector field X.
+      (2) C(ε) ∩ {R | tr(R) ≤ h0 } ⊂ F .
+      (3) F \ C(s) is relatively compact for all s ∈ [ε, 1).
+  We remark that F is O(n)-invariant if the cones are. We also note that the
+analogue of the theorem holds in the vector space of Kähler curvature operators.
+12                     CHRISTOPH BÖHM AND BURKHARD WILKING
+
+
+Proof. Let F denote the minimal closed convex SO(n)-invariant subset which is
+invariant under the flow of X and which contains the set
+                                C(ε) ∩ {R | tr(R) ≤ h0 } .
+Notice that F is the intersection of all subsets which satisfy the above properties.
+In particular F is well defined and F ⊂ C(ε). We have to prove that for all s the
+set F \ C(s) is bounded.
+   Suppose on the contrary that F \ C(s) is not bounded for some s. Let s0 ≥ ε
+denote the infimum among all s with this property. Since the vector field X is
+transverse to the boundary of C(s0 ) it is clear that for all small δ the cone Cδ (s0 )
+over the convex set
+                       {R ∈ C(s0 ) | tr(R) = 1, d(R, ∂C(s0 )) ≥ δ}
+is invariant under X. For small δ the cone Cδ (s0 ) has maximal dimension and
+C0 (s0 ) = C(s0 ). We now choose δ0 so small that the vector field X is transverse to
+the boundary of Cδ (s0 ) for all R 6= 0 and for all δ ∈ [0, δ0 ].
+   A simple compactness argument shows that there is some constant η such that
+for each R ∈ Cδ (s0 ) the vector field X has distance at least ηkRk2 to the boundary
+of the tangent cone of Cδ (s0 ) at R. We note that X is locally Lipschitz continuous
+with a Lipschitz constant that growths linearly in k R k. Combining both facts we
+see that there is some constant c > 0 such that the truncated shifted cone
+                      T Cδ (s0 ) := {R | R +I ∈ Cδ (s0 ), tr(R) ≥ h̄}
+is invariant under the flow of X for all δ ∈ [0, δ0 ].
+    Consequently for small δ > 0 we have that C(s0 ) ∩ {R | tr(R) = h̄} is contained
+in the interior of T Cδ (s0 ). Since the family C(s) is continuous, we conclude
+                           C(s̄) ∩ {R | tr(R) = h̄} ⊂ T Cδ (s0 )
+for some ε ≤ s̄ < s0 . In the case of s0 = ε put s̄ = ε. By the definition of s0 we
+can choose k ∈ N so large that
+         F ∩ {R | tr(R) = k h̄} ⊂ C(s̄) ∩ {R | tr(R) = k h̄} ⊂ k · T Cδ (s0 ) .
+The scaled set k · T Cδ (s0 ) is invariant under the flow of X too, since X(k R) =
+k 2 X(R). Thus the set
+                                                               
+                F ′ := F ∩ {R | tr(R) ≤ k h̄} ∪ F ∩ k · T Cδ (s0 )
+
+is convex and invariant under the flow of X. By assumption F ′ ⊂ F . On the other
+hand T Cδ (s0 ) \ Cδ/2 (s0 ) is bounded. By the continuity of the family it follows that
+F \ C(s) is bounded for all s which are sufficiently close to s0 . A contradiction to
+the choice of s0 .                                                                    
+
+                           5. Proof of the Main Result
+     Using Theorem 3.1, Theorem 1 is an immediate consequence of the following
+                                    2
+Theorem 5.1. Let C(s)s∈[0,1) ⊂ SB     (so(n)) be a pinching family of closed convex
+cones, n ≥ 3. Suppose that (M, g) is a compact Riemannian manifold such that the
+curvature operator of M at each point is contained in the interior of C(0). Then
+the normalized Ricci flow evolves g to a constant curvature limit metric.
+      MANIFOLDS WITH POSITIVE CURVATURE OPERATORS ARE SPACE FORMS                     13
+
+
+Proof. Let Rp denote the curvature operator of (M, g) at a point p ∈ M . For all
+p ∈ M we have
+                              Rp ∈ {R | scal ≤ h0 } ∩ C(ε)
+for a sufficiently small ε > 0 and a sufficiently large h0 , since the family of cones is
+continuous and M is compact. For this pair ε, h0 we consider an invariant set F as
+in Theorem 4.1.
+   By the maximum principle the Ricci flow evolves g to metrics gt whose curvature
+operators at each point are contained in F . We do also know that the solution of
+the Ricci flow exists as long as the curvature does not tend to infinity. Furthermore
+it follows from the maximum principle that the Ricci flow exists only on a finite
+time interval t ∈ [0, t0 ). By Shi [Sh] it follows from the maximum principle applied
+to the evolution equation for the i-th derivatives of the curvature operator that
+                          max k∇i Rt k2 ≤ Ci max k Rt ki+2
+for all t ∈ [t0 /2, t0 ).
+   We now rescale each metric gt to a metric g̃t such that the maximal sectional
+curvature is equal to 1. From the above estimates we get a priori bounds for all
+derivatives of the curvature tensor of the metric g̃t for t ∈ [t0 /2, t0 ).
+   Next, we pick a point pt ∈ (M, gt ) such that the sectional curvature attains
+its maximum in the ball Bπ (pt ) of radius π around pt . We pull the metric via
+the exponential map back to the ball of radius π in Tpt M . By choosing a linear
+isometry Rn → Tpt M we identify this ball with the ball Bπ (0) ⊂ Rn and denote
+by ḡt the induced metric on Bπ (0). From the above estimates on the derivatives of
+the curvature tensor it is clear that for any sequence (tk ) in [0, t0 ) converging to t0
+there is a subsequence of (ḡtk ) converging in the C ∞ topology to a limit metric.
+   Let now λj denote the scaling factors of these metrics ḡtj which by assumption
+tend to infinity. At each point of M the curvature operator of the limit metric is
+contained in the set                \
+                                        1
+                                       λ2
+                                          F = R+ I .
+                                         j
+
+Thus the limit metric on Bπ (0) has pointwise constant sectional curvature. Since
+n ≥ 3, it has constant curvature one by Schur’s theorem.
+   Since the sequence was arbitrary, the minimal sectional curvature converges on
+a ball of radius π around pt in (M, gt ) to 1 as well as t tends to t0 . Notice that this
+argument works for all pt ∈ Bπ (qt ), where qt denotes a point where the sectional
+curvature attains its maximum 1. Therefore the minimal sectional curvature con-
+verges on the ball of radius 2π around qt to 1 as well. By the theorem of Bonnet
+Myers diam(M, g̃t ) ≤ 3π/2 for large t < t0 and consequently, also the minimum of
+the sectional curvature of (M, g̃t ) tends to 1 for t → t0 .
+   In the case of manifolds one is done since by Klingenberg’s injectivity radius
+estimate [CE] collapse can not occur. Alternatively, one can use the fact that
+(M, gt ) satisfies the assumption of Huisken’s theorem [Hu] for suitable large t. In
+the case of orbifolds one has to use additionally Proposition 5.2 from below.          
+  Let us remark that collapse in the above situation can also be ruled out by
+applying Perelman’s local injectivity radius estimate for the Ricci flow [Pe].
+Proposition 5.2. Let (X, g) be a compact orbifold with sectional curvature K. If
+n ≥ 3 and g is strictly quarter pinched, that is 1/4 < K ≤ 1, then X is the quotient
+of a Riemannian manifold by a finite isometric group action.
+14                  CHRISTOPH BÖHM AND BURKHARD WILKING
+
+
+Proof. By replacing X by a cover if necessary we may assume that X is not a
+nontrivial quotient of an orbifold by a finite group action. We then have to show
+that X is a manifold. Recall that the frame bundle F X of the orbifold X, endowed
+with the connection metric of g, is a Riemannian manifold. We consider an SO(n)
+orbit SO(n)v in F X. Clearly the normal exponential map of the orbit SO(n)v has
+a focal radius ≥ π. Similarly to Klingenberg’s injectivity radius estimate we show
+below that the normal exponential map of the orbit SO(n)v has injectivity radius
+≥ π. Since the orbit was arbitrary, this rules out exceptional orbits and hence X
+is then a manifold.
+    From the assumption that X is not a nontrivial quotient it follows that the natu-
+ral map π1 (SO(n)) → π1 (F X) is surjective. This implies that the space ΩSO(n)v F X
+of all curves starting and ending in SO(n)v is connected. The critical levels of the
+energy functional in ΩSO(n)v F X are in one to one correspondence to the geodesic
+loops in the orbifold.
+    Suppose on the contrary that the injectivity radius of the normal exponential
+map of SO(n)v is equal to r < π. It is then easy to see that there is a horizontal
+geodesic c of length 2r in ΩSO(n)v F X. Analogously to Klingenberg’s long homotopy
+lemma one can show that every path cs in ΩSO(n)v F X that connects c = c0 with a
+constant curve c1 satisfies L(cs ) ≥ 2π for some s. In other words the space of paths
+of energy < 2π 2 is not connected.
+   On the other hand it is straightforward to check that the critical points of the
+energy function with energy ≥ 2π 2 have indices at least n − 1 ≥ 2. But then by
+a standard degenerate Morse theory argument the loop space ΩSO(n)v F X itself is
+not connected – a contradiction.                                                   
+Remark 5.3.      1. The main difference between the two-dimensional and the
+      higher dimensional case is that in dimension two, Schur’s theorem fails.
+   2. Proposition 5.2 does not remain valid in dimension two either. In fact given
+      any positive δ < 1, there is a δ pinched two-dimensional orbifold X which
+      is not the quotient of a manifold: Consider two discs of constant curvature
+      1 and with totally geodesic boundary. Divide out the cyclic group of order
+      (p + 1) from the first disc and the cyclic group of order p from the second.
+      After scaling the first disc by the factor p+1
+                                                  p the two orbifolds can be glued
+      along their common boundary. By smoothing this example for some large
+      p one obtains the claimed result.
+   3. The space of 3-positive curvature operators is not invariant under the or-
+      dinary differential equation (1) for n ≥ 4.
+
+                                   References
+ [CE] J. Cheeger, D. Ebin, Comparison theorems in Riemannian geometry, North-
+       Holland Mathematical Library, Vol. 9. New York, 1975.
+[Che] H. Chen, Pointwise 1/4-pinched 4-manifolds, Ann. Global Geom. 9 (1991),
+       161-176.
+[Cho] B. Chow, The Ricci flow on the 2-sphere, J. Differential Geom. 33 (1991),
+       325-334.
+[CW] B. Chow, L.-F. Wu, The Ricci flow on compact 2-orbifolds with curvature
+       negative somewhere, Comm. Pure. Appl. Math. 44 (1991), 275-286.
+  [H1] R. Hamilton, Three-manifolds with positive Ricci curvature, J. Differential
+       Geom. 17 (1982), 255-306.
+      MANIFOLDS WITH POSITIVE CURVATURE OPERATORS ARE SPACE FORMS                  15
+
+
+ [H2] R. Hamilton, Four-manifolds with positive curvature operator, J. Differential
+       Geom. 24 (1986), 153-179.
+ [H3] R. Hamilton, The Ricci flow on surfaces, Mathematics and general relativity,
+       237-262, Contemp. Math. 71, Amer. Math. Soc. (1988).
+ [H4] R. Hamilton, The formation of singularities in the Ricci flow, Surveys in
+       differential geometry, Vol. II (Cambridge, MA, 1993), Internat. Press, Cam-
+       bridge, MA, 1995.
+ [Hu] G. Huisken, Ricci deformation on the metric on a Riemannian manifold, J.
+       Differential Geom. 21 (1985), 47-62.
+[MM] M. Micallef, J.D. Moore, Minimal two-spheres and the topology of manifolds
+       with positive curvature on totally isotropic two-planes, Ann. of Math. (2) 127
+       (1988), 199–227.
+  [Pe] G. Perelman, The entropy formula for the Ricci flow and its geometric ap-
+       plications, arXiv:math.DG/0307245.
+  [Sh] W. Shi, Deforming the metric on complete Riemannian manifolds, J. Differ-
+       ential Geom. 30 (1989), 223–301.
+  [Ta] S. Tachibana, A theorem on Riemannian manifolds of positive curvature op-
+       erator, Proc. Japan Acad. 50 (1974), 301-302.
+
+University of Münster, Einsteinstrasse 62, 48149 Münster, Germany
+E-mail addresses: cboehm@math.uni-muenster.de
+                  wilking@math.uni-muenster.de
+

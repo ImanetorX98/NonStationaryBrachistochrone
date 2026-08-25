@@ -1,0 +1,675 @@
+Study of pseudo-Riemannian solitons
+on complete manifolds
+after umbilicity conditions
+Orchidea Maria Lecian
+Sapienza University of Rome,
+Rome, Italy.
+orchideamaria.lecian@uniroma1.it
+
+
+Key-words:
+Pseudo-Riemannian solitons; non-compact solitons; Cauchy-complete manifolds.
+
+
+Abstract
+3-space-dimensional Ricci solitons which are projected onto surfaces are here
+considered.
+The chosen construction is newly proven to be extended to 4-dimensional non-
+compact pseudo-Riemannian solitons, for which the projection map of vector
+the vector bundle is proven newly to be unique; more in detail, it is newly
+proven to be Cauchy complete.
+The differential map is newly proven to be non-vanishing, unique and confor-
+mal.
+The properties of the dilation of these solitons are newly investigated. As the
+result, the dilation is newly proven to be unique and the trivial one int his
+setting; more in detail, the notions of projection map of vector bundles and
+that of projection map of tangent bundles are newly proven to overlap in the
+present case: the total space is newly proven to be Cauchy complete because it
+is geodesically complete.
+Examples of General Relativity Theory are newly reconducted; in the presented
+approach, the implementation of the strong energy condition is not followed: dif-
+ferently, the procedure is taken to implement the aspects of a Gaussian manifold
+in General Relativity. The Gaussian manifold is needed to assign the qualities
+of a complete maximal timelike hypersurface in whose bein is in R2 as totally
+geodesics and geodesically complete. Therefore, the proof is provided with that
+the surfaces the solitons are projected onto are Cauchy-complete manifolds.
+
+
+1    Introduction
+In the work of Baird et al. [1], the 3-space-dimensional Ricci solitons are investi-
+gated with the aim to study those maps which project these solitons to surfaces
+after semi-conformal mapping.
+The aim of [1] is the study of the constraints on the parameters which define the
+
+
+                                         1
+mapping for the construction of solitons after the data on the surfaces. As a re-
+sult, the 3-space-dimensional solitons are found to be projected to 2-dimensional
+manifolds.
+In the work of Meena et al. [2], Clairaut conformal submersions between Rie-
+mannian manifolds are recapitulated.
+The Clairaut conformal submersions are ibidem schematized after constant di-
+lation along the fibres.
+Geodesics on the total manifolds of conformal submersions are studied ibidem,
+after which the Ricci scalar and the Ricci tensor are calculated of the vertical
+distributions and of the total manifolds.
+The fibres of General-Relativity (GR) Theory spacetimes are here found as de-
+fined after a local semiconformal submersions, which is reconducted to a Clairaut
+submersion after the fibres being described as totally geodesics and the fibration
+is proven to be unique; moreover, the fibration is proven to be that admitted
+after a Riemannian immersion in GR as from manifolds which constitute a
+metrized soliton equipped with weight function and which undergo the Ricci
+flow. In this respect, one notices that the total umbilicity condition then is
+reconducted.
+From [2], the fibers are then found to be totally umbilical, from which the com-
+parison with [3] holds, the mean curvature being found after the gradient of the
+suitable function.
+More in particular, in [3], the methodology is set for to define the causal-
+structure-preserving 2-space-dimensional manifolds from a static totally-umbilic
+4spacetime-dimensional spacetime.
+From [2], in the case of Clairaut conformal submersions, the changes of the met-
+ric tensors are reported to be conformal and the fibers are described as totally
+geodesics.
+It is the present aim to newly apply the Clairaut conformal submersion after
+having discussed it is unique for GR spacetimes form which the manifolds under-
+goes a Ricci flow and is equipped with (the suitable) weights when the fibration
+in GR is found to be unique, i.e., after ADM decomposition.
+As a further result, the vector fields are determined after the 4-velocity 4-vector.
+The behaviour of the metric is examined within the rotational ansatz. The re-
+quested generalized curvature is here newly calculated after the new theorems
+from the Myers’ Theorems, which is here newly applied to GR.
+The conformal foliation induced on the fibres of the corresponding smooth sub-
+mersive semiconformal map are newly described in Theorem T27.
+Fixed points of the Ricci flow are evaluated from [4].
+In the work of Abbassi et al. [5], the completeness of the total spaces descending
+after conformal submersions is investigated. Particular Riemannian metrics are
+considered ibidem on vector bundles; for this purpose, constraints are put on
+the dilation functions: the Riemannian case is researched. Within the present
+work, it is my aim to implement the paradigm after evaluating the submersions
+as undergoing the Ricci flow.
+In the work of Blaga et al. [6], selected topic in Ricci solitons are addressed.
+The conditions which allow one to reduce generic solitons to trivial Ricci soli-
+
+
+                                         2
+tons are studied. Ibidem, some of the properties of the potential vector fields
+which are related to totally-umbilical solitons are examined; differently, in the
+present paper, the vector field determined as a Killing field. The Killing vector
+field is here proven to be one worked out of the 4-velocity 4-vector and to be
+unique, which lead to the wanted properties due to total umbilicity.
+In addition, the potential vector field is here unique.
+In the work of Blaga et al. [6], Riemannian solitons of constant scalar curvature
+are studied; unaccordingly, in the present study, the solitons considered do not
+need to be ones of constant Ricci curvature but merely of non-negative Ricci
+scalar. Indeed, the results will be applied also to Generalized-Schwarzschild
+solitons in [7] and to early-cosmological scenarios in [8].
+in [6], the compact topology and the connected-ness are invoked an all the mech-
+anisms there proposed; unassociatedly, in the present analyses, all the Theorems
+are proven in a more general way and independently of these topological prop-
+erties, and are indeed suitable to be applied to the non-compact cases [7] and
+[8].
+It is one of the present aims to prove that when the solutions of the Einstein
+Field Equations (EFE’s) are issued, then these solutions are conducted to soli-
+tons on weighted manifolds. These manifolds are therefore here newly metrized.
+As a tool, the horizontal distribution of the differential semiconformal mapping
+is proven to be Cauchy complete, after which the proof follows of Theorem T23,
+where the horizontal distribution is newly found to be applied after the here-
+newly-studied submersions.
+The Riemannian submersions here studied are proven to be immersions from
+the result of the action of the pullback of the metric tensor.
+
+More in detail, the new proof is provided with of Theorem T25, according
+to which these horizontal distributions are found to be the result of the new
+conformal submersions; these submersions are newly defined from the general-
+ization of Clairaut submersions to pseudo-Riemannian manifolds. Indeed, in the
+present work, starting from the nomenclature set in [2], the conformal Clairaut
+submersions are written in for weighted metrized complete Einstein solitons un-
+dergoing the Ricci flow after the EFE, from which the suitable manifolds and
+the appropriate structures in GR are newly defined.
+The corresponding dilations is found the exist and to be unique.
+The proof is here provided with that the corresponding space is total, as it is
+Cauchy complete as it is geodesically complete.
+Moreover, the proof is illustrated, that the vector bundle is a total space; its
+total space admits a projection on Riemannian manifold.
+The case of pseudo-Riemannian manifolds follows directly is the present con-
+text, as the solutions of the EFE’s are issued.
+The corresponding solitons on weighted manifolds are built. More in detail,
+from Theorem T27, the rescalings of the wrights are newly analyzed.
+The result here presented are built without the strong energy conditions, i.e.,
+also in vacuum.
+
+
+
+                                       3
+Within the present analysis, the newly-found weighted solitons are proven to
+be projected onto a 3-spacetime, from which the 2-space surfaces from [1] are
+newly proven to disclose new spacetime structures.
+The follwoing notation is here written utilised for apices and for pedices: lower-
+case Latin letters from the beginning of the alphabet designate to 2-space dimen-
+sional indices, lower-case Latin letters from the middle of the alphabet refer to
+3-space dimensional indices, lower-case Greek letters are referred to 4-spacetime-
+dimensional indices, upper-case Latin letters indicate generic indices (i.e. the
+numbers of dimensions is not specified).
+The paper is organized as follows.
+In Section 2, the new methodologies are outlined after the exposition of the new
+introductory results.
+In Section 3, the new results about the conformal mappings are written.
+In Section 4, the further studies about Ricci solitons being projected onto 2-
+manifolds are presented.
+In Section 5, the new properties of the Clairaut submersions are scrutinized.
+In Section 6, the newly-found results are newly conducted to the 4-spacetime-
+dimensional description.
+In Section 7, the unique conformal foliation is focused about.
+In Section 8, the new topics are inscribed within the analysis of metrized spaces.
+
+
+2      Outline of the new methodologies
+The Ricci flow
+                                ∂gµν
+                                     = −2Rµν (gρσ )                           (1)
+                                  ∂t
+is looked for its fixed points after
+
+                         −2Rµν [gij ] = £X gµν + 2c1 gµν                      (2)
+
+when
+                                   X µ ≡ ∇µ F                                 (3)
+for the function F to be defined after the 4-velocity.
+Definition D1:
+A semiconformal map ψ is a Lipshitz map such that
+
+                      ψ : (P m , gij ) → (Qn , hij ), ψ ∈ C 1 ,               (4)
+
+and ψ is dense.
+Accordingly,
+Theorem T1:
+There exists the differential map dψx :P m , gij → Qn , hij and tx P → Tψx Q
+Theorem T2:
+either ψ is the identically-zero map, or ψ is conformal and it is surjective on
+the complement of the Ker[dΨx ]. 
+Definition D2:
+
+
+                                         4
+The space Ker[dΨ] is named the horizontal distribution.
+From [9], the fibers of a smooth submersive semiconformal map are recalled to
+determine a conformal foliation.
+The map dΨx is nonvanishing and is conformal and surjective when it is re-
+stricted to the complement of the Kernel of it.
+The complement of the Kernel of it is the horizontal space Hx .
+The ma is this way acting as a scaled isometry.
+As a result, while a semiconformal map sends circles into ellipses, on the hori-
+zontal space it sends circles into circles.
+Definition D3:
+∃Λ(x) continuous function: ∀xa , y a vectors in Hx , the metric tensor is described
+as
+                        hij (dΨxi )(dΨx y j ) = Λ2 (x)gij xi y j .              (5)
+
+
+
+    There exists the number Λ(x) named the dilation.
+
+
+3     Results
+Theorem T3:
+The properties of the mapping is to be conformal and orthogonal to the fibers.
+Definition D4:
+When (x) = 1 the conformal submersion becomes a Riemannian submersion.
+Differently stated,
+Definition D5:
+The horizontally homeotetic submersion becomes
+
+                                   H(∇µ ) ≡ 0                                  (6)
+
+with constant along any horizontal distribution.
+In the work of Abbassi et al. [5] the problem of the completeness of the chosen
+manifolds as classes of Riemannian metrics on vector bundles is addressed. The
+completeness is proven ibidem of horizontally conformal submersions and the
+bound on the dilation is found as follows.
+Theorem T4:
+The projection map of tangent bundles with spatial Riemannian metrics is a
+horizontally conformal submersion. 
+Theorem T5:
+The projection map of vector bundles endowed with spatially-symmetric metrics
+is such that the fiber metric on the bundle is worked and put after the bein
+projection of the Riemannian metric.  Moreover, I add that
+Theorem T6:
+There exists and is unique the corresponding Riemannian metric
+
+
+
+
+                                        5
+4     Further studies about the Ricci solitons
+In the work of Baird et al. [1], 3-space-dimensional Ricci solitons which are
+projected to surfaces are built.
+It is the present aim to study 3-dimensional Einsteinian solitons which are pro-
+jected onto the surface, which is here studied to be unique up to (truncated)
+homeomorphisms, which are isomorphic.
+It is here proven that
+Theorem T7:
+The total space of a vector bundle whose projection is a horizontal conformal
+submersion defines the tangent bundle.
+Proof P7:
+The manifold P m from which the mapping is issued is Riemannian, and the
+manifold Qn to which it is mapped can also be pseudo-Riemannian. 
+Remark R1:
+The qualities of N n which define it as pseudo-Riemannian are not issued after
+the mapping.
+Furthermore,
+Theorem T8:
+The total space is Cauchy complete.
+Proof P8:
+It is geodesically complete. 
+Remark R2:
+In the present case, the geodesics completeness implies the Cauchy completeness
+as the EFE’s select the geodesics uniquely.
+Moreover, Theorem T9:
+The Ricci flow on the manifolds which are solutions of the EFE’s preserve the
+Cauchy completeness. 
+Theorem T10:
+The corresponding weighted solitons are unique up to locally-conformal rescal-
+ings.
+Proof P10:
+After the rotational ansatz. 
+
+
+
+5     About Clairaut submersions on 4-dimensional
+      manifolds
+5.1    Semiconformal submersions
+Be the two 3-space dimensional manifolds (P r , gij ) and (Qs ), hij . Be F the
+mapping
+                        F : (P r , gij ) → (Qs , hij ).                     (7)
+Definition D6:
+The orthogonal complement with respect to g is named the vertical distribution.
+
+
+                                       6
+The point p ∈ P m is now considered: the vectors tangent to the fiber from the
+vertical distribution are indicated as Wp .
+The projection onto the horizontal distribution H is now investigated.
+The map dF induces the coordinate transformation
+                                                      ′
+                                (P r , gij ) → (Qs , gij )                   (8)
+where X i , Y i ∈ Ker[dF ]; therefore the dlilation is written as
+                           ′
+                          gij (dF X i )(dF Y j ) = gij X i Y j .             (9)
+Then
+                           ′
+                          gij (dF X i )(dF Y j ) = 2 gij X i Y j            (10)
+with C(Ker[df ]) is the codomain of the transformation, and it corresponds to
+the target coordinate chart.
+The case ≡ 1 is here selected; the corresponding Riemannian submersion is
+now studied from [10], [11], [12], [13].
+Be χ the angle between the velocity vector of a geodesics and a meridian. Be
+R the radius between the point and the axis of the revolution surface; I point
+out that χ is the angle Θ = −χ + φ/2 from [3] between the chosen manifold and
+the coordinate axis.
+After [14] and after [3], the following Theorem is written
+Theorem T11:
+The Riemannian submersion between soliton spaces is selected as those with
+χ = π/2. 
+This way, after [2], one has that
+Theorem T12:
+The submersion is Riemannian when
+                                  R ∼ χ |Riem = c1                          (11)
+being c1 the dimensional constant. 
+
+
+5.2    The 4-spacetime-dimensional paradigm
+Be (P m , gµν ) the 4-spacetime dimensional manifold, and be P r , gij the corre-
+sponding 3-space dimensional manifold; the metric of Qs is now denoted as gij ,
+as it is proven in the following.
+After [2], and after [10],
+Definition D7:
+the O’Neill tensors Aµ ν and T µ ν are defined as ∀X1µ , X2µ ∈ Γ(T P ) being
+Γ(T P ) the Levi-Civita Connection of P m .
+I here stress that
+                                Γµνρ (xiµ ) ≡ Γµνρ (xµ )                     (12)
+as the angle χ has been attributed the value which conserves the GR spacetime
+causal structure with its Minkowski lightcones on the tangent bundle. There-
+fore,
+
+
+                                            7
+Theorem T13:
+P m is now the manifold from a metrized weighted GR soliton. 
+
+
+5.3    About Clairaut submersions
+The work after [2] is now briefly recalled for the sake or it to be extended to
+manifolds from metrized solitons equipped with weight functions.
+Be
+                            F : (P m , g) → (Qn , h)                       (13)
+a conformal submersion between the Riemannian manifolds (P m , g) and (Qn , h).
+For q ∈ Q, be F −1 { q} the mapping such that the fibre of F is mapped over
+q ∈ Q; therefore
+Theorem T14:
+The following new decomposition holds
+                     µ   ν
+                    X ν X1 = H∇hx1 W X2 + W ∇Hx1 HX2 ,                     (14a)
+                      µ   ν
+                    X1 ν X2 = H∇W X1 x2 + W γW x1 HX2                      (14b)
+
+being x1 , x2 ∈ H the 4-spacetime-dimensional vector from the metrized solitons
+of P m ; this way γW X1 corresponds to ∇W X1 as it will be specified.
+f orallx1 , x2 ∈ Γµνρ (T P ), the tensors µν and µ nu are antisymmetric.
+
+The projections on the horizontal space is therefore named H and that on the
+vertical spaces are then called W . It is now my aim to prove that T is unique.
+This way,
+Theorem T15:
+The following decomposition holds
+
+                                 W x1 ≡ Tx1 ,                              (15a)
+                                 THX1 ≡ TX1                                (15b)
+
+being W x1 the vertical projection and THX1 the horizontal projection. 
+Therefore
+Theorem T16:
+The projections are decomposed as
+
+                                   Tx1 ≡ x1                                 (16)
+
+after having projected X1 on T P m . 
+The achieve decompositions hold in GR; furthermore,
+Theorem T17:
+The surjective projection X1 on T P m is also bijective. 
+
+
+
+
+                                       8
+6    4-dimensional extension
+It is the further aim to extend the study to 4-dimensional pseudo-Riemannian
+noncompact solitons. The Clairaut conformal submersions between Riemannian
+manifolds are provided with a geometrical interpretation in the work of Meena
+et al. [2].
+It is immediately verified that ∀xµ , y µ ∈ Γ(Ker[dΨ]) and ∀ui , v j ∈ Γ(Ker[dF ])
+one has that
+Theorem T18
+The following decomposition holds
+
+                       (∇u v)i = Tu µj v j + W ∇u v i ,                     (17a)
+                              i            i   j           i
+                       (∇x u) = AX j u + W ∇Z u ,                           (17b)
+                              i                    i            i
+                       (∇x Y ) = (AZ Y ) + (H(∇Z Y )) ,                     (17c)
+
+being Z i the restriction of Z µ ∈ P m of the suitable vector resulting from the
+submersions, and it is straightforward verified that
+
+                           (H(∇Z Y ))i ≡ (H∇Z )(Z i )                        (18)
+
+after which i is selected from µ int eh first addend of the right-hand-side of Eq.
+(17a).
+Proof P18:
+The angle χ has already been selected as preserving the causal structure. 
+Remark R3:
+The causal structure of the 2-space-dimensional manifold Qs is such that a
+geodesics is never abandoned, i.e. not in the vacuum case nor in the matter
+case.
+The further manifold Q is now issued after [A] as in the following
+Theorem T19:
+The conformal mapping F is now proven to be such that
+
+                                  F −1 { q} → Q ∈ Q                          (19)
+
+being Q corresponding to whole Q. 
+Moreover
+Theorem T20:
+The fibres of the submersions are totally umbilical.
+Proof P20:
+After [15]. 
+After [15], the following is also newly proven
+Theorem T21:
+The following decomposition is unique
+
+                             Tu i j v j ≡ gµρ uµ uρ H jσ ,                  (20a)
+                                       j
+                            Tu i j X       = −gij H ik X k uj               (20b)
+
+
+                                               9
+The subspace from the projection operator T has now become the tangent T of
+the spacetime. 
+The mapping dF is now a section of the bundle.
+The following transformation is now investigated Hom(T P, F −1 T Q) → M be-
+ing M the restriction of P which coincides with the 3-dimensional manifold M .
+Then
+Theorem T21:
+F −1 (T )P ≡ F −1 (T P ) is the pullback bundle. 
+Furthermore,
+Theorem T22:
+The pullback of the metric is the pullback bundle; it admits the fibration which
+is also the unique fibre at p ∈ P as
+                             (F −1 T P ) |p ≡ T |F (p) P                        (21)
+. 
+It is immediately verified that
+Theorem T23:
+The bundle Hom(T P, F ′ T Q) admits a Levi-Civita connection γ after which the
+differential operator ∇ is uniquely defined. .
+The relevance of Theorem T23 is therefore now outlined as
+Theorem T24:
+The connections γ are calculated after the Christoffel symbols which coincide
+with the connections ∇(P ) after which ∇F has become the pullback connection.
+
+
+   The following new definition is now provided with
+Definition D8:
+In GR, on has that
+                             ∇F ≡ ∇(p) ≡ γ ≡ Γ                                  (22)
+are the Christoffel symbols.
+Accordingly, the transformations-invariance rule of the Christoffel connections
+is recovered
+                                Γ(x′ ) ≡ Γ(x);                             (23)
+in particular,                                   ′
+                                 ΓµνρV ρ ≡ Γµνρ V ρ                             (24)
+        µ
+being V the 4-velocity 4-vector, which is selected as calculated from the con-
+figuration of the reference frame of the observed solidal with the photon.
+Remark R4:
+is here stressed that the photon follows the geodesics in GR.
+This way,
+Theorem T25:
+the requested Killing vector field is calculated accordingly and is therefore unique.
+
+The importance of Theorem T25 is now focused about.
+
+
+
+                                         10
+7    The unique conformal foliation
+In the work [9], cofmormal foliations are newly introduced. In particular, the
+conformal foliations are defined ibidem from the notion of Haefiger structure,
+i.e., from the new following
+Definition D9:
+A Haelfliger structure of codimansion q on a topological space S is defined after
+a CΓ(q) cocycle cosisting of an open cover { Aa } , where A is used in the above,
+and a system of continuous map Fαβ whose bein rpojection is written as
+                                Fab = Fac F cb .                             (25)
+ It is our aim to prove that there exist systems of continuous maps, as, i.e.,
+Theorem T26:
+The specification Faa : Ua → CΓ(q) define the continuous maps being U the
+generic cover associated to the case of Γ(q) .
+Definition D10:
+When the Faa ’s are submersions, the foliation is conformal. Accordingly, the
+product spaces can be considered for application.
+The generic submersions are studied in the work of Sikander et al. [16].
+The following is proven straightforward:
+Corollary C1:
+A Riemannian foliation is recovered when the values of Faa are the germs of
+isometries. 
+Corollary C2:
+The Christoffel symbols are now the coefficients of the generic connection Γ(q)
+of the Riemannian submersion. 
+The following generalization holds
+Theorem T27:
+The conformal foliation is Riemannian when the locally conformally-flat rescal-
+ings after the Rotational ansatz are isometries.
+Proof P27:
+After Proof T25; furthermore, the Killing vectors are conserved alog the trans-
+verse bundles B ≡ T (M )/T (E) being E the differentiable foliation of codimension
+q on M.
+The comparison with Riemannian foliation is therefore taken from [17].
+The constants of motion are constant along the leaves E and are to be applied
+to Eq. (27) after [18].
+In the work of Zawadzi [15], conformal submersions endowed with total-umbilical
+fibres are investigated; as a result, ibidem the total umbilical fibres are found
+to exist when the fibres are connected.
+From definition 2.1 from ibidem, the following Theorem is written
+Theorem T28:
+for π conformal mapping, ∃π∗ conformal mapping restricted to the horizontal
+distribution such that the fibres of the conformal Riemannian submersion are
+totally umbilical. 
+Furthermore,
+
+
+                                       11
+Lemma L1:
+Given π conformal submersion with totally-umbilical fibres, the inverse π −1 is
+defined on the totally-umbilical manifold; therefore, ∃ smooth horizontal vector
+field H on M.
+
+
+
+8    Discussion
+According tho Theorem T23 and to Theorem T25,
+Theorem T29:
+The fibre is unique and is totally geodesics. Box
+and
+Theorem T30:
+The two-manifold M2 described after the radius R is totally geodesics. 
+As a result,
+Theorem T30:
+The manifold M2 is the manifold on which the soliton is projected. 
+More in detail, the surfaces M 2 are the 2-dimensional spacetimes M ≡ M2
+which are given examples in [7] in the case of diagonal 4-spacetime-dimensional
+metric tensor.
+The locally-conformal rescaling becomes that of the locally-conformally-flat
+spacetimes which are worked out after the Rotational ansatz. They are also
+the transformations which are requested as those introduced after a local con-
+formal submersion between Riemannian manifolds as one induced after locally-
+conformally-flat rescalings (of the metric of a metrized Einstein solitons which
+can now be equipped with the weights functions)
+    and after the Riemannian immersion.
+The first fundamental form F1 coincides therefore with the second fundamental
+form F2 . The total-umbilicity condition from [19] is therefore reconducted.
+In [7], the rescaled metric individuate therefore the same equal-time surface af-
+ter which the prescriptions on the derivatives are worked out.
+From lemma 2 from [2], the following new Lemma is worked out
+Lemma L2:
+dF (HΓ(X) Y ) ≡ ∇Q                                     i j
+                    F X FX Y + XFX Y + Y Fx X − gij X Y grad H(x̃) being x̃ the
+normalized vector from the normalized flow with grad H(x̃) ≡ 0. .
+
+   After the work of Blaga et al. [6], the new findings are now stated.
+After the study of proposition 2 from [6], the following Proposition is now writ-
+ten after the total-geodesics properties as
+Corollary C3:
+There exist and is unique ξ A parallel vector field in GR along the integral curves
+ς.
+Proof P3:
+As
+                                    ∇ς ξ A ≡ 0,                                (26)
+
+
+                                        12
+and
+                                  ∇S V B ≥ 0                               (27)
+being V A the n-spacetime-dimensional velocity four-vector, the inequality sign
+from Eq. (27) being due to the Pseudo-Riemannian description. 
+Proposition Pr1:
+Be (Mm , g, f ) a metrized weighted hyperbolic gradient Ricci soliton. The Ricci
+scalar is constant on the integral curves ς and
+
+                                gAB ξ A ξ B > 0.                           (28)
+
+
+Proof Pr1:
+As the second Lie derivative of the metric tensor is vanishing as
+
+                              £x i[£ξ [gAB ]] ≡ 0.                         (29)
+
+
+and
+Corollary C4:
+The Ricci curvature of M is non-negative.
+Proof P4:
+By construction after direct calculation. 
+The bounded-ness of the Ricci curvature from Corollary C4 is studied in [7].
+After Remark R3, one notices here that the new implications from the analyses
+are addressed in a further work [20].
+
+
+References
+ [1] P. Baird, L. Danielo, Three-dimensional Ricci solitons which project to
+     surfaces e-print: arXiv:math/0510313 (2005).
+
+ [2] K. Meena, T. Zawadzki, Clairaut Conformal Submersions, Bull. Malays.
+     Math. Sci. Soc. 47, 101 (2024).
+
+ [3] O.M. Lecian, The (total)-umbilicity conditions of static-Fridman-
+     Robertson-Walker, Encyclopedia MPDI, Entry ID 59432 (2025).
+
+ [4] R. Hamilton, The Ricci flow on surfaces, Contemp. Math., 71 (1988), 237-
+     262.
+
+ [5] M.T.K. Abbassi, I. Lakrini, On the completeness of total spaces of hori-
+     zontally conformal submersions, Communications in Mathematics, 29(3),
+     493-504 (2021).
+
+ [6] A.M. Blaga, C. Oezguer, Results of Hyperbolic Ricci Solitons, Symmetry
+     15(8), 1548 (2023).
+
+
+
+                                      13
+ [7] O.M. Lecian, The Yamabe flow after the rotational ansatz of noncom-
+     pact (pseudo-Riemannian) solitons: the Schwarzschild solitons and the
+     Generalized-Schwarzschild ones, Researchgate, Berlin (2026).
+ [8] O.M. Lecian, Researchgate, Further cogradient Ricci solitons and about the
+     newly-metrized smooth metric space: The Yamabe solitons of spacetimes
+     from the matter-dominated era, Berlin (2025).
+
+ [9] I. Vaisman, Conformal foliations, Kodai Math. J., 2 (1979), 26-37.
+
+[10] B. O’Neill, The fundamental equations of a submersion, Michigan Math.
+     J., 13 (4), 459-469 (1966).
+
+[11] A. Gray, Pseudo-Riemannian almost product manifolds and submersions,
+     J. Math. Mech. 16, 715-737 (1967).
+
+[12] P. Baird, A. El Soufi, A. Fardoun and R. Regbaoui, Progress in Nonlinear
+     Differential Equations and Their Applications, Vol. 59, Birkhauser, 2004.
+
+[13] M. Falcitelli, S. Ianus, A.M. Pastore, Riemannian Submersions and Related
+     Topics, World Scientific, River Edge, NJ (2004).
+
+[14] R.L. Bishop, Clairaut submersions, Differential geometry (in Honor of K.
+     Yano), Kinokuniya, Tokyo, 21-31 (1972).
+
+[15] T. Zawadzki, Existence conditions for conformal submersions with totally
+     umbilical fibers, Differential Geom. Appl. 35, 69-84 (2014).
+
+[16] F. Sikander, T. Fatima, S.A. Alharbi, A study on curvature relations of
+     conformal generic submersions, Journal of King Saud University - Science
+     35, 102526 (2023).
+
+[17] Pasternack, J., Classifying spaces for Riemannian foliations, Proceedings
+     Symposia in Pure Math. 27 (1) (1975), 303-310.
+
+[18] I. Vaisman, Variétés Rimanniennes feuilletées, Czechosl. Math. J. 21 (1971),
+     46-75.
+
+[19] Nore, T.: Second fundamental form of a map. Ann. Mat. Pura Appl., 146
+     (1), 281-310 (1986).
+
+[20] O.M. Lecian, in preparation (2026).
+
+
+
+
+                                        14
+

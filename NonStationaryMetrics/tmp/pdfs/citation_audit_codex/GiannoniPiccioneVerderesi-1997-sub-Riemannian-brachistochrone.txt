@@ -1,0 +1,1141 @@
+   An approach to the relativistic brachistochrone problem by sub-Riemannian
+   geometry
+   Fabio Giannoni, Paolo Piccione, and José A. Verderesi
+
+
+   Citation: J. Math. Phys. 38, 6367 (1997); doi: 10.1063/1.532217
+   View online: http://dx.doi.org/10.1063/1.532217
+   View Table of Contents: http://jmp.aip.org/resource/1/JMAPAQ/v38/i12
+   Published by the American Institute of Physics.
+
+
+   Additional information on J. Math. Phys.
+   Journal Homepage: http://jmp.aip.org/
+   Journal Information: http://jmp.aip.org/about/about_the_journal
+   Top downloads: http://jmp.aip.org/features/most_downloaded
+   Information for Authors: http://jmp.aip.org/authors
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                      An approach to the relativistic brachistochrone problem
+                      by sub-Riemannian geometry
+                                 Fabio Giannoni
+                                 Dipartimento di Energetica, Universitá de L’Aquila, Italy
+                                 Paolo Piccione and José A. Verderesi
+                                 Instituto de Matemática e Estatı́stica, Universidade de São Paulo, Brazil
+                                 ~Received 12 May 1997; accepted for publication 27 May 1997!
+                                 We formulate a brachistochrone problem in Lorentzian geometry and we prove a
+                                 variational principle valid for brachistochrones in stationary manifolds. This varia-
+                                 tional principle is stated in terms of geodesics in a suitable sub-Riemannian struc-
+                                 ture on M. Moreover, we prove the regularity of the solutions of our variational
+                                 problem and we determine a differential equation satisfied by the brachistochrones.
+                                 Some explicit examples are computed. © 1997 American Institute of Physics.
+                                 @S0022-2488~97!03311-2#
+
+
+
+                      I. FORMULATION OF THE BRACHISTOCHRONE PROBLEM
+
+                           The classical brachistochrone problem dates back to the end of the 17th century, and it is one
+                      of the most famous problems of Calculus of Variations. In its original formulation, the problem
+                      was to determine the shape of a slide joining two fixed points in the space in such a way that a
+                      mass moving along it under the action of the gravity would reach the final point in the shortest
+                      time. Several generalizations of the problem have been studied, and the most classical Newtonian
+                      generalization can be formulated in modern terminology as follows. Given a manifold M en-
+                      dowed with a Riemannian metric g ~the state space! and a smooth function V: M°R1 ~the
+                      gravitational potential!, a brachistochrone of fixed energy E joining the points x 0 , x 1 PM is a
+                      curve x: @ 0,T x # °M that minimizes the functional F(x)5T x in the space of all smooth curves y:
+                      @ 0,T y # °M such that y(0)5x 0 , y(T y )5x 1 and satisfying the law of conservation of energy:
+
+                                                           g ~ y ~ t !!@ ẏ ~ t ! ,ẏ ~ t !# 1V ~ y ~ t !! [E,     ;tP @ 0,T y # .                                     ~1!
+
+                      A well-known variational principle states that the curves of fixed energy E.0 that are solutions
+                      to the brachistochrone variational problem are minimal geodesics in the manifold M with respect
+                      to a Riemannian metric g̃ that is conformally equivalent to g:
+
+                                                                                                 g~ y !
+                                                                                   g̃ ~ y ! 5             .
+                                                                                                E2V ~ y !
+
+                      We will refer to this variational principle as the classical variational principle for brachisto-
+                      chrones.
+                           Recently, some generalizations of the brachistochrone problem have been introduced in the
+                      context of General Relativity, as in Refs. 1–3. In particular, in Ref. 3, it is defined a brachisto-
+                      chrone problem on a Lorentzian manifold M, under the assumption that the Lorentzian metric g
+                      be stationary with respect to a given time-like Killing vector field Y , and that M admit a global
+                      space–time splitting U3R adapted to Y . Roughly speaking, this means that M admits a global
+                      coordinate system (x 1 ,x 2 ,...,x n ,t), with (x 1 ,x 2 ,...,x n )PU open subset of Rn , tPR, and Y
+                      5 ] / ] t. The Killing property of Y is given by the fact that the coefficients of the metric of M do
+                      not depend on the variable t. Under these hypotheses, the brachistochrone problem is reduced to
+                      a purely spatial geodesic problem in U, with the proof of the first relativistic version of the
+                      classical variational principle for brachistochrones.
+
+                      0022-2488/97/38(12)/6367/15/$10.00
+                      J. Math. Phys. 38 (12), December 1997                                                © 1997 American Institute of Physics                     6367
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                      6368                           Giannoni, Piccione, and Verderesi: Relativistic brachistochrones
+
+
+                           The aim of this paper is to define a general brachistochrone principle in stationary Lorentzian
+                      manifolds and to extend the classical variational principle for brachistochrones under intrinsic
+                      assumptions on the relativistic space–time. Namely, we do not assume that M admits a global
+                      splitting adapted to a given time-like Killing vector field on M.
+                           For the reduction to a spatial problem, we use the terminology and some techniques of
+                      sub-Riemannian geometry. This branch of mathematics has attracted a great deal of interest due to
+                      its applications to the Optimal Control Theory ~see, e.g., Refs. 4, 5!, and it is particularly well
+                      suited to study dynamical systems of particles subject to nonholonomic constraints.
+                           A general formulation of the brachistochrone problem for stationary space–times may be
+                      stated as follows. We will denote by M an (n11)-dimensional smooth manifold, n>1, and by g
+                      a Lorentzian metric on M. We will also denote by ^•,•& the bilinear form induced on the tangent
+                      space T q M by g(q). Let Y be a smooth time-like Killing vector field on M, i.e. ^ Y ,Y & ,0
+                      everywhere, and the metric tensor g is invariant by the flow of Y . For the main properties of
+                      Lorentzian geometry we refer to the classical textbooks like Refs. 6, 7, and 8.
+                           Let g :]a,b @ °M be an integral curve of Y and p¹ g be an event of M @we will also denote
+                      by g the image g ( # a,b @ ) in M#.
+                           Let kPR1 be a fixed constant. We consider the space B 1   p, g (k) of all piecewise smooth future
+                      pointing, time-like curves z from p to g, parametrized by proper time, and satisfying the conser-
+                      vation law 2 ^ ż,Y & [k.0:
+
+                                                                B1
+                                                                 p, g ~ k ! 5 $ z: @ 0,T z # °M:z of class C ,
+                                                                                                            1
+
+
+
+                                                                       z ~ 0 ! 5p, z ~ T z ! P g , ^ ż,ż & [21,                                                      ~2!
+
+                                                                          2 ^ ż,Y & [k.0 ~ constant! % .
+
+                      The curve g is interpreted as the world line of an observer; the curves z in B 1  p, g (k) represent the
+                      world line of massive particles, starting at the event p and eventually reaching the observer g. The
+                      condition ^ ż,ż & 521 means that z is parameterized by proper time, so that T z is the travel time of
+                      z measured on the particle. The quantity ^ ż,Y & is the component along Y of the four-momentum
+                      of the particle z; observe that, since Y is Killing, then it is constant on geodesics. The condition
+                      2 ^ ż,Y & [k is the analog of the conservation law of the energy ~1! in the Newtonian case. The
+                      positivity of k says that z is future pointing with respect to the time orientation induced on M by
+                      Y . A perfectly similar theory may be developed by considering past pointing curves. If one
+                      modifies properly the definitions, it is easily checked that all the results proven in this paper work
+                      equally well in this case.
+                            We denote by b (q) the positive smooth function 2 ^ Y (q),Y (q) & . Let us consider the open
+                      subset U k ,M:
+
+                                                                             U k 5 $ qPM: b ~ q ! ,k 2 % .                                                             ~3!
+
+                      Observe that, since Y is Killing, then ^ Y ,Y & is constant on the flow lines of Y , and so U k is
+                      invariant by the flow of Y . We will also consider the space U 1
+                                                                                     p, g (k) consisting of all curves z in
+                      B1p, g (k) lying in U k :
+
+                                                           U1                  1
+                                                            p, g ~ k ! 5 $ zPB p, g ~ k ! :z ~ s ! PU k ,;sP @ 0,T z # % .
+
+                      Observe that, by the wrong way Schwartz’s inequality, if zPB 1               p, g (k) then z is contained in the
+                      closure of U k . Indeed, 2 ^ Y ,Y & 5 ^ ż,ż &^ Y ,Y & < ^ ż,Y & 2 . Moreover, if 2 ^ ż,Y & [k, then z is en-
+                      tirely contained in U k if and only if ż is never a multiple of Y .
+                           We will assume that g is a maximal integral curve of Y . For all q in M, g q will denote the
+                      maximal integral line of Y such that g q (0)5q.
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                                                     Giannoni, Piccione, and Verderesi: Relativistic brachistochrones                                               6369
+
+
+                          Definition I.1: A curve zPB 1 p, g (k) is said to be a minimal brachistochrone of energy k
+                      between p and g if z is a minimal point for the travel time functional F: B 1         1
+                                                                                                  p, g (k)→R , given by
+
+
+                                                                                        F ~ z ! 5T z .
+
+                      A curve zPB 1   p, g (k) is a brachistochrone of energy k if it minimizes locally its travel time, i.e., if
+                      for all rP @ 0,T z @ and for eP#0, T z 2r @ small enough, the curve z̄(s)5z(s2r), defined on the
+                      interval @0,e#, is a minimal brachistochrone between z(s) and g z(s1 e ) .
+                           Our definition of brachistochrones extends the definition of the t brachistochrones given in
+                      Ref. 3 in the case of a regular stationary manifold. In Ref. 3 it is also defined as a different
+                      brachistochrone problem ~in Perlick’s terminology: the t-brachistochrones!, which are curves z
+                      PB 1 p, g (k) minimizing the arrival time functional:
+
+
+                                                                    AT ~ z ! 5 g 21 „z ~ T z ! …,        zPB 1
+                                                                                                             p, g ~ k ! .                                              ~4!
+
+                           The duplicate notion of brachistochrones is justified by the fact that, in General Relativity,
+                      there is no such concept as a global time, and there does not exist a universal way to measure the
+                      travel time of particles. The two different concepts of brachistochrones are referred to the proper
+                      time of the particle in the case of the t brachistochrones, and the time measured by the observer g
+                      in the case of the t brachistochrones.
+                           The two variational problems are essentially different. The arrival time functional, introduced
+                      in Ref. 9, has been also extensively studied to investigate the structure of causal ~time-like or
+                      light-like! geodesics in Lorentzian manifolds ~see Ref. 10, 9, and 11!. A relativistic extension of
+                      Fermat’s Principle states that the stationary points of AT in suitable spaces are geodesics joining
+                      an event with an observer in the space–time ~see Ref. 10 for the time-like case and Ref. 11 for the
+                      light-like case!.
+                           In this paper we will only be concerned with the variational problem of Definition I.1. We
+                      prove an extension of the classical variational principle, stating that the brachistochrones with
+                      fixed energy correspond to the geodesics of a sub-Riemannian structure that is associated to the
+                      Killing vector field Y .
+                           For a physical interpretation of our brachistochrone problem, the time-like vector field Y
+                      should be related to some observable quantities, i.e., Y should be comoving with some bodies. For
+                      instance, if we are in the solar system and Y is comoving with the planets, the solutions to our
+                      brachistochrone problem will give a world line of particles that minimize the travel time among all
+                      curves that have a fixed specific energy in the rest system of the planets. If Y is at rest with respect
+                      to the sun and to the distant stars, then the brachistochrones will be the world line of massive
+                      objects that minimize the travel time among all curves that have fixed energy in a reference system
+                      oriented at distant stars.
+                           It is also possible to return to the original interpretation of the brachistochrone problem and
+                      think of the body guided by a frictionless slide, in which case Y is determined by being the rest
+                      system of the slide.
+                           The paper is organized as follows. In Sec. II we give a self-contained exposition of the
+                      problem of sub-Riemannian geodesics, which are minimal curves with respect to a positive metric
+                      tensor defined on a sub-bundle of the tangent bundle of M. In order to keep the exposition short
+                      and self-contained, the problem is willingly not discussed in its full generality, as it will be
+                      remarked ahead. In our specific case, we are able to prove that sub-Riemannian geodesics are
+                      indeed smooth curves that satisfy the Euler–Lagrange equations associated to the sub-Riemannian
+                      energy functional ~see Remark II.4!.
+                           In Sec. III, under the completeness assumption for the vector field Y , we prove that the
+                      brachistochrones can be deformed into geodesics with respect to a suitable sub-Riemannian struc-
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                      6370                           Giannoni, Piccione, and Verderesi: Relativistic brachistochrones
+
+
+                      ture on M, and vice versa, obtaining a relativistic version of the classical variational principle for
+                      brachistochrones. Moreover, using the properties of normal sub-Riemannian geodesics, we deter-
+                      mine a differential equation satisfied by the brachistochrones.
+                           Finally, in Sec. IV, we compute explicitly the brachistochrones in a class of stationary Lorent-
+                      zian manifolds generalizing the Heisenberg space and in the 3-sphere S 3 endowed with its struc-
+                      ture of a fiber bundle over S 2 with fibers homeomorphic to S 1 .
+                           Thanks to the use of sub-Riemannian geometry, the variational principle proven in this paper
+                      generalizes the one obtained by Perlick in Ref. 3. In that paper, in order to reduce to a spatial
+                      problem, the Lorentzian manifold M was assumed to have a global space–time splitting adapted
+                      to Y . From a sub-Riemannian point of view, this can be considered the case where the distribution
+                      on which the metric is defined is globally integrable.
+                           In any case, a crucial point in the theory seems to be the fact that the manifold M and its
+                      metric have symmetries or invariance properties with respect to the time. In our case, the sym-
+                      metry is given by the Killing property of the vector field Y . This also suggests that further
+                      generalizations of the Principle might be obtained by considering more general symmetries, given,
+                      for instance, by a conformal time-like field ~conformally stationary manifolds!, or even by some
+                      group action.
+
+                      II. SUB-RIEMANNIAN GEODESICS
+                           We denote by D the orthogonal distribution to the vector field Y . Since Y is time-like, the
+                      wrong way Schwartz’s inequality implies that the restriction of the Lorentzian metric g is positive
+                      definite. To avoid confusion, we will denote by g sr the restriction of g on D; the pair (D,g sr!
+                      defines a sub-Riemannian structure on M. Observe that, by the Killing property, both g sr and D
+                      are invariant by the flow of Y , hence the sub-Riemannian structure on M is Y invariant.
+                           Since there is no unanimous agreement in the literature on the proper definition of a sub-
+                      Riemannian geodesic ~see Remark 1 of Ref. 4!, in this paper we give a self-contained presentation
+                      of the subject in our special case of geodesics joining a point and the integral curve of a Killing
+                      vector field. Having one degree of freedom in the choice of the final end point, we avoid all the
+                      technicalities and the abnormalities that arise in the general treatment of the subject. The reader
+                      may find in Ref. 4 and in the references therein a detailed discussion and a classification of
+                      geodesics for a general sub-Riemannian structure.
+                           We fix once and for all an auxiliary Riemannian metric g R on M that coincides with the
+                      Lorentzian metric g on the distribution D. For instance, for v PT q M, one can take
+
+                                                                                                               ^ v ,Y ~ q ! & 2
+                                                              g R@v , v# 5 ^ v , v & ~ R! 5 ^ v , v & 22                            .                                  ~5!
+                                                                                                             ^ Y ~ q ! ,Y ~ q ! &
+                      The wrong way Schwartz’s inequality implies that g R@v , v# defines a positive definite, symmetric
+                      tensor on M.
+                           Remark II.1: It is easily checked that the flow of Y preserves g R , so that Y is Killing with
+                      respect to g R also.
+                           In view of developing an existence theory for sub-Riemannian geodesics, in this section we
+                      define our functional framework by requiring that the maps in our spaces only satisfy a Sobolev-
+                      type regularity. From an analyst’s viewpoint, this technicality allows us to use some results of
+                      Calculus of Variations that require the completeness of the functional spaces. However, Corollary
+                      II.7 proven below states that the solutions to our variational problems are smooth curves.
+                           Let “ be the covariant derivative with respect to the Levi-Civita connection of g. Using
+                      standard notation, for a smooth function f: M°R we also denote by “f the Lorentzian gradient
+                      of f, which is the vector field defined by d f (q) @ • # 5 ^ “ f (q),• & , for all qPM.
+                           Since Y is Killing with respect to g, then for every pair v 1 , v 2 of smooth vector fields on M,
+                      it is ~see Ref. 8!
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                                                     Giannoni, Piccione, and Verderesi: Relativistic brachistochrones                                               6371
+
+
+                                                                           ^ “ v 1 Y , v 2 & 1 ^ “ v 2 Y , v 1 & 50.                                                   ~6!
+
+                      The characterization ~6! of the Killing property of Y will be used implicitly or explicitly through-
+                      out the paper.
+                             Using the Riemannian metric, we define the space L 2 ( @ 0,1# ,TM), consisting of all measur-
+                      able maps z: @ 0,1# °TM, such that ^ z , z & (R) is integrable on @0,1#. The Sobolev space
+                      H 1 ( @ 0,1# ,M) is defined as the set of all absolutely continuous curves z: @0,1#°M, such that ż is
+                      in L 2 ( @ 0,1# ,TM). By a classical result of Global Analysis on Manifolds, the spaces
+                      L 2 ( @ 0,1# ,TM) and H 1 ( @ 0,1# ,M) actually do not depend on the choice of the Riemannian metric
+                      on M ~see Ref. 12!. Our functional framework consists of the following spaces:
+
+                                                            V p, g 5 $ wPH 1 ~@ 0,1# ,M ! :w ~ 0 ! 5 p,w ~ 1 ! P g % ,                                                 ~7!
+
+                                                           V p, g ~ D ! 5 $ wPV p, g :ẇ ~ s ! PD a.e. on @ 0,1# % .                                                   ~8!
+
+                      Moreover, for qP g , we denote by V p,q the space of all curves wPV p, g , such that w(1)5q.
+                          It is well known that V p, g has the structure of a smooth Hilbertian manifold; for wPV p, g the
+                      tangent space T w V p, g is identified with the Hilbert space:
+
+                                 T w V p, g 5 $ z : @ 0,1# °TM: z absolutely continuous,                                  z ~ 0 ! 50,   z ~ 1 !i Y ~ w ~ 1 !! ,
+                                                “ ẇ z PL 2 ~@ 0,1# ,TM ! ,                  z ~ s ! PT w ~ s ! M,;s % ,                                               ~9!
+
+                      endowed with the Hilbert norm:
+
+                                                                      i z i w5   S E ^ z z&
+                                                                                        0
+                                                                                         1
+                                                                                              “ ẇ ,“ ẇ    ~ R! ds   D   1/2
+                                                                                                                            .
+
+                      For all qP g , V p,q is a closed submanifold of V p, g , and for wPV p,q the tangent space T w V p,q
+                      is given by
+
+                                                                       T w V p,q 5 $ z PT w V p, g : z ~ 1 ! 50 % .                                                  ~10!
+
+                         Lemma II.2: Vp,g ~D! is a smooth submanifold of Vp,g . For wPVp,g ~D!, the tangent space
+                      TwVp,g ~D! is identified with the Hilbert subspace of TwVp,g:
+
+                                                       T w V p, g ~ D ! 5 $ z PT w V p, g : ^ “ ẇ z ,Y & 1 ^ ẇ,“ z Y & [0 % .                                      ~11!
+
+                           Proof: We consider the map C: V p, g °L 2 ( @ 0,1# ,R) given by C(w)5 ^ ẇ,Y & . It is easily seen
+                      that C is smooth, and, for z PT w V p, g , the Gateaux derivative C 8 (w) @ z # is given by
+
+                                                                      C 8 ~ w !@ z # 5 ^ “ ẇ z ,Y & 1 ^ ẇ,“ z Y & .
+
+                      Using the Implicit Function Theorem ~see Ref. 13!, it suffices to prove that C 8 (w) is surjective
+                      for all wPV p, g (D). To see this, for all hPL 2 ( @ 0,1# ,R) we set
+
+
+                                                                     m h~ s ! 5   E^0
+                                                                                     s                h~ r !
+                                                                                             Y „w ~ r ! …,Y „w ~ r ! …&
+                                                                                                                        dr.
+
+                      Clearly, z h 5 m h •Y is in T w V p, g , and, recalling ~6!, a straightforward calculation gives C 8 (w)
+                      3@ z # 5h. This gives the surjectivity of C 8 (w) and concludes the proof.                            h
+                          It is possible to give a more geometric proof of Lemma II.2 by showing that the end point
+                      mapping, which is the map end: V p, g °M that assigns to each curve w its final point w(1), is
+                      transversal to the curve g ~see Ref. 5!.
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                      6372                           Giannoni, Piccione, and Verderesi: Relativistic brachistochrones
+
+
+                          The regularity result proven in Lemma II.2 allows us to give the following definition of the
+                      sub-Riemannian geodesic.
+                          Definition II.3: Let f: M°R1 be a smooth map that is Y invariant, i.e. ^ Y ,“ f & [0. Con-
+                      sider the sub-Riemannian metric g̃ sr5 f •g sr on D ~observe that, by the wrong way Schwartz’s
+                      inequality, the orthogonal space to a time-like vector is always space-like!. A normal geodesic
+                      between p and g with respect to g̃ sr is a curve w that is a smooth critical point in V p, g (D) for the
+                      energy functional E f :
+
+
+                                                                        E f~ w ! 5
+                                                                                       1
+                                                                                       2
+                                                                                           Ef  1
+
+                                                                                               0
+                                                                                                      ~ w ! • ^ ẇ,ẇ & ds.                                          ~12!
+
+
+                      A normal geodesic is said to be minimal if it is a minimal point for E f .
+                           Remark II.4: A sub-Riemannian manifold consists of a triple (M,D,g sr), where M is a
+                      smooth manifold, D is a smooth distribution on M, and g sr is a positive definite metric tensor
+                      defined only on D.
+                           A ~piecewise! C 1 curve z is said to be horizontal if ż(s) belongs to D for ~almost! all s. We
+                      remark here that the choice of the adjective normal given to the critical points of E f derives from
+                      the fact that, in general sub-Riemannian manifolds, there exist the so-called abnormal geodesics,
+                      which are singular points in the set of horizontal curves joining two fixed points ~see, e.g. Ref. 14!.
+                      Such geodesics do not, in general, satisfy the geodesic equation, and they cannot be recovered as
+                      critical points of the sub-Riemannian energy functional.
+                           Remark II.5: Observe that, since E is a smooth functional on V p, g , then, by Lemma II.2, its
+                      restriction to V p, g (D) is also smooth. For z PT w V p, g (D) the Gateaux derivative E f8 (w) @ z # is
+                      easily computed as:
+
+
+                                                  E 8f ~ w !@ z # 5   E Sf ^ z &
+                                                                        0
+                                                                         1
+                                                                               ~ w ! “ ẇ ,ẇ 1
+                                                                                                           1
+                                                                                                           2                           D
+                                                                                                             ^ “ f ~ w ! , z &^ ẇ,ẇ & ds.                          ~13!
+
+
+                      Here, the gradient “f is computed with respect to the Lorentzian metric g.
+                          We denote by H 1 ( @ 0,1# ,R) the space of all absolutely continuous functions m: @0,1#°R with
+                                            *
+                      a square integrable derivative and satisfying m~0!50.
+                          Lemma II.6: Let wPV p, g (D) and q5w(1). The following are equivalent:
+                          (1) w is a normal geodesic between p and g with respect to g̃sr ;
+                          (2) w is a critical point of the functional Ef in the space Vp,g ;
+                          (3) w is a critical point of the functional:
+
+
+                                                                     E R~ w ! 5
+                                                                                   1
+                                                                                   2
+                                                                                       Ef  1
+
+                                                                                           0
+                                                                                                   ~ w ! •g R~ z !@ ż,ż # ds,
+
+
+                      on Vp,q , where g R is given by (5).
+                          Proof: Let wPV p, g (D) be fixed. For all m PH 1 ( @ 0,1# ,R), let z m denote the vector field
+                                                                         *
+                      along w, given by
+
+                                                                              z m ~ s ! 5 m ~ s ! •Y „w ~ s ! ….
+
+                      Since ^ “ f (w),Y & [0, ^ ẇ,Y & [0 and Y is Killing ( ^ “ ẇ Y ,ẇ & [0), from ~13! one computes im-
+                      mediately
+
+                                                                   E f8 ~ w !@ z m # 50,            ; m PH 1 ~@ 0,1# ,R! .
+                                                                                                               *
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                                                       Giannoni, Piccione, and Verderesi: Relativistic brachistochrones                                             6373
+
+
+                      To prove the arrow ~1!⇒~2!, it suffices to show that T w V p, g (D) and the vectors z m , m
+                      PH 1 ( @ 0,1# ,R) generate the space T w V p, g . To this aim, let z̃ be any vector in T z V p, g . Then, an
+                          *
+                      easy computation shows that z̃ is written as z̃ 5 z 1 z m , where z PT w V p, g (D) and m is given by
+
+
+                                                                      m~ s !5   E S ^ z̃ ^& ^&z̃
+                                                                                  0
+                                                                                   s    “ ẇ ,Y 2 ,“ ẇ Y &
+                                                                                               Y ,Y
+                                                                                                            dr.         D
+                      To prove the implication ~2!⇒~3!, observe that, by definition of g R , we can write
+
+                                                                               E R~ w ! 5E f ~ w ! 2G ~ w ! ,
+
+                      where
+
+
+                                                                             G~ w !5   Ef0
+                                                                                          1
+                                                                                                 ~w!
+                                                                                                         ^ ẇ,Y & 2
+                                                                                                          ^ Y ,Y &
+                                                                                                                    ds.
+
+
+                      Since E 8f (w) @ z # 50 for all z PT w V p, g (D), and in particular for all z PT w V p,q , in order to prove
+                      that w is a critical point for E R it suffices to show that w is a critical point for G in V p,q . To see
+                      this, we observe that G is a smooth functional on V p,q , whose derivative G 8 (w) @ z # in the
+                      direction z PT w V p,q is easily computed as
+
+
+                                             G 8 ~ w !@ z # 5   EF0
+                                                                   1
+                                                                       ^“f~ w !,z&
+                                                                                          ^ ẇ,Y & 2
+                                                                                           ^ Y ,Y &
+                                                                                                     12 f ~ w !
+                                                                                                                ^ ẇ,Y &^ “ ẇ z ,Y &
+                                                                                                                      ^ Y ,Y &
+                                                                                                                                      ds.     G
+                      Since ^ ẇ,Y & [0, it follows that G 8 (w)50 on T w V p,q and ~3! is proven.
+                           To pass from ~3! to ~1!, observe that if w is a critical point of E R on V p,q , by standard
+                      regularity results, w is a smooth curve. Moreover, since ^ Y ,ẇ & [0, by ~5! we have that the
+                      derivative E f8 (w) @ z # vanishes for all variations z that satisfy z~0!5z~1!50. The computation
+                      above shows that E f8 (w) @ z # vanishes also for all variations z 5 z m 5 m •Y ; hence E f8 vanishes in
+                      T w V p, g (D), and we are done.                                                                      h
+                           As a Corollary to Lemma II.6, we obtain that the normal sub-Riemannian geodesics between
+                      p and g are regular curves that satisfy the Euler–Lagrange equation of a smooth functional.
+                           Corollary II.7: Let wPVp,g be a normal geodesic with respect to g̃ sr . Then, w is a smooth
+                      curve that satisfies the differential equation
+
+
+                                                              “ ẇ ẇ1   K   “f~ w !
+                                                                             f~ w !
+                                                                                     ,ẇ ẇ2 L
+                                                                                             1 “f~ w !
+                                                                                             2 f~ w !
+                                                                                                       ^ ẇ,ẇ & 50.                                                 ~14!
+
+                      Moreover, the quantity E f (w)51/2(w(s)) ^ ẇ(s),ẇ(s) & is constant along w.
+                           Conversely, every smooth curve w: @0,1#°M joining p with g, satisfying (14) and
+                      ^ ẇ(0),Y (w(0)) & 50, is a normal sub-Riemannian geodesic with respect to g̃ sr .
+                           Proof: Since w is a geodesic for the Riemannian metric g̃ R , then w is smooth. It satisfies the
+                      equation E f8 (w) @ z # 50 for all z PT w V p,q ; in particular z~0!5z~1!50 and we can integrate by
+                      parts the formula ~13!, obtaining
+
+
+                          05E f8 ~ w !@ z # 5
+                                                   1
+                                                   2
+                                                        E^ f
+                                                         0
+                                                          1
+                                                              “ ~ w ! , z &^ ẇ,ẇ & ds5         E 0
+                                                                                                     1
+                                                                                                         ~ 2 f ~ w ! ^ z ,“ ẇ ẇ & 2 ^ “ f ~ w ! ,ẇ &^ z ,ẇ & ! ds,
+                                                                                                                                                                     ~15!
+
+                      for all z PT w V p, g (D). Passing to a strong equality in ~15!, we obtain that w satisfies the equation
+                      ~14!.
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                      6374                           Giannoni, Piccione, and Verderesi: Relativistic brachistochrones
+
+
+                          Clearly, the quantity E f (w)5 21 f (w) ^ ẇ,ẇ & is constant along every geodesic in the Riemann-
+                      ian metric g̃ R .
+                          Conversely, if w is a smooth curve joining p and g satisfying ~14!, then w is a geodesic with
+                      respect to the metric g̃5 f •g. Since Y is Killing with respect to g̃, then f (w) ^ ẇ(s),Y „w(s)…&
+                      [ f (w) ^ ẇ(0),Y „w(0)…& 50, so that wPV p, g (D) and w is a normal sub-Riemannian geodesic
+                      between p and g with respect to g̃ sr .                                                             h
+                          We also have the following immediate Corollary.
+                          Corollary II.8: The curve wPV p, g (D) is a normal geodesic with respect to g̃ sr if and only if
+                      w minimizes locally the energy functional E f in V p, g (D).                                        h
+
+
+                      III. THE VARIATIONAL PRINCIPLE
+                         Let M be a stationary Lorentzian manifold and Y a time-like Killing vector field on M,
+                      which is assumed to be complete. We denote by
+
+                                                                                    c :M3R°M
+
+                      the flow of Y . The Killing property of Y is expressed by the fact that, for all t, the map x° c (x,t)
+                      is an isometry of M. We recall that, denoting by d x and d t the differential operators with respect
+                      to the variables x and t, respectively, by definition of flow, for all (x,t)PM3R it is
+                           ~1! d t c (x,t)5Y „c (x,t)…;
+                           ~2! d x c (x,t) @ Y (x) # 5Y „c (x,t)….
+                           Moreover, since Y is Killing, d x c (x,t): T x M°T c (x,t) M is an isometry. Observe that, in
+                      particular, the quantity ^ Y ,Y & is constant along the flow lines of Y :
+
+                                      ^ Y „c ~ x,t ! …,Y „c ~ x,t ! …& 5 ^ d x c ~ x,t !@ Y ~ x !# ,d x c ~ x,t !@ Y ~ x !# & 5 ^ Y ~ x ! ,Y ~ x ! & .
+                      We use the flow of Y to define a map from the space B 1        p, g (k) to the space V p, g (D) as follows.
+                      First of all, we introduce the space B̃ 1
+                                                              p, g (k) consisting of  all curves in B 1p, g (k) suitably reparam-
+                      etrized on the interval @0,1#:
+
+                                        B̃ 1            H
+                                           p, g ~ k ! 5 s : @ 0,1# °M of class C u
+                                                                                1
+                                                                                                          s ~ 0 ! 5 p,         s~ 1 !Pg,        'T s ,
+
+
+                                                        such that          ^ ṡ , ṡ & [2T s2 ,
+                                                                                                  ^ ṡ ,Y ~ s ! &
+                                                                                                        Ts
+                                                                                                                    [2k .  J                                         ~16!
+
+                      Clearly, the map R: B 1                1
+                                                 p, g (k)°B̃ p, g (k) defined by R(z)5 s , where s (s)5z(T z •s), gives a
+                      bijection between B 1                1
+                                           p, g (k) and B̃ p, g (k).
+                           The map R is used to identify the spaces B 1                      1                       1
+                                                                             p, g (k) and B̃ p, g (k); a curve s PB̃ p, g (k) will be
+                                                                     21
+                      called a brachistochrone of energy k if R ( s ) is a brachistochrone of energy k.
+                           We introduce the following map F : B̃ 1     p, g (k)°V p, g (D):
+
+                                                                     F ~ s !~ s ! 5w s ~ s ! 5 c „s ~ s ! ,t s ~ s ! …,                                              ~17!
+
+                      where
+
+                                                     t s ~ s ! 52   E ^ ^ṡs s s& &
+                                                                      0
+                                                                       s       ,Y ~ !
+                                                                           Y ~ ! ,Y ~ !
+                                                                                        dr5k•T s                E^ ss
+
+                                                                                                                    0
+                                                                                                                            dr
+                                                                                                                        Y ~ ! ,Y ~ s ! &
+                                                                                                                                         .                           ~18!
+
+                      The curve w s is of class C 1 , moreover, the following calculation shows that w s is in V p, g (D):
+
+                                                     ^ ẇ s ,Y & 5 ^ d x c @ ṡ # ,Y & 1ṫ s ^ Y ,Y & 5 ^ ṡ ,Y & 1ṫ s ^ Y ,Y & 50.
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                                                     Giannoni, Piccione, and Verderesi: Relativistic brachistochrones                                               6375
+
+
+                      Observe that, if for some positive k the curve s PB̃ 1
+                                                                           p, g (k) has an image in the open set U k of ~3!,
+                      then, since U k is Y invariant, also F ~s! has an image in U k .
+                          Our variational principle states that the map F is a bijection between the set of brachisto-
+                      chrones of fixed energy k joining p with g and the set of normal sub-Riemannian geodesics with
+                      respect to a suitable metric that is conformally equivalent to g sr . For k.0, let us consider the
+                      smooth function:
+
+                                                                                                      ^ Y ,Y &
+                                                                                   f k 52                            .                                               ~19!
+                                                                                                 k 1 ^ Y ,Y &
+                                                                                                  2
+
+
+                      The map f k is defined and positive in the open set U k . We are ready to state and prove our
+                      variational principle for brachistochrones.
+                          Proposition III.1: Let k be a fixed positive number. If s is a brachistochrone of energy k
+                      between p and g, then w s 5F ( s ) is a normal geodesic joining p and g in U k with respect to the
+                      metric f k •g sr .
+                          Conversely, if w is a normal geodesic in U k between p and g with respect to f k •g sr , then
+                      there exists a unique brachistochrone s of energy k between p and g such that w5F ( s ).
+                      Moreover, in either case, w is minimal if and only if s is minimal.
+                          Proof: Observe that the function f k defined in ~19! is Y invariant, because ^ Y ,Y & is constant
+                      on the flow lines of Y . Let s be any curve in B̃ 1 p, g (k) with an image in U k and w s 5F ( s ).
+                      Recalling ~18!, we have
+
+                                                                                  ^ Y ,Y &
+                                           f k ~ w s ! ^ ẇ s ,ẇ s & 52                         ^ d x c @ ṡ # 1ṫ s Y ,d x c @ ṡ # 1ṫ s Y &
+                                                                            k 1 ^ Y ,Y &
+                                                                              2
+
+
+                                                                                  ^ Y ,Y &
+                                                                     52                          ~ ^ ṡ , ṡ & 12ṫ s ^ Y , ṡ & 1ṫ s2 ^ Y ,Y & !
+                                                                            k 1 ^ Y ,Y &
+                                                                              2
+
+
+
+                                                                     52
+                                                                                  ^ Y ,Y &
+                                                                            k 2 1 ^ Y ,Y &
+                                                                                                 S   ^ ṡ , ṡ & 2
+                                                                                                                     ^ ṡ ,Y & 2
+                                                                                                                      ^ Y ,Y &     D
+                                                                     52
+                                                                                  ^ Y ,Y &
+                                                                            k 2 1 ^ Y ,Y &
+                                                                                                 S   2T s2 2T s2
+                                                                                                                            k2
+                                                                                                                         ^ Y ,Y &      D
+                                                                                                                                  5T s2 [2 ^ ṡ , ṡ & .             ~20!
+
+
+                      If s is a brachistochrone of energy k, then s minimizes locally the quantity T s . It follows that w s
+                      minimizes locally the functional E f k (w) @see ~12!#, hence ẇ is a normal geodesic with respect to
+                      f k •g sr .
+                           Conversely, let w be any curve in V p, g (D). Let L f k (w) be the length of w with respect to the
+                      metric f k •g sr :
+
+
+                                                                        L f k~ w ! 5    E Af 1
+
+                                                                                             0
+                                                                                                       k ~ w ! ^ ẇ,ẇ & ds.
+
+
+                      Define the curve s w by
+
+                                                                              s w ~ s ! 5 c „w ~ s ! ,t w ~ s ! …,
+
+                      where t w is given by
+
+
+                                                                   t w ~ s ! 52kL f k ~ w !           E^
+                                                                                                       0
+                                                                                                        s         dr
+                                                                                                            Y ~ w ! ,Y ~ w ! &
+                                                                                                                               .                                     ~21!
+
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                      6376                           Giannoni, Piccione, and Verderesi: Relativistic brachistochrones
+
+
+                      Since
+
+                                      ^ d x c ~ w,t w !@ ẇ # ,Y ~ s w ! & 5 ^ d x c ~ w,t w !@ ẇ # ,d x c ~ w !@ Y ~ w !# & 5 ^ ẇ,Y ~ w ! & 50,
+                      an easy computation shows that
+
+                                                                             ^ ṡ w ,Y ~ s w ! & [2kL f k ~ w !
+
+                      is constant. Set T s w 5L f k (w). If w is a normal geodesic in U k with respect to f k •g sr , then w is
+                      smooth, and thus also s is smooth. Moreover, the quantity 2E f k (w)5 f k (w) ^ ẇ,ẇ & 5L f k (w) 2 is
+                      constant, so
+
+                                                                                                                                                    E f k~ w !
+                                ^ ṡ w , ṡ w & 5 ^ ẇ,ẇ & 12ṫ w ^ ẇ,Y & 1ṫ 2w ^ Y ,Y & 5 ^ ẇ,ẇ & 1ṫ 2w ^ Y ,Y & 5 ^ ẇ,ẇ & 12k 2
+                                                                                                                                                     ^ Y ,Y &
+
+                                              52E f k ~ w ! 2   F     k 2 1 ^ Y ,Y &
+                                                                          ^ Y ,Y &
+                                                                                     1
+                                                                                          k2
+                                                                                       ^ Y ,Y &       G
+                                                                                                522E f k ~ w ! 52T s2 .
+                                                                                                                     w
+                                                                                                                                                                     ~22!
+
+                      Hence, s w is in B̃ 1    p, g (k). Since w minimizes locally the functional E f k , then, by ~22!, s w
+                      minimizes locally T s w , and it is a brachistochrone of energy k.
+                           Let w be a normal geodesic between p and g with respect to f k •g sr . Suppose that s 1 , s 2
+                      PB̃ 1 p, g (k) are two brachistochrones of energy k, such that F ( s 1 )5F ( s 2 )5w; then, by ~20!, it
+                      is T s 1 5T s 2 . By definition of the space B̃ 1
+                                                                      p, g (k) @see ~16!#, this implies that ^ ṡ 1 ,Y & [ ^ ṡ 2 ,Y & . But
+                      s 1 (s) and s 2 (s) belong to the same integral line of Y for all s, while s 1 (0)5 s 2 (0)5 p. Then,
+                      there exists a smooth function t (s) such that
+
+                                                                    s 2 ~ s ! 5 c ~ s 1 ~ s ! , t ~ s !! ,   ;sP @ 0,1# ,
+
+                      and t~0!50. Then, recalling the main properties of a Killing vector field, it is
+
+                                                        ^ ṡ 2 ,Y ~ s 2 ! & 2 ^ d x c @ ṡ 1 # ,Y ~ s 2 ! & ^ ṡ 2 ,Y & 2 ^ ṡ 1 ,Y &
+                                                 t 85                                                      5                          [0,
+                                                                     ^ Y ~ s 2 ! ,Y ~ s 2 ! &                        ^ Y ,Y &
+
+                      hence, it must be t[0, i.e. s 1 [ s 2 and the uniqueness is proven.
+                           Finally, the equalities ~20! and ~22! imply immediately that s is a minimal brachistochrone if
+                      and only if w5F ( s ) is a minimal geodesic. This concludes the proof.                             h
+                           Using the variational principle of Proposition III.1 and the Euler–Lagrange equation ~14!
+                      satisfied by the sub-Riemannian geodesics, we can write the differential equation satisfied by the
+                      relativistic brachistochrones.
+                           Corollary III.2: Let z be a curve in B 1 p, g (k) with an image in U k . Then, z is a brachisto-
+                      chrone of energy k joining p and g if and only if z is a smooth curve satisfying the differential
+                      equation:
+
+                                                  2k                              ^ “ ż Y ,Y &                     ^ “ ż Y ,Y &
+                                     “ ż ż1              “ ż Y 12k 2                                 ż22k                             Y 50,                      ~23!
+                                                ^ Y ,Y &                    ^ Y ,Y & ~ k 2 1 ^ Y ,Y & !       ^ Y ,Y & ~ k 2 1 ^ Y ,Y & !
+
+                      where “ is the covariant derivative with respect to the Levi-Civita connection of the Lorentzian
+                      metric g.
+                          Proof: Let zPU 1   p, g (k) be fixed and T z its travel time. We consider the curves s 5R(z)
+                      PB̃ 1
+                          p, g (k), given by  s (s)5z(T z •s) and w5F ( s )PV p, g (D), given by w(s)5 c „s (s),t(s)…,
+                      where t(s) satisfies ~18!.
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                                                     Giannoni, Piccione, and Verderesi: Relativistic brachistochrones                                               6377
+
+
+                           By Proposition III.1, z is a brachistochrone of energy k if and only if w is a normal sub-
+                      Riemannian geodesic with respect to the metric f k •g sr . Then, by Corollary II.7, z is a brachis-
+                      tochrone of energy k if and only if w is a smooth curve that solves the differential equation ~14!
+                      @it satisfies antomatically ^ ẇ,Y (w) & [0#.
+                           In order to translate the differential equation ~14! in terms of z, we argue as follows. We
+                      consider the map F: @0,1#3R°M given by
+
+                                                                                 F ~ s,t ! 5 c „s ~ s ! ,t…,
+
+                      where s (s)5z(T z •s). Denoting by T(s,t) the vector field along F given by
+
+                                                                                                 ]F
+                                                                                          T5        ,
+                                                                                                 ]s
+
+                      since Y 5 ] F/ ] t, a standard argument in calculus of connections ~see, for instance, Proposition 6.9
+                      of Ref. 15! shows that
+
+                                                                                    “ Y T2“ T Y 50.                                                                  ~24!
+
+                      Since w(s)5F„s,t(s)…, it is
+
+                                                                                  ẇ5T ~ w ! 1ṫY ~ w ! ,
+
+                      and so, using ~24!, we compute
+
+                                             “ ẇ ẇ5“ ẇ ~ T1ṫY ! 5“ ẇ T1ẗY 1ṫ “ ẇ Y 5“ T1 ˙t Y T1ẗY 1ṫ “ T1 ˙t Y Y
+                                                     5“ T T12ṫ “ T Y 1ṫ 2 “ Y Y 1ẗY .                                                                             ~25!
+
+                      It is
+
+                                             T ~ s,t ! 5d x c „s ~ s ! ,t…@ ṡ ~ s !#       and Y „w ~ s ! …5d x c „s ~ s ! ,t…@ Y ~ s !# .                          ~26!
+
+                      Considering that d x c is an isometry, then for every pair of smooth vector fields v 1 and v 2 on M
+                      it is
+
+                                                                        “ d x c @v 1 # d x c @v 2 # 5d x c @ “ v 1 v 2 # .                                           ~27!
+
+                      Putting together ~25!, ~26!, and using ~27!, we get
+
+                                                    “ ẇ ẇ5d x c @ “ ṡ ṡ 12ṫ “ ṡ Y ~ s ! 1ṫ 2 “ Y ~ s ! Y ~ s ! 1ẗY ~ s !# .                                  ~28!
+
+                      From ~19!, recalling that ^ “ v Y ,Y & 52 ^ “ Y Y , v & , the gradient “ f k is computed easily as
+
+                                                                                              2k 2
+                                                                           “ f k5                            “YY ,                                                   ~29!
+                                                                                      ~ ^ Y ,Y & 1k 2 ! 2
+
+                      namely, for every vector field v on M, it is
+
+
+                                         ^ “ f k , v & 5“ v f k 5
+                                                                             22k 2
+                                                                       ~ ^ Y ,Y & 1k !  2 2
+                                                                                            ^ “ v Y ,Y & 5      K            2k 2
+                                                                                                                    ~ ^ Y ,Y & 1k 2 ! 2
+                                                                                                                                          “YY ,v .  L
+                      Recalling the conservation law ~20!, we have
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                      6378                           Giannoni, Piccione, and Verderesi: Relativistic brachistochrones
+
+
+                                                                         f k ~ w ! ^ ẇ,ẇ & [2E f k ~ w ! 5T 2z ;                                                   ~30!
+
+                      moreover, it is easily computed:
+
+                             “ f k~ w !               2k 2                                             2k 2
+                                        52                             “   ~   ! Y ~ w ! 52                             d x c @ “ Y ~ s ! Y ~ s !# ;
+                              f k~ w !     ^ Y ,Y & ~ k 2 1 ^ Y ,Y & !
+                                                                         Y   w
+                                                                                            ^ Y ,Y & ~ k 2 1 ^ Y ,Y & !
+                                                                                                                                                                     ~31!
+
+                                                                  ẇ5d x c @ ṡ # 1ṫY ~ w ! 5d x c @ ṡ 1ṫY ~ s !# ;                                               ~32!
+
+                      and, from ~18!,
+
+                                                                             kT z                          ^ “ ṡ Y ,Y &
+                                                                     ṫ5            ,       ẗ522kT z                      .                                         ~33!
+                                                                           ^ Y ,Y &                          ^ Y ,Y & 2
+                      Recalling that f k (w) ^ ẇ,ẇ & [T 2z and ^ “ Y Y ,Y & [0, patiently substituting ~28!, ~29!, ~30!, ~31!,
+                      ~32!, and ~33! into ~14! gives
+
+
+                                  F
+                            d x c “ ṡ ṡ 12
+                                                    kT z
+                                                  ^ Y ,Y &
+                                                             “ ṡ Y 12k 2
+                                                                                        ^ “ ṡ Y ,Y &
+                                                                              ^ Y ,Y & ~ k 1 ^ Y ,Y & !
+                                                                                             2
+                                                                                                             ṡ 22kT z
+                                                                                                                                     ^ “ ṡ Y ,Y &
+                                                                                                                               ^ Y ,Y & ~ k 2 1 ^ Y ,Y & !
+                                                                                                                                                              G
+                                                                                                                                                             Y 50.
+                                                                                                                                                                     ~34!
+
+                      Since d x c is an isometry, this is equivalent to the vanishing of the argument inside the square
+                      bracket of ~34!.
+                          Finally, since ṡ 5T z •ż, we obtain easily ~23!.                                         h
+                          Thus, the differential equation ~23! characterizes the brachistochrones in B 1
+                                                                                                       p, g (k).
+
+
+                      IV. EXAMPLES
+                           To illustrate the results obtained, in this section we discuss two examples of stationary space–
+                      times and their brachistochrones. Our first example concerns a generalized version of the Heisen-
+                      berg group, which is a manifold diffeomorphic to R3 such that the orthogonal distribution to the
+                      Killing vector field Y 5 ] / ] t is not integrable. The family of Lorentzian metrics in this example are
+                      parametrized by a smooth function v of the space variables x and y. If one chooses v 5x, then the
+                      projection onto the xy plane of this metric coincides with the projection of the metric of Rinsler’s
+                      model ~see Ref. 16!, and we recover a result by Perlick obtained in Ref. 3.
+                           In our second example we study a model of a stationary manifold built over the manifold S 3 ,
+                      considered as a bundle over S 2 with a fiber diffeomorphic to circles ~Hopf fibration S 1 °S 3 °S 2 !.
+                      This model gives a stationary space–time that is not regular, i.e. it does not admit a global
+                      space–time splitting adapted to the Killing vector field Y .
+
+                      A. Brachistochrones in the generalized Heisenberg space
+                            We consider in M5R3 , with coordinates (x,y,t), the Lorentzian metric,
+
+                                                                   g5dx 2 1dy 2 2 v 2 ~ dt2y dx1x dy ! 2 ,
+
+                      where v 5 v (x,y) is a smooth map on R2 . As the coefficients of the metric do not depend on the
+                      variable t, the time-like vector field Y 5 ] / ] t is a Killing vector field in (M,g). Setting u 1
+                      5dx, u 2 5dy, and u 3 5 v (dt2y dx1x dy), so that g5( u 1 ) 2 1( u 2 ) 2 2( u 3 ) 2 , then the Riemann-
+                      ian metric g R in M is
+
+                                                                            g R5 ~ u 1 ! 2 1 ~ u 2 ! 2 1 ~ u 3 ! 2 .
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                                                     Giannoni, Piccione, and Verderesi: Relativistic brachistochrones                                               6379
+
+
+                      If (e 1 ,e 2 ,e 3 ) denotes the dual basis of ( u 1 , u 2 , u 3 ), given by
+
+                                                                    ]    ]                         ]   ]                      1 ]
+                                                             e 15      1y ,               e 25       2x ,              e 35        ,
+                                                                    ]x   ]t                       ]y   ]t                     v ]t
+
+                      then the Levi-Civita connection of g R is given by
+
+
+                                                                                              S
+                                                                       “e 1 5 v u 3 e 2 1 v u 2 1
+                                                                                                          vx 3
+                                                                                                          v
+                                                                                                            u e3 , D
+                                                                                               S
+                                                                     “e 2 52 v u 3 e 1 2 v u 1 2
+                                                                                                              vy 3
+                                                                                                              v
+                                                                                                                u e3 , D
+                                                                          S
+                                                             “e 3 52 v u 2 1
+                                                                                       vx 3
+                                                                                       v
+                                                                                               D S    vy
+                                                                                         u e 11 v u 12 u 3 e 3 ,
+                                                                                                      v
+                                                                                                                               D
+                      If w(s)5„x(s),y(s),t(s)…, then ẇ5ẋe 1 1ẏe 2 1 v (ṫ2yẋ1xẏ)e 3 ; the normality condition ṫ2yẋ
+                      1xẏ50 gives
+
+                                                                                      ẇ5ẋe 1 1ẏe;
+
+                      hence
+
+                                                                                    “ ẇ ẇ5ẍe 1 1ÿe 2 .
+
+                      Considering the function
+
+                                                                                                   v2
+                                                                                      f k5 2    ,
+                                                                                          k 2v2
+
+                      the equation ~14! for the normal geodesics in the metric f k •g sr is given by the system
+
+
+
+
+                                                               5
+                                                                               k2
+                                                                   ẍ1                    „v x ~ ẋ 2 2ẏ 2 ! 12 v y ẋẏ…50,
+                                                                         v~ k 2 2 v 2 !
+                                                                               k2                                                                                    ~35!
+                                                                   ÿ1                    „v y ~ ẏ 2 2ẋ 2 ! 12 v x ẋẏ…50,
+                                                                       v~ k 2 v !
+                                                                               2      2
+
+                                                                   ṫ2yẋ1xẏ50.
+
+                      Each solution of the system ~35! gives a brachistochrone s of energy k on M, given by s (s)
+                      5„x(s),y(s),t(s)1 t (s)…, with t (s)5k * s0 v 22 dr.
+                          Choosing v [1, the manifold (M,g R! coincides with the Heisenberg space. This is the Lie
+                      subgroup of SL(3,R) consisting of upper triangular matrices
+
+
+
+                                                                                      S D 1
+                                                                                          0
+                                                                                          0
+                                                                                               x
+                                                                                               1
+                                                                                               0
+                                                                                                     z
+                                                                                                     y
+                                                                                                     1
+                                                                                                          ;
+
+
+                      the metrics g, g R , and the vector field Y are left invariant. In this case the equations ~35! reduce
+                      to
+
+                                                                                ẍ50,         ÿ50,      ṫ50,
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                      6380                           Giannoni, Piccione, and Verderesi: Relativistic brachistochrones
+
+
+                      whose solutions are straight lines w(s)5(as,bs,0), and the brachistochrones of energy k are of
+                      the form s (s)5(as,bs,ks).
+                          Observe also that, if we take v 5x, the projection onto the xy plane of the metric g coincides
+                      with the projection of the metric of Rindler’s model given by dx 2 1dy 2 2x 2 dt 2 . The spatial part
+                      of the brachistochrones in these two models are the same; it is easily checked that the first two
+                      equations of ~35! are equivalent to formulas ~60! and ~61! of Ref. 3.
+
+
+                      B. Brachistochrones in the 3-sphere S 3
+                            In C2 , with coordinates z5(z 1 ,z 2 ), we consider the 3-sphere,
+
+                                                                          S 3 5 $ zPC2 :z 1 z̄ 1 1z 2 z̄ 2 51 % .
+
+                      For z5(z 1 ,z 2 ), we write z' 5(2z̄ 2 ,z̄ 1 ); the triple (iz,z' ,iz' ) is a basis for T z S 3 as a real vector
+                      subspace of C2 .
+                          On S 3 we consider the 1-forms:
+
+                                                       u 52i ~ z̄ 1 dz 1 1z̄ 2 dz 2 !           and w 52z 2 dz 1 1z 1 dz 2 ,
+
+                      and the Lorentz metric g5 w ^ w̄ 2 u 2 ~observe that u 5 ū !.
+                          Since w (z' )51, w (iz)50, then, writing s 5 u 1 1i u 2 , ( u 1 , u 2 , u ) is the dual basis of
+                      (z ,iz' ,iz).
+                        '
+
+                          The metric g R is given by
+
+                                                                                    g R5 w ^ w̄ 1 u 2 ,
+
+                      and the covariant derivative associated to g R is given by
+
+                                                                                “z' 52 u iz' 1 u 2 iz,
+
+                                                                                  “iz' 5 u z' 2 u 1 iz,
+
+                                                                                “iz52 u 2 z' 1 u 1 iz.
+
+                      The vector field Y (z)5iz is time-like and Killing, and ^ Y ,Y & [21, hence, in the notation of Sec.
+                      III, we have
+
+                                                                                          1
+                                                                              f k[           ,        ¹ f k [0.
+                                                                                      k 2 21
+
+                      The integral curves of Y are circles and the quotient space is diffeomorphic to the 2-sphere S 2 ,
+                      giving rise to the Hopf fibration of S 2 by S 1 .
+                          The orthogonal distribution D to Y is the kernel of the 1-form u. The normal geodesics satisfy
+                      the system of equations:
+
+                                                                                     z̄ 1 ż 1 1z̄ 2 ż 2 50,
+
+                                                                                     z 1 z̈ 2 2z 2 z̈ 1 50,                                                          ~36!
+
+                                                                               ^ ż,z & 50,       ^ z̈,z̄' & 50.
+                      For each z 0 PS 3 , the solutions of ~36! through z 0 are given by
+
+                                                                    z ~ t ! 5z 0 cos t1 a z'0 sin t,              u a u 51,
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+                                                     Giannoni, Piccione, and Verderesi: Relativistic brachistochrones                                               6381
+
+
+                      they are maximal circles on S 2 .
+                          The flow of the vector field Y is c (z,t)5e it z; moreover,
+
+                                                                           t ~ s ! 52k     E^ &
+                                                                                             0
+                                                                                              s    dr
+                                                                                                  Y ,Y
+                                                                                                       52ks.
+
+                      Hence, the brachistochrones through z 0 are given by
+
+                                                                     s ~ s ! 5e 2iks ~ z 0 cos s1 a z'0 sin s ! .
+
+                      ACKNOWLEDGMENTS
+                          The second author gratefully acknowledges the partial sponsorship provided by CNPq, Pro-
+                      cesso No. 301410/95-0, and by FAPESP, Processo No. 96/2214-0.
+
+                       1
+                         F. Goldstein and C. M. Bender, ‘‘Relativistic brachistochrone,’’ J. Math. Phys. 27, 507–511 ~1985!.
+                       2
+                         G. Kamath, ‘‘The brachistochrone in almost flat space,’’ J. Math. Phys. 29, 2268–2272 ~1988!.
+                       3
+                         V. Perlick, ‘‘The brachistochrone problem in a stationary space–time,’’ J. Math. Phys. 32, 3148–3157 ~1991!.
+                       4
+                         W. Liu and H. J. Sussman, ‘‘Shortest paths for sub-Riemannian metrics on rank-2 distribution,’’ Memoirs AMS 564,
+                         1995, Vol. 118.
+                       5
+                         R. Montgomery, ‘‘Singular extremals on Lie groups,’’ Math. Control Signals 7, 217–234 ~1994!.
+                       6
+                         J. K. Beem, P. E. Ehrlich, and K. L. Easly, Global Lorentzian Geometry ~Marcel Dekker, New York, 1996!.
+                       7
+                         S. W. Hawking and G. F. Ellis, The Large Scale Structure of Space–Time ~Cambridge University Press, London, 1973!.
+                       8
+                         B. O’Neill, Semi-Riemannian Geometry with Applications to Relativity ~Academic, New York, 1983!.
+                       9
+                         I. Kovner, ‘‘Fermat principle in arbitrary gravitational fields,’’ Astrophys. J. 351, 114–120 ~1990!.
+                      10
+                         F. Giannoni, A. Masiello, and P. Piccione, ‘‘A timelike extension of Fermat’s principle in general relativity and appli-
+                         cations,’’ to appear in Calculus of Variations and PDE.
+                      11
+                         V. Perlick, ‘‘On Fermat’s principle in ceneral relativity: I. The general case,’’ Class. Quantum Grav. 7, 1319–1331
+                         ~1990!.
+                      12
+                         R. Palais, Foundations of Global Nonlinear Analysis ~Benjamin, New York, 1968!.
+                      13
+                         S. Lang, Differential Manifolds ~Springer-Verlag, Berlin, 1985!.
+                      14
+                         R. Montgomery, ‘‘A survey of singular curves in sub-Riemannian geometry,’’ J. Dyn. Controlled Syst. 1, 49–90 ~1995!.
+                      15
+                         M. Spivak, A Comprehensive Introduction to Differential Geometry, 2nd ed. ~Publish or Perish, Inc., Wilmington, DE!,
+                         Vol. 2.
+                      16
+                         W. Rindler, Essential Relativity ~Springer, New York, 1977!.
+
+
+
+
+                                                                J. Math. Phys., Vol. 38, No. 12, December 1997
+
+
+
+
+Downloaded 03 Apr 2013 to 131.211.208.19. This article is copyrighted as indicated in the abstract. Reuse of AIP content is subject to the terms at: http://jmp.aip.org/about/rights_and_permissions
+

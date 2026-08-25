@@ -1,0 +1,824 @@
+                                       Dynamical surface gravity.
+                                                       Alex B Nielsen 1 and Jong Hyuk Yoon 2
+                                                       1
+                                                         Department of Physics and Astronomy, University of Canterbury, Private Bag 4800,
+
+
+
+
+arXiv:0711.1445v1 [gr-qc] 9 Nov 2007
+                                                       Christchurch, New Zealand ‡
+                                                       2
+                                                         Department of Physics, Konkuk University, Seoul 143-701, Korea
+                                                       E-mail: eujin@phya.snu.ac.kr, yoonjh@konkuk.ac.kr
+
+                                                       Abstract. We discuss how the surface gravity can be classically defined for dynamical
+                                                       black holes. In particular we focus on defining the surface gravity for locally defined
+                                                       horizons and compare a number definitions proposed in the literature. We illustrate
+                                                       the differences between the various proposals in the case of an arbitrary dynamical,
+                                                       spherically symmetric black hole spacetime. We also discuss how the trapping horizon
+                                                       formalism of Hayward can be related to other constructions.
+
+
+
+                                                       PACS numbers: 04.70.-s, 04.70.Bw, 04.70.Dy
+
+
+                                       1. Introduction
+
+                                       In black hole thermodynamics the surface gravity of a black hole plays a role analogous to
+                                       temperature. The relationship between black hole evolution and thermodynamics is one
+                                       of the most widely studied topics in theoretical physics. Indeed the discovery of the semi-
+                                       classical Hawking radiation effect put black hole thermodynamics on a firm theoretical
+                                       footing and directly established the relationship between the surface gravity and the
+                                       temperature. However, the derivation of the Hawking radiation effect depends on quasi-
+                                       stationary, quasi-equilibrium evolution. In a non-equilibrium, dynamical situation the
+                                       temperature may not be well defined.
+                                            In a fully dynamical situation, the surface gravity will probably not be directly
+                                       analogous to a temperature of any thermal spectrum. However, there are two reasons
+                                       for investigating the surface gravity in dynamical situations. The first is the desire
+                                       to derive a purely classical evolution law for the black hole, in the sense of the first
+                                       law, without making any appeal to true thermal behaviour. In this context the surface
+                                       gravity will play the role as the ‘constant’ of proportionality between the change in the
+                                       mass of the black hole and the change in the area. In this way the definition of the
+                                       surface gravity is closely connected to our choice of quasi-local mass for the black hole.
+                                            The second reason is that the surface gravity is likely to play a key role in the
+                                       emission of Hawking radiation, even in non-equilibrium processes. There have been a
+                                       number of derivations of the Hawking effect that are easily applicable to dynamical
+                                       ‡ Current address: Center for Theoretical Physics, Seoul National University, Seoul 151-747, Korea
+Dynamical surface gravity.                                                                2
+
+situations (see for example [1, 2, 3]). These derivations make it clear that the Hawking
+effect is a local geometrical effect and that something resembling the surface gravity
+plays a key role. Heuristically, one is tempted to think that the larger the surface
+gravity, the more Hawking radiation there will be and the quicker the black hole will
+evaporate.
+     The most widely known definition of the surface gravity is in terms of a Killing
+horizon. This is for example, how the surface gravity is calculated for a Schwarzschild
+black hole. This works well in stationary situations but breaks down in fully dynamical
+situations, where no such Killing horizon exists. A key question is whether the surface
+gravity can be defined for black holes that are evolving, either by accreting matter or
+by emitting Hawking radiation.
+     In stationary spacetimes the event horizon of a black hole is typically a Killing
+horizon for a suitably chosen Killing vector. However, for event horizons in more
+general, non-stationary spacetimes, the surface gravity can be defined in terms of the
+null generators of the horizon. In these more general cases there is no Killing vector
+field to use to fix the normalization of the surface gravity. Since the generator of the
+horizon is only really defined on the event horizon, there is no natural way of fixing this
+normalization by imposing a condition off the horizon.
+     However, recently much interest has focused on local definitions of horizons [4, 5, 6].
+These local horizons are typically defined in terms of spacelike two-surfaces for which
+the expansion of the outgoing null normal vanishes. Indeed, there are good reasons for
+believing that it is such a local horizon, and not the event horizon, that is responsible
+for the Hawking process [1, 3]. Since we expect the surface gravity to play a role
+in governing the ‘amount’ of Hawking radiation, it makes sense to investigate surface
+gravity definitions for local horizons in dynamical situations.
+     While there have been many proposals for what the dynamical surface gravity
+should be, there is not yet any consensus as to what the correct definition is. In this
+paper, we investigate a number of different definitions for the dynamical surface gravity
+that have appeared in the literature. In order to compare them, we will compute their
+forms for marginally trapped surfaces in a generic, dynamic, spherically symmetric
+spacetime. Furthermore, we will be able to evaluate how these definitions compare to
+the familiar Killing horizon definition in the static limit.
+     The results presented here will be of a purely classical nature based purely on the
+geometry of the spacetime. We will not perform any quasi-classical calculations involving
+quantum fields and we will not prove any relation between the classical surface gravity
+discussed here and any Hawking radiation that may be emitted, although such a relation
+is of course one of the main motivations for the work. We rather take the viewpoint
+that the surface gravity can be defined in a classical way and thus its nature is tied up
+with the local geometrical properties of the space-time at the horizon.
+     The paper is organized as follows. In section 2 we give an overview of the various
+proposals that have appeared in the literature for defining surface gravity including for
+Killing horizons and event horizons. In section 3 we go on to compare these various
+Dynamical surface gravity.                                                                 3
+
+definitions in the case of a fully general, dynamical, spherically symmetric spacetime.
+We then conclude with a discussion.
+     When working in advanced Eddington-Finkelstein coordinates we will use a dot
+to denote differentiation with respect to the time coordinate v, ṁ = ∂v m, and a dash
+to denote differentiation with respect to the radial coordinate r, m′ = ∂r m. Greek
+superscripts and subscripts denote components in a given coordinate basis, while Latin
+superscripts and subscripts denote tensor indices in the abstract index notation [7].
+
+2. Surface gravity definitions
+
+2.1. Surface gravity for Killing horizons and event horizons
+The traditional definition of surface gravity [8], is based on the idea of a Killing horizon,
+a hypersurface where a Killing vector of the metric becomes null. In general relativity,
+stationary event horizons are typically Killing horizons for a suitably chosen Killing
+vector k a (for the technical assumptions for this proposition see [9]). The surface gravity
+κ of the Killing horizon can be defined by
+                 k a ∇a k b = κk b .                                                     (1)
+Thus, the surface gravity for a Killing horizon is defined by the fact that the Killing
+vector is a non-affinely parameterized geodesic on the Killing horizon§. The proof of
+this is as follows: Since k a ka is constant and zero on the Killing horizon by definition,
+then ∇b (k a ka ) must be normal to the horizon, in the sense of being orthogonal to any
+vector tangent to a curve lying in the horizon. Since k a is also normal to the horizon,
+and this normal is unique, we have k a ∇b ka ∝ kb . Using the Killing relation, we then
+obtain the above.
+     We note here, for later use, that due to Killing’s equation the above can also be
+written as
+                 1 ab c
+                   g k (∇c ka − ∇a kc ) = κk b .                                        (2)
+                 2
+Since k a is normal to the null hypersurface, it is hypersurface orthogonal and by the
+Fröbenius theorem, we have
+                 k[a ∇b kc] = 0.                                                         (3)
+Contracting this condition (3) with ∇a k b and using the Killing property we get another
+formula often seen in the literature as a definition of surface gravity [7],
+                      1
+               κ2 = − (∇a k b )(∇a kb ).                                               (4)
+                      2
+This version also provides us with a nice physical interpretation of the surface gravity.
+In static spacetimes the surface gravity can be interpreted as the limiting force required
+at infinity to hold a mass stationary above the event horizon (one could imagine the
+§ In general, off the horizon, the Killing vector is not geodesic.
+Dynamical surface gravity.                                                                              4
+
+mass connected to infinity by a very long massless string). Note that this physical
+interpretation does not work in non-static spacetimes [7].
+      By virtue of Killing’s equation ∇a kb + ∇b ka = 0, the Killing vector is only
+determined up to a constant factor. This freedom corresponds to a gauge freedom to
+rescale the curve parameter along the integral curves of the Killing vector by a constant
+factor. The advantage of using a Killing horizon of a global Killing vector field is that for
+static, asymptotically flat spacetimes, this factor can be fixed by requiring ka k a = −1
+at infinity and thus, at infinity, the Killing vector coincides with the four-velocity of a
+static observer parameterized by the observers proper time τ .k This fixes the freedom in
+k a globally and uniquely determines the value of the surface gravity of a Killing horizon.
+      This prescription can also be extended to apply to static observers anywhere in
+the spacetime and leads to the idea that the temperature of the event horizon tends to
+infinity as seen by static observers located closer and closer to the horizon. However,
+this procedure relies on a Killing vector field to relate the normalization to a point away
+from the horizon.
+      A similar definition to (1) can be made for an event horizon that is not a Killing
+horizon, with the role of the Killing vector replaced by the null generator of the event
+horizon. However, in the general case, there is no natural way to fix the parametrization
+of this generator. Even in spherically symmetric spacetimes, where the generators of
+the future event horizon will form a subset of the congruence of radially outgoing null
+geodesics it is not easy to fix the parameterization of the generators and thus the value
+of the surface gravity.
+
+2.2. Surface gravity for marginally trapped surfaces
+In dynamical situations, it is a well known fact that local definitions of horizons such as
+apparent horizons, trapping horizons or dynamical horizons do not necessarily coincide
+with the location of the event horizon¶. In such cases one is left with the question ‘for
+which surface should one define the black hole area or the black hole surface gravity?’
+The canonical choice is to use the event horizon. However, as noted above, there is
+evidence that it is the apparent horizon, and not the event horizon, that plays the key
+role in Hawking radiation. This idea has become a key point in hopes to demonstrate
+Hawking radiation in the laboratory using analogue gravity models [12]. Furthermore,
+it has been shown that the laws of black hole thermodynamics can easily be applied to
+the case of trapping [4] and dynamical [5] horizons.
+k A slightly different prescription is required for non-static spacetimes such as the Kerr solution, since
+the relevant Killing vector is no longer composed purely of a time-translational Killing vector. In this
+paper we are only considering spherically symmetric spacetimes.
+¶ This issue is actually quite subtle. In spacetimes satisfying the Null Energy Condition, it has been
+conjectured by Eardley [10] that the outer boundary of the region containing marginally trapped
+surfaces is in fact the event horizon. However, in spherically symmetric spacetimes, with spherically
+symmetric slicings, the apparent horizon is in most cases also a dynamical horizon and a trapping
+horizon. In most dynamical cases it does not coincide with the location of the event horizon [11].
+Dynamical surface gravity.                                                                 5
+
+     Most of the definitions we will consider in this work are motivated by investigations
+of local horizons. Therefore we will evaluate the surface gravity for marginally outer
+trapped surfaces, although several of the definitions could equally well be applied to
+event horizons.
+     A marginally trapped surface is a compact spacelike two-surface for which the
+expansion of one of the future-directed null normals vanishes. In the following we will
+consider spacelike two-surfaces with an ingoing null normal na and an outgoing null
+normal la . Furthermore, we will assume that the cross-normalization of these two null
+vectors is such that la na = −1. A marginally outer trapped surface is therefore defined
+by the requirement that θl = 0 where the expansion is given by
+                 θl = g ab ∇a lb + na lb ∇a lb + la nb ∇a lb .                           (5)
+A common approach to defining the surface gravity of a non-Killing horizon is to use the
+fact that la is typically a non-affinely parameterized geodesic on the horizon, although
+it is not always a horizon generator. This mirrors the requirement for a Killing horizon
+that the Killing vector should be a non-affinely parameterized null geodesic on the
+Killing horizon. In this way the surface gravity can be defined via the equation
+                 la ∇a lb = κlb ,                                                        (6)
+or
+                 κ = −nb la ∇a lb .                                                      (7)
+While the direction of the null geodesic la will be fixed by the location of the horizon and
+its foliations into spacelike two-spheres, the choice of parametrization of la will become
+crucial to the overall value of the surface gravity.
+      Writing the null vector la as the tangent vector of a curve xµ (λ) with parameter λ,
+under a change of parametrization of the curve λ → λ′ , the components of the tangent
+vector change by+
+                      dxµ      ′   dxµ     dλ
+                lµ ≡      → lµ ≡      ′
+                                        =    ′
+                                               (x)lµ = Ω(x)lµ ,                           (8)
+                      dλ           dλ     dλ
+and the surface gravity changes by
+                                                
+                           dλ         a      dλ
+                       ′
+                κ → κ = ′ (x)κ + l ∇a              (x) = Ω(x)κ + la ∇a Ω(x).              (9)
+                           dλ                dλ′
+If the surface gravity is to measure the extent to which the geodesic la fails to be affinely
+parameterized, the choice of parametrization becomes essential. For a Killing horizon
+the normalization is fixed by the link between the parametrization of the Killing vector
+and the proper time at infinity.
+     For an affinely parameterized geodesic κ = 0. In general the tangent vector la can
+always be reparameterized to eliminate κ. However, a number of proposals have been
+made to fix the parameterization of this null vector and in order to give a non-zero
++
+    Note this change of parametrization can depend on the spacetime point x.
+Dynamical surface gravity.                                                                6
+
+surface gravity this parameterization is required to be non-affine. The following are
+some of the proposals that have been given for fixing this normalization.
+
+     Fodor et al. [13] proposed a non-local choice of normalization for spherically
+symmetric spacetimes in terms of an affinely-parameterized ingoing null geodesic na
+whose asymptotic form was such that ta na = −1 where ta is the asymptotic time-
+translational Killing vector. In order to do this one needs to require that the spacetime
+admits an asymptotically flat spatial infinity. This choice of parameterization for ingoing
+na is then transferred to the choice of parameterization of outgoing la by requiring the
+condition la na = −1 everywhere in the spacetime. The proposal of [13] is therefore
+              κF = −nb la ∇a lb ,                                                      (10)
+where na must be affinely parameterized everywhere and at asymptotically flat spatial
+infinity by the proper time of static observers. Fodor et al. discuss how this
+normalization can be observed locally by measuring the frequency of fiducial photons
+sent in from infinity.
+
+     Hayward [14] gave a definition of surface gravity for dynamic, spherically symmetric
+spacetimes in terms of the Kodama vector K a [15]. The Kodama vector has the property
+that the combination Ka T ab is divergence free in spherical symmetry and that K a
+reduces to K a Ka = −1 at spatial infinity. The overall sign can be fixed by requiring it to
+be future directed. In static electrovac solutions it coincides with the time-translational
+Killing vector of the Reissner-Nordström geometry [14]. The value of the ‘dynamic
+surface gravity’ for a trapping horizon was defined by
+                1 ab c
+                  g K (∇c Ka − ∇a Kc ) = κKo K b .                                     (11)
+                2
+This matches the form of (2) but note that the Kodama vector does not in general
+satisfy Killing’s equation and it is not necessarily geodesic on the horizon. The surface
+gravity defined in this way is unique since K a is unique and agrees with the surface
+gravity in the Reissner-Nordström case. However, this definition does not agree with
+that given in [4] or [13] and is only applicable in spherically symmetric spacetimes.
+     For an isolated horizon, Ashtekar, Beetle and Fairhurst [16] fixed the normalization
+by setting the expansion of the ingoing null vector na to be the same as the Reissner-
+Nordström value and cross-normalizing with la via na la = −1. This idea was elaborated
+by Ashtekar, Fairhurst and Krishnan [17] by fixing κ as a unique function of the horizon
+parameters a△ and Q△ , in terms of the known value given in the static case. However it
+is not possible to extend this method to situations such as Einstein-Yang-Mills where the
+surface gravity in the static sector is not a unique function of the horizon parameters.
+     In the case of a slowly evolving horizon, defined in terms of a perturbative expansion
+around an isolated horizon, Booth and Fairhurst [18] gave a new definition of surface
+gravity that was an extension of the definition for isolated horizons. It is given by
+              κB = −Bna lb ∇b la − Cla nb ∇b na ,                                      (12)
+Dynamical surface gravity.                                                                  7
+
+where the normal to horizon is given by τ a = Bla +Cna . B and C are just scalar fields on
+the dynamical horizon that encode how the choice of a horizon normal (unique up to a
+factor) can be expressed in terms of the chosen la and na . Clearly in the isolated horizon
+case, where B = 1 and C = 0, it reduces to the original isolated horizon definition. In
+addition, it is clear in this form that this definition incorporates information about the
+inaffinity of la , through the term na lb ∇b la , and the inaffinity of na , through the term
+la nb ∇b na .
+      It is also possible to define a surface gravity without appealing to the inaffinity of
+a null vector. This is usually done by identifying the surface gravity in a dynamical law
+for the black hole evolution. An analogue of surface gravity, called trapping gravity, was
+presented by Hayward in [4]. In the notation used here it is given by
+                         1p a
+                   κH =     −n ∇a θl .                                                    (13)
+                         2
+On a marginally outer trapped surface, where θl = 0 this definition is independent of
+the parametrization of la since under a reparameterization of la by λ → λ′ , we have
+        dλ a          dλ′ a                                           dλ
+la → dλ          a                             a
+          ′ l , n → dλ n (since we require n la = −1) and θl → dλ′ θl .
+
+      Another definition of surface gravity for a trapping horizon was proposed by
+Mukohyama and Hayward [19]
+                                       √
+                                                                         
+                             1                                   θn a
+                               Z
+                                   2        a          a
+                   κM = −         d θ h n ∇a θl + l ∇a θn + l ∇a Λ .                      (14)
+                           16πr S                                Λ
+Their original definition was also based on affinely parameterized null vectors. However,
+the original definition also included a factor of la na which will not be −1 if both
+null vectors are affinely parameterized. Here we have introduced a factor 1/Λ that
+would make a general la affinely parameterized. A full derivation of this result appears
+in Appendix A. Since this formula involves an integral over the marginally trapped
+surface it is manifestly quasi-local. Once again this definition is independent of the
+parametrization of la , provided the normalization na la = −1 is preserved.
+     For a dynamical horizon [5], the effective surface gravity is identified from an area
+balance law [5] and takes the value
+                1 df (r))
+                                                                                  (15)
+               2r dr
+where r is the area defining radial coordinate and f (r) is any function of r. Once
+again there is freedom in the normalization that can usually be fixed by appeal to the
+stationary Kerr solution.
+
+3. Surface Gravity in dynamic, spherically symmetric spacetimes
+
+To see how these various definitions compare to one another we turn now to a specific
+example of a dynamical, spherically symmetric metric. A general, dynamic, spherically
+Dynamical surface gravity.                                                                           8
+
+symmetric metric can be written in advanced Eddington-Finkelstein coordinates∗ as
+                ds2 = −A2 (v, r)△(v, r)dv 2 + 2A(v, r)dvdr + r 2 dΩ2 ,                            (16)
+The two free functions A(v, r) and △(v, r) could in principle be determined by solving
+the full Einstein equations, although we will see here that this is not necessary for
+our purposes. The function △(v, r) can be written in terms of the Misner-Sharp mass
+function m(v, r) as
+                               2m(v, r)
+                △(v, r) = 1 −           .                                               (17)
+                                   r
+The function A(v, r) will also play an important role in what follows and should not
+be confused with the area of the horizon. Note that in, general, the function A(v, r)
+cannot be gauged away and a general spherically symmetric spacetime must contain
+two free functions [11]. In certain situations, such as the Schwarzschild and Reissner-
+Nordström solutions, one can consistently choose A = 1. However, in other situations,
+such as the Einstein-Skyrme system studied in [20], this function cannot be set equal to
+one everywhere and its value on the horizon will affect the value of the surface gravity
+computed in terms of a Killing horizon.
+      In the static case where A and △ are only functions of r there is a Killing vector
+that is timelike for △ > 0. Suitably normalized this Killing vector has components
+(1, 0, 0, 0) and thus on the Killing horizon, choosing the positive root, equation (4) gives
+                       A(rH )
+                κ=            (1 − 2m′ (rH )),                                                    (18)
+                      4m(rH )
+This we will take as the surface gravity of a spherically symmetric Killing horizon. We
+can now compare how this result for the Killing horizon compares with the various static
+limits of the proposed dynamical surface gravities in spherically symmetric spacetimes.
+     The first definition for a dynamical, non-Killing horizon, surface gravity proposed
+by Hayward in [4], is independent of the chosen normalization on the horizon.
+                     1p a
+               κH =      −n ∇a θl .                                                 (19)
+                     2
+For the spherically symmetric metric we have
+                          A△ − A′ r△ − Ar 2 △′
+                na ∇a θl =                      .                                   (20)
+                                    Ar 3
+where m′ = ∂r m. Therefore, on the horizon △ = 0, we have
+                      1 √
+              κH =          1 − 2m′ .                                               (21)
+                     4m
+                                                                    √
+This will reduce to the static result in situations where A(r) = 1/ 1 − 2m′ . However,
+as already noted in [13] this does not give the correct
+                                                     p answer in the Reissner-Nordström
+                          ′      2       2    2
+case where A = 1 and m = Q /2(2M − Q + 2M M 2 − Q2 ).
+∗ These coordinates will be well-defined on the future horizon (but not the past horizon) and are
+therefore better suited to examining functions defined there than Schwarzschild coordinates. Painlevé-
+Gullstrand coordinates served a similar purpose in [11].
+Dynamical surface gravity.                                                                9
+
+    Fodor et al.’s value [13] for the surface gravity κF is simple to evaluate in Eddington-
+Finkelstein coordinates. The correctly normalized na and la are given by
+                nµ = (0, −1, 0, 0) ,                                                   (22)
+                                  
+                 µ       A△
+                l = 1,       , 0, 0 .                                                  (23)
+                          2
+Therefore, we obtain
+                            Ȧr 2 + AA′ r(r − 2m) + A2 (m − m′ r)
+                −na lb ∇b la =                                    .                  (24)
+                                              Ar 2
+On the horizon this becomes
+                      A              Ȧ
+               κF =     (1 − 2m′ ) + .                                               (25)
+                     4m              A
+This definition will always give the Killing horizon value in static spacetimes, since in
+static cases Ȧ = 0.
+
+    The Kodama vector in a spherically symmetric spacetime has the following form in
+Eddington-Finkelstein coordinates
+                                
+              µ       1
+             K =        , 0, 0, 0 .                                             (26)
+                     A
+In spherical symmetry we have
+                                                 △A′ + A△′ △(△A′ + A△′ )
+                                                                                 
+                 ab   c
+                g K (∇c Ka − ∇a Kc ) =                    ,              , 0, 0        (27)
+                                                    A2         A
+on the horizon this becomes
+              1 △′
+                             
+                     , 0, 0, 0 = κKo K µ                                               (28)
+              2 A
+and thus we find
+                      1
+                κKo =   (1 − 2m′ ) ,                                                   (29)
+                     4m
+which will reduce to the static, Killing horizon case when A = 1.
+
+     The value for the surface gravity κM given by Mukohyama and Hayward in [19] has
+the form
+                                                    
+                       r a            a       θn a
+              κM = −      l ∇a θn + n ∇a θl + l ∇a Λ .                          (30)
+                       4                      Λ
+Since we have
+                              2Ȧr 2 + A2 △ + A′ Ar△
+                la ∇a θn =                           ,                                 (31)
+                                        A2 r 3
+this gives
+                                               !
+                                      ′
+                          m   1 − 2m   Ȧ              rθn a
+                κM =               2
+                                     − 2           −      l ∇a Λ,                      (32)
+                          2     4m    A m              4Λ
+Dynamical surface gravity.                                                           10
+
+Thus the value of the surface gravity depends on knowing the factor Λ that makes
+la affinely parameterized. This will be discussed further in Appendix A. In static
+situations, we have Λ = kA2 △, where k is a constant of integration, and thus
+                     1
+               κM =     (1 − 2m′ ).                                           (33)
+                    4M
+
+      The surface gravity for a slowly evolving horizon, proposed by Booth and Fairhurst
+in [18], does not fix the overall normalization of the surface gravity. The value of
+la nb ∇b na depends on the choice of normalization for la and for affinely parameterized
+na in spherical symmetry (equation (22) above) we naturally find
+              la nb ∇b na = 0.                                                     (34)
+                                                            ′
+However, for general parameterizations, transforming via lµ = Ω(x)lµ we find
+               ′               na ∇a Ω  1
+              la nb ∇b na =        2
+                                       + la nb ∇b na .                          (35)
+                                 Ω      Ω
+Thus, the surface gravity for a slowly evolving horizon depends on the choice of
+normalization and will only coincide with that given by the isolated horizon formula
+κ = −na lb ∇b la if na is affinely parameterised or Ω′ = 0.
+
+     In [11] it was shown how the use of the Misner-Sharp mass can lead to a preferred
+normalization for the surface gravity in spherically symmetric spacetimes. As shown in
+[11] the surface defined by
+              r = 2m(v, r),                                                        (36)
+defines a marginally trapped surface at r = rH and in many cases is also a dynamical
+horizon or trapping horizon. Differentiating this equation with respect to any parameter
+ξ, labeling spherically symmetric foliations of the horizon, gives
+               dr      ∂m dv    ∂m dr
+                  =2         +2         .                                           (37)
+               dξ      ∂v dξ     ∂r dξ
+In we take ξ = v and rearrange using the formula for the area A = 4πr 2 this becomes
+            ∂m       1 (1 − 2m′ ) dA
+                 =                   ,                                            (38)
+             ∂v     8π     2r     dv
+where m′ = ∂m
+           ∂r
+              . In order for this to take the same form as the first law of black hole
+                       1
+thermodynamics dm = 8π   κ dA it seems natural to take
+                     (1 − 2m′ )
+              κN =              .                                                  (39)
+                        2rH
+This gives a natural normalization of the surface gravity in terms of the Misner-Sharp
+mass function, which we can interpret as the mass of the black hole contained within
+the radius rH . In the static case, this does not reduce to the usual Killing horizon
+definition, although this derivation automatically assumes a dynamical evolution since,
+Dynamical surface gravity.                                                                 11
+
+in the static case, the differentiation with respect to v is not valid. It is also interesting
+to note that direct differentiation of (36) gives
+               dm      1 1 dA
+                   =             ,                                                    (40)
+               dv     8π 2rH dv
+suggesting a surface gravity identical to the one mentioned in [5] for a dynamical horizon
+in spherical symmetry.
+
+4. Conclusion
+
+We have seen a variety of ways of defining surface gravity for dynamical situations.
+These seem to fall into three different categories. Firstly there is the very simple form
+1/2rH in spherical symmetry [5]. The second category is of the form κ = (1 − 2m′ )/2m
+(29), (33) and (39), while the third category is of the form A(1 − 2m′ )/4m + Ȧ/A (25).
+Only the third form gives the correct Killing horizon behaviour in the static limit for
+spherically symmetric spacetimes, although all forms give the correct version for the
+Schwarzschild spacetime. However, the first and second categories seem to be much
+more closely related to full dynamical evolution of the horizon. In situations where one
+can set A = 1 everywhere, such as the Vaidya solution, the second and third categories
+will coincide.
+     It thus seems that the issue of the surface gravity is far from clear for general
+black holes. What role one wants the surface gravity to play depends on the context.
+In terms of the classical first law of black hole mechanics there is a close connection
+between the definition of the surface gravity and a choice of quasi-local mass. We have
+noted that using this approach there is a tension between the surface gravity defined in
+terms of a Killing horizon and the static limit of the surface gravity defined in terms of
+the Misner-Sharp quasi-local mass in a spherically symmetric spacetime. Local horizons
+have many simple properties in spherically symmetric spacetimes. In spherical symmetry
+the Misner-Sharp mass is equivalent to the Hawking mass and forms a ‘preferred’ quasi-
+local mass. In rotating spacetimes, such as the Kerr solution, the Hawking mass may
+not give a useful definition of the mass associated with the horizon [5] and thus the
+situation is not as clear.
+     Furthermore, in spherical symmetry it is easy to show that the Hawking-Gibbons
+method for calculating the temperature of a static black hole (by eliminating the conical
+singularity in the Euclidean sector) gives a finite temperature for the Hawking radiation
+corresponding to the Killing horizon surface gravity (18). However, this version does
+not correspond to the versions derived from a fully dynamical first law of black hole
+evolution. Whether this apparent ‘tension’ between the two formulations has any deeper
+significance for understanding the fully dynamical evolution of black holes remains to
+be seen.
+Dynamical surface gravity.                                                               12
+
+5. Acknowledgments
+
+This work was supported by the ISAT fund of the Royal Society of New Zealand
+and by the International Cooperation Program of the Korea Science and Engineering
+Foundation. It is a pleasure to thank Hiromi Saida and Gungwon Kang for helpful
+discussions and comments.
+
+Appendix A. Double null foliations of the Schwarzschild metric
+
+In [19] Mukohyama and Hayward define a double null foliation based on two foliations
+of null hypersurfaces labeled by ξ + and ξ − . In order to compare their notation with the
+notation used here, in the following all tensors from Mukohyama and Hayward will have
+a + or a − attached to them. We will also use abstract index notation for consistency,
+although it is not used by Mukohyama and Hayward. They define one-forms normal to
+the null hypersurfaces by n± = −dξ ± . In abstract index notation this corresponds to
+              n+
+               a ≡ −∇a ξ
+                         +
+                                                                                      (A.1)
+and
+              n−        −
+               a ≡ −∇a ξ .                                                            (A.2)
+Since d2 ξ ± = 0, both of these one-forms are dual to affinely parameterized tangent
+vectors of null geodesics. In terms of abstract index notation we have
+              ∇a n±       ±
+                  b − ∇b na = 0,                                                      (A.3)
+contracting this with g −1(n± ) we have
+              n±a ∇a n±          ±
+                                   
+                        b − ∇b na         =0
+                               1     ±a ±
+              ⇒ n±a ∇a n± b − ∇b (n na ) = 0
+                               2
+              ⇒ n±a ∇a n± b               = 0,                                        (A.4)
+where the last two lines follow from the Leibniz rule, metric compatibility of the covariant
+derivative and the fact that n±a n± a = 0 everywhere. However, in general we can choose
+both null vectors to be non-affinely parameterized by making the choices
+              na = Γn+
+                     a                                                                (A.5)
+and
+              la = Λn−
+                     a,                                                               (A.6)
+where 1/Γ is a spacetime dependent factor that makes na affinely parameterized and
+1/Λ is a spacetime dependent factor that makes la affinely parameterized. In particular,
+in advanced Eddington-Finkelstein coordinates (v, r, θ, φ), the ingoing null geodesics are
+naturally affinely parameterized (Γ = 1) and we can equate
+              na = n+
+                    a                                                                 (A.7)
+Dynamical surface gravity.                                                           13
+
+and
+              la = Λn−
+                     a,                                                           (A.8)
+The one-forms have components
+              nµ = (−1, 0, 0, 0),                                                 (A.9)
+                     A2 △
+                                    
+              lµ = −        , A, 0, 0 .                                          (A.10)
+                        2
+The corresponding vector components are
+                                
+               µ         1
+             n = 0, − , 0, 0 ,                                                   (A.11)
+                        A
+                                
+              µ       A△
+             l = 1,        , 0, 0 .                                              (A.12)
+                       2
+In this form na is affinely parameterized while la is not and the conventional
+normalization has been chosen so that la na = −1.
+
+Returning to the general case, we can choose the cross-normalization for la and na such
+that la na = −1. Since Mukohyama and Hayward have g −1 (n+ , n− ) = −ef we see that
+                     1
+              ef =     .                                                         (A.13)
+                    ΛΓ
+Now Mukohyama and Hayward define two null normal vectors by l± = e−f g −1 (n∓ ) (note
+the switch as ± becomes ∓.) In our notation this becomes
+               a
+              l+ = ΛΓg ab n−     a
+                           b = Γl ,                                              (A.14)
+               a
+              l− = ΛΓg ab n+     a
+                           b = Λn .                                              (A.15)
+
+The expansions of l± are defined by θ± = ∗L± ∗ 1 where L± is the Lie derivative with
+respect to l± and ∗ is the Hodge dual operation associated with the projection of the
+metric onto a two-sphere to which both l+ and l− are normal. Using the anti-symmetric
+area two-form, or Levi-Civita tensor for the two-surface, ǫab this can be written
+                    1
+              θ± = ǫab L± ǫab = 0.                                                (A.16)
+                    2
+Thus we have
+                    1
+              θ− = ǫab L− ǫab
+                    2
+                    ǫab c                     c           c
+                                                            
+                 =        l− ∇c ǫab + ǫcb ∇a l− + ǫac ∇b l−
+                     2
+                    ǫab
+                 =      (Λnc ∇c ǫab + ǫcb ∇a (Λnc ) + ǫac ∇b (Λnc ))
+                     2
+                    ǫab
+                 =      (Λnc ∇c ǫab + ǫcb Λ∇a nc + ǫac Λ∇b nc )
+                     2
+                      ǫab
+                 = Λ Ln ǫab ,                                                     (A.17)
+                       2
+Dynamical surface gravity.                                                             14
+
+where terms such as ǫcb nc ∇a Λ are zero because nc is normal to the surface ǫcb nc = 0.
+Similarly we find θ+ = Γ2 ǫab Ll ǫab . The area two-form can be given in terms of the
+Newman-Penrose null tetrad, as in Ashtekar et al. [16], as
+              ǫab = i (ma m̄b − m̄a mb ) .                                         (A.18)
+We can use this to calculate the expansions by
+               1 ab            1
+                 ǫ Ln ǫab = − (ma m̄b − m̄a mb )Ln (ma m̄b − m̄a mb ).        (A.19)
+               2               2
+Performing the necessary permutations, and using the fact that the expansion as given
+in (5) is equivalent to (ma m̄b + m̄a mb )∇a lb we find
+                     Λ
+               θ− = ǫab Ln ǫab = Λ(ma m̄b + m̄a mb )∇a nb = Λθn               (A.20)
+                      2
+and similarly
+                     Γ
+               θ+ = ǫab Ll ǫab = Γ(ma m̄b + m̄a mb )∇a lb = Γθl .             (A.21)
+                     2
+This gives
+              ef (L+ θ− + L− θ+ + θ+ θ− ) = la ∇a θn + na ∇a θl
+                                                 θn         θl
+                                               + la ∇a Λ + na ∇a Γ + θn θl .     (A.22)
+                                                 Λ           Γ
+The surface gravity of Mukohyama and Hayward, for a spherically symmetric trapping
+horizon is
+                          1
+                              Z      √
+              κM = −             d2 θ hef (L+ θ− + L− θ+ + θ+ θ− )
+                        16πr S
+                                                        
+                        r a             a        θn a
+                  = −       l ∇a θn + n ∇a θl + l ∇a Λ .                         (A.23)
+                        4                        Λ
+In order to use this definition we need to know what the factor Λ is that makes la
+affinely parameterized. To do this we need to pick a coordinate system that is regular
+on the horizon. It is difficult, at least in advanced Eddington-Finkelstein coordinates,
+to calculate what the affine parameter for the outgoing null vectors should be. By
+examining the way the surface gravity changes under a reparameterization of la we see
+that for a non-affine parameterization we have
+              la ∇a Λ = −Λna lb ∇b la .                                            (A.24)
+Using the non-affine parameterization given above, (22) and (23), this becomes
+                                                            !
+                                                          ′
+                        A△               Ȧ            A△
+               ∂v (Λ) +      ∂r (Λ) = Λ     + A′ △ +                                (A.25)
+                          2              A              2
+or
+                           A△            Ȧ            A△′
+               ∂v (lnΛ) +      ∂r (lnΛ) = + A′ △ +                                  (A.26)
+                            2            A              2
+The solution of this first order partial differential equation will depend on the specific
+situation. For static solutions we have Ȧ = 0 = ∂v (lnΛ) and the solution to the ordinary
+differential equation is just
+              Λ = kA2 △,                                                           (A.27)
+Dynamical surface gravity.                                                              15
+
+where k is a constant of integration. Therefore, for the static case we have la ∇a θn = 0,
+na ∇a θl = −△′ /r, θn = −2/(Ar) and
+                       1
+              κM =       (1 − 2m′ ),                                                (A.28)
+                     4M
+which we see will match the Killing horizon value for A = 1. In particular, in the static
+Schwarzschild solution Λ = △ and we have, at the horizon △ = 0,
+                           2M
+              na ∇a θl = − 3                                                        (A.29)
+                            r
+               la ∇a θn = 0                                                         (A.30)
+               θn a         2M
+                 l ∇a Λ = − 3                                                       (A.31)
+               Λ             r
+                    M      1
+               κM = 2 =        .                                                    (A.32)
+                    r     4M
+
+In Kruskal-Szekeres coordinates (T, R, θ, φ) we can easily generate a double null foliation
+and thus find affinely parameterized null normals. The Schwarzschild solution takes the
+form
+                        32M 3 −r/2M
+              ds2 = −        e      (−dT 2 + dR2 ) + r 2 dΩ2 .                      (A.33)
+                          r
+This can be written in double null coordinates by identifying
+               v = T + R,                                                           (A.34)
+
+               u = T − R.                                                           (A.35)
+
+In double null coordinates (u, v, θ, φ) the Schwarzschild metric takes the form
+                       32M 3 −r/2M
+               ds2 = −       e        dudv + r 2 dΩ2 .                              (A.36)
+                         r
+The radial null vectors are
+                        r                 
+              lµ = 0,        e r/2M
+                                    , 0, 0   ,                                      (A.37)
+                       16M 3
+               lµ = (−1, 0, 0, 0),                                                  (A.38)
+
+and
+                           r    r/2M
+                                                
+               nµ =             e     , 0, 0, 0   ,                                 (A.39)
+                          16M 3
+               nµ = (0, −1, 0, 0).                                                  (A.40)
+
+For these choices we have la la = 0 = na na and
+                          r
+              la na = −       er/2M .                                       (A.41)
+                        16M 3
+Thus, if we take la to be l+ and na to be n− , in terms of Mukohyama and Hayward’s
+notation, we have
+                      r
+              ef =        er/2M ,                                           (A.42)
+                    16M 3
+Dynamical surface gravity.                                                                      16
+
+                      er/2M ∂v r
+               θ+ =              ,                                                         (A.43)
+                        8M 3
+                      er/2M ∂u r
+               θ− =              ,                                                         (A.44)
+                        8M 3
+                              er/2M [∂v r∂u r − r∂u ∂v r]
+               ef L− θ+ = −                               ,                                (A.45)
+                                        8M 3 r
+                              er/2M [∂v r∂u r − r∂u ∂v r]
+               ef L+ θ− = −                               .                                (A.46)
+                                        8M 3 r
+The surface gravity for the horizon is now simply given by
+                      r
+              κM = − ef (L− θ+ + L+ θ− ) .                                         (A.47)
+                      4
+Since we can write the double null coordinates u, v in terms of Schwarzschild coordinates
+r, t as
+                  r
+                      r
+              v=          − 1e(r+t)/4M ,                                           (A.48)
+                     2M
+                    r
+                        r
+              u=−          − 1e(r−t)/4M ,                                          (A.49)
+                       2M
+we have
+                          r  r/2M
+              uv = 1 −        e                                                            (A.50)
+                         2M
+and thus, at the horizon r = 2M
+               ∂u ∂v r = −2M.                                                              (A.51)
+Putting it all together with θ+ = 0 ⇒ ∂v r = 0 gives
+                      1
+               κM =      .                                            (A.52)
+                     4M
+This value agrees with the value given by the Killing horizon method for the
+Schwarzschild solution.
+
+Appendix B. References
+
+  [1] P. Hajicek, “On the origin of Hawking radiation,” Phys. Rev. D 36 (1987) 1065.
+  [2] M. K. Parikh and F. Wilczek, Phys. Rev. Lett. 85 (2000) 5042 [arXiv:hep-th/9907001].
+  [3] M. Visser, Int. J. Mod. Phys. D 12 (2003) 649 [arXiv:hep-th/0106111].
+  [4] S. A. Hayward, “General laws of black hole dynamics,” Phys. Rev. D 49 (1994) 6467 [arXiv:gr-
+         qc/9303006].
+  [5] A. Ashtekar and B. Krishnan, “Isolated and dynamical horizons and their applications,” Living
+         Rev. Rel. 7 (2004) 10 [arXiv:gr-qc/0407042].
+  [6] A. B. Nielsen, “Black holes as local horizons,” arxiv:0711.0313 [gr-qc].
+  [7] R. M. Wald, General Relativity, (The University of Chicago Press, Chicago, 1984)
+  [8] J. M. Bardeen, B. Carter and S. W. Hawking, Commun. Math. Phys. 31 (1973) 161.
+  [9] P. T. Chrusciel, Helv. Phys. Acta 69 (1996) 529 [arXiv:gr-qc/9610010].
+ [10] D. M. Eardley, Phys. Rev. D 57 (1998) 2299 [arXiv:gr-qc/9703027].
+Dynamical surface gravity.                                                                           17
+
+[11] A. B. Nielsen and M. Visser, “Production and decay of evolving horizons,” Class. Quant. Grav.
+        23 (2006) 4637 [arXiv:gr-qc/0510083].
+[12] C. Barcelo, S. Liberati and M. Visser, Living Rev. Rel. 8 (2005) 12 [arXiv:gr-qc/0505065].
+[13] G. Fodor, K. Nakamura, Y. Oshiro and A. Tomimatsu, “Surface gravity in dynamical spherically
+        symmetric spacetimes,” Phys. Rev. D 54, 3882 (1996) [arXiv:gr-qc/9603034].
+[14] S. A. Hayward, “Unified first law of black-hole dynamics and relativistic thermodynamics,” Class.
+        Quant. Grav. 15 (1998) 3147 [arXiv:gr-qc/9710089].
+[15] H. Kodama, “Conserved Energy Flux For The Spherically Symmetric System And The Back
+        Reaction Problem In The Black Hole Evaporation,” Prog. Theor. Phys. 63, 1217 (1980).
+[16] A. Ashtekar, C. Beetle and S. Fairhurst, “Mechanics of Isolated Horizons,” Class. Quant. Grav.
+        17, 253 (2000) [arXiv:gr-qc/9907068].
+[17] A. Ashtekar, S. Fairhurst and B. Krishnan, “Isolated horizons: Hamiltonian evolution and the
+        first law,” Phys. Rev. D 62 (2000) 104025 [arXiv:gr-qc/0005083].
+[18] I. Booth and S. Fairhurst, “The first law for slowly evolving horizons,” Phys. Rev. Lett. 92 (2004)
+        011102 [arXiv:gr-qc/0307087].
+[19] S. Mukohyama and S. A. Hayward, “Quasi-local first law of black-hole dynamics,” Class. Quant.
+        Grav. 17 (2000) 2153 [arXiv:gr-qc/9905085].
+[20] A. B. Nielsen, “Skyrme black holes in the isolated horizons formalism,” Phys. Rev. D 74 (2006)
+        044038 [arXiv:gr-qc/0603127].
+

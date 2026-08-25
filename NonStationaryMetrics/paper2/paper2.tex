@@ -1247,11 +1247,29 @@ $K_{\rm tan}$ altogether. Hence
 \end{equation}
 with $\Phi$ the swept azimuth. Paper~I establishes $\Phi<\pi$ for the
 spherically symmetric rail, so in that sector---and in the non-rotating frozen
-limit used here---Propositions~\ref{prop:noconj}--\ref{prop:hjb-frozen} hold
-without the equatorial restriction, in full three dimensions. What genuinely
-requires the restriction is the \emph{rotating} case $a\neq0$, where the rotation
-group is broken to $U(1)$, no symmetry generates the out-of-plane field, and
-$K_{\rm tan}$ must be confronted directly. We do not treat it.
+limit used here---Proposition~\ref{prop:noconj} holds without the equatorial
+restriction: there is no conjugate point in \emph{any} direction, in-plane or
+out-of-plane.
+
+It must be said plainly that this does \emph{not} lift
+Propositions~\ref{prop:globalmin} and~\ref{prop:hjb-frozen}, and for two
+independent reasons. Absence of conjugate points gives local minimality; the global
+statement came from Cartan--Hadamard on the universal cover, which requires
+non-positive sectional curvature in \emph{every} plane, and $K_{\rm tan}>0$ at the
+circular-orbit radius denies exactly that. More decisively, the homotopy classes
+themselves do not survive the lift. The equatorial optical surface is
+$(2M,\infty)\times S^1$, with $\pi_1=\mathbb{Z}$, and it is that annular topology
+which produces the winding classes the proposition indexes; the full
+three-dimensional optical manifold is $(2M,\infty)\times S^2$, which is simply
+connected. In three dimensions there is a single homotopy class, so ``one minimiser
+per class'' would assert a unique minimiser outright---contradicted by the Maxwell
+set identified above. The global statements are therefore equatorial by nature, not
+merely by present limitation.
+
+What requires the restriction for a further reason is the \emph{rotating} case
+$a\neq0$, where the rotation group is broken to $U(1)$, no symmetry generates the
+out-of-plane field, and $K_{\rm tan}$ must be confronted directly. We do not treat
+it.
 Equation~\eqref{eq:outofplane-J} is verified in
 \texttt{verification/verify\_outofplane\_jacobi.wls}.
 

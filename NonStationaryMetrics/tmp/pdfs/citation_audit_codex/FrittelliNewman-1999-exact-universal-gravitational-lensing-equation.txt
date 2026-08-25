@@ -1,0 +1,490 @@
+                                                                                                   Aug.27, 1998
+
+
+
+
+arXiv:gr-qc/9810017v1 5 Oct 1998
+                                      An Exact Universal Gravitational Lensing
+                                                    Equation
+
+                                               Simonetta Frittellia,b and Ezra T. Newmanb
+                                                            a
+                                                              Dept. of Physics,
+                                                  Duquesne University, Pgh., PA 15282
+                                                   b
+                                                     Dept. of Physics and Astronomy,
+                                                University of Pittsburgh, Pgh., PA 15260
+
+
+                                   Abstract
+                                       We first define what we mean by gravitational lensing equations in a
+                                   general space-time. A set of exact relations are then derived that can be used
+                                   as the gravitational lens equations in all physical situations. The caveat is
+                                   that into these equations there must be inserted a function, a two-parameter
+                                   family of solutions to the eikonal equation, not easily obtained, that codes
+                                   all the relevant (conformal) space-time information for this lens equation
+                                   construction. Knowledge of this two-parameter family of solutions replaces
+                                   knowledge of the solutions to the null geodesic equations.
+                                       The formalism is then applied to the Schwarzschild lensing problem.
+
+
+
+
+                                                                         1
+I.   Introduction
+    The purpose of this note is to first define, on an arbitrary Lorentzian
+space-time, what we mean by exact gravitational lensing equations and then
+derive a version of these exact equations (which we believe should be of uni-
+versal applicability). Our definition reduces to the more usual lens equations1
+when we consider approximations; namely small observation angle and per-
+turbation calculations off either flat or Robertson-Walker space-times. The
+basic idea will be to consider the one parameter family of past light-cones
+with apex on a time-like world-line that should be considered as the history
+of an observer; i.e., it defines what an observer can “see” and when the ob-
+server can see it. The gravitational lens equations are to be, loosely stated,
+the space-time positions of potential light sources, given in terms of the po-
+sition and time of the observation and the direction of observation (direction
+on the observers past tangent space light-cone).
+    In Sec.II we will make precise what we mean by the “lens equation”
+and in Sec.III, using techniques obtained from V.I. Arnold’s2,3,4,5 theory of
+Lagrangian and Legendre maps, we derive a set of general relations, “lens
+equations”, that with appropriate linearization reduce to the standard ap-
+proximate lens equation.1
+    A caveat should be expressed here. First of all in any form of lensing
+equations one must be looking at the past null geodesics and one thus must
+have the metric tensor (needed only up to a conformal factor since only null
+geodesics are relevant) in order to calculate, from the geodesic equations, the
+null geodesics themselves. Though in our version, this information clearly
+must still be there, its specific appearance is circumvented by the assumed
+knowledge of a two-parameter family of solutions, u = Z(xa , ζ, ζ), to the
+eikonal equation:
+
+                             g ab (xa )∂a Z∂b Z = 0.                        (1)
+The two parameters, (ζ, ζ), are the complex stereographic coordinates on the
+sphere. The (null) gradient of Z(xa , ζ, ζ) at xa , namely pa = ∂a Z(xa , ζ, ζ),
+sweeps out the sphere of null directions as (ζ, ζ) ranges over the sphere.
+The function Z(xa , ζ, ζ), which encodes all the conformal information of the
+space-time, is not easily obtained. It can be found exactly in spaces with
+sufficient symmetries, e.g., all conformally flat spaces, (Robertson-Walker),
+
+                                       2
+Schwarzschild, Kerr, etc., but in most applications it will have to be found
+by perturbation methods. In any case, our lensing equations will be given
+explicitly and exactly in terms of Z(xa , ζ, ζ) though when applied to physical
+situations, approximations will have to be made.
+    Our starting point will be to assume that we have globally (perhaps given
+in different patches) the level surfaces of the function, u = Z(xa , ζ, ζ).
+
+Remark 1 For simplicity of discussion, we have assumed that the solutions
+to the eikonal equation will have been given by a function of the local co-
+ordinates, xa . Actually there might be singular regions (caustics) or self-
+intersections, where this is not possible; the surfaces could then be given in
+parametric form. We will nevertheless use the language of the simple func-
+tion, Z(xa , ζ, ζ).
+
+
+II.   Defining the Lens Equation
+    We first assume that our space-time allows the null geodesics to be in-
+finitely extendable into both the future and the past. In any region local
+coordinates will exist such that the world-line, L, of an observer can be given
+parametrically by
+
+                                    xa = X0a (τ )                           (2)
+and the one parameter family of light-cones,C(X0a (τ )), by
+
+                   xa = X a (X0a (τ ), η, η̄, s) ≡ X a (τ, η, η̄, s)        (3)
+where (η, η̄) label the sphere’s worth of null directions at xa = X0a (τ ) and s
+is an affine parameter along each of the geodesics labeled by (τ, η, η̄). La =
+∂s X a 6= 0 is the (null) tangent vector to the geodesics. {Derivatives of X a
+with respect to the other parameters yield connecting vectors. They will
+not directly interest us here though they often are used in the study of the
+caustics of the light-cones, C(X0a (τ )). We will approach the caustic issue
+from a slightly different point of view.} We further assume that the local
+coordinates xa are such that three of them, xi , are space-like and one, x0 , is
+time-like. From this and from the non-vanishing null character of La , using
+the implicit function theorem, one (at least one) of the space-like equations
+
+                                          3
+(3) can be solved for s. Let us call that special coordinate x∗ and the other
+two space-like coordinates, xα . We then have that
+
+                                 s = S(x∗ , τ, η, η̄)                          (4)
+and the remaining three Eqs.(3) become, when s is replaced by S(x∗ , τ, η, η̄)
+
+
+                                                     b0 (x∗ , τ, η, η̄),
+              x0 = X 0 (τ, η, η̄, S(x∗ , τ, η, η̄) ≡ X                         (5)
+                                                      bα (x∗ , τ, η, η̄).
+              xα = X α (τ, η, η̄, S(x∗ , τ, η, η̄)) ≡ X                        (6)
+
+    If we think of a light source at the spatial position (x∗ , xα ) emitting light
+at time x0 , then Eq.(5) relates the time of emission x0 at x∗ , with the time
+of arrival τ and arrival direction, (η, η̄). We will refer to Eq.(5) as the time
+of arrival relation or function.
+    The lens equation is defined by Eq.(6); it expresses two of the spatial
+coordinates, xα , in terms of the arrival time at the observer, τ, the direction
+at the observer, that the observer sees the source and one of the source
+coordinates. Most often in applications the two coordinates xα are identified
+with some angular position coordinates (θ, ϕ) of the source and the x∗ as
+some form of “radial” or “distance from observer coordinate”, say D. In this
+case the lens equation reads
+
+
+                               θ = Θ(D, τ, η, η̄),                             (7)
+                               ϕ = Φ(D, τ, η, η̄).
+
+Much of conventional lensing theory is based on finding approximate versions
+of Eq.(7). An important issue is the inversion of these equations, i.e., finding
+the observation angles in terms of the source position, namely when can one
+rewrite them as
+
+                     (η, η̄) = (N(D, τ, θ, ϕ), N (D, τ, θ, ϕ))                 (8)
+and the multiplicity of these solutions. The condition for caustics on the past
+light-cone at D (the non-invertibility of (7)) is the vanishing of the Jacobian
+of Eq.(7);
+
+
+                                          4
+                                        ∂(θ, ϕ)
+                                  J=             .                         (9)
+                                        ∂(η, η̄)
+We return to this issue in the next Section in a more general context.
+
+
+III.    The Construction of the Past Light-Cone
+    The construction of the light-cones, C(X0a (τ )), Eq.(3) and hence, the time
+of arrival function and the lens equations, Eqs.(5) and (6) was based on
+the integration of the null geodesic equations. In this section we will give
+an alternative construction of Eqs.(5) and (6) based on the solution to the
+eikonal equation.
+    As discussed in the introduction, we assume that we have the two-parameter
+family of solutions, u = Z(xa , ζ, ζ), to the eikonal equation where for each
+value of (ζ, ζ) the level surfaces of Z are null surfaces, i.e., ∂a Z is a null
+covector. Furthermore it is assumed that at each point xc , ∂a Z sweeps out
+the entire null cone at xa as (ζ, ζ) goes thru its range, S 2 .
+
+Remark 2 We repeat and emphasize that the level surfaces of the solu-
+tions to Eq.(1) though referred to as “null or characteristic surfaces” are
+not strictly speaking surfaces; they can have self-intersections and in general
+are only piece-wise smooth. Though Arnold2 refers to them as “big-wave-
+fronts” we will continue to call them null surfaces. The intersection of a big
+wave front with a generic three surface yields a two-dimensional (small) wave
+front.
+
+   The first thing that we want to show is that the light-cones, C(X0a (τ )),
+with apex on an arbitrary curve, L, can be constructed from knowledge of
+the function Z.
+   One sees immediately, from the eikonal equation, that the function
+
+              F (xa , τ, ζ, ζ) ≡ Z(xa , ζ, ζ) − Z(X0a (τ ), ζ, ζ) = 0,    (10)
+
+for each fixed value of τ,defines a two-parameter family of surfaces which all
+pass thru the point X0a (τ ) and which are all null surfaces.
+
+
+
+                                         5
+Remark 3 Note that ∂τ F ≡ −∂τ Z = −V a (τ )∂a Z 6= 0, with V a (τ ) =
+∂τ X0a (τ ). The non-vanishing of ∂τ F is because the scalar product of a non-
+vanishing null vector with a non-vanishing time-like vector is different from
+zero. It now follows from the implicit function theorem that Eq.(10) is the
+implicit version of the function τ = T (xa , ζ, ζ), i.e., we have
+
+               Z(xa , ζ, ζ) − Z(X0a (τ ), ζ, ζ) = 0 ⇔ τ = T (xa , ζ, ζ).              (11)
+
+The function T (xa , ζ, ζ) (or F ) defines, what Arnold3,5 calls a generating
+family and is used to construct, via its envelope, the light-cone for each value
+of τ.
+
+    Specifically the envelope of this family is constructed by demanding that6
+
+                                ∂ζ F (xa , τ, ζ, ζ) = 0,                              (12)
+                                ∂ζ F (xa , τ, ζ, ζ) = 0
+
+where (∂ζ , ∂ζ ) denote the derivatives with respect to the (ζ, ζ). Assuming
+for the moment that (12) could be solved for the (ζ, ζ) = (Γ(xa , τ ), Γ(xa , τ ))
+then when they are substituted into (10 ) one obtains the function
+
+ F̂ (xa , τ ) ≡ F (xa , τ, Γ(xa , τ ), Γ(xa , τ )) = Z(xa , Γ, Γ) − Z(X0a (τ ), Γ, Γ) = 0.
+                                                                                       (13)
+    Once again using the implicit function theorem with Eq.(12), Eq.(13 ),
+can be written as
+
+           F̂ (xa , τ ) ≡ Z(xa , Γ, Γ) − Z(X0a (τ ), Γ, Γ) = 0 ⇔ τ = T̂ (xa )         (14)
+    Using either F̂ (xa , τ ) = 0 or τ = T̂ (xa ) one can easily see that they define
+a one parameter, (τ ), family of null surfaces (and satisfy the eikonal equa-
+tion); this follows from either ∂a F̂ (xa , τ )|τ = ∂a Z(xa , ζ, ζ) or from ∂a T (xa ) ∝
+∂a Z(xa , ζ, ζ). Furthermore, at xa = X0a (τ ), the gradients pa = ∂a Z(X0a (τ ), ζ, ζ)
+sweep out all null directions. [At xa = X0a (τ ), Eq.(12) is identically satis-
+fied and can not be solved for the (ζ, ζ) = (Γ(xa , τ ), Γ(xa , τ )); all values of
+(ζ, ζ) are allowed. See discussion below.] We thus see that F̂ (xa , τ ) = 0 [or
+τ = T̂ (xa )] represents the family of null cones, C(X0a (τ )), with apex along L.
+    The assumption that Eq.(12) could be solved for (ζ, ζ) = (Γ(xa , τ ), Γ(xa , τ ))
+depended on the non-vanishing of the determinant J of the matrix
+
+                                            6
+                                     ∂ζ ∂ζ F ∂ζ ∂ζ F
+                            Jij ≡                                              (15)
+                                     ∂ζ ∂ζ F ∂ζ ∂ζ F
+J does vanish at the singularities of the “surface” F (xa , τ, ζ, ζ), e.g., at the
+apex xa = xa0 , among other regions. In fact the vanishing of J defines3,4 the
+caustics of the family of the cones, C(X0a (τ )).
+    In general, whether or not J = 0, Eqs.(12) and (10) can be solved for
+other variables, namely some set of three (say xI , which might be different
+in different regions) of the four xa , in terms of the fourth one (say x# ), τ and
+the (ζ, ζ), i.e.,
+                               xI = xI (x# , τ, ζ, ζ).                         (16)
+Note the important point that if the coordinates xa are such that three of
+them (say xj = {xα , x∗ }) are space-like and one of them is a time coordinate,
+x0 , then Eq.(16) has a stronger version, namely
+
+
+                                  b0 (x∗ , τ, ζ, ζ),
+                             x0 = X                                            (17)
+                                  bα (x∗ , τ, ζ, ζ)
+                             xα = X                                            (18)
+
+where the two xj and the x∗ are the three space-like coordinates. That
+one can solve for the x0 = X̂ 0 (τ, x∗ , ζ, ζ) follows from the implicit function
+theorem and from the fact that T̂ (xa ) satisfies the eikonal equation and hence
+∂ T̂ (xa )/∂x0 6= 0.
+     Eqs.(17) and (18) are a parametric representation of C(X0a (τ )) via the
+null geodesics that rule it. For the different given values of the (ζ, ζ), they
+are the null geodesics thru xa0 . They are the explicit version of the implicit
+relations of Eqs.(10) and (12).
+     We thus see that Eqs.(10) and (12) are equivalent to the lens and the
+time of arrival equations, (5) and (6) of the previous section.
+
+
+IV.     Examples; Flat-Space and Schwarzschild Space-
+        Time
+   First, as a rather trivial example, using a family of Z(xa , ζ, ζ) in flat space,
+we construct the family C(X0a (τ )). A particularly useful two-parameter family
+
+                                         7
+of solutions to the flat-space eikonal equation are the family of all plane-waves
+with can be represented7 in the following fashion;
+
+                               Z(xa , ζ, ζ) = xa ℓa (ζ, ζ)                        (19)
+where ∂a Z = ℓa (ζ, ζ̄) represents the covariant version of the null vectors ℓa ,
+pointing in all possible directions, with Cartesian components given as
+                            1                                           
+         ℓa (ζ, ζ) = √             (1 + ζζ), (ζ + ζ), i(ζ − ζ), (ζζ − 1) .        (20)
+                         2(1 + ζζ)
+
+Using the null basis set, (for each value of (ζ, ζ)), {ℓa (ζ, ζ), ma (ζ, ζ), ma (ζ, ζ),
+na (ζ, ζ)} where
+
+
+                 ma = (1 + ζζ)∂ζ ℓa ,           ma = (1 + ζζ)∂ζ ℓa ,              (21)
+                  na = ℓa + (1 + ζζ)2 ∂ζ ∂ζ ℓa
+
+   that have all vanishing scalar products except for ℓa na = −ma m̄a = 1.
+   The lens and time of arrival equations, i.e., Eqs.(10) and (12), are then
+
+
+               (xa − X a (τ ))ℓa (ζ, ζ) = 0,                                      (22)
+                   (xa − X a (τ ))ma = 0,                a     a
+                                                      (x − X (τ ))m = 0a
+                                                                                  (23)
+
+where xa = X a (τ ), is an observers world-line, L. Eqs.(22) and (23), using
+(21), are easily solved for a parametric form of the light-cone as
+
+                              xa = X a (τ ) + sℓa (ζ, ζ),                         (24)
+with s a parameter along the null geodesic.. If the observation is to be at an
+angle close to (say) the x∗ = x3 − axis, then s = (x3 − X 3 (τ ))/ℓ3 (ζ, ζ̄) and
+eliminating s from the remaining equations (24), we have for (17) and (18);
+
+                                                      ℓ0 (ζ, ζ)
+                       x0 = X 0 (τ ) + (x3 − X 3 (τ )) 3        ,                 (25)
+                                                      ℓ (ζ, ζ)
+
+
+
+                                           8
+                                                     ℓ1 (ζ, ζ)
+                   x1 = X 1 (τ ) + (x3 − X 3 (τ ))             ,          (26)
+                                                     ℓ3 (ζ, ζ)
+                                                     ℓ2 (ζ, ζ)
+                   x2   = X 2 (τ ) + (x3 − X 3 (τ ))
+                                                     ℓ3 (ζ, ζ)
+the trivial time of arrival function and lens equation. A simple calculation
+of the Jacobian,
+
+                             J = ∂(x1 , x2 )/∂(ζ, ζ)                      (27)
+verifies that it is different from zero and hence in the flat case there are no
+caustics.
+    There are two ways to find the equations equivalent to Eqs.(25) and (26)
+in a Schwarzschild space-time; one could integrate the eikonal equation di-
+rectly, (this is easily doable by separation of variables8 ) or by integration
+of the null geodesic equations with appropriate initial conditions. (Actually
+this integration is most easily performed by the use of Hamilton-Jacobi tech-
+niques via the Eikonal equation.) In a recent work by Tom Kling, the exact
+Schwarzschild lensing equations were found.9 We simply quote these results.
+    Due to the spherical symmetry of the Schwarzschild lensing problem, with
+no loss of generality, one could place the observer at an arbitrary point on a
+fixed radial line - we chose the negative z axis - and place the sources in a
+special plane - the x − z plane. In polar coordinates that means the observer
+is at the angular position θ0 = π, φ0 = 0. (For simplicity of discussion,
+since we working in a fixed plane, we let 0 ≤ θ ≤ 2π, φ = 0, rather than
+0 ≤ θ ≤ π with φ = 0 and π.). The angular position of a source is then
+given by 0 ≤ θ ≤ 2π and φ = 0. Rather then the usual Schwarzschild radial
+coordinate r, it is much more useful to use
+
+                                      1
+                                l =√                                      (28)
+                                       2r
+and the retarded time coordinate, u = t − r − 2Mlog(r − 2M)
+   The time of arrival equation and the lens equation have the form
+
+                              u = u0 − U(l0 , ψ, l)                       (29)
+
+                                         9
+                                        θ = Θ(l0 , ψ, l)                                                 (30)
+where (l0 , u0 ) are the position coordinates of the observer, who is assumed
+to be at the fixed position l0 on the negative z- axis. The coordinates of the
+source are (θ, u, l) and ψ is the observation angle, namely the angle between
+the incoming null geodesic projected into the rest-frame of the observer,
+and the inward directed radial vector at the observer, i.e., in the positive
+z direction. The roles of τ and x∗ , in Eqs.(17) and (18), are played here
+by u0 and l. The exact expressions for U and Θ are given by the integral
+expressions,
+
+                           q                                    q
+            Z l̂ dl′ (1+
+                       1 − sin lψ2 fl (l0 f) (l ) ) Z l dl′ (1− 1 − sin lψ2 fl (l0 )f (l ) )
+                              2      ′2        ′                       2      ′2        ′
+
+
+ u = u0 −              q         0
+                                 2 ψ l′2 f (l′ )
+                                                   +             q       0
+                                                                          2 ψ l′2 f (l′ )
+                                                                                             (31)
+               ′2   ′
+          l0 2l f (l )       sin                          ′2   ′      sin
+                         1 − l2 f (l0 )              l̂ 2l f (l ) 1 − l2 f (l0 )
+                                        0                                             0
+
+
+
+
+                                 Z l̂                                                 Z l
+                   sin ψ                                 dl′     sin ψ                                        dl′
+Θ(l0 , ψ, l) = π− p                   q         2
+                                                              + p                              q                  2
+                 l0 f (l0 )        l0   (1 − sin 2ψ l f (l ) ) l0 f (l0 )
+                                                     ′2   ′
+                                                                                          lˆ         (1 − sin l2ψ fl(l0f)(l ) )
+                                                                                                                      ′2   ′
+
+                                                           l0 f (l0 )                                          0
+                                                                                                        (32)
+where
+
+                                              2M         √
+                             f (l) = 1 −         = (1 − 2 2Ml)                                           (33)
+                                               r
+and ˆl is the positive root of the cubic equation
+                                     √                   √
+                  (sin ψ)2 ˆl2 (1 − 2 2M ˆl) − l02 (1 − 2 2Ml0 ) = 0.                                    (34)
+        If the source is situated on the positive z- axis, i.e., at θ = 0 then
+Eq.(32) becomes
+
+                      Z l̂                                               Z l
+        sin ψ                           dl′                 sin ψ                              dl′
+0 = π− p                   q         2
+                                                      +     p                  q                2
+      l0 f (l0 )        l0   (1 − sin ψ l′2 f (l′ )
+                                       2            )   l 0    f (l0 )    ˆ
+                                                                          l        (1 − sin l2ψ fl(l0f)(l ) )
+                                                                                                        ′2    ′
+
+                                            l0 f (l0 )                                       0
+                                                                                                    (35)
+
+
+                                                    10
+which can be considered as an implicit function, F (ψ, l, l0)) = 0, that defines
+the observation angle ψ when the source and observer are co-linear with the
+origin; ψ is then the observation angle of the Einstein ring.
+    Note that in this case we have cheated slightly in that we have used
+null coordinates for the time of arrival and lens equations rather than the
+spatial/time coordinates of Secs. II and III.
+    Simple approximations9 to Eqs.(31), (32) and (35) yield the standard
+linearized Schwarzschild time of arrival/lens equation and Einstein angle.
+
+
+V.       Discussion
+    In Sec.II, we gave a general definition of an exact time of arrival/lens
+equation that, in principle, is applicable to all physical situations. Its ap-
+plication depended on knowing how to construct the past light-cones from
+an observers world-line or on the construction of a two-parameter family of
+solutions to the eikonal equation.
+    We are studying the possibility of applying these techniques to statistical
+perturbations of the homogeneous, isotropic cosmological models for which
+the eikonal solutions are known.
+    From the point of view of contact with observation, it appears extremely
+unlikely that the exact equations discussed here, and their associated correc-
+tions from the linearized approach to lensing, implicit in the exact equations,
+will have observational consequences in the near future. Nevertheless, the ex-
+traordinarily rapid advances in observational techniques must make one du-
+bious of absolute statements that something is unobservable. To emphasize
+this point we end with a quote from Einstein’s 1936 paper10 on lensing;
+
+     •     “....there is no great chance of observing this phenomenon.”
+
+
+VI.      Acknowledgments
+   The authors thank the NSF for financial support under grant #PHY-
+9722049. We also extend our appreciation to Tom Kling for generously al-
+lowing us to summarize his results on Schwarzschild lensing
+
+
+
+                                      11
+VII.   Bibliography
+
+
+
+
+                      12
+References
+1
+     P. Schneider, J. Ehlers, E.E. Falco, Gravitational Lenses, Springer-Verlag,
+      New YOrk, Berlin, Heidelberg, 1992
+2
+     V.I Arnold, Catastrophe Theory, Springer Verlag, Berlin, Heidelberg, NY,
+      Tokyo, (1986).
+3
+     V. I. Arnold, S.P. Novikov, eds., Dynamical Systems; Vol. IV, , Springer-
+      Verlag, Berlin, Heidelberg, NY, (1990).
+4
+     V.I Arnold, Mathematical Methods of Classical Mechanics, Springer Verlag,
+      Berlin, Heidelberg, NY, Tokyo, (1980).
+5
+     V. I. Arnold, S.M. Gusein-Zade, A. N.. Varchenko, Singularities of Differ-
+      entiable Maps, Vol. I, Birkhauser, Boston, Basel, Stuttgart, 1985.
+6
+     L. Landau and Lifschitz, Classical Mechanics, Pergamon Press, Headington
+      Hill Hall, Oxford, 4, 5 Fitzroy Sq. London, W.1, (1960).
+7
+     Simonetta Frittelli, Ezra T. Newman and Gilberto Silva-Ortigoza, The
+       Eikonal Equation in Flat Space; Null Surfaces and Their Singularities,
+       accepted for publication in JMP.
+8
+     L. Landau and Lifschitz, Classical Theory of Fields, Pergamon Press, Head-
+      ington Hill Hall, Oxford, 4, 5 Fitzroy Sq. London, W.1, (1962).
+9
+     Thomas P. Kling, Ezra T. Newman, Null Surfaces in Spherically Symmetric
+      Space-Times, submitted Phys. Rev.D
+10
+     Einstein, A. Lens-Like Action of a Star by the Deviation of Light in the
+      Gravitational Field, Science, Vol 84, p506, (1936)
+
+
+
+
+                                        13
+

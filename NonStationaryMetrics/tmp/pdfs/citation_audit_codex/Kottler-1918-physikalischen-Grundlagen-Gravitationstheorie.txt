@@ -1,0 +1,2649 @@
+ 1918.                                                    a 14.
+      ANNALEN DER PHYSIK.
+                  VIEBTE FOWE. BAND 56.
+
+
+
+
+     In dem Bestreben nach einer physikalisohen Ableitung
+ der Einsteinschen Gravitationstheorie habe ich in einer
+ kurzen Arbeit l) 1916 die sogenanntn Aquivalenehypothese
+ ZUI  Grundlage zu machen gesucht. Diese Untersuchungen
+muJ3ten infolge liingerer Felddienstleistung unterbrochen werden.
+ Nach meiner Riickkehr aus dem Felde habe ich sie wieder
+aufgenommen und gefunden, daS der dort eingeschlagene Weg
+zu Widerspruchen mit der Erfahrung fuhrt, daB also die
+Aquirelenzhypothese, wic. sie aus der Minkowakischen Kine-
+matik gefolgert werden mu& nicht ohne weiteres zu Recht
+besteht.2)
+     Ich babe daher im folgenden einen anderen Weg ein-
+geschlagen. Ich erha1t.e die Einsteinsche Theorie auf Orund
+einer Abanderung des Newt onschen Trtigheitsgesetzes. Es sind
+hierbei zweierlei Beschrankungen gemacht: Erstens der Be-
+griff der berechtigten Bezugssysteme. Dies bedeutet eine
+gewiese Aufrechterhaltung des Min ko ws kischen Postulats
+der konstanten Lichtgeschwindigkeit, derart, deS die De-
+terminante der Koeffizienten des asa in kartesischen Koordinaten
+                                g=-$
+invariant bleibt. N u r solche Spteme liefern Obereinetimmung
+mit der Newtonschen Niiherungstheorie in den Newtonschen
+Koordinakn.
+    Zweit,ens die Beschriinkung auf stationgren Charakter
+allw Gravitat,ionsfelder.
+
+     1 ) F. Kottler, fZber Einstein8 ~quivalenzhypothese und die
+Gravitation. Ann. d. Phys. 60. p. 956. 1916. - A. Einstein, tZber
+Friedrioh Kottlers Abhandlung u ~ w . ,I. c. 61. p. 639. 1916.
+    2) Vgl. unten 5 38.
+  Ammlen der Pbpik. 11'. Folge. 66.               26
+408                              F. Kottler.
+     Im ganzen hoffe ich, durch diese Arbeit einen Beitrag
+zu der Erkenntnis des Wertes der neuen Einsteinschen
+Theorie zu liefern, durch welche meiner h i c h t nach das
+Problem der Gravitation, das drei Jahrhunderte offen ge-
+lassen hahten, endlich gelijst ist.
+
+
+                                      Inhalt.
+      1. Daa Tragheitsgesetz. - 1 . Das Newtonsche TAghcitsgeset,z. 2. Die
+ifbrigen Newtonsohen h o m e . 3. Die Vcriindedichkeit der Licht-
+geschwindigkeit als Fundamenhlannahme. 4. Die Relativititt des neuen
+TEggheitsgesetzes. 6. Die Uniformitilt der Gravitation. 6. Die Energetik
+der Gravitation.
+      I I . Die Vmazcasetzung. - 7 . Das Tragheitsgesetz hei Minkowski.
+8. Das generalisierte Bogengesetz. 9. Berechtigtc Bezugsspteme. Die
+hithypothese. 10. Die Anziehung infolge der Sehwere.
+      I I I . Das Feld des ruhenden Nassenpunktes. - 11. Das zugrunde-
+gelede Bogengesetz und seine Extremalen. 12. Die Newtonsche erste
+Naherung. K e p l e r s Gcsetze. 13. Die Effekte zweiter Ordnung. Die
+Perihelbewegung. 14. Zahlenwerte.
+      I V . Due allgemeine stutische E‘eld. - 15. Dcr Kewtoneche starre
+Korper und die inkohlrente Massenst.romung. 16. Das zugrundegelegte
+Bogengeeetz und seine Extremalen. 17. Anwendung der Poissonschen
+Gleichung. 18. Ei&hmng der Differentialinvaricmten. 19. Anwendung.
+20. Ableitung dcr Einste.inschen Gleichwlgen atis der Poissonschen
+Gleichung. 21, Beatimmung des Multiplikators au8 d e n Impulsenergio-
+eatz. 22. Diskussion der Einsteinschen Gloichungen.
+       V. Das Innere der Materie. - 33. Das AuBenfeld der hoxogenon
+ruhenden Kugcl. 24. Das Fcld im Innern der homogenen Kugel. 35. Die
+Grenzbedingungen. 26. Diskussion der gewSh1t’cn Lijsung. Einiges aus
+der Theorie der JIateric. 27. Schwere und triige Masse. 28. Die Massen-
+whale. 29. Die Leithypothese g = - c2 f i i r kartesischc Koordinaten.
+       V I . Die kinematischen Sonderfalle des neuen Trcigheitsgesetzes. -
+ 30. Die Insichtransformationeii dcs ds* und die Relat.ivitatstlleorie.
+31.’ Die Relativitat der Beschleunigung Lei N e w t o n im unstarren Korper.
+ 32. Die Rehtivitat der Beschleunigung bei Minkowski. 33. Die Rela-
+tivitit der Bcschleunigung bei E i n s t e i n . Die Aquivalenzhypothesc.
+       V I I . Der freie Fall und dns hom,ogeiLe SchweTefeld. - 34. Der freie Pall
+bei Minkowski. 35. Das homogene Feld. 36. Vergleich mit der Erfslining.
+       V I I I . Die gleichforlnige Rotation untl das Gravitation.sdre?ifeeld. -
+ 37. -Die gleichformigo Rotation Lei Minkowski. 38. Das Gravitations-
+drehfeld.
+       I X . Zusammeiifasw~iqder Leistimgen der neuen Theorie.
+                          I. DM Triigheitegesets.
+               1. Daa N e w t on u c h e Tr iig h e it a ge a e t L
+       bas Triigheitsgesetz der X e w t o n - Galilttischen Meohanik
+ist bekanntlich das erste K-owtonsche Axiom: corpus omne
+perseverare in statu BUO quiescendi vel movendi uniformher
+in directmi, nisi quatenus a viribus impressis cogitor 'staturn
+i l l m mutare. Stammt dieses Triigheitsgesetz .BUS der Er-
+fahrung? ,,Hat nian," so fragt PoincsiBl); ,,jemals, mit
+Korpem uxperimentiert, die der Einwirkung aller Kraftm ent-
+sogen waren? Man zitiert gewohnlich das Beispiel einer
+Kugcl, die sehr lange auf einem Mannortische rollt; sber
+waruiii sagm wir, daB sie keiner Kmft unterworfen i s t ? lit
+sie eLwa zu w i t von allen iibrigen Kiirpttrn entfernt, u m von
+ihnen keine merkliche Einwiikung krfahrcn zu konnen ? Aber
+sie ist doch urn iiichts weit.er vou der Erd6 entfernt, els wenn
+man sie frei in der Luft 1vslieBe; und jetiermann we& deB
+sie in diesem Balle dem Einflussu dex Ychweru unterliogw
+wiirdt:, der von der h i e h u n g s h a f t der Erde herrubrt."
+       Wir sind also n i t der Erfehrung liviiieawcgs im W i d w
+spruche, w m n wir dau erstt? Newtonsclit~ Axiom aufhobcn.
+h C;cgenit:il, w e m wir an dessen Stellr die Aussage set,zen:
+,,Eiri sicli selbst uberlassener liijrptlr fallt", sird wir illit &I.
+alltiiglichrn Eyfahrung in bt:st.eiu Einklangcn. Witr ist ditses
+TriiGght.itsgcAst.tz zu vtbrstehrii ? Offtwhr so, da13 vou cL*r
+Gravitation riiclit. abstrahitd wt.i.~l~'i~      tlttrf. Xinti L L i A l i ,
+wt!lclit) wie die K e w t,onschn dio Grttvit,at,ion der Materie ilicht
+alu wesentlich urid ir1ir~~chsfft.nsnsieht 2), ist ulizaii. ,ig.
+U n s w ~Aufgabe ist es iilso, d;ts Trirght.itsgtwtz so zu i j d i f i -
+zicjrt.ii, del3 aus ihni die standige G(~gvravaitclw Gro8vit.ation
+in d ; , . i i physikitliseiit~i~Eis~lieiniiugt~ii
+                                                folgt .
+              2. D i e i i b r i g a n X c w t o n s e h e u Ax i o m e .
+    Vvrurst eiii Wort u t e r dith iibrigcn Scw tonschen AWoiiil:
+in diuseni Zusammeiihange. Sie sind siimtlich von der neucn
+Mech~nik bereits aui'gegcbrn.           l h s , wodurch sich dies6
+ncue Mechanik voii dcr S e w t o uschen nntorscheidet, ist ba-
+kannt.lich die Beriichichtigmig d~ endlichen Ausbreitungs-
+geschwindigkeit nllcr St,orungen, als welchc die Lichtgesehwindig-
+     1) H. Poincsrb, La science e t I'iiypoth&se, chap. VI, p. 113.
+     2) K e w t o n an Bent1t:y.
+                                                                      26 *
+404                                    F. Iiotl2er;
+
+keit angenonimen wird. Voii diesem Geuichtspunkte fie1 als
+erstes der Newtonschen Prinzipien das von der Gleichheit
+der Aktion und Reaktion. Auch das zweite Newtonsche
+Axiom, daB Kraft und Beschleunigung proportional seien,
+muBte aufgegeben worden, als die Abhiingigkeit des Propor-
+tionalitatsfaktors, der Masse, von der Richtung erkannt wurde,
+welche zur Folge hat, daS &aft und Beschleunigung im
+allgemeinen nicht gleichgerichtet sind. SchlieBlich muBte
+sogar der Newtonsche Grundbegriff der absoluten Zeit ge-
+opfert werden, indem auch hicr bei der Definition der Gleich-
+zeitigkeit an verschiedenen Orten die endliche Signalgeschwin-
+digkeit ihre Rolle spielt.
+     Dio Unterschiede der neuen Mechanik gegen die N e w t o n -
+sche Mechanik sind hier allerdings nur sogenannte Effekte
+zweiter Ordnung, welche +Pegfallen, wenn man die Relativ-
+geschwindigkeit des Systems gegen die Lichtgeschwindigkeit
+vernachllssigt. Im Falle relativer Ruhe stirnmen die Newton-
+sche und die neue Mechanik sogar exakt uberein.
+     Die in 1. angekiindigte Modifizierung des Trilgheits-
+gesetaes geht nun ebenfalls auf die endliche Lichtgeschwindig-
+keit zuriick, wio wir spater sehen werden. Wir werden d a m
+gloichzeitig sehen, da13 die Gravitation jedoch in gewissem
+Sinne ein Effekt erster Ordnung ist.
+
+      3. D i e V e r h d e r l i c h k e i t d e r L i c h t g e e c h w i n d i g k e i t
+                          a1a F n n damentalannahme.
+     Die Fundamentalaimahme, die wir zur Erreichung des
+angekiindigten Zieles rnachen, ist diese :
+     Im leeren Raume ist in der Ntihe von Materie die Licht-
+geschwindigkeit veranderlich.
+     Man kenn hiervon zweierlei Interpretationen geben. Erstens
+eine rein phanomenologische : Die Zeitmessung hiingt von der
+Gegenwart der Meterie a b und wird durch sie beeinflust. Wir
+wollen gleich hinzufugen, daS auch die Raummafh, wie das
+Spatere lehren wird, beeinflufit werden miissen.
+     Zweitens eine anschaulichere fiktive : Wir denken u118
+statt des leeren Raurnes das Medium, den Ather, als Um-
+gebung der Materie. Dann konnen wir sagen: Durch die E&n-
+        Grundlnge,i &r Ea?deinschpn (~ruvitatwmtlicorme.                        405
+
+bettung der hlaterie entstehen im -4tker gewisse Ddchteanderungen,
+als deren Folge die variable Ldchtgeschwindigkeit aufCritt. Die
+Folge dieser Dichteanderungen sind g e w i s e (fiMive) Spann ungen,
+die der A t k auf die Materie auszibt. Bei einw isolderten Masse
+M e n sich ddese Spannungen gegenseitig auf. Ist mch eine
+Masse anwesend, so sind die Spannungen auf def d k e r Muse
+miheren Seite stdirb gesttrrt; infolgedessen kommt ein Ifber-
+gewicht der Spannungen der anderen Seite zustande, oder die
+beiden Massen ziehen sich an.
+    Man eiinnert sich hier einer geuissen Analogie ruit der
+Le Sageschen Gravitationstheorie. Xur sind cs hie7 nicht
+hherst,oSe, sondern Atherspsnnungen.
+
+           4. D i e R e l s t i v i t Q t den Trrgh e i t e g e s e t c e s .
+    Wir werden spiiter sehen, deB die Anziehung als Folge-
+rung aus der Abnahrne der Lichtgeschwindigkeit bei An-
+niiherung an die Massen ohne die Atherhypothese gezogen
+werden kann (5 10).
+     Vorerst aber stellen wir fest: Uns~erZiel, die Gravitation
+unlosbrtr mit der Materie zu vcrkniipfea, ist vorbehaltlich der
+mathematischen Formulierung, dwch unsere Fundamental-
+annahnie erreicht. In einer Veriinderung von Zoit (und Raum)
+gipfelt die eingefubrtc Modifikation des Triigheitsgesetzes.
+     Aber dieses Trtigheitsgesctz ist yon der Gegenwart einer
+ode1 mehrerer Massen in der Umgebung abhgngig. Das neue
+Triigheitsgesetz ist relativ, das alte war absolut. Darl scheint
+eine Komplikratiou zu win. Sip wird aufgewogen durch die
+Vorteile der neuen Auffaswng. I)ies erhnnen wir aus den
+folgenden Ebtrechtungen.
+
+              5. D i e UniformitPt der G r s v i t a t i o n .
+     hie Gravitation war fiir E e w t o n ablosbar von der Materie.
+Sie bildete bei ihm ein separates Kapitel der Phpik, wie es
+die Elektriaitat., die Kohiision, die Kapillaritilti UBW. sind.
+Im Vergleich mit den genannten Natnrkrliften mi@ aber die
+Gravitattion em abweichendes Verhalten ; sie 1st nnabfiangig
+von der ohemischen und strukturellen Beachsffenheit der Materie.
+Alle Korper erfahren die gleiohe Fallbeschlgnnrgang, wie echon
+Galilei wuBte. Es gibt keine Diqersion der Gravitation,
+406                        F. Kottler.
+wie die astronomischen Verfimterungen gezeigt haben. Diesem
+Komplex von Eigonschaften bezeichnen wir kurz als die Uni-
+formittit der Gravitation.
+     Van dem eroffnetea Gesichtspunkte aus ist dies aber
+nichts Verwunderliches. Raum und Zeit, auf deren Eigen-
+schaften die Gravitation zuriickgeht, sind ja selber, uniform.
+So setgen wir sie bei w e r e r Betrachtung der Aubnwelt
+voraua. Die gemeinsame Fallbeschleunigung aller KorpeT-ist
+d a m ebensowenig verwunderlich als das gleichartige Ver-
+halten aller Korper im Newt o nschen Tragheit,sgosetze.
+
+
+               6. D i e Energetik d e r Gravitation.
+
+      Abar noch einer anderon Scha ierigkcit bcgegnete die
+ Newtonsche Mechanik boi ihrer Behandlung der Gravitation.
+Durch deren Gleichatellung niit den elektrischen, chemischen,
+rnolekularen u w . Kriiften liegt die Frage nahe: K a m die
+ Gravitationsenergie in andero Energieformen iibergefiihrt wer-
+den? Man hat nw vergeblich nach einer Umwandlung der
+ Gravitation in Warme gesucht. Es gibt j a wohl einige Phy-
+siker, die z. 13, das Gliihen dor Metcoro jemoits der Atmo-
+sphare hiers)uf z u r i i c k f e e n wolltcn. Kein Experiment hat
+dieso Anschauung bisher bestatigt.
+      Im Hinblick hierauf hat die alte Mwhanik ihre Bezoich-
+nung ,,komervative Krafte" orfunden. Konservative Krafte
+sind reine Bewegungshafte (Helmholtz). Keine andere
+&aft auDer der Gravitation ist aber rein komervativ. Wie
+kommt es zu dieser Sondorstellung der Gravitation, w e m
+Bie wirklich nur ein Seitenstiick zur Elektrizitat UBW. ware?
+     Von umerem Gesichtspunkte ist hier weiter nichts Vor-
+wunderliches, so wenig wie es verwundorlich ist, de13 der
+isolierte Korper des Now t ouschen Tragheitsgesetzes kon-
+servativ war. Wir werden infolgedessen auch nicht mehr von
+Gravitationskrafton reden. Damit sol1 zum Ausdrucke konimen,
+daB die zugrundeliegpnden Gravitationsspannungen fingiort
+giqd, ahnlich, wie eg die Triigheits- und Zusatzkrafte des
+d'Alew ber t schon Prinzipes waren. Mathematisch findet dies
+seinen Ausdruck darin, daS die Gravitationsspamungen, yie
+wir sehen werden, automatisch BUS dem Impulsenergiesatz,
+den1 Anelogon        zu N e w t o n s Bewegungsgleichungen,           aus-
+fallen (5 24).l)
+
+                       11. Die Vonmseetsungen.
+      S’achdem solchermafkn die Voiteile der neuen Auffassung
+genugend belegt z u sein scheinen, gehen wir an die Formu-
+lierung der mathematischen Aufgabe.
+      Chsucht ist also diejeilige Abanderung des Trggheits-
+gesetzcbs, aus Eigenschaften von Raum und Zeit folgond, daB
+sicli aus ihr die Gravitationserscheinungen ergeben. Da die
+Newtonsche Theorie diese bis auf wenige Ausnahmen gut
+darstellt, inuS sie oder die auf ihr fuBende Minkowskische
+Mechenik sich als crste Naherung der neuen Theorie ergeben.
+
+             7. Das Triigheitsgesetz bei Minkowski.
+      Welches ist nun das Triigheitsgesetz bei Min ko ws k i ?
+Llenn auf dieses, nicht auf das Newtonsche, haben wir j a
+off enbar aufzubauen.
+      Man aeiS, daS fur die Jiinkowskisclie Mechanik eino
+Art Vnion von R a m und Zeit stattfindet, die ihren Aus-
+druek in der vierdimensionalen Symbolik Minkowskis findet.
+Hierbt.1 spklt die quadratische Differentialform
+(1)              - c ~ s 2= a 2 2   +- ‘7?/2+ a z 2 - c2 ( i t 2
+eine Hauptrolle, vergleichbar einem hgengesetze der Diffe-
+rentialgeometrie. Genauer gesagt, entspricht dieaes Bogen-
+gesetz einer euklidischen Geometrie. Ein euklidisoher Ram
+(wie allgrmein jeder R a m konstanter K r h m u n g ) i& all-
+seitig syninietrisch.
+     Welche Bedmtung hat physikalisch dieses a s a ? Min-
+kowski deutet d s als die Eigonzeit eines bewegten Beob-
+achters. Denn man weiB, daB die Zeit bei Minkowski nicht
+mehr absolut ist, sondern vom Bewegungszustande dee Be-
+--
+      1) In dieaem S h e habe ich 1916 gesagt, dab die Gravitation
+kinematiwhen (im Gegeneatz zu: dynamischen) Cherakter hat. Eine
+Auffeswng, ale wllrde ioh damit gemeint heben, deI3 aie kinematiacb
+vorgetiinscht werde, wie ea nur bei den gewissen Spezialfiillen der Theorie
+(vgl. Rap. VI) tateiiohlich der Fall ist, kann nur auf ein mf3veretiindnis
+meiner Ausfiihrungen zuriiokgchen.
+408                     F . Kottler.
+obachters abhiingt. Dor Unterschied ist beksnntlich der,
+daJ3 Beschleunigung sozusagen den Gang einer Uhr verzogert.
+Das h e s t : Unter allen moglichen Bewegungen, die einen Be-
+obachter von einer gegebenen Anfangalage in eine gegebene
+Endlage iiberfiihren, erkennt man die unbesohlounigte an der
+mitbewegten Uhr; sie weist ein Maximum der Zeitdifferenz auf.
+Dies ist das Tragheitsgosetz von Minko ws ki. Mathematisch
+gesprochen hei%t dies : Das Integral
+
+                            ids
+                           1
+wird fiir die Bus den1 Tragheitsgesetze folgende Bewegung
+ein Extrem.
+      Man iiberzeugt sich leicht, daS die Extremalen dieses
+Integrals, die Geodiiten des Minkows kischen S,, euklidische
+Gerade sind. Bus der bekannten Kinematik von Minkowski
+folgt, daS d a m die zugehorigen Bahnen ebenfalle Gerade
+des gewdhnlichen Raumes sind und da% sie mit gleichformiger
+Geschwindigkeit * durchlaufen werden ; das h o s t aber, das
+Minkowskische Tragheitsgesetz ist idontisch mit dem K e n -
+t o nschen.
+         '   8. Das generalisierte Bogengesetz.
+
+    Zufolge unsurer Fundamcntalannahme ist die Licht-
+geschwindigkeit in der Nahe von ponderabler Materie variabel.
+Dies geht zuriick auf eine Verlinderung des Zeitmahs. Diesem
+Standpunkte Rechnuhg tragend, ist der allgemeinst mogliche
+Ansatz zu machen:
+
+
+
+wo die gtr Funktionen von z12, q,2, und z1za z8 irgend-
+welche drei ranmertige Koordinaten, 3, eine reelle eeitartige
+Koordinate ist. Hierbei sind allerdings die Raumma6e auch
+veriindert; ferner ist durch dB gl, gu gM eine Anisotropie
+der Lichtgesch+4ndigkeit (Abhllngigkeit von der Richtung)
+eingefiihrt. DaS anch diese Effekte von der Oegenwart der
+Materie herriihren, ist noch zu rechtfertigen, wenn es gleich
+am der Atherhypothese evident ist, daJ3 die Diehteanderung
+       Ghundlagen der Eimteinachen Gtaoitdionetheoric.                409
+des Athers ihrerseits auf gewiese Langenanedehnungen in
+der Materie euruckwirkt, daB ferner unter U&&nden eine
+anisotrope Struktur des Athers denkbar iat.
+     9. B e r e c h t i g t e Bezngssyeteme.   D i e Leithypothese.
+     Folgendermahn kommen wir eiu. Erbnntnfs, daS wir
+die RaummaSe ebenfalls einer h d e r u n g unterwerfen miissen.
+Die Konstanz dttr Lichtgeschwindigkeit war ein grundlegendee
+Postulat der Minkowskischen Mechsnik. Man kann nun
+dieses Postulat in einem gewissen Sinne aufreeht erhalten.
+Niimlich -19 ist bei Minkowski nicht bloS der Koeffieient
+von atz in der Form as2, sondern auch der Wert von
+
+
+
+
+der lleterminante siimtlicher Koeffbienten des ds2. Benuteen
+wir also kartesische Koordinaten, so kann man dem Umstande,
+daS die Newton-Minkowskische Mechanik mit konstanter
+Lichtgeschwindigkoit ihr Auslangen zu einer Beschreibung der
+Naturerscheinungen findst, Rechnung tragen, indem man fur (2)
+vorschreibt :
+(3)                       g=-@,
+Hat man andere als ksrtesische Koordinaten, so ist diem
+Bedingung der Invanam der D e t e k n t e ainngemaS w
+iindern.’) Ea wird sich tatslichlich migen, daS wir mit Hilfe
+von (8) die beatmoglichste Anniiherung an die Erfahrung
+durch die Newtoneche Theorie erzielen, wobei q z ; z , ala
+gewohnliche kartesisehe Koordinaten, s oder e k e zu 8 pro-
+portionale &oh als Zeit verwendet werden, die Liieht-
+geschwindigkeit komtant gleich c genommen wird,
+     Die exakte Darstellung ist freilich (2), *obi die Kon-
+stanz von c nar in der Beziehnng (9) oder in einer analogen
+auftritt. Nnr solche Rezugssysteme wollen wir ale betechti&
+gelten lessen. 3
+     1) 8ie ist nicht identiech mit der von Einetein hie und da ver-
+wendeten Beschrankung ’/1     g =c!
+     2) Diere AIgzeichnung gilt nur, solmge r i r a d dem Boden
+Newtonocher Raumzeitauncheuang &hen. Im ellgemeineren Fall sind
+dle Bamgesgsteme gleichberechtigt.
+410                           F. Kottler.
+    Man erkennt nun sofort, dal3 init einer Veriinderlichkeit
+der Lichtgeschwindigkeit auch eine der RaummaBe Hand
+in Hand gehen m a . Nimmt beispielsweise die Lichtgeschwh-
+digkeit langs oiner Koordinate eb, so muS wegen der Invhrianz
+von g der Koeffizient der betreffenden Koordinate in ds2 zu-
+nehmen, d. h. 00 erfolgt eine Streckung in der Richtung des
+Sch erefeldes.
+
+           10. Die Anziehung i n f o l g e d e r S c h w e r e .
+     Auf (2) und der Hypothese (3) errichten wir nun mit
+Hilfe des Mipkows kischen Tragheitsgesetzes unseren Aufbau
+der neuen Theorie. Die Lichtgeschwindigkeit nimmt bei An-
+niiherung an die Materie ab. Gesetzt also, ein Beobachter
+                                               2
+
+wiirde ejne Eigenzeituhr, die das [ d s            abzulesen gestattet,
+                                           1
+ im Schwerefelde beobachten. Zum Beispiel ein Spiegelpaar
+ von festem Abstande, zwischen dem ein Lichtstrahl hin tmd
+ her zirkuliert. Der zuriickgelegte Lichtweg ist dam, J d s .
+      Angenommen, der Beobachter miBt an swei Stellen des
+ SchmerefeIdes mit Hilfe der Lokalzeit z. B. einer schwingenden
+ Saite, die Daner eines Hin- und Herganges seiner Lichtuhr.
+Er findet d a m an der Stelle des Schwerefeldes mit kleinerern
+ Sch erepotential (kleinerer Lichtgeschwindigkeit) den groljeren
+Wert der Zeitangabe seiner Lokaluhr fiir den Gang der Licht-
+uhr. Nach dem 1etderen.richtet sich aber die Tragheit. Es
+entspricht dem eingepflanzten ,,Beharrungsvermogen" der
+Materie, diejenigen Orte aufzusuchen, wo das j d s die groBt-
+moglichsten Werte erreicht. Dies , ist ja anfropomorph aus-
+gedriickt, die mathematische Aussage des Min ko w s ki schen
+Triigheitsprinzips. Wir sehen also ohne Zuhilfenahme dos
+Athers, allerdings auch mit einer metaphysischen Beimengung,
+die Anziehung der Materie gegen die Stelle des Minimums der
+Lichtgeschwindigkeit. Der exakte Standpunkt ist natiirhh
+der rein mathematische (die bekannte bloBe Beschreibung der
+Ereignisse durch die Differentialgleichungen), von dern frei-
+lich die Vorstellungskraft keinen Gewinn hat.
+        G!rundZagen dep Eimi%inschesz Gaduthsthemie.           421
+
+           III. D.s Fold dea rnhenden Mawenpupktes.
+     Die Grundlsge der Newtonschen Theorie sind die
+Ke plerschen Gesetze. Mit Beriicksichtigung der Unter-
+schiede zwiechen Minkowskischer und Newtonscher Me-
+ohanik, also bei Vernachlassigung der Effekte meiter Oidnung,
+mussen sie sich aus der nenen Theorie ergeben, wenn wir ein
+im S h e von Q 11 berechtigtes Bezugssystem benutzen. Das
+Ke plersche Problem ist dabei das Zweikorperproblem mit
+VernachlLsipng der angezogenm Masse gegeniiber der Masse
+des Zentralkorpers, der als Massenpunkt behandelt wird, kurz
+das Schwerefeld des ruhenden Nassenpunktes.
+11. Dae zugrundegelegte Bogengeeeta und seine Extremalen.
+     Das Feld des ruhenden Massenpunktes ist statisch, frei
+von t. EE ist radialsymmetrisch und isotrop; wir haben blo13
+e h e S t r e c h g in der Richcung der Radienvektoren. Wir
+setzen deher an:
+(4) - d s 2 = g1 (r) dr2 t r2 d.92 I-r2sinZ 6 dq9 - g4 (1') d f 2 .
+Dabei sind r 6 ~1 gewohnliche Polarkoordinaten, deren Ur-
+sprung in den Massenpunkt verlegt wird; gl und g, sind Funk-
+tionen von der Entfernung r allein. Die Bedingung (S), dab
+wir ein zur New tonschen naherungsweisen Dsrstellung be-
+rechtigtes Bezugssptem vor uns haben, verlangt in sinn-
+gerniihr Anwendung auf Polarkoordinaten:
+                    g = - r 4 sin2 9 c2     .
+Die Invariane von g bedingt also
+                           91 9 4 = c z .
+Wir schreiben also
+                  d r 2 + T'? d P + r 2sin29. d y 2 - y4dt2
+               Cf
+(4a)   - ds' = -
+                 94
+
+mit der unbekannten Funktion g, (r). P a die Lichtgeschwindig-
+keit in 'der Richtung der Radienvektoren variistt, setzen 'wir
+(4 b)               y, = c 2 - L m f ( 7 ) ,
+wo la die Ne wtonsche Gravitetionskomtante,
+                 6,7.       gr-l ~ 1 x s1 ~ G - ~ ,
+m eine Massenkonstante, die Newtonsche schwere Masse des
+Massenpnnktes iet. Denn fur k = O oder na -0 htitten wir
+412                            F. Kottler.
+keine Gravitation und g, muSte gleich ca sein. Erfahrunga-
+gemii8 kann die h d e r u n g der Lichtgeschwindigkeit im Schwere-
+felde keine groJ3e sein, sonst wilre j a die Newtonsche Theorie
+mit konstanter Lichtgeschwindigkeit keine Naherung ehter
+Ordnung. Es ist deher in
+
+
+der Ausdruck   2f   (r) von zweiter Ordnung.
+      Wir haben somit endgiiltig
+
+                      n. n,*
+                  1 - - /.(?.I
+                        CS
+                                          - c2 ( 1 -   7f   (r)) d t2
+
+und hiervon sind die Extrernalen zu bildep, um das Tragheits-
+gesetz fiir das Schwerefeld des ruhenden Massenpunktes sn
+erhalten.
+     Fur ein allgemeines
+                                  d
+                     - ds2 = 2 gi,; d s , d z k
+                                i,k = 1
+
+sind bekanntlich die E u l e r - Lagrangeschen               Differential-
+gleichungen der Extremalen
+
+
+wobei u ein Parameter, so da8 die Nebenbedingung erfidlt ist;
+
+
+Man hat die Faille zu unterscheiden.
+     3. Da = O ; dann hat man 8s mit Lichtstrahlen zu tun.
+     2. D2 > 0; dann hat man es mit den Weltlinien krafte-
+freier Punkte zu tun. Man nimmt d a m pessend D* =c*,
+so daS u eine (Minkowskisohe) Eigeneeit wird.
+     Wir beschriinken uns anf den Fall 2 und nehnien ds = c d k
+Man finde t d a m
+          &un&qen           der EinsteQlzsoBen Grcvitativnstheorie.              413
+
+mit den Differeutialgleichungen
+
+
+
+ d        d 8
+du (I2   &)                                                                     = 0,
+
+                                                                                = 0,
+
+                                                                                -0
+
+
+                                       d
+                            ra sin2 8 3 = const = B ,
+                                       du-
+
+                     (C3- k m f ' ( T ) ) dd ut = COllbt = C2 - A .
+                                       -
+
+
+
+Man zeigt leicht, daB die Bewegung in einer Ebene durch
+den Ursprung vor sich geht, als welche wir die (invariable)
+Ebene                    6 =n/2
+nehmen. Man hat denn die Integrak
+
+
+
+
+Das letzte ist bekanntlich nach Minkowski der Energie-
+satz, den j a die vierte Bewegungsgleichung Minkowskis
+liefsrt. Also muB A / c 2 von zweiter Ordnung sein. Ebenso
+kt B/c" von zweiter Ordnung.
+      I i m h Einsetzen und Einfiihrung der unabhgngigen Varia-
+blen cp an Stelle von u, erhiilt man schlieJ3lich 'die einzige
+Relation
+
+(5a) ~ a l f i i . f ~ 2 . ; ( 1      - k7 fm( r ) ) - ~ m f ( r ) + 2 ~ - -A', = 0 .
+                dP
+414                              F. Kottler.
+    12. D i e N e w t o n s c h e erste Niiherung.   Keplers Gesetze.
+
+                          r , 8, 91 n i t 4 =
+
+als Zeit bilden nach Voraussetzung (Q 9) ein bereohtigtes
+Bezugssystem, liefern aho die N e w t onsche Darstellung exakt
+bis auf die Minkowskischen Effekte zweit,er Ordnung. h i
+deren Vernachlassigung stoat man also auf K e p l e r s Gesetze.
+Diese liefern B als Konstante des Flachemstzes, A a k (nega-
+tive) Gesamtenergio und die Keplersche Form des inter-
+mediaren, zu (5s) analogen Integrals
+
+
+           M
+                             1                 2
+(6b) BZ d -      '+Baea              --Rm.-+2.4              =O.
+                            r-
+
+Bei Vergleich mit (5a) findet man bis auf die Effekte zweiter
+Ordnung Ubereinstimmung, wenn
+                                         2
+                                 f (r)= - .
+
+Da unser Bezugssystem berechtigt war, ist dies die exakte
+Form von ( f r ) . Mithin haben wir gefunden
+
+
+
+
+als Ausdruck des Schwerefeldes eincs ruhenden Massenpunktes,
+der in Gr&n erster Ordnung die Keplerschen Gtsetzc
+liefert .')
+      13. D i e Effekte zweiter Ordnung.           Perihelbewegung.
+     Gehen wir jetzt zu den Effelrten zweiter Ordnung, die
+den charaktelistischen Unterschied von Minkows kis und
+N e w t o n s Mechanili ausmachon und auf die Berucksiyhtigung
+der endlichen Ubertragungsgeschwindigkeit der Stiirungen
+zuriickgehen. Man hat zufolgc (5a) mit
+
+
+
+      1). Zuerst angegeben von I(. Schwarzuchild, uber das Gravi-
+tatiomfeld e k e s Xfmsenpunktes nach der Einsteinschen Theorie. Berl.
+Ber. p. 189. 1916.
+mithin ein elliptisches Integral.
+    F ( l / r ) = 0 ist eine Glc~iehung drit,ten Grades fiix l / r .
+Wir haben
+
+
+Mei bezeichnt;                 fl2
+                                             ,-'i '
+                               __ 5= a. (1 - '
+                               liryL
+                                            a       h 111
+
+so haben n7ir
+
+
+Bei Vernschl&ssigtmg der Effekte zweitrr Ordnung hatten
+wir lim a = a,, liin E = E,, wo a, die halbe groBe Achse,
+E, die numcxischr Exzer?t,rizit&t K e p l e r s ist
+               i '                           1              +   ---.) .
+                                                                1
+              (\ 1
+       liiu 1; -
+                 T
+                   =-
+                              : : \ - a, (i + 62) !'7,(1
+                                                   I     +          EJ,
+
+Wir hsben infolgedrssen nwi Wurzeln, et,wtt w1 bzn-. w2, in
+der Niilie von       ~
+                         1
+                         ~~
+                                               I
+                     a(l +&j             (4 (i - e) '
+
+die dritte, w,,in der Nahe von 21i.nz/c2. Jede dieser Wurzeln
+Iiefert einen Extremmert von 1/ r , iLiit,hin einen Seheitol der
+€'lanet,enbahn. Fur eine durchaus im Endlichen gt.legene
+Bahn kommt der Wert w, nicht, in Betracht, da wegen der
+KleinhGit von km/c2 (vgl. $14) r ungeheure Werte bekame.
+Wir boschranken uns also nnf w1 bzw. zc, wobei w, offenbar
+das Pi:rihel, lol (1:~sAly!ic.l liefert, cia
+                                     lcl   < we *
+Mithin ist, der \4GtiB(~lal.)?t
+                             and Periht.l--rZphel
+416                              F. Kottler.
+denn
+                       2km
+                       7(fU1       + wy +      203)     = 1*
+
+Man fuhre ein
+                    1
+                    -   --
+                      - fO% -WE
+                                cos $0 + -+-
+                                           20,        Zi.2
+
+                       r     2                               2
+und erhglt
+                   n
+
+
+
+
+             u
+Bei Beschrankung auf Glieder zweiter Ordnung liefert dies
+
+
+
+
+Es ist aber bis auf GroBen zweiter Ordnung
+   w1   +    -   lol 0 + wUaO = ~
+                                   1
+                                      _ + _
+                                @0(1$. 6) ao(1 - 80)
+                                                      -L
+                                                     = ~-
+                                                       Uo (1
+                                                             2
+                                                             - 6,,3 '
+
+mithin in GroBen zweiter Ordnung genau
+
+
+wo To, die Umlgufszeit des Planeten gemaB dem dritten
+Keplerechen Gesetze
+
+
+eingesetzt wurde. Dies liefert dae Fortschreiten des Perihels
+um                           ~
+                                   24 n pa,'
+                                   ___..
+                                 c? To9(1 - eo9)
+
+pro Umlauf, die sogenannte Perihelbewegung, wie sie beson-
+ders am Merkur vermoge der groBen Exzentrizitat seiner Bahn
+und seiner groSen Schnelligkeit tatsachlich beobachtet wurde.')
+     So ergibt sich aus der neuen Mechanik eine der auf-
+fallendsten Diskrepanzen der Newt on schen Mechanik, gegen
+die Erfahrung einfach als Effekt aweiter Ordnung, auf der-
+
+      1) A. Einstein, Erkliirung der Perihelbewewg des Merkur BUS
+der allgemeinen Relativitiitstheorie. Bed. Ber. p. 831. 1916.
+         Grundlngen der Eilzsteimchen Grawdntionshorie.           41 7
+selben Basis, auf der die Abhangigkeit der Masse von der
+Geschwindigkeit seinerzeit von L o r e n t z eingefiihrt und an
+der Erfahrung bestiitigt wurde.
+                         .14. Z a h 1 e n w e r t e.
+     Zur 1llust.ration folgen einige Zahlenwerte :
+Zentralkorper Planet (Trabant) krn/e2 in km mittlere Entfernung in km
+   Sonne          Merkur            174         5,7    -
+                                                       10'
+     ,l
+   Erde
+             Enckescher Komet
+                   Mond
+                                   1,4
+                                       -
+                                4,34 10-3
+                                                       -
+                                                4,97 107 1)
+                                                3,84 10'
+   Mars       Msrsmond Phobos 4,48     -        9,34 * 10s
+      Man ersieht hieraus die allgemeine Kleinheit von kmlc2
+gegen die vorkommenden Entfernungen, also die prektische
+Konst.anz der Iichtgeschwindigkeit. Bemerkenswert ist, deS der
+E n c kesche Komet ebenfalls Perihrlanomalien zeigt, wie dies
+zu crwarten steht', da die numerischen Verhiiltnisse ungefahr
+wie beim Merkw liegen. Die Astronomen deut,en hier die
+Reobacht,ungen gewohnlich anders, im Sinne einer Verfruhung
+dos Perihels ( E n c k e , Olbers). Verinutlich liegt auch hier
+eine Perihelbewegung vor.
+      Noch ein Wort iiber die vergeblichen Erklarungsversuche
+der Perihelbewegung aus der Theorie der retardierten Poten-
+tiale (Elementargesetee von W e b e r , R i e m a n n , L o r e n t z ,
+Gerber usw.): Da die Gravitation nichts mit Wellenaus-
+breitung zu tun hat, liegen diese Versuche in falscher Richtung,
+ebenso wie wenn man die L o r e at z sche Massenveriinderlichkeit
+auf retardierte Potentiale zuruckfiihren wollte. Der Effekt
+ist wesentlich stationarer Natur.
+
+                  IV. Dae allgemeine etstieohe Feld.
+     Der erste Punkt unseres Programmes ist gelost: Die
+Planetenbewegung ist als kraftcfreie Bewegung durch eine
+Abanderung des Tragheitsgesetzes gedeute t, die ihren Grund
+hat in der Beeinflussung von Raum- und ZeitmaBen dwch
+die Anwesenheit eines Zentralkorpeis. Es ware demnach als
+nachster Punkt das allgemeine statische Feld zu analysieren.
+Dieses wird bekanntlich bei Newton durch die Poissonsche
+Differentialgleichung
+
+
+     1) Periheldietanz.
+   Annalen der Physlk. IV.Folge. 66.                   27
+418                          F. Kottler.
+beheirscht , wofiir man auch die Gausssche Divergenz-
+beziehung
+
+
+schreiben kann. X Y Z sind die Feldstarken der Gravitation.
+p ist die Dichte der schweren Masse Newtons. Wenn wir
+vorhin m ohne weiteres als Konstante behandelt haben, so
+erfordert die Einfuhrung von p eine Untersuchung, die wir
+hier anschlieBen.
+   15. Der Newtonsche starre K8rper und die sogenannte
+              ink o h Brent e Mas s en st r 8 m u ng.
+     Die Minkowskische Mechanik fuhrt alle Masse auf die
+Triigheit der Energie zuruck. Sie set& im einfachsten Falle
+der Ruhe                       8
+                               p=-
+                                       c1   '
+wo E die ruhende Energiedichte ist. Treten Spannungen im
+Korper auf, so liefern diese gleichfalls einen Beitrag, 8. B.
+fur einen isotropen &uPeren Druck p hatte man1)
+                            &-P
+                                  CS
+
+als trage Masse usw. Allgemein gesprochen, ersetzt sie die
+Newtonsche Masse durch den ganzen Tensor T i k i , l ~ = 1 , 2 , 3 , 4
+der Spannungen, des Impulses und der Energiedichte.
+     Welches ist dieser Tensor in unserem Falle? Hierzu be-
+denke man, daB Newtons Grundidee der starre Korper ist.
+Im Falle der Ruhe fallen also alle elastischen Spannungen
+und der Impuls weg; es bleibt nur die Komponente VM),die
+Energiedichte, bestehen. Diesem starren Korper Newtons
+entspricht daher bei Minkows ki der Tepsor
+                                                        i,k = 1,2,3,4.
+Das Minuszeichen riihrt davon her, da8 wir auperen Druck usw.
+als positiv rechnen und die Triigheitskrafte als negative Reak-
+tionskriifte ansehen. Die Spannungen, die dieser Tensor fiir
+den Fall der Bewegung aufweist, sind scheinbare Spannungen,
+
+
+                     *
+      1) In der Planckschen Fassung nimmt man den inneren Druck
+positiv und findet
+                     e2
+                          als Dichte der tragen Masse
+       Grundlagen. der Einsteinsckm Gra2,itationstheorie.    41 9
+
+ebenso wie die Lorentzkontraktion eine scheinbare Deformation
+ist und nur vom zugrundegelegten Bezugssysteme a bhangt .
+Die wirklichen elastischen Spannungen sind die Relativspan-
+nungen (Laue), die auf das einfachste nlit den Ruhespannungen
+zusammenhlngen.
+      Nun, diese Relativspannungen und ebenso der Rela tiv-
+energiestrom verschwinden f i u den obigen Tensor und nur
+fiir diesen. Es handelt sich hier also um die relativjstische
+Minkows kische Ubertragung des Newtonschen Begriffes
+des Systems diskreter Massenpunkte, die ihre Abstande bis
+auf die Lorentzdeformation unverandert beibehalten. Keinerlei
+elastische Spannungen sind zwischen den Massenpunkten
+tatig. Man spricht daher auch von einer inkohtirenten Massen-
+striimung.
+     1st nun dieser Standpunkt des starren Korpers N e w t o n s
+in seiner Minkows kischen Ubertragung bei der Betrachtung
+der schweren Materie gerechtfertigt ? Keineswegs.
+     Zuerst die fiktiven Atherspannungen, die Gravitations-
+spannungen des auljeren Feldes. Diese fallen, wie wir sehen
+werden, aus den Bewegungsgleichungen aus, sie sind also
+keine elastischen Spannungen, und der Newt onsche Stand-
+punkt ware gerechtfertigt. I n der Tat verlangt die Form
+unseres Tragheitsgesetzes (die geodatischen Differentialglei-
+chungen) fur den Massenpunkt, wie wir sehen werden, den
+Tensor der inkoharenten Massenstromung ( 0 22).
+     Dabei ist nun etwas vernachlassigt : namlich das Eigen-
+feld des Massenpunktes. Dies tun wir ja gewohnlich bei der
+Einbringung eines Probekorpers in rin auljeres Feld. Wollte
+man aber dieses Eigenfeld mitberiicksichtigen, so ist sofort
+klar, daB es dann irgendwelcher Kohasionsspannungen im
+Probekorper bedarf, urn ihn entgegen der Wirkung des Eigen-
+feldes zusammenzuhalten. Diese Spannungen sind elastischer
+Natnr, und es kann daher der inkoharente Tensor nicht mehr
+gelten (Naheres Kapitel VI).
+     Wir werden aber diese Spannungen, die meiter Ordnung
+sind, im folgenden vernachlassigen und wollen als Tensor
+der Materie
+
+ansetzen, d. h. wir vernachlassigen bei der Betrachtung eines
+Volumelementes den EinfluB des Eigenfeldes.
+                                                 27'
+420                            F. Iiottler.
+
+     Mit,hin haben wir eine erste Annaherung an den N e w t o u -
+schen Standpunkt vollaogen. Wir heben den sterren K6rper
+adoptiert.
+     Aber noch sind Unterschiede zuriickgeblieben, die ge-
+wissen Effekte aweiter Ordnung, durch die M i n k o w s k i und
+S e w t o n sich unterscheiden. Wir wissen, daB M i n k o w s k i -
+sche und Newtonsche Mechanik sich oxakt nur fur den Fall
+der relativen Ruhe decken.
+     Wenn wir also die Poissonsche Theorie exakt wieder-
+finden wollen, miissen wir die betrachtete Stelle der Mate&
+als ruhend annehmen. Bei ihrer Kleinheit konnen wir d a m
+auch die Einwirkung des Eigenfoldes vernachlassigen und
+finden so noch einmal eine Rechtfertigung fiir die Annahme
+dea starren Tensors.
+     Wir gehen nun an diese Aufgabe, die das Analogon zu
+unserem Vorgange bei den Keplerschen Gesetzen ist, die
+wir je auch exakt als Effekte erster Ordnung fanden.
+18. Daa zugrundegelegte Bogengesetz und aeine Extremalen.
+   Das allgemeine statische Feld N e w t o n s ist frei von t
+und isotrop. Mit,hin haben wir
+
+
+
+Hierin sind die x1 x, x3 irgendwelche Lagrangesche gene-
+ralisierte Koordinaten. Wenn das Bezugssystem berechtigt ist,
+so mu13 sein
+                           '      I
+
+                                                         I
+           912   913
+                           '           011
+
+                                       021
+                                             012
+
+                                             aae
+                                                   a13
+
+                                                   s2'
+                                                         I .(-cz)=   -a.cz.
+                           ~       I         a32   '38   I
+            0    0 -944    I
+
+Hierin sind die a,,, die Kwffizienten von
+
+
+
+dem dreidimensionalen Bogengeset,ze sew ton-Lagranges,
+wie es a. B. im Ausdrucke der kinetischen Energie
+         Grundlayeli deer Einsteinschen Grazuitationstheorie.     421
+
+h i L a g r a n g e auftritt. u ist hierbei wieder s i c , die Xew-ton-
+schc Zeit, da die Materie nach Voraussetzung ruht.
+     Zufolge eben dieser Voraussetzimg k t
+                     (
+                     '
+                     -T
+                      I
+                        -    dz, - !if      =0)
+                      ds      ds      ds
+also
+
+
+woraus
+                             dt    - -1
+                                     VY,;
+folgt.
+     Die Extremalen liefern mit Benutzung dieses Wertes
+
+
+
+                                                  =0.
+
+Die vierte Gleichung zeigt uns, da5 die von une angenomniene
+Ruhe nicht zeitljch andauern kann, de sie mit dem obigen
+Werte von d t l d s nicht vrrtraglich ist. Wir mussen uns daher
+auf den speziellen Fall der momentanen Ruhe beschranken
+und deuten dies an, indem wir die Koordineten stricheln.
+Ein solcher spezieller Fall der momentanen Buhe im Schwere-
+felde ist z. B. der Umkchrpunkt eines aufwarts geworfenen
+ StQkeS.
+     'Wir haben also die drei Gleichungen, bei Einfuhrung
+          9
+von I I = 7
+
+
+&i Dqrchfuhrung der Differentiat,ion und Beriiclisichtigung
+yon
+                     dx'
+                     1=- dq'= =       (ksI
+                      ds      ds      ds
+kommt
+
+
+Die Auflosung dieser drei Gleichnngen nach den drei Un-
+            dsx '
+bekannten     u$ liefert
+422                       F. Kottler.
+
+
+
+Hierin sind die g@p)die zu g A p adjungierten Unterdeterminanten
+von g, gebrochen durch 3.
+     In New tonscher Ausdrucksweise haben wir mithin fiir
+die Feldstarke der Gravitation die Komponenten
+
+
+
+
+        17. Anwendung der Poissonschen Gleichung.
+    Wir konnen jetzt die Poissonsche Gleichung anwenden,
+denn die unmittelbare Urngebung der betrachteten Stelle der
+Materie ruht. Zu beriioksichtigen ist hierbei, daB wir mit
+Gauss die Divergenz der Feldstarke zu bilden haben, jedoch
+in generalisierten Koordinaten. Man findet fur solche Koordi-
+naten, fur die also
+
+
+
+leicht die transformierte Form der Divergenzbeziehung fiir
+einen Vektor, wie es die Feldstiiirke ist. Es kommt
+
+
+
+Dies angewendet, ergibt zufolge (8)
+
+
+
+
+      = -47dkp.
+
+Hier kann man zufolge der Invarianzbeziehung g' = -afcz
+substituieren und hat schlieBlich, indem man noch ,u = 6
+                                                       CS
+                                                          setzt
+        Crundlagen der Einsteinschen Gravitationstheorie.                  4'23
+
+     18. Ei n f ii hrnn g der Differ en t i alinvar ian t en th eor i e.
+    Bevor wir weitergehen, bedarf es der Einfiihrung einer
+neuen Vektoranalysis.
+    I n der alten Mechanik verwendet man dreidimensionale
+Vektoren, d. h. GroBen, denen unabhangig von den Koordi-
+naten fur die
+                      3
+            dG2 = CarlJL
+                      dx7.( i ~=, d~
+                                   a2            + dy2+ dz2
+                    2 , p l
+sei, eine Bedeutung zukommt. Eiii solcher Vektor war z. B.
+die Kraft
+                        XU) XC")
+                               XCS
+vorhin; wie immer wir auch die Koordinaten definieren, ob
+sio kartesische oder generslisierte seien, immer reprasentiert
+X(1)X(2)X(s)  dieselbe Strecke nach Richtung und GroBe. Man
+sagt : X mu13 sich wie die Koordinatendifferentiale trana-
+formieren. Also in neuen Koordinaten q' 5%' 5' hat man
+
+
+
+Nur Vektoren (Tensoren) haben eine physikalisehe Bedeutung,
+una bhiingig vom Koordinatensystem.
+     Min kows k i hat vierdimensionale Vektoren eingefiihrt.
+Bei ihm sind ja Raum und Zeit in einer Art Union verbunden,
+fur die ebenfalls ein
+             3
+  - d s 2 = 2 aLjtdxrldxrL- c 2 d t 2 = dx' + dy' + d z 2 - c2dP
+           I,y=l
+
+gilt.. Dieses Gesetz sagt aus, da13 nur solche Koordinaten-
+transformationen zulassig sind, die das a s 2 erhalten. Hierbei
+sind auBer den gewohnlichen Raum transformationen auch
+Raumzeittransformationen zugelassen, deien physikalische Be-
+deutung eine kinematische ist, namlich des Ubergengs zu
+einem relativ gleichformig bewegten System (Lorentztrans-
+formation).
+      Was bedeutet nun diese Erhaltung des a s 2 ? Offenbar
+die Beibehaltung des grundlegenden Tragheitsgesetzes und
+der damit zusammenhangenden Lichtausbreitungsgesetze bei
+allen irgendwie moglichen Auffassungen von Raum, Zeit und
+Bewegungszu~;taad.
+424                           F. Iiottler.
+
+     In diesem Sinne ist diese Kovaiianz auch fiir das ver-
+allgemeinerte ds* zu fordern. Denn das Triigheitsgesetz ist
+das Fundament aller Mechanik und Physik, auf dem erst das
+ubrige Gebiiude errichtet wird. Die Unverruckbarkeit dieses
+Fundamentes, das ebon ist die allgemeine E i n s teinsche KO-
+varianz.
+     Diese Kovarianz fiihrt auf die Emfiihrung der Differential-
+invarianten. Ein Vektor A(') A(!?)A@)d4)   is t d a m beim Uber-
+gang zu neuen Koordinaten x' charakterisiert durch die Be-
+ziehungen
+                                                         i = 1,2,3,4
+
+(Kontravariante 1. Ordnung). Analog dofiniert man K0nt.m-
+und Kovarianten hoherer Ordnung.
+     Die Veranderlichkeit der MaBstiibe von Punkt zu Punkt
+bringt es mit sich, daf3 die Komponenten eines Vektors sich
+iindern, erstens infolge der h d e r u n g des Vektors selbst,
+meitens infolge der Veranderung der MaSstiibe. Nur die
+erste h d e r u n g ist offenbar vektorieller Natur. In den Diffe-
+rentialquotienten a A / a x stecken aber beide ; die letztere mu13
+daher eliminiert werden. Dies geschieht mit Hilfe oiner neuen
+Art Differentialrechnung, dem absoluten Differontialkalkul
+von Ricci und L e v i - C i v i t a , der den gewohnlichen Diffe-
+rentialquotienten Zusatzglieder anfugt, die von der Verander-
+lichkeit der MaBstiibe herriihren. Sie enthalten die sogenannten
+Dreiindizesspbole Christoffels zweiter Art, nlimlich
+
+
+
+Sie selbst sind nicht vektonell, wohl aber sind es die am
+ihnen gebildelen Vierindizessymbole zweiter Art
+
+
+
+
+Insbesondere sind die von E i n s t e i n hieraus gebildeten GroBen l)
+
+     1) A. Einstein, Die Grundlage der ellgemeinen Relativit.iitetheorie.
+Ann. d. Phys. 49. p. 769. 1916, wo man Niiheres iiber den ebsoluten
+KaWl f i d e t . Einstein bezeichnet Kh( mit - B h j .
+          Grundlagkn der Einsteinsclten G?mwitationstheork   425
+
+
+
+Kovarianten zweiter Ordnung.
+
+                         19. A n w e n d u n g .
+     Wir berechnen fur ein Bogenelement,
+
+
+
+den Wert von
+
+
+wofiir man zufolge der Eigenschaften der Vierindizessymbole
+auch schreiben kann
+
+
+
+
+Es ist (men hat ja -ga4 als Koeffizient'en zu nehmen)
+
+
+
+
+mi thin
+
+
+
+
+Wem wir damit die Poissonsche Gleichung (9) vergleichen,
+so ist die linke Seite genau -KM', mithin
+426                                  F. Kottkr.
+
+Ekdenken wir noch, dab dor Tensor des st,arren Korpers
+
+
+sich in unserem speziellen Falle auf das eine Glied
+
+
+reduziert, also
+
+ist, so haben wir gefunden
+(9a)                            K 14 # = - 2r p 4 4   1.
+
+
+
+
+Hierin ist gesetzt
+                                     x = - .8 n k
+                                             'C
+
+  20. A b l e i t u n g   der E i n s t e i n s c h e n Q l e i c h u n g e n aus der
+                           Poi B s o n s c h e n a 1e i c h nn 6.
+     Die Beziehung (9a) ist der kovariante Ausdruck der
+Poissonschen Gleichung fiir den speziellen Fall, dab der
+Tensor der Materie den Kewtonschen starren Korper ent-
+spricht, sich also im Falle der Ruhe auf das einzige von Null
+verschiedene Glied !l"(4*) reduziert. I h s e Eigenschaft des Ten-
+sors kann auch folgendermahn zum Ausdruck gebracht werden.
+
+
+
+denn es besteht die Beziehung
+
+
+
+
+Mithin wird
+
+
+ein.Tensor, dessen Komponente im Falle der Ruhe verschwindet
+(es ist ja gt44) = -- l/g,,).
+    Kehren wir zur kovariant.en Form der Poissonschen
+Gleich m g
+                                  K '=-ET '
+(9 4                                 44           2   44
+          Grundlayen der Einsteinschen Gravitatwnstheorie.       427
+
+zuriick. Diese Form ist, da wir, ein berechtigtes Bezugssystem
+haben und die Mat,erie ruht, mithin die Effekte zweiter Ord-
+nung wegfallen, die exskte Form, genau so wie wir die exakte
+Form der K e p l e r schen Gleichungen bei Weglsssung der
+Effekte zweiter Ordnung fanden.
+     Welches ist nun aber die Form der Poissonschen Glei-
+chung bzw. der ihr entsprechenden Relationen, wenn die
+Materie nicht ruht ? Die Beziehung (9a) ist ja offenbar speziali-
+siert fiir ein Koordinatensystem mit einer besonderen Orien-
+tierung der Zeitkoordinate xt4,eben fur Ruhe. Gehen wir
+zu einem anderen Bezugssystem uber, etwa den ungest'richelten x,
+so erhalt'en wir
+
+
+
+denn die Relation (9a) mu13 ja vektoriell sein. Da nun dieses
+ungestrichelt,e Bezugssystem, in welchem die Materie nicht
+niehr ruht, willkiirlich ist, insofern die absolute Translations-
+geschwindigkeit der Materie willkiirlich ist, so folgt, da13
+
+                  2 (Khi + 5 I t i ) axh d
+                                         axi
+                   4
+
+                 h,i=l                    .;--0
+una bhangig von den Werten a x/a d4 befriedigt sein muB,
+wofern nur die Nebenbedingung beriicksichtigt wird
+
+
+
+die fiir den Tensor Thz besteht. Des heiBt aber
+(9 b)            &; = - t T , i         $A(Th,-ggh;T),   h,i=1,2,3,4
+wo 1 eine noch zu bestimmende Konstante (Lagrangescher
+Mrht i plika t or) ist .
+        21. Bestimmung des Multiplikators aus dem Impuls-
+                             energiesstz.
+        Analog wie die GroBe T gibt es auch eine GroBe
+                                    5
+                          2y =i   C 9 (h K , i
+                                           ')
+                                  k,i=l
+
+Man defiiiiert nun niit deren Hilfe folgende GroBen
+                     G,, = +ghi K - Khi        h, i = 1,2,3,4.
+428                                F. Kottkr.
+Ausgeschrieben lauten diese
+                                          1
+                     G h . = 21.qhi *
+                           i              2'
+                                        l,m=l
+                                                g(lm)   - ghi
+Hierbei ist
+
+
+worin
+
+
+
+
+das Vierindizessymbol erster Art (Riemannsymbol) ist, das
+bekanntlich durchwegs im euklidischen Raume verschminden
+mu13.
+     Diese Iliemannsymbole haben gewisse symmetrische und
+zyklische Eigenschaften; so ist beispielsweise die Relation
+
+
+eine Folge derselben. Eiiie uns hier inter€ssierende Relation
+ist die folgende
+             (h i, k Z).m + (/I i, I rn),r; + (h i, m A);! = 0.
+Hierin bedeute t
+                                    4
+                 a
+'h i7 k I)lm =
+(                    (/I   i, k I ) - C
+                                   r= 1
+
+
+                                -5 +=L
+
+den kowrianten Differentialquotienten von ( h i , kl) nach xw.
+Aus dieser Relation loitet man leicht ab, daB die wichtige
+Ident.it,iit
+
+
+
+besteht. Diese Identitat hat die Form der Tensordivergenz,
+die den Impulsenergiesatz charakterisiert. Namlich, es lautete
+dieser bei M i n k o w s k i z, B. fur einen Tensor T i ,
+       Grundlagen der Einsteinschen Grawitationstheorie.    429
+
+Hier treten an Stelle der gewohnlichen Differentialquotienten
+liovariante Differentiationen, so dab die Form der Tensor-
+divergenz jet.zt
+                                                  i = 1,2,3,4
+
+wird. Hierfiir kann man bei Einfiihrung des kontravarianten
+Tensors
+
+
+
+
+bedeutet,.
+    Der Iinpulsencrgiesstz, d. h die Ekziehung
+
+                                                   i = 1,2,3,4
+
+die der vollstandige Tensor der Matprie befriedigt, ist bekannt-
+lich das Seitenstuck dor Minkowskischen Mechanik zu den
+N e w t onschen Bewegungsgleichungen oder, besser gesagt,
+den Bewegungsgleichungen der Cauchy-Poissonschen Elasti-
+zitiitstheorie. 1st nun unser Tensor
+                      T(lh)=   - -2
+                                 d~ d z r
+                                 ds ds
+                                       ._
+
+
+
+ein vollstandigei Teasor ? Keineswegs. Wir wissen bereits,
+claI3 im Schwerefeld elastische Spannungen auftreten, wahrend
+der obige Tensor nur scheinbare Lorentzspannungon enthalt.
+Sber wir wissen auch, daB wir berechtigt waren, bei dei Ab-
+Ieitung der Poissonschen Gloichung (9a) von diosen Span-
+nungen abzusehen. Die Form des Endresultates (9b) wird
+durch diese Vernachlbsigung nicht beriihrt, nur miissen wir
+j e t z t unter T einen vervollstandlgten Tensor verstehen, der
+also die Rolationen des Impulsenergiesatzes
+430                             F. Kottler.
+    1st dies der Fall, d a m haben wir in (10) und (11) das
+Mittel zur Bestimmung der Konstanten.
+    Hierzu schreiben wir (9b) in der Form:
+                  Khi=   (- 5 + I ) Thi ? . g h i T .
+                                                  --
+
+
+Hieraus folgt
+
+
+also
+                Khi - -- 2 1 ghi =
+                     x f 6 1
+                                           (- 2- + 1) T h i ,
+                                                  2
+oder
+
+
+Vermoge (10) und (11) befriedigt die rechte Seite identisch
+eine Relation von der Form des Impulsenergiesatzes. Dies
+ergibt fiir die linke Seite die Bedingnng
+
+
+Das ist aber nur moglich, wenn
+                          1          22     -
+                                           -0,
+                          2        x f 6 2
+oder
+
+woraus folgt
+(9c)                           G'hi = X T h i .
+
+Dies ist die endgidt.ige Form der Relat,ionen, deren Spezial-
+fall die Poissonschc Gleichung ist. Hierbei bedeutet
+
+
+       22. Disknssion der Einsteinschen Qleichungen.
+     Die gefundenen Einsteinschen Gleichungen (9c) gclten
+vermoge ihrer Ableitung nur fur ein Poissonsches, d. h.
+statisches Schwerefeld; aber wir haben j a voraussetzungs-
+gemaiB unsere Betrachtungen auf stationiire Felder beschrankt.
+Die Gravitation sollte durchaus stationaren Charakter haben.
+Wollten wir Wellen zulassen, so is t zumindes t zu bemeifeln,
+ob die Gleichungen (Yc) ausreichen.
+        Grundlagen der Einsteinschen Gmvitationstheorie.          431
+
+     Indem wir die Beschrinkung auf stationire Felder aufrecht-
+erhalten, gehen wir zur Diskussion der Gleichungen uber. Zu-
+nichst stellen wir fest, daB die Ghgscheinbare, aber auch nur
+scheinbare ,,Gravitationsspannungen", namlich jene fiktiven
+Atherspannungen darstellen. l) Denn aus dem Impulsenergie-
+satz fallen sie aus, wie man sofort sieht, indem man von beiden
+Seiten die Tensordivergenz nirnmt
+                    x g ( r a )G , , , = x Cg(ra1q.:.,. i = 1, 2, 3,4.
+                                                fi
+
+                    T,   *                7,a
+
+Die linke Seite ist identisch Null. So whalt der Impulsenergie-
+satz die Form
+                             c
+                             9"'"'Ti, = 0
+                             r,s=l
+
+in der das Gravitationsfeld nur durch sejnen Einflu.6 auf die
+MaBstabe mitwirbt. Die Voraussage von 0 6 ist also erfullt:
+Es gibt keine Wechselwirkvng mischen Gravitation und
+anderen Energien. Die Bewegung im 'Schwerefelde, und nur
+diese, ist rein konservativ ( Thi = 0).
+     Dab (von der Eigengravitation abgesehen) im Probe-
+korper, mit dem wir das Feld untersuchen, keinerlei elastische
+Spannungen herrschen, also der inkoharente Tensor gilt, liiBt
+sich auch so zeigen:
+     Es gilt, das Tragheitsgesete, d. h.
+
+
+Das ist vollig identisch mit der Aussage
+
+                                                     i = 1,2,3,4,
+
+
+
+Denn
+
+
+
+
+                                dz,   a
+
+      1) Eins tein definiert als Gravitationsspannnngen andere G$Ben,
+die nicht kovariant sind; vg1. z. B. A. Einstein, ober Gravitat,ions-
+wellen, Berl. Ber. 1918, p. 154.
+432                             F. Kottkr.
+    Der Klammerausdruck der ersten Zeile ist aber nichts
+anderes als die Kontinuit,atsgleichung, welche aussagt, daS
+Mat,erie nicht plotzlich verschwinden oder entstehen kann.
+Denn
+
+
+Daher bleibt nur die zweite Zeile, die man offenbar schreiben
+kann :
+
+
+wornit der Beweis erbracht ist.
+     Die Voraussetzung war freilich, daB das Eigenfeld des
+Probekorpers oder bei raumlich eusgedehnter Materie, das
+Eigenfeld der betrachteten Stelle der Materie vernachliissigt
+werden kann. Sonst treten, wie wir sehen werden, elestische
+Spannungen hinzu, die zur Kompensstion des Eigenfeldes
+notig sind. Das bedeutet nun keineswegs, da13 dieses AuBen-
+fold nicht mehr konservetiv ist. Sondern es ist dies bloB eine
+Berucksichtigung der Kohasion der Materie. Die Rechnung
+mu13 ergeben, da13 auch bei Beriicksichtigung der Storung
+durch das Eigenfeld des Probekorpers alles so verlauft, als
+                 dz dx
+ob der Tensor E      xi-
+                    ds ,nur mit geandertem e, fiir den Probe-
+korper zugrunde liegt.
+
+                  V. Das Innere der Yaterie.
+     Urn nun ejnen Einblick in die eiwahnten Spannungen
+im Inneren der Materie zu gewinnen, wenden wir uns im
+folgenden der Bet,rachtung einer isolierten homogenen Massen-
+kugel zu, die im Gleichgewichte sein soll.
+      23. Daa AuBenfeld der h o m o g e n e n r n h e n d e n K n g e l .
+    Fur das Aurjenfeld dieser Kugel finden wir den bekannten
+Satz der Newtonschen Theorie wieder: Die homogene Kugel
+wirkt nach auBen wie ein Massenphnkt im Zentrum mit der
+vereinigten Masse der Kugel.
+     Seien niimlich wieder wie in Q 14 r , 6, q.~ Polarkoordi-
+naten, dann wird wegen der allseit,igen Symmetrie sowohl im
+Inneren als im AuBeren das Bogengesetz gelten miissen
+(4) - ds2 = y1 (1’) d r 2 + da2+ r2 sin2 9.d v 2 - 9,(T) d t * .
+                  Grundlagen der Einsteinschen Gravitationstheorie.               433
+
+    Wir wollen vorliiufig unsere Grundbedingung
+                                91 94 = c2
+    aul3er acht lassen :wir werden sie aus den Differentialgleichungen
+    wieder finden.
+         Unsere Differentialgleichungen lauten nunmehr
+                                          Ghi = x Thl    ,
+    also im Auljenraume
+                                           Ghz = O   .
+    Es ist bequeiner, die ,.gemischte" Form xu verwwnden, dns ist
+                                              4
+                                     G/")= C g @ J )Gji .
+                                             J=1
+    Man findet I)
+
+
+
+
+Alle anderen Gih)= 0. Dabei sind die bekannten vier Identi-
+taten (10) erfullt, woraus folgt, dalj z. B. GJ2) als eine lineare
+Kombination von G,(s und GJ4) bzw. deren Derivierten dar-
+gestellt werden kann.
+     Aus den unabhangigen Relationen
+
+
+
+
+die auBerhalb der Kugel gelten miissen, folgt daher zmachst
+                                        -I--. eonst
+                                     -1 -
+                                     91              r
+Wir schreiben fiir die Konst,ante, die beim Massenpunkte
+den Wert                  2Em
+                                               9
+hatte,                                        -.
+                                              a3
+~    ~    ~~
+                                              R4
+               1 ) D e r k e n t bedeutet hier und im foigenden die Derivierte nach r.
+         Annden dar Physik. IV. Fdga 66.                             28
+434                                   F. Irbtfler.
+
+Hier ist a der (Newt onsche) Radius der Kugel, R eine GroBe
+die spater erkliirt werden wird. Mithin
+                             -1 -- 1 --a3 . -1 ~ .
+                             Yl               R2        r
+Dann folgt
+                   g, = const ( I - RY
+                                                   a3       1   -
+Wenn im unendlich Fernen g4 den Wert c2 haben SOH, wie
+es selbstversthdlich ist, haben wir
+
+
+Wir haben mithin das Gesetz
+                                      Y1 g4 = c2
+wiedergefunden und aul3erdem den eingangs erwahnten New ton-
+schen Lehrsatz: Eine homogene Kugel wirkt nach auBen wie
+die vereinigte Masse im Mittelpunkte.
+     Denn wir haben genau die Form (6) des Massenpunktes
+fiir unser
+      - ds2 -                          dr2   + r2d9.a-+ r 2 s i n 2 9 . d y 2
+                I - - . as
+                        -         1
+                      R2          r
+
+
+
+      24. Dae F e l d i m Inneren der homogenen Kugel.
+     Beim Ubergang zum Inneren der Kugel miissen wir zu-
+niichst den Tensor T untersuchen. Voraussetzung ist hierbei,
+                                                     dx d m
+dal3 die Kugel ruht. Dann nimmt unser Tensor - 8 ds ds
+die Form an
+
+
+Hiervon ist kicht zu eeigen, dal3 der Impulsenergiesatz nicht
+erfiillt ist, wie auch selbstversthndlich, da zufolge (4) die
+Eigengravitation existiert, die nicht kompensiert is t.
+      Zu ihrer Kompensation ist also eine Erweiterung des
+Tensors durch eZastische Spannungen erforderlich. Wir nehmen
+den einfachsten Fall eines isotropen, aul3eren Druckes, p ,
+weIcher hierbei eine Funkbion von T sein kann. Dann wissen
+          Grundlogew der Einsteinschen Gavitationstheorie.             435
+
+wir aus der Planck-Minkowskischen Mechanik, deb sich
+die Masse des betiachteten Korpeis um den BuBeren Druak
+vermindert. Namlich die Dichte der Masse ist jetzt nicht
+mehr
+
+sondern
+
+
+Wir schreiben den gemischten Tensor daher in der Form
+        p1(1) = yJ
+                 2
+                   12) = yf 13) = y T4( A ) = E = l ] + p .
+Der Impulsenergiesatz liefert nunmehr die Rela tion
+
+
+Dies erinnert an die Gleichgewichts bedingung der Hydro-
+dynamik, wobei
+                                  +Ins*
+die Rolle des Potentials der auf die Masseneinheit beeogenen
+Krafte, 7 die Dichte reprasentiert.
+    Wir entnehmen hieraus, daB das Feld im Inneren von g,
+beherrscht wird.
+    Ferner haben wir die Gleichungen
+
+
+
+
+Hier ist
+                               rl = E - p ,
+so da8 wir
+                    x (TI   + p ) = x = const = 3
+                                     E                     ~-
+                                                           R2
+
+schreiben konnen, d. h. wir setzen die Kugel als homogen
+voraus. Die Konstante 1/R2 wird sofort erklart werden.
+Nunmehr kommt
+                                               const
+                        I
+                       -= 1
+                       91
+                                .-+,- RS
+                                    72
+                                                       -
+Da r = O im Integrationsgebiete, folgt aus der Endlichkeit
+von g,, da8 sein mufl: const = 0 , also
+                                           1
+                              91 = 1 - sSjRf *
+                                                                28 *
+436                          F. Kottkr.
+Dies erreicht fur r = a den Wert
+                                          1
+                         @A = 7 - 7            J
+
+
+
+wahrend im AuDenraume
+
+                                              -
+                                              T
+denselbon Wert
+
+
+liefei-t. Wir haben mithin, wie es sich von selbst versteht,
+stetigen AnschluB der Werte g, im AuSen- und Innenraume,
+nicht aber der Werte dgJdr im AuSen- und Innenraume.
+Die Stetigkeit der ersten Derivierten ist fur g1 keineswegs zu
+postdieren, was j a auch daraus hervorgeht, da13 das einzige
+Argument hierfiir die Stetigkeit des Feldes w k e , was nicht
+zutrifft, da fur das Feld, wie wir vorhin sahen, nur g4 maB-
+gebend ist.
+      Verweilcn wir einen dugenblick bei der Gestalt von gl.
+Der raumartige Teil von (4) ist
+
+
+Man ersieht mit Hilfe der Transformation
+                         r = Rsin g ,
+daS dies auf die Form
+      d g2 = K 2 d e2 + RZsin2(1 d IV+- R2sinZp sin29. d sp2
+gebracht werden kann. Dies ist aber die bekannte Form des
+Bogens fur den sphiirischen Raum. Man kann also sagen:
+Der E i n f l d der Eigengrevitation auf die riiumliche MaS-
+bestimmung innerhalb der Kugel beruht in dem Ersatz der
+euklidischen Geornetrie durch die elliptische Geometrie. Der
+Krummungsradius R ist dabei foolgendermaBen gegeben: Fiir
+den AuBenreum wirkt unsere Kugel wie ein Massenpunkt mit
+der Newtoaschen Masse m
+                           2km
+                           ~-
+                             c4
+                                    - as
+                                    -%'
+Denn wir haben ja bei S e w t o n
+                 p = c 48 - - - - 3- - = - - - 3 0'
+                                  rc2R*       8nkRP
+         Grundlayen der Einsteinscken Gravitationstheorie.         437
+
+also
+
+
+So rechtfertigen wir nachtriiglich die Wahl unserer Kon-
+stanten fiir das AuBenfeld.
+    Das Eintreten der ellipt'ischen Geometrie mit einem
+KriimmungsinaSe
+
+
+(also in zweiter Orduuhg) hat nun fur die Gravitationstheorie
+die Beseitigung einer b e h n n t e n Schwierigkeit zur Folge. l)
+Niimlich es folgt hieraus, wenn dieses Resultat auf die gesamte
+Welt ausgedehnt wird, die Begrenztheit der Gesamtmasse der
+Welt. Bei iinbegrenater Erstreckung ins Unendlishe wiirde
+die ,,Kohasiou" des N e w t onschen Massensystems unverstand-
+lich (Seeliger 1896).
+                    25. D i e Gr e n e b e d in g u n g e u.
+     Zur weiteren Integration, also Ermittlulzg von g,, bedarf
+es cler Angabe der Grenzbedingungen fiir das Feld. Denn
+dieses ist von g, bzw. ',y abhiingig.
+   Erste Annahme : Sfetiger Uibergang von p (Schwarzschild).
+     Wir machen niit S c h w a r z s c h i l d 2 ) zunachst die An-
+nahme des stetigen Uberganges des Feldes. Also mu13 g,'
+stetig iibergehen und p = O in cler Grenzflliche r = a sein.
+Man findet :
+                      1
+            91     -- P / R a'
+                 = s
+
+
+
+
+     1 ) A. E i nst e in , Kosniologische Betrachtungen zur allgemeinen
+Rehtivitijtstheorie. Bed. Ber. p. 142. 1917.
+     2) K. Sc hwa rz s c h ild , ober das Gravitationsfeld einer Kugel
+am jnkomprewibler Fliiesigkeit nach der Einsteinschen Theorie. Eerl.
+Ber. p. 434. 1916.
+438                          F. Koftler
+p ist negat,iv, also Zugspannung. Dies entspricht namlich
+dom Umstande, dalj die Lichtgeschwindigkeit fi4            (Schwarz-
+s c h i l d nimmt irrtiimlich hierfiir l/fi,) gegen das Zentrum zu
+sinkt, d. h. Anziehung zum Zentrum als Folge der Eigen-
+gravitation auftritt. Diese wird durch den erwahnten Zug
+kompensiert. Das Feld ist verh81tmnismaBigschwiicher als im
+AuBenraume.
+    Zweite Annahme : Konstanz von p (Einstein, Schrodinger).
+        Wir machen nun mit E i n s t e i n I. c., indem wir das dortige
+Zusatzglied zu den Feldgleichungen I. gik
+                              Gi,- Ag,, = x q k
+mit S c h r o d i n g e r l ) in den Tensor Tik hiniiberziehen, also
+als isotropen Druck deuten, die Annahme unstetigen cber-
+ganges, dsfiir
+                                  p = eonst.
+Dann liefert der Impulsenergiesatz (la)
+
+
+
+                           gP = const.,
+sofern nicht, 17 = 0, was wir vorlaufig ausschlieDen.
+     Es kommt
+
+
+
+
+das von E i n s t e i n 1. c. gegebene Losungssystem. Da g4 = const,
+herrscht im Inneren diesmal kein Feld.
+  Dritte Annahme: 7 = 0. iMasse der isolierten Iiuyel Null.
+     Wir betrachten den bisher ausgeschlossensn Fall
+                                   ?] =: 0 .
+
+Dies bedeutet, dap die Dichfe cZer gesamten Trigheit der Kugel
+ - .__-
+     1 ) E. Schrodinger, Obcr ein Lijsungssystem der ellgemein ko-
+varianten Gravitationsgleichungen. Physik. Zeitschr. 19. p. 20. 1918.
+        Grundlagen der Einsteinschen Gkavdtatioizstheorie.   439
+Null ist. Dies ist aber ein bekanntes Postulat der Relativitlits-
+theorie. Die Triigheit ist ja definiert als Widerstand gegen
+eine auBere Kraft. Bei eineni abgeschlossenen System, wie
+es unsere Kugel ist, liegt keine solche &aft vor. Es muB
+daher auch dieser Widerstand verschwinden.
+     Die Losung = O ist also gerade diejenige, die durch
+die Relativitiitstheorie fur @in abgeschlossenes System ge-
+fordert wird. Bei M i n k o w s k i war dieses Postulat nicht er-
+fullt, da dort noch der Newtonsche Gesichtspunlst der Ab-
+straktion von der Gravitation festgehalten wurde. Infolge-
+dessen war Minkows kis System kein abgeschlossenes. Erst
+mit Beriicksichtigung der Eigengravitation ist das System
+ein abgeschlossenes, und dann muB die Dichte der gesaniten
+Tragheit q = O sein.
+     Wir erhalten                 1
+
+
+
+(13 4
+                     i  91 = 1 - +Z/RZ '
+                        ga = 2 (1 - 1 . 2 / H Z ) ,
+
+
+
+                     I p =- 3
+                             aR2
+                   71 = E - p = O .
+                                   '
+Wir bemerken, daB wieder die Beziehung
+                           $71 g4 = c2
+erfullt ist. D. h. wir haben ein berechtigtes Bezugssystem
+in Polarkoordinaten. Davon hatten wir umgekehrt ausgehen
+konnen und hiitten so (13c) gefunden.
+     Fur das Fernere verwerfen wir demgemaB die S c h w a r z -
+schildsche Losung (I3a) und die Einsteinsche Losung (13b).
+  26. Diskussion der gewlihlten Losung.      - Einiges an8 der
+                     Theorie der Materie.
+    Wir bemerken, daB die Lichtgeschwindigkeit ini Innen-
+raume
+                    g* = G ( l -       -$)
+ist. D. h. sie nimmt, von innen nach auBen ab.
+     Im AuBenraume ninimt sie, da
+
+
+ist, wieder zu. Und m a r ist im Mit,telpunkte T = O
+                          (g4)* = c2   .
+440                             F. Kottler.
+
+Ebenso im Unendlichen T = G O
+                                (g& = c 2 *
+Dazwischen liegt das Minimum an der Grenzflache T = a ,
+
+
+Der Ubergang erfolgt unstetig in den ersten Derivierten.
+
+
+
+
+Das Feld ist also innen doppelt so stark als auBen und iiber-
+dies entgegengesetzt gerichtet. Wir haben eine Abstopung
+vom Zentrum. (Dementsprechend ist p > 0. Das heiBt, wir
+haben Kohasionsdruck.)
+     Dieses paradoxe Resultat ist nun gerade dasjenige, das
+eine bekannte Schwierigkeit der Gravitation aufhebt. NiLm-
+lich es hat bereits Maxwell darauf hingewiesen, daB die
+Atherhypothese in der Gravitation auf Schwierigkeiten stoBt,
+wenn die Cravitatioiiskriifte durchaus auf nziehung beruhen.
+Die statische hhertheorie muB nkmlich von einer Deformation
+des Athers ausgehen, wie wir dies j a getan habeii. Die De-
+formationsenergie ist dann die Gravitationsenergie. Das heifit
+aber, die Gesamtenergie des Athers muB zunehmen, wenn
+Materie eingebracht wird. Denn das Minimum der Energie
+entspricht dem stabilen. Gleichgewichte, als welches doch             -
+offenbar der materielose Zustand zu gelten hat. Bei reinen
+Attraktionskriiften ist das nun nicht der Fall. Die Energie
+wird im Gegenteil (durch das negative Vorzeichen der Attrak-
+tion) kleiner als im materielosen Zustande. Wenn man sie also
+nicht mit einer unendlich groBen positiven Kom tanten be-
+schweren will, was dem Endlichkeitsaxiom unserer Welt-
+anschauung widersprechen wiirde, bleibt nichts anderes iibrig,
+als die Annahme, daB der materiefreie Ather nicht im stabilen
+ Gleichgewicht w%re.l)
+     Hier treten nun im Inneren abstoBende Krafte auf.
+Hierdurch wird der Beitrag zur Energiedichte positiv. Die
+Energiedichte des Athers muate freilich erst definiert werden
+      1) Vgl. W. R i t z , Die Gravitat,ion, Scient,ia 5. p. 241. 1909.
+         Grundlagen der Einsteimchen Gravitcrtiotutheorie.   441
+
+Die fiktiven Spannungm.,warden hierfd G#! *egelegt.    Den1
+widerspricht deren Vemchwinden im AuBenreume, du doch
+nicht gut angenommen werden kann, dal3 dort keine Ilefor-
+mationsenergie herrscht.
+     Wenn wir auch die Atherhyputhc~se nicht weitcr ~ e r -
+folgen, so behslten wir doch die Tatsache, daB die StabiEitut
+der Mate& gerade diese Umkehrung der Feldrichtung zu
+verlangen soheint. Es ist dies namlich nichts anderes als
+das alte Dogma von dcr Undurcldringlichkeit der Materie
+cum grano salis genommen.
+
+                 27. Schwere u n d triige Uaaee.
+    Wir slzgteri vorhin, daI3 p einen Kohasiondruck vorstelle.
+Es ist
+                                3
+                      p =   c _      = E =pcz.
+                            x R3
+
+Woher konimt dieser Kohasionsdruck 1 Und wie kornmt es,
+da13 wir Clem Massenpunkt in1 Schwerefelde gleichwohl den
+Tensor
+
+
+zuschreiben dwften, ohnc die Veranderung dcr Triigheit (lurch
+die inneren Spannungen in Rechnung zu ziehen?
+     Dies letztere zuerst rechtfer-tigrnd, weisen wir dsrauf hin,
+daB
+
+
+ist, also vernachliissigt werden kann niit 1/R2,d. l ~ . d t r
+Einwirkung des Eigenfeldes auf dit. Umgebung. Xur zur
+Kompensation des Eigenfeldes wurde jn der Kohayionsdrnck
+benot,igt.
+     Aber genau genommen ist er imnier da; er id nhmlich
+unlosbar mit schwerer Mass(. verknupft. Denn
+                            p       -p c?
+                                     L
+
+
+
+Sowie wir drm Massenpunkt eine Masse zuerkennen, haben
+wir gem&B obiger Relation den unzei-trennlichen Ekgleiter p.
+Hierniit erkennen wir, daB der Kohasionsdruck auf nichts
+weiter zuriickgefiihrt werden limn, daB er als eine primare
+Tatsache ebenso wie die Masw aufgefaI3t werden muB.
+442                        F. Kottbr.
+
+    Wie sich, exakt gesprochen, Eigenfeld und BuBeres Feld
+superponieren, so dal3 dann angenahert
+
+
+
+fiir den Massenpunkt gelten wird, mul3 die Rechnung zeigen,
+die aber sehr kompliziert ausfallt, selbst wenn man das ein-
+fachste a d e r e Feld, das homogene Feld, nimmt.
+     Nehmen wir immerhin jetzt 1/ R2 als zu vernachlassigend
+an, so verbleibt der Tensor
+
+
+und es zeigt sich, da13
+
+
+die Rolle der schweren Massendichte spielt und gleichseitig
+die der Tragheitsdichte. Bei der Betrachtung der Bewegung
+im Schwerefelde fallt E in den geodatischen Differential-
+gleichungen uberhaupt aus. Die alte Galileische Erfahrung
+von der uniformen Fallbeschleunigung ist gerechtfertigt.
+     Kommt eine aufiere Kraft'hinzu, so spielt &/c2 die Rolle
+der Tragheitsdichte. Warurn ist hier die Tragheit nicht Null
+wie vorhin?
+     Fiir ein abgeschlossenes System hatten wir die Gesamt-
+tragheit Null. 1st das System nicht abgeschlosen, so konnen
+wir die Eigengravitation entweder vernachlassigen - dann
+baben wir einfach        als trage Dichte - oder mitberiick-
+sichtigen. Im letzteren Falle ist nun der Impulsenergiesatz
+nicht mehr fur Ruhe erfullt, es liommen vielmehr die von den
+                           (12, __
+                          --    d x , __
+                                      dxs
+                            ds ds ds
+herruhrenden Tragheitsglieder hinzu. Diese liefern einen Bei-
+trag zur Tragheit, und der Koeffizient &/ ca der Beschleunigung
+gilt als trage Masse im Newtonschen Sinne. Der EinfluD
+des Kohasionsdruckes, der sich gegen die Eigengravitation
+hebt,, fallt eus. Darum macht sich anders ab i n der Plartck-
+Minkowskischn Dyna9nik der Kohasionsdruck nicht im Ge-
+samtresultat geltend.
+       Grudlagerc der Einakimchen Gracitatwnstheorie.       468
+
+                     25. Die Massenschale.
+    Wir schliel3cn dieses Kapitel mit einer Betrachtung der
+Massenschale. Es sei niimlich die homogene Mamendichte
+                                       E
+                                 p=-
+                                       c:L
+
+
+nicht mehr uber die Vollkugel
+                                O s r i n
+ausgebreitet , sondern niir uber die Schrtlt.,
+                           O < h S T S a .
+Uer einzige Unterschied gegeii fiiiher ist, claB jetzt in der
+Materie
+                   -1 _-I-,+,- l.? const
+                      91
+genomnien 1%-erdrn kann.          Fur den Innenraum 0      r 5b
+haben wir
+                           -1= l + , - const
+                           91
+und hier mu13 w i d e r die Konstante verschwinden; also
+
+
+Andererseits ist
+
+
+da aber jetzt
+             2km
+             __
+              ct
+                 - -83nc4k & (a3 - P)= -
+                                       X E
+                                        3
+                                           (u3 - b 3 ) ,
+
+
+folgt bei atetigem AnschluB der g,-Wert,e fur r = b bzw. r = a
+wieder                    %& = -
+                                 3
+                                       Ra '
+wornit die analogen SchluBfolgeriingeii Tie vorhin auftreten.
+Die Losung ist jetzt, wie man leicht findet:
+
+
+
+
+     Wir haben also das wichtige Resultat:
+444                           F. Kottler.
+    Im Inneren einer ruhenden Massenschale herrscht kein
+Feld. Es gilt Minkowskische Mechanik.
+    Auch dies ist ein bekannter Satz der Newtonschen
+Theorie, der also auch in der neuen Theorie gilt.
+  29. D i e Leithypothese g = - c2 far k e r t e s i s c h e Koordinete.
+      Wieder finden wir durchgehend, wie es fiir berechtigte
+Polarkoordinaten sein muB,
+                        g = - ~ ' si n z6 c2
+erfiillt. Schwarzschilds und E i n st e i n s Losungen (13a)
+bzw. (13b) sind hingegen nicht berechtigt.
+      Halten wir dem entgegen, wo wir die Leithypothese be-
+statigt fanden:
+      1. In der Ableitung der Keplerschen Gesetze.
+      2. I n der Ableitung der Poissonschen Gleichung.
+      3. I n der Gesamttragheit der isolierten Masse, die N~ill
+sein mu13.
+      4. In der repulsiven Wirkung der Gravitation im Inneren
+der Materie, welche durch die Stabilitat und die Undurch-
+dringlichkeit gefordert wird. Es erscheint mithin, daB diese
+Leithypothese, welche nichts anderes ist als eine andere Form
+fur das, was seinerzeit das Postulat der Konstanz der Licht-
+geschwindigkeit bei Minkows ki war, genugend ihre Berech-
+tigung dargetan hat, insbesondere indem sie die Frage der
+ Grenzbedingungen lost.
+
+  VI. Die kinematleehen Sonderfille dee neuen Tdgheitsgesetzes.
+     Wir haben unsere Aufgabe, das Tragheitsgesetz so zu
+modifizieren, daB aus ihm die standige Gegenwart der Gravi-
+tation in allen physikalischen Erscheinungen folgt, die in $ 1
+gestellt worden war, im Vorhergehenden gelost. So ist eine
+komplette Gravitationstheorie entstanden. Unsere Betrach-
+tungen waren aber nicht vollstandig, wenn wir nicht auf die
+Art eingingen, wie E i n s t e i n seine Theorie gefunden hat,
+welche gekennzeichnet ist durch seine Bezeichnung ,,allgemeine
+Relativitatstheorie" statt Gravitationstheorie.
+30. D i e Insichtransformation des d8'         und d i e Relativitiits-
+                               theorie.
+    Bekanntlich hat die Relativitatstheorie ihren Ausgangs-
+punkt von der Form der Newt o nschen Bewegungsgleichungen
+        Grundlageiz der Einsteinschelz Gracitntionstheorie.   445
+
+genoniinen; diese sind Differentialgleichungen 2. Ordnung in
+ den kartesischen Koordinaten, wenn die Zeit als unabhgngige
+Variable genommen wird, und diesem Umstande ist es zu
+danken, daB eine hinzugefugte gleichformige Translation am
+hblauf cler Erscheinungen nichts andert, indem der zweite
+Differentialquotient nach der Zeit fiir eine solche verschwindet.
+       Physikalisch gesproohen heiBt dies: Es ist in jedem Augen-
+ blicke einer Bewegung eines Systems relativ zu einem anderen
+gleichgiiltig, ob ich dem System die eine Bewegung und dem
+anderen Ruhe zuschreibe oder umgekehrt dem anderen System
+die entgegengesetzte Bewegung, dem ersten dafiir Ruhe.
+       Eine Folge hiervon ist, daB bei Newton eine Relativitat
+fur beliebig beschleunigte Bewegungen moglich ist ; 1;. B.
+kenn icli die Erde sich drehen lassen und die Some still-
+stehen, odei uingekehrt. Allerdings nur solange die Erde ein
+starrer KOrper ist. 1st sie deformierbar, wie es in Wirklich-
+keit ist, so treten die gewissen Abplattungseffekte auf infolge
+der Zentrifugalkraft. Ferner wirkt auf nicht starr verbundene
+Teile des Massensystems der Erde, wie z. B. den freifallenden
+ Stein, das Foucaultsche Pendel usw., die zusammengesetzte
+Zentrifugalkraft oder die Coriolissche Kraft.
+      Wenn wir aber nur ein starres Punktesystem, wie es
+dem Sinne der New tonschen Mechanik entspricht, annehmen,
+gilt die Relativitat auch fur die beschleunigte Bewegung. Wir
+werden spBter sehen, wie sich die Relathitah der gleichformig
+beschleunigten Bewegung aush fiir das nichtstarre System
+bei New t o n durch Zuriickfiihrung der Reaktionskriifte (Ztentri-
+fugalkraft usw.) auf fiktive Felder aufrechterhalten lie&.
+      Bleiben wir fur den Augenblick beim starren System
+und gehen wir jetzt Bur Minkowskischen Mechanik uber.
+Diese kennt im allgemeinen keinen starren Korper wegen der
+endlichen Ausbreitungsgeschwindigkeit der Spannungen. Also
+nur fiir den Fall, da13 solche Storungen wegfallen, fur die
+unbeschleunigte Bewegung, 1aBt sich die Relativitiit der Be-
+wegung. bei Miinkows ki aufrechterhalten.
+      Es ist bekannt, daB in diesem Falle der gleichformigen
+Translation tatsiicblich die Relativitat gewahrt ist. Dies hat
+L o r e n t z mit seiner bekannten Transformation gezeigt. Mathe-
+matisch gesprochen bedeutet sie, dad der Bewegungsznstand
+446                             F. Kottler.
+
+eines Systems in gewissem Sinne willkiirlich, d. i. relativ
+ist, indem das ds2 Minkowskis
+                 -aS2 = a x 2 + a y 2 + a 2 2 - c2 at2
+
+unendlich viele Insichtransformationen in den kartesischen
+Koordinaten gestattet, also die Interpretation des Tragheits-
+gesetzes (Ruhe oder Bewegung) in gewissem Grade willkiirlich ist.
+      Der Zusatz ,,in kartesischen Koordinaten" ist dabei wesent-
+lich. Denn die bloBe Tetsache, daft das ds2 umtransformiert
+werden kann, wenn die neuen Koordinaten krummlinig waren,
+ware physikalisch bedeutungslos.
+      L o r e n t z hat gezeigt, daB jeder raumzeitlichen Insich-
+transformation (Drehung) des ds2 der Sinn zukommt, daB
+damit die Einfuhrung einer bestimmten relativen Translation
+verbunden ist.
+      Das eingangs erwahnte Newt o nsche Resultat, daB die
+Hinzufiigung einer beliebigen gleichformigen Translation am
+Ablaufe der Naturerscheinunge nichts andert, ist also in der
+Minkows kischen Mechanik bestktigt.
+      Was ist es nun mit der beschleunigten Bewegung beim
+unstarren Newtonschen Korper ? Hat Ptolemaeus oder hat
+ Kopernikus recht ?
+   31. D i e Belativittit d e r B e s c h l e u n i g u n g b e i Newton i m
+                         u n at a rr e n K iirp er.
+     ,,Warum", so fragt PoincarBl), ,,ist das Relativitats-
+prinzip n u wahr fiir den Fall geradliniger und gleichformiger
+Bewegung der Achsen? Wenn ich mich im Eisenbahnwagen
+befinde und der Zug auf ein Hindernis stoBt, so daB er plotz-
+lich anhalt, so werde ich auf die gegeniiberliegende Bank ge-
+sohleudert, obwohl iczl nicht direkt irgendeiner Kraftwirkung
+ausgesetzt gewesen war. Darin liegt nichts Wunderbares.
+War ich nicht der a d e r e n Kraft ausgesetzt, so war es der
+Zug, der den kderen StoS erlitten hat. DaB die Relativ-
+bewegung meier Korper gestort wird, wenn die Bewegung
+des einen oder des anderen durch eine auSere Ursache modi-
+fiziert wnd, ist nicht zu verwundern."
+     I n diesem Falle gilt also das Prinzip der Reletivitiit auch
+in der New tonschen Mechanik nicht. Wir erkennen, daB
+      1) H. P o i n c a d , La science et l'hypothhse, chap. III,p, 137f.
+        Grundlagen der Einsteinscbn Gavitationstheorie.       4.47
+
+ es der StoB ist und das infolgedessen auftretende nichtstarre
+  Verhalten des Systems, das hier die absolute Beschleunigung,
+  d. h. die Einwirkung einer auBeren Kraft festlegt.
+        Gehen wir mit Poinear6 zu dem schwierigeren Falle
+ der gleichformigen Rotation iiber. ,,Wenn der Himmel be-
+ standig von Wolken bedeckt ware, w-enn wir kein Mittel
+ hiitten, die Sterne zu beobaohten, so konnten wir doch schlieBen,
+ daB sich die Erde dreht; wir wiirden dies erkennen an ihrer
+ Abplattung oder auch am Foucaultschen Pendelversuche.
+ Und doch, was hat das fiir einen Sinn, in diesem Falle zu
+ sagen, daB sich die Erde dreht? Wenn es keinen absoluten
+ Raum gibt, kann es eine Drehung geben ohne Drehung in
+ bezug auf etwas? Oder sollen wir die SchluBfolgerung New-
+ t o n s annehmen und an den absoluten Raum glauben? Kehren
+wir also zu unserer Fiktion zwuck. Dichte Wolken verbergen
+die Gestirne den Menschen, die sie nicht beobachten konnen,
+ von deren Existenz sie sogar nichts wissen. Wie sollten diese
+Menschen wissen, daB sich die Erde dreht? Vie1 eher noch
+als m e r e Vorfahren werden sie den Erdboden, der sie tragt,
+fiir fest und unerschiitterlich ansehen. Die Gelehrten dieser
+imaginaren Welt werden auf keine Widerspriiche mit dem
+Trggheitsgesetze stoBen, wenn sie die beiden fiktiven Kriifte,
+die gewohnJiche und die zusammengesetzte Zentrifugalkraft,
+studieren. Sie werden sie als wirkliche Krafte erklken; die
+erste wird abhiingen von den relativen Lagen der Teile des
+Systems, wie die wirklichen Anziehungszentralkr~fte; die
+letztere wird abhangen von den Relativgeschwindigkeiten der
+Teile, wie die wirkliche Reibung. Allerdings wiirden bald
+Schwierigkeiten entstehen, die ihrer Aufmerksamkeit nicht
+entgehen konnten. Diese Amiehungskrafte wiirden keines-
+wegs bei wachsender Entfernung verschwinden; weit entfernt
+hiervon, wachst ja die Zentrifugelkraft ins Unendliche mit
+zunehmender Entfernung. Vielleicht wiirden sie sich helfen
+durch Erfindung eines Mediums, analog unserem Ather, in
+das alle Korper eingebettet waren und welches auf diese e k e
+abstoBende Kraft ausuben wiirde. Aber das sind nicht alle
+Schwierigkeiten. Der R a m wiirde nicht mehr symmetrisch
+erscheinen ;man miiBte zwisohen links und rechts unterscheiden.
+Die Zyklonen drehen sich immer im selben Sinne, ohne daB
+ein Grund offenbar wgre, w a r m hier die Symmetrie des
+448                            I". Iioitler.
+Raumes gestort ist und warum der eine Drehungssinn vor
+dem anderen bevorzugt ware. l) Kurz, die Schwierigkeiten
+wiirden sich haufen, bis daB der lang erwartete Kopornikus
+erschiene und sie alle auf einma,l hinwegfegte, indem er sagen
+miirdc: ,,Es ist vie1 einfachcr anzunehmen, dab sich die .Erde
+dreht."
+     Was unterscheidet dieses Beispiel P o i n c a r h s von seinem
+friiheren? Es fehlt der StoB. Die Beschleunigung ist stationar
+und dernm kann sie verborgen bleiben. Das Syfitem ist quasi-
+starr. Die hier von P o i n c a r 6 angedeutete Relativitatstheorie
+der Beschleunigung wollen wir uns naher ansehen.
+     Worauf geht sic zuriick? Offonbar auf eine Abanderung
+des Tragheitsgese tzes. Denken wir niimlich a n das Additions-
+gesetz der Geschwindigkeiten fiir die gleichformige Rotation
+
+
+d. h. die absolute Geschwincligkoit ist gleich der relativen Ge-
+schwindigkeit) vermehrt um die Drehgeschwindigkeit ; so liefert
+diems bei Differentiation
+
+
+d. h. die absolute Beschleunigung ist gleich der rehtiven Be-
+schleunigung vermehrt urn die Coriolisbeschleunigung und die
+Zentrifugalbeschlounigung.
+     Mabm wir also
+
+
+d. h. ist die Bcwcgung des Systems kriiftefrei (und dies ist
+in der alten Mechanik f i i r die gleichformige Rotation der Fell,
+nicht so in der neuen Mechanik), so haben wir im Relativ-
+svstem
+               d zr
+               d F + 2 U---;-
+                             [ z;] + [  U[Ut] = o
+                                                 ]
+sls neues Tragheitsgesetz. Damit ist unsere Behauptung be-
+wiesen. Anders ausgedriickt: Es gibt bei N e w t o n Raum-
+zeittransformatiooen in kartesischen Koordinaten, die den
+Ubergang auf beschleunigte Systeme vermitteln. 1st die Be-
+      1) Wic es die gleichflirmige Rotation ja ist.
+         Grundlayen der Einsteinseheiz G'racitationstheorie.   449
+
+wegung hierbei gleichformig beschleunigt, l) SO gibt es auch
+fiir den unstarren Korper X e w t o n s ein Verborgenbleiben der
+Beschleunigung .
+     Der Zusammenhang dieser I d e m mit unseren Betrach-
+t,ungen uber das Triigheitsgeset z ist nunmehr schon klerer
+gcworden.
+   32. D i e Relativitiit der Beechleunigung bei Minkowaki.
+      Zur geneueren Untersuchung dieses Zusammenhanges
+kehren wir zu Minkowskis Mechanik zuriick.
+      Wir sagten, daB die Relativitat der gleichformigen Trans-
+lation auf die in sich Transformierbarkeit (in kartesischen
+Koordinaten) des ds2 zuriickginge. 1st diese Transformation
+auf die Translat,ion beschrankt? Und was ist die Translation
+von diesem Gesichtspunkte '?
+      Wir findan, daS die gleichfdrmige Translation eines Systems
+auf eine Schiebung des Min kows kischen vierdimensionalen
+Raumes hinausliiuft. Das kann man sich leicht Mar machen
+m i geometrischen Bilde der Weltlinien. Sie sind fiir eine
+gleichformige Translation eines Systems parallele Gerade ;
+ein ebener (rapmartiger) Schnitt liefert die eugenblickliche
+Lage des Systems bei irgendeinen Zeitauffassung. Die paral-
+lelen Ebenen liefern die sukzessiven Lagen des Systems ( h i
+dieser Zeitauffassung), d. h. aber, wir haben es mit einer
+Schiebung im S, m tun. Mit L0rent.z kann man d a m die
+Zeitachse drehen, so daB sie in die gemeinsame Richtung dieser
+Ciersden fiillt,, also stiindig einer Weltlinie parallel ist ; man
+sagt d a m , wir hat.ten euf Ruhe transformieit.
+      Der Bewegungsmstand ist also in gewissem Sinne relativ
+oder willkiirlich.
+     1st die gleichformige Translation - so fragon wir noch
+einmal - die einzige Insichtransformation des Minkows ki-
+schen ds=?
+     Nein, man findet leicht, daS es noch einige Klassen von
+solchen Bewegungen gibt, die nicht mit der gleichformigen
+Translation identisch sind, die abo lnumme Weltlinienscharen
+besit.zen oder beschleunigt sind. Es gibt also eine Relativitrit
+der Beschleunigung auch bei Minkowski.
+  -   -
+     1 ) Vgl. sber dae im Kep. VIII angegebene Gravitationedrehfeld,
+dae genau diese Eigenschaften hat.
+  Annllen der Phymlk. IV. Polgo. 66.                89
+450                          F. ICottler.
+       Sehen wir zu, wie wir zu diesem anscheinend paradoxen
+Resultate kommen, das wir vorhin ausschlossen, weil es doch
+keinen starren Korper bei Minkows k i geben sollte.
+      Denken wir wieder a n die gleichformige Rotation bei
+P o i n c a r b und wie sie einen Unterschied gegen den stoBenden
+Eisenbahnxug gebildet hat. Worauf ist dieser Unterschied
+zuruckzufuhren ? Wir sagten schon; auf das Fehlen des
+StoBesa bei dem ersteren Falle. Denn nur durch den StoB
+wird die unstarre Natur des Bezugssystems offenbar, indem
+sich dann eine gegenseitige Verschiebung seiner Teile einstellt.
+Aber es gibt beschleunigte Bewegungen, denen der StoB fehlt.
+Das sind offenbar diejenigen, die bei N e w t o n konstante Be-
+schleunigung aufweisen. Denn alsdann kann sich ein stationarer
+Zustand herstellen, so da13 alle Kraftwellen sich ausgeglichen
+haben.
+       Wir kommen also zu dein Resultate : Diejenigen bescldeu-
+nigten Bewegungen, die stationar sind, ermoglichen einen
+quasistarren Korperl), und fur diese und nur fiir diese gilt
+Relativi tat der Beschleunigung.
+      Man findet leicht, daB dss im wesentlichen der freie Fall
+und die gleichformige Rotation sein werden.2)
+       I n der Tat 1aBt sich zeigen, daB die entsprechenden
+Weltlinienscharen einer Insichtransformation (Drehung) des
+ds2 ihren Ursprung verdanken.
+       So haben wir denn nuch in der M i n k o w s ki sehen Mechanik
+den Anschlub an die gewohnliche Erfahrung erreicht, indem das
+ Retativitatsprinzip nicht nur fur die gleichformige Translation,
+sondern auch fur die stationare Beschleunigung gilt. Fur un-
+gleichformige Beschleunigung, bei der also Stope vorkommen,
+schlieben wir es, wieder in Ubereinstimmung mit der gewohn-
+lichen Erfahrung, am.
+33. D i e Relativitait der Beschleunigung b e i Einstein.         Die
+                      Aq uival en zh y p o t h e s e.
+    Halten wir fest, was wir gefunden haben. Das M i n k o w s k i -
+sche d s2 laBt unendlich viele Insichtransformationen zu, und
+     1) Den einen Haupttypus des sogenannten Bornsohen starren
+Korpers.
+     2) Vgl. F. Kottler, Relativitatsprinzipund beschleunigte Bewegung.
+Ann. d. Phys. 44. p. 701. 1914.
+       Grundlagen der Einsteiiescheii ~ra~itiationstheorie.        451
+
+hierauf grundet. sich die ge '             Relatiritiit oder Willkurlich-
+keit d P r Auffassung des Bewegungszustandes bei Minkow ski.
+        Nun, in cler neuen Gravitationstheorie haben wir ein
+anderes as2. 1st dieses a,uch iiisichtransforniierbar ? Wein,
+in1 allgenwinen nicht,.
+        I)er Bewegungszustancl in1 Schwerefelde ist nicht inehr
+willkiirlich, s o n d e m genau rorgeschri.eben. h'atiidich in kar-
+t,esischtin Iioordinaten. V o n diesein. Gesichtspunkte uus i.st E i i -~
+s t e i n s Th.eorie keiize Re1atir;itutsth~orie.sondern eine Absolut-
+theorie.l)
+        Waim gibt es fiir ein d s 2 unendlich viele Insichtrans-
+formationen? Nur wenn dieses d s 2 rinein ,3'4 i d konstanteni
+R i e ni a nnschen IiriimmungsmaBe ent.spricht (von den un-
+symmc4rischen Spezialfiillen der Rotationsniannigfatltigkeitmen
+abgesehen) .
+        Es ist leicht zu zeigen, daB ein konstantes R i e m a n n -
+sches Kruinniungsmalj die Einsteinschen Gleichungen (9c)
+ini mat,eriefreien Gebifit,e nicht befriedigt .
+        Awgenomrnen n w den Fall, daB dieses KrumniungsmaB
+Null ist, d. h. aber wieder fiir clas Minkowskisc.he as2.
+        Die Minkows kische Physik mu13 j a (Linen Spezialfall der
+E i n s t e i n schen bilden.
+        \Venn nun hier in kartesischen Koordiiiaten eine Uni-
+gestaltung clcs d s 2 miiglich ist, wie wir gesehen haben, wie
+inussrn mil, sic mit E i n s t . e i n deuten? hls ein (spexielles)
+Schwerefrld! W e deutet sie M i n k o w s k i ? Als beschleunigtes
+Syst,em! Beide Deutungen sind gleichberecht~igt,! Dies ist
+Eins t e i n s Aquivalenzhypothese.
+        I h m i t ' ist ein Postulat, der Relativitat der Beschleunigung
+erfiillt. Wenn eine solche moglich ist, so niiissen ja die R?ak-
+tionshiifte des beschleunigten Systems als Feldkrafte ge-
+deutet werden k6nnen. Dies tun ja P o i n c a r h s imaginare
+Gelehrte im obigen Beispiele mit, der Zentrifugalkraft mid
+der Corioliskraft. (4 31.)
+        Von diesem Postulate hat E i n s t e i n seinen Ausgangs-
+punkt genommen bei der Aufstellung seiner Gravitations-
+bheorie. Nur war es fur ihn mehr Exemplifikation des Ganzen;
+       1) E. Kretschniann, Uber den phyvikalischen Sinn der Rela-
+tivitatspostulate. Ann. d. Phys. 63. p. 5 i 5 . 1917.
+                                                      29'
+45.21                         F. Xottler
+die mathematische Ableitung erfolgte auf rein formaler
+invnriantent heoretischer Grundlage.
+     Kann die Aquivalenzhypot hese aber wirklich als mathe-
+matische Basis dienen? Hierzu bedarf es einer gewissen Ein-
+schrankung, die auf unsere Leithypothese g = - c2 in kar-
+tesischen Koordinaten hinauslanft, wie wir im nachsten Kapitel
+zeigen werden.
+     Vorerst machen wir uns die Beschrankurrgen der Giiltig-
+keit der Aquivalenzhypothese klar.
+     Erstens haben wir sie auf Miii kows kische Physik (spezielle
+Relativitatstheorie nach E i n s t e i n s Bezeichnung) beschrankt.
+     Zwejtens haben wir sie auch da auf stationare Felder
+beschrankt. Bei E i n s t e i n gibt es hiugegen auch stoBende
+Gravitationsfelder. l)
+     Nach unseren fruheren Betrachtungen halten wir aber
+diese, so lange keine gegenteilige Erfahrung vorliegt, fur aus-
+geschlossen. I m Zusamnienhange hiermit steht die Strahlungs-
+freiheit der Gravitationsb3wegung. .
+     Zu deren Exemplifikation diene das folgende elektro-
+magnetische Bild, das ich in der Arbeit ,,&la tivitatsprinzip
+und beschleunigte Bewegung" von der Entstehung der stationar
+beschleunigten Bewegungen gegeben habe : Denkt man sich
+namlich ein quasistarres Elektron, SO muB fiir clieses der
+Tensor                      - dXi d z k
+                                 E-        __
+                                      ds   ds
+statthaben. W-irkt nun ein konstantes homogenes elektro-
+magnetisches Feld, z. R. ein elektrostatisches oder magneto-
+statisches Feld, so mird sich der freie Fall bzw. die gleich-
+formige Rotation entwickeln. Das Interessante hierbei ist ,
+da8 die Elektronen, wenn die Bewegung einmal im Gange,
+also nach geraumer Zeit, nicht strahlen.
+     Damit sol1 nicht etwa gesagt werden, dab die wirklichen
+Elektronen im statischen Felde das tun wiirden, wie dies
+B o h r behauptet. Fiir diese gilt sicher ein anderer Tensor
+als oben, weil ja Kohasion da sein mu13. Aber als Bild fiir
+     1) So erklilrt er den Ruck im gebremsten Eisenbahnwagen. A. Ein   -
+stein, f%er die spezielle und die allgemeine Relativitiitstheorie (Samml.
+Vieweg 1917. p. 48). Reletivitat im Sinne des Verborgenbleibens der
+beschleunigten Bewegung ist dies, selbst bei ZuIassung der stoaenden
+Felder, nicht.
+        Grundlayen der Einsteimeken Gmritationsfheorie.           453
+
+die Vorgange im Schwerefelde ibt diese ,,Erhaltung der Iiraft",
+w a n einmal der stationare Zustand eingetreten, wertvolI.
+Denn die Strahlung dea beschleunigten Elektrons geht jo
+auf das elektrische Eigenfelcl zuriicli. 1st dieses sarut dew
+konstanten auderen Felde in einen stabilen Zustand gelangt
+(und ein solcher ist moglich, weil das BuBere Feld konstant,
+bleibt), so bleibt die beschleunigte Bewegung strahlungsfrei.
+        VII. Der freie Poll uud das homogene Sahwerefeld.
+               34. D e r f r e i e F a l l b e i Minkowski.
+     Wir gehen nunniehr 811 die Untersuchnng der beiden
+Haupttypen der stationiiren Beschleunigung.
+     Das erste ist der freie Fall bzw. sein ielativistisches Yeiten-
+stuck die B o i nsche Hyperbelbewegung. Welches ist hier die
+ Gestalt der Raumzeittransformation, die den Ubergang voin
+rnhenden zum init bewegten Systeme vrrmittelt ? l)
+     Sei 1' die (Minkowskische) Fallbeschleunigung, die etwa
+entgegen der positiven 2-Achse vi-irke, sei 2 y z t ein gewohn-
+liches Min kows kisches Bezugssptem, sei 2' y' z' t' das fallende
+Bezugssystem, so ist die Ranmzeittransformation gegeben
+dui ch
+
+                 i       r = x .
+                         y = !I
+                         z =
+                                   I
+
+
+
+
+                               (--r +
+                                ('4
+                                        z') cosh-,7 t'
+
+
+
+
+Entwickeln wir die hyperbolischen Funktionen, so kommt
+         (x=x'
+
+
+
+
+         I t = f + ...                    + Glieder mit 1 .
+    Das heiBt, bei Weglassung der Effekte zweiter Ordnung
+haben wir die bekannte Galileische Form der Newtonschen
+Mechanik.
+     1) F. K o t t l e r , Fallende Bezugssysteme vom Standpunkte des
+Reiativitatsprinzip. Ann. d. Phys. 45. p. 481. 1914.
+454                             F . Iiottler.
+
+      Kehren wir zu (14a) zuiuck und bilden das as2. Es kommt
+
+
+
+
+Dies ist, ein solcher spezieller Fall eincs Schwerefcldes, wie es
+E i n s t e i n s Hypothese voraussieht. DaR es die Feldgleichungen
+befriedigt, versteht sich von selbst. Denn (15a) ist euklidisch;
+es verschwinden allc Riernannsymbolc! und daher auch die
+aus ihnen kombiniert.en Gik.
+      Dies ware also der gesuchte Baustein f k - unsere Gravi-
+tationstheorie. TatsSichlich hatte E i n s t e i n in seinen ersten
+Arbeit.en I) die obige Ramnzeit,transformation, allerdings in der
+Bcschrankung auf erst.e Ordnung, zugrunde gelegt.
+      Warum ist das nun nicht der Fall? Warum ist. die liqui-
+valenzhypothese in dieser Form, also: ,,Minkows kis be-
+schleunigtes System aquivelent einem Schwerefelde", un-
+brauchbar ?
+                      35. D a s h o m o g e n e F e l d .
+      Hierzu untersnchen wir, was das fiir ein Schwerefeld
+u-iire, das clurch (15a) reprasentiert werdon sollt,e. Es ist dies
+offenbar ein langs dcr z-Aclise wirkendes homogenes Schwernfcld.
+      Waiin entsteht aber ein solches Frld? Dies ist offenbar
+der Charalder des Schs-erefeldcs eines Massenpunktes in einem
+sehr kleinen Bereicho oder in sehr weiter Entfernung voni
+Ma,ssenpnnkte.
+      Wie sieht dicses Feld nsch unserer fruhoren Theorie aus ?
+      Greifen wir Ltuf die wohlbeksnnte Gestalt (4) des fur den
+Massenpnnkt
+
+
+
+
+l h n n when wir, dal3 das hoiiiogene Feld nienials die Gestalt
+(15a) haben wird. Setzm wir niimlich
+                          r == r0 2.
+                                  1
+                                     3
+-       --
+      1 ) A. Einstein, Lichtgevchwiiidigkeit und Statik des Gravitatione-
+feldes. Ann. d. Phys. 88. p. 355. 1912.
+      Grundlagen der Einsteinschen Gracifationstheorie.      455
+
+und sei z klein gegen T o , so wird
+
+
+
+
+                                  nach N e w t o n fiir T = r,,
+ferner ist, die ~'cldbeschleunigun~
+
+
+also hsben wir
+
+
+
+ncd iuithin bei giol3er Entfwnung ro, wo z2 gegen ro2 ver-
+nachlgssigt werden und G = co genommen werden kann, fiir
+das homogene Feld in der z-Richtung, die init den1 Radius-
+vrktor nun zusammenfgllt,
+
+
+
+Es ist leicht zu when, dsl3 dieses ds2 ebenfalls Min kows kisch
+ist. Nhmlich init Hilfe der Transformation '
+
+
+kann es suf die Form gebracht werden
+(151%) - d s 2 = d ~+ ,d y~2 + dz' - c2 1 +
+                                        (     e   i
+                                                      "dt2
+
+und dies ist grnau die Form (15a), von der wir ja wissen,
+da13 sie ein Minkows kisches Element vorstellt,.
+     Warum aber unterscheiden sich die MaBbestiinmungen
+des beschleunigten Minkows kischen Systems (15a) von der
+MaBbestimniung (15b) ?
+     Hierzu bemerken wir, da13 die MaBbestimmung (l5a)
+durch die Minkowskissche Physik gefordert wird, wenn anders
+der Obeygang vom bewegten zum ruhenden System sich durch
+eine instantane Lorentztransformation vollziehen soll. Der
+456                            F . Kottler.
+
+Widerspruch ist also nicht durch iryendweEche Hinweise auf
+die Frezhit der Mapbestinzmung des mitbewegten Beobachters
+z u baeitigen.
+     Wo liegt also der Schliissel zu diesem Versagen der &ui-
+valenzhypothese? Der Grund ist einfach der, daB (15a)
+                 kein berechtigtes Bezugss ystem
+ist. Denn der Wert g ist fiir (15a)
+
+
+hingegen ist (15b) ein berechtigtes Bezugssystem, denn es ist
+                               y=     - c 2 .
+
+    Ich will nun zeigen, wie wichtig diese Porderung des
+berechtigten Bezugssystems ist, damit U b e r e i n s t k u n g Isit
+der Newtonschen Niiherung und auch mit den Effekten
+zweiter Ordnung erzielt werde.
+               36. V e r g l e i c h m i t der Erfehrung.
+    Hierzu berechnen wir die geodatischen Bewegungsglei-
+chungen fur (15b)
+         - -
+         $2:
+         ds¶ - ' 9
+
+
+
+
+          d
+         d8
+
+Wir erhalten mit       =u      als Zeit die Integral6
+                       2   - z1 = qz (u - U J ,
+                       Y - ~1 = qy (U -              I
+
+
+                       z - 2       ' - q U - U ) ?
+                               1          a              1   '
+
+wo die qz qv gewisse Integrat,ionskonstanten sind.               11 = u1   ist
+der Zeitpunkt der Umkehr           2
+                                = 0.
+
+   Dies ist nun genau analog der Galileisohen Wurfparabel.
+Denn fur diese gilt
+           Grzi n dlagen der Ein steinahen Gracitationstheorie.            457
+
+                           5 -          = BT (t - il)*
+
+                           y - .?/* = ?JY (t - f i i
+                            -
+                            7             r i
+                                - 1 - _ -Y ,t - t,)?
+                                -   -
+                                    -
+
+
+
+
+Also bei Veriiachllssigung der Efiekte aweiter Ordnung ist
+8
+-=    t uncl wir haben exakt die Galileische Parabel.
+c
+     Hingegen findet man fur (Ilia), \Tie ich 1. c. gezeigt
+habe, als \Yurfbahn eine (parabelartige) Ellipse.
+     Also ist (15b) im besseren Einlilang mit der Erfahrung
+als (15a). Noch einen snderen Widerspruch rnit der Erfahrung
+konnen wir nachweisen. Konstruiert man nlrulich, wie ich
+es 1916 versuchtel), von (15s) ruckwarts das Feld des Massen-
+pnnktes, so mu13 es offenbar die Gestalt haben
+    - dss= d r 2 + r B d a a +r 2 s i n a 9 . d ~ Z -c 2 ( l - 1,-  -) d t 2 .
+                                                                  m. 1
+                                                                 ep r
+                                                                       ?
+
+
+
+
+Dieses ds2 befriedigt auch gew-isse invariante Differential-
+gleichungen analog den E i n s teinschen Gleichungen; aber
+es liefert nur die halbe Perihelbeweguiig des Merkur.2)
+      Mithin erliennen a i l , daB die Aquivalenzhypothese, also
+die Aquivalenz eines Minko ws kischen beschleunigten Systems
+mit einem Schwerefelde, zu Widerspruchen mit der Erfahrung
+f u h t und da13 sie such nicht als Ausgangspunkt der Theorie
+dienen kann.
+      Gibt man ihr freilich eine andere Form, verlangt man
+namlich die Anderung der LBngeiima13bestimmung auch fur
+das beschleunigte System, so liefie sie sich aufrechterhalten.
+Dies ware d a m freilioh kein initbrwegtes System im Sinne
+~-     ~
+
+
+
+
+      1) Auch Einstein hatte ursprunglich die Erftillung der Laplace-
+schen Cleichung fur V g L im materiefreien Felde verlangt (vgl. Ann. d.
+Phys. 38. p. 360. 1912). In der nachfolgenden Arbeit ,,Zur Theorie des
+statischen Gravitationsfeldes" (1. c. 36. p. 452. 1912) verwirft er diese
+Form von qaa und nimmt die (unrichtige) Form an, wonach
+Laplacesche Gleichung befriedigt. Es heil3t dort p. 456 oben wortlich:
+                                                                      6
+                                                                      die
+
+,,Zu diesem Schritte entbchliel3e ich mich schwer, wcil ich mit ihm den
+Boden des unbedingten Aquivalenzprinzips verlasse".
+       Hatte ich also 1916 so Unrecht, zu sagen: ,,Einstein hat die Aqui-
+ valenzhypothese aufgegeben" ?
+       2) Vgl. E. Reichenbacher. dcr dieses Bogenelement adoptiert.
+ Ann. d. Phys. 5?. p. 161. 1917.
+458                        F. Kottler.
+L o r e n t z mehr, und es ist nicht einzusehen, was der Begriff
+des berochtigten Bezngssystems, der in der Gravitation wurzelt,
+in der Minkowskischen Kinematik zu sagen hatte.
+       Davon abgeschen 1aBt sich jedenfalls die Aussage oufrecht -
+erhalten: Die Anschauiingen cler Ruhe im Schwerefeldc und
+des fallenden Bezugssystems sind bei geeigneten Voraus-
+ setzungen uber die NaBstiibe aquivalent.
+
+  VIII. Dle gleiehPVrmlge Rotation und dae Bnrvltatlonsdrehfeld.
+       37. D i e gleichfarmige Rotation bei Minkow ski.
+     Dies ist der zweite Haupttypus der stationLen Beschleuni-
+gung. Zur Aufstellung der Raumzeittransformation, welchc
+den Ubergang vom ruhenden zum rnitbcwcgten System ver-
+inittelt, bediene man sich folgender Iioordinaten:
+
+
+
+
+                             Fig. 1.
+
+     Die Rotation geschehe um die z-Xchse mit gleichforruiger
+Winkelgeschwindigkci t o. Dann sei die 2'-Achse der z-Achse
+stets parallel, die x'-Achse weise in der Richtung der Zentri-
+fugalkraft, die g'-Achse sei senkrecht hierzu. Auf die Erde
+iibertragen heiBt dies: Sei R cler Erdradius, sei das Komple-
+merit zur geographischen Brvite, so ist die
+     2'-Achsc parallel zur Erdachse, d. h. unter eineru U'inkel q
+geneigt zur Lotlinie,
+     xl-Achse in der Meridianebene hierzu senkrecht,
+     g'-Achse horizontal entlang dem Breitenparallelkreis.
+     Dann lautet die voii mir angc,gebene Raunizeittrans-
+for mat ion
+          Grun dlagen der Einsteinschen Grawitntionsthemie.                             459
+
+                     z=(Rsincp + z ‘ ) c o s m t - - s iY’n w t ,
+                 Iy (Rsingp + sin                              v3-
+
+(16)
+                 I     =
+
+                     z = B cos y
+                                         z’)
+
+                                      + z’,
+                                                     r o t + -Y‘c o s w t ,
+                                                               V?
+                                         w
+                           t‘ f R sin cp -  . y’
+                                         C*
+                                               -.
+                                  VT
+       Hierin 1st abkiirzungshalber
+                             13 = 1 - R2sin2gp-eE         W*
+
+
+
+
+gesetzt. Dies liefert, wmn dt’ = rlt 1/> berucksichtigt wird,
+clas folgende a s 2
+               lw= l i x 2 + a g +             a-2   -~ a t 2
+
+
+                                                                          +   g44   a i’2.
+Hierbei entninimt man die Werte der six folgendem Schema
+
+
+
+
+       Der Wert diessr Determinante ist
+
+
+
+widerspricht also unseier Leithypothrse
+                                    ( J = - c 2 .
+
+Selbstverstandlich befriedigt (16a) die Einsteinschen Feld-
+gleichungen. Es folgt also, daB die Geometrie des bewegten
+Beobachters euklidisch sein konnte. E i n s t e i n ist also im
+Irrtum, wenn erl) meint,, da13 die Notwendigkeit einer Langen-
+            -
+       1) A. E i n s t e i n , Uber die spezielle usw. Relativitiitatheorie. p. 55.
+460                           F. liottlel..
+anderung im Schwerefelde aus den Verhaltnisscn beim rotieren-
+den Bezugssystem gefdgert werden konnl,e. MaBgobend hierfiir
+ist vielmehr erst der Begriff des berechtigten Bezugssystems
+mit dem postulierten Anschlusse an die Xewtonsche Erfahrung.
+     Wir konnen statt (16a) lcicht ein berechtigtes Bezugs-
+system einfuhren, i n d m wir set,zen
+                    y' = y, , 2' = zl, t' = t,
+
+
+
+
+Man findet dann
+
+(W {
+         -as2   = I/ll dx,2   +   ay12   4- a q +- 2y,, ax, at,
+                                         +
+                                 2Y2, dY1 at1 + g44 a t , 2           9
+
+wobei die Determinante 9 gcgeben ist d u c h
+
+
+
+
+ i o                    1           0
+                                                                  0
+
+
+
+
+ I       0             0            1                       0
+
+
+
+
+wobei wieder abkkzungshalber
+                            KP 0 9
+                   /?= 1 - --      ein2y
+gesetzt wurde.
+    Dieses Element (16b) stellt also nach allem Voraus-
+gegangenen ein Schwerefeld dar. Was fiir eines 3
+         Grundlqen der Einsteinschen Gral;itation.slheorie.                461
+
+                   38. Das G r s v i t a t i o n s d r e h f e l d .
+     Hierzu greifen wir zuriick auf clas in $ 28 uber die Physik
+innerhalb einer homogonen Massemchale Gesagte : Ini Inneren
+einer ruhenden Massenschale heirsch t, Mi n k o w s kische Physi k,
+also pin Element.
+                --w = ds2 +                    + dz2     - c2 a t 2    .
+       Dieses Result,at mu13 offenbar auch aufrechterhalten
+werden, wenn sich die homogene Massenschale in gleichformige
+drehendc Bewegung versetzt. X ~ i rtritt. d a m an St.elle der
+Minkows kischen MaSbestiminung die MaBbestirnmung (16b).
+       Unser Schmerefeld ist also das Drehfeld im Inneren einer
+horn ogenen, gleichf ijrmig rotierendcn Massenschale.
+       Bildet man die Geodaten, so findet man leicht bis auf
+l3ffekt.e zwcikr Ordnung die Zentrifugelluaft. uncl die Coriolis-
+liraf t. wiedcr, diesmal als Gravitat.ionsfeldkrlfte.')
+       Einem alten Postmulate der Relativitht ist. so Genuge
+grtan. P t o l e m a c u s und K o p e r n i k u s behalten beide recht.
+
+      IX. Znsammenhesnng der Lelstnngen der nenen Theorle.
+     Fassen wir zusamn en, was dio ntwe Theorie alles ge-
+leiskt hat.
+     Sie erkliirt, erstem die Uniformit.iit der Gravitation, d. i.
+die Tatsache, daS alle Korper gleich schnell fallen, den Mange1
+einer Dispersion bei der Gravitation IISW.
+     Sie erklart ferner, w a r m die Gravitation rein konservativist.
+     Die Kctplerschen Gesetze liefert. sie exakt als Effekt
+erster Ordnung.
+     nie Perihelbewegung des Mcrkur ergibt sich als Effekt
+zweiter Ordnung auf derselben Grundlage wie die Verander-
+lichkeit der Masse in der Min kows kischen Mechanik.
+     duch die allgemeine Poissonsche Theorie der Gravi-
+tation findet, sich als Effekt erster Ordnung wider.
+     Sie ergibt fur das abgeschlossene System die Gesamt-
+niasse Null.
+     Sie liefert die Begrenztheit der Welt und ihrer Masse.
+     1) Von andercn Randbedingungen ausgehend, findet H. T h i r r i n g ,
+Ober die Wirkung rotierender ferncr Massen in der Einsteinschen
+Gravitationstheorie (Physik. Zeitachr. 19. p. 33. 1918) eine Liismg, die
+aber mit der Erfahrung nicht im Einklang steht..
+462   F. Kottlcr. Grundlagen der Einsteinschen Grawitafionstheorie.
+     Weiters zeigt sich iin Irineren der Materie abs toBende
+Wirkung an Stelle der anziehenden Wirkung im AuDenraume.
+Hierdurch lost sich die Maxwellsche Schwierigkeit der Stabili-
+tat fur eine AtheAheorie der Gravitation. Ferner wird die
+Undurchdringlichkeit der Materie hier duich gekennzeichnet,
+     Endlich ergibt sich fiir die Theorie der Relativitat der
+stationaren Beschleunigung eine gewisse Aquivalenz zwischen
+Schwerefeld und beschleunigtem Bezugssystem, womit ein
+Relativi tatspos tula t befriedigt wird.
+     Alles in allem konnen wir sagen, dafi unsere einleitenden
+Bemerkungen, durch die Einsteinsche Theorie ware das
+drei Jahrhunderte alte Problem der Gravitat'ion gelost, ge-
+rechtfertigt sind.
+
+                   (Einggangen 14. Miirz 1918.)
+

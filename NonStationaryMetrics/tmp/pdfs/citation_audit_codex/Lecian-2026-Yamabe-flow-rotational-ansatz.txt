@@ -1,0 +1,2131 @@
+Article
+
+The Yamabe Flow Under the Rotational Ansatz of Noncompact
+(Pseudo-Riemannian) Solitons: Schwarzschild Solitons and
+Generalized-Schwarzschild Ones
+Orchidea Maria Lecian
+
+
+                                         Department of Clinical and Molecular Medicine, Sapienza University of Rome, Viale Regina Elena 324,
+                                         00185 Rome, Italy; lecian@icra.it
+
+
+                                         Abstract
+                                         The present paper is aimed at studying the convergence of the Yamabe flow in the case
+                                         of noncompact solitons. The more specified example of locally conformally flat noncom-
+                                         pact solitons is addressed with the aim to newly analyse the qualities of the Ricci scalar.
+                                         The particular case of noncompact pseudo-Riemannian solitons is studied; moreover, in
+                                         the instances of Schwarzschild and Generalized-Schwarzschild geometries, rescalings of
+                                         spherically symmetric weights are performed. For this purpose, new results are achieved
+                                         as far as the considered structures are concerned. The Myers Theorem is upgraded as
+                                         the new Myers paradigm of spacetime-dimensional manifolds, where the Einstein Field
+                                         Equations can now be taken into account. In particular, the Myers Theorems are studied
+                                         here as far as their new implementation in General Relativity Theory is concerned. As a
+                                         first important result, the Myers mean curvature is found to coincide with the Ricci scalar in
+                                         General Relativity Theory, where the 4-position of the observer, from which the 4-velocity
+                                         4-vector is calculated from, is taken as that of the observer solidal with the reference frame
+                                         of the photon. The following results are also of relevance. In more detail, the umbilicity
+                                         conditions are applied. At a further step, the role of the umbilicity conditions in GR after
+                                         the Myers Theorems are studied for weighted manifolds and specific new implications of
+                                         weighted manifolds are developed. The description of the weighted Schwarzschild mani-
+                                         folds and that of the weighted Generalized-Schwarzschild manifolds are newly studied
+                                         as follows: as a new finding, the Birkhoff Theorem is newly reconciled with the rotational
+                                         ansatz of the metrised solitons, and the comparison with the previous results about the
+                                         Brendle non-metrised solitons is accomplished with the outcome stressing the new roles
+                                         of the new rescalings of the metric tensor with respect to the previous known results of
+                                         the scaling of the metric tensor of the non-metrised solitons. In the present framework,
+                                         these procedures allow one to prove the reconciliation of the EFEs with the Yamabe flow.
+                                         The flow on the tipping lightcones is newly written. The umbilicity condition is studied in
+                                         General Relativity after the upgrade of the Myers Theorems as far as the sectional curva-
+Academic Editor: Anna Maria Fino         tures are concerned; as a result, the Calabi–Bernstein description is implemented in General
+Received: 2 February 2026
+                                         Relativity, as well as the Chen–Yau requirements, and the cases of weighted manifolds
+Revised: 26 March 2026                   are taken into account. More specifically, the equal-time 2-dimensional space surfaces are
+Accepted: 31 March 2026                  studied analytically, onto which the weighted General-Relativistic solitons which satisfy
+Published: 7 April 2026                  the Einstein field equations after the Yamabe flow are projected due to the rotational ansatz.
+Copyright: © 2026 by the author.         As an accessory introductory result, the class of Wu non-metrised solitons are proven to
+Licensee MDPI, Basel, Switzerland.
+                                         be discarded in several aspects of the Wu description as the conditions provided after the
+This article is an open access article
+                                         work of Wu are not compatible with metrisation.
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license.
+
+
+
+
+Axioms 2026, 15, 267                                                                                        https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                              2 of 33
+
+
+
+                       Keywords: Bernstein–Calabi problems; Chen–Yau hypotheses; rotational ansatz;
+                       Schwarzschild solitons; Generalized-Schwarzschild solitons
+
+                       MSC: 35C08; 35Q76; 83C20
+
+
+
+
+                       1. Introduction
+                             The present paper is aimed at studying the Yamabe flow of weighted, metrised,
+                       noncompact pseudo-Riemannian solitons, which are newly obtained after the imposition of
+                       the rotational ansatz on the new structures; particular cases of the Schwarzschild geometries,
+                       and of the Generalized-Schwarzschild ones, are then taken as instances.
+                             The present work is motivated after the results of Yamabe [1]. In the work of
+                       Yamabe [1], the theorems are proven, according to which, every compact C ∞ Rieman-
+                       nian manifold with n ≥ 3 space dimensions can undergo conformal deformation to a C ∞
+                       Riemannian structure of constant scalar curvature.
+                             In more detail, the results of Yamabe are in the present paper newly axiomatised as
+                       those from an n-spacetime-dimensional manifold, which is then weighted and metrised;
+                       the Einstein Field Equations (EFEs) are imposed on the Ricci flow, and the rotational ansatz
+                       is required as follows: the study of the induced rescalings of the metric tensor is afforded.
+                       As a result, the new Riemannian Levi-Civita connections are newly proven to be unique
+                       and to coincide with the Christoffel symbols; the required steps for the calculations are
+                       spelled out, which are also newly proven to induce some particular isocline hypersurfaces.
+                             One further motivation of the work is the study of the Myers Theorems in General
+                       Relativity; as a new result, the Myers mean curvature is proven to coincide with the
+                       Ricci scalar, after the proofs of the uniqueness of the Levi-Civita connections and of the
+                       identifications of the required Killing vector field(s) with those written after the 4-velocity
+                       vector. As a further result, the new aspects of the tangent space are discovered, after which
+                       the definitions of the tipping lightcones in the description à la Penrose are shown.
+                             As one methodological tool, the Myers paradigm is newly written for the case of
+                       noncompact manifolds; as a result, the new definition of Myers mean curvature and
+                       the new majorisation theorems are constructed—the mean curvature is here proven to
+                       coincide with the Ricci scalar in GR and with the inclusion of weighted solitons. As a
+                       further methodological tool, the umbilicity conditions are newly applied to weighted
+                       Einsteinian manifolds.
+                             The application of the umbilicity conditions to unweighted Einsteinian manifolds has
+                       already been performed only in some specific cases.
+                             In the work of Alías et al. [2], General-Relativistic spacetimes are considered, whose
+                       sectional curvature of the fibre is not constant. Ibidem, the complete spacelike surface is
+                       demonstrated to be completely umbilical under the chosen hypotheses; in the case of a
+                       compact spacetime manifold, complete umbilicity is taken into account.
+                             The particular case of an FRW spacetime is studied ibidem, for which the convergence
+                       condition is imposed in the case of a vanishing cosmological constant, which is in the
+                       present work considered a particular Generalized-Schwarzschild soliton.
+                             Ibidem, generalized-FRW-spacetime slices are taken, and they are demonstrated to
+                       have constant mean curvature and total umbilicity.
+                             In the present paper, as a further methodological tool, the umbilicity conditions
+                       are newly applied to the weighted, metrised manifolds form which the wanted solitons
+                       are originated. The paper is structured as follows. One of the goals of the present
+                       paper is the obtention of the Yamabe flow of noncompact pseudo-Riemannian spacetime-
+                       dimensional manifolds. The results are specialised and applied to the case of the metrised
+
+
+                                                                                  https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                            3 of 33
+
+
+
+                       Schwarzschild soliton of specified Einstein Field Equations (EFEs) and to the metrised
+                       Generalized-Schwarzschild ones.
+                              For these purposes, the umbilicity conditions are implemented in the study of the
+                       first fundamental form and in the second fundamental form, after which the new results
+                       are demonstrated as far as weighted manifolds are concerned starting from the work of
+                       Alías et al. [2] and the following items of work [3] (which are ones where the paradigms
+                       are implemented for the unweighted manifolds of metrised Friedmann–Robertson–Walker
+                       spacetimes and are in the present work written for generic weighted manifolds, i.e., the
+                       Kaehler-inspired weighted manifolds are also investigated); the Nichikawa Theorems are
+                       developed as follows: the Calabi–Bernstein problems are upgraded, and the Chen–Yau
+                       description of Maximal spacelike hypersurfaces in Lorentzian Minkowski metrics are
+                       upgraded in the case of General-Relativistic instances. As an accessory result, the presence
+                       of tachyons is ruled out. In the work [4], the Ricci problem analogous to the Tykhonov
+                       example of the heat kernel is investigated for the deformations of the metric tensor.
+                              The work [4] motivates the work of Wu [5]. In the work [6], the property of metrised
+                       gradient Ricci solitons is studied, where the completeness of the metric g implies the
+                       completeness of the vector field ∇µ F that is the F the weight function.
+                              In the work of Wu [5], complete noncompact Yamabe solitons are studied; integral
+                       conditions are hypothesized on the curvature as follows: the pertinent weight functions
+                       are ibidem taken with, at most, quadratic direct growth in the distance. Moreover, the
+                       topological properties of this class of solitons are investigated. In the present paper, the
+                       Wu solitons are discarded; in more detail, the weight function are proven to be, at most,
+                       of linear growth in the distance. The methodology followed here is to discard the integral
+                       conditions on the curvature from the work of Wu, as the solitons considered here are
+                       solitons metrised in the a smooth metric space of convex functions. The instance of the
+                       radial functional dependence on the distance is taken as an example. Moreover, in the
+                       work of Wu, the description is provided given that the Ricci curvature from the Yamabe
+                       flow of the Wu class of solitons becomes constant; in the present paper, this description is
+                       discarded, as the proof shows that metrised solitons exhibit a different behaviour in this
+                       case, as follows: the tool utilised here in the newly presented proof is the analysis of the
+                       rescaling of the metric tensor under the rotational ansatz, where the weights are put in the
+                       square root of the determinant of the metric tensor as a consequence of the metrisation,
+                       after which the Yamabe solitons can be also downgraded to non-metrised cases as the EFEs
+                       (of which solutions of the Wu class of solitons are described on a Riemannian manifold) for
+                       an alternative proof by construction after direct comparison.
+                              In the present work, it is also proven that the n-velocity is a complete vector field
+                       (i.e., after the use of the tools from [6]), where Mn is an n-spacetime-dimensional manifold;
+                       the proof is by construction as follows: this new theorem completes the definition of
+                       noncompact metrised Yamabe solitons after Axiom A1 and and after Axiom A2, as the
+                       proof is not based on any compactness assumptions, i.e., in the same topology of [6].
+                              In the present paper, the Myers Theorems are upgraded to GR, and the required
+                       definition of the curvature is newly proven to coincide with the Ricci scalar in GR for
+                       unweighted manifolds. Afterwards, the weighted metrised solitons are considered, which
+                       are recalled to live on the pseudo-spherical Relativistic cylinder, which, in turn, is here
+                       considered for weighted metrised solitons. The metrisation, viewed as one in a space of
+                       smooth convex functions, is here newly approached. As a methodology, the behaviours of
+                       the Christoffel symbols are studied, which are proven to bring about new results regarding
+                       their potential in the Schwarzschild and Generalized-Schwarzschild cases, which allow
+                       one to reconcile the EFEs with the Yamabe flow. The newly outlined procedure is thus
+                       newly proven to be equivalent to the imposition of the rotational ansatz on the metrised
+
+
+
+                                                                                https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                               4 of 33
+
+
+
+                       weighted manifolds, whose behaviours are here newly investigated and newly proven
+                       to be equivalent with the requirement that the Christoffel symbols for the GR weighted
+                       metrised manifold are reconducted to those obeying the Birkhoff Theorem.
+                             In the present paper, the following notation is utilised from [7]: Greek-letter indices
+                       refer to 4-spacetime-dimensional indices, and Latin-letter indices refer to space-dimensional
+                       indices in any number of space dimensions; the metric tensor Ĝ is utilised as that of any
+                       number of spacetime dimensions, while the metric tensor ĝ is the 4-spacetime-dimensional
+                       metric tensor. The convention c ≡ 1 is here used for the velocity of light c, i.e., also in
+                       the definition of the infinitesimal line element. The Einstein summation is implied in the
+                       saturated indices. The signature employed is (+, −, −, . . . , −).
+                             The paper is organized as follows. In Section 2, the introductory definitions are
+                       introduced; a critical review of the previous items of bibliography is conducted, after which
+                       the Wu class of Yamabe solitons from [5] is proven to be discarded as the metrisation
+                       techniques proposed ibidem are proven to not be consistent with a space of smooth convex
+                       functions, which are needed for the definition of pseudo-Riemannian solitons as follows: the
+                       new results achieved here are independent of the topology of the solitons. The noncompact
+                       solitons which live on the pseudo-spherical GR cylinder are then recalled, whose tangent
+                       space is recalled to be illustrated as characterised after tipping lightcones constructed after
+                       the Frénet mobile GR triedron.
+                             In Section 3, the introductory material is demonstrated.
+                             In Section 4, the introductory study is presented as follows: the Myers paradigm,
+                       including the Myers Theorem, is reported for compact space-dimensional manifolds from
+                       the work of Myers [8].
+                             In Section 5, the new Myers paradigm of noncompact spacetime-dimensional mani-
+                       folds is newly formulated and shown; the new implementation is also suitable to be applied
+                       to the spacetime-dimensional manifolds, in particular, in General Relativity, where the
+                       EFEs can be implemented.
+                             In Section 6, new results from the umbilicity conditions are presented.
+                             In Section 7, selected topics from the work of Yamabe are recalled as far as the Yamabe
+                       flow of compact Riemannian manifolds in space dimensions is considered.
+                             In Section 8, the new Myers paradigm is newly implemented on Schwarzschild geometries.
+                             In Section 9, the new Myers paradigm is newly written on Generalized-
+                       Schwarzschild geometries.
+                             In Section 10, the new study of the parametric-time-variable-weighted rescaled-
+                       Schwarzschild spacetimes is presented.
+                             In Section 11, the new study of the radial-variable-weighted Rescaled-Schwarzschild
+                       spacetimes is achieved.
+                             In Section 12, the new rescalings of the Generalized-Schwarzschild spacetimes with
+                       radial-variable-dependent weights are focused on.
+                             In Section 14, some aspects of the results are further discussed, and their role is further
+                       characterised within some of the pre-existing literature.
+                             In the Outlook Section 15, the reconciliation of the EFEs with the Yamabe flow is
+                       proven to be equivalent with the (newly proven) observance of the Birkhoff theorem after
+                       the imposition of the newly found conditions of the Christoffel connections of the weighted
+                       (metrised) manifolds, whose metrisation itself is proven to define all the rescalings allowed
+                       after the rotational ansatz (i.e., not only the one rescaling described in the Brendle analysis).
+                       All the new corresponding theorems are proven here.
+                             In the Appendices A–F, the Schwarzschild metrics used for this paper are found as
+                       follows: the geometrical objects are spelled out.
+
+
+
+
+                                                                                   https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                              5 of 33
+
+
+
+                             In Appendix G, the existence and the uniqueness of the Yamabe flow is newly con-
+                       trolled to hold in the noncompact case for pseudo-Riemannian manifolds, in which case
+                       the applicability is here newly ensured in GR; the cases of weighted manifolds is also taken
+                       into account.
+
+                       2. New Definitions for the New Methodologies
+                            In the present paper, the new methodology is issued from [9] and from [10] for the
+                       metrisation of the manifolds from which the solitons are taken to be implemented. As a
+                       methodology, the non-metrised manifolds M are taken, which are compared with those
+                       employed in the study of [9,10] about the so-called Brendle solitons. The Brendle solitons
+                       are built for the scaling of the metric tensor to be studied. The manifolds M are then
+                       metrised after the application of the weights f in the functional form e−2 f , which defines
+                       the locally conformally flat transformations of the metric tensor as
+
+                                                              GaB → e−2 f GaB .                                      (1)
+
+                       After Equation (1), the weight functions therefore enter the squared root of the determinant
+                       of the metric tensor matrix. Accordingly, not only the scaling, but all the conformal
+                       rescalings of the metric tensor can be studied; from this study, the locally conformally
+                       flat transformations are found. Moreover, the asymptotical flatness is controlled. As a
+                       further result, one finds from [11] that the local volume growth due to the metric tensor
+                       is vanishing.
+                              After weight metrisation is achieved, the Einstein Field Equations can be controlled,
+                       i.e., the constraints arising from the EFEs are implemented. As a result, the time interval
+                       (i.e., the exact coordinate-time interval as expressed from the pedexa in Equation (1) during
+                       which the Ricci flow is defined is checked; in particular, the RIcci flow is then made to be
+                       coherent in the desired time interval.
+                              The Ricci flow is this way made to obey the EFEs, i.e., the Ricci solitons obtained
+                       this way are from Einsteinian manifolds. The geometrical objects (such as those listed in
+                       Appendices A–E, are then calculated from the metric tensor transformed after Equation (1).
+                       It is straightforward to verify that the Christoffel symbols contain now the weight functions
+                       and their opportune derivatives; accordingly, the Riemann tensor is then calculated, and
+                       from its components, the Ricci tensor and the Ricci scalar are written as well as the oppor-
+                       tune functions of the weight functions and those of their derivatives. The construction is
+                       straightforwardly proven to be unique as the metrised manifolds M, obtained from the
+                       non-metrised manifolds M, are Einsteinian as follows: it is straightforwardly checked as
+                       well that the Levi-Civita connections of Einsteinian manifolds are unique, and that they
+                       coincide with the Christoffel symbols in GR.
+                              It is now my aim to impose the Yamabe flow as follows.
+
+                       2.1. About Noncompact Yamabe Solitons
+                             Noncompact solitons are here newly described, where the main aspects are recalled in
+                       order to correct the work of Wu [5]. Noncompact Yamabe solitons admit a smooth vector
+                       field X α such that it is a conformal Killing vector as the metric tensor obeys the requirement
+
+                                                              ∂
+                                                                g = − Rgαβ                                           (2)
+                                                              ∂t αβ
+
+                       after which the Riemannian manifold ( Mn , g) is considered.
+
+
+
+
+                                                                                  https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                    6 of 33
+
+
+
+                           From the work of Wu, the Ricci scalar R is proposed to be characterised after the
+                       weight function F as obeying the limit
+
+                                                            lim F→const R | Yamabe → C                                     (3)
+
+                       where R | Yamabe is the Ricci scalar evaluated after [5] in the Yamabe flow on the non-
+                       metrised Mn with, generically,
+                                                             2X A ≡ ∇ A F                                  (4)
+
+                       being C a constant.
+                           Here, I set
+
+                       Axiom 1. The Yamabe soliton is obtained as
+
+                                                           Rgαβ + ∇α ∇ β F = −λgαβ .                                       (5)
+
+                       from
+
+                       Axiom 2. The application of the Lie derivative is performed according to X µ as
+
+                                                            RGαβ + £L X Gαβ ≡ λgαβ .                                       (6)
+
+                            It is now momentous to remark that
+
+                       Remark 1. Axiom 2 induces the specific result that the conformal Killing vector field is obtained
+                       after a concurrent vector field; indeed, the position is proven in [9] to be a concurrent vector field
+                       in GR, as follows: the conformal Killing vector field is here then calculated after the 4-velocity
+                       vector field.
+
+                       Remark 2. The degrees of freedom permitted after the non-vanishing components of the 4-velocity
+                       vector field have been examined in the subsequent work of the author
+
+                            In more detail,
+
+                       Remark 3. The solitons in vacuum spacetimes exhibit at least one degree of freedom of the non-
+                       vanishing radial component of the 4-velocity vector field, which is also true in the Schwarzschild case.
+
+                       Remark 4. The solitons in non-vacuum spacetimes exhibit at least two degrees of freedom, i.e., one
+                       from the radial component of the 4-velocity vector field, and one from the time component of the
+                       4-velocity vector field, as it is analysed in the Schwarzschild spacetimes.
+
+                           The new definition of concurrent vector fields in GR is obtained in [9].
+                           The specifications occur for a steady soliton with λ ≡ 0, expanding the soliton with
+                       λ > 0, and shrinking solitons with λ < 0, i.e., the signs in Equation (6) are
+                       chosen accordingly.
+                           I correct that here.
+
+                       Theorem 1. The Schwarzschild soliton is metrised as its Ricci scalar RS obeys the limit
+
+                                                         lim F→const RS | EFEs−Yamabe ≡ 0.                                 (7)
+
+                       Remark 5. The case lim F→0 in Theorem 1 allows one to recover the GR unweighted
+                       Schwarzschild spacetime.
+
+
+
+                                                                                       https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                       7 of 33
+
+
+
+                             Moreover,
+
+                       Theorem 2. The Generalized-Schwarzchild soliton is metrised as its Ricci scalar RGS and obeys
+                       the limit
+                                                  lim F→const RGS | EFEs−Yamabe > 0.                              (8)
+
+                       2.2. Metrised Noncompact Yamabe Solitons and Isoperimetric Inequalities
+                            In the following, my methodology attempts to correct Theorem 1.6 from [5] and to
+                       then refine the integral estimate from Theorem 1.2 from ibidem.
+                            One has
+
+                       Axiom 3. Given the (geodesics) distance D ( p a , x a ), the weight function is majorised as
+
+                                                              F < C1 D 2 + C2 D + C3                                          (9)
+
+                       for all λ; here, ≡ D (( p), x ), with p being the initial point and x the arrival point; the dimensionfull
+                       constants C1 , C2 , and C3 are introduced. □
+
+
+                       Remark 6. Axiom 3 implies the convexity of the metric space to be metrised (i.e., the metric space
+                       is one of convex functions also before the performance of the metrisation).
+
+                             This way, one is allowed to calculate all the necessitated isoperimetric inequalities.
+
+                       Remark 7. The case C1 ≡ λ/2 can be of interest in the case λ < 0.
+
+                       Remark 8. The use of p a and that of x a are here stressed to be applied to the graph manifolds in
+                       the following.
+
+                             Moreover,
+
+                       Theorem 3. In the Schwarzschild case, the limit holds
+                                                                      Z xα
+                                                                  1
+                                                        limD →∞              dVol [ F, G ] RS ≡ 0.                           (10)
+                                                                  D     pα
+
+                       Proof of Theorem 3. By construction, after the Birkhoff Theorem, when the definition of
+                       the convex function is utilised, the infinitesimal volume element dVol [ F, G ] is calculated
+                       directly from the right-hand side of Equation (1), with F being the selected weight.
+
+                       and
+
+                       Theorem 4. In the Generalized-Schwarzschild case, the limit holds
+                                                                      Z xα
+                                                               1
+                                                       limD →∞               dVol [ F, G ] RGS > 0.                          (11)
+                                                               D       pα
+
+                       Proof of Theorem 4. By construction, after the Birkhoff Theorem, when the definition of
+                       the convex function is utilised, the infinitesimal volume element dVol [ F, G ] is calculated
+                       directly from the right-hand side of Equation (1), with F being the selected weight. Indeed,
+                       the isoperimetric inequalities which are obeyed by the distances are utilised.
+
+                       Remark 9. I remark here that the choice of the specification of the Ricci scalar on ’minimal geodesics
+                       with unit velocity’ is here redundant within the framework of the present paper.
+
+
+
+                                                                                           https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                        8 of 33
+
+
+
+                       Remark 10. The isoperimetric inequalities obeyed after the definition of convex functions are
+                       analysed in [12,13].
+
+                       2.3. The Motivations of the Study
+                            Theorem 1.1 from [4] is here reported as
+
+                       Theorem 5. Let ( M3 , g( x )) be a complete noncompact 3-space-dimensional manifold of bounded
+                       nonnegative sectional curvature S such that 0 ≤ S ≤ D0 with D0 a fixed constant being g( x ) the
+                       initial data of the Ricci flow. Be g(1) (t) and g(2) (t) two smooth complete solutions of the Ricci flow:
+                       they admit the comparison g(1) (t) = g(2) (t) when 0 ≤ t ≤ min[ T0 , 4D1 0 ].
+
+                            From definition 1.2 from [6], the following new one is given
+
+                       Definition 1. Be ( Mn , g(t), X A ) a smooth non-metrised Yamabe soliton with a smooth pseudo-
+                       Riemannian metric with X µ a smooth vecotr field.
+
+                            There follows that
+
+                       Theorem 6. The pseudo-Riemannian non-metrised Yamabe soliton from the ( Mn , g(t)), X A exists
+                       if there exists the Perelman diffeomorfism ϕ∗ ( g(0) ), i.e., such that there exist the scalars σ(i) ( X A )
+                       which defines
+                                                               g(t) ≡ σ(i) ϕ∗ ( g(0) )                                        (12)
+
+                       where the Perelman diffeomorphisms are generated after X A .
+
+                            The parabolocity of the flow equations is controlled in Appendix F.
+                            Theorem 5 is now upgraded to pseudo spacetime pseudo-Riemannian manifolds as
+
+                       Theorem 7. Be ( Mn , g( x )) a complete noncompact n-spacetime-dimensional manifold of bounded
+                       nonnegative sectional curvature S such that 0 ≤ S ≤ D0 with D0 being a fixed constant and g( x )
+                       the initial data of the Ricci flow. Let g(1) (t) and g(2) (t) be two smooth complete solutions of the
+                                                                                                                     1
+                       Ricci flow as follows: they admit the comparison g(1) (t) = g(2) (t) when 0 ≤ t ≤ min[ T0 , 4D  0
+                                                                                                                         ].□
+
+                            The rotational ansatz is now analysed as
+
+                       Theorem 8. The triple ( M, g, X A ) obeys the rotational ansatz and can be metrised as a
+                       Yamabe soliton.
+
+                       Proof of Theorem 8. The field X A is from the velocity vector field, which is smooth.
+
+                            Then,
+
+                       Theorem 9. The noncompact metrised Yamabe solitons obey the Rotational ansatz.
+
+                       Proof of Theorem 4. The velocity vector field is complete.
+
+                            The Perelman diffeomorphisms are now explored as
+
+                       Theorem 10. The Perelman diffeomorphisms define a unique diffeomorphism in the case of non-
+                       compact pseudo-Riemannian metrised solitons.
+
+                           The paradigm can bow be applied to Schwarzschild spacetimes and to Generalized-
+                       Schwarzschild spacetimes.
+
+
+
+
+                                                                                          https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                  9 of 33
+
+
+
+                       2.4. Solitons on the GR Metrised Pseudo-Spherical Cylinder
+                             In the present Subsection, the GR metrised pseudo-spherical cylinder is recalled
+                       from [9].
+                             The tangent cylinder is recalled here to be proven to consist of exactly all the geodesics
+                       that access (i.e., which attain at) the point from the future and on the point π located on the
+                       fictitious singularity. Thus,
+
+                       Theorem 11. The tangent cylinder is geodesically complete.
+
+                            This way,
+
+                       Theorem 12. All unperturbed Schwarzschild solutions of the EFEs establishe a Schwarzschild
+                       black hole.
+
+                       Proof of Theorem 12. All of the cylinders tangent to the Schwarzschild black hole are
+                       geodesically complete.
+
+                              The GR pseudo-spherical cylinder is spelled out analytically as follows.
+                              The weights f imply the existence of the Killing vector field ξ µ : k µ kµ = −1; from the
+                       configurations of the observer (in the reference frame solidal with the photon), k µ ≡ ∇µ vr ,
+                       i.e., such that
+                                                                 ∇µ f ≡ ξ µ                                        (13)
+
+                       after which
+
+                                                         ∇0 f α = ξ 0 = Γ0α
+                                                                         σ
+                                                                            fσ ,                                      (14a)
+                                                         ∇r f α = ξ r = ∂r f α + Γrα
+                                                                                  σ
+                                                                                     fσ ,                             (14b)
+                                                         ∂θ f θ = 0,                                                  (14c)
+                                                         ∂θ f ϕ = 0.                                                  (14d)
+
+                       The additional degree of freedom is obtained from the component of the 4-spacetime-
+                       dimensional velocity 4-vector v0 , according to which one has that
+
+                                                                 χ µ ≡ ∇ µ v0 .                                         (15)
+
+                       3. Introductory Material
+                            In the work of Chow [14], the Yamabe flow is studied in the case of compact lo-
+                       cally conformally flat manifolds when the Ricci curvature is positive. The description is
+                       demonstrated ibidem to necessitate that the manifold is conformal to a spherical form.
+                            Theorem 1.2 from ibidem is aimed at proving that the corresponding Yamabe flow
+                       implies a metric tensor converging to a constant-curvature one in the large-time limit. It is
+                       here stressed that the covering of such manifolds is considered in the present work.
+                            In the work of Schoen [15], the compact n-space-dimensional manifold with n ≥ 3 is
+                       considered. The metric tensor g is deformed as
+                                                                              4
+                                                              gij → g̃ ≡ u n−1 gij                                      (16)
+
+                       When the scalar curvature is required to be constant, u obeys the equation
+
+                                                                 n−2             n +2
+                                                         ∇u −             Ru + u n−2 ,                                  (17)
+                                                                2( n − 1)
+
+
+
+
+                                                                                      https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                     10 of 33
+
+
+
+                       then u is proven to be nonzero.
+                             In the approach followed in the present paper, the positive-mass theorems are not
+                       utilised, and the energy conditions are not invoked.
+                             The problem is here also solved at n = 2 space dimensions.
+                             In the work of Brendle [16], the Yamabe flow of a Riemannian compact manifold is
+                       proven to converge in the opportune space dimensions after a conformally flat initial metric.
+                       The boundedness of the conformal factor is investigated. The convergence of the Yamabe
+                       flow of locally conformally flat metric tensors is studied in [14] under the hypothesis of
+                       positive scalar curvature.
+                             In the work of Ye [17], the results of [14] are studied in the case of a locally conformally
+                       flat metric tensor after the introductory work of Ye [18].
+                             The study of the length of geodesics is motivated after the work of Synge [19].
+
+                       4. The New Myers Method of Spacetime-Dimensional Manifolds
+                            In the present Section, some of the results from the works of Myers and related material
+                       are shown in order to be implemented to the spacetime-dimensional newly metrised
+                       manifolds in Section 5.
+                            The original work of Myers [8] was motivated after [20], pag. 224 ibidem, and after [21].
+                       In the work of Myers [8], the Myers Theorems of Riemannian manifolds exhibiting positive
+                       mean curvature are proven.
+                            Ibidem, Riemannian compact space-dimensional manifolds are considered.
+                            Ibidem, the metric tensor is considered gij such that
+
+                                                                        Gij ≡ δij ,                                         (18)
+
+                       where the Kronecker delta is utilised, such that
+
+                                                                        ∂
+                                                                           G = 0.                                           (19)
+                                                                       ∂x c ab
+
+                       The coordinates are ibidem considered as x1 , x2 , . . . n, x n−1 , which are required to be con-
+                                                √
+                       stant along g (g ≡ − g being the square root of the opportunely chosen specification of
+                       the metric tensor). Let x n be the arclength s on gij measured from point P. In more detail,
+                       the point P is chosen on Gij with respect to the plane of directions determined after the unit
+                       vector (0, 0, . . . , 1) tangent of gij at P.
+                            Accordingly, the following methodology is now shown from [8]
+
+                       Proposition 1. Any vector (w1 , w2 , ..., wn−1 , 0) orthogonal to Gij at the point P̄ is written after
+                       the mean curvature k as
+                                                                         R     wi w k
+                                                           k ( P̄, n) ≡ ninkj                                            (20)
+                                                                            w wj
+
+                       with the definition
+
+                       Definition 2. The Myers mean curvature k is defined after the Riemann tensor as
+
+                                                         k ( P̄) = Rnjnk g jk ≡ − Rnnjk g jk .                              (21)
+
+                            From the work of Myers [8], the variation J (w) is considered
+
+                                                                           dxi dx j
+                                                             Z P                   
+                                                                   A
+                                                                        Gij n n ds                                          (22)
+                                                               0           dx dx
+
+
+
+
+                                                                                          https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                        11 of 33
+
+
+
+                       for arbitrary functions w1 (s), w2 (2), . . . , wn−1 (s).
+                            In the compact case, one has that
+
+                                                               wi (0) ≡ wi ( PA ) ≡ 0.                                         (23)
+
+                       Ibidem, the vector wi is specified as
+
+                                                                    wi ≡ F ( s ) ξ i ;                                         (24)
+
+                            The would-be point Q is considered (after the work of Lecian [9], the would-be point
+                       Q is proven not to exists) as one conjugate to P; the vector wi is vanishing identically when
+                       M contains the would-be point Q.
+                            The variation J (w) is proven to be such that
+
+                                                               J (w) > 0 ∀ F (s) ̸= 0                                          (25)
+
+                       unless M contains a would-be point Q; no geodesics can be a minimizing arc when the
+                       suitable limit (i.e., one calculated in [8]) is taken.
+
+                       4.1. The Covering Manifold of the Compact-Space Dimension Manifold
+                            The notion of the covering manifold from the work of Myers is motivated after the
+                       studied from [20]. The notions characterising covering manifolds can be summarised
+                       from [22]. From [20], a complete surface whose curvature (to be further defined in the
+                       present work) is everywhere greater than or equal to a positive constant that is demon-
+                       strated to be closed. From [21], the results from [20] are extended to the universal covering
+                       manifold. It is one of the aims of the present work to study the universal covering manifolds
+                       after the new upgrades of the Myers definitions in GR.
+                            In more detail, while the covering manifold of a compact manifold is also a compact
+                       manifold, the covering manifold of a noncompact manifold is here one which is noncompact.
+                       In the latter case, the local Perelman diffeomorphism is here proven to be generated.
+
+                       4.2. The Myers Upper Bound of the Diameter(s)
+                            From the work of Myers, the n-space-dimensions unit sphere is studied to be endowed
+                       with a constant unit curvature and to be of constant mean curvature which equals n − 1
+                       with diameter π.
+                            As an implication, the upper bound of the diameters cannot be improved.
+
+                       5. The New Myers Paradigm of Spacetime-Dimensional Manifolds
+                           The new Myers paradigm is here newly worked out in the case of spacetime-
+                       dimensional manifolds.
+                           The Myers curvature is defined as K on spacetime-dimensional manifolds as
+
+                       Definition 3. The Myers curvature on spacetime-dimensional manifolds M is written as
+                                                                        µ
+                                                                      R ρµσ vρ vσ ggρσ
+                                                                K≡                       .                                     (26)
+                                                                            vρ vσ gρσ
+
+                       with vµ (τ ) being the vector tangent to the manifold M according to the affine parameter τ; the
+                       component of the tangent vectors are written as
+
+                                                                               dx µ
+                                                                     vµ ≡                                                      (27)
+                                                                               dτ
+
+
+
+                                                                                             https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                        12 of 33
+
+
+
+                       where the vector x µ is a concurrent vector field.
+
+                       Proposition 2. The paradigm in here implemented, according to which the velocity uµ is chosen
+                       as that measured from configuration of the reference frame of the observer solidal with the photon,
+                       which selects the definition of the time variable from the (possible) affine parametrisation(s).
+
+                       Remark 11. It is here recalled that the photon from Remark RP1 is moving on the selected geodesics.
+
+                            Therefore, the vector tangent to M is specified after Proposition P1 as
+
+                       Definition 4. The vector tangent to M in the point P is written according to the parametrisation
+                       of the time variable as
+                                                                       dx µ
+                                                                vµ ≡        .                                      (28)
+                                                                        dt
+                       and is such that
+                                                                      vµ vµ = −1.                                              (29)
+
+                       when the GR configuration of the reference frame of the observer solidal with the photon is taken.
+
+                       6. New Results About the Umbilicity Conditions
+                           Following from Section 5 from [2], the new result is here presented, which, for any GR
+                       spacetime manifold, when the timelike congruence conditions are obeyed, every spacelike
+                       hypersurface which is endowed with constant mean curvature is umbilical regardless the
+                       compactness; it is here remarked that, in the original presentation of [2], the results were
+                       proven only in the case of compactness.
+
+                       6.1. The First Integral Form
+                            The first integral form is now studied following the notation from [2], where the
+                       overscript ¯ is referred to as the unweighted GR manifold.
+                       The first integral form is written as
+                                                    Z 
+                                                          F ′ (πI ) + ḡµν aµ N ν H        − gd4 x = 0
+                                                                                      p
+                                                                                                                               (30)
+                                                      S
+
+                       with H being the mean curvature, where the spacelike hypersurface χ is taken into account,
+                       for which x : S → M̄ of a GR spacetime whose immersed manifold is M̄; N µ being the
+                       unitary timelike vector field normal to S which is normalized from N µ in Equation (30)
+                       normal to S, of which the orientation is taken as parallel to ∂t , i.e., such that the directions
+                       of infalling into the black hole is taken as the positive one, while the escape direction is
+                       considered with a negative sign when the black hole spacetimes are studied. Moreover, aµ
+                       from Equation (30) is the timelike vector field aµ ∈ χ( M̄) as
+
+                                                                    at ≡ F (πI )∂t                                             (31)
+
+                       and it is equipped with the sign selected from the direction as the tangent component ( a T )µ
+                       is written, i.e., also from [2], in the present case, in an arbitrary spacetime dimensional
+                       spacetime to be metrised as
+
+                                                           ( a T ) M ≡ a M + ḠPΣ a P N Σ W M                                  (32)
+
+                       with a M ∈ χ(S) tangent to S; it is here recalled that this construction is possible as the
+                       position is a concurrent vector field in General Relativity. Furthermore, ( a T ) M must now be
+                       normalized such that it becomes tangent to S as the tangent direction vector from the Frénet
+
+
+
+                                                                                             https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                                               13 of 33
+
+
+
+                                      construction. The normalization is taken after choosing the configuration of the reference
+                                      frame of the observer solidal with the photon which follows, in turn, the geodesics paths
+                                      also in the weighted-manifolds cases.
+                                           The metric Ḡ MN is now hypothesized to be Lorentzian for the spacetime to be metrised.
+
+                                      6.2. The Second Integral Form
+                                           The notation from Equation (9) from [2] is now followed for the second integral form
+                                      to be written, which is here newly extended in the unweighted manifold as
+                                                Z h                                                                            ip
+                                                         (n − 1) ḠMN ∇ M H a N + R MN ( A T ) M W N + GMN A M N N U                − gd N x = 0      (33)
+                                                 S
+
+                                      being n ≤ N.
+                                          The total umbilicity condition is now imposed as
+
+                                                                                    V = tr ( A2 ) − nH2 ≡ 0                                           (34)
+
+                                      when the immersion is totally umbilical.
+                                           The condition is now here newly proven so that the total-umbilicity condition posed
+                                      on the normalized tangent vector from the Frénet construction makes the second integral
+                                      form vanish after the vanishing of each addend identically. Indeed, one has that
+
+                                                                                    ∇ M H ≡ ∂ M /∂H ≡ 0,                                              (35)
+
+                                      and, in particular,
+                                                                                          ∇µ H = ∂µ/H,                                                (36)
+
+                                      and, therefore, the new prescription is found
+                                                                                Z
+                                                                                                         − gd4 x = 0.
+                                                                                                     p
+                                                                                        Rµν vµ N ν                                                    (37)
+                                                                                    S
+
+                                      This way, the condition is found in vacuum and in the presence of interstellar medium.
+                                           Equation (10) from [2] is now explicated as
+
+                                                                                      gµν aµ N ν gρσ aρ N σ
+                                                                                                                   
+                            T µ                                               1
+                       Rµν ( a ) N ≡ gµν a N
+                                  ν         µ        ν
+                                                             Rµν N̂ µN̂ − ′ 2
+                                                                      ν
+                                                                                   1−                            ξ ζ
+                                                                                                            Rξζ a a     ≡0                            (38)
+                                                                         F (πI )            F 2 (πI )
+                                      therefore one takes
+                                                                                            N µ = (1,⃗0).                                             (39)
+
+                                      In vacuum, one has that Rtt ≡ 0, and thus,
+                                                                                                              2
+                                                                                         F 2 (πI ) = gtt at                                           (40)
+
+                                      as
+                                                                                           ( a T )µ ≡ ( at ,⃗0)                                       (41)
+
+                                      i.e., the tangentiality condition of aµ is implied straightforwardly.
+
+                                      7. Selected Topics About the Yamabe Flow in Space dimensions
+                                          Selected topics from the work of Yamabe [1] are now recalled when Riemannian
+                                      compact space-dimensional manifolds are taken into account.
+                                          For this purposes, the foundational requirements from the work of Hamilton [23] are
+                                      now revised.
+                                          From the work of Hamilton [23], the flow is studied
+
+
+
+                                                                                                                   https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                        14 of 33
+
+
+
+
+                                                                     ∂
+                                                                       g = (R − R) gij                                         (42)
+                                                                     ∂t ij
+                       with R being the mean curvature.
+                            For the purposes of the study, the following theorems are ibidem proven, as follows:
+                            Theorem 1.1 from ibidem states that
+
+                       Theorem 13. ∀ initial data of the flow Equation (42), the solution exists.
+
+                            Theorem 1.2 from ibidem establishes that
+
+                       Theorem 14. If R < 0, then the metric tensor Gij converges to one of constant curvature.
+
+                           In Theorem 14, the sign of the Myers mean curvature from Equation (21) is taken into
+                       account, which is here now normalized.
+                           Theorem 1.3 from the work of Hamilton [23] allows one to prove that
+
+                       Theorem 15. If R > 0, then the metric tensor Gij converges to one of constant curvature.
+
+                            Theorem 1 from the work of Yamabe [1] is here reported as
+
+                       Theorem 16. Let S be the N-space-dimensional C ∞ Riemannian manifold in n ≥ 3-space-
+                       dimensions; and let gij be the fundamental tensor which is C ∞ . Let the normalized volume be
+                       V = 1. The conformal transformation is written as a conformal factor of the metric tensor.
+
+                       Proof of Theorem 16. Let the conformal transformation of a Riemannian structure undergo
+                       the transformation
+                                                          gij → ḡij ≡ e2ρ gij ;                           (43)
+
+                       let ρi = ∂ρ/∂xi ; this way,
+
+                                                                                1
+                                                         ρ jk ≡ ρ j,k − ρ j ρk + glm ρl ρm g jk .                              (44)
+                                                                                2
+
+
+
+                            Accordingly, the Ricci tensor is scaled as
+
+                                                     R jk → R̄ jk ≡ R jk − (n − 2)ρ jk − g jk ρl l                             (45)
+
+                       and the Ricci scalar is scaled as
+                                                                                      
+                                                        R → R̄ ≡ e−2ρ R − (n − 2)ρl l − .                                      (46)
+
+                       Let ∆Gij be the Laplace–Beltrami operator of Gij ; the scaling of R in Equation (45) is now
+                       written as
+
+                                                                      n − 1 ( n +1 ) ρ
+                                                                                                        
+                                                                                                  n −1 ρ
+                                               R̄ = e   −2ρ
+                                                                  R−4      e  2        (∆gij )e ( 2   )    .                   (47)
+                                                                      n−2
+
+                       Remark 12. In the following, the fundamental metric tensor gij from Theorem 16 is taken as the
+                       metric tensor of the same manifold.
+
+                            Furthermore, from the work of Yamabe [1], the following analysis is reported.
+
+
+
+
+                                                                                             https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                           15 of 33
+
+
+
+                            Let
+                                                                              n
+                                                                      ū = e( 2 −1)ρ ;                                            (48)
+
+                       therefore, the Ricci scalar is proven to be scaled as
+
+                                                               n +2                    n−1
+                                                          R̄ūe n−2 ρ = Rū − 4            ∆ū.                                   (49)
+                                                                                       n−2
+
+                       The following theorems are revised
+
+                       Theorem 17. ∀q < n2n
+                                          −2 ∃ a positive function v
+                                                                     (q) after which the Yamabe flow which obeys the
+
+                       EFEs is fulfilled.
+
+                       Theorem 18. The limit of the geometrical objects limq→ 2n exists, it is uniform, and it is such that
+                                                                                         n −2
+                       ∃v(q) , where v(q) is positive.
+
+                       After Theorem 18, one sees that Equation (49) is solved with
+
+                                                                              µ
+                                                               C0 =                  .                                            (50)
+                                                                          2n/(n − 2)
+
+                       Theorem 18 implies the following
+
+                       Theorem 19. ∃ ū positive C ∞ function such that
+
+                                                            n +2                         n−1
+                                                         −ū n−2 C0 = Rū = −4               ∆ū                                  (51)
+                                                                                         n−2
+
+                       with C0 being the dimensional constant, and C0 ≡ 12 .
+
+                       Lemmas About the Yamabe Flow
+                                            4
+                            Let ϵ > 0, ϵ < n− 2 ; then
+
+                                                                            Z            1/2
+                                                                                   q
+                                                            || u || q =           u dV                                            (52)
+
+                       with uq ∈ L p ; L p is the Banach space of real functions with norm || · || p .
+
+                       8. The New Myers Paradigm of Schwarzschild Geometries
+                            In the present Section, the new Myers paradigm from Section 5 is newly implemented
+                       on Schwarzschild (S) geometries.
+                            The example of spherically symmetric spaces is taken from [24].
+                                            µ
+                            The 4 velocity vS is recalled to be written as
+
+                                                                   vS ≡ (0, ur , 0, 0).
+                                                                    µ
+                                                                                                                                  (53)
+
+                                                                                                                  µ
+                       From the normalization of the choice of Definition D33, the 4-velocity vS is noted to obey
+                       the normalization from Equation (29) as
+
+                                                          vµ vν gµν = ur ur gS rr = −1.                                           (54)
+
+                       This way,
+
+
+
+
+                                                                                                https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                       16 of 33
+
+
+
+                       Theorem 20. The Myers mean curvature of the Schwarzschild spacetimes is now newly spelled
+                       out as                     µ             µ
+                                                R rµr ur ur   R rµr ur ur · (−1)/grr
+                                           KS ≡             ≡                        ≡R                     (55)
+                                                   ur ur            (−1)/grr
+                       with R being the Ricci scalar and r and µ the indices of the components of the vectors on which the
+                       summation of saturated indices is performed.
+
+                       Remark 13. The Ricci tensor is recalled to be calculated from the volume variation with respect to
+                       the flat spacetime case. The Ricci scalar from Theorem 20 is recalled to be written as the opportune
+                       saturation of the Ricci tensor with the metric tensor.
+
+                             As a result, the following is proven
+
+                       Theorem 21. The Myers mean curvature of the Schwarzschild spacetime manifold is vanishing
+                       identically, as
+                                                             KS ≡ 0                                          (56)
+
+                       and
+
+                       Theorem 22. The sectional curvature S of the Schwarzschild spacetime is vanishing identically.
+
+                       9. The New Myers Paradigm of Generalized-Schwarzschild Geometries
+                             In the present Section, the New Myers paradigm from Section 5 is newly written on
+                       Generalized-Schwarzschild (GS) geometries. The example of spherically symmetric spaces
+                                                           µ
+                       is taken from [24]. The 4 velocity vS is recalled to be written as
+
+                                                              vGS ≡ (ut , ur , 0, 0).
+                                                                 µ
+                                                                                                                              (57)
+
+                       The normalization Equation (29) is now applied to the objects from Definition D31, from
+                       which the Ricci scalar RGS is not a priori vanishing. Accordingly, the Myers mean curvature
+                       of the Generalized-Schwarzschild spacetimes is not a priori vanishing, i.e.,
+
+                       Theorem 23. The Myers mean curvature of the Generalized-Schwarzschild spacetimes is
+                       positive, i.e.,
+                                                         KGS ≥ 0                                      (58)
+
+                       10. New Study of the Parametric-Time-Variable-Weighted Rescaled-
+                       Schwarzschild Spacetimes
+                           The study of the parametric-time is now addressed, with the time variable t
+                       from Appendix A the conformal-time parameter. The time-variable-dependent-weighted
+                       Rescaled-Schwarzschild spacetimes are studied in order to obtain a vanishing Ricci scalar
+                       and a vanishing Ricci tensor, which overlaps with those of the Schwarzschild case.
+                           The vanishing of the Ricci tensor is obtained after imposing
+                                                                      2
+                                                                               d2
+                                                             
+                                                                 df
+                                                                           −       f = 0,                                     (59)
+                                                                 dt            dt2
+
+                       which follows after                                                2/3
+                                                             1 1       3
+                                                      f ≡−         − 6Ho  ( t − t o ) + 1                                     (60)
+                                                             4 Ho2
+
+
+
+
+                                                                                            https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                     17 of 33
+
+
+
+                       with Ho being the initial-value problem of the total time derivative
+
+                                                                        df
+                                                                  lim        = 0.                                           (61)
+                                                                  H0 →0 dt
+
+                       The limit in Equation (61) is also defined as
+
+                                                                       df
+                                                                  lim     = 0.                                              (62)
+                                                                  t→to dt
+
+                       Furthermore, the vanishing behaviour of the Ricci scalar is now obtained after
+                                                              "                   2 #
+                                                              d2 f
+                                                                        
+                                                                             df
+                                                         lim       −                     =0                                 (63)
+                                                         t→to dt2            dt
+
+                       which is obtained after                                            2/3
+                                                            1 1        3
+                                                    f ≡−          − 3 H o ( t − t o ) + 1                                   (64)
+                                                            2 H2o
+                       which is realized after the position
+                                                                   2Ho = H0 .                                               (65)
+
+                       Moreover, the degree of the infinitesimal of Ho with respect to the t variables is now defined
+                       after Equation (61), and also, after Equation (63), and from the same limit of the derivative
+
+                                                       df            2Ho4
+                                                          =                     4/3 .                                      (66)
+                                                       dt   −6Ho3 (t − to ) + 1
+
+                       10.1. Study of the Equal-Time-Isocline Hypersurfaces
+                            Equation (64), and, in turn, the implication from Equation (66) are equalled; as a result,
+                       the equal-time hypersurfaces (ETHs), are defined as
+
+                                                         −6Ho3 (t − to ) + 1 = const                                        (67)
+
+                       Equation (67) is one realization of the Yamabe flow.
+
+                       10.2. One Bernstein–Calabi Problem
+                            It is the aim of the present section to study the Bernstein–Calabi problem associated
+                       with the parametric-time-variable-weighted Rescaled-Schwarzschild spacetimes.
+                            In this case, one has that the surface on which these isoclines live is one of constant
+                       vanishing mean curvature H ≡ f ′ (t) |t0 / f (t0 ), which corresponds to the constraint
+                       t ≡ 0, with f (t) > 0, which implies that the surface is minimal; moreover, the surface is
+                       proven to be maximal after [25,26], after which the first fundamental form is equal to the
+                       second fundamental form. As a result, one finds that the wanted surface is a plane. The
+                       Bernstein–Calabi problem solved here is introduced after the notation from [27].
+
+                       11. New Study of the Radial-Variables-Weighted Rescaled-Schwarzschild
+                       Spacetimes
+                            The study of the radial-variable-dependent-weighted Rescaled-Schwarzschild space-
+                       times is now newly addressed after the spelling of the geometrical objects from Appendix A.
+                            The reconduction of the corresponding Christoffel symbols is written to obtain the
+                       corresponding components of the Ricci tensor and the corresponding Ricci scalar as
+                       vanishing ones.
+
+
+
+
+                                                                                          https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                                     18 of 33
+
+
+
+                            The strictest analytical instance is from the Christoffel symbol Γrt
+                                                                                               t , whose behaviours
+
+                       are now subsequently studied.
+                            For the Christoffel symbol Γrtt to be restored, the limiting required behaviour of
+
+
+                                                                                              df
+                                                                         2r (r − ro )            =0                                         (68)
+                                                                                              dr
+                       is studied.
+                             The required limit is therefore written as
+
+                                                                          limr d f →0 f = 0                                                 (69)
+                                                                                   dr
+
+
+                       which implies, in turn,
+                                                               lim d f f =→ limro →0 f = 0.                                                 (70)
+                                                                    dln(r )
+
+                       From Equation (70), one newly learns that the role of the spherical weight function f (r ) is
+                       to avoid that the size of the fictitious-singularity radius is reduced from its value equivalent
+                       to the Schwarzschild radius rS .
+                            The spherical-weighted Schwarzschild spacetimes can therefore be newly written as
+                                                                                                         
+                                                                              −2 f (r )          ro + ϵ
+                                                                gtt ≡ e                       1−                                            (71)
+                                                                                                    r
+
+                       for the limit ϵ → 0 to be studied without entering the fictitious singularity, i.e., when the
+                       role of the weight function is newly taken into account, for
+
+                                                                               rS ≡ ro + ϵ                                                  (72)
+
+                       remains to be defined as the Schwarzschild radius.
+
+                       Explicit Analytical Solution of the Spherical-Symmetry Scale Factor
+                            The rr component of the Ricci tensor is now studied as
+                                                                  "                       #
+                                                             1        df               df
+                                                   Rrr = −          3r 2 (r − ro ) + 2      ≡0                                              (73)
+                                                           r − rS     dr               dr
+
+                       and it is required to vanish identically for conformal invariance to be preserved
+                       under rescalings.
+                           The limit                      "                      #
+                                                                      df      df
+                                               limr d f →0 r (r − rS ) 2 + 2r      =0                (74)
+                                                    dr                dr      dr
+
+                       is now discussed for non-vanishing r as follows.
+                            The behaviours of the addend are studied
+
+                                                                         df                              d df
+                                         lim d f          r (r − r S )       = 0 ≡ lim d f →0 (r − rS )                                     (75)
+                                             dln(r )
+                                                       →0                dr2          dln(r )           dlnr dr
+
+                       after which follows that
+                                                                                            
+                                                                          1    d       df
+                                                       limr→ro lim d f →0                      = 0;                                         (76)
+                                                                  dln(r ) ro dln(r ) dln(r )
+
+                       the requirement
+                                                                                d2 f
+                                                                                       =0                                                   (77)
+                                                                              (dlnr )2
+
+
+                                                                                                          https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                     19 of 33
+
+
+
+                       is solved as
+                                                                                r
+                                                                    f ≡ F0 ln                                               (78)
+                                                                                ro
+                       with f 0 being the initial-value-problem of f ; the choice of limϵ→0 (r0 + ϵ ≡ rS ) allows one
+                       to let the solution
+                                                                           r
+                                                               f ≡ f 0 ln                                         (79)
+                                                                          rS
+                       be well-posed when Fo (ro → f 0 (rS )).
+
+                       12. The Rescalings of the Generalized-Schwarzschild Spacetimes with
+                       Radial-Variable-Dependent Weights
+                           The rescalings of the Generalized-Schwarzschild spacetimes with radial-variable-
+                       dependent weights are now studied.
+                           For this purpose, the Christoffel symbols Γttr are studied, i.e.,
+                                                                                              
+                                       t       11       1          df                   dΦ         t
+                                      Γrt =−                     2r (rΦ + r − ro ) − r2    − ro ≡ Γrt
+                                               2 r r − ro + rΦ     dr                   dr
+
+                       to be reconducted to the Schwarzschild case, i.e., such that they are reduced to the expres-
+                       sion of
+                                                                  1 rS
+                                                           Γttr ≡           .
+                                                                  2 r − rS
+                       The limit                                                             
+                                                           1          df                   dΦ
+                                          limro →rS                 2r (rΦ + r − ro ) − r2      =0                          (80)
+                                                      r − ro + rΦ     dr                   dr
+                       is now studied.
+                            From the vanishing of the numerator from Equation (80), one has that
+                                                                                
+                                                          df                  dΦ
+                                                       r 2 (rΦ + r − ro ) − r      =0                                       (81)
+                                                          dr                  dr
+
+                       as
+                                                            dΦ    df      r 
+                                                               =2      Φ+r− S                                               (82)
+                                                            dr    dr        r
+                       and after posing
+                                                                                     ro
+                                                              Q ≡ Φe−2 f ≡ r −                                              (83)
+                                                                                     r
+                       with the requirement that the rescaling invariance is to be realized after f ≡ 0, one writes
+                       (see Section 10.2)
+                                                         dΦ      df            
+                                                             =2       1 + e −2 f .                             (84)
+                                                         dr      dr
+                       Equation (84) is integrated as
+                                                                 1 −2 f            1 −2 f o
+                                                        h                                   i
+                                                  Φ ≡ Φ0 e2( f − 2 e ) − e2( f o − 2 e )               ,                    (85)
+                                                                                                f =0
+
+                       which, in turn, is spelled out as as
+
+                                                                    ro
+                                                               r−      ≡ c1 (r o − 1)                                       (86)
+                                                                    r
+                       with the dimensional constant c1 as
+                                                                                1 −2 f o
+                                                                 h                       i
+                                                            c 1 ≡ − e 2 ( f o − 2 e ) f =0                                  (87)
+
+                       which is calculated after the choice of the initial value of f = 0.
+
+
+
+                                                                                          https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                        20 of 33
+
+
+
+                            This sway, the limit
+                                                                         dΦ
+                                                               limΦ→0       ≡0                                                 (88)
+                                                                         dr
+                       is imposed for the study of the isocline lines.
+                            The role of f is to force
+
+                                                      lim dΦ →0 Φ(r ) ≡ limro →rS Φ(r )                                        (89)
+                                                          dr
+
+
+                       such that the presence of f (r ) would induce the size of the Schwarzschild radius not to
+                       be reduced.
+                            The discussion of the denominator of Equation (80) is this way assured.
+                            The further important implications from the non-vanishing of the denominator in
+                       Equation (80) are examined in the subsequent work of the Author.
+                            At the present stage of the investigations, one notices that
+
+                       Proposition 3. the distance D in Equation (80) in the weighted case coincides with the distance
+                       calculated in the non-weighted case,
+
+                            Proposition Pz follows directly from the vanishing of the infinitesimal volume growth
+                       as proven in [11]. This way, it is possible to open the way for the phenomenological
+                       investigations of soliton phenomenology from the experimental evidence.
+
+                       13. Solitons with Time-Dependent Weights
+                            It is now my aim to examine the flow
+
+                                                        ∂
+                                                           gµν (t) = −2Rµν [ grhoσ (t)]                                        (90)
+                                                        ∂t
+                       with t0 being the initial data of the manifold, and t1 being the extremum of the time interval
+                       of validity of the flow equation Equation (90), when the weight functions depends on the
+                       time coordinate variable, because
+
+                       Theorem 24. The time coordinate variable coincides now with the time conformal variable.
+
+                       Proof of Theorem 24. After the vanishing of the infinitesimal volume growth.
+
+                            This way, one studied the case S ≡ 0 under the flow with
+
+                                                           gµν (t) → e−2 f (t) gµν .                                           (91)
+
+                       From the requirement r ≡ 0, with r being the mean curvature, one has that
+
+                                                                        t  1
+                                                          f (t) ≡ ln      + ( t − t1 )                                         (92)
+                                                                       t1  t0
+
+                       where t0 is the taken from the initial data of the manifold, and t1 is the extremum of the
+                       validity of the flow Equation (90).
+                            The metric tensor is therefore spelled as
+                                                                                             t
+                                                                                 −2 tt 2 t1
+                                                       gµν (t) ≡ (t1−2 + t2 )e       0   e       0   .                         (93)
+
+                       From the requirement Rtt ≡ 0 and from the further requirement Rtr ≡ 0, one learns that
+                       f ≡ const.
+
+
+
+
+                                                                                             https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                              21 of 33
+
+
+
+                            The particular solution f ≡ 0 is identically required for static spherically symmetric
+                       nonrotating black hole spacetimes with Rtr ≡ 0. The Schwarzschild vacuum case is
+                       an example.
+
+                       14. Discussion
+                             It is the aim of the present section to discuss the framing of the found results within
+                       the previously known items, after which the outlook is introduced.
+                             The functional dependence of the weight functions on the coordinate variables is now
+                       commented on from [28–31].
+                             In [28], curvature estimates in the cases of complete gradient shrinking Ricci solitons
+                       are written, after the application of the Lopez–Rio rigidity, which is in the present context
+                       questioned.
+                             In [29], factor manifolds of a doubly warped product manifold are utilised for Ricci–
+                       Bourguignon solitons; the existence of a conformal vector field in this case is controlled as
+                       follows: the Hamilton paradigm of inscribing the Ricci solitons as fixed points of a Ricci
+                       flow is ibidem revised.
+                             In the work [31], the compact case is studied for shrinking Ricci solitons, in the case
+                       a local bound on the Riemann tensor is modified; it is momentous to comment that any
+                       bounds on the Riemann tensor is found after the isoperimetic inequalities, to which the
+                       study of the vanishing volume growth under the rotational ansatz must be applied.
+                             In [32], the result is discussed from [33] that a modification of the Ricci flow would
+                       introduce a constraint on the scalar curvature; it is my aim to start discarding this result
+                       after the proof that the infinitesimal volume growth under the rotational ansatz is vanishing
+                       after the Ricci flow is reconciled with the EFEs. As a result, a modification of the Ricci
+                       flow is therefore proven to be the introduction of rotating-like perturbations which modify
+                       the Rtr .
+                             The motivations to start with studying the spherical weight functions after the present
+                       analysis are, indeed, as follows. It is important to recall that the metrisation would imply
+                       the ispoperimetric inequalities and the curvature estimates are majorised after (possibly, a
+                       sum of) the existing ones from the spherically symmetric weights. It is a new perspective
+                       to notice that, from [34], the geodesics paths are studied after ṫ ≡ 0, which defines the
+                       reference frame of the photon; the description is due to the calculation of the t-component
+                       of the 4-momenta in the Euler–Lagrange approach. From [34], the notation of the weight
+                       field is newly introduced; the interrogations from [13] are further studied.
+                             From [35], the rigidity is studied in the generalized-weights case, as well to answer
+                       the interrogations from [35] about the (an-)harmonicity of the Weyl tensor. It is relevant to
+                       stress that the Lagrangian approach in spherical symmetry, i.e., as the one proposed in [34],
+                       implies the spherical symmetry of the weight functions, whose further corresponding
+                       results are presented in the subsequent work of the Author.
+                             It is within the purpose of the present work to recall from [14] that the gradient-
+                       steady Schwarzschild Ricci–Kaehler solitons are proven to be connected at infinity; it is
+                       straightforward to prove that the steady Schwarzschild–Ricci–Kaehler soliton is unique. In
+                       the case of complete gradient shrinking Ricci solitons [13], application is due to smooth
+                       metric spaces with bounded Bakry–Emery curvature; from the Perelmann approach, the
+                       weights are determined for the initial conditions. Further applications of this corollary will
+                       be explored in future work.
+                             From [36], the position holds that, for generalized weights, the Euler–Lagrange equation
+
+                                                           ∂L
+                                                               = −r2 ϕ̇2 ≡ const                                     (94)
+                                                           ∂ϕ̇
+
+
+
+
+                                                                                   https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                              22 of 33
+
+
+
+                       holds as constant. It is therefore possible to open the way to the study of experimental
+                       evidence of vacuum spacetimes, of homogeneous-distribution matter spacetimes, and of
+                       nonhomogeneous-distribution spacetimes.
+                            The study of [29] is motivated after the study of [30]; in [30], the phenomenology
+                       of doubly warped spacetimes is proposed. It is my aim to continue the study of the
+                       phenomenology of solitons after [12] as follows.
+                            It is straightforward to prove that the desired conformal vector field of the Ricci–
+                       Bourguignon solitons is one written after the 4-velocity vector field.
+                            It is my further aim to study the generalized-weights functions of the Ricci–
+                       Bourguignon solitons after the 4-velocity in the Euler–Lagrange approach.
+                            According to the found results, the Lopez–Rio rigidity is discarded because of the
+                       new study of the Weyl tensor; indeed, the construction of harmonic functions from [28] is
+                       upgraded in the case of the weight fields.
+                            From the reasoning from [28], in [37], the complete gradient shrinking Ricci solitons
+                       are described as ’generally asymptotic to a cone over a spherical space form’; this result is
+                       now discarded, as it is proven that the complete gradient shrinking Ricci solitons live on
+                       the GR weighted pseudo-spherical cylinder.
+                            Moreover, the inequalities from [32] are to be upgraded.
+
+                       15. Outlook
+                            The present work is aimed at studying the newly found correspondence between the
+                       reconciliations of the Yamabe flow with the EFEs and those of the Birkhoff Theorems, which
+                       are newly applied to the metrised weighted manifolds with the newly found implications
+                       of the Myers Theorems in GR. The impositions of the umbilicity conditions are newly
+                       appreciated as far as the definitions of the diverse curvatures are concerned in GR.
+                            The particular cases of the Schwarzschild weighted metrised solitons and those of
+                       the Generalized-Schwarzschild weighted metrised solitons are taken into account as key
+                       instances, as they are proven to be realized on inequivalent manifolds, on which the
+                       requirements of the rotational ansatz implies the definition of the new hypersurfaces [36].
+                            In the present paper, the metrisation of the weighted solitons newly allows one to prove
+                       the behaviour of the gravitational potentials under the rotational ansatz; the found variety
+                       of rescalings completes the introductory work of Brendle about non-metrised solitons.
+                            Moreover, and possibly, more importantly, the implications from the application of
+                       the umbilicity conditions on the GR-reconciled Yamabe flows in [36] is proven ibidem to
+                       define new two-dimensional hypersurfaces issued as living on graph manifolds, which are
+                       the isoclines of the potentials. These behaviours are proven after the construction of the
+                       potentials directly from the Christoffel symbols, i.e., after considering the transformations
+                       induced after Equation (1). The study of the action of the pullbacks of the metric tensors is
+                       newly found to be one unique pullback, after which the Riemannian submersion is proven
+                       to be confluent to a Riemannian immersion, as
+
+                       Theorem 25. The uniqueness of the action pullback of the metric tensor of Schwarzschild solitons
+                       after submersion holds both in the compact case and in the noncompact ones on weighted manifolds.
+
+                       Proof of Theorem 25. These solitons live on the pseudo-spherical cylinder.
+
+                       Theorem 26. The noncompact cases are proven in one unique noncompact instance when
+                       Schwarzschild solitons are considered.
+
+                       Proof of Theorem 26. By construction, the weighted pseudo-spherical cylinder is unique
+                       in GR due to the uniqueness of the position (concurrent) vector (field) and to that of Levi-
+
+
+
+                                                                                   https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                              23 of 33
+
+
+
+                       Civita connections, which reduce in the present case to the newly calculated Christoffel
+                       symbols. The Levi-Civita connection is unique in GR. The noncompact case is defined on
+                       the weighted pseudo-spherical cylinder.
+
+                       Theorem 27. The noncompact cases of Generalized-Schwarzschild solitons are well-posed in GR.
+
+                       Proof of Theorem 27. The Generalized-Schwarzschild solitons are defined on the weighted
+                       pseudo-spherical cylinders, whose metrisation is achieved after the prescriptions of the
+                       new behaviours found for the Generalized-Schwarzschild gravitational potentials.
+
+                       Theorem 28. The weighted metrised pseudo-spherical cylinders are geodesically complete. □
+
+                       Theorem 29. The uniqueness of the action pullback of the metric tensor of Generalized-
+                       Schwarzschild solitons after submersion holds both in the compact case and in the noncompact ones
+                       on the weighted manifolds.
+
+                       Proof of Theorem 29. By construction, the Generalized-Schwarzschild solitons live on the
+                       metrised weighted pseudo-spherical cylinders in GR; these pseudo-spherical cylinders are
+                       endowed with the weights which obey the prescriptions presented in the present work.
+
+                       Theorem 30. The conditions found for the Christoffel symbols imply the Birkhoff Theorem(s)
+
+                            As one result,
+
+                       Theorem 31. The GR curvatures observe the Yamabe flow reconciled with the EFEs because the
+                       EFEs are reconciled with the requirements on the Christoffel symbols, which are unique in GR.
+
+                            As a consequence, the imposition of the behaviours of the Christoffel symbols allows
+                       one to impose compliance with the EFEs, even though the systems of differential equations
+                       are highly non-linear.
+                            As a further result,
+
+                       Theorem 32. The Perelman diffeomorphism of the 4-position 4-vector is implied after the potential
+                       satisfies the conditions found for the Christoffel connections.
+
+                       Proof of Theorem 32. The two-dimensional manifolds isoclines of the potentials are de-
+                       fined on the weighted metrised pseudo-spherical cylinders, which are geodesically
+                       complete.
+
+                           I remark here that the topic of Cauchy completeness was not utilised in the present
+                       framework. It is nevertheless my aim to further explore the new structures found after the
+                       implementations of the consequences of the features of Cauchy surfaces.
+
+                       Remarks About the Use of the Umbilicity Conditions on Noncompact Surfaces
+                            It is now my aim to investigate the imposition of the umbilicity conditions on noncom-
+                       pact surfaces which are GR manifolds which obey the EFEs.
+
+                       Theorem 33. The Schwarzschild solitons on the weighted pseudo-spherical cylinder have vanishing
+                       sectional curvature.
+
+                       Proof of Theorem 33. The vanishing of the Ricci curvature is ensured for the weighted
+                       Schwarzschild solitons; the vanishing of the corresponding sectional curvature follows
+
+
+
+
+                                                                                   https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                                   24 of 33
+
+
+
+                                    from it. They have vanishing constant mean curvature according to the new implications
+                                    of the Myers Theorem and are therefore totally umbilical.
+
+                                        Furthermore, the Generalized-Schwarzschild solitons in the weighted case are anal-
+                                    ysed as follows.
+
+                                    Theorem 34. The Generalized-Schwarzschild solitons are on manifolds (the weighted GR pseudo-
+                                    spherical cylinders) which are hyperbolic; therefore, all the points are stable.
+
+                                    Proof of Theorem 34. The GR weighted pseudo-spherical cylinders are geodesically
+                                    complete.
+
+                                          Moreover,
+
+                                    Remark 14. The Ricci curvature of the weighted Generalized-Schwarzschild solitons is positive
+                                    definite, and it coincides with the Myers mean curvature in weighted manifolds which obey the EFEs.
+
+                                         Accordingly, it is possible to study the graph manifolds after Riemannian unique
+                                    Riemannian submersions, which are obtained for the ambient space in which the isoclines
+                                    of the potentials live, as studied in the present work. I now stress that the notions hereby
+                                    newly established are of interest to be applied to [3,38–47].
+
+                                    Funding: This research received no external funding.
+
+                                    Data Availability Statement: No new data were created or analyzed in this study. Data sharing is
+                                    not applicable to this article.
+
+                                    Conflicts of Interest: The author declares no conflicts of interest.
+
+                                    Appendix A. Geometrical Objects of the Parametric-Time-Dependent-
+                                    Weights-Functions Rescaled-Schwarzschild Spacetimes
+                                        The infinitesimal line element considered here for the parametric-time-dependent-
+                                    weights-functions Rescaled-Schwarzschild spacetimes is determined as
+                                                   r                   1
+                 ds2 = gµν dx µ dx ν = e−2 f (t) 1 − S dt2 − e−2 f (t)         − e−2 f (t) r2 dθ 2 − e−2 f (t) r2 (cos θ )2 dϕ2 .        (A1)
+                                                     r                 1 − rrS
+                                    The non-vanishing Christoffel symbols are written in this case as
+
+
+                                                                                    df
+                                                                            Γttt = −   ,                                                (A2a)
+                                                                                    dt
+                                                                             t    1 rS
+                                                                            Γrt =           ≡ Γttr ,                                   (A2b)
+                                                                                  2 r − rS
+                                                                             t            r2         df
+                                                                            Γrr =−               2
+                                                                                                        ,                               (A2c)
+                                                                                    (r − r − S) dt
+                                                                                          r3 d f
+                                                                            Γtθθ = −              ,                                    (A2d)
+                                                                                        r − rS dt
+                                                                            Γtϕϕ ≡ (cos θ )2 Γtθθ ,                                     (A2e)
+                                                                                     1 rS
+                                                                            Γrtt =        (r − r S ),                                   (A2f)
+                                                                                     2 r3
+
+
+
+
+                                                                                                        https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                                        25 of 33
+
+
+
+
+                                                                                   df
+                                                                          Γrtr = −     ,                                                    (A2g)
+                                                                                   dt
+                                                                                   1      rS
+                                                                          Γrrr = −                ,                                         (A2h)
+                                                                                   2 r (r − r S )
+                                                                          Γrθθ = −(r − rS ),                                                 (A2i)
+                                                                                  df
+                                                                          Γθtθ = − ,                                                         (A2j)
+                                                                                  dt
+                                                                                  df
+                                                                          Γtϕ = − ,
+                                                                            ϕ
+                                                                                                                                            (A2k)
+                                                                                  dt
+                                                                          Γθϕϕ = −(sin θ )(cos θ ),                                          (A2l)
+                                                                                1
+                                                                          Γrϕ =
+                                                                           ϕ
+                                                                                  ,                                                         (A2m)
+                                                                                r
+                                                                                cos θ
+                                                                          Γϕθ =
+                                                                           ϕ
+                                                                                                                                            (A2n)
+                                                                                sin θ
+                                                                                   df
+                                                                          Γtϕ = − ,
+                                                                           ϕ
+                                                                                                                                            (A2o)
+                                                                                    dt
+                                                                                1
+                                                                          Γrϕ = .
+                                                                           ϕ
+                                                                                                                                            (A2p)
+                                                                                r
+                                   The non-vanishing components of the Ricci tensor are now examined as
+
+                                                                          df
+                                                                Rtt = −3       ,                                                             (A3a)
+                                                                          dt2
+                                                                      r      1 df
+                                                                Rtr = S                ≡ Rrt ,                                              (A3b)
+                                                                       r r − rS dt
+                                                                                      "          2 #
+                                                                             r2           d2 f     df
+                                                                Rrr = −             2
+                                                                                        − 2 +2          ,                                    (A3c)
+                                                                         (r − r S )        dt      dt
+                                                                                 "              2 #
+                                                                            r3         d2 f     df
+                                                                Rθθ = −             − 2 +2            ,                                     (A3d)
+                                                                         r − rS        dt       dt
+                                                                Rϕϕ = (cos θ )2 Rθθ .                                                        (A3e)
+
+                                   The Ricci scalar is written as
+                                                                                              "        2           #
+                                                                                 r                 df         d2 f
+                                                                R = 6 −2 f ( t )                             − 2                              (A4)
+                                                                     e           (r − r S )        dt         dt
+
+                                   Appendix B. Geometrical Objects of the Radial-Variable-Dependent-
+                                   Weights-Functions Rescaled-Schwarzschild Spacetimes
+                                       The infinitesimal line element of the spherical-weights-functions Rescaled-
+                                   Schwarzschild spacetimes is considered as
+                                                     r                    1
+                 ds2 = gµν dx µ dx ν ≡ e−2 f (r) 1 − S dt2 − e−2 f (r)           − e−2 f ()r r2 dθ 2 − e−2 f (r) r2 (cos θ )2 dϕ2 .  (A5)
+                                                       r                1 − rrS
+
+                                    gtt ≡ e−2 f (r) 1 − rrS
+                                                            
+
+                                         The non-vanishing Christoffel symbols of the spherical-weights-functions Rescaled-
+                                    Schwarzschild spacetimes are now spelled out as
+                                                                                                           
+                                                               t      1       1                     df               t
+                                                              Γtr = −                  2r (r − ro )    − rS ≡ Γrt      ,            (A6a)
+                                                                      2 r (r − r S )                dr
+
+
+
+
+                                                                                                             https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                               26 of 33
+
+
+
+
+                                                                                                   
+                                                                      1 1                  df
+                                                              Γrtt = − 3     2r (r − ro )     − rS ,                               (A6b)
+                                                                      2r                   dr
+                                                                                                          
+                                                               r      1      1                      df
+                                                              Γrr = −                  2r (r − ro )    − rS ,                       (A6c)
+                                                                      2 r (r − r S )                dr
+
+                                  Appendix C. Geometrical Objects of the Spherical-Weights-Functions
+                                  Rescaled-Generalized-Schwarzschild Spacetimes
+                                      The infinitesimal line element is here considered for the spherical-weights-functions
+                                  Rescaled-Generalized-Schwarzschild spacetimes as
+                                               r                      1
+             ds2 = gµν dx µ dx ν ≡ e−2 f (r) 1 − S + Φ(r ) dt2 −     rS         dr2 − r2 θ 2 − r2 dθ 2 − r2 (sin θ )2 dϕ2 .          (A7)
+                                                 r               1 − r + Φ (r )
+                                      The non-vanishing Christoffel symbols of the spherical-weights-functions Rescaled-
+                                  Generalized-Schwarzschild spacetimes are now spelled out as
+                                                                                                        
+                                                 t       11        1         df                   dΦ         t
+                                                Γrt =−                     2r (rΦ + r − rS ) − r2    − rS ≡ Γrt ,                   (A8a)
+                                                         2 r r − rS + rΦ     dr                   dr
+                                                                                             
+                                                         1 1     df                  dΦ
+                                                Γrtt = − 3 2r (rΦ + r − rS ) − r2        − rS ,                                    (A8b)
+                                                         2r       dr                 dr
+                                                                               
+                                                                          df
+                                                Γrθθ = [rΦ + r − rS ] · r    −1 ,                                                   (A8c)
+                                                                          dr
+                                                Γrϕϕ = (sin θ )2 Γrθθ ,                                                            (A8d)
+                                                                       
+                                                          1 df
+                                                Γrθ = −
+                                                  θ
+                                                              r     −1 ,                                                            (A8e)
+                                                          r     dr
+                                                       cos θ
+                                                Γϕθ =
+                                                  ϕ
+                                                              ,                                                                     (A8f)
+                                                       sin θ
+                                                Γθθϕ ≡ Γθθϕ .                                                                      (A8g)
+
+                                  Appendix D. Geometrical Objects of the Schwarzschild Spacetimes
+                                       The geometrical objects of the Schwarzschild spacetimes of infinitesimal line element
+                                  ds2 written after the metric tensor gµν is spelled as
+                                                                     r         1
+                                             ds2 = gµν dx µ dx ν ≡ 1 − S dt2 −         dr2 − r2 dθ 2 − r2 (sin θ )2 dϕ2 .            (A9)
+                                                                       r       1 − rrS
+
+                                  The non-vanishing Christoffel symbols are recalled to be written as
+
+                                                                        t     1      rS
+                                                                       Γrt =                 ≡ Γttr ,                             (A10a)
+                                                                              2 r (r − r S )
+                                                                              1 rs
+                                                                       Γrtt =      (r − r S ),                                    (A10b)
+                                                                              2 r3
+                                                                       Γrθθ = rS − r,                                             (A10c)
+                                                                       Γrϕϕ = (sin θ )2 Γrθθ ,                                    (A10d)
+                                                                              1
+                                                                       Γrθ
+                                                                        θ
+                                                                           =    ,                                                 (A10e)
+                                                                              r
+                                                                       Γθϕϕ = −(sin θ )(cos θ ),                                   (A10f)
+                                                                              1
+                                                                       Γrϕ =    (sin θ )2 ,
+                                                                         ϕ
+                                                                                                                                  (A10g)
+                                                                              r
+                                                                              cos θ
+                                                                       Γθθϕ =       .                                             (A10h)
+                                                                              sin θ
+
+
+
+                                                                                                    https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                                     27 of 33
+
+
+
+                                    Appendix E. Geometrical Objects of Schwarzschild Solitons with
+                                    Weighted Generic-Spherically Symmetric Rescalings
+                                        Geometrical objects of Schwarzschild solitons with weighted generic spherically sym-
+                                    metric rescalings of the metric
+                                             r                     1
+         ds2 = gµν dx µ dx ν = e−2 f (r,t) 1 − S dt2 − e−2 f (r,t)         dr2 − e−2 f (r,t) r2 dθ 2 − e−2 f (r,t) r2 (sin θ )2 dϕ2       (A11)
+                                               r                   1 − rrS
+                                    are here newly investigated.
+                                         The pertinent non-vanishing Christoffel symbols are written as
+
+                                                                ∂ f (r, t)
+                                                        Γttt = −           ,                                                            (A12a)
+                                                                    ∂t                                                 
+                                                                1       1           2 ∂ f (r, t )        ∂ f (r, t)
+                                                         t
+                                                        Γtr = −                  2r               + 2rrS            − rS ≡ Γttr ,       (A12b)
+                                                                2 r (r − r S )            ∂r                 ∂r
+                                                         t             r2    ∂ f (r, t)
+                                                        Γrr =−                          ,                                               (A12c)
+                                                                   (r − rS )2 ∂t
+                                                                     r3 ∂ f (r, t)
+                                                        Γtθθ = −                   ,                                                    (A12d)
+                                                                   r − rS ∂t
+                                                        Γtϕϕ = (sin θ )2 Γtθθ ,                                                         (A12e)
+                                                                 ∂ f (r, t)
+                                                        Γrrt = −            ,                                                            (A12f)
+                                                                     ∂t                                                
+                                                                 1       1             ∂ f (r, t)        ∂ f (r, t)
+                                                        Γrrr = −                   2r2            − 2rrS            + rS ,              (A12g)
+                                                                 2 r (r − r S )            ∂r                ∂r
+                                                                                             
+                                                                              ∂ f (r, t)
+                                                        Γrθθ = (r − rS ) r               −1 ,                                           (A12h)
+                                                                                  ∂r
+                                                        Γrϕϕ = (sin θ )2 Γrθθ ,                                                          (A12i)
+                                                              ∂ f (r, t)
+                                                        Γθtθ = −         ,                                                               (A12j)
+                                                                ∂r          
+                                                              1 ∂ f (r, t)
+                                                        Γrθ
+                                                         θ
+                                                            =− r           −1 ,                                                         (A12k)
+                                                              r        ∂r
+                                                        Γθϕϕ = −(sin θ )(cos θ ),                                                        (A12l)
+                                                                 ∂ f (r, t)
+                                                        Γtϕ = −
+                                                         ϕ
+                                                                            ,                                                          (A12m)
+                                                                   ∂t          
+                                                                 1 ∂ f (r, t)
+                                                        Γrϕ = − r
+                                                          ϕ
+                                                                              −1 ,                                                      (A12n)
+                                                                 r        ∂r
+                                                               cos  θ
+                                                        Γθϕθ =        .                                                                 (A12o)
+                                                               sin θ
+
+                                    Appendix F. Geometrical Objects of Coordinate-Time Dependent
+                                    Weight Functions
+                                          The rescaled infinitesimal line element is now studied
+                                                 r                   1
+               ds2 = gµν dx µ dx ν = e−2 f (t) 1 − S dt2 − e−2 f (t)         dr2 − e−2 f (t) r2 dθ 2 − e−2 f (t) r2 (sin θ )2 dϕ2 .       (A13)
+                                                   r                 1 − rrS
+
+                                    The Ricci tensor is written as
+
+
+
+
+                                                                                                          https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                        28 of 33
+
+
+
+
+                                                               df
+                                                     Rtt = −3       ,                                                      (A14a)
+                                                               f t2
+                                                                   r      1 df
+                                                     Rtr ≡ rrt = S              ,                                          (A14b)
+                                                                    r r − rS dt
+                                                                          "          #
+                                                                  r2        d f 2 d2 f
+                                                     Rrr = −                      − 2 ,                                    (A14c)
+                                                              (r − r s )2    dt    dt
+                                                                         "         2         #
+                                                                  r3           df         d2 f
+                                                        Rθθ = −                          − 2 ,                             (A14d)
+                                                                r − rS         dt         dt
+                                                        Rϕϕ = (sinθ )2 Rθθ .                                               (A14e)
+
+                       The Ricci scalar is written as
+                                                                             "        2         #
+                                                                 r                df         d2 f
+                                                     R = 6 −2 f                             − 2 .                            (A15)
+                                                          e     (r − r S )        dt         dt
+
+                       Appendix G. Control of the Yamabe Flow on Pseudo-Riemannian
+                       Manifolds
+                           In the present appendix, the existence and the uniqueness of the Yamabe flow on
+                       pseudo-Riemannian manifolds are proven.
+
+                       Appendix G.1. Introductory Theorems for the Control
+                            Theorem 7 is now applied. Now, one has that
+
+                       Theorem A1. The comparison of the solutions from Theorems 3, 4, and 7 holds at all times in the
+                       case of Schwarzschild solitons.
+
+                       Proof of Theorem A1. The sectional curvature in the Schwarzschild case is vanishing.
+
+                            The Generalized-Schwarzschild solitons are now analysed as
+
+                       Theorem A2. The section curvature SGS is calculated after the constant δ0 with δ0 as small as
+                       desired in the limit t → ∞.
+
+                            Thus,
+
+                       Theorem A3. The non-vanishing components of the Ricci tensor are majorised with non-vanishing
+                       constants, which may be chosen to be as small as desired and which must obey the required limit; the
+                       information shows that the Ricci curvature is also bounded after Theorem 3, Theorems A4–A6 as
+
+                                                                 0 ≤ RGS ≤ R0GS                                              (A16)
+
+                       with R0GS as small as desired from δ0 .
+
+                       Proof of Theorem A3. Because of completeness.
+
+                            It is momentous to establish that
+
+                       Theorem A4. The sectional curvature of the metrised weighted Schwarzschild Yamabe solitons (in
+                       vacuum) is vanishing.
+
+
+
+                                                                                             https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                               29 of 33
+
+
+
+                       Proof of Theorem A4. The sectional curvature is calculated from the sum of the sectional
+                       curvatures from the Ricci scalar, where these sectional curvatures are calculated from a
+                       chosen orthonormal basis.
+
+                            Furthermore,
+
+                       Theorem A5. The sectional curvature of the metrised weighted Generalized-Schwarzschild Yamabe
+                       solitons is vanishing in the limit r → ∞.
+
+                       Proof of Theorem A5. Because of the Birkhoff Theorem.
+
+                            This way, one has that
+
+                       Theorem A6. The sectional curvature of the metrised weighted Generalized-Schwarzschild Yamabe
+                       solitons is vanishing in the limit everywhere.
+
+                       Proof of Theorem A6. The Ricci curvature is the sum of the sectional curvatures of the
+                       2-dimensional geodesics planes, which are now calculated after Theorem A2.
+
+                            With the choice of orientation of the time direction as the 4-velocity being positive in
+                       the infalling direction with respect to the black hole object, then
+
+                       Axiom A1. The physical Generalized-Schwarzschild solitons are those whose initial conditions put
+                       the D0 GS beyond the fictitious singularity.
+
+                             The relevance of the study of the implications of the umbilicity conditions is therefore
+                       clarified.
+                             It is now of high relevance to study the implications of Axiom A1.
+
+                       Remark A1. From Axiom A1, the physical Generalized-Schwarzschild solitons are newly found;
+                       in particular, Axiom A1 allows one to decide the initial conditions of the new isocline manifolds
+                       found in the present paper, which are therefore newly proven to be defined on a non-null set.
+
+                            In this manner, further specifications are gained, according to which
+
+                       Theorem A7. The Generalized-Schwarzschild spacetimes obey the Birkhoff Theorem.
+
+                       Theorem A8. The Birkhoff Theorem is obeyed after the Generalized-Schwarzschild spacetimes
+                       in a non-trivial manner, i.e., the initial conditions of the generalized manifolds are defined on a
+                       non-null set.
+
+                            It is now possible to state that
+
+                       Axiom A2. The Generalized-Schwarzschild spacetimes are endowed with exactly one fictitious
+                       horizon singularity. □
+
+                            The following Theorem is now directly descended from Axiom A2
+
+                       Theorem A9. The modifications of the Schwarzschild radius in the Generalized-Schwarzschild
+                       spacetimes are determined by the initial conditions for the manifold.
+
+                            There follows that
+
+
+
+
+                                                                                    https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                 30 of 33
+
+
+
+                       Remark A2. The modifications to the Schwarzschild radius in the Generalized-Schwarzschild
+                       solitons is of geometrical origin (i.e., it is written on the left-hand side of the EFEs).
+
+                            In more detail, one notices that all the (mathematically well-posed) modifications of
+                       the Schwarzschild radius are after the present paradigms not due to the presence of any
+                       matter fields.
+                            Form the study of Theorem A9, it is possible to obtain all the information about
+                       the Generalized-Schwarzschild fictitious singularity. The implications of Axiom S4a are
+                       controlled as follows.
+
+                       Appendix G.2. Control
+                            The choice of pseudo-Riemannian manifolds is dictated by the choice to apply the
+                       Yamabe flow in General Relativity Theory, in which the distances are pseudo-Riemannian
+                       with the Lorentzian metric.
+
+                       Appendix G.3. Parabolicity of the Flow Equations
+                            From the work [48], the parabolicity of the flow equations is controlled in the present
+                       case after adapting Theorem 1.1 from ibidem (which is, in turn, taken from Theorem 1.3
+                       from [49]) to the present case and after developing the following paradigm.
+                            One has that Theorem 1.2 from [48] is now newly discarded, and it is substituted by
+
+                       Theorem A10. Let (Mn , f , g) be a nontrivial complete gradient Yamabe soliton after metrisation
+                       with scalar curvature R ≥ 0; this way, the soliton is isometric to the Riemannian product (R, dr2 ) ×
+                       ( N n−1 , ḡ), where M contains N n−1 , a Riemannian manifold with metric ḡ.
+
+                            After which
+
+                       Theorem A11. Let (Mn , g, f ) be a nontrivial complete gradient Yamabe soliton; then, | ∇ g | 2 ≡
+                       const on a ’regular level surface’ f ≡ const of f .
+
+                            In more detail,
+
+                       Theorem A12. The requirement | ∇ g |2 ≡ const is reduced to the description ∇2 f = 0.
+
+                            This way,
+
+                       Theorem A13. The scalar curvature of the metrised surface N n−1 is studied to be constant on the
+                       level surfaces f ≡ const of M.
+
+                            It is my aim to stress that the implications of the study of the regular level surfaces
+                       f = const is addressed in the subsequent work of the Author.
+                            The result is to be studied for S of M.
+                            Thus, one has that in Theorem A11 the surfaces | ∇ f | 2 are studied; in the preset paper,
+                       the study is reconducted to the study of the surfaces ∇2 f ≡ 0, which are a special case of
+                       the ∇2 f = const configuration, whose solution is unique and determines the Schwarzschild
+                       solitons and the Generalized-Schwarzschild ones.
+                            This way,
+
+                       Theorem A14. The flow equations of the noncompact Yamabe solitons are strictly parabolic.
+
+                       Proof of Theorem A14. The surfaces ∇2 f = 0 are rotationally invariant; furthermore, the
+                       surfaces ∇2 f = const obey the rotational ansatz after the use of the EFEs.
+
+
+                                                                                      https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                        31 of 33
+
+
+
+                                 Appendix G.4. Proofs of Existence and of Convergence of the Yamabe Flow in the Noncompact Case
+                                       The existence and the convergence of the Yamabe flow in the noncompact case is
+                                 further controlled.
+                                       Moreover, the uniqueness of the Yamabe flow is also newly ensured to be holding
+                                 after Theorem A14. Indeed, from [48], the levels f = const are studied; here, the following
+                                 is stated.
+
+                                 Theorem A15. The flow of noncompact Yamabe solitons exists.
+
+                                 Proof of Theorem A15. The EFEs are reconciled with the Ricci flow after the applications
+                                 of the rotational ansatz for the determination of f ’s.
+
+                                 Theorem A16. The Yamabe flow of noncompact pseudo-Riemannian noncompact solitons is unique.
+
+                                 Proof of Theorem A16. It is sufficient to study the metrised Yamabe solitons on each level
+                                 f = const. The levels f = const are particular solutions of | ∇ f | 2 = const which reduce to
+                                 ∇2 f = 0 in the present case.
+
+                                 Appendix G.5. Applications of the Paradigms
+                                       From theorems implying Theorem 1.3 from [49], which is also reported as Theorem
+                                 1.1 from [48], one has that
+
+                                 Theorem A17. Every complete locally conformally flat gradient Yamabe soliton endowed with
+                                 positive sectional curvature S > 0 is rotationally invariant.
+
+                                      In this manner, one has that
+
+                                 Theorem A18. The Generalized Schwarzschild solitons are rotationally symmetric.
+
+                                 Proof of Theorem A16. After the umbilicity condition.
+
+                                       It is remarked that eternal solutions of the Yamabe flow will be studied after [49] (i.e.,
+                                 after Proposition 1.4 from ibidem, as well as from the definition of Z ( g, X ) the Harnack ex-
+                                 pression of the eternal Yamabe flow, which is taken, in turn, from [14]) in subsequent work.
+                                       It is worth noticing that the role of the mean curvature in the flow of gradient solitons
+                                 is framed more globally after inscribing the present analysis after the investigation lines
+                                 from [6,50,51].
+
+References
+1.    Yamabe, H. On a deformation of Riemannian structures on compact manifolds. Osaka Math. J. 1960, 12, 21–37.
+2.    Alías, L.J.; Romero, A.; Sánchez, M. Uniqueness of complete spacelike hypersurfaces of constant mean curvature in generalized
+      Robertson-Walker spacetimes. Gen. Relativ. Gravit. 1995, 27, 71–84. [CrossRef]
+3.    Pelegrín, J.A.S. Constant Mean Curvature Spacelike Hypersurfaces in Generalized Robertson-Walker Spacetimes. Proccedings of
+      IX International Meeting on Lorentzian Geometry. Available online: https://digibuo.uniovi.es/dspace/handle/10651/59102
+      (accessed on 30 March 2026).
+4.    Chen, B.-L. Strong uniqueness of the Ricci flow. J. Differ. Geom. 2009, 82, 363–382. [CrossRef]
+5.    Wu, J.-Y. On a class of complete non-compact gradient Yamabe solitons. Bull. Korean Math. Soc. 2011, 55, 851–863
+6.    Zhang, Z.-H. On the completeness of gradient Ricci solitons. Proc. Am. Math. Soc. 2009, 137, 2755–2759. [CrossRef]
+7.    Landau, E.M.; Lifshitz, L.D. Theoretical Physics Course Volume 2; Pergamon Press: London, UK, 1971.
+8.    Myers, S.B. Riemannian manifolds with positive mean curvature. Duke Math. J. 1941, 8, 401–404. [CrossRef]
+9.    Lecian, O.M. Geodesics Completeness and Cauchy Hypersurfaces of Ricci Solitons on Pseudo-Riemannian Hypersurfaces at the
+      Fictitious Singularity: Schwarzschild-Soliton Geometries and Generalized-Schwarzschild-Soliton Ones. Axioms 2025, 14, 896.
+      [CrossRef]
+
+
+
+                                                                                             https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                          32 of 33
+
+
+
+10.   Lecian, O.M. About Uniqueness of Steady Ricci Schwarzschild Solitons. Axioms 2025, 14, 770. [CrossRef]
+11.   Lecian, O.M. New Geodesics 2-Planes (Noncompact) Solitons Connected at Infinity; Researchgate: Berlin, Germany, 2026.
+12.   Lecian, O.M. The new Generalized Schwarzschild-spacetimes trivial Ricci solitons and the new smooth metric space. J. Applied-
+      Math 2025, 3, 2901 [CrossRef] [PubMed] .
+13.   Lecian, O.M. The New Generalized Schwarzschild-Spacetimes Complete Gradient Ricci Solitons and the New Smooth Metric Space;
+      Researchgate: Berlin, Germany, 2025. [CrossRef] [PubMed]
+14.   Chow, B. The Yamabe flow on locally conformally flat manifolds with positive Ricci curvature. Commun. Pure Appl. Math. 1992,
+      45, 1003–1014.
+15.   Schoen, R. Conformal deformation of a Riemannian metric to constant scalar curvature. J. Differ. Geom. 1984, 20, 479–495.
+      [CrossRef]
+16.   Brendle, S. Convergence of the Yamabe flow for arbitrary initial energy. J. Differ. Geom. 2005, 69, 217–278. [CrossRef]
+17.   Ye, R. Global existence and convergence of the Yamabe flow. J. Differ. Geom. 1994, 39, 35–50. [CrossRef]
+18.   Ye, R. The Yamabe flow on locally conformally flat manifolds with positive Ricci curvature. Commun. Pure Appl. Math. 1993,
+      46, 35–50. [CrossRef]
+19.   Synge, J.L. On the neighborhood of a geodesic in Riemannian space. Duke Math. J. 1935, 1, 527.
+20.   Hopf, H.; Rinow, W. Ueber den Begriff der vollstaendigen differentialgeometrischen Flaeche. Comment. Math. Helv. 1931,
+      3, 209–225. [CrossRef]
+21.   Myers, S.B. Riemannian manifolds in the large. Duke J. 1935, 1, 42–43. [CrossRef]
+22.   UNM Departiment of Mathematics and Statistics. Notes 1, Covering Manifolds. Available online: https://share.google/UPA3
+      QZlJLjkjoVR4k (accessed on 30 March 2026). [CrossRef]
+23.   Hamilton, R. The Ricci flow on surfaces, Mathematics and general relativity. Contemp. Math. 1988, 71, 237–262.
+24.   Lecian, O.M. Static Spherically-Symmetric Spacetimes; Lambert Academic Publishing Scia Omniscriptum: Chisinau, Moldova, 2024.
+25.   Lecian, O.M. Study of Pseudo-Riemannian Solitons on Complete Manifolds After Umbilicity Conditions; Researchgate: Berlin,
+      Germany, 2026.
+26.   Lecian, O.M. How to Apply the (Total)-Umbilicity Conditions of Static-Fridman-Robertson-Walker Spacetimesin Vacuum. E
+      Scholarly Community Encyclopedia MPDI, Entry ID 59432. 2026. Available online: https://encyclopedia.pub/entry/59432
+      (accessed on 30 March 2026).
+27.   Calabi, E. Examples of Bernstein problems for some nonlinear equations. Proc. Symp. Pure Appl. Math. 1970, 15, 223–230.
+28.   Munteanu, O.; Sesum, N. On gradient Ricci solitons. arXiv 2009, arXiv:0910.1105.
+29.   Shenawy, S.; Turki, N.B.; Syied, N.; Mantica, C. Almost Ricci–Bourguignon Solitons on Doubly Warped Product Manifolds.
+      Universe 2023, 9, 396. [CrossRef]
+30.   Mantica, C.A.; Molinari, L.M. Spherical doubly warped spacetimes for radiating stars and cosmology. Gen. Relativ. Gravit. 2022,
+      54, 98. [CrossRef]
+31.   Haslhofer, R.; Mueller, R. A Compactness Theorem for Complete Ricci Shrinkers. Geom. Funct. Anal. 2011, 21, 1091–1116.
+      [CrossRef]
+32.   Chen, B.; Choudhary, M.A.; Nisar, M.; Siddiqi, M.D. Comprehensive Review of Solitonic Inequalities in Riemannian Geometry.
+      Int. Electron. J. Geom. 2024, 17, 727–752. [CrossRef]
+33.   Fischer, A.E. An introduction to conformal Ricci flow. Class. Quantum Gravity 2004, 21, S171–S218. [CrossRef]
+34.   Lecian, O.M. The New Generalized Schwarzschild-Spacetimes Solitons and with Spherically-Symmetric Weights: Geodesics Paths; Re-
+      searchgate: Berlin, Germany, 2025. [CrossRef]
+35.   Eminenti, M.; Nave, G.L.; Mantegazza, C. Ricci solitons: The equation point of view. Manuscripta Math. 2008, 127, 345–367.
+36.   Lecian, O.M. Geodesics Paths of Solitons with Generalized Weights; Researchgte: Berlin, Germany, 2026. [CrossRef]
+37.   Munteanu, O.; Wang, J. Structure at infinity for shrinking Ricci solitons. Ann. Sci. L’école Norm. Supér. 2019, 52, 891–925.
+38.   Ma, L.; Cheng, L. Yamabe flow and the Myers-type theorem on complete manifolds. arXiv 2014, arXiv:1003.3914. [CrossRef]
+39.   Bidabad, B.; Ahmadi, M.Y. On complete Yamabe solitons. Adv. Geom. 2018, 18, 101–104. [CrossRef]
+40.   Ma, L.; Miquel, V. Remarks on scalar curvature of Yamabe solitons. Ann. Glob. Anal. Geom. 2012, 42, 195–205 . [CrossRef]
+41.   Bidabad, B. On complete Finslerian Yamabe solitons. Differ. Geom. Its Appl. 2019, 66, 52–60 . [CrossRef]
+42.   Tadano, H. Some myers type Theorems and some Hitchin-Thorpe inequalities for Shrinking Ricci Solitons. Geom. Struct.
+      Riemannian Manifolds 2015, 73/1, 183–199 [CrossRef]
+43.   Derdzinski, A. A Myers-type theorem and compact Ricci solitons. Proc. Am. Math. Soc. 2006, 134, 3645–3648.
+44.   Florez, M.F.E. The k-Yamabe Flow and Its Solitons, Abstract. Available online: https://www.cmm.uchile.cl/?p=61140 (accessed
+      on 30 March 2026). [CrossRef]
+45.   Ma, L.; Cheng, L. Properties of complete non-compact Yamabe solitons. Ann. Glob. Anal. Geom. 2011, 40, 379–387.
+46.   José, M.M. Senovilla Umbilical-Type Surfaces in Spacetime. In Recent Trends in Lorentzian Geometry; Springer: New York, NY,
+      USA, 2012. [CrossRef]
+
+
+
+                                                                                               https://doi.org/10.3390/axioms15040267
+Axioms 2026, 15, 267                                                                                                              33 of 33
+
+
+
+47.   Calvaruso, G. On totally umbilical and minimal surfaces of the Lorentzian Heisenberg groups. Math. Nachrichten 2025,
+      298, 1922–1942.
+48.   Cao, H.-D.; Sun, X.-F.; Zhang, Y.-Y. On the structure of gradient Yamabe solitons. Math. Res. Lett. 2012, 19, 767–774. [CrossRef]
+49.   Daskalopoulos, P.; Sesum, N. The classification of locally conformally flat Yamabe solitons. arXiv 2011, arXiv:1104.2242. [CrossRef]
+50.   Catino, G.; Mantegazza, C.; Mazzieri, L. A note on the global structure of conformal gradient solitons with nonnegative Ricci
+      tensor. Commun. Contemp. Math. 2012, 14, 1250045. [CrossRef]
+51.   Huisken, G. Asymptotic behavior for singularities of the mean curvature flow. J. Differ. Geom. 1990, 31, 285–299. [CrossRef]
+
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+
+
+
+
+                                                                                                   https://doi.org/10.3390/axioms15040267
+

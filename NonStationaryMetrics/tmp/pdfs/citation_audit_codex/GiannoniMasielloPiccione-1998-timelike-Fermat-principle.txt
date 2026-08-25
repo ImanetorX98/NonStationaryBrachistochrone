@@ -1,0 +1,1254 @@
+Calc. Var. 6, 263–283 (1998)
+c Springer-Verlag 1998
+
+
+
+
+A timelike extension of Fermat’s principle
+in general relativity and applications
+Fabio Giannoni1 , Antonio Masiello2 , Paolo Piccione1,?
+1 Dipartimento di Energetica, Facoltá di Ingegneria, Universitá dell’Aquila, Italy
+2 Dipartimento di Matematica, Politecnico di Bari, Italy
+
+
+
+
+Dedicated to the memory of Ennio De Giorgi
+
+
+Abstract. We define a variational problem based on the arrival time functional
+for timelike curves on a Lorentzian manifold M parameterized by a fixed con-
+stant multiple of their proper time. Under a causality assumption for the manifold
+M, we prove that the stationary points of our problem are geodesics, obtaining
+an extension of the Fermat’s Principle for light rays proven in [14] (see also [2]).
+Moreover, we study the compactness properties of the arrival time functional by
+global variational techniques. Under intrinsic assumptions on the metric of M
+we get results of existence and multiplicity for geodesics with a given energy
+between an event and an observer of M.
+
+
+1 Introduction
+
+The Fermat’s Principle in Classical Optics states that the trajectory of a light
+ray, starting from a source A directed towards a point B , is such that the travel
+time is minimal, or better, stationary. Nowadays, it has been developed quite an
+extensive literature about the Principle, and several versions of the same have
+been proven in the context of General Relativity.
+    Roughly speaking, if M is the model for a given relativistic space–time (a
+Lorentzian manifold), p is an event and γ(s) is an observer in M, the trajectory
+of a photon traveling from p to γ under the effect of the gravitational field is
+a lightlike geodesic for the metric tensor of M. This kind of geodesics are
+characterized by the property of minimizing (or extremizing) the proper time of
+the observer at the arrival point. Here, the stationarity is intended in the space
+of all regular lightlike curves in M joining p and γ. Without claiming any
+completeness, we will refer to the articles [2, 5, 14, 17] for a more detailed
+  ? Part of the paper was done while the third author was visiting the Mathematics Department
+
+of the Universidade de São Paulo, Brazil. He wishes to thank all Faculties and Staff for their kind
+hospitality.
+264                                                                  F. Giannoni et al.
+
+
+discussion of the issue, both from a physical and from a mathematical point of
+view.
+    The main result of this paper asserts that the Principle holds also in the case
+of the trajectory of a free falling massive object, which is given by a timelike
+geodesic in M. The interest of the authors in investigating the situation also in
+the case of timelike geodesics arises naturally for several reasons. In first place,
+the problem of determining the trajectory of a free falling massive particle, as
+in the massless case of a photon, under the action of the gravitational field is
+perfectly meaningful in physics, and in general it is desirable to have alterna-
+tive variational principles for the study of (relativistic) dynamical systems. From
+this point of view, it is probably not too far from reality to think of a gener-
+alized Fermat’s Principle as the analog of a Maupertuis Principle in Classical
+Mechanics.
+    A second indication of the fact that the study of the arrival time functional
+might have a certain physical interest is given in Perlick’s paper [15] on a gen-
+eralized brachistochrone problem in a stationary relativistic space–time. In this
+paper, the author studies the critical points of the arrival time for curves satisfy-
+ing a certain property of conservation of energy with respect to a fixed timelike,
+Killing observer field. Using the stationarity assumption for the space–time M,
+the problem is reduced to a purely spatial (Riemannian) setup, and it is proven
+a Maupertuis–Jacobi principle for curves of stationary arrival time. Even though
+the aim of that article and the conservation law assumed in the space of curves
+in consideration are quite different from ours, in both cases the main point under
+investigation is the geodesical property for minimizers of the arrival time.
+    To be precise, an earlier attempt to extend the Fermat’s principle to the
+timelike case has already appeared in the physics literature (see [8]). It should be
+remarked that Kovner’s approach to the problem, although very well motivated
+from a physicist’s point of view, seems to be somewhat unsatisfactory from a
+mathematical point of view. Moreover, in his work Kovner does not deal with
+the compactness properties of the arrival time functional, needed for existence
+results.
+    There are also some mathematical aspects of the problem that it is worth
+describing. The most important one (in the authors’ opinion) was noticed during
+an earlier work regarding the study of light rays on stably causal Lorentzian
+manifold (see [6]). In that case, the space of all timelike curves z , parametrized
+by g(z )[ż , ż ] = −ε2 (g is the Lorentzian metric tensor on M) was used as a
+smooth approximation for the non smooth space of all lightlike curves, yielding
+an approximation scheme that was proven to be useful from the point of view
+of calculus of variations. The functional used in [6] is slightly different from the
+arrival time functional, but it should be considered essentially equivalent as far
+as its critical points are concerned. Further details may be found in [2].
+    To give a more direct approach, we will deal only with the case in which
+the Lorentzian manifold has a (globally defined) time function, even though a
+general treatment of the problem is possible. Indeed, the main definitions and
+Timelike extension of the Fermat’s principle                                       265
+
+
+theorems stated in this paper may be rephrased to make sense in the general case,
+using the proper time of the observer γ (see Remark 5.3).
+    From a technical point of view, it is interesting to notice that, unlike the light-
+like case, under a suitable compactness property for the Lorentzian manifold, in
+the timelike case the arrival time functional does indeed satisfy good compactness
+condition, like the Palais–Smale condition (see Sect. 5), on the Banach manifold
+of all timelike curves of class H 1,1 joining an event and an observer of M and
+parametrized by a fixed multiple of their proper time. The class of manifolds for
+which the Palais–Smale condition of the arrival time functional holds is reason-
+ably large, including all the globally hyperbolic manifolds (see Example 5.4).
+    The condition of Palais and Smale has important consequences as far as
+the existence and, possibly, the multiplicity of timelike geodesics between an
+observer and an event. Further developments of the theory could then provide
+useful tools for the study of an infinite dimensional Morse theory for timelike
+geodesics, which at this stage seems a challenging task (see [4]).
+
+    The paper is organized as follows: Sect. 2 contains a few basic facts on
+Lorentzian geometry needed for the statement and the proof of our results. In
+Sect. 3 we will define the functional framework of our work and we will intro-
+duce our variational problems. In Sect. 4 we will show that the critical points
+for the arrival time functional are geodesics, and in Sect. 5 we will prove the
+Palais–Smale condition for the arrival time. Finally, in Sect. 6, using standard
+techniques of Nonlinear Analysis, we will derive an existence result for timelike
+geodesics joining an event and an observer in a Lorentzian manifold. This kind
+of techniques, together with the use of the Ljusternik–Schnirelman theory (see
+[10, 16]), allows to get also some multiplicity results. For the sake of complete-
+ness, in Appendix A we give a sketch of the proof of a regularity result used in
+Section 3.
+
+
+2 Preliminaries
+
+We recall a few basic facts from Lorentzian Geometry; a complete account of the
+subject can be found in classical texts, such as [3, 7, 12]. A Lorentzian manifold
+is a smooth, finite dimensional manifold M, equipped with a metric tensor g
+of index 1. This means that, for every z ∈ M, g(z )[·, ·] is a nondegenerate,
+symmetric bilinear form on the tangent space Tz M such that the maximal di-
+mension of a subspace on which the form is negative definite is 1. The bilinear
+form g(z )[·, ·] will also be denoted by h·, ·i in the rest of the article.
+     A vector v ∈ Tz M is said timelike (resp. lightlike, spacelike) if hv, vi is
+negative (resp. null, positive); v is called causal if it is not spacelike. A regular
+curve z : (a, b) ⊆ IR 7−→ M is called timelike (resp. lightlike, spacelike, causal )
+if ż (s) is timelike (resp. lightlike, spacelike, causal) for all s ∈ (a, b). This
+classification is called the causal character of a tangent vector, or of a curve.
+If z is not smooth, but only absolutely continuous, we say that z is timelike,
+266                                                                        F. Giannoni et al.
+
+
+lightlike or spacelike respectively if hż , ż i is negative, null or positive almost
+everywhere.
+    A C 2 –curve z :]a, b[7−→ M is a geodesic in M if z satisfies the second
+order differential equation:
+                                    ∇s ż = 0,
+where ∇ denotes the covariant derivative operator along z induced by the Levi–
+Civita connection of the metric tensor g. If z is a geodesic, then the quantity:
+
+                                    hż (s), ż (s)i = Ez                                (1)
+
+is constant, since dsd hż (s), ż (s)i = 2h∇s ż (s), ż (s)i = 0. Timelike geodesics (Ez <
+0) represent in general relativity the trajectories of massive objects under the
+action of the gravitational field.
+    A Lorentzian manifold is said to be time-oriented if there exists a continuous
+vector field Y on M such that Y (z ) is timelike for all z ∈ M. A timelike vector
+field defines a past a a future of a point z in M: a causal vector v ∈ Tz M
+is said to be future pointing (resp. past pointing) if hv, Y (z )i is negative (resp.
+positive).
+    A Lorentzian manifold is said to be stably causal if it is causal, i.e. it does
+not contain closed causal curves, and if this property is preserved after uniformly
+small perturbations of the metric g. Equivalently (see [7], Proposition 6.4.9), M
+is stably causal if there exists a time function T on M, which is a smooth
+function T : M 7−→ IR, satisfying:
+
+                                 h∇T (q), ∇T (q)i < 0,
+
+for every q ∈ M, where ∇T is the Lorentzian gradient of T , defined by:
+
+                                    dT (·) = h∇T , ·i.
+
+We can use the map T to define a time-orientation for non necessarily smooth
+curves. We say that a curve z :]a, b[7−→ M is future-pointing if the map
+s 7−→ T (z (s)) is strictly increasing.
+    A causal Lorentzian manifold is said to be globally hyperbolic (see [7]) if
+for every pair of points p, q ∈ M there exists a compact subset K (p, q) of M
+that contains the support all the causal curves from p to q.
+    We recall also that, if f : M 7−→ IR is function of class C 2 , the Lorentzian
+Hessian of f at the point z ∈ M, denoted by H f (z ), is a bilinear form on Tz M
+defined by:
+                                 d2
+                 H f (z )[ζ, ζ] = 2   f (γζ (s)),    ζ ∈ Tz M,                 (2)
+                                 ds
+                                        s=0
+
+where γζ : (−δ, δ) 7−→ IR is the unique geodesic in M satisfying γζ (0) = z and
+γ̇ζ (0) = ζ. Using the fact that the Lorentzian metric is nondegenerate at every
+point, we will identify H f (z ) with a linear operator on Tz M and we will write
+(2) as:
+Timelike extension of the Fermat’s principle                                     267
+
+
+                                H f (z )[ζ, ζ] = hH f (z ) ζ, ζi.
+
+    In this paper we make the assumption that the manifold M is stably causal,
+and we fix once and for all a smooth time function T on M. This is not the
+most general case for the theory, and future developments will show how to get
+rid of the assumption.
+    We introduce an auxiliary Riemannian structure on M, related to the time
+function T , that will be used systematically throughout the paper. It is denoted
+by h·, ·i(R) and it is given by the following formula:
+
+                                                    hζ, ∇T (z )i2
+                                z = hζ, ζi − 2
+                          hζ, ζi(R)                                  ,           (3)
+                                                  h∇T (z ), ∇T (z )i
+for z ∈ M and ζ ∈ Tz M. Observe that (3) clearly defines a smooth bilinear
+form on Tz M; the (strict) positivity of h·, ·i(R) follows easily from the wrong
+way Schwartz’s inequality. Moreover, it is easy to see that, for every ζ ∈ Tz M,
+we have:
+                             hζ, ζi(R) ≥ |hζ, ζi|.                            (4)
+We denote by k · kR the norm on Tz M induced by h·, ·i(R) , and by ∇(R)   s the
+covariant derivative induced by the Levi–Civita connection of h·, ·i(R) .
+
+
+3 The variational framework
+
+In this section we describe the functional setup needed for our proofs. A complete
+treatment for global variational methods in Lorentzian Geometry may be found
+in [9].
+    The Riemannian metric (3) allows to define the Sobolev space
+                                                  Z 1
+                       
+        H 1,1
+              [0, 1], M = {z ∈ Ac ([0, 1], M) |       kż kR ds < +∞},
+                                                                0
+
+where Ac ([0, 1], M) is the set of absolutely
+                                              continuous curves from [0, 1] to M.
+It is well known that H 1,1 [0, 1], M is a smooth Banach manifold modeled
+on the Banach space H 1,1 ([0, 1], IRn ), where n = dim(M) (see [13]). For every
+z ∈ H 1,1 ([0, 1], M), the tangent space Tz H 1,1 ([0, 1], M) can be identified with:
+                          n
+    Tz H 1,1 ([0, 1], M) = ζ ∈ Ac ([0, 1], T M) : ζ(s) ∈ Tz (s) M,
+                                                         Z 1                    o
+                                                             k∇(R)
+                                                               s ζkR ds < +∞,
+                                                                    0
+
+where T M is the tangent bundle of M and ∇s ζ denotes the covariant deriva-
+                                                         (R)
+
+
+tive of ζ along z with respect to the Riemannian structure (3).
+    From now on, we will fix an event p and a maximal integral curve γ of the
+vector field h∇T , ∇T i−1 · ∇T , i.e. γ is a (smooth) timelike observer in M,
+satisfying:
+268                                                                      F. Giannoni et al.
+
+
+                                 ∇T (γ(s))
+                 γ̇(s) =                          ,     s ∈]a, b[⊆ IR.                 (5)
+                           h∇T (γ(s)), ∇T (γ(s))i
+Observe that, with this definition, γ is future pointing with respect to the time
+orientation given by ∇T . We will denote by supp(γ) the image γ(]a, b[) of M.
+It is easy to see that, since γ is a maximal solution of (5), then γ has no endpoints
+in M, that is γ is a closed embedding of the interval ]a, b[ in M. On the other
+end, if γ is a smooth timelike curve in a stably causal Lorentzian manifold M
+with no endpoints, then γ is indeed the integral curve of the gradient of a time
+function on M (see [6]), so that the assumption (5) is not restrictive.
+     We will assume that p 6∈ supp(γ). Up to subtracting from T a constant term,
+we can also assume that:
+                                       T (p) = 0.                                 (6)
+In general, a timelike curve γ is said to be parametrized by proper time if
+hγ̇(s), γ̇(s)i = −1. The proper time of an observer can be extended to a time
+function defined on a tubular neighborhood of supp(γ), and the problem of its
+global extension is studied in [6]. Whereas we require that γ be parameterized
+in such a way that (5) holds, most of the results proven in this paper are equally
+true if we use the parametrization of γ by its proper time.
+      We introduce the following space:
+                       
+      Ωp,γ
+       1,1
+           = Ωp,γ
+               1,1
+                   M = {z ∈ H 1,1 ([0, 1], M) | z (0) = p, z (1) ∈ supp(γ)}.
+
+It is not difficult to see that Ωp,γ
+                                   1,1
+                                       is a smooth submanifold of H 1,1 ([0, 1], M);
+for every z ∈ Ωp,γ1,1
+                      , the tangent space Tz Ωp,γ
+                                               1,1
+                                                   is identified with:
+                  n                                                      o
+         Tz Ωp,γ
+             1,1
+                 = ζ ∈ Tz H 1,1 ([0, 1], M) : ζ(0) = 0, ζ(1) k ∇T (z (1)) .
+
+     The natural environment for the search of (future pointing) timelike geodesics
+z , with Ez = a < 0, joining p and γ, is the space:
+  +
+ Lp,γ,a = {z ∈ Ωp,γ
+                1,1
+                    | hż , ż i = a a.e., T (z (s)) is strictly increasing on [0, 1] }.
+                          +
+Notice that the space Lp,γ,a   does not depend on the time function T , but only
+on the time orientation of its gradient. Moreover, the condition that T (z (s)) be
+strictly increasing, which means that z is directed towards the future with respect
+to T , is by no means a significant detail, since it is always possible to choose
+the past directed curves simply by changing the sign of the time function.
+    The main difference between the lightlike and the timelike case is precisely
+                      +
+the regularity of Lp,γ,a  for a < 0, as explained in the following:
+
+Proposition 3.1. For every a < 0, if Lp,γ,a
+                                        +
+                                             is not empty, then it is a C 1 Banach
+manifold. For z ∈ Lp,γ,a , the tangent space Tz Lp,γ,a
+                    +                              +
+                                                       is identified with:
+                             n                                o
+                      +
+                  Tz Lp,γ,a = ζ ∈ Tz Ωp,γ
+                                      1,1
+                                          hż , ∇s ζi ≡ 0 a.e. .
+Timelike extension of the Fermat’s principle                                                269
+
+
+Proof. Let Ψa be the map defined by:
+
+                              Ψa : Ωp,γ
+                                      1,1
+                                          7−→ L1 ([0, 1], IR)
+                                           s
+             √      h∇T (z ), ż i                         h∇T (z ), ż i2
+   Ψa (z ) =   2p                      − hż , ż i − 2                    − a.             (7)
+                  |h∇T (z ), ∇T (z )i|                  h∇T (z ), ∇T (z )i
+
+Observe that the quantity under the root sign is strictly positive:
+
+                                   h∇T (z ), ż i2
+                hż , ż i − 2                      − a = hż , ż i(R) − a ≥ −a > 0.
+                                 h∇T (z ), ∇T (z )i
+The same arguments used in the proof of Proposition 2.2 in [6] show that Ψa is
+a map of class C 1 , for all a < 0. For the reader’s convenience we will sketch a
+proof of the C 1 -regularity of the map Ψa and we compute its Gateaux derivative
+in Appendix 1.
+                    +
+    Notice that Lp,γ,a   = Ψa−1 (0). Indeed, if z ∈ Lp,γ,a
+                                                      +
+                                                           , then hż , ż i = −a almost
+everywhere, and Ψa (z ) = 0. Conversely, if Ψa (z ) = 0, then clearly hż , ż i = a and
+h∇T (z ), ż i ≥ 0 almost everywhere. Moreover, by the wrong way Schwartz’s
+inequality, it is:
+
+        h∇T (z ), ż i2 ≥ h∇T (z ), ∇T (z )i · hż , ż i = a · h∇T (z ), ∇T (z )i > 0,
+
+so that T (z (s)) is strictly increasing and z ∈ Lp,γ,a
+                                                  +
+                                                        .
+    As shown in Appendix A, setting
+
+                                         φ(z ) = −h∇T (z ), ∇T (z )i,
+
+we have:
+                                                             
+                   2φ(z ) hH T (z ) ζ, ż i + h∇T (z ), ∇s ζi − φ0 (z )[ζ]h∇T (z ), ż i
+  Ψa0 (z )[ζ]    =                              √          3                             +
+                                                   2 φ(z ) 2
+                                                                             
+                           2h∇T (z ), ż i hH T (z ) ζ, ż i + h∇T (z ), ∇s ζi
+                         −                 q                                    +          (8)
+                                    φ(z ) hż , ż i + 2 h∇Tφ(z
+                                                             (z ),ż i2
+                                                                )       − a
+                                        φ0 (z )[ζ]h∇T (z ), ż i2 − φ(z )2 hż , ∇s ζi
+                                    +              q                                   .
+                                           φ(z )2 · hż , ż i + 2 h∇Tφ(z
+                                                                       (z ),ż i2
+                                                                          )       −a
+
+If z ∈ Lp,γ,a
+        +
+              , then hż , ż i − a = 0 and the expression (8) becomes:
+
+                                            hż , ∇s ζi      p
+                  Ψa0 (z )[ζ] = − √                         · φ(z ),      ∀ z ∈ Lp,γ,a
+                                                                                 +
+                                                                                       .    (9)
+                                           2 h∇T (z ), ż i
+                                                        +
+By the Implicit Function Theorem, to prove that Lp,γ,a       is a C 1 –submanifold of
+                                        0
+Ωp,γ , all we need to show is that Ψa (z ) is surjective for every z ∈ Lp,γ,a
+  1,1                                                                        +
+                                                                                 . To
+see this, let h ∈ L ([0, 1], IR) be arbitrary, and consider the equation in ζ:
+                   1
+
+
+                                                 Ψa0 (z )[ζ] = h.                          (10)
+270                                                                                  F. Giannoni et al.
+
+
+We look for a solution of (10) of the form:
+
+                                      ζ = µ(s) · ∇T (z (s)),
+
+for some function µ = µz to be determined. Observe that, since γ is an integral
+curve of ∇T , then the condition µ(0) = 0 guarantees that ζ ∈ Tz Ωp,γ 1,1
+                                                                          . The
+covariant derivative of ζ along z is computed as:
+
+                            ∇s ζ = µ0 ∇T (z ) + µ H T (z ) ż ,
+
+hence, after taking the inner product with ż , (10) becomes the linear differential
+equation in µ:
+                                                           √ h h∇T (z ), ż i
+               µ0 h∇T (z ), ż i + µhH T (z ) ż , ż i = − 2   √             .                  (11)
+                                                                  φ(z )
+
+Setting
+                                         hH T (z ) ż , ż i
+                      α = αz = −                             ∈ L1 ([0, 1], IR),                  (12)
+                                          h∇T (z ), ż i
+then (11) is explicitly solved by:
+                                Rs             Z s             Rr           
+                       √             α(r) dr           −h          α(σ) dσ
+                  µ=       2e    0                    √       e  0         dr .
+                                                 0      φ(z )
+
+Observe that α and µ are in L1 , hence µ is of class H 1,1 , and ζ = µ · ∇T (z ) ∈
+Tz Ωp,γ
+    1,1
+        , which proves the first part of the Proposition.
+    For the characterization of the tangent space, the Implicit Function Theorem
+                 +
+says that Tz Lp,γ,a    is the kernel of Ψa0 (z ). From (9), since φ(z ) > 0, it follows
+      0
+that Ψa (z )[ζ] = 0 if and only if hż , ∇s ζi = 0 almost everywhere, which concludes
+the proof.                                                                           
+
+The Arrival Time functional τ on Ωp,γ1,1
+                                         , introduced by Perlick in [14], is defined
+by:
+                              τ (z ) = γ −1 (z (1)).
+Thanks to (5) and (6), we can write τ with the formula:
+                                                               Z 1
+              τ (z ) = T (z (1)) = T (z (1)) − T (p) =               hż , ∇T (s)i ds.
+                                                                 0
+
+We resume the basic properties of τ in the next Proposition, whose proof is
+immediate and it will be omitted:
+
+Proposition 3.2. The following are true:
+(a) τ (z ) > 0 if z is future pointing;
+(b) τ (z ) does not depend on the parametrization of z ;
+Timelike extension of the Fermat’s principle                                        271
+
+
+(c) τ is a C 1 functional on Ωp,γ
+                              1,1
+                                  , and its derivative is given by:
+                                   Z 1
+                      0
+                                                                            
+                     τ (z )[ζ] =         h∇s ζ, ∇T (z )i + hH T (z ) ζ, ż i ds,   (13)
+                                    0
+
+    for z ∈ Ωp,γ
+             1,1
+                 and ζ ∈ Tz Ωp,γ
+                             1,1
+                                 .                                                   t
+                                                                                     u
+
+    From part (c) of Proposition 3.2 and from Proposition 3.1 it follows that τ
+is a C 1 functional on Lp,γ,a
+                         +
+                              . An alternative description of the derivative of τ is
+given in the proof of Proposition 4.1.
+
+
+4 Geodesical properties for extremal points of τ
+                                                    +
+In this section we will prove that the curves in Lp,γ,a that are critical points for
+the arrival time functional τ are geodesics in M. We fix a negative number a,
+                                           +
+and we will assume that the manifold Lp,γ,a     in non empty.
+    As in the lightlike case, the critical points for τ in Lp,γ,a
+                                                            +
+                                                                  are characterized
+by the following property of the tangent space:
+
+Proposition 4.1. A curve z ∈ Lp,γ,a
+                                  +
+                                    is a critical point for τ if and only if every
+ζ ∈ Tz Lp,γ,a satisfies ζ(1) = 0.
+         +
+
+
+Proof. The functional τ is the composition of the time function T with the
+                           +
+evaluation at 1 map E1 : Lp,γ,a 7−→ IR+ , given by:
+
+                                          E1 (z ) = z (1).
+
+This is a differentiable function, with E10 (z )[ζ] = ζ(1), for every ζ ∈ Tz Lp,γ,a
+                                                                              +
+                                                                                    .
+By the chain rule, we have:
+
+                                τ 0 (z )[ζ] = h∇T (z (1)), ζ(1)i.                  (14)
+
+From Proposition 3.1, ζ(1) is a multiple of ∇T (z (1)), and since ∇T (z (1)) is
+timelike, from (14), it is τ 0 (z )[ζ] = 0 if and only if ζ(1) = 0.          
+
+The formula (14) for the differential of τ can also be easily obtained integrating
+by parts (13).
+   A crucial point for our theory is the regularity of the critical points of τ . This
+question is settled in the next proposition:
+
+Proposition 4.2. Let a < 0 and z ∈ Lp,γ,a
+                                    +
+                                          . If z is a critical point for τ , then z
+                     2
+is a curve of class C .
+
+Proof. Let z ∈ Lp,γ,a
+                  +
+                      be a critical point of τ and W be an arbitrary vector field
+                     1,1
+along z , with W ∈ H0 ([0, 1], T M) = {ζ ∈ Tz H 1,1 ([0, 1], M) : ζ(0) = ζ(1) =
+0}. We define a new vector field ζ along z by:
+
+                              ζ(s) = W (s) + µ(s) · ∇T (z (s)),
+272                                                                            F. Giannoni et al.
+
+
+where µ = µz ,W is such that ζ ∈ Tz Lp,γ,a
+                                        +
+                                            . From Proposition 3.1, and using a
+similar argument, one sees that µ is the solution of the Cauchy linear problem:
+                         
+                          0               h∇s W , ż i
+                             µ =α·µ+                     ,
+                                          h∇T (z ), ż i                    (15)
+                         
+                             µ(0) = 0,
+
+where α = αz is defined in (12). The (unique) solution of (15) is given by:
+                     Rs         Z s                 R          
+                        α(r) dr      h∇r W , ż i − r α(σ) dσ
+             µ(s) = e 0                            e 0        dr .          (16)
+                                  0 h∇T (z ), ż i
+
+Since W (0) = W (1) = 0, then ζ(1) = µ(1)∇T (z (1)); and since z is a critical point
+for τ , Proposition 4.1 says that ζ(1) = 0, hence µ(1) = 0. Evaluating (16) at s = 1
+and equating to 0 gives:
+                           Z 1
+                    µ(1) =     hλz ż , ∇r W i dr = 0,                          (17)
+                              0
+                    ∀ W ∈ H01,1 ([0, 1], T M),              W (s) ∈ Tz (s) M ∀ s
+
+where λz is the function given by:
+                                            R1
+                                               α(σ) dσ
+                                           e r
+                                  λz (r) =                > 0.                             (18)
+                                           h∇T (z ), ż i
+
+From (17), a classical regularization argument shows that λz ż is of class C 1 .
+Taking the inner product with itself, we get that hλz ż , λz ż i =paλ2z is of class C 1 ,
+so λ2z is of class C 1 . Since λz is positive, then also λz = λ2z is of class C 1 ,
+whence ż is of class C 1 , and we are done.                                           
+
+We are ready to prove the main result of this section, which is the timelike
+extension of the Fermat’s Principle:
+
+Theorem 4.3. Let a < 0. Then, z ∈ Lp,γ,a
+                                   +
+                                         is a critical point for τ if and only if
+z is a geodesic in M.
+
+Proof. Let z ∈ Lp,γ,a
+                    +
+                         be a critical point for τ . Since hż , ż i is constant, then,
+using the regularity result of Proposition 4.2, we have:
+                                      d
+                               0=        hż , ż i = 2hż , ∇s ż i.                      (19)
+                                      ds
+If λz denotes the function of (18), then, integrating by parts in (17) gives:
+                     Z 1
+                   −     h∇r (λz ż ), W i dr = 0
+                         0
+                     ∀ W ∈ H 1,1 ([0, 1], T M), W (s) ∈ Tz (s) M ∀ s.                      (20)
+
+Passing to a strong equality in (20), we have:
+Timelike extension of the Fermat’s principle                                       273
+
+
+                           ∇r (λz ż ) = λ0z ż + λz ∇r ż = 0,       ∀ r.        (21)
+
+Taking the inner product of (21) with ż and recalling (19), we obtain:
+
+                             λ0z hż , ż i + λz h∇r ż , ż i = aλ0z = 0,
+
+from which it follows that λ0z is null and λz is a positive constant. From (21),
+then one has ∇r ż ≡ 0, so that z is a geodesic, and we are done.
+    Conversely, let z ∈ Lp,γ,a +
+                                     be a geodesic, and let ζ ∈ Tz Lp,γ,a
+                                                                        +
+                                                                            . From
+Proposition 4.1 it is sufficient to show that ζ(1) = 0. To prove this, observe that
+hζ(s), ż (s)i is constant:
+
+                 d
+                    hζ(s), ż (s)i = h∇s ζ(s), ż (s)i + hζ(s), ∇s ż (s)i = 0,
+                 ds
+because ∇s ż ≡ 0. Since ζ(0) = 0,
+
+                               hζ(1), ż (1)i = hζ(0), ż (0)i = 0,               (22)
+
+and since both ζ(1) and ż (1) are timelike, (22) says that ζ(1) = 0. This concludes
+the proof.                                                                        
+
+Remark 4.4. Notice the remarkable difference between the lightlike and the time-
+like case given by Theorem 4.3. Namely, in the lightlike case the critical points
+for τ are only pre-geodesics, i.e. geodesics up to a reparametrization (see e.g.
+[2, 14]), whereas, if a < 0, there is an automatic choice of the right parametriza-
+tion that makes them geodesics. Notice also the difference between the functional
+                               R1
+τ and the functional Q(z ) = 0 hż , ∇T (z )i2 ds used in [6] to study the light rays
+joining p and γ: on the manifold Lp,γ,a +
+                                             the critical points of Q do not have a
+clear meaning.
+
+
+5 Compactness properties of τ
+
+We recall the following compactness definition for functionals:
+
+Definition 5.1. Let (X , k · k) be a Finsler manifold, I : X 7−→ IR be a C 1 func-
+tional and c a real number. I is said to satisfy the Palais–Smale (PS) condition
+at the level c if every sequence xn in X satisfying:
+
+(PS1) lim I (xn ) = c,
+        n→∞
+(PS2) lim kdI(xn )k = 0, where, for y ∈ X , kdI (y)k is defined by:
+        n→∞
+
+                        kdI (y)k = sup {|dI (y)[ζ]| : ζ ∈ Ty X , kζk ≤ 1}.
+
+has a converging subsequence in X . A sequence xn satisfying (PS1) and (PS2)
+will be called a Palais–Smale sequence.
+274                                                                  F. Giannoni et al.
+
+
+     The Palais–Smale condition is a crucial property for functionals defined on an
+infinite dimensional Banach manifold, and it is needed to get several interesting
+results from global analysis, including results of existence and multiplicity of
+critical points (see Sect. 6).
+   The aim of this section is to prove that, under suitable assumptions on the
+metric of the manifold, the arrival time functional τ satisfies the Palais–Smale
+                                        +
+condition at any positive sublevel in Lp,γ,a .
+    It is not difficult to produce examples of stably causal Lorentzian manifolds
+where the arrival time functional does not satisfy the Palais–Smale condition
+       +
+on Lp,γ,a  . To do this, it is sufficient to consider product manifolds of the form
+M = M0 × IR, where M0 is a non–complete Riemannian manifold, and M
+is endowed with the metric dx 2 − dt 2 . In this case, the arrival time functional
+can be easily written in terms of the spatial variable x as a slight modification of
+the Riemannian length functional, and it is easy to check that it does not satisfy
+the (PS) condition.
+                                                                               +
+    We introduce the following definition of compactness for the space Lp,γ,a      :
+
+Definition 5.2. Let a < 0 and c be real numbers. The manifold Lp,γ,a
+                                                               +
+                                                                     is said to
+be c–precompact if there exist a compact subset K = K (c) of M that contains
+the support of every curve z ∈ Lp,γ,a
+                                  +
+                                      satisfying τ (z ) ≤ c.
+
+Remark 5.3. Observe that, since τ (z ) depends only on the point z (1) ∈ supp(γ),
+and T is strictly increasing on γ, then the definition of c-precompactness can be
+stated in terms of the proper time of the observer γ, even if (5) does not hold,
+and hence it is an intrinsic notion depending only on the metric of M.
+
+Example 5.4. Let c ∈ IR+ and let q ∈ supp(γ) be such that T (q) = c. Every
+curve z ∈ Lp,γ,a
+              +
+                   with τ (z ) ≤ c can be extended to a causal curve from p to
+                                                +
+q, hence, if M is globally hyperbolic then Lp,γ,a    is c-precompact for every
+choice of a, p, γ and c.
+
+   For the proof of the Palais–Smale condition, we introduce a Finsler structure
+     +                                                    +
+on Lp,γ,a , by defining a norm on each tangent space Tz Lp,γ,a , as follows:
+                               Z 1                  Z 1
+                      kζk1 =         k∇(R)
+                                       s ζkR ds +         kζkR ds.               (23)
+                                0                    0
+
+For c ∈ IR, we denote by τ c the c-sublevel of the functional τ in Lp,γ,a
+                                                                    +
+                                                                          :
+
+                          τ c = {z ∈ Lp,γ,a
+                                      +
+                                            : τ (z ) ≤ c}.                       (24)
+                                           +
+Using the c-precompactness assumption for Lp,γ,a , we have the following com-
+pleteness result for τ :
+                      c
+
+
+Proposition 5.5. Let c ∈ IR and suppose that Lp,γ,a
+                                                +
+                                                     is c-precompact. Then, the
+sublevel τ is a complete metric space with respect to the Finsler structure (23).
+          c
+Timelike extension of the Fermat’s principle                                         275
+
+
+Proof. Using the Nash embedding theorem (see [11]), we can assume that M is
+embedded in some Euclidean space IRN and the Riemannian metric (3) coincides
+with the restriction to M of the Euclidean metric. Let {zn }n∈IN be a Cauchy
+sequence in Lp,γ,a +
+                        with respect to the Finsler structure (23) and with τ (zn ) ≤ c
+for all n. Then, by the c-precompactness, there exists a compact subset K of M
+such that zn (s) ∈ K for all n ∈ IN and all s ∈ [0, 1].
+Since H 1,1 ([0, 1], IRN ) is complete, then zn converges to some z in the space
+H 1,1 ([0, 1], IRN ). This implies, in particular, that zn converges uniformly to z .
+Thus, z (s) ∈ M for all s, because the limit of zn (s) must belong to the compact
+set K ⊂ M. Clearly, since zn (0) ≡ p, then z (0) = p. Moreover, since γ is a
+maximal integral curve of the vector field h∇T , ∇T i−1 ∇T , then supp(γ) ∩ K is
+compact, which implies that z (1) = limn zn (1) ∈ supp(γ) ∩ K , hence z ∈ Ωp,γ      1,1
+                                                                                        .
+From the continuity on Ωp,γ of the map Ψa defined by (7), we get Ψa (z ) =
+                               1,1
+
+limn Ψa (zn ) = 0, hence z ∈ Lp,γ,a  +
+                                         . Finally, the continuity of τ gives τ (z ) =
+limn τ (zn ) ≤ c, which says that z ∈ τ c and we are done.                            
+
+The completeness of the sublevels of the functional τ is essential to apply the
+Ljusternik–Schnirelman theory and the Morse theory to τ on Lp,γ,a
+                                                                +
+                                                                     .
+    We are ready to prove the main compactness result for the arrival time func-
+tional τ :
+
+Theorem 5.6. Let a < 0 and suppose that Lp,γ,a  +
+                                                     is c-precompact for some
+c ≥ inf
+     +
+        τ . Then τ satisfies the Palais–Smale condition       +
+                                                        on Lp,γ,a at every level
+     Lp,γ,a
+c0 ∈ [inf τ, c ], with respect to the norm (23).
+
+Proof. We split the proof into two steps. In the first step we will show that if
+zn ∈ Lp,γ,a
+         +
+             is a Palais–Smale sequence, with τ (zn ) ≤ c0 < c, then the sequence
+żn is bounded in L∞ ([0, 1], T M). In the second step we will show that zn has
+                                 +
+a converging subsequence in Lp,γ,a   .
+Step 1. From the c–precompactness, there exists a compact subset K of M such
+that supp(zn ) ⊂ K for every n ∈ IN.
+    First of all, observe that, by a density argument, we can assume that zn is
+of class C 2 for every n. Moreover, the condition τ (zn ) ≤ c0 implies that zn
+is a bounded sequence in H 1,1 ([0, 1], M). Indeed, zn is bounded in L∞ , and,
+denoting by D the minimum of −h∇T (q), ∇T (q)i−1 on K (D > 0), by (3) one
+has:
+       Z 1                     Z 1           √                     !
+                                    √          2
+           kżn (s)k(R) ds ≤          −a + √ h∇T (zn (s)), żn (s)i ds ≤
+        0                       0             D
+                                         √
+                               √           2
+                           ≤     −a + c0 √ .
+                                           D
+
+   By well known results on the dual Sobolev spaces (see e.g. [1]) there exist
+two sequences of vector fields Θn and ηn in L∞ ([0, 1], T M) along zn , such that:
+276                                                                                                 F. Giannoni et al.
+
+                                         Z 1                              Z 1
+                       τ 0 (zn )[ζ] =          hΘn , ∇(R)
+                                                      s ζi(R) ds +                hηn , ζi(R) ds,               (25)
+                                          0                                 0
+
+for every ζ ∈ Tzn Lp,γ,a
+                       +
+                            .
+    Since τ 0 (zn ) tends to 0, then Θn and ηn are convergent to 0 in L∞ .
+    Now, using the definition of the Riemannian metric (3) and integration by
+parts, we can prove the existence of a sequence Bn of vector fields along zn , with
+Bn going to zero in L∞ ([0, 1], T M), such that:
+                     Z 1                       Z 1
+                         hΘn , ∇(R)
+                                s   ζi(R) ds =     hBn , ∇s ζi ds
+                                0                                     0
+
+for every ζ ∈ Tzn Lp,γ,a
+                     +
+                         . Moreover, using (3), one proves the existence of vector
+fields hn along zn , with hn going to zero in L∞ , such that:
+                          Z 1                  Z 1
+                              hηn , ζi(R) ds =     hhn , ζi ds,
+                                     0                            0
+
+for every ζ ∈ Tzn Lp,γ,a
+                   +
+                         . We can therefore write (25) as:
+                                              Z 1                         Z 1
+                           τ 0 (zn )[ζ] =           hBn , ∇s ζi ds +            hhn , ζi ds,                    (26)
+                                               0                           0
+
+with Bn and hn going to zero uniformly.
+   Let Wn be a sequence of C 1 –vector fields along zn such that Wn (0) = Wn (1) =
+0 and kWn k1 ≤ 1
+   Finally, let ζn ∈ Tzn Lp,γ,a
+                          +
+                                be defined as in Proposition 4.2 by:
+
+                                          ζn = Wn + µn · ∇T (zn ),
+
+where (see (12) and (16) ):
+                     Rs           Z s                   R            
+                        αn (r) dr      h∇r Wn , żn i − r αn (σ) dσ
+           µn (s) = e 0                                e 0          dr ,
+                                    0 h∇T (zn ), żn i
+
+and
+                                                       hH T (zn ) żn , żn i
+                                          αn = −                              .
+                                                        h∇T (zn ), żn i
+Since Wn (0) = Wn (1) = 0, from (14) we have:
+
+      τ 0 (zn )[ζn ]   =     h∇T (zn (1)), ζn (1)i =
+                       =     h∇T (zn (1)), W (zn (1))i + µn (1)h∇T (zn (1)), ∇T (zn (1))i =
+                       =     µn (1)h∇T (zn (1)), ∇T (zn (1))i,                                                  (27)
+
+and since h∇T (zn (1)), ∇T (zn (1))i is bounded away from 0 and ζn is bounded in
+H 1,1 , it must be:
+                                    lim µn (1) = 0.
+                                                   n→∞
+
+Observe that, since we are in a compact set, there exists a constant C such that
+Timelike extension of the Fermat’s principle                                                           277
+
+
+                                        |αn (s) | ≤ C · kżn (s)kR ,
+
+so that αn is a bounded sequence in L1 . We define γn as:
+                                                         R1
+                                                            α (σ) dσ
+                  γn (s) = h∇T (zn (1)), ∇T (zn (1))i · e s n        ;
+
+γn is a bounded sequence in L∞ ([0, 1], IR− ).
+    Denote by Hn the covariant primitive of hn (i.e. hn = ∇s Hn ) satisfying
+Hn (0) = 0. Since żn is bounded in L1 ([0, 1], T M) and hn tends to 0 uniformly,
+then also Hn tends to 0 uniformly. We claim that there exists a sequence Cn of
+vector fields along zn that tends to 0 in L∞ ([0, 1], T M) and such that, setting
+                                                      γn żn
+                                        Yn =                    − Cn ,
+                                               hżn , ∇T (zn )i
+it is:                                   Z 1
+                                               hYn , ∇s Wn i ds = 0,                                  (28)
+                                          0
+
+for every Wn vector field of class C 1 along zn , with Wn (0) = Wn (1) = 0 and
+kWn k1 ≤ 1. Indeed, by (16), (26) and (27), choosing ζ = Wn + µn ∇T (zn ) and
+              R1                  R1
+recalling that 0 hhn , Wn i ds = − 0 hHn , ∇s Wn i ds, we have:
+         Z 1                                    Z 1
+                h∇s Wn , żn i
+                                γn ds    =            hhn , Wn + µn ∇T (zn )i ds +                    (29)
+          0    hżn , ∇T (zn )i                  0
+                      Z 1
+                   +      hBn , ∇s Wn    +      µ0n ∇T (zn ) + µn H T (zn ) żn i ds =
+                     0
+                                                Z 1
+                                                                         żn
+                                         =            hBn − Hn +                     , ∇s Wn i ds +
+                                                 0                  h∇T (zn ), żn i
+                                                Z 1
+                                         +            µn · hBn , αn ∇T (zn ) + H T (zn ) żn i ds.
+                                                 0
+
+Now, using again (16) and Fubini’s Theorem, for every integrable real function
+f on [0, 1], we have:
+   Z 1                Z 1 Z s                        Rs         
+                                     h∇r Wn , żn i      α dσ
+        µn · f ds =         f ·                     e r n dr ds =               (30)
+     0                 0        0 h∇T (zn ), żn i
+                      Z 1                   Rs           Z 1     Rr         !
+                           h∇r Wn , żn i       αn dσ               αn dσ
+                   =                      ·e 0               f ·e 0       dr ds.
+                       0 h∇T (zn ), żn i                 s
+                      Z 1
+                   =      h∇s Wn , F (f )i ds,
+                                 0
+
+where F (f ) is defined in the obvious way.
+    Setting f = hBn , αn ∇T (zn ) + H T (zn ) żn i and substituting (30) inside (29), we
+get an explicit expression for the vector field Cn . Moreover, from the fact that Bn
+278                                                                        F. Giannoni et al.
+
+
+and Hn are uniformly convergent to 0, żn is bounded in L1 , and żn hżn , ∇T (zn )i−1
+is uniformly bounded, it follows that Cn is uniformly convergent to 0.
+    Since Wn is arbitrary, from (28) it follows that Yn is of class C 1 and it
+satisfies ∇s Yn = 0. In particular, since
+                      d
+                         hYn (s), Yn (s)i = 2 hYn (s), ∇s Yn (s)i = 0,
+                     ds
+it follows that hYn (s), Yn (s)i is constant.
+     Observe that, since Cn tends to 0 in L∞ , γn and hżn ,∇T     żn
+                                                                       (zn )i are bounded in
+  ∞                                    ∞
+L , then also Yn is bounded in L ([0, 1], T M).
+     Taking the inner product with itself, we have:
+                                                       γn2
+                           hYn , Yn i = An + a ·                    ,                  (31)
+                                                   h∇T (zn ), żn i
+where An tends to 0 in L∞ , because so does Cn .
+   Suppose, absurdly, that żn is not bounded in L∞ and that there exists a
+sequence sn in [0, 1] such that:
+                                  lim kżn (sn )kR = +∞.
+                                  n→∞
+
+Since γn is bounded in L∞ and k∇T (zn )kR is bounded away from 0, from (31)
+one would get:
+                          lim hYn (sn ), Yn (sn )i = 0.
+                               n→∞
+But hYn (s), Yn (s)i is constant, so that hYn (s), Yn (s)i is uniformly convergent to
+0. Then, from (31), it would be:
+                                    γn2
+                            lim                  =0        in L∞ ,
+                           n→∞ h∇T (zn ), żn i2
+
+and since γn is bounded away from 0, this would imply that h∇T (zn ), żn i is
+uniformly divergent on [0, 1]. Finally, we would then obtain:
+                                     Z 1
+                  lim τ (zn ) = lim      h∇T (zn ), żn i ds = +∞,
+                    n→∞            n→∞     0
+which contradicts the assumption τ (zn ) ≤ c0 and proves that żn is bounded in
+L∞ ([0, 1], T M).
+Step 2. By Step 1 and the c-precompactness, up to passing to a subsequence,
+we can assume that zn is uniformly convergent to a continuous curve z from p
+to γ. Since żn is bounded in L∞ , once again by (31) we see that there exists a
+subsequence znk such that żnk is pointwise convergent on [0, 1] to a vector field
+Z ∈ L∞ ([0, 1], T M) along z . Of course, the pointwise convergence gives that
+hZ , Z i = limhżnk , żnk i = −a almost everywhere.
+           k
+    Using the Lebesgue Dominated Convergence theorem, we see that żnk con-
+verges to Z in L1 ([0, 1], T M), that z is absolutely continuous, and that ż = Z
+                                                  +
+almost everywhere. This implies that z is in Lp,γ,a   , and that znk tends to z in
+  1,1
+H , which concludes the proof.                                                  
+Timelike extension of the Fermat’s principle                                   279
+
+
+6 Existence of timelike geodesics
+
+Since the results proven so far do not depend on the choice of a parametrization
+for the timelike curve γ, in this section we will assume without loss of generality
+that γ is defined on ]0, +∞[.
+    Thanks to the Palais–Smale condition for τ and the completeness of its sub-
+levels, we can easily prove the following existence result for timelike geodesics
+z with fixed constant Ez (see (1)):
+
+Theorem 6.1. Let M be a stably causal Lorentzian manifold, p ∈ M be an
+event, and γ : IR+ 7−→ M be a timelike curve with no endpoints. Let a < 0 be a
+                                     +
+real number, and suppose that Lp,γ,a     is non-empty and c-precompact for some
+c ≥ inf+
+           τ . Then, there exists at least one future pointing, timelike geodesic z
+      Lp,γ,a
+joining p and γ, with Ez = a and τ (z ) = infLp,γ,a
+                                              +     τ.
+
+Proof. This is proven with standard argument in the Critical Point Theory.
+Namely, let d = inf+
+                      τ > 0. If d weren’t a critical value for τ , then, since
+                      Lp,γ,a
+τ satisfies the (PS)-condition at the level d and the sublevel τ d is complete, by
+classical Deformation Lemmas (see [16]), there would exist a positive number
+δ and a homotopy between the sublevels τ d +δ and τ d −δ . But this is impossible,
+since τ d +δ 6= ∅, while τ d −δ = ∅.                                            
+
+    We denote by cat (τ c ) the Ljusternik–Schnirelman category of the sublevel
+c ∈ [0, +∞], which is defined as the minimal number (possibly infinite) of closed,
+                           +
+contractible subsets of Lp,γ,a  covering τ c .
+    Thanks to Theorem 4.3 and Theorem 5.6 we also get the following multi-
+plicity result, whose proof is a standard application of the classical deformation
+techniques in the Ljusternik–Schnirelman theory (see [10, 16]).
+
+Theorem 6.2. Under the same hypothesis of Theorem 6.1, there are at least
+cat (τ c ) distinct timelike geodesics in Lp,γ,a
+                                            +
+                                                 ∩ τ c . Moreover, if Lp,γ,a
+                                                                       +
+                                                                             is c-
+precompact for every c ∈ IR and cat(Lp,γ,a ) = +∞, then there exists a sequence
+                               +          +
+                        +
+zn of geodesics in Lp,γ,a    satisfying:
+
+                                       lim τ (zn ) = +∞.
+                                      n→∞
+
+                                                                                 t
+                                                                                 u
+
+
+A Appendix: Proof of a regularity result
+
+In this Appendix we give a sketch of the proof of the C 1 -regularity and we
+compute the first Gateaux differential of the map Ψa , introduced in (7) and used
+in Proposition 4.2. Further details of this proof may be found in Proposition 2.2
+of reference [6].
+280                                                                                F. Giannoni et al.
+
+
+Proposition A.1. Let a < 0 be a fixed real number. The map Ψa : Ωp,γ           1,1
+                                                                                   7−→
+                                                       0
+L ([0, 1], IR) is of class C . Its Gateaux derivative Ψa (z )[ζ] at a point z ∈ Lp,γ,a
+ 1                           1                                                      +
+
+evaluated at ζ ∈ Tz Ωp,γ is given by:
+                         1,1
+
+
+                            √ h∇T (z ), ∇s ζi − h∇T (z ), ∇T (z )i(hż , H T (z )ζi)
+       Ψa0 (z )[ζ]    =      2                                      3               +         (32)
+                                               −h∇T (z ), ∇T (z )i 2
+                             √ h∇T (z ), ż i + 2h∇T (z ), H T (z )ζi
+                      +     2 2                             3         +                       (33)
+                                      −h∇T (z ), ∇T (z )i 2
+                             hż , ∇Rs ζi(R)
+                      +     p                   ,                                              (34)
+                              hż , ż i(R) − a
+where ∇ denotes the gradient operator with respect to the Lorentzian metric g of
+M, H T is the Hessian of T with respect to g, ∇s the covariant derivative along
+z with respect to the Levi–Civita connection of g, and ∇Rs the covariant derivative
+along z with respect to the Riemannian metric (3).
+
+Remark A.2. Observe that the expression (34) can be written in terms of the
+Lorentzian metric only. Namely, setting:
+
+                                     φ(z ) = h∇T (z ), ∇T (z )i,                               (35)
+
+from (3), differentiating the expression 12 hż , ż i(R) , we get:
+
+                                                φ0 (z )[ζ] · hż , ∇T (z )i2
+          hż , ∇Rs ζi(R)   =    hż , ∇s ζi −                               +
+                                                          φ(z )2
+                                                                                       
+                                   hż , ∇T (z )i · h∇s ζ, ∇T (z )i + hż , H T (z ) ζi
+                            +    2                                                       ,     (36)
+                                                             φ(z )
+for every z ∈ Ωp,q
+               1,1
+                   , ζ ∈ Tz Ωp,q
+                             1,1
+                                 .
+    The formula (8) is easily obtained combining (32), (33), (34) and (36).
+
+Remark A.3. Observe that, from (4) it is hż , ż i(R) ≥ −a > 0 for all z ∈ Lp,γ,a
+                                                                                +
+                                                                                    ,
+                           −2
+                            1
+                                     ∞
+hence ż · (hż , ż i − a)
+                      (R)
+                              is in L ([0, 1], T M). Since ζ ∈ H ([0, 1], T M),
+                                                                    1,1
+
+then the quantity in (34) is in L1 ([0, 1], IR). Moreover, considering the following
+facts:
+(a) −h∇T (z (s)), ∇T (z (s))i is continuous and positive;
+(b) H T (z (s)), ∇T (z (s)) and ζ(s) are continuous;
+(c) ż and ∇s ζ are in L1 ([0, 1], T M),
+it is easily seen that the expression for Ψa0 (z )[ζ] given in (32), (33) and (34) gives
+a well defined function in L1 ([0, 1], IR).
+
+Sketch of the Proof of Proposition A.1. We begin with the study of the Gateaux
+differential of the map g defined by:
+
+                                         g(z ) = h∇T (z ), ż i.
+Timelike extension of the Fermat’s principle                                               281
+
+
+   To this aim, we fix z ∈ Ωp,γ
+                             1,1
+                                 and ζ ∈ Tz Ωp,γ
+                                             1,1
+                                                 . We denote by expq (·) the
+exponential map on Tq M with respect to the Lorentzian structure of M, and
+we define a two-parameter map u(λ, s) by:
+
+                  u(λ, s) = expz (s) (λ · ζ(s)),   λ ∈] − δ, δ[, s ∈ [0, 1].           (37)
+
+The map u(λ, s) satisfies:
+(a) u(0, s) = z (s),
+     ∂
+(b) ∂λ u(0, s) = ζ(s), for all s ∈ [0, 1].
+By definition, we have:
+                                          g(u(λ, s)) − g(u(0, s))
+                         g 0 (z )[ζ] = lim                        ,
+                                      λ→0            λ
+where the limit is taken in the sense of the L1 -norm.
+   Let D ⊆ [0, 1] be defined by:
+
+                   D = {s ∈ [0, 1] : z and ζ are differentiable at s};
+
+this is a set of full measure in [0, 1]. We denote by η(z , v, σ) the geodesic flow
+around z with respect to the Lorentzian metric. We have:
+
+                      u(λ, s) = η(z (s), λζ(s), 1) = η(z (s), ζ(s), λ).                (38)
+
+Then, for every s ∈ D, it is:
+             ∂
+                u(λ, s)η1 (z (s), ζ(s), λ) · ż (s) + η2 (z (s), ζ(s), λ) · ∇s ζ(s),
+             ∂s
+where ηi , i = 1, 2, denotes the differential of η with respect to the i -th variable.
+Observe that, originally, η2 is a map from Tζ(s) T M to T M; this map is reduced
+to a map from Tz (s) M to T M with the help of the Lorentzian metric of M.
+    It follows:
+
+    g(u(λ, s)) = h∇T (u(λ, s)), η1 (z (s), ζ(s), λ)ż (s) + η2 (z (s), ζ(s), λ)∇s ζ(s)i.
+
+   If we fix s ∈ D and we apply the mean value theorem to the map λ 7−→
+g(u(λ, s)), we obtain:
+   g(u(λ, s)) − g(u(0, s))                       ∂u
+                                 =    hH T (u(θ, s))(θ, s), η1 (z (s), ζ(s), θ)ż (s)i +
+              λ                                  ∂λ
+                                                 ∂u
+                                 + hH T (u(θ, s)) (θ, s), η2 (z (s), ζ(s), θ)∇s ζ(s)i+
+                                                 ∂λ
+                                 + h∇T (u(θ, s)), η1λ (z (s), ζ(s), θ)ż (s)i +
+                                 +    h∇T (u(θ, s)), η2λ (z (s), ζ(s), θ)∇s ζ(s)i,     (39)
+
+where θ ∈ [0, λ]. Now, by (38), we have:
+                           ∂u
+                              (θ, s) = η2 (z (s), θ · ζ(s), 1) · ζ(s).
+                           ∂λ
+282                                                                            F. Giannoni et al.
+
+
+    Using Lebesgue’s Dominated Convergence Theorem, we can pass to the L1 -
+limit in (39), and, by well known properties of the geodesic flow, we obtain:
+                        g 0 (z )[ζ] = hH T (z ) ζ, ż i + h∇T (z ), ∇s ζi,                  (40)
+which is a continuous linear map on Tz Ωp,q
+                                        1,1
+                                            . Using again the Lebesgue’s Dom-
+inated Convergence Theorem, from (40) we obtain that g is of class C . In a
+                                                                        1
+
+similar way, we prove that the map φ of (35)) is of class C 1 on Ωp,γ
+                                                                  1,1
+                                                                      , and its
+Gateaux derivative is given by:
+                φ0 (z )[ζ] = −2hH T (z )ζ, ż i,    ∀ z ∈ Ωp,γ
+                                                           1,1
+                                                               , ζ ∈ Tz Ωp,γ
+                                                                         1,1
+                                                                             .              (41)
+
+
+      We pass now to the study of the map:
+                             p
+                 ga (z ) =     hż , ż i(R) − a =
+                             s
+                                                 hż , ∇T (z )i2
+                         =     hż , ż i − 2                     −a .                      (42)
+                                               h∇T (z ), ∇T (z )i
+To establish the regularity of this map, we use formally the same argument we
+used to prove the regularity of g, with the only difference that we will use the
+Riemannian structure on M rather than the Lorentzian one.
+     Thus, we will still denote by η(z , ζ, λ) the geodesic flow with respect to
+h·, ·i(R) , and ηi will denote the partial derivative of η with respect to the i -th
+variable. In this case, the map η2 , originally defined from Tζ(s) T M to T M, is
+reduced to a map from Tz (s) to T M using the Riemannian structure of M.
+     We set
+                                u(λ, s) = expRz (s) (λ · ζ(s)),
+for s ∈ D we compute ga (u(λ, s)) as follows:
+                                q
+                  ga (u(λ, s)) = kη1 (z , ζ, λ)ż + η2 (z , ζ, λ)∇Rs ζk2R − a. (43)
+Moreover,
+       ∂ga
+            (u(λ, s)) =                                                                      (44)
+       ∂λ
+             hη1 (z , ζ, λ)ż + η2 (z , ζ, λ)∇s ζ, η1λ (z , ζ, λ)ż + η2λ (z , ζ, λ)∇s ζi
+                                               R                                     R   (R)
+
+          =                   p                                                              .
+                                kη1 (z , ζ, λ)ż + η2 (z , ζ, λ)∇Rs ζk2R − a
+Since
+                                   kη1 ż + η2 ∇Rs ζkR
+                      p                                          ≤ 1,
+                    kη1 (z , ζ, λ)ż + η2 (z , ζ, λ)∇Rs ζk2R − a
+we can take the limit as λ 7−→ 0 in (44), and using the Lebesgue’s Dominated
+Convergence Theorem, we get:
+                                               hż , ∇Rs ζi(R)
+                                ga0 (z )[ζ] = p                   .                         (45)
+                                                hż , ż i(R) − a
+We have therefore proven that ga is differentiable, and using the Lebesgue’s
+Dominated Convergence theorem again we see that ga is of class C 1 .
+  Finally, combining (40), (41) and (45) allows to conclude the proof.    
+Timelike extension of the Fermat’s principle                                                    283
+
+
+References
+
+ 1. R. Adams, Sobolev Spaces, Academic Press, 1975.
+ 2. F. Antonacci, P. Piccione, A Fermat Principle on Lorentzian Manifolds and Applications, Applied
+    Mathematics Letters 9, 1996, 91–96.
+ 3. J. K. Beem, P. E. Ehrlich, Global Lorentzian Geometry, Marcel Dekker, Inc., New York and
+    Basel, 1981.
+ 4. J. Everson, C. Talbot, Morse Theory on Timelike and Causal Curves, Gen. Rel. Grav. 7, No. 7,
+    (1976), 609–622; Erratum 9, No. 11, 1047 (1978).
+ 5. D. Fortunato, F. Giannoni, A. Masiello, A Fermat Principle for Stationary Space-Times and
+    Applications to Light Rays, Jour. of Geometry and Physics 515 (1994), 1–30.
+ 6. F. Giannoni, A. Masiello, P. Piccione, A Variational Theory for Light Rays on Stably Causal
+    Lorentzian Manifolds: Regularity and Multiplicity Results, Comm. Math. Phys. 187 (1997),
+    375–415.
+ 7. S. W. Hawkwing, G. F. Ellis, The Large Scale Structure of Space–Time, Cambridge Univ. Press,
+    London, New York, 1973.
+ 8. I. Kovner, Fermat Principle in Arbitrary Gravitational Fields, Astrophysical Journal 351 (1990),
+    114–120.
+ 9. A. Masiello, Variational Methods in Lorentzian Geometry, Pitman Research Notes in Mathemat-
+    ics Series 59, 1994.
+10. J. Mahwin, M. Willem, Critical Point Theory and Hamiltonian Systems, Springer–Verlag, 1989.
+11. J. Nash, The Embedding Problem for Riemannian Manifolds, Ann. Math. 63, (1956), 20–63.
+12. B. O’Neill, Semi–Riemannian Geometry with Applications to Relativity, Academic Press, New
+    York, 1983.
+13. R. Palais, Foundations of Global Nonlinear Analysis, W. A. Benjamin, 1968.
+14. V. Perlick, On Fermat’s Principle in General Relativity: I. The General Case, Class. Quantum
+    Grav. 7 (1990), 1319–1331.
+15. V. Perlick, The Brachistochrone Problem in a Stationary Space–Time, J. Math. Phys. 32 (11)
+    (1991), 3148–3157.
+16. M. Struwe, Variational Methods, Springer–Verlag, Berlin, New York, 1990.
+17. K. Uhlenbeck, A Morse Theory for Geodesics on a Lorentz Manifold, Topology 14 (1975),
+    69–90.
+

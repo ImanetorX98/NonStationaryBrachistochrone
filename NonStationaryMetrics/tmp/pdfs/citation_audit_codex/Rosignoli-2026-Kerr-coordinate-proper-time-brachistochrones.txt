@@ -1,0 +1,962 @@
+   Brachistochrones in coordinate time and in proper time in
+                      the Kerr geometry:
+     analytical derivation, the t–τ plunge inversion, off-equatorial Hamilton–Jacobi
+       structure, approximate quasi-invariants, and the Schwarzschild limit a → 0
+
+                                                       I. Rosignoli∗
+                                                       July 2, 2026
+
+                                                           Abstract
+    Building on Perlick’s formulation of the brachistochrone problem in stationary spacetimes [1] and on the optical
+    Randers–Finsler framework for stationary metrics [2, 3], we give a unified treatment of the two brachistochrones of a
+    test particle in the Kerr field: the one minimizing the coordinate time t and the one minimizing the proper time τ . On
+    the equatorial plane Tt is the length of a Randers metric, due to a linear gravitomagnetic term, whereas Tτ is purely
+    Riemannian. We derive the first integrals, exact orbit equations, travel times, and Hamiltonian formulations for both
+    branches. From the equatorial Hamiltonians we obtain a new analytical result: for common initial phase-space data
+    the two branches carry different on-shell energies, H0τ /H0t → E 2 /f02 , and this, combined with the gravitomagnetic
+    enhancement of the centrifugal barrier, produces an inversion of the radial plunge across a critical angular momentum
+    Jinv (a). The resulting closed-form criterion is validated numerically to four significant digits. Off the equator the
+    brachistochrone Hamilton–Jacobi equation is non-separable: the conformal factor n2τ = F/DE obstructs Carter
+    separation at finite energy, while separability is recovered in the Fermat limit. We therefore construct approximate
+    quasi-invariants by perturbative Poisson-bracket closure: for τ a single O(a2 ) term reduces the drift, while for t the
+    bare Carter form is already optimal. We also verify the a → 0 Schwarzschild limit, develop spin and weak-field
+    expansions, and extend the construction toward the ergoregion using ZAMO variables. These results complement
+    the companion interior treatments [17, 18].
+
+
+Contents                                                               11.3 On-shell reduction and exact non-
+                                                                            integrability . . . . . . . . . . . . . . . . .    7
+1 Introduction                                             1           11.4 Drift, Poincaré sections, and the ergosphere       7
+                                                                       11.5 BVP collocation validation of the quasi-
+2 Stationary spacetime                                     2                K criterion . . . . . . . . . . . . . . . . .      7
+3 The two functionals (Fermat–Randers)                     2       12 Trajectories entering the ergoregion               10
+                                                                      12.1 ZAMO reduction . . . . . . . . . . . . . . 10
+4 Kerr on the equatorial plane                             3
+                                                                      12.2 Zermelo wind and the ergosurface threshold 10
+5 Exact orbit equations                                    3          12.3 Conserved angular integral across the er-
+                                                                           gosurface . . . . . . . . . . . . . . . . . . 10
+6 Equatorial Hamiltonians             and     the    t–τ              12.4 Radial trichotomy and the critical orbit . 10
+  plunge inversion                                         3          12.5 Closed-form critical orbit . . . . . . . . . 10
+                                                                      12.6 Small-spin expansion (NLO, NNLO) . . . 10
+7 The limit a → 0: Schwarzschild                           4          12.7 Boundary layer and horizon winding . . . 11
+                                                                      12.8 Well-posedness . . . . . . . . . . . . . . . 11
+8 Expansion in the spin a                                  4
+  8.1 Coordinate time . . . . . . . . . . . . . .          5       13 Conclusions                                             11
+  8.2 Proper time . . . . . . . . . . . . . . . . .        5
+  8.3 O(a) deflection of the path . . . . . . . .          5       A Explicit expressions: proper-time branch                 13
+
+9 Weak field: Schwarzschild                                5       B Explicit      expressions:        coordinate-time
+                                                                     branch                                                   13
+10 Off-equatorial              brachistochrones:
+   Hamilton–Jacobi non-separability                  5             C Denominators and pole structure                          14
+   10.1 The Carter obstruction . . . . . . . . . . . 5
+   10.2 Fermat limit and recovery of Carter . . .    6
+
+11 Approximate quasi-constants                             6
+                                                                   1     Introduction
+   11.1 Proper-time branch . . . . . . . . . . . . .       6       The classical brachistochrone problem — to find, be-
+   11.2 Coordinate-time branch . . . . . . . . . .         6       tween two assigned points in a gravitational field, the
+  ∗ iman.rosignoli01@universitadipavia.it                          curve along which a constrained particle released from
+
+
+                                                               1
+rest takes the least time — has a cycloid as its solu-           2      Stationary spacetime
+tion in a uniform field. In general relativity the no-
+tion of “travel time” bifurcates: one may minimize the           Let ξ = ∂t be the timelike Killing field. We decompose
+particle’s proper time τ or the coordinate time t sin-           the stationary metric in lapse–shift form [16, 20, 21]
+gled out by the stationarity of the spacetime. Per-                                                     2
+lick [1] showed that, in a stationary spacetime, both                    ds2 = −e2Φ dt − Ai dxi              + hij dxi dxj ,      (1)
+problems reduce in the static case to geodesic problems
+of suitable Riemannian 3-metrics; in the stationary but          with
+non-static case (rotating, as in Kerr) this remains true                       e2Φ = −g00 ,         Ai = −
+                                                                                                                 g0i
+                                                                                                                     ,
+only for the proper-time brachistochrone, whereas the                                                            g00
+coordinate-time one is “influenced by a sort of Cori-                                               g0i g0j
+                                                                                    hij = gij −             .                     (2)
+olis force” — the frame-dragging term. This is pre-                                                  g00
+cisely the Randers structure [3] that emerges from the
+optical geometry of stationary metrics [2, 4] and from           The 3-metric hij is positive definite outside the ergore-
+the Fermat / Jacobi–Maupertuis principle in Finslerian           gion. The static observers ustat = e−Φ ∂t measure
+form [5, 8, 6]. The first relativistic brachistochrone in                                             q
+                                                                       dT = eΦ dt − Ai dxi , dl = hij dxi dxj , (3)
+                                                                                            
+a Schwarzschild-type field was treated by Goldstein &
+Bender [6]; Kamath extended this to the weak-field ex-
+terior [7]. Existence and multiplicity were established          so ds2 = −dT 2 + dl2 and dτ 2 = dT 2 − dl2 . The local
+by Giannoni & Piccione [9], with a Morse-theoretic               speed is v = dl/dT , γ = (1 − v 2 )−1/2 .
+treatment in [10]. The Snell approach to the proper-
+time brachistochrone in exterior Schwarzschild is due            Energy and speed. The specific energy E = − ξµ uµ
+to Schmidt [19]; brachistochrone-ruled timelike surfaces         is conserved under an ideal constraint. From uµ uµ = −1,
+were studied by Aritürk [11]. The present work extends
+the variational framework to the rotating (Kerr) exte-                         E                                         e2Φ
+                                                                         γ=√        = E e−Φ ,                v2 = 1 −        .    (4)
+rior; the companion papers [17, 18] treat the analogous                        −g00                                      E2
+problems in the interior Schwarzschild geometry (grav-
+itational train, NLO/NNLO expansion in the compact-              The local speed depends only on position and on E;
+ness µ = rs /R) and in Tolman–Oppenheimer–Volkoff                frame dragging does not affect v. For release from rest
+stellar interiors.                                               at r0 , E 2 = e2Φ(r0 ) . Setting
+                                                                                                           √
+   A central structural novelty of the rotating case is                                                      w
+that the brachistochrone flow is not the Kerr geodesic
+                                                                                  2       2Φ
+                                                                           w := E − e = E − f,    2
+                                                                                                      v=       ,     (5)
+                                                                                                            E
+flow: the Fermat–Randers reduction rescales the spa-
+tial metric by the position- and energy-dependent con-           w is positive in the accessible region and vanishes at the
+formal factor n2• , destroying the hidden symmetry re-           turning points.
+sponsible for Carter’s constant [12]. Off the equa-
+tor the Hamilton–Jacobi equation does not separate,
+so one must resort to approximate fourth invariants,
+                                                                 3      The two functionals (Fermat–
+in the spirit of the generalized-Carter / approximate-                  Randers)
+Killing-tensor programme for non-Kerr and “bumpy”
+backgrounds [13, 14, 15].                                        Inverting dT, dτ and using v = dl/dT ,
+   In this work: (a) we formulate the two brachis-                                                  dl
+tochrones as Fermat problems with explicit refractive                             dt = Ai dxi + e−Φ ,                             (6)
+                                                                                                    v
+indices nt , nτ (Sec. 3); (b) we specialize to the Kerr                                √
+                                                                                         1−v  2
+equatorial plane (Sec. 4); (c) we derive the first inte-                          dτ =          dl.                               (7)
+grals, orbits, and times (Sec. 5); (d) we recast the equa-                                 v
+torial problem in Hamiltonian form and prove a new t–τ           The two functionals are
+plunge-inversion criterion (Sec. 6); (e) we prove the con-
+vergence a → 0 (Sec. 7); (f) we develop the spin and
+                                                                                        Z
+                                                                                          nt dl + Ai dxi ,                        (8)
+                                                                                                        
+weak-field expansions (Secs. 8–9); (g) we go off the equa-                     Tt [γ] =
+                                                                                           γ
+tor, exhibit the Hamilton–Jacobi non-separability and                                      Z
+the Carter obstruction (Sec. 10), and construct approxi-                        Tτ [γ] =       nτ dl,                             (9)
+mate quasi-invariants for both branches with explicit ex-                                  γ
+pressions to O(a6 ) (Sec. 11, Apps. A–C); (h) we extend
+the construction across the ergosurface by a ZAMO re-            the first of Randers type, the second purely Riemannian,
+duction (Sec. 12).                                               with
+                                                                                                     √          r
+                                                                             e−Φ     E                 1 − v2     f
+                                                                      nt =       =√      ,     nτ =           =     ,
+Conventions. Geometric units G = c = 1, signature                             v       fw                 v        w
+(−, +, +, +), latin indices spatial. We set f (r) := 1 −                            nt           E
+2M/r = e2Φ = −gtt |θ=π/2 . Reference parameters for                                    = E e−2Φ = .                              (10)
+                                                                                    nτ           f
+the numerical comparisons are M = 1, E = 1.2, J = 3.0
+unless stated otherwise.                                         Both diverge as w−1/2 at the turning points.
+
+                                                             2
+Observation 1 (Perlick’s result). Tt contains the lin-                      The difference between the two brachistochrones lies en-
+ear term Ai dxi , odd under time reversal (the ana-                         tirely in Aϕ and in the substitution nt ↔ nτ .
+logue of a magnetic potential): it produces the pro-
+grade/retrograde asymmetry (“Coriolis force” [1]). Tτ
+has no linear term: the proper-time brachistochrone is a                    6     Equatorial Hamiltonians and
+geodesic of n2τ hij , hence symmetric under ϕ → −ϕ.
+                                                                                  the t–τ plunge inversion
+4    Kerr on the equatorial plane                                           The orbit equations are most transparent in Hamilto-
+                                                                            nian form. On the equator the two brachistochrones are
+In Boyer–Lindquist coordinates [21], with Σ = r2 +                          the geodesic flows of, respectively, the Randers (optical–
+a2 cos2 θ and ∆ = r2 − 2M r + a2 ,                                          magnetic) structure for t and the Riemannian metric
+                                             2
+                                                                            n2τ hij for τ . Writing pr and pϕ = J, the equatorial
+         gtt = − 1 − 2M
+                      Σ
+                        r
+                            , gtϕ = − 2M arΣsin θ ,                         Hamiltonians are
+                        Σ
+                grr = ∆   ,    gθθ = Σ,                                                         w∆ 2 w 2
+                                                                                       2Hτ =         p + J ,                               (21)
+                (r + a ) − a2 ∆ sin2 θ sin2 θ                                                   r2 f r ∆
+                2      2 2
+                                        
+         gϕϕ =                                ,
+                               Σ                                                                f w∆ 2      f 2w
+                                                                                        2Ht =          p  +      (J − Aϕ )2 ,              (22)
+                           2
+               gtt gϕϕ − gtϕ = −∆ sin2 θ.                        (11)                           E 2 r2  r
+                                                                                                            E2∆
+On the equatorial plane θ = π/2 (Σ = r2 ), Eq. (2) gives                    with f = 1 − 2M/r, w = E 2 − f , ∆ = r2 f + a2 , Aϕ =
+the exact expressions                                                       −2M a/(r − 2M ). They follow from Hτ = 12 gτij pi pj with
+                      2M                                                    gτ,ij = n2τ hij , and from the Randers magnetic Hamilto-
+        e2Φ = 1 −         = f,    ∆ = r2 f + a2 ,                (12)       nian Ht = 12 ãij (pi − Ai )(pj − Aj ) with ãij = n2t hij ; one
+                       r
+                                                                            checks that dϕ/dr = (∂H/∂J)/(∂H/∂pr ) reproduces
+                         2M a       2M a                                    (17)–(18).
+                  Aϕ = −       =−        ,                       (13)
+                          rf      r − 2M
+                                  r2     r2                                 Common initial data break the normalization.
+                      hrr =          = 2       ,                 (14)
+                                  ∆   r f + a2                              The two Hamiltonians carry different coefficient func-
+                                  ∆       a2                                tions. If both branches are launched from the same ini-
+                       hϕϕ =        = r2 + .                     (15)       tial phase-space point (r0 , pr0 , J, E), their on-shell values
+                                  f       f
+                                                                            differ, H0t ̸= H0τ , and the unit-speed convention H0 = 12
+Observation 2 (the central structural fact). On the                         cannot be imposed on both. The ratio of the radial coef-
+equator e2Φ = f as in Schwarzschild: hence v, nt , nτ                       ficients in (21)–(22) is exactly E 2 /f 2 , so when the radial
+are identical to Schwarzschild and independent of a. The                    momentum dominates the budget,
+Kerr effects enter only through hrr , hϕϕ and through Aϕ .
+                                                                                     H0τ              E2
+                                                                                         −−−−− −−− −→     ,                f0 ≡ f (r0 ),   (23)
+                                                                                     H0t pr0 dominant f02
+5    Exact orbit equations
+                                                                            nearly independent of J for large r0 (e.g. E 2 /f02 ≃ 2.24
+By axisymmetry both functionals admit a first integral.                     at r0 = 10M , E = 1.2). This unequal energy budget is
+With the arc length s of h (hrr r′2 + hϕϕ ϕ′2 = 1) the                      the origin of the effect below.
+momenta conjugate to ϕ are
+        Jt = nt hϕϕ ϕ′ + Aϕ ,                Jτ = nτ hϕϕ ϕ′ .    (16)       Centrifugal barrier and turning points. A turn-
+                                                                            ing point is pr = 0. Introduce the branch-independent
+The exact orbit equations are                                               centrifugal function
+                                           √
+             dϕ                    (Jt − Aϕ ) hrr                                                                w(r)
+                      =p                                     ,   (17)                              V (r) :=           ,                    (24)
+             dr  hϕϕ [n2t hϕϕ − (Jt − Aϕ )2 ]
+                  t                                                                                              ∆(r)
+                      √
+         dϕ        Jτ hrr                                                   monotonically increasing as r → r+ in the accessible
+              =p                      .                          (18)
+         dr τ    hϕϕ [n2τ hϕϕ − Jτ2 ]                                       range. From (21)–(22) the inversion radii rτ , rt obey
+
+The travel times (descent from r0 , at rest, down to r1 <                                              2H0τ
+                                                                                          V (rτ ) =         ,                              (25)
+r0 ) are                                                                                                J2
+                Z r0 h q                                                                                        2H0t E 2
+           Tt =       nt hrr + hϕϕ dϕ
+                                           2                                              V (rt ) =                        2 .           (26)
+                  r1
+                                        dr                                                             f (rt )2 J − Aϕ (rt )
+                               i
+                      + Aϕ dϕdr dr,                   (19)                  Since V is monotone, the τ branch reaches the smaller
+                      Z r0        q                                         radius (rτ < rt , deeper plunge) precisely when V (rτ ) >
+                                                  dϕ 2
+                                                                 (20)       V (rt ). Equating the two required values at the common
+                                                     
+             Tτ =            nτ       hrr + hϕϕ   dr   dr.
+                       r1                                                   turning radius gives a closed criterion.
+
+                                                                        3
+          a [M ]   Jinv [M ]   a [M ]   Jinv [M ]
+           0.10     0.1347      0.60     0.9184
+           0.20     0.2757      0.70     1.1076
+           0.30     0.4263      0.80     1.3347
+           0.40     0.5777      0.90     1.5618
+           0.50     0.7291      0.99     1.7889
+
+Table 1: Critical angular momentum Jinv for the t–τ
+plunge inversion (Result 1) at E = 1.2, r0 = 10M , pr0 =
+−0.5. The analytic criterion (27) and direct integration
+agree to all digits shown (R2 = 1.00000).
+
+
+Result 1 (t–τ plunge inversion — new, ab-
+sent in Schwarzschild). Under identical initial data
+(r0 , pr0 , J, E), the proper-time brachistochrone pene-         Figure 1: Numerical validation of the t–τ plunge-
+trates deeper than the coordinate-time one (rτ < rt )            inversion criterion (Result 1). Each point is a directly
+iff                                                              integrated brachistochrone trajectory; the solid curve is
+                 2 τ                2
+                  fτ   H0 J − Aϕ (rτ )                           the analytic prediction (27). Agreement exceeds four sig-
+                                          > 1,      (27)
+                  E    H0t       J                               nificant digits across the full spin range a ∈ [0.1, 0.99] M
+                                                                 (R2 = 1.00000, RMSE < 10−4 M ).
+with fτ = f (rτ ), Aϕ (rτ ) = −2M a/(rτ − 2M ).
+The crossover defines a critical angular momentum
+Jinv (a; E, r0 , pr0 ) at which rτ = rt .                        7     The limit a → 0: Schwarzschild
+   The mechanism is twofold: (i) the energy ratio (23),          As a → 0: Aϕ → 0, hrr → 1/f , hϕϕ → r2 . The linear
+biasing the comparison towards τ (H0τ > H0t when                 term disappears and the orbits (17)–(18) collapse into
+f0 < E); and (ii) the gravitomagnetic factor J − Aϕ ,
+which enhances the effective centrifugal momentum of                          
+                                                                                  dϕ
+                                                                                       
+                                                                                                        J
+the t branch and diverges as r → re = 2M . The two                                           =      √ √             ,     (28)
+                                                                                  dr               r f n2 r 2 − J 2
+compete and balance at Jinv . As a → 0, Aϕ → 0 and                                     Sch
+
+the branches degenerate (Schwarzschild), so the inver-
+                                                                 with (n, J) = (nt , Jt ) for coordinate time and (n, J) =
+sion is genuinely rotational. The simplified unit-speed
+                                                                 (nτ , Jτ ) for proper time, and times
+criterion is recovered only for the true variational prob-
+lem where pr0 is fixed by the boundary conditions; (27)                                 Z r0 q
+                                                                                                           2
+is the corrected form for matched phase-space data.                             T•Sch =     n• f1 + r2 dϕ
+                                                                                                        dr    dr.      (29)
+                                                                                            r1
+
+Numerical validation. Solving (25)–(26) for Jinv (a)             The two Schwarzschild brachistochrones differ only
+and comparing with direct integration of (21)–(22) (ref-         through the index (nt /nτ = E/f ): geometrically dis-
+erence set E = 1.2, r0 = 10M , pr0 = −0.5) gives agree-          tinct but in the same Riemannian family (Snell approach
+ment to four decimals across the full spin range (Table 1;       in [19]). This is the expected consistency check.
+R2 = 1.00000, RMSE < 10−4 M ). The critical Jinv grows
+almost linearly with a, and the deeper-reaching branch
+switches across it (for these parameters τ reaches the           8     Expansion in the spin a
+smaller radius for J > Jinv ).
+                                                                 Expanding (13)–(15) about Schwarzschild:
+
+                                                                                             1   a2
+                                                                                  hrr =        − 2 2 + O(a4 ),
+                                                                                             f  r f
+                                                                                                     a2
+                                                                                   hϕϕ = r2 +              (exact),
+                                                                                                     f
+                                                                                             (1)          (1)    2M
+                                                                              Aϕ = a A ϕ ,             Aϕ = −       .     (30)
+                                                                                                                 rf
+                                                                 The gravitomagnetic two-form F = dA has the single
+                                                                 equatorial component
+                                                                                              2M a      2M a       (1)
+                                                                     Frϕ = ∂r Aϕ =                   2
+                                                                                                       = 2 2 =: a Frϕ .   (31)
+                                                                                           (r − 2M )    r f
+
+                                                                 Envelope theorem. With γa = γ0 + aγ1 + . . . the
+                                                                 minimizer of T = T0 + aT1 + . . . and γ0 stationary for
+                                                                 T0 , T (γa ) = T0 [γ0 ] + a T1 [γ0 ] + O(a2 ).
+
+
+                                                             4
+8.1     Coordinate time                                                         (the cycloid in the uniform-field limit). The first PN
+                                                                                corrections are
+The only O(a) contribution to Tt comes from the linear
+term Aϕ dϕ:                                                                                        1     M       M
+                                                                                             nt ≃      1+     −      ,                 (37)
+Result 2 (O(a) gravitomagnetic correction — new).                                                 vN       r      r0
+                                                                                                   1     M
+                                                                                             nτ ≃      1−       ,                      (38)
+                     Z                 Z
+                         (1)               dϕ
+              δTt = a Aϕ dϕ = −2M a                                                               vN       r
+                      γ0                γ0 r f                                                    r         
+                                                                                             dl ≃    1 + 2M    dr2 + r2 dϕ2 .          (39)
+                          Z
+                                dϕ
+                  = −2M a            + O(a2 ).                       (32)                                 r
+                           γ0 r − 2M
+
+        (1)                                                                     They are identical at leading order and differ at the
+Since Aϕ < 0, for prograde motion δTt < 0: frame drag-                          PN corrections (nt carries the constant −M/r0 , tied
+ging shortens the coordinate time. No Schwarzschild                             to the coordinate redshift of the origin, absent in nτ )
+analogue.                                                                       — the perturbative form not previously isolated for the
+                                                                                Schwarzschild case alone.
+8.2     Proper time
+                                                               (1)
+Tτ has no linear term and nτ is a-independent: δTτ                   = 0.
+                                        (2)
+The first nontrivial term comes from hij on γ0 :
+                                                                                10     Off-equatorial        brachis-
+                                                                                       tochrones:    Hamilton–Jacobi
+Result 3 (frame-dragging robustness — parity in a).
+                            1 ′2    1
+                                                                                       non-separability
+                            f ϕ − r2 f 2
+                  Z r0
+            a2
+      δTτ =              nτ p                   dr + O(a4 ),         (33)       Away from the equator the proper-time brachistochrone
+            2       r1          f −1 + r2 ϕ′2
+                                                                                is still a geodesic of gij = n2τ hij , now with θ dynamical.
+with ϕ′ = dϕ/dr p evaluated on the Schwarzschild solution                       With the off-equatorial redshift e2Φ = F/Σ (F := Σ −
+γ0 and dl0 = f −1 + r2 ϕ′2 dr its length element. The                           2M r) and
+series of Tτ is even in a: insensitive to frame dragging
+at first order.                                                                          F    DE                                 F
+                                                                                w = E2−     =     , DE := (E 2 −1)Σ+2M r, n2τ =     ,
+                                                                                         Σ     Σ                                DE
+                                                                                                                                (40)
+8.3     O(a) deflection of the path                                             the geodesic Hamiltonian reads
+The optimal time is protected at first order, but the
+optimal path in coordinate time deflects at O(a):                                                 DE h              F J2 i
+                                                                                          Hτ =        ∆ p2r + p2θ +          ,         (41)
+Result 4 (gravitomagnetic deflection).                                                           2 ΣF               ∆ sin2 θ
+
+              D(0) δ ẋi            (1)                                         with Σ = r2 + a2 cos2 θ, ∆ = r2 − 2M r + a2 . On the
+                         = a(0) ij Fjk ẋ(0) k + O(a2 ),             (34)
+                ds                                                              equator (Σ = r2 , F = r2 f , DE = r2 w) this reduces to
+       (0)           (0)
+                                                                                (21).
+with aij = n2t hij the base metric, D(0) its connection,
+                                                                      (1)
+and source the gravitomagnetic Lorentz force from Frϕ
+(31). Solvable by quadratures.                                                  10.1     The Carter obstruction
+Observation 3 (higher orders). At O(a2 ) the coordi-                            Setting 2Hτ = 2h0 and clearing the conformal factor,
+                                      (2)
+nate time receives both the explicit hrr term and the
+contribution of γ1 through the second variation of T0 ;                                                     F J2           ΣF
+                                                                                            ∆ p2r + p2θ +            = 2h0    .        (42)
+the two must be summed. The first order is completely                                                       ∆ sin2 θ       DE
+given by (32).
+                                                                                For Kerr geodesics the analogous equation separates:
+                                                                                multiplied by Σ, it splits into an r-block plus a θ-block,
+9     Weak field: Schwarzschild                                                 yielding Carter’s quadratic constant [12]. Here the con-
+                                                                                formal factor n2τ = F/DE spoils this — the combination
+We expand (28) in the weak field, ΦN = −M/r. Exactly,                           ΣF/DE does not separate, because DE = (E 2 − 1)Σ +
+                                                                              2M r mixes r and θ additively in the denominator, while
+                                      1   1        2                            the centrifugal term carries F = (r2 − 2M r) + a2 cos2 θ.
+ w = E 2 − f = 2 ΦN,0 − ΦN = 2M
+                             
+                                        −      =: vN ,
+                                      r   r0                                    Consequently the standard zeroth-order candidate
+                                                   (35)
+                                                                                           Qstd = p2θ + J 2 cot2 θ − a2 E 2 cos2 θ     (43)
+the square of the Newtonian descent speed. At leading
+order nt , nτ → 1/vN : the two brachistochrones collapse
+                                                                                obeys {Qstd , Hτ } = O(a2 ): it is exact only as a → 0
+into a single Newtonian brachistochrone
+                                                                                and conserved only approximately at finite spin. This is
+                                                                                the brachistochrone counterpart of the loss of a Killing
+                  Z
+                     dl         q
+          T (0) =       , vN = 2M 1r − r10 ,        (36)
+                                             
+                   γ vN
+                                                                                tensor in deformed (“bumpy”) Kerr backgrounds [14, 15].
+
+
+                                                                            5
+10.2    Fermat limit and recovery of Carter
+As E → ∞ the conformal factor degenerates, DE →
+E 2 Σ, so ΣF/DE → F/E 2 with F = (r2 − 2M r) +
+a2 cos2 θ additively separable. Equation (42) then splits
+and Qstd becomes exact: the brachistochrone reduces to
+the null (Fermat) geodesic problem of the Kerr optical
+geometry [2, 4], whose fourth invariant is the Kerr Carter
+constant. The finite-E obstruction is thus controlled by
+w = E 2 − e2Φ and disappears in the high-energy (null)
+regime — the canonical consistency check.
+
+
+11     Approximate quasi-constants
+Because no exact fourth invariant exists at finite spin
+(Sec. 10), we build approximate ones by perturba-
+tive closure of the Poisson bracket, in the spirit of
+the generalized-Carter / approximate-Killing-tensor pro-
+gramme [13, 14] and following the NLO/NNLO strategy
+of the companion interior treatments [17, 18]. We take
+the ansatz
+                         X
+             K = Qstd +     a2k f2k (r, θ) p2θ ,    (44)
+                          k≥1
+
+even in a: odd powers are excluded, since Hτ is even
+in a2 and for the t branch Aϕ ∼ a enters only through
+A2ϕ ∼ a2 . The pr content is fixed to degree two and the
+pθ content to (44); both are confirmed numerically (no
+pr pθ cross term; radial weight r−2 of the residual block,
+exponent −2.006 ± 0.033).
+   Figure 2 illustrates representative off-equatorial
+brachistochrone trajectories for both branches, provid-
+ing visual context for the quasi-invariant analysis that
+follows.
+
+11.1    Proper-time branch
+Imposing {K, Hτ } = O(a4 ) fixes the NLO coefficient:
+
+Result 5 (optimal τ quasi-invariant).
+
+             KτNLO = Qstd + a2 f2 (r, θ) p2θ ,
+                           N2 (r) cos 2θ
+                 f2 =                       ,        (45)        Figure 2: Representative off-equatorial brachistochrone
+                        2 r2 D0 (r) DE0 (r)
+                                                                 trajectories in Boyer–Lindquist coordinates (M = 1, a =
+                                                                 0.4, E = 1.2, J = 3). Top: four t-branch trajectories at
+with N2 = (E 2 − 1)r2 + 4M r − 4M 2 , D0 = r2 − 2M r,
+                                                                 different initial polar angles θ0 . Bottom: four τ -branch
+DE0 = (E 2 − 1)r2 + 2M r (App. A).
+                                                                 trajectories at the same initial conditions. The prograde
+  The factor cos 2θ < 0 near the equator concentrates            azimuthal drift due to frame dragging is visible in the t
+the correction there, where the drift of Qstd is largest.        branch; the τ branch remains symmetric under ϕ → −ϕ
+Over 174–240 trajectories at five spins, the NLO invari-         as expected from the purely Riemannian structure of Tτ .
+ant reduces the drift σ(K) relative to Qstd by a median
+factor 0.916 (68% wins). The expansion saturates at              Result 6 (optimal t quasi-invariant). Ktbest = Qstd . Ev-
+O(a2 ): the NNLO term f4 changes the drift below the             ery perturbative (a2 , a4 ) or on-shell correction increases
+four-digit level, while the NNNLO term f6 helps only             the drift (NLO wins only 22–24%, ratio 0.78–0.87 against
+for a ≲ 0.5 and the series diverges for a ≳ 0.6 (App. A).        Qstd ).
+The p2θ structure is essential: dropping it degrades the
+drift by 8–800×.                                                    A numerical SVD search for the best quadratic-in-
+                                                                 pθ invariant returns a leading combination α(a, E) (p2θ +
+                                                                 J 2 cot2 θ) with α(0.4, 1.2) = −0.869 ± 0.043 (and a sig-
+11.2    Coordinate-time branch
+                                                                 nificant a·E cross term): the natural Carter pairing is
+For the t branch the optimum is the bare Carter form:            not optimal for t. There the drift is governed by the er-
+
+
+                                                             6
+gosphere geometry rather than by the non-conservation
+of Qstd , so perturbative corrections cannot help.
+
+11.3     On-shell reduction and exact non-
+         integrability
+Substituting the radial shell p2r → 2h0 r2 /DE0 − p2θ /D0 −
+J 2 /(D0 sin2 θ) collapses the NLO τ correction exactly:
+g2 = f2 + F2 = 0, so the on-shell NLO invariant is
+again Qstd (first nonzero on-shell term at O(a4 ), g4 =
+N2 sin2 θ/[D02 DE0 ]). For t the same reduction doubles
+the harmful correction, g2t = 2f2t . The fully nonpertur-
+bative ansatz K = Qstd + φ(r, θ)p2θ forces φ = −1 from
+the pθ p2r bracket, leaving K = J 2 cot2 θ − a2 E 2 cos2 θ;
+this kills the pθ p2r and p3θ brackets exactly but leaves
+an irreducible p1θ residue, and numerically drifts 8–800×
+worse. Hence:
+Observation 4 (non-integrability). No exact second
+constant of the form Qstd + φ p2θ exists at a ̸= 0: the
+system {K, Hτ } = 0 is overdetermined. The Randers–
+Zermelo reduction injects Σ3 /F 2 terms absent from the
+Kerr geodesic flow, obstructing Hamilton–Jacobi separa-
+tion.
+
+11.4     Drift, Poincaré sections, and the er-
+         gosphere
+We quantify conservation by the trajectory dispersion
+σ(K), with acceptance |{H, K}|/|K| < 10−3 cross-
+checked on Poincaré sections [15]. The residual of Qstd
+is odd about the equator,
+ dQstd ≃ pθ cos θ [c0 + c1 cos2 θ + c2 cot2 θ] + c3 p3θ cos θ
+                                                          (46)
+(R2 = 0.9997). Near the ergosurface the drift follows
+              B(a, E)
+     σ(K) ∼           ,      slope = −1.05 ± 0.06,       (47)
+              margin                                                 Figure 3: Drift log10 σ(K) of the quasi-invariants on the
+with B(a, E) non-factorizable (a genuine a · E coupling              (θ0 , margin) grid for a/M = 0.1, E = 1.2, J = 3.0.
+at 3.6σ): any perturbative quasi-invariant loses validity            Top: Qstd (t branch, bare Carter form). Bottom: KτNLO
+as r → re , where the drift diverges as (r − re )−1 .                (τ branch, NLO correction f2 ). The y-axis is the ergo-
+  Figure 3 shows log10 σ(K) as a function of initial polar           sphere margin r0 −re (θ0 ) on a log scale; the white dashed
+angle θ0 and ergosphere margin for a/M = 0.1, illustrat-             line marks margin = 1M . The universal 1/margin diver-
+ing the universal 1/margin divergence of equation (47).              gence (47) is visible as the systematic darkening near the
+                                                                     bottom of each panel.
+Contrast with the geodesic Carter constant. For
+Kerr geodesics the exact quadratic invariant is KCarter =
+                                                                     CasADi/IPOPT interior-point solver [26, 27]. The dis-
+Qstd + a2 p2r . The extra a2 p2r piece is not conserved by
+                                                                     crete transcription uses N = 100 mesh intervals (trape-
+the brachistochrone flow (Hbrachi ̸= Hgeo ) and does not
+                                                                     zoidal scheme), yielding 407 optimization variables; two
+improve the drift — a quantitative measure of how the
+                                                                     free parameters (J and the initial quasi-invariant value
+Fermat–Randers reduction alters the integrable struc-
+                                                                     K0 ) are released, and the on-shell normalization 2H0 = 1
+ture relative to standard geodesics.
+                                                                     fixes pr0 uniquely. Wall-clock time per solve is approxi-
+  Figure 4 displays the critical integration length λcrit
+                                                                     mately 0.1 s.
+— the affine-parameter value at which the relative drift
+                                                                        Figures 5 and 6 compare the quasi-K shooting tra-
+|δK/K| first exceeds 10−3 — across the (θ0 , margin) pa-
+                                                                     jectories (Secs. 11 and 11.4) against the BVP solution
+rameter space for the NLO perturbed quasi-invariant.
+                                                                     for representative off-equatorial data. The two meth-
+                                                                     ods agree within the integration tolerance: the brachis-
+11.5     BVP collocation validation of the                           tochrone paths in (r, θ, ϕ), the temporal profiles, and the
+         quasi-K criterion                                           quasi-invariant K(λ) all coincide to line-width accuracy.
+                                                                     This confirms that the perturbative Poisson-bracket clo-
+As an independent check we formulated the off-
+                                                                     sure correctly identifies the global minimizer of the func-
+equatorial brachistochrone as a boundary-value prob-
+                                                                     tional, not merely a local stationary point.
+lem (BVP) and solved it by direct collocation using the
+
+                                                                 7
+                                                                    Figure 5: Comparison between quasi-K shooting (solid)
+                                                                    and BVP collocation via CasADi/IPOPT (dashed) for
+Figure 4: Critical integration length λcrit (color scale)           representative off-equatorial brachistochrone trajecto-
+at which the relative drift |δK/K| of the NLO quasi-                ries (M = 1, a = 0.4, E = 1.2). Each panel shows a dif-
+invariant first exceeds 10−3 , shown as a function of initial       ferent set of boundary conditions; the two solution meth-
+polar angle θ0 (horizontal) and ergosphere margin (verti-           ods agree to within line width, confirming that the shoot-
+cal, log scale), for both the t branch (left) and τ branch          ing approach based on the approximate quasi-invariant
+(right) at a/M = 0.4, E = 1.2, J = 3.0. Larger values               correctly locates the global minimum of the travel-time
+(green) indicate longer useful integration windows. The             functional.
+white dashed contour marks λcrit = 50M ; the 1/margin
+degradation (47) is visible near the bottom of each panel.
+
+
+
+
+                                                                8
+Figure 6: Temporal profiles along the brachistochrone
+for the same trajectories as Fig. 5: radial coordinate
+r(λ), polar angle θ(λ), azimuthal coordinate ϕ(λ), and
+the quasi-invariant K(λ) (bottom panels). Solid: quasi-
+K shooting. Dashed: BVP collocation. The relative
+drift of K remains below 0.1% over the full integration
+length λmax , validating KτNLO as a practical conservation
+law for numerical trajectory generation.
+
+
+
+
+                                                             9
+12     Trajectories entering the er-                                 12.3     Conserved angular integral across
+       goregion                                                               the ergosurface
+                                                                     Axisymmetry holds throughout: the conjugate momen-
+The reduction of Secs. 2–5 rests on the static observers             tum
+ustat = e−Φ ∂t , which cease to exist once e2Φ = −gtt = f                                  ∂F              dϕ
+changes sign. On the equator this occurs at the ergosur-                              J=      ′
+                                                                                                ,    ϕ′ =     ,            (55)
+                                                                                           ∂ϕ              dr
+face                                 p                               is conserved along the entire trajectory in regular ZAMO
+          re = 2M,       r ± = M ± M 2 − a2 ,         (48)           variables. Continuity of J at the ergosurface is the gen-
+with r+ the outer horizon; the ergoregion is r+ < r < re             eralized Snell law, here automatic.
+and, like the indices, is a-independent on the equator.
+There the static data diverge,                                       12.4     Radial trichotomy and the critical
+                  E
+                                    q
+                                       f
+                                                                              orbit
+          nt = √      → ∞, nτ = w        → 0,
+                  fw                                                 Eliminating L in favour of J (proper-time branch),
+                    2M a
+          Aϕ = −           → −∞ (r → re+ ),         (49)                                 w (∆ − J 2 w)           Jw
+                  r − 2M                                                         ṙ2 =                 ,   ϕ̇ =     ,
+                                                                                               2
+                                                                                              r f                ∆
+signalling the breakdown of the static reduction — not                                   dϕ            √
+                                                                                                     J r wf
+of the problem itself.                                                                           = √           ,             (56)
+                                                                                          dr τ    ∆ ∆ − J 2w
+12.1     ZAMO reduction                                              (˙ = d/dτ ). Since ∆ − J 2 w|re = a2 − J 2 E 2 the behaviour
+                                                                     splits about
+Replace the static observers by the zero-angular-                                                    a
+                                                                                              Jc =     :                     (57)
+momentum observers (ZAMO) [22], regular down to r+ .                                                 E
+In 3+1 form the equatorial metric reads                                  • |J| > Jc : a periapsis sits outside the ergosphere;
+     ds2 = −N 2 dt2 + γrr dr2 + γϕϕ (dϕ − ω dt)2 ,       (50)              never reached.
+                                                                       • |J| < Jc : the orbit meets re radially and is reflected
+                       ∆            gtϕ   2M a                          — it grazes the ergosurface, not the horizon.
+             N2 =         ,   ω=−       =       ,
+                      gϕϕ           gϕϕ   r gϕϕ                        • |J| = Jc : (r − 2M ) cancels and the orbit crosses
+             r2
+                                             2M a    2                   smoothly, threading the ergoregion.
+     γrr =     ,     γϕϕ = gϕϕ = r2 + a2 +        .      (51)
+             ∆                                 r                       Figure 7 illustrates the three regimes for a = 0.9M ,
+γij is positive definite for all r > r+ , N vanishes only at         showing trajectories in the equatorial plane with angular
+the horizon, and the energy E = −ut stays conserved.                 momenta spanning the trichotomy (57).
+The ZAMO-measured speed is
+                                                                     12.5     Closed-form critical orbit
+                            N2
+             v2 = 1 −              ,      L ≡ uϕ ,       (52)        For J = Jc ,
+                         (E − ωL)2
+which depends on the direction of motion through E −                                                     E 2 r 2 + a2
+                                                                                 ∆ − Jc2 w = (r − 2M )                ,      (58)
+ωL: the Finslerian feature made unavoidable.                                                                 E2r
+                                                                                    √
+                                                                     removing the    f branch and leaving
+12.2     Zermelo wind and the ergosurface                                                 p
+         threshold                                                              dϕ       a (E 2 − 1)r2 + 2M r
+                                                                                   =                  √            ,         (59)
+                                                                                dr   (r2 − 2M r + a2 ) E 2 r2 + a2
+Minimizing the coordinate time of a light ray is a Zer-
+melo navigation problem with wind W ϕ = ω/N , and the                valid down to the horizon. Rationalizing,
+time-optimal paths are geodesics of the optical Randers                                         p
+                                                                                                  P4 (r) dr
+                                                                                    Z
+metric [2]                                                                   ∆ϕ = a                                    ,     (60)
+                                                                                       (r2 − 2M r + a2 )(E 2 r2 + a2 )
+            p
+               λ γij dxi dxj + (Wi dxi )2 − Wi dxi
+       Ft =                                        , (53)            with P4 = [(E 2 − 1)r2 + 2M r](E 2 r2 + a2 ): the critical
+                              Nλ                                     brachistochrone integrates in elliptic integrals of the first
+λ = 1 − |W |2γ , valid while λ > 0. From Boyer–Lindquist,            and third kinds. As r → r+ the orbit spirals onto the
+                                                                     horizon; for a → 0 it degenerates to the radial plunge.
+                         γϕϕ ω 2     (2M a/r)2
+               |W |2γ =           =            ,
+                             N2         ∆                            12.6     Small-spin            expansion             (NLO,
+                                f gϕϕ   −gtt
+                   1 − |W |2γ =       =      ,           (54)                 NNLO)
+                                  ∆      N2
+                                                                     The penetrating orbit’s winding is odd in a. Expanding
+so the wind is subcritical (λ > 0) outside the ergosurface,
+                                                                     (59),
+critical on it, and supercritical (λ < 0) inside, where Ft
+becomes a conic (Lorentz–)Finsler metric [25, 24] on the               dϕ        a g(r)     h                          i
+co-rotating cone of admissible directions.                                 =                  1−(P +Q) a2
+                                                                                                          +Λ a4
+                                                                                                                +O(a6
+                                                                                                                      )  , (61)
+                                                                       dr    E r2 (r − 2M )
+
+                                                                10
+                                                                    horizon. The coordinate-time functional Tt is bounded
+                                                                    below only for r ≥ re ; inside, E − ωL can reverse sign
+                                                                    (Penrose negative energies [23]) and inf Tt is not attained,
+                                                                    so Tt is well posed only as a cone-constrained problem.
+
+
+                                                                    13      Conclusions
+                                                                    We have derived in closed form, on the Kerr equato-
+                                                                    rial plane, the two brachistochrones in coordinate and
+                                                                    proper time as Fermat problems with Randers structure
+                                                                    (8)–(9), with first integrals, orbits, times, and Hamilto-
+                                                                    nians (21)–(22). From the latter we proved a new t–τ
+                                                                    plunge-inversion criterion (Res. 1): under matched ini-
+                                                                    tial data the branches carry unequal on-shell energies
+                                                                    (H0τ /H0t → E 2 /f02 ), and together with the gravitomag-
+                                                                    netic centrifugal enhancement this drives a crossover at a
+                                                                    critical Jinv (a), validated to four digits (Table 1, Fig. 1).
+                                                                    Off the equator the Hamilton–Jacobi equation is non-
+                                                                    separable (Sec. 10): the conformal factor n2τ = F/DE
+                                                                    obstructs Carter separation at finite E, so the quadratic
+Figure 7: Equatorial brachistochrone trajectories near
+                                                                    constant survives only to O(a2 ) and is recovered exactly
+the Kerr ergosphere (M = 1, a = 0.9, E = 1.2). The
+                                                                    only in the Fermat limit. We therefore built approx-
+three regimes of the radial trichotomy (57) are shown:
+                                                                    imate quasi-invariants (Sec. 11): for τ a single O(a2 )
+J = 3.0M , 2.0M , 1.0M > Jc (reflecting, with turning
+                                                                    term KτNLO (Res. 5) lowers the drift and the spin se-
+radii rmin indicated in the legend) and J = 0.5M < Jc
+                                                                    ries saturates; for t the bare Carter form Qstd is al-
+(captured, integrated via the ZAMO formula down to
+                                                                    ready optimal (Res. 6); explicit expressions to O(a6 )
+r ≃ r+ ). The black disk is the outer horizon r+ =
+                                                                    are collected in Apps. A–C. The a → 0 limit recovers
+1.436M ; the dashed red circle is the ergosurface re =
+                                                                    Schwarzschild (28); the spin expansion gives the O(a)
+2M .
+                                                                    gravitomagnetic correction (32) and the parity-in-a ro-
+     p                                                              bustness (33); the weak-field expansion yields a single
+g=       (E 2 − 1)r2 + 2M r,                                        Newtonian brachistochrone splitting at the PN order.
+                                                                    Section 12 extends the construction across the ergosur-
+                        1                 1                         face (Res. 7). These results complement the companion
+             P =              ,    Q=           ,
+                   r(r − 2M )           2E 2 r2                     interior treatments [17, 18]. The numerical validation
+                   Λ = P 2 + P Q + 32 Q2 ,             (62)         of the quasi-invariants — drift maps (Figs. 3–4), collo-
+                                                                    cation cross-check (Figs. 5–6), and the ergosphere tri-
+following the interior expansions of [17]. The series is            chotomy (Fig. 7) — is presented in Secs. 11–12; a fuller
+non-uniform (each order gains (r − 2M )−1 ), holding for            parameter survey is deferred to a sequel.
+r − 2M ≫ a2 , with r+ = 2M − a2 /2M + O(a4 ) an O(a2 )
+layer.                                                              Note on conventions. The formulas use f = 1 − 2M/r,
+                                                                    signature (−, +, +, +), and Ai = −g0i /g00 ; they adapt
+                                                                    to alternative conventions (opposite sign of Aϕ , dτ -
+12.7       Boundary layer and horizon wind-                         weighted normalization) by redefining the indices (3).
+           ing
+With the inner variable r = 2M + a2 ξ,                              Acknowledgements
+     dϕ      a                                 1
+        =          + O(a3 ),         ξ+ = −      ,     (63)         The author thanks the University of Pavia for provid-
+     dξ   2M ξ + 1                            2M
+                                                                    ing a stimulating academic environment. The author
+regular across re (ξ = 0). The winding to near the hori-            received no external funding for this work. The AI assis-
+zon scales as                                                       tants GPT 5.5 (OpenAI) and Claude Fable (Anthropic)
+                                                                    were used to assist with symbolic derivations, numerical
+                          a    1   a   1                            implementation, and manuscript preparation; all results
+              ∆ϕergo ≃      ln 2 =   ln .              (64)
+                         2M   a    M   a                            were verified independently by the author, who takes full
+                                                                    responsibility for the content of this work.
+12.8       Well-posedness
+Result 7 (ergoregion well-posedness and the critical
+separatrix). For endpoints with r > r+ the proper-
+                                                                    Data availability
+time functional Tτ admits a minimizer, obeying the tri-             The complete numerical and symbolic codebase underly-
+chotomy (57): the ergosurface is a turning surface, so              ing this work is openly available under the MIT license
+a generic minimizer stays in r ≥ re ; penetration occurs            in the GitHub repository “KerrBrachistochrone” [28]:
+only on the measure-zero separatrix |J| = a/E, whose
+orbit (59)–(60) is closed-form (elliptic) and spirals to the           github.com/ImanetorX98/KerrBrachistochrone.
+
+
+                                                               11
+The repository includes the trajectory integrators, the
+Poisson-bracket closure and quasi-invariant scans, the
+BVP collocation scripts, and the figure-generation
+pipeline. It also retains exploratory scripts and neg-
+ative results, documenting which ansatz classes failed
+the held-out trajectory and phase-space residual tests of
+Secs. 11–11.4.
+
+
+
+
+                                                            12
+A     Explicit expressions: proper-time branch
+The τ quasi-invariant is Kτ = Qstd +             k≥1 a f2k (r, θ) pθ with Qstd = pθ + J cot θ − a E cos θ and
+                                                      2k           2              2    2   2     2 2   2
+                                            P
+
+
+                D0 (r) = r2 − 2M r,             DE0 (r) = (E 2 − 1)r2 + 2M r,           (2M + r(E 2 − 1)) = DE0 /r.      (65)
+
+NLO [O(a2 )].
+                                           N2 (r) cos 2θ
+                          f2 (r, θ) =                       ,         N2 (r) = (E 2 − 1)r2 + 4M r − 4M 2 .               (66)
+                                        2 r2 D0 (r) DE0 (r)
+Simple pole at r = 2M ; cos 2θ < 0 at the equator, so f2 reduces K near θ = π/2 where the Qstd drift peaks.
+
+NNLO [O(a4 )].
+                                               (2M − r) P4τ (r, θ)                            D0 (r)3 DE0 (r)
+                         f4 (r, θ) = −                                 ,           ∆2 (r) =                   ,          (67)
+                                         2 r4 (2M + r(E 2 − 1)) ∆2 (r)                              r4
+        P4τ = − E 4 r4 sin2 θ + 2E 4 r4 cos4 θ + 16E 2 M 3 r cos4 θ + 8E 2 M 2 r2 sin2 θ − 24E 2 M 2 r2 cos4 θ
+                − 8E 2 M r3 sin2 θ + 16E 2 M r3 cos4 θ + 2E 2 r4 sin2 θ − 4E 2 r4 cos4 θ − 16M 4 sin2 θ + 32M 4 cos4 θ
+                                                                                                                         (68)
+                + 32M 3 r sin2 θ − 64M 3 r cos4 θ − 24M 2 r2 sin2 θ + 48M 2 r2 cos4 θ + 8M r3 sin2 θ − 16M r3 cos4 θ
+                − r4 sin2 θ + 2r4 cos4 θ.
+Numerically f4 adds < 1% to f2 over 174 trajectories: NNLO = NLO to four digits.
+
+NNNLO [O(a6 )].
+
+                                      (2M − r) P6τ (r, θ)
+                        f6 (r, θ) =                       ,          ∆3 (r) = (2M − r)4 (2M + r(E 2 − 1)),               (69)
+                                       r6 DE0 (r) ∆3 (r)
+
+                   P6τ = + E 4 r5 sin2 θ − E 4 r5 cos6 θ + 16E 2 M 4 r cos6 θ − 32E 2 M 3 r2 cos6 θ
+                          − 8E 2 M 2 r3 sin2 θ + 24E 2 M 2 r3 cos6 θ + 8E 2 M r4 sin2 θ − 10E 2 M r4 cos6 θ
+                          − 2E 2 r5 sin2 θ + 2E 2 r5 cos6 θ + 32M 5 cos6 θ + 16M 4 r sin2 θ − 80M 4 r cos6 θ             (70)
+                                  3 2       2            3 2    6            2 3    2           2 3    6
+                          − 32M r sin θ + 80M r cos θ + 24M r sin θ − 40M r cos θ
+                          − 8M r4 sin2 θ + 10M r4 cos6 θ + r5 sin2 θ − r5 cos6 θ.
+Triple pole at r = 2M . Saturates (≡ f2 numerically) for a ≤ 0.5; the series diverges for a ≳ 0.6.
+
+Irreducible residual. The pθ p2r bracket residue at O(a2 ) is proportional to sin 2θ (odd about the equator)
+and cannot be cancelled by any p2θ ansatz; on shell (g2 = f2 + F2 = 0) the first surviving on-shell term is
+g4 = N2 (r) sin2 θ/[D0 (r)2 DE0 (r)].
+
+
+B     Explicit expressions: coordinate-time branch
+For the t branch the optimum is Ktbest = Qstd ; the corrections below are listed for completeness (each increases the
+drift). With
+
+              N2t (r) = 4E 2 M r − E 2 r2 + 12M 2 − 8M r + r2 ,               D2t (r) = (2M − r) (2M + r(E 2 − 1)),      (71)
+
+NLO [O(a2 )].
+                                                                     N2t (r) cos 2θ
+                                                      f2t (r, θ) =                  .                                    (72)
+                                                                      2 r2 D2t (r)
+Simple pole at r = 2M ; cos 2θ < 0 amplifies the drift at the equator. On shell g2t = 2f2t .
+
+NNLO [O(a4 )].
+                                                                 P4t (r, θ) cos2 θ
+                                          f4t (r, θ) =                                   ,                               (73)
+                                                         r4 (2M − r)2 (2M + r(E 2 − 1))2
+       P4t = − 12E 4 M 2 r2 cos2 θ − 8E 4 M 2 r2 + 8E 4 M r3 cos2 θ + 4E 4 M r3 − E 4 r4 cos2 θ − 12 E 4 r4
+              − 72E 2 M 3 r cos2 θ − 48E 2 M 3 r + 76E 2 M 2 r2 cos2 θ + 44E 2 M 2 r2 − 24E 2 M r3 cos2 θ − 12E 2 M r3
+                                                                                                                         (74)
+              + 2E 2 r4 cos2 θ + E 2 r4 − 96M 4 cos2 θ − 72M 4 + 144M 3 r cos2 θ + 96M 3 r
+              − 76M 2 r2 cos2 θ − 44M 2 r2 + 16M r3 cos2 θ + 8M r3 − r4 cos2 θ − 12 r4 .
+
+                                                                     13
+NNNLO [O(a6 )].
+                                                         P6t (r, θ)
+                                  f6t (r, θ) = −                        ,       P6t = PA + PB ,                           (75)
+                                                   2 r4 D0 (r)2 DE0 (r)
+                  PA = + 16E 4 M 2 r4 cos2 θ − 8E 4 M r5 cos2 θ + E 4 r6 cos2 θ
+                         + 96E 2 M 3 r3 cos2 θ − 88E 2 M 2 r4 cos2 θ + 24E 2 M r5 cos2 θ − 2E 2 r6 cos2 θ
+                                                                                                                          (76)
+                         + 144M 4 r2 cos2 θ − 192M 3 r3 cos2 θ + 88M 2 r4 cos2 θ
+                         − 16M r5 cos2 θ + r6 cos2 θ,
+               PB = + 32E 4 M 2 r2 sin6 θ − 120E 4 M 2 r2 cos4 θ − 20E 4 M r3 sin6 θ + 70E 4 M r3 cos4 θ
+                      + 2E 4 r4 sin6 θ − 7E 4 r4 cos4 θ + 224E 2 M 3 r sin6 θ − 840E 2 M 3 r cos4 θ
+                      − 216E 2 M 2 r2 sin6 θ + 780E 2 M 2 r2 cos4 θ + 60E 2 M r3 sin6 θ − 210E 2 M r3 cos4 θ
+                                                                                                                          (77)
+                      − 4E 2 r4 sin6 θ + 14E 2 r4 cos4 θ + 320M 4 sin6 θ − 1248M 4 cos4 θ
+                      − 448M 3 r sin6 θ + 1680M 3 r cos4 θ + 216M 2 r2 sin6 θ − 780M 2 r2 cos4 θ
+                      − 40M r3 sin6 θ + 140M r3 cos4 θ + 2r4 sin6 θ − 7r4 cos4 θ.
+Quadruple pole at r = 2M ; numerically f6t ≈ 0 (NNNLO = NNLO = NLO to four digits).
+
+Irreducible residual.
+                                                                                        
+                         8E 2 M 2 r − 6E 2 M r2 + E 2 r3 + 24M 3 − 28M 2 r + 10M r2 − r3 sin 2θ
+                   C2t =                                                                        ,                         (78)
+                                                           E 2 r5
+the pθ p2r residue (∝ sin 2θ) that no p2θ ansatz can remove; the O(a4 ) residue C4t has the same parity and an r−7
+weight.
+
+
+C     Denominators and pole structure
+The NLO/NNLO/NNNLO denominators reduce to powers of D0 = r2 − 2M r and DE0 = (E 2 − 1)r2 + 2M r:
+
+                                  D0 DE0                                                                   D03 DE0
+           (τ NLO)     D2 (r) =          ,                                            (τ NNLO)    ∆2 (r) =          ,
+                                    r2                                                                        r4
+                                                                                                                          (79)
+                                                     D4 DE0                                                   D0 DE0
+        (τ NNNLO) ∆3 (r) = (2M − r) (2M + r(E − 1)) = 0 5 ,
+                                              4                 2
+                                                                                       (t NLO)    D2t (r) = −         .
+                                                       r                                                         r2
+All poles sit at the Schwarzschild horizon r = 2M (a root of D0 ) and at the τ turning locus DE0 = 0. Their orders
+at r = 2M are:
+
+                                  order                              NLO     NNLO      NNNLO
+                                  τ branch (f2 , f4 , f6 )          simple   double     triple
+                                  t branch (f2t , f4t , f6t )       simple   double   quadruple
+
+The progressive deepening of the pole at r = 2M is the analytic signature of the non-uniformity noted in Eq. (47):
+each order in a2 gains a power of (r − 2M )−1 , so the perturbative quasi-invariant degrades as the ergosurface is
+approached and the series ceases to converge for a ≳ 0.6.
+
+
+
+
+                                                                    14
+References                                                         [16] L. D. Landau, E. M. Lifshitz, The Classical Theory
+                                                                        of Fields, 4th ed., Pergamon Press, Oxford (1975),
+ [1] V. Perlick, The brachistochrone problem in a sta-                  §84.
+     tionary space-time, J. Math. Phys. 32(11), 3148–
+     3157 (1991). doi:10.1063/1.529472.                            [17] I. Rosignoli, Gravitational train in the interior
+                                                                        Schwarzschild metric: NLO and NNLO pertur-
+ [2] G. W. Gibbons, C. A. R. Herdeiro, C. M. War-                       bative expansions, Zenodo preprint v2 (2026).
+     nick, M. C. Werner, Stationary metrics and optical                 doi:10.5281/zenodo.20678106.
+     Zermelo–Randers–Finsler geometry, Phys. Rev. D
+     79, 044022 (2009). arXiv:0811.2877.                           [18] I. Rosignoli, Coordinate-Time and Proper-Time
+                                                                        Brachistochrones      in    Tolman–Oppenheimer–
+ [3] G. Randers, On an asymmetrical metric in the four-                 Volkoff Stellar Interiors, Zenodo preprint (2026).
+     space of general relativity, Phys. Rev. 59, 195–199                doi:10.5281/zenodo.20708060.
+     (1941).
+                                                                   [19] H.-J. Schmidt, Snellius meets Schwarzschild
+ [4] M. C. Werner, Gravitational lensing in the Kerr–                  — Refraction of brachistochrones and time-like
+     Randers optical geometry, Gen. Relativ. Gravit. 44,                geodesics, J. Math. Phys. 59, 082501 (2018).
+     3047–3057 (2012).                                                  arXiv:1809.00355.
+
+ [5] S. Chanda, G. W. Gibbons, P. Guha, Jacobi–                    [20] R. M. Wald, General Relativity, University of
+     Maupertuis Randers–Finsler metric for curved                       Chicago Press, Chicago (1984).
+     spaces and the gravitational magnetoelectric
+                                                                   [21] C. W. Misner, K. S. Thorne, J. A. Wheeler, Gravi-
+     effect, J. Math. Phys. 60, 122501 (2019).
+                                                                        tation, W. H. Freeman, San Francisco (1973).
+     arXiv:1903.11805.
+                                                                   [22] J. M. Bardeen, W. H. Press, S. A. Teukolsky, Rotat-
+ [6] H. F. Goldstein, C. M. Bender, Relativistic brachis-
+                                                                        ing black holes: locally nonrotating frames, energy
+     tochrone, J. Math. Phys. 27(2), 507–511 (1986).
+                                                                        extraction, and scalar synchrotron radiation, Astro-
+ [7] S. G. Kamath, Brachistochrone in almost flat                       phys. J. 178, 347–369 (1972).
+     space, J. Math. Phys. 29(10), 2268–2272 (1988).
+                                                                   [23] R. Penrose, Gravitational collapse: the role of gen-
+     doi:10.1063/1.528158.
+                                                                        eral relativity, Riv. Nuovo Cimento 1, 252–276
+ [8] F. Giannoni, P. Piccione, J. A. Verderesi, An ap-                  (1969).
+     proach to the relativistic brachistochrone problem by         [24] E. Caponio, M. A. Javaloyes, A. Masiello, Morse
+     sub-Riemannian geometry, J. Math. Phys. 38(12),                    theory of causal geodesics in a stationary spacetime
+     6367–6381 (1997). doi:10.1063/1.532217.                            via Morse theory of geodesics of a Finsler metric,
+ [9] F. Giannoni, P. Piccione, An existence theory                      Ann. Inst. H. Poincaré Anal. Non Linéaire 27, 857–
+     for relativistic brachistochrones in stationary space-             876 (2010).
+     times, J. Math. Phys. 39(11), 6137–6152 (1998).               [25] M. A. Javaloyes, M. Sánchez, On the definition and
+     doi:10.1063/1.532611.                                              examples of cones and Finsler spacetimes, RAC-
+[10] F. Giannoni, P. Piccione, D. V. Tausk, Morse theory                SAM 114, 30 (2020).
+     for the travel time brachistochrones in stationary            [26] J. A. E. Andersson, J. Gillis, G. Horn, J. B. Rawl-
+     spacetimes, Discrete Contin. Dyn. Syst. 8(3), 697–                 ings, M. Diehl, CasADi: a software framework
+     724 (2002). arXiv:math-ph/9905007.                                 for nonlinear optimization and optimal control,
+                                                                        Math. Program. Comput. 11(1), 1–36 (2019).
+[11] S. Aritürk, Brachistochrone-ruled timelike surfaces
+                                                                        doi:10.1007/s12532-018-0139-4.
+     in Newtonian and relativistic spacetimes, Ann. Phys.
+     (2024, in press). arXiv:2512.08776.                           [27] A. Wächter, L. T. Biegler, On the implementation
+                                                                        of an interior-point filter line-search algorithm for
+[12] B. Carter, Global structure of the Kerr family
+                                                                        large-scale nonlinear programming, Math. Program.
+     of gravitational fields, Phys. Rev. 174, 1559–1571
+                                                                        106(1), 25–57 (2006). doi:10.1007/s10107-004-0559-
+     (1968). doi:10.1103/PhysRev.174.1559.
+                                                                        y.
+[13] J. Brink, Formal solution of the fourth-order
+                                                                   [28] I. Rosignoli, KerrBrachistochrone:    Numerical
+     Killing equations for stationary axisymmetric vac-
+                                                                        and symbolic codebase, GitHub repository (2026).
+     uum spacetimes, Phys. Rev. D 84, 104015 (2011).
+                                                                        github.com/ImanetorX98/KerrBrachistochrone.
+     arXiv:0911.4161.
+
+[14] S. J. Vigeland, N. Yunes, L. C. Stein, Bumpy black
+     holes in alternative theories of gravity, Phys. Rev.
+     D 83, 104027 (2011). arXiv:1102.3706.
+
+[15] J. R. Gair, C. Li, I. Mandel, Observable properties
+     of orbits in exact bumpy spacetimes, Phys. Rev. D
+     77, 024035 (2008). arXiv:0708.0628.
+
+
+                                                              15
+

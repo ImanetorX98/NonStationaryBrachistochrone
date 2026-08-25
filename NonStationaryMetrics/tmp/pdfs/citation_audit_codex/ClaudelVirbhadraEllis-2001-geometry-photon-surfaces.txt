@@ -1,0 +1,1336 @@
+                                            THE GEOMETRY OF PHOTON SURFACES
+
+
+                                                              CLARISSA-MARIE CLAUDEL1
+                                            Mathematical Institute, University of Umeå, S-901 87 Umeå, Sweden
+
+                                                        K. S. VIRBHADRA2 and G. F. R. ELLIS3
+                                               Department of Applied Mathematics, University of Cape Town,
+                                                             Rondebosch 7701, South Africa.
+
+
+
+
+arXiv:gr-qc/0005050v2 7 Jul 2000
+                                           Abstract. The photon sphere concept in Schwarzschild space-time is gen-
+                                           eralized to a definition of a photon surface in an arbitrary space-time. A
+                                           photon sphere is then defined as an SO(3) × R-invariant photon surface in
+                                           a static spherically symmetric space-time. It is proved, subject to an energy
+                                           condition, that a black hole in any such space-time must be surrounded by a
+                                           photon sphere. Conversely, subject to an energy condition, any photon sphere
+                                           must surround a black hole, a naked singularity or more than a certain amount
+                                           of matter. A second order evolution equation is obtained for the area of an
+                                           SO(3)-invariant photon surface in a general non-static spherically symmetric
+                                           space-time. Many examples are provided.
+
+
+
+
+                                                                       1. Introduction
+                                      The exterior region of the maximally extended Schwarzschild space-time is de-
+                                   scribed by the metric
+                                                                  −1
+                                                  2m              2m
+                                                       dt2 + 1 −          dr2 + r2 dθ2 + sin2 θdφ2 ,
+                                                                                                  
+                                     g =− 1−                                                            r > 2m .
+                                                   r               r
+                                                                                                                (1)
+                                   For any null geodesic in this exterior region the null geodesic equations give
+                                                                        ( 
+                                                                                2           2 )
+                                                      d2 r                  dθ         2    dφ
+                                                         2
+                                                           = (r − 3m)             + sin θ                                  (2)
+                                                      dλ                    dλ              dλ
+                                   where λ is an affine parameter along the geodesic. The right side here is evidently
+                                   positive for r > 3m and negative for r : 2m < r < 3m. It follows that any
+                                   future endless null geodesic in the maximally extended Schwarzschild space-time
+                                   starting at some point with r > 3m and initially directed outwards, in the sense
+                                   that dr/dλ is initially positive, will continue outwards and escape to infinity. Any
+                                   future endless null geodesic in the maximally extended Schwarzschild space-time
+                                   starting at some point with r : 2m < r < 3m and initially directed inwards, in the
+                                   sense that dr/dλ is initially negative, will continue inwards and fall into the black
+                                   hole. The hypersurface {r = 3m}, known as the Schwarzschild photon sphere, thus
+                                   distinguishes the borderline between these two types of behaviour; any null geodesic
+                                   starting at some point of the photon sphere and initially tangent to the photon
+                                   sphere will remain in the photon sphere. (See Darwin [1, 2] for a detailed analysis
+                                   of the behaviour of null and timelike geodesics in Schwarzschild space-time.)
+                                     1 e-mail: clarissa@abel.math.umu.se
+                                     2 e-mail: shwetket@maths.uct.ac.za
+                                     3 e-mail: ellis@maths.uct.ac.za
+
+                                                                                1
+                                  PHOTON SURFACES                                       2
+
+
+   The Schwarzschild photon sphere also has physical significance for massive bod-
+ies. For any timelike geodesic in the exterior region the geodesic equations give
+                                        ( 
+                                                 2           2 )
+                d2 r     m                  dθ               dφ
+                     = − 2 + (r − 3m)              + sin2 θ                       (3)
+                ds2      r                  ds               ds
+where s is arc length along the geodesic. At any point with r > 3m one may arrange
+for the two terms on the right of (3) to cancel and so obtain a timelike geodesic at
+constant r. For r : 2m < r < 3m the right hand side of (3) is evidently negative.
+Thus any future endless timelike geodesic in the maximally extended Schwarzschild
+space-time starting at some point between the event horizon at r = 2m and the
+photon sphere at r = 3m and initially directed inwards, in the sense that dr/ds is
+initially negative, will continue inwards and fall into the black hole. Any observer
+who traverses a Schwarzschild photon sphere must therefore engage some form of
+propulsion or else be drawn in to the black hole to meet an inevitable fate.
+   A photon sphere has been defined by Virbhadra & Ellis [3] as a timelike hyper-
+surface of the form {r = r0 } where r0 is the closest distance of approach for which
+the Einstein bending angle of a light ray is unboundedly large. These authors sub-
+sequently [4] considered the Einstein deflection angle for a general static spherically
+symmetric metric and obtained an equation for a photon sphere. The existence of a
+photon sphere in a space-time has important implications for gravitational lensing.
+In any space-time containing a photon sphere, gravitational lensing will give rise to
+relativistic images [3].
+   The Schwarzschild photon sphere may be usefully be compared with the concept
+of a closed trapped surface. Any null geodesic originating from any point on a
+closed trapped surface in Schwarzschild space-time is drawn into the singularity at
+r = 0. By contrast, any null geodesic originating from any point on the photon
+sphere will be drawn into the singularity if and only if it is initially directed inwards.
+   The main objectives of the present paper are to give a geometric definition of a
+photon surface in a general space-time and of a photon sphere in a general static
+spherically symmetric space-time.
+   An evolution equation is obtained for the cross-sectional area of a photon sur-
+face in a dynamic spherically symmetric space-time. It is shown, subject to suitable
+energy conditions, that in any static spherically symmetric space-time a black hole
+must be surrounded by a photon sphere, and a photon sphere must surround ei-
+ther a black hole, a naked singularity or more than a certain amount of matter.
+Many examples are given of photon spheres in static spherically symmetric space-
+times. Photon surface evolution is considered for the dynamic space-time example
+of Vaidya null dust collapse to a naked singularity.
+
+                                2. Photon surfaces
+   The hypersurface S := {r = 3m} in Schwarzschild space-time has two main
+properties, first that any null geodesic initially tangent S will remain tangent to S,
+and second that S does not evolve with time. The following general definition of
+a photon surface is based on only the first of these properties. A more restrictive
+class of photon surfaces may be defined when the space-time admits a group of
+symmetries (see Definition 2.3).
+Definition 2.1. A photon surface of (M, g) is an immersed, nowhere-spacelike
+hypersurface S of (M, g) such that, for every point p ∈ S and every null vector k ∈
+                                     PHOTON SURFACES                                           3
+
+
+Tp S, there exists a null geodesic γ : (−ǫ, ǫ) → M of (M, g) such that γ̇(0) =k, |γ| ⊂
+S.
+    Any null hypersurface is trivially a photon surface. Photon surfaces are confor-
+mally invariant structures. If S is a photon surface of (M, g) then S is a photon
+surface of (M, Ω2 g) for any smooth function Ω : M → (0, ∞).
+    Note that Definition 2.1 is entirely local. In particular, a photon surface S need
+contain no endless null geodesics of (M, g). Moreover, a photon surface need only
+be immersed, rather than embedded in M , and so may have self-intersections. If
+(M, g) is of dimension n + 1 (n ≥ 2) then, through each point p of a photon surface
+S in (M, g), there is an (n − 2)-parameter family of null geodesics of (M, g) that
+lie entirely in S.
+    The paper will be principally concerned with photon surfaces in space-times of
+3 + 1 dimensions. The exceptions are Examples 1 and 3 which give photon surfaces
+in space-times of dimension 2 + 1 and 4 + 1 respectively.
+Example 1 (Minkowski 3-space). In Minkowski 3-space M3 , consider the single-
+sheeted hyperboloid S given by
+                                     −t2 + x2 + y 2 = a2                                     (4)
+for some constant a > 0. This surface is doubly ruled, the rulings being given by
+                   γθ± (t) := a (0, cos θ, sin θ) + at (1, ∓ sin θ, ± cos θ)                 (5)
+(−∞ < t < ∞, 0 ≤ θ < 2π), where θ identifies the intersection points with {t = 0}
+and t is the parameter along the ruling lines. The tangents γ̇θ± (t) to the ruling lines
+are null with respect to the M3 metric. Clearly they are geodesics in M3 . At each
+point of S there can be just two null directions tangent to S. These must therefore
+be the directions of the two ruling lines through that point. Hence S is a photon
+surface in the sense of Definition 2.1 (see Fig. 1).
+   Note that for any circle of the form
+                     C = {t0 , x0 + r cos θ, y0 + r sin θ} ,       r > 0,                    (6)
+and any future-directed timelike vector field X along C that respects the symmetry
+of C, in the sense of
+                           X = X t , X r cos θ, X r sin θ ,
+                                                         
+                                                                               (7)
+for constant X t > 0, X r such that (X t )2 > (X r )2 , there is a unique single-sheeted
+hyperboloid S through C such that X is tangent to S along C.
+   In the case a = 0, equation (4) gives the null cone through the origin. The
+complement of p in this null cone is a null photon surface of M3 .
+
+Example 2 (Minkowski 4-space). One may generalize Example 1 to Minkowski 4-
+space M4 as follows. Let S be a timelike hypersurface in M4 of the form
+                                  −t2 + x2 + y 2 + z 2 = a2                                  (8)
+for some constant a > 0. The two-parameter family of lines
+ ±
+γθ,φ (t) = a (0, cos θ, sin θ sin φ, sin θ cos φ) + at (1, ∓ sin θ, ± cos θ sin φ, ± cos θ cos φ)
+                                                                                              (9)
+foliate S and are null geodesics with respect to the M4 metric. For each p ∈ S, the
+                          ±
+tangents at p to those γθ,φ (t) that pass through p can be shown to generate the
+                                  PHOTON SURFACES                                      4
+
+
+
+
+        Figure 1. A photon surface in Minkowski 3-space. The two fam-
+        ilies of ruling lines are null geodesics with respect to both the
+        Minkowski 3-metric and the induced 2-metric. The lines may be
+        regarded as the space-time paths of pulsed laser beams.
+
+null cone of Tp S. Hence S is a photon surface in the sense of Definition 2.1. In
+terms of the double null coordinates
+                                      u := t + r                                   (10)
+                                      v := t − r                                   (11)
+for r := (x2 + y 2 + z 2 )1/2 , equation (8) assumes the simple form
+                                      uv = −a2 .                                   (12)
+In the future direction S tends asymptotically to the null hypersurface {v = 0},
+whilst in the past direction S tends asymptotically to the null hypersurface {u = 0}.
+
+Example 3 (De Sitter space). De Sitter space-time may be regarded [5] as a single-
+sheeted hyperboloid in Minkowski 5-space M5 . By analogy with Examples 1 and
+2, de Sitter space-time is thus realized as a photon surface in M5 .
+
+Example 4 (The Robertson-Walker models). Since all Robertson-Walker models
+are conformally flat and therefore locally conformally transformable to Minkowski
+space, the photon surfaces of any such model may thus be obtained, at least locally,
+by conformal transformations of Minkowski space.
+
+Theorem 2.2. Let S be a timelike hypersurface of (M, g). Let n be a unit normal
+field to S and let hab be the induced metric on S. Let χab be the second fundamental
+form on S and let σab be the trace-free part of χab . Then the following are equivalent:
+                                       PHOTON SURFACES                                        5
+
+
+  i) S is a photon surface;
+ ii) χab k a k b = 0 ∀ null k ∈ Tp S ∀p ∈ S;
+iii) σab = 0;
+iv) every affine null geodesic of (S, h) is an affine null geodesic of (M, g).
+Proof. (i) ⇒ (ii). Suppose S is a photon surface. Let p ∈ S and let k ∈ Tp S
+be null. There exists an affine null geodesic γ : (−ǫ, ǫ) → M of (M, g) such that
+γ̇ (0) = k, |γ| ⊂ S. One has
+                         χab γ̇ a γ̇ b = na;b γ̇ a γ̇ b = (na γ̇ a );b γ̇ b = 0            (13)
+along γ. At p this gives χab k a k b = 0.
+   (ii) ⇒ (iii). Let p ∈ S. By (ii) one has σab k a k b = χab k a k b = 0 ∀ null k ∈ Tp S.
+Let {e(0) , e(1) , e(2) } be an orthonormal basis for Tp S with e(0) timelike and e(1) , e(2)
+spacelike. Any null k ∈ Tp S, normalized such that g(k, e(0) ) = −1, has components
+k a = (1, cos ψ, sin ψ) with respect to {e(0) , e(1) , e(2) } for some ψ ∈ [0, 2π). A
+calculation gives
+  σab k a k b = (σ00 + 21 σ11 + 12 σ22 ) + 2σ01 cos ψ + 2σ02 sin ψ
+                                                    + 21 (σ11 − σ22 ) cos 2ψ + σ12 sin 2ψ . (14)
+This must vanish for all ψ ∈ [0, 2π). One thus has σ01 = σ02 = σ12 = 0 and
+−σ00 = σ11 = σ22 . Since σab is trace-free one must also have σ00 = σ11 + σ22 .
+There follows σab = 0.
+  (iii) ⇒ (iv). For any curve in S with null tangent k one has
+                      k a ||b k b = ha c k c ;b k b = k a ;b k b + (σbc k b k c )na        (15)
+where || denotes covariant differentiation in S with respect to h. The second term
+on the right of (15) vanishes by hypothesis. If k is tangent to an affine null geodesic
+of (S, h) then the term on the left of (15) also vanishes and so k is tangent to an
+affine null geodesic of (M, g).
+   (iv) ⇒ (i). Let p ∈ S and let k ∈ Tp S be null. Let γ : (−ǫ, ǫ) → S be an affine
+null geodesic of (S, h) such that γ̇(0) = k. Then, by (iv), γ is an affine null geodesic
+of (M, g) such that γ̇(0) = k, |γ| ⊂ S.
+
+   Condition (iii) of Theorem 2.2 is equivalent to a requirement that χab is pure
+trace in the sense of
+                                         χab = 13 Θhab ,                                   (16)
+where Θ := hcd χcd is the expansion of the unit normal to S. For Example 1 one
+has Θ = 2/a; for Example 2 one has Θ = 3/a. (Note that, by a standard abuse of
+notation, hab denotes both the induced metric on S and the symmetric tensor field
+of rank (0, 2) along S in M which satisfies hab nb = 0 and pulls back to the induced
+metric on S.)
+   It is clear from condition (iii) of Theorem 2.2 that a space-time must be special-
+ized in some respect in order to admit any timelike photon surfaces in the sense
+of Definition 2.1. For this reason it is helpful to restrict attention to space-times
+which admit groups of symmetries.
+Definition 2.3. Suppose (M, g) admits a group G of isometries. A photon surface
+S of (M, g) that is invariant under G, in the sense that each g ∈ G maps S onto
+itself, will be called a G-invariant photon surface.
+                                    PHOTON SURFACES                                        6
+
+
+  Clearly any G-invariant null hypersurface is a G-invariant photon surface. In
+particular, if G = R or G = S, then any Killing horizon [6, 7] is a G-invariant
+photon surface.
+
+             3. Dynamic Spherical symmetry: General theory
+   By definition, a general spherically symmetric space-time admits an SO(3) isom-
+etry group for which the group orbits are spacelike 2-spheres. The following result
+describes the evolution of the cross-sectional area of an SO(3)-invariant photon
+surface in a spherically symmetric space-time.
+Theorem 3.1. Let (M, g) be a spherically symmetric space-time. Let S be an
+SO(3)-invariant timelike hypersurface of (M, g) and let X be the SO(3)-invariant
+unit future-directed timelike tangent vector field along S orthogonal to the SO(3)-
+invariant 2-spheres in S. Let T be one such SO(3)-invariant 2-sphere in S and let
+Ts be the SO(3)-invariant 2-sphere in S at arc-length s from T along the integral
+curves of X. Then S is a photon surface of (M, g) iff the area (2)As of Ts satisfies
+                                         2
+           d2 (2)
+                              
+                         1       d (2)
+                                            + (2)As 13 Θ2 − Gab na nb − 4π
+                                                                     
+             2
+                 A s =  (2)
+                                      As                                       (17)
+          ds           4 As ds
+where na is the unit normal to S, Θ is the expansion of na and Gab := Rab − 12 Rgab
+is the Einstein tensor of (M, g).
+Proof. Let hab be the induced Lorentzian 3-metric on S and, for each s, let (2) hab
+be the induced Riemannian 2-metric on Ts . The expansion of X in (S, h) is given
+by (2) Θ = (2) hab Xa;b where the covariant derivative is that of (M, g). Since X
+is both shear-free and vorticity-free in (S, h), the Raychaudhuri equation for X in
+(S, h) assumes the form
+                          d (2)
+                                Θ = − 12 ( (2) Θ)2 − (3)Rab X a X b                     (18)
+                          ds
+where (3)Rab is the Ricci tensor of (S, h).
+  From first principles one has
+                 R = (3)R + 2 (3)Rab X a X b − ( (2) χa a )2 + (2) χa b (2) χb a
+               (2)
+                                                                                        (19)
+               (3)                  a b       a   2     a   b
+                 R = R − 2Rab n n + (χ a ) − χ b χ a                                    (20)
+where (2) χab is the second fundamental form of each Ts in (S, h). Since X a is
+shear-free and vorticity free in (S, h) one has (2) χab = 12 (2) Θ (2) hab . The second
+fundamental form of S admits the canonical decomposition χab = 13 Θhab + σab .
+Equations (19) and (20) therefore give
+                           R = (3)R + 2 (3)Rab X a X b − 12 (2) Θ2
+                         (2)
+                                                                                        (21)
+                         (3)
+                           R = R − 2Rab na nb + 23 Θ2 − σ a b σ b a                     (22)
+which combine to yield
+          2 (3)Rab X a X b = (2)R + 2Gab na nb − 23 Θ2 + 21 ( (2) Θ)2 + σ a b σ b a .   (23)
+One may now substitute for the second term on the right of (18) to obtain
+           d (2)
+                 Θ = − 43 ( (2) Θ)2 + 13 Θ2 − 21 (2)R − Gab na nb − 12 σ a b σ b a .    (24)
+           ds
+                                         PHOTON SURFACES                                            7
+
+
+From first principles one has (2) Θ = ds d
+                                            ln (2)A, and the Gauss-Bonnet theorem
+gives (2)R (2)A = 8π. Substituting for (2) Θ and (2)R in (24) one obtains
+                                2
+  d2 (2)
+                     
+                 1      d (2)
+                                   + (2)As 13 Θ2 − Gab na nb − 21 σ a b σ b a − 4π . (25)
+                                                                             
+     2
+        A s =   (2)
+                             As
+  ds           4 As ds
+This agrees with (17) iff σ a b σ b a = 0.
+   Construct, for the tangent bundle T S of S, an orthonormal basis field of the
+form {X, e(1) , e(2) }, with e(1) and e(2) unit spacelike. With respect to this basis
+one has
+      σ a b σ b a = (σ 0 0 )2 + (σ 1 1 )2 + (σ 2 2 )2 + 2(σ 1 2 )2 − 2(σ 1 0 )2 − 2(σ 2 0 )2 .   (26)
+By spherical symmetry the vector field σ a b X b must be proportional to X a . Hence
+one has σ 1 0 = σ 2 0 = 0. The vanishing of σ a b σ b a is thus equivalent to the vanishing
+of σab . One has σab = 0 iff S is a photon surface.
+
+   A spherically symmetric metric is locally expressible in the form
+                                                           
+                                   g00 g01 0          0
+                                 g10 g11 0           0     
+                         gab =  0
+                                                                                (27)
+                                         0 gθθ        0     
+                                                        2
+                                    0    0    0 gθθ sin θ
+with respect to coordinates x0 , x1 , θ, φ adapted to the spherical symmetry, where
+                                          
+
+g00 , g01 = g10 , g11 and gθθ > 0 depend only on x0 and x1 . It is often convenient
+to introduce a radial coordinate r, depending only on x0 and x1 , such that gθθ is
+a function of r only. One is free to specify gθθ as a function of r alone since to do
+so is, in effect, a definition of the coordinate r. This will be assumed to be done
+throughout this paper.
+   The following result is useful in the locating of SO(3)-invariant photon surfaces
+in dynamic spherically symmetric space-times.
+Lemma 3.2. Let (M, g) be a spherically symmetric space-time. Let S be an SO(3)-
+invariant timelike hypersurface of (M, g) and let X be the SO(3)-invariant unit
+future-directed timelike tangent vector field along S that is orthogonal to the SO(3)-
+invariant 2-spheres in S. Then S is a photon surface of (M, g) iff
+                                    X a ;b X b = 12 (g θθ nb ∂b gθθ )na                          (28)
+                            a
+holds along S, where n is the unit normal field to S in (M, g).
+Proof. By spherical symmetry, and since X is unit timelike, the vector field ∇X X
+must be proportional to n. Hence it suffices to show that S is a photon surface iff
+along S one has
+                                      n·∇X X = 12 g θθ nb ∂b gθθ                                 (29)
+or equivalently
+                                   χab X a X b = − 21 g θθ na ∂a gθθ .                           (30)
+   Construct for T S a local orthonormal basis field of the form {X, e(θ) , e(φ) }. With
+respect to this basis field the components of χa b form a diagonal matrix with
+                                χθ θ = χφ φ = nθ ;θ = 21 g θθ na ∂a gθθ .                        (31)
+                                      PHOTON SURFACES                                    8
+
+
+Equation (30) is thus equivalent to χ0 0 = χθ θ = χφ φ which is in turn equivalent to
+σ 0 0 = σ θ θ = σ φ φ . In view of the trace-free property of σ a b , equation (30) is thus
+equivalent to σ a b = 0. From Theorem 2.2 one has that σ a b = 0 holds along S iff S
+is a photon surface.
+
+   Let us continue to work with respect to the coordinate system {x0 , x1 , θ, φ}
+employed in (27). Let xa (s) be an integral curve of the vector field X in Lemma
+3.2. One has
+                                    dxa
+                                        = Xa                                 (32)
+                                     ds
+and equation (28) becomes
+                                          b   c
+                        d2 xa       a dx dx
+                                + Γ bc          = 12 (g θθ nb ∂b gθθ )na .            (33)
+                         ds2            ds ds
+             0
+                              
+                   dx1
+Since X = dx
+           ds   1, dx 0 , 0, 0   is unit timelike one has
+                                         2
+                                                     dxa dxb
+                                 
+                                     ds
+                                            =  −g ab             .                    (34)
+                                    dx0              dx0 dx0
+The x0 and x1 components of equation (33) thus combine to give
+                                          dxb dxc
+                                                                   a b
+                               dx1 0
+                                                     1
+  d2 x1
+                                    
+             1 θθ a        1                          dx 0     1   dx dx
+         = − 2 g n ∂a gθθ n − 0 n gbc 0 0 +               Γ − Γab
+ (dx0 )2                       dx         dx dx       dx0 ab       dx0 dx0
+                                                                        (35)
+where the components of n are given by
+                                 dxa                    dxa
+                     n0 = ψ g1a       ;  n 1
+                                             = −ψ  g 0a                               (36)
+                                 dx0                    dx0
+for
+                                                     − 12
+                                             dxa dxb
+                                      
+                                 − 12
+                      ψ := (−∆)         −gab 0 0                                      (37)
+                                             dx dx
+where
+                                     ∆ := g00 g11 − (g01 )2                           (38)
+is the determinant of the time-space part of gab in (27). Equation (35) is the
+coordinate equivalent of (28) and provides for the easy determination of SO(3)-
+invariant photon surfaces (see Example 10).
+
+               4. Static Spherical Symmetry: General Theory
+   By definition, a spherically symmetric space-time is static if it admits an SO(3)×
+R group of isometries such that the R orbits are generated by a Killing field K which
+is both hypersurface orthogonal and orthogonal to the SO(3) orbits. The present
+section will be concerned with SO(3) × R-invariant photon surfaces in static spheri-
+cally symmetric space-times. Such surfaces may be termed photon spheres because,
+as will be seen, they are a natural generalization to general static spherically sym-
+metric space-times of the Schwarzschild photon sphere concept. The term “photon
+sphere” will be regarded as applicable only in static spherically symmetric space-
+times. For clarity, the term “SO(3) × R-invariant photon surface” will usually be
+employed in preference to “photon sphere”.
+                                 PHOTON SURFACES                                    9
+
+
+   Although the space-times of Examples 1 and 2 are static and spherically sym-
+metric, the photon surfaces in these space-times are not SO(3) × R-invariant and
+so are not photon spheres. Of the Robertson-Walker space-times of Example 4,
+only the Einstein cylinder is both spherically symmetric and static. None of the
+photon surfaces of the Einstein cylinder are SO(3)× R-invariant. Thus the Einstein
+cylinder has no photon spheres.
+   One may characterize an SO(3) × R-invariant photon surface, or photon sphere,
+in a static spherically symmetric space-time by means of the following special case
+of Theorem 3.1.
+Theorem 4.1. Let (M, g) be a static spherically symmetric space-time with Killing
+field K and let S be an SO(3) × R-invariant timelike hypersurface of (M, g). Then
+S is an SO(3) × R-invariant photon surface of (M, g) if there exists an SO(3)-
+invariant 2-sphere T ⊂ S satisfying
+                           A Θ2 − 3Gab na nb = 12π
+                                              
+                                                                              (39)
+where A is the area of T , na is the unit normal to S and Θ is the trace of the
+second fundamental form of S. Conversely, if S is an SO(3) × R-invariant photon
+surface of (M, g) then (39) holds for every SO(3)-invariant 2-sphere T ⊂ S.
+Proof. Note that the unit future-directed timelike tangent field X along S in The-
+orem 3.1 is proportional to the restriction to S of the Killing field K.
+   Suppose first that there exists an SO(3)-invariant 2-sphere T ⊂ S such that
+(39) holds. The quantities A, Θ and Gab na nb remain constant as T is mapped
+along the flow lines of the Killing field K. So they also remain constant as they are
+mapped along the flow lines of X. Hence (17) holds with the term on the left and
+the first term on the right both zero. Thus, by Theorem 3.1, S is a photon surface
+of (M, g). By hypothesis S is SO(3) × R-invariant.
+   For the converse, suppose that S is an SO(3) × R-invariant photon surface of
+(M, g). Then (17) holds for every SO(3)-invariant 2-sphere Ts ⊂ S. Since K
+induces groups of local isometries, the area As of Ts is independent of the parameter
+s. Hence the term on the left and the first term on the right of (17) both vanish
+and one obtains (39).
+Corollary. If one has Gab Y a Y b ≥ 0 ∀ vectors Y and S is an SO(3) × R-invariant
+timelike photon surface of (M, g), then for any SO(3)-invariant 2-sphere T ⊂ S
+one has
+                                     AΘ2 ≥ 12π                                  (40)
+
+with equality holding iff Gab na nb = 0 along S.
+
+   For Schwarzschild space-time where (see Example 5)√the only timelike photon
+sphere is at r = 3m, one has A = 4π(3m)2 , Θ = 1/( 3m) and Gab = 0 which
+verifies (39) and (40) for this case.
+   If the Einstein equations hold with a zero cosmological constant then, in the
+corollary to Theorem 4.1, the hypothesis Gab Y a Y b ≥ 0 for all vectors Y is equiv-
+alent to Tab Y a Y b ≥ 0 for all vectors Y. This is a physically reasonable energy
+condition. In particular, for a perfect fluid with density ρ and pressure p, it is
+equivalent to a condition that ρ and p are both non-negative. More generally,
+the condition holds for an energy tensor with a single timelike eigenvector (type
+                                   PHOTON SURFACES                                  10
+
+
+I in the classification of Hawking & Ellis [5]) iff each energy tensor eigenvalue is
+non-negative.
+   The characterization of timelike photon surfaces provided by Theorem 4.1 in-
+volves derivatives of the metric components up to second order. The following
+result (Theorem 4.2) provides an entirely different characterization of SO(3) × R-
+invariant photon surfaces in terms of derivatives of the metric components up to
+only first order.
+   Let a general static spherically symmetric metric g be expressed in the form (27)
+with gθθ a function of r only. The Killing equation K(a;b) = 0 and the orthogonality
+of K to ∂θ and ∂φ gives K a ∂a gθθ = 0 and hence ∇K r = 0 where r is to be regarded
+as a scalar field on M . Since r is independent of θ and φ it follows that any
+SO(3) × R-invariant hypersurface S of (M, g) must be of the form {r = const.}. If
+S is also a timelike hypersurface then r;a is a spacelike vector field along S and K
+is a timelike vector field in a neighbourhood of S.
+   If the coordinates x0 and x1 implicit in (27) are chosen such that K = ∂x0 then
+the Killing equation gives that all the metric components gab in (27) are independent
+of x0 . Since r is constant along the integral curves of K, the coordinate x1 must be
+a functionRof r only. A natural choice is x1 = r. One may redefine x0 according to
+x0 → x0 − (g01 /g00 )dx1 . This diagonalizes the time-space part of gab and leaves the
+components of gab independent of x0 . Furthermore the curves {x1 , θ, φ = const.}
+are unchanged except that they are re-parametrized. The vector field ∂x0 then
+becomes a conformal Killing field.
+   Define the tensor field
+                                                            
+                                               0 1 0 0
+                                           −1 0 0 0 
+                         ǫab := (−∆)−1/2  0 0 0 0 
+                                                                                 (41)
+                                               0 0 0 0
+on M , where the components are given with respect to the coordinate basis em-
+ployed in (27) and ∆ is the determinant of the time-space part of g in (27), as in
+(38).
+Theorem 4.2. Let (M, g) be a static spherically symmetric space-time with g of
+the form (27), with gθθ a function of the coordinate r only. Let S be an SO(3) × R-
+invariant timelike hypersurface of (M, g) and suppose that ∇r is nowhere-zero along
+S. Then S is an SO(3) × R-invariant photon surface of (M, g) iff
+                      2gθθ ǫab ǫcd r;ac r;b r;d + r;a r;a r;c ∂c gθθ = 0         (42)
+holds along S.
+Proof. Since (M, g) is both spherically symmetric and static, the surface S is of
+the form {r = const.}. The unit spacelike normal to S is therefore given by
+                                        na = ηr;a                                (43)
+for
+                                   η := (r;a r;a )−1/2 .                         (44)
+The second fundamental form of S is given by
+                                  χab := ηha c hb d r;cd .                       (45)
+                                     PHOTON SURFACES                                         11
+
+
+The vector fields
+                         Xa := (−∆g bc r;b r;c )−1/2 (r;1 , −r;0 , 0, 0)                   (46)
+                         e(θ) := (gθθ )−1/2 ∂θ                                             (47)
+                                           2    −1/2
+                        e(φ) := (gθθ sin θ)            ∂φ                                  (48)
+form an orthonormal frame field along S, with e(θ) and e(φ) unit spacelike and X
+unit timelike. One has
+                       χab X a eb(θ) = χab X a eb(φ) = χab ea(θ) eb(φ) = 0                 (49)
+
+                                                               ηr;a ∂a gθθ
+                         χab ea(θ) eb(θ) = χab ea(φ) eb(φ) =                               (50)
+                                                                  2gθθ
+
+                              χab X a X b = η 3 ǫab ǫcd r;ac r;b r;d .                     (51)
+Condition (iii) of Theorem 2.2 holds iff χab is proportional to hab and hence iff
+                        −χab X a X b = χab ea(θ) eb(θ) = χab ea(φ) eb(φ) .                 (52)
+This is equivalent to
+                                                            r;a ∂a gθθ
+                              −η 2 ǫab ǫcd r;ac r;b r;d =                                  (53)
+                                                              2gθθ
+which is in turn equivalent to (42).
+
+   Equation (42) can have solutions such that {r = const.} is a spacelike hypersur-
+face and therefore not a photon surface (see e.g. Example 7). It is therefore always
+necessary in the use of Theorem 4.2 to check that the hypersurface {r = const.} is
+in fact timelike or null.
+   Note that in a region of space-time where the Killing field K is spacelike, for
+example behind the event horizon of Schwarzschild space-time, the hypersurfaces
+{r = const.} are necessarily spacelike and so cannot be photon spheres.
+    Case 1. (x1 := r, components of gab independent of x0 .) As discussed
+previously, for a static spherically symmetric metric it is possible to choose x1 := r,
+with gθθ depending only upon r and with all the components of gab independent of
+x0 . In this case (42) reduces to
+                                    g00 ∂r gθθ = gθθ ∂r g00 .                              (54)
+This agrees with an equation obtained by Virbhadra & Ellis [4] on the basis of a
+different definition [3] of a photon sphere. Note that even though the components
+grr , g0r = gr0 do not appear in (54), they are not assumed to vanish. A particular
+sub-case of interest is that of time-space coordinates, with t := x0 timelike in the
+sense of g tt < 0. Another sub-case of interest is that of single null (radiation)
+coordinates, with u := x0 null in the sense of g uu = 0.
+   Case 2. (Double null coordinates u, v.) Let x0 := u, x1 := v be double
+null coordinates in the sense of g uu = g vv = 0. The radial coordinate r is to be
+regarded as a function of u and v. Then (42) assumes the form
+          gθθ {r;uu (r;v )2 − 2r;uv r;u r;v + r;vv (r;u )2 } + 2(r;u r;v )2 ∂r gθθ = 0 .   (55)
+The metric components guv = gvu enter here through the covariant derivatives of
+r.
+                                   PHOTON SURFACES                                  12
+
+
+    Equations (42), (54) and (55) may be referred to as photon sphere equations since
+they give the location of timelike photon spheres in static spherically symmetric
+space-times.
+    In order to facilitate further progress, a general static spherically symmetric
+metric will be written in such a form as to cast the Einstein tensor in a particularly
+simple and convenient form.
+    One has from previous remarks that a general static spherically symmetric metric
+is locally expressible in the form
+
+                       g = gtt dt2 + grr dr2 + r2 (dθ2 + sin2 θdφ2 )              (56)
+
+where gtt and grr are functions of r only. Let
+                                                   
+                                                 1
+                              m(r) := 12 r 1 −                                    (57)
+                                                grr
+                              µ(r) := ln(−gtt grr ) .                             (58)
+
+Then the metric assumes the form
+                                      −1
+              2m(r) µ(r) 2         2m(r)
+  g =− 1−             e   dt + 1 −           dr2 + r2 (dθ2 + sin2 θdφ2 )          (59)
+                r                    r
+and the Einstein tensor is given by
+                                                                     
+                                −ρ(r)          0        0        0
+                                  0          p1 (r)     0        0 
+                   Ga b = 8π 
+                             
+                                                                                 (60)
+                                 0            0      p2 (r)     0 
+                                  0            0        0      p2 (r)
+
+for
+                 2m′ (r)
+       8πρ(r) :=                                                                  (61)
+                    r2
+                  1
+      8πp1 (r) := 2 {(r − 2m(r))µ′ (r) − 2m′ (r)}                                 (62)
+                 r
+                   1 
+      8πp2 (r) := 2 (2(r + m(r) − 3rm′ (r))µ′ (r) + r(r − 2m(r))(µ′ (r))2
+                 4r
+                                          −4rm′′ (r) + 2r(r − 2m(r))µ′′ (r)} .    (63)
+
+where a prime denotes differentiation with respect to r. For the right sides of (61),
+(62) and (63) to be defined at some radius r̂ > 0 one evidently needs m(r) and µ(r)
+to be twice differentiable at r = r̂. Equations (61) and (62) combine to give
+
+                                          8πr(ρ(r) + p1 (r))
+                               µ′ (r) =                                         (64)
+                                             1 − 2m(r)
+                                                    r
+
+whereby one may rewrite (63) in the more convenient form
+                                                           
+                                           m(r)
+         2                                  r2  + 4πrp 1 (r)  (ρ(r) + p1 (r))
+           (p2 (r) − p1 (r)) = p′1 (r) +                                    .   (65)
+         r                                           1 − 2m(r) r
+                                    PHOTON SURFACES                                       13
+
+
+In the perfect fluid case p1 (r) = p2 (r) =: p(r) equation (65) reduces to the Tolman-
+Oppenheimer-Volkoff equation
+                                                  
+                                   m(r)
+                                    r2  + 4πrp(r)    (ρ(r) + p(r))
+                      p′ (r) = −                                 .               (66)
+                                             1 − 2m(r)
+                                                   r
+
+By means of equations (61) and (64), the photon sphere equation (54) becomes
+                                    3m(r)
+                              1−           − 4πr2 p1 (r) = 0 .                           (67)
+                                       r
+For r such that 2m(r) < r, and hence such that the hypersurface {r = const.}
+is timelike, equation (67) gives the location of the SO(3) × R-invariant timelike
+photon surfaces for the metric (59).
+   Equation (67) is the basis for the following result which shows that, subject
+to a suitable energy condition, any black hole in a static spherically symmetric
+space-time must be surrounded by an SO(3) × R-invariant photon surface. For the
+purpose of this and subsequent results, a function f : R ⊃ I → R on an interval I
+will be said to be piecewise C r if I is the disjoint union of a locally finite collection of
+intervals Ii such that f |Ii is C r . Each interval Ii may be open, closed or half-open.
+Theorem 4.3. Suppose the metric g has the form (59) for r0 < r < ∞, for some
+r0 > 0, with m(r) and µ(r) both C 0 , piecewise C 2 functions of r ∈ (r0 , ∞). Suppose
+the following hold:
+1) ρ(r) and p1 (r) are bounded functions of r ∈ (r0 , ∞);
+2) 2m(r) < r ∀r ∈ (r0 , ∞);
+3) ρ(r) ≥ 0, p1 (r) ≥ 0 ∀r ∈ (r0 , ∞);
+4) limr→∞ 4πr2 p1 (r) = limr→∞ 4πr2 ρ(r) = 0;
+5) for each value of t the 2-surfaces Tt,r := {t = const.}∩{r = const.}, r0 < r < ∞,
+   are such that Tt := limrցr0 Tt,r exists as an embedded spacelike 2-sphere in
+   (M, g) and is marginally outer trapped.
+Then (M, g) admits an SO(3) × R-invariant timelike photon surface of the form
+{r = r1 } for some r1 ∈ (r0 , ∞).
+Proof. Fix t and let k be the outward future-directed null normal field along each
+                                                                           1/2
+Tt,r , r0 < r < ∞, normalized such that g(k, n) = 1, where n = 1 − 2m(r)r        ∂r
+is the outward radial unit tangent to {t = const.}. Since k is parallelly propagated
+along each of the geodesic integral curves of n, one has that limrցr0 k is a well-
+defined, nowhere-zero null vector field along Tt := limrցr0 Tt,r . For r ∈ (r0 , ∞) the
+vector field k has the form k a = (k t , a(r)k t , 0, 0) for
+                                                            
+                                        1/2             2m(r) µ(r)/2
+                   a(r) := (−gtt /grr )     = 1−               e     .             (68)
+                                                           r
+The expansion of k is given by
+                                              2a(r) t
+                             Θout = (2) hb a k a ;b =
+                                                   k .                                  (69)
+                                                r
+The condition that Tt is marginally outer trapped therefore implies
+                                                   
+                                              2m(r) µ(r)/2
+                   0 = lim a(r) = lim 1 −             e      .                          (70)
+                       rցr0        rցr0         r
+                                PHOTON SURFACES                                   14
+
+
+The non-negativity of ρ(r) and p1 (r) gives, by means of (61) and (64), that m(r)
+and µ(r) are non-decreasing functions of r ∈ (r0 , ∞). Thus (70) holds iff at least
+one of
+                                   
+                             2m(r)
+                   lim 1 −             = 0 ; lim µ(r) = −∞                     (71)
+                  rցr0          r              rցr0
+
+holds.
+  Suppose the first of (71) fails. Then the second must hold and one has
+                                            −1
+                                      2m(r)
+                            lim 1 −              <∞.                           (72)
+                           rցr0          r
+From the boundedness of ρ(r) and p1 (r) on r ∈ (0, ∞) one has, by means of (64)
+and (72), that lim suprցr0 µ′ (r) is finite. This is incompatible with the second of
+(71). Hence the first of (71) must hold.
+   Let f : (r0 , ∞) → R be the left side of (67). By the non-negativity of p1 (r)
+and the first of (71) one has limrցr0 f (r) ≤ − 21 . By condition (4), equation
+(61) and l’Hôpital’s rule one has limr→∞ m(r)/r = limr→∞ r2 p1 (r) = 0 and hence
+limr→∞ f (r) = 1. Hence there exists some r1 ∈ (r0 , ∞) such that f (r1 ) = 0. The
+hypersurface {r = r1 } is an SO(3) × R-invariant photon surface of (M, g).
+
+   Condition (3) of Theorem 4.3 may be expressed more succinctly as Gab Y a Y b ≥ 0
+∀ vectors Y. With regard to condition (5) of Theorem 4.3, to have required Tt to
+be contained in the hypersurface {t = const.} would have been too strong since, for
+Schwarzschild space-time, no spacelike hypersurface of the form {t = const.} in the
+exterior region contains a marginally outer trapped 2-surface.
+   Theorem 4.3 may be interpreted to the effect that, subject to the energy condi-
+tions expressed in condition (3), any static spherically symmetric black hole must
+be surrounded by an SO(3) × R-invariant timelike photon surface. The following
+result may then be regarded as a partial converse in that it shows, subject to a
+suitable energy condition, that if there exists an SO(3) × R-invariant timelike pho-
+ton surface then there must be a naked singularity or a black hole, or more than a
+certain amount of matter.
+Proposition 4.4. Suppose the metric g has the form (59) for 0 < r < ∞, with
+m(r) and µ(r) both C 0 , piecewise C 2 functions of r ∈ (0, ∞). If the following all
+hold:
+1) ρ(r) is a non-increasing, bounded function of r ∈ (0, ∞);
+2) limr→0 m(r) = 0;
+3) 4m(r) < r ∀r ∈ (0, ∞);
+4) p1 (r) ≤ ρ(r)/3 ∀r ∈ (0, ∞),
+then (M, g) can contain no SO(3) × R-invariant timelike photon surfaces.
+Proof. By conditions (1) and (2) with equation (61) one has m(r) ≥ (4π/3)r3 ρ(r)
+∀r > 0. By condition (4) one therefore has 4πr2 p1 (r) ≤ (4π/3)r2 ρ(r) ≤ m(r)/r
+∀r > 0. The left side of (67) is thus bounded from below by 1 − 4m(r)/r ∀r > 0.
+This is positive by condition (3). The left side of (67) is therefore non-vanishing
+for all r > 0.
+
+  Note that this result is valid even for negative p1 (r) and ρ(r). Condition (2) of
+Proposition 4.4 prohibits any curvature singularity at r = 0. Condition (3) may
+                                  PHOTON SURFACES                                    15
+
+
+be interpreted as a requirement that there is no black hole and less than a certain
+amount of matter. The result shows that one of these two conditions must fail if
+there is an SO(3) × R-invariant timelike photon surface and conditions (1) and (4)
+both hold.
+   When the matter is a perfect fluid it is possible to improve condition (3) of
+Proposition 4.4 to condition (3) of the following result.
+Theorem 4.5. Suppose the metric g has the form (59) for 0 < r < ∞, with m(r)
+and µ(r) both C 1 , piecewise C 2 functions of r ∈ (0, ∞). If the following all hold:
+1) the matter is a perfect fluid with pressure p(r) and density ρ(r);
+2) limr→∞ 4πr2 p(r) = limr→∞ 4πr2 ρ(r) = 0;
+3) (24/7)m(r) < r ∀r ∈ (0, ∞);
+4) p(r) ≤ ρ(r)/3 ∀r ∈ (0, ∞),
+then (M, g) can contain no SO(3) × R-invariant timelike photon surfaces.
+Proof. Let f : (0, ∞) → R be the left side of equation (67). Since m(r) and µ(r)
+are C 1 , piecewise C 2 functions of r ∈ (0, ∞), one has by equation (62) that f (r) is
+a C 0 , piecewise C 1 function of r ∈ (0, ∞). The function f ′ (r) is then a piecewise
+C 0 function of r ∈ (0, ∞) which, by means of of the Tolman-Oppenheimer-Volkoff
+equation (66), is given by
+                                                                
+                                                 m(r)
+              m(r)                                r   + 4πr2 p(r)
+ rf ′ (r) = 3      − 12πr2 ρ(r) − 8πr2 p(r) +                    4πr2 (ρ(r) + p(r)) .
+               r                                    1−2  m(r)
+                                                               r
+                                                                                  (73)
+For r = r1 ∈ (0, ∞) such that
+                                              m(r1 )
+                        0 = f (r1 ) = 1 − 3          − 4πr12 p(r1 )               (74)
+                                               r1
+equation (73) reduces to
+                        r1 f ′ (r1 ) = 1 − 8πr12 (ρ(r1 ) + p(r1 )) .              (75)
+From condition (3) and equation (74) one has 4πr12 p(r1 ) > 1/8, whence by condition
+(4) one has 4πr12 ρ(r1 ) > 3/8. Thus (75) gives f ′ (r1 ) < 0.
+   By condition (2), equation (61) and l’Hôpital’s rule one has limr→∞ m(r)/r =
+limr→∞ 4πr2 p(r) = 0 and hence limr→∞ f (r) = 1. Since it has been established
+that f ′ (r) is negative for all r ∈ (0, ∞) such that f (r) = 0, one must therefore
+have f (r) > 0 for all r ∈ (0, ∞). Hence the space-time can contain no SO(3) × R-
+invariant timelike photon surfaces.
+
+   Note that, as for Proposition 4.4, Theorem 4.5 is valid even for negative pressure
+and density.
+   One would like to remove the insufficient matter parts of condition (3) of Propo-
+sition 4.4 and condition (3) of Theorem 4.5, in other words to weaken these to a
+no-black-hole condition 2m(r) < r ∀r > 0. But no result to this effect is forthcom-
+ing. On the other hand no counterexample is known.
+   To conclude this section it will be shown that the physical significance of the
+photon sphere in Schwarzschild space-time, as discussed in the Introduction, carries
+over to the general static spherically symmetric case. Suppose the metric has the
+form (59) for r0 < r < ∞ and is asymptotically flat in the limit r → ∞. Assume
+                                  PHOTON SURFACES                                    16
+
+
+p1 (r) ≥ 0, m(r) ≥ 0 ∀r > r0 . The matter need not be a perfect fluid. Denote the
+left side of (67) by f (r). The condition of asymptotic flatness gives limr→∞ f (r) = 1
+so, if there are any SO(3) × R-invariant timelike photon surfaces, there will be an
+outermost such surface S. For simplicity assume f ′ (r) 6= 0 at S. Let Rext be the
+connected component of {q ∈ M : f (q) > 0} that has S as its inner boundary and
+extends to r = ∞. Let Rint be the connected component of {q ∈ M : f (q) < 0}
+that has S as its outer boundary.
+    Consider first the case of a future endless affine null geodesic γ(λ). The null
+geodesic equations for the metric (59) give
+                             ( 
+                                    2            2 )             2
+               d2 r             dθ          2    dφ         µ′ (r) dr
+                    = rf (r)          + sin   θ          −                 .       (76)
+               dλ2              dλ               dλ           2     dλ
+
+At any point p ∈ |γ| ∩ Rext such that dr/dλ = 0 one has d2 r/dλ2 > 0. At any
+point p ∈ |γ| ∩ Rint such that dr/dλ = 0 one has d2 r/dλ2 < 0. Thus if γ starts
+outside S (i.e. in Rext ) and is initially directed outwards, in the sense that dr/dλ is
+initially positive, then γ will continue outwards. If γ starts in Rint and is initially
+directed inwards, in the sense that dr/dλ is initially negative, then γ will continue
+inwards until it falls either into a singularity or through an SO(3) × R-invariant
+photon surface other than S.
+   Consider now a unit speed timelike geodesic ξ(s). The timelike geodesic equa-
+tions give
+                                         ( 
+                                                 2           2 )            2
+  d2 r      m(r)                             dθ         2    dφ        µ′ (r) dr
+        = −       −  4πrp 1 (r) + rf (r)           + sin  θ          −                .
+  ds2        r2                              ds              ds          2     ds
+                                                                                    (77)
+For any point p ∈ Rext one can arrange for the first three terms on the right of
+(77) to cancel and so obtain a unit speed timelike geodesic ξ(s) through p ∈ Rext
+at constant r. For p ∈ Rint the first three terms on the right of (77) are evidently
+negative. For p ∈ |ξ| ∩ Rint such that dr/ds = 0 one has d2 r/ds2 < 0. Thus if ξ
+starts in Rint and is initially directed inwards, in the sense that dr/ds is initially
+negative, then ξ will continue inwards until it falls either into a singularity or
+through an SO(3) × R-invariant photon surface other than S.
+
+                       5. Spherical symmetry: Examples
+  The following are some examples of SO(3) × R-invariant and SO(3)-invariant
+photon surfaces in familiar space-times.
+Example 5 (Schwarzschild space-time). The metric of Schwarzschild space-time
+in single null (radiation) coordinates has the form
+                               
+                             2m
+                                  du2 + 2dudr + r2 dθ2 + sin2 θdφ2 .
+                                                                  
+                g =− 1−                                                 (78)
+                              r
+In this case equation (54) reduces to r = 3m. The timelike hypersurface {r = 3m}
+is thus an SO(3)×R-invariant photon surface, or photon sphere, as expected. There
+are no other SO(3) × R-invariant timelike photon surfaces.
+    For a non-zero cosmological constant Λ, the Schwarzschild metric (78) generalizes
+to the Schwarzschild-de Sitter metric
+                                   PHOTON SURFACES                                   17
+
+
+
+
+                  2m Λr2
+                        
+                           du2 + 2dudr + r2 dθ2 + sin2 θdφ2 .
+                                                           
+          g =− 1−    +                                                            (79)
+                   r   3
+One finds that equation (54) reduces to r = 3m, independent of the value of Λ.
+This is surprising since Schwarzschild and Schwarzschild-de Sitter space-times are
+not conformally related.
+
+Example 6 (Schwarzschild interior solution). The Schwarzschild interior solution
+describes a spherically symmetric distribution of perfect fluid of radius R, bounded
+pressure p and constant density ρ0 > 0. The solution is to have a metric of the form
+(59) and is to be matched at r = R to a Schwarzschild vacuum solution in such a way
+that the pressure is a continuous function of r. One thus has p1 (r) = p2 (r) =: p(r)
+for all r : 0 ≤ r < ∞, ρ(r) = ρ0 for all r : 0 ≤ r ≤ R, ρ(r) = 0 for all r : R < r < ∞
+and p(r) = 0 for all r : R ≤ r < ∞. The pressure p(r) for r : 0 ≤ r ≤ R is to
+be obtained by an integration of the Tolman-Oppenheimer-Volkoff equation (66)
+subject to the boundary condition p(R) = 0. This yields
+                        4π
+                 m(r) =    ρ0 r 3 ,                        0≤r≤R,                  (80)
+                         3
+
+                         (3 − u(r))2
+               eµ(r) =               ,                     0≤r≤R,                 (81)
+                           4u2 (r)
+
+                         u(r) − 1
+                p(r) =            ρ0 ,                     0≤r≤R,                 (82)
+                         3 − u(r)
+for
+                                            21
+                             3 − 8πρ0 r2
+                         
+               u(r) :=                            ,        0≤r≤R.                 (83)
+                             3 − 8πρ0 R2
+The spherically symmetric system described by the Schwarzschild interior solution
+can exist in a state of stable equilibrium iff m(R)/R < 4/9 (see in Stephani [8]).
+This condition is equivalent to 8πρ0 R2 < 8/3, which implies p(r) ≥ 0 ∀r ≥ 0, and
+implies that the absence of a black hole is a general feature of the Schwarzschild
+interior solution.
+   The left side of equation (67) now assumes the form
+                                                     2
+                                       
+                  3m(r)                 1 − 8πρ0 r
+                                                       :0<r≤R,
+             1−         − 4πr2 p(r) =          3 − u(r)                       (84)
+                    r                         3m(R)
+                                          1−            :r≥R.
+                                       
+                                                  r
+For m(R)/R < 1/3 one has that (84) is positive for all r > 0, so there are no timelike
+photon spheres. For m(R)/R = 1/3 there is a single timelike photon sphere which
+lies at the boundary r = R of the matter. For 1/3 < m(R)/R < 4/9 there is one
+timelike photon sphere outside the matter at r = 3m(R) > R and one timelike
+photon sphere inside the matter at
+                                                                 1/2
+                                  1/2
+                 1 − 3πρ0 R2                      1 − 9m(R)
+             
+                                         2R             4R
+         r=                            =                               <R.      (85)
+               πρ0 (3 − 8πρ0 R2 )
+                                                         
+                                          3    1 − 2m(R) m(R)
+                                                       R      R
+                                 PHOTON SURFACES                                     18
+
+
+For fixed R the radius of the outer photon sphere is a strictly increasing function
+of m(R)/R whilst the radius of the inner photon sphere is a strictly decreasing
+function of m(R)/R.
+    Thus a Schwarzschild interior solution matched to a Schwarzschild vacuum ex-
+terior solution contains no black hole, and contains one timelike photon sphere
+iff 1/3 = m(R)/R and two timelike photon spheres iff m(R)/R lies in the range
+1/3 < m(R)/R < 4/9. However for such values of m(R)/R     √     the space-time is un-
+physical in that the pressure at the center is p(0) ≥ ρ0 / 3 > ρ0 /3. Therefore under
+the reasonable energy condition p(r) ≤ ρ0 /3 ∀r : 0 ≤ r < ∞ there are no photon
+spheres in this example.
+    The energy condition 0 ≤ p(r) ≤ ρ(r)/3 ∀r ∈ [0, ∞) is in fact satisfied iff
+m(R)/R lies in the range 0 ≤ m(R)/R ≤ 5/18. The corresponding space-times
+(in view of 5/18 < 7/24) satisfy all of conditions (1) to (4) of Theorem 4.5, except
+the smoothness of ρ(r) at r = R. Thus considering a smoothed family of solutions
+approximating the solution above and having it as a strict limit, but each with
+smooth ρ(r) at r = R, we can apply Theorem 4.5 to show no photon spheres exist
+in all the cases discussed in this section where this energy condition is satisfied. On
+the other hand Proposition 4.4 is directly applicable without smoothing, but only
+applies to the subset of these cases with 0 ≤ m(R)/R < 1/4.
+
+Example 7 (Reissner-Nordström space-time). The general static spherically sym-
+metric solution to the Einstein-Maxwell equations is the Reissner-Nordström solu-
+tion comprising a metric g and an electromagnetic field Fab given by
+                            2m e2
+                                    
+                                + 2 du2 + 2dudr + r2 dθ2 + sin2 θdφ2
+                                                                         
+               g =− 1−                                                           (86)
+                             r     r
+                             e
+             Ftr = −Frt = 2 , all other components vanishing,                    (87)
+                            r
+where m is the ADM mass and e is the electric
+                                           √       charge. We assume m > 0. There
+is an event horizon   at  r =  r   :=  m +   m 2 − e2 and a Cauchy horizon at r =
+              √                  +
+r− := m − m2 − e2 . The event horizon exists for 0 ≤ (e/m)2 ≤ 1, and the
+Cauchy horizon exists for 0 < (e/m)2 ≤ 1. For (e/m)2 = 1 they both lie at r = m.
+There can be no timelike photon spheres between the event horizon and the Cauchy
+horizon because the Killing field K is spacelike there. Outside the event horizon the
+Killing field K is timelike, so every hypersurface of the form {r = const.} which lies
+outside the event horizon and satisfies the photon sphere equation (54) is necessarily
+a timelike photon sphere.
+   Equation (54) assumes the form
+                                 r2 − 3mr + 2e2 = 0                               (88)
+                     ±
+which has solutions rps given by
+                                        p
+                             ±       3±   9 − 8(e/m)2
+                            rps /m =                   .                     (89)
+                                              2
+The hypersurface S + := {r = rps +
+                                   } exists for 0 ≤ (e/m)2 ≤ 9/8 and lies outside
+the event horizon and is therefore a timelike photon sphere. The hypersurface
+S − := {r = rps
+              −
+                } exists for 0 < (e/m)2 ≤ 9/8 but lies outside the event horizon
+only for 1 < (e/m)2 ≤ 9/8, and so is a timelike photon sphere only then. The
+hypersurfaces S + and S − coincide for (e/m)2 = 9/8. The Cauchy horizon and
+event horizon are always null photon spheres.
+                                      PHOTON SURFACES                                 19
+
+
+
+                          r=m
+                            3:0                        outer photon sphere
+
+
+
+
+                                                             event horizon
+                            2:0
+
+
+
+
+                                                              inner photon sphere
+
+
+                            1:0
+
+
+
+
+                                                             Cau hy horizon
+
+
+
+
+                1:0               0              1.0
+                                                         e=m
+
+        Figure 2. The radii of the event horizon, Cauchy horizon and
+        photon spheres for Reissner-Nordström space-time.
+
+
+   For 0 ≤ (e/m)2 ≤ 1 the curvature singularity at r = 0 is locally naked but
+hidden behind an event horizon which lies strictly inside the only timelike photon
+sphere. For 1 < (e/m)2 the singularity at r = 0 is globally naked and is surrounded
+by two timelike photon spheres in the case 1 < (e/m)2 < 9/8, one timelike photon
+sphere in the case (e/m)2 = 9/8 and by no photon spheres, either timelike or null,
+in the case (e/m)2 > 9/8 (see Fig. 2).
+
+Example 8 (Janis-Newman-Winicour space-time). The most general static spher-
+ically symmetric solution to the Einstein massless scalar field equations for a scalar
+field Φ satisfying Φ = 0 was obtained by Janis, Newman and Winicour [9]. The
+Ricci tensor has the form Rab = 8πΦ;a Φ;b . The solution is known [10] to be ex-
+pressible in the form
+                 ν            −ν              1−ν
+                b              b                 b
+                       2                2
+                                                         r2 dθ2 + sin2 θ dφ2 (90)
+                                                                              
+   g =− 1−           dt + 1 −        dr + 1 −
+                r              r                 r
+                        
+          q            b
+  Φ = √ ln 1 −                                                                    (91)
+        b 4π           r
+for r : b < r < ∞ where the constants b, ν are related to the ADM mass m and
+scalar charge q by
+                                  2m            p
+                            ν=       ,     b = 2 m2 + q 2 .                         (92)
+                                   b
+                                 PHOTON SURFACES                                    20
+
+
+We assume b > 0. There is a curvature singularity at r = b. In order to obtain
+m ≥ 0 one must assume 0 ≤ ν ≤ 1. For q = 0 the solution reduces to the
+Schwarzschild solution.
+  Since all hypersurfaces of the form {r = const.} are timelike, one has from the
+photon sphere equation (54) that the only timelike photon sphere is at
+                                       b (2ν + 1)
+                                   r=             ,                           (93)
+                                            2
+which exists only for ν : 21 < ν ≤ 1, i.e. for 0 ≤ q 2 < 3m2 . For 21 < ν ≤ 1 it is
+known [11] that a photon coming from infinity is deflected through an unboundedly
+large angle, i.e. the photon passes increasingly many times around the singularity
+as the closest distance of approach tends to the right side of (93).
+
+Example 9 (Charged dilaton space-time). A static spherically symmetric space-
+time with a charged dilaton field was obtained by Horne & Horowitz [12]. It com-
+prises a metric g, a dilaton field Φ and an electromagnetic field Fab given by
+                    r+       r− ω 2         r+ −1     r− −ω 2
+        g =− 1−            1−         dt + 1 −           1−          dr
+                      r          r                r           r
+                                                          r−   1−ω
+                                                    + 1−             r2 dΩ2    (94)
+                                                            r
+                 r− (1−ω)/β
+                      
+      e2Φ = 1 −                                                                (95)
+                   r
+                       e
+      Ftr = −Frt = 2 , all other components vanishing,                         (96)
+                      r
+where r+ and r− are related to the ADM mass m and electric charge e by
+                               r+ + ωr− = 2m                                      (97)
+                                              2       2
+                                    r+ r− = e (1 + β )                            (98)
+and β is a free parameter which controls the coupling strength between the dilaton
+and Maxwell fields, with ω defined in terms of β 2 by
+                                           1 − β2
+                                    ω :=          .                               (99)
+                                           1 + β2
+We assume m > 0.
+   For β = 0 the solution reduces to the Reissner-Nordström solution considered
+in Example 7. For β = 0 and e = 0 the solution reduces to the Schwarzschild
+solution. The solution also reduces to the Schwarzschild solution for e = r− = 0
+and arbitrary β. Here we shall consider the case β 2 = 1. In this case one has
+(r+ , r− ) = (2m, e2 /m). There is an event horizon at r = r+ = 2m and a curvature
+singularity at r = r− = e2 /m. For 0 ≤ (e/m)2 < 2 the singularity at r = r− lies
+inside a black hole whilst for (e/m)2 > 2 it is globally naked.
+   For β 2 = 1 the photon sphere equation (54) reduces to
+                                         p
+                  ±        (6 + (e/m)2 )± 36 + (e/m)4 − 20(e/m)2
+                rps /m =                                               .          (100)
+                                              4
+For 0 ≤ (e/m)2 < 2 one has rps −                +
+                                  ≤ r− < r+ < rps  so there is a single timelike photon
+                    2              −                +
+sphere. For (e/m) = 2 one has rps = r− = r+ = rps      so there are no timelike photon
+                         2             +      −
+spheres. For 2 < (e/m) < 18 both rps and rps are complex so there are no timelike
+photon spheres. For (e/m)2 ≥ 18 one has rps    −
+                                                  ≤ rps+
+                                                          < r− so there are again no
+PSfrag repla ements
+                                        PHOTON SURFACES                                 21
+
+
+                      3 :0                                       photon sphere
+
+                      2 :5
+
+                                   event horizon
+                      2 :0
+               r=m
+                      1 :5
+
+                      1 :0
+                                                             urvature
+                      0 :5                                  singularity
+
+                         0
+                             0   0 :2   0 :4       0 :6   0 :8    1 :0    1 :2   1 :4
+                                                     e=m
+
+               Figure 3. The radii of the photon sphere, event horizon and cur-
+               vature singularity are plotted against the electric charge for the
+               charged dilaton solution.
+
+      timelike photon spheres. Thus in the black hole case 0 ≤ (e/m)2 < 2 there is a
+      single timelike photon sphere, whilst in the naked singularity case (e/m)2 > 2 there
+      are no timelike photon spheres. (See Fig. 3.)
+
+      Example 10 (Vaidya null dust collapse). The Vaidya null dust collapse model is a
+      non-static, spherically symmetric space-time with a metric which, in terms of single
+      null (radiation) coordinates (u, r, θ, φ), assumes the form
+                                       
+                                 2m(u)
+                    g =− 1−                du2 + 2dudr + r2 (dθ2 + sin2 θdφ2 )      (101)
+                                    r
+      where m(u) is a freely specifiable function of u. Setting x0 := u, x1 := r in (35)
+      one obtains
+        d2 r
+                                        
+               1         dr             dr       dr
+             =    g uu +       g uu + 2      − 32 ∂r guu − 12 (guu ∂r guu + ∂u guu ) (102)
+        du2    r         du             du       du
+                 (                                                  2 )
+               1         3m(u)          2m(u)      dr     dm(u)         dr
+             =       1−             1−         −3       −        +2              .   (103)
+               r           r               r      du        du          du
+      This is the evolution equation for a spherically symmetric photon surface of the
+      Vaidya collapse metric (101).
+        Consider the special case
+                                    
+                                     0
+                                                  : −∞ < u < 0
+                           m(u) =     λu           : 0 ≤ u ≤ u1                  (104)
+                                    
+                                      m1 := λu1 : u1 < u < ∞
+                                    
+
+      for given constants λ > 0, u1 > 0. For u < 0 the space-time is locally Minkowskian,
+      for u : 0 ≤ u ≤ u1 there is inward falling null dust, and for u > u1 the space-time
+      is locally isometric to Schwarzschild space-time with ADM mass m1 > 0. It is
+                                          PHOTON SURFACES                               22
+
+
+
+            4.25
+
+
+                 4
+
+
+                                         u1 = 5
+            3.75
+        r=m1
+               3.5
+                                                           u1 = 10
+            3.25          u1 = 1
+
+
+                 3
+
+
+                      0              2               4               6       8     10
+                                                             u
+
+                4.5
+
+
+               4.25
+
+
+                  4                               u1 = 5
+        r=m1
+               3.75
+
+
+                3.5
+
+
+               3.25         u1 = 1
+                                                                         u1 = 10
+
+                  3
+
+                      0              2               4               6       8     10
+                                                             u
+
+        Figure 4. The backwards evolution of the r = 3m1 Schwarzschild
+        photon surface through collapsing Vaidya null dust. The space-
+        time coordinates of the evolved surface are plotted for m(u) = u/16
+        (above) and m(u) = u/32 (below) for various values of the null time
+        u1 > 0 of the junction between the null dust and Schwarzschild
+        regions. In each case the evolved photon surface fails to intersect
+        the Minkowskian region u < 0.
+
+                                                                                1
+well-known there is a curvature singularity at r = 0 and that for λ : 0 < λ ≤ 16
+the part of this singularity at u = 0 is locally naked.
+                      1
+   Fix λ : 0 < λ ≤ 16   . For u > u1 equation (103) gives, as expected, that there
+is a photon surface at r = 3m1 . We seek to evolve this photon surface backwards
+in time, though the in-falling null dust, to obtain a maximally extended photon
+surface S. The boundary conditions are
+                               r = 3m1
+                                         )
+
+                                dr = 0        at u = u1 .                    (105)
+                                du
+                                       PHOTON SURFACES                                23
+
+
+                    future singularity
+                                                     Photon surfa e S
+
+
+               na                                   I+
+                ked
+                            in
+                             fa                           S hwarzs hild region
+                    sin          lli
+                      gu          ng
+                       la               l
+                          rity       nu
+                                       ld
+                                         ust
+
+
+
+                            r=0                          partial Cau hy surfa e   H
+                        oordinate
+                       singularity              I
+
+        Minkowskian region
+
+
+        Figure 5. The conformal diagram of the Vaidya null dust collapse
+        model showing the photon surface S arising from the backwards
+        evolution of the Schwarzschild photon sphere. Any partial Cauchy
+        surface H which extends to spatial infinity is cut into two compo-
+        nents by S.
+
+The results are shown in Fig. 4 for λ = 1/16 and λ = 1/32 for selected values of
+u1 . One sees that in all cases S tends in the past direction to a null hypersurface
+of the form {u = const.}. The conformal diagram must therefore be of the form
+sketched in Fig. 5.
+    It is evident from Fig. 5 that the naked central singularity is enclosed within
+the photon surface S in the sense that any partial Cauchy surface H extending
+to spatial infinity must intersect S in a 2-sphere. The physical significance of this
+may warrant further investigation.
+
+                                 6. Concluding remarks
+   The definition of a photon surface given in Section 2 is valid in an arbitrary space-
+time. However the result that a photon surface must have a second fundamental
+form which is pure trace indicates that a space-time must be specialized in some
+respect if it is to contain any photon surfaces. For spherically symmetric space-times
+there are always photon surfaces that respect the spherical symmetry. For space-
+times that are not spherically symmetric, the definitions of a photon surface and G-
+invariant photon surface may seem too restrictive. The problem is that, in general,
+one may not have orbiting null geodesics at a fixed radius. In Kerr space-time for
+example, although there are orbiting null geodesics in the equatorial plane, those
+null geodesics which move in the direction of rotation do so at a different radius than
+those which move in the opposite direction. But it seems implausible that a concept
+which is physically important in the case of exact spherical symmetry should become
+invalid when even a small amount of angular momentum is introduced. A non-
+trivial generalization of the concepts of photon surface and G-invariant photon
+surface, at least to axially symmetric space-times, is thus required.
+                                 PHOTON SURFACES                                          24
+
+
+                               Acknowledgements
+This research was supported by the NFR of Sweden and NRF of South Africa.
+
+                                    References
+  [1] C. Darwin, Proc. Roy. Soc. 249, 180 (1958).
+  [2] C. Darwin, Proc. Roy. Soc. 263, 39 (1961).
+  [3] K. S. Virbhadra and G. F. R. Ellis, Schwarzschild Black Hole Lensing, astro-ph/9904193.
+  [4] K. S. Virbhadra and G. F. R. Ellis, Gravitational Lensing by Naked Singularities, Phys.
+      Rev. D. To be submitted.
+  [5] S. W. Hawking and G. F. R. Ellis, The Large Scale Structure of Space-Time (Cambridge
+      University Press, Cambridge, 1973).
+  [6] B. Carter, Phys. Rev. 141, 1242 (1966).
+  [7] R. H. Boyer, Proc. Roy. Soc. A 311, 245 (1969).
+  [8] H. Stephani, General Relativity. An Introduction to the Theory of the Gravitational
+      Field (Cambridge University Press, Cambridge 1982), p.222.
+  [9] A. I. Janis, E. T. Newman and J. Winicour, Phys. Rev. Lett. 20, 878 (1968).
+ [10] K. S. Virbhadra, Int. J. Mod. Phys. A 12, 4831 (1997).
+ [11] K. S. Virbhadra, D. Narasimha, and S. M. Chitre, Astron. & Astrophys. 337, 1 (1998).
+ [12] J. H. Horne and G. T. Horowitz, Phys. Rev. D 46, 1340 (1992).
+

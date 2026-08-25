@@ -1,0 +1,363 @@
+ a 1364                                             CHARLES              K. M ISNE R
+might be emitted by the Quid particle just after the                           in Eqs.  (4. 18), (5.7), and (6.1), just Z'+y, and from
+pulse of intense radiation went by. Owing to the weaker                        Eqs. (6.6) and (6.8) we compute
+gravitational binding just after the pulse, one expects
+this additional radiation to reach inanity with a smaller                                               6(Z/+y) =0.                        (6.9)
+redshift than if it were emitted ahead of the strong
+                                                                                                  ACKNOWLEDGMENTS
+pulse. However, we see that this eRect is just canceled
+by the greater Doppler shift from the moving Quid after                          The author       wishes     to thank      Robert     Schwartz,
+the impulse. The total conversion factor from local                            Dr. David Sharp, Dr. Michael May, and Dr, Richard
+radiant energy to its value at infinity is, as we have seen                    White for helpful discussions.
+
+
+
+
+PHYSICAL REVIEW                                           VOLUME        137, NUMBER SB                                      8   MAR   C H 1965
+
+                                       Vaidya's Radiating Schwarzschild                          Metric*
+                                                 R. W. LINDQUISTt       AND     R. A. SCHWARTZ$
+                               Lamrence Radiation Laboratory,     University    of California, Livermore, California
+
+
+                                                                 C. W. MISNER
+                          Department   of Physics and Astronomy, ) University of Maryland,       College Park, Maryland
+                                                                      and
+                               Lawrence Radiation Laboratory,    University of California, evermore, California
+                                                          (Received 9 September 1964)
+
+                  In Vaidya's metric for a radiating sphere,
+                                                    ds2 = —(1 —2nzr ') dN~ —2dld p+ p2dQ'
+               where m(n) is a nonincreasing    function of the retarded time I =t r, we verify —
+                                                                                                that —dm/dn     is the total
+               power output as given by the Landau-Lifshitz stress-energy pseudotensor, and relate it through red-shift
+               and Doppler-shift factors to the apparent luminosity L for an observer moving radially in this gravitational
+               field. We argue that the hypersurface r =2m(N) cannot be realized physically, but see that a hypersurface
+               r = 2m(e&) at n= ao (which is not adequately represented in presently available coordinate systems) shows
+                                                                                         "
+               the total red-shift characteristic of the Schwarzschild "singularity. The geodesic equations are written out
+               to display a gravitational "induction field"                                  —
+                                                                 GL/c'r associated with a changing mass in the Newtonian
+               —  Gm/r' 6eld.
+
+
+                         I. INTRODUCTION                                   metric may have some relevance to the study of a
+       HE metric field surrounding  a star, idealized as a                 collapsing supernova core, ' if one allows for the pro-
+        radiatieg sphere, cannot be the SchwarzschiM                       duction of a copious supply of neutrinos, but neglects
+solution, ' except in the excellent approximation       in                 their subsequent absorption in the outer envelope. A
+which one neglects the energy density of the emitted                       realistic treatment must, of course, analyze the problem
+radiation. In this paper we investigate the metric out-                    of neutrino transport in detail. The solution described
+side a spherically symmetric body when radiation is                        here is thus chieQy useful as an extreme limiting case,
+included. For a normal st@.r, the inQuence of radiation                    in which the neutrino optical depth of the envelope is
+on the metric is negligible when compared with the                         negligible.
+effects of deviations from spherical symmetry, caused                         We therefore seek. a spherically            symmetric    solution
+by rotation, magnetic fieMs, etc.' Nevertheless, this                      of the Einstein equations4
+
+  *Work supported in part by NASA Grant NsG 436 and the                                                    , g „R—SxT „
+U. S. Atomic Energy Commission.
+  t Present address: Department of Physics, The University of              with the "geometrical           optics" stress-energy      tensor of
+Texas, Austin, Texas.
+  f Permanent address: Goddard Institute of Space Studies,                Proc. Roy. Irish Acad. A52, 11 (1948). Static metrics for empty
+New York, New York and Department of Physics, Columbia                    space surrounding objects with axial symmetry were given by
+University, New York, New York.                                           H. Weyl, Ann. Physik 54, 117 (1917); 59, 18S (1919), and have
+   Permanent     address.                                                 been further studied by M. Misra, Proc. Natl. Inst. India A26,
+  '$ K. Schwarzschild,  Sitzber. Preuss. Akad. Wiss. Physik-Math.         673 (1960); A27, 373 (1961); G. Krez and N. Rosen, Bull. Res.
+Kl. 189 (1916).                                                           Council Israel SF, 47 (1959); D, Zipoy (unpublished).
+  'A metric for empty space surrounding a rotating object has               ' S. A. Colgate and R. W. White, Rev. Mod. Phys. (to be pub-
+been given by R. Kerr, Phys. Rev. Letters 11, 237 (1963). The             lished).
+asymptotic form had been obtained previously by A. Papapetrou,               4 Throughout
+                                                                                              this paper we choose units such that    G=1, c=1.
+                       VAI DYA'S            RADIATI NG SCHWARZSCHILD                             METRI C                    8 $3|5
+radiation                                                                                                      "
+                                                                   given by Bondi and van der Burg, and to the general
+                              T~"= qk~k"                   (1.2)   case without symmetry by Sachs.            "
+                                                                      The coordinates introduced by Finkelstein" for the
+in which k& is a null vector directed radially outward.            Schwarzschild metric have their counterpart also in the
+  This problem has been considered by Vaidya, ' by                 radiating case. Setting
+Raychaudhuri, ' and by Israel, ~ and the most con-
+venient form for the solution is that given by Vaidya'
+                                                                                                 N=t —r                       (2 4)
+which reads                                                        in Vaidya's metric       (1.3) one finds
+         ds'= —L1 2m(u)/—r'jdu' —2dudr+r'dQ'               (1.3)   ds'= —(1 —2mr ') dP —2 (2mt-') dtdr
+where
+                                                                                                     + (1+2mr ')dr'+r'dQ'     (2.5)
+                      dies   = dg'+ sinsgd ys.             (1.4)   If m is a constant then this is just the Schwarzschild
+                                                                   metric, as Finkelstein showed by introducing Schwarzs-
+Here m(u) is an arbitrary nonincreasing function of the            child's time coordinate T through the formula
+retarded time coordinate N. In Sec. II below we discuss
+this and other closely related metrics. In Sec. III we
+                                                                                         7= I+2m ln(r —2m) .                  (2.6)
+verify from the Landau-Lifshitz pseudotensor that m                A corresponding  transformation to explicitly diagonalize
+and I. = —(dm/du) are, respectively, the mass and
+        „—                                                         the metric (1.3) or (2.5) when dm/du/0 is not known.
+total energy output at,'infinity, and compare this to the             In the form
+energy Aux measured by local observers. Section IV                                   ds'= dss'+2mr 'du')                (2 7)
+analyzes the special features of the "Schwarzschild
+surface" r=2m(u). Finally, in Sec. V, we study the                 where dss' is the flat space metric, Vaidya's metric (1.3)
+                                                                   is of the type recently studied for empty space by Kerr
+geodesics in this metric, and exhibit the main features
+of the non-Newtonian gravitational field tied to a pulse           and Schild.    "
+of radiation.
+                                                                             III. THE OBSERVED ENERGY FLUX
+                   II. RELATED METRICS                                The value of q in Eq. (1.2) is not well defined because
+                                                                   there is no natural normalization for k&. Let us then
+  The geometry of spherically          symmetric space time is     define q to be the energy density of the radiation as
+usually described by'                                              measured locally by an observer with 4-velocity e)", so
+               ds'=       e'&d T'+e"dr'+r'd—Q'.            (2.1)                                                              (3 1)
+
+The retarded time coordinate          I used by Vaidya in the      Therefore, in this observer's local Lorentz frame,
+                                                                   k" = (1; 1,0,0); it follows that tt is the energy flux as well
+metric (1.3) can be introduced         through the equation
+                                                                   as the energy density measured in this frame. We shall
+                   du =   f '(end T e" lsd—r),        —    (2 2)   only consider radially moving observers, and define
+                                                                                             U= s"=dr/dr.           —         (3.2)
+where   f is an integrating factor to make du an exact
+differential. The metric then takes the form                       Then, from v&v„= —1, with   e'=0, v&=0, there follows
+                                            —                         du/dr = s" = (1—2mr ') '(p —
+                                                                                         ——
+            ds'=      f'du'          "i'dudr+ r'dQ'
+                                 2 fe—                     (2.3)                                   U) = (y+ U) '    (3 3)
+
+From Eqs. (2.1) and (2.2) it follows that u'& is a null            where
+vector. This can also be seen from Eq. (2.3) directly;
+                                                                                         = (1+U' —2mr ')'I'.
+                                                                                        y—                                    (3.4)
+the metric induced on a 3-dimensional hypersurface                   The covariant Ricci tensor for the metric (1.3) has
+u= constant has the signature (0, +,+) of a null hyper-            only one nonvanishingcomponent: R „= 2r '(dm/d—   u)
+surface. For our choice of signs in Eq. (2.2) these hyper-         From Eqs. (3.1) and (1.1) one computes
+surfaces of constant      I
+                         contain outgoing null rays, since
+                                                                                  = (Ss-)—'tt&s "R
+r increases with increasing T when dN=O.                                      q                                              (3.5a)
+   A generalization of Vaidya's radiation coordinates
+of Eq. (2.3) to the case with axial symmetry has been
+                                                                     "H. Bondi, Nature, 186, 535 (1960); H. Bondi, M. G. J. van
+  ' P. C. Vaidya, Proc. Indian Acad. Sci. A33, 264 (1951); Curr.   der Burg, and A. W. K. Metzner, Proc. koy. Soc. (London) A269,
+Science 21, 96 (1952).                                             21 (1962).
+    A. K. Raychaudhuri, Z. Physik 135, 225 (1953).                   "   R. Sachs, Proc. Roy. Soc. (London) A270, 103 (1962).
+  ' W.  Israel, Proc. Roy. Soc. (London) A248, 404 (1958).            '2 D. Finkelstein, Phys. Rev. 110, 965 (1958).
+  'P. C. Vaidya, Nature 171, 260 (1953). We thank Professor          "R.    P. Kerr and A. Schild, invited paper presented to the
+D. Zipoy for pointing out this work to us.                         International Meeting on General Relativity, Florence, Italy,
+  ' R. C. Tolman, Proc. Natl. Acad. Sci. Wash. 20, 3 (1934).       September 1964 (unpublished).
+8 1366                             LINDQUIST,                SCHWARTZ,               AND          MISNER
+                                                                             Another way to compute the total-energy output of
+                                                                          the system described by the metric of Eq. (1.3) is by
+                                                                          means of the various stress-energy pseudotensors.  The        "
+                                                                          one defined by Landau and Lifshitz" is usually best
+                                                                          because one can remember the formulas. Landau and
+                                                                          Lifshitz have rewritten the Einstein equations in the
+                                                                          form
+                                                                                              Qpo. vP )ap —Ptot pv          (3 9)
+
+                                                                          where Tt, tI'" involves both the stress-energy tensor of
+                                                                          matter and an expression quadratic in first derivatives
+                                                                          of the metric. The left-hand side contains an expression
+                                                             T& IQm
+                                                                          with the synlmetries of the Riemann tensor; it is defined
+                                                                          by
+                                                                                                                             (3.10)
+                                                                          with
+                                         I                TMO                                                                           (3.11)
+                                    gl
+                                             T~-lOm
+                                                                          The total energy-momentum               vector is
+
+   FIG. 1. Kruskal's coordinate system for the Schwarzschild
+ (constant m) metric shows that there are two different r=2m                          P't, tI"=    Tt, tl"'d'x=      II~'~ d'Sp         (3.12)
+hypersurfaces,     corresponding     to T = & cc. The Schwarzschild
+metric in the above m8q coordinates is ds'= —              16m'e dvdm
+ +4m'x'dO', where x=r/2m is defined in the region of regularity              Similarly the power output can be computed from the
+oio&1 by     —          —
+                oui= (x 1)e*. Thus hypersurfaces of constant r are
+represented by hyperbolas of constant m, and the Schwarzschild            right-hand side of
+"singularity" x=1 consists of the two quite regular null hyper-
+surfaces v=0 and m=0. Schwarzschild's time coordinate T is de-
+fined by —   ai/o = or~'~ and is therefore constant along lines through               Itot=        Ttot d S'=         H    ~gpd   S'.   313
+the origin of the vm plane. Schwarzschild's coordinate system
+covers only the fourth quadrant of the diagram above. Vaidya's
+coordinate m of Eq. (1.3) is defined here (dm/dN = 0) by
+o= —e "~'~(2m) '~' and covers the lower half-plane. The curves            These integrals must be evaluated in asymptotically
+r=constant (r(2m) are represented by a sample curve, r=m.                 rectangular coordinate systems. (This is a reasonable
+One may see that this curve always has a negative slope. Thus,            restriction since energy and momentum have meaning
+since light cones are lines parallel to the axes, r=m must be a
+space-like hypersurface and no particle can have r = m for a world        only with reference to Lorentz transformations,         and
+line. Similiarly, the lines T = constant are time-like in this region.    therefore some means must be provided to introduce the
+However, there is no singularity in the coordinates system for            reference flat space at infinity into the calculations. )
+       ~.
+0&r & This is the maximal extension of the exterior Schwarzs-
+child solution; the singularity at r =0 cannot be eliminated. If one         Introducing      Cartesian coordinates x'(i = 1,2, 3) in
+demands that the geometry be regular there, and satisfy spherical         place of (r, 0, p), one computes
+symmetry, then Bat space is the only solution.
+
+                                                                                                     g = —(1+2mr ')
+Since q, being an energy density, must be positive, it                                                '= —2nsg'r —     2
+follows from (3.5b) that dm/du(~0.
+   For an observer at rest at infinity we find a total                                               g"=8"—2mr 'x'x&
+luminosity of
+                                                                                                                                        (3.14)
+            L„(u) =     lim     (47rr'q) =   —(dm/du) .          (3.6)
+                                                                          and then, from (3.12) and (3.13),
+
+Note also that if we define                                                                       Po= (m; 0,0,0),                       (3.15)
+                              I-=4~r'q                           (3.7)
+                                                                                               Li., ——(dm/du) =L„                       (3.16)
+then Kq. (3.5) can be rewritten as                                          ' J. N. Goldberg, Phys. Rev. 111, 315 (195g); R. Arnowitt
+                          L„=I (y+ U)'                           (3.8)    S. Deser, and C. W. Misner, Phys. Rev. 122, 997 (1961), Pro-
+                                                                          ceed&sgs of The International
+                                                                                                      Conference on The Theory of Gravita-
+                                                                          tion (PWN, Warsaw and Gauthier-Villars, Paris, 1964), p. 189;
+showing   that the locally observed luminosity I. is re-                  A. Trautman in Gravitation: &n Introduction to Current Research,
+duced (or increased if U)m/r) by one factor of (p+ U)                     edited by L. Witten (John Wiley Bz Sons, Inc. , New York, 1962),
+to red shift the energy involved as it moves out, and a                   p. 169.
+                                                                            'sL. Landau     and E. Lifshitz, The Classical Theory of Fields
+second (y+ U) factor for the dilation of the time interval                (Addison-Wesley    Publishing Company, Reading, Massachusetts,
+over which this energy is emitted.                                        1951), Sec. 11-9.
+                      VAIDYA'S           RADIATING              SCHWARZSCHILD                        METRIC                      B 1367
+
+   Equivalent results requiring more extensive computa-
+tion with other stress-energy pseudotensors have been
+obtained by Mufller.   "                                                                                  y   =2m(u)
+
+
+
+          IV. THE SCHWARZSCHILD            SURFACE
+   In Kruskal's form" of the Schwarzschild metric one
+sees that there are really two distinct Schwarzschild
+surfaces r=   2';                              —
+                  one coincides with T = ~, the other
+with    T=+~     (see Fig. 1). In Vaidya's metric the
+hypersurface r = 2m(zz) is analogous to the Schwarzs-
+                            —
+child hypersurface T= ~, r=2m. Its character can
+                                                                       Fzo. 2. The light cones for Vaidya's metric are shown projected
+                                                                    on to the I-r plane. Note that time-like vectors in the forward
+be seen most easily in Fig. 2 where we have sketched                light cone on the hypersurface r =2za(N) all have dr/dN&0, so no
+                                                                    time-like path crosses this hypersurface starting from the outside.
+light cones bounded by the radial null vectors
+                     k= k&(B//)x&) =8/Br                   (4 1)    examine. Let a particle move radially inward along a
+and                                                                 time-like path with a 6nite nonzero "velocity"
+                                                                    U=dr/dr. Then, Eq. (3.3) gives du/dr= (y+U) '.
+                                                           (4.2)    Since light signals travel outward along rays of con-
+in the Nr plane.                                                    stant u, two signals emitted by the particle at an inter-
+   Froin, this sketch one sees that, for dm/dzz/0, the              val dl are received at infinity with the same separation
+surface r = 2m(zz) lies outside the light cone; i.e. , it is a      dl. For an observer at rest at infinity, du is just his
+space-like hypersurface. This is also obvious from the              proper time dr, b, Conseq. uently we may write Eq. (3.3)
+                                                                    in the form
+form of the induced metric on the hypersurface
+                                 —
+                                                                                       dr. b. = (y+ U)           'dr—   (4.4)
+           (ds') „s„(„)=2(      d—  N)dzt'+r'dQ',
+                                 m/d—                      (4.3)
+                                                                     Since p is necessarily positive, in6nite time dilations
+which    has signature (+,     +,+)whenever dm/du&0.                occur when U= —       y~&0; from Eq. (3.4) it follows that
+We may properly consider it to be a space-like hyper-
+surface lying in the past of the region        r)
+                                               2m(N), since
+                                                                                      I
+                                                                    r = 2m (u). If is finite, a time-like vector at r = 2m. (zz),
+                                                                    which lies in the future light cone, necessarily has
+no light ray starting in this region will intersect the              U~& 0; hence infinite     time dilation only occurs at
+r= 2m( z)zhypersurface. Itis also evident from the figure           r=2 m(~). Because this time dilation also affects the
+that no material particle following a time-like path can            frequency of a photon, there will correspondingly be a
+reach the r = 2m (I) hypersurface starting from the out-            total red shift of light emitted by a particle crossing the
+side. For this reason we consider the region r~& 2m(N)
+to be unphysical; the sources of the strong gravitational
+                                                                    r = 2m (~ ), I =+    ~ hypersurface.
+                                                                       It would be desirable, of course, to introduce a co-
+fields there cannot be objects which once existed in an             ordinate system which included the r= 2m. (~), zz = ~
+r)  2m(N) region and were then assembled into some-
+                                                                                                                                   +
+                                                                    hypersurface in its interior, so that one could study this
+thing in the region r&2m(N). As these regions cannot,               interesting hypersurface in detail and follow the world
+in principle, be produced experimentally,         we ignore         lines of particles into the region r&~2m(~). Because
+them. Every physical situation must consequently
+                                                 )
+contain a boundary hypersurf ace r = (I) 2m (zz) with
+                                           f
+                                                                    dm/du ~& 0 and m) 0, there are two possibilities to con-
+                                                                    sider: Either (1) m(u) is constant for all sufficiently
+                                                                                                              —
+the interior metric in the region r ~& f(zz) differing from
+Vaidya's metric because of the presence of matter or
+                                                                    large u, say zz) 0, or (2) m(zt) & ms)  &0 as -+     I ~. In
+                                                                    case (1) the metric in the u)0 region is just the
+other fieMs.                                                        Schwarzs child metric, whose continuation          through
+   The hypersurface r=2 m(~) at u= ~ in Vaidya's                    zz=+0c has been given by Kruskal. 'r We have been
+metric is analogous to the Schwarzschild hypersurface               unable to find explicitly the transformation to Kruskal-
+r=2m at T=+ ~ in Kruskal's metric. It is reasonable                 like coordinates for solutions of type (2).
+to suppose that such surfaces are sometimes formed in
+the gravitational collapse of the cores of stars at the                                          V. GEODESICS
+supernova stage. In any case they can, in principle, be
+produced.                                                              The geodesics for the metric (1.3) will all lie in
+   The most characteristic property of the hypersurface             "planes" because of the spherical syDUnetry. When we
+zz=+~ is an infinite time dilation, which we now                    orient the coordinate system to make the "plane" in
+                                                                    question e=zr/2, then the geodesic equations result
+   ~6 C. Mgller, Kgl. Danske Videnskab. Selskab, Mat. Fys. Medd.
+                                                                    from varying the action integral
+34, No. 3 (1964).
+   "M. Kruskal, Phys. Rev. 119, 1/43 (1960): This form of the
+Schwarzschild metric is analyzed in detail by R. W. Fuller and                    1
+J. '8A. Wheeler, Phys. Rev. 128, 919 (1962).                                              L
+                                                                                              —(1 —2mr ')u' —2ur'+r' j']dr   )     (5.1)
+      J. R. Qppenheimer and H. Snyder, Phys. Rev. 56, 455 (1939).                 2
+ 8 1368                        LINDQUIS 1', SCHWARTZ,                     AND      MISNER
+where a dot is used for proper time derivatives. Two of       the Einstein perihelion precession in Mercury and other
+the generalized momenta associated with this variation        planets.
+principle are useful to us: The angular momentum per             We see in Eq. (5.6c) that the gravitational induction
+unit mass                                                     field L/r is directed toward the center of force, and from
+                                                   (5.2)      Eq. (5.6b) it always acts to increase the energy of the
+                                                              test particle on which it acts. (This feature was first dis-
+and the energy per unit mass
+                                                              covered in the interior metric discussed in the accom-
+             ——(BZ/Bu) = (1—2mr ')u+r'.
+            y=                                        (5.3)   panying paper. ") In normal situations it is negligible,
+                                                              as we can see by comparing it with acceleration a43
+Although 7 will be constant only when m is, / will of         which gives the Einstein 43"/century perihelion pre-
+course always be constant. The normalization condition        cession in Mercury's orbit
+       —
+vp&= 1 can be written in terms of I,, y, and the radial
+momentum per unit mass U=i in the form                                  ar/a4s = (GL/c'r) (3G511'/c'r')    ' = 5 && 10-".
+             p'= (1—2mr ')(1+Pr ')+U'.                (5.4)   In order to find a situation where the induction field
+                                                              aL, is comparatively large, we may try to take advantage
+The geodesic equations will be further simplified by          of the fact that ar, = L/r de—  creases more slowly with
+introducing the apparent flux L defined by Eqs. (3.7)         r than the other terms in Eq. (5.6c). Thus we can denne
+and (3.5a)                                                    a distance E where al. is comparable to the Newtonian
+                L=L„u'= —u'(dm/dl) .                  (5.5)   acceleration a    = —m/r'. From
+The equations resulting from the variation of Eq. (5.1)                    ar/a = (GL/c'r) (Gm/r')        '=Lr/c'm           (5.9)
+are then
+                                                              we find
+               dt/dr = 0,                            (5.6a)                                                                 (5.10)
+                                                     (5.6b)   While this radius E for the sun exceeds the "radius of
+                                                                               "
+                                                              the universe, for the most luminous known objects it
+                                                              is small enough to have some meaning without reference
+                                                     (5.6c)   to cosmology, and can even be made small with pre-
+                                                              judiced data: A low minimum mass for the quasistellar
+From our previous definitions we can add the equations        source" 3C273 is ns 10'350, while a generous value of
+                                                              L would be 10't erg/sec. These figures give E 5&(10s
+                     d p/dr=   t/r',                 (5.7a)   light years which is not much larger than the complex
+                                                              radio source itself. More probable mass estimates in-
+                      dr/dr = V,                     (5.7b)   crease this value of R by several orders of magnitude.
+                         du    1+Pr '                            Although the induction field L/r ma, y be comparable
+                                                     (5.7c)   to the Newtonian m/r' field at sufficiently large dis-
+                         dr     7+0                           tances from a strongly radiating source, it will not have
+                                                              important eIIfects there because of its limited duration
+to form with Eqs. (5.6) a system of first-order equations     in time. The maximum time a constant luminosity                   I
+for which Eq. (5.4) gives a first integral. These equa-       can be maintained by a mass m is At=me'/L, so the
+tions differ from the Schwarzschild set only in the           maximum velocity change a test particle can have due
+terms containing I..                                          to the GL/c'r acceleration during this interval is
+   The acceleration                                           AU=A(e/c) =aint/c=GrN/c'r. But if the test particle
+                                                      (5.8)   were originally in a Newtonian orbit with e' Gm/r,
+                                                              this gives
+in  Eq. (5.6c) is a non-Newtonian gravitational field
+associated with radiated power I. emitted by the central
+source, or one may call it an iedmctiotspeld associated       Thus the induction field L/r is likely to be of im
+with the changing Newtonian Gm/r' field. The terms            portance, if at all, only in catastrophic phases of gravi-
+                 r' in this equation are the Newtonian
+   Gm/r' an. d P/—                                            tational collapse where one might find e c and
+gravitational force, and the centrifugal force, while the     Grn/c'r     1.
+term      3GmP/c'r' is a n— on-Newtonian    gravitational
+                                                                "C. W. Misner, preceding      paper,   Phys. Rev. 137, 31360
+force which Ltogether with the distinction           (5.7c)   (1965).
+between coordinate time and proper time) accounts for           "J.L. Greenstein and M. Schmidt, Asttophys J. 140, 1 (196.4).
+

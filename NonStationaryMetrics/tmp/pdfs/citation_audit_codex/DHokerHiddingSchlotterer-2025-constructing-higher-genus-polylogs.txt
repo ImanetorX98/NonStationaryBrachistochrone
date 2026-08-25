@@ -1,0 +1,2438 @@
+                                                                                                                       2023 June 14
+                                                                                                               revised 2025 March 5
+                                                                                                                      UUITP–17/23
+
+
+
+                                                        Constructing polylogarithms on
+                                                        higher-genus Riemann surfaces
+
+
+
+
+arXiv:2306.08644v3 [hep-th] 8 Mar 2025
+                                            Eric D’Hoker(a), Martijn Hidding(b), and Oliver Schlotterer(b)
+                                                       (a)
+                                                         Mani L. Bhaumik Institute for Theoretical Physics
+                                                              Department of Physics and Astronomy
+                                                       University of California, Los Angeles, CA 90095, USA
+                                                             (b)
+                                                                Department of Physics and Astronomy,
+                                                             Uppsala University, 75108 Uppsala, Sweden
+                                                 dhoker@physics.ucla.edu, martijn.hidding@physics.uu.se,
+                                                            oliver.schlotterer@physics.uu.se
+
+
+                                                                               Abstract
+                                             An explicit construction is presented of homotopy-invariant iterated integrals on a
+                                         Riemann surface of arbitrary genus in terms of a flat connection valued in a freely gen-
+                                         erated Lie algebra. The integration kernels consist of modular tensors, built from con-
+                                         volutions of the Arakelov Green function and its derivatives with holomorphic Abelian
+                                         differentials, combined into a flat connection. Our construction thereby produces ex-
+                                         plicit formulas for polylogarithms as higher-genus modular tensors. This construction
+                                         generalizes the elliptic polylogarithms of Brown-Levin, and prompts future investiga-
+                                         tions into the relation with the function spaces of higher-genus polylogarithms in the
+                                         work of Enriquez-Zerbini.
+Contents
+1 Introduction                                                                                     3
+
+2 Review of genus-zero and genus-one polylogarithms                                                6
+  2.1 Genus zero . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         6
+  2.2 Genus one . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          7
+
+3 A flat connection at higher genus                                                               12
+  3.1 Basics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        12
+  3.2 The Arakelov Green function . . . . . . . . . . . . . . . . . . . . . . . . . .             13
+  3.3 Convolution of Arakelov Green functions and modular tensors . . . . . . . .                 14
+  3.4 Generating functions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          17
+  3.5 The flat connection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         19
+
+4 Higher-genus polylogarithms                                                                     22
+  4.1 Construction of higher-genus polylogarithms . . . . . . . . . . . . . . . . . .             22
+  4.2 The special case of polylogarithms for words without bI . . . . . . . . . . . .             24
+  4.3 Low letter count polylogarithms in the basis (aI , bI ) . . . . . . . . . . . . . .         25
+  4.4 Low letter count polylogarithms in the basis (âI , bI ) . . . . . . . . . . . . . .        26
+  4.5 Meromorphic variants . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          28
+  4.6 Closure under taking primitives . . . . . . . . . . . . . . . . . . . . . . . . .           29
+  4.7 Higher-genus associators . . . . . . . . . . . . . . . . . . . . . . . . . . . . .          32
+
+5 Flat connection in the multiple variable case                                                   34
+
+6 Separating degeneration                                                                         36
+  6.1 The construction for genus two . . . . . . . . . . . . . . . . . . . . . . . . .            36
+  6.2 Degeneration of Abelian differentials . . . . . . . . . . . . . . . . . . . . . .           38
+  6.3 Degeneration of the Arakelov Green function . . . . . . . . . . . . . . . . . .             39
+  6.4 Degeneration of ∂x G I1 ···Is (x, y) . . . . . . . . . . . . . . . . . . . . . . . . . .    39
+  6.5 Degeneration of ∂x ΦI1 ···Is J (x) . . . . . . . . . . . . . . . . . . . . . . . . . . .    40
+  6.6 Degeneration of the flat connection . . . . . . . . . . . . . . . . . . . . . . .           41
+
+7 Conclusions and further directions                                                              44
+
+A Definiton of the prime form                                                                     46
+
+B Separating degeneration of ∂x G I (x, y)                                                        47
+  B.1 Degeneration of ∂x1 G1 (x1 , y1 ) and ∂x2 G2 (x2 , y2 ) . . . . . . . . . . . . . . . . .   47
+  B.2 Degeneration of ∂x1 G2 (x1 , y1 ) and ∂x2 G1 (x2 , y2 ) . . . . . . . . . . . . . . . . .   48
+  B.3 Degeneration of ∂x1 G1 (x1 , y2 ) and ∂x2 G2 (x2 , y1 ) . . . . . . . . . . . . . . . . .   49
+  B.4 Degeneration of ∂x G I (x, y) . . . . . . . . . . . . . . . . . . . . . . . . . . . .       50
+
+                                                 2
+1     Introduction
+In a variety of research areas in theoretical physics, polylogarithms and related iterated inte-
+grals have become almost as widely used as elementary functions. In particular, perturbative
+computations in quantum field theory and string theory have benefitted significantly from
+the systematic investigation of iterated integrals on the sphere and the torus, namely on
+Riemann surfaces of genus zero and one. At genus zero, mathematical advances on mul-
+tiple polylogarithms have become a driving force behind sophisticated loop calculations in
+high-energy physics and evaluations of higher-order effective interactions in the low-energy
+expansion of string theory. At genus one, the construction of elliptic polylogarithms in the
+mathematics literature has dramatically increased our computational reach in quantum field
+theory and string perturbation theory and spawned a vibrant collaboration between these
+two communities. Comprehensive overviews of the literature may be found in reviews and
+white papers, such as [1, 2, 3, 4] for quantum field theory and [5, 6, 7, 8, 9] for string theory.
+    A major impetus for the use of polylogarithms and their elliptic analogues is the fact that
+they span a space of functions which is closed under taking primitives. As a result, integration
+is rendered completely algorithmic. This property is at the source of the ubiquity of genus-
+zero polylogarithms [10, 11, 12] in the study of quantum-field-theory amplitudes [13, 14,
+15, 16] and string-theory amplitudes [17, 18, 19]. Elliptic polylogarithms were introduced
+in [20, 21, 22], used to reformulate Feynman-integral calculations in [23, 24, 25, 26], and
+applied to one-loop string amplitudes in [27, 28].
+    The formulation of elliptic polylogarithms crucially hinges on the existence of suitable
+integration kernels, which were identified in [22] and naturally enter genus-one string am-
+plitudes [29, 27, 30, 31]. For the torus, these kernels are usually expressed via Jacobi theta
+functions, obtained by expanding certain Kronecker-Eisenstein series, and combined into
+a flat connection. The flatness of the connection guarantees homotopy invariance of the
+iterated integrals generated by its path-ordered exponential. The translation of Kronecker-
+Eisenstein kernels from tori to elliptic curves was performed in [26].
+   Higher loop orders of scattering amplitudes in both quantum field theory and string
+theory involve functions and integrals on higher-genus Riemann surfaces, whose role in string
+theory dates back to the early days of the subject [32, 33, 34, 35]. In Feynman integrals,
+both hyperelliptic curves [36, 37, 38] and higher-dimensional geometric varieties, such as
+Calabi-Yau spaces, have recently been encountered [39, 40, 41, 42, 43]. However, a general
+and explicit construction of the functions necessary to describe Feynman integrals and string
+amplitudes beyond (elliptic) polylogarithms was still missing. For polylogarithms on higher-
+genus Riemann surfaces, proposals to characterize the function spaces and flat connections
+have been advanced in the mathematics literature by Enriquez [44] and Enriquez-Zerbini
+
+                                                3
+[45, 46], but these have not yet led to tractable expressions for the individual polylogarithms
+necessary for physics applications. An investigation into the precise relation between these
+proposals and the construction presented here is relegated to future work.
+   In this paper, we shall eliminate this bottleneck for compact Riemann surfaces of arbitrary
+genus and present a generating series of homotopy-invariant iterated integrals that generalize
+the polylogarithms and their elliptic analogues to concrete expressions at arbitrary genera.
+These higher-genus polylogarithms are built out of modular tensors and can be organized to
+themselves enjoy tensorial modular transformation properties.
+    Our main result here is to provide an explicit proposal for the higher-genus generaliza-
+tion of the integration kernels and flat connection of Brown and Levin. The higher-genus
+integration kernels in this work share the logarithmic singularities of their genus-one coun-
+terparts and the Lie algebra structure of the formulation of Enriquez and Zerbini [45] (see
+also [47, 44] for earlier work). While the meromorphic higher-genus connections in the math-
+ematics literature exhibit multi-valuedness [44], or poles of arbitrary order [45] in marked
+points, our construction features non-meromorphic kernels which reconcile single-valuedness
+with the presence of at most simple poles.
+    Instead of extending the Jacobi theta-function or elliptic-curve description of the Brown-
+Levin integration kernels used at genus one, our construction on Riemann surfaces of arbi-
+trary genus is driven by the Arakelov Green function [48, 49] which, in turn, is built from the
+prime form [50] and Abelian integrals (for a recent account see [51]). We employ convolutions
+of Arakelov Green functions and their derivatives with holomorphic Abelian differentials to
+construct higher-genus analogues of the Kronecker-Eisenstein-type integration kernels that
+were crucial for elliptic polylogarithms. The differential properties of the Arakelov Green
+function then lead us to identify a flat connection which in turn yields infinite families of
+homotopy-invariant iterated integrals to be referred to as higher-genus polylogarithms.
+    The Arakelov Green function is by now widely used in string perturbation theory [52, 53,
+51, 54, 55] and has stimulated the construction of tensor-valued functions on the Torelli-space
+of compact genus-h Riemann surfaces [56, 57, 58, 59]. Our integration kernels for higher-
+genus polylogarithms enjoy similar tensorial transformation properties under the modular
+group Sp(2h, Z) of compact genus-h Riemann surfaces and are related to the vector-valued
+modular forms investigated by van der Geer and collaborators in [60, 61, 62].
+
+
+Organization
+In section 2, we review the construction of polylogarithms at genus zero following Goncharov
+and at genus one following Brown and Levin, while emphasizing the role played by flat
+connections. Section 3 provides a summary of the function theory on Riemann surfaces of
+
+                                              4
+arbitrary genus h that will be needed here, including the Arakelov Green function. We use
+these tools to build the Sp(2h, Z) modular tensors needed for the explicit construction of a
+flat connection valued in a Lie algebra that is freely generated by 2h elements. In section 4,
+we use this connection to construct the promised higher-genus polylogarithms. We discuss
+their modular properties; provide examples at low order; discuss their meromorphic variants;
+give evidence for their closure under taking primitives; and present a proposal for higher-
+genus generalizations of elliptic associators. In section 5 we generalize the higher-genus
+connection to the case of multiple marked points on the surface. In section 6 we consider
+the behavior of the higher-genus flat connection under separating degenerations and recover
+the Brown-Levin connection at genus one from the degeneration of a genus-two surface. We
+conclude and discuss some open directions in section 7.
+
+Acknowledgments
+We sincerely thank Benjamin Enriquez and Federico Zerbini for valuable discussions and
+comments on the first preprint version of the manuscript. ED is grateful to the members of
+the Theoretical Physics Group at Uppsala University for their warm hospitality and stimu-
+lating environment offered throughout this work. The research of ED is supported in part
+by NSF grant PHY-22-09700. The research of MH is supported in part by the European
+Research Council under ERC-STG-804286 UNISCAMP and in part by the Knut and Alice
+Wallenberg Foundation under grant KAW 2018.0116. The research of OS is supported by
+the European Research Council under ERC-STG-804286 UNISCAMP.
+
+
+
+
+                                              5
+2     Review of genus-zero and genus-one polylogarithms
+The construction of homotopy-invariant iterated integrals on a surface of arbitrary genus,
+including genus zero and genus one, is based on the existence of a flat connection. We begin
+by reviewing this well-known construction. A flat connection J on a Riemann surface Σ,
+which takes values in a Lie algebra L, is defined to satisfy the Maurer-Cartan equation,
+
+                                         dJ − J ∧ J = 0                                     (2.1)
+
+As a result, the differential equation dΓ = J Γ is integrable (and so is dΓ′ = −Γ′ J ). Its
+solution Γ takes values in the simply-connected Lie group associated with L and is given by
+the path-ordered exponential along an arbitrary open path C between points z0 , z ∈ Σ,
+                                        Z              Z 1
+                          Γ(C) = P exp J (·) = P exp       dt J(t)                     (2.2)
+                                           C               0
+
+We have parametrized the path C by t ∈ [0, 1] with C(0) = z0 and C(1) = z and set
+J = J(t)dt. The path-ordered exponential is defined by placing J(t) to the left of J(t′ ) for
+t > t′ following physics conventions. Its expansion in powers of J takes the form,
+                   Z 1               Z 1              Z 1     Z t1
+             P exp     dt J(t) = 1 +     dt1 J(t1 ) +     dt1      dt2 J(t1 )J(t2 ) + · · · (2.3)
+                   0                 0               0         0
+
+Flatness of the connection J guarantees that Γ(C) is unchanged under continuous deforma-
+tions of the path C, so that Γ(C) depends only on the end-points z0 and z. However, Γ(C)
+may be multiple-valued in z0 and z as these points are taken around non-contractible cycles
+on Σ. Such iterated integrals will be referred to as homotopy-invariant.
+   Polylogarithms on surfaces Σ of arbitrary genus are obtained from the path-ordered
+exponential (2.3) by extracting the coefficients of independent words in the generators of L.
+Homotopy invariance of Γ(C) implies that the resulting polylogarithms are functions of the
+endpoints z0 and z and the homotopy class of the path C, but do not depend on the specific
+path chosen within a homotopy class. In general, the polylogarithms are multiple valued in
+z and z0 as these points are taken around a non-trivial homology cycle on Σ.
+
+2.1    Genus zero
+Multiple polylogarithms at genus zero are iterated integrals of rational forms dz/(z − s) with
+z, s ∈ C. They are defined recursively as follows [12],
+                                                   Z z
+                                                       dz1
+                     G(s1 , s2 , · · · , sn ; z) =           G(s2 , · · · , sn ; z1 )     (2.4)
+                                                    0 z1 −s1
+
+                                                6
+with initial value G(∅; z) = 1 for sn 6= 0. When sn = 0, an endpoint divergence is shuffle-
+regularized preserving holomorphicity by setting G(0; z) = ln(z) (see for example [63, 2] for
+pedagogical accounts). The integer n ≥ 0 is referred to as the transcendental weight. A gen-
+erating series for the polylogarithms (2.4) may be constructed starting from the Knizhnik-
+Zamolodchikov (KZ) connection JKZ (z) for a Lie algebra L that is freely generated by
+elements e1 , · · · , em associated with the marked points s1 , · · · , sm ,
+                                                      m
+                                                     X     dz
+                                           JKZ (z) =            ei                                            (2.5)
+                                                     i=1
+                                                         z − si
+
+Since JKZ(z) is a meromorphic (1, 0) form in z ∈ Ĉ, it automatically satisfies the Maurer-
+Cartan equation (2.1) and is therefore a flat connection, away from the points si . The
+path-ordered exponential ΓKZ (z), produced by the connection JKZ (z) using (2.2) and (2.3),
+is homotopy-invariant by construction and depends only on the end-points. Choosing z0 = 0
+by translation invariance and z1 = z, we may organize the expansion of the path-ordered ex-
+ponential in powers of JKZ in terms of the generators e1 , · · · , em (of the universal enveloping
+algebra of L),
+                                 Z z               X
+                           P exp     JKZ (·) = 1 +    w G(w; z)                               (2.6)
+                                           0                     w
+
+The sum runs over all words w with at least one letter, formed out of the alphabet e1 , · · · , em ,
+and we identify G(ei1 , ei2 , · · · , ein ; z) = G(si1 , si2 , · · · , sin ; z) for i1 , · · · , in ∈ {1, · · · , m}.
+The construction confirms that every coefficient function G(w; z) is a homotopy-invariant
+iterated integral. Without loss of generality we may set (s1 , s2 ) = (0, 1) by using the SL(2, C)
+invariance on the sphere, as a result of which these coefficient functions G(w; z) reduce to
+the standard genus-zero polylogarithms in m−1 variables [10, 11, 12].
+
+2.2      Genus one
+At genus zero, the coefficient of each Lie-algebra generator ei in the connection (2.5) is a
+single-valued meromorphic (1, 0)-form with simple poles (as opposed to higher-order poles).
+On a compact Riemann surface of genus h ≥ 1, however, it is not possible to maintain
+these properties simultaneously without introducing additional marked points. Instead, the
+available options are as follows.
+
+   1. a single-valued but non-meromorphic connection with at most simple poles;
+   2. a meromorphic but not single-valued connection with at most simple poles;
+   3. a meromorphic and single-valued connection with a single pole of higher order, or poles
+      of lower order distributed over multiple marked points.
+
+                                                         7
+The Brown-Levin construction of elliptic polylogarithms via iterated integrals [22] follows
+option 1, and will be briefly reviewed below.1 It will be generalized to higher genus in the
+next subsection following option 1. The constructions at genus one following options 1 and 2
+will be related at the end of this section, while their relation with option 3 will be relegated
+to future work.
+
+2.2.1     The Brown-Levin construction
+A genus-one surface Σ with modulus τ in the Poincaré upper half plane may be represented by
+Σ = C/(Z+τ Z), and parametrized by local complex coordinates z, z̄ subject to identifications
+z ≡ z + 1 and z ≡ z + τ . The Brown-Levin connection JBL (z|τ ) takes values in the Lie
+algebra L generated freely by elements a, b and is given as follows,
+                                                       ∞                   
+                             π                        X
+                                                            (n)       n
+               JBL(z|τ ) =       dz−dz̄ b + dz a +         f (z|τ ) adb (a)             (2.7)
+                           Im τ                        n=1
+
+where adb (·) = [b, ·]. Flatness of the connection, namely dJBL − JBL ∧ JBL = 0, requires the
+following relations between the coefficient functions f (n) (z|τ ),2
+                                        π
+                  ∂z̄ f (n) (z|τ ) = −      f (n−1) (z|τ )               f (0) (z|τ ) = 1  (2.8)
+                                       Im τ
+The functions f (n) (z|τ ) may be constructed in different but equivalent ways. Following
+Brown and Levin, they are given by expanding the doubly-periodic Kronecker-Eisenstein
+series Ω(z, α|τ ) in powers of an auxiliary parameter α ∈ C,
+                                                                        ∞
+                                         Im z ϑ′1 (0|τ )ϑ1 (z+α|τ ) X n−1 (n)
+            Ω(z, α|τ ) = exp 2πiα                                      =        α f (z|τ ) (2.9)
+                                         Im τ       ϑ1 (z|τ )ϑ1 (α|τ )   n=0
+
+The relations (2.8) immediately result from the following identity for Ω(z, α|τ ) for z 6= 0,
+                                                    πα
+                                ∂z̄ Ω(z, α|τ ) = −      Ω(z, α|τ )                       (2.10)
+                                                   Im τ
+One may obtain the connection JBL in (2.7) by a formal substitution α → adb as follows,
+                                      π                                  
+                     JBL (z|τ ) =         (dz−dz̄) b + dz adb Ω z, adb |τ a              (2.11)
+                                    Im τ
+The factor adb to the left of Ω ensures the cancellation of the pole that Ω(z, α|τ ) has in α.
+   1
+    An alternative construction of elliptic polylogarithms given in the same Brown-Levin reference [22] relies
+on certain averages of genus-zero polylogarithms which preserve meromorphicity. Throughout this work, we
+use the term Brown-Levin (elliptic) polylogarithms to refer to the non-meromorphic iterated integrals in [22]
+and not to the meromorphic functions obtained from the averaging procedure of the reference.
+   2
+    As we shall see below, the relation for n = 1 actually holds up to a δ-function, ∂z̄ f (1) (z) = πδ(z)−π/Im τ ,
+so that the corresponding relation (2.8) holds for z 6= 0, as does
+                                                                R the flatness condition of JBL . Throughout,
+we shall set d2 z = 2i dz ∧ dz̄ and normalize the δ-function by Σ d2 z δ(z) = 1.
+
+                                                        8
+2.2.2   Alternative construction via convolutions of Green functions
+
+An alternative construction of the functions f (n) (z|τ ), and the one that will generalize to
+higher genus, is in terms of the scalar Green function g(z|τ ) on Σ, which is defined by,
+                                                             Z
+                                           π
+                ∂z̄ ∂z g(z|τ ) = −πδ(z) +                       d2 z g(z|τ ) = 0        (2.12)
+                                          Im τ                Σ
+
+and may expressed in terms of ϑ-functions and the Dedekind eta-function η as follows,
+                                                         2
+                                             ϑ1 (z|τ )          (z−z̄)2
+                              g(z|τ ) = − ln                 −π                                (2.13)
+                                              η(τ )              2 Im τ
+
+Furthermore, we define two-dimensional convolutions of g recursively as follows,
+                       Z
+                            d2 x
+          gn+1(z|τ ) =           g(z−x|τ ) gn (x|τ )         g1 (x|τ ) = g(x|τ )               (2.14)
+                         Σ Im τ
+
+In terms of these convolutions gn (z|τ ) the integration kernels f (n) (z|τ ) are given by,
+
+                                     f (n) (z|τ ) = −∂zn gn (z|τ )                             (2.15)
+
+and may thus also be defined recursively by convolutions over Σ [31],
+                          Z
+             (n)               d2 x (1)
+           f (z|τ ) = −            f (z−x|τ ) f (n−1) (x|τ )                     n≥2           (2.16)
+                            Σ Im τ
+
+We note that, in co-moving coordinates u, v ∈ [0, 1] with z = uτ +v, the non-holomorphic
+prefactor in the definition (2.9) of Ω(z, α|τ ) becomes e2πiαu so that, for fixed u, v, the functions
+f (n) (uτ +v|τ ) are holomorphic in the modulus τ .
+
+2.2.3   Modular properties of the Brown-Levin construction
+
+Under a modular transformation on the modulus τ, z, and α given by,
+
+                   Aτ + B                              z                                α
+        τ → τ̃ =                        z → z̃ =                           α → α̃ =            (2.17)
+                   Cτ + D                           Cτ + D                            Cτ + D
+where A, B, C, D ∈ Z with AD−BC = 1, the Kronecker-Eisenstein series Ω and the functions
+f (n) in (2.9) transform as modular forms of weight (1, 0) and (n, 0), respectively,
+
+                                 Ω(z̃, α̃|τ̃ ) = (Cτ + D)Ω(z, α|τ )
+                                 f (n) (z̃|τ̃ ) = (Cτ + D)n f (n) (z|τ )                       (2.18)
+
+                                                   9
+These transformation properties may be readily established by using (2.9) and the transfor-
+mation properties of the Jacobi ϑ-function,
+
+                                             1     2
+              ϑ1 (z̃, α̃|τ̃ ) = ε (Cτ + D) 2 eiπCz /(Cτ +D) ϑ1 (z|τ )             ε8 = 1   (2.19)
+
+
+or the modular invariance of the functions gn (z|τ ) along with the relation (2.15). The
+modular properties of the Brown-Levin connection and polylogarithms are most transparent
+by assigning the following transformation law to the generators a, b in (2.11),
+
+                                                                                   b
+                a → ã = (Cτ + D)a + 2πiCb                           b → b̃ =              (2.20)
+                                                                                Cτ + D
+
+This choice renders the flat connection JBL modular invariant under (2.17). The extra
+contribution 2πiCb to ã in (2.20) is engineered to compensate the transformation of the first
+term in the expression (2.11) for the connection
+
+                                        π dz̃      C τ̄ + D π dz
+                                              b̃ =               b                         (2.21)
+                                        Im τ̃      Cτ + D Im τ
+
+
+2.2.4   Homotopy-invariant iterated integrals
+
+Homotopy-invariant iterated integrals on a genus-one surface are constructed by expanding
+the path-ordered exponential in terms of words in the (rather frugal) alphabet a, b as follows,
+
+                                   Z z                      X
+                           P exp         JBL (·|τ ) = 1 +       w Γ(w; z|τ )               (2.22)
+                                    0                       w
+
+
+
+The Brown-Levin connection JBL can be found in (2.11), and the sum runs over all words
+w with at least one letter, formed out of the alphabet a, b. The construction guarantees
+that every coefficient function Γ(w; z|τ ) is a homotopy-invariant iterated integral. These
+functions were dubbed elliptic polylogarithms in [22].
+
+    In this construction, the requirement of doubly-periodicity introduces non-holomorphicity
+into the functions f (n) (z|τ ), into the connection JBL , and into the elliptic polylogarithms in
+(2.22). Still, any z̄-dependence of Γ(w; z|τ ) occurs only via polynomials in 2πi(Im z)/Im τ ,
+so that the key structure is carried essentially by meromorphic iterated integrals.
+
+                                                       10
+2.2.5     Meromorphic variant
+Given the meromorphic counterparts of the doubly-periodic Kronecker-Eisenstein series
+Ω(z, α|τ ) and its expansion coefficients f (n) (z|τ ) of (2.9),3
+                                                         ∞
+                                 ϑ′1 (0|τ )ϑ1 (z+α|τ ) X n−1 (n)
+                                                      =     α g (z|τ )                                  (2.23)
+                                   ϑ1 (z|τ )ϑ1 (α|τ )   n=0
+
+a meromorphic variant of the Brown-Levin polylogarithms (2.22) may be recursively defined
+as follows [26],
+                                         Z z
+                    n1 n2 ··· nr
+                                                                                            
+                 Γ̃ a1 a2 ··· ar ; z|τ =     dz1 g (n1 ) (z1 −a1 |τ ) Γ̃ na22 ··· nr
+                                                                              ··· ar ; z1 |τ   (2.24)
+                                               0
+
+with Γ̃(∅; z|τ ) = 1 and r, ni ∈ N0 . These meromorphic elliptic polylogarithms coincide with
+                                            
+the formulation via Γ na11 na22 ··· nr
+                                ··· ar ; z|τ in [27] on the real line and exhibit a closer analogy
+to the recursive definition (2.4) at genus zero than the Γ(w; z|τ ) in (2.22). However, the
+meromorphic integration kernels g (n) (z|τ ) in (2.23) such as
+                                                                                              Im z
+        g (0) (z|τ ) = 1                g (1) (z|τ ) = ∂z ln ϑ1 (z|τ ) = f (1) (z|τ ) − 2πi             (2.25)
+                                                                                              Im τ
+which enter the construction (2.24) of Γ̃ are generically multiple-valued on the torus, and
+thus more properly live on the universal covering space, which is C.
+   Note that the Brown-Levin polylogarithms (2.22) associated with words w → ab · · · b
+reduce to a single integral over the meromorphic kernels (2.23), for instance
+                   Z z                            Z z
+                               Im t    (1)
+                                                                                       
+     Γ(ab; z|τ ) =    dt 2πi        − f (t|τ ) = −      dt g (1) (t|τ ) = −Γ̃ 10 ; z|τ   (2.26)
+                    0          Im τ                  0
+
+(see [27, 64] for the regularization of endpoint divergences) and more generally
+                                                 Z z X     n                  j
+                                               n               1          Im t
+                 Γ(a |b ·{z
+                          · · }b; z|τ ) = (−1)       dt              −2πi          f (n−j) (t|τ )
+                                                  0      j=0
+                                                               j!         Im τ
+                         n
+                                                 Z z
+                                                                                         
+                                        = (−1)n      dt g (n) (t|τ ) = (−1)n Γ̃ n0 ; z|τ                (2.27)
+                                                   0
+
+                                                                                  Im z
+These examples illustrate that the Brown-Levin polylogarithms in (2.22) are Q[2πi Im τ
+                                                                                       ]-linear
+combinations of the meromorphic ones in (2.24).
+   3
+     The meromorphic functions g (n) (z|τ ) in the expansion given in (2.23) are not to be confused with the
+real-analytic convolutions gn (z|τ ) of the scalar Green function on the torus defined in (2.14). Both notations
+have, by now, become standard for historical reasons and can be distinguished through the placement of
+n ∈ N0 in the superscript and in parenthesis in case of (2.23).
+
+                                                       11
+3       A flat connection at higher genus
+This section is dedicated to the construction of a flat connection which generalizes the Brown-
+Levin flat connection JBL in (2.11) to higher genus. We begin by introducing some functions
+and forms on Riemann surfaces of arbitrary genus that will provide the key ingredients in our
+construction. Further background material on Riemann surfaces and their function theory,
+including ϑ-functions, may be found in [50, 65, 33].
+
+
+3.1     Basics
+The topology of a compact Riemann surface Σ without boundary is specified by its genus h.
+The homology group H1 (Σ, Z) is isomorphic to Z2h and supports an anti-symmetric non-
+degenerate intersection pairing denoted by J. A canonical homology basis of cycles AI and
+BJ with I, J = 1, · · · , h has symplectic intersection matrix J(AI , BJ ) = −J(BJ , AI ) = δIJ ,
+and J(AI , AJ ) = J(BI , BJ ) = 0, as illustrated in Figure 1 for genus two.
+
+                                                                A2
+                          A1
+                                                                                    Σ
+                                         B1                               B2
+
+
+
+
+Figure 1: A choice of canonical homology basis on a compact genus-two Riemann surface Σ.
+
+A canonical basis of holomorphic Abelian differentials ω I may be normalized on A-cycles,4
+                         I                          I
+                           ω J = δIJ                    ω J = ΩIJ                    (3.1)
+                               AI                             BI
+
+
+The complex variables ΩIJ denote the components of the period matrix Ω of the surface Σ.
+By the Riemann relations, Ω is symmetric, and has positive definite imaginary part,
+
+                                Ωt = Ω                   Y = Im Ω > 0                                 (3.2)
+
+    4
+    Throughout, differential forms are denoted in boldface, while their component functions in local complex
+coordinates z, z̄ on Σ are denoted by the same letter in normal font, such as for example
+                                                                                       R ω I = ωI (z)dz. The
+coordinate volume form on Σ is d2 z = 2i dz ∧ dz̄ and the δ-function is normalized by Σ d2 z δ(z, w) = 1 for
+any w ∈ Σ. Finally, repeated pairs of identical
+                                        Ph      indices are to be summed following the Einstein convention
+so that, for example, we set Y IJ ω J = J=1 Y IJ ωJ .
+
+                                                    12
+                                                            IJ
+The matrix YIJ = Im ΩIJ and its inverse Y IJ = (Im Ω)−1           may be used to raise and lower
+indices as follows,
+
+               ω I = Y IJ ω J            ω̄ I = Y IJ ω̄ J             Y IK YKJ = δJI       (3.3)
+
+In particular, it will be useful to express the Riemann bilinear relations as follows,
+                                         Z
+                                       i
+                                            ω I ∧ ω̄ J = δIJ                               (3.4)
+                                       2 Σ
+
+The choice of canonical A and B-cycles is not unique: a new canonical basis Ã and B̃
+is obtained by applying a modular transformation M ∈ Sp(2h, Z), such that M satisfies
+M t JM = J, and the column matrices of cycles are transformed as follows,
+                                                                      
+         B̃      A B      B                      A B                      0 −I
+             =                           M=                        J=            (3.5)
+         Ã      C D      A                      C D                      I 0
+
+Under a modular transformation M, the row matrix ω of holomorphic Abelian differentials
+ω I , the period matrix Ω, and its imaginary part Y , transform as follows,
+
+                                ω̃ = ω (CΩ + D)−1
+                                Ω̃ = (AΩ + B)(CΩ + D)−1
+                                                 −1
+                                Ỹ = Ω̄C t + D t     Y (CΩ + D)−1                          (3.6)
+
+where we have denoted transformed quantities with a tilde as in the discussion of the genus-
+one case in section 2.2.3.
+    The moduli space of compact Riemann surfaces of genus h will be denoted by Mh . The
+moduli space Mh for h = 1, 2, 3 may be identified with Hh /Sp(2h, Z) provided we remove
+from the Siegel upper half space Hh for h = 2, 3 all elements which correspond to disconnected
+surfaces, and take into account the effect of automorphisms including the involution on the
+hyper-elliptic locus for h = 3. For h ≥ 4, the moduli space Mh is a complex co-dimension
+1
+2
+  (h − 2)(h − 3) subspace of Hh /Sp(2h, Z) known as the Schottky locus.
+
+3.2    The Arakelov Green function
+The Arakelov Green function G(x, y|Ω) on Σ×Σ generalizes the Green function g(z|τ ) which
+was defined at genus one in (2.12), and is defined by,
+                                                        Z
+          ∂x̄ ∂x G(x, y|Ω) = −πδ(x, y) + πκ(x)             κ(x)G(x, y|Ω) = 0         (3.7)
+                                                                  Σ
+
+
+                                                 13
+where κ is given by the pull-back to Σ under the Abel map of the unique translation invariant
+Kähler form on the Jacobian variety J(Σ) = Ch /(Zh + ΩZh ), normalized to unit volume,5
+                                                              Z
+                           i         I        2
+                     κ=      ω I ∧ ω̄ = κ(z) d z                  κ=1                   (3.8)
+                          2h                                    Σ
+
+Here and throughout the rest of this work, we shall suppress the dependence on the period
+matrix Ω unless otherwise indicated. Both κ and G(x, y) are conformally invariant. An
+explicit formula for G(x, y) may be given in terms of the non-conformally invariant string
+Green function G(x, y) as follows,
+
+                                G(x, y) = G(x, y) − γ(x) − γ(y) + γ0                                   (3.9)
+
+where γ(x) and γ0 are given by,
+                            Z                                              Z
+                    γ(x) =      κ(z)G(x, z)                         γ0 =        κγ                    (3.10)
+                                    Σ                                       Σ
+
+The string Green function is given in terms of the prime form E(x, y) by,6
+                                                    Z x       Z x 
+                                         2
+               G(x, y) = − log |E(x, y)| + 2π Im        ωI    Im    ωI                                (3.11)
+                                                                y                y
+
+see Appendix A for the definition of the prime form in terms of theta functions. The following
+double derivatives,
+
+                          ∂x ∂y G(x, y) = −∂x ∂y ln E(x, y) + π ωI (x) ω I (y)
+                          ∂x ∂ȳ G(x, y) = π δ(x, y) − π ωI (x) ω̄ I (y)                              (3.12)
+
+will prove useful in the sequel.
+
+3.3     Convolution of Arakelov Green functions and modular tensors
+Convolutions involving the Arakelov Green function and various integration measures were
+used to construct a variety of modular tensors in [56, 57, 58, 59]. Here we shall extend this
+library of modular tensors by including convolutions that involve not only Arakelov Green
+
+   5
+    A recent account of the Arakelov Green function and its properties needed here may for instance be
+found in [51].
+   6
+    Here, it is understood that the prime form, and thus the string Green function, are defined in a suitable
+fundamental domain for Σ in the universal covering space of Σ, and that the integrals in (3.10) are to be
+carried out in that same domain [51].
+
+                                                     14
+functions (as was the case in [58]) but also derivatives on Arakelov Green functions and holo-
+morphic Abelian differentials. The building blocks of our flat connection and corresponding
+higher-genus polylogarithms will be modular tensors, and the resulting modular properties
+of the connection and the polylogarithms themselves will be discussed in section 3.5 and 4.4,
+respectively.
+
+3.3.1   Definition of modular tensors
+Modular tensors are defined on Torelli space, which is the moduli space of compact Riemann
+surfaces endowed with a choice of canonical homology basis of A and B cycles. The signif-
+icance of modular tensors has been articulated in the work of Kawazumi [56, 57, 59] and
+two of the authors of the present paper in [58]. Modular tensors generalize modular forms
+at genus one by replacing the familiar automorphy factor (Cτ + D) of SL(2, Z) discussed in
+section 2.2.3 by an automorphy tensor Q and its inverse R = Q−1 ,
+
+                                               Q = Q(M, Ω) = CΩ + D
+                                               R = R(M, Ω) = (CΩ + D)−1                                                            (3.13)
+
+for M ∈ Sp(2h, Z) and the matrices C and D given in (3.5). The composition law for the
+automorphy tensors may be read off from the transformation properties of Ω given in (3.6),
+                                                              
+              Q(M1 M2 , Ω) = Q M1 , (A2 Ω + B2 )(C2 Ω + D2 )−1 Q(M2 , Ω)           (3.14)
+
+In (3.6) we already encountered the tensors ω I , ω I , YIJ , and its inverse Y IJ . In the notation
+(3.13) of the automorphy factors Q and R, their transformation properties are given by,
+                                           ′                                                             ′         ′
+                         ω̃ I = ω I ′ RI I                                     ỸIJ = YI ′ J ′ R̄I I RJ J
+                                               ′                                                                   ′ ′
+                        ω̃ J = Q̄J J ′ ω J                                    Ỹ IJ = QI I ′ Q̄J J ′ Y I J                         (3.15)
+
+More generally, a modular tensor T of arbitrary rank transforms as follows,
+                                                                                                     ′        ′        ′       ′
+           T̃ I1 ,··· ,In ;J1 ,··· ,Jn̄ (Ω̃) = QI1 I1′ · · · QIn In′ Q̄J1 J1′ · · · Q̄Jn̄ Jn̄′ T I1 ,··· ,In;J1 ,··· ,Jn̄ (Ω)      (3.16)
+
+The tensors YIJ and Y IJ may be used to lower and raise indices, respectively, and can be
+made to compensate any anti-holomorphic automorphy factor: instead of the Q̄Ji Ji′ in (3.16),
+the tensor,
+
+                            UJI11,···
+                                 ,··· ,In
+                                      ,Jn̄ (Ω) = YJ1 K1 · · · YJn̄ Kn̄ T
+                                                                         I1 ,··· ,In ;K1 ,··· ,Kn̄
+                                                                                                   (Ω)                             (3.17)
+                                                                                                                           ′
+exclusively transforms with holomorphic automorphy factors QIi Ii′ and RJi Ji ,
+                                                                                                  I ′ ,··· ,I ′
+                      ŨJI11,···
+                            ,··· ,In          I1         In    J          ′J              ′
+                                 ,Jn̄ (Ω̃) = Q I1 · · · Q In′ R 1 J · · · R n̄ J U ′
+                                                                                   J ,··· ,J ′ (Ω)                                 (3.18)
+                                                                                    1       n
+                                                 ′
+                                                                   1            n̄
+                                                                                                   1          n̄
+
+
+
+
+                                                                   15
+The above tensors may be reducible. Symmetrization, anti-symmetrization, and removal of
+the trace by contracting with factors of YIJ or δIJ may be used to extract irreducible tensors.
+For genus h, the anti-symmmetrization of h indices I (resp. J indices) produces a factor of
+det Q (resp. det Q̄).
+
+3.3.2   The interchange lemma
+The modular tensor defined by the following convolution,
+                                    Z
+                            I
+                          Φ J (x) =    d2 z G(x, z) ω̄ I (z)ωJ (z)                             (3.19)
+                                           Σ
+
+was found to play a central role in the studies of more general modular tensors and their
+relations. In view of the second equation in (3.7), the tensor Φ is trace-less, and therefore
+vanishes identically at genus one. In particular, it enters into the interchange lemma which
+was stated and proved in [55, 58],
+
+         ∂x G(x, y) ωJ (y) + ∂y G(x, y) ωJ (x) − ∂x ΦI J (x) ωI (y) − ∂y ΦI J (y) ωI (x) = 0   (3.20)
+
+The genus-one version of this formula holds trivially by translation invariance on the torus
+and the vanishing of Φ. At higher genus, Φ may be viewed as compensating for the lack of
+translation invariance on higher-genus Riemann surfaces.
+
+3.3.3   Higher convolutions of the Arakelov Green function
+The fundamental building blocks for a flat connection on higher-genus Riemann surfaces are
+modular tensors defined recursively by convolutions on Σ as follows,
+                                Z
+               I1 ···Ir
+             Φ          J (x) =     d2 z G(x, z) ω̄ I1 (z) ∂z ΦI2 ···Ir J (z)   r≥2 (3.21)
+                                Z Σ
+              I1 ···Is
+            G          (x, y) =     d2 z G(x, z) ω̄ I1 (z) ∂z G I2 ···Is (z, y) s≥1
+                                Σ
+
+where ΦI J (x) was defined in (3.19) and G ∅ (x, y) = G(x, y). By construction, ΦI1 ···Ir J (x)
+and G I1 ···Is (x, y) are scalar functions of x, y and Sp(2h, Z) tensors of rank r+1 and s, re-
+spectively, with the purely holomorphic transformation law in (3.18). The vanishing of the
+trace ΦI1 ···Ir Ir = 0 for arbitrary genus implies that Φ-tensors for arbitrary r ≥ 1 vanish
+identically for genus one. Furthermore, at genus one, the derivatives of the tensor G I1 ···Is for
+I1 = · · · = Is = 1 equal the Kronecker-Eisenstein integration kernels f (s+1) given in (2.9)
+and (2.16),
+                                 ∂x G I1 ···Is (x, y) h=1 = −f (s+1) (x−y|τ )             (3.22)
+
+                                                 16
+From the differential relations satisfied by the Arakelov Green function in (3.7) and (3.12)
+we derive analogous differential relations satisfied by ΦI1 ···Ir J (x),
+
+                           ∂x̄ ∂x ΦI J (x) = −π ω̄ I (x) ωJ (x) + π δJI κ(x)
+                      ∂x̄ ∂x ΦI1 ···Ir J (x) = −π ω̄ I1 (x) ∂x ΦI2 ···Ir J (x)                   r≥2           (3.23)
+
+and by G I1 ···Is (x, y) for s ≥ 1,
+
+               ∂x̄ ∂x G I1 ···Is (x, y) = −π ω̄ I1 (x) ∂x G I2 ···Is (x, y)
+               ∂ȳ ∂x G I1 ···Is (x, y) = π ∂x G I1 ···Is−1 (x, y) ω̄ Is (y) − π ∂x ΦI1 ···Is J (x) ω̄ J (y)   (3.24)
+
+These relations will be fundamental in the construction of the flat connection at higher genus.
+
+
+3.3.4    Modular properties of convolutions
+
+The convolutions G I1 ···Is (x, y) and ΦI1 ···Ir J (x) are modular tensors. Their transformation
+properties may be read off directly from those of ω J and ω̄ I ,
+
+                                                ω̄ I (x) = QI J ω̄ J (x)
+                                                ˜                                                              (3.25)
+
+see (3.15), and provide the following transformation rules,
+                                                                            ′       ′
+                              G̃ I1 ···Is (x, y) = QI1 I1′ · · · QIs Is′ G I1 ···Is (x, y)
+                               Φ̃I1 ···Ir J (x) = QI1 I1′ · · · QIr Ir′ ΦI1 ···Ir J ′ (x) RJ J
+                                                                                ′       ′    ′
+                                                                                                               (3.26)
+
+We note that all automorphy tensors Q, R in (3.13) are holomorphic on Torelli space. Thus
+we may view G I1 ···Is (x, y) and ΦI1 ···Ir J (x) as sections of holomorphic vector bundles over
+Torelli space, whose transition functions are given by the tensor Q and its inverse R.
+
+
+3.4     Generating functions
+For genus one, the functions f (n) (z|τ ) were obtained by expanding the Kronecker-Eisenstein
+series Ω(z, α|τ ) in powers of the free parameter α. At higher genus, we may also assemble
+the families of modular tensors, defined in the previous subsection, into generating functions.
+To do so, we introduce a non-commutative algebra freely generated by BI for I = 1, · · · , h,
+and that will soon be extended to a larger free algebra. We also fix an arbitrary auxiliary
+marked point p on the Riemann surface Σ. With the help of the generators BI , we introduce
+
+                                                              17
+the following generating functions,
+                                             ∞
+                                             X
+              H(x, p; B) = ∂x G(x, p) +            ∂x G I1 I2 ···Ir (x, p)BI1 BI2 · · · BIr
+                                             r=1
+                         = ∂x G(x, p) + ∂x G I1 (x, p)BI1 + ∂x G I1 I2 (x, p)BI1 BI2 + · · ·
+                                    X ∞
+               HJ (x; B) = ωJ (x) +     ∂x ΦI1 I2 ···Ir J (x)BI1 BI2 · · · BIr
+                                       r=1
+                          = ωJ (x) + ∂x ΦI1 J (x)BI1 + ∂x ΦI1 I2 J (x)BI1 BI2 + · · ·             (3.27)
+Note that the modular tensors G I1 ···Ir (x, p) and ΦI1 ···Ir J (x) are not necessarily symmetric
+in their indices I1 , · · · , Ir . This absence of symmetry is captured by the non-commutative
+nature of the algebra of the BI . The differential relations (3.7), (3.23), and (3.24) on the
+components imply the following differential relations on the generating functions,
+                  ∂x̄ H(x, p; B) = π κ(x) − πδ(x, p) − π ω̄ I (x)BI H(x, p; B)
+                                                                                              
+                  ∂p̄ H(x, p; B) = πδ(x, p) + π ω̄ I (p) H(x, p; B)BI − HI (x; B)
+                   ∂x̄ HJ (x; B) = π κ(x)BJ − π ω̄ I (x)BI HJ (x; B)                              (3.28)
+By forming the combination,
+                             ΨJ (x, p; B) = HJ (x; B) − H(x, p; B)BJ                              (3.29)
+the differential form κ in (3.8) is found to cancel between the x̄-derivative of both terms in
+(3.28), and the result may be compactly written as follows,
+                      ∂x̄ ΨJ (x, p; B) = πδ(x, p)BJ − π ω̄ I (x) BI ΨJ (x, p; B)
+                      ∂p̄ ΨJ (x, p; B) = −πδ(x, p)BJ + π ω̄ I (p) ΨI (x, p; B) BJ                 (3.30)
+                                                                                                1
+The delta functions on the right-hand side signal the simple pole of ∂x G(x, p) = − x−p           + O(1)
+                                                   I1 ···Ir                I1 ···Ir
+whereas all the tensorial integration kernels ∂x Φ          J (x) and ∂x G          (x, p) with r ≥ 1 are
+regular on the entire surface. This generalizes the pole structure of the f (n) to arbitrary genus
+                        1
+where f (1) (x−p|τ ) = x−p + O(x−p) exhibits the only pole among the genus-one kernels.
+   To obtain tensorial modular transformations properties for the generating function (3.29),
+the modular transformations of its components must be accompanied by the following trans-
+formation properties for the algebra generators BJ ,
+                                                                ′
+                                             B̃J = BJ ′ RJ J
+                                                                         ′
+                                     H̃J (x; B̃) = HJ ′ (x; B)RJ J
+                                                                             ′
+                                   Ψ̃J (x, p; B̃) = ΨJ ′ (x, p; B)RJ J                            (3.31)
+The generating function H(x, p; B) is then invariant.
+
+                                                       18
+3.5    The flat connection
+We are now ready to assemble all the results of the previous sections into a flat and modular
+invariant connection.
+    To do so, we begin by extending the algebra generated by the elements BI as follows.
+We introduce the Lie algebra L freely generated by elements aI and bI for I = 1, · · · , h
+and set BI = adbI = [bI , ·]. The algebra admits a dual grading counting independently the
+number of letters a and the number of letters b in each word, irrespective of the value of their
+indices. This algebra was already considered by Enriquez and Zerbini in their construction
+of Maurer-Cartan elements in [45], where the generators aI and bI correspond to generators
+of the fundamental group of the surface Σ with the point p removed. For a general reference
+on freely generated Lie algebras and their applications we refer to Reutenauer’s book [66].
+   It remains to generalize the term proportional to (dz − dz̄)b in the genus-one connection
+JBL in (2.11) to higher genus. Since the single b at genus one generalizes to a tensor bI at
+higher genus, it might seem natural to generalize dz − dz̄ to the closed differential ω I − ω̄ I .
+Actually, this choice does not lead to a flat connection, but promoting the ω I part of this
+construction to HI in (3.27) does the job. The result is the following theorem.
+
+Theorem 3.1 The connection J (x, p), on a Riemann surface Σ of arbitrary genus h with
+a marked point p ∈ Σ and valued in the Lie algebra L freely generated by the 2h elements
+aI , bI with I = 1, · · · , h, is given in terms of ω̄ I (x) and the generating functions HI (x; B) =
+Y IJ HJ (x; B) and ΨI (x, p; B) as follows,
+
+               J (x, p) = −π dx̄ ω̄ I (x) bI + π dx HI (x; B) bI + dx ΨI (x, p; B) aI         (3.32)
+
+where BI = adbI = [bI , ·]. The connection J (x, p) is flat and reproduces the Brown-Levin
+connection (2.11) at genus one.
+    To prove the theorem we begin by using the differential equations (3.28) and (3.30)
+satisfied by the generating functions HI (x; B) and ΨI (x, p; B), and readily establish the
+following results,
+                                      n
+               dx J (x, p) = πdx̄ ∧ dx δ(x, p)[bI , aI ] − π ω̄ I (x) BI HJ (x; B) bJ          (3.33)
+                                                                        o
+                                        −ω̄ I (x) BI ΨJ (x, p; B) aJ
+                                                                                              
+      J (x, p) ∧ J (x, p) = πdx̄ ∧ dx −π ω̄ I (x) BI HJ (x; B)bJ − ω̄ I (x) BI ΨJ (x, p; B) aJ
+
+The difference of the two lines shows that the connection is flat away from x = p,
+
+                   dx J (x, p) − J (x, p) ∧ J (x, p) = πdx̄ ∧ dx δ(x, p) [bI , aI ]           (3.34)
+
+                                                  19
+To prove that the connection J (x, p) reduces to the non-holomorphic single-valued Brown-
+Levin connection, we specialize to the case of genus one and relabel a1 = a and b1 = b. Since
+the tensor ΦI J of (3.19) and its higher-rank versions of (3.21) all vanish identically at genus
+one, the generating function H1 (x; B) reduces to,
+                                                                   ω1 (x)
+                                   H1 (x; B)         = ω 1 (x) =                             (3.35)
+                                               h=1                 Im τ
+so that the first two terms in (3.32) combine to π(dx − dx̄)b/Im τ thereby reproducing the
+contributions ∼ (Im τ )−1 to the non-meromorphic Brown-Levin connection of (2.11). The
+third term in (3.32) reproduces the Kronecker-Eisenstein series by (3.35) and (3.22),
+
+              Ψ1 (x, p; B)         = ω1 (x) − H(x, p; B)B1           = adb Ω(x−p, adb |τ )   (3.36)
+                             h=1                               h=1
+
+concluding the proof of Theorem 3.1.
+   The expression (3.32) for the flat connection is modular invariant for suitable Sp(2h, Z)
+transformation rules of the generators aI , bI to be stated in the following theorem:
+
+Theorem 3.2 Under a modular transformation M ∈ Sp(2h, Z), parametrized in (3.5),
+which acts on ω̄ I as given in (3.25), on BI , HI , and ΨI as given in (3.31), and on the
+Lie algebra generators aI and bI by,
+
+                                    aI → ãI = QI J aJ + 2πi C IJ bJ
+                                    bI → b̃I = bJ RJ I                                       (3.37)
+
+the connection J (x, p) is invariant. In the basis (âI , bI ) of generators of the Lie algebra L,
+
+                                          âI = aI + πY IJ bJ                                (3.38)
+
+subject to
+                                                ˜I = QI J âJ
+                                          âI → â                                           (3.39)
+
+the connection J (x, p) takes on a simplified form,
+
+                         J (x, p) = −π dx̄ ω̄ I (x) bI + dx ΨI (x, p; B) âI                 (3.40)
+
+and is manifestly invariant under Sp(2h, Z).
+    Proving modular invariance of J (x, p) is most transparently achieved by first carrying
+out the change of basis of (3.38) to the equivalent form (3.40) which immediately follows
+from the observation that Y IJ BI bJ = 0 so that ΨI (x, p; B)Y IJ bJ = HI (x; B)bI . The connec-
+tion J (x, p), presented in the form of (3.40), is term-by-term invariant under the modular
+
+                                                      20
+transformations of ω̄ I , BI , ΨI , and aI , bI stated in the theorem: in both of dx̄ ω̄ I (x) bI and
+dx ΨI (x, p; B) âI , the respective ingredients transform with opposite automorphy factors as
+can be verified from (3.15), (3.31), (3.37) and (3.39). The modular invariance of dx̄ ω̄ I (x) bI
+and dx ΨI (x, p; B) âI established in this way completes the proof of Theorem 3.2.
+   Finally, the connection J may be expanded in words with r+1 letters in the basis (aI , bI ),
+                                                                        ∞
+                                                                        X
+                          I                     I
+     J (x, p) = −π dx̄ ω̄ (x)bI + π dx ω (x)bI + π dx                         ∂x ΦI1 ···Ir J (x) Y JK BI1 · · · BIr bK
+                                                                        r=1
+                        ∞ 
+                        X                                                            
+                 + dx            I1 ···Ir
+                              ∂x Φ          J (x) − ∂x G
+                                                           I1 ···Ir−1
+                                                                        (x, p)δJIr       BI1 · · · BIr aJ            (3.41)
+                        r=1
+
+
+or, equivalently, in the basis (âI , bI ),
+                                                  
+             J (x, p) = π dx ω I (x) − dx̄ ω̄ I (x) bI
+                               ∞ 
+                               X                                                    
+                         +dx         ∂x ΦI1 ···Ir J (x) − ∂x G I1 ···Ir−1 (x, p)δJIr BI1 · · · BIr âJ               (3.42)
+                               r=1
+
+where we abbreviate BI = adbI . These expressions will be useful in the subsequent section
+to illustrate the expansion of higher-genus polylogarithms, and the simplified representation
+in (3.42) may be easily obtained from the change of basis using (3.38).
+    The higher-genus polylogarithms obtained by expanding the path-ordered exponential
+(2.2) of the connection J (x, p) in words of the generators (aI , bI ) or (âI , bI ) will automatically
+be homotopy invariant. Examples to low letter count will be given in the next section.
+
+
+
+
+                                                       21
+4     Higher-genus polylogarithms
+In this section, the flat connection J assembled in the preceding section will be used to
+construct higher-genus polylogarithms. The flat connection J (x, p) of (3.32) is well-defined
+and single-valued on two copies of Σ but this property came at the cost of giving up mero-
+morphicity in both of x and p. We shall outline a method to restore meromorphicity in
+the first variable x for certain combinations of integration kernels at the cost of giving up
+single-valuedness. Moreover, non-trivial evidence will be provided that the higher-genus
+polylogarithms in this section are closed under taking primitives. We close this section with
+a proposal for higher-genus analogues of elliptic associators.
+
+4.1    Construction of higher-genus polylogarithms
+The flat connection J (x, p) of Theorem 3.1 integrates to a homotopy-invariant path-ordered
+exponential Γ(x, y; p),
+                                                    Z x
+                                 Γ(x, y; p) = P exp     J (t, p)                       (4.1)
+                                                      y
+
+Expanding the path-ordered exponential in terms of the generators of the Lie algebra L
+produces homotopy-invariant iterated integrals, as explained in the preamble of section 2,
+                                            X
+                           Γ(x, y; p) = 1 +     w Γ(w; x, y; p)                        (4.2)
+                                                 w
+
+Here, the sum over w is over all words, containing at least one letter, made out of the
+alphabet of the Lie algebra generators introduced in section 3.5. In this way, the path-
+ordered exponential is the generating function for the iterated integrals Γ(w; x, y; p) and,
+for each word w, defines a polylogarithm Γ(w; x, y; p). Their iterated-integral definition via
+(4.1) and (4.2) implies the following shuffle property,
+                                                        X
+                    Γ(w1 ; x, y; p) · Γ(w2 ; x, y; p) =   Γ(w; x, y; p)                  (4.3)
+                                                          
+                                                     w∈w1 w2
+
+which holds in identical form for the polylogarithms (2.6) and (2.22) at genus zero and genus
+                                                                      
+one. Following the standard shuffle product, the sum over w ∈ w1 w2 includes all ordered
+sets obtained from w1 ∪ w2 that preserve the order within the individual words w1 , w2 .
+    In Theorem 3.1 and Theorem 3.2, the modular invariant connection J (x, p) was expressed
+in terms of two different bases for the same Lie algebra L in which J (x, p) takes its values. In
+the first basis (aI , bI ) the relation with the Brown-Levin connection at genus one is manifest,
+while the second basis (âI , bI ) leads to polylogarithms Γ(w; x, y; p) that transform as modular
+
+                                               22
+tensors by the Sp(2h, Z)-invariance of J (x, p) established in Theorem 3.2. The expansion in
+either basis will be of interest, and both will be pursued in the sequel.
+    In order to avoid cluttering, we compactly label the polylogarithms in the expansion of
+(4.2) through an ordered sequence of upper and lower indices encoding the accompanying
+words in either the basis (aI , bI ) or the basis (âI , bI ),
+
+                             Γ...I... ...J... (x, y; p) = Γ(. . . aI . . . bJ . . . ; x, y; p)
+                             Γ̂...I... ...J... (x, y; p) = Γ(. . . âI . . . bJ . . . ; x, y; p)              (4.4)
+
+For example, for words with at most two letters in the basis (aI , bI ), the expansion (4.2)
+takes the following form,
+
+            Γ(x, y; p) = 1 + aI ΓI (x, y; p) + bI ΓI (x, y; p) + aI aJ ΓIJ (x, y; p)
+                           + bI bJ ΓIJ (x, y; p) + aI bJ ΓI J (x, y; p) + bI aJ ΓI J (x, y; p) + · · ·        (4.5)
+
+while in the basis (âI , bI ) it is given by,
+
+            Γ(x, y; p) = 1 + âI Γ̂I (x, y; p) + bI Γ̂I (x, y; p) + âI âJ Γ̂IJ (x, y; p)
+                           + bI bJ Γ̂IJ (x, y; p) + âI bJ Γ̂I J (x, y; p) + bI âJ Γ̂I J (x, y; p) + · · ·   (4.6)
+
+Identifying term by term in both expansions gives the relations ΓI = Γ̂I and ΓIJ = Γ̂IJ to
+be established in all generality in (4.10), as well as the following relations to this order,
+
+                      Γ̂I = ΓI − πY IJ ΓJ
+                     Γ̂I J = ΓI J − πY IK ΓKJ
+                     Γ̂I J = ΓI J − π ΓIK Y KJ
+                     Γ̂IJ = ΓIJ − πY IK ΓK J − π ΓI K Y KJ + π 2 Y IK ΓKL Y LJ                                (4.7)
+
+We have suppressed the common arguments (x, y; p) of the polylogarithms in order to avoid
+unnecessary clutter.
+
+4.1.1    Tangential end-point regularization and specialization to genus one
+
+Apart from their dependence on the endpoints x, y of the integration path in (4.1) and on
+the moduli of Σ, the higher-genus polylogarithms defined in (4.1) also depend on the marked
+point p that enters the connection J (t, p) in (3.32). Setting p = x or p = y leads to endpoint
+                                                             1
+divergences caused by the simple pole of ∂t G(t, p) = − t−p     + O(1) which we shall shuffle
+regularize using the procedure introduced in [27]. This may be done by shifting one or the
+
+                                                            23
+other of the endpoints in the exponent of (4.1) by |ε| ≪ 1 along a prescribed tangent vector
+[67, 68, 63, 2],
+                  Z x−ε                              Z x
+                         J (t, p) if p = x   or          J (t, p) if p = y             (4.8)
+                         y                                               y+ε
+
+expanding the regularized integral in powers of ε, and defining the value of the integral as
+the term of order zero in the expansion, thus omitting divergent terms such as ln(2πiε).
+    At genus one, the regularization procedure of [27] leads to the elliptic polylogarithms
+(2.22) of Brown-Levin which are obtained by setting y = p = 0 in (4.1) or (4.4),
+
+                               Γ(. . . a . . . b . . . ; x) = Γ...1... ...1... (x, 0; 0) h=1                    (4.9)
+
+4.2      The special case of polylogarithms for words without bI
+The polylogarithms associated with words w that do not involve any of the letters bI are the
+same in the bases (aI , bI ) and (âI , bI ) and are given by the following simple formula,
+                                                          Z x            Z t1                  Z tr−1
+       ΓI1 I2 ···Ir (x, y; p) = Γ̂I1 I2 ···Ir (x, y; p) =     ω I1 (t1 )      ω I2 (t2 ) · · ·        ω Ir (tr ) (4.10)
+                                                             y                 y               y
+
+which makes clear that these polylogarithms are actually independent of the marked point
+p and confirms explicitly that they are modular tensors of rank r. For the case r = 1,
+we recover the basic Abelian integrals. For r = 2, a particular combination of the A-cycle
+monodromy in x gives the Riemann vector [50] with base point z0 ,
+                                  1 1         XI              Z z
+                      ∆I (z0 ) = − − ΩII +            ω J (z)     ωI                (4.11)
+                                  2 2         J6=I AJ          z0
+
+
+For r ≥ 2, the simple subclass (4.10) of polylogarithms generalizes Abelian integrals to
+modular tensors of rank r. They obey the differential equations,
+
+                                ∂x ΓI1 I2 ···Ir (x, y; p) = ωI1 (x)ΓI2 ···Ir (x, y; p)                         (4.12)
+
+and the simplest instance of the shuffle property (4.3) reads,
+
+                          ΓI (x, y; p) · ΓJ (x, y; p) = ΓIJ (x, y; p) + ΓJI (x, y; p)                          (4.13)
+
+Specializing to genus h = 1 they may be evaluated explicitly,
+                                                                1
+                                     Γ11 · · · 1 (x, y; z) h=1 = (x−y)r                                        (4.14)
+                                      | {z }                    r!
+                                           r
+
+
+
+                                                            24
+4.3        Low letter count polylogarithms in the basis (aI , bI )
+Using the expansion (4.5) of the path-ordered exponential Γ(x, y; p) in powers of the con-
+nection combined with the expansion of the flat connection J (x, p) in (3.41),
+                                                  
+       J (x, p) = ω I a + π(ω − ω̄ )bI + dx ∂x ΦI J (x)[bI , aJ ] − ∂x G(x, p)[bI , aI ]
+                         I        I     I
+
+                                                                                    
+                        + π∂x ΦI J (x)Y JK [bI , bK ] + ∂x ΦIJ K (x) bI , [bJ , aK ]
+                                                                                                      
+                              I
+                                                 J
+                                                             IJ        KL
+                                                                                            
+                        − ∂x G (x, p) bI , [bJ , a ] + π∂x Φ K (x)Y           bI , [bJ , bL ] + · · ·     (4.15)
+
+
+in terms of words in the alphabet aI , bI , we construct polylogarithms for words that contain
+the letters bI as well as aI . For the single-letter word bI , we obtain,
+                                                           Z x
+                                            I
+                                         Γ (x, y; p) = π          (ω I − ω̄ I )                           (4.16)
+                                                              y
+
+
+which is independent of p but, as expected in the basis (aI , bI ), not a modular tensor. For
+double-letter words with at least one letter bI , we obtain,
+
+                  Z x                                                               Z            
+  IJ                            I       KJ         J      KI
+                                                                    I          I
+                                                                                     t J      J
+Γ (x, y; p) = π        dt ∂t Φ K (t)Y       − ∂t Φ K (t)Y      + π ω (t) − ω̄ (t)       (ω − ω̄ )
+                   y                                                                  y
+                Z x                                                      Z        
+ J                          J                      J       J        J
+                                                                          t
+Γ I (x, y; p) =      dt ∂t Φ I (t) − dt ∂t G(t, p)δI + π ω (t) − ω̄ (t)         ωI
+                 y                                                          y
+                Z x                                            Z t               
+   J                          J                      J                 J      J
+ΓI (x, y; p) =       −dt ∂t Φ I (t) + dt ∂t G(t, p)δI + πω I (t) (ω − ω̄ )                   (4.17)
+                     y                                                        y
+
+
+The entry ΓIJ and the off-diagonal components of ΓJ I and ΓI J are independent on p.
+
+
+4.3.1       Simplified representations
+
+The polylogarithms in (4.16) and (4.17) with upper indices admit simplified representations
+in terms of (4.10), their complex conjugates and contractions with Y IJ . For words with a
+single letter bI we have,
+
+                                                                               
+                               ΓI (x, y; p) = πY IJ ΓJ (x, y; p) − ΓJ (x, y; p)                           (4.18)
+
+                                                         25
+while for two-letter words that contain at least one bI , we have,
+                                   Z x                                                           
+  J                JK
+ΓI (x, y; p) = πY ΓIK (x, y; p) +      dt −∂t ΦJ I (t) + δIJ ∂t G(t, p) − πωI (t)Y JK ΓK (t, y; p)
+                                                y
+  I                  IK
+                                                                
+Γ J (x, y; p) = πY     ΓKJ (x, y; p) − ΓJ (x, y; p)ΓK (x, y; p)
+                  Z x                                                          
+                +     dt ∂t ΦI J (t) − δJI ∂t G(t, p) + πωJ (t)Y IK ΓK (t, y; p)
+                   y
+                                                                                      
+ IJ              2 IK JL
+Γ (x, y; p) = π Y Y           ΓKL (x, y; p) + ΓKL (x, y; p) − ΓK (x, y; p)ΓL (x, y; p)
+                    Z x 
+                +π      dt ∂t ΦI K (t)Y KJ − ∂t ΦJ K (t)Y KI
+                     y
+                                                                            
+                     + πω J (t)Y IK ΓK (t, y; p) − πω I (t)Y JK ΓK (t, y; p)                              (4.19)
+
+These expressions already illustrate the general fact that the indices on these polylogarithms
+cannot be simply raised or lowered by contraction with YIJ or its inverse. Indeed, ΓI (x, y; p)
+in (4.18) is not obtained by contracting ΓJ (x, y; p) with Y IJ .
+    Homotopy-invariance of the higher-genus polylogarithms in (4.18) and (4.19) can be seen
+directly from the fact that the integrands with respect to t entering ΓI J (x, y; p), ΓI J (x, y; p)
+and ΓIJ (x, y; p) are meromorphic in t. The vanishing of the respective ∂t̄ -derivatives can
+be checked via (3.7), (3.23) and (4.12). The shuffle relations ΓI · ΓJ = ΓIJ + ΓJI and
+ΓI · ΓJ = ΓI J + ΓJ I in (4.3) are easily verified from the expressions in (4.18) and (4.19).
+
+
+4.4     Low letter count polylogarithms in the basis (âI , bI )
+The polylogarithms Γ̂(x, y; p) in the basis (âI , bI ) defined by the expansion (4.6) are modular
+tensors by the Sp(2h, Z) invariance of the connection J (x, p) established in Theorem 3.2.
+For words involving only âI letters and no bI letters, the expressions were already given in
+(4.10). For the general case, it will be convenient to introduce the following expansion of the
+generating function ΨI (x, p; B),
+                                                           ∞
+                                                           X
+                           ΨJ (x, p; B) = ωJ (x) +                BI1 · · · BIr f I1 ···Ir J (x, p)
+                                                            r=1
+                          f I1 ···Ir J (x, p) = ∂x ΦI1 ···Ir J (x) − ∂x G I1 ···Ir−1 (x, p)δJIr           (4.20)
+
+Expanding the connection J (x, p) accordingly,
+                                                                                                          
+  J (x, p) = −π ω̄ I (x)bI + ω I (x)âI + f J I (x, p)[bJ , âI ] + f JK I (x, p)[bJ , [bK , âI ]] + · · · (4.21)
+
+
+                                                            26
+we compute the polylogarithms for a one- and two-letter words, starting with the coefficient
+of the letter bI ,
+                                       Z x
+                       I
+                     Γ̂ (x, y; p) = −π     ω̄ I = −πY IK ΓK (x, y; p)                (4.22)
+                                                        y
+
+This example illustrates that, also in the (âI , bI ) basis, indices of polylogarithms Γ̂ cannot
+be raised or lowered via Y IJ or YIJ . For two-letter words that contain at least one letter bI ,
+the simplest examples (4.19) translate into,
+                         Z x          Z t1
+      IJ               2       I
+    Γ̂ (x, y; p) = π         ω̄ (t1 )      ω̄ J = π 2 Y IK Y JL ΓKL (x, y; p)
+                           y           y
+                        Z x                             Z t 
+        J                          J
+    Γ̂I (x, y; p) = −        dt f I (t, p) + π ωI (t)        ω̄ J
+                          y                               y
+                      Z x                             Z t 
+    Γ̂I J (x, y; p) =     dt f I J (t, p) + π ωJ (t)      ω̄ I − πY IK ΓK (x, y; p) ΓJ (x, y; p) (4.23)
+                      y                                         y
+
+under the conversion (4.7) between the (a , bI ) and (âI , bI ) basis. These examples line up
+                                                            I
+
+with the general transformation law of higher-genus polylogarithms Γ̂ in the expansion (4.6)
+                                                                 ′
+as modular tensors with holomorphic automorphy factors RI I and QJ J ′ in (3.13),
+                   ˜
+                   Γ̂···I··· ···J···(x, y; p) = · · · RI I · · · QJ J ′ · · · Γ̂···I ′ ··· ···J ··· (x, y; p)
+                                                        ′                                      ′
+                                                                                                                (4.24)
+
+4.4.1    Genus-one illustration of the modular properties
+We shall now illustrate how modularity is realized in the last two polylogarithms in equation
+(4.23) specialized to genus one. Upon specializing the expansion (4.6) and transformation law
+(4.24) to genus one, any elliptic polylogarithm Γ̂...I......J... (x, y; p)|h=1 with m uppercase indices
+and n lowercase indices transforms as a modular form of SL(2, Z) with weight (m−n, 0). In
+particular, the genus-one incarnation of the second example in (4.23),
+                                                   π 1                                       
+  Γ̂I J (x, y; p) h=1 = Γ̃ 1p ; y|τ − Γ̃ p1 ; x|τ +      2
+                                                           (y−p)2 − 21 (x−p)2 + (ȳ−p̄)(x−y) (4.25)
+                                                    Im τ
+is modular invariant by this counting. Indeed, SL(2, Z)-invariance of the term ∼ (ȳ−p̄)(x−y)
+                                                                                          Im τ
+                                                                             2   (x−p)2
+is manifest whereas modular invariance of the leftover expression ∼ (y−p)
+                                                                        2Im τ
+                                                                               −  2Im τ
+                                                                                        and
+                                           
+                   Γ̃ 1p ; y|τ − Γ̃ 1p ; x|τ = ln ϑ(y−p|τ ) − ln ϑ(x−p|τ )                 (4.26)
+relies on cancellations between the respective SL(2, Z)-transformations obtained from (2.19).
+    For the endpoint divergences of higher-genus polylogarithms Γ̂···I··· ···J··· (x, y; p) at p = x or
+p = y, the regularization prescription (4.8) necessitates the specification of a tangent vector.
+It remains to be investigated which choices of tangent vectors preserve the tensorial modular
+transformation of Γ̂···I··· ···J··· (x, y; p) at p ∈ {x, y}.
+
+                                                                27
+4.5    Meromorphic variants
+
+The first example of the higher-genus polylogarithms in (4.19) can be written as,
+
+
+    ΓI J (x, y; p) = Γ(aI bJ ; x, y; p)                                                          (4.27)
+                     Z x                                                                         
+                   =    dt −∂t ΦJ I (t) + δIJ ∂t G(t, p) + πωI (t)Y JK ΓK (t, y; p) − ΓK (t, y; p)
+                     y
+
+
+Upon specializing to genus h = 1 and setting p = y = 0, this reproduces the Brown-Levin
+                                          
+polylogarithm Γ(ab; p|τ ) = −Γ̃ 10 ; p|τ in (2.26), namely the integral over the meromorphic
+kernel g (1) (t|τ ) in (2.25). Accordingly, one may view the integrand with respect to t in the
+second line of (4.27) as a higher-genus uplift of the Kronecker-Eisenstein kernel g (1) (t|τ ),
+
+                                                                                       Z t
+                 J                      J            J                         JK
+                g I (t, y; p) = ∂t Φ        I (t) − δI ∂t G(t, p) − 2πiωI (t)Y    Im         ωK       (4.28)
+                                                                                         y
+
+
+
+Indeed, the Laplace equations (3.7) and (3.23) of G(t, p) and ΦJ I (t) readily imply meromor-
+phicity in t,
+
+
+                                            ∂t̄ g J I (t, y; p) = πδIJ δ(t, p)                        (4.29)
+
+
+verifying homotopy invariance of (4.27). However, (4.28) is not meromorphic in the end-
+point y of the integration path or the second argument p of the flat connection. At genus
+h = 1, setting y → p readily reduces g J I (t, y; p) to the kernel g (1) (t−y|τ ) meromorphic in
+both t and y. Starting from genus h ≥ 2, by contrast, (4.28) at y = p does not yield a
+meromorphic function of two points t, y on Σ since
+
+                                                                                                
+                 J
+            ∂ȳ g I (t, y; p) y=p       = −πδIJ δ(t, y) + π         J         K              J
+                                                                   δI ωK (t)ω̄ (y) − ωI (t)ω̄ (y)     (4.30)
+
+                                                                Rt                    Rt
+Corrections of g J I (t, y; p) y=p by abelian integrals ωI (t)Im y ω J or δIJ ωK (t)Im y ω K do not
+suffice to attain simultaneous meromorphicity in t and y. Still, one can add combinations of
+                               Ry                     Ry
+abelian integrals ωI (t)Im p ω J and δIJ ωK (t)Im p ω K to render g J I (t, y; p) meromorphic in
+both t and y at the cost of a separate dependence on a third marked point p.
+                                                                                                  
+    One can similarly take the Brown-Levin polylogarithms Γ(ab · · · b; p|τ ) = (−1)n Γ̃ n0 ; p|τ
+in (2.26) with n ≥ 2 letters b as a starting point to motivate higher-genus analogues of the
+
+                                                            28
+meromorphic kernels g (n≥2) in (2.23), e.g.
+
+      ΓI JK (x, y; p) = Γ(aI bJ bK ; x, y; p)                                                        (4.31)
+            Z x 
+                                                                                                   
+          =      dt ∂t ΦKJ I (t) − δIJ ∂t G K (t, p) − π∂t ΦJ I (t)Y KL ΓL (t, y; p) − ΓL (t, y; p)
+              y
+                                                                   
+                  + πδIJ ∂t G(t, z)Y KL ΓL (t, y; p) − ΓL (t, y; p)
+                                                                                                
+                  + π 2 ωI (t)Y JL Y KM ΓLM (t, y; p) − ΓL (t, y; z)ΓM (t, y; p) + ΓLM (t, y; p)
+                             Z t                                                                
+                                    ′    J    ′   LK     J ′      KL
+                                                                                              
+                  + πωI (t)      dt ∂t′ Φ L (t )Y                         ′
+                                                     − πω (t )Y ΓL (t , y; p) − (J ↔ K)
+                              y
+
+Again, the integrand on the right-hand side is meromorphic in t and may be viewed as a
+higher-genus generalization g KJ I of g (2) . However, simultaneous meromorphicity in t and y
+cannot be attained without admitting dependences on additional marked points z. Hence,
+our construction does not suggest any straightforward generalizations of the meromorphic
+Kronecker-Eisenstein coefficients g (n) (t−y|τ ) to higher genus which meromorphically depend
+on two points t, y on the surface without any reference to additional points. Instead, the
+tensors ∂t ΦI1 ...Ir J (t) and ∂t G I1 ...Is (t, y) of section 3.3 naturally generalize the doubly-periodic
+Kronecker-Eisenstein kernels f (n) (t−y|τ ) to arbitrary genus.
+   The above examples motivate the study of gauge transformations U(x, p), whose action
+on the connection is given by,
+                                                              
+                J˜(x, p) = U(x, p)J (x, p)U(x, p)−1 + dU(x, p) U(x, p)−1         (4.32)
+
+and which induce the following transformation on the path-ordered exponential,
+
+                              Γ̃(x, y; p) = U(x, p)Γ(x, y; p)U(y, p)−1                              (4.33)
+
+such that Γ̃(x, y; p) is meromorphic in x and y to all orders in aI and bJ . Based on the gen-
+eralized abelian integrals (4.10) and their complex conjugates, it is not difficult to construct
+a gauge transformation that implements meromorphicity in x and yields generating series of
+the elliptic polylogarithms (2.24) upon specialization to genus one. Refined choices of U(x, p)
+that additionally preserve the vanishing of A-cycle monodromies of J (x, p) in x and make
+contact with the meromorphic connections in the work of Enriquez [44] and Enriquez-Zerbini
+[45, 46] are currently under investigation.
+
+4.6     Closure under taking primitives
+The closure of elliptic polylogarithms under taking primitives crucially hinges on translation
+invariance at genus one and the Fay identity among Kronecker-Eisenstein kernels [22, 27, 26].
+
+                                                    29
+We shall now present evidence that a similar closure holds for products of the higher-genus
+polylogarithms in (4.1) with the integration kernels in the connection (3.32). As we will
+see below, the two key mechanisms for closure under taking primitives are the interchange
+lemma (3.20) and Fay identities at higher genus.
+
+4.6.1     Implications of the interchange lemma
+
+Given that the path-ordered exponential in (4.1) only involves integrals over the first ar-
+gument t of the connection J (t, p) in the integrand, the primitive of ∂t G(t, p)ωI (p) with
+respect to p is not obvious from the definition of higher-genus polylogarithms. However,
+the interchange lemma (3.20) yields an alternative representation of ∂t G(t, p)ωI (p) where its
+primitive with respect to p can be readily found in terms of higher-genus polylogarithms via
+(4.12) and (4.18),
+
+                 ∂t G(t, p)ωJ (p) = ∂p ΦI J (p)ωI (t) + ∂t ΦI J (t)ωI (p) − ∂p G(p, t)ωJ (t)                                     (4.34)
+                                       
+                                  = ∂p −ΓJ I (p, t; t)ωI (t) + ΓI (p, t; t)∂t ΦI J (t)
+                                                                                          
+                                    + πωI (t)Y IK ΓJK (p, t; t) − ΓJ (p, t; t)ΓK (p, t; t)
+
+Similarly, convolutions of the interchange lemma (3.20) with Arakelov Green functions allow
+to rewrite higher-rank expressions ∂t G I1 I2 ···Is (t, p)ωJ (p) as (see section 5 of [69] for a proof),
+
+        ∂t G J1 J2 ···Js (t, p)ωI (p) = (−1)s−1 ∂p G Js ···J2 J1 (p, t)ωI (t)                                                    (4.35)
+                                           s
+                                           X
+                                        +      (−1)i ∂t ΦJ1 J2 ···Js−i K I (t)∂p ΦJs Js−1 ...Js−i+1 K (p)
+                                            i=1
+                                                                                                                           
+                                                    J1 J2 ···Js K                        s                 t↔p
+                                            + ∂t Φ                  I (t)ωK (p) + (−1)           J1 J2 ···Js ↔Js ···J2 J1
+
+
+where the primitives of the right-hand side with respect to p are accessible from the higher-
+genus polylogarithms in (4.1) and their complex conjugates. The instruction to add (−1)s
+times the image under the simultaneous relabelling t ↔ p and J1 J2 · · · Js ↔ Js · · · J2 J1
+applies to both the second and the third line of (4.35).
+
+4.6.2     Towards higher-genus Fay identities
+
+In order to find the primitive of
+
+                       ωI (1)∂2 G(2, 1)∂3 G(3, 1) = ωI (z1 )∂z2 G(z2 , z1 )∂z3 G(z3 , z1 )                                       (4.36)
+
+                                                            30
+with respect to z1 , the interchange lemmas (3.20) and (4.35) need to be augmented by
+higher-genus generalizations of the genus-one Fay identity,
+
+                    Ω(z1 , α1 |τ )Ω(z2 , α2 |τ ) = Ω(z1 , α1 +α2 |τ )Ω(z2 −z1 , α2 |τ )               (4.37)
+                                                    + Ω(z2 , α1 +α2 |τ )Ω(z1 −z2 , α1 |τ )
+
+of the Kronecker-Eisenstein series (2.9). The need for identities beyond the scope of inter-
+change lemmas can be seen from the appearance of z1 in two factors ∂2 G(2, 1) and ∂3 G(3, 1) of
+(4.36) which persists after trading ∂i G(i, 1)ωI (1) for ∂1 G(1, i)ωI (i) and Φ-tensors via (3.20).
+As a first example of higher-genus Fay identities, the expression (4.36) can be rewritten as,
+                                 n
+     ωI (1)∂2 G(2, 1)∂3 G(3, 1) = −∂1 G(1, 3)∂2 G(2, 3)ωI (3) − ωK (3)∂1 G K (1, 2)ωI (2)    (4.38)
+                                          + ωK (3)∂1 ΦKLI (1)ωL (2) + ωK (3)∂1 ΦKL (1)∂2 ΦLI (2)
+                                                      o
+                                          + (z2 ↔ z3 ) + ωK (1)∂2 ∂3 VIK (2, 3)
+
+such that each term on the right-hand side features only one z1 -dependent factor and can be
+readily integrated over z1 via higher-genus polylogarithms (4.1). In the last line of (4.38),
+we encounter the convolution,
+                            Z
+                  K
+          ∂x ∂y VI (x, y) =   d2 z ∂x G(x, z)ω̄ K (z)ωI (z)∂y G(y, z)                  (4.39)
+                                Σ
+                           = ∂y ΦK L (y)∂x ΦL I (x) + ∂y ΦKL I (y)ωL (x) − ∂y G K (y, x)ωI (x)
+
+which has been reduced to the integration kernels of (3.32) in passing to the second line. The
+derivation of (4.38) is based on the fact that the first three lines of the right-hand side have the
+same anti-holomorphic derivative with respect to z1 , z2 , z3 as the left-hand side. Moreover,
+both sides of (4.38) vanish upon multiplication by ω̄ P (1)ω̄ Q(2)ω̄ R (3) and integrating all of
+z1 , z2 , z3 over the surface which excludes the addition of holomorphic terms.
+   At genus one, (4.38) reduces to the Fay identity,
+
+                f (1) (z1 −z2 |τ )f (1) (z2 −z3 |τ ) + f (2) (z1 −z3 |τ ) + cycl(z1 , z2 , z3 ) = 0   (4.40)
+
+at the α10 α20 order of (4.37) through the identifications (3.22) as well as
+
+                                    ∂x ∂y VIK (x, y) h=1 = f (2) (x−y|τ )                             (4.41)
+
+Similar Fay identities should reduce higher-rank analogues ωI (1)∂2 G I1 ...Is (2, 1)∂3 G J1 ...Js′ (3, 1)
+of (4.36) to convolutions of Arakelov Green functions whose primitives with respect to z1
+are determined by the differential equations of higher-genus polylogarithms. This is ex-
+pected since products of convolutions of Arakelov Green functions span a rich function
+
+                                                       31
+space which offers multiple distinct expressions with the same anti-holomorphic derivatives
+as ωI (1)∂2 G I1 ...Is (2, 1)∂3 G J1 ...Js′ (3, 1). By iteratively simplifying these alternative solutions
+to the differential equations with respect to z̄i via interchange lemmas and lower-rank Fay
+identities, the z1 -dependence can be eventually arranged to occur through a single factor of
+either ωI (1), ∂1 ΦI1 ···Ir J (1) or ∂1 G I1 ···Is (1, i) in each term.
+   The detailed form of higher-rank Fay identities at arbitrary genus and their proof can be
+found in [69].
+
+
+4.7      Higher-genus associators
+The Drinfeld associator for genus zero evaluates monodromy properties of solutions to the
+Knizhnik-Zamolodchikov equation with a connection given in (2.5) [70, 71]. The associator
+was generalized to genus one in [72, 73, 74] using the meromorphic connection JE (z|τ ), and
+the associated Knizhnik-Zamolodchikov-Bernard equation,
+
+                                                                         ϑ1 (z + adb |τ )adb
+          ∂z F (z|τ ) = JE (z|τ )F (z|τ )             JE (z|τ ) = −dz                          (a)   (4.42)
+                                                                         ϑ1 (z|τ )ϑ1 (adb |τ )
+
+Since the connection satisfies JE (z + 1|τ ) = JE (z|τ ) and JE (z + τ |τ ) = e−2πi adb JE (z|τ )
+the functions F (z|τ ), F (z + 1|τ ) and e2πib F (z + τ |τ ) satisfy the same differential equation
+in z. The solutions are normalized in [73] by their behavior as z → 0. As a result, their
+Wronskians are given as follows,7
+
+                                  ΦA (τ ) = F (z|τ )−1 F (z + 1|τ )
+                                  ΦB (τ ) = F (z|τ )−1 e2πib F (z + τ |τ )                           (4.43)
+
+are independent of z, as the notation ΦA (τ ) and ΦB (τ ) indeed suggests, and are referred
+to as the elliptic associators introduced in [73]. Equivalently, the solution F (z|τ ) may be
+expressed in terms of the path-ordered exponential of the connection JE in (4.42),
+                                              Z z          
+                              F (z|τ ) = P exp     JE (t|τ ) F (z0 |τ )                              (4.44)
+                                                    z0
+
+
+where t is the integration parameter and z0 is a reference point chosen such that F satisfies
+the normalization as z → 0 introduced in [73]. In terms of this formulation, we obtain the
+
+     7
+    The associators ΦA , ΦB and ΦAI , ΦBI in this section are not to be confused with the modular tensors
+Φ J (x) and ΦI1 ···Ir J (x) defined by (3.19) and (3.21).
+ I
+
+
+
+                                                    32
+following expressions for the elliptic associators,
+                                                 Z z+1          
+                                       −1
+                    ΦA (τ ) = F (z|τ )     P exp        JE (t|τ ) F (z|τ )
+                                                    z
+                                                      Z z+τ          
+                                       −1 2πib
+                    ΦB (τ ) = F (z|τ ) e         P exp       JE (t|τ ) F (z|τ )           (4.45)
+                                                          z
+
+Using the properties of the path-ordered exponential, it may be verified immediately that
+both expressions are independent of z. A parallel construction may be given in terms of
+the non-meromorphic but doubly periodic Brown-Levin connection JBL defined in (2.7), in
+which case the factor e2πib should be omitted. It is this non-meromorphic version that we
+shall propose to generalize to higher genus.
+    Based on the polylogarithms that we have constructed in (4.1), we are led to a natu-
+ral proposal for higher-genus associators, which generalize the elliptic associators reviewed
+above. They may be defined by evaluating the path-ordered exponential of (4.1) around
+the homology cycles of the Riemann surface. Those integrals, in turn, are generated by
+the path-ordered exponentials of (4.1) around the basis of homology cycles AI and BI , and
+defined in close analogy with the construction given in (4.45). We introduce a slight variant
+of the generating function for higher-genus polylogarithms defined in (4.1),
+                             Z x           
+          F (x; p|Ω) = P exp      J (t; p|Ω) F (x0 ; p|Ω) = Γ(x, x0 ; p|Ω)F (x0 ; p|Ω)  (4.46)
+                                 x0
+
+Here, we have exhibited the dependence on the moduli of the higher-genus Riemann surface
+Σ in terms of the period matrix Ω so that the presentation is as close as possible to the genus-
+one case (4.44), and retained the dependence on the point p explicitly. Since the connection
+J (t; p|Ω) is single-valued on Σ, the functions F (x; p|Ω), F (x + AI ; p|Ω) and F (x + BI ; p|Ω)
+satisfy the same differential equation dx F (x; p|Ω) = J (x; p|Ω)F (x; p|Ω). As a result, the
+following combinations are independent of x,
+                                                  Z x+AI           
+                                         −1
+                  ΦAI (p|Ω) = F (x; p|Ω)     P exp        J (t; p|Ω) F (x; p|Ω)
+                                                    x
+                                                  Z x+BI           
+                                         −1
+                  ΦBI (p|Ω) = F (x; p|Ω)     P exp        J (t; p|Ω) F (x; p|Ω)           (4.47)
+                                                      x
+
+A significant difference between the proposal for higher-genus associators made here and the
+elliptic associators of Enriquez is the dependence on the point p on Σ. Also, it remains to
+be investigated whether our proposal satisfies the general axioms enunciated for associators,
+or whether these axioms can be relaxed and generalized to the case of higher-genus poly-
+logarithms. Moreover, it would be interesting to relate our proposal to the operad-theory
+approach to higher-genus associators in [75]. We shall return to these open questions in
+future work, see section 7.
+
+                                                 33
+5     Flat connection in the multiple variable case
+In this section, we further generalize the construction of the flat connection and polyloga-
+rithms on higher-genus Riemann surfaces to an arbitrary number of marked points, thereby
+generalizing the multi-variable genus-one polylogarithms of Brown and Levin to higher gen-
+era. This generalized flat connection may be formulated entirely in terms of the modular
+tensors needed for the single-variable case, just as was the case for genus one.
+  The genus-one connection JBL in (2.7) may be generalized to depend on n additional
+marked points z1 , · · · , zn on the torus, and is then given as follows by [22],
+                                                 π
+               JBL (z1 , · · · , zn ; z|τ ) =        (dz − dz̄) b + dz adb Ω(z, adb |τ ) a
+                                                Im τ
+                                                     Xn
+                                                                                            
+                                                +dz      Ω(z − zi , adb |τ ) − Ω(z, adb |τ ) ci   (5.1)
+                                                      i=1
+
+We now have a Lie algebra Ln that is freely generated by the elements a, b of section 2.2 and
+additional elements c1 , · · · , cn associated with the marked points z1 , · · · , zn . The generaliza-
+tion to higher genus is given by the following theorem.
+
+Theorem 5.1 The connection Jmv is defined on a compact Riemann surface Σ of arbitrary
+genus h and with n + 1 marked points p, z1 , · · · , zn ∈ Σ as follows,
+
+                       Jmv (z1 , · · · , zn ; x, p) = J (x, p) + Jn (z1 , · · · , zn ; x, p)      (5.2)
+
+The connection J (x, p) for the single-variable case was constructed in Theorem 3.1 and is
+repeated here for convenience, while the multi-variable addition Jn is given by,
+
+                           J (x, p) = −πdx̄ ω̄ I (x) bI + πdx HI (x; B) bI + dx ΨI (x, p; B) aI
+                                            n 
+                                            X                              
+          Jn (z1 , · · · , zn ; x, p) = −dx       H(x, zi ; B) − H(x, p; B) ci                    (5.3)
+                                                i=1
+
+The connection Jmv takes values in a Lie algebra Lmv that is freely generated by the el-
+ements aI , bI with I = 1, · · · , h as seen in section 3.5 and additional elements ci with
+i = 1, · · · , n associated with the marked points zi . The connection Jmv is flat away from
+the points p, z1 , · · · , zn ,
+                                                           n    X  n              
+                                                        I
+                                                           X
+         dJmv − Jmv ∧ Jmv = πdx̄ ∧ dx δ(x, p) bI , a −          ci +     δ(x, zi ) ci   (5.4)
+                                                                          i=1          i=1
+
+and reduces to the multi-variable Brown-Levin connection (5.1) in the genus-one case. Alter-
+natively, one may express the connection J (x, p) in terms of the basis (âI , bI ) with tensorial
+
+                                                            34
+modular transformations. This leads to a modular invariant multi-variable connection (5.2)
+if the generators ci are taken to be Sp(2h, Z)-invariant.
+   To prove the theorem, we begin by showing that the connection Jmv in (5.2) and (5.3)
+reduces to JBL for h = 1. Indeed, the differences between the generating series H in Jn
+reduce to differences between the Kronecker-Eisenstein series inside the sum in (5.1). In
+particular, by expanding the components, it is easy to see from (3.22) that we have,
+
+               H(x, zi ; B) − H(x, p; B) h=1 = −Ω(x − zi , adb |τ ) + Ω(x, adb |τ )                  (5.5)
+
+upon setting p → 0 on the torus and identifying a1 = a as well as b1 = b.
+   Furthermore, to prove flatness of Jmv away from the points y, zi , we use the flatness
+condition of the connection J in Theorem 3.1 to obtain the following relation,
+
+          dJmv − Jmv ∧ Jmv = dJn − J ∧ Jn − Jn ∧ J + πdx̄ ∧ dx δ(x, p)[bI , aI ]                     (5.6)
+
+The remaining contributions may be worked out using (3.28) as follows,
+                      n 
+                      X                                   
+      dJn = −dx̄ ∧ dx    ∂x̄ H(x, zi ; B) − ∂x̄ H(x, p; B) ci
+                        i=1
+                        n 
+                        X                                                                  
+          = πdx̄ ∧ dx         δ(x, zi ) − δ(x, p) + ω̄ I (x)BI H(x, zi ; B) − H(x, p; B)        ci   (5.7)
+                        i=1
+
+Similarly, the wedge products may be worked out as follows,
+                                            X   n                            
+                                            I
+         J ∧ Jn + Jn ∧ J = πdx̄ ∧ dx ω̄ (x) bI ,     H(x, zi ; B) − H(x, p; B) ci                    (5.8)
+                                                      i=1
+
+Flatness of Jmv then follows in view of BI H(x, p; B)ci = [bI , H(x, p; B)ci ].
+    Finally, modular invariance of J (x, p), H(x, zi ; B)−H(x, p; B) and ci readily carries over
+to the multi-variable connection Jmv in (5.2) and (5.3).
+   Multi-variable generalizations of the higher-genus polylogarithms in section 4.1 may now
+be constructed from the flat connection Jmv following the methods presented in section 4.
+
+
+
+
+                                                 35
+6        Separating degeneration
+In this section, we shall study the behavior of the generating functions and flat connection at
+higher genus under separating degenerations of the genus-h Riemann surface Σ. To keep the
+discussion as simple and concrete as possible, we shall specialize here to the case of genus two
+degenerating to two genus-one surfaces connected by a long funnel. The generalization of
+this construction to the non-separating degeneration of higher-genus Riemann surfaces may
+be found in section 3 of [51], while the separating, non-separating, and tropical degenerations
+for genus two are presented in detail in [54].
+
+
+6.1      The construction for genus two
+A convenient parametrization of the neighborhood of the separating divisor is provided by
+the funnel construction given in Fay’s book [50], and specifically for genus two in [54]. Here
+we shall give a simplified presentation that will suffice for the problem at hand. For genus
+two, the starting point of the construction of Σ is provided by the compact genus-one surfaces
+Σ1 and Σ2 , to which we add punctures p1 and p2 , respectively. Next, we introduce a system
+of local complex coordinates (x1 , x̄1 ) and (x2 , x̄2 ) on each surface, and denote the coordinates
+of the punctures simply by p1 and p2 . We specify a disc D1 centered at p1 on Σ1 and a disc
+D2 centered at p2 on Σ2 , as shown in Figure 2.
+
+             B1                                                                      B2
+                                        D1                  D2
+                                  •                                 •
+                                  p1                               p2
+    Σ1                                                                                        Σ2
+                                 ∂D1                               ∂D2
+             A1                                                                      A2
+
+Figure 2: Funnel construction of a family of genus-two Riemann surfaces Σ near the separat-
+ing divisor in terms of genus-one surfaces Σ1 and Σ2 . The circles ∂D1 and ∂D2 are centered
+at the punctures p1 and p2 and bound the discs D1 and D2 , respectively. The surface Σ is
+constructed from the surfaces Σ1 \ D1 and Σ2 \ D2 by identifying ∂D1 and ∂D2 .
+
+
+    The genus-two surface Σ is obtained by identifying annuli surrounding ∂D1 and ∂D2 with
+respective local complex coordinates x1 and x2 via the relation (more complete discussions
+of the construction are given in [50, 54]),
+
+                                       (x1 − p1 )(x2 − p2 ) = vs                              (6.1)
+
+                                                   36
+Here vs is a complex parameter governing the separating degeneration (which is referred to
+as t in [50]) and is such that the separating degeneration corresponds to the limit vs → 0.
+Customarily, the curves ∂D1 , ∂D2 are defined to be circles in the local complex coordinates
+on the surfaces but here instead we shall use a more intrinsic definition,
+
+                         ∂D1 = {x1 ∈ Σ1 such that g(x1 − p1 |τ ) = t1 }
+                         ∂D2 = {x2 ∈ Σ2 such that g(x2 − p2 |σ) = t2 }                         (6.2)
+
+where the scalar Green function g(z|τ ) = g1 (z|τ ) on the torus was defined in (2.12). The
+moduli τ and σ of the genus-one surfaces Σ1 and Σ2 in (6.2) are given by the diagonal entries
+of the period matrix Ω of the genus-two Riemann surface Σ which will be parametrized by,
+                                                  
+                                             τ v
+                                      Ω=                                                (6.3)
+                                             v σ
+
+Note that, for sufficiently large values of t1 , t2 , each level-set ∂D1 , ∂D2 in (6.2) is connected.
+    In the separating degeneration limit, the diagonal entries τ, σ are kept fixed as v → 0.
+The relation between the off-diagonal entry v and vs is linear and will be derived shortly in
+(6.10) below. The relation between the parameters t1 , t2 , and vs is obtained as follows,
+
+                           t1 + t2 = − ln |2πvs η(τ )2 η(σ)2 |2 + O(vs2 )                      (6.4)
+
+Here, we have used the short-distance expansion of the scalar Green function on the torus,
+
+                               g(z|τ ) = − ln |2πz η(τ )2 |2 + O(z 2 )                         (6.5)
+
+to convert (6.1) into the expression above.
+    When performing integrals over the genus-two surface Σ, it will be convenient to decom-
+pose the integral into a sum of the contribution from Σ1 \ D1 plus the contribution from
+Σ2 \D2, where the curves ∂D1 , ∂D2 are defined such that t1 = t2 = t. Under these conditions,
+the Abelian differentials ω1 and ω2 remain uniformly bounded throughout Σ by a constant
+of order O(vs0 ), with corrections which are suppressed by powers of vs .
+    Assuming that we set t1 = t2 , we can evaluate the dependence on v of the radii of the
+coordinate discs D1 , D2 in the limit where v is small. Using the asymptotic expression (6.5)
+for the Green functions, we have for x1 ∈ D1 and x2 ∈ D2 ,
+                                                                          1
+                           |x1 − p1 | = |x2 − p2 | = |2πvs η(τ )2 η(σ)2 | 2                    (6.6)
+
+Thus, in the limit where vs → 0, the coordinate areas of the coordinate discs tend to zero
+linearly in vs and thus linearly in v, as we shall establish below.
+
+                                                  37
+6.2     Degeneration of Abelian differentials
+We choose canonical homology bases A1 , B1 ⊂ Σ1 \ {p1 } and A2 , B2 ⊂ Σ2 \ {p2 } as in
+Figure 2, and extend those to a canonical homology basis for Σ. The genus-one holomorphic
+Abelian differentials ω̂1 and ω̂2 on Σ1 and Σ2 , respectively, are normalized as follows,
+           I        I                        I                          I
+              ω̂1 =      ω̂2 = 1                   ω̂1 = τ                  ω̂2 = σ       (6.7)
+             A1         A2                              B1                           B2
+
+
+To construct holomorphic one-forms on the genus-two surface Σ with the period matrix Ω
+parametrized in (6.3) we extend ω̂1 to a differential ω1 on Σ and ω̂2 to a differential ω2 on
+Σ by using the identification (6.1). Choosing complex coordinates x1 , x2 on Σ1 and Σ2 such
+that ω̂1 = dx1 and ω̂2 = dx2 , we see that the differential dx1 extends to −vs /(x2 − p2 )2 dx2
+in Σ2 while the differential dx2 extends to −vs /(x1 − p1 )2 dx1 in Σ1 . Thus, the extensions
+are governed by meromorphic one-forms with a double pole. The meromorphic one-forms
+̟(x1 , y1 |τ ) and ̟(x2 , y2|σ) on Σ1 and Σ2 , respectively, are normalized to have vanishing
+A-periods and a double pole of unit strength at x1 = y1 and x2 = y2 . Their B-periods are
+given by the Riemann bilinear relations,
+             I                                         I
+                 ̟(x1 , y1 |τ ) = 2πiω̂1 (y1 )             ̟(x2 , y2 |σ) = 2πiω̂2 (y2 )   (6.8)
+             B1                                                   B2
+
+
+The holomorphic one-forms ω1 and ω2 on the genus-two surface Σ, canonically normalized
+on A1 and A2 -cycles, are then given as follows,8
+                             (
+                              ω̂1 (x1 )                                  x1 ∈ Σ1 \ D1
+                    ω1 (x) →
+                              v ̟(x2 , p2 |σ)/(2πiω̂2 (p2 ))             x2 ∈ Σ2 \ D2
+                             (
+                              v ̟(x1 , p1 |τ )/(2πiω̂1 (p1 ))             x1 ∈ Σ1 \ D1
+                    ω2 (x) →                                                                         (6.9)
+                              ω̂2 (x2 )                                   x2 ∈ Σ2 \ D2
+
+The parameter vs is related to the off-diagonal entry v of the genus-two period matrix Ω of
+(6.3) by,
+                                  I           I
+                             v=        ω2 =        ω1 = −2πi vs ω̂1 (p1 ) ω̂2(p2 )                  (6.10)
+                                  B1          B2
+
+
+The expressions in (6.9) are valid up to corrections of order O(v 2 ) which have been omitted.
+
+   8
+    Here and below, we shall use the notation x for a point on the genus-two surface Σ, and set it equal to
+x1 when the point lies in the genus-one component Σ1 \ D1 and to x2 when it lies in the component Σ2 \ D2 .
+
+                                                       38
+6.3    Degeneration of the Arakelov Green function
+The separating degeneration of the Arakelov Green function G on the funnel construction of
+genus-two surfaces Σ in Figure 2 is given by,
+           1
+          
+           − 2 ln |v̂| + g(x1 − y1 |τ ) − 21 g(x1 − p1 |τ ) − 21 g(y1 − p1 |τ )  x1 , y1 ∈ Σ1 \ D1
+          
+          − 1 ln |v̂| + g(x − y |σ) − 1 g(x − p |σ) − 1 g(y − p |σ)
+              2                2    2       2     2    2        2    2    2        x2 , y2 ∈ Σ2 \ D2
+G(x, y) →     1           1                   1
+           + ln |v̂| + 2 g(x1 − p1 |τ ) + 2 g(y2 − p2 |σ)            x1 ∈ Σ1 \ D1 , y2 ∈ Σ2 \ D2
+           12
+          
+          
+            + 2 ln |v̂| + 12 g(x2 − p2 |σ) + 21 g(y1 − p1 |τ )        x2 ∈ Σ2 \ D2 , y1 ∈ Σ1 \ D1
+                                                                                              (6.11)
+
+where v̂ is related to the entries v, τ, σ of the genus-two period matrix (6.3) by the Dedekind
+eta-function η,
+
+                                      v̂ = 2π v η(τ )2 η(σ)2                                 (6.12)
+
+The combinations that will enter the flat connection and the generating functions of genus-
+two polylogarithms are,
+                 (1)
+                
+                −f (x1 − y1 |τ ) + 21 f (1) (x1 − p1 |τ ) x1 , y1 ∈ Σ1 \ D1
+                
+                −f (1) (x − y |σ) + 1 f (1) (x − p |σ) x , y ∈ Σ \ D
+                            2     2        2   2    2       2 2        2     2
+   ∂x G(x, y) →    1   (1)
+                                                                                            (6.13)
+                
+                
+                − 2
+                     f     (x 1 − p 1 |τ )                 x1  ∈  Σ1 \ D 1 , y 2 ∈ Σ2 \ D 2
+                 1 (1)
+                 − 2 f (x2 − p2 |σ)                        x2 ∈ Σ2 \ D2 , y1 ∈ Σ1 \ D1
+
+Conveniently, the dependence on ln |v̂| cancels out in these derivative combinations.
+
+6.4    Degeneration of ∂x G I1 ···Is (x, y)
+We begin with the separating degenerations of the convolutions ∂x G I1 ···Is (x, y) of Arakelov
+Green functions defined in (3.21) that carry the dependence of the flat connection on the
+second marked point y,
+                                          Z
+                        I1 ···Is
+                   ∂x G          (x, y) =   d2 z ∂x G(x, z)ω I1 (z)∂z G I2 ···Is (z, y)
+                                         Σ
+                                           I1 ···Is              I1 ···Is
+                                     = ∂x G(1)      (x, y) + ∂x G(2)      (x, y)             (6.14)
+                                                                                          
+where the second equality is obtained by decomposing Σ = Σ1 \ D1 ∪ Σ2 \ D2 with,
+                       Z
+           I1 ···Is
+         G(i) (x, y) =       d2 zi G(x, zi ) ω I1 (zi ) ∂zi G I2 ···Is (zi , y)   i = 1, 2   (6.15)
+                           Σi \Di
+
+The asymptotics is given by the following lemma.
+
+                                                  39
+Lemma 6.1 The functions ∂x G I1 ···Is (x, y) have the following separating degenerations, up to
+order O(v) which vanishes as v → 0,
+
+                            ∂x1 G 1s (x1 , y1) → −f (s+1) (x1 − y1 |τ ) + 12 f (s+1) (x1 − p1 |τ )
+                            ∂x1 G 1s (x1 , y2) → − 21 f (s+1) (x1 − p1 |τ )
+                             ∂x1 G S (x1 , yi ) → 0                          if 2 ∈ S                 i = 1, 2
+
+
+                            ∂x2 G 2s (x2 , y2) → −f (s+1) (x2 − y2 |σ) + 12 f (s+1) (x2 − p2 |σ)
+                            ∂x2 G 2s (x2 , y1) → − 12 f (s+1) (x2 − p2 |σ)
+                             ∂x2 G S (x2 , yi ) → 0                          if 1 ∈ S                 i = 1, 2            (6.16)
+
+where 1s = 1 · · · 1 with s entries and similarly for 2s , and where S stands for an arbitrary
+array I1 · · · Is with each Ii taking values 1 or 2.
+    The proof proceeds by induction on s. For s = 0, only the cases on the first, second,
+fourth and fifth lines arise, and they are given by (6.13). We shall prove the validity of the
+formulas of (6.16) for s = 1 in Appendix B, as these cases involve some detailed analyses.
+The recursive definitions of (6.15) may then be used to show that the v → 0 limit of any
+tensor ∂x G I1 ···Is (x, y) vanishes unless I1 = · · · = Is = 1 or I1 = · · · Is = 2. In these cases, it is
+                              1s                2s                                           1s
+readily shown that ∂x G(2)       (x, y) and ∂x G(1) (x, y) have vanishing limits, while ∂x G(1) (x, y) and
+    2s
+∂x G(2) (x, y) produce the remaining contributions to (6.16).
+
+6.5      Degeneration of ∂x ΦI1 ···Is J (x)
+It will be convenient to rewrite the recursive definition (3.21) of the functions ∂x ΦI1 ···Is J (x)
+in terms of ∂x G I1 ···Is−1 (x, y) whose separating degeneration was already evaluated in the
+preceding subsection,
+                                              Z
+                             I1 ···Is
+                        ∂x Φ          J (x) =   d2 z ∂x G I1 ···Is−1 (x, z) ω̄ Is (z)ωJ (z) (6.17)
+                                                            Σ
+
+One may split up the integration into the contributions from the surfaces Σ1 \D1 and Σ2 \D2 ,
+                                               I1 ···Is                 I1 ···Is
+                  ∂x ΦI1 ···Is J (x) = ∂x Φ(1)           J (x) + ∂x Φ(2)           J (x) (6.18)
+
+where,
+                                      Z
+                I1 ···Is
+         Φ(i)               J (x) =                d2 zi G I1 ···Is−1 (x, zi ) ω̄ Is (zi ) ωJ (zi )              i = 1, 2 (6.19)
+                                          Σi \Di
+
+The analysis parallels the one carried out for ∂x G I1 ···Is (x, y), uses the results of Lemma 6.1,
+and produces the following lemma, stated without proof.
+
+                                                                        40
+Lemma 6.2 The separating degenerations of the functions ∂x ΦI1 ···Is J (x) are given by,
+
+      ∂x1 Φ1s 1 (x1 ) → 12 f (s) (x1 − p1 |τ )             ∂x1 Φ1s−1 2 2 (x1 ) → − 21 f (s) (x1 − p1 |τ )
+      ∂x2 Φ2s 2 (x2 ) → 12 f (s) (x2 − p2 |σ)              ∂x2 Φ2s−1 1 1 (x2 ) → − 21 f (s) (x2 − p2 |σ)    (6.20)
+
+where again 1s = 1 · · · 1 with s entries and similarly for 2s . All other components such as
+∂xi Φ···1 2 (xi ), ∂xi Φ···2 1 (xi ) with i = 1, 2 or ∂x2 Φ1s 1 (x2 ) with s ≥ 2 vanish. The degenerations
+of (6.20) are consistent with the traceless property ΦI1 ···Is Is = 0.
+
+6.6     Degeneration of the flat connection
+The separating degenerations of the modular tensors ∂x G I1 ···Is (x, y) and ∂x ΦI1 ···Is J (x) for the
+special case of genus-two surfaces may now be used to evaluate the separating degeneration
+limit of the flat connections discussed in Theorem 3.1 and Theorem 5.1.
+    We begin by assembling the limits of the generating function H(x, y; B) in the first line
+of (3.27) with BI = adbI ,
+                                    ∞ 
+                                    X                                                   
+                    H(x1 , y1 ) →          −f (n) (x1 − y1 |τ ) + 21 f (n) (x1 − p1 |τ ) B1n−1
+                                    n=1
+                                    ∞ 
+                                    X                                                 
+                    H(x2 , y2 ) →          −f (n) (x2 − y2 |σ) + 21 f (n) (x2 − p2 |σ) B2n−1
+                                    n=1
+                                          ∞
+                                       1 X (n)
+                    H(x1 , y2 ) → −          f (x1 − p1 |τ )B1n−1
+                                       2 n=1
+                                          ∞
+                                    1 X (n)
+                    H(x2 , y1 ) → −       f (x2 − p2 |σ)B2n−1                                               (6.21)
+                                    2 n=1
+
+as well as the components I = 1, 2 of HI (x; B) in the second line of (3.27),
+                                                       ∞
+                                               1 X (n)
+                                H1 (x1 ) → 1 +       f (x1 − p1 |τ )B1n
+                                               2 n=1
+                                                       ∞
+                                               1 X (n)
+                                H2 (x2 ) → 1 +       f (x2 − p2 |σ)B2n
+                                               2 n=1
+                                                   ∞
+                                                 1 X (n)
+                                H1 (x2 ) → −           f (x2 − p2 |σ)B2n−1 B1
+                                                 2 n=1
+                                                   ∞
+                                             1 X (n)
+                                H2 (x1 ) → −       f (x1 − p1 |τ )B1n−1 B2                                  (6.22)
+                                             2 n=1
+
+
+                                                           41
+Note that the rightmost generator in both of HI (x1 ) and HI (x2 ) is given by BI in each term
+of (6.22). As a consequence, the contribution ∼ HI (x; B) bI to the flat connection (3.32) at
+genus two reduces to ω I (x)bI under separating degenerations in view of Y IJ BI bJ = 0.
+   By the composition (3.29) of ΨI (x, y), these results immediately imply the vanishing of
+two cases for its components and arguments,
+
+                                               Ψ1 (x2 , y1 ) → 0
+                                               Ψ2 (x1 , y2 ) → 0                               (6.23)
+
+Assembling the components ΨI (x, y) with non-vanishing limits we find,
+                                       ∞
+                                       X
+               Ψ1 (x1 , y1 ) → 1 +           f (n) (x1 − y1 |τ )B1n = B1 Ω(x1 − y1 , B1 |τ )
+                                       n=1
+                                       ∞
+                                       X
+               Ψ2 (x2 , y2 ) → 1 +           f (n) (x2 − y2 |σ)B2n = B2 Ω(x2 − y2 , B2 |σ)
+                                       n=1
+                                       X∞
+               Ψ1 (x1 , y2 ) → 1 +           f (n) (x1 − p1 |τ )B1n = B1 Ω(x1 − p1 , B1 |τ )
+                                       n=1
+                                       X∞
+               Ψ2 (x2 , y1 ) → 1 +           f (n) (x2 − p2 |σ)B2n = B2 Ω(x2 − p2 , B2 |σ)
+                                       n=1
+                                 ∞ 
+                                 X                                             
+               Ψ1 (x2 , y2 ) →          f (n) (x2 − y2 |σ) − f (n) (x2 − p2 |σ) B2n−1 B1
+                                 n=1
+                                                                                  
+                                  = Ω(x2 − y2 , B2 |σ) − Ω(x2 − p2 , B2 |σ) B1
+                               ∞ 
+                               X                                            
+               Ψ2 (x1 , y1 ) →     f (n) (x1 − y1 |τ ) − f (n) (x1 − p1 |τ ) B1n−1 B2
+                                 n=1
+                                                                                  
+                                       = Ω(x1 − y1 , B1 |τ ) − Ω(x1 − p1 , B1 |τ ) B2          (6.24)
+
+Our results may be summarized in the form of the following theorem.
+
+Theorem 6.3 To evaluate the separating degeneration of the flat connection in Theorem 3.1
+at genus two, we may pick, without loss of generality, a point y = y1 ∈ Σ1 \ D1 . The
+components of the connection then enjoy the following asymptotics,
+                           π                                                  
+           J (x1 , y1 ) →      (dx1 − dx̄1 ) b1 + dx1 adb1 Ω x1 − y1 , adb1 |τ a1
+                          Im τ                                                
+                           + dx1 Ω(x1 − y1 , adb1 |τ ) − Ω(x1 − p1 , adb1 |τ ) [b2 , a2 ]
+                           π                                                  
+           J (x2 , y1 ) →      (dx2 − dx̄2 ) b2 + dx2 adb2 Ω x2 − p2 , adb2 |σ a2         (6.25)
+                          Im σ
+
+                                                      42
+   The proof proceeds by inserting (6.22), (6.23) and (6.24) into the genus-two instance of
+the flat connection (3.32).
+   We conclude this section with a number of remarks.
+
+  1. Upon choosing y1 = p1 the second line in the expression (6.25) for J (x1 , y1 ) cancels.
+     With this assumption, the connection J (x, y) with y = y1 = p1 = 0 reduces to the
+     genus-one Brown-Levin connection (2.11) on a torus Σ1 when the point x = x1 is on
+     the surface Σ1 \ {p1 }.
+  2. At distinct points y1 6= p1 and y1 = 0, in turn, the separating degeneration of J (x1 , y1 )
+     in (6.25) yields the Brown-Levin connection (5.1) with one extra marked point z1 = p1 ,
+     and free Lie algebra generator c1 = [a2 , b2 ].
+  3. Finally, when the point x = x2 is on the surface Σ2 \ {p2 }, the genus-two connection
+     J (x2 , y1) reduces to the Brown-Levin connection on Σ2 with a shift by p2 in the
+     Kronecker-Eisenstein series of (2.11).
+  4. The same methods determine the separating degeneration of the multi-variable addi-
+     tion Jn (z1 , · · · , zn ; x, y) to the flat connection at genus two in (5.3). Once the extra
+     punctures are distributed via z1 , z2 , · · · , zm ∈ Σ1 \ D1 and zm+1 , · · · , zn ∈ Σ2 \ D2 ,
+     there are two inequivalent cases to consider: for x = x1 and y = y1 on the same surface
+     Σ1 \ D1 , we obtain the multi-variable additions (5.1) to the genus-one connection
+                                                m
+                                                X                                              
+        Jn (z1 , · · · , zn ; x1 , y1 ) → dx1         Ω(x1 − zi , B1 |τ ) − Ω(x1 − y1 , B1 |τ ) ci
+                                                i=1
+                                                  n
+                                                  X                                                
+                                       + dx1              Ω(x1 − p1 , B1 |τ ) − Ω(x1 − y1 , B1 |τ ) ci   (6.26)
+                                                  i=m+1
+
+     involving the generators c1 , · · · , cn associated with the additional punctures z1 , · · · , zn
+     on both surfaces. If x = x1 ∈ Σ1 \ D1 and y = y2 ∈ Σ2 \ D2 are chosen to be on
+     different surfaces, however, the generators cm+1 , · · · , cn associated with the punctures
+     zm+1 , · · · , zn ∈ Σ2 \ D2 on a different surface than x1 are absent,
+                                                  m
+                                                  X                                              
+          Jn (z1 , · · · , zn ; x1 , y2 ) → dx1         Ω(x1 − zi , B1 |τ ) − Ω(x1 − p1 , B1 |τ ) ci     (6.27)
+                                                  i=1
+
+
+
+
+                                                          43
+7      Conclusions and further directions
+In this work, we have presented an explicit construction of polylogarithms on compact Rie-
+mann surfaces of arbitrary genus. Generalizing the approach of Brown and Levin for the
+genus-one case, our construction relies on a flat connection whose path-ordered exponen-
+tial plays the role of a generating series for higher-genus polylogarithms and manifests their
+homotopy-invariance. The flat connection takes values in the freely-generated Lie algebra
+introduced by Enriquez and Zerbini in [45] and is assembled from convolutions on higher-
+genus surfaces of Arakelov Green functions and their derivatives. Our construction furnishes
+the first explicit proposal for a “complete” set of integration kernels beyond genus one: the
+higher-genus polylogarithms constructed here are conjectured to close under taking primi-
+tives with respect to the points on the surface.
+    While our construction of higher-genus polylogarithms builds on the Brown-Levin connec-
+tion at genus one, it also draws heavily on the structure of families of higher-genus modular
+tensors. We illustrate the importance of these tensorial building blocks and their proper-
+ties in several examples of higher-genus polylogarithms, introduce a basis of polylogarithms
+which themselves transform as modular tensors and provide non-trivial evidence for their
+closure under taking primitives. Moreover, upon separating degeneration of the Riemann
+surface, our flat connection reduces to flat connections on the degeneration components. We
+illustrate this result here for the case of genus two, thereby paving the way for systematic
+investigations into the rich network of relations among the higher-genus polylogarithms that
+result from different types of degenerations.
+    It is expected that the higher-genus polylogarithms constructed in this work will find
+broad applications in theoretical physics, ranging from multi-loop amplitudes in string theory
+to Feynman integrals in quantum field theory and beyond. At the same time, our results
+offer a concrete forward leap towards a coherent theory of integration on arbitrary Riemann
+surfaces and should prove relevant to questions in number theory and algebraic geometry.
+Among the myriad of mathematical and physical open problems raised by our construction,
+the following questions readily qualify for tractable follow-up research:
+
+
+    (i) proving the conjecture advanced here that higher-genus polylogarithms close under
+        taking primitives, based on the generalizations to all orders of the interchange lemma
+        and Fay identities discussed in section 4.6 which are provided and proven in [69];
+ (ii) obtaining the separating and non-separating degenerations of the polylogarithms for
+      arbitrary genera, exploiting the properties of the Arakelov Green function in [51, 54];
+(iii) determining the differential relations with respect to moduli variations satisfied by
+
+                                              44
+     higher-genus polylogarithms and their integration kernels using complex-structure de-
+     formation theory [53, 76];
+(iv) identifying generalizations of the (non-holomorphic) higher-genus modular graph ten-
+     sors in [56, 57, 58] that close under complex-structure variations and degenerations;
+ (v) exploring the properties of the higher-genus associators proposed in section 4.7, thereby
+     generalizing the studies of elliptic associators introduced in [72, 73, 74];
+(vi) re-formulation of higher-genus string amplitudes in terms of the integration kernels
+     and polylogarithms constructed in this work, a program that was foreshadowed long
+     ago by the cohomological analysis of chiral blocks for the case of genus two in [77] and
+     implemented more recently at genus one in [27, 31, 78].
+
+We plan to report progress on some of these topics in future work.
+
+
+
+
+                                             45
+A      Definiton of the prime form
+Given that the Arakelov Green function is constructed from the prime form E(x, y) in (3.9)
+and (3.11), we shall briefly review the definition of the prime form in this appendix. For this
+purpose, we introduce the Riemann ϑ-function of rank h,
+                                     X           ′ t    ′         ′ t    ′′
+                        ϑ[κ](ζ|Ω) =      eπi(n+κ ) Ω(n+κ )+2πi(n+κ ) (ζ+κ )              (A.1)
+                                      n∈Zh
+
+
+where ζ ∈ Ch and where the characteristics κ = [κ′ , κ′′ ] comprises two h-component vectors
+κ′ , κ′′ ∈ Ch . Following the main text, we will henceforth suppress the dependence on the
+period matrix Ω.
+   The prime form at arbitrary genus h is built from a specialization of κ to odd half-
+characteristics or spin structures ν = [ν ′ , ν ′′ ] with entries ∈ {0, 21 } such that 4ν ′ · ν ′′ is
+odd [50]:                                               Rx 
+                                                 ϑ[ν] y ω
+                                   E(x, y) =                                                  (A.2)
+                                                 hν (x)hν (y)
+By virtue of the holomorphic ( 21 , 0)-forms hν (x) in the denominator subject to
+                                          h
+                                     2
+                                          X                ∂
+                               hν (x) =         ω I (x)       ϑ[ν](ζ)                          (A.3)
+                                          I=1
+                                                          ∂ζI         ζ=0
+
+
+the definition (A.2) of the prime form is independent on the choice of the odd spin structure ν.
+Since the ϑ-functions entering the prime form are odd under the flip ζ → −ζ in (A.1), the
+prime form is antisymmetric E(y, x) = −E(x, y) under exchange of x, y and in particular
+                                                                            
+exhibits the short-distance behaviour E(x, y) = (x − y) + O (x − y)3 in local complex
+coordinates.
+
+
+
+
+                                                   46
+B      Separating degeneration of ∂xG I (x, y)
+In this appendix, we derive the separating degeneration of the functions ∂x G I (x, y) for genus
+two with I = 1, 2. These derivations are essential components of Lemma 6.1. Actually, it
+will be convenient to derive first the asymptotic behavior in the separating degeneration of
+the modular tensor with a lowered index, defined by ∂x GI (x, y) = YIJ ∂x G J (x, y), and then
+reconvert the result to ∂x G J (x, y).
+
+B.1      Degeneration of ∂x1 G1 (x1, y1) and ∂x2 G2 (x2, y2)
+                                                                                     (1)                (2)
+Following the decomposition of (6.14), we evaluate the contributions G1 (x, y) and G2 (x, y)
+by substituting the degeneration limits of the various factors in its integrand,
+                      Z          h                                                                    i
+        (1)
+      G1 (x1 , y1 ) =       d2 z1 g(x1 − z1 |τ ) − 21 g(x1 − p1 |τ ) − 21 g(z1 − p1 |τ ) − 21 ln |v̂|
+                       Σ1 \D1
+                                   h                                           i
+                                  × ∂z1 g(z1 − y1 |τ ) − 21 ∂z1 g(z1 − p1 |τ )                          (B.1)
+
+The integral may be extended to all of Σ1 where it is absolutely convergent and differs from
+the original integral by a contribution that is proportional to the coordinate volume, which is
+of order O(v) in view of (6.6), and will be neglected. As an integral over Σ1 , the contributions
+of the z1 -independent terms inside the first bracket vanish in view of,
+                     Z                         n
+                           2
+                         d z1 ∂z1 g(z1 − y1 |τ ) = 0                 n≥0                    (B.2)
+                         Σ1
+
+Evaluating the remaining integrals using the concatenated Green functions gn of (2.14), and
+taking the derivative in x1 , gives the following limit,
+                                                                                          
+                   (1)
+              ∂x1 G1 (x1 , y1 ) → (Im τ ) ∂x21 g2 (x1 − y1 |τ ) − 21 ∂x21 g2 (x1 − p1 |τ )   (B.3)
+
+The overall factor of Im τ arises from the integrand in the definition of g2 in (2.14).
+                                           (2)
+    We proceed analogously for ∂x1 GI (x1 , y1 ),
+                                          Z             h                                         i
+          (2)           1       v
+         G1 (x1 , y1) =                              d2 z2 g(x1 − p1 |τ ) + g(z2 − p2 |σ) + ln |v̂|
+                          4 2πiω̂2 (p2 )         Σ2 \D2
+
+                                                      ×∂z2 ∂p2 ln ϑ1 (z2 − p2 |σ) ∂z2 g(z2 − p2 |σ)           (B.4)
+
+On the face of it, this contribution is automatically suppressed by a factor of v. However, the
+integral does not extend to a convergent integral over Σ1 , so part or all of the suppression
+might in principle be cancelled. To proceed, we extract the leading singularity near the
+
+                                                          47
+puncture in terms of a contour integral over ∂D1 which may be evaluated exactly in the
+limit where the size of the disc D1 is small. First, we show that the combination,
+                         Z
+                    I=        d2 z2 ∂z2 ∂p2 ln ϑ1 (z2 − p2 |σ) ∂z2 g(z2 − p2 |σ)   (B.5)
+                           Σ2 \D2
+
+                                                               (2)
+remains bounded as v → 0 so that its contribution to G1 (x1 , y1 ) vanishes in this limit. To
+do so we write it as follows,
+                          Z
+                  I=−            d2 z2 ∂p2 ln ϑ1 (z2 − p2 |σ) ∂z̄2 ∂z2 g(z2 − p2 |σ)
+                            Σ2 \D2
+                            Z          h                                             i
+                          i
+                        −            d dz2 ∂z2 g(z2 − p2 |σ)∂p2 ln ϑ1 (z2 − p2 |σ)      (B.6)
+                          2 Σ2 \D2
+
+Using ∂z̄2 ∂z2 g(z2 − p2 |σ) = −πδ(z2 , p2 ) + Imπ σ , the fact that the support of the δ-functions
+is outside the domain of integration, and that the integral involving the constant term is
+convergent on Σ1 and integrates to zero there, we see that the first line on the right vanishes.
+The remainder may be written as follows,
+                                        I
+                                     i                               2
+                               I=−            dz2 ∂z2 g(z2 − p2 |σ)                           (B.7)
+                                     2 ∂D2
+
+In passing from the second line of (B.6) to (B.7) we have omitted a contribution proportional
+to 2πiIm (z2 − p2 )/Im σ, as the integral involving this term is of order O(v). The overall
+minus sign results from the fact that the orientation of the integrations over the boundary
+of Σ2 \ D2 is opposite to the ones over the boundary of D2 . The angular integration of the
+pole term vanishes, and the remaining contribution is bounded as v → 0. We conclude that
+  (2)
+G1 (x1 , y1 ) → 0 so that we obtain the following limit for ∂x1 G1 (x1 , y1) from (B.3) and, by
+swapping the role of the two surfaces,
+                                                                                         
+                                             2                     1 2
+                ∂x1 G1 (x1 , y1 ) → (Im τ ) ∂x1 g2 (x1 − y1 |τ ) − 2 ∂x1 g2 (x1 − p1 |τ )
+                                                                                         
+                ∂x2 G2 (x2 , y2 ) → (Im σ) ∂x22 g2 (x2 − y2 |σ) − 21 ∂x22 g2 (x2 − p2 |σ)   (B.8)
+
+where we have neglected all contributions that vanish as v → 0.
+
+B.2     Degeneration of ∂x1 G2 (x1, y1) and ∂x2 G1 (x2, y2)
+Following the corresponding analysis for these two cases, we find the limits,
+
+                                        ∂x1 G2 (x1 , y1) → 0
+                                        ∂x2 G1 (x2 , y2) → 0                                 (B.9)
+
+                                                48
+B.3      Degeneration of ∂x1 G1 (x1, y2) and ∂x2 G2 (x2, y1)
+Using once more the decomposition of (6.14), we have,
+                      Z       h                                                                 i
+      (1)           1       2                   1                  1                  1
+     G1 (x1 , y2) =       d z1 g(x1 − z1 |τ ) − 2 g(x1 − p1 |τ ) − 2 g(z1 − p1 |τ ) − 2 ln |v̂|
+                    2 Σ1 \D1
+                                 ×∂z1 g(z1 − p1 |τ )                                             (B.10)
+
+The integrals may be continued to absolutely convergent integrals on Σ1 . The z1 -independent
+terms inside the bracket integrate to zero, as does the term g(z1 − p1 |τ ) so that,
+                                      Z
+                     (1)            1
+                    G1 (x1 , y2 ) =      d2 z1 g(x1 − z1 |τ ) ∂z1 g(z1 − p1 |τ )
+                                    2 Σ1
+                                    1
+                                  = (Im τ )∂x1 g2 (x1 − p1 |τ )                        (B.11)
+                                    2
+The remaining contribution is given by,
+                                   Z           h                                         i
+       (2)           1      v
+      G1 (x1 , y2) =                        d2 z2 g(x1 − p1 |τ ) + g(z2 − p2 |σ) + ln |v̂|
+                     2 2πiω̂2 (p2 )    Σ2 \D2
+                                                    h                                        i
+                         ×∂z2 ∂p2 ln ϑ1 (z2 − p2 |σ) ∂z2 g(z2 − y2 |σ) − 21 ∂z2 g(z2 − p2 |σ) (B.12)
+
+The contribution of the second term in the bracket on the second line may be evaluated by
+                          (2)
+the method used for G1 (x1 , y1 ) and vanishes as v → 0. In the remaining expression the
+z2 -independent terms in the first bracket integrate to a finite quantity as v → 0, leaving
+contributions proportional to,
+                             Z
+           (2)
+          G1 (x1 , y2 ) ∼ v̄   d2 z2 ∂z2 ∂p2 ln ϑ1 (z2 − p2 |σ) ∂z2 g(z2 − y2 |σ)g(z2 − p2 |σ) (B.13)
+                             Σ2 \D2
+
+Isolating the leading singularity in the form of a contour integral,
+                           Z                                     h                               i
+         (2)                      2
+        G1 (x1 , y2) ∼ −v̄       d z2 ∂p2 ln ϑ1 (z2 − p2 |σ) ∂z̄2 ∂z2 g(z2 − y2 |σ)g(z2 − p2 |σ)
+                            Σ2 \D2
+                             I
+                         i
+                       + v̄         dz2 ∂z2 g(z2 − y2 |σ)g(z2 − p2 |σ)∂p2 ln ϑ1 (z2 − p2 |σ)       (B.14)
+                        2 ∂D2
+The angular integration of the second term cancels the pole and gives a finite result which
+vanishes as v → 0. Applying ∂z̄2 to the first factor in the bracket of the first line gives a
+δ(z2 , y2) and a constant term, both of which give finite contributions to the integral leading
+                                 (2)
+to vanishing contributions to G1 (x1 , y2 ) as v → 0. The remaining integral is then,
+                             Z
+            (2)
+          G1 (x1 , y2) ∼ −v̄    d2 z2 ∂p2 ln ϑ1 (z2 − p2 |σ) ∂z2 g(z2 − y2 |σ)∂z̄2 g(z2 − p2 |σ) (B.15)
+                              Σ2 \D2
+
+
+                                                   49
+The angular integration again kills the pole and we are left with a finite integral with a
+                                                                             (2)
+vanishing contribution as v → 0. Hence, by the vanishing asymptotics of G1 (x1 , y2 ) and
+                                             (1)
+the non-zero contribution (B.11) from G1 (x1 , y2), we find the following asymptotics for
+∂x1 G1 (x1 , y2 ) and, by swapping the two surfaces, we obtain,
+
+                            ∂x1 G1 (x1 , y2 ) → 12 (Im τ ) ∂x21 g2 (x1 − p1 |τ )
+                            ∂x2 G2 (x2 , y1 ) → 21 (Im σ) ∂x22 g2 (x2 − p2 |σ)              (B.16)
+
+B.4     Degeneration of ∂x G I (x, y)
+Assembling the results obtained in (B.8), (B.9), and (B.16) for ∂x GJ (x, y), we obtain those
+of G I (x, y) by raising the index J with the help of Y IJ . The off-diagonal elements of Y IJ
+are proportional to v and do not contribute in the limit v → 0. The role of the diagonal
+elements of Y IJ is to cancel the prefactor Im τ in (B.8) and Im σ in (B.16). The final result
+is the following table of limits,
+
+                    ∂x1 G 1 (x1 , y1 ) → ∂x21 g2 (x1 − y1 |τ ) − 21 ∂x21 g2 (x1 − p1 |τ )
+                    ∂x1 G 1 (x1 , y2 ) → 12 ∂x21 g2 (x1 − p1 |τ )
+                    ∂x1 G 2 (x1 , y1 ) → 0
+
+
+                    ∂x2 G 2 (x2 , y2 ) → ∂x22 g2 (x2 − y2 |σ) − 21 ∂x22 g2 (x2 − p2 |σ)
+                    ∂x2 G 2 (x2 , y1 ) → 12 ∂x22 g2 (x2 − p2 |σ)
+                    ∂x2 G 1 (x2 , y2 ) → 0                                                  (B.17)
+
+Together with ∂x2 g2 (x−p|τ ) = −f (2) (x−p|τ ) as in (2.15), this completes the proof of Lemma 6.1
+for the case s = 1.
+
+
+
+
+                                                     50
+References
+ [1] J. L. Bourjaily, et al. “Functions Beyond Multiple Polylogarithms for Precision Collider
+     Physics,” [arXiv:2203.07088 [hep-ph]].
+ [2] S. Abreu, R. Britto and C. Duhr, “The SAGEX review on scattering amplitudes Chapter
+     3: Mathematical structures in Feynman integrals,” J. Phys. A 55 (2022) no.44, 443004
+     [arXiv:2203.13014].
+ [3] J. Blümlein and C. Schneider, “The SAGEX review on scattering amplitudes Chapter 4:
+     Multi-loop Feynman integrals,” J. Phys. A 55 (2022) no.44, 443005 [arXiv:2203.13015].
+ [4] S. Weinzierl, “Feynman Integrals, a Comprehensive Treatment for Students and Re-
+     searchers,” Springer Cham (2022), ISBN 978-3-030-99557-7.
+ [5] N. Berkovits, E. D’Hoker, M. B. Green, H. Johansson and O. Schlotterer, “Snowmass
+     White Paper: String Perturbation Theory,” [arXiv:2203.09099].
+ [6] D. Dorigoni, M. B. Green and C. Wen, “The SAGEX review on scattering ampli-
+     tudes Chapter 10: Selected topics on modular covariance of type IIB string amplitudes
+     and their supersymmetric Yang–Mills duals,” J. Phys. A 55 (2022) no.44, 443011
+     [arXiv:2203.13021].
+ [7] E. D’Hoker and J. Kaidi, “Lectures on modular forms and strings,” [arXiv:2208.07242].
+ [8] C. R. Mafra and O. Schlotterer, “Tree-level amplitudes from the pure spinor super-
+     string,” Phys. Rept. 1020 (2023), 1-162 [arXiv:2210.14241].
+ [9] E. D’Hoker and J. Kaidi, “Modular forms and string theory,” Cambridge University
+     Press (2024), ISBN 978-1-009-45753-8.
+[10] A. B. Goncharov, “Geometry of Configurations, Polylogarithms, and Motivic Cohomol-
+     ogy,” Advances in Mathematics 114 (1995), 197-318.
+[11] A. B. Goncharov, “Multiple polylogarithms, cyclotomy and modular complexes,” Math.
+     Res. Lett. 5 (1998), 497-516 [arXiv:1105.2076 [math.AG]].
+[12] A. B. Goncharov, “Multiple           polylogarithms    and    mixed    Tate   motives,”
+     [arXiv:math/0103059 [math.AG]].
+[13] E. Remiddi and J. A. M. Vermaseren, “Harmonic polylogarithms,” Int. J. Mod. Phys.
+     A 15 (2000), 725-754 [arXiv:hep-ph/9905237].
+[14] J. Vollinga and S. Weinzierl, “Numerical evaluation of multiple polylogarithms,” Com-
+     put. Phys. Commun. 167 (2005), 177 [arXiv:hep-ph/0410259].
+[15] A. B. Goncharov, M. Spradlin, C. Vergu and A. Volovich, “Classical Polylogarithms for
+     Amplitudes and Wilson Loops,” Phys. Rev. Lett. 105 (2010), 151605 [arXiv:1006.5703].
+
+                                             51
+[16] C. Duhr, “Hopf algebras, coproducts and symbols: an application to Higgs boson am-
+     plitudes,” JHEP 08 (2012), 043 [arXiv:1203.0454].
+[17] J. Broedel, O. Schlotterer and S. Stieberger, “Polylogarithms, Multiple Zeta Values and
+     Superstring Amplitudes,” Fortsch. Phys. 61 (2013), 812-870 [arXiv:1304.7267].
+[18] O. Schlotterer and O. Schnetz, “Closed strings as single-valued open strings: A genus-
+     zero derivation,” J. Phys. A 52 (2019) no.4, 045401 [arXiv:1808.00713].
+[19] P. Vanhove and F. Zerbini, “Single-valued hyperlogarithms, correlation functions
+     and closed string amplitudes,” Adv. Theor. Math. Phys. 26 (2022) no.2, 455-530
+     [arXiv:1812.03018].
+[20] A. Beilinson and A. Levin, “The Elliptic Polylogarithm,” in Proc. of Symp. in Pure
+     Math. 55 (1994), 123-190.
+[21] A. Levin and G. Racinet,             “Towards    multiple   elliptic   polylogarithms,”
+     [arXiv:math/0703237 [math.NT]].
+[22] F. Brown and A. Levin, “Multiple Elliptic Polylogarithms,” [arXiv:1110.6917
+     [math.NT]].
+[23] S. Bloch and P. Vanhove, “The elliptic dilogarithm for the sunset graph,” J. Number
+     Theor. 148 (2015), 328-364 [arXiv:1309.5865].
+[24] L. Adams and S. Weinzierl, “Feynman integrals and iterated integrals of modular
+     forms,” Commun. Num. Theor. Phys. 12 (2018), 193-251 [arXiv:1704.08895].
+[25] J. Ablinger, J. Blümlein, A. De Freitas, M. van Hoeij, E. Imamoglu, C. G. Raab,
+     C. S. Radu and C. Schneider, “Iterated Elliptic and Hypergeometric Integrals for Feyn-
+     man Diagrams,” J. Math. Phys. 59 (2018) no.6, 062305 [arXiv:1706.01299].
+[26] J. Broedel, C. Duhr, F. Dulat and L. Tancredi, “Elliptic polylogarithms and iter-
+     ated integrals on elliptic curves. Part I: general formalism,” JHEP 05 (2018), 093
+     [arXiv:1712.07089].
+[27] J. Broedel, C. R. Mafra, N. Matthes and O. Schlotterer, “Elliptic multiple zeta values
+     and one-loop superstring amplitudes,” JHEP 07 (2015), 112 [arXiv:1412.5535].
+[28] E. D’Hoker, M. B. Green, Ö. Gürdogan and P. Vanhove, “Modular Graph Functions,”
+     Commun. Num. Theor. Phys. 11 (2017), 165-218 [arXiv:1512.06779].
+[29] L. Dolan and P. Goddard, “Current Algebra on the Torus,” Commun. Math. Phys. 285
+     (2009), 219-264 [arXiv:0710.3743].
+[30] A. G. Tsuchiya, “On new theta identities of fermion correlation functions on genus g
+     Riemann surfaces,” [arXiv:1710.00206].
+
+                                            52
+[31] J. E. Gerken, A. Kleinschmidt and O. Schlotterer, “Heterotic-string amplitudes at
+     one loop: modular graph forms and relations to open strings,” JHEP 01 (2019), 052
+     [arXiv:1811.02548].
+[32] M. B. Green, J. H. Schwarz and E. Witten, “Superstring Theory Vol. 2: Loop Ampli-
+     tudes, Anomalies and Phenomenology,” Cambridge University Press (1988),
+     ISBN 978-0-521-35753-1.
+[33] E. D’Hoker and D. H. Phong, “The Geometry of String Perturbation Theory,”
+     Rev. Mod. Phys. 60 (1988), 917.
+[34] J. Polchinski, “String Theory Vol II,” Cambridge University Press (1997),
+     ISBN 978-0-521-63304-8.
+[35] E. Witten, “Superstring Perturbation Theory Revisited,” [arXiv:1209.5461].
+[36] R. Huang and Y. Zhang, “On Genera of Curves from High-loop Generalized Unitarity
+     Cuts,” JHEP 04 (2013), 080 [arXiv:1302.1023 [hep-ph]].
+[37] A. Georgoudis and Y. Zhang, “Two-loop Integral Reduction from Elliptic and Hyper-
+     elliptic Curves,” JHEP 12 (2015), 086 [arXiv:1507.06310].
+[38] C. F. Doran, A. Harder, E. Pichon-Pharabod and P. Vanhove, “Motivic geometry of
+     two-loop Feynman integrals,” Quart. J. Math. Oxford Ser. 75 (2024) no.3, 901-967
+     [arXiv:2302.14840 [math.AG]].
+[39] F. Brown and O. Schnetz, “A K3 in φ4 ,” Duke Math. J. 161 (2012) no.10, 1817-1862
+     [arXiv:1006.4064 [math.AG]].
+[40] J. L. Bourjaily, A. J. McLeod, M. von Hippel and M. Wilhelm, “Bounded Collection of
+     Feynman Integral Calabi-Yau Geometries,” Phys. Rev. Lett. 122 (2019) no.3, 031601
+     [arXiv:1810.07689].
+[41] C. Duhr, A. Klemm, F. Loebbert, C. Nega and F. Porkert, “Yangian-Invariant Fishnet
+     Integrals in Two Dimensions as Volumes of Calabi-Yau Varieties,” Phys. Rev. Lett. 130
+     (2023) no.4, 4 [arXiv:2209.05291].
+[42] S. Pögel, X. Wang and S. Weinzierl, “Bananas of equal mass: any loop, any order in
+     the dimensional regularisation parameter,” JHEP 04 (2023), 117 [arXiv:2212.08908].
+[43] C. Duhr, A. Klemm, C. Nega and L. Tancredi, “The ice cone family and iterated
+     integrals for Calabi-Yau varieties,” JHEP 02 (2023), 228 [arXiv:2212.09550].
+[44] B. Enriquez, “Flat connections on configuration spaces and braid groups of surfaces,”
+     Advances in Mathematics 252 (2014), 204–226 [arXiv:1112.0864 [math.GT]].
+[45] B. Enriquez and F. Zerbini, “Construction of Maurer-Cartan elements over configuration
+     spaces of curves,” [arXiv:2110.09341 [math.AG]].
+
+                                            53
+[46] B. Enriquez and F. Zerbini, “Analogues of hyperlogarithm functions on affine complex
+     curves,” [arXiv:2212.03119 [math.AG]].
+[47] D. Bernard, “On the Wess-Zumino-Witten models on Riemann surfaces,” Nucl. Phys.
+     B 309 (1988), 145-174.
+[48] G. Faltings, “Calculus on Arithmetic Surfaces,” Ann. Math. 119 (1984) 387.
+[49] L. Alvarez-Gaume, G. W. Moore, P. C. Nelson, C. Vafa and J. b. Bost, “Bosonization
+     in Arbitrary Genus,” Phys. Lett. B 178, 41-47 (1986).
+[50] J. D. Fay, “Theta Functions on Riemann Surfaces,” Lecture Notes in Math. 352 (1973).
+[51] E. D’Hoker, M. B. Green and B. Pioline, “Higher genus modular graph functions, string
+     invariants, and their exact asymptotics,” Commun. Math. Phys. 366 (2019) 927-979
+     [arXiv:1712.06135].
+[52] E. D’Hoker and M. B. Green, “Zhang-Kawazumi Invariants and Superstring Ampli-
+     tudes,” J. Number Theor. 144 (2014), 111-150 [arXiv:1308.4597].
+[53] E. D’Hoker, M. B. Green, B. Pioline and R. Russo, “Matching the D 6 R4 interaction at
+     two-loops,” JHEP 01 (2015), 031 [arXiv:1405.6226].
+[54] E. D’Hoker, M. B. Green and B. Pioline, “Asymptotics of the D 8 R4 genus-two string
+     invariant,” Commun. Num. Theor. Phys. 13 (2019), 351-462 [arXiv:1806.02691].
+[55] E. D’Hoker, C. R. Mafra, B. Pioline and O. Schlotterer, “Two-loop superstring five-
+     point amplitudes. Part II. Low energy expansion and S-duality,” JHEP 02 (2021), 139
+     [arXiv:2008.08687].
+[56] N. Kawazumi, “Some tensor field on the Teichmüller space,” Lecture at MCM2016,
+     OIST (2016).
+[57] N. Kawazumi, “Differential forms and functions on the moduli space of Rie-
+     mann surfaces,” in Séminaire Algèbre et topologie, Université de Strasbourg.
+     Séminaire Algèbre et topologie, Université de Strasbourg (2017).
+[58] E. D’Hoker and O. Schlotterer, “Identities among higher genus modular graph tensors,”
+     Commun. Num. Theor. Phys. 16 (2022) no.1, 35-74 [arXiv:2010.00924].
+[59] N. Kawazumi, “A twisted invariant of a compact Riemann surface,” [arXiv:2210.00532
+     [math.GT]].
+[60] F. Cléry, G. van der Geer, S. Grushevsky, “Siegel modular forms of genus 2 and level 2,”
+     [arXiv:1306.6018 [math.AG]].
+[61] F. Cléry, G. van der Geer, “Constructing vector-valued Siegel modular forms from
+     scalar-valued Siegel modular forms,” [arXiv:1409.7176 [math.AG]].
+
+                                             54
+[62] G. van der Geer, “Siegel modular forms of degree two and three and invariant theory,”
+     [arXiv:2102.02245 [math.AG]].
+[63] E. Panzer, “Feynman integrals and hyperlogarithms,” [arXiv:1506.07243 [math-ph]].
+[64] J. Broedel, C. Duhr, F. Dulat, B. Penante and L. Tancredi, “Elliptic symbol calculus:
+     from elliptic polylogarithms to iterated integrals of Eisenstein series,” JHEP 08 (2018),
+     014 [arXiv:1803.10256].
+[65] D. Mumford, “Tata Lectures on Theta I,” Progress in Mathematics 28 (1983),
+     Birkhäuser Boston Inc., MA.
+[66] C. Reutenauer, “Free Lie Algebras”, Ocford University Press (1993).
+[67] P. Deligne, “Le Groupe Fondamental de la Droite Projective Moins Trois Points,” in
+     Galois Groups Over, vol. 16, ed. by Y. Ihara, K. Ribet, J.P. Serre. Mathematical Sciences
+     Research Institute Publications (Springer, New York, 1989), 79-297.
+[68] F. Brown, “Motivic periods and the projective line minus three points,” in Proceedings
+     of the ICM 2014, vol. 2, ed. by S.Y. Jang Y.R. Kim, D.-W. Lee, I. Yie (2014), 295-318.
+[69] E. D’Hoker and O. Schlotterer, “Fay identities for polylogarithms on higher-genus Rie-
+     mann surfaces,” [arXiv:2407.11476].
+[70] V. Drinfeld, “Quasi Hopf algebras,” Leningrad Math. J. 1 (1989), 1419.
+[71] V. Drinfeld, “On quasitriangular quasi-Hopf algebras and on a group that is closely
+     connected with Gal(Q̄/Q),” Leningrad Math. J. 2 (1991), 829.
+[72] D. Calaque, B. Enriquez and P. Etingof, “Universal KZB equations: the elliptic case,”
+     Progr. Math. 269 (2009), 165-266. Birkhäuser Boston Inc., MA.
+[73] B. Enriquez, “Elliptic associators,” Selecta Math. (N.S.) 20 (2014), 491-584.
+[74] R. Hain, “Notes on the universal elliptic KZB equation,” [arXiv:1309.0580 [math.AG]].
+[75] M. Gonzalez, “Surface Drinfeld Torsors I: Higher Genus Associators,” [arXiv:2004.07303
+     [math.QA]].
+[76] A. Basu, “Eigenvalue equation for genus two modular graphs,” JHEP 02 (2019), 046
+     [arXiv:1812.00389].
+[77] E. D’Hoker and D. H. Phong, “Two-Loop Superstrings. VII. Cohomology of Chiral
+     Amplitudes,” Nucl. Phys. B 804 (2008), 421-506 [arXiv:0711.4314].
+[78] J. Broedel, N. Matthes, G. Richter and O. Schlotterer, “Twisted elliptic multiple zeta
+     values and non-planar one-loop open-string amplitudes,” J. Phys. A 51 (2018) no.28,
+     285401 [arXiv:1704.03449].
+
+
+
+
+                                             55
+

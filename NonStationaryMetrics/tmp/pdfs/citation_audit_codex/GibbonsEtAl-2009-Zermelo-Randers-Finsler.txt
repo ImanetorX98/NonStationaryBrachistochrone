@@ -1,0 +1,1981 @@
+                                                           Stationary Metrics and Optical
+                                                         Zermelo-Randers-Finsler Geometry
+                                            G. W. Gibbons1,∗, C. A. R. Herdeiro2,†, C. M. Warnick1,‡ and M. C. Werner1,3,§
+
+
+
+
+arXiv:0811.2877v1 [gr-qc] 18 Nov 2008
+                                                                                    1
+                                                                                 D.A.M.T.P.
+                                                                            Cambridge University
+                                                                Wilberforce Road, Cambridge CB3 0WA, U.K.
+
+                                                            2
+                                                             Departamento de Fı́sica e Centro de Fı́sica do Porto
+                                                              Faculdade de Ciências da Universidade do Porto
+                                                            Rua do Campo Alegre, 687, 4169-007 Porto, Portugal
+
+                                                                             3
+                                                                           Institute of Astronomy
+                                                                           Cambridge University
+                                                                Madingley Road, Cambridge CB3 OHA, U.K.
+
+                                                                                  November 2008
+
+
+
+                                                                                        Abstract
+                                                We consider a triality between the Zermelo navigation problem, the geodesic flow on a Fins-
+                                            lerian geometry of Randers type, and spacetimes in one dimension higher admitting a timelike
+                                            conformal Killing vector field. From the latter viewpoint, the data of the Zermelo problem are
+                                            encoded in a (conformally) Painlevé-Gullstrand form of the spacetime metric, whereas the data
+                                            of the Randers problem are encoded in a stationary generalisation of the usual optical metric.
+                                            We discuss how the spacetime viewpoint gives a simple and physical perspective on various is-
+                                            sues, including how Finsler geometries with constant flag curvature always map to conformally
+                                            flat spacetimes and that the Finsler condition maps to either a causality condition or it breaks
+                                            down at an ergo-surface in the spacetime picture. The gauge equivalence in this network of rela-
+                                            tions is considered as well as the connection to analogue models and the viewpoint of magnetic
+                                            flows. We provide a variety of examples.
+
+
+
+
+                                        ∗
+                                          G.W.Gibbons@damtp.cam.ac.uk
+                                        †
+                                          crherdei@fc.up.pt
+                                        ‡
+                                          cmw50@cam.ac.uk
+                                        §
+                                          mcw36@cam.ac.uk
+
+
+                                                                                           1
+Contents
+1 Introduction                                                                                        2
+
+2 A Network of Relations                                                                              4
+  2.1 The Zermelo problem as a Finslerian flow . . . . . . . . . . . . . . . . . . . . . . . .        4
+      2.1.1 Zermelo/Randers duality via a Legendre transformation . . . . . . . . . . . .             5
+  2.2 Spacetime picture: Randers and Zermelo form of a stationary metric . . . . . . . . .            6
+      2.2.1 Analogue Models: waves in moving media . . . . . . . . . . . . . . . . . . . .            8
+  2.3 The magnetic flow viewpoint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       9
+  2.4 Spacetime versus magnetic flow pictures in the ultra-stationary gauge . . . . . . . .          10
+  2.5 Gauge equivalence and Tensorial Relations . . . . . . . . . . . . . . . . . . . . . . . .      11
+      2.5.1 Conformally flat spacetimes . . . . . . . . . . . . . . . . . . . . . . . . . . . .      13
+      2.5.2 Constant Flag Curvature . . . . . . . . . . . . . . . . . . . . . . . . . . . . .        14
+
+3 Examples                                                                                           16
+  3.1 A rotating platform on M1,3 : simple Zermelo; non-trivial Randers . . . . . . . . . . .        16
+  3.2 Magnetic fields on R3 and H2 × R: simple Randers; non-trivial Zermelo . . . . . . .            17
+      3.2.1 Heisenberg group manifold . . . . . . . . . . . . . . . . . . . . . . . . . . . .        18
+      3.2.2 Squashed AdS3 and Gödel spacetime . . . . . . . . . . . . . . . . . . . . . . .         18
+      3.2.3 Störmer’s problem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     21
+      3.2.4 Gödel’s cat . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   23
+  3.3 A rotating coordinate system in the ESU and the Anti-Mach metric . . . . . . . . .             23
+  3.4 Kerr black hole and charged Kerr . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     27
+      3.4.1 Asymptotic Randers/Zermelo structure . . . . . . . . . . . . . . . . . . . . .           27
+      3.4.2 Ergo-region Randers/Zermelo structure . . . . . . . . . . . . . . . . . . . . .          28
+      3.4.3 Near horizon for non extremal case: Asymptotic Hyperbolicity . . . . . . . .             30
+      3.4.4 Near horizon for extremal case: the NHEK geometry . . . . . . . . . . . . . .            31
+
+4 Concluding Remarks                                                                                 33
+
+
+1    Introduction
+There has been a great deal of activity in theoretical physics over the past few years involving
+the properties of various spacetimes in four and higher dimensions. Apart from their obvious
+astrophysical significance, there have been applications to string theory, gauge theory (via the
+AdS/CFT correspondence), and a growing interest in analogue models. Most investigations have
+centred on particular spacetimes, typically a solution of Einstein’s equations arising in supergravity
+theory. However, it is important to distinguish particular properties from general ones. In other
+words, we wish to see to what extent certain results obtained are due to the special properties of
+the metric used and to what extent they are universal, and valid for all metrics in a general class.
+    In the case of static metrics a convenient tool for investigating such questions is the well known
+optical metric (see [1] for an elementary account) which allows one to bring to bear on questions
+concerning non-rotating Killing horizons, light bending etc., the powerful tools of Riemannian and
+
+
+                                                  2
+Projective Geometry. For example, the optical distance diverges as one approaches a static Killing
+horizon, and in this limit the metric is asymptotic to the metric on hyperbolic space with the radius
+of curvature being given by the inverse of the surface gravity of the horizon. One may use this fact
+to gain insight into “No Hair Theorems” and the loss of information arising as matter falls into
+the associated black hole [2]. One may use the Gauss-Bonnet Theorem and information about the
+curvature of the optical metric to make general statements about light bending [2, 3, 4] and one
+may use the Projective Geometry to illuminate the dependence of light bending on the cosmological
+constant [5].
+    This leads naturally to the question of what replaces the optical metric when one is dealing with
+stationary metrics and can the associated geometric structures prove useful in dealing with rotating
+Killing horizons, ergo-regions and ergo-spheres, the existence or otherwise of closed timelike curves.
+    The purpose of this paper is to show how, in order to answer this question, one needs to pass
+from Riemannian to Finsler Geometry, to obtain two spatial geometric objects, a Randers and
+a Zermelo structure, related by Legendre duality. Taken with the original stationary spacetime,
+one obtains a triple of structures linked by a kind of triality (see figure 1). This allows one to
+translate a problem in one language to one of the other two languages, often leading in this way to
+a dramatic simplification. For example much effort has been expended on understanding constant
+flag curvature for Randers-Finsler metrics [6]. As we shall see, from the spacetime perspective
+the spacetime metrics are rather simple: all constant flag curvature Randers-Finsler metrics map
+to conformally flat spacetimes. In particular, the principal example in [6] lifts to flat Minkowski
+spacetime in rotating coordinates, whereas the example in [7] maps to an Einstein Static Universe
+in rotating coordinates.
+    The link between the three ideas is provided by a 1-form arising, in the spacetime picture, from
+the cross term g0i in the metric gµν of the spacetime manifold {M, g} and associated with the
+dragging of inertial frames. When viewed on the space of orbits B of the time translation Killing
+field ∂/∂t, this gives rise to a one-form bi which, with a metric aij , endows B with a Randers
+structure, a type of Finsler geometry which may be thought of physically in terms of a fully non-
+linear and exact version of gravito-magnetism.1 Light rays in {M, g} project down on {B, aij , bi } to
+Finsler geodesics which in turn may be lifted to the cotangent bundle T ⋆ B to give a magnetic flow.
+Such flows have been extensively studied by mathematicians of late and, as we shall show, some
+of their results have applications in the present setting. Moreover, we show that, in this magnetic
+picture, for all constant flag curvature Randers-Finsler 3-metrics, the magnetic field B is a Killing
+vector field of the Riemannian part of the geometry aij .
+    The alternative Zermelo viewpoint works in terms of a vector field or wind W, on B, and
+a different metric hij . Light rays then project down on {B, hij , W i } to solutions of the Zermelo
+problem: find the least time trajectory for a ship moving with constant speed in a wind W.
+Physically, this is where one makes contact with fluid dynamical analogue models in which a fluid
+vortex, sometime thought of in terms of an Aether, gives rise to a Maelstrom-like picture of a
+rotating black hole. Currently, this idea, which can also work for a non-rotating black hole, is often
+associated with the use of Painlevé-Gullstrand coordinates. And here we show that, indeed, the
+Zermelo structure manifests itself in the spacetime picture by expressing the spacetime metric in a
+   1
+    In the case of ultra-stationary spacetime metrics this exact version of gravito-magnetism can be understood in
+terms of an equivalence of magnetic tidal tensors [8].
+
+
+
+                                                        3
+Painlevé-Gullstrand form.
+    This paper is organized as follows. In section 2 we describe the network of relations: the
+triality between the Zermelo problem, Randers-Finsler geometries and the null geodesic flow in
+conformally stationary spacetimes. We also discuss the magnetic flow viewpoint, the relation to
+analogue models and the gauge equivalence from the spacetime picture. In particular, the condition
+of spacetime conformal flatness is explored in both the Randers and the Zermelo pictures, and the
+relation to Killing magnetic fields and constant flag curvature is established. In section 3 we
+provide a variety of examples of increasing complexity. We start with Langevin’s rotating platform
+in Minkowski spacetime, which maps to a Randers-Finsler geometry of constant flag curvature,
+physically interpreted as a varying magnetic field in a negatively curved space, and a Zermelo
+problem of a constant angular velocity tornado (or Shen’s rotating fish tank [6]) in flat space.
+Let us note that, since the mapping between the spacetime and Randers picture can be seen
+as a temporal Kaluza-Klein reduction, this example is akin (in fact an analytic continuation) to
+the Melvin solution in Kaluza-Klein theory [9]. Section 3.2 explores, in contrast to the first one,
+several examples where the Randers picture is physically simpler than the Zermelo one, and in
+some cases, even simpler than the spacetime picture: constant or varying magnetic fields in R3
+or H2 × R. The particular example of section 3.2.2 allows us to relate the Finsler condition with
+isoperimetric inequalities, Novikov’s action functional and ergodic theory. Section 3.3 gives another
+example of a Randers-Finsler geometry of constant flag curvature which is simply interpreted in the
+spacetime picture: a conformally flat spacetime – the Einstein Static Universe (ESU) – in rotating
+coordinates. We then consider a genuinely rotating ESU, the Anti-Mach geometry, and its Randers
+and Zermelo pictures are exhibited. In section 3.4, we discuss the Randers and Zermelo pictures
+for the Kerr geometry. While these pictures are valid asymptotically, they break down at the ergo-
+sphere. To cover the ergo-region, we actually need to introduce co-rotating coordinates, and then the
+Randers/Zermelo pictures break down asymptotically. Using these co-rotating coordinates, we show
+that the Riemannian part of the Randers metric is hyperbolic near the horizon for non-extremal
+Kerr, in similarity with the general non-rotating Killing horizon. The Randers/Zermelo pictures
+of the near horizon extremal case, the NHEK geometry, are also considered and, in particular, the
+Zermelo picture turns out to be quite simple: an azimuthal wind in a deformed 3-sphere. We finish
+in section 4 with some final remarks.
+
+
+2     A Network of Relations
+2.1   The Zermelo problem as a Finslerian flow
+The Zermelo navigation problem [10] is a time-optimal control problem, which aims at finding the
+minimum time trajectories in a Riemannian manifold {B, h} (R2 with the Euclidean metric in [10])
+under the influence of a drift (wind) represented by a vector field W. Assuming a time independent
+wind, Shen [6] has shown that the trajectories which minimize travel time are exactly the geodesics
+of a particular Finsler geometry, known as Randers metric [11], whose norm is given by
+                                      q
+                           F (x, v) = aij (x)v i v j + bi (x)v i , v ∈ Tx B .                   (1)
+
+
+
+
+                                                 4
+For the geodesics of (1) to solve the corresponding Zermelo problem, the Randers data {aij , bi } are
+determined in terms of the Zermelo data {hij , W i } as [12]:
+
+                                    λhij + Wi Wj
+                          aij     =              ,     λ = 1 − hij W i W j ,                        (2)
+                                         λ2
+                                      Wi
+                           bi     = −     ,    Wi = hij W j .                                       (3)
+                                      λ
+Note also that
+                                           aij = λ hij − W i W j .
+                                                                
+                                                                                                    (4)
+It has also been shown [13] that every Randers metric F arises as the solution to a Zermelo’s
+problem of navigation, defined by the data {hij , W i }. The latter is defined by the former as:
+
+                                                                λ = 1 − aij bi bj ,
+                                                     
+                            hij       = λ aij − bi bj ,                                             (5)
+                                           bi
+                            Wi = −            ,      bi = aij bj .                                  (6)
+                                           λ
+Note also that
+                                                   λaij + bi bj
+                                             hij =               .                                   (7)
+                                                       λ2
+Thus, there is a natural identification of Randers metrics with solutions to the Zermelo problem.
+It should be observed that
+                                   |W |2 ≡ hij W i W j = aij bi bj ≡ |b|2 .
+The Finsler condition |b|2 < 1 ensures that F is positive and the metric is convex, i.e. ∂vi ∂vj F 2 /2
+                                                                                                       
+
+is positive definite for all non-zero v [13].
+
+2.1.1      Zermelo/Randers duality via a Legendre transformation
+
+For a generic Finsler norm, the geodesics of F are obtained by taking F as the Finsler Lagrangian.
+However, for a Hamiltonian treatment, we need to consider a Lagrangian which is not homogeneous
+of degree one in velocities, since the associated Hamiltonian would vanish. It is convenient to
+consider a Lagrangian of degree two in velocities. Thus, since F (x, v) is a Finsler Lagrangian
+which is homogeneous of degree one, we define a Lagrangian by
+                                                     1
+                                                  L = F2 .                                          (8)
+                                                     2
+Hence, the Hamiltonian will also be of degree two in the momenta
+                                                    ∂L     ∂F
+                                             pi =      i
+                                                         =F i .                                     (9)
+                                                    ∂v     ∂v
+In fact,
+                                             H(x, p) = L(x, v) .                                   (10)
+It is convenient to define a function G(x, p) which is homogeneous of degree one in momenta by
+                                                        1 2
+                                                  H=      G .                                      (11)
+                                                        2
+
+
+                                                       5
+Thus
+                                          G(x, p) = F (x, v) .                                (12)
+Specializing F to be given by the Randers metric (1), we have
+                                                                      aij v j
+                                p i = F n i + bi ,          ni = p                   ;        (13)
+                                                                       akr v k v r
+
+since aij ni nj = 1, we find that              q
+                                        G=         hij pi pj − W i pi ,                       (14)
+
+where {hij , W i } are the associated Zermelo data. Thus, the Legendre transformation maps the
+Randers (Lagrangian) data to the Zermelo (Hamiltonian) one.
+   Note that one may think of G as the sum of two moment maps
+
+                                               G = G0 + G1 ,                                  (15)
+
+where                                                q
+                                            G0 =         hij pi pj ,                          (16)
+generates the geodesic flow and
+                                               G1 = −W i pi ,                                 (17)
+generates the lift to the cotangent bundle of the one parameter group of diffeomorphisms of the
+base manifold generated by the vector field −W. Observe that these two flows commute
+
+                                               {G0 , G1 } = 0 ,                               (18)
+
+if and only if W is a Killing vector field. In the case that the base manifold is a sphere and W
+a Killing vector field, these are the flows constructed by Katok [14] and discussed by Ziller [15].
+They correspond to rigid rotation on the sphere.
+
+2.2     Spacetime picture: Randers and Zermelo form of a stationary metric
+The geodesic flow of the Randers metric can be seen as the null geodesic flow in a stationary
+spacetime with generic form
+                                                        2
+                          gµν dxµ dxν = −V 2 dt + ωi dxi +γij dxi dxj ,                  (19)
+
+so that
+                                          gij = γij − V 2 ωi ωj .                             (20)
+Fermat’s principle arises from the Randers structure given by
+
+                                           aij     = V −2 γij ,                               (21)
+                                            ij             2 ij
+                                           a       = V γ          ,                           (22)
+                                            bi = −ωi .                                        (23)
+
+Thus we call the form
+                               ds2 = V 2 −(dt − bi dxi )2 + aij dxi dxj ,
+                                                                      
+                                                                                              (24)
+
+                                                       6
+the Randers form of a stationary metric. Note that for bi = 0, aij is the usual optical metric (see
+[1] for an elementary introduction).
+     Using (5), (6), the Randers data are equivalent to a Zermelo structure of the form
+                                                            1    gij
+                                        hij    =                     ,                           (25)
+                                                   1 + V g ωr ωs V 2
+                                                           2  rs
+
+                                        Wi =       V 2 gij ωj ,                                  (26)
+
+where
+
+                                       γij    = gij + V 2 ωi ωj ,                                (27)
+                                                              V 2ωiωj
+                                       γ ij   = gij −                       ,                    (28)
+                                                        1 + V 2 grs ωr ωs
+and
+                                                                  V 2 γ ij ωj
+                               ω i = g ij ωj ,        Wi =                        ,              (29)
+                                                               1 − V 2 γ rs ωr ωs
+                                                                   1
+                                   1 − V 2 γ ij ωi ωj =                       .                  (30)
+                                                            1 + V 2 gij ωi ωj
+There is actually a more familiar way to extract the Zermelo data from a stationary spacetime.
+Inverting (21), (23) and using (2), (3) one finds the spacetime metric (19) in the form
+
+                                V2              2
+                   ds2 =                                    i     i        j     j
+                                                                                     
+                                            −dt   + hij (dx   − W   dt)(dx   − W   dt)  .        (31)
+                           1 − hij W i W j
+
+This is the Zermelo form of a stationary spacetime. One recognizes the metric in square brackets
+as having a Painlevé-Gullstrand form [16, 17]. Since in the spacetime picture of the Zermelo
+problem/Randers flow one is interested only in the null geodesic flow, the spacetime metric is only
+defined up to a conformal factor. Thus, the Zermelo data encoded in a stationary spacetime can
+be read off simply by writing it (conformally) in a Painlevé-Gullstrand form.
+    It should be noted, however, that for a given spacetime, an apparently different Zermelo struc-
+ture can be obtained by writing the spacetime metric in Painlevé-Gullstrand coordinates. It is
+helpful to give an example. In these coordinates (t̃, r, θ, φ), the Schwarzschild metric is
+                                                                             r
+                   2       2             2    2    2        2     2
+                                                                               2M
+                 ds = −dt̃ + (dr + vdt̃) + r dθ + sin θdφ ,              v≡         .          (32)
+                                                                                  r
+One finds immediately that the Zermelo structure is
+                                ∂
+                                              hij dxi dxj = dr 2 + r 2 dθ 2 + sin2 θdφ2 ,
+                                                                                       
+                     W = −v        ,                                                             (33)
+                                ∂r
+which is interpreted as a radial wind in flat space. On the other hand, the Zermelo structure derived
+by writing the Schwarzschild solution in the usual Schwarzschild coordinates (t, r, θ, φ), in the form
+(31), has no wind and the spatial metric is the usual optical metric,
+
+                                                      dr 2       r2       2      2    2
+                                 hij dxi dxj =
+                                                                                        
+                  W=0,                                        +        dθ   + sin  θdφ    .      (34)
+                                                   (1 − v 2 )2 1 − v 2
+
+
+                                                        7
+The two Zermelo structures (33) and (34) are equivalent in the sense that the trajectories of one can
+be mapped to the trajectories of the other one. This equivalence is obvious in the spacetime picture,
+since both structures correspond to the same spacetime in different coordinates; but it is not obvious
+in the Zermelo picture itself. In the Randers picture, on the other hand, the equivalence is again
+obvious, since aij is, in both cases, the optical metric and bi differs only by a gauge transformation.
+This type of equivalence is one example of the large class of gauge equivalences which will be present
+in our discussion of the spacetime/Randers/Zermelo triangle and which we will explore more in
+section 2.5. In section 3.4, we will briefly compare the analogue of these two Zermelo structures in
+the Kerr case.
+    Given the simple physical interpretation of the Zermelo problem, it should not come as a surprise
+at this point that many analogue models of black holes are naturally written in the Painlevé-
+Gullstrand form (see, for instance [18, 19, 31]), as we shall now discuss briefly.
+
+2.2.1   Analogue Models: waves in moving media
+
+Metrics of Painlevé-Gullstrand form are frequently encountered in discussions of waves propagating
+in moving media and go back at least to a paper of Gordon [20] on electromagnetic waves in a
+moving dielectric medium. Similar metrics have arisen when discussing sound waves in a moving
+compressible medium such as the atmosphere [21, 22]. More recently attempts have been made to
+construct analogue models of black holes [23, 24] and again similar metrics are used. Typically such
+metrics are taken to be accurate just to quadratic order in velocities and the underlying spatial
+metric to be flat. Thus one considers a metric of the form
+                                                                   2
+                               ds2 = −c2 (x)dt2 + dx − W(x, t)dt ,                              (35)
+
+where c(x, t) is the local light or sound speed and W(x, t) the velocity of the medium. Both c
+and W could, as indicated, be time dependent but from now on we shall assume that both are
+independent of time. If c and W were constant, then (35) would be obtained by performing a
+Galileo transformation on the flat metric
+                                  2
+                  ds2 = −c2 dt′ + (dx′ )2 ,        where t′ = t ,                 x′ = x − Wt .   (36)
+
+The scalar wave equation for a scalar field Φ,
+                                 "                    #
+                                         ∂ 2        ∂ 2
+                                                 
+                                   1
+                                               −           Φ=0,                                   (37)
+                                   c2 ∂t′          ∂x′
+
+becomes                       "                       2               2 #
+                                  1        ∂       ∂                 ∂
+                                              +W·           −                   Φ=0,              (38)
+                                  c2       ∂t     ∂x                ∂x
+which is indeed the wave equation of (35). One could adopt (38) or some variant of (38) with lower
+order terms even if c and W depend on space and time. One would still find that the characteristics,
+i.e. the “rays ” would be null geodesics of the metric (35).
+     An interesting example is provided by a cylindrically symmetric vortex flow [25, 26] for which,
+in suitable units, c = 1 and
+                                                   Ω
+                                             W = eφ                                             (39)
+                                                   ρ
+
+                                                       8
+            p
+where ρ =       x2 + y 2 , tan φ = y/x and eφ is a unit vector in the φ direction. The metric (35)
+becomes                                                                2
+                              2        2       2   2             Ω
+                            ds = −dt + dρ + ρ               dφ + 2 dt        + dz 2 .             (40)
+                                                                ρ
+The metric is well defined and has Lorentzian signature for all ρ > 0. The surfaces ρ = constant
+are timelike for all ρ > 0. Thus, there is no Killing horizon, and hence no analogue black hole, in
+this metric (in agreement with [27]). The surface ρ = |Ω| is a timelike ergo-sphere inside which the
+Killing vector ∂/∂t becomes spacelike. This closely resembles the cylindrical analogues discussed
+by Zel’dovich when he suggested the possibility of superradience for the Kerr black hole [28, 29].
+
+2.3   The magnetic flow viewpoint
+The Randers orbits are generated by the Finsler norm (1) taken as a Lagrangian: L(x, ẋ) = F (x, v).
+An immediate observation, already pointed out in [11] is that these can be interpreted as motion
+in a magnetic field. Indeed, the Euler-Lagrange equations for the Finsler norm are
+                                     Dui
+                                         = F̃ ij ui ,         F̃ = db ,
+                                     ds
+where ui = dxi /ds, and s is arc length with respect to the Riemannian metric aij . In terms of the
+standard magnetic potential Ai the orbits of a charged particle (mass m, charge q) can be written,
+using the same parametrization, as
+                                  Dui    q
+                                      =√     F ij ui ,           F = dA ,
+                                  ds     2mǫ
+where the energy ǫ is
+                                               m dxi dxj
+                                            ǫ=   aij        ,
+                                               2      dτ dτ
+and τ is proper time. Thus, the Randers 1-form b relates to the physical magnetic potential 1-form
+by
+                                                     q
+                                             b= √       A.                                      (41)
+                                                    2mǫ
+Note, in particular, the dependence on the energy. We shall come back to this point in the example
+of section 3.2.2.
+    From a physicists’ perspective, this is actually the most natural way to look at Randers metrics:
+as describing motion on curved manifolds with a magnetic field
+                                            ∂
+                                  B = Bi       ,    B i = aij (⋆(3) db)j ,                        (42)
+                                           ∂xi
+denoting Hodge duality with respect to aij by ⋆(3) . From the perspective of section (2.2), the
+spacetime geodesics, when projected down to the base manifold B, with metric aij , are no longer
+geodesics; rather they satisfy the equations of motion of a charged particle in a magnetic field, which
+is described by the Maxwell 2-form F . The particle paths may be lifted to the cotangent bundle of
+T ⋆ B where they are referred to as magnetic flows. They may be regarded as a Hamiltonian system
+where the Hamiltonian coincides with the usual energy
+                                                1
+                                             H = gij pi pj ,                                      (43)
+                                                2
+
+                                                   9
+but where the symplectic form ω is modified
+                                                        q
+                                        ω = dpi ∧ dq i + F .                                       (44)
+                                                        2
+This magnetic flow then uplifts to one dimension more (in a temporal version of the Kaluza-Klein
+picture) as the null geodesic flow discussed in section (2.2).
+     Magnetic flows have been quite extensively studied in the mathematics literature. In particular,
+some of the phenomena to be discussed here, involving the breakdown of the Randers structure
+and, at times, the transition between the behaviour with and without closed timelike curves in the
+spacetime picture, has been noticed, albeit without that interpretation [30]. To discuss them here
+it is useful to choose a particular “conformal gauge”.
+
+2.4   Spacetime versus magnetic flow pictures in the ultra-stationary gauge
+With regard to the Randers/Zermelo structure, conformally related spacetimes form an equivalence
+class. Thus, for this purpose, we can always take the representative in this equivalence class to be
+ultra-stationary, that is a spacetime M admitting an everywhere timelike Killing vector field K with
+unit length, g(K, K) = −1. Such spacetimes may be considered, as a bundle over a base manifold B
+consisting of the space of orbits of the Killing vector field. These orbits, sometimes called timelines,
+may either be circles, S 1 , in which case time is periodic, or lines R. In the former case there are
+obviously closed timelike curves (ctc’s). If the bundle is a trivial product, M ≡ S 1 × B, these
+ctc’s may be eliminated by passing to a covering space. Then the question is: do there exist ctc’s
+which are homotopically trivial, i.e. which may be shrunk to a point? If the bundle is non-trivial,
+things may be more complicated. Spacetime may already be simply connected. In that case the
+ctc’s may not be eliminated by passing to a covering spacetime. This happens in spacetimes of
+Taub-NUT type. If the bundle is non-trivial it will admit no global section and hence no global
+time coordinate t, say, such that Kt = 1. If the bundle is trivial then there will exist (many) global
+time coordinates t but there may exist no global time function. A time function may be defined to
+be a function which increases along every timelike curve. Its level sets t = constant must therefore
+be everywhere spacelike. The examples that will be provided in section 3.2 are of this type: the
+bundle is trivial, a time coordinate exists, but there is no global time function. The line element
+can be cast in the form (24) with V 2 = 1
+
+                                   ds2 = −(dt − b)2 + aij dxi dxj ,                                (45)
+
+where b = bi dxi and xi are coordinates on B. The positive definite metric aij is the projection of
+the spacetime metric orthogonal to the Killing vector field K = ∂/∂t. The time coordinate t is
+defined only up to a gauge transformation of the form t → t + ψ(x) under which b → b + dψ. The
+quantity bi may be regarded as the pull-back to B of the Sagnac connection [32] which governs
+frame-dragging effects. It depends upon the choice of section of the bundle, however the pull-back
+of the curvature F̃ = db is gauge-invariant.
+    Any timelike curve in M projects down to B. We call its projection γ and define its element of
+length with respect to the metric aij by dl2 = aij dxi dxj . The curves will be timelike as long as
+
+                                             dt > dl + b .                                         (46)
+
+
+                                                  10
+If the right hand side of (46) is always positive then t is a time function. On the other hand,
+suppose that M admits a closed timelike curve. Its projection on B will be a closed curve and
+moreover                                        Z
+                                        L(γ) + b = 0 ,                                     (47)
+                                                      γ
+
+where L(γ) is the length of γ with respect to the metric aij . Thus a sufficient condition for the
+absence of ctc’s is that                          Z
+                                        L(γ) > − b ,                                          (48)
+                                                          γ
+
+for all closed curves γ in B. Inequality (48) is also a necessary condition for the absence of ctc’s,
+because if it is not true we can find a timelike curve for which the total change in the coordinate t
+vanishes, in which case it is a closed timelike curve, or for which it is negative. In the latter case
+we can construct a closed timelike curve by moving along an orbit of K.
+    The metric induced on the surfaces of constant t is
+
+                                  ds2 |t=constant = (aij − bi bj )dxi dxj .                          (49)
+
+This depends on the choice of gauge. If for some choice of gauge it is positive definite, then the
+surfaces t = constant will be spacelike and and hence t will be a time function. In that case no
+closed timelike curves are possible. But if (aij bi bj )|N = 1, where N is a sub-manifold of the constant
+t surfaces, (49) is not positive definite on N ; this surface is either a null or a singular surface where
+the Randers structure breaks down.
+    If N is regular, its existence implies the appearance of closed null curves in spacetime. For this
+reason we call it a Velocity of Light Surface (VLS), from the spacetime perspective. And if beyond
+N the metric induced on constant t surfaces becomes timelike, there will be closed timelike curves.
+Moreover, in the absence of horizons these can be extended all over the spacetime, that is, they are
+naked ctc’s. In section 3.2 we will give four examples of this situation.
+    If N is singular, on the other hand, the ultrastationary conformal gauge might not be the best
+gauge to provide a spacetime interpretation. Multiplying the ultrastationary metric by a conformal
+factor (that vanishes on N ) might provide a more physical interpretation. This is illustrated by the
+examples in sections 3.1 and 3.4. In both cases, a spacetime metric with an appropriate conformal
+factor renders the interpretation of an ergo-surface for N , wherein ∂/∂t becomes null. In this gauge
+N is also a VLS, albeit of a different nature than that of the previous case.
+
+2.5   Gauge equivalence and Tensorial Relations
+In figure 1 we summarise the main relations discussed in the previous sections. In the network
+of relations described by figure 1 it is possible that a complicated Randers picture is equivalent
+to a simple Zermelo picture or vice-verse. It is also possible that the spacetime description may
+illuminate the Randers or Zermelo pictures, or vice-verse. Or even that two Zermelo (or two
+Randers) pictures are equivalent, one being simple and the other involved. We shall now address
+the gauge equivalence in the network. In the next section explicit examples will be provided.
+    The key observation here is that in the spacetime picture of the flows, we have a very large free-
+dom to change the metric by diffeomorphisms (coordinate transformations) and conformal rescalings
+
+
+
+                                                     11
+                                                              Null Geodesic Flow in a
+                            Temporal version of
+                                                             Class of Stationary Metrics
+                             Kaluza-Klein Form
+                                                                       V, ωi , γij
+
+                                                  Optical Form                       Painlevé-Gullstrand Form
+                                                   (21)−(23)                              (25)−(26)
+
+
+                                          Finslerian Flow in a             (5),(6)
+   Magnetic Flow B i in a                                                            Zermelo Problem
+                                            Randers Metric
+   Riemannian Metric aij       (42)              aij , bi                  (2),(3)
+                                                                                        hij , W i
+
+
+Figure 1: A network of relations. Alongside the arrows are the equation numbers which pro-
+vide the respective map. The dashed lines represent interpretation relations rather than different
+frameworks.
+
+which do not affect the null geodesics. Because of this, we have access to a large class of transfor-
+mations which map one problem into another, going far beyond the manifest symmetries of either
+of the lower dimensional viewpoints.
+    In the spacetime picture, we consider the null geodesics of a conformal class of metrics [g]. In
+order to pass to the Randers or Zermelo picture, we require that [g] admits at least one timelike
+conformal Killing vector K, satisfying:
+
+                                      LK g = f g ,        g(K, K) < 0 ,                                (50)
+
+for some representative g of [g], where f is any function on M. The conditions are independent of
+the choice of representative g. Locally we may pick g so that f vanishes. We may choose coordinates
+so that K = ∂/∂t and the conformal metric takes the form (45). This form of the metric is not
+uniquely determined: bi is determined only modulo an exact one-form so that the data
+
+                                  (bi , aij ) ,   and     (bi + ∂i ψ, aij ) ,                          (51)
+
+arise from the same pair ([g], K). From the Randers point of view, this transformation of b does
+not alter the geodesics, essentially adding an exact differential to the Lagrangian. In the spacetime
+picture this may be seen as a coordinate transformation to a new time coordinate t̃, as discussed in
+section 2.4. Whilst this is a natural transformation from the point of view of the Randers picture,
+in the Zermelo case such a transformation gives rise to a complicated transformation involving both
+the wind W and the spatial metric h.
+    In the case where the class [g] admits more than one timelike conformal Killing vector, we are
+also free to make a different choice of K. This may lead to very different structures on reduction
+to Randers or Zermelo data. As an example, we may consider the case where we have a Zermelo
+structure arising from a conformal Killing vector K. If the Zermelo metric h admits a Killing vector
+ξ, then K + wξ may be seen to be a conformal Killing vector of [g] and provided w is sufficiently
+small this will remain timelike. After the reduction with this new conformal Killing vector, we see
+that the effect in the Zermelo picture is to introduce a ‘Killing wind’. Once again, this is a natural
+transformation in the Zermelo picture, but can be very complicated in the Randers picture, as
+shown in the examples of section 3.1 and 3.3.
+
+                                                     12
+   There are therefore essentially three possible transformations available to us, which relate Ran-
+ders or Zermelo problems arising from the same geodesic problem in the spacetime picture.
+
+   • Change of coordinates in the spacetime picture independent of t. This descends to a change
+     of coordinates on B.
+
+   • Shift of time coordinate in the spacetime picture: t → t + ψ. This descends to a gauge trans-
+     formation in the Randers picture bi → bi + ∂i ψ. In the Zermelo picture, this transformation
+     is complicated.
+
+   • Change of timelike conformal Killing vector. This includes the introduction of a “Killing
+     wind”in the Zermelo picture, but may produce other transformations. In the Randers picture,
+     this transformation is complicated.
+
+   We thus see that once we allow the more general class of transformations available in the space-
+time picture, some problems which from the lower dimensional point of view seem inequivalent arise
+from choosing different coordinates on the same spacetime, or reducing along different directions
+within the same spacetime. Such transformations include, but are by no means limited to the
+manifest symmetries of the lower dimensional pictures, for example under change of coordinates on
+B.
+
+2.5.1   Conformally flat spacetimes
+
+Once we allow this larger set of transformations to act on Randers or Zermelo problems, we are faced
+with the question of how to identify two equivalent problems. The standard tensorial quantities of
+the lower dimensional pictures are not preserved under a general higher dimensional transformation,
+so we must look elsewhere for our answer. The solution is to consider the Weyl tensor of the higher
+dimensional metric, which is invariant under diffeomorphisms and conformal transformations. A
+case of particular interest is when the higher dimensional space is conformally flat, so that it may
+be brought by coordinate transformations to the form C 2 η, with η the Minkowski metric. In this
+case the null geodesics are simple to find.
+    If we assume that a spacetime metric in the Randers (24) or Zermelo (31) form is conformally
+flat, this imposes conditions on the relevant lower dimensional data. In terms of the Randers data,
+for a four dimensional spacetime, these conditions may be reduced to, using the analysis in [33],
+                                        
+                                   (24)
+                                         Rij − 31 aij R = Bi Bj − 31 aij B 2 ,
+                       µ
+                     C αβγ = 0 ⇔                                                                 (52)
+                                                       ∇ B =0,
+                                                         (i   j)
+
+where the tensorial quantities on the right hand side of the equivalence are all computed from the
+metric aij , and B is defined by (42), i.e the magnetic field in the magnetic flow interpretation of the
+Randers picture. Thus, a necessary (but not sufficient) condition for the spacetime Weyl triviality
+of a Randers structure is that the magnetic field (42) is a Killing vector of the metric aij . This
+gives a simple test for examining the Weyl triviality of an apparent complex Randers structure.
+Examples of this will be given in sections 3.1 and 3.3. In section 3.2 we will give examples of both
+Killing and non-Killing magnetic fields corresponding, in the spacetime picture, to non-conformally
+flat geometry.
+
+                                                  13
+   It is also worthwhile to calculate the Weyl tensor for a metric in the Zermelo or Painlevé-
+Gullstrand form. To do so it is convenient to first introduce an orthonormal basis {ēa } of forms for
+the Zermelo spatial metric h together with the dual basis of vector fields {ēa }. We may then use
+the following orthonormal basis of forms
+
+                                                     e0 = dt ,
+                                                    ea = ēa + W a dt ,                                                        (53)
+
+for the space-time metric in Zermelo form, where W a are the components of the wind vector in the
+basis {ēa }, a = 1 . . . n. Letting ∇a denote the Levi-Civita connection of h in the given basis, we
+find that the vanishing of the Weyl tensor is equivalent to the following conditions on W and h
+
+                                                                                 n−2 e                                     θ2
+                                                                                                                                
+              1        
+                           (n)              (n)
+                                                  
+                                                              e       θθab                             δab            ef
+ 0 =                     n Rab − δab R − θae θ b +                          +           θ ψ +                 θef θ −              ,
+         n(n − 1)                                                    n − 1 n − 1 (a b)e                 n                n−1
+                                                                                                                     
+                                                 1
+ 0 =       δb e δa f δc g − δb g δa f δc e −          [δac δb e δf g − δac δb g δf e + δab δc e δf g − δab δc g δf e ] ∇e θf g ,
+                                              n−1
+                                           2θ
+ 0 = (n) Cabcd + 2θa[c θd]b −                   (δ θ − δb[c θd]a ) +
+                                         n − 2 a[c d]b
+            2                                           2(θ 2 − θef θ ef )
+                 (δa[c θd]e θ e b − δb[c θd]e θ e a ) +                     δ δ ,                                                (54)
+         n−2                                            (n − 1)(n − 2) a[c d]b
+
+where we have introduced the quantities
+
+                                 ψab = ∇[a Wb] ,            θab = ∇(a Wb) ,            θ = θaa ,                               (55)
+
+and all indices are raised and lowered with δ. The curvatures (n) Cabcd , (n) Rab , (n) R refer to the
+metric h.
+   In the case where the ultra-stationary metric is in fact ultra-static, i.e. W = 0, we quickly
+deduce that the Weyl tensor vanishes if h is both Einstein and conformally flat, which imply that h
+must in fact be of constant sectional curvature. In other words the only conformally flat ultra-static
+spacetimes are Minkowski space, R × S n or R × Hn , as shown in [34].
+
+2.5.2     Constant Flag Curvature
+
+A class of spaces of particular interest in the study of Randers geometry are the spaces of ‘con-
+stant flag curvature’ which generalise the concept of space of constant sectional curvature to the
+Finsler regime. It has been shown [13] that the Randers metrics of constant flag curvature K have
+corresponding Zermelo data satisfying
+                                             1 2
+    • h has constant sectional curvature K + 16 σ ;
+
+    • W is a homothety of h, i.e.
+                                                            LW h = −σh ,                                                       (56)
+        for a constant σ.
+
+Substituting θab = −σδab into equations (54) one quickly finds that all the terms not involving
+curvatures of h cancel. Since a metric of constant curvature is necessarily both conformally flat and
+
+                                                                14
+Einstein, the spacetime corresponding to a Randers metric of constant flag curvature is conformally
+flat.
+    We conjecture that the converse also holds, in other words we may characterise the Randers
+metrics of constant flag curvature as those giving rise to a conformally flat spacetime of the form
+(24). Clearly if we allow ourselves the full freedom to make gauge transformations and change the
+timelike conformal Killing vector K then any conformally flat spacetime may be reduced to a Ran-
+ders structure of constant flag curvature by taking K = ∂/∂t in standard Minkowski coordinates,
+which gives the trivial Randers structure of aij = δij , bi = 0.
+    If we restrict ourselves to only allowing gauge transformations, so that we have no freedom to
+change K then there are more possibilities. In order to classify the possible Randers structures
+arising from a conformally flat spacetime, we must classify the timelike conformal Killing vectors
+of Minkowski space. Any such vector generates a conformal transformation and so may be written
+as a linear combination of generators of the conformal group. These generators are:
+                                         ∂
+                                  pµ =        ,
+                                        ∂X µ
+                                             ∂           ∂
+                                  jµν = Xµ      ν
+                                                   − Xν      ,
+                                           ∂X           ∂X µ
+                                             ∂
+                                    d = Xµ         ,
+                                           ∂X µ
+                                                   ∂          ∂
+                                  kµ = 2Xµ X ν       ν
+                                                       − X2      .                                 (57)
+                                                  ∂X        ∂X µ
+We claim that any conformal Killing vector which is timelike in some region of Minkowski space
+may be brought to the following form by a conformal transformation:
+
+                              K = (pt − κkt ) + ω ij jij + v i (pi + κki ) ,                       (58)
+
+where κ, ω ij , v i are constants which we require to be such that the vector remains timelike in some
+region. For each such K, there is a choice of gauge where the Zermelo structure is of the following
+type:
+
+   • h is a metric of constant sectional curvature κ;
+
+   • W is a Killing vector of h, determined by ω ij , v j ;
+
+For example, in the case where κ = 0, ω ij give rise to a wind along the rotational Killing vectors
+and v i along the translational Killing vectors. The κ 6= 0 case is less clear cut, but in both cases
+the ω ij give rise to winds along the orbits of some SO(3) subgroup of the full isometry group.
+     It would appear that we have not recovered all of the constant flag curvature manifolds of [35],
+since they find in addition the possibility that h is flat and W is a homothety. This case may be
+seen in the Randers form to be gauge equivalent to the hyperbolic metric with no magnetic field, so
+is included in our classification above. In fact, if we wish to classify constant flag curvature metrics
+modulo gauge transformations, our list above contains redundancies as any Killing wind which
+arises from a hypersurface orthogonal Killing vector may be removed by a gauge transformation.
+
+
+
+
+                                                   15
+3      Examples
+We shall now provide the Randers and Zermelo picture of a number of stationary spacetimes and
+discuss some physical phenomena using the different viewpoints.
+
+3.1    A rotating platform on M1,3 : simple Zermelo; non-trivial Randers
+An elementary example is obtained by considering Minkowski space M1,3 in rotating coordinates.
+Let φ be the usual azimuthal cylindrical coordinate and φ′ = φ − Ωt a co-rotating coordinate with a
+rigidly rotating platform (angular velocity Ω). The spacetime metric, first considered by Langevin
+[36], is then of the form (24) with V 2 = (1 − Ω2 r 2 ) and Randers data
+
+                          Ωr 2 dφ′                        dr 2 + dz 2     r 2 dφ′2
+                    b=              ,     aij dxi dxj =               +            2 .         (59)
+                         1 − Ω2 r 2                       1 − Ω2 r 2    1 − Ω2 r 2
+
+Let us consider briefly the z = const. surfaces of this 3-geometry. For simplicity we take Ω = 1.
+Observe that, introducing r = sin ρ, the geometry of these 2-surfaces has the simple line element
+
+                                        ds2 = dρ2 + A(ρ)2 dφ′2 ,                                (60)
+
+with
+                                          A(ρ) = tan ρ sec ρ .                                  (61)
+The surface (60) has Gaussian curvature K = −Ä/A (dot denotes ρ derivative). Thus, our particu-
+lar case has a negative, but not constant, Gaussian curvature, which diverges at ρ = π/2. Surfaces
+of the form (60) may be embedded in a 3-dimensional Lorentzian/Euclidean space, with metric
+ds2 = ±dT 2 + dX 2 + dY 2 , using the embedding functions
+                                                          Z ρ     q
+                                 ′                ′             ′
+                  X = A(ρ) cos φ , Y = A(ρ) sin φ , T =       dρ ±[1 − Ȧ(ρ′ )2 ] .           (62)
+
+For the standard periodicity ∆φ′ = 2π, regularity at the origin requires Ȧ(ρ = 0) = 1. Since,
+as we depart from ρ = 0, Ȧ increases (decreases) for negatively (positively) curved surfaces, their
+embedding, if it exists, must be done in a Lorentzian (Euclidean) 3-dimensional space. Because of
+the U (1) symmetry of (60) one can display the embedding as the following surface
+                                                            p
+                           T (ρ(R)) = T (A−1 (R)) ,    R ≡ X2 + Y 2 .
+
+For instance, hyperbolic space, which has constant negative curvature, is described by A(ρ) = sinh ρ.
+Thus, it is embedded in M1,2 as the surface
+
+                                        T (R) = cosh(sinh−1 R) .
+
+For (61) it is straightforward to perform the integral (62); noting that
+                                                   √              !
+                                  −1                 1 + 4R2 − 1
+                                A (R) = arcsin                       ;
+                                                         2R
+
+one can construct the embedding, which is displayed in figure 2.
+
+                                                   16
+    The impossibility of smoothly and isometrically embedding a 2-surface with a fixed point of
+a U (1) symmetry, whose Gaussian curvature is everywhere negative, into Euclidean 3-space may
+be understood geometrically as follows. At every point the principal curvatures are opposite in
+sign; thus any tangent plane cuts the surface into two parts, one lying on one side of the plane
+and the other one lying on the opposite side. If the smoothly embedded surface is such that it
+lies entirely on one side or the other of a complete plane (as in the case of a surface of revolution
+with a fixed point, such as the one displayed in figure 2) we can bring up this plane such that it
+touches this surface. At this point the plane coincides with the tangent plane, and hence we obtain
+a contradiction.
+    Rewriting the metric in a Painlevé-Gullstrand form one obtains the Zermelo data:
+                                   ∂
+                         W = −Ω ′ ,          hij dxi dxj = dr 2 + dz 2 + r 2 dφ′2 .              (63)
+                                  ∂φ
+This example illustrates the discussion of section 2.5 concerning “Killing winds”: whereas the
+Zermelo picture (63) retains the simplicity of the spacetime viewpoint – a rigid rotation in flat
+space –, the Randers picture (59) appears to reveal a much more complex structure of a non-trivial
+one-form in a curved space. However, using the tensorial test (52) one could also observe the Weyl
+triviality of the spacetime description of this Randers structure; in particular the magnetic field
+                                                        ∂
+                                             B = 2Ω       ,
+                                                       ∂z
+is indeed a (quite simple) Killing vector field of (59). Another instructive conclusion from this
+example is that the breakdown of the Randers/Zermelo picture for r ≥ 1/Ω has a clear physical
+spacetime interpretation: the existence of a Velocity of Light Surface (VLS) at r = 1/Ω and the
+consequent spacelike character of the φ′ = const. surfaces for larger r. Outside this VLS timelike
+observers are obliged to move in the φ′ direction.
+    In figure 2 we summarize the network of relations for this example. In the three pictures we
+have shown the geometry of a z = const. (and t = const. in the spacetime picture) 2-surface. In
+the spacetime picture we have a VLS; both the Randers and the Zermelo picture cover only the
+region inside the VLS. In the Randers picture the 2-surfaces are negatively curved geometries; the
+outer surface depicted is the surface with constant negative curvature (and a flat surface) given for
+comparison; the norm of B is represented by the size of the dashed arrows; it diverges, together
+with the curvature, when the Randers picture breaks down. In the Zermelo picture the 2-surfaces
+are flat geometries; W describes a constant angular velocity “tornado”.
+    Let us finish this example with the comment that this Randers structure is one of the examples
+discussed by Shen [6] who envisages it in terms of a fish moving inside a rotating fish tank. The
+Randers structure has zero flag curvature and zero S-curvature. From the spacetime viewpoint this
+conclusion is somewhat trivial, since we are dealing with flat Minkowski spacetime.
+
+3.2   Magnetic fields on R3 and H2 × R: simple Randers; non-trivial Zermelo
+We shall now consider four examples of magnetic fields: a constant and a non-constant mag-
+netic field in 3-dimensional flat space R3 and a constant and a non-constant magnetic field in
+2-dimensional hyperbolic space times a flat direction H2 × R. All of these examples are, in the
+spacetime picture, ultra-stationary metrics of the form (45), so that the discussion of section 2.4
+applies.
+
+                                                 17
+                                                                                      VLS
+            Spacetime picture:                                           t
+            Minkowski space                                                  r
+                                                    ∂
+                                                         timelike                φ′
+         in rotating coordinates                    ∂t
+
+
+                                   ∂
+                                   ∂t
+                                        spacelike
+
+
+
+
+        B = B z (r)ez
+ Randers picture:                                                                                           Zermelo picture:
+ negatively curved                                                                                          constant angular
+ surfaces with varying                                                                                      velocity tornado
+ magnetic field
+
+
+
+                                                                                                    W
+
+
+Figure 2: Langevin’s rotating platform in Minkowski space and the corresponding Randers and
+Zermelo pictures. We have chosen positive Ω to depict the tipping of the light-cones (spacetime
+picture) and the “tornado” direction (Zermelo picture). The direction of the magnetic field pre-
+sented (Randers picture) is merely illustrative, since the embedding performed excludes the z
+direction.
+
+3.2.1     Heisenberg group manifold
+
+A special case of the Som-Raychaudhuri spacetimes [37] is a homogeneous manifold, which is (up
+to a trivial z-direction) the group manifold of the Nil or Heisenberg group, the Lie group of the
+Bianchi II Lie algebra. The spacetime metric is (45) with the Randers structure
+
+                               b = ar 2 dφ ,              aij dxi dxj = dr 2 + r 2 dφ2 + dz 2 .                         (64)
+
+The corresponding magnetic field is B = a∂/∂z; thus the Randers picture has the simple physical
+interpretation of a constant magnetic field in R3 . This picture breaks down at r = 1/|a| – see
+figure 3 – which has the spacetime interpretation of being a VLS, beyond which (i.e. for larger r),
+the integral curves of ∂/∂φ are closed timelike curves. Note also that this Randers structure fails
+to obey the requirements (52), as expected, despite the fact that the magnetic field is actually a
+Killing vector field of (64).
+    The Zermelo structure, on the other hand, is more complex:
+                       a     ∂
+             W=          2 2
+                               ,                hij dxi dxj = (1 − a2 r 2 )[dr 2 + dz 2 + (1 − a2 r 2 )r 2 dφ2 ] .      (65)
+                    1 − a r ∂φ
+
+3.2.2     Squashed AdS3 and Gödel spacetime
+
+AdS3 is the group manifold of the Lie group SL(2, R). Introduce the following two sets of 1-forms:
+                                                 
+                 0                                     0
+             σL = dφ + cosh rdt
+                                                  σR = dt + cosh rdφ
+                                                  
+               σL1 = sin φdr − sinh r cos φdt ,      σR1 = − sin tdr + sinh r cos tdφ .       (66)
+             σ 2 = cos φdr + sinh r sin φdt
+                                                  σ 2 = cos tdr + sinh r sin φdφ
+                                                  
+                L                                      R
+
+
+                                                                    18
+                                                              Randers structure valid outside the surfaces
+                Randers structure valid inside the surfaces
+
+
+
+Figure 3: Surfaces, in R3 , where the Randers structure breaks down. Left: Heisenberg example
+of section 3.2.1 for a = 10/3, 10/6, 10/9 (smaller to larger cylinder); the Randers structure is valid
+                                                                                     √
+inside the cylinder for each case. Right: Störmer example of section 3.2.3 for µ = 0.5, 0.8, 1
+(smaller to larger surface); the Randers structure is valid outside the surface for each case.
+
+These are called left and right 1-forms on SL(2, R), respectively. Both sets obey the Cartan-Maurer
+equations
+                                 1                            1
+                         dσLµ = cµαβ σLα ∧ σLβ ,    dσRµ
+                                                         = − cµαβ σR α    β
+                                                                       ∧ σR  ,
+                                 2                            2
+where cµαβ are the structure constants of sl(2, R), i.e c012 = 1 = −c120 = −c201 . The AdS3 metric
+can be written in terms of either set of forms; we write it as2
+                                         ds2 = −a2 (σR
+                                                     0 2     1 2
+                                                       ) + (σR       2 2
+                                                               ) + (σR ) .                                      (67)
+We have introduced a squashing parameter a; a2 = 1 corresponds to the AdS3 case. For a2 > 1
+we have a family of spacetimes with ctc’s of the Gödel type [38]. To identify the original Gödel
+universe [39] we introduce a new time coordinate t = 2t′ − φ and the vector field U = ∂/∂t′ . The
+Einstein tensor of (67) (with a trivial flat direction) reads
+                                                               (a2 − 1)
+                                          Gµν − a2 gµν = 4              Uµ Uν ,
+                                                                  a2
+which means it is a solution of the Einstein equations with a cosmological constant Λ = −a2 and
+a pressure-less perfect fluid with density ρ = 4(a2 − 1)/a2 . Gödel’s original choice was to take
+ρ = |Λ| which corresponds to a2 = 2, but all spacetimes with a2 > 1 are qualitatively similar.
+Introducing yet another time coordinate t = 2at′ the spacetime metric (adding a flat direction to
+make it 4-dimensional) becomes of the form (45) with the Randers structure
+                                  r
+                   b = −2a sinh2 dφ ,       aij dxi dxj = dr 2 + sinh2 rdφ2 + dz 2 ,          (68)
+                                  2
+which can be interpreted as a constant magnetic field B = −a∂/∂z on H2 × R. This Randers
+structure breaks down at
+                                            r      1
+                                       tanh2 = 2 ,
+                                            2     a
+  2
+      For the AdS space (i.e for a2 = 1) to have unit “radius”, a conformal factor of 1/4 would have to be included.
+
+
+                                                              19
+being valid only for smaller r – see figure 4. Thus, the Randers structure is valid everywhere if
+a2 ≤ 1. When it breaks down there is, in the spacetime picture, a VLS, such that the Killing vector
+field ∂/∂φ becomes timelike beyond it.3
+    The Zermelo structure is, again, less straightforward to interpret:
+                                                a             ∂
+                                    W=            2      2 r ∂φ ,
+                                      2[1 + (1 − a ) sinh 2 ]
+                                                                                                               (69)
+                                        r 2                   r                  
+              hij dxi dxj = 1 − a2 tanh2     dr + 1 − a2 tanh2       sinh2 rdφ2 + dz 2 .
+                                         2                        2
+    This squashed SL(2, R) example allows us to make another application of the discussion of
+section 2.4 together with isoperimetric inequalities. For this purpose, reconsider equation (48),
+and suppose that the closed curve γ spans a 2-surface Σ. This will always be true if B is simply
+connected. Using Stokes’s theorem, condition (48) becomes
+                                                   Z
+                                        L(Σ) > −      F̃ .                                   (70)
+                                                             Σ
+
+Using (68) for a simply connected domain Σ in the hyperbolic plane H2 , with area A(Σ), condition
+(70) becomes
+                                        L(Σ) > aA(Σ) .                                       (71)
+Now the isoperimetric inequality of Schmidt [43, 44] states that for any such domain (with Gaussian
+curvature K)                              p
+                                  L(Σ) > 4πA(Σ) − KA2 (Σ) .                                    (72)
+In the Euclidean plane E2 the second term in the square root would be absent; it arises from the
+negative curvature. In fact for any two dimensional connected and simply connected domain with
+Gauss-curvature K everywhere less or equal to −κ, Yau [44, 45] has shown that
+                                                √
+                                         L(Σ) > κA(Σ).                                      (73)
+
+In general, the quantity
+                                                 inf L(Σ)/A(Σ),                                                (74)
+is called the Cheeger’s constant [46]. Thus an inequality of the form (73) may be called a generalised
+isoperimetric or Cheeger type inequality.
+    Recall, from section 2.4, that (70) guarantees the absence of ctc’s. Comparing with (73), we
+see that if 0 < a ≤ 1, (70) holds for any γ and hence there can be no ctc’s. Since the isoperimetric
+inequality is sharp, if a > 1 there are ctc’s, in agreement with the spacetime picture.
+    The limiting case, case a = 1, corresponds to the standard metric on AdS   ]3 ≡ SL(2; ^R), the
+universal covering space of three-dimensional Anti-de-Sitter spacetime. Of course it is not difficult
+to construct a time function directly on AdS]3 but this suggests an amusing reversal of the logic.
+Given that AdS]3 admits no ctc’s we deduce that (73) holds for domains on H2 . This leads to some
+apparently new isoperimetric inequalities for 2-surfaces in HnC , the complex hyperbolic ball with its
+standard Bergmann metric.
+   3
+     An illustrative diagram for the light cone structure of the Gödel spacetime is given in [40] (and corrected in
+[41, 42]). A similar light cone structure applies to the Heisenberg example of section 3.2.1. It is instructive to
+compare this light cone structure with the one illustrated in figure 2.
+
+
+                                                        20
+   The isoperimetric inequality and the existence or non-existence of closed timelike curves in the
+spacetime picture is also closely related to the behaviour of an action functional S(γ) defined by
+Novikov [47] on Ω(x1 , x2 ), the space of paths γ joining two points x1 and x2 in B. The path pursued
+by a particle moving with unit speed in B under the influence of a magnetic field F̃ may be found
+by extremizing this action functional which is
+                                                   Z
+                                           S(γ) = (dl + b) ,                                     (75)
+                                                   γ
+
+among all curves γ ∈ Ω(x1 , x2 ). Novikov proposes using S(γ) as a Morse function on Ω(x1 , x2 ).
+Unlike the length L(γ) however, the functional S(γ) need not be bounded below. This leads to
+difficulties with the Morse function since the set in Ω(x1 , x2 ) for which S(γ) ≤ ǫ is no longer
+relatively compact.
+     If this “Arzela property”[47] does not hold, then it is not guaranteed that, for example, there
+exists at least one critical path between two arbitrary points x1 and x2 (see [47]). A simple example
+is provided by a uniform magnetic field in the Euclidean plane. All classical paths are circles with
+the Larmor radius (which is fixed for fixed physical magnetic field and energy). If the distance
+between x1 and x2 exceeds twice the Larmor radius there is no classical path between them. This
+is exactly what happens as we vary a in the squashed SL(2, R) example: S(γ) will cease to be
+bounded below as we cross a = 1 towards a > 1.
+     A last relation we would like to point out for this squashed SL(2, R) example is that the
+breakdown of the Randers structure is associated to the transition from chaos to integrability for
+the magnetic flow. Take the Randers 1-form b in terms of the physical magnetic potential, A, for
+                                                                    √
+a particle of unit charge and unit mass. Then, from (41), b = A/ 2ǫ. Choosing the magnetic field
+dA to be the volume form on the unit radius (i.e Gaussian curvature −1) hyperbolic plane H2 , we
+recover the Randers structure (68) with
+                                                 1
+                                             a= √ .
+                                                 2ǫ
+It was shown in [30, 48] that, under the conditions described, the motion is completely integrable,
+in terms of real-analytic integrals of motion, on the energy levels 2ǫ < 1. For 2ǫ > 1, the magnetic
+flow is an Anosov flow (chaotic). Thus, the transition from existence or otherwise of ctc’s in
+the spacetime picture and the breakdown or otherwise of the Randers structure in the Randers
+picture, has yet another manifestation as a transition from a non-ergodic to an ergodic motion in
+the magnetic flow picture.
+
+3.2.3   Störmer’s problem
+
+Consider the spacetime metric (45) with the Randers structure
+
+                            sin2 θ
+                   b = −µ          dφ ,   aij dxi dxj = dr 2 + r 2 (dθ 2 + sin2 θdφ2 ) ,        (76)
+                              r
+where µ is a constant. The corresponding magnetic field is a pure dipole field:
+                                                             
+                                         2 cos θ ∂    sin θ ∂
+                               B = −µ              +            .                               (77)
+                                           r 3 ∂r      r 4 ∂θ
+
+                                                  21
+                                                                  Randers structure valid near the origin
+
+
+
+
+                                                                  Randers structure valid asymptotically
+
+
+
+Figure 4: Region of H2 covered by the Randers structure in the examples of section 3.2.2 and 3.2.4.
+The surface on the left is the embedding diagram of H2 discussed in section 3.1. As we increase the
+constant magnetic field of section 3.2.2, beyond the minimal value associated to a = 1, the Randers
+structure breaks down outside a finite radius which decreases with increasing a (top sequence).
+As we turn on the asymptotically decaying magnetic field of section 3.2.4, the Randers structure
+breaks down inside a finite radius which increases with increasing λ (bottom sequence).
+
+
+Notice that this is not a Killing vector of aij which immediately guarantees that the spacetime is
+not conformally flat and the Randers-Finsler geometry has not constant flag curvature. From the
+form of B it follows that this Randers picture has the simple interpretation of a dipole magnetic
+field on R3 . Understanding the orbits of a charged particle under the influence of such a magnetic
+field is often called Störmer’s problem and it is of obvious interest for understanding the Earth’s
+magnetic field and the phenomena associated with it, such as the Polar Aurorae [49].
+    The Randers structure (76) breaks down at the surfaces
+                                                p
+                                           r = |µ| sin θ ,
+
+which are represented in figure 3. In the spacetime picture, these surfaces corresponds to a VLS
+beyond which (i.e. for smaller r) the Killing vector field ∂/∂φ becomes timelike giving rise to ctc’s.
+   The Zermelo structure is
+                                                       µr               ∂
+                                      W=                            ,
+                                                 r 4 − µ2 sin2 θ ∂φ
+                                                                                                                    (78)
+                                µ2 sin2 θ                                  µ2 sin2 θ
+                                                                                                     
+                i   j                              2      2         2                           2      2
+           hij dx dx =       1−                  dr + r           dθ + 1 −                    sin θdφ           .
+                                   r4                                         r4
+
+    It has been shown (see for instance [50]) that the Störmer problem is non-integrable, in a
+Liouville sense. Thus, one should not expect the geodesics of the spacetime metric (45) with (76)
+to separate.
+
+
+
+
+                                                        22
+3.2.4     Gödel’s cat
+
+Cats always land on their feet. Even when dropped upside down and without any external torque.
+Thus, by deforming their body, cats undergo a rotation with zero angular momentum.
+   Deformations generate rotation because, generically, they do not commute. The ratio between
+the rotation and the area of the deformation can, when the latter tends to zero, be interpreted as
+curvature. Thus, the optimisation problem of finding the most effective rotation with zero angular
+momentum can be cast as motion in a curved space. In [51] such problem was reduced to studying
+the magnetic flow of the following Randers structure:
+                                                                                           cosh r − 1
+      b = −λa(r) sinh rdφ ,        aij dxi dxj = dr 2 + sinh2 r dφ2 + dz 2 ,      a(r) ≡              ,      (79)
+                                                                                            sinh 2r
+where λ is a constant. A trivial flat direction was added to the spatial metric to make it three
+dimensional. The interpretation of this Randers structure is that of the non-constant magnetic
+field
+                                                  λ    ∂
+                                        B=          2 ∂z ,
+                                              2 cosh r
+on a 3-geometry which is the direct product of the hyperbolic plane with a flat direction H2 × R.
+   In the spacetime picture, the orbits are the null geodesics of the 4-dimensional metric (45).
+Loosely speaking this is an “inside-out” version of the Gödel spacetime, albeit not homogeneous.
+There is a VLS at
+                                                    1
+                                           a(r) =      ,
+                                                   |λ|
+wherein the Randers structure breaks down (it is only valid outside, i.e for larger r - figure 4).
+Inside (outside) the VLS ∂/∂φ is timelike (spacelike).
+    The Zermelo structure is:
+               λa(r)         ∂
+W=                  2    2
+                               ,        hij dxi dxj = (1 − λ2 a(r)2 )[dr 2 + dz 2 + (1 − λ2 a(r)2 ) sinh2 rdφ2 ] .
+        sinh r(1 − λ a(r) ) ∂φ
+                                                                                                       (80)
+    Let us close this section with an observation concerning the Zermelo structures (65), (69),
+(78) and (80). Generically, the 3-geometry hij is conformal to the t = constant sections of the
+spacetime picture geometry. The conformal factor that multiplies the latter to give the former is
+(1 − |b|2 )/V 2 , cf. (5) and (24). For ultra-stationary metrics V = 1. Thus the surface at which
+the Randers structure breaks down becomes degenerate for the Zermelo geometry, even if it is
+non-degenerate in the spacetime picture. For the examples in this section, such surface is a smooth
+null surface in the spacetime picture, but becomes a singular surface (wherein the curvature blows
+up) for hij . For instance, the Ricci scalar of the 3-geometry (65) is R = 2a2 (7 − 5a2 r 2 )/(1 − a2 r 2 )3 .
+
+3.3     A rotating coordinate system in the ESU and the Anti-Mach metric
+S 3 is the group manifold of the Lie group SU (2). Introduce the following two sets of 1-forms:
+                                                   
+                 1                                       1
+            σ̄L = sin φ2 dθ − sin θ cos φ2 dφ1
+                                                    σ̄R = − sin φ1 dθ + sin θ cos φ1 dφ2
+                                                    
+              σ̄L2 = cos φ2 dθ + sin θ sin φ2 dφ1 ,      2 = cos φ dθ + sin θ sin φ dφ
+                                                       σ̄R                                 .    (81)
+                                                                  1                1   2
+            σ̄ 3 = dφ + cos θdφ
+                                                    σ̄ 3 = dφ + cos θdφ
+                                                    
+                L      2            1                    R     1           2
+
+
+
+                                                       23
+These are left and right 1-forms on SU (2), respectively. Both sets obey the Cartan-Maurer equa-
+tions
+                                1                           1
+                         dσ̄Li = cijk σ̄Lj ∧ σ̄Lk ,    i
+                                                    dσ̄R            j
+                                                         = − cijk σ̄R     k
+                                                                      ∧ σ̄R ,
+                                2                           2
+where cijk are the structure constants of su(2), i.e cijk = −ǫijk , where ǫijk is the Levi-Civita tensor
+density and ǫ123 = 1. One can define the dual vector fields to σ̄Li and σ̄R        i , which we denote,
+                   L       R
+respectively, by ki and ki . To examine the symmetries of the geometries to be presented in this
+section, it is useful to notice that the left forms are right invariant and the right forms are left
+invariant:
+                                                            j
+                                    LkR σ̄Lj = 0 ,    LkL σ̄R =0.
+                                         i                       i
+
+The Lie dragging of the left (right) forms along the left (right) vector fields is, on the other hand,
+given by
+                                                          j
+                             LkL σ̄Lj = ǫijk σ̄Lk , LkR σ̄R = −ǫijk σ̄R
+                                                                      k
+                                                                        .
+                                   i                         i
+
+    The Einstein Static Universe metric on R × S 3 , with radius R, can be written in terms of either
+set of forms; we write it as
+
+                                              R2  1 2
+                               ds2 = −dt2 +                   2 2      3 2
+                                                                           
+                                                  (σ̄R ) + (σ̄R ) + (σ̄R ) .                              (82)
+                                              4
+Let us consider a rigidly rotating coordinate system in the ESU. Since this universe is finite,
+we expect that, for sufficiently small angular velocity, there will be no VLS and hence that the
+corresponding Randers/Zermelo structures will hold everywhere in B. To see this explicitly consider
+the co-rotating coordinate φ′1 = φ1 − Ωt, such that the rotation is along the integral lines of kR
+                                                                                                 3 , i.e
+the Hopf fibres. The corresponding Randers structure is
+                                                                                    3 )2 
+                 ΩR2                               R2
+                                                          
+                           3            i  j                   1 2      2 2     4(σ̄R
+          b=             σ̄ ,     aij dx dx =               (σ̄R ) + (σ̄R ) +              ,      (83)
+              4 − (ΩR)2 R                      4 − (ΩR)2                      4 − (ΩR)2
+
+where, the right-forms should be written in terms of φ′1 rather than φ1 . This Randers structure
+breaks down if R = 2/|Ω|. Notice that this is now a condition on the metric parameters, rather
+than the equation of a surface. Thus if we take the angular velocity sufficiently small, |Ω| < 2/R,
+the Randers structure is valid all over B. Physically this Randers structure is interpreted as a
+magnetic field along the Hopf fibre
+                                           "           #
+                                                   ΩR 2 R
+                                                 
+                                        2Ω
+                                    B=       1−           k3 ,                                  (84)
+                                        R           2
+
+on a squashed 3-sphere (kR             ′
+                            3 = ∂/∂φ1 ). The Zermelo picture, on the other hand, retains the
+simplicity of the spacetime picture: a constant wind along the Hopf fibre of a round S 3 :
+
+                                                          R2  1 2        2 2      3 2
+                     W = −ΩkR             hij dxi dxj =
+                                                                                       
+                            3 ,                               (σ̄R ) + (σ̄R ) + (σ̄R ) .                  (85)
+                                                          4
+One can visualise this wind using the Clifford tori representation of the 3-sphere. Change from
+Euler (θ, φ1 , φ2 ) to bipolar (θ̃, φ̃1 , φ̃2 ) coordinates on S 3 : θ = 2θ̃, φ1 = φ̃1 + φ̃2 , φ2 = φ̃1 − φ̃2 .
+The θ̃ = constant surfaces of the 3-sphere become tori to which the wind is tangent since ∂φ1 =
+(∂φ̃1 + ∂φ̃2 )/2. This is represented in figure 5.
+
+                                                      24
+Figure 5: Foliation of the 3-sphere by Clifford tori and the Killing wind corresponding, in the
+spacetime picture, to a rigidly rotating coordinate system. Adapted from [52] and inspired by the
+cover of Twistor Newsletter.
+
+   Let us comment that the Finsler metric defined by (83) is equivalent to the family of Finsler
+metrics of constant, positive flag curvature on the Lie group S 3 , constructed in [7]. Explicitly, the
+parameter K therein maps to
+                                                    4
+                                          K=              .
+                                               4 − (ΩR)2
+So, the restriction considered in [7], K > 1, amounts to considering rotating coordinate systems
+in the ESU with |Ω| < 2/R, which is the condition, in the spacetime perspective, for ∂/∂t to be
+everywhere timelike and for the Randers structure to hold everywhere in B. As in section 3.1 and in
+agreement with the general discussion of section 2.5.1, we again observe how the spacetime picture
+trivializes the construction of Randers-Finsler geometries with constant flag curvature.
+    There is actually an exact solution of Einstein’s equations with a positive cosmological constant
+and incoherent matter describing a truly rotating ESU, found by Osváth and Schücking [53, 54].
+This remarkable geometry, sometimes dubbed Anti-Mach metric, lives on R×S 3 and can be written4
+                        p
+                                   3      R2            1 2             2 2
+       ds2 = −dt2 − R                                                      ) + (1 + 2k2 )(σ̄R
+                                                                                            3 2
+                                                                                                
+                         1 − 2k2 σ̄R dt +      (1 − k)(σ̄R ) + (1 + k)(σ̄R                    ) ,           (86)
+                                          4
+where k is a constant, taken in the interval 0 ≤ k2 < 1/4. The special case k = 0 coincides with the
+ESU, but described in a frame of reference, i.e. a tetrad, which is rigidly rotating with respect to
+the standard static (and non-rotating) frame. Actually this k = 0 case is the rotating coordinate
+system just described with                          √
+                                                     2
+                                             Ω=−        .                                       (87)
+                                                    R
+   4                             1       2
+    Our left invariant 1-forms σ̄R and σ̄R are exchanged as compared to the ones in [54]. Since these can also be
+exchanged by making k → −k the solution presented here maps to the one in [54] under this transformation.
+
+
+
+                                                       25
+For direct comparison of the Randers/Zermelo structures that shall be obtained from the Anti-
+Mach metric with k = 0 and the ones arising from the rotating platform with (87), it is convenient
+                                                                                       √
+also to rescale the radius of the rotating platform, after implementing (87), as R → R/ 2.
+    The geometry (86) solves the Einstein equations with the energy-momentum tensor of pressure-
+free-matter, with density ρ and a cosmological constant Λ. The density, cosmological constant and
+radius R are related by
+                                4πρ                            1
+                                     = 1 − 4k2 ,     Λ= 2             .                       (88)
+                                 Λ                        R (1 − k2 )
+    In this geometry, the fluid is rotating with respect to the local inertial frame at some point P .
+Thus, it is a counter-example to (a version of) Mach’s principle.5 Another interesting property of
+this geometry can be seen by noting that the 4-velocity of the matter is [54]
+                                    s                    r
+                                        1 − 2k2 ∂      1       2
+                              u=                    +               kR .                         (89)
+                                      2(1 − 4k ) ∂t R 1 − 4k2 3
+                                               2
+
+
+Here and below kR  3 = ∂/∂φ1 . The general metric is homogeneous, being invariant under time
+translations, generated by ∂/∂t, and left translation of the 3-sphere S 3 generated by kL
+                                                                                        i . If k 6= 0,
+the fluid flow vector is not a Killing vector field and indeed, in co-moving coordinates adapted to
+the flow, the metric is not stationary, but rather it oscillates in co-moving time.
+   The Randers structure for the Anti-Mach metric is
+             Rp           3                           R2            1 2             2 2       3 2
+                                      aij dxi dxj =
+                                                                                                   
+       b=−      1 − 2k2 σ̄R ,                              (1 − k)(σ̄R ) + (1 + k)(σ̄R ) + 2(σ̄R ) .              (90)
+             2                                        4
+This Randers structure never breaks down in the allowed range for k. Physically it is interpreted
+as a magnetic field along the Hopf fibre
+                                           r
+                                         2   2(1 − 2k2 ) R
+                                   B=− 2                k3 ,                                 (91)
+                                         R     1 − k2
+on a tri-axial squashed 3-sphere. Observe that the magnetic field is not a Killing vector field,
+immediately denouncing, by virtue of the discussion in section 2.5.1, that the spacetime picture is
+not a conformally flat geometry. The Zermelo picture, on the other hand, reveals a non-Killing
+wind, still along the Hopf fibre of a tri-axial squashed S 3 :
+         √
+        2 1 − 2k2 R                     (1 + 2k2 )R2            1 2             2 2
+                               i    j
+                                                                                   ) + (1 + 2k2 )(σ̄R
+                                                                                                    3 2
+                                                                                                        
+ W=              2
+                   k3 , hij dx   dx   =                (1 − k)(σ̄R ) + (1 + k)(σ̄R                    ) .
+        R(1 + 2k )                           8
+                                                                                                       (92)
+It is a simple matter to verify that (90)-(92), with k = 0, reduce to (83)-(85) with (87) and the
+appropriate rescaling of R.
+   5
+    A similar property holds in Gödel’s spacetime [39], but the latter has ctc’s and it is not finite. Thus this Anti-
+Mach metric is more physical and sharper (due to its finiteness) as a counter-example to Mach’s principle in general
+relativity.
+
+
+
+
+                                                          26
+3.4     Kerr black hole and charged Kerr
+3.4.1    Asymptotic Randers/Zermelo structure
+
+We now consider rotating black holes. In Boyer-Lindquist coordinates xµ = (t, r, θ, φ), the Kerr
+solution is given by the line element
+
+                  ∆                 2 sin2 θ                      2 ρ2 2
+           ds2 = − 2 dt − a sin2 θdφ +        (r 2
+                                                   + a 2
+                                                         )dφ − adt   + dr + ρ2 dθ 2 ,            (93)
+                  ρ                      ρ2                           ∆
+
+where m is the ADM mass and a = j/m, with j the ADM angular momentum; moreover
+
+                           ∆ ≡ r 2 − 2mr + a2 ,        ρ2 ≡ r 2 + a2 cos2 θ .
+
+A simple manipulation recasts the metric in the form (24) with V 2 = H/ρ2 and the Randers
+structure
+                 2mra sin2 θ                     ρ4 dr 2         ∆ sin2 θ 2
+                                                                           
+                                          i  j               2
+           b=−               dφ ,   aij dx dx =          + dθ +          dφ   ,      (94)
+                      H                          H    ∆             H
+
+where
+                                         H ≡ ∆ − a2 sin2 θ .                                     (95)
+The magnetic field that one derives from this Randers structure is
+
+                              2ma sin θ(r 2 − a2 cos2 θ) ∂   4mra cos θ∆ ∂
+                      B=−                  6
+                                                           −               .                     (96)
+                                         ρ              ∂θ       ρ6     ∂r
+
+One notes that, on the equatorial plane (θ = π/2), the magnetic field is purely in the θ direction;
+thus a particle with a 3-velocity on the equatorial plane will feel a Lorentz force on the equatorial
+plane, as expected from the fact that this sub-manifold is totally geodesic. Likewise, along the axis
+direction (θ = 0, π), the magnetic field is purely radial. Thus a particle moving along the axis will
+feel no Lorentz force and therefore will remain moving along the axis, as expected from the fact
+that this sub-manifold is also totally geodesic in the full Kerr metric. Observe also that, for large
+r, this magnetic field approaches the pure dipole field (77) with µ = 2j. The Finsler condition is
+given by
+                                             (2mra sin θ)2
+                                      |b|2 =                <1.
+                                                  ∆ρ4
+This Randers structure is therefore only defined outside the ergo-region. To see this, note that
+
+                   ρ4 ∆ − (2mra sin θ)2 = H((r 2 + a2 )2 − a2 sin2 θ∆) ≡ C(r, θ) ,
+
+and at the ergo-sphere H = 0. Hence the Finsler condition fails to hold exactly on the ergo-sphere.
+The spacetime interpretation of the breakdown of the Randers structure is very similar to the case
+of the rigidly rotating platform of section 3.1 (but an inside out version): the ergo-sphere is a VLS
+in the sense that φ = const becomes a spacelike surface inside the ergo-region.
+    The Zermelo structure for the Kerr metric is, on the other hand,
+
+                                                  C(r, θ) dr 2
+                                                                                        
+                  2marH ∂                 i  j                     2    C(r, θ)    2   2
+            W=                 ,    hij dx dx =                + dθ +           sin θdφ .         (97)
+                   C(r, θ) ∂φ                      ∆H      ∆             Hρ4
+
+                                                  27
+Observe that this Zermelo structure is qualitatively different from the ‘flow of space picture’ ob-
+tained in [55], by considering Painlevé-Gullstrand coordinates for the Kerr metric based on zero
+angular momentum observers dropped from infinity; namely the wind herein is purely azimuthal
+whereas the ‘flow of space’ in [55] has a radial component (as the wind in (33)), a distinction which
+is compensated by the different space curvature.
+    Let us note that this analysis of Zermelo/Randers structure of the Kerr black hole generalizes
+quite easily to charged rotating black holes. The metric of the Kerr-Newman black hole of Einstein-
+Maxwell theory is obtained by simply replacing
+
+                                           ∆ → ∆ + q2 ,
+
+in (97)/(94), where q denotes the black hole charge. The metric of the Kerr-Sen [56] black hole of
+low energy heterotic string theory is obtained, as observed in [57], simply by replacing
+                                     qm                              qm
+                       ∆ → ∆+          √ r,           ρ2 → ρ2 +        √ r.
+                                  q + 2 2m                        q + 2 2m
+where m denotes the black hole mass. Note that in both cases H (and C(r, θ) for the Zermelo case)
+changes accordingly by virtue of (95).
+
+3.4.2   Ergo-region Randers/Zermelo structure
+
+In order to investigate the Randers structure up to the outer event horizon, we need to change to
+coordinates that are co-rotating with the outer event horizon of the Kerr black hole. Recall that
+the angular velocity of the outer horizon is
+                                      a                  p
+                             Ω+ =          ,   r± ≡ m ± m2 − a2 .                            (98)
+                                    2mr+
+Thus one finds the suitable co-rotating angular coordinate (note that for a > 0, freely falling
+observers in the geometry (93) are being dragged in the positive φ direction)
+
+                                           φ′ = φ − Ω+ t .
+
+In these co-rotating Boyer-Lindquist coordinates, the line element of the Kerr solution can be
+written in the form (24) with V 2 = H ′ /ρ2 and the Randers structure
+
+                  N (r, θ) sin2 θ ′                  ρ4 dr 2          ∆ sin2 θ ′2
+                                                                                 
+              ′                           ′    i  j               2
+             b =                 dφ ,    aij dx dx = ′        + dθ +          dφ    ;      (99)
+                        H′                           H    ∆             H′
+we have introduced
+                                                  C(r, θ)
+                       N (r, θ) ≡ −2mra + Ω+              ,
+                                                    H
+                                                              Ω2+ sin2 θC(r, θ)
+                           H ′ ≡ H + 4Ω+ mra sin2 θ −                           .
+                                                                     H
+By inspection, one confirms that (99) reduces to (94) when Ω+ = 0. This Randers structure breaks
+down when                                                    2 ) 2
+                                                   2mr(r 2 − r+
+                          |b′ |2 = ∆Ω2+ sin2 θ 1 +                   ≥1.
+                                                       ρ2 ∆
+
+                                                 28
+For non-extremal black holes |b′ |2 → 0 at the horizon, which confirms that this Randers structure
+is indeed valid near the horizon. Moving away from the horizon, |b′ |2 grows, except for θ = 0
+and θ = π, at which values |b′ |2 = 0 for any r. Clearly, the co-rotating Randers structure (99)
+breaks down as r → ∞. The boundary surface where this occurs depends both on θ and r, and
+it approximates Ω+ r sin θ = 1 as r → ∞, which is simply the light cylinder of a a rigidly rotating
+platform with the angular velocity of the outer Kerr horizon. Sufficiently close to extremality, the
+co-rotating Randers boundary surface enters the ergo-region of the black hole. By symmetry, this
+happens first at the equator as a/m increases, and the condition for intersection is therefore
+                                             √
+                                           q
+                                      a
+                                         ≥     8 − 2 ≈ 0.910 .                                 (100)
+                                      m
+This is illustrated schematically in figure 6.
+
+
+
+
+Figure 6: Illustration of the ergo-sphere and the break down surface of the Randers structure for the
+Kerr black hole with a = 0.98m. The non-rotating Randers structure covers the region outside the
+ergo-sphere. The co-rotating Randers structure covers the region inside the cup-like surfaces. For
+a/m obeying (100) these surfaces intersect the ergo-sphere in the vicinity of the equatorial plane.
+They approach the light cylinder (meshed) asymptotically from within, for small co-latitudes. Note
+that this is not an embedding diagram.
+
+   Physically, this Randers structure can be interpreted as the rather involved magnetic field
+B′ = B ′r ∂r + B ′θ ∂θ , where
+                 2 cos θ
+       B ′r =                ′             2                2     2                 2
+                                                                                                       
+                         (H    + N Ω + sin   θ)(N − Ω + ∆a    sin   θ) +    N a sin   θ(a −  2mrΩ   + )  ,   (101)
+                   ρ6
+                 2 sin θ    ′
+       B ′θ =                             2                     2       2                 2    2
+                                                                                                   
+                         (H    + N Ω + sin   θ) ma − Ω  + (2r(r    +  a   ) −  (r −   m)a   sin  θ)
+                   ρ6
+                 +N (r − m + Ω+ ma sin2 θ) .
+                                                
+
+
+In this form, all Ω+ terms derive from the transformation to the co-rotating frame, so that the
+
+                                                      29
+equations reduce to the Boyer-Lindquist case (96) if one sets Ω+ = 0. Note also that B ′r = 0 on
+the equatorial plane, as expected from the fact that this is a totally geodesic sub-manifold.
+    As before, we can also give expressions for the Zermelo structure corresponding to this co-
+rotating Randers structure,
+
+                                             N (r, θ)H ′      ∂
+                                 W′ = − 4             2   2 ∂φ′ ,
+                                        ρ ∆ − N (r, θ) sin θ
+                                         4  dr 2                 2       
+                          ′    i  j    ′ρ             2    ′ ∆ sin θ   ′2
+                         hij dx dx = λ ′          + dθ + λ           dφ     ,
+                                        H     ∆                H′
+
+using (5) and (6), where
+                                                       N (r, θ)2 sin2 θ
+                                            λ′ = 1 −                    .
+                                                             ρ4 ∆
+
+3.4.3   Near horizon for non extremal case: Asymptotic Hyperbolicity
+
+To analyse the near horizon Randers structure take
+
+                                           r = r+ + ǫ , and ǫ → 0 .
+
+For the non-extremal case (r+ > r− ), as ǫ → 0,
+
+                                     (r+ − r− ) 4
+                    H ′ (ǫ, θ) =                           2
+                                            2 )2 ρ+ ǫ + O(ǫ ) ,      ρ2+ ≡ r+
+                                                                            2
+                                                                              + a2 cos2 θ .
+                                     (a2 + r+
+
+It follows that the Randers structure becomes, to leading order in ǫ
+
+                               a sin2 θ(a2 + r+
+                                              2)    2r+2         
+                           ′                              r+ + r−
+                          b =                     1+ 2               dφ′ ,                           (102)
+                                       ρ2+            ρ+ r+ − r−
+                                       2 )2
+                                (a2 + r+               2 )2             2 )4 sin2 θ
+                                            dǫ2 (a2 + r+    dθ 2 (a2 + r+           dφ′2
+               a′ij dxi dxj =                  +                +                        .           (103)
+                                (r+ − r− )2 ǫ2   r+ − r− ǫ         (r+ − r− )ρ4+     ǫ
+The magnetic field is
+                                                    2    2 
+                                        2 2a cos θ(r+ − a )     a2
+                                                                         
+                                 ′                                    2    ∂
+                                B    =ǫ       4   2    2
+                                                             3 − 2 cos θ      .
+                                            ρ+ (r+ + a )        r+         ∂ǫ
+At leading order in ǫ there is only a radial component of the magnetic field, which vanishes on the
+equatorial plane. Clearly, if higher orders of ǫ are taken into account, then a component in the θ
+direction will also emerge.
+    It turns out that the 3-geometry described by a′ij (103) is asymptotically hyperbolic. To exhibit
+this property, one can introduce a radial tortoise coordinate r ∗ , as usual by defining dr ∗2 = a′ǫǫ dǫ2 .
+Hence, as ǫ → 0, r ∗ → −∞, and integration yields
+                                                            
+                                                   ∗ r+ − r−
+                                      ǫ = k exp r 2        2    ,
+                                                     a + r+
+
+where we choose the constant k = r+ − r− . Notice that the exponent becomes r ∗ /2m and k = 2m
+if a = 0, as in the standard Regge-Wheeler coordinate for the Schwarzschild solution. The line
+
+
+
+                                                         30
+element (103) may now be written more concisely by redefining the tortoise coordinate in the
+following way,
+                                    r+ − r−        1       ǫ
+                          η = −r ∗         2 ) = − 2 ln r − r  ,
+                                   2(a2 + r+             +   −
+
+such that the asymptotically hyperbolic structure becomes apparent,
+
+                            a′ij dxi dxj |ǫ→0 = C 2 (dη 2 + sinh2 ηds22 )|χ→∞ ,                 (104)
+
+where the conformal factor is
+                                                     a2 + r+
+                                                           2
+                                            C=2              ,
+                                                     r+ − r−
+and the line element of the hyperbolic boundary surface is
+
+                                                  (a2 + r+2 )2
+                                 ds22 = dθ 2 +                 sin2 θdφ′2 ,                     (105)
+                                                    ρ4 (r+ )
+
+which, for the Schwarzschild metric, reduces to the line element of the unit sphere.
+   It is instructive to compare the geometry of this boundary surface withqthe geometry of the
+                                                                               2 + a2 as discussed
+event horizon at r+ . To this end, we introduce a distortion parameter β ≡ a/ r+
+                                    √
+by Smarr [58], where 0 ≤ β < 1/ 2 in the non-extremal case. Then, for small β, the surface is
+an oblately deformed sphere which can be globally embedded in E3 . Moreover, one finds that
+the Gaussian curvature at the poles vanishes when β = 1/2 or, if the black hole is un-charged,
+       √
+a/m = 3/2. For β > 1/2, there are two polar caps of negative Gaussian curvature, and the event
+horizon cannot be globally embedded in E3 in this case.
+    The surface described by the line element (105) shows similar behaviour. To see this, consider
+its Gaussian curvature,
+
+                                          2a2    2      2
+                                                          + 3a2 ) cos2 θ .
+                                                                        
+                           K(θ) = 1 +     4     r+ − (4r+                                       (106)
+                                         ρ+ (θ)
+
+Clearly, for a → 0, one recovers the line element of the unit sphere with K = 1. As β increases, two
+polar caps of negative Gaussian curvature appear and the surface cannot be globally embedded in
+                                                                          √                   √
+Euclidean space, as before. From (106), the transition occurs at β = 1/ 6, that is, a/m = 5/3.
+Furthermore, the topology of the boundary surface can be found from the Gauss-Bonnet theorem.
+It implies that the Euler characteristic is
+                                         1
+                                           Z
+                                                         ′
+                                  χ=         K(θ)eθ ∧ eφ = 2 ,
+                                        2π
+                                              ′
+using (106) and an orthonormal dyad {eθ , eφ } on (105). Hence, the boundary surface is a topological
+sphere, as in the case of the Kerr event horizon [58].
+
+3.4.4   Near horizon for extremal case: the NHEK geometry
+
+The Near Horizon geometry of an Extreme Kerr black hole, so called NHEK geometry [59], is
+particularly interesting. Recently [60] it has been argued that it is dual to a Conformal Field Theory
+and the suggested duality has been used to exactly compute the Bekenstein-Hawking entropy of
+
+
+                                                     31
+an extreme Kerr black hole from the CFT. In global dimensionless coordinates (τ, r, θ, ϕ) this Ricci
+flat geometry reads6
+
+                  ds2 = 2jC 2 (θ) − cosh2 rdτ 2 + dr 2 + dθ 2 + Λ(θ)2 (dϕ + sinh rdτ )2 ,
+                                                                                      
+                                                                                                              (107)
+
+where
+                                    1 + cos2 θ                  2 sin θ
+                                C 2 (θ) ≡      ,     Λ(θ) ≡              .
+                                        2                     1 + cos2 θ
+These global coordinates, with the ranges −∞ < τ, r < +∞, cover the whole spacetime. For
+θ = 0 and θ = π, the geometry is exactly AdS2 . There are two timelike conformal boundaries at
+r = ±∞. Thus, this geometry shares some properties of the AdS2 × S 2 near horizon geometry of
+extreme charged black holes. The θ = constant sections have isometry group SL(2, R)L × U (1)R ,
+which is enhanced to SL(2, R)L × SL(2, R)R when Λ(θ)2 = 1. In the latter case the geometry is
+exactly AdS3 and, inspection of (107) reveals that it is written in an analytic continuation of Euler
+coordinates for S 3 .
+   The Randers structure for the NHEK geometry is
+
+                                             Λ(θ)2 sinh r
+                                 b=−                            dϕ ,
+                                        cosh2 r −Λ(θ)2 sinh2 r
+                                                                                                              (108)
+                                                                  Λ(θ)2 cosh2 r
+                                                                                                  
+                              1                        2        2
+              i   j
+        aij dx dx =                                 dθ + dr +                         dϕ2             .
+                    cosh r − Λ(θ)2 sinh2 r
+                        2
+                                                              cosh2 r − Λ(θ)2 sinh2 r
+
+One observes that the breakdown condition reduces to
+
+                                                | coth r| = Λ(θ) .
+
+Thus the Randers structure is valid for all r if 2 sin θ > 1 + cos2 θ that is inside a “light-cone”
+with polar angle θ = 47o . Observe also that the induced metric on this “light cone” Λ(θ)2 = 1 is
+exactly that of H2 and db becomes the volume form of H2 . The corresponding magnetic field is
+quite simple:
+
+                      2 cos θ(2 + sin2 θ)         ∂                                      ∂
+              B=−                2   2
+                                          sinh 2r    − Λ(θ)(cosh2 r − Λ(θ)2 sinh2 r − 2)    .
+                         (1 + cos θ)              ∂r                                     ∂θ
+
+    Inspection of (107) immediately allows us to derive the Zermelo structure. Introducing a new ra-
+                     R
+dial coordinate R ≡ dr/ cosh r, with range 0 < R < π, the Zermelo structure becomes remarkably
+simple:
+                             ∂
+                                       hij dxi dxj = dR2 + sin2 R dθ 2 + Λ(θ)2 dϕ2 .
+                                                                                  
+                W = − cot R      ,                                                             (109)
+                            ∂ϕ
+The 2-geometry dθ 2 +Λ(θ)2 dϕ2 is exactly the a = r+ limit of (105). In particular it is topologically a
+2-sphere. Thus, the 3-geometry in (109) is, topologically, a 3-sphere. Hence, this Zermelo structure
+describes an azimuthal wind, varying with R, in a deformed S 3 .
+   6
+   The radial coordinate here r relates to the global radial coordinate used in [59, 60], rbh by the simple transfor-
+mation rbh = sinh r.
+
+
+
+
+                                                           32
+4    Concluding Remarks
+In this paper we have explored a triangle of relations between stationary spacetimes {M, g} and
+two structures on the space of orbits B of the time translations Killing vector field K: a Randers-
+Finsler structure {B, aij , bi } and a Zermelo structure {B, hij , W i }. This triangle can be seen as a
+triality between physical problems: the null geodesic flow in {M, g}, the magnetic flow due to db
+on {B, aij } and the Zermelo navigation problem on {B, hij } due to the wind W. But each of these
+physical problems motivates alternative viewpoints.
+    From the spacetime perspective, the study of null geodesics motivates the following question:
+what generalises the usual optical geometry for the case of stationary, rather than static, spacetimes?
+If we wish to keep a strictly geometric viewpoint the answer is, as we have described, a Randers-
+Finsler, rather than Riemannian, geometry. A connection along these lines had already been
+hinted in [61]. This viewpoint provided a deep insight into the construction of Randers-Finsler
+geometries of constant flag curvature: they all correspond to conformally flat spacetimes. It would
+be interesting to prove the converse statement. Also of interest might be to write down tensorial
+relations, in the Randers and Zermelo pictures, for circumstances in which the magnetic field/wind
+or the space curvature might be gauged away, by moving to an equaivalent problem.
+    Interestingly, as we have shown in the Kerr example, the Riemannian part of the Randers-
+Finsler geometry still approaches hyperbolic space in the vicinity of a rotating, non-degenerate
+Killing horizon, as for the case of non-rotating ones. One should be able to show that this is a
+generic feature for rotating, non-degenerate Killing horizons and generalise some of the applications
+[2] given in the non-rotating case.
+    This connection also allows a reinterpretation of the Finsler condition from the spacetime view-
+point. As we have argued and shown in a number of examples, the break down of the Randers
+condition is associated to either the change in character of K, as on an ergosphere, or to the
+non-existence of a global time function associated to K, as in situations where ctc’s arise.
+    Taking a more physical interpretation, rather than a strictly geometric one, a Randers-Finsler
+flow is simply a magnetic flow in a Riemannian geometry. One may then recast properties of the
+former in the language of the latter. For instance, in three dimensions, all constant flag curvature
+Randers-Finsler geometries are Killing magnetic fields. Another connection of great beauty is that
+provided by squashed SL(2, R) example: the existence of a break down surface for the Randers
+structure is associated to a change in the ergodicity properties of the magnetic flow.
+    We have described how the connection between the spacetime and the Zermelo viewpoints arises
+by casting the former in a Painlevé-Gullstrand form. This is also the natural form for the spacetime
+metrics of analogue models, which conceptually also fit well with the Zermelo picture.
+    An interesting open question is if this network of relations might be generalised if one allows a
+time dependent wind in the Zermelo picture and how such generalisation works.
+
+
+Acknowledgements
+C.H. would like to thank the hospitality of D.A.M.T.P., University of Cambridge, where part of this
+work was done and financial support from the Centre of Theoretical Cosmology. C.M.W. thanks
+Queens’ College, Cambridge for a Research Fellowship and is also grateful to Centro de Fisica do
+
+
+                                                  33
+Porto for hospitality during the preparation of this paper. M.C.W. gratefully acknowledges funding
+from S.T.F.C., United Kingdom.
+
+
+References
+ [1] M. A. Abramowicz, “Black holes and the centrifugal force paradox,” Scientific American,
+     March 1993, 26.
+
+ [2] G. W. Gibbons and C. M. Warnick, “Universal properties of the near-horizon optical geome-
+     try,” arXiv:0809.1571 [gr-qc].
+
+ [3] G. W. Gibbons, “No glory in cosmic string theory,” Phys. Lett. B 308 (1993) 237.
+
+ [4] G. W. Gibbons and M. C. Werner, “Applications of the Gauss-Bonnet theorem to gravitational
+     lensing,” arXiv:0807.0854 [gr-qc].
+
+ [5] G. W. Gibbons, C. M. Warnick and M. C. Werner, “Light-bending in Schwarzschild-de-Sitter:
+     projective geometry of the optical metric,” arXiv:0808.3074 [gr-qc].
+
+ [6] Z. Shen, “Finsler metrics with K = 0 and S = 0,” Canadian J. Math. 55 (2003) 112,
+     arXiv:math/0109060 [math.DG].
+
+ [7] D. Bao and Z. Shen, “Finsler metrics of constant positive curvature on the Lie group S 3 ,” J.
+     London Math. Soc.(2) 66 (2002) 453 [arXiv:math.DG/0011071v1].
+
+ [8] L. Filipe Costa and C. A. R. Herdeiro, “A gravito-electromagnetic analogy based on tidal
+     tensors,” Phys. Rev. D 78 (2008) 024021 [arXiv:gr-qc/0612140].
+
+ [9] F. Dowker, J. P. Gauntlett, G. W. Gibbons and G. T. Horowitz, “The decay of magnetic fields
+     in Kaluza-Klein theory,” Phys. Rev. D 52 (1995) 6929 [arXiv:hep-th/9507143].
+
+[10] E. Zermelo, “Über das Navigationsproblem bei ruhender oder veränderlicher Windverteilung,”
+     Z. Angew. Math. Mech. 11(2) (April 1931) 114.
+
+[11] G. Randers, “On an asymmetrical metric in the four-space of general relativity,” Phys. Rev. 59
+     (1941) 195.
+
+[12] C. Robles, “Geodesics in Randers spaces of constant curvature,” Tran. American Math. Soc.
+     359 (2007) 1633, arXiv:math/0501358 [math.DG].
+
+[13] D. Bao and C. Robles, “On Ricci and flag curvatures in Finsler geometry,” in Some Perspectives
+     in Finsler Geometry, MSRI Publications 50, Cambridge University Press (2004).
+
+[14] A. B. Katok, “Ergodic properties of degenerate integrable Hamiltonian systems,” Izv. Akad.
+     Nauk SSSR 37 (1973) (in Russian), Math. USSR-Izv. 7 (1973) 535.
+
+[15] W. Ziller, “Geometry of the Katok examples,” Ergod. Th. & Dynam. Sys. 3 (1982) 135.
+
+[16] P. Painlevé, “La mécanique classique et la théorie de la relativité,” C. R. Acad. Sci. (Paris)
+     173 (1921) 677.
+
+                                                  34
+[17] A. Gullstrand, “Allgemeine Lösung des statischen Einkörperproblems in der Einsteinschen
+     Gravitationstheorie,” Arkiv. Mat. Astron. Fys. 16 (1922) 1.
+
+[18] G. E. Volovik, “Simulation of Painlevé-Gullstrand black hole in thin 3He-A film,” Pisma Zh.
+     Eksp. Teor. Fiz. 69 (1999) 662 [JETP Lett. 69 (1999) 705] [arXiv:gr-qc/9901077].
+
+[19] W. G. Unruh and R. Schutzhold, “On slow light as a black hole analogue,” Phys. Rev. D 68
+     (2003) 024008 [arXiv:gr-qc/0303028].
+
+[20] W. Gordon, “Zur Lichtfortpflanzung nach der Relativitätstheorie,” Ann. Phys. (Leipzig) 72
+     (1923) 421.
+
+[21] R. White, “Acoustic ray tracing in moving inhomogeneous fluids,” Journal of the Optical
+     Society of America 53 (1973) 1700.
+
+[22] R. Meyer and G. Schroeter, “The application of differential geometry to ray acoustics in
+     inhomogeneous moving media,” Acustica 47 (1981) 105.
+
+[23] W. G. Unruh, “Experimental black hole evaporation,” Phys. Rev. Lett. 46 (1981) 1351.
+
+[24] C. Barcelo, S. Liberati and M. Visser, “Analogue gravity,” Living Rev. Rel. 8 (2005) 12
+     [arXiv:gr-qc/0505065].
+
+[25] U. Leonhardt and P. Piwnicki, “Optics of nonuniformly moving media,” Phys. Rev. A 60
+     (1999) 4301 [arXiv:physics/9906038].
+
+[26] U. Leonhardt and P Piwnicki, “Relativistic effects of light in moving media with extremely
+     low group velocity,” Phys. Rev. Lett. 84 (2000) 822 [arXiv:cond-mat/9906332].
+
+[27] M. Visser, “Comment on “Relativistic effects of light in moving media with extremely low
+     group velocity”,” Phys. Rev. Lett. 85 (2000) 5252 [arXiv:gr-qc/0002011].
+
+[28] Ya. B. Zel’dovich, “Generation of waves by a rotating body,” Sov. Phys. JETP Lett. 14 (1971)
+     180.
+
+[29] Ya. B. Zel’dovich, “Amplification of cylindrical electromagnetic waves reflected from a rotating
+     body,” Sov. Phys. JETP 35 (1972) 1085.
+
+[30] K. Burns and G. P. Paternain, “Anosov magnetic flows, critical values and topological entropy,”
+     Nonlinearity 15 (2002) 281.
+
+[31] M. Visser and S. Weinfurtner, “Analogue spacetimes: Toy models for “quantum gravity”,”
+     arXiv:0712.0427 [gr-qc].
+
+[32] A. Ashtekar and A. Magnon, “The Sagnac effect in general relativity,” J. Math. Phys. 16
+     (1975) 341.
+
+[33] D. Grumiller and R. Jackiw, “Kaluza-Klein reduction of conformally flat spaces,” Int. J. Mod.
+     Phys. D 15 (2006) 2075 [arXiv:math-ph/0609025].
+
+
+
+                                                 35
+[34] M. R. Brown, A. C. Ottewill and S. T. C. Siklos, “Comments on conformal killing vector fields
+     and quantum field theory,” Phys. Rev. D 26 (1982) 1881.
+
+[35] D. Bao, C. Robles and Z. Shen, “Zermelo navigation on Riemannian manifolds,” J. Diff. Geom.
+     66 (2004) 377-435.
+
+[36] P. Langevin, “Théorie de l’experience de Sagnac”, Academie des sciences comptes rendus des
+     seances 173 (7 Nov 1921) 831; “Relativité - Sur l’experience de Sagnac”, 205 (2 Aug 1937)
+     304.
+
+[37] M. Som and A. Raychaudhuri, “Cylindrically symmetric charged dust distribution in rigid
+     rotation in general relativity,” Proc. Roy. Soc. A 304 (1968) 81.
+
+[38] M. Rooman and P. Spindel, “Goedel metric as a squashed anti-de Sitter geometry,” Class.
+     Quant. Grav. 15 (1998) 3241 [arXiv:gr-qc/9804027].
+
+[39] K. Gödel, “An example of a new type of cosmological solutions of Einstein’s field equations of
+     gravitation,” Rev. Mod. Phys. 21 (1949) 447.
+
+[40] S. W. Hawking and G. F. R. Ellis, The Large Scale Structure of Space-Time, Cambridge
+     University Press (1973).
+
+[41] D. B. Malament, “ “Time travel” in the Gödel universe,” Proceedings of the Biennial Meeting
+     of the Philosophy of Science Association, Vol. 2, Philosophy of Science Association (1984) 91.
+
+[42] I. Ozsváth and E. Schucking, “Gödel’strip,” American Journal of Physics, 71 (2003) 801.
+
+[43] E. Schmidt, “Über die isoperimetrische Aufgabe im n-dimensionalen Raum konstanter nega-
+     tiver Krümmung. I. Die isoperimetrischen Ungleichungen inder hyperbolischen Ebene und für
+     Rotaionskörper im n-dimensionalen hyperbolischen Raum,” Raum. Math. Z. 46 (1940) 204.
+
+[44] I. Chavel, Riemannian Geometry: A Modern Introduction, Cambridge University Press (1993)
+     sec. 6.1.
+
+[45] S.-T. Yau, “Isoperimetric constants and the first eigenvalue of a compact manifold,” Ann.
+     Sci. Ecole Norm. Sup. 8 (1975) 487.
+
+[46] J. Cheeger, “A lower bound for the smallest eigenvalue of the Laplacian,” in Problems in
+     Analysis (A Symposium in Honor of S. Bochner), Princeton University Press (1970) 195.
+
+[47] S. P. Novikov, “The Hamiltonian formalism and a many-valued analogue of Morse theory,”
+     Russian Mah. Surveys 37 (1982) 1.
+
+[48] I. A. Taimanov, “On an example of a transition from chaos to integrability for magnetic
+     geodesic flows,” Math. Notes 76 (2004) 587 [arXiv:math.DS/0312430].
+
+[49] C. Störmer, The Polar Aurora, Oxford University Press (1955).
+
+[50] M. A. Almeida, I. C. Moreira and H. Yoshida, “On the nonintegrability of the Stormer prob-
+     lem,” J. Phys. A: Math. Gen. 25 (1992) L227.
+
+                                                36
+[51] J. E. Avron, O. Gat, O. Kenneth and U. Sivan, “Optimal rotations of deformable bodies and
+     orbits in magnetic fields,” Phys. Rev. Lett. 92 (2004) 040201.
+
+[52] G. W. Gibbons and C. A. R. Herdeiro, “Supersymmetric rotating black holes and causality
+     violation,” Class. Quant. Grav. 16 (1999) 3619 [arXiv:hep-th/9906098].
+
+[53] I. Ozsváth and E. Schucking, “Finite rotating universe,” Nature 193 (1962) 1168.
+
+[54] I. Ozsváth and E. Schucking, “The finite rotating universe,” Ann. Phys. 55 (1969) 166.
+
+[55] J. Natario, “Painlevé-Gullstrand coordinates for the Kerr solution,” arXiv:0805.0206 [gr-qc].
+
+[56] A. Sen, “Rotating charged black hole solution in heterotic string theory,” Phys. Rev. Lett. 69
+     (1992) 1006 [arXiv:hep-th/9204046].
+
+[57] D. V. Galtsov and O. V. Kechkin, “Ehlers-Harrison type transformations in dilaton - axion
+     gravity,” Phys. Rev. D 50 (1994) 7394 [arXiv:hep-th/9407155].
+
+[58] L. Smarr, “Surface geometry of charged rotating black holes,” Phys. Rev. D 7 (1973) 289.
+
+[59] J. M. Bardeen and G. T. Horowitz, “The extreme Kerr throat geometry: A vacuum analog of
+     AdS(2) x S(2),” Phys. Rev. D 60 (1999) 104030 [arXiv:hep-th/9905099].
+
+[60] M. Guica, T. Hartman, W. Song and A. Strominger, “The Kerr/CFT correspondence,”
+     arXiv:0809.4266 [hep-th].
+
+[61] L. Biliotti and M. A. Javaloyes, “t-Periodic Light Rays in Conformally Stationary Spacetimes
+     via Finsler Geometry,” arXiv:0803.0488 [math.DG].
+
+
+
+
+                                                37
+

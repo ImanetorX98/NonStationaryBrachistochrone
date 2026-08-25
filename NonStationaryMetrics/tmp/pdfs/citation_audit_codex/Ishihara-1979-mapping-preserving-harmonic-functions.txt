@@ -1,0 +1,1091 @@
+J. Math. Kyoto Univ. (JMKYAZ)
+19-2 (1979) 215-229
+
+
+
+   A mapping o f Riemannian manifolds which preserves
+                              harmonic functions
+
+                                            By
+
+                                     Toru ISHIHARA
+
+                      (Communicated by Prof. H. Toda, Sept. 7, 1977)
+                               ( Revised, Feb. 15, 1978)
+
+
+
+
+     In the theory of haormonic spaces, C. Constantinescu and A. Cornea [3] intro-
+duced the concept of harmonic mapping between harmonic spaces as a generalization
+of analytic mapping between Riemannian surfaces. A harmonic space is a locally
+compact Hausdorff space on which it is given a sheaf of continuous functions, called
+harmonic functions, satisfying Brelot's axioms [2], and roughly speaking a harmonic
+mapping is a mapping of harmonic spaces which preserves harmonic functions.
+     As a Riemannian manifold with usual harmonic functions is a harmonic space,
+we can define a harmonic mapping of Riemannian m anifolds. H. Imai [10] studied
+the value distriburion of harmonic mappings between Riemannian manifolds of the
+same dimension. The main purpose of this article is to give a characterization of
+harmonic mappings between Riemannian manifolds of the same dimension or dif-
+ferent ones from the differential geometric point of view.
+     Later on in the paper, a harmonic mapping of C. Constantinescu and A. Cornea
+will be called a mappng which preserves harmonic functions, for we would like to
+use the term "harmonic mapping" in the sense of Eells and Sampson [4], and the
+concept of harmonic mapping in this sense plays an important roll in the present
+paper.
+     Let A, (resp. AO be the Laplacian on a Riemannian manifold M (resp. N ) . S.
+Helgason [9] proved that a diffeomorphism f: M— >N is an isom etry if it is a La-
+placian commuting mapping, i.e., f*LI = 4 f * . B. Watson [13] extended this result
+                                        N
+
+
+to the following; f: M— >N is a Laplacian commuting mapping if it is a harmonic
+Riemannian submersion. S. I. Goldberg and T. Ishihara [8] gave a more generali-
+zation. T h u s a harmonic Riemannian submersion is a mapping which preserves
+harmonic functions. Moreover it is evident that a Laplacian commuting mapping
+preserves not only harmonic functions but also all of eigenspaces of the Laplacian.
+ Hence it may be conjectured that a set of mappings which preserve harmonic func-
+tions is much larger than that of Laplacian commuting mappings, but our main re-
+sult (Theorem 5.1) asserts it is not s o . I n fact f: M— >N is a mapping which pre-
+serves harmonic functions if it is a constant mapping or its restriction to the open
+216                                                  T oru Ishihara
+
+submanifold M '= {p e M , ( f* ), # 0} of M is a Riemannian submersion after some
+conformal change of the natural Riemannian metric on M '.
+      In § 1, we will review briefly the basic facts on harmonic mappings and Rie-
+mannian submersions for the later use. Our problems are described explicitly in § 2.
+It will be proved in § 3 that a mapping preserves convex functions if it is totally
+geodesic (Theorem 3.2). To prove this we have to construct local convex functions
+satisfying certain conditions (Lemma 3.1). The lemma leads us to the following
+characterization of harmonic mapping; f: M—>N is a harmonic mapping ifff * maps
+every local convex function in N into a local subharmonic function in M . In order
+to deal with a mapping which preserves harmonic functions, we need the fact that
+there are sufficiently many local harmonic functions, which is shown in § 4 as a gen-
+eralization of Lemma 5.1 in L. Bers [1]. The last section is devoted to the proof of
+our main results, Theorems 5.1, 5.2 and 5.7.
+     The author wishes to express his hearty thanks to Professor M. Matsumoto for
+his valuable advice and encouragement.
+
+§           1 .   Harmonic mappings and Riemannian submersions
+
+       Let M and N be smooth Riemannian manifolds of dimension m and n respecti-
+v e ly . The Riemannian metrics of M and N are denoted by d s „,, and ds , respectively            2       2
+
+
+
+which are written locally as
+
+(1.1)                         d s = a)± • • • + O ,       m       ds„ = cor ± • • • + 4 ,              2
+
+
+
+
+where oi (a = 1, • • • , m ) are local 1-forms in M and cuP(i= 1 , • • • , n ) are local 1-forms
+                      a
+
+
+in N . The structure equations in M are
+                                            171,
+
+                                    dw = E cobA w ba,
+                                       a
+                                           b=1
+(1.2)
+                                I da) = E coac A w cb
+                                           c=1
+                                                              —
+                                                                  2 c d
+                                                                          R a b cd O ic   A w d,
+
+ where the co are the components of the connection form of the Riemannian metric
+ ds , and the R „ , are the components of its curvature tensor. Similar equations are
+        2
+                          a
+
+
+valid in N and we will denote the corresponding quantities in the same notations
+ with asterisks. (Throughout the paper, indices a, b , c, • •• run from 1 to in, and i,
+j, k , • • • from 1 to n).
+        Let f: M ---> N be a smooth mapping of M into N and
+
+(1.3)                                f * ( 4 ) - = f a cua , i = 1 , • • • , n .
+                                                   a= 1
+
+
+ Let f ' T (N ) denote the bundle induced by f from the tangent bundle T (N ) over N.
+                  -
+
+
+
+ The differential f * of f is regarded as a f 'T ( N ) - v a l u e d 1-form on M . The bundle
+f 7 ( N ) has the covariant differential operator compatible with the metric deduced
+    -
+                                       Mapping of Riemann manifolds                                                                    217
+
+naturally from th e Riemannian metric M . The components f „ of the covariant   T                                  i
+
+differential of f , are given by
+                                ni n                               n                           i
+(1.4)                           E fiabC 0 b — df ia+ E f i a f * W * i t E fibW ba•
+                               b =1j   =              1                 b           =              1
+
+
+From (1.2) and (1.3), it follows that r          ,ba•      T he mapping f is called harmonic
+(resp. totally geodesic) i f E,7= f a . =0 (resp. f i a b = 0) [6].
+     In the sequel of this section, we assume n _<m . A mapping f: M -->N is said to
+be a Riemannian submersion if it satisfies
+
+(1.5)
+                                                      a=1
+                                                          E    fia fja              ô ir
+
+
+
+Although a Riemannian submersion is sometimes assumed to be surjective [13], it is
+not in the paper.
+     It is known that f: M— >N is a Riemannian submersion if we can choose local
+forms w in M and ce in N in (1.1) such that the equations (1.3) are reduced to
+        a
+
+
+
+(1.6)                                       * *                                 i =1, • • •,n,
+                                           J (-0 —            t,
+
+that is, f = 3 [8].
+            ia   ia
+
+      When f: M— ÷N is a Riemannian submersion, we always take local 1-forms w                                                           a
+
+and ce satisfying (1.6), which we call canonical bases of the Riemannian submersion.
+We denote the f , with respect to canonical bases by F l b. Then they satisfy
+                      ia                                                                                       a
+
+
+
+
+(1.7)                          w 1i— f*a4i= E F i j W ,            a        a              wia= E Fi„awa,
+                                                  a=1                                                      a=1
+
+
+ and are called the components of the structure tensor of the Riemannian submersion
+f : M — >N . (In the paper, the indices a, p , • • • run from n +1 to m if n < m . On
+ the other hand for m =n , terms with indices a, p , • • • , for example F i   vanish.)
+ From (1.7) it follows
+(1.8)   =             0         ,      F          i       i        , =
+
+     For any point of f (M ), its inverse image by f is said to be a fibre of f       From
+the property of canonical bases, it follows that 0 = • • • —04,= 0 on each fibre. L e t    1
+
+
+p be a point of f ( M ) . Then the fibre f (p) is a closed submanifold of M of dimen-
+                                                                   -1
+
+
+
+sions m — n, when m > n . The restriction of E,7_,, (0„ to the fibre gives the induced                 1
+                                                                                                           2
+
+
+
+Riemannian metric. The restriction of the F,„p to the fibre may be regarded as the
+components of the second fundamental forms of the submanifold f ( p ) . Hence,                                         -1
+
+
+
+when m >n , a Riemannian submersion f: M— >N is said to be m inim al (resp. totally
+geodesic) if E 7_ , F,„ = 0 (resp. 0 ) . Since
+                       7   1                                      = 0, it holds E L ,                                       , ,
+                                                                                                                                  n+
+
+
+      F , . Therefore a Riemannian submersion is harmonic if it is m in im a l. The
+horizontal distribution, which is defined by N n + 1 = • • • — com = 0, is integrable
+218                                           Toru Ishihara
+
+2 . Harmonic, suharmonic and convex functions
+
+        Let h be a smooth function on N . Put
+
+                                                   d l = h a,„ i
+
+
+(2.1)
+                                       E It a4 =d h ,± Eh i N t ,
+                                             1 j
+                                                                         n
+
+                                      j =1                             5=1
+
+that is, h, (resp. h ) are the components of the first (resp. second) covariant deriva-
+                       o
+
+
+tive of the function h. The Laplacian on the functions on N is defined to be
+
+(2.2)                                         4        h
+                                                   N       =   hii.
+
+J , also denotes the Laplacian on M . A function h is said to be harmonic (resp.
+subhamonic) if ZI h= 0 (resp.
+                   N                0).
+     A function h on N is called (geodesically) convex if for every geodesic C(t) pa-
+rametrized by arc-length and defined for all t E [t , t , it holds           1   2]
+
+
+
+
+(2.3)                      h(C(2t1± (1 — 2)0) < 2h(C(t )) + (1 — 2)h(C(t ))
+                                                                   1                                2
+
+
+
+
+for all A E [0, 1]. If the right hand side of (2.3) is always greater than the left, h is
+called strictly conv ex . It is well known that a C -function h is convex (resp. strictly
+                                                                             2
+
+
+
+convex) i f the second covariant derivative (h ) is non-negative (resp. positive) de-
+                                                                   1 j
+
+
+finite. A l l of the functions in the paper are smooth.
+      Let h be a local function in N , that is, a function on an open subset U of N.
+We call h a local harmonic function if it is harmonic on the open Riemannian sub-
+manifold U of N . Similarly we can define local subharmonic functions and local con-
+vex functions.
+     As it is described in the preface, we would like to study mappings which pre-
+serves harmonic functions. Hence we define the set
+                                f: M— ›-Nlf is a smooth mapping such that f * h is
+             (2 ,(M , N )= a local harmonic function in M for every local
+                                harmonic function in N.
+Similarly, (2„(M , N ), S 2,(M , N ) and (2„(M , N ) denote the sets of mappings which
+preserve subharmonic, convex and strictly convex functions, respectively.
+                                                                   f*
+     Let f: M--)-N be a smooth mapping. The components of             are f , as in (1.3).               ic
+
+
+For a local function h on an open set U of N , we have on f (U) -1
+
+
+
+
+                                         ( f * h ).= E
+
+where the h are the components of the local 1-form d h . It follows from (2.1)
+              1
+
+
+
+      n/
+                                                 E hi(d.f
+                                      E f *0 ) + 1=1
+                     E f i . (hd i + 5=1
+       E (f*Mabcob = 1=1                             +                                ia   E f f *(oli + E
+                                                                                                         =1
+                                                                                                            fibwb.)•
+      b=1                                                                                  5 =1 1
+                               Mapping of Riemann manifolds                                          219
+
+Thus using (1.4), we obtain the following fundamental relations
+     Lemma 2 . 1 . Let f: M— >N be a sm ooth m apping. For any function h on an open
+set of N,
+
+(2.4)                         (fh)ab          E 1i
+                                            i,j           1
+
+                                                                          n       m
+(2.5)                    dm f * h =                   h• f f ,.+ E                E h ifia a •
+                                       i,k = 1 a= 1                   1= 1 a= 1
+
+
+       If f: M — >N is a harmonic Riemannian submersion, that is, 7 an'- 1f i a a = 0 a n d
+                       (2.5) is reduced to 4 m f * h = f * 4 , h . Moreover it is known that
+4 2,f * =f *Z I N if f is a harmonic Riemannian submersion [9]. Hence we get
+
+        Proposition 2 . 2 . If f: M — >N is a harmonic Riemannian submersion, it is con-
+tained in    „(M , N ).
+
+
+§ 3 . Mappings which preserve convex functions
+     Using Lemma 2.1, we will investigate the set D (M , N ) and f28 (M , N ) in the
+section. We need to prove there are sufficiently many local convex functions. In
+fact we have
+      Lemma 3 . 1 . L et C, and Co be any constants such that (C o ) is sy m m etric and
+positive def inite. For any point q of N , there exists a strictly convex function h defined
+near q whose covariant derivatives satisfy
+(3.1)                                h i(q )=C „              h ,i(q )=
+
+     P ro o f . Fix an arbitrary point q E N . We use a normal coordinate system
+{U, y', • • • , yn} about q. Let h be any smooth function defined near q. Put
+
+(3.2)
+                             _ ah                         avi _               n
+                                                                                      ah rk
+                        nt
+                               ay '
+                                 ,
+
+                                                        ayay              k=      1
+                                                                                      y k
+
+
+where P are the components of the Riemannian connection on N with respect to
+{U, y 1}.  We will show that for any constants C „ Co with (C, ) >O, there exists a              i
+
+strictly convex function h defined near q and satisfying
+(3.3)                                Tti(q)= C„               llij(q)=
+
+     Now there is a neighborhood V of q contained in U, where p .,„ are expanded
+in the following way (for example, see [11]);
+
+(3.4)                                    E
+                                        1=1
+                                                               E A jk ih Y Y ,
+                                                              1,h=1
+                                                                      i               1   h
+
+
+
+
+where Aik , are constants and A            k th   smooth functions on V. Defined a function h
+on V by
+220                                                         Toru Ishihara
+
+                                                                           1    n
+                                   h = E Ci y '± — E Co y'yi
+                                       i=1       2 =1
+
+It is easy to check that the function h satisfies (3.3). Using (3.2) and (3.4), we may
+expand i a s follows
+                                                                                    1
+
+                        r iii=   C if    —
+                                               E c At y i + - EÊ B i j k l Y Y ,
+                                                                 k     i
+                                                                                                            k   I
+
+                                              1 ,k =1                               2 k ,1 =1
+
+where B , are smooth functions o n V . Since (C ) is positive definite, it is evident
+         ijk                                                                            ji
+
+that    is positive in some neighborhood of q.
+      Theorem 3.2. f is an elem ent of 0,(M , N ) j f f it is a totally geodesic mapping.
+     P ro o f Assume that f is totally geodesic. For any local smooth function h , it
+follows from (2.4)
+
+                                             ( f *11 ).b=                      h iifia f,b .
+                                                                      1 ,j=1
+
+
+If h is convex, that is, (ho ) is non-negative, ((f*h) a b ) is non-negative.
+       Conversely, let f e fl c (M ,N ) . Suppose for some point p of M and some integer
+i0 (1 < i o _<n), the matrix ( f i o d p ) ) is n o n -z e ro . Then for some ordered m-tuple X =
+{X', • • • , X"'} of real numbers, E Zb . i f o abXaXb is non-zero. P ut
+                               in
+                        A = a ,b = 1 fio.df X p —       a        b,
+                                                                                    Ê             fia X a ).
+                                                                                     1= 1 a = 1
+
+
+Applying Lemma 3.1 in the case C = —(p-1- 1)/2, C ,=0 (i # 4 ),
+                                                            io                                                          we get a
+strictly convex function h defined near p and satisfying
+
+                        (f*h )a b (p )=            Êfia(P)fib(p) P + 1 ( 1 3• )
+                                                   i=1                                               'a b
+
+
+
+
+Hence we have
+
+                                          2 (f*h)(p)X aX b = — 1.
+                                        a ,b = 1
+
+
+Thus ((f *h) ,) is not non-negative. But this is contrary to the fact that f € 0,(M , N )
+               a
+
+
+and h is strictly c o n v e x . Therefore we proved f,,, b = 0 on M.
+      Theorem 3 .3 . W hen m>n, Q s ,( M , N )=Ø. W hen m                                             n, a mapping f is contained
+in (2 se(M , N ) f f it is a totally geodesic immersion.
+      P r o o f If f is a totally geodesic immersion, it is easy to prove that for any
+strictly convex function h, ((f *h)„,)=(E;',. / = 1 hi i f i a f i b ) is positive.
+      We will prove the converse. Applying Lemma 3.1 when C ,= 0 and Ci i =8, j ,
+for any point p of M , we have a local strictly convex function h such that (f*h) a b (p)
+— E % ,f, (p )f ( p ) . A s ((f*h) a b (p)) is positive, (f ),, should be injective. This is
+           a       ib                                                                        *
+                                           M apping of Riemann manifolds                                                221
+
+true at any point of M . Hence if m > n , p sc(M , N )= 0 , and if m < n , f is an im-
+m ersion. On the other hand, we have already proved in the proof of Theorem 3.2
+that f = 0 on M.
+        ia b
+
+
+
+     Another application of Lemma 3.1 is given in the following theorem which is a
+characterization of harmonic mappings.
+     Theorem 3 .4 . f: M -4 •N is a harmonic mapping if for any open subset U of N,
+it maps any convex function defined o n U into a subharm onic function on f A U ).
+
+        P ro o f. If f is harmonic, for any convex function h on an open set U, it holds
+zim f * h = E ,,,„hj f . Thus we get zlm f *h_>._ 0 on f ( U), for (120 ) is non-negative.
+               i        ia        ia
+                                                                                           -
+
+
+
+
+        The convese is given without difficulty. If for some point p E M and some
+i 0 (1 < i 0 < n ), E ant_i f j o a a (p ) is non-zero, we put
+                                              nin               m
+                                       2
+                                           = E foa a (P ) E ,
+                                                                              Ej—i a = 1
+
+We use Lemma 3.1 when C = — (p + 1)/2, C 0 ( i# 4 ) ,
+                                             io                           i                           80, and get a strictly
+convex function h such that
+
+                   o f if f .h x p ) - - -        Ê 2 (fa— 11 +21 J .--.1
+                                                    a = i            ; ( p ) = —1.             'a a
+
+
+
+
+Thus we proved Egt ,f„ (p)= 0 for any i and any point p E M.
+                             =         a
+
+
+
+
+§ 4 . The existence of local harmonic functions
+        In order to study ,(2,(M , N ) we need the following
+        Lemma 4 . 1 . F or any p o in t q E N and any con sta n ts C , Co with C = C and
+        C = O, there exists a harmonic function h on a neighborhood o f q which satisfies
+
+                                              h i (q)= C 1 ,            hii(q)= C i.„
+
+      P ro o f. Take a normal coordinate system {U, y ', • • , yn} about q such that
+yi(q)= • • • = yn(q)=- O. A function h on U is harmonic if
+                                                       2h           n     ah
+(4.1)
+                                                    ay ay       k =1 y    a    k
+
+
+
+
+where     are the contravariant components of the Riemannian metric on N and P                                            ik
+
+
+are the components of the Riemannian connection with respect to the normal co-
+ordinate {y1}. We will prove the follow ing; For any constants C , C satisfying                             i   i j
+
+
+Co = C11 and E': , C 0 , there is a solution h of the equation (4.1) which is defined
+                    =            11
+
+
+near y = 0 and satisfies
+222                                                      Toru Ishihara
+
+                                         ah (0)— C„                   a2h (0)— C .
+                                                                                          15
+                                         ay i                       ayia
+
+But this is true because for n 2, it is a special case of Lemma 4.2 given below, and
+for n = 1 , the equation (4.1) is an ordinary differential equation.
+     Before describing Lemma 4.2, we must make some preparations. From now
+on in the section, we use the same notations as in [1]. Compare it for d e ta ils . Let
+x = (x „ • • • , x ) be a point of Euclidean n-space (n_ 2). Let 0(x) be a function de-
+                   n
+
+fined for l x l < R . We set, for 0 < a < 1 ,
+
+                             IP:(95)= I•u•b•    95(x') — 95(x") VI — x "
+                                     la-1,1."KR
+                                                                                    au0(x)
+                              D'95 =
+                                                                            ax1' • • • ax          in .
+
+
+
+if the derivatives exist. F o r an integer l                        0 and for 0 < a < 1 , we set
+
+                             R
+           110Ir+„—1 = 0 1 ..).
+                                 1
+                                                           R "
+                                                             1
+
+
+
+                                                         1!(1±ot)
+                                                                     maximum            IH(axil • • •ax;',. 11•
+                                                                                               R
+
+
+
+
+        Let B r )„ denote the set of functions q5 for which the norm l!ol lr.„is defined and
+               +
+
+
+finite.    BM, is a banach space with respect to the norm.
+        Let
+
+(4.2)                        Lq5(x)= E                   E
+                                                v=o i,+••••,•,„=.
+                                                                                .a %/5                —o
+                                                                           axp— a4-
+
+be a linear partial differential equation of order /(_2) and of elliptic type which is
+defined near the origin x = 0 . Now we can give a slight extension of Lemma 5.1 in
+[1].
+
+       Lemma 4.2. A ssum e th at th e coefficients in (4.2) belong to .V . f o r so m e                           )
+
+
+
+
+a ( 0 < a < l ) and R ( > 0 ) . Fo r any constants C ... .(0 1, + • • • -fi < l ) which are
+                         0                                                 li       i                         n
+
+
+symmetric in i„ • • • , i and satisfy
+                             n
+
+
+
+
+(4.3)                                              E
+                                           (),).+•••+i„t
+
+there exists a solution 0 of (4.2) defined near the origin and satisfying
+
+                                 a 95
+(4.4)                                '           (o )— c                0 < i d - • • • ±i < l.
+                                                                                1                         n
+                        axli • • • axi;,-
+
+     P ro o f : We will follow substantially the method used for the proof of Lemma
+5.1 by L. Bers. Let 2(x) be a smooth function such that 0_< 2(x)< 1 for all x, 2(x)
+= 1 for Ix l< 1/4, 2(x)= 0 for I x 1 / 2 . For O < R ,< R , consider the linear mapping
+Afr= TO of Bp.:?, into itself defined by the relation
+                                                       Mapping of Riemann manifolds                                                          223
+
+
+                                ik(x)=-            —
+                                                                                   e)2(e IR)[Loge)            —
+                                                                                                                   Lge)lcle,
+                                                         lel<n
+
+where J(x ) is the fundamental solution of the osculating equation
+
+(4.5)                               LoO(x)-=                   E                                      atO             —o.
+                                                                                              axi,i• • •ax„in
+
+        From the fact d ..          i p            E B ( 1 2 ) , it follows that there is                         a constant A , such that
+(4.6)
+
+where 11              sup 7 '56 11/
+                                  R
+                                   1-J1i 11P                          Let R be so sm all that T H < 1 . For every h(x)
+E   BM the equation
+(4.7)                                                                     95-=h— TO
+
+has a unique solution O = h— T h+ Ph— • • • +(-1) 7 m h + • • • . The property of
+                                             h
+                                                                                                         17
+
+
+
+the fundamental solution J(x ) of the elliptic equation L O(x )=0 implies                                     0
+
+
+
+
+                                          LoOh(x)=Loh(x)+2(x/R)[Logx)                                    -
+                                                                                                                  45(x)i•
+Hence if L h(x )=0, it holds
+                  0
+
+
+
+
+                                                         LO,(x)--- 0,                     IxI < R/4.
+
+If follows from (4.5) that
+
+(4.8)                                                                     R
+                                                                          I+
+                                                                                      THMTOr+ „
+                                                                                        --MTM
+For       4+ • • •                           it holds
+
+(4.9)                                                   xil • • • 4. lir+ , ( 2 R ) i '+'"+'..
+
+     Let V be the vector space generated by                                                       ••• 4.,                   • • • +4,51 over the
+real num ber. The dimension of V is given by
+
+                                                                          (n+1)• • • ( n +r- 1 )
+                                                  d = l+
+                                                               r=1
+
+
+Put
+
+          V ,=                E                                 • • • x „ E V, l
+                                                                                                E                                = 01,
+                                                                                          i,+ • • • + in ,
+
+
+          v ={z               E                  c „ ...,„ x ti • •   •E             V,          E
+                      0 5 ,,+ • • • + in ,
+
+
+Then, V and V, are (d— 1)-dimensional vector subspaces of V.
+          I
+
+
+     Let h = E ,,,...   , c„...,„xi • • • x.„i be an elements of V,. It is a solution of
+                         a            + i                        i
+
+the equation (4.5). Hence the corresponding solution q5„ of (4.7) is a solution of the
+224                                                                        T oru Ishihara
+
+equation (4.2) for ix K R/4. From (4.6) (4.8) and (4.9) we get
+(4.10)                           110h(x)—h(x)11<A2R'                                    E
+                                                                                o5.ix+•••+i„gz
+                                                                                                     I
+where A, is a positive constant.
+    Let 0 : V 1 —>V, be a linear mapping defined by
+
+                                       0 (h )=                    E             6 '0 4                 (0).x.i • • •
+                                                                                   a.x. • • • ax;:,-
+
+Assume 0 (h )= 0, i.e.,
+                                                 a s
+                                           'v • ( 0 ) - 0, h                                             •••
+                                       ax. • •ax,7
+Let A „ A, be some c o n sta n ts. From (4.10) we have for
+                     kii+•••+.in
+         j                                   1   !!               IC ... „1
+                                                                      ii    J          213 R '           E
+                        • • • +in)                                                               (:■ .i.+•••+,;„5t
+
+Combining this with (4.10), we get
+
+                                 E     Ici1•••.i.1                                            E c i p..„ IRii+"• " -.  -
+
+
+
+
+If R is so small that A ,R ' < 1, this implies that all of the                                                                 vanish. Thus we
+have shown that 0 : V —>V is bijective.  1             2
+
+
+
+
+§ 5. Mappings which preserve harmonic functions
+
+     Let f belong to Q H (M , N ) . Firstly we will prove that it is a harmonic mapping.
+In fact, for any point p E M and any integer i o (l_.<i o n ) , Lemma 4.1 in the case
+where C, = 1, C =O (i * i o ) and Co = 0 assures that there is a harmonic function h
+                 o          4
+
+
+defined near f ( p ) such that
+
+                                                               4 m (f*h)(p)=
+
+This is true for any i, and any p e M.
+     Next, for any p E M and any constants Co w ith Co = C , and C                                                         j             = 0,
+there is a harmonic function h defined near f ( p ) such that
+
+                                                                        Ê 1 c i i xi i (p)— 0 ,
+                                                       4 .(f* h )(p )— i,j=
+
+where X = Egi_ f f . Thus, for any constants Co satisfying C o = C , and E 7 ,
+             o               l    ia    ia                                                                                       j       =
+
+
+= 0 , we get
+
+                                                      C iiX ii(p )± t (X „(p )— X „(p ))C „---.- 0,
+                                        i* j                                i= 1
+                                Mapping of Riemann manifolds                                               225
+
+so that
+                    x (p)= x (p)=
+                       „        .            •       •   •   = x n .(p ), X ( p )= O
+Put 2(p)= X ii(P). Then we have
+
+(5.1)                                      fi a ( p ) f,a ( p ) = 2 ( p ) a i i .
+                                     a=1
+
+This gives
+
+(5.2)                               2 (p )= ..                    a   2, ( f . ( 0 .
+                                                                                  2
+
+
+
+
+At any p e M , (5.2) is v a lid . Hence 2 is a non-negative function globally defined
+on M . If there is a point p E M with 2(p)#0, (5.1) implies
+
+                                      rank (fia )- rank (a ii)
+at p . Hence we have n/_. n.
+     We are now in the position to give the following definition.
+      Definition. Assume that m _ n . Let f: M— >N be a smooth mapping. f is
+called a conformal submersion (resp. pseudo-submersion) with function 2 if it satisfies
+(5.1) at every point p of M for some positive (resp. non-negative) function À on M.
+
+      Remark that every smooth mapping f: M-->N is a conformal pseudo-submersion
+when n = 1.
+      From Lemma 2.1 it follows easily that a harmonic conformal pseudo-submer-
+sion f: M—>N preserves local harmonic functions. Thus, we have obtained
+     Theorem 5.1. When        n, a mapping f belongs to 2 „(M,N) i t i s a harmonic
+conformal pseudo-subm ersion. In particular, f or n=1, Q (M , N ) is the set of all       H
+
+
+harm onic m appings f : M — .N . W hen m <n, (M , N ) consists of constant mappings
+                                                                         H
+
+
+of M into N.
+
+        Similarly we can get
+
+        Theorem 5.2.       „(M , N )= Q (M, N).  H
+
+
+
+
+    P r o o f W e w ill p ro v e (M , N )c ,(2 „(M , N ). This is trivial when m <n.
+                                     H
+
+
+Hence we assume that              If f: M -->N is a harmonic conformal pseudo-sub-
+mersion, for any local subharmonic function h we have 4,(f *h)=-2 I        h >0.                       1
+
+
+    Conversely, let f E Qsa(M, N ) . For any point p E M , any integer i (1 % < n )                0
+
+
+and any constant C , applying Lemma 4.1 in the case when C = C , C = 0 (i 1)                  io   1        0
+
+
+and C = 0, we have a local harmonic function h satisfying
+         j i
+
+
+
+
+                               4 m ( f* h ) ( p ) =            c a=1 f i o . . ( p ) 0.
+226                                                                   Toru Ishihara
+
+This is true for any constant C . Thus f is harmonic.
+     For any point p E M and any constants C with C = C                                        ii               11   and Eli , C = O, we
+                                                                                                                                  =   11
+
+
+apply Lemma 4.1 and get
+
+
+
+where                      f,
+                        1 ., .a ,f ,, a   as in the proof of Theorem 5 .1 . This also gives (5 .1 ). Thus
+fE f2 „(M, N).
+          In the argument above, we have practically proved
+     Proposition 5.3. If f: M--›-N m aps every local harm onic function into a local
+subharmonic function, it is contained in (M, N).                                 i i
+
+
+
+
+     As it was described in §2, all of minimal Riemannian submersions are harmonic
+conformal submersions. Let U be an open subset in complex Euclidean 2-space
+C --={(z , z ) } . f denotes a holomorphic function on U . Take the natural metrics
+  2
+            1   2
+
+on U and complex Euclidean space C . Then f: U—>C is a harmonic conformal
+pseudo-submersion with function 2=1af/az,1 -Flaf/az 1.                                     2
+                                                                                                        2
+                                                                                                            2
+
+
+
+     We proceed to study relations between Riemannian submersions and conformal
+submersions. To begin with, let f: M—›-N be a conformal pseudo-submersion with
+function 2 . Then the restriction off to the open submanifold e           M, 2(p)>O1
+is a conformal submersion. Hence we assume that f is a conformal submersion
+originally. Let 2 denote the Riemannian manifold with Riemannian metric d§ 3/                                                                  2
+
+
+
+= 2d.Sif. Then f :           is a Riemannian submersion. We call this the Riemannian
+submersion    corresponding   to f: M — ›-N . Let Riemannian metrics ds an d d s1 be                                          2
+                                                                                                                              m
+
+written locally as in (1.1). We may assume that local 1-forms (0,,, coP satisfy
+
+(5.3)                                                                 E
+                                                             f 049= e a=1
+                                                                  *                    P
+
+
+
+
+where p=1. log A. T h e n dS, is given locally by dg = aEm. O a . Here we set (D =
+                                                   2
+                                                                                                                                           a
+
+
+ePw . Let (D, be the connection forms of the Riemannian metric dg„ . Then
+      a             a
+                                                                                                                          2
+
+
+
+
+                                                                      —
+                                                        (
+                                                            i ab
+                                                            )
+                                                                          W ab+ p a w b P bO a,
+
+where we put dp= EnL1 Da 0- a• Let F i b be the components of the structure tensor
+                                      a                                      a
+
+
+of the Riemannian submersion f : — >N . Then we know
+          Lemma 5.4 [6].
+(5.4)                                                                     8     —          —
+                                          f la b       e 2 P F 1 a b — e ( abPz   a ia p t   a ib io .).
+
+          This yields
+          Lemma 5.5. Let f: M--›.N be a conformal subm ersion. It is harmonic ill'
+                                                            771
+
+(5.5)                                                       E F,„,,=(m -2)e p,.                     -
+
+
+
+                                                       a=n+1
+                                                               Mapping of Riemann manifolds                                                                                                                                 227
+
+     For a function h on M , put dh= d„hd- 411, where
+                                                                                                                          7m
+                                                          d h = E h w„
+                                                           i i                          i                       411= E                 h
+                                                                        4=1                                           =n+1
+
+
+It is evident that this definition is independent of the choice of local forms (0, satis-                                                                                                                       6
+
+
+fying (5.3). (Compare d „ with Vaisman's foliated exterior derivative [12].) Now
+we get
+    Proposition 5.6. Let f: M--->N be a conformal submersion with function 2. As-
+sume that the corresponding Riemannian submersion is h arm o n ic . Then f is harmonic
+01'4 2 =0 .
+
+      Let R -={(y„ y )} be Euclidean 2-space with standard metric ds1= E!, , (dy )
+                          2
+                                              2                                                                                                                                                                 =               i
+                                                                                                                                                                                                                                        2
+
+
+
+and 12 ={ (x , x , x , x )} be Euclidean 4-space with metric dec.= A x3, x4) El=i(dxa) ,
+      4
+                              1       2   3       4
+                                                                                                                                                                                                                                    2
+
+
+
+where 2(x , x ) is a smooth positive function depending only on variables x„ x . Let
+                  3           4                                                                                                                                                                                     4
+
+
+P: R'---3R be the natural projection, i.e., P(x„ x„ x , x ) =(x , x ). From Proposi-
+                  2
+                                                                                                                               3           4                   4           2
+
+
+tion 5.6 it follows that P: R — R is an example of harmonic conformal submersion
+                                                                   4        2
+
+
+
+which are not Riemannian submersions.
+      Let v : S —>S be the Hopf mapping, where S = {(x , x„ x„ x ) e R4, El , xz = 1}
+                      c
+                                  3       2                                                                           3
+                                                                                                                                           1                               4                                =           a
+
+
+and S = {(y„ y„ E 12,
+      2
+                                 y!=. (1/2) }. We introduce a local coordinate system
+                                                      3                                                 2
+
+
+
+
+01, 02, 0 in S3
+               ' such that
+      x = cos 0, cos 02, X 2 =
+          1                                                            COS      0 sin 02, X 3 = sin o, cos 0 , x = sin 6 sin 0
+                                                                                    1
+                                                                                                                                                   3                   4                           3
+                                                                                                                                                                                                                    3
+
+
+
+
+and a local coordinate system * „ *, in S ' such that
+                                  y,= I- cos * „ y =                    2                   sin *, cos           * y =1 sin *, cos * .
+                                                                                                                           3                                                           2
+
+
+
+
+Then   is given locally by * , = 2'1 61 2 *= 6r 3 —6r 1. Let dA and ds1 be the standard         ,
+
+
+Riemannian metrics on S ' and S of constant curvatures 1 and 4 respectively. Put2
+
+
+
+
+                              oh= 010 , W = sin 6,(d0,— 450, oh= sin 6,dØ + cos 6 d6 ,
+                                          1           I
+                                                                                                                                   2
+                                                                                                                                                       3
+                                                                                                                                                                               2
+                                                                                                                                                                                   1           2
+
+
+
+                                           cot = 441/1 , w = 4-sin /1 diJr .                1                                      1           2
+
+
+
+
+Then it holds locally d 4 = E3 ., w2 , ds1=   c u r and 1.),(coP)=E „ , co . It is
+                                                                        a               a
+                                                                                                                                                                                   3
+                                                                                                                                                                                           =           ia   a
+
+
+well known that p c : S —>S is a harmonic Riemannian submersion. Now let d.i be
+                                                  3            2                                                                                                                                                            2
+
+
+
+a Riemannian metric on S conformally related to ds3, i.e., c/g =2ds3. Then we have
+                                                           3                                                                                               2
+
+
+
+
+                                                  42— a2 o), ± ( cot 95, a2 —tan 0, a2 )(0 .                                                               2
+
+                                                                        aqi,       asb2
+Hence 42=-0 if is constant. Thus v : S —›S is an only harmonic conformal sub-                       a
+                                                                                                            3     2
+
+
+
+mersion with the corresponding Riemannian submersion v : S —>S up to a homo-                                                                           c
+                                                                                                                                                                   3               2
+
+
+
+thetic change of the metrics on S'.
+     Lastly we would like to consider [2 „(M , N ) in the equidimensional c a se . H.
+Imai states in Lemma 4 [10] that a harmonic mapping (of C. Constantinescu and A.
+228                                    Toru Ishihara
+
+Cornea) between Riemannian manifolds of the same dimension is a local isometry
+on its non-singular points. It seems however there is a gap in his proof of the
+lemma. But the following theorem asserts that his lemma is true up to homothetic
+changes of metrics, and moreover that a mapping of this kind has no singular point
+if it is not a constant mapping.
+      Theorem 5 . 7 . A ssume that dim M = dim    3, and M is connected. L et f : M
+—>N be a harmonic, conformal pseudo-submersion with function A . Then it is a con-
+stant mapping or f: M— >N' is a Riemannian covering after some homothetic change of
+the metric on M , where N' -=f(M).
+
+      P ro o f . Let M '= {p e M , 2(p)> 01. If M '= Ø , f is a constant mapping. As-
+sume          0 . Then it is an open submanifold o f M . Applying Lemma 5.5 to the
+restriction of f to M ', since in this case the left hand side of (5.5) vanishes, we get
+
+                                   d2=2e PE p,w = O.
+                                           2
+                                                    i
+
+
+
+
+Hence A is a positive constant function on M '. Since A is continuous on M , we
+obtain M ' =M .
+      When dim M = dim N =2 , it follows from Lemma 5 5 that all conformal pseudo-
+submersions are harmonic. Moreover if M and N are oriented, they are regarded
+naturally as complex manifolds, and f : M —>N is a conformal pseudo-submersion i f
+it is holomorphic or antiholomorphic.
+
+Acknowledgment
+
+   The author wishes to express his hearty thanks to the referee for many valuable
+comments and correcting some errors.
+                                                                  FACULTY OF EDUCATION,
+                                                                  TOKUSHIMA UNIVERSITY
+
+
+                                         References
+
+[1]   L . Bers, Local behavior of solutions of general linear elliptic equations, Comm. Pure
+      A pp. Math. 8 (1955) 473-496.
+[ 2 1 M. Brelot, Lectures on potential theory, Tata Institute of Fundamental Research, Bombay,
+      1960.
+[ 3 ] C. Constantinescu and A. C ornea, Compactifications of harmonic spaces, Nagoya Math.,
+      J . 25 (1965) 1-57.
+[ 4 ] J. Eells Jr. and J. H. Sampson, Harmonic mappings of Riemannian manifolds, Amer. J.
+      Math. 86 (1964) 109 - 160.
+[ 5 ] R. E. Greene and H . Wu, On the subharmonicity and plurisubharmonicity of geodesically
+      convex functions, Indiana Univ. Math. J . 22 (1973) 641 - 653.
+[ 6 ] S. I. Goldberg, T. Ishihara, Harmonic quasiconformal mappings of Riemannian manifolds,
+      A m er. J. Math. 98 (1976) 225-240.
+                             Mapping of Riemann manifolds                                 229
+
+[ 7 ] S . I . Goldberg, T . Ishihara and N . C . P etridis, Mappings o f bounded dilatation of
+        Riemannian manifolds, J. Differential Geometry 1 0 (1975) 619-630.
+[ 8 ] S. I. Goldberg and T. Ishihara, Riemannian submersion commuting with the Laplacian,
+        to appear.
+[ 9 ] S . H e lg a so n , Differential geometry and symmetric spaces, Academic Press 1962.
+[10] H . Im ai, The value distribution of harmonic mappings between Riemannian n-spaces,
+        Nagoya Math. J . 5 9 (1975) 45-58.
+[11] T. Sakai, On eigen-values of Laplacian and curvature of Riemannian manifold, Tohoku
+        Math. J. 23 (1971) 589-603.
+[12] I. Vaisman, Vartiétés riemanninnes feuilletées, Czechsl. Math. J . 2 1 (1971) 46-75.
+[13] B . Watson, Manifold maps commuting with the Laplacian, J. Differential Geometry 8
+         (1973) 85-94.
+
+
+Added in proof.
+
+     After submitting this paper, the author was noticed that the theorems 5.1 and
+5.5 had been shown independently by Bent Fuglede b y a different method (Ann.
+Inst. Fourier, Grenoble 28, 107-144, 1978).
+

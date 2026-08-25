@@ -1,0 +1,1385 @@
+                                                                                                             1073
+
+
+
+                    Einstein centennial review article / Article de
+                    synthèse commémoratif du centenaire de
+                    l’année miraculeuse d’Einstein
+
+
+                 Black-hole boundaries1
+                 Ivan Booth
+
+
+
+                 Abstract: Classical black holes and event horizons are highly nonlocal objects, defined in
+                 relation to the causal past of future null infinity. Alternative, quasilocal characterizations of
+                 black holes are often used in mathematical, quantum, and numerical relativity. These include
+                 apparent, Killing, trapping, isolated, dynamical, and slowly evolving horizons. All of these
+                 are closely associated with two-surfaces of zero outward null expansion. This paper reviews
+                 the traditional definition of black holes and provides an overview of some of the more recent
+                 work on alternative horizons.
+                 PACS Nos.: 04.20.Cv, 04.70.−s, 04.70.Bw
+
+                 Résumé : Les trous noirs classiques et leur horizon des événements sont des objets qui
+                 sont définis de façon hautement non locale par leur relation avec avec le passé causal de
+                 l’infini futur (du genre lumière). Des définitions alternatives des trous noirs et de leurs
+                 horizons, basées sur des considérations semi-locales, sont pourtant souvent utilisées en
+                 relativité mathématique, quantique, de Killing, piège, isolée, dynamique et en evolution
+                 lente. Toutes ces formes d’horizon sont étroitement associées à des surfaces fermées à deux
+                 dimensions qui possèdent cette caractéristique propre que l’expansion extérieure de rayons
+                 lumineux orthogonaux à ces surfaces s’annule. Cet article contient une revue des définitions
+                 traditionnelles des trous noirs et résume quelques travaux récents sur les horizons alternatifs.
+                 [Traduit par la Rédaction]
+
+1. Introduction
+    Black holes have played a central role in gravitational physics for over 40 years. Early on, they
+were largely creatures of mathematical relativity and it was in the 1960s and 1970s that many of their
+classical properties were investigated. These properties included both detailed studies of the geometry
+and physics of stationary exact solutions as well as proofs of general results such as the singularity,
+
+
+
+   Received 17 August 2005. Accepted 29 September 2005. Published on the NRC Research Press Web site at
+   http://cjp.nrc.ca/ on 10 December 2005.
+   I. Booth. Department of Mathematics and Statistics, Memorial University, St. John’s, NL A1C 5S7, Canada,
+   (e-mail: ibooth@math.mun.ca).
+   1
+     This article is one of a series of invited papers that will be published during the year in celebration of the
+   World Year of Physics 2005 — WYP2005.
+
+Can. J. Phys. 83: 1073–1099 (2005)             doi: 10.1139/P05-063                            © 2005 NRC Canada
+1074                                                                                   Can. J. Phys. Vol. 83, 2005
+
+uniqueness, and area increase theorems (for reviews, see the standard texts such as refs. 1–3). Since then
+the mathematical interest has continued but black holes have also found wide application in other areas of
+gravitational research. Notably, the discovery in the early 1970s of the laws of black-hole mechanics [4]
+and the subsequent identification of those laws with the laws of thermodynamics [5] has reverberated
+through studies of quantum gravity ever since. Black holes have also found a key place in gravitational
+astrophysics and the observational evidence for their existence is very strong and getting better all the
+time [6]. Theoretically, they are closely linked to some of the most powerful processes known to science
+including both supernovae and active galactic nuclei [7]. Physical processes involving black holes (such
+as binary inspirals and gravitational collapse) are widely expected to be some of the brightest sources of
+gravitational waves and based on these expectations, gravitational wave observatories have been built
+all over the world [8].
+    All of that said, the standard mathematical definition of a black hole [1], as laid down over 30 years
+ago, is largely disconnected from these applications. The extent of a black hole is not directly defined
+by strong gravitational fields (equivalently large spacetime curvatures) or any other locally defined
+quantities. Instead, it is a global property of the causal structure of an entire spacetime; one cannot
+properly identify a black-hole region without that global knowledge. We will discuss the rigourous
+definition in more detail later in this review, but for now paraphrase it, in the usual way, by saying
+that a black hole is a region of spacetime from which no signal can ever escape. As a definition this is
+intuitively satisfying but complications quickly arise once we try to properly define “ever” and “escape”.
+To do this in an invariant and mathematically elegant way we are inevitably lead to a consideration of
+the structure of spacetime at infinity — only after waiting an infinite amount of time can one really say
+whether or not a signal will get out and only once it is an infinite distance from the hole can we really
+say that it has escaped.
+    Thus, this definition depends on observations that can only be made “at infinity” and so the exact
+extent of a black hole can only be determined by omniscient observers. In practice, of course, such
+observations are impossible and so, as a physicist, one might adopt a more practical viewpoint of
+deciding on the existence and (or) extent of a black hole by making measurements at large distances
+after waiting for long periods of time. Even then though, the definition remains teleological and nonlocal
+and so philosophically problematic. For example, we will see that an event horizon will always expand
+in area until the last bit of matter and (or) energy that will ever pass through it does so. Because it is
+identified in the far future, its evolution reflects that knowledge.
+     Given these difficulties, there has always been some discussion of other, (quasi)local, characteri-
+zations of black holes. Instead of the causal structure, these alternative definitions are geometric and
+identify black holes2 with regions of strong gravitational fields and, in particular, with trapped surfaces:
+closed and spacelike two-surfaces that have the property that all null geodesics that intersect them
+orthogonally must converge into the future. Horizons are then taken as the boundaries of regions of
+trapped surfaces, and are necessarily marginally trapped — the expansion of ingoing null geodesics is
+negative but that of outgoing sets is zero. Such ideas are not new. The definition of trapped surfaces
+actually preceded that of event horizons [9] and these objects are at least as characteristic of black
+holes: they are clearly a measure of strong gravitational fields, they imply the existence of spacetime
+singularities (event horizons do not), and they even imply the existence of event horizons in spacetimes
+with the appropriate causal structure.
+    What has changed over the last decade has been the increased interest in these ideas. This has partly
+been motivated by theoretical concerns that the identification of physical objects should not depend on
+the structure of null infinity and events that might or might not happen in the far future. However, at
+
+2
+    “Black hole” is used in a general sense here as the kind of object that, for example, forms during a gravitational
+    collapse. Henceforth, we will often use it in this common way, and generally add “causally defined”, “standard”
+    or some other identifying phrase in situations when we men instead the specific classical definition.
+
+                                                                                                  © 2005 NRC Canada
+Booth                                                                                                   1075
+
+least as strong a reason has come from numerical relativity. There, black holes are widely identified with
+outermost marginally trapped surfaces [10]. Event horizons can be (approximately) located, but only
+retroactively after a simulation is complete. This de facto characterization, along with the theoretical
+concerns, was the original impetus for studying these objects. As we shall see however, the rapid progress
+in our understanding of quasilocally defined horizons now gives its own motivation to this work — more
+and more they are seen as interesting and physically important objects in their own right.
+    Studies of quasilocal horizons go by several names: in numerical work outermost marginally trapped
+surfaces are usually referred to as apparent horizons (which does not correspond to the technical defi-
+nition of that term), while the best known of the mathematical programmes are trapping [11], isolated
+horizons [12], and dynamical horizons [13]. In this paper, we review the developments of the last
+decade, seeking to clarify the nomenclature (often similar concepts have many names while sometimes
+one name is used to refer to several distinct ideas), build an intuition about the physical relevance of the
+various objects, and understand their many properties.
+    The paper is structured in the following way. To set the stage, in Sect. 2, we review the classical
+definitions of black holes including trapped surfaces and event, Killing, and apparent horizons. Sec-
+tion 3 discusses some of the newer definitions such as isolated, trapping, and dynamical horizons and
+their relationship with those older ideas, in particular emphasizing their kinship to apparent horizons
+and trapped surfaces. Apart from definitions in principle however, we will also seek to test them by
+considering how they apply to various sample spacetimes. This will help to illuminate their strengths
+and weaknesses and point the way to further investigations and improvements. Then, in Sect. 4, we will
+explore the mathematical implications of these definitions, considering theorems on their existence,
+uniqueness, allowed topologies, associated flux laws, limiting behaviours, and role as boundaries in
+Hamiltonian formulations of general relativity. In Sect. 5, we will summarize, draw some conclusions,
+and look towards the future.
+    Finally, I give advance notice that this review will only really be of the classical uses and implications
+of quasilocal horizons. We will say very little about the quantum applications and so neglect such
+important developments as the role of isolated horizons in the loop quantum gravity entropy calculations
+[14] and the developing applications of these ideas to quantum mechanical investigations of black-hole
+formation and evaporation [15].
+
+2. Standard black holes and their boundaries
+2.1. Event horizons
+    We begin with a quick review of event horizons, restricting our discussion to strongly asymptotically
+predictable spacetimes. The interested reader is directed to refs. 1 and 3 for a proper definition of these
+terms (or to ref. 16 for a recent discussion of associated mathematical difficulties) but, here, we just note
+that they mean that the spacetime is asymptotically identical to Minkowski space. In particular, with
+the help of conformal mappings, one can rigorously construct boundaries “at infinity” that correspond
+to the ultimate destinations and (or) sources of (most) inextendible spacelike, timelike, and null curves.
+As shown in Fig. 1 these are two-dimensional spacelike infinity i o , the similarly two-dimensional past
+and future timelike infinities i − and i + , and the three-dimensional past and future null infinities I − and
+I +.
+    Then a null curve is said to have “escaped to infinity” if its counterpart in the conformally mapped
+spacetime terminates on I + .
+    In Minkowski space, all inextendible null curves terminate on I + . By contrast, spacetimes are said
+to contain a (causally defined) black hole if they have regions from which no null curve reaches I + —
+thus no causal curve can escape those regions. Equivalently, as shown in Fig. 1, a spacetime contains a
+black hole if the complement of the causal past of I + is nonempty. Then that complement is the black
+hole and the boundary of that region is the event horizon. In this example, null curves do not all escape to
+I + and those that do not, end up either in the central singularity or trapped forever in the event horizon.
+                                                                                           © 2005 NRC Canada
+1076                                                                               Can. J. Phys. Vol. 83, 2005
+
+Fig. 1. A Penrose–Carter diagram showing a spacetime in which a matter distribution collapses to form
+a black hole. As usual in these diagrams, null curves are drawn with slopes of ±1. i ± is future and (or)
+past timelike infinity (the destination and (or) origin of timelike curves as “time” goes to ±∞), i o is the
+corresponding spacelike infinity, and I ± is future and (or) past null infinity (the destination and (or) origin
+of null curves as “time” goes to ±∞). Note that point A can send signals to I + while B, which is part of
+the black hole, cannot.
+
+
+
+
+    This definition is based on the global causal structure of the spacetime rather than directly on its local
+geometry (equivalently the gravitational field). Further, it is teleological as the identification of a black
+hole region depends on the ultimate fate of null curves, not their local behaviour. As mentioned in the
+introduction, these dual nonlocalities mean that black holes evolve in nonintuitive ways. For example,
+one would naively expect that the event horizon of a black hole would expand as matter falls through
+it and be quiescent when it is (temporarily) isolated from such all influences. This is not the case. As
+shown in Fig. 2, infalling matter does not cause such expansion but instead reduces rates of growth. By
+contrast, the absence of matter results in an acceleration of expansion. This growth only stops once all
+interactions permanently cease between the event horizon and its surroundings. Temporary cessations
+are not sufficient; due to the teleogical nature of the definition a black hole can distinguish between
+temporary and permanent states of isolation and react accordingly.
+    To understand this behaviour, keep in mind that the event horizon is null and so coincides with a
+congruence of null geodesics. As such its evolution is governed by the Raychaudhuri equation. Thus
+(see, for example, ref. 17)
+
+dθ()    1 2
+      = − θ() − σ()ab σ()
+                         ab
+                             − 8π Tab a b                                                                   (1)
+ dλ      2
+where a is a null tangent vector to the congruence, λ is an affine parameter for these geodesics, θ() is
+the expansion of the geodesics (so that d/dλ = θ(), where  is the area form), σ()ab is the shear, and
+Tab is the stress-energy tensor. The immediate thing to notice is that the first two terms on the right-hand
+side of the equation will always be nonpositive and, if the null energy condition holds, then so will the
+last term. Therefore, for any congruence of null geodesics (including event horizons), dθ() /dλ ≤ 0,
+                                                                                              © 2005 NRC Canada
+Booth                                                                                                    1077
+
+Fig. 2. A two-dimensional schematic of the evolution of the event horizon (the heavy black line) as two
+concentric, spherically symmetric shells of matter (the sets of parallel arrows) collapse to form a black hole
+(the grey region). As noted in the text, the evolution is highly noncausal: the horizon forms in vacuum and
+then expands continuously with infalling matter decreasing the rate of expansion. The expansion only stops
+when the last shell crosses the the horizon. In this diagram the horizon is nonexpanding (and so null) when
+it is vertical. Otherwise it is expanding.
+
+
+
+
+and in particular it is not hard to show that if we ever have θ() < 0 then it must always diverge to
+−∞ shortly thereafter. This result is the focussing theorem; if a congruence of light rays ever begins to
+contract in area then it must form a caustic in finite time. Thus, for an event horizon that asymptotes to
+become stationary, we must always have θ() ≥ 0. In turn, this gives rise to the celebrated area increase
+theorem (d /dλ ≥ 0) for event horizons.
+     We can gain further understanding of this evolution by making the following, simple, calculation:
+                                             
+   
+ d2      1 2
+      =     θ   −  σ      σ ab
+                     ()ab () − 8π T ab a b
+                                               
+                                                                                                      (2)
+dλ2       2 ()
+Thus, even though θ() never increases, the rate of expansion of the area of the horizon can increase
+(unless θ() = 0), and does if θ()  = 0 and the shear and matter terms vanish. To clarify this difference,
+consider the case of a sphere of light expanding outwards in Minkowski space. As it gets very large
+θ() → 0 as local sections of the sphere become almost flat. By contrast, as this happens dA/dλ → ∞
+(where A is the cross-sectional area of the horizon).
+    With these observations in mind, we can understand Fig. 2. There, two spherical shells collapse to
+form a black hole. Combining our omniscience with the symmetry, it is relatively easy to identify the
+event horizon. Specifically, outside the outermost shell the spacetime will be Schwarzschild and static.
+Thus, once the two shells have collapsed within their (combined) Schwarzschild radius we know that
+the event horizon will coincide with the surface r = 2M. Then, we can trace the evolution of this surface
+backwards in time to find its orgin at r = 0. We note that there is nothing special happening at r = 0 at
+that point. Instead the event horizon appears in anticipation of future events (and at this point θ() will
+have its maximum value). Having identified the relevant congruence the above equations (simplified
+by the symmetry so that σ()ab = 0) guide its evolution as we follow it forwards in time. The newly
+formed horizon exists in vacuo and so by (2), the rate of growth of A is positive and accelerating. This
+continues until the first shell of matter crosses the horizon and causes that rate to decrease until, in our
+example, it is very close to zero. However, the horizon is then back in vacuo and so the growth of A
+again begins to accelerate. Just before the second shell hits, this rate is large enough to be noticeable
+and we again see a rapid growth in the horizon area. Then, the second shell arrives, sends θ() → 0, and
+
+                                                                                            © 2005 NRC Canada
+1078                                                                             Can. J. Phys. Vol. 83, 2005
+
+so with no more matter ever falling into the hole, A achieves its maximum value and stays that way for
+the rest of time.
+     Thus, there are at least three unusual features of event horizons (as compared to the usual objects
+studied by physics). First, a standard black hole is only properly defined for spacetimes that have a
+I + . This means that it is a highly nonlocal object as its very existence depends on the structure of
+infinity. Second, even if the spacetime has the correct asymptotic structure we must still wait until “the
+end of time” to locate the event horizon. It cannot be identified by local measurements. Third, while
+the evolution of the horizon is causal once it has been identified, its growth still reflects its initial,
+teleological identification. As such, we have features like growth not being simply related to the rate of
+infalling matter.
+     Of these, we have already seen that the first two are probably not causes for serious concern. Keeping
+in mind that this is an idealized definition, it is perfectly reasonable to argue that in physical situations
+one should replace I + with a set of observers, far from the black hole, who are willing to wait for long
+(but finite) periods of time. Thus, as long as there is an “almost” flat region around the black hole in
+which these observers can live, one can adapt this definition in an appropriate way (again, see ref. 16).
+That said, this clearly does not resolve the problem for highly dynamical situations where such a region
+does not exist. Further, even if one can find a I + substitute, one still has to use nonlocal information to
+identify an event horizon and live with its strange modes of evolution.
+     Now, given the exotic nature of black holes it is certainly conceivable that this situation cannot be
+improved upon; perhaps reality does not allow for a local identification of black holes. However, as we
+shall see in the next couple of sections this does not seem to be the case. Alternative characterizations
+of black holes do exist and are, in general, at least as useful as causally defined black holes and event
+horizons. We now consider some of these ideas.
+
+2.2. Killing horizons
+    The best known examples of event horizons are in static or stationary spacetimes (i.e., those in the
+Kerr–Newman solutions). As such, besides being null surfaces they are also tangent to one or more
+(global) Killing vector fields. This observation gives rise to the following definition.
+
+Definition: Given a spacetime (M, gab ), a Killing horizon is a null three-surface H that is everywhere
+tangent to some Killing vector field ξ a of the full spacetime, which itself is null on H ( ξ · ξ |H = 0).
+
+It can be shown (see ref. 18 for a general discussion or ref. 1 for details) that event horizons in stationary,
+asymptotically flat, black-hole solutions to the Einstein–Maxwell equations must be Killing horizons.
+For static spacetimes (such as Schwarzschild), ξ a is the Killing vector field corresponding to time
+translations at infinity, but for stationary spacetimes (such as Kerr), it will be a linear combination of
+the “time-translation” and rotational Killing vector fields: ξ a = (∂/∂t)a + (∂/∂φ)a , where  is the
+angular velocity of the horizon.
+     If one slightly relaxes the definition so that ξ a does not have to be a Killing vector field of the full
+spacetime, but instead just of some neighbourhood of (some section) of H then one can use Killing
+horizons to characterize horizons that are (possibly temporarily) in equilibrium with their surroundings.
+Of course in this case they will not, in general, exactly coincide with the event horizon but in many cases
+they would be quite close (think about Fig. 2 where the event horizon is “almost” stationary). Then, on
+extracting a surface gravity κξ from the geodesic equation ξ a ∇a ξ b = κξ ξ b , one can prove a version of
+the zeroth law of black-hole mechanics: κξ is constant over H . The specific value of the surface gravity
+depends on the normalization of the Killing vector field, though if ξ a is a global Killing vector field,
+the natural choice is made by requiring that ξ · ξ = −1 “at infinity” [17, 18].
+     Note that by definition the intrinsic and extrinsic geometry of H will be invariant with respect to
+translations along the null Killing vector field. Thus, given a foliation of H consistent with the Killing
+                                                                                            © 2005 NRC Canada
+Booth                                                                                                   1079
+
+vector fields, an induced metric q̃ab on the two-surfaces, and setting a = ξ a we have
+
+L  q̃ab = θ() q̃ab + σ()ab = 0                                                                         (3)
+
+and so the expansion and shear of the a congruence vanishes.
+    Finally note that while event horizons are necessarily Killing horizons under the conditions dis-
+cussed above, the converse is not necessarily true. For example, in Minkowski space with the standard
+rectangular coordinates, the x = ±t three-surfaces are Killing horizons. Less trivially, ref. 19 constructs
+examples of other black-hole-free spacetimes that can be entirely foliated by Killing horizons, each with
+topology S 2 × [0, 1]. Thus, while Killing horizons may be characteristic of stationary black holes they
+are not a sufficient condition for their identification. Situations of this type will recur with some of our
+later definitions and the implication is simply that certain non-black-hole structures share some common
+properties with black holes.
+
+2.3. Trapped surfaces and apparent horizons
+    For the Kerr–Newman family of black-hole spacetimes, the black-hole region has an alternative
+characterization that is both local and physical. Specifically, through each point inside the event horizon
+there exists a trapped surface — a closed two-surface that has the property that the expansions in each
+of the two forward-in-time pointing, normal-to-the-surface, null directions a and na are everywhere
+negative. That is, for a trapped two-surface S,
+
+θ() = q̃ ab ∇a b < 0   and    θ(n) = q̃ ab ∇b nb < 0                                                    (4)
+
+where q̃ab = gab + a nb + b na is the two-metric induced on S. Here, and in the future, we always
+“cross-normalize” so that  · n = −1 and assign a /na to be outward and (or) inward pointing null
+vector fields whenever it makes sense to make this distinction.
+      One can compare such behaviour with, say, a two-sphere embedded in Minkowski space. There, the
+ingoing set of null rays would focus (θ(n) < 0) while the outgoing set would expand (θ() > 0). This is
+what one would intutively expect. By contrast, for trapped surfaces, the strong curvature of spacetime
+means that any causal evolution of the two-surface will be a contraction.
+      Even away from these examples, there are general theorems that tell us that trapped surfaces charac-
+terize the strong gravitational fields intuitively associated with black holes. For example, for spacetimes
+That satisfy certain positive energy conditions and which have a I + , any weakly trapped surface (where
+one only restricts both expansions to be nonpositive) must be contained inside a black hole [1, 3]. Even
+for spacetimes without a I + , Israel [20] shows that given the weak energy condition, any trapped two-
+surface can be extended into a spacelike three-surface of constant area that causally seals off its interior
+from the rest of the spacetime. Thus, trapped surfaces really are trapped. Finding a trapped surface in
+a spacetime is also sufficient to imply the existence of a singularity (in the form of an inextendible
+geodesic) somewhere in its causal future [1, 3, 9]. We note that there is no corresponding theorem for
+event horizons — event horizons can exist that do not contain singularities.
+      The association of trapped surfaces with black holes, forms the basis of the definition of an apparent
+horizon. Following ref. 1, if a spacetime can be foliated by asymptotically flat spacelike three-surfaces
+  t , then a point q ∈ t is said to be trapped if it lies on some trapped two-surface in t . The apparent
+horizon in t is the boundary of the union of all of the trapped points and given certain smoothness
+assumptions, it can be shown that it is a surface on which θ() = 0 [1, 3, 21]. Further, if the spacetime
+is strongly asymptotically predictable then the apparent horizon is contained inside (or coincides with)
+an event horizon.
+      While it is certainly possible to identify an apparent horizon without reference to the far future, this
+definition is quite unwieldy, most obviously in the need to check the assumption about asymptotic flatness
+and also in the procedure of finding the boundary of the union of all the trapped points. There can also be
+                                                                                           © 2005 NRC Canada
+1080                                                                             Can. J. Phys. Vol. 83, 2005
+
+  Table 1. A tabular summary of the various quasilocal horizons and their definitions. Note that other
+  properties may follow from those that are listed, but only requirements that explicitly appear in the
+  definition have been included here.
+                                                                            Signature
+   Acronym     Full name                          Dim     θ(n)   L n θ()   (if 3D)     Other
+   IH          Isolated horizon                   3       —      —          null        energy condition
+   MOTS        Marginally outer trapped surface   2       —      —          —           closed topology
+   MOTT        Marginally outer trapped tube      3       —      —          —           foliated by MOTSs
+   MTS         Marginally trapped surface         2        <0     —         —           closed toplogy
+   MTT         Marginally trapped tube            3       <0      —         —           foliated by MTSs
+   TH          Trapping horizon                   3        =0    =0       —           foliated by MOTSs
+   FITH        Future inner trapping horizon      3        <0     >0        —           foliated by MTSs
+   FOTH        Future outer trapping horizon      3        <0     <0        —           foliated by MTSs
+   DH          Dynamical horizon                  3        <0     —         spacelike   foliated by MTSs
+   TLM         Timelike membrane                  3        <0     —         timelike    foliated by MTSs
+
+
+
+problems associated with the smoothness of the total trapped region and (or) the apparent horizon [16].
+In particular, these problems mean that, contrary to popular belief (and usage), the outermost θ() = 0
+two-surface in a slice t does not always coincide with the original definition of an apparent horizon
+that we have just discussed.
+    That said, the outermost θ() = 0 surface in a slice is obviously much more convenient to work
+with than either an apparent or event horizon. In fact, as suggested above, the classical definition of an
+apparent horizon is widely ignored in practical applications such as numerical relativity [10] and instead
+the term is used to refer to the outermost θ() = 0 surface. This mixing of distinct ideas under the same
+name is nomenclaturally unfortunate but physically suggestive. The quasilocal horizon definitions that
+we now consider can be thought of as formalizations of this vernacular notion of an apparent horizon.
+
+3. Quasilocal horizons
+    For purposes of this paper event, Killing, and apparent horizons represent the classical notions of
+black-hole boundaries, and with this background in mind we now turn to the alternative, quasilocal
+definitions that have been developed over the last decade. Based on the discussion of apparent horizons
+above, it will not be a surprise that each of these is defined in terms of θ() = 0 surfaces. However, we
+will also see that such surfaces are not exclusively restricted to black-hole spacetimes. Thus, further
+restrictions are needed to single out these surfaces as black-hole boundaries. Again following the model
+of apparent horizons, we will see that requiring that there be trapped surfaces “just inside” the horizon
+seems to be what is needed.
+    For a quick reference, these definitions and their associated acronyms are summarized in Table 1.
+
+3.1. Isolated horizons
+    We begin with isolated horizons. These are intended to be the black-hole analogues of isolated,
+equilibrium states in thermodynamics and so correspond to black holes that are not interacting with
+their surroundings, even though those surroundings themselves may be dynamic. The simplest way to
+introduce these is as a generalization of Killing horizons. While a Killing horizon assumes the existence
+of a Killing vector field in some neighbourhood of H , an isolated horizon is defined only in terms of
+the intrinsic and extrinsic geometry of H itself. As such, the existence of an isolated horizon does not
+assume any properties of the surrounding spacetime and in particular allows for dynamic evolutions of
+the surrounding spacetime “right outside” as long as the horizon itself is left unaffected.
+
+                                                                                           © 2005 NRC Canada
+Booth                                                                                                 1081
+
+    They have been well studied and are the subject of an extensive literature (see, for example, refs. 12
+and 22–24). Here, we will just review some of their main properties, and note that technically we will
+be considering a variety known as weakly isolated horizons.
+
+Definition: A weakly isolated horizon is a three-surface H such that:
+
+   1. H is null,
+
+   2. the expansion θ() = 0 where a is a null normal to H ,
+
+   3. −Tab a is future directed and causal, and
+
+   4. L  ωa = 0, where ωa = −nb ∇a b and the arrow indicates a pull-back to H .
+                                      ←
+                                      −
+
+Note that the second condition does not depend on the specific normalization of a since θ(f ) = f θ()
+for any function f . The third is an energy condition (and in particular is implied by the dominant energy
+condition). The last condition can always be met by an appropriate choice of a and so is not a restriction
+on which surfaces may be considered to be weakly isolated but instead is just a rule about how we should
+choose the normalization of a . This restriction is nonunique.
+    If we consider any foliation of H into two-surfaces Sv , it is easy to see that the first two conditions
+guarantee that L   = 0 (where, as before, is the area form for the horizon) while from the Raychaudhuri
+equation (1), we also have σ()ab = 0 and Tab a b = 0. Then, it follows that a is a Killing vector for
+the intrinsic geometry of H and so this geometry is invariant under “time evolutions” with respect to a .
+Further, there are no matter flows across H . An isolated horizon does not interact with its surroundings.
+    That said, those surroundings can, themselves, be dynamic. We have not imposed direct restrictions
+on the rest of the spacetime or even on a neighbourhood of H as we did for Killing horizons. No
+assumptions have been made about the behaviour of extensions of a off of H and in fact it has been
+shown [25] that the spacetime surrounding an isolated horizon does not have to inherit any of the
+symmetries of H . In particular, there can exist spacetimes that are both dynamic and nonspherical
+“right outside” a spherical isolated horizon. Certain Robinson–Trautman spacetimes are commonly
+cited as examples of these [26].
+    Further support for isolated horizons as equilibrium states comes from a study of isolated horizon
+mechanics. First, since a generates a congruence of null geodesics that rule H , we know that there is a
+function κ such that a ∇a b = κ b . As for Killing horizons, this is the surface gravity of the horizon
+and we note that we can equivalently write κ = a ωa = −nb a ∇a b . Then, for any weakly isolated
+horizon it can be shown that each choice of a that satisfies the fourth condition of the definition gives
+rise to a κ that is constant everywhere on H [23]. This is the zeroth law of isolated horizon mechanics.
+Note that unless the isolated horizon is also a Killing horizon (and so we can normalize a versus
+times translations at infinity) significant freedom remains in the choice of a and, therefore, the surface
+gravity. In fact, while the formalism tells us that any κ will be constant over H , it does not fix that
+constant. In many circumstances there will be a convenient choice of that value, but that is extra input
+into the formalism.
+    There is also a first law of isolated horizon mechanics. Here, we will restrict our attention to
+(uncharged) weakly isolated horizons that also admit a rotational symmetry generated by some vector
+field φ a (technically these are rigidly rotating horizons). For more general cases see refs. 23, 24, and
+27. The first law then comes from a careful Hamiltonian analysis of the phase space of spacetimes that
+have an isolated horizon as a boundary. In the usual way, the Hamiltonian functional includes both bulk
+and boundary terms and when evaluated on any particular solution to the Einstein equations, the bulk
+terms vanish. Conventionally, the boundary terms are then identified as the energies associated with
+those boundaries and that is what is done here. In that case, it can be shown that the evolution of such
+
+                                                                                         © 2005 NRC Canada
+1082                                                                                     Can. J. Phys. Vol. 83, 2005
+
+spacetimes admits a Hamiltonian formulation if and only if
+                κ
+δHisol =           δA + δJφ                                                                                         (5)
+                8π
+for variations through the phase space of isolated horizons where Hisol is the contribution from the
+isolated horizon boundary, A is the area of the two-dimensional cross sections Sv of the horizon, and
+      
+Jφ =      
+          φ a ωa                                                                                   (6)
+           Sv
+
+is the corresponding angular momentum associated with the rotational symmetry. Hisol , the surface
+gravity κ , and the angular velocity  are functions of A and Jφ alone.
+    As the zeroth law fixes the surface gravity to be a constant but does not fix the actual value of that
+constant, the first law fixes relationships that the quantities must satisfy but does not actually specify
+expressions Hisol , κ , or φ . That said, if one calibrates the expressions for surface gravity and angular
+velocity so that they take their regular values for the Kerr section of the phase space, then (5) can be
+integrated to show that Hisol must also take its usual value [23, 24].
+    Finally, before moving on to nonisolated horizons, we note that just as for Killing horizons, the
+phase space of isolated horizons includes more than just outer black-hole horizons. For example, all
+horizons in the fully extended Reissner–Nordström–deSitter spacetime qualify as isolated horizons —
+the outer black-hole horizon, the inner Cauchy horizon, the corresponding horizons associated with
+white holes, and even the cosmological horizons. Further, since all Killing horizons are also isolated
+horizons, the examples of non-black-hole Killing horizons discussed in Sect. 2.2 are also examples of
+isolated horizons. Thus, while the isolated horizons conditions are sufficient to capture many of the
+properties of equilibrium black holes they are not exclusively black holes. In the next section, as we
+classify (potentially) nonisolated horizons, we will also consider the extra conditions that are necessary
+to distinguish between the various subclasses of horizons.
+
+3.2. Classifying horizons
+    We now consider quasilocal definitions of black-hole boundaries that will include nonequilibrium
+states. These definitions will be general enough to allow for isolated black-hole horizons as equilibrium
+states and yet also include extra conditions to identify and exclude the non-black-hole isolated horizons
+considered above.
+    Following the terminology of ref. 28, the primary building block of these surfaces is the marginally
+outer trapped surface (MOTS): a closed, spacelike, two-surface for which the outgoing null expansion
+θ() = 0 (from here on we will always assume that we can distinguish between “inward” and “outward”
+pointing vector fields). Any three-surface, H , which can be entirely foliated with MOTSs, Sv , will be
+referred to as a marginally outer trapped tube (MOTT). We immediately see that a null MOTT (that also
+satisfies the energy condition) is an example of an isolated horizon, though with a particular foliation.
+Note, however, that the restriction that the MOTSs be closed spacelike surfaces means that certain
+Killing horizons, such as the x = t surfaces in Minkowski space, are not MOTTs.
+    To further restrict the allowed structures that we will call horizons, it is common to demand that
+θ(n) < 0 so that ingoing null rays focus. Such behaviour would be intuitively expected, removes the
+Killing horizons of ref. 19 from consideration, and also has strong physical implications. If θ(n) < 0
+then a MOTS is called a marginally trapped surface (MTS)3 and in turn this will imply the existence
+
+3
+    Note that “marginally trapped surface” is used to mean different things in different places in the literature. In one
+    common usage (ref. 3 for example) the surfaces that we have called weakly trapped (with θ() ≤ 0 and θ(n) ≤ 0)
+    are instead referred to as marginally trapped. We do not use it in that way here and instead follow, for example,
+    ref. 17 or ref. 28 where a marginally trapped surface is as defined above in the main text.
+
+                                                                                                     © 2005 NRC Canada
+Booth                                                                                                    1083
+
+of an event horizon in suitable spacetimes (an MTS is weakly trapped). Following refs. 13 and 28, we
+also define a marginally trapped tube) (MTT) as an MOTT with θ(n) < 0.
+    At first thought, these two conditions might seem to be sufficient to identify a surface as a black-hole
+boundary. However, this is not the case and there are non-black-hole spacetimes that contain MTTs.
+For example, Senovilla [31] has shown that certain vanishing scalar invariant (VSI) spacetimes include
+MTTs (and in fact can be foliated by them) but do not contain any trapped surfaces or other signatures
+of black holes.
+    Along with the definition of apparent horizons, this example suggests a third condition that must
+be satisfied by any three-dimensional tube that aspires to be viewed as a black-hole boundary — we
+require that there be trapped surfaces “just inside” the MTT.
+    This can be made mathematically precise by demanding that with an arbitrarily small “inwards”
+deformation, each Sv can be turned into a fully trapped surface. This idea was first proposed by Hayward
+[11] who formulated the condition in the following way (though using different notation). Construct a
+dual-null foliation of some neighbourhood of the MTT so that, in particular, the MTSs are surfaces of
+constant null variables [29]. Further, scale the null vectors a and na so that they generate the foliation
+(note that in general this will mean that it is no longer possible to require  · n = −1). Then, θ()
+and θ(n) are defined at every point in the neighbourhood as the expansions of surfaces of constant null
+coordinates and if L n θ() < 0, those surfaces “just inside” the MTT are fully trapped. Conversely, if
+L n θ() > 0 those “just outside” are trapped (a situation that we will see in Sect. 3.3.1 when we study a
+class of spacetimes that include “jumping” MTTs) and if the sign of L n θ() varies over an Sv , neither
+set is trapped.
+     Of course such conditions have physical implications. As we saw in Sect. 2.3, trapped surfaces imply
+the existence of spacetime singularities. Thus, any MTT that satisfies this condition almost certainly
+should be viewed as associated with a black hole — it bounds trapped surfaces, conceals a spacetime
+singularity, and is contained in an event horizon (if the global structure is such that one may be defined).
+These arguments were first made by Hayward and form the basis of his classification of MOTTs [11]:
+
+Definition: An MOTT is a trapping horizon if θ(n)  = 0 and there exists a dual-null foliation of some
+neighbourhood of H so that L n θ()  = 0. If θ(n) < 0 then a trapping horizon is future while if θ(n) > 0
+it is past. Further, if L n θ() < 0 it is outer while if L n θ() > 0 it is inner.
+
+The names follow from a consideration of the various horizons of the fully extended Reissner–Nordström
+solution. In that case, using the natural spherically symmetric dual-null foliation, it is easy to see that the
+black-hole event and Cauchy horizons are future trapping horizons while the corresponding white-hole
+horizons are past. Further, the black-hole Cauchy horizon is a future inner trapping horizon (FITH)
+while the event horizon is a future outer trapping horizon (FOTH).
+    Following ref. 30, the trapped surface condition may be reformulated in the following, computa-
+tionally more convenient way. Instead of considering dual-null foliations, one directly considers the
+deformations of the MTSs generated by vector fields. Thus, given a vector field X a defined over an Sv ,
+one constructs an extension of Xa over some neighbourhood of the two-surface and then evolves that
+surface using the flow generated by the vector field (that is Lie-drags Sv with X a ). Then one can construct
+quantities such as θ() on the new surface and so calculate its variation: δX θ() . As would be expected,
+the variation does not depend on the particular extension of X a and, for example, if Xa = Aa + Bna
+we find
+                                                                        
+                                                      (2)R
+δX θ() = d B − 2ω̃ da B + −da ω̃ + ω̃a ω̃ −
+            2         a                a         a
+                                                           + 8π Tab  n B
+                                                                     a b
+                                                        2
+                                                                                                       
+                                                                      − A σ()ab σ() ab
+                                                                                         + 8π Tab a b     (7)
+
+                                                                                            © 2005 NRC Canada
+1084                                                                           Can. J. Phys. Vol. 83, 2005
+
+where d 2 and da are, respectively, the intrinsic Laplacian and induced covariant derivative on Sv while
+                                 (2)
+ω̃a is the pull-back of ωa , and R/2 is the two-dimensional Ricci scalar (this may most easily be seen
+through an inspection of the relevant Newman–Penrose equations [2]). Thus, the classification of a
+MOTT as a trapping horizon becomes a matter of classifying the (A = 0) solutions to this differential
+equation (again, see ref. 30 for a related discussion).
+    For spherically symmetric slices of Reissner–Nordström horizons and the same symmetry for B,
+                                                  
+                               (2)R
+δ(Bn) θ() = Bδn θ() = B −          + 8π Tab  n
+                                               a b
+                                                                                                     (8)
+                                 2
+
+and it is fairly easy to see that this matches the results of Hayward’s classification. On the outer horizon,
+δn θ() = 0 if and only if the black hole is extreme. Equally clearly though, if one breaks the spherical
+symmetry of B we will not necessarily always have δn θ() < 0 — a “proper” scaling of the na is crucial
+to the classification. A good example of the problems that this can cause arises if we consider black
+holes distorted by strong external gravitational fields [27, 32]. There spherical symmetry is broken and
+if one does a naive calculation using surfaces of constant time coordinate to foliate the horizon, it does
+not appear that this is a FOTH. A more careful analysis is needed to properly classify these horizons.4
+    Assuming that one can identify a FOTH, it is clearly a good candidate for an outer black-hole
+boundary. That said, it would certainly be convenient to have a more direct way to identify these
+structures. It turns out that this is possible if we consider the dynamical horizons (DHs) of Ashtekar
+and Krishnan [13]. These are spacelike MTTs — intuitively, if isolated horizons are null one would
+expect dynamic and expanding MTTs to be spacelike. As we shall see in Sect. 4.4 this extra condition
+is sufficient to allow one to generate flux laws that track how the local flow of quantities across the
+dynamical horizon affects such properties as their total area. For now though, we note that the VSI
+examples of ref. 31 again demonstrate that the spacelike condition is not quite enough to identify a
+black-hole boundary (those examples include dynamical horizons). However, if one also requires a
+genericity condition: σ()ab σ()ab + 8π T a b  = 0 plus the null energy condition, then it can be shown
+                                           ab
+that in this case FOTHs and DHs are equivalent (Sect. 4.2 or ref. 28).
+     To gain further insight into the physical relevance of these definitions we now turn to some examples
+of spacetimes that include dynamically evolving horizons that may be confidently identified with black
+holes.
+
+3.3. Dynamically evolving horizons
+    As we have already noted, the quasilocal notions of horizons discussed above formalize the numerical
+relativity practice of identifying the outermost MOTS in a spacelike three-surface as a potential black-
+hole boundary. Identifying this boundary is obviously physically interesting, but it also has practical
+advantages. As we have seen, if the spacetime is asymptotically flat then any marginally trapped surface
+must lie within any event horizon, and so the interior of such a region may be safely excised without
+affecting the future development of the spacetime.
+    Thus, if one consults almost any numerical study of black-hole evolutions (for example, ref. 335 ),
+examples of dynamical MOTT or MTT evolution may be found. The “apparent horizon” is sometimes
+seen to evolve smoothly in a spacelike manner and sometimes seen to discontinuously “jump” as
+new horizons form around old. Unfortunately, given the involved nature of many of these simulations,
+complications arising from slicing conditions, and the fact that the interior of the “apparent horizon”
+is generally discarded, it can be difficult to use such simulations to build an intuition as to how these
+quasilocal horizons generically evolve.
+
+4
+    As far as the author is aware, this has not yet been done.
+5
+    David Hobill. Private communication. 2000.
+
+                                                                                          © 2005 NRC Canada
+Booth                                                                                                 1085
+
+Fig. 3. A schematic of a Vaidya spacetime in which two concentric shells of null dust collapse onto a
+pre-existing isolated horizon. Isolated horizon sections are labelled, IH, while dynamic horizon (and so
+spacelike) regions are labelled DH. Note the difference between the behaviour of the MTT versus the event
+horizon shown in Fig. 2.
+
+
+
+
+     As such, exact analytic solutions, though necessarily much simpler than full numerical examples,
+play an important role in building an intuition about how these boundaries evolve and which are relevant
+for black hole formation and growth. In this subsection we will consider in some detail how MTTs evolve
+in Tolman–Bondi spacetimes. It turns out that while these are quite simple exact solutions, their MTTs
+demonstrate surprising rich behaviours.
+     Before turning to these examples however, we briefly review two even simpler spacetimes and
+consider the questions that they raise. To start, consider what are probably the best known examples of
+exact dynamical black hole spacetimes — the Vaidya solutions. These represent spherically symmetric
+black holes absorbing infalling null dust (thus the stress energy tensor for the spacetime takes the form
+Tab = ρna nb where ρ is the dust density). Given the spherical symmetry one can easily identify MOTTs
+in these spacetimes and find that θ(n) < 0 and δn θ() < 0. Further, they are either null and isolated if no
+matter is falling through them or spacelike and expanding (dynamical horizons) otherwise (Fig. 3 and
+refs. 17 and 13). Thus, this example supports the intuition that dynamic MTT evolutions are generically
+spacelike.
+     Howevever, this initial expectation is confounded by our second example — the Oppenheimer–
+Snyder collapse [34]. These spacetimes are generated using spacetime surgery to piece together sections
+of Schwarzschild and Robertson–Walker spacetimes to model the gravitational collapse of balls and (or)
+shells of uniform density dust. MTTs exist in these spacetimes and are null and isolated if no matter is
+falling through them, but timelike and shrinking otherwise; these surfaces, often referred to as timelike
+membranes (TLMs), connect isolated horizons either to each other or to the central density singularity
+as shown in Fig. 4. Equivalently, δn θ() < 0 in isolation (so that trapped surfaces are inside the horizon)
+but in dynamical situations δn θ() > 0 (so that the trapped surfaces lie outside the TLM).
+     Now, while the first example shows a smooth expansion of the horizon it appears that the second
+may be an example of the “jumping” apparent horizons seen in numerical relatlivity. The question then
+arises as to which of these behaviours is generic? In general, do black holes expand smoothly or do
+the horizons jump? As neither of these examples is completely satisfactory physically (null dust is very
+unusual matter while the second example has density discontinuities as well as other unusual features),
+it is hard to draw general conclusions about which represents “most” black-hole evolutions.
+     To better understand these evolutions we now turn to examples that are physically slightly more
+satisfactory — spherically symmetric, but radially nonhomogeneous, timelike dust collapse.
+
+                                                                                         © 2005 NRC Canada
+1086                                                                           Can. J. Phys. Vol. 83, 2005
+
+Fig. 4. An Oppenheimer–Snyder spacetime in which three consecutive shells of constant density dust fall
+into a pre-existing black hole. When no dust crosses the MTT, it is an isolated horizon while when it is
+dynamic it is a timelike membrane. Note that the trapped region may be either inside or outside of the MTT
+depending on whether it is dynamic or isolated.
+
+
+
+
+3.3.1. MOTS in Tolman–Bondi spacetimes
+     From the Tolman–Bondi spacetimes, we can draw a whole series of physically interesting, but still
+fairly simple examples of spherical dust collapse. These were recently investigated in some detail in
+ref. 35 and here we review some of the results from that paper. As already mentioned, these solutions
+model the gravitational collapse of spherically symmetric but radially nonhomogeneous clouds of dust.
+They are commonly used to study shell-crossings and the consequent naked singularities (see, for
+example, the discussion in ref. 36). However, as we shall now see, they also provide many interesting
+examples of MTT spacetimes.
+    The combination of pressureless dust and spherical symmetry makes the evolution of these space-
+times especially easy to study using only analytical tools. The spherical symmetry means that the
+problem reduces to a consideration of the evolution of dust shells while the nature of this matter means
+that those shells interact with each other only through the gravitational field. In turn, this means that
+tracing the evolution of each dust shell is essentially equivalent to calculating the evolution of radial
+geodesics in Schwarzschild spacetime.
+    We study these spacetimes by giving initial conditions on a spherically symmetric, spacelike, three-
+surface o . We then specify a dust density ρo so that on that surface Tab = ρo ûa ûb , where ûa is the
+forward-in-time-pointing unit normal to o . For purposes of this review we will also assume that the
+spacetime (and this matter) is instantaneously static at o ; that is, the extrinsic curvature of o vanishes.
+Then the three-metric on o is
+
+             dr 2                           
+ds 2 =               + r 2 dθ 2 + sin2 θdφ 2                                                            (9)
+         1 − 2m(r)/r
+
+where r is the areal radius (so that a sphere with coordinate radius r on                   2
+                                                                             o has area 4π r ), θ and φ are
+the usual spherical coordinates and
+           r             
+m(r) =          dr̃ 4π r̃ 2 ρo (r̃)                                                                    (10)
+           o
+
+is a mass function — if the mass distribution were to terminate at r then m(r) would be equal to the
+ADM mass of the entire spacetime.
+    From these initial conditions, the Einstein equations can be solved to evolve the full spacetime.
+Then in Gaussian normal coordinates, where τ is the proper time as measured by a fleet of geodesic
+
+                                                                                         © 2005 NRC Canada
+Booth                                                                                               1087
+
+Fig. 5. Collapse of a dust ball to form a black hole.
+
+
+
+
+observers with initial velocity ûa on   o (and so comoving with the dust)
+
+                  (R (τ, r))2
+ds 2 = −dτ 2 +                dr 2 + R 2 (τ, r) d2                                                  (11)
+                 1 − 2m(r)/r
+where R(τ, r) is the areal radius at time τ of the spherical set of observers who had initial areal radius
+r, and must be a solution of
+
+             dR(τ, r)    2m(r)      R(τ, r)
+Ṙ(τ, r) ≡            =−         1−                                                                  (12)
+               dτ        R(τ, r)      r
+
+R(τ, r) = ∂R(τ, r)/∂r and the stress-energy tensor keeps the form Tab = ρ(τ, r)∇a τ ∇b τ .
+    All of these quantities may be obtained analytically since (12) may be parametrically integrated.
+Details may be found in ref. 35.
+    Since our spacetime is spherically symmetric, we search for MOTS that share this symmetry. Fo-
+cussing our attention of these surfaces one can show that, up to multiplication by positive functions of
+r and τ
+                     √                                           √
+        2 Ṙ(τ, r) + 1 − 2m(r)/r                      Ṙ(τ, r) − 1 − 2m(r)/r
+θ() =                                   and θ(n) =                                                 (13)
+                   R(τ, r)                                      R(τ, r)
+Then, consulting (12), we then find that θ() = 0 if and only if R(τ, r) = 2m(r), and on that surface we
+always have θ(n) < 0. Thus, all quasilocal horizons in this spacetime are marginally trapped tubes (or
+future trapping horizons whenever L n θ()  = 0).
+
+3.3.2. Examples
+    Generating examples of MTT evolutions is then simply a matter of picking initial matter distribution
+functions ρo (r) and evolving the data in time. Some care needs to be taken in picking initial matter
+distributions to avoid shell-crossings but a great amount of freedom remains. Some examples are shown
+in Figs. 5–7.
+    Figure 5 shows the collapse of a spherical symmetric cloud of dust with an (initial) Gaussian density
+function. In Fig. 5, all measurements are made relative to the ADM mass, mo , of the dust cloud. Part (a)
+
+                                                                                        © 2005 NRC Canada
+1088                                                                                    Can. J. Phys. Vol. 83, 2005
+
+Fig. 6. Large shell of constant density falls “into” a small black hole.
+
+
+
+
+Fig. 7. Complicated dust distributions collapse to form a black hole.
+
+
+
+
+shows the initial mass distribution while part (b) shows how the horizon (the thick black line) evolves
+as a function of τ . The other lines in (b) trace the paths of infalling dust shells. Note that the horizon
+forms as the first shells collapse to zero area (and infinite density). It then grows from the singularity
+before asymptoting to R = 2mo as most of the mass has fallen into the newly formed hole. Though we
+do not do so here, it is straightforward to show that the horizon is spacelike throughout this expansion
+and that L n θ() < 0. Thus, this is both a dynamical and a future outer trapping horizon.
+    Figure 6 shows another dramatic situation. In this case the initial configuration is a small black hole
+of mass mo surrounded by a huge cloud of constant density dust with a total mass of 600mo .6 Note
+
+6
+    Though initial black holes were not discussed in the above, they may easily be inserted into the initial data using
+    spacetime surgery to excise and connect regions of suitable spacetimes. See ref. 35 for the details.
+
+                                                                                                   © 2005 NRC Canada
+Booth                                                                                                1089
+
+that the density distribution is defined in terms of error functions and so, despite initial appearances,
+is smooth everywhere. The evolution of this distribution is shown in (b) where we see a slow initial
+growth followed by a “jump” at τ ≈ 3000mo as a new horizon forms at R ≈ 1202 around the old. It is
+fairly easy to show that the segment connecting the new horizon to the old is a timelike membrane.
+    Alternatively, we can trace the evolution as a function of R. Then, it begins as an isolated horizon
+(before the first dust shells hit), becomes a dynamical horizon (during the initial expansion), transitions
+through a null (but not isolated) instant to become a timelike membrane (heading backwards in time),
+and then goes back to being dynamical before asymptoting towards isolation. Thus, it is a future trapping
+horizon everywhere except when it passes through the null instants to transit from being a FOTH to
+being a FITH. During those instants L n θ() = 0.
+    Finally, Fig. 7 shows an example of a more complicated initial dust distribution and subsequent
+collapse. In this observers defining instants of simultaneity as surfaces of constant τ would see new
+horizons form outside of old ones on four distinct occasions. In each case a DH/TLM (or FOTH/FITH)
+pair would appear with the DH (FOTH) growing and the TLM (FITH) shrinking. Further, on four
+separate occasions these shrinking “horizons” would meet up with growing ones and disappear. Each
+of the creation and destruction events occurs on a surface of L n θ() = 0.
+    Note that even though the MTTs are seen to become timelike in two of these examples and so may
+be crossed by causally evolving observers, this does not mean that these TLMs may be used as escape
+hatches from the black holes. As is discussed in ref. 35, such observers may temporarily escape the
+trapped region but are always doomed to be recaptured.
+    It is also of some interest to consider the physical circumstances under which the horizon “jumps”
+can occur. Again it is shown in ref. 35 that these jumps occur when the infalling matter is dense relative
+to 1/A, where A is the surface area of the horizon. For a solar-mass black hole this means that jumps
+occur only when the infalling matter is at least as dense as a neutron star while it is only when one gets
+to galactic-mass black holes that jumps could be generated by matter with the density of water. This
+suggests an answer to the question posed in relation to the Vaidya and Oppenheimer–Snyder spacetimes.
+Both evolutions can occur but “jumps” only happen under very extreme conditions (for small black
+holes). Essentially they correspond to new horizons forming outside of old ones.
+    One of the surprising observations from these examples is that FOTHs/DHs do not necessarily last
+forever once they are formed. They may appear and disappear, though apparently according to strict rules
+that always leave the trapped region shrouded from outside observers. The formations and destructions
+are signalled by the presence of TLMs that connect new horizons to old. How far this behaviour extends
+into nonspherically symmetric cases is currently unknown but, in particular, it seems possible that the
+multiple θ() = 0 surfaces sometimes seen inside a numerical “apparent” horizon (ref. 33 and footnote 5)
+may actually represent one (or possibly a few) MTTs weaving backwards and forwards in time. We will
+come back to this point in Sect. 5.
+
+4. Properties of quasilocal horizons
+   We now review some properties that follow from the definitions set forth in the last section.
+
+4.1. Existence and uniqueness
+    While it is clear from both numerical simulations and our examples that the quasilocal horizons
+discussed in the previous section exist under a wide range of circumstances, there is surprisingly little
+known about what mathematical conditions are needed to guarantee this existence. Slightly more is
+known about the lack of uniqueness of apparent horizons and (or) MOTTs. In particular, it is known
+that in general a MOTS can be distorted and so any MOTT will be highly non-unique [37]. Even more
+dramatically, it has been shown that apparent horizons are completely absent from some slicings of
+Schwarzschild spacetime [38]. That said, recent work has shed new light on both of these questions and
+we now review these results, starting with existence.
+
+                                                                                         © 2005 NRC Canada
+1090                                                                             Can. J. Phys. Vol. 83, 2005
+
+4.1.1. Existence
+     Assume that a spacetime (M, gab ) is foliated with spacelike hypersurfaces t (with all fields and
+surfaces smooth). Further assume that on a slice o of that foliation, there exists a MOTS and, for some
+function β, the variation δβ r̂ θ() > 0 everywhere on So , where r̂ a is the outward pointing unit normal
+vector to So in o . Then, from our discussion in Sect. 3.2, there are trapped surfaces in o “just inside”
+So , and So is said to be strictly stably outermost (SSO).
+     It has been shown very recently [30] that these conditions imply that So is part of a marginally
+outer-trapped tube H such that each leaf Sv of H lies in some leaf t of the spacetime foliation. That
+is, Sv = H ∩ t (v) for some function t (v). Further, H exists at least as long as the Sv remains SSO
+                                                                 ab + 8π T a b  = 0. Else it is null (and
+and, if the null energy condition holds, is spacelike if σ()ab σ()        ab
+so isolated). Note that no condition has been imposed on θ(n) .
+     Given this result, MOTSs will always evolve into MOTTs in numerical relativity at least until the
+SSO condition is violated. Based on the Tolman–Bondi examples of the last section, we already have
+a good idea of when such violations might occur. Examples of such violations were seen in Figs. 6
+and 7 where the marginally trapped tubes transition from being spacelike to being timelike and heading
+backwards in time (and exactly where δn θ() = 0). In those situations the MOTT will necessarily become
+(momentarily) tangent to any foliation of spacetime and so the existence theorem fails — which is a
+good thing since we have seen in these examples that the tube does not continue to smoothly evolve
+forwards in time relative to the foliation. Thus, the theorem is consistent with our examples.
+     We note however that violations can also occur as a result of (unfortunate) foliation choices. Though
+we have not discussed such examples here, ref. 35 shows that it is fairly easy to generate foliations that
+are (at least temporarily) tangent to a dynamical horizon and even interweave it. This is a function of a
+foliation choice rather than physical or mathematical necessity, but we note that in these cases the SSO
+condition (but not δn θ() < 0) would also be violated. That said, in these examples, the MTT again
+fails to continue evolving “forward in time” relative to the foliation and so the existence theorem is still
+consistent.
+
+4.1.2. Uniqueness
+     There are two distinct types of uniqueness that may be considered with respect to quasilocally
+defined horizons. First, given a MOTT, is it possible to foliate it into MOTSs in more than one way?
+Second, given a spacetime with two or more MOTTs (produced, for example, by alternate foliations of
+the full spacetime) are there any restrictions on how they may be positioned relative to each other? A
+recent paper by Ashtekar and Galloway [28] addresses both of these issues.
+     The first issue is completely resolved for (globally) achronal FOTHs (or equivalently achronal
+dynamical horizons that satisfy σ()ab σ()ab + 8π T a b  = 0). In this case, it is shown that the foliation
+                                                    ab
+of a FOTH is unique and so it is impossible to refoliate it in any other way. Thus, in these cases the
+foliation is an intrinsic property of the hypersurface. This can be contrasted with the situation for isolated
+horizons. No mention of a foliation is made in the definition of those structures, neither is it needed
+since a is defined as the normal to H as a whole rather than some two-surface. Indeed it is not hard
+to see that isolated horizons will admit many possible foliations (and consequent definitions of na , the
+in-horizon normal to those two-surfaces). Note too that timelike membranes are not achronal either and
+so possible refoliations of them are not forbidden by the theorem.
+     One immediate implication of this theorem arises if we consider the dependence of apparent horizons
+on spacetime foliations. To see this, assume that we have a foliation t of a spacetime M and have used
+it to identify a compatible FOTH, so that St = t ∩ H . Now let t be a second foliation so that the
+St = t ∩ H are not the same set of two-surfaces as the St (i.e., the foliations are not tangent at H ).
+Then, by the uniqueness result, the St cannot be MOTS. Thus, any H identified with respect to the new
+foliation cannot coincide with H and so, as expected, FOTHs determined in this way must vary with
+the foliation of the spacetime.
+                                                                                            © 2005 NRC Canada
+Booth                                                                                                1091
+
+Fig. 8. A schematic showing an MTS that transitions from isolated–dynamical–TLM–dynamical–isolated.
+The large dots indicate transitions points between these behaviours. The broken lines are null surfaces
+and the shading indicates regions where the uniqueness theorems forbid the existence of a weakly trapped
+surface.
+
+
+
+
+    This paper also sheds light on the second issue. It is shown that, given the null energy condition and
+a regular dynamical horizon and (or) achronal FOTH H , no weakly trapped surface can be contained
+in D − (H ), the past domain of dependence of H . An application of this theorem to a specific MTS with
+two regular dynamical horizon regions is depicted in Fig. 8. There, the past domains of dependence are
+shown as shaded regions.
+
+    There are several immediate implications of this result. First, it is clear that a spacetime cannot
+be foliated by regular dynamical horizons. If this were possible then there would certainly be weakly
+trapped surfaces in the past of each horizon. In this context, we note that the VSI examples considered
+                         ab + 8π T a b  = 0 condition and so are consistent with this theorem. Note,
+earlier fail the σ()ab σ()      ab
+however, that it does not forbid weakly trapped surfaces having components that lie in D − (H ). For
+example, it would be possible to have a second dynamical horizon H that “interweaves” with the first
+so that each MOTS lies partly in the past and partly in the future of H . Thus, while multiple dynamical
+horizons are certainly allowed by this theorem, their behaviour is strongly constrained. In the example of
+horizons generated by spacetime foliations, we then know that while different foliations will necessarily
+generate different horizons, those horizons will just as necessarily be constrained to repeatedly intersect
+each other.
+
+    Finally, before moving on, we will briefly discuss trapping boundaries [11]. It has been proposed
+that an invariantly defined trapping horizon could be defined in an analogous way to how apparent
+horizons are obtained. Specifically, one would find the union of all of the points in a spacetime that lie
+on any trapped surface and so define a trapped region. The three-dimensional boundary of this region is
+the trapping boundary and it was shown that, given certain assumptions about the relationship between
+the trapped surfaces and some foliation of the trapping boundary, it must be a trapping horizon. If
+these conditions are generically met, then this construction would give us a canonical trapping horizon.
+Unfortunately (see the discussion of wild MTSs in ref. 37 and the discussion in ref. 28), it appears that
+that the assumptions are probably not satisfied in general. Instead, it seems likely (though it has not
+been proven) that the trapping boundary will actually turn out to be the event horizon — in general, the
+wild MTSs will sample the far future and so can access the necessary information to locate the event
+horizon.
+
+                                                                                         © 2005 NRC Canada
+1092                                                                            Can. J. Phys. Vol. 83, 2005
+
+4.2. Laws of expansion
+    As was discussed in Sect. 2.1, one of the best known properties of classical, causally defined, black
+holes is that, given the null energy condition, they never decrease in area. It was first shown in ref. 11
+this is also true for certain classes of quasilocal horizons. Using dual null foliations of the type discussed
+in Sect. 3.2, the argument is fairly straightforward though we will modify its statement a little here.
+    Let H be a FOTH and let V a ∈ T H be a tangent vector field that satisfies V · n < 0 and is both
+foliation generating and orthogonal to those foliation two-surfaces. Then, if the null-energy condition
+holds the area increase theorem says that either: (i) H is null and isolated or (ii) H is spacelike and
+L V ≥ 0. That is, under the flow generated by V a the area element    never decreases in magnitude and
+hence the same holds true for the area of the Sv two-surfaces.
+    In considering this result, note that the V · n condition picks the orientation of V a and in particular
+this ensures that it points forwards-in-time when H is isolated. This, combined with the second two
+conditions means that for a given foliation parameter v, we may always choose the normalization of a
+such that V a = a − Cna for some function C (which we will refer to as the expansion parameter) and
+L V v = 1. The result then follows quite simply. Since θ() = 0 everywhere on H we must have
+                                              L  θ()
+L V θ() = L  θ() − CL n θ() = 0 ⇔ C =                                                                (14)
+                                              L n θ()
+The division is always possible since L n θ() < 0 by assumption. Meanwhile by the Raychaudhuri
+equation (1) and the null energy condition L  θ() ≤ 0. Then C ≥ 0 everywhere on H and C = 0 if
+and only if the horizon is temporarily (or permanently) isolated. Further, note that V · V = 2C and
+so H is either null (and thus an isolated horizon) or spacelike (and so a dynamical horizon). Finally,
+L V = −Cθ(n)    where θ(n) < 0 by assumption and so the horizon never decreases in area. It is also
+clear that if the null-energy condition is violated (as it would be by Hawking radiation) then we could
+have L  θ() > 0 and so a FOTH that decreases in area.
+    From these considerations, it is clear that a dynamical horizon that satisfies the genericity condition
+(which may be essentially be rephrased as L  θ()  = 0) is necessarily a FOTH; it is spacelike which
+means that C > 0 and so, in turn, we must have L n θ() < 0. However, even without the genericity
+condition, C > 0 is sufficient to ensure that a dynamical horizon expands in area (as indeed the non-black
+hole DHs do in the VSI examples [31]). By contrast the strictly stably outermost MOTTs considered in
+Sect. 4.1.1 do not necessarily increase in area as there no assumption was made about the sign of θ(n) .
+    Timelike membranes and (or) FITHs necessarily decrease in area. At first this might appear to be
+a conundrum given some of the Tolman–Bondi examples which always seem to expand. The apparent
+difficulty is resolved when one realizes that the area increase theorem (reasonably) assumes that V a
+on a TLM will be oriented to point forwards-in-time. With this orientation, the TLMs seen in the
+examples do shrink and this is certainly a valid way to view their evolution. If, however, one demands
+that V a be consistently oriented with a foliation parameter v on the MTT, with v always increasing
+forwards-in-time on isolated sections, then one naturally has V a pointing backwards-in-time on TLM
+sections. Thus, in all of our examples we have dA/dv ≥ 0. With this perspective, we can see that if
+an MTT interpolates between two asymptotically isolated regions, the later isolated horizon (relative to
+the foliation parameter) will always have a larger area then the earlier.
+
+4.3. Topology
+    In the preceding discussions, we have often implicitly assumed a spherical topology for MOTS. In
+fact, for an outer trapping horizon that satisfies the dominant energy condition, this is not an assumption
+but follows directly from the Einstein equations. To see this integrate equation (7) over the MOTS with
+Xa = na to obtain
+                                                
+       1
+χ=            −δn θ() + ω̃a ω̃a + 8π Tab a nb
+                                                                                                      (15)
+       π Sv
+                                                                                           © 2005 NRC Canada
+Booth                                                                                                      1093
+
+where we have used the well-known result that the integral of the Ricci scalar over a two-surface is the
+topological invariant 2π χ, with χ equal to the Euler characteristic of the surface. Now, by the δn θ() < 0
+assumption and the dominant energy condition the right-hand side of this equation is positive and so
+χ must be postive as well. However, the only closed and orientable two-surfaces with positive Euler
+characteristic are spheres. Thus, the two-surfaces foliating an outer trapping horizon (including FOTHs)
+must be spheres. This result was first shown specifically for trapping horizons in ref. 11 but has been
+known for some time for strictly stably outermost MOTSs [30, 39].
+    It has been noted ref. 13 that this result is left unchanged in the presence of a positive cosmological
+constant but fails for  < 0. In that case, a negative term enters the right-hand side of (15) and so it
+is no longer strictly positive. Then, alternative topologies are allowed, which is in accord with the fact
+that event horizons with such topologies can exist in asymptotically anti-deSitter spacetimes [40].
+
+4.4. Flux laws
+     Given the area increase laws, in an ideal world we would also like to have a corresponding set
+of flux laws that describe how incoming energy and matter flows generate those increases. A priori,
+it is not at all obvious that such laws could actually exist given that the process will, in general, be
+highly dynamical and so one might expect that it could be impossible to localize these contributions.
+Surprisingly, this does not seem to be the case. It has been shown that for dynamical horizons [13] a
+whole range of such flux laws exist. This was extended to certain classes of FOTHs (and so transitions
+to and from isolation) in ref. 41 . Finally, results from ref. 30 appear to imply that this class may include
+all strictly stably outermost FOTHs. Thus, for a wide class of horizons we have quasilocal flux laws
+that govern their growth.
+     Our review of these developments begins with the original result [13]. Given a dynamical horizon
+H , we can define its forward-in-time pointing unit normal τ̂a to H and a spacelike unit tangent vector
+field r̂ a that is normal to each of the Sv and whose orientation is chosen by requiring that r̂ · n < 0.
+Then, the flux laws originate from the following observation:
+
+H + 2r̂ a Ha = (2) R − σ ab   )ab − 2ζ ζa + 2da ζ + (terms that vanish when θ() = 0)
+                          ˆ σ( ˆ
+                                       a          a
+                                                                                                            (16)
+                          ()
+
+where H and Ha are the Hamiltonian and diffeomorphism constraints on H and so satisfy H+2r̂ a Ha =
+16π ˆa Tab τ̂ b , while ˆa = τ̂a + r̂a , and ζa = r̂ b ∇b ˆ a (where the arrow subscript indicates a pull-back
+                                                              ←−
+to Sv ).
+     Then, as for the topology calculation, we integrate (16) over Sv (this time using the fact that χ = 2)
+to find that
+                                                                    
+8π =        16π Tab (τ̂ a + r̂ a )τ̂ b + σ ab
+                                               σ
+                                               ˆ (ˆ
+                                                  )ab  + 2ζ   a
+                                                                 ζ a                                         (17)
+                                         ()
+        Sv
+
+For any function 4F (v) we can then use the fundamental theorem of calculus to write
+                                                                       
+                         (H )                 Nr  ab
+F (v2 ) − F (v1 ) =          Tab ξra τ̂ b +      σ ˆ σ( ˆ)ab + 2ζ a ζa                                    (18)
+                     H21                     16π ()
+                                                                                                  (H )
+where the integration is over some section of a dynamical horizon bounded by S1 and S2 ,  = ±r̂ ∧      
+is the natural volume form on this spacelike surface, NF = ||dv|| dF      , and  ξ a = N ˆa . N may be
+                                                                       dv          r       r    F
+identified as a natural lapse function associated with the function F while ξra is the corresponding (null)
+time vector field.
+    Equation (18) is the Ashtekar–Krishan flux law for any quantity F (v) that may be defined on each
+Sv expressing its change in terms of a matter flux across the H , a shear term (usually interpreted as a
+flux of gravitational wave-type energy) and the ζ a ζa term (whose meaning is not so clear though see
+                                                                                              © 2005 NRC Canada
+1094                                                                                  Can. J. Phys. Vol. 83, 2005
+                                                                                                 √
+ref. 42 for one interpretation). Particularly interesting quantities include the irreducible mass A/16π
+and A/4 (in which case the flux law might be interpreted as measuring the flow of entropy).
+     In this original form, there are difficulties in taking the isolated limit — many of the quantities are
+defined in terms of r̂ a and τ̂ a , which, in turn, are only well-defined for spacelike H . However, recent
+developments suggest that this limit may be fully achievable. In ref. 41, it was pointed out that if one
+switches to the coordinate dependent volume form dv ∧          and defines
+
+           dF a                               dF a
+˜a =         τ̂ + r̂ a       and    ña =       τ̂ − r̂ a                                                  (19)
+           dv                                 dv
+then we can rewrite equation (18) as
+                     v2         
+                                                  1  ab                         
+F (v2 ) − F (v1 ) =      dv      Tab ˜a τ̃ b +
+                                                    σ( ˜) σ( ˜)ab + 2ζ̃ a ζ̃a                            (20)
+                     v1      Sv                  16π
+
+where the various quantities have been rewritten in terms of ˜a and ña . These will then remain well-
+defined in the isolated limit if dF /dv → 0 sufficiently quickly to keep the new null vectors both nonzero
+and nondivergent. This limiting process will be considered in more detail7 (see also the discussion in
+ref. 13) but for now, note that it only really has a chance of being well-defined if any transition between
+dynamical and isolated regions happens “all at once”. That is, for no Sv is H partly dynamical and
+partly isolated. Equivalently, on a given Sv either C = 0 everywhere or nowhere. Now, while it might
+seem unlikely that such transitions would be generic, in fact ref. 30 proves just this result for strictly
+stably outermost MOTTs.
+     There are also flux laws for angular momentum [13]. We do not discuss them here but note that they
+are essentially the same as those governing the angular momentum evolution of timelike tubes [43];
+they are not restricted to dynamical horizons and actually hold for any three-surface regardless of its
+signature. A nice discussion of these laws may be found in ref. 44. There it is shown that the fluxes
+may be physically interpreted by viewing the evolving horizon as a viscous fluid and the flux laws as a
+version of the Navier–Stokes equations.
+
+4.5. Slowly evolving horizons
+    The limiting process considered above occurs in the regime of “almost isolated” horizons. This
+is also the regime where one would expect the classical results of black-hole perturbation theory to
+apply and would include many, if not most, astrophysical processes — the exceptions being especially
+dramatic events like the final stages of black-hole mergers. Finally, one would expect that the black-
+hole analogues of thermodynamic quasi-equilibrium states would be “almost isolated”, and so physical
+process versions of the laws of black-hole mechanics should apply here. Thus, an investigation of such
+states is of considerable physical interest. A couple of approaches have been used to study this limit.
+Here, we will focus on that taken in ref. 458 and footnote 7though the interested reader is also referred
+to ref. 46 for an alternative.
+    A slowly evolving horizon is an “almost isolated” FOTH. Now, it is not immediately obvious that
+such a characterization is possible. In particular, what does it mean for a spacelike (or timelike) surface
+to be “almost” null and how can this be expressed in an invariant manner? In ref. 45, we proposed that
+if one regularizes a against the FOTH foliation parameter v so that L V v = 1 (with V = a − Cna as
+before), the key condition for identifying a FOTH as slowly evolving over some slice Sv is that
+               ε
+   |C||θ(n) | <                                                                                        (21)
+                R
+7
+    I. Booth and S. Fairhurst. Slowly evolving horizons. Manuscript in preparation.
+8
+    W. Kavanagh and I. Booth. Examples of slowly evolving horizons. Manuscript in preparation.
+
+                                                                                               © 2005 NRC Canada
+Booth                                                                                                           1095
+
+where ε  1 and R is the areal radius of Sv . The first thing to note is that this expression is invariant
+under rescalings of a → αa , since in this case C → α 2 C and na → α1 na . Thus, this is a geometrically
+meaningful statement to make. Next, it is clear that this parameter vanishes
+                                                                      √      for isolated horizons. Finally,
+                                                                 = C/2θ(n) 
+on a dynamical horizon where r̂ a = V a /|V|, we note that L r̂                 < (ε/R)   and so in the
+approach to isolation our parameter is a measure of the geometrically invariant rate of change (and it
+goes to zero).9
+    That said, the chief justification for viewing a FOTH that satisfies these conditions as slowly evolving
+comes from its utility in calculations and its applicability to situations that one would intuitively consider
+to be quasi-equilibrium states. Thus, it has been shown in footnote 8 that classical examples of perturbed
+black holes, such as a Schwarzschild black hole immersed in a slowly changing tidal field [47], satisfy
+all of the requirements necessary to be classed as slowly evolving. A second example comes from
+considering the collapse of dust balls, such as those shown in Fig. 5. In those cases, it has been shown
+that while MTTs may not be slowly evolving just after formation, they rapidly asymptote to this condition
+as the amount of matter crossing the horizon also asymptotes to zero (again see footnote 8).
+    Thus, at least as much as is possible for a spacelike surface, it seems reasonable to view slowly
+evolving horizons as “almost isolated". Then, an analysis of the implications of these assumptions on
+the Einstein equations gives rise to other results that further support our interpretation. In particular, it can
+be shown that all other physical and geometrical quantities on the FOTH are also slowly evolving (this
+time relative to Lie derivatives with respect to V, which has been normalized so that V · V = 2C ∼ ε 2 ).
+For example, the surface shears slowly and any flow of matter across it is small. Further, it can be
+shown that κV = −nb V a ∇a b is constant (up to order ε) over an particular Sv and L V κV is similarly
+small. Then, as this expression clearly reduces to the usual surface gravity in isolation, it is natural to
+identify it as the approximate surface gravity here as well. Next, a careful analysis of the diffeomorphism
+constraint on H shows that it reduces to
+
+ κ  dA                                            
+      o                         1
+              ≈     Tab   +
+                              a b        ab
+                                  σ()ab σ()                                                                    (22)
+    8π     dv   Sv             8π
+
+
+to lowest order in our approximation. We do not discuss how angular momentum terms may be included
+in this expression here. However, they certainly can be and the interested reader is referred to ref. 45
+and footnote 7
+    The analogy with quasi-equilibrium states in thermodynamics is clear. Just as such objects may be
+assigned a temperature, in this case we may assign a surface gravity to the hole. It is not completely
+constant and can slowly change but this is expected behaviour for a system that is nearly in equilbrium
+with itself and its surroundings. Further, in the quasi-equilibrium regime of thermodynamics one expects
+the physical process version of the first law to be expressible in the form Ė = T Ṡ = Ẇ . This is exactly
+the form seen in (22) if one identifies surface gravity with temperature and entropy with area in the
+usual way. Note too that the right-hand side also matches the form for energy flows across a perturbed
+event horizon first found in refs. 47 and 48.
+    The precise relationship between (22) and the Ashtekar–Krishnan flux law (20) is not immediately
+clear. For example, the null vectors appearing in the laws have very different behaviours in the isolated
+limit and there is no ζ 2 term in (22). This will be discussed in detail in footnote 7
+
+9
+    There are also a few other technical conditions that a horizon must meet to be considered slowly evolving. These
+    are chiefly restrictions on the environment surrounding the FOTH to ensure that it is not too extreme — if this is
+    the case then the horizon will not remain slowly evolving for very long. One suspects that the restrictions may
+    also eliminate many, if not all, of the “wild” MTSs discussed in Sect. 4.1.2.
+
+                                                                                                  © 2005 NRC Canada
+1096                                                                          Can. J. Phys. Vol. 83, 2005
+
+4.6. A Hamiltonian formulation
+    Both the flux laws and slowly evolving horizons are concerned with the exchange of energy and
+angular momentum between black holes and their environment. That said, in neither case is a specific
+expression for the energy singled out by the respective formalisms — the flux laws can essentially
+be applied to any increasing function while the first law for slowly evolving horizons also allows for
+a rescaling freedom in a (and, therefore, κV ) essentially equivalent to the one allowed for isolated
+horizons. In an ideal world, this freedom would be reduced or eliminated and that is a major reason for
+examining these horizons from a Hamiltonian perspective.
+    Such an analysis was conducted in ref. 49. The calculations are long and involved but the basic ideas
+behind them are straightforward. In that paper, quasilocal horizons are examined from both Lagrangian
+and Hamiltonian perspectives. The Lagrangian approach is of the style used in ref. 43 and so begins by
+identifying a quasilocal action whose first variation vanishes for solutions to the Einstein equations that
+include one of these horizons as a boundary. A Hamiltonian functional is then derived using a Legendre
+transform and Hamilton–Jacobi arguments. By this process, it is found that the action formulation is
+well defined if, on the horizon boundary, one sets θ() = 0 as well as fixing the angular-momentum
+one-form ω̃a and induced two-metric q̃ab on the foliation two-surfaces (up to diffeomorphisms). Further,
+one has to fix the pull-back  a to H — essentially a gauge-fix so that specifying ω̃a (the connection
+                               ←−
+on the Sv normal bundle) is physically meaningful. Thus, only a MOTT is needed to get a well-defined
+action principle and conditions on θ(n) and the proximity of trapped surfaces are not necessary.
+    From the analysis it turns out that only functionals of the fixed data q̃ab , ω̃a , and  a are allowed
+                                                                                             ←−
+as energies associated with the MOTT. While this, unfortunately, does not completely eliminate the
+freedom found in the earlier analyses it does reduce it greatly while still allowing for most common
+energy expressions. These conclusions are confirmed and re-examined using an extended phase-space
+analysis in the style of ref. 50. One advantage of these methods is they let one say something about
+angular momentum in addition to energy. In particular, in this case they uniquely select an expression for
+angular momentum and this expression precisely matches those appearing in the previous formalisms.
+    Finally, largely based on the Hamiltonian perspective, it was seen that certain physical arguments
+allow one to say more about energy and the flow of time. Specifically, one requires that the expression
+for energy (i) be dimensionally correct, (ii) be constant for isolated horizons, and (iii) scale linearly
+with some notion of time. Then, based on the allowed freedom in the energy expression one is lead to
+identify a as the natural time vector field (which, in contrast to usual Hamiltonian formulations, does
+not generate evolutions of the boundary). A scaling of a is forced by the formalism and it turns out that
+this makes it essentially identical to the ˜a appearing in (20). Finally, again based on the requirements,
+the allowed energy expressions are closely tied to a and, though still not completely specified, shown
+to be constant in isolation and increasing
+                                   √         on dynamical horizons (in agreement with the flux laws). It is
+argued that the irreducible mass A/16π is then a natural candidate for the energy.
+
+5. Overview and outlook
+     Perhaps the most basic motivation for the study of quasilocal horizons is the philosophy that black
+holes should be thought of as physical objects in a spacetime that may be identified and quantified by
+local measurements. This contrasts with causally defined black holes and event horizons that are defined
+from the asymptotic causal structure; with such a definition, it is hard to imagine how physical processes
+could possibly be dependent on the location of the event horizon. Any such interactions would have
+to be nonlocal, almost certainly noncausal, and so violate some of our most fundamental ideas about
+physics. This is then a strong argument for the nonphysicality of event horizons and a need for some
+replacement.
+     Of course there is a potential flaw in the above argument. The basis-motivating idea could be wrong.
+It is certainly possible that while event horizons may not be particularly physical there may also be no
+
+                                                                                         © 2005 NRC Canada
+Booth                                                                                                        1097
+
+replacement for them. In this case, black holes would be fundamentally different from other objects in
+the Universe such as stars, elephants, and toasters. They would be symptomatic of strong gravitational
+fields but have no meaning independent of those fields. Then, interactions with black holes could only
+be understood in the context of the global evolution of spacetime and it might not make sense to discuss
+such things as the exchange of energy and angular momentum between a black hole and its environment.
+    This seems unlikely. Results such as black-hole mechanics, energy exchange mechanisms (for
+example, the Penrose process), a well-developed perturbation theory of known solutions, and an equally
+well-developed infrastructure for calculating the gravitational waves emitted by black holes interacting
+with their surroundings all suggest that, at least in some regime, we should be able to view black holes
+as objects for physical study.
+    Given that the association of trapped surfaces with black holes actually precedes that of event
+horizons, they provide the obvious candidate for a definitive black-hole signature. In particular, it
+is well known that their appearance implies both spacetime singularities and the existence of event
+horizons. Further, they play a key role in the definition of apparent horizons, which are essentially the
+boundary of the region of trapped surfaces at some “instant” of time. Then, we have argued that one can
+quasilocally identify a black-hole boundary by finding a three-surface that is marginally trapped (with
+θ() = 0 and θ(n) < 0) and bounds a region in which all points lie on a trapped surface.
+    A chief concern with this definition is that such surfaces are not invariantly defined. We have
+seen that this freedom may be constrained though certainly not entirely eliminated. Thus, it appears
+that we must accept that quasilocal black-hole boundaries are non-unique and so, in a sense, observer
+dependent.10 This is not necessarily a problem — as long as all set of observers agree in their conclusions
+and predictions (appropriately transformed between reference frames) no physical principles will be
+violated.
+    That said, if one is chiefly interested in using these tools to better understand physical processes
+that may be seen by far-away observers, we need to be a bit more careful. Since we are dealing with
+marginally trapped surfaces, causal signals emitted directly from these horizons cannot escape from
+the hole but instead must head further into its depths (or at best remain on the horizon). Therefore,
+anything seen by those far-away observers must be a consequence of the environment interacting with
+the hole’s external field rather than the horizon directly (this applies to event horizons as well and is a key
+motivating idea behind the membrane paradigm [51]). Thus, to be useful in trying to better understand
+far-field observations, our quasilocal horizons must act as proxies for that near field. For this purpose,
+their utility is in characterizing that near field by closely reflecting its evolution.
+    With this in mind, consider a highly dynamical process in which multiple horizons develop along
+the lines of the example shown in Fig. 7. Then there is no reason to expect the behaviour of inner
+horizons, buried deep inside the hole, to be especially useful in interpreting, say, the gravitational waves
+emitted by this process. In fact, in a sufficiently dramatic evolution one probably would not expect even
+the outermost horizon to closely reflect the near-field geometry. Based on these observations, it seems
+likely one could only expect a direct correlation between horizon behaviours and far-field observations
+in certain regimes — one of which would probably be slowly evolving horizons. In these regimes,
+however, it should be possible to ask (and answer) many interesting physical questions. For example,
+one could study how the multipole moments of the horizon [52] determine how it interacts with its
+environment and gains and (or) loses energy and angular momentum.
+    Physically, these are the most obviously relevant problems, however there are also interesting ques-
+tions of a more mathematical interest. For example, we have seen that it is possible to have (spherically
+
+10
+ The precise sense is as follows. Consider the MOTS to be outermost trapped surfaces as located in some t foliation
+ of spacetime — that is, numerical and (or) vernacular “apparent” horizons. Further, consider that foliation to be
+ hypersurfaces of “constant time” as determined by a fleet of observers with clocks that were synchronized on
+ some initial hypersurface. Then, as we have seen, different fleets will observe different MTTs.
+
+                                                                                               © 2005 NRC Canada
+1098                                                                          Can. J. Phys. Vol. 83, 2005
+
+symmetric) spacetimes with complicated MTTs that weave backwards and forwards through time and
+so appear as multiple horizons on a given hypersurface. Further, numerical simulations, see ref. 33
+and footnote 5, often show multiple horizons at a given “instant”. Thus, it is natural to speculate that
+these may actually correspond to (a smaller number of) MTTs weaving backwards and forwards in
+time, or even just intersecting the foliation in nontrivial ways. Other interesting topics for investigation
+would include a more detailed understanding of the non-uniqueness of MTTs and the possibility that
+the trapping boundary might actually coincide with the event horizon. Such a result would be especially
+interesting as it would provide an alternative way of identifying “event horizons” — without reference
+to global causal structure.
+    These and other questions about quasilocal horizons can be cleanly defined and are mathematically
+both interesting and yet relatively accessible. Thus, it seems likely that the next few years will see a
+rapid development in our understanding of quasilocal horizons and a concordant growth of applications
+of these ideas to physical and numerical problems.
+
+Acknowledgements
+     This work was supported by the Natural Sciences and Engineering Research Council of Canada and
+is loosely based on a talk given by the author at the 11th Canadian Conference on General Relativity
+and Relativistics Astrophysics (which was held at the University of British Columbia in May 2005).
+
+References
+ 1. S.W. Hawking and G.F.R. Ellis. The large scale structure of space-time. Cambridge University Press,
+    Cambridge. 1973.
+ 2. S. Chandrasekhar. The mathematical theory of black holes. Oxford University Press, Oxford. 1983.
+ 3. R.M. Wald. General relativity. University of Chicago Press, Chicago. 1984.
+ 4. J.M. Bardeen, B. Carter, and S.W. Hawking. Commun. Math. Phys. 31, 161 (1973).
+ 5. J.D. Bekenstein. Phys. Rev. D, 7, 2333 (1973); S.W. Hawking. Commun. Math. Phys. 43, 199 (1975).
+ 6. R. Narayan. New J. Phys. 7, 199 (2005).
+ 7. J.H. Krolik. Active galactic nuclei. Princeton University Press, Princeton. 1999.
+ 8. See for example the homepages of LIGO: www.ligo.caltech.edu; VIRGO: www.virgo.infn.it; GEO600:
+    www.geo600.unihannover.de; TAMA: tamago.mtk.nao.ac.jp; and LISA: lisa.jpl.nasa.gov.
+ 9. R. Penrose. Phys. Rev. Lett. 14, 57 (1964).
+10. T.W. Baumgarte and S.L. Shapiro. Phys. Rep. 376, 41 (2003).
+11. S.A. Hayward. Phys. Rev. D49, 6467 (1994).
+12. A. Ashtekar, C. Beetle, O. Dreyer, S. Fairhurst, B. Krishnan, J. Lewandowski, and J. Wiśniewski. Phys.
+    Rev. Lett. 85, 3564 (2000).
+13. A. Ashtekar and B. Krishnan. Phys. Rev. Lett. 89, 261101 (2002); Phys. Rev. D, 68, 104030 (2003).
+14. A. Ashtekar, J. Baez, and K. Krasnov. Adv. Theor. Math. Phys. 4, 1 (2000); A. Ashtekar, J. Engle, and C.
+    Van Den Broeck. Class. Quantum Grav. 22, L27 (2005).
+15. V. Husain and O. Winkler. Quantum black holes, gr-qc/0412039 (2005). A. Ashtekar and M. Bojowald.
+    Class. Quant. Grav. 22, 3349 (2005). S.A. Hayward. Formation and evaporation of regular black holes,
+    gr-qc/0506126 (2005).
+16. P.T. Chruściel. Lect. Notes Phys. 604, 61 (2002).
+17. E. Poisson. A relativist’s toolkit: The mathematics of black-hole mechanics. Cambridge University Press,
+    Cambridge. 2004.
+18. R.M. Wald. Living Rev. Rel. 4, 6 (2001).
+19. T. Pawlowski, J. Lewandowski, and J. Jezierski. Class. Quantum Grav. 21, 1237 (2004).
+20. W. Israel. Can. J. Phys. 64, 120 (1986); Phys. Rev. Lett. 56, 789 (1986).
+21. M. Kriele and S. Hayward. J. Math. Phys. 38, 1593 (1997).
+22. A. Ashtekar, C. Beetle, and S. Fairhurst. Class. Quantum Grav. 16, L1 (1999); A. Ashtekar, A. Corichi,
+    and K. Krasnov. Adv. Theor. Math. Phys. 3, 419 (2000); A. Ashtekar, C. Beetle, and S. Fairhurst. Class.
+
+                                                                                         © 2005 NRC Canada
+Booth                                                                                             1099
+
+    Quantum Grav. 17, 253 (2000); A. Ashtekar and A. Corichi. Class. Quantum Grav. 17, 1317 (2000);
+    A. Ashtekar, C. Beetle, and J. Lewandowski. Class. Quantum Grav. 19, 1195 (2002).
+23. A. Ashtekar, S. Fairhurst, and B. Krishnan. Phys. Rev. D, 62, 104025 (2000).
+24. A. Ashtekar, C. Beetle, and J. Lewandowski. Phys. Rev. D, 64, 044016 (2001).
+25. J. Lewandowski. Class. Quantum Grav. 17, L53 (2000).
+26. P.T. Chrusciel. Proc. R. Soc. London A, 436, 299 (1992).
+27. S. Fairhurst and B. Krishnan. Int. J. Mod. Phys. D, 10, 691 (2001).
+28. A. Ashtekar and G. Galloway. Some uniqueness results for dynamical horizons, gr-qc/0503109 (2005).
+29. S.A. Hayward. Ann. Poincare Phys. Theor. 59, 399 (1993).
+30. L. Andersson, M. Mars, and W. Simon. Phys. Rev. Lett. 95, 111102 (2005).
+31. J.M.M. Senovilla. JHEP, 0311, 046 (2003).
+32. R. Geroch and J.B. Hartle. J. Math. Phys. 23, 680 (1982).
+33. D. Bernstein, D. Hobill, E. Seidel, and L. Smarr. Phys. Rev. D, 50, 3760 (1994); P. Anninos,
+    D. Bernstein, S.R. Brandt, D. Hobill, E. Seidel, and L. Smarr. Phys. Rev. D, 50, 3801 (1994);
+    E. Schnetter, F. Hermann, and D. Poulney. Phys. Rev. D, 71, 044033 (2005).
+34. I. Ben-Dov. Phys. Rev. D, 70 124031 (2004).
+35. I. Booth, L. Brits, J. Gonzalez, and C.-Van Den Broeck. Marginally trapped tubes and dynamical
+    horizons, gr-qc/0506119. 2005.
+36. S.M.C.V. Gonçalves. Phys. Rev. D, 63, 124017 (2001).
+37. D. Eardley. Phys. Rev. D, 57, 2299 (1998).
+38. R.M. Wald and V. Iyer. Phys. Rev. D, 44, 3719 (1991).
+39. R. Newman. Class. Quantum Grav. 4, 277 (1987).
+40. S. Aminneborg, I. Bengtsson, S. Holst, and P. Peldan. Class. Quantum Grav. 13, 2707 (1996).
+41. S.A. Hayward. Phys. Rev. D, 70, 104027 (2004); Phys. Rev. Lett. 93, 251101 (2004).
+42. S.A. Hayward. Gravitational radiation from dynamical black holes, gr-qc/0505080. 2005.
+43. J.D. Brown and J.W. York. Phys. Rev. D, 41, 1407 (1993).
+44. E. Gourgoulhon. A generalized Damour–Navier–Stokes equation applied to trapping horizons,
+    gr-qc/0508003. 2005.
+45. I. Booth and S. Fairhurst. Phys. Rev. Lett. 92, 011102 (2004).
+46. S.A. Hayward. Phys. Rev. D, 61, 101503 (2000); H. Shinkai and S. Hayward. Phys. Rev. D, 64, 044002
+    (2001).
+47. E. Poisson. Phys. Rev. Lett. 94, 161103 (2005); Phys. Rev. D, 70, 08404 (2004).
+48. S. Hawking. In Black holes. Edited by B. deWitt and C. deWitt. Gordon and Breach, New York. 1973.
+49. I. Booth and S. Fairhurst. Horizon energy and angular momentum from a Hamiltonian perspective,
+    gr-qc/0505049. 2005.
+50. I. Booth and S. Fairhurst. Class. Quantum Grav. 20, 4507 (2003).
+51. K.S. Thorne, R.H. Price, and D.A. Macdonald. Black holes: the membrane paradigm. Yale University
+    Press, New Haven, Conn. 1986.
+52. A. Ashtekar, J. Engle, T. Pawlowski, and C. Van Den Broeck. Class. Quantum Grav. 21, 2549 (2004);
+    C. Van Den Broeck. Ph.D. thesis, The Pennsylvania State University, Pennsylvania, USA. 2005.
+
+
+
+
+                                                                                     © 2005 NRC Canada
+

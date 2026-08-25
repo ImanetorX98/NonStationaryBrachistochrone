@@ -1,0 +1,574 @@
+Math. Ann. 286, 613424 (1990)
+                                                                       9   Springer-Verlag 1990
+
+
+
+
+The Bloch-Wigner-Ramakrishnan
+polylogarithm function
+Don Zagier
+Max-Planck-Insfitut fiir Mathematik, Gottfried-Claren-Strasse 26, D-5300 Bonn 3,
+Federal Republic of Germany
+
+To Hans Grauert
+
+
+The polylogarithm function
+                        9         co ~ n
+
+
+
+
+appears in many parts of mathematics and has an extensive literature [2]. It can be
+analytically extended to the cut plane ~ \ [ 1 , ~ ) by defining Lira(x) inductively as
+x
+[ Li m_ l(z)z-tdz but then has a discontinuity as x crosses the cut. However, for
+0
+m = 2 the modified function
+
+                            O(x) = ~(Liz(x)) + arg(1 -- x) loglxl
+
+extends (real-) analytically to the entire complex plane except for the points x = 0
+and x = 1 where it is continuous but not analytic. This modified dilogarithm
+function, introduced by Wigner and Bloch [1], has many beautiful properties. In
+particular, its values at algebraic argument suffice to express in closed form the
+volumes of arbitrary hyperbolic 3-manifolds and the values at s = 2 of the
+Dedekind zeta functions of arbitrary number fields (cf. [6] and the expository
+article [7]). It is therefore natural to ask for similar real-analytic and single-valued
+modification of the higher polylogarithm functions Li,. Such a function Dm was
+constructed, and shown to satisfy a functional equation relating D=(x-t) and
+D~(x), by Ramakrishnan E3]. His construction, which involved monodromy
+arguments for certain nilpotent subgroups of GLm(C), is completely explicit, but he
+does not actually give a formula for Dm in terms of the polylogarithm. In this note
+we write down such a formula and give a direct proof of the one-valuedness and
+functional equation. We will also:
+    i) prove a formula (generalizing a formula of Bloch for m = 2) expressing
+certain infinite sums of the D= as special values of Kronecker double series related
+to L-series of Hecke characters,
+    ii) describe a relation between the D,~(x) and certain Green's functions for the
+unit disc, and
+614                                                                                        D. Zagier
+
+    iii) discuss the conjecture that the values at s = m of the Dedekind zeta function
+~F(s) for an arbitrary number field F can be expressed in terms of values of D,.(x)
+with x ~ F.
+    The last relationship, which seems to be the most interesting property of the
+higher polyiogarithm functions, is closely connected with algebraic K-theory and
+in fact leads to a conjectural description of higher K-groups of fields, as will be
+discussed in more detail in a later paper I-9].
+
+1. Definition of the function D.,,(x)
+For m e N and x ~ • with Ixl ~ 1 define
+
+                              Lm(x)= ~ (-l~
+                                         =~      (in-j)!
+                                      3(Lm(x))                  (m even),
+                        D,,,(x)
+                                  I
+                                  [ ~lt(Lm(x))+ (loglxly" (m odd).
+                                                   2ml
+Proposition L D,~(x) can be continued real-analytically to 113\{0,1} and satisfies the
+functional equation Dm (1_~ = ( _ 1)m_ 1Din(x)"
+                       \xJ
+Remarks. Ramakrishnan's D., is equal to ours for m even but is just 9t(L.(x)) for m
+odd. We have included the extra term (loglxl)m/2m! for m odd in order to make the
+functional equation as simple as possible (Ramakrishnan's function satisfies
+D~,,(I/x)=D=(x)+(loglxl)"/m! for m odd), but at the cost of making the function
+discontinuous at 0 in this case. (For m even, D mextends to a continuous function on
+the extended plane iEu{ oo }, vanishing on l l u {oo }.) The definition of Dm here also
+differs by a factor ( - 1 ) w~+l)t21 from the normalization given in [7], which was
+chosen to give a simpler relation between OD,,/Oz and D,,_ 1. The functions D l(x)
+and D2(x) are equal to - l o g [ x l / Z - x - t/2l and D(x), respectively.
+Proof As mentioned in the introduction, we can continue Lira(x) analytically to the
+cut plane IE\[I, oo) by successive integration along, say, radial paths from 0 to x.
+The two branches just below and just above the cut then continue across the cut.
+Write A for the difference of these two analytic functions in their common region of
+                                                                                               1
+definition (say, in the range l a r g ( x - 1)J <s, where e is small). Since L/l(x) = l o g 1 - - x
+for I x l < l , we have ALil=2ni, and it then follows from the formula xLi'm(X)
+= Li,_ t(x) that
+                           ALira(x) = 2M(logx)"- 1/(m - 1)[
+for each m>_ 1. (This is welt-defined in the region in question: we take the branch of
+logx which vanishes at x = 1.) Consequently,
+
+          AL,,(x)=2rci ~. (-l~                   (l~             2hi    ['1   x'~m-t
+                      S=,    (w-j)[               (/'-1)[   =   (m-l)[ ~ og~)          .
+Since log x is pure imaginary, this is real for m even and pure imaginary for m odd.
+          IXt
+The Bloch-Wigner-Rarnakrishnan polylogarithm function                                                     615
+
+Hence ~(i m+ ~Lm(x)) is one-valued, proving the first assertion of the proposition.
+   To prove the second, it will be convenient to introduce the generating function
+L,e(x; t) = Y, L,.(x)t"- 1. For Ixl < 1, Itl < 1 we have
+            m=l
+
+
+
+                                      ( - l o g l x l ) k Lij{x)ti+,_ , = Ix[-t ~ Lij(x)t i-1
+              ~ ( x ; t) =       Y,           k!
+                             i>__Lk>__o                                        j=l
+                                    o~ oo t j - 1                   oD X n
+
+
+or
+
+                                                  rn-t           r u-tdtt
+                        ~(rei~ t) = .~=t n - t ei'e -~e-ief-u-                  (0 < r < 1),
+
+                                              r
+                                 rn-t         S un-t-
+where we have written                    as              ldu and summed the geometric series under
+                                 tl--t        0
+
+the integral sign. The integral converges also for r>__1 and immediately gives the
+extension to the cut plane ]arg(1 - z ) l < n. Since the integrand has a simple pole of
+residue - e ~t~at u = e - i0, we again see that the difference between the two branches
+of Lm(re i~ near the cut is 27zimom-1/(m - 1)!, giving the one-valuedness of Dm as
+before. In terms of ~'(x; t), the functional equation can be stated as the assertion
+that ~ ( r e iO; t) §           iO
+                                   ; - t) + -l r t is unchanged when r is replaced by r - 1 But
+                                             t
+for 0 < t < 1 we have
+                                           r ~ _,f u-tdu                      r vtdv
+          L~(re~~          ~(re-ie; -t) + t    -oe-i~
+                                                 J                          + !ei-~-v + I u - t - l d u
+                                                                                   --     r_ !
+
+
+                                                         --
+
+
+
+
+This makes the desired symmetry obvious.
+
+
+2. The functions Do, b(x) and Kronecker double series
+It is clear from the definition that the Bloch-Wigner function D(x) goes to 0 like
+Ixl loglxl as x - , 0 , and from the functional equation that D(x)= O(Ixl-Xloglxl) as
+x ~ 0o. Hence, for a complex n u m b e r q of absolute value strictly less than 1 and any
+complex number x, the doubly infinite series
+
+                                              O(q;x)=           ~, D(q'x)
+                                                              l= -co
+
+converges with exponential rapidity. Clearly D(q; x) is invariant under x ~-~ qx, so
+it is in fact a function on the elliptic curve (E ~/qz. In other words, if we write q = e 2~'
+with z in the complex upper half-plane and x = e 2~u with u e • , then D(q;x)
+depends only on the image of u in the quotient of~E by the lattice L = Z~ + Z. In [1],
+Bloch computed the Fourier development of this non-holomorphic elliptic
+616                                                                                       D. Zagier
+
+function. Actually, he found that D(x) should be supplemented by adding an
+imaginary part -iJ(x), where
+                        J(x)=loglxllogll-xl                  (x~C, x + 0 , 1 ) .
+
+The function J(x) is small as Ixl~0 but large as IxI--+o% so we cannot form the series
+   J(qtx) as we did with D. However, using the functional equation J(x- 1)= _ J(x)
+leZ
++log2[xl we find after a short calculation that the function
+
+        J(q;x)= ~., J(q'x)- s J(qix-')+ log31xl
+                                                                       log21xl loglxllog]ql
+                  ~=0            t=l                   31oglq[            2   F     6
+                  (q,x~(E, Iql< 1)
+is invariant under x ~-* qx, so descends to the elliptic curve (E •                      as before.
+Bloch's result can then be written
+                                               i ~,z, 2 ~, sin(2~z(nr
+
+
+where q = e2~", x = e 2~i"with u = ~z + t/(4, r/~ R/Z) and the sum is over all pairs of
+integers (m,n)#:(O,O). This is a classical series studied by Kronecker (see for
+instance Weil's book 1"5]).The special case when z is quadratic over ~ and r and ~/
+are rational numbers occurs in evaluating L-series of Hecke grossencharacters of
+type Ao and weight 1 at s=2. To get other weights and other special values, we
+have to study series of the same type but with other powers of mz + n and mf + n in
+the denominator. In this section we will prove the analogue of Bloch's formula for
+such series, the function D(x)--iJ(x) being replaced by a suitable linear combi-
+nation of the Ramakrishnan functions Din(x).
+    To define these combinations, we will need combinatorial coefficients, and we
+begin by defining these. For integers a,m,r with 1 <a, m<=r let c~.)m denote the
+coefficients of xa- 1 in the polynomial (1 - x ) m- 1(1 + x)'-". These coefficients are
+easily computed by the recursion ~(~   , ~ - ~ (.'.-.1. .) ~ ~-
+                                                            ~(,-1)
+                                                                1,,~ or by the closed formula
+
+                            c(') = ~. (--j)h-l(m-l~(r--m~
+                            a.m h=,                    \h-l]ka-h]"
+They have the symmetry properties
+
+                     ca , m -(_ - [[ - -r 1aI1 a)- l~(r)     __~ l ~ m - l . ( r )
+                                                    ~a,r+l--m-- 82          ~r+l--a,m,
+                                                                                                (i)
+                                   m--l] ~"n- (;~ 1]-'"'
+
+the former being obvious and the latter a consequence of the identity
+
+                        9     r--I
+                      Z (    .~C~,:),,x"-lY'-I=(I+x+y-xy) "-1.
+                ,,=I ~=tkm--lJ '
+The Bloch-Wigner-Ramakrishnanpolylogarithmfunction                                                                 617
+
+The definition of c aoo, m is equivalent to saying that the r x r                                            matrix
+C , _- (c..~)
+         (r)
+              . . . . t ...... gives    the transition between the                                            bases
+{t r- 1, t'- 2u..... tu'- 2, u'- 1} and
+              {(t+u)r-t,(t+u)r-z(t--u) ..... (t+u)(t--u)r-2,(t--uf -1}
+of the space of homogeneous polynomials of degree r - 1 in two variables t and u.
+The fact that the matrix ( 1 1 11) has square 2 implies that
+
+                                            Cr I =2-r+Ic,.                                                         (2)
+We will also need the formulas
+
+
+
+           ~ (_l),._,(r_kk)C:,~:(_l),_.(kr_:)T_k                                            (l<a,k<r)              (3)
+
+(the expressions on the right being 0 for k<a or k < r + 1 - a , respectively) and
+                                ~ (rm) c~:~=2"-1                      (1 < a < r ) .                               (4)
+                            m=l
+                            modd
+
+We leave the proofs to the reader (hint: expand (1 - x ) t - t{1 + x + ( l - x ) } "-k for
+0 < k < r). As numerical examples to illustrate properties (1)-(4) we give the c~;~ for
+r = 6 and 7:
+                                 1          1         1          1         1           1
+                                 5          3          1        -1         -3         -5
+                                 10         2         -2        -2          2         10
+                     C 6=
+                                 10        -2         -2         2          2        -10         '
+                                 5         -3          1         1         -3          5
+                                 1         -1         1         -1         1         -1
+
+                            1         1          1          1         1          1           1
+                             6        4          2          0        -2         -4          -6
+                            15        5         --1        -3        -1          5          15
+                 C~=        20        0         -4          0         4          0         -20
+                            15       --5        --1         3        --1        -5          15
+                            6        --4         2          0        --2         4         -6
+                            1        --1        1          -1        1          -1          1
+
+   We now define for integers a, b -> 1 and x e C
+                     (,) ~., , ( - l o g [ 1)'                       (-21oglx[)"                (r=a+b-1),
+      D..~(x)=2.,=Y.c..,.v.,tx) ~                               +        2rl
+
+where D*(x)= D=(x) for m odd, O*(x)= iDm(x) =89                                                      for m even.
+618                                                                                    D. Zagier
+
+Proposition 2. O) De, bis a one-valued real-analytic function on C \ [ I , oo) and satisfies
+the functional equation
+                         Da (L'~ = ( - - 1 ) ' - ' D . b(x)+ (21og[xD"
+                            ,~t,~)                         .         r!
+
+      (it) D,,~ is given in terms of the polylogarithm by
+                                       r            k-
+                 Da'b=(--)1 a- 1 k~=o2"- k ( a - - l1) (-l~ - k)!         Lik(x)
+
+                         + (-- 1)b-1 ~ 2'- k (k -- 1~ ( -- log Ixl)" -k Lik(x),
+                                    ~=~ \ b - l )          (r-k)!
+      (iii) The function defined for q, x e r with Iql < 1 by
+
+                   D~,b(q;x) = ~ D:,b(q'x)+(--1)'-' ~ D.,b(qlx-i)
+                                 I=0                           l=t
+
+                                       ( - 2 log Iql)" flog lxl
+                                 +        (r+l)! Br+l\log[ql/
+( B,+ l(x)= (r + 1)st Bernoulli polynomial) is invariant under x ~ qx.
+Proof Statement (i) follows immediately from Proposition I and statement (it)
+from equations (3) and (4). For (iii), we note first that the infinite sum converges
+absolutely for any x, because D~,b(x)= O(Ixl log~+blxl) as Ixl-,0. Hence D,,b(q; x)
+makes sense. Using (i) and the property B, + l(x + I ) - B , + l(x)= (r + 1)x', we find
+              Da,~(q; x)-- D..b(q ; qx) = D.,b(x)--(-- 1)'- tDo,b(x- 1)
+                                    ( - 2 log Iql)' (r +9 1) (log
+                                                               l
+                                                                  Ixi r _: o  ~
+                                       (r+l)!                \loglqlJ        '
+This completes the proof of the proposition.
+   Notice that we can use the inversion formula (2) to write
+                  , , ( - loglxl)"
+              D ,7.,txJ    ~..     =        Y~      d'){2-q~"b(X)(-loglx])'~
+                                           o,b~_l    "'~                    2r[    J
+                                       a+b=r+I
+
+                                       (m> l,n>O,r=m+n);
+in particular, the Ramakrishnan functions D mare linear combinations of the D,, b.
+We could therefore have equally well defined the functions D~,b directly by the
+formula in (it) and taken them rather than the functions Dmas the primitive objects
+of study. The proof of the analytic continuation can be given directly from (it) by
+the same method as in the proof of Proposition 1 : using
+                              ALia(x) = 2zi(logx)k- ~/ ( k - 1)!
+and the binomial theorem, one finds easily that AD.,b=O.
+   Part (iii) of the proposition says that the function D.,b(q;e 2"I') is a (non-
+holomorphic) elliptic function of u. Our goal is to compute the Fourier
+development of this function.
+The Bloch-Wigner-Ramakrishnan polylogarithm function                                                                 619
+
+Theorem 1. Write q = e ~", x = e 2~i~ with z in the complex upper half-plane and u = ~z
++ ~ / e ~ , ~,~Te]R. Then
+
+                                    D         .    __ (Z - - Z-)r    ,     e2~i(n~- r~,~)
+                                        ~,~(q,x)- ~                 ~ ( m z ~               n)b"
+
+Proof. Since D., b(e2'~i';e 2nt(r +'~))is invariant under r ~ r + 1, we can develop it into
+a Fourier series ~ ,l.e ~'~I~r with
+
+                  1
+            ,~ __ f ~ - 2n~n~13             (~2rtiz. o2ni(~c+~)'lrl~
+                  0
+                                                                                  oo
+               _-- Jr e - 2 . i n ~ D a ,   btte2~i(r +'~)~'~:~'*~a-~• -- *i~xr-1 I e2rangDa, b(e2~i(r176
+                   0                                                              0
+
+
+
+
+where we have substituted for D~. b the expression defining it and then in the first
+two terms combined the sum over l and the integral from 0 to 1 into a single
+integral from 0 to oo by the substitution l_+ ~ ~ r It is well-known [and easily
+shown by repeated integration by parts, using B) =jB~_ 1 and B~(I) = B j(0) forj 4= 1]
+that the last integral is equal to 0 for n = 0 and to - ( r + l)!/(2nin) ~+~ for n ~=0.
+Substituting for D~, b(X) from part (ii) of the proposition, we find
+
+                                                                             o0
+        2~=(-I) ~-' ~ 2"-k(k--l~(2~r))'-'!~'-k[Lik(e2~'('~+"))e                                             -2~'~'
+                   k=~    \a-lJ    (r-k)!
+
+                +(_l)._~Li~(e2.~r                                        + ( a ~ b "~        (-2i~(~))" _._~
+                                                                           \z*-,--f]               2~i      n
+
+where the second term denotes the result ofinterchanging a and b and replacing z
+by - ~in the first term and the last term is to be omitted if n = 0. The two arguments
+of Lik in the integrand are less than 1 in absolute value, so we can replace Lik by its
+definition as a power series, obtaining
+
+            ~'- ~[Li~(e2~(r +~))e- 2~i.~ + ( _ 1)r- 1Li~(e2~(r ~))e2~r
+        0
+                     1 o~{e2ntttm,- n,r + m,fl_1_(_ 1)r- l-e2,at(m,+ n)~-mnt)r162
+            = m~__1 m-s
+
+               k 1       ( r - k) t (    e 2~'~                       e- 2~,.. ]
+            =~--1 ~k ( _ 2~zi),+ 1-k ~[(mz_ny.+l -k + ( - - 1)r- 1 (mz+n) "+ 1-~?
+
+                (-- 1)~(r-k)!                           e- 2 ~
+                  (2~zi),+i - k z~,o mk(m,r+ n),+i-k,
+620                                                                                                            D. Zagier
+
+where we have used the formula 7 e-Zr                                       =I!7`-~- 1 for 9t(2)>0. Hence
+                                                         0
+
+                                  , /t~-l\      .                e -2~m~
+                  2ui2, = (-- 1)~k~~t : _ l )(2t~(~))r-~m~,o mk(r~ ~ ; - + l - k
+
+
+                               + k ~         i       U           n"+ 1
+
+
+Applying the easily checked identity
+                                r                1              r-k             { k _ l'~ ( X _ y),-k
+                              k =. \ a   i           I
+                           ( x - Y)"
+                   -        Xby~             (r=a+b-1)
+
+to X=mz+n, Y=mf+n, we find
+                                                                                 e - 21tim~i
+                             2~i~.=(2i'~3('c))r                 E
+                                                               .,~z         (m~ + n)~(mr + n) b"
+                                                         (re, n) 4=(0, 0)
+
+This proves the theorem.
+
+
+
+3. D . and the Green's function of the unit disc
+
+Let g3= {z = x + iy ~ ~[y > O} denote the upper half-plane and for each positive
+integer k define a function G~ : .~ • ~\(diagonal)-+R'by
+
+                       ,
+            Gk(z,z)=--2Qk_l_l+
+                                             (           Iz-z'12"~ (z=x+iy, z'=x' +iy' ~ ) .
+                                                             2yy' ]
+
+Here Qn(O(n~O) is the nth Legendre function of the second kind:
+   Q.         1        t+l                 t,      t+l                                  3t2-1,            t+l     3
+      o(t)= ~ l o g t - ~ ,         Qt(t)= ~ l o g t ~ l - 1 ,                    Q2(t)=~ l o g           t ~ ~ - ~t
+
+and in general Qn(t)=Pn(t)Qo(t)-R.(t) where P.(t) and Rn(t) are the unique
+                                                                  2nnt 2
+polynomials of degree n and n - 1, respectively, making Qn(t)~ -(2n- + t1)! -n- I for
+t~oo. The function G~ is real-analytic on b x b\(diagonal), has a singularity of
+type
+                             G~(z, z') = log ] z - z' 12+ continuous                           (z'--+z)
+
+along the diagonal, and satisfies the partial differential equation A=G~=A=,G~
+=~l-k)G~, where A ~ = - y 2 --Ox2 + ~                                          denotes the hyperbolic Laplace
+operator. Moreover, by virtue of the defining property of Qk-~, it is small
+The Bloch-Wigner-Ramakrishnanpolylogarithm function                                              621
+
+enough at infinity that the series
+
+                                   G~IZ(z,z') = ~ G~(z,z'+ n)
+
+converges and has properties similar to those of G~, but now with z and z' in ~/7..
+This "Green's function" is studied [in connection with the analogously defined
+functions G~/r, where F is a subgroup of finite index in PSL(2, Z)] in [8] and is
+shown there to be closely related to Ramakrishnan's modified polylogarithm
+function. We content ourselves with stating the result, referring to 18] for the proof.
+Theorem 2. Let k e N , z = x + iy, z' = x' + iy' e ~. Then
+                               k
+               G~lZ(z, z') = ~ fk. ~(2z~y,2ny') I-D2~_l(q/q') - D2~- ~(q~)],
+                             n=l
+
+where q = e 2=~, q ' = e 2~i~' and
+                                                ( 2 k - 2 - 2r)! ( 2 k - 2 - 2s) ! u2,v2,"
+          A,~(u,v)= 2'- ~(uv)l -~          y.
+                                         ,.~=>o r ! ( k - l - r ) ! s ! ( k - l - s ) !
+                                       r+s=k--n
+
+     Note that the symmetry of G~/z in its two arguments is reflected by the two
+symmetry properties D2~_ 1(x) = D2~_ l(x- 1)= D2~- 1(~). The map z ~ q identifies
+~ / Z with the punctured unit disc {q e tel 0 < Iql < 1}, but the right-hand side of the
+formula in the theorem now makes sense for any q, q' e IE • (with 2ny, 2zry' replaced
+by -loglzl, -loglz'l) and represents some kind of Green's function on IE ~ x IE •
+
+
+4. D,. and special values of Dedekind zeta functions
+The Bloch-Wigner dilogarithm function D(x) is related in a very beautiful way to
+special values of Dedekind zeta functions. Specifically, we have the following
+theorem.
+Theorem 3. Let F be an arbitrary algebraic number field, d r the discriminant of F, r 1
+and r 2 the numbers of real and complex places (r I + 2r 2 = I-F:O_.]), and ~r(s) the
+Dedekind zeta function of F. Then ~e(2) is equal to n2(,~+,2)ldF[- 1/2 times a rational
+linear combination of r2-fold products D(x (r~+ 1))... D(x(rt +,2)) with x e F.
+    (Here x (1), ..., x (rl), x (rl + 1), ..., x(rl +~2), x(,t + x),..., x~r~+r~) are the images of x
+under the various embeddings F c~ C.)
+    This result was proved in I-5] in a somewhat weaker form (it was asserted only
+that the x could be chosen of degree < 4 over F, rather than in F itself} by a
+geometric method: the value of ~r(2) was related to the volume of a hyperbolic 3r 2-
+dimensional manifold (more precisely, a manifold locally isometric to ~2, where
+9~3 denotes hyperbolic 3-space) and this volume was then computed by triangulat-
+ing the manifold into a union of r2-fold products of hyperbolic tetrahedra whose
+volumes could be expressed in terms of the function D(x). The more precise
+statement above comes from algebraic K-theory: the value of fie(2) is related by a
+result of Borel to a certain "regulator" attached to K3(F), and this is calculated
+using results of Bloch, Levine, Suslin, and Mercuriev in terms of the Bloch-Wigner
+622                                                                                   D. Zagier
+
+function. For details and references, see [4] or E7]. The K-theoretical proof in fact
+gives a somewhat stronger statement than the above theorem: the value of
+Idrl~/2~v(2)/~z" +2,~ is equal to an r~ • r2 determinant of rational linear combina-
+tions of values D(x), rather than merely to a rational linear combination of rz-fold
+combinations of such values.
+    As examples of Theorem 3, we have for F = (I~(~-L7) (dr = - 7, r 1 = 0, r z = 1)
+
+                            22~ 2 /       //I"~'~         +D(--1
+                                                      :       . 4%)
+and for F=r         with 0 3 - 0 - 1   = 0 ( d e = - 2 3 , r I = r 2 = 1)
+                                   23n*                 22n a
+                        r    = ~           D(O')=      3.23 a/2 D ( - 0'),
+
+          { O[             i]/~3~                            )
+where 0 ' [ = ~ [ - 1   + 2--0-+-3]' if 0 is the real r o o t / d e n o t e s the conjugate of 0
+with ~3(0')> O.
+   We can now formulate
+
+Conjecture 1. Theorem 3 holds true for (e(m) for all positive even m with ~2(,1 +r~)
+replaced by n ~(rl +,21and with the function D replaced by the function Dm. For m odd
+a similar statement is true but with ~mr: instead of n "~(~'+'~) and
+D,,(x~l)) ... D~(xC,~ +,21) instead of D~(x ~ + 1t... D=(x(,~ +,~)).
+      The difference between the two cases m even and m odd is, on the one hand, that
+ D,, satisfies D=(~) = (-- 1)m- XDm(x) [so in particular D~,(x) = 0 for x real and m even]
+and, on the other hand, that the order of vanishing of ~e(s) at s = 1 - m for m > 1
+equals r 2 for m even but r l + q for m odd. Again we can make a more precise
+conjecture with an r x r determinant (r= r 2 or r~ + r2) instead of simply a linear
+combination of r-fold products. Moreover, one can make a more general
+conjecture with Artin L-functions in place of Dedekind zeta functions. In
+particular, ~e(s)/~(s) (~ = ~ ) , which is a product of such L-series, should be a sum of
+( r - 1)-fold products of values D~. This statement makes sense also for m = 1 and is
+true by the Dirichlet regulator formula (recall that D~ is essentially the logarithm-
+of-the-absolute-value function), but even when m = 1 the general conjecture for
+Artin L-series is u n k n o w n (Stark conjectures).
+      As a special case, we make the very specific
+
+Conjecture 2. Let F be a real quadratic field. Then Idrl 1/2~v(3)/~(3) is a rational linear
+combination of differences D3(x)-- Da(x'), x ~ F.
+    Here x' denotes the conjugate of x over Q. Note that ~(3)= D3(l ), so this is a
+strengthening of Conjecture 1 in this case. As numerical examples, we give
+                                 25
+
+
+                              - Eo~(2 + I / 3 ) - o ~ 2 - 1/3)1]
+                                                                  ./
+The Bloch-Wigner-Ramakrishnanpolylogarithm function                                          623
+
+and
+        ~V2)(3) v 3
+          ~(3) -- 5.25~- ([D3(4 + 2~/~)- D3(4- 2V~)]
+
+                     -- 9[D3(2 + V'2)- D3(2- l/~)]
+                     - 6ED3(1+ ~ ) - 0 3 ~ 1 - ~ ) ] + 9 E D 3 ~ ) - 0 3 ( - ~ ) ] ) ,
+both true to at least 25 decimals. (These relations were found empirically by using
+the Lenstra-Lenstra-Lovasz lattice reduction algorithm to search numerically for
+linear relations between Idrl~/2(r(3)/((3) and selected values of D3(x) - D3(x'), x e F.)
+    That the quotient (F/(Q should be connected with the differences Din(x)
+ - Dm(x') is a special case of a "Galois descent" property which we expect to hold in
+general, and which is known for the case m = 2 by the K-theoretical work already
+cited (cf. [4] for details). Roughly speaking, this property implies that the r
+space spanned by the x ~ F occurring in the conjecture should be invariant under
+the group of automorphisms of F over @ and that the value of an (abelian or Artin)
+L-function factor of (r at s = m should be the determinant of a matrix of
+combinations of D,~(x) with x in the corresponding subspace. An example of how
+this works is provided by the case when F is abelian over Q. Here the assertion of
+Conjecture I is easy if we allow the arguments x to be in the abelian closure
+N =1~((:) ( f = conductor of F), rather than in F itself: (r factors into a product of
+Dirichlet L-series L(s, Z) with rl + r2 even and r2 odd Dirichlet characters Z modulo
+f (of course, either rl or rz is zero), and the value of L(m, X) is an algebraic multiple
+of n'~ if X ( - 1 ) = ( - 1 ) m and an algebraic linear combination of values of Din(x),
+x:= 1, in the opposite case. This gives the statement with an algebraic rather than
+rational combination of products of D-values, but a little more work shows that
+the algebraic multiples occurring combine correctly to give a rational multiple of
+Ideal/2. The point is now that the set of x occurring, and the coefficients with which
+they occur, are invariant under the action of Gal(N/F). For instance, in the above
+case F real quadratic, m = 3, f = dr, we have
+
+                                  - dr Li 3(e 2'~'~/f) =:-1
+  d~/Z~F(3)/~(3)=fl/2L(3,(d~e.))=~.i(n)                      dr D 3(e 2 ~ i n t f ) ,
+                                                        ,,~=~(n)
+
+and the conjugates of e 2~/: ~ N over F are exactly the e 2~'/: with                     = ~- .
+    By analyzing the structure of the numerical examples of Conjectures 1 and 2,
+one can get a more precise conjecture which actually predicts which linear
+combinations of products of polylogarithm values must be used in order to get
+zeta-values. Using it, it is easy to produce as many (conjectural) formulas involving
+polylogarithms and zeta-values as desired. In many cases, these seem to be new
+even for F = ~ , e.g.
+
+            ~ ( ( 3 ) ~ 6D3(~) + 3D 3(88 - 3D3(89 - D3(~) - 2D 3(89 + D 3 ( - ~).
+
+We will discuss the various versions of this conjecture, and its relation to algebraic
+K-theory, in a later paper [9-1.
+624                                                                                     D. Zagier
+
+References
+1. Bloch, S.: Higher regulators, algebraic K-theory, and zeta-functions of elliptic curves. Lecture
+   Notes, U.C. Irvine, 1977
+2. Lewin, L.: Polylogarithms and associated functions. New York: North-Holland 1981
+3. Ramakrishnan, D.: Analogs of the Bloch-Wigner function for higher poiylogarithms.
+   Contemp. Math. 55, 371-376 (1986)
+4. Suslin, A.A.: Algebraic K-theory of fields, in: Proceedings of the International Congress of
+   Mathematicians 1986. Am. Math. Sot., pp. 222-244 (1987)
+5. Weft, A.: Elliptic functions according to Eisenstein and Kron~cker. Ergebnisse der Mathematik
+   88. Berlin Heidelberg New York: Springer 1977
+6. Zagier, D.: Hyperbolic manifolds and special values of Dedekind zeta functions. Invent. Math.
+   83, 285-302 (1986)
+7. Zagier, D.: The remarkable dilogarithm. In: Number theory and related topics. Papers
+   presented at the Ramanujan Colloquium, Bombay 1988, TIFR and Oxford University Press,
+   pp. 231-249 (1989) and J. Math. Phys. Sci. 22, 131-145 (1988)
+8. Zagier, D.: Green's functions for quotients of the upper half-plane. In preparation
+9. Zagier, D.: Polylogarithms, Dedekind zeta functions, and the algebraic K-theory of fields. In
+   preparation
+
+
+Received March 3, 1989
+

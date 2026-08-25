@@ -1,0 +1,398 @@
+                                             Analytic solutions of the geodesic equation in axially symmetric space–times
+
+                                                                  E. Hackmann1 , V. Kagramanova2, J. Kunz2 and C. Lämmerzahl1
+                                                              1
+                                                                  ZARM, Universität Bremen, Am Fallturm, 28359 Bremen, Germany and
+                                                                  2
+                                                                   Institut für Physik, Universität Oldenburg, 26111 Oldenburg, Germany
+                                                                                          (Dated: October 29, 2018)
+                                                      The complete sets of analytic solutions of the geodesic equation in Taub–NUT–(anti-)de Sitter,
+
+
+
+
+arXiv:0911.1634v1 [gr-qc] 9 Nov 2009
+                                                    Kerr–(anti-)de Sitter and also in general Plebański–Demiański space–times without acceleration are
+                                                    presented. The solutions are given in terms of the Kleinian sigma functions.
+
+                                                    PACS numbers: 04.20.Jb, 02.30.Hq
+
+
+                                             INTRODUCTION AND MOTIVATION                                where the functions p2 , ∆r , ∆ϑ , A, and B will be speci-
+                                                                                                        fied later. We derive all analytic solutions of the geodesic
+                                          Supernovae and other data indicate the existence of           equation in various space–times of this type, namely
+                                       Dark Energy which is appropriately described by a cos-           Taub–NUT–(anti-)de Sitter (TNdS), Kerr–(anti-)de Sit-
+                                       mological constant. Galactic rotation curves, gravita-           ter (KdS) and even in Plebański–Demiański (PD) black
+                                       tional lensing and structure formation indicate the ex-          hole space–times without acceleration. The set of PD
+                                       istence of Dark Matter which in some approaches is ac-           black-hole solutions exhausts all electrovac type D space-
+                                       counted for by assuming a modified gravity theory. In            times. Since the Hamilton–Jacobi equation is separable
+                                       any case, properties of the gravitational field, of the un-      only in the subset of space-times without acceleration [9],
+                                       derlying geometry, can only be explored through the mo-          we conclude that we can analytically solve the geodesic
+                                       tion of test objects like point particles and light rays.        equation in all electrovac type-D space-times without ac-
+                                       Therefore analytic solutions of the geodesic equation giv-       celeration.
+                                       ing the orbits of test objects in standard and generalized          In all stationary axisymmetric space–times we have a
+                                       gravitational models is an important issue.                      conserved energy and angular momentum
+                                          Analytic solutions of the geodesic equation are also of               ∆r               ∆ϑ
+                                       use for black hole physics and the creation of gravita-              E=     (ṫ − Aϕ̇) − a 2 sin2 ϑ(aṫ − B ϕ̇)            (2)
+                                                                                                                p2               p
+                                       tional waves: they provide an analytic determination of
+                                                                                                                   ∆r               ∆ϑ
+                                       the shape of black holes with a link to the black hole               L = −A 2 (ṫ − Aϕ̇) + B 2 sin2 ϑ(aṫ − B ϕ̇) ,        (3)
+                                       parameters [1], also in generalized scenarios. They can                      p                p
+                                       also be used for the calculation of gravitational wave tem-      where the dot denotes the derivative with respect to s.
+                                       plates for Extreme Mass Ratio Inspirals (EMRI) [2], for            Orbits in Taub–NUT–(anti-)de Sitter space–times
+                                       systematically finding homoclinic orbits [3], also in gen-       The stationary axisymmetric TNdS space–time is given
+                                       eralized scenarios, for analytic solutions and systematic        by [10, 13]
+                                       studies of effective one–body equations of motion [4], for
+                                       testing numerical codes for binary systems, and finally           p2 := r2 + n2 , A := 2n cos ϑ , B := p2 , ∆ϑ := 1 (4)
+                                       may also be of use for practical applications like geodesy.                          Λ 2         2
+                                                                                                         ∆r := r2 − 2M r −     r + 3n2 − n2 1 − 4Λn2 , (5)
+                                                                                                                                                        
+                                          Analytic solutions of the geodesic equation were only                             3
+                                       known for the motion in Schwarzschild [5], Reissner–
+                                       Nordström, Kerr, and Kerr–Newman space–times [6].               where Λ is the cosmological constant and M and n are
+                                       Based on new techniques developed in [7] we derived the          the mass and NUT charge of the gravitating body.
+                                       complete set of analytical solutions of the geodesic equa-          With dimensionless quantities r̃ = r/rS (rS = 2M ),
+                                       tion in Schwarzschild–(anti-)de Sitter space–time and ap-        ñ = n/rS , L̃ = L/rS , and the substitution ξ = cos ϑ the
+                                       plied it also to the case of spherically symmetric space–        Hamilton–Jacobi equation separates and reduces to
+                                       times in higher dimensions [8]. Here we present complete                   √
+                                                                                                             dr̃           dξ  p            dϕ   L̃ − 2ñEξ
+                                       sets of analytic solutions for a wide class of stationary                 = R,         = Θξ ,           =                  (6)
+                                       axially symmetric gravitational fields.                               dτ            dτ               dτ      1 − ξ2
+                                          The metric of a general stationary axially symmetric          where
+                                       black hole gravitational field in four dimensions has the
+                                       form                                                                                              ˜ r (δr̃2 + L̃2 + k)
+                                                                                                                 R = (r̃2 + ñ2 )2 E 2 − ∆                        (7)
+                                                                                                                Θξ = αξ 2 + βξ + γ .                              (8)
+                                                     ∆r             2   p2 2
+                                             ds2 =       (dt − Adϕ)   −    dr
+                                                     p2                 ∆r                              Here, k is the separation constant (Carter constant), α =
+                                                      ∆ϑ                      p2 2                      −(k − δñ2 + 4E 2 ñ2 + L̃2 ), β = 4E ñL̃, γ = k − δñ2 , and
+                                                     − 2 sin2 ϑ(adt − Bdϕ)2 −   dϑ ,            (1)     ˜ r = ∆r r−2 . Here and throughout the paper we use the
+                                                                                                        ∆
+                                                       p                      ∆
+                                                                                                                                                                                       2
+
+   L̃ 4                               L̃
+
+
+
+                                           3
+                                                                                                                                                           −10
+
+
+
+
+     2                                     2              2.6
+                                                                                                     −10                         10
+                                                          2.4
+                                                                                                                                                     −10
+                                                                                                                                                                                10
+                                                          2.2
+                                           1                                                                    0                                           0
+                                                                                                                0                                                00
+                                                              2
+
+                                                                                                                                                    −10
+                                                                  0.92     0.94    0.96        −10                                                                         10
+
+     0    0.5      1       1.5             0   0.5        1              1.5                                               10
+                                 E2                                               E2
+
+  (a)           k = −0.5              (b)            k = 1.0
+                                                                                             (a) escape orbit crossing r = 0;                (b) bound orbit; E 2 = 0.94038;
+                                                                                                  E 2 = 0.99515, k = −0.5,                           k = 1.0, L̃ = 2.0
+FIG. 1: TNdS: Parameter diagrams for ñ = 0.5, Λ̃ = 2.9·10−5 .                                            L̃ = 2.5.
+The gray scales denote the number of positive real zeros of the
+polynomial R: black = 4, gray = 2, white = 0. Parameters                                               FIG. 2: TNdS: Orbits for n = 0.5, Λ̃ = 2.9 · 10−5 .
+in the dashed region are forbidden due to (9).
+                                                                                                           √
+                                                                                             where τ0ϑ = −ατ0 + arcsin 2αξ     √0 +β . A substitution r̃ =
+                                                                                                                                 D
+Mino–time τ defined through p2 dτ = rS ds [11]. δ = 1 for
+                                                                                             ± x1 + r̃R , where r̃R is a zero of R, reduces the equation
+time–like and δ = 0 for null geodesics.
+                                                                                             for r̃ in (6) to the hyperelliptic differential of first kind
+  For given Λ and n, the orbits are characterized by E,
+                                                                                             dτ = √xdx for a polynomial P5 of degree 5. This can
+L, and k. The range of these parameters is restricted                                                      P5 (x)
+by the condition that R and Θξ have to be positive or,                                       be solved by [7]
+equivalently, possess a certain number of real zeros.                                                                             σ2
+                                                                                                                                       
+                                                                                                                                        f (τ − τ0′ )
+                                                                                                                                                    
+  Θξ has two real zeros ξ1,2 ∈ (−1, 1) and, thus, can be                                                        r̃(τ ) = ∓                            + r̃R ,                        (11)
+                                                                                                                                  σ1      τ − τ0′
+positive only if
+                                                                                             where σi are the derivatives of the Kleinian σ function,
+                  c1 = k − δñ2 + 4E 2 ñ2           ≥0                                      f describes     θ–divisor, i.e. σ((f (z), z)t ) = 0, and
+                                                                                       (9)    ′
+                                                                                                      R ∞thexdx
+                  c2 = k − δñ2 + L̃2                ≥0                                      τ0 = τ0 + x0 √      . The solution of the ϕ equation is
+                                                                                                                        P5 (x)
+
+which constrains the allowed values for E and L̃. Then
+                                                                                                                            1                1 − uB−
+ξ is restricted to the interval [ξ1 , ξ2 ] which for n 6= 0 is                                        ϕ(τ ) = ϕ0 +            A+ arctan √       q
+                                                                                                                            2             1 − u2 B 2 − 1
+not symmetric with respect to ξ = 0. Thus, the motion                                                                                                                  −
+of a test particle in TNdS space–time is bounded by two                                                                                                               ! ξ(τ )
+cones with in general different opening angles [12]. If                                                                            1 − uB+
+                                                                                                                    −A− arctan √                                                 , (12)
+k−δñ2 > 0 then ϑ ∈ (0, π) (see fig.2(b)), but for k−δñ2 ≤
+                                                                                                                                       q
+                                                                                                                                1 − u 2 B+2 −1
+                                                                                                                                                                         ξ0
+0 the motion takes place in one half–space (ϑ ∈ (0, π2 ) or
+ϑ ∈ ( π2 , π)) only (see Fig. 2(a)). If n = 0 or L = 0
+                                                                                             where u = 2αξ+β
+                                                                                                           √   , A± = |L̃±2E  ñ
+                                                                                                                                  and B± = β±2α
+                                                                                                                                            √   .
+the opening angles of the two cones are equal and the                                                       D           L̃±2E ñ|            D
+motion is symmetric with respect to the equatorial plane.                                       For a detailed discussion see [15].
+It also can be shown along the lines of [12] that all test                                      Orbits in Kerr–(anti-)de Sitter space–times The sta-
+particles move on a cone which is tilted with respect to                                     tionary axially symmetric KdS metric written in Boyer–
+the symmetry axis and which touches the two bounding                                         Lindquist coordinates t → tχ−1 , ϕ → ϕχ−1 , where
+cones related to ξ1 and ξ2 , see fig. 2.                                                     χ = 1 + 31 a2 Λ, emerges from (1) for [13, 14]
+   The function R is a polynomial of 6th order in r which                                       p2 := r2 + a2 cos2 ϑ , ∆ϑ := 1 + 31 Λa2 cos2 ϑ ,                                     (13)
+for positive Λ possesses at most 4 positive real zeros. The
+                                                                                                ∆r := 1 − 13 Λr2 (r2 + a2 ) − 2M r ,
+                                                                                                                
+r coordinate may take negative values.                                                                                                                                               (14)
+   Two examples of (E, L̃)–diagrams for n = 0.5 and dif-                                                            2                    2      2
+                                                                                                     A := a sin ϑ ,             B := r + a .                                         (15)
+ferent k are shown in fig. 1 where the dashed region de-
+note forbidden values for E and L̃ due to (9). Black                                           The Hamilton–Jacobi equation again separates and
+indicates an escape orbit, a bound orbit (e.g. fig. 2(b))                                    gives with ã = a/rS and D = L̃/E, κ = k/E 2 , δ2 = δ/E 2
+and a bound orbit crossing r = 0, gray one escape and                                        and the substitution ν = cos2 ϑ (we exclude ν = 1 corre-
+a bound orbit crossing periodically r = 0, and white an                                      sponding to the coordinate singularities ϑ = 0, π)
+escape orbit crossing r = 0 (fig. 2(a)).                                                        dr̃     √         dν       p
+   With (9) we have α < 0 and D := β 2 − 4αγ > 0 and                                                = E R,            = E νΘν                          (16)
+                                                                                                dτ                dτ
+the solution for ϑ is
+                                                                                                            "                                      #
+                                                                                                              ã r̃2 + ã2 − ãD     ã sin2 ϑ − D
+                                                                                                                                 
+                                                                                                dϕ
+                  1 √                √                                                            = χ̃2 E                        −                 , (17)
+                                                                                                                      ˜r                ˜ ϑ sin2 ϑ
+                                                    
+                         D sin τ0ϑ − −ατ − β                                                    dτ                    ∆                ∆
+                                              
+  ϑ(τ ) = arccos                                        , (10)
+                  2α
+                                                                                                                                                                                 3
+
+                                                                                                             20
+
+
+                                                                                                                                                           10
+
+
+
+
+                                                                                                             10
+
+
+
+
+                                                                                                                              −20
+                                                                                                                                                                    −10
+                                                                                    −20
+                                                                                                                   −10                         −10
+                                                                                                 −10
+
+
+
+                                                                                                       10                10
+                                                                                                                                                                          10
+                                                                                                                                    20               10
+                                                                                            20
+                                                                                                            −10
+
+
+
+
+                                                                                                                                                          −10
+
+
+                                                                                                            −20
+
+
+
+
+                                                                             (a)      escape orbit, E 2 = 0.98,                          (b)   bound orbit, E 2 = 0.94,
+FIG. 3: Different types of geodesic motion. Here rS = 2,                                       L̃ = 1.                                                L̃ = 0.6.
+ã = 0.4, k = 4, and Λ̃ = 10−5 . The gray scales denote the
+number of positive real zeros of the polynomial R: black =                         FIG. 4: KdS: Orbits for ã = 0.4, Λ̃ = 10−5 , and k = 3.
+5, gray = 3, white = 1. Parameters in the dashed region are
+forbidden due to Θν ≥ 0.                                                                                                     √
+                                                                             Rand r̃R is a zero of R and a5 > 0. With τ̂0 = E a5 τ0 +
+                                                                               ∞ xdx
+                                                                               x
+                                                                                  √     the solution is given by [7]
+where                                                                          0          R̃x
+
+                                ˜ r (δ2 r̃2 + κ)                                                                                     √
+   R := χ2 (r̃2 + ã2 − ãD)2 − ∆                                     (18)
+                                                                                                                                                 
+                                                                                                                         σ2      f (E a5 τ − τ̂0 )
+                                                                                                  r̃(τ ) = ∓                         √              + r̃R .                    (22)
+ Θν := (1 − ν)∆ϑ (κ − δ2 ã2 ν) − χ2 (ã(1 − ν) − D)
+                                                                  2
+                                                                      (19)                                               σ1        E a5 τ − τ̂0
+
+   Solutions of (16) require Θν (ν) ≥ 0 and R(r̃) ≥ 0.                         The ϕ–motion depends on both r and ϑ
+Therefore, the number of real zeros of Θν (in [0, 1)) and
+R depending on the parameters of the black hole and the                                                           χ−2 (ϕ − ϕ0 ) = Ir − Iϑ ,                                    (23)
+particle gives all possible types of orbits.
+   The number of zeros of Θν in [0, 1) changes if (i) 0 or                   where we have to solve an elliptic and hyperelliptic inte-
+1 is a zero√or (ii) two zeros coincide. We have case (i) if                  gral of third kind [15]
+L̃ = ãE ± χk or L̃ = 0, respectively. Considering case (ii)                              4                                              !
+                                                                             2c1         X       1                            σ(v − vi )
+we can solve Θν = (ν −u)2 (a1 ν +a0 ) with some constants                          Iϑ =                 ζ(vi )(v − v0 ) + log
+ai for E 2 and L̃, where only u ∈ [0, 1) is of interest. In                  |c1 |       i=1
+                                                                                              ℘′ (vi )                        σ(v0 − vi )
+the same way we can analyze the changes inPthe number                                                                           (−d )
+                                                                                                                                      1
+                                                    4
+of zeros of R with the ansatz R = (r̃ − u)2 ( i=0 ai r̃i ).                     · (δi1 + δi2 )ã3 Λ̃(χ − aΛD) + (δi3 + δi4 )D
+                                                                                                                                    4χ
+   A typical result of such an analysis for timelike                            + (ã − D)(v − v0 ) ,                                    (24)
+geodesics is shown in fig. 3. The dashed region denotes
+forbidden parameter values. The white area corresponds                       where v(τ ) = 2Eτ − τ̌0 , v0 = v(τ0 ), ℘(v1 ) = 14 (a2 Λd1 −
+to an escape orbit, the gray area to an escape orbit but                     d2 ) = ℘(v2 ), ℘(v3 ) = 41 (d1 + d2 ) = ℘(v4 ), and
+also a bound orbit, and the black area to an escape and
+two different bound orbits.                                                      √                                                        4
+   The differential equation for ϑ is of elliptic type and                         a5 |x0 |                                              X
+                                                                               −            Ir̃ = C1 (w − w0 ) + C0 (f (w) + f (−w0 )) +
+first kind and is solved by                                                        ãx0                                                  i=1
+                      s                                                              "                             t Z p+ !#
+                                    d1                                        C                               f (w)          i
+
+     ϑ(τ ) = arccos ±                                 , (20)                  p 2,i Si (w) − Si (w0 ) −                        d~r  , (25)
+                        4℘(2Eτ − τ̌0 ; g2 , g3 ) − d2                          Rui                              w         p−
+                                                                                                                           i
+
+                                                                                                  √
+where g2 = 43 d22 − d3 d1 , g3 = 14 d1 d2 d3 − 16
+                                               1
+                                                  δ2 ã4 d21 − 81 d32 ,      where w(τ ) = E a5 τ − τ̂0 , w0 = w(τ0 ), and Si (w) =
+            R∞              ′
+τ̌0 = 2Eτ0 + y0 √ ′3 dy ′          , and d1 = κ − χ2 (ã − D)2 ,                                R p+
+                                                                                 σ((f (w),w)t −2 ∞i d~
+                                                                                                     z)
+                                                                                                                               t
+                         4y −g2 y −g3                                        log                R p−    . Here d~z = √dx
+                                                                                                                       R
+                                                                                                                         , √xdx
+                                                                                                                             R
+                                                                                                                                   and
+                                                                                                                                                                x     x
+3d2 = ã2 (κΛ̃ − δ2 ) − κ + 2χ2 ã(ã − D), 4d3 = ã2 (δ2 (1 −                   σ((f (w),w)t −2 ∞i d~
+                                                                                                     z)
+                                                                                                                            ak+1+i xk dx
+                                                                             d~r = (dr1 , dr2 )t with dri = 5−i
+                                                                                                           P
+Λa2 )−χ2 − Λ̃κ). Contrary to the TNdS–case, this motion                                                      k=i (k + 1 − i) a5
+                                                                                                                                    √
+                                                                                                                                   4 R                                           x
+is symmetric with respect to the equatorial plane.                           (see [16]). The constants Cj are given by a ppartial frac-
+   The differential equation for r̃ is of hyperelliptic type                 tion decomposition. The points p±  i = (xi , ± Rxi ) are
+                                                        dx
+  √ first kind. It can be cast in standard form x dτ =
+and                                                                          the zeros of ∆r̃(x) on the Riemann surface of y 2 = Rx .
+E a5 Rx by a substitution r̃ = ±1/x + r̃R where                              Two orbits are shown in fig. 4, for a detailed discussion
+            5                                                                see [15].
+            X ai                      (±1)i d(6−i) R                            Orbits in Plebański–Demiański space–times The PD
+     Rx =              xi ,   ai =                     (r̃R ) ,       (21)
+            i=0
+                  a5                 (6 − i)! dr̃(6−i)                       space–times without acceleration are described by (1)
+                                                                                                                                  4
+
+with [13]                                                             solutions of geodesic equations in all electrovac type D
+                                                                      space–times without acceleration.
+                               2
+   p2 = r2 + (n − a cos ϑ) ,                                  (26)      In all cases discussed here the motion can be extended
+  ∆ϑ = 1 + 13 a2 Λ cos2 ϑ − 34 Λan cos ϑ                      (27)    through r = 0 to negative r [15].
+                                                                        For bound orbits, the r and ϑ motions are related to
+  ∆r = r2 − 2M r − n2 + a2 + Q2e + Q2m
+                                                                      characteristic periods given by
+       − 13 Λ r4 + (6n2 + a2 )r2 + 3(a2 − n2 )n2
+                                                 
+                                                              (28)
+             2
+                                                                                 Z rmax                      Z ξmax
+    A = a sin ϑ + 2n cos ϑ ,          2  2    2
+                                   B =r +a +n ,               (29)                         dr                           dξ
+                                                                        ωr = 2            p     ,   ωϑ = 2            p       , (35)
+                                                                                  rmin     R(r)               ξmin     Θξ (ξ)
+where Qe and Qm are electric and magnetic charges of a
+gravitating source. Also in this case the Hamilton–Jacobi             which are related to the zeros of the underlying polynomi-
+equation separates (for simplicity, we choose neutral test            als. From these periods one can derive the perihelion shift
+particles; charged particles do not change the structure              and the Lense–Thirring effect, and also perform further
+of the equations) and yields differential equations for r̃,           orbital frequency analysis [17]. For escape orbits, the two
+ξ = cos ϑ, and ϕ                                                      deflection angles are given by ∆ϑ = lim (ϑ(s) − ϑ(−s))
+                                                                                                               s→∞
+
+   dr̃  √          dξ              dϕ   ãX   L̃ − ÃE                and ∆ϕ = lim (ϕ(s) − ϕ(−s)). These observable peri-
+                       p                                                           s→∞
+       = R,           = Θξ ,          =     +                         ods and deflection angles can be calculated analytically.
+   dτ              dτ              dτ   ∆˜r   ˜ ϑ sin2 ϑ
+                                              ∆
+                                                       (30)           For detailed calculations and discussions see [15].
+with                                                                     We are grateful to W. Fischer and P. Richter for help-
+                                                                      ful discussions. E.H. thanks the German Research Foun-
+   R = X2 − ˜
+            ∆r (δr̃2 + k)                                     (31)    dation DFG and V.K. the German Academic Exchange
+                   2
+  Θξ = ∆ϑ (1 − ξ ) k − δ(ñ − ãξ)    2
+                                                        2
+                                              − (L̃ − ÃE) , (32)     Service DAAD for financial support.
+
+where X = (r̃2 + ã2 + ñ2 )E − ãL̃ and Ã = ArS−1 .
+  A standard substitution ξ = ± y1 + ξΘ , where ξΘ is a
+zero of Θξ , brings the equation for ξ to a holomorphic                [1] K. Hioko and K. Maeda, Phys. Rev. D 80, 024042 (2009).
+hyperelliptic differential of the first kind dτ = √ydy .               [2] L. Barack and C. Cutler, Phys. Rev. D 75, 042003
+                                                             P5 (y)
+                                                                           (2007).
+The solution of the equation for ϑ in (30) is                          [3] J. Levin and G. Peres-Giz, Phys. Rev. D 79, 124013
+                                                  !                        (2009); Phys. Rev. D 79, 124014 (2009).
+                                f (τ − τ0ϑ )
+                                           
+                          σ2                                           [4] T. Damour, P. Jaranowski, and G. Schäfer, Phys. Rev.
+       ϑ(τ ) = arccos   ∓                     + ξΘ .          (33)
+                          σ1      τ − τ0ϑ                                  D 62, 044024 (2000).
+                                                                       [5] Y. Hagihara, Japan. J. Astron. Geophys. 8, 67 (1931).
+                                                                       [6] S. Chandrasekhar, The Mathematical Theory of Black
+As in (11) we obtain for the r̃ motion the solution
+                                                                           Holes (Oxford University Press, Oxford 1983).
+                                                                       [7] E. Hackmann and C. Lämmerzahl, Phys. Rev. Lett. 100,
+                       σ2 f (τ − τ0r̃ )
+                                       
+            r̃(τ ) = ∓                    + r̃R .   (34)                   171101 (2008); Phys. Rev. D 78, 024035 (2008).
+                       σ1   τ − τ0r̃                                   [8] E. Hackmann, V. Kagramanova, J. Kunz and
+                                                                           C. Lämmerzahl, Phys. Rev. D 78, 124018 (2008).
+The function f describing the θ–divisor depends on the                 [9] M. Demianski and M. Francaviglia, Int. J. Theor. Phys.
+definition of the σ–function and, therefore, on the poly-                  19, 675 (1980); R. Debever, N. Kamran and R.G. McLe-
+nomials P5 (y) for the ϑ motion and on P5 (x) for the r̃                   naghan, J. Math. Phys. 25, 1955 (1984); D. Kubizňák
+motion.                                                                    and P. Krtouš, Phys. Rev. D 76, 084036 (2007).
+  ϕ depends both on ϑ and r̃ giving a hyperelliptic inte-             [10] C.W. Misner, J. Math. Phys. 4, 924 (1963)
+                                                                      [11] Y. Mino, Phys. Rev. D 67, 084027 (2003).
+gral of third kind which can be solved completely [15].
+                                                                      [12] D. Lynden–Bell and M. Nouri–Zonoz, Rev. Mod. Phys.
+  Therefore we succeeded in obtaining the complete an-                     70 427 (1998)
+alytic solution of the geodesic equation in all PD black              [13] J.F. Plebański and M. Demiański, Ann. Phys. (NY) 98,
+hole space–times without acceleration. The orbits now                      98 (1976); J.B. Griffiths and J. Podolsky, Int. J. Mod.
+depend on the three particle parameters E, L, and k                        Phys. 15, 335 (2006).
+as well as the six parameters characterizing this class               [14] B. Carter, Phys. Rev. 174, 5, 1559 (1968).
+of space–times. It has been shown that the PD black                   [15] E. Hackmann et al, in preparation.
+                                                                      [16] V. Enolskii, M. Pronine, and P. Richter, J. Nonlinear
+hole solutions exhaust all electrovac type D solutions.
+                                                                           Sci. 13, 157 (2003); V. Buchstaber, V. Enolskii and
+Since the condition of a space–time of being of electrovac                 D. Leykin, Reviews in Mathematics and Mathematical
+type D without acceleration ensures separability of the                    Physics 10, 1 (1997).
+Hamilton–Jacobi equation [9] we, thus, arrived at the                 [17] S. Drasco and S.A. Hughes, Phys. Rev. D 69, 044015
+conclusion that we now can explicitly give all analytic                    (2004).
+

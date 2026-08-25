@@ -1,0 +1,550 @@
+                   The Gravitational Train in the Interior Schwarzschild Metric:
+                           NLO and NNLO Perturbative Expansions
+                                                      Iman Rosignoli∗
+                                   Department of Physics, University of Pavia, Pavia, Italy
+                                                  (Dated: June 13, 2026)
+                 We extend the gravitational train problem—a test particle sliding without friction through a
+              tunnel inside a spherical body—to the interior Schwarzschild spacetime. Working in the equato-
+              rial plane, we show that the coordinate travel-time functional is the length of a positive-definite
+              Riemannian optical (Jacobi) metric on the spatial slice. The cyclic symmetry yields a relativistic
+              Snell law; expanding its integrand in the compactness parameter µ = rs /R and integrating in closed
+              form, we obtain the angular half-opening as a power series in µ through next-to-next-to-leading
+              order. Perturbative inversion gives explicit NLO and NNLO corrections to the Newtonian relation
+              q = 1 − ∆/π, both positive for 0 < ∆ < π: the optimal tunnel becomes progressively shallower
+              with increasing compactness. The perturbative results are validated against direct numerical inte-
+              gration of the exact geodesic equation, and agree to four significant figures for µ ≲ 0.3. Near the
+              Buchdahl bound µ → 8/9, the optical index diverges at the centre as (8/9 − µ)−1 , creating a central
+              optical barrier that forces the brachistochrone toward the surface—the optical signature of extreme
+              gravitational redshift.
+
+
+                  I.   INTRODUCTION                                     nel is simply radial). The optical index n(r) de-
+                                                                        pends on A(r) in a way that encodes both gravi-
+   The gravitational train is the relativistic analogue of              tational redshift and the specific energy set by the
+the classical brachistochrone problem inside a spherical                initial condition.
+body: two points on the surface of a self-gravitating
+sphere are connected by a frictionless tunnel, and a test
+particle is released from rest at one endpoint. The ques-            2. The minimising curve is generically non-radial, so
+tion is which tunnel shape minimises the travel time.                   the full geodesic equation for the optical metric
+   In Newtonian gravity the problem reduces to a Fer-                   must be solved. The cyclic symmetry of the prob-
+mat principle with a radially dependent refractive in-                  lem reduces this to a single first-order ODE—a
+dex, whose solution is a hypocycloid [1]. The closely                   relativistic Snell law—whose integrand can be ex-
+related “through-the-Earth” problem was analysed early                  panded in the compactness µ = rs /R.
+by Cooper [2] and by Kleppner and Kolenkow [3].
+   In general relativity the construction requires addi-             3. The Buchdahl bound µ < 8/9 plays a direct ge-
+tional care: the spacetime metric is Lorentzian, so the                 ometric role: as µ → 8/9− , the optical index di-
+variational problem for coordinate travel time does not                 verges at the centre, creating a central optical bar-
+directly define a geodesic problem for the spatial path.                rier absent in the Newtonian problem.
+The key observation, established in full generality by
+Perlick [4] for stationary spacetimes, is that in a static
+geometry the coordinate travel time equals the opti-                 We derive explicit perturbative corrections to the New-
+cal length in a positive-definite Riemannian metric on            tonian hypocycloid through NNLO in µ, in closed form,
+the spatial slices—the Jacobi (or optical) metric. The            and validate them numerically. The results show that
+brachistochrone is therefore a geodesic of this effective         relativistic corrections raise the minimum radius q—the
+metric, and the full apparatus of Riemannian geometry             optimal tunnel is shallower in GR than in Newtonian
+applies.                                                          theory—and that the effect grows rapidly near the Buch-
+   Parker [5] applied this idea to the straight radial grav-      dahl bound.
+ity train in the exterior Schwarzschild geometry, i.e. to a          The paper is organised as follows. Section II recalls
+particle falling through a diametral tunnel. The present          the Newtonian problem. Section III introduces the inte-
+work addresses a qualitatively different problem: tun-            rior Schwarzschild metric. Section IV derives the optical
+nels at arbitrary angular separation inside the star, de-         metric from the Lorentzian line element. Section V es-
+scribed by the interior Schwarzschild metric. Three fea-          tablishes the radial Snell law. Section VI carries out the
+tures make this extension non-trivial.                            perturbative expansion and inversion, states the main re-
+   1. The interior metric functions A(r) and B(r) are             sults, and validates them numerically. Section VII analy-
+      both non-trivial (unlike the exterior, where the tun-       ses the optical geometry near the Buchdahl bound. Sec-
+                                                                  tions VIII and IX contain the discussion and conclusions.
+                                                                  We use units c = 1 throughout unless otherwise stated;
+                                                                  factors of c are restored in the numerical estimates of
+∗ iman.rosignoli01@universitadipavia.it
+                                                                  Section VI.
+                                                                                                                              2
+
+  II.   NEWTONIAN GRAVITATIONAL TRAIN                                Here rs = 2GM/c2 , and the compactness parameter is
+                                                                                                    rs
+  Let the spherical body have radius R, total mass M ,                                        µ=       .                   (11)
+                                                                                                    R
+and constant density. Inside the body the Newtonian
+acceleration is                                                      At the surface one has
+                                          GM                                               A(R) = 1 − µ.                   (12)
+                r̈ = −ω 2 r,       ω2 =      .                 (1)
+                                          R3
+                                                                     By spherical symmetry we may restrict the motion to the
+If the particle starts from rest at the surface, conservation        equatorial plane θ = π/2. The metric then becomes
+of Newtonian energy gives
+                              p                                               ds2 = −A(r)c2 dt2 + B(r)dr2 + r2 dφ2 .       (13)
+                     v(r) = ω R2 − r2 .                   (2)
+Therefore the travel time along a planar curve is                      IV. FROM THE LORENTZIAN METRIC TO
+                             1                                           THE RIEMANNIAN OPTICAL METRIC
+                   Z           Z
+                       dℓ             dℓ
+           T [γ] =         =      √         .                  (3)
+                    γ v(r)   ω γ R − r2
+                                      2
+                                                                       We now spell out the reduction from the spacetime
+This is precisely Fermat’s principle with refractive index           metric to the effective Riemannian metric governing the
+proportional to (R2 − r2 )−1/2 .                                     spatial tunnel. This is the part where the Lorentzian
+  The minimising curve is a hypocycloid, in agreement                geometry is converted into a positive-definite optical ge-
+with the explicit solution of the brachistochrone problem            ometry.
+for a spherical mass distribution of uniform density given             Start from the Lorentzian line element in the equatorial
+by Mitchell [1]. A convenient parametrisation of half of             plane:
+the trajectory is
+               q                                                      ds2 = −A(r)c2 dt2 + dℓ2 ,       dℓ2 = B(r)dr2 + r2 dφ2 .
+     r(u) = R q 2 + (1 − q 2 ) sin2 u,                 (4)                                                                 (14)
+                                                                     The spatial metric
+                      tan u
+                           
+                                                π
+     φ(u) = arctan            − qu,     0≤u≤ ,         (5)
+                        q                        2                                     h = B(r)dr2 + r2 dφ2                (15)
+
+where q = r∗ /R and r∗ is the minimum radius reached                 is already positive definite on a constant-time slice, but
+by the tunnel. The full curve is obtained by reflection              it is not yet the metric whose geodesics give the fastest
+around the point of minimum radius. The boundary con-                tunnel. The time functional contains an additional con-
+dition at the surface gives                                          formal factor coming from gravitational redshift and from
+                                                                     the initial condition of release from rest at the surface.
+                 ∆      π π
+                                                                        For a massive particle following a timelike trajectory,
+                    =φ      = (1 − q),              (6)
+                 2        2   2                                      the four-velocity satisfies
+and hence                                                                                          2  2
+                                                                                                    dt        dℓ
+                                   ∆                                             −c2 = −A(r)c2            +         ,       (16)
+                        q =1−        .                         (7)                                  dτ        dτ
+                                   π
+Thus a tunnel connecting antipodal points passes                     where τ is proper time. Since the metric is static, ∂t is a
+through the centre, whereas a tunnel connecting nearly               Killing field and the specific energy is conserved:
+coincident points remains close to the surface.                                                            dt
+                                                                                          E = A(r)c2          .            (17)
+                                                                                                           dτ
+III.    INTERIOR SCHWARZSCHILD GEOMETRY                              If the particle is released from rest at the surface r = R,
+                                                                     then initially dℓ/dτ = 0. Evaluating the normalisation
+  The interior Schwarzschild metric for a homogeneous                condition at r = R gives
+incompressible sphere [6] is                                                              dt      1
+                                                                                               =p     .                    (18)
+         ds = −A(r)c dt + B(r)dr + r dΩ ,
+            2            2     2           2     2    2
+                                                               (8)                        dτ R   A(R)
+with                                                                 Therefore
+                                                     #2
+                                                                                          E = c2                           (19)
+                    " r              r                                                             p
+                1         rs                rs r2                                                   A(R).
+         A(r) =   3 1−       −            1− 3            ,    (9)
+                4          R                 R                       Using energy conservation at a generic radius gives
+                          −1
+                    rs r2
+                                                                                              p
+         B(r) = 1 − 3         .                               (10)                       dt       A(R)
+                     R                                                                       =         .                 (20)
+                                                                                         dτ      A(r)
+                                                                                                                                     3
+
+Substituting this into the normalisation equation yields         Consequently,
+                                                                                            n(r)r sin α = C.                    (31)
+    2                    
+     dℓ            A(R)            A(R) − A(r)
+           = c2          − 1 = c2               .   (21)
+     dτ             A(r)               A(r)                      This is the radial Snell law. At the deepest point of the
+Hence                                                            tunnel the tangent is orthogonal to the radial direction,
+                                                                 so α = π/2. If r∗ = qR, then
+                          dℓ
+                 dτ = p              .                   (22)                                C = n(r∗ )r∗ .                     (32)
+                     c A(R)/A(r) − 1
+The coordinate time element is then                              Solving for the shape gives the first-order equation
+                                                                                              p
+          dt
+                  p
+                     A(R)         dℓ                                              dφ        C B(r)
+     dt =    dτ =                        .               (23)                        = p                  .           (33)
+          dτ        A(r) c A(R)/A(r) − 1
+                           p                                                      dr    r n2 (r)r2 − C 2
+
+After simplifying the denominator, one obtains                   This equation, together with the boundary condition at
+                                                                 r = R, determines the relativistic gravitational train.
+                         1
+            dt = p                   dℓ.                 (24)
+                c A(r) 1 − A(r)/A(R)
+                      p
+                                                                      VI.      PERTURBATIVE EXPANSION IN
+Thus the coordinate travel time along a spatial curve γ                            COMPACTNESS
+is
+                                                                    Introduce the dimensionless variable x = r/R and
+                        1
+                          Z
+                 t[γ] =      n(r) dℓ,              (25)          write q = r∗ /R. The half-opening angle of the tunnel
+                        c γ                                      is
+where                                                                ∆
+                                                                          Z 1      p
+                                                                                 C B(x)
+                                                                        =                     dx,     C = n(q) q. (34)
+                            1                                        2     q x n (x)x − C
+                                                                               p
+                                                                                  2   2     2
+             n(r) = p                   .                (26)
+                     A(r) 1 − A(r)/A(R)
+                         p
+                                                                 We expand the integrand systematically in µ.
+Since dℓ = B(r)dr +r dφ , the travel-time functional is
+        2           2    2   2
+
+the length functional of the positive-definite Riemannian
+                                                                          A.     Expansion of the metric functions
+metric
+
+             dσ 2 = n2 (r) B(r)dr2 + r2 dφ2 .        (27)         Setting x = r/R in Eq. (9), one finds
+                                           
+
+                                                                                    2
+This is the desired optical, or Jacobi, metric. The rela-                 3α − β(x)
+                                                                                                                               p
+                                                                 A(x) =                     α ≡ 1 − µ,                              1 − µx2 ,
+                                                                                                p
+tivistic brachistochrone for the coordinate time is there-                             ,                               β(x) ≡
+                                                                              2
+fore a geodesic of dσ 2 , not directly a geodesic of the orig-                                                                  (35)
+inal spatial metric dℓ2 .                                                    1       1
+                                                                 B(x) =           = 2    .                                      (36)
+                                                                          1 − µx2  β (x)
+              V.    RADIAL SNELL LAW
+                                                                 Expanding in µ through O(µ2 ):
+
+  Let λ be an arbitrary parameter along the curve. The                         α = 1 − 12 µ − 18 µ2 + O(µ3 ),                   (37)
+optical length Lagrangian is                                              β(x) = 1 − 21 µx2 − 18 µ2 x4 + O(µ3 ),                (38)
+               L = n(r) B(r)ṙ2 + r2 φ̇2 .         (28)                                 3 − x2       2 9 − 10x + x
+                                                                                                              2    4
+                        p
+                                                                          A(x) = 1 − µ                 +µ                 + O(µ3 ),
+                                                                                                  2                8
+Because φ is cyclic, the conjugate momentum is con-                                                                             (39)
+served (see e.g. [7]):                                                  B(x) = 1 + µx + µ x + O(µ ),
+                                                                                              2       2 4      3
+                                                                                                                                (40)
+                ∂L                  2
+                                 r φ̇                            A(R) = A(1) = 1 − µ.                                           (41)
+         pφ =        = n(r) p                  = C.      (29)
+                ∂ φ̇          B(r)ṙ2 + r2 φ̇2
+Define α as the angle between the tangent vector and                        B.    Expansion of the optical index
+the outward radial direction, measured using the spatial
+metric dℓ2 . Then                                                  From Eq. (26),
+                             rφ̇                                                                     1
+                sin α = p                 .              (30)                    n2 (x) =                     .                (42)
+                         B(r)ṙ2 + r2 φ̇2                                                   A(x) 1 − A(x)/A(R)
+                                                                                                                                     4
+
+Writing A(x) = A(R) + δA(x) with δA(x) = A(x) −                                  D.       Integration in closed form
+A(R) = µ(1−x2 )/2·3+. . . , expanding 1/(A(R)+δA)(1−
+(A(R) + δA)/A(R)), and collecting powers of µ, one ob-                  It is convenient to introduce the auxiliary functions
+tains                                                                                s
+                                                                                        x2 − q 2
+                                                                    U (x) = arcsin                           =     (x2 − q 2 )(1 − x2 ).
+                                                                                                                p
+             1          5 − 3x2 − 2x4                                                            ,     S(x)
+                                              
+  n(x) = √          1+µ                 + O(µ ) . (43)
+                                             2                                          1 − q2
+           1 − x2           8(1 − x2 )                                                                                           (49)
+                                                                    RThe
+                                                                       x
+                                                                              perturbative angular functions φk (x)                 =
+                                                                      q k
+                                                                         I (ξ; q) dξ (k = 0, 1, 2) are computed by stan-
+         C.      Expansion of the Snell integrand                    dard techniques [8]. One obtains
+                                                                                             p            !
+                                                                                                 x2 − q 2
+  Define the Snell integrand                                               φ0 (x) = arctan √                − q U (x),           (50)
+                                                                                             q 1 − x2
+                    p
+                  C B(x)                                                            q(15 − 7q 2 ) 
+   I(x; q, µ) = p                ,          C = n(q) q.     (44)         φ1 (x) =                  S(x) + (1 − q 2 )U (x) ,
+                                                                                                                         
+                                                                                                                                 (51)
+               x n2 (x) x2 − C 2                                                        32
+
+Substituting the expansions of n(x), B(x) and C into                Defining P ≡ −144q 4 + 12q 2 + 132 e Q ≡ 147q 4 − 354q 2 +
+Eq. (44) and expanding in µ, one collects                           399, one has
+                                                                                          (
+                                                                                        q    P
+                                                                              φ2 (x) =           S + (1 − q 2 )U
+                                                                                                                 
+ I(x; q, µ) = I0 (x; q) + µ I1 (x; q) + µ2 I2 (x; q) + O(µ3 ),
+                                                                                       512 2
+                                                          (45)
+where the individual coefficients are obtained as follows.                                      Q 2
+                                                                                            +      (2x + 3q 2 − 1)S
+  a. Leading order. At µ = 0p          one has n(x) = (1 −                                      8                        )
+x )
+ 2 −1/2
+        , B(x) = 1, so C0 = q/ 1 − q 2 , and a direct
+                                                                                                + (1 − q 2 )(1 + 3q 2 )U .       (52)
+                                                                                                                        
+substitution gives
+                                  √
+                                 q 1 − x2                           Evaluating at x = 1, where S(1) = 0 and U (1) = π/2,
+                    I0 (x; q) =   p        .                (46)    one obtains the main perturbative result:
+                                x x2 − q 2
+                                                                    ∆  π             π
+This recovers the Newtonian Fermat integrand.                         = (1 − q) + µ    q(1 − q 2 )(15 − 7q 2 )
+                                                                    2  2            64
+  b. Next-to-leading order. Let n = n0 + µn1 + O(µ2 ),                       3π
+                                                                       + µ2      q(1 − q 2 ) 147q 6 − 497q 4 + 297q 2 + 309 + O(µ3 ).
+                                                                                                                           
+where n0 = (1 − x2 )−1/2 and n1 follows from Eq. (43).                      8192
+The NLO correction to the Snell constant is C1 =                                                                         (53)
+∂µ (n(q; q) q)|µ=0 . A systematic expansion of the denom-
+inator n2 x2 − C 2 to first order in µ and insertion into
+Eq. (44) yields                                                                      E.    Perturbative inversion
+
+                                         √
+                          q(15 − 7q 2 ) x 1 − x2                      Equation (53) expresses ∆ as a function of q and µ.
+              I1 (x; q) =              ·p          .        (47)    To invert, write
+                              16          x2 − q 2
+                                                                                    q = q0 + µ q1 + µ2 q2 + O(µ3 ),              (54)
+  c. Next-to-next-to-leading order. Continuing to sec-
+ond order in µ via the same procedure gives                         where q0 ≡ 1 − ∆/π is the Newtonian minimum radius.
+                                                                    Substituting Eq. (54) into Eq. (53), Taylor-expanding
+                      √                                             each term in µ around q = q0 , and requiring that the
+                3q x 1 − x2
+ I2 (x; q) =       ·p                                               O(µk ) residuals vanish order by order gives
+               512    x2 − q 2
+                                                                       • Order µ0 : π(1−q0 )/2 = ∆/2, satisfied by definition
+                (49q − 118q 2 + 133)x2 − 48q 4 + 4q 2 + 44 .
+                    4
+                                                         
+                                                                         of q0 .
+                                                         (48)
+                                                                       • Order µ1 :
+The key algebraic steps that lead to Eqs. (47) and (48)                       π     π
+are: (i) expand n(x; µ) and C(µ) to the required order;                     − q1 +     q0 (1 − q02 )(15 − 7q02 ) = 0,            (55)
+                                                                              2     64
+(ii) write n2 x2 − C 2 = (n20 x2 − C02 ) + µ(. . .) + µ2 (. . .);
+(iii) factor out (n20 x2 − C02 )1/2 from the denominator of               yielding
+Eq. (44) and expand the residual factor; (iv) simplify                                       q0 (1 − q02 )(15 − 7q02 )
+using n0 (q)q = C0 and collect coefficients by power of µ.                            q1 =                             .         (56)
+                                                                                                        32
+                                                                                                                           5
+
+   • Order µ2 : differentiating the NLO term in Eq. (53)
+     with respect to q evaluated at q0 , multiplying by
+     q1 , and combining with the NNLO term of Eq. (53)
+     gives
+
+        q0 (1 − q02 ) 1827 − 3489 q02 + 2457 q04 − 539 q06
+                                                           
+  q2 =                                                       .
+                               4096
+                                                           (57)
+
+  The final result is therefore
+            q0 (1 − q02 )(15 − 7q02 )
+q = q0 + µ
+                        32
+             (1     0 1827 − 3489 q0 + 2457 q0 − 539 q0
+                      )
+                    2                 2      4        6
+                                                        
+         q 0    − q
+    +µ 2
+                                  4096
+    + O(µ ).
+          3
+                                                     (58)
+
+Both corrections are strictly positive for 0 < ∆ < π
+(equivalently 0 < q0 < 1), confirming that the relativistic       FIG. 1. The various forms of the NLO tunnels, depending on
+optimal tunnel is always shallower than the Newtonian             µ.
+one.
+
+                                                                  trale. The approximate geographical coordinates are
+               F.    Numerical validation
+                                                                           (ϑPV , λPV ) ≃ (45.18882◦ , 9.14453◦ ),
+  To validate Eq. (58), we integrate the exact geodesic                     (ϑMI , λMI ) ≃ (45.484997◦ , 9.202167◦ ).
+equation (34) numerically for several values of ∆ and             The haversine formula gives the central angular separa-
+µ, using the exact n(x) and B(x) from Eqs. (35)–(36).             tion
+The minimum     radius qnum is determined by requiring
+                                                                            ∆PV-MI ≃ 5.22 × 10−3 rad ≃ 0.299◦ .         (59)
+        R1
+∆/2 = q I dx for the exact integrand, solved iteratively
+via bisection. Table I shows the comparison for ∆ = 90◦           With R⊕ ≃ 6371 km, the surface distance is s = R⊕ ∆ ≃
+(q0 = 0.5).                                                       33.2 km.
+                                                                     a. Newtonian baseline. The dimensionless Newto-
+                µ    qNLO qNNLO qnum                              nian minimum radius is q0 = 1 − ∆/π ≃ 0.998339, giving
+               0.05 0.50586 0.50601 0.50601                       a maximum depth h0 = R⊕ (1 − q0 ) ≃ 10.58 km.
+               0.10 0.51172 0.51218 0.51218                          b. Relativistic correction. The Earth’s compactness
+               0.20 0.52344 0.52512 0.52517                       is µ⊕ = rs /R⊕ ≃ 1.39×10−9 . Using 1−q02 ≃ 3.32×10−3 ,
+               0.30 0.53516 0.53903 0.53927                       Eq. (56) gives q1 ≃ 8.31 × 10−4 , so
+               0.40 0.54688 0.55422 0.55496                       hNLO = R⊕ (1−qNLO ) = h0 −R⊕ µ⊕ q1 ≃ 10.58 km−7.4 µm.
+                                                                                                                           (60)
+TABLE I. Comparison between NLO, NNLO perturbative                The relativistic correction to the tunnel depth is sub-
+values and the numerically exact result for ∆ = 90◦ (q0 =
+                                                                  micrometric for the Earth, as expected from µ⊕ ≪ 1.
+0.5). The NNLO formula agrees with the numerical result to
+four significant figures for µ ≲ 0.3.                               c. Travel time. The Newtonian travel time along
+                                                                  the brachistochrone follows from the hypocycloid
+                                                                  parametrisation. Along one half    p of the trajectory, dℓ =
+   The NNLO formula tracks the exact result to four sig-
+                                                                  R(1 − q02 ) cos u du and v = ωR 1 − q02 cos u, so
+nificant figures up to µ ≈ 0.3. The NLO formula already
+captures the leading deformation of the hypocycloid and                                π                      GM⊕
+                                                                                         q
+is accurate at the percent level for µ ≲ 0.1. For µ ≳ 0.3                    Tbrach =      1 − q02 ,    ω2 =     3 .       (61)
+                                                                                       ω                       R⊕
+higher-order terms become important, and direct numer-
+ical integration is required.                                     With ω ≃ 1.24 × 10−3 s−1 , one obtains
+                                                                                   PV-MI
+                                                                                  Tbrach ≃ 146 s ≃ 2.4 min.             (62)
+   G.    Example: Pavia railway station – Milano                  This idealised figure—which neglects non-uniform den-
+                     Centrale                                     sity, friction, rotation, and geological constraints—is
+                                                                  roughly an order of magnitude shorter than the actual
+  As a concrete illustration, consider a gravitational            railway travel time of 30–45 min [9, 10], and serves only
+train connecting Pavia railway station to Milano Cen-             as a scale indicator.
+                                                                                                                       6
+
+   VII.    LIMITING BEHAVIOUR NEAR THE                        Hence the optical index at the centre diverges as (8/9 −
+               BUCHDAHL BOUND                                 µ)−1 when the Buchdahl bound is approached. For a
+                                                              path that reaches r = 0, the optical length diverges, mak-
+                                                              ing the central region optically inaccessible.
+
+
+                                                               B.   The central optical barrier and the limit q → 1
+
+                                                                 From the Snell law n(r) r sin α = C = n(q) q, the
+                                                              turning point q is determined by the condition that
+                                                              n2 (x)x2 − C 2 = 0 has a solution in [0, 1]. As n(0) → ∞,
+                                                              the product n(0) · 0 is formally
+                                                                                         Rϵ      p indeterminate; how-
+                                                              ever, the optical length 0 n(r) B(r) dr diverges be-
+                                                              cause n(r)p≳ 1/ A(0) throughout a central region of
+                                                                                p
+
+                                                              size r ≲ R A(0), and B(r) → (1 − µ · 0)−1 = 1 at r = 0.
+                                                              Consequently, for any fixed ∆ ∈ (0, π), the trajectory
+                                                              that minimises coordinate travel time avoids the central
+                                                              region and has q → 1 as µ → µB .
+                                                                 To quantify the growth of q near the Buchdahl bound,
+                                                              one may observe from Eq. (53) that the perturbative ex-
+                                                              pansion breaks down for µ ∼ O(1); numerical integration
+   FIG. 2. The numerical tunnels, derived for various µ.      of Eq. (34) is required in this regime. Figure 2 shows
+                                                              the family of numerically computed brachistochrones for
+  The Buchdahl bound µB = 8/9 is the maximum com-             ∆ = 180◦ as µ increases toward 8/9: the trajectories are
+pactness consistent with finite central pressure for an in-   progressively pushed toward the surface, consistent with
+compressible constant-density star [11]. As µ → 8/9− ,        the optical barrier at the centre.
+the lapse function at the centre approaches zero:
+            A(0) = 41 (3 1 − µ − 1)2 −→ 0.            (63)
+                        p
+                                                                            C.    Physical interpretation
+We now make this qualitative statement quantitative by
+working out the asymptotic behaviour of the optical in-          The divergence of n(r) at the centre is the optical sig-
+dex and its consequences for the brachistochrone.             nature of the gravitational redshift becoming extreme.
+                                                              A particle that penetrates deep into the potential well of
+                                                              a near-Buchdahl star gains kinetic energy in proper-time
+ A.     Divergence of the optical index at the centre         terms, but pays a very high coordinate-time cost because
+                                                              clocks at the centre tick arbitrarily slowly. The brachis-
+  Near µ = µB introduce       the                             tochrone trades proper-time efficiency for coordinate-
+                    √          √ small parameter ϵ ≡          time efficiency; near the Buchdahl bound, the optimal
+8/9 − µ > 0. Then 1 − µ = 1 − µB + ϵ = (1/3)(1 +
+9ϵ/2)1/2 ≃ 1/3 + ϵ/2 + O(ϵ2 ), and                            strategy is to stay close to the surface. This is a purely
+                                                              relativistic effect with no Newtonian analogue.
+                          9ϵ2
+                  A(0) ≃      + O(ϵ3 ).                (64)
+                           4
+More generally, for small r one finds                                            VIII.   DISCUSSION
+
+                     3µ
+      A(r) ≃ A(0) + √    r2 /R2 + O(r4 /R4 ).          (65)      For ordinary astrophysical bodies the compactness pa-
+                   4 1−µ                                      rameter is small. For the Earth µ⊕ ≃ 1.4 × 10−9 , and
+Since A(R) = 1 − µ → 1/9 as µ → 8/9, the optical index        for white dwarfs µ ∼ 10−4 ; in both cases the perturba-
+near the centre is                                            tive corrections are completely negligible. The situation
+                             1                                is qualitatively different for neutron stars, whose com-
+            n(r) = p                     .         (66)       pactness may reach µ ∼ 0.1–0.4 for realistic equations of
+                    A(r) 1 − A(r)/A(R)
+                        p
+                                                              state. In this regime Table I shows that the NNLO for-
+Using Eq. (65) and A(r)/A(R) → 0 for r ≪ R near the           mula of Eq. (58) captures the exact brachistochrone to
+Buchdahl limit,                                               four significant figures for µ ≲ 0.3, and the deformation
+                                                              of the Newtonian hypocycloid is visible at the level of a
+              1              1          2                     few percent in q.
+n(r) ∼ p               ∼ p          ∼      →∞      (ϵ → 0).
+            A(0) · 1         A(0)       3ϵ                       The mechanism is transparent in the optical picture.
+                                                       (67)   Increasing compactness raises the effective refractive in-
+                                                                                                                          7
+
+dex inside the star according to Eq. (26), making it op-            The cyclic symmetry of the problem yields the rel-
+tically costly to penetrate deep into the potential well.        ativistic Snell law n(r) r sin α = C, from which the
+The minimising curve therefore avoids the interior more          brachistochrone equation follows as a first-order ODE.
+strongly than in Newtonian theory, which is why both the         Expanding the exact Snell integrand systematically in
+NLO coefficient q1 of Eq. (56) and the NNLO coefficient          the compactness parameter µ = rs /R, and integrating in
+q2 of Eq. (57) are positive-definite for q0 ∈ (0, 1).            closed form using the auxiliary functions U (x) and S(x),
+   Several extensions of this framework would be worth           we obtained the angular half-opening ∆/2 as a power
+pursuing.                                                        series in µ through NNLO [Eq. (53)]. Perturbative in-
+                                                                 version then gives the minimum radius q as a function of
+   • Realistic equation of state. The idealised ho-              the Newtonian value q0 = 1 − ∆/π [Eq. (58)].
+     mogeneous density profile should be replaced by                Both the NLO and NNLO corrections are strictly pos-
+     a realistic equation of state, with A(r) and                itive, confirming that relativistic gravity makes the op-
+     B(r) obtained numerically from the Tolman–                  timal tunnel progressively shallower. The NNLO for-
+     Oppenheimer–Volkoff equations.      The optical             mula agrees with direct numerical integration of the exact
+     geodesics might display qualitatively new be-               geodesic equation to four significant figures for µ ≲ 0.3
+     haviour depending on the density gradient.                  (Table I), a range that covers most physically realistic
+   • Ultra-compact objects beyond the Buchdahl limit.            neutron-star models.
+     Configurations supported by anisotropic matter or              Near the Buchdahl bound µ → 8/9, the optical index
+     negative-pressure regions [12] allow formally higher        diverges at the centre as n(0) ∼ (8/9 − µ)−1 [Eq. (67)],
+     compactness. In this regime the central optical bar-        creating a central optical barrier that forces the brachis-
+     rier would be absent (since A(0) need not vanish),          tochrone to remain close to the surface. This is the op-
+     and the brachistochrone could probe the deep inte-          tical manifestation of the extreme gravitational redshift
+     rior.                                                       near the Buchdahl limit, and it has no Newtonian ana-
+                                                                 logue.
+   • Rotating spacetimes. In the Kerr geometry frame                More broadly, the analysis illustrates how classi-
+     dragging breaks the purely radial optical symmetry,         cal variational problems—the brachistochrone being
+     and the optical metric becomes anisotropic. The             the paradigmatic example—acquire a natural optical-
+     brachistochrone problem is then genuinely Finsle-           geometric interpretation in general relativity, and how
+     rian rather than Riemannian, in the sense of Per-           that interpretation provides both analytical control
+     lick [4]; the equatorial plane is still invariant but the   through the Snell law and physical intuition through the
+     Snell law acquires φ-dependent corrections propor-          effective refractive index.
+     tional to the spin parameter.
+   • Travel time beyond Newtonian order. The coor-
+                                                                                 DATA AVAILABILITY
+     dinate travel time itself receives relativistic cor-
+     rections from the dt/dτ factor. Computing the
+     NLO travel time for a general tunnel angle—                    The numerical codes used to produce the results of
+     extending the Earth-like estimate of Section VI G           this paper are openly available in the GitHub repos-
+     to non-negligible compactness— would be the nat-            itory     ImanetorX98/CoordinateTimeGravityTrain
+     ural companion calculation to the shape results de-         at                 https://github.com/ImanetorX98/
+     rived here.                                                 CoordinateTimeGravityTrain. This paper contains no
+                                                                 experimental data.
+
+                 IX.    CONCLUSIONS
+                                                                                ACKNOWLEDGMENTS
+  We have reformulated the gravitational train problem
+inside a homogeneous relativistic star as a geodesic prob-          The author acknowledges the University of Pavia for
+lem for the Jacobi (optical) metric                              the academic training and scientific environment that
+                                                                 made this work possible. The author also acknowl-
+             dσ 2 = n2 (r) B(r)dr2 + r2 dφ2 ,
+                                           
+                                                                 edges the assistance of AI-based tools developed by Ope-
+                                1                                nAI and Anthropic in preparing an initial draft of parts
+            n(r) = p                          .
+                       A(r) 1 − A(r)/A(R)                        of the derivation and in supporting the editing of the
+                            p
+                                                                 manuscript. The author retains full responsibility for the
+derived from the interior Schwarzschild spacetime by in-         scientific content, calculations, and conclusions of this
+tegrating out the time coordinate along a particle trajec-       work. No funds, grants, or other support were received
+tory that is released from rest at the surface.                  during the preparation of this manuscript.
+                                                                                                                       8
+
+
+
+
+[1] D. R. Mitchell, Brachistochrone of a spherical uniform    [7] H. Goldstein, C. Poole, and J. Safko, Classical Mechan-
+    mass distribution (2006), arXiv:math-ph/0611055.              ics, 3rd ed. (Addison Wesley, 2002).
+[2] P. W. Cooper, American Journal of Physics 34, 68          [8] I. S. Gradshteyn and I. M. Ryzhik, Table of Integrals,
+    (1966).                                                       Series, and Products (Academic Press, 1980).
+[3] D. Kleppner and R. J. Kolenkow, An Introduction to Me-    [9] Trenord,     Tickets   and    timetables   for   Milano
+    chanics (McGraw-Hill, 1973) problem 2.26.                     Centrale–Pavia,           https://www.trenord.it/en/
+[4] V. Perlick, Journal of Mathematical Physics 32, 3148          routes-and-timetables/most-searched-lines/
+    (1991).                                                       milano-centrale-pavia/.
+[5] E. Parker, General Relativity and Gravitation 49, 106    [10] Trainline, Pavia to Milano Centrale by train,
+    (2017).                                                       https://www.thetrainline.com/it/orari-treni/
+[6] K. Schwarzschild, Sitzungsberichte der Königlich              pavia-a-milano-centrale.
+    Preussischen Akademie der Wissenschaften (1916).         [11] H. A. Buchdahl, Physical Review 116, 1027 (1959).
+                                                             [12] C. Posada and C. Chirenti, Classical and Quantum Grav-
+                                                                  ity 36, 065004 (2019), arXiv:1811.09589 [gr-qc].
+

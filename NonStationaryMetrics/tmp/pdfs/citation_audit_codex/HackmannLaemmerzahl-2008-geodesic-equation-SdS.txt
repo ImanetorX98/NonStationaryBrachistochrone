@@ -1,0 +1,299 @@
+                                        PHYSICAL REVIEW LETTERS                                                           week ending
+PRL 100, 171101 (2008)                                                                                                    2 MAY 2008
+
+
+
+     Complete Analytic Solution of the Geodesic Equation in Schwarzschild–(Anti-)de Sitter
+                                          Spacetimes
+                                           Eva Hackmann and Claus Lämmerzahl
+                              ZARM, University of Bremen, Am Fallturm, 28359 Bremen, Germany
+                                   (Received 29 November 2007; published 2 May 2008)
+                The complete set of analytic solutions of the geodesic equation in a Schwarzschild –(anti-)de Sitter
+             space-time is presented. The solutions are derived from the Jacobi inversion problem restricted to the
+             theta divisor. In its final form the solutions can be expressed in terms of derivatives of Kleinian sigma
+             functions. The solutions are completely classified by the structure of the zeros of the characteristic
+             polynomial which depends on the energy, angular momentum, and the cosmological constant.
+
+             DOI: 10.1103/PhysRevLett.100.171101                                       PACS numbers: 04.20.Jb, 02.30.Hq
+
+
+
+   Introduction and motivation. —The Einstein equations              The geodesic equation. —We consider the geodesic
+with a cosmological constant R  12 Rg  g                 equation
+T today are taken as very successful model to incor-                                        
+                                                                                   d2 x      dx dx
+porate the observation of an accelerated expanding uni-                        0      2
+                                                                                                      ;          (2)
+verse [1]. Within this theory the most simple solution of an                        ds        ds ds
+isolated mass is the spherically symmetric Schwarzschild–                                                           
+                                                                   where ds2  g dx dx is the proper time and f g is the
+de Sitter solution (e.g., [2])
+                                                                   Christoffel symbol in a space-time given by the metric (1).
+       ds2  dt2  1 dr2  r2 d2  sin2 d’;         (1)     The geodesic equation has to be supplemented by the
+                                                                                                      
+                                                                   normalization condition g dxds dx
+                                                                                                    ds   where for massive
+where   1  rrS  13 r2 (we take c  G  1). This               particles   1 and for light   0.
+Schwarzschild –de Sitter metric is characterized by the              Because of the spherical symmetry we can restrict our
+Schwarzschild-radius rS  2M related to the mass M of              consideration to the equatorial plane. Furthermore, due to
+the gravitating body, and the cosmological constant               the conserved energy E and angular momentum L the
+which today is assumed to have the value 1052 m2                geodesic equation reduces to one ordinary differential
+[1]. For a general discussion of this metric, see, e.g., [2,3].    equation
+This may serve as a model for the Solar system in an                                    
+                                                                                     1 dr 2
+expanding universe. Recently such a model has attracted                                        E  Veff r;              (3)
+some interest in order to discuss the possibility to observe                         2 ds
+the influence of  on moving masses on the scale of the            with the effective potential
+solar system [4]. This requires a discussion of the geodesic                                               
+equation and its solutions in such a Schwarzschild–                             1     1         r L2 r L2 
+                                                                     Veff r   L2   S  2  S 3  r2 :
+de Sitter space-time. Exact solutions of the geodesic equa-                     2     3         r r   r   3
+tion are also of interest in the calculation of gravitational                                                 (4)
+wave templates for extreme mass ratio inspirals (EMRI)
+[5]. There is further interest to understand explicitly the        A substitution u  rS =r gives
+structure of geodesics in the background of black holes in            2
+                                                                      du                                         1
+anti –de Sitter space in the context of string theory and the                 u3  u2   u          2
+                                                                      d’                                        u
+AdS/CFT correspondence. In addition, recently there also
+has been a lot of work dealing with geodesics and integra-                                                         (5)
+bility in black hole backgrounds in higher dimensions, also        with the dimensionless parameters
+in the presence of a cosmological constant [6].
+   Here we present explicitly the full analytic solution of                 r2S                                             2
+the geodesic equation in a Schwarzschild–(anti-)de Sitter
+                                                                       :        0;        : E2  0;      and     :    r : (6)
+                                                                            L2                                             3 S
+space-time and their complete classification. So far, ex-
+plicit solutions for the geodesic equations are only known         We rewrite (5) as
+for the Schwarzschild solution [7], the Reissner-Nordström                                    
+                                                                                              du 2
+solution [8], and for the Kerr and Kerr-Newman space-time                                   u       P5 u                       (7)
+                                                                                              d’
+[8]. For a specialized case orbits in a Schwarzschild–
+(anti-)de Sitter space-time have been presented in [9].            with
+
+0031-9007=08=100(17)=171101(4)                              171101-1                   © 2008 The American Physical Society
+                                           PHYSICAL REVIEW LETTERS                                                            week ending
+PRL 100, 171101 (2008)                                                                                                        2 MAY 2008
+
+ P5 u : u5  u4   u3       u2   :                    as well as the period matrices (2!, 2!0 ) and (2 , 2 0 )
+                                                 (8)                                I                       I
+                                                                          2!ij :       dzi ;     2!0ij :      dzi ;
+   For light   0 the situation simplifies considerably. In                         aj                      bj              (15)
+this case the solutions can be given in terms of the                                  I                       I
+Weierstrass } function [10]                                               2 ij :        dri ;    2 0ij :      dri :
+                                                                                          aj                          bj
+                                 rS
+                r’                         ;          (9)           Here fai ; bi ji  1; 2g 2 H1 X; Z is the homology basis of
+                         4}’; g2 ; g3   13
+                                                                       closed paths where integration does not evaluate to zero.
+with the Weierstrass invariants                                        Finally we introduce the normalized holomorphic differ-
+                                                                     entials
+          1                 1 1  1
+    g2 : ;        g3 :        u30  u20  ;                (10)                                                    
+          12                8 27 2                                                                                   dz1
+                                                                                    dv~ : 2!1 dz~;      dz~          :    (16)
+                                                                                                                     dz2
+where u0  rS =b and b is the distance of closest approach.
+   Now we discuss   1. Separation of variables in (7)                The period matrix of these differentials is given by (12 ; )
+yields the hyperelliptic integral                                      where 12 is the 2  2 unit matrix and is defined by
+                              Z u u0 du0
+                 ’  ’0          p ;     (11)                                         : !1 !0 :                       (17)
+                               u0 P5 u0 
+                                                                       It can be shown [14] that this normalized matrix always is
+where u0  u’0 . We explicitly solve this integral by                a Riemannian matrix, that is, is symmetric and = is
+using a method based on the inversion problem of hyper-                positive definite.
+elliptic Abelian integrals [11]. We use this general ansatz               The Riemannian surface of y2  P5 x has 4 indepen-
+[12] in order to obtain an explicit one-parameter solution of          dent closed paths, each corresponding to a period of the
+the two-parameter inversion problem by restricting the                 functions defined on these surfaces and, hence, to a period
+problem to the so-called theta divisor. This procedure has             of the solution u of (11). In order to construct functions
+been applied previously to the problem of the double                   with four periods, we need the theta function #: C2 ! C,
+pendulum [13]. The resulting orbits can be completely                                               X        t
+classified.                                                                            #~z;  :       ei m~  ~m2~z ;     (18)
+   In solving (11) there are two major issues which have to                                           m2Z2
+                                                                                                      ~
+be addressed. First, owing to the two branches of the square           which is a holomorphic function on C2 . The theta function
+root the integrand is not well defined in the complex plane.           is already periodic with respect to the columns of 12 and
+Second, the solution u’ should not depend on the inte-               quasiperiodic with respect to the columns of , i.e., for any
+gration path. That means that if denotes some closed                   n 2 Z2 it holds
+integration path and
+                       I udu                                                               #z~  12 ~n;   #~z; ;                 (19)
+                          p  !;              (12)
+                            P5 u                                                                            t
+                                                                                  #~z  ~n;   ei n~  ~n2~z #~z; :            (20)
+then
+                                                                          The solution of (11) can be explicitly formulated in
+                                Z u u0 du0
+                   ’  ’0  !     p               (13)   terms of sigma functions : C2 ! C,
+                                 u0 P5 u0                                                      2            0 1 0 1 3
+                                                                                                                 1
+                                                                                                                         0
+                                                                       z~  Ce1=2~z ! z~ # 42!1 z~  @ 21 A  @ 1 A; 5;
+                                                                                         t 1
+should be valid, too. Therefore u has to be a periodic
+function with period !.                                                                                                2         2
+  The analytic solution.—These problems can be solved if                                                                              (21)
+(11) is considered on the Riemannian surface of y2 
+P5 x. For the construction of periodic functions on this             where the constant C can be given explicitly [15] but does
+Riemannian surface we introduce the canonical basis of the             not matter here. Based on this , the generalized
+space of holomorphic differentials dzi and of associated               Weierstrass functions are
+meromorphic differentials dri by
+                                                                                        @ @               i ~zj ~z  ~zij ~z
+           dx                                   xdx                     }ij ~z             logz~                                 ;
+  dz1 : p ;                 dz2 : p ;                          @zi @zj                         2 ~z
+          P5 x                                P5 x                                                                                (22)
+                                                                (14)
+         3x3  2x2  x                         x2 dx
+  dr1 :      p dx;          dr2 : p ;          where i denotes the derivative of the sigma function with
+             4 P5 x                         4 P5 x                 respect to the ith component.
+
+                                                                 171101-2
+                                                PHYSICAL REVIEW LETTERS                                                                   week ending
+PRL 100, 171101 (2008)                                                                                                                    2 MAY 2008
+
+                                                                                                 ’1            0
+  We need the 2-dimensional Abel map                                              where ’~   ’’ 0 . Here ’0 is given by
+                                                                                                       0
+
+                                               Z x1           Z x2                                                    Z1
+                                         x1
+   A~ x0 : S2 X ! JacX;                   哫           d~z           d~z                                 ’00  ’0          dz2                 (29)
+                                         x2        x0            x0                                                      u0
+                                                                        (23)
+                                                                                  and ’1 is chosen in such a way that 2!1 ’~  is an
+from the symmetric product S2 X of the Riemannian sur-                            element of the theta –divisor K~ 1 .
+face X to the Jacobian JacX  C2 = of X, where                                    The classification of the solutions.—Having an analyti-
+f!v  !0 v0 jv; v0 2 Z2 g is the lattice of periods of the                        cal solution at hand we can explore the set of all possible
+differential d~z. Jacobi’s inversion problem is now to deter-                     solutions in a systematic manner. The shape of an orbit
+mine x~  x1 ; x2 t for given ’~ from the equation ’~                          depends on E, L, and  or, equivalently, on , , and  (rS
+                                                                                  can been absorbed through a rescaling of the radial coor-
+A~ x0  ~x, i.e.,
+                                                                                  dinate). Since r should be real and positive it is clear from
+                      Z x1            Z x2 dz                                     (4) that physically acceptable regions are given by those u
+                         dz
+              ’1      p      p ;                          for which E > Veff . The zeros of P5 are related to the points
+                    x0  P5 z         x0  P5 z                                 of intersection of E and Veff , and a real and positive P5 is
+                   Z x1 zdz           Z x2 zdz                          (24)      equivalent to E > Veff . Hence, the number of positive real
+              ’2      p      p :                          zeros of P5 characterizes the form of the resulting orbit. A
+                    x0  P5 z         x0  P5 z                                 detailed discussion is presented in [16].
+                                                                                       If we denote by e1 ; . . . ; en the positive real zeros, then it
+We want to restrict now Jacobi’s inversion problem to the                         follows that the physically acceptable regions are given by
+set of zeros of #  K~ x0 ; , where K~ x0 is the vector of                       0; e1 ; e2 ; e3 ; . . . ; en ; 1 if n is even and by e1 ; e2 ;
+Riemann constants; see [15]. This set is called a                                 . . . ; en ; 1 if n is odd. With respect to r we have the
+theta divisor and denoted by K~ x . This restriction is                          following classes of orbits: (i) the region [0, e1 ] corre-
+                                     0
+
+necessary since in our case A~ 1
+                               x0  ’~ should be the (one-                        sponds to escape orbits, (ii) the region [en , 1] corresponds
+dimensional) physical angle and the theta divisor is a one-                       to orbits falling into the singularity, i.e., to terminating
+dimensional subset of S2 X.                                                       orbits, and (iii) the regions [ei , ei1 ] correspond to bound
+   The solution of Jacobi’s inversion problem (24) can be                         orbits. The case of no positive real zero corresponds to a
+given in terms of generalized Weierstrass functions. The                          particle coming from infinity and falling to the singularity.
+components of the solution vector x~ are                                               The number of real zeros are shown in Fig. 1. A non-
+                                                                                  vanishing cosmological constant dramatically changes the
+     x1  x2  4}22  ~
+                     ’;              x1 x2  4}12  ~
+                                                     ’:                (25)      possible structure of orbits. While for negative cosmologi-
+                                                                                  cal constant there are only bound orbits or orbits terminat-
+Now we reformulate (24) to ~  A~ 1  ~x with ~  ’~                          ing in the singularity, for vanishing  we have terminating,
+R1                                                                                bound as well as escape orbits. For  > 0 we have in
+  x0 dz~ and restrict the problem to the theta divisor by the
+                                                                                  addition orbits which will be ‘‘reflected’’ at the potential
+limiting process
+                                                                                  barrier related to positive . In Fig. 2 two orbits without
+              x1 x2          ’~ 1 12 ’~ 1   1 ’~ 1 2 ’~ 1            analogue for   0 are shown.
+x1  lim                                                               ;              For bound orbits it is possible to directly identify the
+        x2 !1 x1  x2            22 ’~ 1   ’~ 1 22 ’~ 1                 perihelion shift perihel by the difference of the periodicity
+                                                                    (26)          of the solution r’ from 2 . Let us assume that the bound
+where
+
+    ’~ 1  lim ’~  A~ 1 x~ 1 ;             x~ 1  x1 ; 1t :        (27)
+             x2 !1
+
+
+It can be shown, see [14], that 2!1 A~ 1 x~ 1  is an element
+of the theta divisor K~ 1 , where K~ 1  1=2            0
+                                               1=2  1=2 [15].
+Thus, ’~ 1   0 and there is a functional relation be-
+tween ’1;1 and ’1;2 . The solution to the geodesic equation
+in Schwarzschild –(anti-)de Sitter space-time is then given                       FIG. 1. The zeros of P5 u in a (, ) diagram for different
+                                                                                  values for the cosmological constant ( is along the x axis,
+by
+                                                                                  along the y axis). The gray scales encode the numbers of positive
+                                                                                  real zeros of the polynomial P5 : black  4, dark gray  3,
+                         rS  r        ’~ 
+             r’           S  rS 2  ;                             (28)      gray  2, light gray  1, white  0. For   0 these zeros
+                        u’ x1      2 ’~                                     have been extensively discussed in [7].
+
+
+                                                                             171101-3
+                                         PHYSICAL REVIEW LETTERS                                                          week ending
+PRL 100, 171101 (2008)                                                                                                    2 MAY 2008
+
+                                                                     dimension three or higher, which could only be reduced by
+                                                                     one dimension with the presented method.
+                                                                        We would like to thank H. Dittus, V. Kagramanova,
+                                                                     J. Kunz, O. Lechtenfeld, D. Lorek, and, in particular,
+                                                                     P. H. Richter for fruitful discussions. Financial support of
+                                                                     the German Aerospace Center DLR and of the German
+                                                                     Research Foundation DFG is gratefully acknowledged.
+
+
+
+                                                                      [1] P. Peebles and B. Ratra, Rev. Mod. Phys. 75, 559 (2003).
+                                                                      [2] W. Rindler, Relativity (Oxford University Press, Oxford,
+                                                                          2001).
+                                                                      [3] K. Geyer, Astron. Nachr. 301, 135 (1980).
+                                                                      [4] A. Kerr, J. Hauck, and B. Mashhoon, Classical Quantum
+FIG. 2 (color online). Orbits with no analogue for   0.                 Gravity 20, 2727 (2003); V. Kagramanova, J. Kunz, and
+(a) Reflection at the  barrier; (b) bound orbit with perihelion          C. Lämmerzahl, Phys. Lett. B 634, 465 (2006); P. Jetzer
+shift which would be an escape orbit for   0. The scale is in           and M. Sereno, Phys. Rev. D 73, 044015 (2006).
+km.                                                                   [5] L. Barack and C. Cutler, Phys. Rev. D 75, 042003
+                                                                          (2007).
+                                                                      [6] V. Frolov and D. Stojkovi, Phys. Rev. D 68, 064011
+orbit corresponds to the interval [ek , ek1 ] and that the path          (2003).J. Lucietti, Phys. Rev. D 71, 104021 (2005); M.
+ai surrounds this interval. Then                                          Vasudevan, K. Stevens, and D. Page, Classical Quantum
+                                                                          Gravity 22, 339 (2005); M. Vasudevan, Phys. Lett. B 624,
+                                       Z ek1 xdx                         287 (2005); Z.-W. Chong, M. Cvetic, H. Lu, and C. Pope,
+    perihel  2  2!2i  2  2              p :   (30)        Phys. Rev. Lett. 95, 161301 (2005); D. Page, D. Kubizňák,
+                                        ek    P5 x
+                                                                          M. Vasudevan, and P. Krtouš, Phys. Rev. Lett. 98, 061102
+                                                                          (2007).
+   Summary and outlook.—We derived the complete                       [7] Y. Hagihara, Jpn. J. Astron. Geophys. 8, 67 (1931).
+set of solutions for the geodesic equation in a                       [8] S. Chandrasekhar, The Mathematical Theory of Black
+Schwarzschild –(anti-)de Sitter space-time. A more de-                    Holes (Oxford University Press, Oxford, 1983).
+tailed discussion of the approach will be published else-             [9] N. Cruz, M. Olivares, and J. Villanueva, Classical
+where [16]. Beside the importance of such solutions                       Quantum Gravity 22, 1167 (2005).
+mentioned in the introduction this result may also be                [10] I. Gradshteyn and I. Ryzhik, Table of Integrals, Series, and
+applied to the study of the Pioneer anomaly [16] which                    Products (Academic Press, Orlando, 1983); M.
+has been speculated to be due to the influence of the                     Abramowitz and I. E. Stegun, Handbook of Mathe-
+cosmological expansion. Although the cosmological con-                    matical Functions (Dover Publications, New York, 1968).
+stant is very small, its influence on nearly critical orbits is      [11] N. Abel, Crelle’s J. 3, 313 (1828); C. G. J. Jacobi, Crelle’s
+                                                                          J. 9, 394 (1832); K. Weierstrass, Crelle’s J. 47, 289 (1854);
+much stronger. As the anomaly is also small, a definite
+                                                                          H. Baker, Abelian Functions. Abel’s Theorem and The
+quantitative answer to the question whether the cosmologi-                Allied Theory of Theta Functions (Cambridge University
+cal constant has an influence on the Pioneer orbits requires              Press, Cambridge, U.K., 1995) (first published 1897).
+an analytical solution. Our result may also be applied to the        [12] G. Kraniotis and S. Whitehouse, Classical Quantum
+motion of stars in the outer regions of galaxies. Fur-                    Gravity 20, 4817 (2003); G. Kraniotis, Classical
+thermore, the above techniques apply to the geodesic                      Quantum Gravity 21, 4743 (2004); R. Drociuk, arXiv:gr-
+equations in higher dimensional Schwarzschild,                            qc/0204023.
+Schwarzschild –(anti-)de Sitter, Reissner-Nordström, and            [13] V. Enolskii, M. Pronine, and P. Richter, J. Nonlinear Sci.
+Reissner-Nordström–(anti-)de Sitter space-times [17].                    13, 157 (2003).
+The use of this method in more general space-times,                  [14] D. Mumford, Tata Lectures on Theta (Birkhäuser, Boston,
+namely, the Plebanski-Demianski class without accelera-                   1983/84), Vols. I, II.
+                                                                     [15] V. M. Buchstaber, V. Z. Enolskii, and D. V. Leykin, in
+tion is under way [17]. In these cases polynomials of 6th
+                                                                          Hyperelliptic Kleinian Functions and Applications, edited
+order appear which can be treated with the above method.                  by I. M. Krichever and S. P. Novikov, Reviews in
+   We note that our method is not capable of solving                      Mathematics and Mathematical Physics Vol. 10 (Gordon
+equations of motions based on a polynomial of 7th or                      and Breach, New York, 1997), Pt. 2 , p. 1.
+higher order which appear, e.g., in the geodesic equation            [16] E. Hackmann and C. Lämmerzahl (to be published).
+in Schwarzschild space-times in higher than 11 dimen-                [17] E. Hackmann, V. Kagramanova, J. Kunz, and C.
+sions. This will entail an Abel map with a preimage of                    Lämmerzahl (to be published).
+
+
+
+
+                                                               171101-4
+

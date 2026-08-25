@@ -1,0 +1,913 @@
+PHYSICAL REVIEW D                                VOLUME 53, NUMBER 4                                     15 FEBRUARY 1996
+
+
+                              Gravitational        energy in spherical         symmetry
+
+                                                   Sean A. Hayward*
+                              Department of Physics, Kyoto University, Kyoto 606.01, Japan
+                         (Received 2 August 1994; revised manuscript received 25 September 1995)
+
+                 Various properties of the Mimer-Sharp spherically symmetric gravitational energy E are es-
+             tablished or reviewed. In the Newtonian limit of a perfect fluid, E yields the Newtonian mass to
+             leading order and the Newtonian kinetic and potential energy to the next order. For test particles,
+             the corresponding Hijjidek energy is conserved and has the behavior appropriate to energy in the
+             Newtonian and special-relativistic limits. In the small-sphere limit, the leading term in E is the
+             product of volume and the energy density of the matter. In vacuo, E reduces to the Schwaraschild
+             energy. At null and spatial infinity, E reduces to the Bondi-Sachs and Arnowitt-Deser-Misner en-
+             ergies, respectively. The conserved Kodama current has charge E. A sphere is trapped if E > ir,
+             marginal if E = ir, and untrapped if E < $-, where T is the area1radius. A central singularity is
+             spatial and trapped if E > 0, and temporal and untrapped if E < 0. On an untrapped sphere, E
+             is nondecreasing in any outgoing spatial or null direction, assuming the dominant energy condition,
+             It follows that E 2 0 on an untrapped spatial hypersurface with a regular center, and E 2 $vg on
+             an untrapped spatial hypersurface bounded at the inward end by a marginal sphere of radius ~0,
+             All these inequalities extend to the asymptotic energies, recovering the Bondi-Sachs energy loss and
+             the positivity of the asymptotic energies, as well as proving the conjectured Penrose inequality for
+             black or white holes. Implications for the cosmic censorship hypothesis and for general definitions
+             of gravitational energy are discussed.
+
+             PACS number(s): 04.70.Bw, 04.20.Dw, 04.20.Ha, 04.25.N~
+
+
+
+
+                 I. INTRODUCTION                                Moreover, E is intimately related to the characteristic
+                                                                strong-field gravitational phenomena, namely black and
+                                                                white holes and singularities.
+   A massive source produces a gravitational field which
+                                                                   This work lists various key properties of the energy.
+has energy. In relativity theory, the equivalence of mass
+                                                                The main new results, apart from the Newtonian, test-
+and energy means that it is only the combined energy
+                                                                particle, and special-relativistic limits, axe a monotonic-
+which may be measured at a distance. Moreover, the
+                                                                ity property of E which leads to a positivity property
+nonlinearity of the gravitational field means that the ma-
+                                                                and a lower bound for E in terms of the area of a black
+terial (or passive) mass and its gravitational and kinetic
+                                                                or white hole, the so-called isoperimetric inequality [5].
+energy combine in a nonlinear, nonlocal way to produce
+                                                                Here, black and white holes are defined by marginal sm-
+the effective (or active) energy. In spherical symmetry,
+                                                                faces of certain types, as explained later, or in [6] or 171.
+in vacuo, this effective energy is just the Schwarzschild
+                                                                These properties of E extend to the asymptotic ener-
+energy. In general, there is no agreed definition of this
+                                                                gies, in particular establishing the isoperimetric inequal-
+energy, except at infinity in an asymptotically flat space-
+                                                                ity for EADM, as conjectured by Penrose [5], and for Ess.
+time, where one has the Arowitt-Deser-Mimer         (ADM)
+                                                                Known results are also reviewed, partly because some are
+[l] energy EADM at spatial infinity and the Bondi-Sachs
+                                                                prerequisites for the newer results, and partly because the
+(BS) [2,3] energy EBS at null infinity. One would there-
+                                                                existing literature on the subject is somewhat dispersed,
+fore like a definition of energy which reduces to these
+                                                                so that it is not always appreciated that E enjoys quite
+asymptotic energies appropriately. Also, given the above
+                                                                so many desirable properties.
+physical motivation, one would like the energy to yield
+                                                                   In Sec. II, E is defined geometrically and shown to
+the Newtonian mass in the Newtonian limit, with the
+                                                                have various purely geometrical properties related to
+highest-order correction yielding the Newtonian energy.
+                                                                trapped and marginal surfaces, central singularities, and
+Similarly, One would like the energy to yield the correct
+                                                                the asymptotic energies. In Sec. III, various dynami-
+energies of test particles in the Newtonian and special-
+                                                                cal properties are derived assuming the dominant en-
+relativistic limits. Remarkably, such an energy does exist
+                                                                ergy condition, including the monotonicity, positivity,
+in spherical symmetry: the Misner-Sharp [4] energy E.
+                                                                and area-bound properties. A discussion of implications
+                                                                for the cosmic censorship hypothesis is also given there.
+                                                                In Sec. IV, the geometry is decomposed with respect to
+                                                                spatial hypersurfaces and the behavior of E in the Newto-
+                                                                nian limit is found. In Sec. V, the energy of test particles
+ ‘Electronic address:                                           as determined by E is discussed, including the Newtonian
+hayward~murasaki.scphys.kyoto-u.acjp                            and special-relativistic limits. The Conclusion discusses
+
+055~2821/96/53~41/1938~121/$06.W                          53    1938                    01996 The American Physical Society
+2                              GRAVITATIONAL ENERGY IN SPHERICAL SYMMETRY                                              1939
+
+
+the implications for more general suggestions for gravi-       and untrapped regions, separated by marginal hypersur-
+tational energy. The Appendices concern (A) Newtonian          faces. The following subdivisions may be made.
+theory, (B) the identity of E as a charge associated with         (i) A trapped sphere is future if B+ < 0 and past if
+a conserved current, and (C) energy momentum.                  B* > 0 [6,7]. [Equivalently, if g-‘(dy) is future-temporal
+   Since the whole work is concerned with spherical sym-       or past-temporal, respectively.] Future and past trapped
+metry, this case will be assumed implicitly in the Propo-      spheres occur in black and white holes, respectively, and
+sitions, without repeated qualification. Similarly, all geo-   also in cosmological models.
+metrical objects mentioned will be assumed to respect the         (ii) On an untrapped sphere, a spatial or null normal
+spherical symmetry. All arguments will be local, except        vector t is outgoing if z(dr) > 0 and ingoing if z(dr) < 0.
+to note implications for conformal infinity, if it exists.     Equivalently, fixing the orientation locally by 0+ > 0 and
+                                                               e- < 0, z is outgoing if g(z, 8,) > 0 or g(z,&)      < 0 and
+                                                               ingoing if g(z, 8,) < 0 or g(z, a-) > 0 [SI. In particular,
+          II. GEOMETRICAL         PROPERTIES                   8, and & are, respectively, the outgoing and ingoing
+                                                               null normal vectors. It is easily checked that the area is
+   The line element may be written locally in double-null      increasing in any outgoing spatial or null direction, and
+form as                                                        decreasing in any ingoing spatial or null direction.
+                                                                  (iii) A marginal sphere with B+ = 0 is fatwe if /I- < 0,
+             ds= = r2dC12- 2e-f@+dc-       ,             (1)   past if B- > 0, biykrcating if 0- = 0, outer if 8.53, < 0,
+                                                               inner if d-0+ > 0, and degenerate if a-B+ = 0 [6,7].
+where da= refers to the unit sphere and T and f are func-
+                                                               The closure of a hyperswface foliated by future or past,
+tions of the null coordinates ([+,[-).    This double-null     outer or inner marginal spheres is called a (nondegen-
+form is natural in the sense that each symmetric sphere
+                                                               erate) trapping horizon [6,7]. Outer trapping horizons
+has two preferred normal directions, the null directions
+                                                               possess various easily proven properties which are often
+8/L@.     One may also use one spatial and one temporal
+                                                               intuitively ascribed to black or white holes, including con-
+direction, as in Sec. IV, but there is no unique choice of
+                                                               finement of observers and analogues of the zeroth, first,
+such directions, which makes it more difficult to check
+                                                               and second laws of thermodynamics [6-91. Inner trap-
+coordinate invariance. In double-null form, the remain-
+                                                               ping horizons include cosmological horizons as well as
+ing coordinate &edom consists simply of the diffeomor-
+                                                               the possible inner boundaries of black and white holes.
+phisUlS
+                                                               In this work, future (past) outer trapping horizons will
+                                                               be taken as the definition of black (white) holes. This
+                    5* I-+ s^*ct*, .                     (2)   enables the discussion of black holes in general space-
+The geometry is given by the metric (1) mod& the null          times, not just those which are asymptotically flat. In
+rescalings (2). Note that r is a geometrical invariant but     particular, there will be no discussion of event horizons
+that f is not. The area of a symmetric sphere is 4?r?, so      or apparent horizons, which are defined in asymptotically
+that T is the area1 radius, and will simply be called the      flat space-times only [lO,ll]. The trapping horizon is a
+radius. One may take T > 0, with T = 0 being discussed         more useful concept because it is sufiiciently general, is
+shortly.                                                       defined quasilocally, and has the properties mentioned
+   The space-time will be assumed time-orientable, and         above.
+a/&*     will be assumed future-pointing. The expansions          The Misner-Sharp spherically symmetric gravitational
+may be defined by                                              energy, or simply the energy, may be defined in units
+                                                               G=lby
+                    e+ = 2r-1a+T ,                       (3)
+                                                                      E = $[l   - g-‘(dy,   dr)] = +T + efm9+,&,
+where 0, denotes the coordinate derivative along t*.                    = ir + +f?e+e-        .                         (4)
+The expansions measure whether the light rays normal
+to a sphere are diverging (6’ > 0) or converging (!3 < 0),     The form actually given by Misner and Sharp is derived
+or equivalently, whether the area of the spheres is in-        in Sec. IV. Note that E is an invariant. Indeed, the only
+creasing or decreasing in the null directions. Note that       invariants of the metric and its first derivatives are func-
+the signs of 6’~ are geometrical invariants, but their ac-     tions of T and E, as explained above. This makes r and E
+tual values are not. An invariant combination is efe+e-,       natural variables to use, as has been rediscovered many
+or equivalently g-‘(dr, dr) = -$ef?e+e-,         where g is    times by different authors. It transpires that remarkably
+the space-time metric. Indeed, the only invariants of          many key geometrical properties of spherically symmet-
+the metric and its first derivatives are functions of T and    ric space-times are controlled by T and E.
+ef0+6’-. The latter invariant has an important geomet-            Proposition 1. %pping. A metric sphere is trapped if
+rical and physical meaning: a metric sphere is said to be      and only if E > ,$r, marginal if and only if E = +r, and
+(i) trapped if 0+B- > 0, (ii) untrapped if B+B- < 0, and       untrapped if and only if E < fr.
+(iii) marginal if 8+6’- = 0. [Equivalently, if g-‘(dy)    is      Proof By definition. q
+temporal, spatial, or null, respectively.] This terminol-         This property is mathematically trivial given the defi-
+ogy for surfaces will be extended to hypersurfaces and         nition in the above form, but is physically important be-
+space-time regions. If ef0+0- is a function with nonvan-       cause it shows that the ratio E/T controls the formation
+ishing derivative, the space-time is divided into trapped      of black and white holes, and trapped spheres generally.
+1940                                               SEAN A. HAYWARD                                                              22
+
+Note that the material (or passive) mass does not have          [17], for a massless scalar field it is possible to obtain
+this property; the sharpest relations [12] between trapped      causal central singularities, but such configurations are
+spheres and the material mass fall short of necessary and       nongeneric with respect to initial data. Conversely, for
+sufficient conditions. In other words, it is not the mate-      pure radiation (or null dust), a sufficiently weak wave
+rial mass which directly controls the formation of black        traveling into an initially flat space-time necessarily cre-
+and white holes, but the effective energy E.                    ates a null singularity which is at least locally visible
+   Consider the two-dimensional space-time obtained by          (18,191. Such visible null singularities area also possible
+taking the quotient by the spheres of symmetry. If T = 0        for dust [ZO-221.
+coincides with a boundary of the quotient space-time,              Despite such material-dependent differences, one use-
+then it will be called a center. A central point p will         ful fact remains: if E 1 0, a central singularity which is
+be called regular if g-‘(dr,dr)     - 1 = O(?) as p is ap-      either causal or untrapped must have vanishing energy,
+proached, and singular otherwise. Then E = O(?) at a            El, = 0. (For instance, the analysis of Joshi and Dwivedi
+regular center. A singular center will also be referred to      [23] concerrx+ such singularities.) This at least constrains
+as a centml singularity.                                        counterexamples to cosmic censorship. Moreover, one
+   A point in the center will be said to be trapped if sur-     might expect that zero-energy singularities are unstable
+rounded by a neighborhood of trapped spheres, and un-           or nongeneric in some sense. Similarly, it has been sug-
+trapped if surrounded by a neighborhood of untrapped            gested [24] that zero-energy singularities are nongravi-
+spheres. A regular center is untrapped, but central sin-        tational and do not conflict with the spirit of the cos-
+gularities may be either trapped, as in the positive-energy     mic censorship hypothesis. Beyond spherical symmetry,
+Schwareschild solution, or untrapped, as in the negative-       there is also some evidence for a weakened form of cos-
+energy Schwarzschild solution. Whether singularities are        mic censorship in which positive-energy singularities are
+trapped or untrapped is relevant to Penrose’s cosmic cen-       censored [25].
+sorship hypothesis [13,14]. Indeed, one might formulate            Proposition 3. Asymptotics. In an asymptotically flat
+a local version of weak cosmic censorship [13] in terms         space-time, E coincides with the Bondi-Sachs (scalar)
+of whether singularities are trapped. Directly relevant to      energy &s at null infinity, and with the Amowitt-Deser-
+strong cosmic censorship [14] is whether the singularity        Misner (scalar) energy EADM at spatial infinity.
+is causal or spatial, defined with respect to the quotient         Proof By definition [2,3,11,X,26,27]
+metric. It turns out that both features are controlled by
+E [15,16].
+                                                                      ES6 = &Ill &             &      f4R+efe+e-),             (5)
+   Proposition 2. Central singularities. For a central sin-                               SI
+gularity at p, if E 2 Eo in a neighborhood of p for some
+                                                                where ‘R is the F&ci scalar, /I the area form, and A =
+constant EO > 0 (E 5 Ea 5 0) then (i) p is trapped
+(respectively untrapped) and (ii) if the singularity is dif-    1~ the area of a family of affinely parametrized surfaces
+                                                                lying in a null hypersurface approaching Z*;. In spherical
+ferentiable at p, then it is spatial (respectively temporal).
+   Proof     Consider the case E 2 Eo > 0 (the case             symmetry, S fi = 47rr2 and R = 2/ra, so that
+E < Eo 5 0 being similar). (i) In the neighborhood,
+                                                                                         Ess = lili* E                         (‘9
++f?O+8-       = 2E -T -> 2Eo - 1‘ > 0 for sticiently    small
+T < 2Eo. So B+B- > 0 in a neighborhood of p, i.e., this
+neighborhood consists of trapped spheres. (ii) The tan-         for a null curve y approaching p E Z*.               Similarly, by
+gent vector t = alac to the singularity is a linear com-        definition [1,15,28]:
+bination t = pa+ - a& of the null normals a+, so that
+0 = ar/ac= pa+r- cua-r.But a+&r               = pe+e- > 0
+                                                                                                         472 + efe+e-
+in the above neighborhood, so a@ > 0, which means that
+t is spatial. 0                                                                   -4ef     (g+,o-))                            (7)
+   This reflects a physically important idea: there is a
+connection between the sign of the energy, the causal           for a family of surfaces parametrized by area radius T =
+nature of singularities, and whether they are trapped.          m        lying in a spatial hypersurface approaching i”,
+Combined with the property E 2 0, which will be de-             where o* are the shears corresponding to the expansions
+rived under certain assumptions in proposition 6, this          B*. In spherical symmetry, o+ = 0, so that
+result supports the cosmic censorship hypothesis. It falls
+short of a proof of cosmic censorship for two reasons.                              EADM = tag E                               (8)
+First, it is possible to have E < 0 when the assumptions
+of proposition 6 do ndt hold, as will be discussed at the       for a spatial curve y approaching p = i”. 0
+end of Sec. III. Second, there is the case where El, = 0, in       The result shows that the asymptotic energies (in
+which case p could be a spatial, null, or temporal singu-       spherical symmetry) are just special cases of E, defined at
+larity, or a regular center. Specifically, if 2E/rl, > 1 the    infinity in an asymptotically flat space-time. It is usual to
+singularity is spatial and trapped, and if 2E/rl, < 1 the       interpret the asymptotic energies as measuring the total
+singularity is temporal and untrapped. If 2E/rl, = 1,           energy (or mass, see Appendix C) of an asymptotically
+one must look at higher orders, (2E/r - 1)/r, and so on.        flat space-time, whereas E provides a more general def-
+Exactly which possibility occurs seems to depend on the         inition of energy which applies locally as well as asymp-
+matter field. According to the analysis of Christodoulou        totically.
+12                               GRAVITATIONAL ENERGY IN SPHERICAL SYMMETRY                                                 1941
+
+           III. DYNAMICAL         PROPERTIES                           This is a proof of Birkhoff’s theorem: a vwuum, spher-
+                                                                    ically symmetric space-time must be the Schwxzschild
+   Having derived various purely geometrical properties             solution. The proof improves on the usual one [lo] in
+of E, consider now applying the Einstein equations. The             that a global coordinate chart is obtained automatically,
+most general form of the Einstein tensor in spherical sym-          so that one does not have to subsequently join the T > 2E
+metry determines the most general material stress-energy            and T < 2E Schwarzschild charts.
+tensor T, given by the line element                                    The Schwarzschild solution provides an example of
+                                                                    propositions l-3. For the case E > 0 there are trapped
+pr’d@    + T++(@+)’   + T-w@-)’         + 2T+.&+4-            (9)   spatial singularities, while for the case E < 0 there is an
+                                                                    untrapped temporal singularity. In the former case, there
+The Einstein equations are                                          are trapped spheres in the black-hole and white-hole re-
+                                                                    gions E > ;T, and the event horizons coincide with the
+           a+a+r+a,fa,r= -4?rr~**,                       (104       trapping horizons E = ?g.
+                                                                       Consider now the nonvacuum cases. In order to ob-
+        Ta+a-r+ a+ra-r   + +-f     = 4&~+-      ,        Wb)        tain results which are as general as possible, the type of
+                                                                    matter will not be fixed but energy conditions will be
+                                                                    imposed instead. Three useful energy conditions are as
+     Pa+a-f + 2a+?ah     +,-f     = 8d(~+-     + e-fp)    ,         follows [lO,ll]. The null energy (or convergence) condi-
+                                                                    tion (NEC) states that a “null observer” measures non-
+                                                         PW         negative energy:
+recalling the units G = 1. The variation of E is deter-
+                                                                              NEC:     g(u,u)=O+T(zl,u)>O.                 (15)
+mined by these equations as
+                                                                    The weak energy condition (WEC) states that a causal
+          a*E = 4xefP(T+-a*r       - T**aq)
+                                                                    observer measures non-negative energy:
+              = 2nef?J(T+-e*      - T**B,)                (11)
+                                                                              WEC :    g(u,zl) 5 0 =+.T(u,u)   2 0.        (1’3)
+This can also be written in a manifestly covariant form
+[29,30].                                                            The dominant energy condition (DEC) states that a
+   Proposition 4. Vacuum. In vacuo, E is constant and               future-causal observer measures future-causal momen-
+the solution is locally isometric to the Schwarzschild so-          tum:
+lution with energy E.
+   Proof. In vacuo, a+E = 0, so E is constant. The                  DEC:      i&,4    5 O,g(u,v) 5 O,g(u,v)    5 0
+vacuum Einstein equations are                                                         aT(u,w)>O.                           (17)
+                  a+(efa*?)     = 0 ,                    w4         Clearly
+
+                                                                                     DEC =$ WEC =+ NEC .
+               a+aer= -xe-f,-2          ,                WbI                                                               (18)
+
+                                                                    All this applies to general space-times. In the spherically
+               a+a-f= -2xf@.                             (124
+                                                                    symmetric case,
+
+If E # 0, a straightforward calculation yields a+a- (f -                               NEC+T+*;O                           09)
+lnr - 7/2E) = 0, with general solution f = lnr + r/2E +
+f+ + f- for some functions f *([*) of integration. The              and
+rescaling freedom (2) corresponds to choice off l, so that
+                                                                                 DEC=+T*+>O,T+-20.                         (20)
+one may fix coordinates such that
+                                                                        Proposition 5. Monotonicity. If the dominant energy
+                 ef = rer/=R/16E3                         (13)      condition holds on an untrapped sphere, E is nondecreas-
+Equations (12s) integrate to eta+, = $ for some func-               ing (nonincreasing) in any outgoing (ingoing) spatial or
+tions q*([*)  of integration. Differentiating using (12b),          null direction.
+&,*    = -1/4E, which integrates to q* = -5*/4E, iix-                  Proof Fix the orientation of the untrapped sphere by
+ing the zero. Thus                                                  0+ > 0 and 0- < 0. The variation formula (11) and dom-
+                                                                    inant energy condition (20) yield a+E 2 0 and a-E 5 0,
+              F+<- = (1 - r/2E)bzE                                  i.e., E is nondecreasing (nonincreasing) in the outgoing
+                                                         (14)
+                                                                    (ingoing) null direction. If z = a/a< is an outgoing spa-
+which implicitly determines T (and hence f) its a function          tial vector, then z = pa+ - cra- with a > 0 and p > 0,
+of tCEm. This is the Kruskal form of the Schwareschild              which yields aE/aC = pa+E - cua-E 1 0. Similarly for
+                                                                        .
+solution with energy E, which can be put in static form             an Ingoing spatial direction. U
+in terms oft* = 2Eln(-.$*/SF)    Similarly, if E = 0 then              The proof illustrates the economy of the double-null
+tlat space-time is recovered. 0                                     approach: monotonicity in any spatial direction follows
+1942                                               SEAN A. HAYWARD                                                       52
+
+immediately from monotonicity in the null directions.           hole is at least fro. As for the positivity result, one can
+
+
+                                                                                        I
+This monotonicity property has the physical interpreta-         write an explicit formula
+tion that the energy contained in a sphere is nondecreas-
+ing as the sphere is perturbed outwards. Note that the
+result is for untrapped spheres only, though a similar re-
+sult for marginal spheres will be given in proposition 8.
+                                                                     E(C) = $0 + 47~
+                                                                                       J   .dP{(pT+-    + aT--)a+r
+
+                                                                             -+~+++~~++)a-~)d(,                        (22)
+There is no possibility of a similarly general monotonic-
+ity result for trapped spheres, since they do not have a        where C = co is the marginal surface.
+locally preferred orientation.                                     Proposition 6A. Asymptotic positivity. If the dominant
+   Proposition SA. Asymptotic monotonicity. If the dom-         energy condition holds on a spatial hypersurface which
+inant energy condition holds at Z+ (Z-), then EBS is            has a regular center and extends to Z* (i”), then Ess >
+nonincreasing (nondecreasing) to the future.                    0 (Em,, > 0) there.
+   PrOOf      By propositions     3 and 5, a-E,,          =        Proof. If the hypersurface is untrapped, propositions
+a-(lim,,,E)      = lim,,p C?- E 5 0. Here commutativ-           3 and 6 suffice. Otherwise, the hyperswface contains
+ity follows from the asymptotic expansions Ill], as in [SI.     an outermost marginal sphere, so propositions 3 and 7
+0                                                               suffice. 0
+   At Z+, this is the Bondi-Sachs energy-loss property,            This combines the famous positive-energy theorems for
+which is usually interpreted as describing a loss of energy     the spherically symmetric case. Note that the energy
+due to outgoing radiation. Similarly, the more general          can be negative if the above assumptions do not hold.
+monotonicity property of E may be interpreted as being          For instance, the asymptotic energies are negative for
+due to ingoing and outgoing radiation.                          the negative-energy Schwarzschild solution.
+   Positivity of E is already known in some circumstances          Proposition 7A. Asymptotic area inequality. If the
+[30] but can be established directly and quite generally        dominant energy condition holds on a spatial hypersur-
+from the monotonicity property. Note first that E may           face which contains an outermost marginal sphere df ra-
+be negative, as in the negative-energy Schwarzschild so-        dius rg and which extends to Z* (i”), then EBS 2 fro
+lution. On the other hand, proposition 1 shows that E is        (EADM 2 $0) there.
+automatically positive for trapped and marginal spheres,           Proof. By propositions 3 and 7. 0
+so that it is only for untrapped spheres that E might be           The result is the spherically symmetric case of the
+negative. Positivity on untrapped spheres is established        isoperimetric inequality conjectured by Penrose [5], who
+below in two physically relevant contexts, namely where         argued that it was required by the cosmic censorship hy-
+there is a regular center and where there is a black or         pothesis. Establishing the inequality even in spherical
+white hole.                                                     symmetry appears to be new. It was recently established
+   Proposition 6. Positiuity. If the dominant energy con-       for maximal hypersurfaces in spherical symmetry [31].
+dition holds on an untrapped spatial hypersurface with             The properties 5A, 6A, and 7A of the asymptotic ener-
+regular center, then E 2 0 on the hypersurface.                 gies are of interest in their own right. Nevertheless, they
+   Pmof     By proposition 5, since E = 0 at a regular          are just special cases of properties of E. If these proper-
+center. 0                                                       ties of the asymptotic energies are accorded their usual
+   Moreover, denoting the tangent vector to the hypersw-        conceptual and physical importance, then the more gen-
+                    a/ac = pa+ - aa-,
+face as before by a/a<              ola-, with cC = 0 being     eral properties of E are of even greater importance. The
+
+
+                     I
+the center, one can write explicitly                            idealization of asymptotic flatness is no longer necessary
+                                                                for the formulation of such ideas about energy.
+        E(C) = 47r
+                    JII
+                          ef,z{(pT+-
+
+                 +T+++PT++)~-TDC.
+                                       + ax)a+T                    Proposition 8. Second law [6]. If the null energy con-
+                                                                dition holds on a future (past) outer trapping horizon, or
+                                                                on a past (future) inner trapping horizon, then E = ir
+                                                        C-21)
+                                                                is nondecreasing (nonincreasing) along the horizon.
+The positivity property has the physical interpretation            Proof. Denote the tangent to the horizon by a/& =
+that under the stated circumstances, total energy cannot        pa+ - aa- and ti the orientations by 0+ = 0 and p > 0
+be negative. This is not immediately obvious even given         on the horizon. Then 0 = ae+jac = pa+s, - de+
+an energy condition on the matter, since gravitational          yields
+potential energy tends to be negative. The result shows
+that the total energy E, including potential energy, can-               aria< = -cua-r    = -prii-a+e+/2a-o+
+not be negative.
+   Proposition 7. Area inequality. If the dominant en-          The focusing equation (lOa) and null energy condition
+ergy condition holds on an untrapped spatial hypersur-          (19) yield a+O+ 5 0, and the signs of 0- and a-0, are
+face bounded at the inward end by a marginal sphere of          given by the definition of future or past, outer or inner
+radius Q, then E 2, ir0 on the hypersurface.                    trapping horizons. Thus ar/a< 2 0 for future outer or
+   Proof By proposltlons 1 and 5. 0                             past inner trapping horizons, and ar/a< 5 0 for past
+   Since Q > 0, this is a stronger result than mere pos-        outer or future inner trapping horizons. 0
+itivity of E: there is a positive lower bound on E. The            Propositions 5-8 may be loosely summarized as fol-
+physical interpretation is that if there is a black or white    lows. If the dominant energy condition holds, E is non-
+hole of area 4?rr& then the energy measured outside the         decreasing in outgoing directions, defined for untrapped
+53                               GRAVITATIONAL ENERGY IN SPHERICAL SYMMETRY                                                 1943
+
+
+or marginal surfaces, including at conformal infinity if it        the only other possibility for nonspatial central singu-
+exists. So in the untrapped region outside a regular cen-          larities as being outside X. Again this is possible: the
+ter, E is non-negative, including at conformal infinity if         center may simply become singular but remain causal,
+it exists for the untrapped region. But E is also positive         implying that E is no longer positive. There are such
+in a trapped region. Moreover, in the untrapped region             examples [17-241, but ,it is noteworthy that they have
+outside a black or white hole (defined by outer marginal           zero rather than negative E. This suggests that there
+surfaces) of area 4nri, E 2 ir,,, including at conformal           may be some mechanism forbidding such formation of
+infinity if it exists for the untrapped region.                    negative-energy singularities. As to the zero-energy sin-
+   Propositions 1-8 alone give a quite coherent picture of         gularities, one might again expect them to be unstable in
+gravitational collapse, which may be further refined using         some sense. Both possibilities indicate the need to study
+related results [6-91. Recall first the expected picture ac-       the behavior of E as the center becomes singular. Finally,
+cording to the cosmic censorship hypothesis [13,14]. Here          there is the possibility of noncentral singularities, such as
+a center which is initially regular subsequently becomes           shell-crossing singularities [35,36]. However, these have
+singular, but in such a way that the singularity is gener-         been found only for matter fields which admit similar sin-
+ically spatial and trapped. That is, a future trapping             gularities as test fields on tlat space-time, and therefore
+horizon forms before the singularity. More precisely, one          may be dismissed as pathologxal matter models.
+expects the trapping horizon to intersect the center, typ-            To conclude: to find a convincing counterexample to
+ically at the first singular po&’     The horizon develops         cosmic censorship, i.e., the stable formation of a causal
+outwards with nondecreasing E = 4~. Outside the hori-              singularity, one needs to study the possibility of negative-
+zon is an untrapped region in which 0 5 E < $7. Inside             energy singularities, the stability of zero-energy singular-
+the horizon is a trapped region in which E > ir, which             ities, or the stability of inner horizons. It is noteworthy
+is expected to extend to the center T = 0 in such a way            that E plays a crucial role in each case. The importance
+that E is generically positive there. This picture has been        of energy for cosmic censorship seems clear.
+confirmed for the massless scalar field by Christodoulou
+P71.                                                                  IV. SPATIAL HYPERSURFACES                  AND THE
+    To what extent do the above results support this pic-
+                                                                                 NEWTONIAN  LIMIT
+ ture? First, there is the connection of proposition 2
+ between the causal nature of central singularities and
+ whether they are trapped. Thus two aspects of cosmic                 Consider any spatial hypersnrface C. Set up coordi-
+ censorship are linked. Second, both aspects are linked to         nates (7, C) such that alac is tangent to C and a/& is
+ the sign of the energy E, again a physically important            orthogonal to a/ac, with 7 being proper time:
+ connection. Third, there are the positivity properties of
+ E, propositions 1, 6, and 7. Consider then a space-time                           da/ak    aiao    = 0 ,                 (33=)
+ with partially regular center, and the external region X
+ of points connectable to the regular part of the centwby                         g(a/aT,a/aT)     = -I                   Wb)
+ a nontemporal curve (respecting the spherical symme-
+ try). As long as X remains untrapped, E is positive and           Define a function X by
+no central singularities can form. If part of X is trapped,
+i.e., a trapping horizon forms, then inside the trapped                            2 = daiac,      am)                     (24)
+region any central singularity must be either spatial or
+have zero energy. One expects that zero-energy singular-           For any such coordinates (T,<), the rescaling freedom (2)
+ities are nongeneric or unstable in some sense. The only           can be used to fix <* such that
+other way that a nonspatial central singularity can form
+                                                                               diCf&(’       = dr f e’/=dC                 (25)
+in X is if a second trapping horizon forms, separating
+the trapped region from another untrapped region. That
+is, the black or white hole must have an inner boundary.           The line element (1) transforms to
+This is also possible, as the Reissner-Nordstrijm solution
+shows, but again such horizons are thought to be un-                           ds2 = rzdC12+ exdC2 - d?      ,             (26)
+stable by the energy-inflation effect [32-341: for a test
+                                                                   where T and X are functions of (T,(). Denote @ = a~/&
+field on such a background, the perturbation in E typ-
+                                                                   and p’ = alp/a<. Then the definition (4) of E can be
+ically becomes unbounded at the horizon. This leaves
+                                                                   rewritten as
+
+
+
+  ‘This does not contradict the fact that, when using a family
+of spatial hypersurfaces developing in time, trapped surfaces      which is the form actually given by Misner and Sharp 141,
+are often first detected away from the center. This just de-       with different notation.
+pends on the choice of hypersurfaces; if the horizon is spatial,      The Einstein equations may be transformed to these
+one may choose a spatial hypersurface to touch it anywhere.        coordinates, but for the following results it suffices to
+There is no unique first moment of trapped surface formation,      lind the corresponding variation formulas for E, which
+except ip. a limiting sense at the center.                         are
+1944                                                             SEAN A. HAYWARD                                                             53
+
+                                                                              where the second expression follows from (27). Compar-
+              E’ = 47rr2(T0~r’ -T&)               ,                   (284    ing with the material (or passive) mass
+
+
+                                                                      (28’4                    M=k*Too=kv                                 (36)
+
+where
+                                                                              it can be .seen that the integrand for E differs from that
+                                                                              of M by a factor which Misner and Sharp interpreted
+                Ta,, = T(a/ar, a/ar) ,                                (294
+                                                                              as being due to kinetic and potential energy. This can
+                                                                              be made precise in the Newtonian limit in terms of the
+                                                                      Pb)     kinetic energy K and gravitational potential energy V,
+                                                                              defined as explained in Appendix A by
+
+                 TII = W/X,a/W                .
+  Proposition 9. Small spheres. Near a regular center
+                                                                      PW                         K=
+                                                                                                          Jy2,                           (3%
+
+with tangent a/&, if To0 = O(1) and T,, = O(1) then
+
+              E = $rr~~oo~~~o + O(T”) .                                (30)
+                                                                                                vs-
+                                                                                                           Jx T
+                                                                                                             ,Mp.
+
+   Proof    Near a regular center 1‘ = 0, T’ = O(1). If                       F&tom of the speed of light c may be introduced on
+a/&    is tangent to the center, then 1: = O(T). Thus                         dimensional grounds by the formal replacements 7 H
+E’ = 4?r&‘&      + O(?),  which integrates along the hy-                      m> (r,*l) * (~>*l), (P>W * c-~(P>W,         (P>KV,E)   ++
+persurface C to the above result. 0                                           &(p, K, V, JZ), assumed in the remainder of this section.
+   In other words, the leading term in E is the product                       These factors are determined simply by the desired inter-
+of volume $1rr3 and density Too, as would be expected                         pretation of the various quantities as time, length, mass,
+physically.                                                                   etc.
+   Misner and Sharp [4] derived a useful formula for E                           Proposition 10. Newtonian limit. For a perfect fluid
+which will be derived below and used to find the Newto-                       on a spatial hypersurface C with regular center: if
+nian limit. Mimer and Sharp considered a perfect fluid                         * T7i I P) = o(i) as c + oo, then (M,K,v)
+                                                                              u’d                                                = O(I)
+with energy density p, pressure p, and velocity a/a?:
+                                                                                         E=Mc~+K+V+O(C-~).                                ,(33)
+              T=       (p+p)d+@d?+pg,                                 (3W     Additionally, if p = O(1) then Newtonian conservation
+                                                                              of mass is recovered:
+                 g(a/at,a/ai)          = -I                           Pb)
+                                                                                                     A2 = o(c-“)                           (3%
+Adapt the (7, C) coordinates to the fluid by taking 7 = +.
+                                                                                Pmof. Inserting the factors of c, (36) and (37) take the
+Then the variation formulas (28) for E reduce to
+                                                                              same form, so that (M, K,V) = O(l), while (35) takes
+                       E’ = 4dpr’        ,                                    the form
+                                                                      (32a)
+
+                                                                                                                  3
+                                                                                                J (
+                                                                                                                      2E     I’=
+                       I3 = -4?rr2p? .                                PbI              E = cz        *p   1+---                    .       (40)
+                                                                                                 x             c2     c% >
+The second equation (32b) expresses the rate ti of work
+                                                                              Thus E = c2 J, *p+O(l)  = Mc’+O(l)              to leading order.
+done by the force 47rr’p due to the pressure. In the ab-
+                                                                              Expanding the square root,
+sence of pressure, E is conserved, E = 0. The tist equa-
+tion (32a) allows E to be expressed as an integral of p
+over C. Specifically, if C has a regular center C = 0, (32a)
+integrates to
+                                                                                      E=Mc’+
+                                                                                                     JI: *p(+i’
+
+                                                                                        =Mc’+K+V+O(c-‘).
+                                                                                                                   -E/TC’)    + O(c-‘)
+
+
+
+                                                                       (33)   Similarly, (32b) expands to -4nr’pi     = tic2 + O(1). 0
+                                                                                 In words, E yields the Newtonian mass M to leading
+Since the volume form *I of C is given by (26) as                             order and the Newtonian kinetic energy K and gravita-
+                                                                              tional potential energy V to next highest order. This
+                                                                              illustrates how E measures the combined energy includ-
+                                  4?rw+g                               (34)
+                                                                              ing contributions from mass, kinetic energy, and potential
+                                                                              energy. Note also that the quantities M, K, and V are
+this may be rewritten as                                                      all defined in the full theory rather than just the Newto-
+                                                                              nian limit. Of these, M may always be interpreted as the
+   E=
+        Jx
+             *pc-q.’      =
+                              J (
+                              c
+                                  *p    l+i2-T        2E
+                                                           >
+                                                               u2 ,    (35)   material (or passive) mass, whereas the interpretation of
+                                                                              K and V as kinetic and potential energy is reliable in the
+3                              GRAVITATIONAL       ENERGY     IN SPHERICAL    SYMMETRY                                  1945
+
+
+Newtonian limit only. In general, E cannot be expressed                    i = 47r?-%~(%lT’          - 7ili)   ,      (43b)
+as a sum of individually meaningful energies, as the form
+(35) indicates. It is only the combined energy E which         and M by (36),
+
+
+                                                                                           Jx*Too
+is physically meaningful in general.
+   Incidentally, the above considerations provide one rea-                         M=
+son for referring to E as an energy rather than a mass,
+though the latter is more common. Although mass and
+                                                                  Proposition 11. Test particles. For a spherical shell
+energy are formally equivalent in relativity, the two words
+                                                               of test particles, (i) the perturbations in M and E are,
+carry connotations inherited from their status as distinct
+                                                               respectively,
+concepts in Newtonian theory. Specifically, mass is a
+measure of matter whereas energy exists in many differ-                                 M=m,                          (45a)
+ent forms. So it is reasonable to describe M as mass, since
+it is simply the integral (36) of the material density, and
+to describe E as energy, since it contains contributions                                l/2
+from kinetic and potential energy.                                        E=hll l+fZ-F      (                         (4W
+   Under the assumptions of proposition 10, the inverse
+                                                                               (       >
+metric is Euclidean to leading order, g-’ = 6-‘+O(c?),         where the sign is that of T’. Both are conserved:
+where the flat metric 6 is given by r2df12 + dr’, so that
+T is a standard radial coordinate. Thus the 5at space of                                if=0                          (46a)
+Newtonian theory is recovered.
+   Note that it has not been necessary to introduce the
+usual coordinate conditions 1371required to obtain an in-                               i=o.                          (46b)
+ertial frame in which Newton’s laws hold, or to obtain
+                                                                 (ii) In the Newtonian limit, with assumptions as for
+Newtonian solutions from solutions to the Einstein equa-
+                                                               proposition 10,
+tions [38]. In contrast, the Newtonian behavior of E may
+be obtained simply by expanding a formula for E in pow-
+ers of c. In this sense, the recovery of Newtonian mass               f& = rn2 + fmP           - y      + o(c-2)       (47)
+and energy from E is more robust than the complete re-
+covery of Newton’s gravitational theory from Einstein’s         Proof. (i) Since 700 = rn6 and 701 7 711 = 0, (44)
+theory. This could be interpreted as meaning that energy      reads M = Jxw& = rn, (43b) reads E = 0, and (43a)
+is a fundamental concept which connects Newtonian the-        reads E’ = 4nr%‘mb, which integrates using (27) and
+ory with relativity. Certainly this is consistent with the    (34) to
+key role that the equivalence of mass and energy played
+in the historical development of relativity.
+                                                                           E = f
+                                                                                   J
+                                                                              = *rn;,
+                                                                                        w&(1    + i2 - 2E/r)‘/’
+
+                                                                                         + i= - 2E/r)‘f=
+          V. TEST PARTICLES         AND     THE
+          SPECIAL-RELATIVISTIC            LIMIT                (ii) Inserting the factors of c,
+
+   The energy of a spherical shell of test particles may be
+                                                                                       +2 2E u=
+                                                                           *& = rn2 1+2-x                              (43)
+defined as the variation in E induced by the perturbation                          (        >
+of test particles, as suggested by Hiji&zk [39]. Denote the
+perturbations of (T, E, M) by (7, E, M). In terms of the       which expands as above. 0
+constant rest mass rn and velocity a/a+ of the shell, the         In words: the perturbation in M is just the rest mass
+stress-energy tensor is given analogously to (31) by           rn, while the perturbation in E contains contributions
+                                                               &rn energy, in particular the correct Newtonian expres-
+                  T=mbdF@di,                           (41)    sions for kinetic energy $&       and gravitational poten-
+                                                               tial energy -mM/r.      Combined with the fact that & is
+where S is the Dirac distribution with support at the          conserved as the shell evolves, this co&ms     the physical
+intersection 5’ of the shell with a spatial hypersurface C:    interpretation of & as the active energy of the shell of test
+                                                               particles.
+                                                                  Conservation (46b) of E, written explicitly using (45b),
+                                                               is equivalent to the equation of motion of the test parti-
+Evaluation on S is clear in context and will be omitted        cles:
+henceforth. Take C to be orthogonal to the shell and                                           7lLE
+adopt the notation of Sec. IV for spatial hypersurfaces,                            rni:=--.
+                                                                                                T2
+identifying 7 = +. Then the H&j&k energy E is defined
+by the perturbation of (11) or (28):                           This has the same form as the Newtonian equation of
+                                                               motion of test particles in a central gravitational field,
+             E’ = 4?rr~(7&r’ - T&i) ,                (43a)     with E playing the role of the active gravitational energy
+1946                                                SEAN A. HAYWARD                                                        55
+
+
+of the source. Again this confirms the physical interpre-       that the radius T and energy E are relevant in quantum
+tation of E as the active gravitational energy.                 theory [47]. Certainly E plays a key role in the vacuum
+   Proposition 12. Special-relativistic limit. In flat space-   case, according to the analysis of Kuchai: [48].
+time, the perturbation in E for a spherical shell of test          The conceptual and physical importance of E in spher-
+particles is                                                    ical symmetry encourages the search for a more general
+                                                                definition of gravitational energy. It is widely accepted
+              .q&O = fm(1      f i2)“2                   (50)   that such a general definition should reduce to E in spher-
+                                                                ical symmetry, as occurs for definitions in the style of
+   Proof By proposition 11. 0                                   Penrose 140-441 or Hawking [15,45,46]. Exceptions in-
+   This has been dignified as a separate proposition be-        clude the Brown-York energy [49], which gives a value
+cause it is important that E yields the correct result in       different from E for the Schwarzschild solution, and the
+the special-relativistic limit, namely that E reduces to        Bartnik energy 1501,which is undefined for trapped sur-
+the standard expression (50) for the energy of test parti-      faces. Whether such definitions have some other physical
+cles in special relativity. In particular, & is not just the    meaning is unclear, but they do not represent gravita-
+rest mass. This is noteworthy since the opposite is some-       tional energy in the sense of propositions 1-12.
+times claimed, namely that E corresponds to the rest               Familiarity with the spherically symmetric case also
+mass rather than energy of a test particle in flat space-       yields other guidelines to more general definitions. First,
+time. This misunderstanding seems to be the reason,             it is noteworthy that E is defined on spheres rather than
+other than apathy, that E is usually described as mass          hypersurfaces. One can write an implicit expression for
+rather than energy. On the contrary, using the terminol-        E involving an integral (35) over a hypersurface with reg-
+ogy standard in both special relativity and Newtonian
+                                                                ular center, if such a hypersurface exists, but the general
+theory, E and E are energies and rn and M masses. In            definition (4) or (27) is a function of spheres only. This
+the same sense, the following are all energies rather than
+                                                                is quite different from the definition of mass M as an in-
+masses: quasilocal energies which agree with E in spher-        tegral (36) over a hypersurface. So rather than looking
+ical symmetry, such as those of Penrose and Hawking             for a definition of gravitational energy as a hypersurface
+[15,40-461; the asymptotic (scalar) energies EADM and
+                                                                integral, as would be natural in Newtonian theory, one
+EBS; the Schwarzschild energy.                                  should look for a surface integral. Specifically, one wants
+   The mistaken claim that E corresponds to rn rather           an invariant of the intrinsic and extrinsic curvature of an
+than E is sometimes ascribed to the fact that, in flat
+                                                                 embedded surface, which following Penrose [40] may be
+space-time, E depends on the choice of frame (or ob-            called quasilocal energy.
+server) whereas rn is frame independent, like E. But                Another guideline to more general definitions is that
+except in flat space-time, E is also frame independent:         one would like analogous positivity and monotonicity
+the velocity 1: is relative to the preferred frame deter-       properties, and analogous relations to black holes and
+mined by T, not the frame of some observer. Only in Aat         possibly to singularities which are central in Some sense.
+space-time is T not unique, due to the Lorentz symme-            The Hawking energy [45] takes the value m                on a
+try. It is this degeneracy of 5at space-time that renders E      spherical marginal surface of area A, and so automat-
+frame dependent in that special case. Frame dependence           ically generalizes propositions 1 and 8. The Hawking
+is not a general feature of energy, as discussed further in      energy also has the same small-sphere behavior as in
+Appendix C. For instance, Newtonian gravitational po-           proposition 9 1511. Generalizations of the positivity and
+tential energy is &me independent.                              monotonicity propositions 5-7 for the Hawking energy
+                                                                 have also been found 181. A warning should be sounded
+ VI. REMARKS:        GRAVITATIONAL           ENERGY      IN      that such positivity and monotonicity theorems involve
+                       GENERAL                                   certain assumptions without which the conclusions are
+                                                                 invalid. Even the Schwarzschild energy may be negative.
+   The Misner-Sharp energy E has an impressi-az vari-            Thus there is little point in searching for a definition of
+ety of useful properties, ranging from the asymptotically        gravitational energy which is always non-negative by def-
+flat, vacuum, small-sphere, Newtonian, test-particle, and        inition, as is sometimes suggested [50].
+special-relativistic limits to the black holes and singular-        The final lesson of the spherically symmetric case is
+ities characteristic of strong gravitational fields. These       that a general definition of gravitational energy should
+properties have an exact geometrical character and are           give the correct results in various limits: the asymp-
+simultaneously of direct physical relevance. In particular,      totically flat, vacuum, small-sphere, Newtonian, test-
+E has quite general monotonicity and positivity proper-          particle, and special-relativistic limits. In particular, one
+ties, determines the causal nature of central singularities,     weld like to obtain the Newtonian mass to tist order
+and determines when trapping occurs. This makes E use-           in c, with corrections interpretable as Newtonian ener-
+ful in many different applications, particularly regarding       gies. This is possible for the Penrose energy in certain
+black holes and singularities. Indeed, E has been redis-         cases [52]. This brings the discussion back to the physical
+covered by many authors and is often crucial to their            meaning of gravitational energy as expressed in the In-
+analyses [16-22,24,29,30,32-34,36,39].     In particular, E      troduction: an effective energy which is measurable on a
+arises as the charge associated with a conserved current,        surface and which is produced by the nonlocal, nonlinear
+as explained in Appendix B, and can be derived from              interaction of the mass of sources with the energy of the
+the “2+2” Hamiltonian [15]. One might also speculate             consequent gravitational field.
+53                                   GRAVITATIONAL       ENERGY        IN SPHERICAL    SYMMETRY                                  1947
+
+
+               ACKNOWLEDGMENTS                                                              VQ      = 47rp                     C-46)
+
+  It is a pleasure to thank Alan Rendall, Yosbi J4+jiwara,              and integrating by parts yields
+Marcus Kriele, and Gregory Burnett for discussions or
+correspondence which led to improvements in the work.                          w=psv,qaz
+                                                                                      - .&s*IVW
+                                                                                              ,              x
+                                                                                                                               (A7)
+This work was supported by the Japan Society for the
+Promotion of Science.                                                   where n is the outgoing unit vector. The Poisson equa-
+                                                                        tion integrates to VQ! = TIM/P, so that
+
+APPENDIX        A: NEWTONIAN               GRAVITATIONAL
+                      ENERGY
+
+
+  Recall the dynamical role of the kinetic energy K and                 So V, F, and W all differ by boundary terms. In partic-
+potential energy V (37) in Newtonian gravity, taking the                ular, at finite radius, V and F differ unless M vanishes,
+case of dust, p = 0. The Lagrangian L = K - V deter-                    while V and W differ unless M is constant. However,
+mines the Euler-Lagrange equation                                                                   M is finite and the arbitrary
+                                                                        if the total mass lirn,,,
+                                                                        constant in CJis fixed as usual by lirn,,, + = 0, then all
+        o=$($-g=J,.p(i+$)                                       (Al)    three quantities coincide at infinity:
+
+
+regarding M (or equivalently *p) as an independent vari-
+                                                                                                                               W’)
+able which is conserved, ti = 0. This yields Newton’s                   Thus all three expressions give the correct asymptotic
+inverse-square law of gravitatiox2                                      energy. Nevertheless, at a finite radius, only V gives the
+                                                                        correct potential energy in the Lagrangian or Hamilto-
+                                                                        nian sense. Thus it is V rather than F or W that should
+                                                                        occur in the Newtonian limit of a quasilocal energy, even
+The Hamiltonian H = K + V is therefore conserved:                       though each would suffice for the asymptotic energy.
+
+             &Jr./$+$)                     =o.                  (A3)
+                                                                         APPENDIX       B: CONSERVED             CURRENTS    AND
+It is remarkable that both conserved quantities with a                                        CHARGES
+clear physical meaning in Newtonian gravity, namely the
+mass M and the Hamiltonian energy H, are encoded in E                      Kodama [53] showed that spherically symmetric space-
+via the expansion E = MC’ + H + O(c-“) of proposition                   times have a conserved current and defined an energy as
+10.                                                                     the associated charge. Tbis energy is the Mimer-Sharp
+   There are two other expressions which are sometimes                  energy, as follows. Kodama introduced vectors k and j
+suggested as the potential energy of the Newtonian grav-                which may be defined, up to orientation, by
+itational field: namely,
+                                                                                              k = curlr                         (‘31)
+                F=--&              *IVW    1                (A4a)       and
+                             JI:
+
+                                                                                           g(j)
+                                                                                             =-T(k)
+                                                                                                >
+                             J
+                                                                                                                                !W
+                   WC+             *a/J,                    Wb)
+                              x                                         where the curl refers to the two-dimensional        auotient
+                                                                        space-time. It follows that
+where @ is the Newtonian potential. However, neither
+F nor W coincide with the potential energy V except at
+infinity, as follows. Integrating V by parts yields                                      g(k,k)+l                               (B3)
+
+            If=-$          -1 *!E.                              (A5)    so that k reduces in vacuo (Schwarzschild) to the sta-
+                         I8Z8?r
+                             Jz                                         tionary Killing vector. One may interpret k as giving a
+                                                                        preferred time for the preferred class of constant-radius
+Similarly, rewriting W using the Poisson equation
+                                                                        observers, and j as the corresponding energy-momentum
+                                                                        density. Note that k is spatial in trapped regions and
+ *An inverse-square law also exists in the Einstein theory for          causal otherwise. If the dominant energy condition holds,
+dust, with M replaced by E in (AZ). This reinforces the                 j is also causal (or zero) in untrapped regions. Fixing
+interpretation of E as an active energy. In this case, &l =             the orientation so that k and j are future-causal for rn-
+fi = 0, so that Lagrangian   and Hamiltonian     formulations    are    trapped spheres, whose orientation is chosen as in the
+possible with M replaced by E in the definition of V.                   main text, one finds explicitly that
+1948                                                          SEAN A. HAYWARD                                                     53
+
+
+           k = ef@+r&            - a-?++)                                  In special relativity, a test particle with mass rn and
+                                                                        unit velocity vector a has energy-momentum p = mu. In
+               4(d&i$)                         ,                (B4a)   the frame of an observer with unit velocity 21,the energy
+                                                                        is -g(p, v) and the momentum is p + g(p, v)v. Similarly,
+                                                                        a test field with density p and velocity u has energy-
+                                                                        momentum density j = pu) which to an observer has en-
+                                                                        ergy density -g(j,v)    and momentum density j +g(j,v)v.
+                                                                        On a flat spatial hypersurface C with unit normal 21,the
+                                                                        total energy E, momentum II, and energy-momentum J
+                                                                        are
+
+
+
+                                                                                                   J~*dj,
+                                                                                                       u)I                   (Cl=)
+Thus k is tangent to the constant-r hypersurfaces and j
+is tangent to the constant-E hypersurfaces:                                              E=-
+
+                         k(r) = 0 ,                             035.9
+
+
+                     j(E) = 0                                   CBsb)
+                                                                                      II=
+                                                                                            J~*[j+ dj, UbJl,                 Pb)
+
+One also has
+
+                   4&j          = curlE                          W)
+                                                                                       J=
+                                                                                            J  x
+                                                                                                   ej=Ev+n,                  WC)
+
+
+Since div curl = 0 and the four-dimensional divergence                  and the total mass is d-j.
+is given by Divu = r-‘div(r’u), it follows from (Bl) and                   In general relativity, vectors are not integrable, so Il
+(B6) that both k and j are covariantly conserved:                       and J are ill defined. In contrast, E is well defined for
+                                                                        given j, but generally depends on the hyperswface X.
+                         Divk = 0 ,                             PW      However, it will be independent of C (with fixed bound-
+                                                                        aries) if j is covariantly conserved, by Gauss’ law. As
+                                                                        explained in Appendix B, spherical symmetry admits
+                         Divj = 0                                       such an energy-momentum density: the Kodama current
+                                                                        j, a preferred contraction (BZ) of the stress-energy ten-
+By Gauss’ law, any such conserved current u has a charge
+                                                                        sor. The corresponding energy E agrees (B8b) with the
+Q,, = - JLL*g(u, u) which is independent of C (with fixed
+                                                                        Misner-Sharp energy. Again, this identifies E as energy
+boundaries). Here the notation is that of Sec. IV, with
+                                                                        rather than mass. The total momentum Il and energy-
+unit normal vector 2) = a/ar. Using (34) and (B4), the
+                                                                        momentum J remain ill defined. (One could make sense
+charges associated with k and j are the area1 volume and
+                                                                        of them by taking the unit spatial vector outside the in-
+energy, respectively:
+                                                                        tegral, but the result would depend on C.) So proceeding
+                                                                        by analogy with special relativity yields, independent of
+   Qk= -J,      *g(k,v)        = ~‘4rr%‘d[         = $2   ,     (~3a)   hypersurface, a total energy but not total momentum,
+                                                                        energy momentum, or mass.
+                                                                           Another useful asymptotic quantity is
+
+             Qj = -k*g(it~)              = l*W,u)                                              K=;;mimk,                      w
+
+                 =J  0
+                         C
+                              E’dl = E                          Pb)
+                                                                        where k is the Kodama vector (BI). By (B3), K is a unit
+                                                                        vector, so it may be interpreted as the preferred asymp
+                                                                        totic velocity, or the total velocity of the source. This
+The charge Qj is the definition of energy of Kodama [53].               provides a preferred frame at infinity, the asymptotically
+Regarding k as generating preferred diffeomorphisms,                    stationary frame.
+one may interpret j as the corresponding Noether cur-                      Now suppose that one believed that E was mass rather
+rent and E as the Noether charge [54].                                  than energy. Then by analogy with test particles in spe-
+                                                                        cial relativity, one might define
+
+       APPENDIX          c:    ENERGY        MOMENTUM                                          P = lim Ek                     (C3)
+                                                                                                   r+cc
+
+   In an asymptotically fiat space-time, there are def-                 and call it asymptotic energy-momentum. This applies to
+initions. not just of total energy, but of total energy-                both null and spatial infinity, agreeing with the Bondi-
+momentum [1,11,26,27], a vector (or covector) at infinity.              Sachs [11,26,27] and Arnowitt-Deser-Mimer [l] energy-
+Problems with this interpretation as energy momentum                    momentum, respectively: P = EssK and P = EADMK,
+are described below. Since this interpretation is often                 respectively, by proposition 3. Pursuing this idea, one
+explained by analogy with special relativity, that case is              might refer to -g(P, v) and P + g(P,v)u as energy and
+described lirst.                                                        momentum, respectively, and to Ess or EAD~ as mass.
+12                               GRAVITATIONAL        ENERGY IN SPHERICAL SYMMETRY                                        1949
+
+
+This terminology will be avoided here because E is en-           might expect it to be the limit of a quasilocal energy-
+ergy rather than mass, according to the Newtonian, test-         momentum,     as for the energy E itself. But Ek is not
+particle, and special-relativistic  limits of Secs. IV and V,    recognizable as an energy-momentum     at finite radius. In-
+as well as the above analogy with test fields in special         dependently, the energy E and current k are both useful
+relativity. (If necessary for clarity, Ess or EADM may be        quantities with simple physical interpretations,   but their
+referred to as the scalar asymptotic energy.) By the same        product has no obvious physical meaning.         Asymptoti-
+reasoning, P is the product of velocity and energy rather        tally one has the limits lim,,,    E and lim,,,       k, but
+than velocity and mass, so is not energy-momentum.               their product P also has no obvious physical meaning.
+  To measure the gravitational     field experimentally,   one   So it seems that there is no asymptotic      (or quasilocal)
+may observe the motion of test particles. The equation of        energy-momentum.       Instead one has the radius T, the
+motion (49) shows that the measurable energy is just E,          current k, the local energy-momentum    density j, and the
+not something that agrees asymptotically   with -g(P,v).’        quasilocal energy E.
+  If P did measure asymptotic energy-momentum,        one
+
+
+
+
+ [1] R. Arnowitt, S. Deser, and C. Misner, in Gravitation: An         spindle and cylindrical naked singularities,” Report No.
+      Introduction to Cuwent Research, edited by L. Witten            KUNS-1250 (unpublished).
+      (Wiley, New York, 1962).                                   [ZS] R. Penrose, Phys. Rev. Lett. 10, 66 (1963).
+  [Z] H. Bondi, M. G. J. van der Burg, and A. W. K. Metener,     [27] E. T. Newman and K. P. Tad, in General Relativity
+      Proc. R. Sot. London A268, 21 (1962).                           and Gravitation, edited by A. Held (Plenum, New York,
+  [3] R. K. Sachs, Proc. R. Sot. London A270, 103 (1962).             1980).
+  141 C. W. Misner and D. H. Sharp, Phys. Rev. 136, B571         1281 A. Ashtekar and R. 0. Hansen, .I. Math. Phys. 10, 1542
+      (1964).                                                         (1978).
+  [5] R. Penrose, Ann. N. Y. Acad. Sci. 224, 125 (1973).         [29] G. A. Burnett, Phys. Rev. D 43, 1143 (1991).
+  [6] S. A. Hayward, Phys. Rev. D 49, 6467 (1994).               [30] G. A. Burnett, Phys. Rev. D 48, 5688 (1993).
+  171 S. A. Havward. Class. Quantum Grav. 11, 3025 (1994).       [31] E. M&c and N. b Murchadha, Phys. Rev. D 49, 6931
+  i8i S. A. Ha;ward; Class. &&un       Grav. 11, 3037 (1994).          (1994).
+  [g] S. A. Hayward, “Confinement by black holes,” Report        [32] E. Poisson and W. Israel, Phys. Rev. Lett. 63, 1663
+      No. gr-qc/9405055, 1994 (unpublished).                           (1989).
+[lo] S. W. Hawking and G. F. R. Ellis, The Lwge Scale Stmc-      [33] E. Poisson and W. Israel, Phys. Lett. B 255, 74 (1989).
+      twe of Space-Time (Cambridge University Press, Cam-        [34] E. Poisson and W. Israel, Phys. Rev. D 41, 1796 (1990).
+      bridge, England, 1973).                                    [35] H. Miiller zum Hagen, P. Yodsis, and H.-J. Seifert, Com-
+[11] R. Penrose and W. Rindler, Spinors and Space-Time                mu,,. Math. Phys. 37, 29 (1974).
+       (Cambridge University Press, Cambridge,       England,    [36] M. Kriele, Class. Quantum Grav. 10, 1525 (1993).
+       1986), Vols. 1 and 2.                                     [37] C. W. Mimer, K. S. Thorne, and J. A. Wheeler, Gravi-
+[12] P. Bizon, M. M&c, and N. O’Murchadha, Phys. Rev.                  tation (Freeman, New York, 1973).
+      Lett. 61, 1147 (1988).                                     [38] A. D. Rendall, Commum. Math. Phys. lSS, 89 (1994).
+1131R. Penrose, Riv. Nuovo Cimento 1, 261 (1969).                [39] P. HAjjiZek,Phys. Rev. D 86, 1065 (1987).
+[14] R. Penrose, in General Relativity, an Einstein Centenary    [40] R. Penrose, Proc. R. Sot. London ASS& 53 (1982).
+      Survey, edited by S. W. Hawking and W. Israel (Cam-        [41] K. P. Tod, Proc. R. Sot. London A388, 457 (1983).
+      bridge University Press, Cambridge, England, 1979).        [42] A. J. Dougan and L. J. Mason, Phys. Rev. Lett. 67, 2119
+[15] S. A. Hayward, Phys. Rev. D 49, 831 (1994).                       (1991).
+[16] T. Koike, H. Onosawa, and M. Siino, “Causal feature of      [43] G. Bergqvist, Class. Quantum Grav. 9, 1753 (1992).
+      central singularity and gravitational mass,” Report NO.    [44] G. Bergqvist, Class. Quantum Grav. 9, 1917 (1992).
+      gr-qc/9312012, 1993 (unpublished).                         [45] S. W. Hawking, J. Math. Phys. 9, 598 (1968).
+[17] D. Christodoulou, Commun. Pure Appl. Math. 46, 1131         [46] G. Bergqvist, Class. Quantum Grav. 11, 3013 (1994).
+       (1993).                                                   [47] K. Nakamura, S. Konno, Y. Oshiro, and A. Tomimatsu,
+ [18] W. A. Hiscock, L. G. Williams, and D. M. Eardley, Phys.          Prog. Theor. Phys. 90, 861 (1993).
+      Rev. D 26, 751 (1982).                                     [48] K. V. Kuchar, Phys. Rev. D 50, 3961 (1994).
+ [19] B. Waugh and K. Lake, Phys. Rev. D 34, 2978 (1986).        [49] J. D. Brown and J. W. York, Phys. Rev. D 47, 1407
+ [ZO] D. M. Eardley and L. Smarr, Phys. Rev. D 19, 2239                (1993).
+      (1979).                                                    [SO] R. Bartnik, Phys. Rev. Lett. 62, 2346 (1989).
+[21] D. Christodoulou, Commun. Math. Phys. 93, 171 (1984).       [51] G. T. Horowitz and B. G. Schmidt, Proc. R. Sot. London
+[22] R. P. A. C. Newman, Class. Quantum Grav. 3, 527                   A381, 215 (1982).
+      (1986).                                                    [52] B. P. Jeffryes, Class. Quantum Grav. 3, 841 (1986).
+(231 P. S. Joshi and I. H. Dwivedi, Phys, Rev. D 47, 5357        [53] H. Kodama, Prog. Theor. Phys. 63, 1217 (1980).
+      (1993).                                                    [54] Y. Fujiwara, “Local energy in spherical space-times as
+[24] K. Lake, Phys. Rev. Lett. 68, 3129 (1992).                       Noether charge,” Report No. YITP/U-95-06,       1995 (un-
+[25] T. Chiba, K. Nakao, and T. Nakamura, “Masses of                  .Dublished).,
+

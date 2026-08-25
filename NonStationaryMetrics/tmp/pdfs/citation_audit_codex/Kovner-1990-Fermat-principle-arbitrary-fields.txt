@@ -1,0 +1,473 @@
+1990ApJ. . .351. .114K
+                         The Astrophysical Journal, 351:114-120,1990 March 1
+                         © 1990. The American Astronomical Society. All rights reserved. Printed in U.S.A.
+
+
+
+
+                                                                     FERMAT PRINCIPLE IN ARBITRARY GRAVITATIONAL FIELDS
+                                                                                                               Israel Kovner
+                                                                                         Department of Nuclear Physics, The Weizmann Institute of Science
+                                                                                                Received 1988 March 14 ; accepted 1989 August 28
+                                                                                              ABSTRACT
+                                          The Fermat principle is applicable in arbitrary, stationary, and nonstationary metrics, for massive and
+                                       massless particles, as well as for massive and massless observers. I give a general derivation, along with several
+                                       ways to regard the principle.
+                                          The practical usefulness of the Fermat principle is restricted to cases in which a sufficiently small set of
+                                       suitable trial paths can be found. Zigzag trial paths are suitable for thin comoving gravitational lenses, to the
+                                       first order in the lens effect, and also if there is a nonstationary perturbation.
+                                          As an example, I apply the Fermat principle to a perturbation by gravitational waves and derive the trans-
+                                       verse velocity of the caustics motion. This velocity poses a difficulty for the proposition by McBreen and
+                                       Metcalfe that y-bursts come from a small hot BL Lac cores crossed by microcaustics, the caustics being jit-
+                                       tered by gravitational waves. A stochastic gravitational radiation background cannot account for the y-bursts
+                                       registered by different spacecraft separated by interplanetary distances, since the produced caustic motion is
+                                       too slow. If, on the other hand, there might be local sources of gravitational radiation to produce super-
+                                       luminal caustic motion, the light travel time direction annuli would cluster at the solar system poles.
+                                       Subject headings: y-rays: bursts — gravitation — gravitational lenses — relativity
+
+
+                                                  I. INTRODUCTION                                                           and, for instance, the frequency of a photon depends on the
+                            Practical applications of the Fermat principle have been                                        path by which the photon arrived at the observer.
+                         particularly useful for gravitational lenses (Schneider 1985;                                         Historically, the Hamilton’s principle of least action was
+                         Blandford and Narayan 1986; Kovner and Paczynski 1988;                                             devised from an optical-mechanical analogy to the Fermat
+                         Kovner 1989). These applications concerned gravitational                                           principle (e.g., Arnold 1978). However, the principle of least
+                         fields which vary on time scales much larger than the light                                        action is now more familiar, and I take it as a starting point, in
+                         crossing time. Essentially nonstationary lenses, like cosmic                                       § II, to derive the Fermat principle. I also outline several differ-
+                         strings (Hogan and Narayan 1984; Vilenkin 1986; and refer-                                         ent ways to regard the Fermat principle for light.
+                         ences therein), and nonstationary lens components, like gravi-                                        The practical usefulness of the Fermat principle is limited by
+                         tational waves (McBreen and Metcalfe 1988 and references                                           our ability to find a sufficiently small suitable subset of all the
+                         therein), may also be important. It is therefore interesting that                                  possible trial paths. Schneider (1985) and Blandford and
+                         the Fermat principle is also valid for arbitrary gravitational                                     Narayan (1986) used zigzag trial paths for thin comoving
+                         fields. It was derived for static spacetimes by Weyl (1917), and,                                  lenses. In § III I derive the zigzag path construction for massive
+                         in two different ways, for stationary metrics by Pham Mau                                          and massless particles, to see that these paths are a suitable
+                         Quan (1962) and by Brill (1973). I give a derivation for an                                        approximation to the first order in the lens effect.
+                         arbitrary spacetime, in which a geodesic which connects an                                            The same trial paths can be used for nonstationary lenses
+                         emitter to an observer exists, for arbitrary observer and parti-                                   composed of a comoving thin lens weakly perturbed by a
+                         cle masses.                                                                                        gravitational wave. The effects of the perturbation are appre-
+                            The Fermat principle can be regarded as an analogy of the                                       ciably felt only by the nearly merging rays near the caustics. I
+                         Maupertuis principle of least action (Arnold 1978; see also                                        derive this effect in § IV and examine the proposition by
+                         comments by Schrôdinger 1956, p. 45). A particle with a time-                                      McBreen and Metcalfe (1988) that y-bursts may be results of
+                         independent Hamiltonian moves along a trajectory on which                                          crossings of small hot cores of BL Lac objects by microcaustics
+                         the travel time is extremal (stationary, to be precise) with                                       which are moved by gravitational waves. The conclusions are
+                         respect to variations of the spacetime path within the hyper-                                      stated in § V.
+                         surface of a given energy. For light rays this is the Fermat
+                         principle, the trajectory variations in question are such that the                                                       II. FERMAT PRINCIPLE
+                         speed is that of light at every point, and the photon frequency                                       I assume that no singularities of the metric are involved, and
+                         is assumed to be constant.                                                                         that a source of particles, hereafter “ interceptors,” can be con-
+                            For gravitational lenses, the energy must be Doppler shifted                                    nected by an interceptor worldline to an observer worldline.
+                         while a photon travels its null-geodesic, as the lenses and the                                    Both the observer and the interceptor can be massive as well as
+                         sources are at cosmological distances. Schneider (1985) noticed                                    massless, and I assume that geometric optics is applicable.
+                         that the arrival time is extremal for comoving gravitational                                          In the usual formulation of the Fermat principle, the travel
+                         lenses in an expanding, uniformly isotropic universe. However,                                     time of a photon is extremized. Since I consider arbitrary
+                         there may be lens components which are more substantially                                          metrics and observers, I state and prove the Fermat principle
+                         nonstationary, in the sense that the metric is inhomogeneous,                                      with respect to an arbitrary worldline parameter of an observer
+                                                                                                                      114
+
+                                           © American Astronomical Society • Provided by the NASA Astrophysics Data System
+1990ApJ. . .351. .114K
+                                                              FERMAT PRINCIPLE IN GRAVITATIONAL FIELDS                                                          115
+
+                         of arbitrary mass (then, the usual formulation is the particular         Therefore, a principle that <5/lobs = 0 for path variations on
+                         case of a comoving observer).                                         the mass shell leads to equation (2.5), from equations (2.6) and
+                            First, let us recall that the geodesic equation can be obtained    (2.7). However, since now öxß are not entirely arbitrary, it is
+                         from the principle of least action. Let us use action                 not necessarily obvious that equation (2.5) leads to the geo-
+                                                                                               desic equation (2.3). To see that it does, let us examine paths
+                                              4 = 2 J gllv(x)xf‘x'’dX ,                (2.1)   restricted to the mass shell and to having their endpoint on the
+                                                                                               observer’s worldline, at a particular point on a particular inter-
+                         where xß = dxß/dk, the trajectories are given by xß —                 ceptor path.
+                         where = 0, 1, 2, 3, and the line parameter, 2, plays a role              If we trace all the paths restricted to the mass shell backward
+                         analogous to the role of time in the nonrelativistic mechanics.       from the observer worldline, they fill a four-dimensional
+                         As the Hamiltonian does not depend explicitly on 2, its value is      volume with a three-dimensional boundary. Let us consider a
+                         conserved, and every geodesic stays within a mass shell,              source-observer path restricted to the mass shell, STO, a point
+                                                                                               T on this path, and a one-parametric family of on-shell paths,
+                                              xv xv = s2 = constant.                   (2.2)   x^X) = x¡¡sp(X, Xobs), with the following properties: every path
+                         For massless particles s = 0. A true trajectory is determined by      of the family intercepts the observer at an event which is char-
+                         equation (2.2) and by the geodesic equation,                          acterized by line parameter ¿obs on the observer worldline, and
+                                                                                               by line parameter ¿ — ¿end on the path, with the same value of
+                                                  D2xß/dX1 = 0 ,                       (2.3)   Xend for all the paths of the family. The family fills a sufficiently
+                         where the covariant acceleration is D x /dÀ = 5c + F^ jcax^,
+                                                                  2 fl    2   M                smooth two-dimensional surface and includes the path in ques-
+                         and r%ß(x) are the connection coefficients.                           tion, STO : xM(X) = x¡¡sp(X, 0), whereas the point in question is
+                            I regard the geodesic equation as the basic law of motion,         T = xosp(0,0).
+                         and I take a variational principle to be valid if it leads to the        Let us use a locally Lorenzian frame and a Taylor expansion
+                         geodesic equation. The principle of least action requires sta-        of the paths, in terms of X and 2obs, in the vicinity of T :
+                         tionarity of the action with respect to arbitrary path variations.
+                         The Fermat principle for massless interceptors admits only            <sp(¿, ¿obs) = ¿M* + (¿72K + (¿76)^ + • • • + ¿obs e + • • •,
+                         path variations which are null curves. As I consider arbitrary                                                                (2.8)
+                         interceptors, the path variations admitted by the Fermat prin-
+                         ciple are restricted to the mass shell given by equation (2.2).       within some ranges |2|                 ~ 0(u)/0(w), \ 2obs | €0,
+                            To see the distinction between the two principles in more          where u - u = s2, m • w = 0, and u • z + w • w = 0, where
+                         detail, let us consider the variation of action for a general path    a • b = a^b*. Let us examine the product u Ç =
+                         variation, in a parametrization with fixed values of the inter-       (^5x^p/aAoJA=Aobs=0, assuming for definiteness metric signa-
+                         ceptor line parameter at the end and at the start, ^end —             ture (H         ), and all parametrizations to have dx°/dX > 0.
+                                                                                               First, let us consider geodesic family paths. Then
+                         ¿¿start =                                                             d(xM dx^sp/dXobs)/dX = 0, so that m - ^ at T is the same as at the
+                                                                                               interception point S (parallel transport). For a massive obser-
+                         à A = IsôsYsiït -    sös dX = [x^         rt —   dk öxßD2xJdX2 .      ver, M • £ > 0, unless the interceptor is tachionic (or the obser-
+                                                                                       (2.4)   ver is tachionic while the interceptor is not). If both the
+                                                                                               observer and the interceptor are massless, u Ç > 0 unless they
+                            From the rightmost side of equation (2.4), we see that the         move on the same geodesic at the interception (a “touching
+                         principle of least action, namely the requirement ÔA = 0 for          interception ”). Now, if the STO path is accelerated, u • Ç can
+                         arbitrary      and fixed endpoints, <5x£nd = <5x^tart = 0, leads to   be arbitrary. However, this path must contain points at which
+                         requirement                                                           u • ^ has the same sign as at interception and w ^ 0. We can
+                                                                                               therefore assume u • £ > 0 hereafter.
+                                               J dXôx>lD2x)JdX2 = 0                    (2.5)      Let us take a zig-zag trial path,
+
+                         which, in turn leads to the geodesic equation, since the varia-                                     o),      for X < —€a ,
+                         tions     are arbitrary. This is the customary demonstration of                          xW),                for —€a < X <0 ,
+                         the validity of the principle of least action.                                      M) =                                             (2.9)
+                            The Fermat principle restricts the path variations to the                             xp),                for 0 < A < ,
+                         mass shell, c.f. equation (2.2), thus à A = 0, from the middle                           :5C
+                                                                                                                      osp(¿» ¿obs)    for eb < X
+                         section of equation (2.4). Requirement (2.5) can now be
+                         obtained from a requirement of stationarity of the contribu-          (to be compared with STO), where ea ~ €b ~ e           €l9 whereas
+                         tions at the boundaries to the rightmost side of equation (2.4).      x£ and xg are determined by velocities
+                         To see this, let us fix the starting point of the interceptor path,
+                         and allow the variaton of the endpoint along a worldline of an          y = ^ + du*} + Aw" + ô^u} + Xôw} + {X2/2)ztl + ..., (2.10)
+                         observer, = xjJA,J. Then,
+                                                                                               where j stands for a or for b, ôu ~ 60(u\ ôw ~ 0O(w)9
+                                               ¿x'Xend) = <52obsxSbs.                  (2.6)   ô(2)u ~ 02O(u), and 0 1. The small parameters e and 0 are
+                         and                                                                   independent. The on-shell condition for deviations requires
+                                                                                               w • <5u = 0, Su • bu + 2m • <5(2)m = 0, w • <5w + w • = 0, and
+                                 ¿x^end) = J      öxßD2xJdX2 on the mass shell, (2.7)          so on, on each leg (a and b).
+                                                                                                  A zigzag trial path starts from the source along the path
+                         for massive and massless, interceptors and observers.                 being examined, makes two legs of the zigzag deviation, and
+
+
+
+                                     © American Astronomical Society • Provided by the NASA Astrophysics Data System
+1990ApJ. . .351. .114K
+                         116                                                                      KOVNER                                                                       Vol. 351
+
+                         continues along one of the paths of the family. For this to be
+                         possible we have to match
+
+                                 Aobs £ + •■•= eaôua + €b ôub + {(el öwb - el <5wJ
+                                                     + eaômua + ebômub + --- , (2.11)
+                         at 2 = efc. As « - ^ > 0 and u • ôu = 0, the match is impossible
+                         to order O(€0) unless
+                                                   ea0Ua + ebSub = 0 .                         (2.12)
+                         The match is possible for any efl, €b, ôua9 and öub which satisfy
+                         equation (2.12) and are of the stated orders of magnitude: 2obs
+                         must obey equality
+                                  2(u • £)Aobs = ea(ea +            ' ôua - eb lôua ■ óua)
+                                                                                                           Fig. 1.—True and trial paths between a source event S and the observer
+                                                                               + o(e62 + e26), (2.13)    worldline.
+                         and the rest of the match can be performed in the plane normal
+                         to u!1. Thus, for fixed ea and eb, the variation of the observer                   Another way to regard the Fermat principle for light is pro-
+                         worldline parameter is linear with the path variation if the                    vided by the Huygens principle as illustrated in Figure 2.
+                         examined path is accelerated, or quadratic if the path is geo-                  Photons emitted in all directions at event S travel along rays
+                         desic.1                                                                         on a light cone (a three-dimensional hypersurface), which may
+                            In the particular case of a massless interceptor, Sua • ôua <                possibly cross itself along the caustics (two-dimensional
+                         0 (from u u = 0 and u öu = 0), so that 2obs > 0 for a devi-                     surfaces). The worldline of an observer crosses the cone at one
+                         ation from a null-geodesic: a null path which is a small devi-                  or more points. Of all the null-curves which may possibly
+                         ation from a null-geodesic arrives to the observer later than the               connect event S with the observer worldline only the extreme
+                         null geodesic. (This should not be confused with “global”                       null-curves, on the light cone itself, are true light rays.2
+                         zigzag trial paths considered in the next section, with respect to                 In practice, it can be more convenient to consider the past
+                         which the arrival time can be a minimum, a maximum or a                         light cone emanating from an observer, Figure 3, at a certain
+                         saddle point.)                                                                  moment, event O, and intercepting a continuously emitting
+                            We can now give a general formulation of the Fermat prin-                    source, S, on its worldline, at different moments of its history.
+                         ciple:                                                                          In this case, the Fermat principle is applicable to the worldline
+                            An observer is intercepted by geodesics which are extremals of               parameter of the source, 2emit.
+                         the observer's worldline parameter with respect to path varia-                     The customary statement of the Fermat principle regards
+                         tions restricted to the mass shell,                                             the travel time of a photon. We can take it to be
+                                                                                                                                     J'tobs
+                                                      interceptor mass shell     ^•            (2.14)                                       dt = 0,                   (2.15)
+                                                                                                                                      ¿emit
+                            There are various ways to regard the Fermat principle. One
+                         view is given by the following alternative derivation which can                 where t = x°/c is the coordinate time. Then, it is a particular
+                         be applied to massless interceptors and massive observers, and                  case of the Fermat principle for light formulated above, for a
+                         which is not manifestly rigorous in that first we take an m # 0                 comoving observer in the look-forward view of Figure 2 (or for
+                         interceptor with action A = J ds, where s is its proper time, and               a comoving source in the look-back view of Fig. 3) with its
+                         then take the limit m -► 0. Let the source emit photons at a                    proper time taken to be its worldline parameter. Clearly, it is
+                         certain moment, event S, and consider a photon which arrives                    valid in any spacetimes, for interceptor null-geodesic which are
+                         at the observer, at observer’s proper time t, event 0, moving                   not isolated. A further specification of this particular case is a
+                         along null-geodesic SO (Fig. 1). Then, t is stationary with                     synchronous coordinate system, in which ds2 = g00 dt2 — dl2,
+                         respect to variations of the path restricted to have ds = 0 at                  and the Fermat principle can be stated as
+                         every point (i.e., a trial path photon moves with the speed of
+                         light at every point). To see that, let us consider such a trial                                           Ô ^dl (g00r112 = 0.                            (2.16)
+                         path SO' which reaches the observer at event O', at t + <5t (Fig.
+                         1). For an m ^ 0 interceptor, the true path is determined by                       2
+                         condition <5 J ds = 0 for any path variations. Let us take SO'O                       The wavefront (eikonal) picture considered by Kayser and Refsdal (1983)
+                         as such a variation, then 0 = ÔA = St + A(SO') — A(SO). Now                     is related to Fig. 2, except that there are some inconveniences in the use of the
+                                                                                                         eikonal. One occurs for a nonstationary lens in which the time dependence of
+                         let us take m -► 0 for photons, then A(SO') = A(SO) = 0, and so                 the eikonal varies with ray direction (a simple example of such a system is a ray
+                         St = 0. For photons, the restriction to the mass shell means                    reflected from a moving, say, rotating mirror). Another is that it may be
+                         tangency to light cones.                                                        important in applications to know the arrival time difference between two
+                                                                                                         images. Kayser and Refsdal addressed pairs of images which can be merged by
+                           1
+                                                                                                         moving the observer in the observer plane, however the merging may not
+                              A geodesic STO with a touching interception is an exception. Such a case   always be possible. In a regular transparent lens, if image A cannot be merged
+                         can occur if the interceptor geodesic is isolated: when the interceptor moves   with image B, there may be an intermediate image C (or several ntermediates)
+                         along the same geodesic as the observer (the interceptor and the observer can   which can be merged with A and with B, setting a common time reference.
+                         then be the same particle). However, a touching interception does not imply     There are, however, no intermediates for singular lenses, as e.g., a cosmic string
+                         isolation, as the massless observer can be accelerated by nongravitational      loop in which a ray passing inside the loop cannot be merged with an outside
+                         forces.                                                                         ray.
+
+
+
+                                      © American Astronomical Society • Provided by the NASA Astrophysics Data System
+1990ApJ. . .351. .114K
+                         No. 1, 1990                                 FERMAT PRINCIPLE IN GRAVITATIONAL FIELDS                                                                            117
+                                                                                                           deflections involved are small and the lens motion is along the
+                                                                                                           line of sight (the aberration is then of second order in angles),
+                                                                                                                           ^^arrival         ^)^^delay at the lens *   (^*^)
+                                                                                                           This can be applied to the lens motion caused by the expansion
+                                                                                                           of a universe with a Robertson-Walker metric, as is conven-
+                                                                                                           tionally done, as well as to the peculiar motion along the line of
+                                                                                                           sight. If the look-back approach of Figure 3 is taken, the obser-
+                                                                                                           ver motion is unimportant, and the time delay must be
+                                                                                                           Doppler shifted to the source.
+                                                                                                              If there is a velocity component transverse to the line of
+                                                                                                           sight, the aberration and in particular the dependence of the
+                                                                                                           Doppler shift on the direction become of first order in the
+                                                                                                           deflection angles. This differential of the Doppler shift is
+                                                                                                           responsible for perturbations of the microwave background by
+                                                                                                           cosmic strings (Kaiser and Stebbins 1984) and by moving
+                                                                                                           clusters of galaxies (Birkinshaw and Gull 1983; Gurvits and
+                                                                                                           Mitrofanov 1986).
+                                                                                                                              III. THE ZIGZAG TRIAL PATHS
+                                                                                                              The principle of least action has the advantage over the
+                                                                                                           Fermat principle because it gives a differential equation of a
+                             Fig. 2.—A future light cone emanating from a source event S, crossed by       trajectory, whereas the application of the Fermat principle
+                         the observer worldline at observer events 01? 02, and 03. Rays OjS, 02 S, 03 S    requires to compare complete trial paths taken from a space of
+                         give the directions in which the three images are observed. ST^ T3 is a null      functions. The Fermat principle can become useful if we know
+                         trial path.
+                                                                                                           enough about the geodesics to consider only a subset of all
+                                                                                                           allowed trial paths, with a small number of dimensions. Schnei-
+                         The goo ^ 1 is kept here to compare this result with the text-                    der (1985), and Blandford and Narayan (1986) considered
+                         book derivations for the still more particular case of a static                   zigzag trial paths for single- and multiscreen gravitational
+                         gravitational field.                                                              lenses (Fig. 4). The “ true ” paths they so find do not have to be
+                            Another familiar particular case is a lens which moves as a                    (and are not) the true geodesics, but rather sufficiently good
+                         whole. From the point of view of Figure 2 the source motion is                    approximations. In this section, I consider the zigzag path con-
+                         unimportant, so the lens effect on the time of travel along the                   struction for massive and massless interceptors and define
+                         trial paths can be calculated in a coordinate system comoving                     some of the notions used in the next section.
+                         with the lens and then transformed to the observer frame. This                       The points at which the past light cone is crossed by the
+                         transformation is just the Doppler shift if the angular sizes and                 source worldline (Fig. 3) determine the “image rays” which
+
+
+
+
+                                                                                                                                              Lens
+
+
+
+
+                                                                                                                                               dos
+                            Fig. 3.—A past light cone emanating from an observer event 0 backward,
+                         crossed by the source worldline at source events Sl5 S2, and S3. Rays OS1, OS2,        b
+                         OS3 give the directions in which the three images are observed.                        Fig. 4.—Zigzag trial paths (solid lines) and true paths (dotted lines)
+
+
+
+                                       © American Astronomical Society • Provided by the NASA Astrophysics Data System
+1990ApJ. . .351. .114K
+                          118                                                              KOVNER                                                           Vol. 351
+                         connect the source and the observer, for given observer time,           extra length of the path, whereas the second term is the gravita-
+                         iobs, and so tell us the directions in which the images are             tional delay.
+                         observed and the emission time differences between the images.             The lens potential can be directly determined from the lens
+                         As the parallaxes of the relevant sources are extremely small,          surface mass density, £, via the Poisson’s equation V20 =
+                         we can regard a lens as a mapping from the sky as we see, the           2X/Xcr, where £cr = (c2/47cGXdos/dol dls). The directions from
+                         image plane r, to the sky as it would look were the lens absent,        which the interceptors arrive to the observer can be found from
+                         the source plane s. The lens is not axially symmetric, however          the lens equation
+                         let us choose a lens axis to determine the origins in the source
+                         plane and in the lens plane. Let the positions on the sky, r =                      í = vr(r),     T(r) = y -            (D(k) ,      (3.4)
+                         (x, y) and s = (sx, sy), be the projections of the unit vectors in
+                         the appropriate directions, on planes perpendicular to the              where T(r) is the source independent part of the dimensionless
+                         respective axes.                                                        time delay. The deflection angle is — (dos/dls)VO(r) • (c2
+                             The lens properties depend on the observer-lens-source dis-          + v'Dßv2^ = — 2 J V± 0 • (c2 + vU/v^, which is the familiar
+                         tances, so we can consider “source spheres” centered at the             scattering angle for a fast particle.
+                         observer (in the absence of lenses), and study lens properties for         A similar lens is a small, relatively growing perturbation in
+                         sources on each such sphere, separately. Usually, the individ-          an Einstein-de-Sitter universe (Sachs and Wolfe 1967). There
+                         ual sources of interest are small enough to be regarded as flat,        is a comoving coordinate system with metric                      =
+                         i.e., all their parts are on the same source sphere. Analogously,       (H0x°/2c)4(riflv + h^), where x° = (2c/H0)(3H0 tJ2)1/3, tu is the
+                         if a lens component is sufficiently localized and stationary, and       proper age of the universe, H0 is the Hubble constant at epoch
+                         the deflection angles are small (as usually is the case), it can be     x° = 2c/H0,         = diag (1, -1, -1, -1), hOa = 0,             =
+                         considered on its “ lens sphere,” and its action can be approx-         (10/3)cKx)ôij + (l/3)(i/0x°/2c)2didj</>(x), i,j = 1, 2, 3; x = (x1,
+                         imated by a deflection at a thin screen (Fig. 4).                       x2, x3), 0(x) is a scaled Newtonian potential determined by the
+                             Let us now construct zigzag paths for arbitrary mass inter-         density fluctuation, <5p(xM) = (2c/H0 x°)4p(x), via the Poisson’s
+                         ceptors, for a comoving observer and a comoving source, for a           equation V2 <£ = 4nGp(x), and all the units are in CGS. If the
+                         thin comoving lens (Fig. 4b). The lens is a weak perturbation of        lens crossing time is small compared to the Hubble time, the
+                         the overall metric, so to the first order in the lens effect we can     time delay contains J [(5/3)0 + (l/6XHoxo/2c)2d20/d£2M =
+                         construct the lens sphere and the trial paths as if the lens were       J 20 + constant (after integration by parts), i.e., the lens
+                         absent, as follows. A trial path is built of two (unperturbed)          potential is determined by the surface mass density as above
+                         geodesics, their space projections can be regarded as straight          (this result is in fact obvious just from the assumption of a
+                         lines (since the angles involved are small), xß = [x°(A), <f(A)nol]     short crossing time).
+                         for X < iz, and         = [x°(2), ¿(/l)iiis] for X > Xh where    =         The travel time calculated along a zigzag path for which ï is
+                         wfs = 1. A trial path goes along such a segment from the obser-         stationary differs from the time along the true path by an
+                         ver to a point on the lens sphere and then, along another               amount which is of higher order in the lens effect than the time
+                         segment, to the source. The segments are curved in the four-            delay along a general zigzag path (Fig. 4). We also have
+                         dimensional spacetime so as to have on a certain mass shell.            neglected terms of order 02/c4 in equations (3.2) and (3.3). The
+                         The lens is approximated by metric                                      zigzag construction is adequate as long as we are not interested
+                                                                                                 in terms of order higher than 0/c2.
+                             »00 = 1 + 2</>/c2 , 0oi = 0 ,          = - (1 - 2<t>/c2)ôjj (3.1)
+                                                                                                          IV. EFFECTS OF GRAVITATIONAL WAVES ON RAYS
+                         (Landau and Lifshitz 1971), where </> is the Newtonian poten-                                      NEAR CAUSTICS
+                         tial, so the on-shell condition is
+                                                                                                    If a nonstationary element is a small perturbation to a sta-
+                                             v       2(j) v2 + c2                                tionary thin lens, the zigzag construction can also be used.
+                                                                                         (3.2)   Then, however, the effects of the perturbation would be notice-
+                                             c       c2 2v2
+                                                                                                 able only for rays which are sufficiently near the caustics, so
+                         where the velocity is i; = c[l — (s/x°)2]1/2 (and ÿ <4 v2 for the       that small variations of the travel time can appreciably change
+                         small angle approximation to be valid).                                 the nature of the images. McBreen and Metcalfe (1988) pro-
+                           The nearest approximations to null-geodesics are extrema of           posed that y-ray bursts may result from crossings of small hot
+                         the travel time, ¿ = J dx°/c, calculated along the trial paths.         cores of BL Lac objects by microcaustics, the caustics motion
+                         Comparison with the value calculated along a straight line in           being caused by gravitational waves. In this section, I recall
+                         absence of the lens gives                                               properties of rays near caustics, calculate the effect of gravita-
+                                                                                                 tional waves, compare it with the effect of peculiar motions,
+                                                          c2 + vl                                and examine the McBreen and Metcalfe proposition in terms
+                         l = constant + — \\{r-s)2-               <Hr) + 0(^          , (3.3)    of timing of the y-bursts.
+                                        Vao L2              2vl
+                                                                                                    The caustics (the two-dimensional self-crossings of a three-
+                         where       is the velocity far away from the lens, the lens poten-     dimensional light cone distorted by a lens) are mergings of > 2
+                         tial is d> = J (2(j)/c2)dÇ/Dt + constant, and the distance measure      extremals of the emission time. The loci of the caustics of the
+                         is Dt = doldos/dls, where dol, dos, and dls, are observer-lens,         light cones emanating from the source for all iemit form a three-
+                         observer-source, and lens-source angular diameter distances,            dimensional hypersurface. This surface can be crossed by the
+                         respectively. This time delay is calculated in the lens frame in        observer worldline at one or more points. Conversely, the loci
+                         the Euclidean universe approximation which remains valid as             of the pasi-caustics of the past light cone emanating from the
+                         long as the time of crossing the lens remains small compared            observer can be crossed by the source worldline. The caustics
+                         with the Hubble time. The first time in the square brackets in          and past-caustics are related by reflexivity: if a point source is
+                         equation (3.3) is caused by the geometrical time delay, i.e., the       on the past-caustic the observer must be on the caustic, as two
+
+
+
+                                     © American Astronomical Society • Provided by the NASA Astrophysics Data System
+1990ApJ. . .351. .114K
+                         No. 1, 1990                           FERMAT PRINCIPLE IN GRAVITATIONAL FIELDS                                                         119
+
+                         or more merging rays connect the respective points on the               a, ß, and y are the Euler angles. The energy density in units of
+                         worldlines of the observer and the source. A source whose               the closure density is
+                         worldline passes inside past-caustic is connected by several
+                                                                                                                           Qw = h2J6H20 ,                      (4.4)
+                         true rays to the observer; i.e., it has several images. If a point
+                         source moves and crosses a past-caustic from inside, a pair of          where now h = dh/dt, t = x°/c. The perturbation of the travel
+                         its images merges and disappears. The two-dimensional caustic           time for a path at small angles to the lens axis is
+                         surface is a fold catastrophe, its singularities form one-
+                         dimensional lines of cusps at which three rays merge, and so on                          tw =     hdx0/^ sin2 ß cos 2y .              (4.5)
+                         (e.g., Berry and Upstill 1980).
+                            Within geometrical optics, the magnification of a point              Let us consider two rays which nearly merge at the caustics,
+                         source on a caustic is infinitely large. Physically, it is limited by   separated by angle Ar = Ar(cos cp, sin (p) at the observer and by
+                         diffraction which becomes important when the travel time dif-           spacetime separation
+                         ference between two neighbor extremal rays becomes of order
+                         of the wave period. Another bound on the magnification comes                            [Ax°(x3), dp(x3)Ar1, dp(x3)Arl9 0] .          (4.6)
+                         from the finite source size. The largest of these bounds deter-
+                         mines the finite width of a “ caustic wall ” within which a source      The difference between the gravitational wave contributions to
+                         has images of maximal magnification. For the microlensing               the travel time along the paths is
+                         relevant for the McBreen and Metcalfe proposition, the wall
+                         can be considered thin (~107-109 cm) as compared with its                  Aiw =        KdpdxO/c2]Ar sin3 ß cos 2y cos (<p — a), (4.7)
+                         other dimensions (>1015 cm for microlens masses >10-3
+                         M0). Therefore for any relative motion only the velocity com-           since Ax° in expression (4.6) is of higher order in Ar and can be
+                         ponent transverse to the caustic wall is important.                     neglected.
+                            The peculiar motions of the observer, the lens and the source           Let us consider the travel time surface: l given by equation
+                         can be reduced to a motion of only one of the three bodies, in a        (4.1), taken as a function of the ray direction r. It has minima,
+                         frame rotating with two of the bodies. If the frame is fixed to         maxima, and saddle points in the directions of the observed
+                         the source and to the lens, the light cone of Figure 2 is relevant.     images. For a source near a caustic (say, inside) two (or more)
+                         As the separate images are not practically resolvable in micro-         such points, say a minimum and a saddle point, are very close
+                         lensing, only the specific temporal structure of the net flux is        to each other. If the source is moved to cross the caustic, the
+                         apparent. One possible sequence for a “ burst ” when the obser-         minimum and the saddle point merge and disappear. The effect
+                         ver crosses a fold is the intensity rise with the appearance of a       of the gravitational wave is that it tilts the travel time surface.
+                         pair, first merged and then separated, of bright images, which          A small tilt can make the minimum and the saddle point to
+                         dim down while separating. A reversed sequence is observed              appear or to disappear, just as the peculiar motion of the
+                         when two images merge and disappear at the crossing. At a               source can.
+                         crossing of a cusp, one image brightens, it is joined by a new             The time difference (4.7) is equivalent to a prismatic element
+                         pair of bright images for a while, the new images separate, the         of deflection | VO | = (c/D^AtJAr). A prismatic element is
+                         original image merges with one of the new, and both disappear.          equivalent to a translational shift of the observer (or the
+                         The resulting “ burst ” can be single as well as double, depend-        source, etc), so its variation with time is equivalent to a trans-
+                         ing on the ratio of the source size and the cusp width at the           verse motion of the observer with velocity vL = vL(cos /?, sin ß,
+                         place of crossing. These temporal profiles are consistent with          0), where
+                         most y-burst profiles, and the y-burst durations are consistent
+                         with transverse velocities ~ 105-109 cm s" L                                     v
+                                                                                                            ±=
+                                                                                                                              2             3
+                                                                                                                     K dpdx°/c (l + zz)j sin ß cos 2y .        (4.8)
+                            Let us now consider an optical system composed of an ordi-
+                         nary, thin, and stationary gravitational lens (e.g., the gravita-          If the gravitational radiation can be decomposed into sto-
+                         tional field of a galaxy) perturbed by a weak gravitational             chastic monochromatic plane components, the relevant wave-
+                         wave. The travel time given by equation (3.3) with vo0 = c, can         lengths lie in interval S < Àg< D, where S is the source size
+                         be written, up to a constant, as                                        (~107-109 cm) and D is the scale of the observer-lens-source
+                                     ï(r, s) = (Dt/c)[ — s • r + T(r)] +      s) ,       (4.1)   distances, D ~ 1 Gpc. For ^ < S, in an unresolved image, the
+                                                                                                 differences between the effects for different points of the source
+                                         2
+                         where T(r) = r /2 — 0(r), and                                           smooth out the overall effect. At the other limit the waves
+                                                                                                 which are too long have periods comparable with the Hubble
+                                                A, j die 1(g00) -1/2                             time. For a random relevant monochromatic plane wave,
+                                             w—
+                                              = °GW                                      (4.2)
+                                                                                                                  Vx = KiVnnMp sin3 ß COS 2y                (4.9)
+                         is the contribution by the gravitational wave.
+                            Let us first consider a weak plane gravitational wave                where rçrand gives a random phase, and dp ~ d0i/(l + z¡) (for a
+                         (Landau and Lifshitz 1971)                                              Euclidean geometry, dp = dol, if       D).
+                                                                                                   Therefore, for a stochastic gravitational radiation back-
+                                                   ôguv(*l) = &uvK(ri)                   (4.3)   ground, the typical effective transverse velocity is
+                         where r¡ = x° + rii x\ the background metric in the lens frame                                 Vx = cr C^ñg ,                        (4.10)
+                         is approximated by diag (1, — 1, — 1, -1), the x3-axis is the           where Qg is the energy density in gravitational radiation of
+                         lens axis, the direction of propagation is given by n = (sin ß cos      relevant wavelengths, in units of the closure density (3if q/SttG),
+                         a, sin ß sin a, cos /?), the polarization is ^ = ^?(a, ß, y)[diag (0,
+                                                                                                 and the lens-dependent coefficient is
+                         1, — 1, 0)][^(a, /?, y)]-1, the net rotation is a product of rota-
+                         tions about the x3 and x1 axes, ^(a, ß, y) = @x3((x)@xl(ß)3#x3(y\                    C, = (H0 d»yi57l6 ~ H0dol/c(l + z,).            (4.11)
+
+
+                                     © American Astronomical Society • Provided by the NASA Astrophysics Data System
+1990ApJ. . .351. .114K
+                         120                                                                  KOVNER
+
+                         The lens statistics are dominated by “ optimal ” redshifts ^                  background of gravitational radiation estimated by Carr
+                         0.3-0.5 (Turner, Ostriker, and Gott 1984). For a lens at z* ~ 0.4             (1980), give     < 10-2 for relevant wavelengths, so v± < 103 5
+                                                                                                               1
+                         and conventional cosmographies, Cl ~ 0.1-0.2.                                 km s“ , to be compared with the relative peculiar velocities
+                            A similar result can be obtained by substituting equation (1)              vp ~ 103 km s-1. For       < 10-3, the caustic motion would be
+                         of McBreen and Metcalfe (1988, taken from detailed calcu-                     dominated by peculiar motions, rather than by gravitational
+                         lations by Zipoy 1966), into their equation (2). However, I                   wave background.
+                         arrive to the following conclusions, at variance with their con-                 A superluminal motion of the caustics might be produced by
+                         clusions. The differences in arrival times of y-bursts detected by            “ local ” gravitational waves from compact sources in the vicin-
+                         spacecraft at different locations in the solar system are used to             ity of the light rays. However, a very high typical v±$> c could
+                         contain the directions to the sources within annuli on the celes-             make the direction annuli determined by the light travel tech-
+                         tial sphere. For y-bursts produced by caustic motion, these                   niques to cluster at the normal to the ecliptic.
+                         directions can never be correct (except by chance), and it does
+                         not matter whether the caustic motion is superluminal or sub-                                            v. CONCLUSION
+                         luminal, as the arrival time difference is determined by the                     The Fermat principle formulated in § II is general, and it is
+                         motion of the caustic wall of maximal magnification and only                  useful in practice if we find a convenient set of trial paths which
+                         the transverse velocity has a meaning. Bursts detected by two                 contain adequate approximations to the true geodesics.
+                         spacecraft separated by Al can only be regarded as possibly the                  Applied to rays near caustics of a static lens perturbed by
+                         same burst if the arrival time difference is Aiarr < Al/c. For a              gravitational waves, the Fermat principle is a simple method to
+                         general configuration, this requires vL > c, and so         > 102.            derive the motion of the caustics. This motion was proposed by
+                         There is a large amount of evidence against such a large energy               McBreen and Metcalfe (1988) to produce y-bursts when the
+                         density in the gravitational radiation background (e.g., Carr                 caustics cross small hot cores of BL Lac objects. However, I
+                         1980 and references therein).                                                 find that a stochastic gravitational wave background would
+                            Let us suppose, however, that there may be some y-bursts                   produce subliminal caustic motion which is too slow to fit the
+                         produced by slow motion of caustics over BL Lac objects (or                   usual y-bursts (identified by two or more spacecraft separated
+                         any suitable sources). These bursts would usually be registered               by a distance sufficient to use light travel time techniques).
+                         as unrelated bursts by spacecraft separated by a distance large               Even if some of the y-bursts registered by a single spacecraft
+                         enough to matter. Bursts registered by only one spacecraft are                are caused by caustics crossing hot cores of compact sources,
+                         usually discarded as instrument errors (e.g., Atteia 1987, and                the relative peculiar motions of sources, lenses, and us are a
+                         references therein). Let us suppose that such bursts still can be             simpler explanation.
+                         identified, then, for any given such burst, an easier explanation
+                         would be the relative peculiar motion, rather than gravita-                      I am much indebted to the referees for suggestions and
+                         tional waves. Indeed, the upper bounds on the cosmological                    references.
+
+                                                                                                REFERENCES
+                         Arnold, V. I. 1978, Mathematical Methods of Classical Mechanics (New York:    Kovner, I., and Paczyñski, B. 1988, Ap. J. (Letters), 335, L9.
+                           Springer-Verlag).                                                           Landau, L. D., and Lifshitz, E. M. 1971, The Classical Theory of Fields
+                         Atteia, J.-L. et al 1987, Ap. J. Suppl, 64,305.                                 (London : Pergamon).
+                         Berry, M. V., and Upstill, C. 1980, Progr. Optics, 18,257.                    McBreen, B., and Metcalfe, L. 1988, Nature, 332,234.
+                         Birkinshaw, M., and Gull, S. F. 1983, Nature, 302,315.                        Pham Mau Quan 1962, Proc. Royaumont Conf, Les Theories Relativistes de la
+                         Blandford, R., and Narayan, R. 1986, Ap. J., 310, 568.                          Gravitation (Paris: CNRS), p. 165.
+                         Brill, D. R. 1973, in Relativity, Cosmology, and Astrophysics, ed. W. Israel  Sachs, R. K., and Wolfe, A. M. 1967, Ap. J., 147,73.
+                           (Dordrecht: Reidel), p. 134.                                                Schneider, P. 1985, Astr. Ap., 143,413.
+                         Carr, B. J. 1980, Astr. Ap., 89,6.                                            Schrödinger, E. 1956, Expanding Universes (Cambridge: Cambridge Uni-
+                         Gurvits, L. I., and Mitrofanov, I. G. 1986, Nature, 324,349.                    versity Press).
+                         Hogan, C, and Narayan, R. 1984, M.N.R.A.S., 211, 575.                         Turner, E. L., Ostriker, J. P., and Gott, J. R. 1984, Ap. J., 284,1.
+                         Kaiser, N., and Stebbins, A. 1984, Nature, 310,391.                           Vilenkin, A. 1986, Nature, 322,613.
+                         Kayser, R., and Refsdal, S. 1983, Astr. Ap., 128,156.                         Weyl, H. 1917, Ann. Physik, 54,117.
+                         Kovner, 1.1989, Ap. J., 337,621.                                              Zipoy, D. M. 1966, Phys. Rev., 142,825.
+
+
+                         Israel Kovner: Department of Nuclear Physics, The Weizmann Institute of Science, Rehovot 76100, Israel
+
+
+
+
+                                      © American Astronomical Society • Provided by the NASA Astrophysics Data System
+

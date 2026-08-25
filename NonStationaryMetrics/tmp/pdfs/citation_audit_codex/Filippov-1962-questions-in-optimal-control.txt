@@ -1,0 +1,475 @@
+                                                                                                                                          J.SIAM ConTroL
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                         Ser. A, Vol. 1, No.
+                                                                                                                                       Printed in U.S.A., 196
+
+
+                                                                                                                                                    ON CERTAIN QUESTIONS IN THE THEORY OF
+                                                                                                                                                             OPTIMAL CONTROL*
+                                                                                                                                                                       A. F. FILIPPOVf
+
+                                                                                                                                         I. The existence of a solution of the optimal control problem within
+                                                                                                                                       the class of bounded, measurable functions. Given a system of n equa-
+                                                                                                                                       tions (in vector notation)
+                                                                                                                                                                       d
+                                                                                                                                       ()                              d
+                                                                                                                                                                              f(’ x, u),
+                                                                                                                                       where x and f are n-dimensional vectors, and u             u(t) is the control
+                                                                                                                                       parameter (an r-dimensional vector) which, for any given and x, can
+                                                                                                                                       take on values in a given set Q(t, x) (in [1] the case where Q depends
+                                                                                                                                       neither on nor on x is considered). The optimal control problem consists
+                                                                                                                                       of the following: for given x () and x*, find a function u(t) such that the
+                                                                                                                                       solution x(t) of (1), with u set equal to u(t), and initial condition
+                                                                                                                                       x (0)    x (), attains the point x* in the least possible time, where, in addi-
+                                                                                                                                       tion, u (t) Q (t, x (t)).
+                                                                                                                                          We shall assume that the vector function f(t, x, u) is continuous in all
+                                                                                                                                       of the variables t, x, and u, is continuously differentiable with respect to
+                                                                                                                                       x, and that
+                                                                                                                                        (2)                     x.f (, x, u) __< c (] x      + ),
+                                                                                                                                       for all and x, and all u f Q (t, x), where the dot denotes the scalar product,
+                                                                                                                                       and xl denotes the length of the vector x. Let Q(t, x) be closed and
+                                                                                                                                       bounded. When u describes Q(t, x), f(t, x, u) describes a set which we
+                                                                                                                                       shall denote by R(t, x). We shall assume that Q(t, x) is upper semicon-
+                                                                                                                                       tinuous (in and x) with respect to inclusion; i.e., that for any t, x and
+                                                                                                                                         > 0 there exists a 8 8(e, t, x) > 0 such that Q(t’, x’) is contained
+                                                                                                                                       in an e-neighborhood of Q (t, x) whenever       It’   < ti and
+                                                                                                                                       Then., R (t, x) will have the same semicontinuity property (on account of
+                                                                                                                                       the continuity of f).
+                                                                                                                                          TgEOnEM 1. Suppose that the conditions stated above are satisfied, and
+                                                                                                                                       that the set R (t, x) is convex for every and x. Also suppose that there exists
+                                                                                                                                       at least one measurable function t(t) Q(t, 2(t) such that the solution
+                                                                                                                                            Originally published in Vestnik Moskov. Univ. Ser. Mat. Mech. Astr., 2 (1959)
+                                                                                                                                       pp. 25-32. Translated by L. W. Neustadt, Aerospace Corporation, E1 Segundo,
+                                                                                                                                       California.
+                                                                                                                                          From time to time the editors will include translations of important foreign
+                                                                                                                                       papers on control.
+                                                                                                                                            Chair of Differential Equations, Moscow State University, U.S.S.R.
+                                                                                                                                            An absolutely continuous vector function which satisfies (1) almost everywhere
+                                                                                                                                       will be called a solution. Under the assumptions we have made, such a solution exists
+                                                                                                                                       by a theorem of Carathodory [2, page 140].
+                                                                                                                                                                                76
+                                                                                                                                                         CERTAIN QUESTIONS IN OPTIMAL CONTROL                               77
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                       2(t) of (1), with u        fi(t), and initial condition 2(0)        x (), attains x*
+                                                                                                                                       for some  t*    O. Then   there also exists an  optimal control, i.e., a measurable
+                                                                                                                                                        Q
+                                                                                                                                       function (t) (t, (t)) for
+                                                                                                                                                 u            x           which  the  solution x (t) of (1), with initial
+                                                                                                                                       condition x (0)     x (), attains x* in the least possible time.
+                                                                                                                                          Proof. It follows from (1) and (2), and the fact that x(0) x (), that
+                                                                                                                                                        dX <
+                                                                                                                                                         dt
+                                                                                                                                                                2CX,      X(O) -ix ()12 1 A   +
+                                                                                                                                       for almost all t, where X (t)      Ix (t)    +
+                                                                                                                                                                                    1. Consequently, X (t) <-_ Ae
+                                                                                                                                       for >_- 0. Hence, for every admissible u (t), the solution of (1) with initial
+                                                                                                                                       condition x(0)       x () satisfies the inequality Ix(t)] <= Ate ct* on the
+                                                                                                                                       interval 0 <= <-_ t* (if we consider that C >= 0).
+                                                                                                                                          We shall show that the Q(t, x) are uniformly bounded for 0 <=             t* <=
+                                                                                                                                       and for Ix <= A1/2eC*; i.e., that there exists an N such that ul <__ N for
+
+
+                                                                                                                                                               - -
+                                                                                                                                       every u Q (t, x) for the indicated values of and x. Indeed, otherwise there
+                                                                                                                                       would be sequences tn t, xn x, and un Q (tn, Xn) such that
+                                                                                                                                       But, by the assumptions we have made, Q(t,,, xn) is contained in an
+                                                                                                                                       e-neighborhood of the bounded set Q (t, x), for sufficiently large n. This con-
+                                                                                                                                       tradiction shows that the Q (t, x) are uniformly bounded for the indicated
+                                                                                                                                       values of and x. Since f is continuous, If(t, x, u) --< M if 0 _-< _-< t*, Ix
+                                                                                                                                        <= Ae c*, u Q (t, x)
+                                                                                                                                          Now consider the set of all the solutions x(t) of (1) (for various
+                                                                                                                                       u (t)Q (t, x (t)) ), for which x (0) x () and x (t’) x*, 0 < t’ -_< t*. The
+                                                                                                                                       numbers t’ can differ for different solutions. Since one such solution exists
+                                                                                                                                       by hypothesis, this set is not empty. If this set is finite, the assertion of the
+                                                                                                                                       theorem is obvious. If it is infinite, we shall select a sequence from this
+                                                                                                                                       set such that the sequence of the corresponding t’ converges to ti--the
+                                                                                                                                       greatest lower bound of all such t’. The solutions of this sequence are
+                                                                                                                                       uniformly bounded for 0 <= <= t* since Ix (t) -<_ Ate ct*. These solutions
+                                                                                                                                       are also equicontinuous since they are absolutely continuous and
+                                                                                                                                         dx/dtl If(t, x, u) <= i lmost everywhere. Let us choose a uniformly
+                                                                                                                                       convergent subsequence xi(t), x2(t),          from this sequence, and let us
+                                                                                                                                       denote the limit of this subsequence by x(t). We shall show that x(t)
+                                                                                                                                       is the solution which corresponds to an optimal control u (t).
+                                                                                                                                          Making use of the equicontinuity of the solutions xi (t), x2 (t),           we
+                                                                                                                                       conclude that x(0)        x () and x(tl)     x*. In addition, there exists no
+                                                                                                                                       solution for which x(0)        x () and x(t)   x*, with 0 < < tl Further,
+                                                                                                                                       since all the x(t) satisfy a Lipschitz condition with the same constant M,
+                                                                                                                                       their limit x(t) satisfies the same condition. Hence, x(t) is absolutely
+                                                                                                                                       continuous, and dx (t) /dt <= M. Let
+                                                                                                                                                             dx(t)
+                                                                                                                                                               dt
+                                                                                                                                                                       y(t),       dx(t)
+                                                                                                                                                                                     dt
+                                                                                                                                                                                              y(t),        i    1,2,   ....
+                                                                                                                                       78                                       A.F. FILIPPOV
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                       The functions y(t) and yi(t) are defined almost everywhere on [0, tl], are
+                                                                                                                                       measurable, and are bounded. Let t0 be a point of [0, ti] for which dx (to)/dt
+                                                                                                                                       exists. We shall show that then dx (to)/dt R (to, x (to)).
+                                                                                                                                          The set R (t, x) is upper semicontinuous (u.s.c.) with respect ,to inclusion.
+                                                                                                                                       Consequently, for any e > 0, there is a > 0 such that R(t, x)                 U
+                                                                                                                                       whenever         to < ti and x x (to) < 2M/t, where U is a closed e-neigh-
+                                                                                                                                       borhood of R (to, x(to)). Making ti smaller, if necessary, we may suppose
+                                                                                                                                       that
+
+                                                                                                                                       (3)                        x(t)           x(to)      dx(to)
+                                                                                                                                                                                 to           dt
+                                                                                                                                       whenever It       tol < ti. But
+                                                                                                                                                 x(t)   x(to)     lim
+                                                                                                                                                                           x(t)       x(to)                          y(T) dr
+                                                                                                                                                    t-- to        -.              t--to              limt       t
+                                                                                                                                                                  1.im_.   f0    y(to + (t         to)s) ds.
+                                                                                                                                       Furthermore,
+                                                                                                                                               y(r)          dx(r)/dt           f(r,x(-),            u(r))      R(r, x(T))
+                                                                                                                                       for almost all r. For all sufficiently large i and ]r                     t01 < ti, we have
+                                                                                                                                                    [x(t0)       < M,
+                                                                                                                                                                x(to)     xi(r)                             x(t0) < Mi.
+                                                                                                                                       Consequently, [xi(r)    x(t0) < 2M. But then, from the previously
+                                                                                                                                       made estimates, R(T, x(r))    U. Thus, if It to[ < ti, and for all
+                                                                                                                                       sufficiently large i, the integrand in (4) is contained (for almost all s) in
+                                                                                                                                       U. Hence, the whole of the integral (4) is also contained in U (U being
+                                                                                                                                       a convex set). Consequently, the left-hand side in formula (4) is also
+                                                                                                                                       contained in U. Now it follows from (3) that dx(to)/dt is contained in
+                                                                                                                                       a 2e-neighborhood of R(to, x(to)). Since e is arbitrarily small and R is
+                                                                                                                                       closed,
+                                                                                                                                                                        dz(to)           R(to, x(to)).
+                                                                                                                                                                            dt
+                                                                                                                                       Hence, there exists a u Q (to, x (to)) such that dx (to)/dt f (to, x (to), u).
+                                                                                                                                       Thus, for all for which the vector function x (t) has a derivative, i.e.,
+                                                                                                                                       for almost all t[0, tl], x(t) satisfies (1) where u(t) Q(t, x(t)). It follows
+                                                                                                                                       from the lemma proved below that u (t) can be considered to be measurable.
+                                                                                                                                          LEMMA. Let the vector function f(t, ul,                    ...,
+                                                                                                                                                                                                ur), or, more concisely,
+                                                                                                                                       f(t, u), be continuous; let the set Q(t) be closed, bounded, and u.s.c, with
+                                                                                                                                       respect to inclusion (in t); let the vector f (t, u) describe a set R (t) when the
+                                                                                                                                                         CERTAIN QUESTIONS IN OPTIMAL CONTROL                               79
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                       vector u      (ul,         ur) describes the set Q (t) and let y (t) be a measurable
+                                                                                                                                       vector function such that y(t) R(t). Then there exist measurable functions
+                                                                                                                                       ul (t),...,   u, (t) such that f (t, ul (t),...,    u, (t) =--- y (t) for almost all t.
+                                                                                                                                          Proof.    For    a   given     value   yR(t),      we shall always take that
+                                                                                                                                       u       (u!,       Ur),  from   among   all the  values of the vector u Q (t),which
+                                                                                                                                       satisfy   the  equation f(t, u)          y, for  which the coordinate ul has the
+                                                                                                                                       smallest value. If there is more than one such u, we shall take that .one
+                                                                                                                                       for which the coordinate us has the smallest value, etc. (the smallest
+                                                                                                                                       value exists since, on account of the continuity of the function f, the set
+                                                                                                                                       of values u which satisfy the equation f(t, u)                  y is closed). We shall
+                                                                                                                                       prove    by  induction    that   the  functions        ...,
+                                                                                                                                                                                         u (t),         u(t) are measurable.
+                                                                                                                                       Let us suppose that u (t),              Us_l (t) are measurable (if s         1, nothing
+                                                                                                                                       need be assumed), and let us prove that u8 (t) is measurable. There exists
+                                                                                                                                       a closed set E        [0, t], of measure greater than tl e, such that the func-
+                                                                                                                                       tions y (t), u (t),  ...,     u_l (t) are continuous on E (this is a property of
+                                                                                                                                       measurable functions). Let us show that, for any number a, the set of
+                                                                                                                                       t E for which u, (t)     =<    a is closed. Suppose the contrary. Then there is a
+                                                                                                                                       sequence tE,        n       1, 2, -.., such that
+                                                                                                                                       (5)                   tn -+     E,      u (t) _-< u8 ()       ,                 1   > 0.
+                                                                                                                                       Since lug(t) <-_ const, for all i and t, a subsequence tn can be chosen
+                                                                                                                                       from the tn such that u(t,,)            --,,_
+                                                                                                                                                                               t, for i     1, 2, .-., r. Since
+                                                                                                                                       u (tn) Q (tn), and Q (t) is closed and u.s.c, with respect to inclusion,
+                                                                                                                                       (,     ..., )      Q(). It follows from (5) and the continuity on E
+                                                                                                                                       of the functions u(t), i    1, 2,     s    1, that
+                                                                                                                                                                                 u(),
+                                                                                                                                       (6)
+                                                                                                                                                                             _<_ u(i)
+                                                                                                                                       Pssing to the limit in the identity f(t, u(t),
+                                                                                                                                                                                          . ...,
+                                                                                                                                                                                            Ur(t))
+                                                                                                                                                                                                         i
+
+
+                                                                                                                                                                                                       y(t) with
+                                                                                                                                                                                                                1, --.,s-- 1,
+
+
+
+                                                                                                                                       respect to the above chosen subsequence, and making use of the continuity
+                                                                                                                                       of the function f, we obtain
+                                                                                                                                       (7)          f (i, u (i),      ...,
+                                                                                                                                                                      u_ (i), t,          ...,
+                                                                                                                                                                                       t) y ().
+                                                                                                                                       By (6) and (7), u (i) is not the smallest value u8 which satisfies the equa-
+                                                                                                                                       tion
+                                                                                                                                                        f(i, ul(i),   ..., u,_(i), u,, -.., ur)         y(i).
+                                                                                                                                       This contradicts the definition of u8 (t). Thus, our assumption is false, and
+                                                                                                                                       the set of t E for which u, (t) =< a is closed.
+                                                                                                                                         Hence, u, (t) is measurable on E. Since E [0, t], and the measure of
+                                                                                                                                       E is greater than tl    e, where e is arbitrarily small, u, (t) is measurable
+                                                                                                                                       80                                A.F. FILIPPOV
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                       on [0, t]. Hence, by induction, we conclude that all the u(t), i     1,      r,
+                                                                                                                                       are measurable.
+                                                                                                                                          Note. In actual mechanical systems, of course, it is impossible to realize a
+                                                                                                                                       control described by a function u(t) if the function is merely measurable
+                                                                                                                                       without being piecewise continuous. In spite of this, Theorem 1 does not
+                                                                                                                                       lose interest since any measurable function u (t) can be approximated by
+                                                                                                                                       continuous function v (t) such that
+
+                                                                                                                                       (8)                               u(t)      v(t) dt <   ,
+                                                                                                                                       where is arbitrarily small. If, in (1), we replace the optimal control
+                                                                                                                                       u(t) by u continuous control v(t) which satisfies (8), then, by virtue of
+                                                                                                                                       the theorem [3] on the continuous dependence of u solution on a parameter,
+                                                                                                                                       the solution x (t), although it may not attain the given point x* at    t,
+                                                                                                                                       will come arbitrarily close to x* if the number in (8) is made sufficiently
+                                                                                                                                       small. Thus, in many cases, one may even get along with continuous con-
+                                                                                                                                       trols.
+                                                                                                                                         II. Piecewise smoothness condition on the control functions u(t). Let
+                                                                                                                                       system (1) have the form
+
+                                                                                                                                       (9)              dx      g(t, x            x,) +     b,(t)u,(t), i     1,       n,
+                                                                                                                                                        dt
+                                                                                                                                       where the g, Og/Ox, nd b, re continuous, nd the u,(t) must satisfy
+                                                                                                                                       the conditions
+                                                                                                                                       (10)                                  [u(t) -<_ 1,                 s1,     r.
+                                                                                                                                       By Theorem 1, there exist measurable bounded functions u,(t) which
+                                                                                                                                       satisfy (10) for which the solution of system (9), with initial conditions
+                                                                                                                                       xi(O)     Xo, i     1,   ..., n, attains the point (x*,     ...,
+                                                                                                                                                                                                      x,*) the most
+                                                                                                                                       quickly of all. By [4], the functions u, (t) satisfy the "maximum principle",
+                                                                                                                                       (11)                       f(t, x, u).(t)max.,
+                                                                                                                                       where f     (f,   ...,
+                                                                                                                                                          f) is the complete right-hand side of (9) in vector
+                                                                                                                                       notation, k     (,    b.) is a solution of the system
+                                                                                                                                                                       Ob,
+                                                                                                                                                                        ot
+                                                                                                                                                                                     Of b                 i   1,   ..., n,
+                                                                                                                                       and the maximum is taken with respect to all the u, which satisfy (10).
+                                                                                                                                         For the system (9), (10), the expression in (11) attains its maximum
+                                                                                                                                          If we assume that u(t)Q, where the set Q is connected, locMly connected, and
+                                                                                                                                       does not depend on or x, the function v(t) in formula (8) can be chosen in such
+                                                                                                                                       way that v(t)Q.
+                                                                                                                                                           CERTAIN QUESTIONS IN OPTIMAL CONTROL                           81
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                       when
+                                                                                                                                       (13)
+                                                                                                                                       where b       (b,,     ...,
+                                                                                                                                                                                         .
+                                                                                                                                                                      u,(t) sgn b, (t) (t)
+                                                                                                                                                                     b,,). It is assumed that b.(t).k(t)
+                                                                                                                                                                                                         s
+
+                                                                                                                                       values of which form set of measure zero. If the values of for which
+                                                                                                                                                                                                                 1,
+                                                                                                                                                                                                            0 only for
+                                                                                                                                                                                                                      ..., r,
+                                                                                                                                       b.(t) .(t)     0 have no point of accumulation, the function u.(t) in (13)
+                                                                                                                                       is piecewise continuous. Points of accumulation can only be those where
+                                                                                                                                       the relations b, (t). (t)    0 and d (b, (t). (t))/dt 0 hold simultaneously
+                                                                                                                                        (here we assume that db/dt is continuous). Hence, we can conclude that,
+                                                                                                                                       generally speaking, for the majority of solutions (t) of (12) such points
+                                                                                                                                       of accumulation will not exist, and, therefore, for the majority of optimal
+                                                                                                                                       trajectories x (t), the controls u, (t) will be piecewise continuous.
+                                                                                                                                          If the system is linear with analytic (in particular, constant, as in [5])
+                                                                                                                                       coefficients and b,, and if b,(t).p(t)       O, then b,(t).p(t) can vanish only
+                                                                                                                                       t isolated points, and, consequently, an optimal control is piecewise
+                                                                                                                                       continuous. The verification of the conditions b, (t) "k (t)    0, s 1,       r,
+                                                                                                                                       may be crried out relatively easily, since it suffices to verify if these
+                                                                                                                                       equalities hold in u neighborhood of the point         0.
+                                                                                                                                          Analogous results for linear systems have been obtained previously by
+                                                                                                                                       other methods by N. N. Krasovskii [6] and R. V. Gamkrelidze; the original
+                                                                                                                                       proof of Gamkrelidze’s [5, pp. 472-474] was replaced by proof due to
+                                                                                                                                       the author of this article.
+                                                                                                                                          III. The case where the optimal control is continuous. Suppose that
+                                                                                                                                       the conditions of section I are satisfied, and, in addition, that the set
+                                                                                                                                       R (t, x) is strictly convex and depends continuously on and x; i.e., for
+                                                                                                                                       every > 0, there exists a > 0 such that if tl t. < ti a.nd xl       x. < i
+                                                                                                                                       then the distance from any point of R(t, x) to the set R(t, x) is less
+                                                                                                                                       than (for. i        1, j   2 ori     2, j    1). Suppose that to each value
+                                                                                                                                       v R (t, x) there corresponds only one u Q(t, x) for which f(t, x, u) v.
+                                                                                                                                       Then, the value of u at which the maximum in (11) is attained will de-
+                                                                                                                                       pend continuously on t.
+                                                                                                                                          Indeed, the maximum is attained at that u for which the point
+                                                                                                                                       f(t, x, u)
+                                                                                                                                                                                              .
+                                                                                                                                                      vR(t, x) lies on the support plane to the set R(t, x) which
+                                                                                                                                       is perpendicular to the vector h. By virtue of the strict convexity of
+                                                                                                                                       R(t, x), this point v depends continuously on Under the assumptions
+                                                                                                                                       we have made, u depends continuously on v. From this it is easy to show
+                                                                                                                                       that the optimal control u (t) is continuous.
+                                                                                                                                         IV. The general formulation of the optimal control problem. There is
+                                                                                                                                       given the system (1) in the notation of section I; a closed set A in the
+                                                                                                                                              That is, every support plane to this set has only one point in common with the
+                                                                                                                                       set.
+                                                                                                                                       8                              A. F. FILIPPOV
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                       hyperplane        to closed sets B and D in the half-space ->_ to and a
+                                                                                                                                       closed set Q(t, x), in the space of the u, which depends on and x. It is
+                                                                                                                                       required to find a point x0 A and vector functions x(t) and u(t) which
+                                                                                                                                       satisfy (1) and the conditions x (to)     x0, (t, x (t)) D, u (t) Q (t, x (t)),
+                                                                                                                                                     q-
+                                                                                                                                       (to -t- T, (to T)
+                                                                                                                                                 x             B, such that the number   T is minimal.
+                                                                                                                                          This formulation differs from the formulation of the problem in [1]
+                                                                                                                                       in that the set of admissible values of u, i.e., Q(t, x), may depend on
+                                                                                                                                       and x; that the solution x(t) must not leave the given region D, and
+                                                                                                                                       must get not from one point to another point in the shortest time, but
+                                                                                                                                       must get from one given set A onto another given set B.
+                                                                                                                                          If A is bounded and the conditions of section I are satisfied, then we
+                                                                                                                                       can make an assertion analogous to the assertion of Theorem 1 concerning
+                                                                                                                                       the existence of an optimal control within the class of bounded and mea-
+                                                                                                                                       surable functions. This can be proved in the same way as Theorem 1. It
+                                                                                                                                       is only necessary to add that the limit of a minimizing sequence of curves
+                                                                                                                                       x,(t) which belong to the closed region D is a curve which also belongs to
+                                                                                                                                       this region.
+                                                                                                                                          The formulation of the problem given above contains, as a special case,
+                                                                                                                                       the optimal control problems as formulated in [1], [5]-[7]. The formulation
+                                                                                                                                       of the problem of [1] has been given in section I. In [7] the requirement
+                                                                                                                                       that the solution x (t) should not leave a given region D was added.
+                                                                                                                                          In one of the problems described in [5], it is in addition required that
+                                                                                                                                       some of the control functions, e.g., u,+l(t),   ...,   ur(t), have derivatives
+                                                                                                                                       which are bounded by a given constant. Let us show that this case is also
+                                                                                                                                       included in the general statement of the problem given above. Let us add
+                                                                                                                                       the following r     p equations to the given system (1)"
+
+                                                                                                                                                                                 vs,             s    p q- 1,      ,r.
+                                                                                                                                                                            dt
+                                                                                                                                          Now there are n -{- r p functions xl,             x., u+l,         ur in the
+                                                                                                                                       system, which are being sought. The last r          p of these are subiect to
+                                                                                                                                       definite constraints (e.g., constraints of the form us(t) =< N, if such
+                                                                                                                                       were the constraints imposed on the u when they were considered to be
+                                                                                                                                       control parameters). Further, there are r control parameters ul,          ...,
+                                                                                                                                       u,, v+,     ...,  Yr. The same constraints as before are imposed on the
+                                                                                                                                       first p of these. The last (r    p) parameters must satisfy the constraints
+                                                                                                                                         vs(t) =< L, s       p q- 1, ...,  r. The initial conditions for the desired
+                                                                                                                                       functions will be as follows: xi(to)    xi0, i    1,       n; us(to) arbitrary,
+                                                                                                                                       s      p W 1,       r, so long as they satisfy the imposed constraints (e.g.,
+                                                                                                                                         us(to) <-- N). Thus, the set A (see the beginning of Section IV) is no
+                                                                                                                                       longer a point. The set B is similarly defined.
+                                                                                                                                          The problem in which there is imposed the additional requirement that
+                                                                                                                                                       CERTAIN QUESTIONS IN OPTIMAL CONTROL                                 83
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                       the derivatives (up to any given order) of the u(t) must be bounded,
+                                                                                                                                       can be reduced by the same method to the formulation given at the be-
+                                                                                                                                       ginning of section IV.
+                                                                                                                                         In [6] constraints of the form
+                                                                                                                                                                      O"l-T
+                                                                                                                                                                              [u.(t) ]2 d -< C
+                                                                                                                                       are imposed on the control parameters. In this case, the functions
+
+                                                                                                                                                                  Zn+,(t)               [U,()]: d,             s    1,      r,
+                                                                                                                                                                                   to
+                                                                                                                                       can be added to the functions of system (1) as functions to be solved for.
+                                                                                                                                       Further, these additional functions are subject to the constraints
+                                                                                                                                       0 _-< xn+ (t) =< C and satisfy the equations
+                                                                                                                                                          dxn+.(t)     [u,(t)].,    x,+,(to) O,        s    1      r.
+                                                                                                                                                              dt
+                                                                                                                                       The u (t) remain as control parameters, but they are now subject to no
+                                                                                                                                       constraints; i.e., Q(t, x) is the entire space. The set R (t, x) may also be
+                                                                                                                                       unbounded, but if it is closed, convex, and u.s.c, with respect to inclusion
+                                                                                                                                        (see section I), the proof given in section I on the existence of an optimal
+                                                                                                                                       control remains in force (with small changes). However, in this way, only
+                                                                                                                                       the square integrability of the functions u,(t) for which the control is
+                                                                                                                                       optimal can be proved. In [6] their continuity is proved by other means.
+                                                                                                                                          V. On sliding regimes. Let us show that an optimal control may not
+                                                                                                                                       exist if the set R(t, x) in Theorem 1 is not convex. Consider the problem
+                                                                                                                                                dx     _y -!- u             dy
+                                                                                                                                                dt                          dt
+                                                                                                                                                                                     u;        lu(t)   <= 1;
+                                                                                                                                       (14)
+                                                                                                                                              x(0)     y(0)     0;          x(T)          1,    y(T)      O,       T > 0;
+
+                                                                                                                                         Since dx/dt -< 1, T >__ 1. It is easily seen that T > 1 for any solution of
+                                                                                                                                       system (14), and that any sequence of solutions for which un (t)             1
+                                                                                                                                       and Y, (t) <- 1In is a minimizing sequence since, for such a sequence,
+                                                                                                                                       x (t) I for I < t < 1 -t- 1/(n 1). Further, any minimizing sequence
+                                                                                                                                       converges to the functions x (t)      t, y (t)   0 which are not a solution of
+                                                                                                                                       system (14) for any u(t). Thus, an optimal control does not exist here.
+                                                                                                                                         In cases similar to the one considered, it is said that the minimizing
+                                                                                                                                       sequence converges to a sliding regime, where the following meaning is
+                                                                                                                                       assigned to this. Consider the problem (14). In order to obtain a solution
+                                                                                                                                       for which the time T is arbitrarily near the minimum (but unattainable)
+                                                                                                                                       84                                A.F. FILIPPOV
+
+
+
+
+Downloaded 04/13/18 to 129.100.58.76. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+                                                                                                                                       value T
+
+                                                                                                                                                                                                 -
+                                                                                                                                                   1, it is necessary that u(t) pass sufficiently often from values
+                                                                                                                                       near q-1 to values near --1. More precisely, let en                  n
+                                                                                                                                                                                                0 and --+ 0, and,
+                                                                                                                                       for an arbitrary time interval of duration greater than t, let the fraction
+                                                                                                                                       of the values of for which u (t)       1 < e differ from 1/2 by less than
+                                                                                                                                       and let the same situation hold for ]un (t) q- 1 < e. Then, such a se-
+                                                                                                                                       quence u (t) is minimizing.
+                                                                                                                                         Both in the example we have considered and in the case of more general
+                                                                                                                                       equations of the form (1), sliding regimes arise from the nonconvexity of
+
+
+                                                                                                                                                   .
+                                                                                                                                       R (t, x). It is clear from the proof of Theorem 1 that a sliding regime appears
+                                                                                                                                       when the vector dx(t)/dt does not belong to R(t, x) on some interval
+                                                                                                                                       a <      < Then, the vector belongs to the complement of R(t, x) with
+                                                                                                                                       respect to a convex set. Here, x(t) is the limit of the convergent sub-
+                                                                                                                                       sequence of the minimizing sequence, as in section I.
+                                                                                                                                         We note that in [8, p. 103] results similar to Theorem 1 of this paper
+                                                                                                                                       were obtained, but under somewhat different assumptions.
+                                                                                                                                                                         REFERENCES
+                                                                                                                                        [1] V. G. BOLTYANSKII, R. V. GAMKRELIDZE AND L. S. PONTRYAGIN, On the theory
+                                                                                                                                                  of optimal processes, Dokl. Akad. Nauk SSSR., 110, (1956) 7-10.
+                                                                                                                                                  (English translation in Report STL-T-Ru-22-60-5111-102, Space Tech-
+                                                                                                                                                  nology Laboratories, Redondo Beach, Clifornia.)
+                                                                                                                                        [2] G. SANSONE, Equazioni Differenziali nel Campo Reale, 2d ed., Vol. 2, Znichelli,
+
+                                                                                                                                        [3]  ,.   Bologna, 1949.
+                                                                                                                                               KURZWEIL AND Z. VOREL, Continuous dependence of solutions of differential
+                                                                                                                                                  equations on a parameter, Czechoslovak Math. J., 7 (1957), pp. 568-583.
+                                                                                                                                                  (Russian, English summary.)
+                                                                                                                                        [4] R. V. GAMKRELIDZE, On the general theory of optimal processes, Dokl. Akad.
+                                                                                                                                                  Nuk SSSR., 123 (1958), pp. 223-226. (English translation in Automation
+                                                                                                                                                  Express, 1 (1959), pp. 37-39.)
+                                                                                                                                        [5] 1. V. GAMKRELIDZE, The theory of time-optimal processes for linear systems,
+                                                                                                                                                  Izvestia Akad. Nauk SSSR., Ser. Mat., 22 (1958), pp. 449-474. (English
+                                                                                                                                                  translation in Report No. 61-7, University of California, Department of
+                                                                                                                                                  Engineering, Los Angeles, California.)
+                                                                                                                                        [6] N. N. KRASOVSKII, On the theory of optimal control, Avtomat. Telemeh., 18
+                                                                                                                                                  (1957), pp. 960-970. (English translation in Automation and Remote Con-
+                                                                                                                                                  trol, 18 (1957), pp. 1005-1016.)
+                                                                                                                                        [7] A. YA. LERNER, On the limiting speed of response in automatic control systems,
+                                                                                                                                                  Avtomat. Telemeh., 15 (1954), pp. 461-477. (Russian.)
+                                                                                                                                        [8] R. BELLMAN, I. GLICKSBERG AND O. GROSS, Some Aspects of the Mathematical
+                                                                                                                                                  Theory of Control Processes, The Rand Corporation, Santa 1Vlonica, Cli-
+                                                                                                                                                  fornia, 1958.
+                                                                                                                                        [9]* E. ROXIN, The existence of optimal controls, Michigan Math. J., 9 (1962), pp.
+                                                                                                                                                  109-119.
+                                                                                                                                       [10]* E. B. LEE AND L. MARKUS, Optimal control for nonlinear processes, Arch.
+                                                                                                                                                  RationM Mech. AnM., 8 (1961), pp. 36-58.
+                                                                                                                                       [11]* J. WRCA, Relaxed variational problems, J. Math. Anal. Appl., 4 (1962), pp.
+                                                                                                                                                   111-128.
+                                                                                                                                            * References added by translator.
+

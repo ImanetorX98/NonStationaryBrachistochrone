@@ -1,0 +1,297 @@
+                                               PHYSICAL REVIEW D, VOLUME 61, 067503
+
+                                                     New form of the Kerr solution
+                                                               Chris Doran*
+                  Astrophysics Group, Cavendish Laboratory, Madingley Road, Cambridge CB3 0HE, United Kingdom
+                                       共Received 28 October 1999; published 25 February 2000兲
+                 A new form of the Kerr solution is presented. The solution involves a time coordinate which represents the
+              local proper time for free-falling observers on a set of simple trajectories. Many physical phenomena are
+              particularly clear when related to this time coordinate. The chosen coordinates also ensure that the solution is
+              well behaved at the horizon. The solution is well suited to the tetrad formalism and a convenient null tetrad is
+              presented. The Dirac Hamiltonian in a Kerr background is also given and, for one choice of tetrad, it takes on
+              a simple, Hermitian form.
+
+              PACS number共s兲: 04.20.Jb, 04.70.Bw
+
+
+                      I. INTRODUCTION
+                                                                                   ẋ i ⫽„1,⫺ 共 2M /r 兲 1/2,0,0…,     ẋ i ⫽ 共 1,0,0,0兲   共4兲
+   The Kerr solution has been of central importance in astro-           defines a radial geodesic with constant ␪ and ␾ . The proper
+physics ever since it was realized that accretion processes             time along these paths coincides with t, and the geodesic
+would tend to spin up a black hole to near its critical rotation        equation is simply
+rate 关1兴. A number of forms of the Kerr solution currently
+exist in the literature. Most of these are contained in Chan-                                       r̈⫽⫺M /r 2 .                          共5兲
+drasekhar’s work 关2兴, and useful summaries are contained in
+the books by Kramer et al. 关3兴 and d’Inverno 关4兴. The pur-              Physics as seen by these observers is almost entirely New-
+pose of this paper is to present a new form of the solution             tonian, making this gauge a very useful one for introducing
+which has already proved to be useful in numerical simula-              some of the more difficult concepts of black hole physics.
+tions of accretion processes. The form is a direct extension of         The various gauge choices leading to this form of the
+the Schwarzschild solution when written as                              Schwarzschild solution also carry through in the presence of
+
+                  冉 冉 冊 冊
+                                                                        matter and provide a simple system for the study of the for-
+                        2M 1/2 2 2                                      mation of spherically symmetric clusters 关6兴 and black holes
+   ds 2 ⫽dt 2 ⫺ dr⫹           dt ⫺r 共 d ␪ 2 ⫹sin2 ␪ d ␾ 2 兲 .
+                         r                                              关5兴.
+                                                                共1兲         A further useful feature of the time coordinate in Eq. 共1兲
+                                                                        is that it enables the Dirac equation in a Schwarzschild back-
+共Natural units have been employed.兲 This is obtained from               ground to be cast in a simple Hamiltonian form 关5兴. Indeed,
+the Eddington-Finkelstein form                                          the full Dirac equation is obtained by adding a single term
+
+              冉          冊                       冉         冊
+                                                                        Ĥ I to the free-particle Hamiltonian in Minkowski spacetime.
+                    2M          4M             2M
+        ds 2 ⫽ 1⫺      d t̄ 2 ⫺    d t̄ dr⫺ 1⫹                          This additional term is
+                     r           r              r
+              ⫻dr 2 ⫺r 2 共 d ␪ 2 ⫹sin2 ␪ d ␾ 2 兲 .              共2兲                    Ĥ I ␺ ⫽i 共 2M /r 兲 1/2„⳵ r ␺ ⫹3/共 4r 兲 ␺ …
+                                                                                            ⫽i 共 2M /r 兲 1/2r ⫺3/4⳵ r 共 r 3/4␺ 兲 .        共6兲
+by the coordinate transformation
+
+
+                                        冉 冉 冊冊
+                                                                        A useful feature of this gauge is that the measure on surfaces
+                                       r 1/2                            of constant t is the same as that of Minkowski spacetime, so
+          t⫽ t̄ ⫹2 共 2M r 兲 ⫺4M ln 1⫹
+                             1/2
+                                             .                  共3兲
+                                      2M                                one can employ standard techniques from quantum theory
+                                                                        with little modification. One subtlety is that the Hamiltonian
+In both metrics r lies in the range 0⬍r⬍⬁, and ␪ and ␾ take             is not self-adjoint due to the presence of the singularity. This
+their usual meaning.                                                    manifests itself as a decay in the wavefunction as current
+    The metric 共1兲 has a number of nice features 关5兴, many of           density is sucked onto the singularity 关5兴.
+which extend to the Kerr case. The solution is well-behaved                 The time coordinate t in the metric of Eq. 共1兲 has many of
+at the horizon, so can be employed safely to analyze physical           the properties of a global, Newtonian time. This suggests that
+processes near the horizon, and indeed inside it 关5兴. Another           an attempt to find an analogue for the Kerr solution might
+useful feature is that the time t coincides with the proper time        fail due to its angular momentum. The key to understanding
+of observers free-falling along radial trajectories starting            how to achieve a suitable generalization is the realization
+from rest at infinity. This is possible because the velocity            that it is only the local properties of t that make it so conve-
+vector                                                                  nient for describing the physics of the solution. The natural
+                                                                        extension for the Kerr solution is therefore to look for a
+                                                                        convenient set of reference observers which generalizes the
+ *Email address: C.Doran@mrao.cam.ac.uk                                 idea of a family of observers on radial trajectories. In Secs. II
+
+0556-2821/2000/61共6兲/067503共4兲/$15.00                          61 067503-1                           ©2000 The American Physical Society
+BRIEF REPORTS                                                                                                                    PHYSICAL REVIEW D 61 067503
+
+and III we present a new form of the Kerr solution and show                         The vector v i also plays a crucial role in separating the Dirac
+that it has many of the desired properties. In Sec. IV we give                      equation in a Kerr background, and is the timelike eigenvec-
+various tetrad forms of the solution, and present a Hermitian                       tor of the electromagnetic stress-energy tensor for the Kerr-
+form of the Dirac Hamiltonian in a Kerr background.                                 Newman analogue of our form.
+Throughout we use Latin letters for spacetime indices and
+Greek letters for tetrad indices, and use the signature ␩ ␣␤                                             III. SPHEROIDAL COORDINATES
+⫽diag(⫹⫺⫺⫺). Natural units c⫽G⫽ប⫽1 are employed
+throughout.                                                                            The nature of the metric 共7兲 is more clearly revealed if we
+                                                                                    introduce oblate spheroidal coordinates (r, ␪ , ␾ ), where
+                   II. THE KERR SOLUTION                                                                                         z
+                                                                                                                       cos ␪ ⫽            0⭐ ␪ ⭐ ␲                          共15兲
+   The new form of the Kerr solution can be written in                                                                           r
+Cartesian-type coordinates (t,x,y,z) in a manner analogous
+to the Kerr-Schild form 关2,4兴. In this coordinate system our                                                                     y
+                                                                                                                       tan ␾ ⫽            0⭐ ␾ ⬍2 ␲ ,                       共16兲
+new form of the solution is                                                                                                      x
+
+       ds 2 ⫽ ␩ i j dx i dx j ⫺   冉   2␣
+                                                                冊
+                                         a v ⫹ ␣ 2 v i v j dx i dx j ,
+                                       ␳ i j
+                                                                             共7兲
+                                                                                    so that ␳ recovers its standard definition
+
+                                                                                                                        ␳ 2 ⫽r 2 ⫹a 2 cos2 ␪ .                              共17兲
+where ␩ i j is the Minkowski metric,                                                The use of the symbols r and ␪ here are standard, though one
+                                                                                    must be aware that when M ⫽0 共flat space兲 these reduce to
+                                       共 2M r 兲   1/2
+                             ␣⫽                                              共8兲    oblate spheroidal coordinates, and not spherical polar coor-
+                                           ␳                                        dinates. This is clear from the fact that r does not equal
+                                                                                    冑 (x ⫹y ⫹z ).
+                                                                                         2   2   2
+
+                                               a 2z 2                                   In terms of (t,r, ␪ , ␾ ) coordinates our new form of the
+                             ␳ 2 ⫽r 2 ⫹                 ,                    共9兲    Kerr solution is
+                                                r2
+
+and a and M constants. The function r is given implicitly by                        ds ⫽dt ⫺
+                                                                                         2      2
+                                                                                                        冉          ␳
+                                                                                                            共 r 2 ⫹a 2 兲 1/2
+                                                                                                                               dr⫹ ␣ 共 dt⫺a sin ␪ d ␾ 兲
+                                                                                                                                                     2
+                                                                                                                                                              冊    2
+
+                                                                                                                                                                       ⫺ ␳ 2d ␪ 2
+             r 4 ⫺r 2 共 x 2 ⫹y 2 ⫹z 2 ⫺a 2 兲 ⫺a 2 z 2 ⫽0,                   共10兲
+                                                                                             ⫺ 共 r 2 ⫹a 2 兲 sin2 ␪ d ␾ 2 .                                                  共18兲
+and we restrict r to 0⬍r⬍⬁, with r⫽0 describing the disk
+z⫽0, x 2 ⫹y 2 ⭐a 2 . The maximally extended Kerr solution                           This neatly generalizes the Schwarzschild form of Eq. 共1兲,
+共where r is allowed to take negative values兲 will not be con-                       replacing 冑 (2M /r) with 冑 (2M r)/ ␳ , and introducing a rota-
+sidered here.                                                                       tional component. The line element can be simplified further
+   The two vectors in the metric 共7兲 are                                            by introducing the hyperbolic coordinate ␩ via a sinh ␩⫽r,
+                                                                                    though this can make some equations harder to interpret and
+
+                         冉   ay   ⫺ax
+                   v i ⫽ 1, 2 2 , 2 2 ,0
+                           a ⫹r a ⫹r
+                                                            冊               共11兲
+                                                                                    will not be employed here. The metric 共18兲 is obtained from
+                                                                                    the advanced Eddington-Finkelstein form of the Kerr solu-
+                                                                                    tion,
+
+and
+                                                                                              冉
+                                                                                      ds 2 ⫽ 1⫺
+                                                                                                            2M r
+                                                                                                                   冊   d v 2 ⫺2 d v dr
+
+                                  冉                                 冊
+                                                                                                             ␳2
+                                      rx    ry  z
+           a i ⫽ 共 r 2 ⫹a 2 兲 1/2 0, 2 2 , 2 2 , .                          共12兲
+                                    a ⫹r a ⫹r r                                                     2M r
+                                                                                              ⫹               共 2a sin2 ␪ 兲 d v d ¯
+                                                                                                                                  ␾ ⫹2a sin2 ␪ dr d ¯
+                                                                                                                                                    ␾ ⫺ ␳ 2d ␪ 2
+                                                                                                        ␳2
+
+
+                                                                                                    冉                                                    冊
+These two vectors play an important role in studying physics
+in a Kerr background. They are related to the two principal                                                                       2M r
+null directions n ⫾ by                                                                        ⫺ 共 r 2 ⫹a 2 兲 sin2 ␪ ⫹                      共 a 2 sin4 ␪ 兲 d ␾
+                                                                                                                                                            ¯ 2,            共19兲
+                                                                                                                                     ␳2
+               n ⫾ ⫽ 共 r 2 ⫹a 2 兲 1/2v i ⫾ 共 ␣ ␳ v i ⫹a i 兲 .               共13兲
+                                                                                    via the coordinate transformation
+For computations it is useful to note that the contravariant
+                                                                                                                                     dr
+components of the spacelike vector in brackets are the same                                       dt⫽d v ⫺                                                                  共20兲
+as those of ⫺a i ,                                                                                                 1⫹„2M r/ 共 r 2 ⫹a 2 兲 …1/2
+
+
+                                           冉
+                                           rx    ry  z
+      ␣ ␳ v i ⫹a i ⫽⫺ 共 r 2 ⫹a 2 兲 1/2 0, 2 2 , 2 2 , . 共14兲
+                                         a ⫹r a ⫹r r
+                                                                        冊                      d ␾ ⫽d ¯
+                                                                                                      ␾⫺ 2 2
+                                                                                                                a dr
+                                                                                                        r ⫹a ⫹„2M r 共 r 2 ⫹a 2 兲 …1/2
+                                                                                                                                      .                                     共21兲
+
+
+                                                                              067503-2
+BRIEF REPORTS                                                                                                              PHYSICAL REVIEW D 61 067503
+
+This transformation is well-defined for all r, though the in-                      techniques described in 关5兴 this tetrad provides a very pow-
+tegrals involved do not appear to have a simple closed form.                       erful way of analyzing and visualizing motion in a Kerr
+   The velocity vector                                                             background.
+                                                                                      A further tetrad is provided by reverting to the original
+         ẋ i ⫽„1,⫺ ␣ 共 r 2 ⫹a 2 兲 1/2/ ␳ ,0,0…,      ẋ i ⫽ 共 1,0,0,0 兲   共22兲    Cartesian-type coordinates of Eq. 共7兲 and writing
+defines an infalling geodesic with constant ␪ and ␾ , and zero                                                                  ␣
+velocity at infinity. The existence of these geodesics is a key                                                e ␮ i ⫽ ␦ i␮ ⫺     v a ␩ j␮,                    共28兲
+                                                                                                                                ␳ i j
+property of the solution. The time coordinate t now has the
+simple interpretation of recording the local proper time for                       where v i and a i are as defined at Eqs. 共11兲 and 共12兲. The
+observers in free-fall along trajectories of constant ␪ and ␾ .                    inverse is found to be
+As in the spherical case, many physical phenomena are sim-
+plest to interpret when expressed in terms of this time coor-                                                                 ␣ ij k
+                                                                                                              e ␮i ⫽ ␦ ␮i ⫹     ␩ a j␦ ␮v k .                  共29兲
+dinate. An example of this is provided in the following sec-                                                                  ␳
+tion, where we show that the time coordinate produces a
+Dirac Hamiltonian which is Hermitian in form. The differ-                          This final form of tetrad is the simplest to use when con-
+ence between this free-fall velocity and the velocity v i 共de-                     structing the Dirac equation in a Kerr background. We will
+fined by the gravitational fields兲 also provides a local defini-                   not go through the details here but will just present the final
+tion of the angular velocity contained in the gravitational                        form of the equation in a Hamiltonian form. Following the
+field.                                                                             conventions of Itzykson and Zuber 关7兴 we denote the Dirac-
+                                                                                   Pauli matrix representation of the Dirac algebra by 兵 ␥ ␮ 其 and
+         IV. TETRADS AND THE DIRAC EQUATION                                        write ␣ i ⫽ ␥ 0 ␥ i , i⫽1 . . . 3. Since e ␮0 ⫽ ␦ ␮0 , premultiplying
+                                                                                   the Dirac equation by ␥ 0 is all that is required to bring it into
+   The metric 共18兲 lends itself very naturally to the tetrad                       Hamiltonian form. When this is done, the Dirac equation in a
+formalism. From the principal null directions of Eq. 共13兲 one                      Kerr background becomes
+can construct the following null tetrad, expressed in
+(t,r, ␪ , ␾ ) coordinates:                                                                            i ⳵ t ␺ ⫽⫺i ␣ i ⳵ i ␺ ⫹m ␥ 0 ␺ ⫹Ĥ K ␺                   共30兲
+           1                                                                       where
+    l i⫽ 2     „r 2 ⫹a 2 ,r 2 ⫹a 2 ⫺ 关 2M r 共 r 2 ⫹a 2 兲兴 1/2,0,a…
+
+                                                                                                     冉
+        r ⫹a 2
+                                                                           共23兲               冑2M
+                                                                                   Ĥ K ␺ ⫽              共 r 3 ⫹a 2 r 兲 1/4i ⳵ r 关共 r 3 ⫹a 2 r 兲 1/4␺ 兴
+                                                                                               ␳2
+
+                                                                                                                                                                     冊
+           1
+   n i⫽         „r 2 ⫹a 2 ,⫺ 共 r 2 ⫹a 2 兲 ⫺ 关 2M r 共 r 2 ⫹a 2 兲兴 1/2,0,a…                                                               a cos ␪ 2
+          2␳2                                                                                 ⫺a cos ␪ r 1/4␣ ␾ i ⳵ r 共 r 1/4␺ 兲 ⫺             共 r ⫹a 2 兲 1/2␥ 5 ␺
+                                                                                                                                           2
+                                                                           共24兲
+                                                                                                                                                               共31兲
+                    1
+   m⫽i
+                                   共 ia sin ␪ ,0,1,i csc ␪ 兲 .             共25兲    and
+          冑2 共 r⫹ia cos ␪ 兲
+                                                                                                           ␣ ␾ ⫽⫺sin ␾␣ 1 ⫹cos ␾␣ 2 .                          共32兲
+In this frame the Weyl scalars ⌿ 0 , ⌿ 1 , ⌿ 3 and ⌿ 4 all
+vanish, and                                                                        The measure on hypersurfaces of constant t is again the same
+                                                                                   as that of Minkowski spacetime, since the covariant volume
+                                            M                                      element is simply
+                        ⌿ 2 ⫽⫺                          .                  共26兲
+                                     共 r⫺ia cos ␪ 兲 3                                                    dx dy dx⫽ ␳ 2 sin ␪ dr d ␪ d ␾ .                      共33兲
+   A second tetrad, better suited to computations of matter                        As with the Schwarzschild case the interaction Hamiltonian
+geodesics, is given by
+                                                                                   Ĥ K is not self-adjoint when integrated over these hypersur-
+            e 0 i ⫽ 共 1,0,0,0 兲                                                    faces. This is because the singularity causes a boundary term
+                                                                                   to be present when the Hamiltonian is integrated.
+            e 1 i ⫽„␣ , ␳ / 共 r 2 ⫹a 2 兲 1/2,0,⫺ ␣ a sin2 ␪ …
+                                                                           共27兲                                  V. CONCLUSIONS
+
+            e 2 i ⫽ 共 0,0,␳ ,0 兲                                                      The Kerr solution is of central importance in astrophysics
+                                                                                   as ever more compelling evidence points to the existence of
+            e 3 i ⫽„0,0,0,共 r 2 ⫹a 2 兲 1/2sin ␪ ….                                 black holes rotating at near their critical rate 关8兴. Any form of
+                                                                                   the solution which aids physical understanding of rotating
+This defines a frame for all values of the coordinate r, so is                     black holes is clearly beneficial. The form of the solution
+valid inside and outside the horizon. Combined with the                            presented here has a number of features which achieve this
+
+                                                                             067503-3
+BRIEF REPORTS                                                                                         PHYSICAL REVIEW D 61 067503
+
+aim. The solution is well suited for studying processes near            the equations also permits many techniques from quantum
+the horizon, and the compact form of the spin connection for            field theory to be carried over to a gravitational background
+the tetrad of Eq. 共28兲 makes it particularly good for numeri-           with little modification. The lack of self-adjointness due to
+cal computation. It should also be noted that this gauge ad-            the source itself is also natural in this framework, as the
+mits a simple generalization to a time-dependent form which             singularity is a natural sink for the current. In the non-
+looks well-suited to the study of accretion and the formation           rotating case the physical processes resulting from the pres-
+of rotating black holes.                                                ence of this sink are quite simple to analyze 关5兴. The Kerr
+    A more complete exposition of the features of this gauge,           case is considerably more complicated, due both to the na-
+including the derivation of the Dirac Hamiltonian will be               ture of the fields inside the inner horizon, and to the structure
+presented elsewhere. One reason for not highlighting more of            of the singularity. One interesting point to note is that the
+the advantages here is that many of the theoretical manipu-             sink region is described by r⫽0, and so represents a disk,
+lations which exploit these properties have been performed              rather than just a ring of matter. This in part supports the
+utilizing Hestenes’ spacetime algebra 关5,9兴. This language              results of earlier calculations described in 关8兴, though much
+fully exposes much of the intricate algebraic structure of the          work remains on this issue.
+Kerr solution and brings with it a number of insights. These
+are hard to describe without employing spacetime algebra                                   ACKNOWLEDGMENTS
+and so will be presented unadulterated in a separate paper.
+    The fact that the time coordinate measured by a family of              C.D. is supported by the EPSRC. The author is grateful to
+free-falling observers brings the Dirac equation into Hamil-            Anthony Lasenby and Anthony Challinor for helpful discus-
+tonian form is suggestive of a deeper principle. This form of           sions.
+
+
+
+
+ 关1兴 J. M. Bardeen, Nature 共London兲 226, 64 共1970兲.                          S. F. Gull, and A. D. Challinor, Mon. Not. R. Astron. Soc. 302,
+ 关2兴 S. Chandrasekhar, The Mathematical Theory of Black Holes                748 共1999兲.
+     共Oxford University Press, New York, 1983兲.                          关7兴 C. Itzykson and J-B. Zuber, Quantum Field Theory 共McGraw-
+ 关3兴 D. Kramer, H. Stephani, M. MacCallum, and E. Herlt, Exact               Hill, New York, 1980兲.
+     Solutions of Einstein’s Field Equations 共Cambridge University       关8兴 A. N. Lasenby, C. J. L. Doran, Y. Dabrowski, and A. D. Chal-
+     Press, Cambridge, England, 1980兲.                                       linor, in Current Topics in Astrofundamental Physics, Erice,
+ 关4兴 R. d’Inverno, Introducing Einstein’s Relativity 共Oxford Uni-            1996, edited by N. Sánchez and A. Zichichi 共World Scientific,
+     versity Press, New York, 1992兲.                                         Singapore, 1997兲, p. 380.
+ 关5兴 A. N. Lasenby, C. J. L. Doran, and S. F. Gull, Philos. Trans. R.    关9兴 D. Hestenes, Space-Time Algebra 共Gordon and Breach, New
+     Soc. London A356, 487 共1998兲.                                           York, 1966兲.
+ 关6兴 A. N. Lasenby, C. J. L. Doran, M. P. Hobson, Y. Dabrowski,
+
+
+
+
+                                                                  067503-4
+

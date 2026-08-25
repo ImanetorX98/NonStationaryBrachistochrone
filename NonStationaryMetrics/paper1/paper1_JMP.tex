@@ -499,14 +499,17 @@ strictly convex \emph{closed curve} (the boundary of a convex region), and the c
 its direction $\theta\in S^1$, itself a compact one-dimensional set. Maximizing the
 support function $p\cdot\dot x(\theta)$ over this curve has a \emph{unique} maximizer by
 strict convexity, which is (i): the control set $S^1$ is already compact and the maximizer
-single-valued, so \emph{no} Filippov relaxation is needed. This is not merely an
-observation about our indicatrix: it is exactly the situation of Filippov's
-\cite[\S III]{Filippov1962}, where a \emph{strictly} convex velocity set---one whose
-every support plane meets it in a single point---together with a one-to-one
-correspondence between velocities and controls is shown to make the maximizer, and
-hence the optimal control, depend continuously on the costate. Hypothesis~(H)
-supplies both conditions, so continuity of $\theta^\star$ is a published theorem and
-only its smoothness is ours. We do \emph{not} claim the
+single-valued, so \emph{no} Filippov relaxation is needed. This follows directly from
+the geometry of the regular oval: for every nonzero covector the support function has
+a unique maximizer, and the maximizing direction is smooth away from the degeneracy
+set. Filippov's continuous-control result \cite[\S III]{Filippov1962} is closely
+related---he obtains continuity of the optimal control from strict convexity of the
+velocity set, in the sense that every support plane meets it in a single point,
+together with a one-to-one correspondence between velocities and controls---but it is
+stated under the standing hypotheses of his section~I, which require the velocity set
+to be \emph{convex}. Our admissible set is the boundary oval itself, which is not a
+convex subset of the plane, so we do not invoke that theorem here; the elementary
+argument above suffices and assumes nothing we do not have. We do \emph{not} claim the
 velocity locus is a convex \emph{subset} of the plane, nor convexify it (which would admit
 averaged velocities violating the unit-mass shell). Excluding $p=0$---legitimate by the
 normality statement of Theorem~\ref{thm:existence}, which is proved independently
@@ -1051,11 +1054,15 @@ dilation
     \Lambda^2=\frac{\Ehat^2}{f\,(\Ehat^2-f)},
     \label{eq:dilation-p1}
 \end{equation}
-the Perlick factor itself. That the rescaling is \emph{conformal} at all is not
-an accident: by the Fuglede--Ishihara dichotomy
-\cite{Fuglede1978,Ishihara1979,BairdWood2003} a semiconformal map is either
-identically zero or conformal on the complement of the kernel of its
-differential.
+the Perlick factor itself. That the rescaling is \emph{conformal} is a computed
+fact, not one conferred by the abstract theory, and the distinction matters. The
+statement that a semiconformal map is either identically zero or conformal on the
+complement of the kernel of its differential is Fuglede's \emph{definition} of
+semiconformality \cite[\S5]{Fuglede1978}, not a theorem; deducing conformality from
+it would assume what is to be shown. What Fuglede and Ishihara prove is that a map
+is a \emph{harmonic morphism} if and only if it is semiconformal \emph{and}
+harmonic \cite[\S7]{Fuglede1978}, \cite{Ishihara1979,BairdWood2003}, which is a
+different statement and is discussed in Paper~II.
 
 What fails away from level (a) is that the structure should \emph{descend}. A
 conformal submersion admits a rescaling of the base turning it into a Clairaut
