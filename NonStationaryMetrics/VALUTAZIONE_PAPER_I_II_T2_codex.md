@@ -364,6 +364,19 @@ In `paper2/paper2.tex:331-355` la descrizione della metrica di McVittie, inclusa
 
 La risposta «no experimental validation is available» è onesta e preferibile a una falsa pretesa osservativa, ma non soddisfa completamente una richiesta formulata come «strict». Si può mantenere la distinzione tra validazione del modello gravitazionale ed emulazione analogica, aggiungendo un protocollo possibile con ottica, fluidi o metamateriali tempo-modulati, presentato come test dell'Hamiltoniana efficace e delle leggi di scala, non come riproduzione della gravità di Kerr.
 
+Questo punto è stato approfondito nel documento dedicato
+`PIANO_VALIDAZIONE_SPERIMENTALE_PAPER_I_II_codex.md`. Il piano distingue tre livelli
+che non devono essere confusi: emulazione esatta del sistema dinamico ridotto,
+analogo fisico con la stessa classe di Hamiltoniane e validazione
+gravitazionale/astrofisica. La proposta prioritaria è un banco planare
+hardware-in-the-loop che realizzi l'indicatrice affine del rail e testi il residuo
+$O(\varepsilon)$ della sola parte on-shell contro il residuo
+$O(\varepsilon^2)$ della correzione completa. Un draining vortex d'acqua o un
+vortice gigante in elio costituiscono invece il test complementare del settore
+rotante, delle strutture prograde/retrograde e della separatrix crossing. Onde e
+fononi sono però null-like e non validano direttamente il rail massive: questa
+limitazione è vincolante nel testo suggerito per Claude.
+
 ### P2 — pulizia editoriale
 
 - eliminare la nota iniziale di Paper I secondo cui il contenuto fisico sarebbe invariato: non è più vera;
