@@ -241,6 +241,9 @@ def report_subwindow(sub: dict) -> bool:
 # --------------------------------------------------------------------------
 # artefact -> (command, path-relative-to-root)
 MANIFEST: list[tuple[str, str, str]] = [
+    ("laboratory design study for the three validation routes",
+     "python3 Experimental/run_all_codex.py",
+     "NonStationaryMetrics/Experimental/run_all_codex.py"),
     # --- claims verified symbolically -------------------------------------
     ("Prop. 3.1 (local classification at r_e), shape",
      "wolframscript -file verify_cusp_corner.wls",
