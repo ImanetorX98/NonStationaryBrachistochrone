@@ -80,7 +80,7 @@ classification at the stationary limit, in which the two marginal momenta $\pm J
 \emph{dynamically inequivalent} although the shape radical is even in $J$---the retrograde
 one has a finite limiting tangent and reaches $r=2M$ only asymptotically, the prograde one
 crosses at a finite rate; the exterior retrograde separatrix at $r_d=3.5139M$; the
-rotational and conformal plunge inversion, with an existence theorem for the latter under
+rotational and conformal depth inversion, with an existence theorem for the latter under
 a same-launch comparison; and the first-order adiabatic response, on-shell and off-shell,
 canonically re-derived from the extended Hamiltonian on compact regular subarcs and
 verified against the true non-autonomous flow to $O(\varepsilon^2)$, its weight-two
@@ -292,7 +292,7 @@ Hamiltonians and the conformal-time ($\eta$) brachistochrone (the arrival branch
 $t\equiv\eta$, distinct from proper time $\tau$); the closed-form equatorial separatrices
 in Weierstrass functions; the complete local classification at the conformal stationary
 limit, with its exact normal forms; the exterior retrograde separatrix; the rotational and
-conformal plunge inversion; and the first-order adiabatic response, on-shell and
+conformal depth inversion; and the first-order adiabatic response, on-shell and
 off-shell, verified against the true non-autonomous flow.
 
 Because the selector fixes where the problem exists, we begin by delimiting it. For
@@ -356,7 +356,24 @@ which much of his analysis rests, is incorrect \cite[\S I]{Kaloper2010}, so
 \cite{NolanMcVittie1998} should be read with that correction attached.
 For constant $A$
 the transfer theorem maps the problem to Kerr with $E_{\rm eff}=\Ehat/A$,
-$J_{\rm eff}=J/A$. Throughout we use $\rp$ (where $\Delta=0$) and $\re=2M$ as
+$J_{\rm eff}=J/A$.
+
+The restriction to constant $A$ is not a technical convenience, and it is worth
+saying why, since the pointwise map itself survives a running factor. If $u$ is
+$g$-unit then $\bar u=Au$ is $\bar g$-unit and $\Ehat=A\,\bar E$ still holds at
+each event. What does not travel with it is the variational problem. Since
+$g=A^2\bar g$ gives $\dd\tau_g=A\,\dd\tau_{\bar g}$, minimising elapsed time in
+$g$ becomes minimising an $A$-\emph{weighted} length in $\bar g$; and at fixed
+$\Ehat$ the seed charge $\bar E=\Ehat/A(\eta)$ is no longer constant along the
+curve. A running conformal factor therefore \emph{relocates} the non-stationarity,
+from the metric into the cost and the constraint, rather than removing it, and
+$\eta$ is a dynamical variable rather than a parameter one is free to fix. No
+representative of the conformal class makes the metric and the control problem
+stationary at once. This is the same boundary that appears in
+section~\ref{sec:submersion} from the weighted-manifold side, where the hypotheses
+of that framework hold precisely at frozen $A$.
+
+Throughout we use $\rp$ (where $\Delta=0$) and $\re=2M$ as
 labels for the \emph{seed} Kerr null surface and conformal-stationary-limit surface:
 a conformal factor preserves the null \emph{character} of $\Delta=0$, so $\rp$ is a
 conformal Killing horizon candidate, but for time-dependent $A(\eta)$ this does
@@ -464,7 +481,7 @@ $\varphi$ is cyclic, $J$ is constant along an extremal at frozen $A$; across
 branches it is relabelled by the conformal weight, $J_t=A\,J_\eta$
 (Protocol~\ref{prot:names}). The arrival-time branch $H_t$ differs
 from $H_\eta$ only in the unit cost ($-1\to-A$) and reduces to it for $A=1$; it is
-the branch compared with $\tau$ in the plunge inversion
+the branch compared with $\tau$ in the depth inversion
 (section~\ref{sec:inversion}), where its turning potential
 $H_{t0}=H_t|_{p_r=0}$ enters. All three are regular through the
 ergosphere ($f=0\Rightarrow R^2=\bar v^2\Delta/\bar P>0$) and degenerate only at
@@ -752,31 +769,55 @@ $\dd f\neq0$, a Riemannian submersion after a conformal change of metric
 is the same: semiconformality is the half we have, and harmonicity is a separate
 condition.
 
-That second half can be settled here rather than left open, because Ishihara
-reduces it for a submersion---one is harmonic exactly when it is \emph{minimal} on
-each fibre \cite[\S1]{Ishihara1979}---and our fibres, the orbits of $W$, are
-one-dimensional, so minimality means simply that they are geodesics. They are not.
-For the Thakurta--Kerr family $\nabla_WW\neq0$, and in the cleanest case, a static
-conformal factor over a Schwarzschild seed, it reduces to
+That second half can be settled here rather than left open, but it takes more than
+the fibre geometry alone. Ishihara's reduction of harmonicity to \emph{minimal}
+fibres \cite[\S1]{Ishihara1979} is stated for a Riemannian submersion, that is at
+unit dilation. Ours is horizontally conformal with the non-constant
+dilation~\eqref{eq:dilation}, and for such a map the tension field carries a second
+term: with $\dim=4$ over a three-dimensional base and one-dimensional fibres,
+\begin{equation}
+    \tau(\pi)=-\,\dd\pi\big(\mu+\nabla^H\ln\Lambda\big),
+    \label{eq:tension}
+\end{equation}
+$\mu$ being the mean curvature of the fibres and $\nabla^H$ the horizontal
+gradient. Non-geodesic fibres therefore do \emph{not} by themselves obstruct
+harmonicity: the two contributions could cancel. Here they do not. For a static
+conformal factor over a Schwarzschild seed the fibre term is
 \begin{equation}
     \nabla_WW=\frac{M}{r^2}\,f\,\partial_r ,
-    \qquad g(\nabla_WW,\nabla_WW)=\frac{M^2f}{r^4}>0
-    \quad (r>2M),
+    \qquad \mu=\frac{M}{r^2}\,\partial_r ,
     \label{eq:fibre-accel}
 \end{equation}
-which is exactly the thrust a static observer must supply. So the optical
-projection is \emph{not} a harmonic morphism, and the obstruction is not a
-technicality of the abstract theory but the same quantity that makes the controlled
-rail cost something. The framework thus accounts for the \emph{form} of Perlick's
+which is exactly the thrust a static observer must supply, while the dilation term
+is $\nabla^H\ln\Lambda=-(M/r^2)\big[(\Ehat^2-2f)/(\Ehat^2-f)\big]\partial_r$, so that
+\begin{equation}
+    \mu+\nabla^H\ln\Lambda
+      =\frac{M}{r^2}\,\frac{f}{\Ehat^2-f}\;\partial_r
+      \;\neq\;0
+    \qquad (r>2M,\ \Ehat>1).
+    \label{eq:tension-residual}
+\end{equation}
+The residual is strictly positive throughout the exterior and vanishes only as
+$f\to0$. So the optical projection is \emph{not} a harmonic morphism, and the
+obstruction is not a technicality of the abstract theory but the same quantity that
+makes the controlled rail cost something---surviving, and not cancelled by, the
+conformal factor that the framework does explain. The framework thus accounts for
+the \emph{form} of Perlick's
 metric, a conformal rescaling of $h$ rather than a general deformation, and for
 nothing further: neither the value~\eqref{eq:dilation} of the factor, which requires
 solving the rail jointly with the mass shell, nor harmonicity, which fails.
-Equation~\eqref{eq:fibre-accel} is verified in
-\texttt{verification/verify\_submersion\_link.wls}. One caveat belongs with it:
+Equations~\eqref{eq:fibre-accel} and~\eqref{eq:tension-residual} are verified in
+\texttt{verification/verify\_submersion\_link.wls} and independently in
+\texttt{verification/verify\_tension\_sympy.py}. One caveat belongs with them:
 Fuglede works throughout with \emph{Riemannian} manifolds, and his machinery is
 built on the Laplace--Beltrami operator, whereas our total space is Lorentzian. What
-transfers without question is the pointwise statement on the horizontal
-distribution, which is spacelike; the elliptic theory does not come along with it.
+we use is the pointwise computation~\eqref{eq:tension-residual} on the horizontal
+distribution, which is spacelike and on which the relevant contractions are those of
+a positive-definite metric; the global elliptic theory---removability, unique
+continuation, the Fuglede--Ishihara equivalence as an \emph{if and only if}---does
+not come along with it, and we invoke none of it. The claim made here is the
+vanishing or non-vanishing of a computed tension field, not a statement inside the
+Riemannian classification.
 
 The hypotheses of that framework are exactly what the non-stationary problem
 loses, and the loss is quantitative. For the induced structure to descend to a
@@ -827,7 +868,7 @@ $g(a,u)=0$, only the part of $W$ orthogonal to $u$ contributes, and
 $|W_\perp|^2=g(W,W)+g(W,u)^2=\Ehat^2-A^2f=\Ehat^2\bar v^2$; Cauchy--Schwarz in
 the (positive definite) rest space of $u$ then gives the \emph{sharp} bound
 \begin{equation}
-    |a|\ \ge\ \frac{\varepsilon}{\Ehat\,\bar v},
+    |a|\ \ge\ \frac{|\varepsilon|}{\Ehat\,\bar v},
     \qquad \bar v^2=1-\frac{A^2f}{\Ehat^2},
     \label{eq:thrust-bound}
 \end{equation}
@@ -1030,7 +1071,7 @@ tangential eigenvalues, and the optical scalar curvature is
     \label{eq:optical-scalar}
 \end{equation}
 Writing $r=2M(1+s)$ with $s>0$ turns the bracket into a quadratic in $s$ whose three
-coefficients are $24\Ehat^4$, $48\Ehat^2(\Ehat^2-1)$ and $8(3\Ehat^4-6\Ehat^2+8)$,
+coefficients are $12\Ehat^4$, $24\Ehat^2(\Ehat^2-1)$ and $4(3\Ehat^4-6\Ehat^2+8)$,
 all positive for $\Ehat>1$---the last because $3X^2-6X+8$ has negative discriminant.
 Hence $R_{\rm opt}<0$ at \emph{every} exterior point and for \emph{every} rail
 energy. But $\mathrm{Ric}(v,v)\ge e^2>0$ for all unit $v$ would force
@@ -1041,7 +1082,9 @@ $S^2\times S^2$ loophole rather than merely noting it. It is worth adding that t
 instrument in question is Myers' Lemma, which asserts that no arc longer than
 $\pi\sqrt{n-1}/e$ minimises, and that the Lemma requires no completeness at all:
 completeness enters only in his \S3, to pass from the Lemma to compactness. Nothing
-is being evaded by the incompleteness of the optical exterior. Myers' own footnote 5
+is being evaded by a completeness question either way: the arrival-time optical
+exterior is in fact complete, as shown in the proof of Proposition~\ref{prop:globalmin}, while it is the
+\emph{proper-time} surface that is incomplete at the conformal stationary limit. Myers' own footnote 5
 is also apposite---his results ``are proved for positive definite metrics, and hence
 are not immediately applicable to the physical theory''---and it is precisely the
 fixed-energy optical reduction, which replaces the Lorentzian problem by a
@@ -1238,18 +1281,40 @@ which vanishes at $\varphi=0$ and next at $\varphi=\pi$. The out-of-plane Jacobi
 fields vanishing at the launch point form a one-dimensional space, so this is the
 \emph{first} out-of-plane conjugate point, and it sits at swept azimuth exactly
 $\pi$---fixed by the rotation group, independently of $\Ehat$, of $M$, and of
-$K_{\rm tan}$ altogether. Hence
+$K_{\rm tan}$ altogether. Hence, for a \emph{fixed non-radial} equatorial arc,
 \begin{equation}
-    \text{no conjugate point at all}
-    \iff
-    K_t<0 \ \text{ along the arc} \ \ \text{and} \ \ \Phi<\pi ,
+    K_t<0 \ \text{ along the arc} \ \ \text{and} \ \ \Phi<\pi
+    \ \Longrightarrow\
+    \text{no conjugate point in any direction} ,
     \label{eq:noconj-full}
 \end{equation}
-with $\Phi$ the swept azimuth. Paper~I establishes $\Phi<\pi$ for the
-spherically symmetric rail, so in that sector---and in the non-rotating frozen
-limit used here---Proposition~\ref{prop:noconj} holds without the equatorial
-restriction: there is no conjugate point in \emph{any} direction, in-plane or
-out-of-plane.
+with $\Phi$ the swept azimuth. The implication runs one way only. Negativity of
+$K_t$ excludes a second in-plane zero but is not necessary---a short enough arc can
+cross a region of positive curvature without becoming conjugate---and $\Phi<\pi$ is
+a condition on the individual arc, not a property of the family.
+
+Two limitations must be stated with~\eqref{eq:noconj-full}, because together they
+prevent it from being promoted into a blanket three-dimensional statement.
+
+First, the bound $\Phi<\pi$ is \emph{not} imported from Paper~I. What is proved
+there is a swept-azimuth bound for the spherically symmetric \emph{proper-time}
+family $H_\tau$; the statements here are on the arrival-time branch, whose optical
+metric differs by the non-constant factor $\Ehat^2/f^2$, so the two are not the same
+family of curves and the bound does not transfer without a separate proof. We do
+not assert it here.
+
+Second, and decisively, \eqref{eq:noconj-full} cannot hold for every class indexed
+by Proposition~\ref{prop:globalmin}. That proposition supplies one extremal per
+winding class, and classes of sufficiently high winding sweep $\Phi\ge\pi$; by
+\eqref{eq:outofplane-J} such an arc \emph{acquires} an out-of-plane conjugate point
+at $\varphi=\pi$, before its endpoint. The equatorial global result and a
+three-dimensional non-conjugacy claim are therefore incompatible in exactly the
+regime where the winding classes are interesting, and it is the three-dimensional
+claim that must go. The radial case $J=0$ needs separate treatment in any event:
+there the chosen Killing field vanishes identically along the geodesic and does not
+by itself span the normal Jacobi fields with a zero at the launch point.
+
+Proposition~\ref{prop:noconj} therefore stands as stated, equatorially.
 
 It must be said plainly that this does \emph{not} lift
 Propositions~\ref{prop:globalmin} and~\ref{prop:hjb-frozen}, and for two
@@ -1313,7 +1378,7 @@ disagree already about which reaches deeper, thus disagree about global structur
 as well.
 
 This asymmetry is visible in Perlick's own worked example, by a completely
-different route, and we had not noticed it there. Integrating both problems
+different route. Integrating both problems
 explicitly in Rindler space he reports that the $\tau$-brachistochrones
 \emph{have cut points}---``not all $h_{\mathcal C}$-geodesics \dots\ are
 brachistochrones in the strict sense meaning curves of \emph{minimal} travel
@@ -1845,7 +1910,8 @@ map to the fixed-endpoint problem.
     convergence study against the full non-autonomous flow (slope two once the
     complete first-order, on-shell $+$ off-shell, term is used) is supplied in
     figure~\ref{fig:phi-true-dynamic}. All coefficients in $\delta\varphi$ are algebraic
-    and given, not fitted.}
+    and given, not fitted. Lengths and momenta in units $M=1$.
+    }
     \label{fig:phi-closed}
 \end{figure}
 
@@ -1918,9 +1984,11 @@ ergosphere iff its outer turning lies inside $r_e$; the prograde boundary is
     \label{eq:Jcplus}
 \end{equation}
 (matching the numerics to $10^{-15}$), the retrograde one a saddle-node $J_c^-(A)$. The window $(J_c^-,J_c^+)$ splits into a
-\emph{plunge} core (no turning, the orbit reaches $r_+$) and a thin
-\emph{penetrate-and-bounce} rim just below $J_c^+$, where the orbit dips inside
-$r_e$, co-rotates, and turns in the annulus $r_+<r_{\rm t}<r_e$ before exiting
+\emph{no-turning} core, whose continued branch reaches $r_+$ without a root, and a
+thin \emph{re-emerging} rim just below $J_c^+$, whose continued branch has a turning
+root in the annulus $r_+<r_{\rm t}<r_e$ and returns across $r_e$. Both descriptions
+are of the analytic continuation, type~(A) of Protocol~\ref{prot:status}, and no
+optimality is claimed for either
 (figure~\ref{fig:bounce}). The breathing conformal factor thus \emph{expels} orbits
 from the ergosphere at $A_c^{\rm wall}$: a purely non-stationary effect.
 
@@ -1928,8 +1996,9 @@ from the ergosphere at $A_c^{\rm wall}$: a purely non-stationary effect.
     \centering
     \includegraphics[width=0.82\columnwidth]{Immagini/fig_penetration_threshold.pdf}
     \caption{Ergosphere-penetration phase diagram of the frozen $t$-branch in the
-    $(A,J)$ plane ($M=1$, $a=0.9$, $\Ehat=1.4$, $r_0=12$). Four regimes: plunge to
-    the horizon, penetrate-and-bounce, scattering, and forbidden (beyond the
+    $(A,J)$ plane ($M=1$, $a=0.9$, $\Ehat=1.4$, $r_0=12$). Four root patterns of the continued
+    branch: no turning root down to $r_+$, a turning root inside $r_e$ with
+    re-emergence, exterior turning, and forbidden (beyond the
     freezing wall $A_c^{\rm wall}=1.534$, dashed). The prograde ergosphere boundary
     $J_c^+(A)$ [equation~\eqref{eq:Jcplus}] is analytic (solid, verified to
     $10^{-15}$); the penetrating window is $(J_c^-,J_c^+)$.}
@@ -1939,11 +2008,13 @@ from the ergosphere at $A_c^{\rm wall}$: a purely non-stationary effect.
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=0.9\columnwidth]{Immagini/fig_penetrate_bounce_orbit.pdf}
-    \caption{A penetrate-and-bounce $t$-brachistochrone ($J=3.2$, frozen): it
+    \caption{Continued $t$-branch at $J=3.2$ (frozen), type~(A) of
+    Protocol~\ref{prot:status}---no optimality is claimed inside $r_e$: it
     enters the ergosphere, is forced to co-rotate (red arc), turns at
     $r_{\rm t}=1.87$---inside $r_e$ but outside the horizon $r_+$---and exits. The
     rail turning $R_6=0$ guarantees it never reaches $r_+$; crossing the ergosphere
-    and returning is causally allowed.}
+    and returning is causally allowed. Lengths and momenta in units $M=1$.
+    }
     \label{fig:bounce}
 \end{figure}
 
@@ -2070,9 +2141,13 @@ evidence level~(I), with level~(II) confirmation]
 \label{prop:classification}
 Let $\Jc=a/E$ and let the extremal be ingoing. Then, as $r\to\re^+$:
 \begin{enumerate}
-\item[\rm(i)] $|J|>\Jc$: $p_r^2(\re)>0$ and the extremal reflects at a smooth
-periapsis $r_{\min}>\re$, the outer root of $r\Delta=J^2D_E$; the shape is
-regular, $r-r_{\min}\propto(\varphi-\varphi_{\min})^2$.
+\item[\rm(i)] $|J|>\Jc$: here $p_r^2(\re)=0$, as it does for every finite $J$
+because $\mathcal S$ carries the explicit factor $r-2M$; what distinguishes this
+case is the sign of the approach, $\partial_r\mathcal S(\re)=8M^3E^2(a^2-E^2J^2)<0$,
+so that $p_r^2<0$ immediately outside $\re$. That neighbourhood is therefore
+inadmissible, the exterior branch never enters it, and the extremal reflects
+instead at the outer simple root $r_{\min}>\re$ of $r\Delta=J^2D_E$; the shape
+there is regular, $r-r_{\min}\propto(\varphi-\varphi_{\min})^2$.
 \item[\rm(ii)] $|J|<\Jc$: $p_r^2$ has a \emph{simple} zero at $\re$ and
 $\mathcal T(\re)\neq0$, so $\dot r\sim-c\sqrt{r-\re}$ and $\re$ is attained in
 \emph{finite} parameter. The shape has a semicubical cusp,
@@ -2157,7 +2232,7 @@ single \emph{prograde} value
     J_+^{t}=\frac{\bar P_e}{2a}=\frac{4M^2+2a^2+a^2/E^2}{2a};
     \label{eq:Jplus-t}
 \end{equation}
-there is no retrograde $r_e$-crossing. Instead the retrograde $t$-capture is
+there is no retrograde $r_e$-crossing. Instead the retrograde $t$-branch is
 bounded by the \emph{marginal} (double-root) condition $N=N'=0$ at a radius
 $r_*>\re$---the massive analogue of the retrograde photon sphere---which closes
 to
@@ -2454,7 +2529,7 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
 
 \begin{table}[t]
     \centering
-    \caption{Protocol dependence of plunge inversion. Same-launch
+    \caption{Protocol dependence of depth inversion. Same-launch
     comparison inverts under either rotation or a conformal factor; the
     genuine fixed-endpoint brachistochrone shows no inversion in every
     proven and tested regime (proven for $r_0\le R_\ast$ and, in the static
@@ -2606,10 +2681,24 @@ commonest way for a computer-assisted result to overclaim.
 \label{prot:evidence}
 \begin{enumerate}
 \item[\rm(I)] \emph{Exact symbolic identity.} A polynomial or rational identity
-returning an exact zero, in two independent computer-algebra systems, with no
-tolerance involved. This is a proof. Examples: $p_r^2=\mathcal S/(D_E^2\Delta^2)$;
+returning an exact zero, with no tolerance involved. This is a proof. The archived
+route is a computer-algebra script named with the claim; where a second, independent
+system has been run against the same identity, the text says so. We do not claim a
+second route for every identity. Examples: $p_r^2=\mathcal S/(D_E^2\Delta^2)$;
 the factorisation~\eqref{eq:marginal-factor}; the reduction determinant as a
 resultant.
+
+The identities carrying two independent routes are those of
+Propositions~\ref{prop:classification} and~\ref{prop:exterior-sep} and of
+section~\ref{sec:submersion}: the factorisation~\eqref{eq:marginal-factor} and the
+multiplicity of the root it produces, the cusp amplitude~\eqref{eq:cusp}, the
+one-sided tangent~\eqref{eq:corner-slope}, the tension
+field~\eqref{eq:tension-residual}, the coefficients of the optical-curvature
+expansion, and the Vaidya--Kodama relations of Paper~I. These are checked in
+Mathematica by the scripts named with each claim and, independently, in SymPy by
+\texttt{verification/verify\_independent\_rederivation.py}, which rebuilds every
+quantity from the definitions printed here rather than from the Mathematica scripts
+it cross-checks, so that agreement is evidence and not tautology.
 \item[\rm(II)] \emph{Independent numerical agreement.} A quantity computed by
 two genuinely different routes---Hamiltonian ODE flow against an evaluated
 closed form, say---agreeing to a stated precision. This excludes transcription
@@ -2668,7 +2757,12 @@ matters. Their effective acoustic metric is the threading form
 $g\propto\big(\begin{smallmatrix}-c^2+v^2&-\boldsymbol v\\-\boldsymbol v&\mathbb
 1\end{smallmatrix}\big)$ \cite[Eq.~(1)]{SvancaraEtAl2024}, that is a Randers
 structure with wind $\boldsymbol v$, and its ergosurface sits at $|\boldsymbol v|=c$
----which is the condition $|W|=\Ehat$ of Lemma~\ref{lem:compact} and the failure of
+---which is exactly $g(W,W)=0$, the point at which the stationary selector ceases to
+be timelike and the \emph{first} hypothesis of Lemma~\ref{lem:compact} fails. That is
+the same clause that ends our own control domain at $r=2M$, where
+$g(\partial_\eta,\partial_\eta)=0$; it is \emph{not} the energy-dependent freezing
+condition $\Ehat=|W|$, at which $W$ is still timelike and the rail slice degenerates
+to a single velocity. What is shared is the causal boundary, and with it the failure of
 the Finsler bound $|b|_a<1$ of Remark~\ref{rmk:finsler-domain}. The boundary this
 paper is organised around has therefore been crossed in a water tank, and what
 happens at it has been measured. Space--time-modulated metamaterials supply the same
@@ -2710,8 +2804,8 @@ and they are the form of falsifiability a problem of this kind admits.
 \hline
 Quantity & Value & Level\\
 \hline
-Exterior retrograde separatrix, $t$-branch & $r_d/M=3.513905124011657$ & (I)\\
-Critical angular momentum there & $J_c^-=-8.053516003877019$ & (I)\\
+Exterior retrograde separatrix, $t$-branch & $r_d/M=3.513905124011657$ & (II)\\
+Critical angular momentum there & $J_c^-=-8.053516003877019$ & (II)\\
 Curvature threshold, arrival branch & $\Ehat^2=3/2$ exactly & (I)\\
 Optical scalar curvature & $R_{\rm opt}<0$ for all $r>2M$, all $\Ehat$ & (I)\\
 Twist on the equatorial CSLS & $-a/2M$ exactly & (I)\\
@@ -2726,7 +2820,9 @@ Provenance content digest & \ProvenanceDigest & ---\\
 Any of these failing to reproduce would locate a defect: the first two an error in
 the degeneration algebra, the third and fourth in the optical curvature, the fifth
 in the conformal-Killing-horizon criterion, the eighth in the adiabatic expansion or
-its window. The digest fails if any archived script has changed.
+its window. The digest covers the adiabatic validation scripts, windows and
+fitted data listed in it, and is not a whole-archive checksum; each MANIFEST row
+separately carries the checksum of its own file.
 
 \paragraph{One command, one dataset.} Every number in the adiabatic validation---the
 figure, the fitted slopes, their uncertainties, the raw convergence data and the file
@@ -2737,8 +2833,9 @@ checksums---is emitted by the single archived command
 which runs each validation script as a subprocess, records the $\varepsilon$-window
 actually used, refits on sub-windows, hashes every script involved, and writes
 \texttt{adiabatic\_slopes.json} (machine-readable), \texttt{adiabatic\_slopes.tex} (the
-macros this manuscript uses for those numbers) and \texttt{MANIFEST.tsv}, which maps each
-equation, figure and table to one command and one checksum. The manuscript
+macros this manuscript uses for those numbers) and \texttt{MANIFEST.tsv}, which maps the
+principal computational claims, and the figures and tables that depend on them,
+each to one command and one checksum. The manuscript
 \texttt{\textbackslash input}s the generated fragment, so the printed values and hashes
 cannot drift from the archive. This replaces the hand-transcribed values of the previous
 version, which had done exactly that.
@@ -3105,7 +3202,7 @@ Hackmann--L\"ammerzahl); but equation~\eqref{eq:t-genus2} reproduces the Hamilto
 flow to $2\times10^{-13}$. Physically these genus-2 orbits are exactly the ones
 that \emph{penetrate the ergosphere}: the prograde threshold $J_+^t$
 [equation~\eqref{eq:Jplus-t}] has its turning point \emph{on} $r_e=2M$ (simple root at
-$r=2$), while for $J$ just inside the capture window $[J_c^-,J_+^t]$ the turning
+$r=2$), while for $J$ just inside the penetration window $[J_c^-,J_+^t]$ the turning
 point moves \emph{inside} the ergoregion and the closed form stays accurate
 across and below $r_e$ (figure~\ref{fig:jpt-g2}). This penetration is generic in a
 sharp sense that distinguishes the two branches (Table~\ref{tab:penetration}). The
@@ -3142,7 +3239,7 @@ tangent stays finite~\eqref{eq:corner-slope} and the total swept angle converges
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_jpt_genus2.png}
     \caption{Genus-2 prograde $t$-orbits and ergosphere penetration. Top: the
     threshold $J_+^t=3.43$ (grey) turns \emph{on} $r_e=2M$; a momentum just
-    inside the capture window ($J=3.0$) penetrates the ergoregion (shaded),
+    inside the penetration window ($J=3.0$) penetrates the ergoregion (shaded),
     Hamilton ODE (black) and the genus-2 closed form~\eqref{eq:t-genus2}
     (dotted) coinciding across $r_e$. Bottom: the deviation stays
     $\sim2\times10^{-13}$ including \emph{inside} the ergosphere ($r<r_e$,
@@ -3160,20 +3257,24 @@ reaching $r_e$ even though the region $(r_e,r_*)$ is itself allowed
 diverges as $r\to r_*$. Just inside the
 window the mechanism is a \emph{saddle-node}: the double root splits into a
 complex-conjugate pair ($r_*=3.514\to3.393\pm0.601i$ at $J=0.95\,J_c^-$), the
-$\varphi$-barrier vanishes, and the retrograde orbit is captured---plunging
-through $r_e$ to the horizon, with the genus-2 closed form tracking it to
-$\sim10^{-9}$ (figure~\ref{fig:jcm-cap}).
+$\varphi$-barrier vanishes, and the continued retrograde branch runs inward
+through $r_e$ to $r_+$ without a turning root---type~(A) of
+Protocol~\ref{prot:status}, with no optimality claimed below $r_e$---the genus-2
+closed form tracking it to $\sim10^{-9}$ (figure~\ref{fig:jcm-cap}).
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_jcm_capture.png}
-    \caption{Retrograde capture just inside the window ($J=0.95\,J_c^-=-7.65$).
-    Top: the orbit plunges from $r_0=6$ through the ergosphere (shaded) to the
-    horizon $r_+$ (Hamilton ODE, black; genus-2 closed form, dotted), whereas
+    \caption{Retrograde branch just inside the window ($J=0.95\,J_c^-=-7.65$);
+    below $\re$ this is the analytic continuation, type~(A) of
+    Protocol~\ref{prot:status}, and no optimality is claimed for it.
+    Top: the curve runs inward from $r_0=6$ through the ergosphere (shaded) to
+    the seed null surface $r_+$ (Hamilton ODE, black; genus-2 closed form, dotted), whereas
     the marginal $J_c^-$ (grey) only spirals onto $r_*$. Bottom: the saddle-node
     in the complex-$r$ plane---the double root of $\mathcal R$ at $r_*$ (square)
     splits into a complex-conjugate pair (circles) as $J$ moves off $J_c^-$,
-    removing the barrier and opening the plunge.}
+    removing the barrier, so that the continued branch runs inward without a root. Lengths and momenta in units $M=1$.
+    }
     \label{fig:jcm-cap}
 \end{figure}
 
@@ -3198,7 +3299,7 @@ $\sim10^{-9}$ (figure~\ref{fig:jcm-cap}).
     \hline
     branch & case & $p_r^2$ root & $\re$ attained & behaviour at $\re$ \\
     \hline
-    $\tau$ & $|J|>J_c$        & none & no      & periapsis at $r_{\min}>\re$ \\
+    $\tau$ & $|J|>J_c$        & simple$^{\ddagger}$ & no      & periapsis at $r_{\min}>\re$ \\
            & $|J|<J_c$        & simple & finite  & cusp, exponent $3/2$ \\
            & $J=-J_c=-0.75$   & double & asympt. & finite tangent, not attained \\
            & $J=+J_c=+0.75$   & double & finite  & regular crossing \\
@@ -3207,7 +3308,11 @@ $\sim10^{-9}$ (figure~\ref{fig:jcm-cap}).
            & $J\notin[J_c^-,J_+^t]$ & ---    & no      & smooth periapsis \\
            & $J=J_c^-=-8.05$        & double$^{\dagger}$ & asympt. & infinite winding \\
     \hline
-    \multicolumn{5}{l}{\footnotesize $^{\dagger}$at $r_*=3.51M$, not at $\re$.}
+    \multicolumn{5}{l}{\footnotesize $^{\dagger}$at $r_*=3.51M$, not at $\re$.}\\
+    \multicolumn{5}{l}{\footnotesize $^{\ddagger}$the root at $\re$ is simple for
+    every finite $J$, but for $|J|>J_c$ the approach has $p_r^2<0$ just outside}\\
+    \multicolumn{5}{l}{\footnotesize \phantom{$^{\ddagger}$}$\re$, so the exterior
+    branch never reaches it.}
     \end{tabular}
 \end{table}
 
@@ -3233,9 +3338,10 @@ $\sim10^{-9}$ (figure~\ref{fig:jcm-cap}).
     \includegraphics[width=\textwidth,height=0.40\textheight,keepaspectratio]{Immagini/fig_atlas_t.png}
     \caption{$t$-brachistochrones by regime (dichotomy). Relative to
     $J_c^\pm=(-8.05,3.43)$: smooth bounce ($J>J_c^+$), tangent contact at $r_e$
-    ($J=J_c^+$), penetration ($J_c^-<J<J_c^+$), retrograde capture just inside
+    ($J=J_c^+$), penetration ($J_c^-<J<J_c^+$), the retrograde branch just inside
     the edge ($J=0.99\,J_c^-$, plunging to $r_+$), and a smooth bounce
-    ($J<J_c^-$). Unlike $\tau$, a whole interval penetrates and no orbit cusps.}
+    ($J<J_c^-$). Unlike $\tau$, a whole interval penetrates and no orbit cusps. Lengths and momenta in units $M=1$.
+    }
     \label{fig:atlas-t}
 \end{figure}
 
@@ -3521,7 +3627,7 @@ discriminant $\mathrm{Res}_r(Q_2,\partial_r Q_2)=0$ has \emph{six} real roots th
 must be classified by the sign and location of the associated double root $r_d$
 (script \texttt{separatrix\_classification.py}). Only an \emph{external} double
 root $r_d>r_+$, at which two real turning points \emph{merge}, is a physical
-separatrix (capture$/$scatter boundary): this is the retrograde $\Jc^-=-8.054$
+separatrix (the boundary between an exterior turning root and none): this is the retrograde $\Jc^-=-8.054$
 ($r_d=+3.514>2M$) of equation~\eqref{eq:Jc-minus}, consistent with the body, plus a
 prograde \emph{ergospheric} branch $\Jc=+2.936$ at $r_+<r_d=1.512<2M$. The large
 roots $\Jc=+19.089,\,-18.671$ instead sit at $r_d=-6.62,\,-6.59<0$: these are
@@ -3774,8 +3880,11 @@ term across both branches and two parameter sets (figure~\ref{fig:phi-true-dynam
 (non-conformal) Vaidya branches---where $m$ is a metric modulus, $\mathcal D=\Theta=
 m\partial_m$ with no dilation term---are treated in Paper~I.
 
-\paragraph{Separatrix limit ($J\to\Jc$).} The off-shell separatrix correction is simply
-the generic term at $J=\Jc$: the coefficients~\eqref{eq:ak} are polynomials in $J$, hence
+\paragraph{Separatrix limit ($J\to\Jc$).} The formal \emph{outer} off-shell correction
+is obtained by setting $J=\Jc$ in the generic coefficients, on compact subarcs bounded
+away from $r_d$; it is not a uniform separatrix-crossing expansion, and the
+inner problem is discussed below. On those subarcs
+the coefficients~\eqref{eq:ak} are polynomials in $J$, hence
 finite there, while the spectral curve \emph{degenerates}, $S=(r-r_d)^2Q_4$ (double root
 $r_d$, genus two $\to$ genus one). Each hyperelliptic letter collapses,
 $U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\sqrt{Q_4}$
@@ -3870,7 +3979,6 @@ with \textsc{abelfunctions}~\cite{abelfunctions}, and on
 \medskip\noindent\textit{ORCID iD:} Iman Rosignoli,
 \url{https://orcid.org/0009-0004-4536-0285}.
 
-\nocite{*}
 \bibliographystyle{iopart-num}
 \bibliography{refs,companionI}
 

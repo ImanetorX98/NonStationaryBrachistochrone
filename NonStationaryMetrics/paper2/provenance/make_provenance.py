@@ -254,6 +254,15 @@ MANIFEST: list[tuple[str, str, str]] = [
     ("Prop. 3.2 (exterior retrograde separatrix), eq. (exterior-sep)",
      "wolframscript -file verify_exterior_separatrix.wls",
      "NonStationaryMetrics/paper2/verification/verify_exterior_separatrix.wls"),
+    # second, independent CAS route for the tension-field identities of sec. 2.2
+    ("Eqs. (fibre-accel), (tension-residual): submersion tension, SymPy route",
+     "python3 verify_tension_sympy.py",
+     "NonStationaryMetrics/paper2/verification/verify_tension_sympy.py"),
+    # independent re-derivation of the headline claims of both papers, built from
+    # the printed definitions rather than from the .wls scripts it cross-checks
+    ("Props. 3.1-3.2, sec. 2.2, Paper I Vaidya: independent re-derivation",
+     "python3 verify_independent_rederivation.py",
+     "NonStationaryMetrics/paper2/verification/verify_independent_rederivation.py"),
     # --- adiabatic validation ---------------------------------------------
     ("Fig. (phi-true-dynamic) and Table A3 slopes",
      "python3 make_provenance.py",
@@ -358,6 +367,9 @@ def write_tex(data: dict) -> None:
         f"{data.get('content_sha256', 'pending')}",
         r"\newcommand{\ProvenanceDigest}{\texttt{"
         + str(data.get("content_sha256", "pending"))[:16] + r"}}",
+        # number of manifest rows, so the response letter cannot quote a
+        # count that has drifted from the archive (referee major 10)
+        r"\newcommand{\ManifestArtefacts}{" + str(len(MANIFEST)) + r"}",
         "% ---------------------------------------------------------------",
         r"\newcommand{\provEpsWindow}{$\varepsilon\in\{"
         + ",\\,".join(f"{x:g}" for x in win) + r"\}$}",

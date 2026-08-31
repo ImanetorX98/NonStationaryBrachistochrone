@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-26T00:16:28+00:00",
+  "generated_utc": "2026-08-30T23:06:13+00:00",
   "epsilon_window": [
     0.001,
     0.002,
@@ -57,7 +57,7 @@
     "NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py": "55fc540ecf17"
   },
   "environment": {
-    "validation_seconds": 12.9,
+    "validation_seconds": 15.9,
     "exact_seconds": 8.7,
     "note": "wall-clock timings; excluded from content_sha256"
   },

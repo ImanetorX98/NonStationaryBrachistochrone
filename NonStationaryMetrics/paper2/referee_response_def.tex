@@ -1,0 +1,506 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{braket}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=2.2cm,bottom=2.2cm,left=2.3cm,right=2.3cm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\title{CQG paper II -- TK response 1}
+\author{Iman Rosignoli}
+\date{August 31, 2026}
+
+\begin{document}
+
+\maketitle
+
+My thanks to both referees.
+
+The first report was notably specific: it found defects I had not managed to
+detect, one of which turned out to be more serious than the report could establish
+from outside, and correcting it led me to a stronger result than the one I had
+obtained initially. The second report allowed me to go deeper into the geometric
+language surrounding my problem and to envisage a possible experimental test of the
+work; the paper is now the richer for it.
+
+The revision follows the first referee's list of points, in the order given.
+
+\begin{enumerate}
+    \item The exterior/contact/analytic-continuation triple is now made manifest
+    throughout the work. Section~2.1 proves, as Lemma~2, the compactness criterion
+    the referee outlined, from which it follows that the compact control problem
+    terminates at \(r=2M\) for \(W=\partial_\eta\); Protocol~1 fixes the
+    labelling (E)/(C)/(A) and is applied throughout the paper, figures included.
+
+    \item The extremal-versus-minimiser statements are corrected in both papers,
+    and the claim that numerical perturbations establish minimality is removed.
+
+    \item The \(J=-J_c\) contradiction is resolved by rederiving the result. Both
+    printed statements were wrong; the correct result is a four-case
+    classification, Proposition~9, and all the material involved has been
+    regenerated.
+
+    \item The archive is rebuilt: the missing module has been restored, slopes and
+    checksums are now generated rather than transcribed, and a manifest of twenty
+    entries associates the artefacts with commands and checksums.
+\end{enumerate}
+
+The exterior retrograde separatrix is now the principal exact result, as
+recommended, and the title no longer speaks of a trichotomy.
+
+\section{Referee 1}
+
+\subsection{Major comment 1. The control domain terminates at the conformal
+stationary limit.}
+\textbf{Reply.} Fully accepted; this is the structural change of the revision.
+
+Lemma~2 states that the rail slice is nonempty and compact if and only if \(W\) is
+timelike and \(\hat E \geq |W|\), degenerating to a single point at
+\(\hat E = |W|\), and is empty or noncompact otherwise. From the form of
+\(g(\partial_\eta,\partial_\eta)=-A^2(1-2M/r)\) one deduces that the two conditions
+are \(r>2M\) and \(\bar v^2 = 1 - A^2f/\hat E^2 >0\).
+
+The text states explicitly that a change of coordinates does not alter this
+conclusion. Doran coordinates regularise the formulae at the points where
+\(\Delta = 0\), but leave the inner product \(g(W,W)\) unchanged. A selector
+anchored to Doran, or to ZAMO, is a different problem and is not treated in this
+work.
+
+A precedent worth recording comes from the second report's reading list: Giannoni,
+Piccione and Verderesi study the stationary problem with
+\(-\braket{\dot z, Y} \equiv k >0\) and restrict at once to \(|Y|<k\), which is
+exactly Lemma~2. The restriction has stood since 1997, but what is studied here is
+the new regime in which \(W\) is not Killing, when the boundary moves with
+\(A(\eta)\).
+
+\subsection{Major comment 2. Pontryagin extremals are not automatically local
+minima.}
+\textbf{Reply.} You are right. The error was more extensive than estimated: the
+statement appeared in both versions of Paper~I. Both now report the hierarchy as
+you wrote it, namely
+\[
+  \text{minimiser}\Longrightarrow\text{PMP extremal},
+  \qquad
+  \text{PMP extremal}\nRightarrow\text{local minimiser},
+\]
+with the note that local minimality requires a second variation or a
+conjugate-point argument.
+
+The revision reports sufficient conditions in the regime where they hold. On the
+frozen arrival-time branch the optical geometry is Riemannian and the Gauss
+curvature is negative throughout the exterior exactly when \(\hat{E}^2 \geq 3/2\).
+There are then no equatorial conjugate points, and by the index theorem in the form
+of Giannoni, Masiello and Piccione (\emph{J. Geom. Phys.} \textbf{35} (2000) 1--34)
+every exterior extremal is a local minimiser. The surface is complete, so
+Cartan--Hadamard on the universal cover returns one global minimiser for each
+winding class, while the optical distance saturates the eikonal equation and
+supplies the value function mentioned in your list.
+
+These statements are equatorial by nature, not by present limitation, and the
+manuscript says so. The tangential curvature is \(K_{\rm tan} = 1/B>0\) at the
+circular orbit, so Cartan--Hadamard cannot hold in three spatial dimensions, and
+the winding classes themselves do not survive the lift, since the equatorial
+surface is \((2M,\infty)\times S^1\) while the full one is simply connected.
+
+The out-of-plane Jacobi field is \(\sqrt{B}\,|\sin \varphi|\), which vanishes at a
+swept azimuth of \(\pi\); for a fixed non-radial arc, \(K_t <0\) together with
+\(\Phi < \pi\) is a sufficient condition for there to be no conjugate point in any
+direction, and nothing stronger follows. In particular I do not import the bound
+\(\Phi < \pi\) from Paper~I, which is proved there for the proper-time family,
+whereas these statements live on the arrival-time family. Nothing analogous is
+claimed on the proper-time family, where \(r^3K_\tau\to +M >0\) and the surface is
+incomplete at the stationary limit.
+
+The passage you were referring to, on perturbing the computed brachistochrones, is
+no longer there; the appendix now states that such perturbations are a consistency
+check and cannot certify a minimum in an infinite-dimensional class.
+
+\subsection{Major comment 3. Endpoint protocol and costate relabelling.}
+\textbf{Reply.} Accepted. Protocol~2 fixes the default launch, with a fixed spatial
+target and a free arrival clock, the shooting being branch-dependent. Comparisons
+between the two branches are made at \(J_t=AJ_{\eta}\), so that comparisons at the
+same \(J\) and comparisons at the same endpoints are two different comparisons.
+
+Section~3.4, the one place where the default does not apply, now names its two
+protocols, records that at a common numerical value of \(J\) they compare different
+orbits, and adds that an ordering between two selected extremals does not show that
+either is the global minimiser. The algebraic regularity of the printed
+Hamiltonians at \(f = 0\) is kept separate from the control-domain question.
+
+\subsection{Major comment 4. The retrograde marginal orbit: cusp or corner.}
+\textbf{Reply.} Accepted. This was the most useful comment in the report. I
+rederived the case as you instructed, and both statements I had printed in the
+paper were wrong.
+
+Two exact identities organise it: \(p_r^2 = \mathcal{S}/(D^2_E\Delta ^2)\), with the
+prefactor regular and nonzero at \(r_e\), and, at the marginal value, the exact
+factorisation \(r\Delta -J_c^2D_E = (r-2M)(r^2+J_c^2)\), giving
+\(\mathcal{S} = r^4f^2w(r^2+J_c^2)\). Hence \(r_e\) is a double root for both signs,
+and it is not the reality condition that selects the prograde value. The
+counter-rotation argument is withdrawn, and it was wrong in detail too, since near
+\(r_e\) the retrograde marginal has \(\dot \varphi > 0\) and is locally co-rotating.
+
+What breaks the \(\pm J\) symmetry is invisible in the radical but manifest in the
+Hamilton equations: \(\tilde{p}_{\varphi}(r_e) = J-J_c\) is linear in \(J\), and
+\(\mathcal{T}(r_e) = -a(J-J_c)/\bar{P}_e\) vanishes only at \(J=+J_c\). The
+classification consists of four cases: a smooth periapsis for \(|J|>J_c\); a
+semicubical cusp for \(|J|<J_c\); at \(J=-J_c\) a double root with \(r_e\) reached
+only asymptotically, finite tangent and exponent~\(1\); and finally a regular
+crossing at \(J=+J_c\).
+
+The cusp in the main text was wrong, and the corner in the appendix was half right,
+since the tangent is finite but there is no reflection. Your caution against merging
+the generic and the marginal case is quantitatively justified: the cusp amplitude
+\(K = (EJ/a^2)\sqrt{2M/(a^2-E^2J^2)}\) diverges as \(|J|\to J_c^-\).
+
+The one-sided expansions, the signs, the branch orientation and the convergence
+tests are in \texttt{verify\_cusp\_corner.wls} (21 checks) and in
+\texttt{verify\_marginal\_hamilton.wls} (19 checks), all passing. For
+\(M=1\), \(a=0.9\), \(E = 1.2\) the retrograde rate is \(C = -0.267000117\),
+consistent with the closed form to \(10^{-6}\); the elapsed parameter increases by
+\(34.4956\) per four decades of \(r-r_e\), against \(\ln(10^4)/|C| = 34.4955\).
+
+All the material involved has been regenerated, not merely supplied with new
+captions: the atlas had drawn a reflection at \(-J_c\), and Table~A1 is now indexed
+on the multiplicity of the root and on whether it is attained.
+
+\subsection{Major comment 5. The exterior separatrix as the principal result.}
+\textbf{Reply.} Accepted, and adopted as the organising result. Proposition~10 gives
+\(r_d = 3.513905124011657\,M\) and \(J_c^-=-8.053516003877019\), reproducing your
+values to sixteen digits, with the printed closed form agreeing to \(10^{-12}\). At
+\(r_d\) both control-domain inequalities hold strictly, \(g(W,W) = -0.430833\) and
+\(\bar v^2 = 0.700811\), and they hold on the whole approach arc, so it is of
+type~(E) rather than a continuation. A spin scan gives
+\(r_d/M = 2.857675,\,3.204756,\,3.513905,\,3.579494\) for
+\(a = 0.1,\,0.5,\,0.9,\,0.99\), so the exterior character is structural. The
+prograde degeneration at \(r_d = 1.512292\,M\) lies outside \(r_+ = 1.435890\,M\)
+but inside \(2M\), and is recorded as type~(A), not a physical control separatrix.
+This also answers M4.
+
+\subsection{Major comment 6. The tiered proof status of the fixed-endpoint result.}
+\textbf{Reply.} Accepted. The conclusions distinguish five levels: an analytic
+inequality for the integrand; a theorem for \(r_0\leq R_*(E,a)\); an asymptotic
+result for \(r_0 \to \infty\) in the static case; a computer-assisted proposition on
+a stated grid; and a conjecture in general. Protocol~4 assigns them different
+evidential status. The text also says that an ordering between two selected
+extremals does not show that either is the global minimiser. On executability you
+were right that the CAP runner imported a module that was absent; see major
+comment~10.
+
+\subsection{Major comment 7. Scope and provenance of the first-order result.}
+\textbf{Reply.} Accepted, and the problem ran deeper than the discrepancy you had
+brought to light: the numbers had been transcribed by hand from different runs, and
+re-running returned \(2.12\pm0.03\) and \(2.15\), so neither printed value was
+current. They are now generated. One archived command,
+\texttt{python3 paper2/provenance/make\_provenance.py}, runs each validation script
+as a subprocess, reads the \(\varepsilon\)-window from the source, computes the hash
+of every script, and writes the machine-readable record, the \LaTeX{} macros
+included by the manuscript, and the manifest.
+
+The theorem is now local on a compact regular subarc, excluding turning points, the
+freezing surface, the stationary limit, coordinate singularities and crossings of
+moving separatrices, the last identified as a singular inner problem.
+
+As for the numbers: since the residual is \(c_2\varepsilon^2(1+k\varepsilon + \dots)\)
+the local exponent is \(2+O(\varepsilon)\), so a fit over a finite window is biased
+upward, and \(\sigma\) measures the quality of the fit rather than that bias.
+Refitting over progressively smaller windows we obtain
+\(2.118\to2.068\to2.043\), \(2.123\to2.072\to2.045\) and \(2.122\to2.070\to2.044\)
+in the three configurations, each decreasing toward \(2\). The window is
+\(\varepsilon \in \{0.001,0.002,0.004,0.008,0.016\}\) and the fitted interval is
+\(r/M \in [8,11]\), at a distance of \(6M\) from the nearest excluded locus.
+
+\subsection{Major comment 8. Higher-genus terminology.}
+\textbf{Reply.} Accepted. A convention now establishes that ``length-two iterated
+Abelian integral on the genus-two hyperelliptic curve'' is the only classification
+claimed, and that ``genus-two dilogarithm'' is a descriptive shorthand for it, not a
+claim that a function class with specified kernels, relations, monodromy or
+single-valued completion has been defined. The three unqualified theorem-level uses
+have been changed. ``Elliptic dilogarithm'' is retained, since at genus one the
+object is established.
+
+\subsection{Major comment 9. Physical language.}
+\textbf{Reply.} Accepted. Protocol~3 fixes the dictionary and is applied
+throughout: \(\hat E\) is the actively maintained rail charge, not a conserved
+energy; \(J = p_\varphi\) is the axial control costate, not mechanical angular
+momentum; the rail minimises a selected clock, not thrust or fuel; \(r_e=2M\) is the
+conformal stationary limit; \(r_+\) is the null surface of the seed Kerr metric,
+with the note that for a time-dependent \(A(\eta)\) neither horizon has been
+computed; and inside \(2M\) we write ``continued orbit'', ``root pattern'' or
+``analytic branch''.
+
+\subsection{Major comment 10. Reproducibility package.}
+\textbf{Reply.} All three findings are correct and I am glad they were checked.
+\texttt{cap\_full.py} had been removed during development and never archived; it has
+been restored in full from the prototype, with a self-test.
+
+For the neighbouring directories the diagnosis turned out to be different: all
+thirteen generators were tracked, but each inserted the repository root on
+\texttt{sys.path} while the shared style module lives one directory further down. On
+a fresh clone, therefore, all of them failed at import. Having corrected this
+behaviour in all thirteen, a silent bug came to light: a helper function for the
+turning radius returned the grid point just inside the forbidden region, dropping a
+curve from a panel without raising any error.
+
+The printed hashes were stale; the same two files carried three different values,
+which is the signature of hand transcription. They are now generated by the command
+given above.
+
+Two statements of scope belong with this. The content digest covers the adiabatic
+validation scripts, the windows and the fitted data listed in it; it is not a
+checksum of the whole archive, and each manifest row separately carries the checksum
+of its own file. The manifest associates the principal computational claims, and the
+figures and tables that depend on them, not every equation.
+
+\subsection{Major comment 11. Dependence on Paper I.}
+\textbf{Reply.} Accepted. The incorrect sentence on the PMP is corrected there.
+Paper~I's existence and normality theorem now defines the extended admissible class
+and the clock state, states the regularity assumptions, explains the closure of the
+non-autonomous clock equation, and identifies the endpoint protocol and the excluded
+degeneracies.
+
+The Vaidya qualification is carried into the abstract and the conclusions: the
+compact control domain terminates at \(r=2m(v)\), and the calculations establish an
+exterior approach and a contact threshold rather than an interior optimal
+trajectory, while \(m'(v)<0\) in the ingoing metric is a formal continuation,
+physical evaporation requiring the outgoing problem. Paper~II no longer imports
+optimality claims from Paper~I; it cites the verification criterion as a criterion.
+
+\subsection{Major comment 12. Relation to established work.}
+\textbf{Reply.} Accepted and treated as a question of positioning.
+
+A new paragraph in the introduction separates the established results from the new
+ones. Established: Perlick's fixed-energy optical metric; the sub-Riemannian
+formulation of Giannoni, Piccione and Verderesi; the arrival-time theory of Giannoni
+and Piccione; the Morse theory of Giannoni, Piccione and Tausk. I have added the
+Giannoni--Masiello--Piccione programme, including the finiteness results on
+conformally stationary spacetimes, which is the published setting closest to the
+frozen-\(A\) approach adopted in this work, and the work of Caponio, Corona, Giamb\`o
+and Piccione on fixed-energy solutions of an indefinite Lagrangian with an affine
+Noether charge.
+
+The distinction is made explicit there: in all of those works the charge is
+conserved, because the generator is a symmetry; here it is held fixed by control
+against a background spacetime of which \(W\) is in general not a symmetry, at the
+cost of proper acceleration, so that \(\hat E\) is a design parameter. Three
+consequences have no stationary counterpart: the possible loss of compactness and
+hence a causal boundary; the reduced Hamiltonian ceasing to be an interior first
+integral; and the first-order response being a genuine perturbation problem.
+
+I have also adopted the framing suggested in the closing part of the report, placing
+the emphasis on the controlled invariant and on the causal boundary rather than on
+one further exact trajectory.
+
+\subsection{Minor comments.}
+\begin{itemize}
+    \item \textbf{M1} Done: Protocol~2 is stated once and used consistently.
+    \item \textbf{M2} Done: \(J=p_\varphi\) is identified as a control costate at
+    first use.
+    \item \textbf{M3} Done: the compact boundary of the indicatrix and the convex
+    body whose support function is used are distinguished, with an explanation of
+    why no convexification is needed.
+    \item \textbf{M4} Done: see major comment~5.
+    \item \textbf{M5} Done. A mechanical check of all captions, re-run on the final
+    text, found five that reported radii or momenta without the normalisation; all
+    now include it.
+    \item \textbf{M6} Done: every figure containing a curve inside \(r_e\) draws
+    that portion in a different line style and states, in the legend or in the panel
+    title, that the continuation is analytic and that no optimality is claimed.
+    Figures whose curves terminate at \(r_e\) carry no such label, because there is
+    no continuation in that case.
+    \item \textbf{M7} Done: Protocol~3 carries a table keeping
+    \(E\), \(\hat E\), \(E_{\rm eff}\), \(J\) and \(J_{\rm eff}\) distinct,
+    including \(J_t = AJ_\eta\).
+    \item \textbf{M8} Done: deviations are declared absolute unless otherwise
+    indicated; norms are specified for vector residuals; every fitted slope is
+    accompanied by its interval and, for the adiabatic convergence, by its
+    \(\varepsilon\)-window.
+    \item \textbf{M9} Done: Protocol~4 separates the levels of evidence and the
+    claims are labelled.
+    \item \textbf{M10} Done: the conclusion is shortened and lists only those
+    results whose domain and proof status are established in the body of the paper.
+\end{itemize}
+
+\section{Referee 2}
+
+\subsection{Bibliography.}
+\textbf{Reply.} Accepted with thanks; the list was useful. I have added or made
+explicit Giannoni, Piccione and Verderesi (1997); Giannoni and Piccione on
+arrival-time brachistochrones; Giannoni, Piccione and Tausk, with the identifier
+\texttt{math-ph/9905007} so that the preprint and the published version are visibly
+the same work; Haws and Kiser (1995); and Ta\c{s} (\texttt{arXiv:2512.08776}).
+
+Your suggestion of connecting the global analysis to the Morse index has shaped the
+revision: it is the framework in which the extremal-versus-minimiser request is
+properly answered.
+
+One bibliographic note, so that the record is right: the article
+\emph{J.\ Math.\ Phys.} \textbf{38}(12), 6367--6381 (1997), given as item~[6], was
+written by Giannoni, Piccione and Verderesi. Giannoni, Masiello and Piccione are a
+separate collaboration, and I now cite three of their papers in their own right,
+including the finiteness results on conformally stationary spacetimes, which are the
+published setting closest to the frozen-\(A\) regime used here. Checking your list
+also brought to light a wrong page number in one of my own entries.
+
+\subsection{Eigenvalues of the curvature operator and weighted manifolds.}
+\textbf{Reply.} This comment sent me back to reconsider the geometry, and it was
+worth it: there is a precise structural relation between the two frameworks which the
+manuscript had left implicit, and a new section~2.2 now sets it out.
+
+The relation is not the one the comment proposes, and the difference is one of
+scope rather than of correctness; the theorem holds where its hypotheses are
+satisfied, while the objects studied here fall outside them.
+
+There are three connections in the paper now thanks to this report. First, the
+optical reduction is a submersion, and with Perlick's metric on the base it is
+horizontally conformal with dilation \(\Lambda^2 = \hat E^2 / [f(\hat E^2-f)]\), the
+Perlick factor itself. Second, since \(\mathcal{L}_Wg=(2A'/A)g\), the selector is a
+conformal Killing field and
+\(\mathrm{d} \hat E/\mathrm{d}\tau|_{\text{geodesic}}=A'/A=\varepsilon\),
+independently of the four-velocity: the rate at which an \emph{uncontrolled}
+worldline drifts away from the rail is the adiabatic expansion rate, which makes
+quantitative the middle rung of the
+Killing\,\(\to\)\,conformal-Killing\,\(\to\)\,Kodama hierarchy. Third, choosing the
+weight \(e^{-2f^2}=A^{-2}\) makes the weighted metric exactly the Kerr seed, with
+\(\operatorname{div}_{\bar g}W = 0\) so that your equation~(32) holds verbatim,
+while \(\operatorname{div}_{g}W = 4A'/A\); your Theorem~T8 requires a parallel
+weight, and ours is parallel precisely at frozen \(A\). That framework therefore
+describes exactly the frozen level of this construction, and the instinct behind the
+comment is well founded.
+
+In the revision I corrected my own statement of the first point. What I had called
+the ``Fuglede--Ishihara dichotomy'' is Fuglede's definition of semiconformality
+(\emph{Ann.\ Inst.\ Fourier} \textbf{28} (1978) 107, \S5), not a theorem, and
+invoking it would have been circular. Following Ishihara's version instead gave a
+definite answer.
+
+His reduction of harmonicity to minimal fibres holds at unit dilation, whereas our
+case has non-constant dilation, so the tension field carries a second term,
+\(\tau(\pi) = -\,\mathrm{d}\pi(\mu+\nabla^H\ln\Lambda)\), and the non-geodesic
+character of the fibres alone leaves open the possibility that the two terms cancel.
+Computing both, with \(\mu = (M/r^2)\partial_r\), returns
+\begin{align*}
+    \mu + \nabla^H\ln \Lambda
+      = \frac{M}{r^2}\,\frac{f}{\hat E^2-f}\,\partial_r\neq 0
+      \qquad (r> 2M,\ \hat E > 1),
+\end{align*}
+strictly positive throughout the exterior. So the projection is not a harmonic
+morphism, and the obstruction coincides with the quantity that makes the rail cost
+something. The claim concerns the non-vanishing of a tension field computed on the
+horizontal distribution, which is spacelike; I do not invoke the global elliptic
+theory, which is Riemannian. The identity is verified in two independent
+computer-algebra systems.
+
+As for Myers, my first argument was too quick. Decay at infinity does not exclude
+his hypothesis, and he himself supplies a counterexample. Tested on
+\(\mathrm{Ric}(v,v)\) instead, the optical scalar curvature is negative at every
+exterior point and for every rail energy, whereas \(\mathrm{Ric}(v,v)\ge e^2 > 0\)
+would force \(R_{\text{opt}} \ge 3e^2 > 0\). The hypothesis fails by sign,
+pointwise, and the relevant instrument is his Lemma, which requires no completeness.
+Correcting a non sequitur produced a better result.
+
+Set beside the objects treated here, Theorem~T2 concerns something else, for three
+concrete reasons. Equation~(9) is a Hermite-type reduction of Abelian differentials
+on a hyperelliptic curve; a dichotomy about the differential of a map and a
+reduction of Abelian integrals are statements about different objects. A
+controlled-rail brachistochrone is not a geodesic of a weighted metric, but an
+extremal of a time-optimal control problem with an actively imposed pointwise
+constraint, a compact indicatrix and a support Hamiltonian; there is moreover a
+regime in which the control set loses compactness and the problem ceases to be well
+posed, with no counterpart for geodesics. Finally, Remark~R4 stresses that the
+photon follows geodesics, while Theorem~T25 constructs a Killing field from the
+four-velocity; the rail is neither, and it is for this reason that the three-rung
+hierarchy is needed.
+
+For these reasons the results cited above do not follow from Theorem~T2. I should
+like to make clear how narrow this conclusion is: it is not a judgement on the
+theorem, nor on the framework, which I have adopted and cited. Three of the
+connections this report proposed are now in the manuscript, together with the Myers
+correction. The fourth, the implication from T2, is the one I have not managed to
+make. Should it exist, I would be glad to cite it.
+
+If the editor considers it useful to record the connection, I will add a neutral
+remark to the effect that weighted-manifold and curvature-operator methods provide
+an alternative setting for related variational problems, without asserting a
+dependence.
+
+\subsection{Experimental validation.}
+\textbf{Reply.} Accepted, and the revision answers the request rather than declining
+it. No gravitational validation is available and none is claimed, but the request
+concerned techniques, and these exist for the parts of this work that do not involve
+the Einstein dynamics. Appendix~A presents three levels.
+
+The controlled rail is realisable on a bench: a holonomic planar robot or an \(XY\)
+stage, tracked from above and commanded so that the \emph{measured} velocity
+satisfies \(\dot x = c + R\,e(\theta)\). Applying 32--64 control directions on a grid
+of states and fitting the velocity locus measures the indicatrix directly, comparing
+it with the \(c\) and \(R\) predicted here, with no refitting of the trajectories; a
+programmed \(A(\chi)\) then tests the first-order response and the
+\(O(\varepsilon^2)\) scaling, and the bench can be driven across \(J =-J_c\) to
+observe the four-case behaviour. This validates the reduced system and its control
+structure, not the field equations, and I do not present it otherwise. Included in
+the archive, under \texttt{Experimental/}, is a design study runnable with a single
+command: the indicatrix identity closes to \(4.4 \times 10^{-16}\) and the
+frozen-flow Hamiltonian is conserved to \(\sim 10^{-15}\). It is a design study, not
+a set of data, and is labelled as such.
+
+Analogue platforms supply the geometry. Rotational superradiance has been measured
+in a draining vortex, with amplification \(14\%\pm 8\%\) at \(3.70\)~Hz,
+\(R_{m=1} = 1.09\pm 0.03\) and \(R_{m=2} = 1.14\pm 0.08\) (Torres \emph{et al.},
+\emph{Nature Phys.} \textbf{13} (2017) 833), and the same structure has since been
+realised in superfluid \(^4\)He (\v{S}van\v{c}ara \emph{et al.}, \emph{Nature}
+\textbf{628} (2024) 66). Their effective metric is a threading form with wind
+\(\boldsymbol v\), hence of Randers type, and the ergosurface lies at
+\(|\boldsymbol{v}| = c\), that is at \(g(W,W) = 0\), where the selector ceases to be
+timelike: the first hypothesis of Lemma~2, and the same condition that terminates
+our control domain at \(r = 2M\). It does not coincide with the energy-dependent
+freezing condition \(\hat E = |W|\), at which \(W\) is still timelike.
+
+The time-dependent component has its own realisations, in expanding condensates
+(Eckel \emph{et al.}, \emph{Phys.\ Rev.\ X} \textbf{8} (2018) 021021) and in the
+programmable scale factor of Viermann \emph{et al.} (\emph{Nature} \textbf{611}
+(2022) 260). The two features of \(g = A(\eta)^2g_{\text{Kerr}}\) each have a
+laboratory realisation and none that I know of contains both; combining them is the
+experimental question the geometry poses.
+
+Two limitations must be stated. These platforms carry waves, and therefore probe the
+geometry and its boundary, not an actively controlled massive worldline; moreover, a
+purely conformal rescaling is invisible to ideal null rays, so an analogue system
+observes \(A(\eta)\) through the redshift of modes and particle production, not
+through ray trajectories. It is because the rail is timelike at fixed \(\hat E\)
+that the conformal factor acts on it at all, which is the same reason the problem
+does not reduce to Fermat's principle.
+
+Since no measurement is on offer, the revision states in one place the values an
+independent recomputation must return: the separatrix at
+\(r_d/M = 3.513905124011657\) with \(J_c^- = -8.053516003877019\), the threshold
+\(\hat E^2 = 3/2\), the negativity of the optical scalar curvature, the twist
+\(-a/2M\), the fibre acceleration, the minimum thrust and the adiabatic exponents.
+Each is given with enough digits that a sign error cannot hide, and each localises a
+different part of the construction. This is the form of falsifiability the problem
+admits, and I prefer to commit to it rather than to assert an observational contact
+the work does not have.
+
+\section{A note of thanks}
+
+Referee~1's report led to the identification of four errors: the cusp/corner
+contradiction, the PMP statement, the missing module and the drifting hashes.
+Pursuing them brought three more to light that the report could not have seen: an
+incorrect import path that prevented every figure script from running on a fresh
+clone; a silent error in the turning radius that removed a curve from a published
+panel; and a wrong page number.
+
+Referee~2's report is responsible for the material that is new rather than
+corrected: the reading list, which made it possible to identify that page number and
+the finiteness results; the insistence on experimental validation, which produced the
+three-level section; and the geometric framework, which generated three connections
+now present in the paper, together with the Myers correction. Where I have not been
+able to follow that report, I have said so above and set out my reasons.
+
+The manuscript is substantially better thanks to both.
+
+\end{document}

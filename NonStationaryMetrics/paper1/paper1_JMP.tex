@@ -391,19 +391,28 @@ precise form of the qualitative requirements listed above, and they are referred
 collectively as (H).
 
 \begin{hypothesis}[timelike selector]\label{hyp:selector}
-The selector $W$ is timelike on the open domain $\Omega$ under consideration, so that the
-rail constraint $-u\cdot W=\Ehat$ cuts the unit-mass shell in a future-timelike locus.
+The selector $W$ is timelike on an \emph{open} set $U$, so that the
+rail constraint $-u\cdot W=\Ehat$ cuts the unit-mass shell in a future-timelike locus
+there.
 \end{hypothesis}
 
 \begin{hypothesis}[above freezing]\label{hyp:convex}
-The rail energy exceeds the selector norm pointwise on $\Omega$:
+The rail energy exceeds the selector norm pointwise on $U$:
 $\Ehat>|W|$, where $|W|=\sqrt{-W\cdot W}$.
 \end{hypothesis}
 
-\begin{hypothesis}[uniform margin]\label{hyp:coercive}
-$\Omega$ is compact and the margin in Hypothesis~\ref{hyp:convex} is uniform,
-$\inf_\Omega(\Ehat-|W|)>0$, the metric and the rail one-form being smooth on $\Omega$.
+\begin{hypothesis}[uniform margin and admissible region]\label{hyp:coercive}
+The state region $\Omega$ is a compact set with $\Omega\Subset U$, Lipschitz
+path-connected, containing the prescribed endpoints, and such that the admissible
+class---Lipschitz arcs in $\Omega$ joining them and satisfying the rail
+constraint---is nonempty. The margin in Hypothesis~\ref{hyp:convex} is uniform on it,
+$\inf_\Omega(\Ehat-|W|)>0$, the metric and the rail one-form being smooth on $U$.
 \end{hypothesis}
+
+Separating the two sets matters: regularity is an open condition and lives on $U$,
+whereas compactness and the closure arguments of the direct method are statements
+about the admissible region $\Omega$. A nonempty set cannot be both open and compact,
+and the hypotheses are not asking it to be.
 
 Hypotheses~\ref{hyp:selector}--\ref{hyp:coercive} are scalar inequalities, directly
 checkable on any candidate domain; the geometric properties actually used below---that the
@@ -450,8 +459,15 @@ non-orthogonality of $\partial_\chi$ and $n$ is an invertible affine map. The af
 of a sphere is an ellipsoid, and affine maps preserve compactness and strict convexity, so
 the physical velocity locus is a compact strictly convex ellipse whose centre is the
 Zermelo wind. Its semi-axes are proportional to $\sqrt{\gamma^2-1}$ and hence vanish as
-$\Ehat\downarrow|W|$. Finally the arrival-time Finsler function is the support-type
-function of that ellipse, so its inradius and circumradius furnish exactly the constants
+$\Ehat\downarrow|W|$. Two dual objects are attached to it and should not be conflated.
+Write $\mathcal K$ for the closed convex \emph{body} bounded by that ellipse---the
+ellipse itself is its boundary, a strictly convex curve, and is not convex as a point
+set. The arrival-time Finsler function $F(x,\nu)$ is the \emph{Minkowski gauge} of
+$\mathcal K$, $F(x,\nu)=\inf\{t>0:\nu/t\in\mathcal K\}$, which is what makes travel
+time a length; the maximised Hamiltonian in the costate is the \emph{support function}
+of $\mathcal K$, which is what appears in the Pontryagin reduction. The two are
+dual to one another and coincide only for the Euclidean ball. It is the gauge whose
+inradius and circumradius furnish the constants
 $\rho$ and $R$ of~\eqref{eq:coercive}; under Hypothesis~\ref{hyp:coercive} the margin is
 uniform on the compact $\Omega$ and so are $\rho>0$ and $R<\infty$.
 \end{proof}
@@ -715,6 +731,17 @@ $\|\chi-\tilde\chi\|_\infty\le e^{L\Lambda}|\chi(0)-\tilde\chi(0)|$. In particul
 $x\mapsto\chi_x$ is well defined, no trajectory escapes the compact set in which the
 bounds were derived, and $T$ depends on the arc only through that map.
 
+The scope of this estimate should be stated exactly, because it is narrower than it
+may look. It compares two clocks carried along the \emph{same} arc, or along two arcs
+sharing a velocity field, and so delivers uniqueness and continuous dependence on the
+initial clock datum. It does \emph{not}, on its own, give continuity of the solution
+map along a minimising sequence, where both the curve and its velocity vary: that
+would require in addition the Lipschitz dependence of $F$ on $x$ and control of the
+convergence of the velocities. We do not need it to. Existence is supplied below by
+the differential-inclusion argument, whose closure step is where the varying
+velocities are handled, and Gr\"onwall is used here only for the two purposes just
+named.
+
 \emph{Existence.} Pass to the augmented state $y=(\chi,x)$ and the extended velocity set
 \[
    \mathcal V(y)=\big\{(t,\nu):\ |\nu|\le\Lambda,\ \ F(x,\nu,\chi)\le t\le R\Lambda\big\},
@@ -887,8 +914,9 @@ points: distinct windings past the rotation axis, or the two $\pm J$ arcs reachi
 a common target, can tie. A closed-form extremal admitting a single-valued saturated
 verification function is globally certified only up to its first Maxwell or conjugate
 obstruction---the first such singularity of $V$. For the generic non-stationary
-trajectories treated here we establish PMP extremality and local numerical minimality
-checks, \emph{not} a complete global Hamilton--Jacobi certificate; beyond the first
+trajectories treated here we establish PMP extremality, and report local numerical
+perturbation checks which are consistency tests on the computed curve and do
+\emph{not} certify minimality in an infinite-dimensional admissible class; beyond the first
 obstruction the global optimum is selected by comparing arrival times across the competing
 extremals. On the frozen family both obstructions are located exactly in
 section~\ref{sec:vaidya-jacobi}: no conjugate point occurs before the turning point, so a
@@ -1740,7 +1768,11 @@ $\ln(r-2m)\equiv\ln[(r-2m)/L]$, which cancels in every assembled result.
     \mathcal{G}_k=\int\ln(r-2m)\,\frac{r^k}{\sqrt S}\,\dd r,
     \label{eq:horizon-dilog}
 \end{equation}
-where $\mathcal{G}_k$ is the horizon-anchored genus-two dilogarithm---the exact
+where $\mathcal{G}_k$ is the horizon-anchored genus-two dilogarithm. As in Paper~II we
+use that name descriptively, for a length-two iterated Abelian integral on the
+genus-two hyperelliptic curve, and claim no more: no function class with specified
+kernels, relations, normalisation, monodromy or single-valued completion is
+established here. It is the exact
 counterpart of the Kerr weight-two piece $W_{jk}$, in the same
 hyperelliptic-dilogarithm class (conjecturally irreducible to weight one, the
 theta-divisor obstruction $\Theta=W_{g-1}$ preventing the genus-one factorization),
@@ -2383,8 +2415,9 @@ the script in the repository~\cite{Rosignoli2026CodeJMP} that generates and veri
 The closed forms and reductions above were checked symbolically and numerically. The
 Kodama energy is held to $|{-}u\cdot K-\Ehat|<7\times10^{-16}$ along the Vaidya rail; the
 stationary limit $m'=0$ reproduces the closed-form Schwarzschild ($a{=}0$ Kerr) orbit to
-$10^{-12}$ (figure~\ref{fig:vaidya-kerra0}); each branch is a local minimizer of its own
-travel time within the tested perturbation family, $t$ and $\tau$ being distinct curves
+$10^{-12}$ (figure~\ref{fig:vaidya-kerra0}); no tested perturbation in the stated finite-dimensional
+family lowered either travel time---a numerical consistency check only, which does not
+establish local minimality in the full admissible class---with $t$ and $\tau$ distinct curves
 (figure~\ref{fig:verifmin}); and the first-order
 adiabatic correction closes to $O(\varepsilon^2)$ against the true non-autonomous flow
 (figure~\ref{fig:vaidya-offshell}).

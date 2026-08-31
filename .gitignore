@@ -46,6 +46,17 @@ NonStationaryMetrics/Fonti/*.pdf
 # Private reading notes -- working document, deliberately untracked.
 NonStationaryMetrics/LETTURA_FONTI_NOTE.md
 
+# Internal audit brief handed to a second agent before resubmission.
+# Working scaffolding, not part of the submission record.
+NonStationaryMetrics/CODEX_AUDIT_BRIEF.md
+
+# Factual inventory used by the author to draft the referee response.
+# Working document, not part of the submission record.
+NonStationaryMetrics/INVENTARIO_RISPOSTA_CQG.md
+
+# Pending-work checklist for the resubmission. Working document.
+NonStationaryMetrics/DA_FARE_PRIMA_DI_CONSEGNARE.md
+
 # Extracted full text of copyrighted papers -- never commit.  The PDFs in
 # Fonti/ are already excluded for the same reason; text extractions of them
 # are the same material in another format.
@@ -61,3 +72,12 @@ NonStationaryMetrics/tmp/
 /SdSMetric/
 /TOVInternalMetric/
 /tmp/
+
+# Cross-audit handoff: Claude's verification record for Codex to repeat.
+NonStationaryMetrics/AUDIT_CLAUDE_PER_CODEX.md
+
+# Cross-audit working documents produced by the second agent. Same category as
+# AUDIT_CLAUDE_PER_CODEX.md: scaffolding, not part of the submission record.
+NonStationaryMetrics/AUDIT_APPROFONDITO_RESPONSE_CQG_R2_codex.md
+NonStationaryMetrics/AUDIT_INDIPENDENTE_CLAUDE_SCRIPTS_codex.md
+NonStationaryMetrics/LETTERA_RISPOSTA_CQG_ITALIANO_codex.md

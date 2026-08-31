@@ -215,9 +215,9 @@ fig, (ax, axb) = plt.subplots(2, 1, figsize=(COL, 6.6))
 ax.plot(rA * np.cos(phiA), rA * np.sin(phiA), 'k-', lw=2.6,
         label='T1: Hamilton ODE (grazes $r_e$ at 2.000000)')
 ax.plot(rg * np.cos(phi2), rg * np.sin(phi2), 'C1--', lw=1.6,
-        label='T2: closed-form quadrature')
+        label='T2: closed-form quadrature (crosses $r_e$)')
 ax.plot(rg * np.cos(phi3), rg * np.sin(phi3), 'C2:', lw=1.8,
-        label='T3: Weierstrass ($\\sigma,\\zeta,\\wp$)')
+        label='T3: Weierstrass ($\\sigma,\\zeta,\\wp$) (crosses $r_e$)')
 th = np.linspace(0, 2 * np.pi, 200)
 ax.plot(2 * M * np.cos(th), 2 * M * np.sin(th), 'b--', lw=1.1,
         label='ergosphere $r_e=2M$')
@@ -228,7 +228,8 @@ ax.set_ylim(-4, 9.6)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
 ax.set_title(f'separatrix $J=J_c=a/E$ ($a={a}$, $E={E}$): three methods\n'
-             'closed form crosses $r_e$; PMP-$\\eta$ terminates there')
+             'closed form crosses $r_e$; PMP-$\\eta$ terminates there\n'
+             'inside $r_e$: analytic continuation, optimality not claimed')
 ax.legend(loc='upper right', fontsize=6, framealpha=0.9)
 
 axb.semilogy(rg, np.abs(phi3 - phi2) + 1e-18, 'C2-',

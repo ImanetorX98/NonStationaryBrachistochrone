@@ -73,8 +73,8 @@ Aline = np.linspace(As[0], As[-1], 200)
 ax.plot(Aline, Jcp(Aline), 'k-', lw=1.4)
 ax.text(0.6, Jcp(0.6)+0.2, r'$J_c^+(A)$', fontsize=6.5)
 from matplotlib.patches import Patch
-leg = [Patch(fc='#08519c', label='plunge (to horizon)'),
-       Patch(fc='#4393c3', label='penetrate + bounce'),
+leg = [Patch(fc='#08519c', label='plunge (continuation, optimality not claimed)'),
+       Patch(fc='#4393c3', label='penetrate + bounce (continuation, optimality not claimed)'),
        Patch(fc='#f4a582', label='scattering'),
        Patch(fc='0.85', label='forbidden (beyond wall)')]
 ax.legend(handles=leg, fontsize=5.4, loc='lower right', framealpha=0.95)

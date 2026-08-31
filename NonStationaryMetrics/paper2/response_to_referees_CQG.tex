@@ -22,6 +22,9 @@
 % Cross-reference numbers read out of paper2.aux; see
 % provenance/make_crossrefs.py. Never type these by hand.
 \input{provenance/crossrefs.tex}
+% generated counts and slopes, so this letter cannot quote a value that has
+% drifted from the archive -- which is the substance of major comment 10.
+\input{provenance/adiabatic_slopes.tex}
 \newcommand{\R}[1]{\par\medskip\noindent\textbf{#1}\par\nopagebreak}
 
 \title{\vspace{-1.6cm}Response to the referees\\[2pt]
@@ -37,11 +40,13 @@ control domain, exterior separatrices, and adiabatic response}}
 
 \section*{Summary of the revision}
 
-I thank both referees for reports that were unusually specific and, in the first
-case, unusually generous with technical detail. The first report identified a
-defect that I had not seen and that turned out to be more serious than the
-report could establish from outside; tracking it down produced a stronger result
-than the one it replaced. I am grateful for it.
+I thank both referees. The first report was unusually specific and unusually
+generous with technical detail: it identified a defect that I had not seen and that
+turned out to be more serious than the report could establish from outside, and
+tracking it down produced a stronger result than the one it replaced. The second
+sent me to a body of geometry and to an experimental question I had not engaged
+with, and the paper now contains work that exists because of it. I am grateful to
+both.
 
 The revision follows the ``required reconstruction'' list of Referee~1 in the
 order given there.
@@ -108,9 +113,9 @@ $\Delta=0$ but leave the scalar $g(W,W)$ unchanged---and that a Doran- or
 ZAMO-anchored timelike selector would be a different problem, which is not
 treated here.
 
-Reading your item~[6] properly while preparing this revision turned up something
-that belongs here rather than in the bibliography reply, because it bears on
-whether this boundary is an artefact of our formulation. It is not. Giannoni,
+The second report's reading list turned up something that belongs here rather than
+in the bibliography reply, because it bears on whether this boundary is an artefact
+of our formulation. It is not. Giannoni,
 Piccione and Verderesi pose the stationary problem with a timelike \emph{Killing}
 field $Y$ and trial curves subject to $-\langle\dot z,Y\rangle\equiv k>0$---the same
 rail relation, conserved there rather than actively maintained---and restrict at
@@ -124,8 +129,8 @@ section~\msSecDomain\ now says so, which seems a better way to present the chang
 than as a restriction adopted under pressure.
 
 Protocol~\msProtStatus\ fixes the labelling (E)/(C)/(A) and is applied throughout, including
-in the figures: continued segments are drawn dashed and carry the legend entry
-requested in M6.
+in the figures: continued segments are drawn in a distinct line style and carry the
+legend entry requested in M6.
 
 \R{Major 2. Pontryagin extremals are not automatically local minima.}
 
@@ -177,18 +182,31 @@ metrically: focusing near a photon sphere is what produces the unbounded sequenc
 of relativistic images in lensing, and it is why no unrestricted global claim is
 available.
 
-The restriction does, however, lift in the spherically symmetric sector, and for
-a reason worth recording. There the out-of-plane Jacobi field is \emph{generated
+The out-of-plane direction can be described exactly, and it is worth recording,
+but it does not lift the restriction. There the Jacobi field is \emph{generated
 by a symmetry} rather than bounded by curvature: the rotation tilting the orbital
 plane is Killing for the optical metric, a Killing field restricts to a Jacobi
 field along any geodesic, and on the equator its norm is
 $\sqrt{B(r)}\,|\sin\varphi|$. That vanishes at swept azimuth exactly $\pi$, fixed
 by the rotation group and independent of the rail energy, the mass and
-$K_{\rm tan}$ altogether. So no conjugate point occurs in \emph{any} direction
-precisely when $K_t<0$ along the arc and the swept azimuth stays below $\pi$---
-and the companion paper proves the latter for the spherically symmetric rail. In
-that sector, and in the non-rotating frozen limit, the \emph{conjugate-point}
-statement is therefore fully three-dimensional.
+$K_{\rm tan}$ altogether. For a \emph{fixed non-radial} arc this gives a sufficient
+condition---$K_t<0$ along the arc together with swept azimuth below $\pi$ implies no
+conjugate point in any direction---and nothing stronger.
+
+It does not extend to a three-dimensional statement, and two things block that
+extension. The companion paper proves its swept-azimuth bound for the spherically symmetric
+\emph{proper-time} family; the statements here are on the arrival-time branch,
+whose optical metric differs by the non-constant factor $\hat E^2/f^2$, so the
+curves are not the same family and the bound does not transfer without a separate
+proof. Worse, the conclusion could not have been right in general: the global
+proposition supplies one extremal per winding class, and a class of high enough
+winding sweeps $\Phi\ge\pi$, at which the symmetry-generated field vanishes and an
+out-of-plane conjugate point appears before the endpoint. The blanket
+three-dimensional claim and the classwise global result are incompatible in exactly
+the regime where the winding classes matter. All conjugate-point and global
+statements in the paper are therefore equatorial, and the radial case $J=0$, where
+the chosen Killing field vanishes identically along the curve, is excluded from the
+sufficient condition rather than covered by it.
 
 I should be explicit that this does not carry the global statements with it, and
 for two independent reasons. Absence of conjugate points gives local minimality;
@@ -338,7 +356,7 @@ classification is therefore fourfold, not threefold:
 \hline
 case & $p_r^2$ at $r_e$ & $\mathcal T(r_e)$ & $r_e$ attained & shape\\
 \hline
-$|J|>J_c$ & $>0$ & $\neq0$ & no & smooth periapsis, exponent 2\\
+$|J|>J_c$ & zero; $<0$ just outside & $\neq0$ & no & outer smooth periapsis, exponent 2\\
 $|J|<J_c$ & simple & $\neq0$ & finite parameter & semicubical cusp, exponent $3/2$\\
 $J=-J_c$ & double & $\neq0$ & \textbf{asymptotic only} & finite tangent, exponent 1\\
 $J=+J_c$ & double & simple & finite, and crosses & regular crossing\\
@@ -361,8 +379,8 @@ $C=-\sqrt{4M^2+J_c^2}/(8M^2)$---which depends on $a$ and $E$ only through
 $J_c$---for the prograde crossing rate, and for the one-sided tangent.
 
 The one-sided expansions, signs, branch orientation and convergence tests the
-referee asked for are in two scripts, \texttt{verify\_cusp\_corner.wls} (22
-checks) and \texttt{verify\_marginal\_hamilton.wls} (23 checks), all passing.
+referee asked for are in two scripts, \texttt{verify\_cusp\_corner.wls} (21
+checks) and \texttt{verify\_marginal\_hamilton.wls} (19 checks), all passing.
 Representative numbers at $M=1,a=0.9,E=1.2$: $C=-0.267000117$ against the closed
 form to $10^{-6}$; the elapsed parameter gains $34.4956$ per four decades of
 $r-r_e$ against $\ln(10^4)/|C|=34.4955$; the sub-marginal exponent measures
@@ -458,8 +476,10 @@ the local exponent is $2+O(\varepsilon)$, so a finite-window fit is biased
 upward, and the covariance $\sigma$ measures fit quality rather than that bias---%
 which is why $2.12\pm0.03$ sits several $\sigma$ from $2$ without being in
 tension with second order. Refitting on shrinking sub-windows gives
-$2.118\to2.068\to2.043$ in every configuration, reaching $2.045$ at
-$\varepsilon_{\max}=0.004$.
+$2.118\to2.068\to2.043$ in the representative configuration and
+$2.123\to2.072\to2.045$, $2.122\to2.070\to2.044$ in the other two; every
+configuration decreases toward $2$ as the window shrinks, none ending above
+\provSubwindowNarrowest\ at $\varepsilon_{\max}=0.004$.
 
 The $\varepsilon$-window is stated ($\{0.001,0.002,0.004,0.008,0.016\}$), as is
 the fitted radial interval, $r/M\in[8,11]$, which remains $6M$ from the nearest
@@ -523,12 +543,19 @@ three different values---one printed, one in the release you cloned, one in the
 working tree---which is the signature of hand transcription. As described under
 major 7, they are now generated by the same command that produces the slopes.
 
-\emph{Manifest and environment.} \texttt{MANIFEST.tsv} maps sixteen artefacts,
+\emph{Manifest and environment.} \texttt{MANIFEST.tsv} maps \ManifestArtefacts\ artefacts,
 each to one command and one checksum. The environment lockfile has been verified
 against the live environment and extended with the computer-algebra system
 version, which \texttt{pip} cannot record but the symbolic suite requires; the
 lockfile is itself a manifest entry. A fresh clone no longer requires unarchived
 parent or sibling folders.
+
+Two scope statements belong with this, so that nothing here is read as more than it
+is. The content digest covers the adiabatic-validation scripts, windows and fitted
+data listed in it; it is not a whole-archive checksum, and each manifest row
+separately carries the checksum of its own file. And the manifest maps the principal
+computational claims together with the figures and tables depending on them---not
+every equation in the paper.
 
 \R{Major 11. Paper II depends on statements in Paper I that also require revision.}
 
@@ -590,10 +617,14 @@ with the reason no convexification is needed.
 \item[M4] Done: see major 5. The interior double root is never called a physical
 separatrix.
 \item[M5] Done: units and the normalisation $M=1$ are declared once in
-Protocol~\msProtNames\ and in every numerical caption and table; an audit of all captions
-found one that listed parameters without $M$, now fixed.
-\item[M6] Done: continued interior curves are drawn with a distinct line style
-and carry the legend entry ``continuation, no optimality claimed''.
+Protocol~\msProtNames\ and in every numerical caption and table. A mechanical audit of
+all captions---re-run against the final text---found five that quoted radii or
+momenta without stating the normalisation; all five now carry it.
+\item[M6] Done: every figure in which a curve is continued inside $r_e=2M$ now draws
+the continued portion in a distinct line style and states, in the legend or in the
+panel title, that the continuation is analytic and that no optimality is claimed for
+it. Figures whose curves terminate at $r_e$ carry no such label, because nothing is
+continued there.
 \item[M7] Done: Protocol~\msProtNames\ carries a table keeping $E$, $\hat E$, $E_{\rm eff}$,
 $J$ and $J_{\rm eff}$ distinct, including the convention that $E$ abbreviates
 $E_{\rm eff}$ in the frozen sections and the relabelling $J_t=A\,J_\eta$.
@@ -645,8 +676,10 @@ hyperplanes.}
 \emph{is} a precise structural relation between the two frameworks, which the
 manuscript had left implicit. I have made it explicit in a new
 section~\msSecSubmersion, \emph{Relation to conformal submersions}, and I am
-grateful for the prompt. I do not, however, think the relation is the one the
-comment states, and I set out below both what it is and why.
+grateful for the prompt. The relation is not quite the one the comment
+proposes, and the difference is one of \emph{scope} rather than of correctness: the
+theorem holds where its hypotheses hold, and the objects at issue here fall outside
+them. I set out below both what the relation is and where it stops.
 
 \emph{What the relation is.} The optical reduction used throughout is a
 submersion. Writing a stationary metric in threading form and projecting along the
@@ -673,16 +706,37 @@ useful one, and pursuing it gave a definite answer rather than a disclaimer.
 Ishihara reduces harmonicity for a submersion to minimality of the fibres, and ours
 are one-dimensional, hence minimal only if geodesic. They are not: for a static
 conformal factor over a Schwarzschild seed $\nabla_WW=(M/r^2)f\,\partial_r$, which
-is precisely the static-observer thrust. So the optical projection is \emph{not} a
-harmonic morphism, and the obstruction is the very quantity that makes the rail
-cost something. The framework accounts for the conformal \emph{form} of the optical
-metric and for nothing beyond it.
+is precisely the static-observer thrust.
 
-\emph{Why it is not an application, trivial or otherwise.} T2 supplies the
-existence of a conformal factor; it does not supply its value, which requires
-solving the rail jointly with the mass shell. More importantly, its hypotheses
-are exactly what the non-stationary problem gives up, and the loss is
-quantitative. For the induced structure to descend to a base the selector must be
+That alone, however, does not settle it. The
+reduction to minimal fibres holds at unit dilation; ours is horizontally conformal
+with a non-constant dilation, and the tension field then carries a second term,
+\[
+   \tau(\pi)=-\,\mathrm d\pi\big(\mu+\nabla^H\ln\Lambda\big),
+\]
+so non-geodesic fibres alone leave open that the two contributions cancel. We have
+therefore computed both. With $\mu=(M/r^2)\partial_r$ and
+$\nabla^H\ln\Lambda=-(M/r^2)\big[(\hat E^2-2f)/(\hat E^2-f)\big]\partial_r$,
+\[
+   \mu+\nabla^H\ln\Lambda=\frac{M}{r^2}\,\frac{f}{\hat E^2-f}\,\partial_r\;\neq\;0
+   \qquad(r>2M,\ \hat E>1),
+\]
+strictly positive throughout the exterior and vanishing only as $f\to0$. So the
+optical projection is indeed \emph{not} a harmonic morphism, the obstruction is the
+very quantity that makes the rail cost something, and it survives rather than being
+cancelled by the conformal factor the framework does explain. The framework accounts
+for the conformal \emph{form} of the optical metric and for nothing beyond it.
+
+Two things are worth saying about the setting. The claim above is the
+non-vanishing of a computed tension field on the horizontal distribution, which is
+spacelike; we do not invoke the global elliptic theory---removability, unique
+continuation, or the Fuglede--Ishihara equivalence read as an ``if and only if''---%
+which is Riemannian and does not transfer to a Lorentzian total space. And the
+identity is now checked in two independent computer-algebra systems.
+
+\emph{Where the two frameworks meet, and what the meeting costs.} The
+hypotheses that let the induced structure descend are exactly what the
+non-stationary problem gives up, and the loss can be measured rather than asserted. For the induced structure to descend to a base the selector must be
 conformal Killing; and by Bishop's theorem---reference [14] of the cited
 preprint---a Riemannian submersion with connected fibres is Clairaut, so that the
 transverse invariant is conserved along geodesics, if and only if its fibres are
@@ -701,8 +755,11 @@ $\mathcal L_Wg=2AA'\bar g=(2A'/A)g$: the selector $W=\partial_\eta$ is a
    \frac{\dd\hat E}{\dd\tau}\bigg|_{\rm geodesic}=\frac{A'}{A}=\varepsilon ,
 \]
 independently of the four-velocity. The rate at which an uncontrolled worldline
-loses the rail is exactly the adiabatic parameter of the paper: the control
-effort and the expansion parameter are the same quantity. This is the middle rung
+loses the rail is exactly the adiabatic expansion rate of the paper: the
+charge-drift source and the expansion rate are the same quantity. That fixes the
+minimum acceleration \emph{component} needed to cancel the drift, and I am careful
+not to read it as the total thrust, fuel or integrated control of a prescribed
+curve, which it is not. This is the middle rung
 of the Killing $\to$ conformal-Killing $\to$ Kodama hierarchy, made
 quantitative, and I had not previously stated it.
 
@@ -726,8 +783,8 @@ surjective on the complement of the $Ker[d\Psi_x]$,
 \noindent where (Definition~D1) $\psi$ is a \emph{semiconformal} map, that is a
 Lipschitz $C^1$ dense map $\psi:(P^m,g_{ij})\to(Q^n,h_{ij})$.
 
-The specific claim attached to it is checkable, and I have checked it.
-Equation~(9) of the submitted manuscript is
+Set beside the objects treated here, the theorem is speaking about something else,
+and in three concrete ways. Equation~(9) of the submitted manuscript is
 \[
   \big(E\partial_E+J\partial_J\big)F
    =\mathrm{d}_r\!\left[\frac{\mathcal A(r)}{\mathcal R}\right]
@@ -735,12 +792,9 @@ Equation~(9) of the submitted manuscript is
 \]
 the Euler (scaling) reduction of the adiabatic source: a Hermite-type reduction
 of abelian differentials on a hyperelliptic curve to a total derivative plus a
-first-/second-kind basis. I can see no substitution carrying a qualitative
-dichotomy about the differential of a map into a reduction of abelian integrals,
-and it is that kind of short, exhibitable chain that ``trivial application'' would
-require.
-
-Beyond that specific point, the objects differ. A controlled-rail brachistochrone is not a geodesic of
+first-/second-kind basis. A dichotomy about the differential of a map and a
+reduction of abelian integrals are statements about different objects, and I see no
+route from the first to the second. Next, a controlled-rail brachistochrone is not a geodesic of
 a metric, weighted or otherwise: it is an extremal of a time-optimal control
 problem with an actively enforced pointwise constraint $-g(u,W)=\hat E$, whose
 admissible set is a compact indicatrix and whose Hamiltonian is a support
@@ -748,10 +802,9 @@ function. Its equations do not reduce to the geodesic equations of
 $e^{-f^2(r)}g_{\mu\nu}$ for any $f$, because the constraint is not a conformal
 rescaling of the metric; the revision makes this concrete by exhibiting a regime
 where the control set loses compactness and the problem ceases to be posed at
-all, which has no counterpart for geodesics of a weighted manifold.
-
-A further difference is decisive for the physical reading. Remark~R4 of the
-cited preprint stresses that ``the photon follows the geodesics in GR'', and
+all, which has no counterpart for geodesics of a weighted manifold. And, decisively
+for the physical reading, Remark~R4 of the
+cited preprint stresses that ``the photon follows the geodesics in GR'', while
 Theorem~T25 there constructs a \emph{Killing} vector field from the four-velocity.
 The controlled rail is neither: $W$ is in general \emph{not} a Killing field of
 the background---which is precisely why this programme needs a
@@ -762,7 +815,9 @@ geodesics.
 The companion claim, that $W$ of equation~(1) of Paper~I follows from the
 Hamiltonian analysis of a second preprint, I have also examined at the source.
 That preprint defines a Ricci soliton by
-$\mathcal L_Xg_{\mu\nu}+R_{\mu\nu}=\lambda g_{\mu\nu}$, i.e.\ a vector field whose
+$\tfrac12\mathcal L_Xg_{\mu\nu}+R_{\mu\nu}=\lambda g_{\mu\nu}$---the normalisation
+carrying the factor $\tfrac12$, which we use throughout and in which the identity
+below is stated---i.e.\ a vector field whose
 deformation tensor is prescribed by the curvature, and this \emph{is} the natural
 point of contact, since the controlled rail is governed by the same object
 $\mathcal L_Wg$. Combining the two gives a clean identity, which I have added to
@@ -834,20 +889,31 @@ at every exterior point and every rail energy---setting $r=2M(1+s)$ makes the
 bracket a quadratic in $s>0$ with all three coefficients positive---whereas
 $\mathrm{Ric}(v,v)\ge e^2>0$ for all unit $v$ would force $R_{\rm opt}\ge3e^2>0$.
 The Myers hypothesis thus fails by sign, pointwise, not by asymptotic decay. I also
-note that the relevant instrument is his Lemma, which needs no completeness, so the
-incompleteness of the optical exterior is not doing any work in the argument. This
+note that the relevant instrument is his Lemma, which needs no completeness, so no
+completeness question is doing work in the argument---and in fact the arrival-time
+optical exterior is complete, incompleteness being a feature of the proper-time
+surface instead. This
 is in section~\msSecSubmersion\ of the revised manuscript and is verified in
 \texttt{verification/verify\_myers\_optical.wls}. I am grateful for the prompt: the
 original wording was a non sequitur, and correcting it produced a better result.
 
-For these reasons I am not in a position to state that the present results are a
-trivial application of Theorem~T2. I would of course reconsider on being shown
-the specific implication, step by step.
+For these reasons the results above do not follow from Theorem~T2. I want to be
+exact about how narrow that statement is: it is not a judgement on the theorem,
+which I have no reason to doubt, nor on the framework, which I have adopted---the
+horizontal-conformal structure it describes is genuinely common ground and is now
+credited as such. What I have been unable to construct is the one implication, from
+that theorem to the results listed above.
+
+Of the connections this report proposed, three are now in the manuscript---the
+conformal submersion and its dilation, the soliton drift identity, and the
+weighted-metric correspondence at frozen $A$---together with the Myers correction.
+The fourth, the implication from T2, is the one I have not been able to make. If it
+does exist I would be glad to cite it and to say so in the text.
 
 If the editor considers the connection worth recording, I would be glad to add a
 neutral remark noting that weighted-manifold and curvature-operator methods
 provide an alternative geometric setting for related variational problems,
-without a dependence claim. I did not want to insert such a remark unilaterally.
+without a dependence claim.
 
 \R{Experimental validation.}
 
@@ -860,7 +926,7 @@ findings.
 it. No \emph{gravitational or astrophysical} validation is presently available and
 none is claimed; but the request was for techniques of experimental validation, and
 those exist for the parts of this work that are not the Einstein dynamics. The
-revised manuscript sets out three levels in section~\msSecClassification, and I
+revised manuscript sets out three levels in~\msAppValidation, and I
 summarise them here.
 
 \emph{(A) The controlled rail is realisable on a bench.} What is distinctive here is
@@ -891,9 +957,13 @@ realised in superfluid $^4$He with bound states and ringdown resolved
 (\v{S}van\v{c}ara \emph{et al.}, \emph{Nature} \textbf{628} (2024) 66). The
 correspondence is not loose: their effective acoustic metric is a threading form
 with wind $\boldsymbol v$, hence a Randers structure, and its ergosurface sits at
-$|\boldsymbol v|=c$---which is exactly the condition $|W|=\hat E$ of
-Lemma~\msLemCompact. The surface this revision is organised around is one that has
-been crossed experimentally and whose neighbourhood has been measured. Those experiments supply the
+$|\boldsymbol v|=c$---that is at $g(W,W)=0$, where the stationary selector ceases to
+be timelike. That is the \emph{first} hypothesis of Lemma~\msLemCompact\ failing, and
+it is the same clause that ends our control domain at $r=2M$; it is not the
+energy-dependent freezing condition $\hat E=|W|$, at which $W$ is still timelike and
+the rail slice degenerates to a single velocity. The two must be kept apart, and once
+they are, the correspondence is the tighter for it: the causal boundary the revision is organised around is one that has been realised
+in the laboratory. Those experiments supply the
 \emph{rotating} half of the geometry; the \emph{time-dependent} half has its own
 realisations, in expanding Bose--Einstein condensates where long-wavelength modes
 are redshifted by the expansion (Eckel, Kumar, Jacobson \emph{et al.},
@@ -964,5 +1034,18 @@ more that the report could not have seen from outside---a broken import path tha
 prevented every figure script from running on a fresh clone, a silent
 turning-radius bug that dropped a curve from a published panel, and a wrong page
 number in a reference. The manuscript is materially better for it.
+
+Referee~2's report is responsible for material that is new rather than corrected.
+The reading list it supplied caught that wrong page number and, more substantially,
+the Giannoni--Masiello--Piccione finiteness results on \emph{conformally stationary}
+spacetimes---the closest published setting to the frozen-conformal-factor regime
+used here, which I had missed. Its insistence on experimental validation produced
+the three-level section that now answers the question rather than declining it. And
+the geometric framework it pointed to produced three connections that are now in the
+paper---the conformal submersion and its dilation, the soliton drift identity, and
+the weighted-metric correspondence at frozen $A$---together with the correction to my
+Myers argument, which replaced a non sequitur with a sharper result. Where I have not
+been able to follow that report I have said so above, with the reasons and with what
+would change my mind.
 
 \end{document}

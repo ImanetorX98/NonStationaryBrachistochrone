@@ -55,7 +55,7 @@ th = np.linspace(0, 2*np.pi, 400)
 inside = rr_full < r_e
 ax.plot(x, y, 'C0-', lw=1.6, label='orbit (outside $r_e$)')
 xi = np.where(inside, x, np.nan); yi = np.where(inside, y, np.nan)
-ax.plot(xi, yi, 'C3-', lw=2.2, label='inside ergosphere (co-rotating)')
+ax.plot(xi, yi, 'C3-', lw=2.2, label='inside $r_e$: analytic continuation, optimality not claimed')
 ax.fill(r_e*np.cos(th), r_e*np.sin(th), color='b', alpha=0.06)
 ax.plot(r_e*np.cos(th), r_e*np.sin(th), 'b:', lw=1.0, label='$r_e$ (ergosphere)')
 ax.plot(r_plus*np.cos(th), r_plus*np.sin(th), 'k-', lw=1.0, label='$r_+$ (horizon)')

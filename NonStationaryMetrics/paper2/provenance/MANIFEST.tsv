@@ -3,7 +3,9 @@ laboratory design study for the three validation routes	python3 Experimental/run
 Prop. 3.1 (local classification at r_e), shape	wolframscript -file verify_cusp_corner.wls	NonStationaryMetrics/paper2/verification/verify_cusp_corner.wls	5503d6a6ea56b2bce9e23f714d8edb2260aef24b2e8c0755b8459ac74d20992d
 Prop. 3.1 (local classification at r_e), dynamics	wolframscript -file verify_marginal_hamilton.wls	NonStationaryMetrics/paper2/verification/verify_marginal_hamilton.wls	47344e49f7f6aa7e5af9b55b26bd123d3fd4dd5c30fb649bfee14f7191b5433d
 Prop. 3.2 (exterior retrograde separatrix), eq. (exterior-sep)	wolframscript -file verify_exterior_separatrix.wls	NonStationaryMetrics/paper2/verification/verify_exterior_separatrix.wls	daeda4c0969343ec479191357fb78386377569012f5d530b1d18fee704a97681
-Fig. (phi-true-dynamic) and Table A3 slopes	python3 make_provenance.py	NonStationaryMetrics/paper2/provenance/make_provenance.py	78968ce839dbc164d08e39bd187e7de41274d6a0cfafeefa08989551801da1c8
+Eqs. (fibre-accel), (tension-residual): submersion tension, SymPy route	python3 verify_tension_sympy.py	NonStationaryMetrics/paper2/verification/verify_tension_sympy.py	4943114085204b14bd28a3b9dc62e28b82fc7644501bb6555ba8dcd8cf86fdbc
+Props. 3.1-3.2, sec. 2.2, Paper I Vaidya: independent re-derivation	python3 verify_independent_rederivation.py	NonStationaryMetrics/paper2/verification/verify_independent_rederivation.py	84e26a166acbe6328bd1b03876656081ce6c02ad90b2a025c2942075ded05367
+Fig. (phi-true-dynamic) and Table A3 slopes	python3 make_provenance.py	NonStationaryMetrics/paper2/provenance/make_provenance.py	9687b5ada250f88a287bf0163849be7848481006b8dce8cdc42c18e2a3bf3a84
 true-dynamics validation run	python3 fig_phi_validation_corrected.py	NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py	d758be24d5fae53aa2f7b20ee81e86314178eb4ed04502c32213a9a55fc19882
 exact first-order PT run	python3 adiabatic_first_order_exact.py	NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py	3cd72fd798e3879dd8889eafbddd7452ee222cab98b1c934888f998627dc1a1b
 CAP interval-arithmetic library	python3 cap_full.py	NonStationaryMetrics/cap_full.py	75175d8a46725da5f0e4caebd1aa7979567a0566e0a3527b7cc230c793858441
@@ -11,7 +13,7 @@ CAP certificate at r0 = 10	python3 no_inversion_schwarzschild_CAP_r0_10.py	NonSt
 Fig. (master-pen)	python3 fig_master_penetration_taut.py	KerrScripts/fig_master_penetration_taut.py	b1ddadbc158c2599fe7989c62259db5063788757d939208d35854daf183e370f
 Fig. (atlas-tau), Fig. (atlas-t)	python3 fig_atlas_tau_t.py	KerrScripts/fig_atlas_tau_t.py	e772e6f558d01f39d4e3d2a00e267c3d2932f7ff828611b2e8dd8f88f1e730f6
 Fig. (th-cusp)	python3 cuspide_ergosfera.py	NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py	55fc540ecf1794cbcb1930819c1628170d4638f76a43067a593c86e2e3d44c9a
-Fig. (sep3)	python3 kerr_separatrix_trajectories.py	KerrScripts/kerr_separatrix_trajectories.py	b8c1043a901c22edfa039404d74a5225a8ea2363a400dedd13b76c2c25eda828
+Fig. (sep3)	python3 kerr_separatrix_trajectories.py	KerrScripts/kerr_separatrix_trajectories.py	3d7b7fde30c7f637ad707d881a4c2dcf4c67b5bc56766a49be9efa70815aa647
 Fig. (jpt-g2)	python3 kerr_jpt_genus2_figure.py	KerrScripts/kerr_jpt_genus2_figure.py	3a54c11148b95d37a5ec52c02db6fcdf2917d43986dc963c25bf738b50c05723
 Fig. (jcm-cap)	python3 kerr_jcm_capture_figure.py	KerrScripts/kerr_jcm_capture_figure.py	504b11ef089596a0a57663f6ec2d8606198f3a052839a15dc5f20f04ea0bafa0
 shared figure style	-	NonStationaryMetrics/paper_style.py	d7f763e2c2a2f777e3f0a1f865e3fe65961137e3b00713cfdafd70a6ad313964
