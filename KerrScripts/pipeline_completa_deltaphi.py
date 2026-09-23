@@ -38,9 +38,14 @@ res=sp.Poly(sp.expand(ident.subs(sol)),r).all_coeffs()
 print("  residuo identita' =", float(max(abs(x) for x in res)) if res else 0.0,"(ESATTO)")
 
 print("="*70)
-print("STEP 4 -- vettore clock b:  eta=tau, dtau/dr=r^2(r-2M)/sqrt(S)=U_3-2M U_2")
-b=[0,0,-2*sub[M],1,0]
-print("  b = (0, 0, -2M, 1, 0) =", [float(x) if not isinstance(x,int) else x for x in b])
+print("STEP 4 -- orologio di deriva eta lungo l'orbita tau (A=A(eta)):")
+print("  d eta/dr = [E r^3 - 2MaJ r DE/Delta]/sqrt(S) = sum b_j r^j/sqrt(S) + R_D/(Delta sqrt(S))")
+Mv,av,Ev,Jv=[float(sub[s_]) for s_ in (M,a,E,J)]
+b=[-2*Mv*av*Jv*(Ev**2-1),0.0,0.0,Ev,0.0]
+RDf=lambda t:-2*Mv*av*Jv*(2*Mv*Ev**2*t-(Ev**2-1)*av**2)
+print("  b = (-2MaJ(E^2-1), 0, 0, E, 0) =",[round(x,6) for x in b])
+print("  R_D = -2MaJ[2ME^2 r-(E^2-1)a^2]  (terza specie agli orizzonti r_pm)")
+print("  [non il tempo proprio b=(0,0,-2M,1,0): e' l'orologio del funzionale, non la variabile lenta]")
 
 print("="*70)
 print("STEP 5 -- coefficienti peso-2:  Q_kj = c_k b_j - c_j b_k")
@@ -67,16 +72,21 @@ Uv=[U(x,k) for k in range(5)]
 print("  U_k =",[round(v,5) for v in Uv],"  (abeliani peso-1)")
 print("  W_kj:",[f'W_{k}{j}={W(x,k,j):+.4f}' for k,j,_ in Qlist])
 print("  I_j = int A r^j/S (elementari->log):",[round(Ical(x,j),4) for j in range(5)])
+Dnf=lambda t:t*t-2*Mv*t+av*av
 eta=sum(b[j]*Uv[j] for j in range(5))
-print(f"  eta(x)=U_3-2M U_2 = {eta:.6f}")
+eta3=lambda xx:quad(lambda t:RDf(t)/(Dnf(t)*sq(t)),r0,xx,limit=200)[0]
+print(f"  eta_2(x)=sum b_j U_j = {eta:.6f},  eta_3(x) (orizzonte) = {eta3(x):.6f}")
 
 print("="*70)
-print("STEP 7 -- ASSEMBLAGGIO (eq:psi-split) vs DIRETTO")
+print("STEP 7 -- ASSEMBLAGGIO (eq:psi-split + parte d'orizzonte) vs DIRETTO")
 I_asm = (-0.5*sum(Q*W(x,k,j) for k,j,Q in Qlist)
          + eta*(Acaln(x)/sq(x)+0.5*sum(cN[k]*Uv[k] for k in range(5)))
          - sum(b[j]*Ical(x,j) for j in range(5)))
 def dEF(t): return Nn(t)/Sn(t)**1.5
-I_dir = quad(lambda t:dEF(t)*sum(b[j]*U(t,j) for j in range(5)),r0,x,limit=200)[0]
+I_hor = quad(lambda t:dEF(t)*eta3(t),r0,x,limit=200)[0]
+I_asm = I_asm + I_hor
+I_dir = quad(lambda t:dEF(t)*(sum(b[j]*U(t,j) for j in range(5))+eta3(t)),r0,x,limit=200)[0]
+print(f"  parte d'orizzonte int dEF*eta_3 = {I_hor:.10f}")
 print(f"  I_assemblato = {I_asm:.10f}")
 print(f"  I_diretto    = {I_dir:.10f}   (= int dE F * eta dr)")
 print(f"  differenza   = {abs(I_asm-I_dir):.2e}   <-- catena chiusa")

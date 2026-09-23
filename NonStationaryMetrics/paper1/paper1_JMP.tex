@@ -813,13 +813,13 @@ existence theorem \cite{Cesari1983,Filippov1962}, and admits a minimizer.
 requires a comparison argument rather than the observation that $\chi(1)$ increases
 with $t$, because $F$ depends on $\chi$ as well.
 
-\begin{lemma}[scalar comparison for the clock]\label{lem:comparison}
+\begin{auxlemma}[scalar comparison for the clock]\label{lem:comparison}
 Fix a spatial arc $x$ with $|\dot x|\le\Lambda$ a.e. Let $\chi$ solve
 $\dot\chi=F(x,\dot x,\chi)$ with $\chi(0)=\chi_0$, and let $\tilde\chi$ be
 absolutely continuous with $\dot{\tilde\chi}\ge F(x,\dot x,\tilde\chi)$ a.e.,
 $\tilde\chi(0)=\chi_0$, and \emph{taking values in} $[\chi_0,\chi_0+R\Lambda]$.
 Then $\tilde\chi\ge\chi$ on $[0,1]$.
-\end{lemma}
+\end{auxlemma}
 
 The last hypothesis is needed and costs nothing. It is automatic for the relaxed
 trajectories to which the lemma is applied: there $\dot{\tilde\chi}=t\le R\Lambda$ by
@@ -1740,16 +1740,22 @@ to $10^{-15}$). The clock is now the \emph{advanced time}: from $v=t+r_*$,
     v=E\,U_3+r+2m\ln(r-2m),
     \label{eq:vaidya-clock}
 \end{equation}
-the tortoise term injecting a \emph{horizon logarithm}. This is the advanced-time
-(native) branch; the \emph{proper-time} branch instead uses the second-kind clock
-$\dd\tau/\dd r=r^2(r-2m)/\sqrt S$, i.e.\ $T_\tau=U_3-2m\,U_2$, $b=(0,0,-2m,1,0)$ (no
-horizon log), and closes by the very same
-universal on-shell assembly established here (specialized to the Vaidya clock)---$\delta\varphi_\tau/\dot m=\tfrac12\sum_{k<j}Q_{kj}
-W_{kj}-T_\tau(\mathcal{A}^m/\sqrt S+\tfrac12\sum c_k^m U_k)+\sum_j b_j\mathcal{I}_j$ with
-$Q_{kj}=c_k^m b_j-c_j^m b_k$, all coefficients algebraic (verified to
-$10^{-14}$). The two canonical clocks of the ingoing problem are therefore the
+the tortoise term injecting a \emph{horizon logarithm}. Because the mass runs with
+the advanced time, $m=m(v)$, it is $v(r)$---the advanced time elapsed along the
+orbit---that weights the drift, and this is so whichever clock the cost
+functional measures. The proper-time density $\dd\tau/\dd r=r^2(r-2m)/\sqrt S$,
+i.e.\ $T_\tau=U_3-2m\,U_2$, $b=(0,0,-2m,1,0)$ (no horizon log), is the
+\emph{timing} of the proper-time functional, not a drift clock: weighting by it
+would describe a mass running with the proper time of the orbit, which is not the
+ingoing Vaidya metric. The on-shell assembly established here is indifferent to the
+clock it is fed---with $T_\tau$ it closes in the same form,
+$\tfrac12\sum_{k<j}Q_{kj}W_{kj}-T_\tau(\mathcal{A}^m/\sqrt S+\tfrac12\sum c_k^m U_k)
++\sum_j b_j\mathcal{I}_j$ with $Q_{kj}=c_k^m b_j-c_j^m b_k$ (verified to
+$10^{-14}$)---which is why the choice has to be made on physical grounds and not
+read off the algebra. The clocks of the ingoing problem are therefore the
 \emph{advanced null time} $v$ (adapted to the Kodama selector $K=\partial_v$, the
-native evolution parameter) and the \emph{proper time} $\tau$; the coordinate time
+native evolution parameter and the drift clock) and the \emph{proper time} $\tau$,
+the clock the proper-time functional measures; the coordinate time
 $t$ that enters the static depth comparison~\eqref{eq:vaidya-turn} is the
 \emph{frozen} Schwarzschild-like time, a comparison device valid at frozen order and
 \emph{not} a canonical non-autonomous clock---once $m=m(v)$ the tortoise
@@ -2211,8 +2217,8 @@ universal boundary form $S_{\mathcal D}=[\,rp_r\,]-\lambda$.
 
 \paragraph{Outlook.} The full outgoing-Vaidya boundary-value problem---with its own
 Hamiltonians, costates and transversality---remains open, as does a genuine third
-(Kodama-observer) clock. The rotating Thakurta--Kerr case, its ergosphere trichotomy,
-closed-form separatrices and conformal plunge inversion, is developed in the companion
+(Kodama-observer) clock. The rotating Thakurta--Kerr case, its local classification at the
+conformal stationary limit, closed-form separatrices and conformal plunge inversion, is developed in the companion
 paper. More broadly, the controlled-rail brachistochrone turns the comparison of
 arrival-time and proper-time optimal worldlines into a quantitative probe of how
 homogeneous expansion, radial spatial gradients and time-dependent mass flow shape causal

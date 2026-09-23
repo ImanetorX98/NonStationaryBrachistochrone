@@ -408,6 +408,10 @@ MANIFEST: list[tuple[str, str, str]] = [
      "tightness, and the two radial windows quoted beside it",
      "python3 verify_wsup_window.py",
      "NonStationaryMetrics/paper2/verification/verify_wsup_window.py"),
+    ("Eq. (clock-eta-tau): the drift clock of the tau-branch against the "
+     "Hamiltonian flow, and the weight-two assembly with its horizon part",
+     "python3 verify_tau_branch_drift_clock.py",
+     "NonStationaryMetrics/paper2/verification/verify_tau_branch_drift_clock.py"),
     ("Figure collection: every compiled figure is the current output of its "
      "generator (hash-compared, not assumed)",
      "python3 collect_figures.py --check",

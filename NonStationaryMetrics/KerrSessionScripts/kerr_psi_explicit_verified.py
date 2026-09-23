@@ -47,38 +47,54 @@ for rv in [11.0, 9.0, 7.0, 5.0]:
 print("=> se diff~1e-12: riduzione CORRETTA (Delta gestito bene).")
 
 # ===== PASSO 4: decomposizione di psi, VERIFICATA =====
+# Orologio di DERIVA lungo l'orbita tau (A = A(eta)):
+#   d eta/dr = [E r^3 - 2MaJ r D_E/Delta]/sqrt(S) = sum_j b_j r^j/sqrt(S) + R_D/(Delta sqrt(S))
+#   b = (-2MaJ(E^2-1), 0, 0, E, 0),   R_D = -2MaJ [2ME^2 r - (E^2-1)a^2]   (terza specie a r_pm)
+# Una versione precedente usava il tempo proprio, b=(0,0,-2M,1,0): e' l'orologio che il
+# funzionale misura, non la variabile lenta (paper2/verification/verify_tau_branch_drift_clock.py).
 import numpy as _np
 from scipy.integrate import quad as _quad
 from scipy.optimize import brentq as _brentq
 Mf,af,Ef,Jf = 1.0,0.9,1.4,2.5
 cval=[float(sp.simplify(sol.get(ck[i],0)).subs(E,E0)) for i in range(5)]
 Anum=[float(sp.simplify(sol.get(Ac[i],0)).subs(E,E0)) for i in range(6)]
-print("\nPASSO 4: decomposizione psi")
+print("\nPASSO 4: decomposizione psi (orologio di deriva eta lungo l'orbita tau)")
 print("c_k (verificati) =", [f"{c:.5f}" for c in cval])
 def Sn(x):
     Dl=x**2-2*Mf*x+af**2; Em=(Ef**2-1)*x+2*Mf
     return x*(x-2*Mf)*Em*(x*Dl-Jf**2*Em)
 def sq(x): return _np.sqrt(Sn(x))
+def Dn(x): return x**2-2*Mf*x+af**2
 r0=12.0; wn=lambda x:Ef**2-(1-2*Mf/x)
 rmin=_brentq(lambda x:(x**2-2*Mf*x+af**2)-Jf**2*wn(x),2.0+1e-9,r0); xf=rmin+0.4
 dEFn=sp.lambdify(r,dEF.subs(E,E0),'numpy')
+b=[-2*Mf*af*Jf*(Ef**2-1),0.0,0.0,Ef,0.0]
+RD=lambda x:-2*Mf*af*Jf*(2*Mf*Ef**2*x-(Ef**2-1)*af**2)
 def Uk(x,k): return _quad(lambda t:t**k/sq(t),r0,x,limit=200)[0]
 def A_of(x): return _quad(dEFn,r0,x,limit=200)[0]
-def B_of(x): return Uk(x,3)-2*Mf*Uk(x,2)
-rho =_quad(lambda x:A_of(x)*(x**3-2*Mf*x**2)/sq(x),r0,xf,limit=100)[0]
-rhot=_quad(lambda x:B_of(x)*dEFn(x),r0,xf,limit=100)[0]
+def eta2(x): return sum(b[j]*Uk(x,j) for j in range(5) if b[j]!=0.0)
+def eta3(x): return _quad(lambda t:RD(t)/(Dn(t)*sq(t)),r0,x,limit=200)[0]
+def deta(x): return (Ef*x**3-2*Mf*af*Jf*x*((Ef**2-1)*x+2*Mf)/Dn(x))/sq(x)
+rho =_quad(lambda x:A_of(x)*deta(x),r0,xf,limit=100)[0]
+rhot=_quad(lambda x:(eta2(x)+eta3(x))*dEFn(x),r0,xf,limit=100)[0]
 LHS=rho-rhot
-# decomposizione
-b=[0,0,-2*Mf,1,0]
+# (a) parte di seconda specie: Q_kj W_kj + termini algebrici (come prima, con il nuovo b)
 def Wkj(k,j): return _quad(lambda x:(Uk(x,k)*x**j-Uk(x,j)*x**k)/sq(x),r0,xf,limit=100)[0]
 poly=sum((cval[k]*b[j]-cval[j]*b[k])*Wkj(k,j) for k in range(5) for j in range(5) if k<j and abs(cval[k]*b[j]-cval[j]*b[k])>1e-14)
-# g_A terms: 2 int A_alg dB + B(xf)(const_A - A_alg(xf)),  A_alg=Acal/sqrtS, const_A=-Acal(r0)/sqrtS(r0)
 def Acaln(x): return sum(Anum[i]*x**i for i in range(6))
 def A_alg(x): return Acaln(x)/sq(x)
 const_A=-A_alg(r0)
-int_Aalg_dB=_quad(lambda x:Acaln(x)*(x**3-2*Mf*x**2)/Sn(x),r0,xf,limit=100)[0]
-gA_terms=2*int_Aalg_dB + B_of(xf)*(const_A - A_alg(xf))
-RHS=poly+gA_terms
-print(f"rho-rho~ diretto        = {LHS:.8f}")
-print(f"decomposizione(Q W + gA)= {RHS:.8f}")
+int_Aalg_d2=_quad(lambda x:Acaln(x)*sum(b[j]*x**j for j in range(5))/Sn(x),r0,xf,limit=100)[0]
+gA_terms=2*int_Aalg_d2 + eta2(xf)*(const_A - A_alg(xf))
+# (b) parte d'orizzonte: per parti, 2 int A_of d eta3 - A_of(xf) eta3(xf), con
+#     int A_of d eta3 = int A_alg d eta3 + const_A eta3 + sum_k c_k int U_k d eta3
+#     (le ultime sono lettere di peso due con una lettera di terza specie a Delta=0)
+int_Aalg_d3=_quad(lambda x:A_alg(x)*RD(x)/(Dn(x)*sq(x)),r0,xf,limit=100)[0]
+WkD=[_quad(lambda x:Uk(x,k)*RD(x)/(Dn(x)*sq(x)),r0,xf,limit=100)[0] for k in range(5)]
+e3=eta3(xf)
+hor=2*(int_Aalg_d3+const_A*e3+sum(cval[k]*WkD[k] for k in range(5))) - A_of(xf)*e3
+RHS=poly+gA_terms+hor
+print(f"rho-rho~ diretto                   = {LHS:.8f}")
+print(f"decomposizione(Q W + gA + orizzonte)= {RHS:.8f}")
+print(f"   di cui parte d'orizzonte        = {hor:.8f}")
 print(f"differenza = {abs(LHS-RHS):.2e}   (identita', coeff DATI dai c_k, NO fit)")

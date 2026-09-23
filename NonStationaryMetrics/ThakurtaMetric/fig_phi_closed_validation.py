@@ -66,7 +66,18 @@ def build_branch(branch, backoff, npts):
     r_stop = max(r_turn, rlam.min()) + backoff
     u = np.linspace(0, 1, npts)
     rg = r0-0.02 - (r0-0.02 - r_stop)*(1-np.cos(u*np.pi/2))  # concentra su r_stop
-    eta = np.abs(lam_of_r(rg)); h = np.gradient(eta, rg)
+    if branch == 't':
+        eta = np.abs(lam_of_r(rg))
+    else:
+        # tau-branch: the slow variable is the conformal time elapsed ALONG THE
+        # tau-ORBIT, d eta/dr = [E r^3 - 2MaJ r D_E/Delta]/sqrt(S)
+        # (paper2/verification/verify_tau_branch_drift_clock.py).  The flow above
+        # is the t-branch one and belongs to a different orbit; an earlier version
+        # took eta from it, and the identity tested here held regardless.
+        Emu = (Es**2-1)*r+2*M
+        Leta = sp.lambdify(r, ((Es*r**3-2*M*a*J*r*Emu/Dl)/sp.sqrt(R)).subs(Es, Ehat), 'numpy')
+        eta = np.abs(cumulative_trapezoid(Leta(rg), rg, initial=0))
+    h = np.gradient(eta, rg)
     phi0 = cumulative_trapezoid(Fn(rg), rg, initial=0)
     dEphi = cumulative_trapezoid(dEF(rg), rg, initial=0)
     Closed = -0.5*Ehat*dEphi*eta
