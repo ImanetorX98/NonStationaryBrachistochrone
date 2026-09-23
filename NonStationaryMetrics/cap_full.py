@@ -58,8 +58,15 @@ class J:
 def C(b): return b if isinstance(b,J) else J(iv.mpf(b))
 
 def Wjets(r_iv,bb):
+    # (3-bb) used to be formed in binary64 and only then promoted to an
+    # interval, which asserts the rounded difference is exact.  For the bb of
+    # the archived runs the subtraction happens to be exact, so those
+    # certificates are unaffected; it is a defect for general use -- e.g.
+    # bb=1.4**2-1 in float carries an error of -2**-52.  Forming it from the
+    # interval b is outward rounded and rigorous in every case.
     r=J(r_iv,iv.mpf(1),iv.mpf(0)); b=iv.mpf(bb)
-    Delta=r*(r-2); DE=r*b+2; N=r*r*b+(3-bb)*r-4
+    tmb=iv.mpf(3)-b
+    Delta=r*(r-2); DE=r*b+2; N=r*r*b+r*tmb-4
     K=C(1)/Delta.sqrt(); Vp=2*r*N/(DE*DE); W=K/Vp; Vj=r*Delta/DE
     return W,Vj
 def WVderivs(r_iv,bb):
@@ -95,8 +102,14 @@ def PhiP_PhiPP(x,V0,bb,N=400):
     return PhiP,PhiPP
 
 if __name__ == "__main__":
-    # reproduce the value quoted in the manuscript: at r0 = 10, b = 0.96, the
-    # enclosure of Phi'' near the peak is strictly negative.
+    # Self-test on ONE cell.  What it establishes is that [Phi'] is certified
+    # strictly negative there -- the 'S' branch of the certificate.  It does NOT
+    # establish Phi'' < 0 at this cell: the enclosure of Phi'' straddles zero,
+    # and the printed "False" is the correct outcome, not a failure.  That is
+    # precisely why the runners subdivide: a cell is accepted when EITHER the
+    # sign of Phi' is resolved OR Phi'' is certified negative, and here the first
+    # disjunct settles it.  An earlier comment promised the second, which the
+    # test never checked and which is false at this cell.
     bb = 0.96
     V0 = Vval(iv.mpf(10.0), bb)
     x = Vval(iv.mpf(5.0), bb)

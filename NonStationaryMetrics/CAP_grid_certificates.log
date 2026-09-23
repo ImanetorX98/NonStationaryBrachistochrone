@@ -1,0 +1,97 @@
+# RUN 5 -- 19 September 2026.  The weld to the grazing bound is now part of the
+# PUBLIC path, not a separate audit script: weld() certifies the bridge cell
+# [rquarter, rquarter+1e-10] like any other cell and encloses
+# V(rquarter+1e-10) - V(r0)/4, requiring the enclosure to be strictly positive.
+# That places the bridge's upper end above the TRUE quarter radius -- rquarter
+# itself comes from brentq in binary64 -- so the certified window and the
+# elementary bound overlap and the interval is covered with no gap.  A failure of
+# either half now sets the exit code.  The runner also reports WELD GAP if the
+# window cap min(rquarter, r0-0.1) ever bites, which on this grid it does not
+# (largest rquarter 7.063 against r0-0.1 = 11.9).
+#
+# The (nc, S, M) counts are IDENTICAL to runs 1-4 in all six configurations.
+#
+# Underpinning both: V is strictly increasing on r >= 2M for every E > 1, which
+# is what makes cap_full.r_of_V's two-sided test an enclosure of the preimage
+# rather than of one branch.  With r = 2M+s, V' = 2rN/D_E^2 and
+#     N(2M+s) = b s^2 + 3M(b+1) s + 2M^2(b+1),   b = E^2-1,
+# all coefficients positive, constant term 2M^2(b+1) > 0.  Verified symbolically
+# for general M; recorded in the manuscript as qualification (iv).
+E  r0  bb  rquarter  RESULT  nc S M  time
+E=1.2 r0=8 bb=0.440 rquarter=4.958 : PASS (nc=374 S=66 M=35 354s)
+  weld [4.958199488,4.958199488] tag=S ; V(upper)-V(r0)/4 in [1.1064160032e-9, 1.1064160032e-9] > 0 ? True : OK
+E=1.6 r0=8 bb=1.560 rquarter=4.759 : PASS (nc=399 S=65 M=43 366s)
+  weld [4.758838390,4.758838390] tag=S ; V(upper)-V(r0)/4 in [4.0919494657e-10, 4.0919494657e-10] > 0 ? True : OK
+E=2.5 r0=8 bb=5.250 rquarter=4.659 : PASS (nc=427 S=69 M=46 397s)
+  weld [4.659381426,4.659381426] tag=S ; V(upper)-V(r0)/4 in [1.32262860623e-10, 1.32262860623e-10] > 0 ? True : OK
+E=1.2 r0=12 bb=0.440 rquarter=7.063 : PASS (nc=917 S=140 M=75 948s)
+  weld [7.063069237,7.063069237] tag=S ; V(upper)-V(r0)/4 in [1.95094972829e-9, 1.95094972829e-9] > 0 ? True : OK
+E=1.6 r0=12 bb=1.560 rquarter=6.765 : PASS (nc=939 S=148 M=73 959s)
+  weld [6.765456692,6.765456692] tag=S ; V(upper)-V(r0)/4 in [6.62314499293e-10, 6.62314499293e-10] > 0 ? True : OK
+E=2.5 r0=12 bb=5.250 rquarter=6.634 : PASS (nc=964 S=150 M=75 998s)
+  weld [6.634406869,6.634406869] tag=S ; V(upper)-V(r0)/4 in [2.08160878512e-10, 2.08160878512e-10] > 0 ? True : OK
+GRID DONE
+
+# Validated interval-arithmetic certificates for the single-crossing property
+# (B), over a grid of (E, r0).  Produced by no_inversion_schwarzschild_CAP_grid.py.
+# RUN 4 -- 18 September 2026, after two counter fixes in the grid runner.
+# (i) cert() returns 'S' or 'M', both truthy, so the wide-cell branch counted
+#     every success as 'S': the S/M split could be wrong, though the certified
+#     disjunction and hence PASS/FAIL could not.
+# (ii) the runner printed FAIL without propagating a nonzero exit code, which
+#     misleads any automation reading only the exit status.  It now exits 1.
+# The counts below are IDENTICAL to runs 1-3 in all six configurations, which
+# says the first bug never fired on these grids: no wide cell ever certified by
+# the PP<0 branch here.  The defect was real in the code and latent in the runs,
+# and the archived counts of the earlier runs therefore stand.
+E  r0  bb  rquarter  RESULT  nc S M  time
+E=1.2 r0=8 bb=0.440 rquarter=4.958 : PASS (nc=374 S=66 M=35 356s)
+E=1.6 r0=8 bb=1.560 rquarter=4.759 : PASS (nc=399 S=65 M=43 366s)
+E=2.5 r0=8 bb=5.250 rquarter=4.659 : PASS (nc=427 S=69 M=46 410s)
+E=1.2 r0=12 bb=0.440 rquarter=7.063 : PASS (nc=917 S=140 M=75 990s)
+E=1.6 r0=12 bb=1.560 rquarter=6.765 : PASS (nc=939 S=148 M=73 983s)
+E=2.5 r0=12 bb=5.250 rquarter=6.634 : PASS (nc=964 S=150 M=75 1010s)
+GRID DONE   (exit code 0)
+
+# RUN 3 -- 17 September 2026, after the (3-bb) correction in cap_full.Wjets.
+# There the constant was formed in binary64 and only then promoted to a point
+# interval; it is now iv.mpf(3)-b, outward rounded.  For the bb of these runs the
+# float subtraction happened to be exact, so this was a defect of the library for
+# general use rather than of these certificates -- and the run confirms it: six
+# PASS with (nc, S, M) IDENTICAL to runs 1 and 2 in every configuration.
+E  r0  bb  rquarter  RESULT  nc S M  time
+E=1.2 r0=8 bb=0.440 rquarter=4.958 : PASS (nc=374 S=66 M=35 354s)
+E=1.6 r0=8 bb=1.560 rquarter=4.759 : PASS (nc=399 S=65 M=43 364s)
+E=2.5 r0=8 bb=5.250 rquarter=4.659 : PASS (nc=427 S=69 M=46 396s)
+E=1.2 r0=12 bb=0.440 rquarter=7.063 : PASS (nc=917 S=140 M=75 956s)
+E=1.6 r0=12 bb=1.560 rquarter=6.765 : PASS (nc=939 S=148 M=73 957s)
+E=2.5 r0=12 bb=5.250 rquarter=6.634 : PASS (nc=964 S=150 M=75 998s)
+GRID DONE
+
+# RUN 2 -- 17 September 2026, after the panel-width correction in moments_g.
+# The earlier version built the panel width as iv.mpf(float(un)-float(prev)):
+# a binary64 subtraction promoted to a POINT interval, which asserts that the
+# rounded difference is exact instead of enclosing it.  It is now hi - lo with
+# hi, lo the two point intervals, which is outward rounded and a rigorous
+# enclosure.  An enclosure can only widen a certificate, never narrow it, so the
+# correction could in principle have turned a PASS into a subdivision; it did
+# not.  The subdivision counts (nc, S, M) are IDENTICAL to run 1 in all six
+# configurations, so the conclusion never depended on the defective width.
+E  r0  bb  rquarter  RESULT  nc S M  time
+E=1.2 r0=8 bb=0.440 rquarter=4.958 : PASS (nc=374 S=66 M=35 343s)
+E=1.6 r0=8 bb=1.560 rquarter=4.759 : PASS (nc=399 S=65 M=43 354s)
+E=2.5 r0=8 bb=5.250 rquarter=4.659 : PASS (nc=427 S=69 M=46 388s)
+E=1.2 r0=12 bb=0.440 rquarter=7.063 : PASS (nc=917 S=140 M=75 928s)
+E=1.6 r0=12 bb=1.560 rquarter=6.765 : PASS (nc=939 S=148 M=73 939s)
+E=2.5 r0=12 bb=5.250 rquarter=6.634 : PASS (nc=964 S=150 M=75 979s)
+GRID DONE
+
+# RUN 1 -- original, kept verbatim for comparison (defective panel width).
+E  r0  bb  rquarter  RESULT  nc S M  time
+E=1.2 r0=8 bb=0.440 rquarter=4.958 : PASS (nc=374 S=66 M=35 399s)
+E=1.6 r0=8 bb=1.560 rquarter=4.759 : PASS (nc=399 S=65 M=43 381s)
+E=2.5 r0=8 bb=5.250 rquarter=4.659 : PASS (nc=427 S=69 M=46 418s)
+E=1.2 r0=12 bb=0.440 rquarter=7.063 : PASS (nc=917 S=140 M=75 1023s)
+E=1.6 r0=12 bb=1.560 rquarter=6.765 : PASS (nc=939 S=148 M=73 1003s)
+E=2.5 r0=12 bb=5.250 rquarter=6.634 : PASS (nc=964 S=150 M=75 1042s)
+GRID DONE

@@ -1,5 +1,22 @@
 % Companion entry cited BY Paper II (points to Paper I). Kept in a separate
 % file so Paper I never lists itself in its own bibliography.
+%
+% CONCEPT DOI, not the version DOI.  The version DOI 10.5281/zenodo.22206237
+% pins v4 (31 August 2026); a reader following it would still land on that file
+% after the preprint is updated, which is the opposite of what a companion
+% reference should do.  The concept DOI always resolves to the latest version --
+% the convention the Data availability section already uses for the code archive.
+%
+% On the locator: iopart-num's `misc` formatter prints howpublished, note,
+% eprint and url, but NOT doi, so a bare doi field is invisible in the rendered
+% bibliography.  Either `note = {\url{...}}` or a `url` field works -- the other
+% Zenodo preprints in refs.bib use the first.  Both are given here.
+%
+% NOTE: BibTeX does not accept `%` comments INSIDE an entry -- it reports
+% "You're missing a field name" and silently drops every field after the
+% comment.  These comments therefore live outside the braces, where they are
+% legal.  An earlier edit put them inside, which suppressed the locator and
+% made it look as though the style were at fault.
 @misc{PaperOne,
   author       = {Rosignoli, Iman},
   title        = {Controlled-rail brachistochrones in non-stationary
@@ -7,6 +24,7 @@
                   dynamics},
   year         = {2026},
   howpublished = {companion paper (Paper~I); Zenodo preprint},
-  doi          = {10.5281/zenodo.22110568},
-  note         = {\url{https://doi.org/10.5281/zenodo.22110568}}
+  doi          = {10.5281/zenodo.21739997},
+  url          = {https://doi.org/10.5281/zenodo.21739997},
+  note         = {concept DOI; always resolves to the latest version}
 }

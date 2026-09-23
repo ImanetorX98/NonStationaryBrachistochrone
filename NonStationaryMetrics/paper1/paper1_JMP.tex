@@ -405,9 +405,53 @@ $\Ehat>|W|$, where $|W|=\sqrt{-W\cdot W}$.
 The state region $\Omega$ is a compact set with $\Omega\Subset U$, Lipschitz
 path-connected, containing the prescribed endpoints, and such that the admissible
 class---Lipschitz arcs in $\Omega$ joining them and satisfying the rail
-constraint---is nonempty. The margin in Hypothesis~\ref{hyp:convex} is uniform on it,
-$\inf_\Omega(\Ehat-|W|)>0$, the metric and the rail one-form being smooth on $U$.
+constraint---is nonempty. Let $T_0<\infty$ be the arrival time of one such arc,
+which nonemptiness supplies. There is a window length $\bar T\ge T_0$ such that the
+margin in Hypothesis~\ref{hyp:convex} is uniform on the \emph{space-time cylinder}
+\begin{equation}
+    Q=\Omega\times[\chi_0,\chi_0+\bar T],\qquad
+    \inf_{Q}\,(\Ehat-|W|)>0 ,
+    \label{eq:cylinder}
+\end{equation}
+and such that the constants $\rho,R$ of~\eqref{eq:coercive} that this uniformity
+yields on $Q$ obey $R\,T_0/\rho\le\bar T$. The metric and the rail one-form are
+smooth on a neighbourhood of $Q$ in $U\times\mathbb R$.
 \end{hypothesis}
+
+\begin{remark}[why the hypothesis is on a cylinder, and why that is not circular]
+\label{rmk:cylinder}
+For a background that evolves, $|W|$ depends on the clock as well as the position,
+so being above freezing on $\Omega$ \emph{at one time} says nothing about the times
+the competitors actually visit; the constants $\rho,R$ used throughout are
+constants on $Q$, not on $\Omega$. Stating the hypothesis there is therefore not a
+strengthening for its own sake---it is what the proof uses.
+
+The closing condition $R\,T_0/\rho\le\bar T$ is what makes the hypothesis a
+\emph{condition} rather than a circle. One does not solve for $\bar T$: one picks
+it, reads off $\rho$ and $R$ on the resulting cylinder, and checks the inequality.
+Nothing in the definition of $Q$ refers to $\rho$, $R$ or $\Lambda$. The condition
+is also exactly what the proof needs, and no more: lengths are bounded by
+$\Lambda=T_0/\rho$ because the reference arc caps the infimum at $T_0$, relaxed
+clocks satisfy $\dot{\tilde\chi}\le R\Lambda=R\,T_0/\rho$ and start at $\chi_0$, so
+every clock the argument touches---minimising sequences, relaxed trajectories, and
+the supersolutions of the comparison lemma alike---stays inside
+$[\chi_0,\chi_0+R\,T_0/\rho]\subseteq[\chi_0,\chi_0+\bar T]$, the window on which
+$\rho$ and $R$ were valid in the first place. The condition is a genuine restriction and is
+not implied by local regularity, which is worth saying because the tempting
+argument---that the margin is positive and $R/\rho$ finite on every compact clock
+window---does \emph{not} establish it. The ratio may grow with $\bar T$ faster than
+$\bar T$ itself. Take $F(x,\nu,\chi)=\mathrm e^{\chi}|\nu|$ with $\chi_0=0$: an arc
+of length $1-\mathrm e^{-1}$ has elapsed duration $T_0=1$, the optimal constants on
+$[0,\bar T]$ are $\rho=1$ and $R=\mathrm e^{\bar T}$, every compact window is
+regular with finite ratio, and yet the condition would demand
+$\mathrm e^{\bar T}\le\bar T$, which no $\bar T$ satisfies. Applying the theorem to a
+given background therefore requires exhibiting a cylinder and its constants for
+that background, and we state the applications of sections~\ref{sec:flrw}
+and~\ref{sec:vaidya} as conditional on that verification rather than as automatic.
+
+Throughout, $T_0$ is an \emph{elapsed duration} and not an absolute arrival
+reading, a distinction that matters as soon as $\chi_0\neq0$.
+\end{remark}
 
 Separating the two sets matters: regularity is an open condition and lives on $U$,
 whereas compactness and the closure arguments of the direct method are statements
@@ -437,8 +481,14 @@ that sphere under an invertible affine map, hence a compact, strictly convex ell
 is~\eqref{eq:ellipse}, and its semi-axes vanish exactly as $\Ehat\downarrow|W|$.
 Consequently Hypotheses~\ref{hyp:selector}--\ref{hyp:convex} imply the convexity properties
 used throughout, and Hypothesis~\ref{hyp:coercive} implies the two-sided
-bound~\eqref{eq:coercive} with $\rho,R$ the (uniform) inradius and circumradius of the
-resulting ovals.
+bound~\eqref{eq:coercive}, with $\rho,R$ the \emph{reciprocals} of the (uniform)
+circumradius and inradius of the resulting ovals. The reciprocal is not a slip:
+$F$ is the Minkowski gauge of the velocity oval $K$, so $\rho_{\rm in}B\subseteq
+K\subseteq R_{\rm circ}B$ gives $|\nu|/R_{\rm circ}\le F\le|\nu|/\rho_{\rm in}$---a
+\emph{wider} oval costs \emph{less} time. Flat spacetime with $\Ehat=\sqrt2$ is the
+one-line check: the admissible speed is $1/\sqrt2$, so the oval is the ball of that
+radius and $F(\nu)=\sqrt2\,|\nu|$, which no bound of the form $F\le(1/\sqrt2)|\nu|$
+can hold.
 \end{auxlemma}
 
 \begin{proof}
@@ -684,14 +734,19 @@ two-sided bound
   \rho\,|\nu| \le F(x,\nu) \le R\,|\nu|, \qquad 0<\rho\le R<\infty,
   \label{eq:coercive}
 \end{equation}
-with $\rho,R$ the inradius and circumradius of the ovals. Then:
+with $\rho,R$ the coercivity constants of Lemma~\ref{lem:indicatrix}---the
+reciprocals of the circumradius and inradius of the ovals. Then:
 \begin{enumerate}
-\item[(i)] \emph{(existence)} the arrival time
-$T[\gamma]=\int F(\gamma,\dot\gamma)\,\dd\sigma$ attains its infimum in the class of
-Lipschitz arcs joining the fixed endpoints;
-\item[(ii)] \emph{(normality)} every regular minimizer is a \emph{normal} extremal: the
-abnormal multiplier $p_0$ cannot vanish, hence normalizes to $-1$, and the costate $p$
-never vanishes along the extremal.
+\item[(i)] \emph{(existence)} the arrival time attains its infimum in the class of
+Lipschitz arcs joining the fixed endpoints. The arrival time is the terminal value
+$\chi(1)$ of the clock equation~\eqref{eq:clock-ode} driven by the arc, which is what
+the proof below minimises; when the background is frozen, so that $F$ carries no
+dependence on the clock, it reduces to
+$T[\gamma]=\int F(\gamma,\dot\gamma)\,\dd\sigma$;
+\item[(ii)] \emph{(normality)} every \emph{interior} minimizer---one whose arc stays in
+the interior of $\Omega$, so that the state constraint is inactive---is a \emph{normal}
+extremal: the abnormal multiplier $p_0$ cannot vanish, hence normalizes to $-1$, and the
+costate $p$ never vanishes along the extremal.
 \end{enumerate}
 \end{theorem}
 
@@ -718,8 +773,8 @@ with $\Omega$ compact, $F$ is smooth.
 function $F$ is $C^1$, hence Lipschitz in its slow argument: there is $L<\infty$ with
 $|F(x,\nu,\chi)-F(x,\nu,\chi')|\le L\,|\nu|\,|\chi-\chi'|$, the factor $|\nu|$ appearing
 because $F$ is positively homogeneous of degree one in $\nu$. Let $\chi,\tilde\chi$ solve
-\eqref{eq:clock-ode} for the same arc but different initial data, or for two arcs with the
-same velocity field; subtracting and using the above,
+\eqref{eq:clock-ode} for the same arc but different initial data; subtracting and
+using the above,
 \[
    \big|\chi(\sigma)-\tilde\chi(\sigma)\big|
    \le\big|\chi(0)-\tilde\chi(0)\big|
@@ -732,9 +787,11 @@ $x\mapsto\chi_x$ is well defined, no trajectory escapes the compact set in which
 bounds were derived, and $T$ depends on the arc only through that map.
 
 The scope of this estimate should be stated exactly, because it is narrower than it
-may look. It compares two clocks carried along the \emph{same} arc, or along two arcs
-sharing a velocity field, and so delivers uniqueness and continuous dependence on the
-initial clock datum. It does \emph{not}, on its own, give continuity of the solution
+may look. The displayed inequality uses only the Lipschitz dependence of $F$ on its
+\emph{slow} argument, so it compares two clocks carried along the \emph{same} arc:
+two arcs at different positions would need in addition the dependence of $F$ on $x$,
+which is not estimated here. What it delivers is therefore uniqueness and continuous
+dependence on the initial clock datum, and nothing wider. It does \emph{not}, on its own, give continuity of the solution
 map along a minimising sequence, where both the curve and its velocity vary: that
 would require in addition the Lipschitz dependence of $F$ on $x$ and control of the
 convergence of the velocities. We do not need it to. Existence is supplied below by
@@ -759,12 +816,21 @@ with $t$, because $F$ depends on $\chi$ as well.
 \begin{lemma}[scalar comparison for the clock]\label{lem:comparison}
 Fix a spatial arc $x$ with $|\dot x|\le\Lambda$ a.e. Let $\chi$ solve
 $\dot\chi=F(x,\dot x,\chi)$ with $\chi(0)=\chi_0$, and let $\tilde\chi$ be
-absolutely continuous with $\dot{\tilde\chi}\ge F(x,\dot x,\tilde\chi)$ a.e.\ and
-$\tilde\chi(0)=\chi_0$. Then $\tilde\chi\ge\chi$ on $[0,1]$.
+absolutely continuous with $\dot{\tilde\chi}\ge F(x,\dot x,\tilde\chi)$ a.e.,
+$\tilde\chi(0)=\chi_0$, and \emph{taking values in} $[\chi_0,\chi_0+R\Lambda]$.
+Then $\tilde\chi\ge\chi$ on $[0,1]$.
 \end{lemma}
 
+The last hypothesis is needed and costs nothing. It is automatic for the relaxed
+trajectories to which the lemma is applied: there $\dot{\tilde\chi}=t\le R\Lambda$ by
+the definition of $\mathcal V(y)$, and $\dot{\tilde\chi}\ge F\ge0$, so
+$\chi_0\le\tilde\chi(\sigma)\le\chi_0+R\Lambda$ on $[0,1]$. The truncation that
+makes $\mathcal V(y)$ compact therefore does a second job here, confining the relaxed
+clock to the interval on which the Lipschitz constant below was derived; without it a
+supersolution could leave that interval and the constant would not apply.
+
 \begin{proof}
-Both clocks remain in $[\chi_0,\chi_0+R\Lambda]$, where $F$ is Lipschitz in its slow
+By hypothesis both clocks lie in $[\chi_0,\chi_0+R\Lambda]$, where $F$ is Lipschitz in its slow
 argument with $|F(x,\nu,\chi)-F(x,\nu,\chi')|\le L|\nu||\chi-\chi'|$, as established
 above. Put $w=\tilde\chi-\chi$, so $w(0)=0$, and suppose $w(\sigma_0)<0$ for some
 $\sigma_0$. Let $\sigma_1=\sup\{\sigma<\sigma_0:\ w(\sigma)\ge0\}$, which is well
@@ -803,11 +869,42 @@ requirement, and is the reason the domain is not taken to be the open exterior. 
 problems have the same infimum, so the minimizer of the relaxed problem is a
 minimizer of $T$.
 
-(ii) Suppose $p_0=0$. The maximized Hamiltonian would then read $\max_\nu p\cdot\nu=0$
-with $p\neq0$; but the support function of the oval obeys
-$h(p)=\max_{\nu\in\partial B}p\cdot\nu\ge\rho\,|p|>0$ by the left inequality
-of~\eqref{eq:coercive}, a contradiction. Hence $p_0$ normalizes to $-1$ and $p$ never
-vanishes.
+(ii) The hypothesis that the arc stays interior to $\Omega$ is what licenses the
+maximum principle used here. Existence in (i) needs $\Omega$ \emph{closed}, so the state
+constraint $x\in\Omega$ is part of the problem; but along an interior arc that constraint
+is inactive, the associated measure multiplier vanishes, and the classical
+principle~\cite{Pontryagin,Liberzon} applies with the nontriviality condition
+$(p_0,p)\neq(0,0)$. Under that condition, suppose $p_0=0$. The argument is run \emph{at the terminal
+time}, where the free-arrival transversality gives $H=0$; it must be, because for a
+non-autonomous problem $H$ is not a first integral and $H=0$ does not hold along the
+whole extremal. The elementary example $\dot x=\mathrm e^{\chi}\nu$, $|\nu|\le1$,
+$x(0)=0$, $x(T)=1$ with $T$ free makes the distinction concrete: the minimum is
+$T=\log2$ with $p\equiv\tfrac12$, $p_0=-1$ and $H^\ast(\chi)=\tfrac12\mathrm
+e^{\chi}-1$, so $H^\ast(T)=0$ while $H^\ast(0)=-\tfrac12$. At $\chi=T$, then, $p_0=0$
+would give $\max_\nu p\cdot\nu=0$ with $p(T)\neq0$; but the oval contains the ball of
+radius $1/R$, so its support function obeys
+\begin{equation}
+    h(p)=\max_{\nu\in\partial B}p\cdot\nu\ \ge\ \frac{|p|}{R}\ >\ 0 ,
+    \label{eq:support-bound}
+\end{equation}
+a contradiction. The constant here is $1/R$ and not $\rho$: the two coercivity
+constants are reciprocals of the oval's radii, so it is the \emph{inner} radius
+$1/R$ that bounds the support function from below, and the flat check above makes
+the difference visible---at $\Ehat=\sqrt2$ one has $\rho=R=\sqrt2$ while
+$h(p)=|p|/\sqrt2$, which $h\ge\rho|p|$ would violate.
+
+Hence $p_0$ normalizes to $-1$, and the order of the remaining steps matters.
+First, nontriviality together with uniqueness for the linear adjoint equation
+excludes $p(T)=0$ in the abnormal case. Then, once $p_0=-1$, the terminal
+transversality $H(T)=0$ reads $h(p(T))=1$, so $p(T)\neq0$ outright. Finally the
+adjoint equation, being linear in $p$, propagates that non-vanishing backwards:
+$p(\chi)\neq0$ for every $\chi$. A minimizer that touched $\partial\Omega$ would instead require the
+state-constrained principle, whose nontriviality is $(p_0,p,\mu)\neq0$ with $\mu$ the
+measure carried on the active set, and there $p$ may vanish where $\mu$ does not; the
+argument above would not apply, and normality would have to be re-established together
+with a constraint qualification. We do not need that case: every extremal used in this
+paper and in the companion is interior by construction, living on a compact region on
+which the two scalar regularity inequalities hold strictly.
 \end{proof}
 
 \begin{remark}[relaxation of the epigraph is not convexification of the indicatrix]

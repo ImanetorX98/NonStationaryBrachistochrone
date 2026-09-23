@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-08-30T23:06:13+00:00",
+  "generated_utc": "2026-09-23T00:21:40+00:00",
   "epsilon_window": [
     0.001,
     0.002,
@@ -42,26 +42,101 @@
   },
   "loci": {
     "fit_interval_r_over_M": [
-      8.0,
-      11.0
+      5.429985640466133,
+      10.409239531288836
     ],
-    "excluded_loci": {
-      "conformal stationary limit r_e = 2M": 2.0,
-      "seed Kerr null surface r_+ (a=0.9)": 1.4358898943540672
-    },
-    "min_separation_r_over_M": 6.0
+    "per_configuration": [
+      {
+        "config": "eta, a=0.9, Ehat=1.4, J=6",
+        "window_r_over_M": [
+          6.810403222954712,
+          10.403200991678373
+        ],
+        "moving_turning_points": [
+          4.031161573747721,
+          4.0470735281456305,
+          4.081400278303081,
+          4.162127439446506,
+          4.398613455789606
+        ],
+        "separation_from_turning_point": 2.4117897671651054,
+        "static_excluded": {
+          "conformal stationary limit r_e = 2M": 2.0,
+          "seed Kerr null surface r_+ (a=0.9)": 1.4358898943540672
+        },
+        "min_sampled_abs_H_pr": 0.4004829590349594,
+        "min_sampled_vbar2": 0.4998125396250227
+      },
+      {
+        "config": "tau, a=0.9, Ehat=1.4, J=2.5",
+        "window_r_over_M": [
+          6.830028476688721,
+          10.409239531288836
+        ],
+        "moving_turning_points": [
+          4.084485490855782,
+          4.123590537294704,
+          4.204343925163142,
+          4.376750373570685,
+          4.772786058873004
+        ],
+        "separation_from_turning_point": 2.0572424178157167,
+        "static_excluded": {
+          "conformal stationary limit r_e = 2M": 2.0,
+          "seed Kerr null surface r_+ (a=0.9)": 1.4358898943540672
+        },
+        "min_sampled_abs_H_pr": 0.45062685239276956,
+        "min_sampled_vbar2": 0.5106172340642898
+      },
+      {
+        "config": "eta, a=0.5, Ehat=1.3, J=5",
+        "window_r_over_M": [
+          5.429985640466133,
+          8.593841735528041
+        ],
+        "moving_turning_points": [
+          2.9945698253922566,
+          3.0205615783372175,
+          3.0746586170458,
+          3.1931084761163677,
+          3.491766829395168
+        ],
+        "separation_from_turning_point": 1.938218811070965,
+        "static_excluded": {
+          "conformal stationary limit r_e = 2M": 2.0,
+          "seed Kerr null surface r_+ (a=0.5)": 1.8660254037844386
+        },
+        "min_sampled_abs_H_pr": 0.3523024522048147,
+        "min_sampled_vbar2": 0.4837065216887554
+      }
+    ],
+    "min_separation_r_over_M": 1.938218811070965,
+    "binding_locus": "moving turning point",
+    "min_sampled_abs_H_pr": 0.3523024522048147,
+    "min_sampled_vbar2": 0.4837065216887554,
+    "checked_along_runs": [
+      "f > 0",
+      "sampled vbar^2 > 0",
+      "sampled |H_pr| > 0",
+      "sampled distance to the moving turning point"
+    ],
+    "not_separately_checked": [
+      "moving separatrix crossings",
+      "chart singularities"
+    ]
   },
   "hashes": {
-    "NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py": "d758be24d5fa",
+    "NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py": "476e662efce9",
     "NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py": "3cd72fd798e3",
-    "NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py": "55fc540ecf17"
+    "NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py": "55fc540ecf17",
+    "NonStationaryMetrics/ThakurtaMetric/adiabatic_convergence_raw.npz": "758b59f23295"
   },
   "environment": {
-    "validation_seconds": 15.9,
-    "exact_seconds": 8.7,
+    "validation_seconds": 14.3,
+    "exact_seconds": 9.2,
     "note": "wall-clock timings; excluded from content_sha256"
   },
-  "content_sha256": "5ddfa9130887f96783e7d9e9875598413b315a98e8217e70a38feeb48e925ce8",
+  "content_sha256": "42ed5ab1779c58132ab9a4349e3f4bf1c28b40907b883efb7d1ed83af0b4ba25",
   "subwindow": {
     "available": true,
     "configs": [

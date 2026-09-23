@@ -35,9 +35,21 @@ def set_style():
         'mathtext.fontset': 'dejavusans',
         'savefig.dpi': 300,
         'figure.dpi': 150,
+        # embed TrueType, not the matplotlib default Type 3 bitmapped fonts:
+        # submission systems reject Type 3 at PDF conversion
+        'pdf.fonttype': 42,
+        'ps.fonttype': 42,
     })
 
 def savefig(fig, out_dir, name):
+    # make_provenance.py --check re-runs the generators only to compare their
+    # numbers with the committed outputs; it must not touch the working tree.
+    # The generators are executed in their own directories, so without this
+    # guard a "check" would silently rewrite every figure it regenerates.
+    if os.environ.get('PROVENANCE_NO_WRITE'):
+        plt.close(fig)
+        print(f'  [PROVENANCE_NO_WRITE] skipped writing {name}')
+        return
     os.makedirs(out_dir, exist_ok=True)
     for ext in ('pdf', 'png'):
         fig.savefig(os.path.join(out_dir, f'{name}.{ext}'), bbox_inches='tight')

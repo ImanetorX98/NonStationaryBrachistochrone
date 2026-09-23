@@ -121,6 +121,7 @@ ax.set_xlabel(r'$J$ ($\tau$-branch momentum $\to$ endpoint angle)')
 ax.set_ylabel(r'$A$ (conformal factor, $E_{eff}=\hat E/A$)')
 ax.set_title('Fixed ASYMMETRIC endpoints '
              f'($r_A={rA:.0f},r_B={rB:.0f}$): $\\Delta r$ in $(J,A)$\n'
-             '$>0$ everywhere (no conformal inversion; $n_t/n_\\tau=E/f>1$)')
+             '$\\Delta r>0$ on the sampled grid (no conformal inversion there;\n'
+             '$n_t/n_\\tau=E/f>1$)')
 savefig(fig, HERE, 'fig_colormap_conforme_asimmetrico')
 print("FATTO.", flush=True)

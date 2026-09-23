@@ -53,6 +53,10 @@ def configure_style():
             "mathtext.fontset": "dejavusans",
             "savefig.dpi": 300,
             "figure.dpi": 160,
+            # embed TrueType, not the matplotlib default Type 3 bitmapped
+            # fonts: submission systems reject Type 3 at PDF conversion
+            "pdf.fonttype": 42,
+            "ps.fonttype": 42,
         }
     )
 

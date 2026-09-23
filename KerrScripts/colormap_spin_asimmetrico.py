@@ -145,6 +145,6 @@ ax.set_xlabel(r'$J$ ($\tau$-branch momentum $\to$ endpoint angle)')
 ax.set_ylabel('$a$ (TK spin)')
 ax.set_title('Fixed ASYMMETRIC endpoints, Kerr '
              f'($r_A={rA:.0f},r_B={rB:.0f}$): $\\Delta r$ in $(J,a)$\n'
-             'no inversion ($\\Delta r>0$): spin does not invert either')
+             '$\\Delta r>0$ on the sampled grid: no inversion found in this scan')
 savefig(fig, HERE, 'fig_colormap_spin_asimmetrico')
 print("FATTO.", flush=True)

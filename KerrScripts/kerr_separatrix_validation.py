@@ -11,8 +11,15 @@ La catena di derivazione ha due anelli:
                                         + ln sigma(z-v)/sigma(z+v) ]
       -> validata QUI su reticolo di test con sigma, zeta, P costruite
       indipendentemente dalle theta di Jacobi (mpmath.jtheta).
-      L'identita' e' indipendente dal reticolo: la verifica su un
-      reticolo rettangolare la stabilisce in generale.
+      PORTATA DI QUESTO TEST.  L'identita' e' un TEOREMA CLASSICO
+      (Whittaker-Watson 20.53), non qualcosa che questo script dimostri.
+      Cio' che il test stabilisce e' che l'IMPLEMENTAZIONE di sigma, zeta e P
+      costruite qui dalle theta di Jacobi la soddisfa, sul reticolo provato.
+      Un reticolo rettangolare ha invarianti reali, quindi e' anche un caso
+      particolare: non campiona il reticolo complesso generale.  La versione
+      precedente di questo commento diceva che la verifica "la stabilisce in
+      generale", il che eccede sia cio' che il test fa sia cio' che servirebbe:
+      per la generalita' si cita il teorema.
 
 Costruzione theta (WW cap. 20-21):
   v = pi z/(2 w1),  q = exp(i pi w2/w1)

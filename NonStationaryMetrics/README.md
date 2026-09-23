@@ -64,12 +64,21 @@ PRD) is retained as the reference version.
 | `VERIFICATION_STATUS.md` | **Master table** of every result and its verification (SYM / NUM / SAGE / Mathematica). Start here. |
 | `paper1/verification/README.md` | Symbolic verification of the formal core of Paper I: which claim, where it appears in the manuscript, and how it is checked. Every check is an exact symbolic zero, run in two independent CAS. |
 | `paper1/verification/REPRODUCTION_section4.2.md` | Re-run of the archived trajectory scripts behind section 4.2 (penetration threshold, bounce, timing), with the numbers obtained. |
-| `SEP_COEFF_SYMBOLIC.md` | Separatrix (genus-1) closed forms: symbolic `b1,b2,b3`, clock residues, `Ce,C0`, period-level hierarchy. |
-| `GENUS2_CLOSED_FORM.md` | Generic-J (genus-2) closed form: `δφ = ½Ê Σ Q_kj W_kj + G_alg`, symbolic coefficients, tabulated special functions. |
-| `progress.md` | Chronological log of the whole derivation, brick by brick. |
-| `EXPLICIT_FORMS_PROGRESS.md`, `RESULTS_ROADMAP.md`, `ALGORITHM_adiabatic_closed_forms.md`, `UNIFIED_ADIABATIC.md`, `sumUp.md`, `paperOutline.md` | Earlier progress notes, the reusable algorithm, figure index, outline. |
+| `ThakurtaMetric/ThakurtaResults.md`, `VaidyaMetric/VaidyaResults.md`, `FLRWmetric/FLRWresults.md` | Per-geometry results: what was derived, with the numbers obtained. |
+| `ThakurtaMetric/phi_adiabatic_closed_form.md`, `VaidyaMetric/vaidya_adiabatic_setup.md` | The adiabatic closed form, set up and assembled. |
 
-### Fixed-endpoint no-inversion (Lemma B) + referee response (recent)
+Some working notes that earlier editions of this file listed are no longer
+distributed with the archive. They fell into two groups. The first is the
+correspondence with the journal and its referees --- reports, point-by-point
+responses, revision logs and editorial reviews --- which is not ours to publish
+and is not needed to reproduce anything here. The second is the derivation of
+results reserved for the follow-up study: the universal off-shell source, the
+eta-brachistochrone, the genus-two closed forms and the separatrix crossing. The
+two manuscripts state what those results are and where they are deferred to;
+this archive supports the manuscripts, and nothing in the checks below depends on
+the withheld notes.
+
+### Fixed-endpoint no-inversion (Lemma B)
 
 > **Status (tiered, not absolute).** The fixed-endpoint no-inversion is **proved**
 > for `r0 <= R*(E)` and, in the static case, asymptotically as `r0 -> infinity`;
@@ -80,13 +89,11 @@ PRD) is retained as the reference version.
 
 | File | What it does |
 |------|--------------|
-| `RESULTS_lemmaB_frozen_schwarzschild.md` | Master summary of the frozen-Schwarzschild no-inversion: Lemma A closed; Lemma B via elementary (`r0<=R*`) + closed-form large-`r0` asymptotic + CAP. |
 | `no_inversion_reduction.py` | Reduction + Lemma A closed-form proof (`symbolic_full_proof`). |
 | `no_inversion_schwarzschild_closedform.py` | Closed form for `Phi_tau'` (IBP); elementary grazing/quarter regimes; single-crossing criterion. |
 | `no_inversion_schwarzschild_asymptotic.py` | Large-`r0` asymptotic: `Phi=arctan(...)-b^{-3/2}sqrt(...)`, single non-degenerate max, `Phi''(x_pk)=-1/2 b^{9/4} V0^{-5/4}`. |
 | `no_inversion_schwarzschild_CAP.py`, `..._CAP_r0_10.py`, `..._CAP_grid.py` | Computer-assisted proof (mpmath interval arithmetic): single-crossing certificates. Complete at `r0=10`; grid `E in {1.2,1.6,2.5} x r0 in {8,12}` (`CAP_grid_certificates.txt`). |
 | `verify_lemmaB_mathematica.wls` | Independent Mathematica cross-check of all no-inversion derivations. |
-| `REFEREE_RESPONSE_main8.md` | Point-by-point response to the main8 referee report (DONE vs PLANNED). |
 | `ThakurtaMetric/adiabatic_offshell_validation.py`, `adiabatic_tk_geodesic_check.py` | Validation of the adiabatic correction against the true optical-metric geodesic: `1/2`-Euler captures ~98%; off-shell (`H2!=0`, costate `p_eta`) term is the ~2% residual (referee 4.6). |
 
 ### Complete first-order extended-Hamiltonian correction (Eq. 40, on-shell + off-shell)

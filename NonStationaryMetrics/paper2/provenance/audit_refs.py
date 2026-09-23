@@ -21,6 +21,8 @@ attributes to it. That needs reading, and is tracked separately.
     python3 audit_refs.py --key Perlick1991
 """
 from __future__ import annotations
+
+import unicodedata
 import json, re, subprocess, sys, time
 from pathlib import Path
 
@@ -54,13 +56,30 @@ def crossref(doi: str) -> dict | None:
 
 
 def norm(s: str) -> str:
+    """Fold a name to a comparable form.
+
+    The previous version carried an ad-hoc list of accent spellings and missed
+    most of them, so it reported a discrepancy whenever a correctly accented
+    bib entry met a correctly accented registry record -- \\'ario vs ario,
+    \\v{S} vs s, D'Hoker vs d\u2019hoker.  Twenty-five of the sixty-four entries
+    came back flagged, and the one genuine error in the list (a wrong given
+    name) was invisible among them.  A checker that cries wolf is worse than no
+    checker.
+
+    This decodes LaTeX accent commands generically, then folds Unicode
+    diacritics, so only substantive differences survive.
+    """
     s = s.lower()
-    for a, b in [("\\'e", "e"), ("\\`e", "e"), ("\\\"o", "o"), ("\\\"u", "u"),
-                 ("\\^i", "i"), ("\\c{c}", "c"), ("\\o", "o"), ("{", ""), ("}", ""),
-                 ("é", "e"), ("è", "e"), ("ö", "o"), ("ü", "u"), ("à", "a"),
-                 ("ò", "o"), ("ù", "u"), ("í", "i"), ("ñ", "n"), ("ç", "c"),
-                 ("\\", ""), ("-", " "), ("'", ""), (".", "")]:
+    # \'a  \`a  \"a  \^a  \~a  \=a  \.a  \v{s}  \u{a}  \H{o}  \c{c}  \k{a}  \r{a}
+    s = re.sub(r"\\[`'\"^~=.vuHckr]\s*\{?([a-z])\}?", r"\1", s)
+    for a, b in [("\\o", "o"), ("\\l", "l"), ("\\ss", "ss"), ("\\aa", "aa"),
+                 ("\\ae", "ae"), ("\\oe", "oe"),
+                 ("{", ""), ("}", ""), ("\\", ""),
+                 ("\u2019", ""), ("'", ""), ("\u2010", " "), ("-", " "), (".", "")]:
         s = s.replace(a, b)
+    # fold any remaining real diacritics (á, š, ò, ...)
+    s = "".join(c for c in unicodedata.normalize("NFKD", s)
+                if not unicodedata.combining(c))
     return " ".join(s.split())
 
 
@@ -79,6 +98,49 @@ def bib_authors(e: dict) -> list[tuple[str, str]]:
             fam, giv = (bits[-1], " ".join(bits[:-1])) if len(bits) > 1 else (part, "")
         out.append((norm(fam), norm(giv)))
     return out
+
+
+
+def _initials_compatible(a: str, b: str) -> bool:
+    """True when two given-name strings differ only by abbreviation.
+
+    'gary w' vs 'g w', 'sumner byron' vs 's b': the registry and a house style
+    disagree about spelling out first names, which is not a bibliographic error.
+    """
+    ta, tb = a.split(), b.split()
+    if not ta or not tb:
+        return False
+    # The registry often stores only part of a multi-part given name
+    # ('miguel' for 'Miguel Angel', abbreviated 'M. A.' in the bibliography),
+    # so compare the tokens both sides actually have rather than demanding the
+    # same count.  A genuine difference of name -- 'isaac' vs 'israel' -- still
+    # fails, because neither is a prefix of the other.
+    return all(x == y or x.startswith(y) or y.startswith(x)
+               for x, y in zip(ta, tb))
+
+
+def classify(problem: str, bib_uses_etal: bool) -> str:
+    """SUBSTANTIVE or COSMETIC.
+
+    The exit code is only useful if it means something.  Before this split the
+    script reported twenty-five discrepancies, every one of them a difference of
+    convention, and a real error (a wrong given name) sat unnoticed among them.
+    Only SUBSTANTIVE findings now set the exit status; COSMETIC ones are still
+    printed, because a reader may want to see them.
+    """
+    if problem.lstrip().startswith("?"):
+        return "COSMETIC"          # registry has no record (Zenodo, ResearchGate)
+    if bib_uses_etal and ("author COUNT" in problem or "'others'" in problem):
+        return "COSMETIC"          # bibtex "and others" is et al., by design
+    if "GIVEN:" in problem:
+        try:
+            bg = problem.split("bib '")[1].split("'")[0]
+            cg = problem.split("registry '")[1].split("'")[0]
+            if _initials_compatible(bg, cg):
+                return "COSMETIC"
+        except IndexError:
+            pass
+    return "SUBSTANTIVE"
 
 
 def check(e: dict) -> list[str]:
@@ -132,18 +194,27 @@ def main(argv):
         withdoi = withdoi[(g - 1) * 5: g * 5]
     print(f"{len(entries)} entries, {len([e for e in entries if e.get('doi')])} with a DOI; "
           f"checking {len(withdoi)}")
-    bad = 0
+    n_sub = n_cos = 0
     for e in withdoi:
         probs = check(e)
         if probs:
-            bad += 1
-            print(f"  {e['key']}  ({e.get('doi')})")
-            for x in probs:
-                print(x)
+            etal = "others" in e.get("author", "").lower()
+            kinds = [classify(x, etal) for x in probs]
+            sub = sum(k == "SUBSTANTIVE" for k in kinds)
+            n_sub += sub
+            n_cos += len(kinds) - sub
+            tag = "SUBSTANTIVE" if sub else "cosmetic"
+            print(f"  [{tag}] {e['key']}  ({e.get('doi')})")
+            for x, k in zip(probs, kinds):
+                print(x + ("" if k == "SUBSTANTIVE" else "   [cosmetic]"))
         time.sleep(0.3)
-    print(f"\n{bad} entr{'y' if bad==1 else 'ies'} with a discrepancy "
-          f"out of {len(withdoi)} checked")
-    return 1 if bad else 0
+    print(f"\n{n_sub} substantive and {n_cos} cosmetic finding(s) "
+          f"out of {len(withdoi)} entries checked")
+    if not n_sub:
+        print("no bibliographic error found; the cosmetic findings are "
+              "abbreviation style, bibtex 'and others', and DOIs the registry "
+              "does not index (Zenodo, ResearchGate).")
+    return 1 if n_sub else 0
 
 
 if __name__ == "__main__":

@@ -56,40 +56,168 @@ def rmin_of_J(N, J, r_hi):
             return brentq(lambda r: N(r) * r - J, rs[i + 1], rs[i])
     return None
 
-def dphi_seg(N, J, r_lo, r_hi):
-    """angolo da r_lo(>r_min) a r_hi lungo la geodetica."""
-    integ = lambda r: J / (r * np.sqrt(f(r)) * np.sqrt(N(r)**2 * r**2 - J**2))
-    return quad(integ, r_lo, r_hi, limit=200, points=[r_lo])[0]
+def _leg(N, J, rm, rE, kernel):
+    """Integrate kernel(r, S) dr from the periastron rm out to rE, where
+    S = sqrt(N(r)^2 r^2 - J^2) vanishes like sqrt(r-rm) at the lower limit.
 
-def solve_bvp(N, rA, rB, dphi_target):
-    """spara J: Delta_phi(A->rmin->B) = dphi_target. Ritorna J, r_min."""
+    The singularity is removed exactly, not stepped over.  Factor
+    N^2 r^2 - J^2 = (Nr - J)(Nr + J); the first factor has a simple zero at rm,
+    so with r = rm + u^2,
+
+        Nr - J = u^2 psi(u^2),   psi(w) = (N(rm+w)(rm+w) - J)/w,
+        S = u sqrt( psi(u^2) (Nr + J) ),
+
+    and the 2u du of the substitution cancels the u in S.  The transformed
+    integrand is bounded, so plain quad converges without `points` and without
+    the extrapolation whose roundoff QUADPACK used to warn about.  The previous
+    version integrated from rm + 1e-9 (angle) and rm + 1e-13 (cost) and relied
+    on QAGP extrapolating the omitted sliver back: it did, but only by an
+    undocumented accident of the epsilon algorithm -- at a nudge of 1e-6 the
+    same call is short by 8.1e-4, which is not small.  Agreement of this routine
+    with a 50-digit mpmath reproduction: 1e-11 in the aperture, 3e-9 in r_min.
+    """
+    dNr = (N(rm + 1e-6) * (rm + 1e-6) - N(rm - 1e-6) * (rm - 1e-6)) / 2e-6
+    def g(u):
+        w = u * u
+        r = rm + w
+        psi = (N(r) * r - J) / w if w > 1e-10 else dNr
+        S = u * np.sqrt(max(psi * (N(r) * r + J), 1e-300))
+        return 2.0 * u * kernel(r, S)
+    return quad(g, 0.0, np.sqrt(max(rE - rm, 0.0)), limit=400)[0]
+
+def dphi_seg(N, J, rm, r_hi):
+    """angolo dal periasse rm a r_hi lungo la geodetica."""
+    return J * _leg(N, J, rm, r_hi,
+                    lambda r, S: 1.0 / (r * np.sqrt(f(r)) * S))
+
+def cost_optical(N, J, rm, rA, rB):
+    """Elapsed clock along the orbit: the optical length int N*sqrt(h(dx,dx)).
+
+    With h = dr^2/f + r^2 dphi^2 and dphi/dr read off the orbit, this is the
+    functional whose extremals solve_bvp is shooting for.  It reproduces the
+    published pair of solutions at aperture 2.0389 to the quoted digits.
+    """
+    def integ(r, S):
+        dphidr = J / (r * np.sqrt(f(r)) * S)
+        return N(r) * np.sqrt(1.0 / f(r) + r**2 * dphidr**2)
+    return sum(_leg(N, J, rm, rE, integ) for rE in (rA, rB))
+
+
+def solve_bvp(N, rA, rB, dphi_target, report=False, nscan=2000):
+    """Shoot on J for Delta_phi(A->r_min->B) = dphi_target.
+
+    Enumerates by MONOTONE BRANCHES of the angle map, not by sign changes of the
+    defect, and returns the cheapest solution found.
+
+    Two defects have been fixed here, in that order.
+
+    (1) The first version returned the first sign change and never compared
+    costs.  The problem has more than one solution: at r_A=r_B=6, M=1, E=1.2 and
+    aperture 2.0389 there are two, r_min = 2.585956 and 2.611228, and the
+    deeper one -- which the outward scan reached first -- costs 1.82e-6 MORE.
+
+    (2) Comparing costs is not enough, because a sign-change scan does not find
+    every solution.  Near an interior extremum of J -> Phi(J) two roots sit on
+    opposite sides of the turning value, and when they are closer together than
+    the sample spacing the defect has the SAME sign at both bracketing samples:
+    the pair is invisible.  Counterexample, same endpoints, aperture
+    2.038982616263322: the roots are J = 1.133661398037 and 1.134023989527,
+    3.6e-4 apart against a grid step of 2.7e-3 -- 0.13 of one cell -- and the
+    scan returned no solution at all.
+
+    The partial cure is to split the J-interval at the interior extrema of Phi
+    and bracket on each resulting subinterval, so that a pair straddling an
+    extremum is approached from both sides.  That recovers the case above.
+
+    It is NOT a completeness guarantee, and must not be described as one.  The
+    node is the vertex of the parabola through three samples: an APPROXIMATE
+    extremum, not a solved Phi'=0.  When the target lies between the approximate
+    node's angle and the true maximum, both roots stay on the same side of the
+    node and are missed again -- at aperture 2.038982626262098, same endpoints,
+    the roots J=1.1338407 and 1.1338447 are not found.  What this routine returns
+    is the least-cost candidate found by a sampled search, under the cuts
+    Jlo=1e-4*Jmax and r>=2.0001*M, and nothing stronger.
+    """
     r_hi = min(rA, rB)
-    def gap(J):
+
+    def angle(J):
         rm = rmin_of_J(N, J, r_hi)
         if rm is None:
-            return np.nan
-        return dphi_seg(N, J, rm + 1e-9, rA) + dphi_seg(N, J, rm + 1e-9, rB) \
-            - dphi_target
+            return np.nan, None
+        return dphi_seg(N, J, rm, rA) + dphi_seg(N, J, rm, rB), rm
+
+    def gap(J):
+        return angle(J)[0] - dphi_target
+
     Jmax = N(r_hi) * r_hi * (1 - 1e-6)
-    Js = np.linspace(0.2 * Jmax, Jmax, 500)
-    gv = np.array([gap(J) for J in Js])
-    for i in range(len(Js) - 1):
-        if np.isfinite(gv[i]) and np.isfinite(gv[i + 1]) \
-                and gv[i] * gv[i + 1] < 0:
-            J = brentq(gap, Js[i], Js[i + 1])
-            return J, rmin_of_J(N, J, r_hi)
-    return None, None
+    # Lower cut: kept small but nonzero because r_min -> 2M as J -> 0 and the
+    # turning point is lost to the quadrature there.  It bounds the SEARCH, not
+    # the class, and is stated rather than silent.
+    Jlo = 1e-4 * Jmax
+    Js = np.linspace(Jlo, Jmax, nscan)
+    phis = np.array([angle(J)[0] for J in Js])
+    ok = np.isfinite(phis)
+
+    # Work run by run: the angle is undefined wherever no turning point exists
+    # below r_hi, and for the t-branch that is most of the interval.  Inside each
+    # maximal finite run, split at the interior extrema of Phi; a root pair
+    # straddling an extremum then lands on opposite monotone pieces, where the
+    # endpoint values alone reveal it.
+    runs, i = [], 0
+    while i < len(Js):
+        if not ok[i]:
+            i += 1; continue
+        j = i
+        while j + 1 < len(Js) and ok[j + 1]:
+            j += 1
+        if j > i:
+            runs.append((i, j))
+        i = j + 1
+
+    sols, seen = [], []
+    for i0, i1 in runs:
+        knots = [Js[i0]]
+        for k in range(i0 + 1, i1):
+            d1, d2 = phis[k] - phis[k - 1], phis[k + 1] - phis[k]
+            if d1 * d2 < 0:
+                denom = d1 - d2
+                shift = 0.5 * (d1 + d2) / denom if denom != 0 else 0.0
+                shift = max(-0.9, min(0.9, shift))          # stay inside the run
+                knots.append(Js[k] + shift * (Js[1] - Js[0]))
+        knots.append(Js[i1])
+        knots = sorted(set(knots))
+        for a, b in zip(knots[:-1], knots[1:]):
+            ga, gb = gap(a), gap(b)
+            if not (np.isfinite(ga) and np.isfinite(gb)) or ga * gb > 0:
+                continue
+            try:
+                J = brentq(gap, a, b, xtol=1e-14)
+            except ValueError:
+                continue
+            rm = rmin_of_J(N, J, r_hi)
+            if rm is None or any(abs(J - j) < 1e-9 for j in seen):
+                continue
+            seen.append(J)
+            sols.append((cost_optical(N, J, rm, rA, rB), J, rm))
+    if not sols:
+        return None, None
+    sols.sort()
+    if report and len(sols) > 1:
+        print(f"      {len(sols)} solutions with these endpoints; costs "
+              + ", ".join(f"{c:.9f}" for c, _, _ in sols)
+              + f"  -> taking r_min={sols[0][2]:.6f}")
+    return sols[0][1], sols[0][2]
 
 def curva(N, J, rA, rB, phiA):
     """(r,phi) della geodetica da A(rA,phiA) a B, via periasse r_min."""
     rm = rmin_of_J(N, J, min(rA, rB))
     r_in = np.linspace(rA, rm + 1e-7, 300)
-    phi_in = phiA + np.array([dphi_seg(N, J, rm + 1e-9, rA)
-                              - dphi_seg(N, J, rm + 1e-9, rr)
+    phi_in = phiA + np.array([dphi_seg(N, J, rm, rA)
+                              - dphi_seg(N, J, rm, rr)
                               for rr in r_in])
-    phi_peri = phiA + dphi_seg(N, J, rm + 1e-9, rA)
+    phi_peri = phiA + dphi_seg(N, J, rm, rA)
     r_out = np.linspace(rm + 1e-7, rB, 300)
-    phi_out = phi_peri + np.array([dphi_seg(N, J, rm + 1e-9, rr)
+    phi_out = phi_peri + np.array([dphi_seg(N, J, rm, rr)
                                    for rr in r_out])
     return (np.concatenate([r_in, r_out]),
             np.concatenate([phi_in, phi_out]), rm)
@@ -103,7 +231,7 @@ r0, Phi = 6.0, 0.9
 print(f"\n(a) SIMMETRICO: A=({r0},-{Phi}), B=({r0},+{Phi})")
 res_a = {}
 for nome, N in (('tau', n_tau), ('t', n_t)):
-    J, rm = solve_bvp(N, r0, r0, 2 * Phi)
+    J, rm = solve_bvp(N, r0, r0, 2 * Phi, report=True)
     res_a[nome] = (J, rm)
     print(f"    ramo {nome}: J_opt={J:.4f}, r_min={rm:.4f}")
 print(f"    => r_min^t - r_min^tau = "
@@ -114,7 +242,7 @@ rA, rB, dphi = 10.0, 6.0, 1.9
 print(f"\n(b) ASIMMETRICO: A=({rA},0), B=({rB},{dphi})")
 res_b = {}
 for nome, N in (('tau', n_tau), ('t', n_t)):
-    J, rm = solve_bvp(N, rA, rB, dphi)
+    J, rm = solve_bvp(N, rA, rB, dphi, report=True)
     res_b[nome] = (J, rm)
     print(f"    ramo {nome}: J_opt={J:.4f}, r_min={rm:.4f}")
 print(f"    => r_min^t - r_min^tau = "

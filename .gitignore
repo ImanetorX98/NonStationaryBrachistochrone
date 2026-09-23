@@ -81,3 +81,121 @@ NonStationaryMetrics/AUDIT_CLAUDE_PER_CODEX.md
 NonStationaryMetrics/AUDIT_APPROFONDITO_RESPONSE_CQG_R2_codex.md
 NonStationaryMetrics/AUDIT_INDIPENDENTE_CLAUDE_SCRIPTS_codex.md
 NonStationaryMetrics/LETTERA_RISPOSTA_CQG_ITALIANO_codex.md
+
+# ---------------------------------------------------------------------------
+# Round-2 reasoning record (September 2026).  Same category again: working
+# notes, cross-audit exchanges and derivation scaffolding.  They are how the
+# results were arrived at and argued over, not the results themselves, and the
+# archive cited by the manuscript should carry the second and not the first.
+# Nothing here appears in provenance/MANIFEST.tsv or is cited by either paper,
+# so ignoring them breaks no reference.
+# ---------------------------------------------------------------------------
+
+# The running ledger: what is established, what is retracted, who found what.
+NonStationaryMetrics/AVANZAMENTI_ROUND2.md
+
+# Handoffs written for the second agent, and its replies.  The pattern needs the
+# leading ** : without it, paper1/HANDOFF_CODEX_round2.md and
+# paper1/HANDOFF_CODEX_production.md were tracked for months.
+**/HANDOFF_CODEX_*.md
+**/SESSION_HANDOFF_*.md
+NonStationaryMetrics/audit_CQG_2026-09-10/
+
+# Derivation companion: every step written out, for reading and explaining.
+# The papers carry the statements; this carries the algebra behind them.
+NonStationaryMetrics/DERIVAZIONI_COMPLETE.tex
+NonStationaryMetrics/DERIVAZIONI_COMPLETE.pdf
+NonStationaryMetrics/DERIVAZIONI_COMPLETE.aux
+NonStationaryMetrics/DERIVAZIONI_COMPLETE.log
+NonStationaryMetrics/DERIVAZIONI_COMPLETE.out
+
+# Corrections held for Paper I until JMP replies, so that manuscript is edited
+# once.  KEEP A COPY OUTSIDE THIS WORKING TREE: it is the only record of the
+# repaired existence proof, and it is deliberately untracked.
+NonStationaryMetrics/paper1/PENDING_JMP_CORRECTIONS.md
+NonStationaryMetrics/paper1/ZENODO_v5_DESCRIPTION.md
+
+# Draft response to the Round-2 reports, superseded once the final letter is
+# written in the author's own voice.
+NonStationaryMetrics/paper2/referee_response_round2_draft.*
+
+# Independent C1-C8 verification report answering the Codex handoff.
+# Working document, same category as the handoff itself.
+NonStationaryMetrics/VERIFICA_CATENA_C1_C8.md
+
+
+# ---------------------------------------------------------------------------
+# Made private on 23 September 2026, on the author's instruction.
+#
+# THE REFEREE CORRESPONDENCE.  Reports, responses, revision logs and editorial
+# reviews are correspondence between the author, the journal and its referees.
+# Some of it is third-party material.  It is not part of a reproducibility
+# archive and it is not ours to publish.
+# ---------------------------------------------------------------------------
+NonStationaryMetrics/REFEREE_*.md
+NonStationaryMetrics/editorial_review_codex/
+NonStationaryMetrics/tmp/pdfs/
+NonStationaryMetrics/paper2/REVISION_LOG.md
+NonStationaryMetrics/paper2/response_to_referees_CQG.tex
+NonStationaryMetrics/paper2/referee_response_def*.tex
+NonStationaryMetrics/paper2/referee_response_round2.*
+NonStationaryMetrics/paper2/**/paper2_highlighted*
+NonStationaryMetrics/paper2/upload_CQG*/
+NonStationaryMetrics/paper2/submission_CQG*/
+NonStationaryMetrics/paper2/baseline_R1_asfiled/
+
+# ---------------------------------------------------------------------------
+# WORK TOWARDS THE NEXT PAPER, and the scaffolding around it.  These carry the
+# numbered derivations of the deferred frontiers -- off-shell universal source,
+# eta-brachistochrone, genus-2 closed forms, separatrix crossing, adiabatic
+# separatrices -- which are the material of the follow-up study and not of the
+# two manuscripts under review.  Published now they would give away unfinished
+# work; they stay local until that paper is written.
+# ---------------------------------------------------------------------------
+NonStationaryMetrics/UNIVERSAL_SD_source.md
+NonStationaryMetrics/UNIFIED_ADIABATIC.md
+NonStationaryMetrics/GENUS2_CLOSED_FORM.md
+NonStationaryMetrics/EXPLICIT_FORMS_PROGRESS.md
+NonStationaryMetrics/eta_brachistochrone.md
+NonStationaryMetrics/tk_separatrix_crossing.md
+NonStationaryMetrics/offshell_closed_form_codex.md
+NonStationaryMetrics/tau_offshell_separatrix_codex.md
+NonStationaryMetrics/separatrix_canonical_cubic_codex.md
+NonStationaryMetrics/separatrix_notation_table.md
+NonStationaryMetrics/vaidya_offshell_closure.md
+NonStationaryMetrics/vaidya_v_offshell_progress.md
+NonStationaryMetrics/vaidya_asymmetry_fix.md
+NonStationaryMetrics/SEP_COEFF_SYMBOLIC.md
+NonStationaryMetrics/RESULTS_lemmaB_frozen_schwarzschild.md
+NonStationaryMetrics/RESULTS_ROADMAP.md
+NonStationaryMetrics/issue5_lemmaB_status.md
+NonStationaryMetrics/issue7_genus2_naming.md
+NonStationaryMetrics/perlick_equivalence.md
+NonStationaryMetrics/ALGORITHM_adiabatic_closed_forms.md
+
+# Planning, progress logs, cross-agent exchanges and memoranda: scaffolding.
+NonStationaryMetrics/TODO_*.md
+NonStationaryMetrics/PLAN_split_and_extensions.md
+NonStationaryMetrics/SPLIT_MAP.md
+NonStationaryMetrics/RESTRUCTURE_MEMO.md
+NonStationaryMetrics/POST_REVIEW_CHANGES.md
+NonStationaryMetrics/WORKING_METHOD.md
+NonStationaryMetrics/progress.md
+NonStationaryMetrics/sumUp.md
+NonStationaryMetrics/paperOutline.md
+NonStationaryMetrics/*_codex.md
+NonStationaryMetrics/DERIVAZIONI_POST_REFERAGGIO_review.md
+
+# Referee task PDFs sent by the journal: correspondence, same category as above.
+NonStationaryMetrics/Response/
+
+# Build output and Sage preparse artefacts.
+output/
+*.sage.py
+
+# ---------------------------------------------------------------------------
+# Exception to the blanket *.log rule.  MANIFEST.tsv cites this file as the
+# archived evidence for the CAP grid, so the archive must actually contain it;
+# without the negation the manifest points at something git refuses to track.
+# ---------------------------------------------------------------------------
+!NonStationaryMetrics/CAP_grid_certificates.log

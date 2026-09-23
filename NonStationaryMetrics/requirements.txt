@@ -4,13 +4,31 @@ sympy
 matplotlib
 mpmath
 Pillow
+tqdm
 
-# SageMath (with the abelfunctions library) is required ONLY for the four .sage
-# scripts in KerrScripts/ that build the genus-2 Riemann surface / theta / Abel-map
-# machinery (Kerr only):
-#   kerr_quasiperiods_bel.sage        (second-kind quasi-periods; Sage RiemannSurface)
-#   kerr_thirdkind_theta_closed.sage  (third-kind L = theta-ratio; abelfunctions)
-#   kerr_psi_forward_abel.sage        (Abel map + RiemannTheta; abelfunctions)
-#   kerr_holo_component_check.sage    (holomorphic-component check; Sage RiemannSurface)
-# Everything else -- ALL FLRW, Vaidya and Thakurta-Kerr analysis, every closed-form
-# check, and all figures -- runs on the pure-Python stack above (no Sage).
+# SageMath is required only for the `.sage` scripts, which build the genus-2
+# Riemann-surface / theta / Abel-map machinery.  Two levels, because they need
+# different things and only one of them is pip-installable (neither is):
+#
+#   (a) PLAIN SageMath, no extra library.  Uses Sage's own
+#       sage.schemes.riemann_surfaces.RiemannSurface:
+#         KerrScripts/kerr_quasiperiods_bel.sage      (second-kind quasi-periods)
+#         KerrScripts/kerr_holo_component_check.sage  (holomorphic-component check)
+#       Verified on SageMath 10.9: kerr_quasiperiods_bel.sage runs to completion
+#       and reproduces the tolerance quoted in the paper (kappa symmetry 1.4e-12).
+#
+#   (b) SageMath PLUS the `abelfunctions` library (RiemannTheta).  Not shipped
+#       with Sage and not on PyPI; it must be built against the Sage in use:
+#         KerrScripts/kerr_thirdkind_theta_closed.sage  (third-kind L = theta-ratio)
+#         KerrScripts/kerr_psi_forward_abel.sage        (Abel map + RiemannTheta)
+#         VaidyaMetric/vaidya_thirdkind_fay.sage        (Fay third-kind, Vaidya)
+#       Without it these raise ModuleNotFoundError at import.
+#
+# KerrSessionScripts/ additionally holds sixteen exploratory `.sage` files
+# (naming, q-series, W_ij reduction).  They are development scaffolding: none is
+# cited by either manuscript and none appears in paper2/provenance/MANIFEST.tsv.
+# They are kept for the record, not required to reproduce any published number.
+#
+# Everything else -- ALL FLRW, Vaidya and Thakurta-Kerr closed-form checks, the
+# CAP certificates, the regression runner and every figure -- runs on the pure
+# Python stack above, with no Sage.

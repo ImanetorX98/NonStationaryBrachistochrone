@@ -58,18 +58,47 @@ def prof(D,rv,E,Jv):
          if np.isfinite(H[i]) and np.isfinite(H[i+1]) and H[i]*H[i+1]<0]
     ing=[p for p in rts if D['Hp'](rv,p,E,Jv)<0]; return min(ing) if ing else np.nan
 
-def analyse(Hbuilder,M,a,Ehat,J0,r0):
+def analyse(Hbuilder,M,a,Ehat,J0,r0,VBAR2_STOP=1e-9):
+    # VBAR2_STOP is the declared tolerance at which the freezing surface counts
+    # as reached.  It is a PARAMETER and not a module constant on purpose:
+    # provenance/make_provenance.py imports this file by keeping only its
+    # imports and function definitions, so a module-level assignment would be
+    # dropped and every call from there would die on a NameError.
     """Return (epss, res_leading, res_exact, rc, phi0, ec, xc, flow) for one config."""
     D=build(Hbuilder(M,a))
+    # TWO terminal events, because the rail has TWO boundaries and they are not
+    # the same thing.  ev_turn is the turning point p_r = 0.  ev_freeze is the
+    # FREEZING surface vbar^2 = 1 - f/E^2 = 0, where the indicatrix collapses to
+    # a point; under a drift the effective energy E = Ehat exp(-eps lam) decays,
+    # so a long enough run reaches it.  Without the second event the solver does
+    # not stop, it FAILS there ("Required step size is less than spacing between
+    # numbers") and the last sample is an integration endpoint, not a turning
+    # point -- at eps = 0.04 it has p_r = -0.577, nowhere near zero.  An earlier
+    # version of the left panel marked that endpoint as a turning point.
     ev=lambda lam,y:y[1]; ev.terminal=True; ev.direction=1
-    def flow(eps):
+    def flow(eps, want_status=False):
         def rhs(lam,y):
             rv,pv,ph=y; s=np.exp(-eps*lam); E=Ehat*s; Jv=J0*s
             # TRUE canonical flow: -eps*pv is the dilation term of the normalized P_r=p_r/A
             return [D['Hp'](rv,pv,E,Jv),-D['Hr'](rv,pv,E,Jv)-eps*pv,D['HJ'](rv,pv,E,Jv)]
+        # Trigger slightly ABOVE zero.  The flow stalls as vbar^2 -> 0+ (the square
+        # root in the Hamiltonian degenerates) and never crosses, so an event on
+        # vbar^2 itself never fires and the solver dies instead: at eps = 0.04 it
+        # stops with vbar^2 = 1.1e-14 and "Required step size is less than
+        # spacing between numbers".  VBAR2_STOP is the declared tolerance at
+        # which we call the freezing surface reached.
+        def ev_freeze(lam,y):
+            E=Ehat*np.exp(-eps*lam)
+            return (1.0-(1.0-2.0*M/y[0])/E**2) - VBAR2_STOP
+        ev_freeze.terminal=True; ev_freeze.direction=-1
         so=solve_ivp(rhs,[0,300],[r0,prof(D,r0,Ehat,J0),0.0],rtol=1e-12,atol=1e-14,
-                     max_step=0.005,dense_output=True,events=ev)
-        lam=np.linspace(0,so.t[-1],12000); Y=so.sol(lam); return lam,Y[0],Y[1],Y[2]
+                     max_step=0.005,dense_output=True,events=[ev,ev_freeze])
+        lam=np.linspace(0,so.t[-1],12000); Y=so.sol(lam)
+        if want_status:
+            which=('turning' if len(so.t_events[0])
+                   else 'freezing' if len(so.t_events[1]) else 'none')
+            return lam,Y[0],Y[1],Y[2],which,so.success
+        return lam,Y[0],Y[1],Y[2]
     lam0,rF,prF,phiF=flow(0.0)
     rturn=rF.min()
     phi0=interp1d(rF,phiF,bounds_error=False,fill_value='extrapolate')
@@ -123,19 +152,58 @@ for i, (name, *_rest) in enumerate(cfgs):
     _raw[f"res_leading_{i}"] = rh_
     _raw[f"res_exact_{i}"] = rx_
     _raw[f"label_{i}"] = np.array(name)
-np.savez(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                      'adiabatic_convergence_raw.npz'), **_raw)
-print(f"  raw convergence data -> adiabatic_convergence_raw.npz "
-      f"({len(cfgs)} configs x {len(out[cfgs[0][0]][0])} epsilon values)")
+# make_provenance.py --check re-runs this generator only to compare numbers; it
+# must not touch the working tree.  savefig is already guarded in paper_style;
+# this raw dataset was still written unconditionally, so the "writes nothing"
+# claim was false for the full check.
+if os.environ.get('PROVENANCE_NO_WRITE'):
+    print(f"  [PROVENANCE_NO_WRITE] skipped adiabatic_convergence_raw.npz "
+          f"({len(cfgs)} configs x {len(out[cfgs[0][0]][0])} epsilon values)")
+else:
+    np.savez(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          'adiabatic_convergence_raw.npz'), **_raw)
+    print(f"  raw convergence data -> adiabatic_convergence_raw.npz "
+          f"({len(cfgs)} configs x {len(out[cfgs[0][0]][0])} epsilon values)")
 
 # ---- figure ----
 fig,ax=plt.subplots(1,2,figsize=(2*COL,COL*0.95))
 # left: true dynamics for the main t-branch config
 nm0=cfgs[0][0]; epss,rh,rx,sh,she,sx,sxe,col,mk,flow,phi0,ec,xc,rc=out[nm0]
-eps=0.04; lam0,rF,prF,phiF=flow(0.0); _,rL,_,pL=flow(eps)
-pt=interp1d(rL,pL,bounds_error=False,fill_value='extrapolate')
-rr2=np.linspace(12.0,rF.min()+0.4,600)
+eps=0.04
+lam0,rF,prF,phiF,whichF,okF=flow(0.0, want_status=True)
+_,rL,_,pL,whichL,okL=flow(eps, want_status=True)
+print(f"  frozen  run: terminated by {whichF:8s} (solver success={okF})")
+print(f"  dynamic run: terminated by {whichL:8s} (solver success={okL})")
+# The dynamic trajectory turns at a LARGER radius than the frozen one, so a grid
+# taken from the frozen r_min pushed 221 of 600 points below rL.min() and the
+# curve drawn as "true non-autonomous" was the interpolant extrapolated past the
+# integrated domain.  Restrict to the window common to every curve shown, and
+# forbid extrapolation so the mistake cannot recur silently.
+pt=interp1d(rL,pL,bounds_error=True)
+r_lo=max(float(rF.min()),float(rL.min()))+0.05
+rr2=np.linspace(12.0,r_lo,600)
+assert rr2.min()>=float(rL.min()) and rr2.max()<=float(rL.max()), \
+    "true-dynamics panel would extrapolate"
+print(f"  true-dynamics panel: r in [{rr2.min():.4f}, {rr2.max():.4f}]; "
+      f"frozen r_min={rF.min():.4f}, dynamic r_min={rL.min():.4f} "
+      f"(no extrapolation)")
 ax[0].plot(rr2*np.cos(pt(rr2)),rr2*np.sin(pt(rr2)),'C0-',lw=2.6,alpha=0.35,label='true non-autonomous geodesic')
+# Mark where each run ENDS, and say which boundary ended it -- they are not the
+# same boundary.  The frozen run turns (p_r = 0).  The drifting run does not: its
+# effective energy decays as E = Ehat exp(-eps lam), and at eps = 0.04 it reaches
+# the FREEZING surface vbar^2 = 0 first, with p_r still around -0.58.  Labelling
+# that endpoint a turning point, as an earlier version did, misnames the physics
+# and misreads a failed integration as a turn.
+_lblL = (r'dynamic: turning point ($p_r=0$)' if whichL == 'turning'
+         else r'dynamic: freezing surface ($\bar v^2=0$)' if whichL == 'freezing'
+         else 'dynamic: integration endpoint (no boundary reached)')
+_rt = float(rL.min()); _pt_t = float(pt(_rt))
+ax[0].plot([_rt*np.cos(_pt_t)],[_rt*np.sin(_pt_t)],'o',ms=5.0,mfc='none',
+           mec='C1',mew=1.4,label=_lblL)
+_rtF = float(rF.min())
+ax[0].plot([_rtF*np.cos(float(phi0(_rtF)))],[_rtF*np.sin(float(phi0(_rtF)))],
+           's',ms=4.0,mfc='none',mec='0.45',mew=1.0,
+           label=r'frozen: turning point ($p_r=0$)')
 ph_h=phi0(rr2)+eps*ec(rr2); ph_x=phi0(rr2)+eps*xc(rr2)
 ax[0].plot(rr2*np.cos(ph_h),rr2*np.sin(ph_h),'k--',lw=1.0,label=r'frozen $+\,\varepsilon\cdot$leading (on-shell)')
 ax[0].plot(rr2*np.cos(ph_x),rr2*np.sin(ph_x),'C3:',lw=1.3,label=r'frozen $+\,\varepsilon\cdot$ complete first-order (exact)')

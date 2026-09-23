@@ -11,7 +11,11 @@ manuscript), established in
     NonStationaryMetrics/paper2/verification/verify_marginal_hamilton.wls
 
   |J| > Jc      smooth periapsis at r_min > r_e
-  |J| < Jc      semicubical cusp AT r_e, reached in finite parameter
+  0<|J|<Jc      semicubical cusp AT r_e, reached in finite parameter
+  J   = 0       RADIAL: the cusp amplitude K carries a factor J, so it
+                vanishes here.  phi is constant and there is no cusp.  The
+                bar marks this value separately; an earlier version swept it
+                into the cusp interval.
   J   = -Jc     double root of p_r^2, approach rate does NOT degenerate:
                 r_e is an ASYMPTOTIC endpoint (log-divergent parameter),
                 with a finite one-sided tangent.  Neither cusp nor reflection.
@@ -115,6 +119,12 @@ ax.add_patch(plt.Rectangle((Jmin, ytau-0.18), (-Jc)-Jmin, 0.36,
 ax.add_patch(plt.Rectangle((-Jc, ytau-0.18), 2*Jc, 0.36,
                            facecolor=c_cusp, edgecolor='white', lw=0.6,
                            hatch='...'))
+# J = 0 is NOT a cusp: the amplitude K of eq. (cusp) carries a factor J, so the
+# trajectory is radial with phi constant.  Proposition (classification)(ii)
+# excludes it, and the bar must agree with the proposition.
+ax.plot([0.0], [ytau], marker='|', color='k', ms=11, mew=1.6, zorder=7,
+        clip_on=False)
+ax.text(0.0, ytau-0.30, r'$J{=}0$: radial, no cusp', ha='center', fontsize=5.2)
 ax.add_patch(plt.Rectangle((Jc, ytau-0.18), Jmax-Jc, 0.36,
                            facecolor=c_smooth, edgecolor='white', lw=0.6))
 # the two marginal values are measure-zero cases and are NOT part of the

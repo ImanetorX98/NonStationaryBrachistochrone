@@ -135,6 +135,86 @@ citations". Nothing in that report asks for a source we do not already cite.
 
 So: **all sixteen items are held and read.**
 
+### Round 2 (decision of 16 September 2026)
+
+The referee numbering is **inverted** with respect to Round 1: the technical
+report is Referee 2 here and asks for nothing; the bibliographic referee is
+Referee 1. Reports in `Response/PaperII/CQG response/round2/`.
+
+Referee 1 lists four citations, but they are **three works**: the arXiv preprint
+and the EPJ Plus article carry the same title and are the same paper.
+
+| Proposed by referee 1, round 2 | Here? |
+|---|---|
+| Chanda, *More on Jacobi metric: Randers–Finsler metrics, frame dragging and geometrisation techniques*, `arXiv:1911.06321` | ✓ held — `Chanda-2024-Randers-Finsler-frame-dragging-geometrisation.pdf` |
+| Chanda, same title, *Eur. Phys. J. Plus* **139**(11) 2024, `10.1140/epjp/s13360-024-05775-y` | ✓ **same work as the line above** — the file held is v13 (5 Nov 2024), which is the published version; §5.2.1 treats the Kerr metric |
+| Chanda, Gibbons, Guha, Maraner & Werner, *Jacobi-Maupertuis Randers-Finsler metric for curved spaces and the gravitational magnetoelectric effect*, *JMP* **60**(12) 122501 (2019), `10.1063/1.5098869`, `arXiv:1903.11805` | ✓ held — `ChandaEtAl-2019-Jacobi-Maupertuis-Randers-Finsler-magnetoelectric.pdf` |
+| Lecian, *Experimental validations of the geodesics 2-plane from GR pseudospherical cylinders*, `10.13140/RG.2.2.24140.58246` | ✓ read — `Lecian-2026-geodesics-2-plane-experimental-validations.pdf`, 13 pp, Sapienza, 7 Sep 2026. Distinct from *New Geodesics 2-planes solitons connected at infinity* also held here |
+
+Two DOIs were confirmed against Crossref rather than copied from the report; the
+ResearchGate identifier resolves to no Crossref record at all, and the file was
+obtained from a logged-in session.
+
+**What the Chanda papers actually contain.** Chanda–Gibbons–Guha–Maraner–Werner 2019
+builds the Jacobi–Maupertuis Randers–Finsler metric for a **stationary** spacetime at
+**fixed conserved** $p_0$, eq. (16):
+$ds_J=\sqrt{\frac{p_0^2-(mc)^2g_{00}}{g_{00}}\gamma_{ij}dx^idx^j}+p_0\frac{g_{0i}}{g_{00}}dx^i$
+with $\gamma_{ij}=-g_{ij}+g_{0i}g_{0j}/g_{00}$, valid where the Randers convexity
+condition $\sqrt{a^{ij}b_ib_j}<1$ holds; eq. (24) is the explicit Kerr case. Two
+facts in it bear directly on the referee's demand. First, their §1 states that the
+section-4 result "agree[s] with a remark in" Perlick, *The brachistochrone problem
+in a stationary space-time*, JMP **32** (1991) 3148 — the paper Paper II already
+builds on (reference [9] in the arXiv version, [16] in the published one). The
+agreement is with Perlick's **Proposition 3.3**, the *free-fall* statement, not
+with his Proposition 3.2, which is the $t$-brachistochrone: see the correction
+below. Second, the construction presupposes a conserved $p_0$ and a *geodesic*;
+our rail is neither free nor at conserved charge once $A$ runs, since
+$\dd\Ehat/\dd\tau=\varepsilon$.
+
+**Correction (16 Sep 2026), and the paper that settles the referee's demand.**
+Chanda's eq. (16) reduces the *free geodesics* at fixed energy. The arrival-time
+brachistochrone is a different functional: eliminating proper time from the
+constraint gives
+$F_T=\sqrt{\frac{E^2}{f(E^2-f)}h_{ij}dx^idx^j}-\omega_idx^i$, whose quadratic part
+is exactly $\Lambda^2h$ of the manuscript's eq. (12), whereas Chanda's is
+$\frac{E^2-f}{f}h$. The two differ by the position-dependent factor
+$E^2/(E^2-f)^2$, so they do **not** share geodesics — in Schwarzschild at $E^2=2$
+the circular extremal sits at $r=2\sqrt2M$ for the arrival cost and at
+$r=(1+\sqrt5)M$ for Jacobi–Maupertuis.
+
+This is already in **Perlick 1991, p. 3153**. His **Proposition 3.2** states that a
+curve is a $t$-brachistochrone of specific energy $e^C$ iff it minimises
+$\tilde S_C=\int[\sqrt{\bar h_C(\xi',\xi')}-\psi(\xi')]\,ds$ — a Randers functional,
+which he himself compares to "a charged particle moving in a magnetostatic field".
+His **Proposition 3.3** is the free-fall counterpart with a different metric
+$\hat h_C$, and his comparison of Props 3.1–3.3 shows the brachistochrone problem
+is equivalent to free fall only *in some other stationary spacetime*, with the
+modified potential of his eq. (50). So the Randers form of the brachistochrone was
+published in 1991, in the paper this manuscript already rests on.
+
+Chanda 2024 (the EPJ Plus paper) adds, at eqs. (3.2.4)–(3.2.5): "optical metrics are
+not Jacobi metrics for null curves, and their similarity for Riemannian static
+metrics … is merely coincidence." So the identification of our optical/Perlick
+structure with a JMRF metric is one the referee's own preferred source denies in the
+stationary rotating case, and grants only in the static Riemannian one.
+
+**What the Lecian preprint actually contains, on the point the referee raises.**
+§7, *Analytical details of geodesics deviations … the geodesics separations*, is the
+textbook Jacobi equation: the covariant separation velocity (15), its second
+covariant derivative (16), and the geodesic-deviation equation
+$D^2\xi^\mu/d\tau^2=R^\mu{}_{\nu\alpha\beta}u^\nu u^\alpha\xi^\beta$ (17). The
+background is the pseudospherical-cylinder soliton
+$ds^2=-A(r)dt^2+B(r)dr^2+r^2(d\theta^2+\sinh^2\theta\,d\varphi^2)$ of eq. (1) —
+hyperbolic angular sector, static weights. §8 lists measurement techniques
+(gyroscopic precession, VLBI photon-ring profiling, gravitational-wave strain).
+
+No equation in it involves Kerr, a Randers–Finsler structure, a brachistochrone or
+a control constraint, so it supplies a *method* to apply — write the Jacobi equation
+on our geometry and evaluate the separation — not a result that bears on our
+spacetime. Two internal notes for whoever cites it: §5 repeats §4 verbatim
+(eqs. (9)–(11) are eqs. (6)–(8)), and reference [16], "The LISA Cosmic Carrier Team,
+*Phys. Rev. D* **111**(6) 064012 (2025)", should be verified before being relied on.
+
 Two items previously recorded here were my own reconstruction and are wrong:
 Cesari 1983 was never proposed by either referee, and neither was Filippov 1962 —
 both entered our bibliography on our own initiative. They are listed under

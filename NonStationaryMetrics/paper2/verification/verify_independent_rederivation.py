@@ -148,16 +148,37 @@ check("curvature-cubic leading coefficient vanishes at Ehat^2 = 3/2",
 
 head("D. optical submersion: tension field")
 
+# CORRECTED.  This block used to compute mu + grad_H log Lambda, call it the
+# tension field, and conclude non-harmonicity from its positivity.  That sum is
+# the RIEMANNIAN assembly tau = -dpi(mu + grad_H log Lambda); our total space is
+# Lorentzian with a timelike fibre, over which the trace defining tau runs with
+# the opposite sign, so the assembly does not apply and the object was
+# misidentified.  The block passed while testing the wrong quantity -- a PASS
+# certifies the file, not the proposition the file claims to check.  The
+# Lorentzian tension is rebuilt from the connections in verify_tension_sympy.py;
+# here we verify the two ingredients, the discrepancy, and the corrected sign
+# statement.
 Lam2 = Eh**2/(f*(Eh**2 - f))
 gradH = sp.simplify(f*sp.diff(sp.log(sp.sqrt(Lam2)), r))
 mu = M/r**2                                    # fibre mean curvature
 resid = sp.simplify(sp.together(mu + gradH))
-check("mu + grad_H log Lambda = (M/r^2) f/(Ehat^2-f)",
+check("mu + grad_H log Lambda = (M/r^2) f/(Ehat^2-f)  [the Riemannian assembly, "
+      "NOT the tension field]",
       sp.simplify(resid - (M/r**2)*f/(Eh**2 - f)) == 0)
-check("residual non-zero on the exterior => NOT a harmonic morphism",
-      sp.simplify(resid) != 0)
-val = float(resid.subs({M: 1, r: 6, Eh: 1.4}))
-check("residual > 0 at r=6M, Ehat=1.4", val > 0, f"{val:.6e}")
+
+tau_r = M/r**2*(2*Eh**2 - 3*f)/(Eh**2 - f)     # the Lorentzian tension field
+check("tau^r - [-(mu + grad_H log Lambda)] = 2M/r^2, so the two differ",
+      sp.simplify(tau_r + resid - 2*M/r**2) == 0)
+check("tau is not identically zero => the projection is NOT a harmonic morphism",
+      sp.simplify(tau_r) != 0)
+check("but it is NOT of one sign: at Ehat^2 = 6/5 it vanishes on r = 10M, so the "
+      "old claim 'positive throughout the exterior' is withdrawn",
+      sp.simplify(tau_r.subs(Eh**2, sp.Rational(6, 5)).subs(r, 10*M)) == 0
+      and sp.N(tau_r.subs({M: 1, r: 3, Eh: sp.sqrt(sp.Rational(6, 5))})) > 0
+      and sp.N(tau_r.subs({M: 1, r: 20, Eh: sp.sqrt(sp.Rational(6, 5))})) < 0)
+check("the sign change is confined to 1 < Ehat^2 < 3/2",
+      sp.solve(sp.Eq(2*sp.Rational(3, 2) - 3*f, 0), r) == []
+      and sp.solve(sp.Eq(2*2 - 3*f, 0), r) == [])
 
 head("E. conformal transfer map (sec. 2, restriction to constant A)")
 

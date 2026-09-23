@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 Figura: separatrice del ramo t (saddle-node retrogrado J_c^-), GENERE 1.
-Pannello (a) traiettoria: flusso di Hamilton (ODE) vs forma chiusa di
-Weierstrass valutata (sigma/zeta/P via theta di Jacobi). Pannello (b)
-deviazione |phi_ODE - phi_Weierstrass| e |phi_quad - phi_Weierstrass|.
+Pannello (a) traiettoria: flusso di Hamilton (ODE) vs QUADRATURA del
+differenziale ellittico ridotto su Q4.  NB: questo script non valuta
+sigma, zeta o P -- non contiene alcuna chiamata a funzioni speciali.  La
+forma chiusa in Weierstrass e' verificata altrove, contro un'implementazione
+esterna (PARI), e quel controllo e' distinto da questo.  Pannello (b)
+deviazione |phi_ODE - phi_quad|.
 
 Radicando sestico R6=(r-r*)^2 Q4 al saddle-node -> Q4 quartico (genere 1);
 phi(r)=Lam0 z + sum lam_k ln(sig(z-v_k)/sig(z+v_k)),  z=P^-1(A/r+B).
@@ -89,26 +92,54 @@ def prof(rv):
 r0 = 7.0
 p0 = prof(r0)
 sA = solve_ivp(lambda t, y: [dHp(y[0], y[1]), -dHr(y[0], y[1]), dHJ(y[0], y[1])],
-               [0, 600], [r0, p0, 0.0], rtol=1e-12, atol=1e-14, max_step=0.01,
+               # Tolerance set so that the ARCHIVED script reproduces the
+               # residual quoted in the paper (2e-14).  At rtol=1e-12,
+               # atol=1e-14 the same comparison returns 1.8e-13: the closed form
+               # is unchanged, the ODE is simply the coarser of the two sides,
+               # and a reader running this file would not have met the number.
+               [0, 600], [r0, p0, 0.0], rtol=1e-13, atol=1e-16, max_step=0.01,
                dense_output=True, events=lambda t, y: y[0]-(rst+0.12))
 tA = np.linspace(0, sA.t_events[0][0], 700)
 rA = sA.sol(tA)[0]
 phiA = sA.sol(tA)[2]
 
-# --- forma chiusa: G partial fractions (fit) ---
+# --- forma chiusa: G in frazioni parziali, residui ESATTI (niente fit) ---
 def sqrtQ4(rv): return np.sqrt(abs(R6(rv, Jst)))/abs(rv - rst)
 def dphidr(rv):
     p = prof(rv)
     return dHJ(rv, p)/dHp(rv, p)
+# Partial-fraction coefficients IN CLOSED FORM.  They used to be recovered by a
+# least-squares fit of dphi/dr * sqrt(Q4) against [1, 1/(r-c_k)] over 60 sampled
+# radii, which is both unnecessary and the thing that limited the residual: the
+# numerator is a known cubic over known simple poles, so the residues are exact.
+# With  dphi/dr = G/sqrt(Q4),  G = Gnum/(Delta (r-r*)),
+#   Gnum(r) = r D_E(r) [J(r-2M) + 2Ma],   D_E(r) = (E^2-1) r + 2M,
+# and Delta (r-r*) = (r-r_+)(r-r_-)(r-r*), so
+#   G = Lam + sum_k alpha_k/(r-c_k),
+#   Lam = J (E^2-1)   (the degree-3 numerator over the monic degree-3 denominator)
+#   alpha_k = Gnum(c_k) / prod_{j != k} (c_k - c_j).
+# Residual against the sampled fit below: both reproduce G, but this one is exact.
 poles = [rp, rm, rst]
-rs = np.linspace(3.9, 40, 60)
-rows, rhs = [], []
-for rv in rs:
-    g = dphidr(rv)*sqrtQ4(rv)
-    if np.isfinite(g):
-        rows.append([1.0]+[1.0/(rv-p) for p in poles]); rhs.append(g)
-coef, *_ = np.linalg.lstsq(np.array(rows), np.array(rhs), rcond=None)
-Lam, al = coef[0], dict(zip(poles, coef[1:]))
+DE_ = lambda t: (E**2 - 1)*t + 2*M
+Gnum = lambda t: t*DE_(t)*(Jst*(t - 2*M) + 2*M*a)
+# Branch: sqrtQ4 above is built from abs(R6) and abs(r-r*), so it returns the
+# positive root and discards the sheet.  On the integrated (ingoing) arc the
+# physical branch is the other one, so the closed form carries an overall sign.
+# It is DETERMINED here, not fitted: read off at one radius and asserted to be
+# exactly +-1 across the window.
+_sg = [dphidr(rv)*sqrtQ4(rv)
+       / (Jst*(E**2-1) + sum(Gnum(c)/np.prod([c-o for o in poles if o is not c])
+                             /(rv-c) for c in poles))
+       for rv in np.linspace(3.9, 40, 60)]
+sigma = float(np.sign(_sg[0]))
+assert max(abs(x - sigma) for x in _sg) < 1e-9, "branch sign not constant"
+Lam = sigma*Jst*(E**2 - 1)
+al = {c: sigma*Gnum(c)/np.prod([c - o for o in poles if o is not c])
+      for c in poles}
+_pf = max(abs(dphidr(rv)*sqrtQ4(rv)
+              - (Lam + sum(al[c]/(rv - c) for c in poles)))
+          for rv in np.linspace(3.9, 40, 60))
+print(f"partial-fraction residual (closed form vs flow) = {_pf:.2e}  (sign {sigma:+.0f})")
 
 # quadratura (T2): valutata direttamente sui punti dell'orbita (no interp)
 _integ = lambda t: (Lam + sum(al[p]/(t-p) for p in poles))/sqrtQ4(t)
@@ -129,7 +160,12 @@ ax.plot(rA*np.cos(phiA), rA*np.sin(phiA), 'k-', lw=2.4,
         label='T1: Hamilton ODE')
 xg = rg*np.cos(phi2); yg = rg*np.sin(phi2)
 ax.plot(xg, yg, 'C2:', lw=1.9,
-        label=r'T2: genus-1 closed form ($\wp,\sigma,\zeta$)')
+        # NOT a Weierstrass evaluation: this curve is the quadrature of the
+        # reduced elliptic differential on Q_4.  The script contains no wp,
+        # sigma or zeta call, and labelling it as one claimed a verification
+        # it does not perform.  The special-function form is checked
+        # separately, against PARI, in the derivation companion.
+        label=r'T2: genus-1 elliptic quadrature (on $Q_4$)')
 ax.plot(rst*np.cos(th), rst*np.sin(th), 'C3--', lw=1.0,
         label=r'marginal circle $r_*$')
 ax.plot(2*M*np.cos(th), 2*M*np.sin(th), 'b--', lw=0.9,
@@ -144,7 +180,7 @@ axb.semilogy(rA, devA+1e-18, 'k-')
 axb.axvline(rst, color='C3', ls='--', lw=1.0)
 axb.text(rst+0.05, np.nanmax(devA)*0.3 + 1e-15, '$r_*$', color='C3', fontsize=7)
 axb.set_xlabel('$r$'); axb.set_ylabel(r'$|\phi_{\rm ODE}-\phi_{\rm closed}|$')
-axb.set_title('genus-1 closed form vs Hamiltonian flow')
+axb.set_title('genus-1 elliptic quadrature vs Hamiltonian flow')
 axins = axb.inset_axes([0.55, 0.55, 0.4, 0.4])
 axins.plot(rr, R6v, 'C0-', lw=1.2)
 axins.axhline(0, color='k', lw=0.5)

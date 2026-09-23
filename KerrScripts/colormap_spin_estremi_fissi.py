@@ -137,6 +137,6 @@ if np.nanmin(Z) * np.nanmax(Z) < 0:
 ax.set_xlabel(r'$J$ ($\tau$-branch momentum $\to$ endpoint angle)')
 ax.set_ylabel('$a$ (TK spin)')
 ax.set_title('Fixed symmetric endpoints, Kerr: $\\Delta r$ in $(J,a)$\n'
-             'no inversion ($\\Delta r>0$): spin does not invert either')
+             '$\\Delta r>0$ on the sampled grid: no inversion found in this scan')
 savefig(fig, HERE, 'fig_colormap_spin_estremi_fissi')
 print("FATTO.", flush=True)

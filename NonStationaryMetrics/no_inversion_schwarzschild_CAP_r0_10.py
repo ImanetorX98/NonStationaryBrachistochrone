@@ -6,10 +6,16 @@ import time
 from tqdm import tqdm
 
 def moments_g(x,V0,bb,N,g=2.0):
+    # The panel width must be an ENCLOSURE of the exact difference between the
+    # two float endpoints, not a float subtraction promoted to a point interval:
+    # the latter rounds once in binary64 and then asserts the rounded value is
+    # exact.  Subtracting the two point intervals is outward rounded and is a
+    # rigorous enclosure, which can only widen the certificate, never narrow it.
     I=iv.mpf(0);Ip=iv.mpf(0);Ipp=iv.mpf(0);prev=mp.mpf(0)
     for i in range(1,N+1):
         s=mp.mpf(i)/N; un=s**g
-        u=iv.mpf([float(prev),float(un)]);w=iv.mpf(float(un)-float(prev));prev=un
+        lo=iv.mpf(float(prev));hi=iv.mpf(float(un))
+        u=iv.mpf([float(prev),float(un)]);w=hi-lo;prev=un
         A=x+(V0-x)*u*u; r=cf.r_of_V(A,bb); Wv,Wp,Wpp=cf.WVderivs(r,bb); om=1-u*u
         I+=w*Wv;Ip+=w*Wp*om;Ipp+=w*Wpp*om*om
     return I,Ip,Ipp

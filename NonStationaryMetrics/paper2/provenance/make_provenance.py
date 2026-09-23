@@ -40,19 +40,38 @@ hashes cannot drift from the archive again.
 
 Usage:
     python3 make_provenance.py            # run everything, write all outputs
-    python3 make_provenance.py --check    # verify outputs are up to date, exit 1 if not
+    python3 make_provenance.py --check    # regenerate into a scratch directory,
+                                          # compare with the committed outputs,
+                                          # write nothing, exit 1 on any difference
     python3 make_provenance.py --manifest # manifest only (fast, no subprocesses)
 """
 from __future__ import annotations
 
+import difflib
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
+import tempfile
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+# --------------------------------------------------------------------------
+# The release the manuscript is allowed to cite.  Declared HERE, once, and
+# emitted as macros, so that the printed version, DOI and content digest cannot
+# disagree -- which is what referee major comment 10 was about, and what v1.6.1
+# did anyway: its digest was 5ddfa913..., the tree now regenerates 9f40bdbb...,
+# and the Data availability section still claimed the first.  Until a release
+# containing the current code exists, these stay PENDING and the generated
+# macros say so in the PDF, where it cannot be overlooked.
+RELEASE = {
+    "version": "PENDING",          # e.g. "v1.7.0"
+    "doi": "PENDING",              # e.g. "10.5281/zenodo.XXXXXXXX"
+    "concept_doi": "10.5281/zenodo.21707377",
+}
 
 HERE = Path(__file__).resolve().parent          # .../paper2/provenance
 PAPER2 = HERE.parent                            # .../paper2
@@ -83,11 +102,21 @@ def rel(path: Path) -> str:
         return str(path)
 
 
+NO_WRITE = False        # set by --check; see run() and paper_style.savefig
+
+
 def run(script: Path, timeout: int = 3600) -> tuple[str, float]:
     t0 = time.time()
+    # The generators run in their own directories, so anything they save lands
+    # in the working tree.  Under --check that would defeat the purpose, so the
+    # figure writer is disabled through the environment; the numbers we parse
+    # come from stdout and are unaffected.
+    env = dict(os.environ)
+    if NO_WRITE:
+        env['PROVENANCE_NO_WRITE'] = '1'
     proc = subprocess.run([sys.executable, script.name],
                           cwd=script.parent, capture_output=True,
-                          text=True, timeout=timeout)
+                          text=True, timeout=timeout, env=env)
     if proc.returncode != 0:
         sys.stderr.write(proc.stdout + "\n" + proc.stderr + "\n")
         raise RuntimeError(f"{script.name} exited {proc.returncode}")
@@ -156,22 +185,118 @@ def parse_exact(out: str) -> dict:
 # --------------------------------------------------------------------------
 # The first-order theorem is local on a compact regular subarc and excludes
 # turning points, the freezing surface, the conformal stationary limit, chart
-# singularities and moving-separatrix crossings.  Both runs fit on the radial
-# window below; we report its separation from the nearest excluded locus.
-FIT_INTERVAL = (8.0, 11.0)      # r/M, as used in both scripts
-EXCLUDED = {
-    "conformal stationary limit r_e = 2M": 2.0,
-    "seed Kerr null surface r_+ (a=0.9)": 1.4358898943540673,
-}
+# singularities and moving-separatrix crossings.
+#
+# These numbers used to be typed here by hand as FIT_INTERVAL = (8.0, 11.0) with
+# an EXCLUDED dict holding only r_e and r_+.  Both were wrong as descriptions of
+# what the generator does: the evaluation window is configuration dependent,
+#
+#     rc in [r_turn + 0.35 (r0 - r_turn),  r_turn + 0.80 (r0 - r_turn)],
+#
+# see fig_phi_validation_corrected.py, and the binding excluded locus is the
+# *moving* turning point, which is nearer than either r_e or r_+.  They are now
+# extracted from the same run that produces the figure, by executing the
+# generator's functions without its plotting and writing body.
+def static_excluded(a: float) -> dict:
+    """Loci that do not move with epsilon, for one spin.
+
+    r_+ depends on the spin, so it cannot be a single number shared by the three
+    configurations: at a = 0.5 it is 1 + sqrt(0.75) = 1.866..., not the a = 0.9
+    value.  Neither is the binding locus here -- the moving turning point is
+    nearer -- but the metadata has to be right per configuration.
+    """
+    return {
+        "conformal stationary limit r_e = 2M": 2.0,
+        f"seed Kerr null surface r_+ (a={a})": 1.0 + (1.0 - a*a)**0.5,
+    }
+
+
+# (label, Hamiltonian branch, a, Ehat, J, r0) -- the configurations of the figure
+WINDOW_CONFIGS = [
+    ("eta, a=0.9, Ehat=1.4, J=6",   "H_eta", 0.9, 1.4, 6.0, 12.0),
+    ("tau, a=0.9, Ehat=1.4, J=2.5", "H_tau", 0.9, 1.4, 2.5, 12.0),
+    ("eta, a=0.5, Ehat=1.3, J=5",   "H_eta", 0.5, 1.3, 5.0, 10.0),
+]
+
+
+def _floor_to(x: float, nd: int) -> float:
+    """Round *down* at nd decimals, so a quoted margin is a true lower bound."""
+    import math
+    return math.floor(x*10**nd)/10**nd
+
+
+def _run_windows() -> list[dict]:
+    """Execute the figure generator's functions and read the real windows off it."""
+    import ast
+    import numpy as np
+    import sympy as sp                                            # noqa: F401
+    from scipy.integrate import solve_ivp, cumulative_trapezoid as ct   # noqa: F401
+    from scipy.optimize import brentq                             # noqa: F401
+    from scipy.interpolate import interp1d                        # noqa: F401
+
+    src = NSM / "ThakurtaMetric" / "fig_phi_validation_corrected.py"
+    tree = ast.parse(src.read_text(), filename=str(src))
+    defs = [n for n in tree.body if isinstance(n, ast.FunctionDef)]
+    ns = dict(globals())
+    ns.update({"np": np, "sp": sp, "solve_ivp": solve_ivp, "ct": ct,
+               "brentq": brentq, "interp1d": interp1d})
+    ns["rr"], ns["pr"], ns["Ess"], ns["Jss"] = sp.symbols("r pr E J_")
+    exec(compile(ast.Module(body=defs, type_ignores=[]), str(src), "exec"), ns)
+
+    out = []
+    for label, branch, a, E, J, r0 in WINDOW_CONFIGS:
+        Hb = ns[branch]
+        eps, rh, rx, rc, phi0, ec, xc, flow = ns["analyse"](Hb, 1.0, a, E, J, r0)
+        D = ns["build"](Hb(1.0, a))
+        turns, min_hpr, min_v2 = [], [], []
+        for e in eps:
+            time, rv, pv, phi = flow(e)
+            turns.append(float(rv.min()))
+            use = (rv >= rc.min()) & (rv <= rc.max())
+            ef, jf = E*np.exp(-e*time[use]), J*np.exp(-e*time[use])
+            min_hpr.append(float(np.min(np.abs(D["Hp"](rv[use], pv[use], ef, jf)))))
+            min_v2.append(float(np.min(1 - (1 - 2/rv[use])/ef**2)))
+        out.append({
+            "config": label,
+            "window_r_over_M": [float(rc.min()), float(rc.max())],
+            "moving_turning_points": turns,
+            "separation_from_turning_point": float(rc.min() - max(turns)),
+            "static_excluded": static_excluded(a),
+            "min_sampled_abs_H_pr": min(min_hpr),
+            "min_sampled_vbar2": min(min_v2),
+        })
+    return out
 
 
 def locus_separation() -> dict:
-    lo, hi = FIT_INTERVAL
-    worst = min(lo - v for v in EXCLUDED.values())
+    """Windows and margins as actually sampled, not as promised.
+
+    What is verified along the runs: f > 0, the sampled vbar^2 and |H_pr| stay
+    positive, and the sampled distance to the moving turning point.  That is not
+    a certificate that every locus the first-order theorem excludes -- moving
+    separatrix crossings, chart singularities -- has been checked, and the
+    reported margins are sampled minima on the integrated grids, not interval
+    enclosures.  Quoted values are rounded *down* so that they are true bounds.
+    """
+    runs = _run_windows()
+    lo = min(r["window_r_over_M"][0] for r in runs)
+    hi = max(r["window_r_over_M"][1] for r in runs)
+    worst_turn = min(r["separation_from_turning_point"] for r in runs)
+    worst_static = min(r["window_r_over_M"][0] - v
+                       for r in runs for v in r["static_excluded"].values())
     return {
         "fit_interval_r_over_M": [lo, hi],
-        "excluded_loci": EXCLUDED,
-        "min_separation_r_over_M": worst,
+        "per_configuration": runs,
+        "min_separation_r_over_M": min(worst_turn, worst_static),
+        "binding_locus": ("moving turning point" if worst_turn <= worst_static
+                          else "static excluded locus"),
+        "min_sampled_abs_H_pr": min(r["min_sampled_abs_H_pr"] for r in runs),
+        "min_sampled_vbar2": min(r["min_sampled_vbar2"] for r in runs),
+        "checked_along_runs": ["f > 0", "sampled vbar^2 > 0",
+                               "sampled |H_pr| > 0",
+                               "sampled distance to the moving turning point"],
+        "not_separately_checked": ["moving separatrix crossings",
+                                   "chart singularities"],
     }
 
 
@@ -254,10 +379,39 @@ MANIFEST: list[tuple[str, str, str]] = [
     ("Prop. 3.2 (exterior retrograde separatrix), eq. (exterior-sep)",
      "wolframscript -file verify_exterior_separatrix.wls",
      "NonStationaryMetrics/paper2/verification/verify_exterior_separatrix.wls"),
-    # second, independent CAS route for the tension-field identities of sec. 2.2
-    ("Eqs. (fibre-accel), (tension-residual): submersion tension, SymPy route",
+    # the tension field, rebuilt from the connections, plus a second route
+    # through the composition law for Box_g(u o pi)
+    ("Eqs. (fibre-accel), (tension-residual): Lorentzian submersion tension",
      "python3 verify_tension_sympy.py",
      "NonStationaryMetrics/paper2/verification/verify_tension_sympy.py"),
+    # --- Randers reduction of the arrival cost and its variations ----------
+    ("Eq. (randers): arrival cost vs Jacobi-Maupertuis; convexity and its "
+     "boundary; gauge dependence of b and invariance of db",
+     "python3 verify_randers_convexity.py",
+     "NonStationaryMetrics/paper2/verification/verify_randers_convexity.py"),
+    ("Eq. (optical-gauss): static certificate K < 0 for Ehat^2 >= 3/2, r >= 2M",
+     "python3 verify_geodesic_separation.py",
+     "NonStationaryMetrics/paper2/verification/verify_geodesic_separation.py"),
+    ("Rotating separation: extremals at prescribed geodesic curvature and the "
+     "magnetic Jacobi equation, with direct stationarity of the arrival cost",
+     "python3 verify_rotating_separation.py",
+     "NonStationaryMetrics/paper2/verification/verify_rotating_separation.py"),
+    ("Eq. (sep-phi): marked-point dictionary of the rotating tau-separatrix, "
+     "and the symbolic identity against its branch differential",
+     "python3 verify_tau_separatrix_dictionary.py",
+     "NonStationaryMetrics/paper2/verification/verify_tau_separatrix_dictionary.py"),
+    ("Prop. (prograde-asym): sign of B' on the exterior, and the prograde/"
+     "retrograde asymmetry of W - K proved rather than sampled",
+     "python3 verify_prograde_asymmetry.py",
+     "NonStationaryMetrics/paper2/verification/verify_prograde_asymmetry.py"),
+    ("Eq. (Wsup): the direction-independent bound on the separation weight, its "
+     "tightness, and the two radial windows quoted beside it",
+     "python3 verify_wsup_window.py",
+     "NonStationaryMetrics/paper2/verification/verify_wsup_window.py"),
+    ("Figure collection: every compiled figure is the current output of its "
+     "generator (hash-compared, not assumed)",
+     "python3 collect_figures.py --check",
+     "NonStationaryMetrics/paper2/provenance/collect_figures.py"),
     # independent re-derivation of the headline claims of both papers, built from
     # the printed definitions rather than from the .wls scripts it cross-checks
     ("Props. 3.1-3.2, sec. 2.2, Paper I Vaidya: independent re-derivation",
@@ -280,6 +434,11 @@ MANIFEST: list[tuple[str, str, str]] = [
     ("CAP certificate at r0 = 10",
      "python3 no_inversion_schwarzschild_CAP_r0_10.py",
      "NonStationaryMetrics/no_inversion_schwarzschild_CAP_r0_10.py"),
+    ("CAP certificates over the (E, r0) grid",
+     "python3 no_inversion_schwarzschild_CAP_grid.py",
+     "NonStationaryMetrics/no_inversion_schwarzschild_CAP_grid.py"),
+    ("archived output of the grid certificates (both runs)", "-",
+     "NonStationaryMetrics/CAP_grid_certificates.log"),
     # --- figures -----------------------------------------------------------
     ("Fig. (master-pen)", "python3 fig_master_penetration_taut.py",
      "KerrScripts/fig_master_penetration_taut.py"),
@@ -304,7 +463,7 @@ MANIFEST: list[tuple[str, str, str]] = [
 ]
 
 
-def write_manifest() -> int:
+def write_manifest(dest: Path = HERE) -> int:
     missing = 0
     lines = ["# artefact\tcommand\tpath\tsha256"]
     for artefact, command, path in MANIFEST:
@@ -314,7 +473,7 @@ def write_manifest() -> int:
             missing += 1
             continue
         lines.append(f"{artefact}\t{command}\t{path}\t{sha256(p)}")
-    (HERE / "MANIFEST.tsv").write_text("\n".join(lines) + "\n")
+    (dest / "MANIFEST.tsv").write_text("\n".join(lines) + "\n")
     return missing
 
 
@@ -339,7 +498,7 @@ def content_digest(d: dict) -> str:
     ).hexdigest()
 
 
-def write_tex(data: dict) -> None:
+def write_tex(data: dict, dest: Path = HERE) -> None:
     v = data["validation"]
     e = data["exact"]
     win = data["epsilon_window"]
@@ -367,15 +526,27 @@ def write_tex(data: dict) -> None:
         f"{data.get('content_sha256', 'pending')}",
         r"\newcommand{\ProvenanceDigest}{\texttt{"
         + str(data.get("content_sha256", "pending"))[:16] + r"}}",
+        r"\newcommand{\ProvenanceRelease}{" + RELEASE["version"] + r"}",
+        r"\newcommand{\ProvenanceDOI}{" + RELEASE["doi"] + r"}",
+        r"\newcommand{\ProvenanceConceptDOI}{" + RELEASE["concept_doi"] + r"}",
         # number of manifest rows, so the response letter cannot quote a
         # count that has drifted from the archive (referee major 10)
         r"\newcommand{\ManifestArtefacts}{" + str(len(MANIFEST)) + r"}",
         "% ---------------------------------------------------------------",
         r"\newcommand{\provEpsWindow}{$\varepsilon\in\{"
         + ",\\,".join(f"{x:g}" for x in win) + r"\}$}",
-        r"\newcommand{\provFitInterval}{$r/M\in[" + f"{lo:g},{hi:g}" + r"]$}",
+        # The window is configuration dependent; the macro reports the union
+        # actually sampled, and the separation is from the *binding* locus,
+        # which is the moving turning point, not r_e or r_+.
+        r"\newcommand{\provFitInterval}{$r/M\in[" + f"{lo:.2f},{hi:.2f}"
+        + r"]$ across the three configurations}",
         r"\newcommand{\provLocusSep}{"
-        + f"{sep['min_separation_r_over_M']:g}" + r"\,M}",
+        + f"{_floor_to(sep['min_separation_r_over_M'], 2):.2f}" + r"\,M}",
+        r"\newcommand{\provBindingLocus}{" + sep["binding_locus"] + r"}",
+        r"\newcommand{\provMinHpr}{$"
+        + f"{_floor_to(sep['min_sampled_abs_H_pr'], 3):.3f}" + r"$}",
+        r"\newcommand{\provMinVbarSq}{$"
+        + f"{_floor_to(sep['min_sampled_vbar2'], 3):.3f}" + r"$}",
         r"\newcommand{\provExactSlope}{" + slope_str + r"}",
         r"\newcommand{\provLeadSlope}{$"
         + f"{min(lead):.2f}" + r"$--$" + f"{max(lead):.2f}" + r"$}",
@@ -416,7 +587,62 @@ def write_tex(data: dict) -> None:
     items = [r"\texttt{" + tex_escape(Path(n).name) + r"}\,$=$\,\texttt{"
              + h + "}" for n, h in data["hashes"].items()]
     out.append("  SHA-256 (first 12 hex): " + ";\n  ".join(items) + ".}")
-    (HERE / "adiabatic_slopes.tex").write_text("\n".join(out) + "\n")
+    (dest / "adiabatic_slopes.tex").write_text("\n".join(out) + "\n")
+
+
+# --------------------------------------------------------------------------
+# --check: compare, do not overwrite
+# --------------------------------------------------------------------------
+# The referee's major comment 10 was about printed numbers drifting from the
+# archive, so a mode advertised as "verify outputs are up to date" must not be
+# the same code path that rewrites them: rewriting makes the check vacuous.
+# Under --check everything is generated into a scratch directory and compared
+# with what is committed, and nothing in the tree is touched.
+VOLATILE_JSON_KEYS = ("generated_utc", "environment")
+
+
+def _stable_json(text: str) -> str:
+    """Drop the two blocks that legitimately differ between machines."""
+    d = json.loads(text)
+    core = {k: v for k, v in d.items() if k not in VOLATILE_JSON_KEYS}
+    return json.dumps(core, sort_keys=True, indent=2)
+
+
+def _stable_tex(text: str) -> str:
+    """Drop the generation-instant comment line."""
+    return "\n".join(ln for ln in text.splitlines()
+                     if not ln.startswith("% generated "))
+
+
+NORMALISERS = {
+    "MANIFEST.tsv": lambda s: s,
+    "adiabatic_slopes.json": _stable_json,
+    "adiabatic_slopes.tex": _stable_tex,
+}
+
+
+def compare_outputs(fresh: Path, names: tuple[str, ...] | None = None) -> int:
+    """Return the number of committed outputs that differ from a fresh run."""
+    differing = 0
+    for name in (names or tuple(NORMALISERS)):
+        normalise = NORMALISERS[name]
+        new, old = fresh / name, HERE / name
+        if not old.exists():
+            print(f"   {name}: MISSING from the tree")
+            differing += 1
+            continue
+        a, b = normalise(new.read_text()), normalise(old.read_text())
+        if a == b:
+            print(f"   {name}: up to date")
+            continue
+        differing += 1
+        diff = list(difflib.unified_diff(b.splitlines(), a.splitlines(),
+                                         fromfile=f"committed/{name}",
+                                         tofile=f"fresh/{name}", lineterm=""))
+        print(f"   {name}: DIFFERS ({len(diff)} diff lines); first hunk:")
+        for line in diff[:12]:
+            print(f"     {line}")
+    return differing
 
 
 # --------------------------------------------------------------------------
@@ -425,12 +651,21 @@ def write_tex(data: dict) -> None:
 def main(argv: list[str]) -> int:
     manifest_only = "--manifest" in argv
     check = "--check" in argv
+    global NO_WRITE
+    NO_WRITE = check
+    # under --check nothing in the tree is written; everything goes to scratch
+    # and is then compared with what is committed.
+    dest = Path(tempfile.mkdtemp(prefix="provenance-check-")) if check else HERE
 
-    print("== manifest ==")
-    missing = write_manifest()
+    print("== manifest ==" + ("  (check mode: comparing, not writing)"
+                              if check else ""))
+    missing = write_manifest(dest)
     print(f"   {len(MANIFEST)} artefacts, {missing} missing "
-          f"-> {rel(HERE / 'MANIFEST.tsv')}")
+          f"-> {rel(dest / 'MANIFEST.tsv')}")
     if manifest_only:
+        if check:
+            return 1 if (missing
+                         or compare_outputs(dest, ("MANIFEST.tsv",))) else 0
         return 1 if missing else 0
 
     print("== adiabatic validation (one command, one dataset) ==")
@@ -463,6 +698,17 @@ def main(argv: list[str]) -> int:
         if p.exists() and p.suffix == ".py" and "ThakurtaMetric" in path:
             hashes[path] = short(p)
 
+    # The raw convergence dump belongs here too.  Under --check the generators
+    # run with PROVENANCE_NO_WRITE set, so this file is NOT regenerated: the
+    # sub-window drift above is refitted from whatever is already on disk.  That
+    # is detected when a perturbed array feeds a reported number -- nudging
+    # res_exact_0[0] by 3% moves the fitted slopes 2.1175 -> 2.1089 -- but an
+    # array the provenance does not read (res_leading_*, which only the figure
+    # uses) would change nothing and pass unnoticed.  Hashing the file closes
+    # that: any edit to it now shows up whether or not a number moves.
+    if RAW.exists():
+        hashes[str(RAW.relative_to(ROOT))] = short(RAW)
+
     # Machine-dependent facts are kept, but segregated: they are recorded under
     # "environment" and excluded from content_sha256, so that a fresh clone on a
     # different machine reproduces the verifiable digest exactly.  Referee major
@@ -483,19 +729,26 @@ def main(argv: list[str]) -> int:
         },
     }
     data["content_sha256"] = content_digest(data)
-    (HERE / "adiabatic_slopes.json").write_text(json.dumps(data, indent=2) + "\n")
-    write_tex(data)
-    print(f"   wrote {rel(HERE / 'adiabatic_slopes.json')}")
-    print(f"   wrote {rel(HERE / 'adiabatic_slopes.tex')}")
+    (dest / "adiabatic_slopes.json").write_text(json.dumps(data, indent=2) + "\n")
+    write_tex(data, dest)
+    print(f"   wrote {rel(dest / 'adiabatic_slopes.json')}")
+    print(f"   wrote {rel(dest / 'adiabatic_slopes.tex')}")
 
     sub = subwindow_drift()
     data["subwindow"] = sub
     data["content_sha256"] = content_digest(data)
-    (HERE / "adiabatic_slopes.json").write_text(json.dumps(data, indent=2) + "\n")
-    write_tex(data)
+    (dest / "adiabatic_slopes.json").write_text(json.dumps(data, indent=2) + "\n")
+    write_tex(data, dest)
 
     ok = report_subwindow(sub)
-    return 1 if (missing or (check and not ok)) else 0
+    if check:
+        print("== check: fresh run against the committed outputs ==")
+        differing = compare_outputs(dest)
+        if differing:
+            print(f"   {differing} committed output(s) out of date; "
+                  f"rerun without --check to regenerate")
+        return 1 if (missing or differing or not ok) else 0
+    return 1 if missing else 0
 
 
 if __name__ == "__main__":
