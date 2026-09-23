@@ -68,8 +68,8 @@ from pathlib import Path
 # containing the current code exists, these stay PENDING and the generated
 # macros say so in the PDF, where it cannot be overlooked.
 RELEASE = {
-    "version": "v1.7.0",           # tag e5662db, 23 September 2026
-    "doi": "10.5281/zenodo.22917422",
+    "version": "v1.7.1",           # tag on 638bd2e, 23 September 2026
+    "doi": "10.5281/zenodo.22926710",
     "concept_doi": "10.5281/zenodo.21707377",
 }
 
