@@ -119,7 +119,7 @@ NonStationaryMetrics/paper1/PENDING_JMP_CORRECTIONS.md
 # the next version too -- the previous rule named v5 alone, so the .txt and
 # .html generated from it stayed untracked only by accident.
 NonStationaryMetrics/paper1/ZENODO_*DESCRIPTION.md
-NonStationaryMetrics/paper1/ZENODO_v*_description.*
+NonStationaryMetrics/paper1/ZENODO_*description.*
 
 # Release notes drafted here and pasted into the GitHub release form.  The
 # release itself is the published copy; keeping a second one in the tree only
