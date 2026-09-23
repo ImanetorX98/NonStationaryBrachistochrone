@@ -118,7 +118,7 @@ NonStationaryMetrics/paper1/PENDING_JMP_CORRECTIONS.md
 # renderings pasted into the description field (.txt, .html).  The glob covers
 # the next version too -- the previous rule named v5 alone, so the .txt and
 # .html generated from it stayed untracked only by accident.
-NonStationaryMetrics/paper1/ZENODO_v*_DESCRIPTION.md
+NonStationaryMetrics/paper1/ZENODO_*DESCRIPTION.md
 NonStationaryMetrics/paper1/ZENODO_v*_description.*
 
 # Release notes drafted here and pasted into the GitHub release form.  The
