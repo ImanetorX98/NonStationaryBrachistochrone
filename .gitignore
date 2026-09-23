@@ -113,7 +113,13 @@ NonStationaryMetrics/DERIVAZIONI_COMPLETE.out
 # once.  KEEP A COPY OUTSIDE THIS WORKING TREE: it is the only record of the
 # repaired existence proof, and it is deliberately untracked.
 NonStationaryMetrics/paper1/PENDING_JMP_CORRECTIONS.md
-NonStationaryMetrics/paper1/ZENODO_v5_DESCRIPTION.md
+
+# Deposit copy for the Zenodo record: the working notes (.md) plus the two
+# renderings pasted into the description field (.txt, .html).  The glob covers
+# the next version too -- the previous rule named v5 alone, so the .txt and
+# .html generated from it stayed untracked only by accident.
+NonStationaryMetrics/paper1/ZENODO_v*_DESCRIPTION.md
+NonStationaryMetrics/paper1/ZENODO_v*_description.*
 
 # Draft response to the Round-2 reports, superseded once the final letter is
 # written in the author's own voice.
