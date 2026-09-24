@@ -1480,17 +1480,22 @@ threshold; evidence level~(I) for the curvature and its sign, level~(II) for the
 quoted sign-change radii]
 \label{prop:noconj}
 For the frozen, non-rotating \emph{arrival-time} optical surface,
-$K_t(r)<0$ for \emph{every} $r>2M$ if and only if $\Ehat^2\ge3/2$. Consequently,
+$K_t(r)<0$ for \emph{every} $r>2M$ if and only if $\Ehat^2\ge3/2$ (the `if' direction
+by the certificate of Corollary~\ref{cor:static-separation}). Consequently,
 for $\Ehat^2\ge3/2$ no exterior $t$-branch extremal carries a conjugate point
 \emph{for equatorial perturbations}, and every such extremal is a local minimiser
 of the arrival time among equatorial competitors. The restriction is necessary
 and is discussed after Proposition~\ref{prop:globalmin}.
 \end{proposition}
 
-Two facts fix the threshold. At the stationary limit the numerator
-of~\eqref{eq:optical-gauss} is $-4\Ehat^4M^4<0$ for \emph{every} $\Ehat$, so $K<0$
-near $r=2M$ always; and its cubic coefficient is
-$-(2\Ehat^2-3)(\Ehat^2-1)$, negative exactly when $\Ehat^2>3/2$. Below the
+Two facts give the necessity of the threshold and the behaviour at the ends. At the
+stationary limit the bracket in the numerator of~\eqref{eq:optical-gauss} is
+$-4\Ehat^4M^4<0$ for \emph{every} $\Ehat$, so $K<0$ near $r=2M$ always; and its cubic
+coefficient is $-(2\Ehat^2-3)(\Ehat^2-1)$, positive when $\Ehat^2<3/2$, so that $K>0$ at
+large $r$ below the threshold. Neither fact excludes a sign change at intermediate radii
+above it: that $K_t<0$ on the \emph{whole} exterior for $\Ehat^2\ge3/2$ is the
+positivity certificate of Corollary~\ref{cor:static-separation} below, and the
+proposition rests on it. Below the
 threshold a region of positive curvature opens at large radius, and its inner
 edge runs off to infinity as $\Ehat^2\to(3/2)^-$: numerically it sits at
 $r/M=22.75,\,59.53,\,576.7,\,5751.7$ for $\Ehat^2=1.20,\,1.40,\,1.49,\,1.499$.
@@ -1812,10 +1817,13 @@ On the frozen equatorial exterior with $E>1$ and $a>0$,
                   {E^2\,r^{9/2}\,(r-2M)^{3/2}}\;<\;0
     \label{eq:Bprime}
 \end{equation}
-everywhere. Consequently $\operatorname{sign}\dd B(N)=\operatorname{sign}T^\varphi$,
-so $W-K=B^2+\dd B(N)>0$ pointwise along \emph{every} prograde extremal, while
-along retrograde ones $\dd B(N)<0$ and the sign of $W-K$ is a competition with
-$B^2$.
+everywhere. Consequently $\operatorname{sign}\dd B(N)=\operatorname{sign}T^\varphi$
+pointwise, so $W-K=B^2+\dd B(N)>0$ at every point where $T^\varphi>0$, while where
+$T^\varphi<0$ one has $\dd B(N)<0$ and the sign of $W-K$ is a competition with $B^2$.
+In particular $W-K>0$ along the whole of every extremal with $J\ge0$, since there
+$T^\varphi\propto J-\beta_\varphi>0$ ($\beta_\varphi<0$ for $a>0$); an extremal with
+small negative $J$ can change the sign of $T^\varphi$ along the way, and the statement
+then holds arc by arc.
 \end{proposition}
 
 The denominator of~\eqref{eq:Bprime} is positive on the exterior, so the sign is
@@ -5002,8 +5010,9 @@ above, which is precisely the drift this apparatus exists to prevent.
 
 \ack
 The author thanks the University of Pavia for a stimulating environment. OpenAI
-GPT-5.6 (Sol), OpenAI Codex and Anthropic Claude (Opus~4.8 and Opus~5) were used to assist
-with symbolic-algebra checks, numerical-code development, bibliographic verification against
+GPT-5.6 (Sol) and GPT-6 Astra, OpenAI Codex and Anthropic Claude (Opus~4.8, Opus~5 and
+Opus~5.5) were used to assist with symbolic-algebra checks, numerical-code development,
+the audit and re-execution of the verification scripts, bibliographic verification against
 the primary sources, and language and structural editing of the manuscript;
 all AI-assisted output was critically reviewed and independently verified by the author,
 who takes full responsibility for the accuracy, originality and integrity of the work. The

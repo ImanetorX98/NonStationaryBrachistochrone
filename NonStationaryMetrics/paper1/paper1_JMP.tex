@@ -961,9 +961,12 @@ convention:
   \qquad\text{for \emph{every} }\theta\in S^1 .
   \label{eq:calibration}
 \end{equation}
-If a candidate PMP extremal \emph{saturates}~\eqref{eq:calibration}---equality along it,
-which in the stationary case is $\nabla V\cdot\dot x=F$ pointwise---then that extremal
-realizes the value function and is a \emph{global} minimizer on that region.
+Suppose moreover that $V$ is constant along the arrival line $\{x=x_f\}$ over the
+arrival clocks reached by competitors in that region---the target condition of a
+free-arrival problem, automatic when $V$ does not depend on $\chi$. If a candidate PMP
+extremal \emph{saturates}~\eqref{eq:calibration}---equality along it, which in the
+stationary case is $\nabla V\cdot\dot x=F$ pointwise---then that extremal realizes the
+value function and is a \emph{global} minimizer on that region.
 \end{proposition}
 
 \begin{proof}
@@ -980,13 +983,14 @@ every $\theta$, it holds in particular for the competitor's own control, so
    =\partial_\chi V+\nabla_x V\cdot f\big(x,\theta(\chi),\chi\big)
    \;\le\;\ell_{\mathcal T}\big(x,\theta(\chi),\chi\big).
 \]
-Integrating from $\chi_0$ to the arrival $\chi_f$ gives
-$V(\chi_f,x_f)-V(\chi_0,x_0)\le\int\ell_{\mathcal T}\,\dd\chi=J_{\mathcal T}$: the
-increment of $V$ between the prescribed data is a lower bound for the cost of every
-competitor. Along the candidate the inequality is an equality by hypothesis, so its cost
-equals that lower bound and no competitor can beat it. Finally
-$V(\chi_f,x_f)-V(\chi_0,x_0)$ therefore equals the value function, and the candidate
-realizes it. In the stationary case~\eqref{eq:calibration} reduces to
+Integrating from $\chi_0$ to the competitor's own arrival clock $\chi_f'$ gives
+$V(\chi_f',x_f)-V(\chi_0,x_0)\le\int\ell_{\mathcal T}\,\dd\chi=J_{\mathcal T}$. The arrival
+clock is free, so $\chi_f'$ differs from competitor to competitor and from the
+candidate's $\chi_f$; it is the target condition that makes the left-hand side the same
+number $c=V(\cdot,x_f)-V(\chi_0,x_0)$ for all of them, and so a lower bound for the cost of
+every competitor. Without it the argument compares values of $V$ at different arrival
+clocks and proves nothing. Along the candidate the inequality is an equality by
+hypothesis, so its cost equals $c$ and no competitor can beat it. Finally $c$ therefore equals the value function, and the candidate realizes it. In the stationary case~\eqref{eq:calibration} reduces to
 $F^\ast(x,\nabla V)\le1$ with $F^\ast$ the dual (optical) norm, the familiar statement
 that $V$ is a subsolution of the eikonal equation, and saturation is
 $\nabla V\cdot\dot x=F$.
@@ -2076,9 +2080,13 @@ $S=(r-r_t)P$ into $u^2P$ with $P(0)=r_t(r_t-2m)D_{\Ehat}(r_t)Q(r_t)\neq0$, so
 $G\,\dd r=2K\,\dd u/\sqrt P$ is regular at $u=0$: the apsidal integral is an ordinary
 smooth integral in $J$, and differentiation under the integral sign is legitimate.
 
-For the endpoints, $J^2=r_t^2(r_t-2m)/D_{\Ehat}(r_t)\to0$ as $r_t\to2m^+$, and the
-integrand carries the overall factor $K=JD_{\Ehat}$, so $\Phi\to0$: a radial plunge sweeps
-no azimuth. As $r_t\to R^-$ the integration range $[0,\sqrt{R-r_t}\,]$ shrinks to a point
+For the endpoints, write $\epsilon=r_t-2m\to0^+$. Then $J\propto\sqrt\epsilon$, but the
+factor $J$ alone does not settle the limit, because $P$ also vanishes with $\epsilon$ near
+the periapsis: $P=r(r-2m)D_{\Ehat}Q$ with $r-2m=\epsilon+u^2$, so near $u=0$ the integrand
+$2K/\sqrt P$ is of order $\sqrt\epsilon/\sqrt{\epsilon+u^2}$ and not small. Integrating,
+$\int_0^{U}\sqrt\epsilon\,\dd u/\sqrt{\epsilon+u^2}=\sqrt\epsilon\,\operatorname{arsinh}(U/\sqrt\epsilon)
+=O(\sqrt\epsilon\ln\epsilon^{-1})$, while away from $u=0$ the integrand is $O(\sqrt\epsilon)$;
+hence $\Phi\to0$: a radial plunge sweeps no azimuth. As $r_t\to R^-$ the integration range $[0,\sqrt{R-r_t}\,]$ shrinks to a point
 with bounded integrand, so $\Phi\to0$ again. A positive continuous function vanishing at
 both ends of an interval attains an interior maximum, where $\Phi'=0$.
 
@@ -3152,8 +3160,9 @@ the MIT licence; the development history is available in the associated GitHub r
 
 \ack
 The author thanks the University of Pavia for a stimulating environment. OpenAI
-GPT-5.6 (Sol), OpenAI Codex and Anthropic Claude (Opus~4.8 and Opus~5) were used to assist
-with symbolic-algebra checks, numerical-code development, bibliographic verification against
+GPT-5.6 (Sol) and GPT-6 Astra, OpenAI Codex and Anthropic Claude (Opus~4.8, Opus~5 and
+Opus~5.5) were used to assist with symbolic-algebra checks, numerical-code development,
+the audit and re-execution of the verification scripts, bibliographic verification against
 the primary sources, and language and structural editing of the manuscript;
 all AI-assisted output was critically reviewed and independently verified by the author,
 who takes full responsibility for the accuracy, originality and integrity of the work. The
