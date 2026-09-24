@@ -680,7 +680,7 @@ brachistochrones, the same for every branch:
 \item eccentricity $\neq0$ (a spatial gradient $\partial_r f\neq0$)
 $\Rightarrow$ the $t$ and $\tau$ branches split in depth, $n_t/n_\tau=E/f\neq1$;
 \item azimuthal offset $c_\varphi\neq0$ (frame dragging)
-$\Rightarrow$ rotational plunge inversion becomes possible;
+$\Rightarrow$ rotational depth inversion becomes possible;
 \item radial offset $c_r\neq0$ (a non-stationary wind, $m'\neq0$)
 $\Rightarrow$ endpoint-sensitive memory, $p_v\neq0$ along the path;
 \item shrinking axes $R\to0$ (local speed $v\to0$) $\Rightarrow$ freezing and
@@ -2218,7 +2218,7 @@ universal boundary form $S_{\mathcal D}=[\,rp_r\,]-\lambda$.
 \paragraph{Outlook.} The full outgoing-Vaidya boundary-value problem---with its own
 Hamiltonians, costates and transversality---remains open, as does a genuine third
 (Kodama-observer) clock. The rotating Thakurta--Kerr case, its local classification at the
-conformal stationary limit, closed-form separatrices and conformal plunge inversion, is developed in the companion
+conformal stationary limit, closed-form separatrices and conformal depth inversion, is developed in the companion
 paper. More broadly, the controlled-rail brachistochrone turns the comparison of
 arrival-time and proper-time optimal worldlines into a quantitative probe of how
 homogeneous expansion, radial spatial gradients and time-dependent mass flow shape causal
@@ -2473,7 +2473,8 @@ A reference solution to check against (polynomial residual $0$ exactly):
 \end{table}
 
 Given the $c_k$, the weight-two assembly is mechanical: the clock supplies the vector
-$b$ (proper-time $T_\tau=U_3-2m\,U_2$, i.e.\ $b=(0,0,-2m,1,0)$), the algebraic
+$b$ (for the proper-time density $T_\tau=U_3-2m\,U_2$, i.e.\ $b=(0,0,-2m,1,0)$, an
+algebraic instance only: the drift clock of ingoing Vaidya is $v$, section~\ref{sec:vaidya-plunge}), the algebraic
 weights are $Q_{kj}=c_kb_j-c_jb_k$, the weight-two
 letters are $W_{kj}=\int(U_k\dd U_j-U_j\dd U_k)$, and the elementary remainders
 $\mathcal{I}_j=\int\mathcal{A}r^j/S\,\dd r$ integrate to logarithms. For Vaidya the
@@ -2501,7 +2502,7 @@ the script in the repository~\cite{Rosignoli2026CodeJMP} that generates and veri
         horizon dilogarithm $\mathcal{D}_k=U_k\ln-\mathcal{G}_k$
             & \texttt{vaidya\_horizon\_dilog.py} & $10^{-12}$\\
         genus-degeneration elliptic form $U_0(\sigma,\zeta)$; $\tau$
-            & \texttt{vaidya\_ell\_dilog\_match.py} & $10^{-14}$\\
+            & \texttt{vaidya\_ell\_dilog\_match.py} & $10^{-13}$\\
         advanced/retarded frozen-clock decomposition $\mathcal{A}_\infty,\mathcal{B}_{\rm hor}$
             & \texttt{vaidya\_asymmetry.py} & $10^{-15}$\\
         complete first-order correction~\eqref{eq:adiab-exact} (on-shell $+$ off-shell)
@@ -2570,9 +2571,10 @@ brachistochrone on the loci where the branch sextic acquires a double root and d
 genus one. For \emph{spherical} Vaidya the relevant value $J=\Jc$ is the \emph{algebraic}
 genus-degeneration $J_{\rm deg}$---the double root sits at $r_d<0$
 (a negative-radius double root), so it is \emph{not} a physical, accessible separatrix,
-though the genus-two$\,\to\,$genus-one reduction is valid there all the same; we give both
-the proper-time ($\tau$) and advanced-time ($v$) branches with every coefficient in closed
-form. All objects live on
+though the genus-two$\,\to\,$genus-one reduction is valid there all the same. On the
+proper-time orbit we give the first-order response weighted by its drift clock, the
+advanced time $v$, and, as an algebraic instance of the same block formula, weighted by the
+proper-time density $T_\tau$, each with every coefficient in closed form. All objects live on
 the elliptic curve $E:\,w^2=Q_4(r)$ into which the branch sextic collapses. The adiabatic expansion is
 $\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$, $\lambda=m$.
 
@@ -2699,8 +2701,12 @@ elliptic function, i.e.\ a constant. Evaluating at $z_\infty$, where $R$ vanishe
 to the displayed $C_0$.
 \end{proof}
 
-\paragraph{First order, proper-time branch (verified to $10^{-9}$).}
-Clock $T_\tau=U_3-2mU_2$; block form
+\paragraph{First order with the proper-time density as weight (algebraic instance,
+verified to $10^{-9}$).}
+This block feeds the proper-time density $T_\tau=U_3-2mU_2$ to Lemma~\ref{lem:blocks}.
+It is \emph{not} the ingoing-Vaidya response: the mass runs with $v$, so the drift is
+weighted by $v$ (section~\ref{sec:vaidya-plunge} and the next paragraph). It is kept
+because it isolates the dilogarithms that do not involve the horizon. Block form
 \begin{equation}
 \delta\varphi_\tau=\tfrac12\,\tilde G(z)\,T_\tau(r)
 +\tfrac12\sum_{i<j}(c_i d_j-c_j d_i)\,A[e_i,e_j],
@@ -2756,11 +2762,12 @@ and $e_1^{z_\infty}=-(2B+r_d-2m)/\sqrt{a_4}$. The constant $C_e$ is then fixed e
 $C_0$ was in Lemma~\ref{lem:residues}.
 \end{proof}
 
-\paragraph{First order, advanced-time branch (verified to $10^{-8}$).}
+\paragraph{First order, advanced-time drift clock: the ingoing-Vaidya response
+(verified to $10^{-8}$).}
 Clock $v=E\,U_3+r+2m\ln(r-2m)$;
 $\delta\varphi_v=\tilde G(z)\,v-\int_{z_0}^z\tilde G\,v_z\,\dd z$ with
-$v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term reproduces the proper-time
-dilogarithms; the second is odd on $E$ with a simple pole at $z=i\omega_{\rm im}$ and
+$v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term carries dilogarithms of the
+same kind as the $T_\tau$ instance above; the second is odd on $E$ with a simple pole at $z=i\omega_{\rm im}$ and
 supplies the horizon dilogarithm.
 
 \subsection{Adiabatic derivative of the degeneration family}
@@ -2853,20 +2860,23 @@ convergent \emph{nome ($q$-)series}: after Siegel reduction $\tau'=-\tau^{-1}$ (
 nomes ${<}1$), $\Lambda=\int Q\,\dd\mathcal A+\int L\,\dd\mathcal A$ with $Q$
 elementary and $L=\log[\theta[\delta](w-e_+)/\theta[\delta](w-e_-)]$ a genus-two
 Kronecker--Eisenstein series that converges geometrically (order $N{=}4$ already
-matches to $10^{-13}$) and does \emph{not} reduce to classical dilogarithms (there is
-no genus-two Jacobi product formula). All these symbolic statements are
+matches to $10^{-13}$). No reduction of it to classical dilogarithms is known: the
+genus-one route, through the Jacobi product formula, has no genus-two counterpart,
+which blocks that route without excluding another. All these symbolic statements are
 \emph{independently reproduced in Mathematica} (native $\wp$, Gröbner reduction,
 Laurent extraction): the degeneration residues to $10^{-16}$--$10^{-38}$, the generic-$J$
 reductions to an exact polynomial identity, and the tracking
 theorem~\eqref{eq:track-cancel}.
 
-\paragraph{Transcendence.}
-None of these is elementary. The $U_k$ are third-kind elliptic integrals, $\tilde G$
+\paragraph{Function classes, and what is not claimed about them.}
+We prove no transcendence statement here; what follows records the class each
+object is \emph{written} in. The $U_k$ are third-kind elliptic integrals, $\tilde G$
 lives in $\sigma,\zeta,\wp$, and the weight-two content is the elliptic dilogarithm,
-conjecturally irreducible to weight one (theta-divisor obstruction $\Theta=W_{g-1}$). The
-advanced-time horizon logarithm is elementary only as a $\dd\log$ letter; integrated
+conjecturally irreducible to weight one (the theta-divisor obstruction
+$\Theta=W_{g-1}$ blocks the direct route and proves nothing more). The
+advanced-time horizon logarithm is a $\dd\log$ letter; integrated
 against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, of the
-same transcendental weight as the proper-time case---the horizon merely relocates the
+same transcendental weight as the $T_\tau$ instance---the horizon merely relocates the
 dilogarithm's anchor from infinity to the two-torsion point $r=2m$. The sole
 numerical ingredient anywhere is the optional compression of the weight-two content to
 an apparent minimal five-dimensional dilogarithm basis (a numerically stable rank five,
@@ -3014,15 +3024,16 @@ and why all displayed residuals are taken on compact sub-arcs bounded away from 
 measured log--log slope $\approx2.0$ of figure~\ref{fig:vaidya-offshell} is the numerical
 confirmation of this exponent.
 
-\paragraph{Special-function class.} The building blocks form a strict transcendence
-hierarchy. The second-kind integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
+\paragraph{Special-function class.} The building blocks are graded by length, and
+we use that word rather than a claim about transcendence, which we have not proved.
+The second-kind integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
 \emph{ordinary Abelian integrals} (weight one), reducible to the classical Kleinian
 $\zeta,\sigma$ basis (Baker~\cite{BakerAbelian1897}; section~\ref{sec:vaidya-adiabatic}),
 the same class as $\varphi_0$. The letters
 $W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$ are \emph{length-two iterated} Abelian
-integrals with algebraic coefficients---one transcendence level above the $U_k$ and
-\emph{not} reducible to the weight-one Kleinian class (their irreducibility to weight one
-is \emph{conjectural}). The third-kind letter at the horizon $r=2m$---the advanced-time
+integrals with algebraic coefficients---one step above the $U_k$ in length. Their
+reduction to the weight-one Kleinian class is neither established nor excluded here;
+that they are irreducible is a conjecture. The third-kind letter at the horizon $r=2m$---the advanced-time
 $\dd\log$ letter, whose residue is nonzero, unlike the on-shell $\psi$ where it
 vanishes---adds a genus-two dilogarithm (descriptively, a hyperelliptic polylogarithm
 \cite{BauneEtal2024,DHokerHiddingSchlotterer2025}), evaluated by the geometrically

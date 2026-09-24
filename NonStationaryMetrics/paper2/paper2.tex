@@ -1883,7 +1883,7 @@ and its structure is worth stating because the construction is easy to check
 against itself. The flow is derived symbolically from the magnetic Lagrangian
 rather than assembled by hand; $\varphi$ is cyclic, so $p_\varphi=Q\varphi'+\beta_\varphi$
 must be conserved, and it is, to $1.0\times10^{-13}$; the geodesic curvature
-matches $-B$ to $8.3\times10^{-17}$; the scalar
+matches $-B$ at the rounding level, $\sim10^{-16}$; the scalar
 equation~\eqref{eq:magnetic-jacobi} is checked against the full linearised
 system, relative error $5.3\times10^{-15}$; and centred differences of nearby
 extremals converge at second order, ratios $4.00$. The test that does not live
@@ -2314,15 +2314,18 @@ $\zeta,\wp$ are singular, so the single-point second-kind integrals appear inste
 Fay theta-derivatives at shifted (off-divisor) arguments. A blocked route is not a
 proof of irreducibility, and we do not present it as one. The third-kind pieces of
 the drift clock integrate to Fay $\theta$-ratios. Its dipole at infinity---on the
-$\tau$-branch the coefficient of $\dd r/r$ is $EM(2E^2-3)/(E^2-1)^{3/2}$---integrates
-to
+$\tau$-branch the coefficient of $\dd r/r$ is $EM(2E^2-3)/(E^2-1)^{3/2}$---integrates,
+up to a term linear in $u$, to that coefficient times
 \begin{equation}
     L(u)=\log\frac{\theta[\delta](u-e_+)}{\theta[\delta](u-e_-)}
     \label{eq:thirdkind-theta}
 \end{equation}
-(Fay prime form~\cite{Fay1973}, odd half-characteristic $\delta$, $e_\pm$ the Abel
-images of the two points at infinity; differentiating $L(u(r))$ back reproduces the
-third-kind differential to $5\times10^{-8}$), and its horizon letters
+($e_\pm$ the Abel images of the two points at infinity, $\delta$ any non-singular odd
+half-characteristic). This is Fay's representation of the normalised third-kind
+differential through the prime form~\cite{Fay1973}: in the ratio the half-order
+differentials $h_\delta$ cancel. The archived double-precision check
+(\texttt{kerr\_thirdkind\_theta\_closed.sage}) reproduces it only to a relative
+$7\times10^{-5}$ and is not relied on. Its horizon letters
 of~\eqref{eq:clock-eta-tau} are of the same type, with poles at the two points of
 the curve over each of $r_\pm$, as on the $t$-branch. The $W_{kj}$ are length-two iterated Abelian integrals of the frozen curve; their
 elliptic ($g{=}1$) analogues admit Kronecker--Eisenstein
@@ -4343,7 +4346,7 @@ matching the direct double integral to $5\times10^{-14}$.
         quasi-periods $\eta$ (Legendre relation, $\kappa$ symmetry)
             & \texttt{kerr\us quasiperiods\us bel.sage} & $10^{-12}$\\
         $L$ (Fay third-kind, $\theta$-ratio)
-            & \texttt{kerr\us thirdkind\us theta\us closed.sage} & $5\times10^{-8}$\\
+            & \texttt{kerr\us thirdkind\us theta\us closed.sage} & $7\times10^{-5}$\,$^{a}$\\
         \hline
         \multicolumn{3}{@{}p{\textwidth}@{}}{\emph{First-order
             extended-Hamiltonian correction, equation~\eqref{eq:adiab-exact} (on-shell
@@ -4355,10 +4358,13 @@ matching the direct double integral to $5\times10^{-14}$.
         \hline\hline
     \end{tabular}
     \\[2pt]
-    {\footnotesize \provHashLine\ All entries in this table, the slopes above,
-    and these checksums are emitted by the single command
-    \texttt{python3 paper2/provenance/make\_provenance.py}, which also writes the
-    raw convergence data and \texttt{MANIFEST.tsv}; they are not transcribed.}
+    {\footnotesize \provHashLine\ The two slopes and these checksums are emitted
+    by the single command \texttt{python3 paper2/provenance/make\_provenance.py},
+    which also writes the raw convergence data and \texttt{MANIFEST.tsv}. The six
+    residuals above are those the named scripts print, to one significant figure,
+    re-run for this version.
+    $^{a}$A double-precision numerical check of Fay's identity, which the text rests
+    on directly; it is not a high-precision verification.}
 \end{table}
 
 \subsection{Consistency residuals}
@@ -4509,7 +4515,8 @@ b_2^{e_i}=\frac{4N(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
 ($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
 $R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
 b_3^a\wp'(z_\infty-a)]$. The axial ($J_{\rm eff}$) part shifts $b_1$ by
-$\sim\!30\%$ relative to the non-rotating conformal source and is tabulated in
+about a third ($34\%$ and $37\%$ at the two degenerations tabulated) relative to the
+source without it and is tabulated in
 \texttt{ThakurtaMetric/conformal\_source\_Jterm.py}.
 
 \subsection{Adiabatic derivative of the degeneration family}
@@ -4538,8 +4545,10 @@ $J\to J/A$ (spin $a$ retained); the control parameter is now $A$ (equivalently $
 the separatrix $\Jc(E_{\rm eff})$ drifts as $A$ runs. Two curves carry the two clocks.
 \emph{Proper-time ($\tau$) branch:} curve $S=r(r-2M)DE\,(r\Delta-J^2DE)$, source
 $N_\tau=\partial_E(K/\sqrt S)S^{3/2}=E\,J\,r^4(r-2M)^2DE$, drift clock
-equation~\eqref{eq:clock-eta-tau}; the block form and residue formulae are those above with
-$N\to N_\tau$. Differentiation along the degeneration family uses $N_\tau\to N_\tau+(\dd\Jc/\dd E)N_J$ with
+equation~\eqref{eq:clock-eta-tau}. The residue formulae of the source are those above
+with $N\to N_\tau$, and the block form applies unchanged, since it holds for any clock;
+what changes is the clock's own expansion, which now also carries third-kind blocks at
+the points of the curve over $r_\pm$, where $\Delta=0$. Differentiation along the degeneration family uses $N_\tau\to N_\tau+(\dd\Jc/\dd E)N_J$ with
 $N_J=r^3(r-2M)^2DE^2$ ($\Delta$ cancelling identically) and
 $\dd\Jc/\dd E=-E\,\Jc\,r_d/DE(r_d)$. The numerical value quoted here in the
 previous version, $-152.96$ at $M=1$, $a=9/10$, $E_{\rm eff}=6/5$, does not
@@ -4871,30 +4880,33 @@ curve---real or complex, inside the control domain or outside it. It is therefor
 inherited by the exterior retrograde separatrix of
 Proposition~\ref{prop:exterior-sep} without a separate derivation.
 
-The numerical checks, however, were run at particular degenerations, and it is
-worth saying which, because a small residual there certifies the algebra and not
-the physics:
+The numerical checks were run at particular degenerations, and it is worth
+saying which, because a small residual certifies the algebra at that root and
+nothing about its physical status:
 \begin{center}
-\begin{tabular}{@{}lccl@{}}
+{\small
+\begin{tabular}{@{}lccc>{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
 \hline
-script & $\Jc$ & $r_d/M$ & status of that root\\
+script & curve & $\Jc$ & $r_d/M$ & status of that root\\
 \hline
-\texttt{tk\_sep\_offshell\_elliptic.py} & $2.936$ & $+1.512$
-  & prograde, \emph{inside} $\re$: type~(A)\\
-\texttt{tk\_sep\_blockassembly.py} & $20.328$ & $-7.130$
-  & negative, off the real physical arc\\
+\texttt{tk\_sep\_offshell\_} & $t$ & $-8.054$ & $+3.514$
+  & exterior retrograde, $r_d>2M$: type~(E)\\
+\quad\texttt{elliptic.py} & $t$ & $+2.936$ & $+1.512$
+  & prograde, inside $\re$: type~(A)\\
+\texttt{tk\_sep\_blockassembly.py} & $\tau$ & $20.328$ & $-7.130$
+  & negative, off the physical arc\\
 \hline
-\end{tabular}
+\end{tabular}}
 \end{center}
-Neither is the exterior retrograde root $r_d=+3.514$ that carries the physical
-statement, and neither should be read as certifying it. What they certify is the
-letter-by-letter collapse and the residue cancellation, to machine precision, on
-curves that exhibit the same double-root structure. That is the right division:
-the identity is general and proved, the spot-checks are particular and sample the
-algebra. (A comment in the first of those scripts describes its root as lying on
-the physical arc, on the seed criterion $r>\rp$; on the selector criterion
-$r>2M$ used throughout this paper it does not, and
-Remark~\ref{rmk:prograde-inner} classifies it as type~(A).) The Vaidya analogue
+The first script checks, at both $t$-branch roots and at thirty digits, the
+degeneration $S=(r-r_d)^2Q_4$, the cancellation $[S/\mathrm{deng}](r_d)=0$ with the
+coefficients~\eqref{eq:ak}, and the collapse of the letters $U_k$ and of the
+weight-two $W_{jk}$; it includes the exterior retrograde root that carries the
+physical statement, and a control in which a displaced $r_d$ makes the collapse
+fail. The second checks the block assembly of the first-order correction on the
+degenerate $\tau$ curve; the block formula holds for any clock, and the clock it
+is run with is the proper-time density, so it tests the algebra of the assembly
+and not the drift clock of equation~\eqref{eq:clock-eta-tau}. The Vaidya analogue
 is in Paper~I.
 \end{remark}
 For Thakurta--Kerr the relevant double root is the \emph{exterior retrograde} one,
