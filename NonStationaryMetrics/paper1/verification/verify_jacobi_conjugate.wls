@@ -14,7 +14,7 @@ ok["N_J - r^3 (r-2m)^2 D_E^2", Simplify[Expand[NJ - r^3 (r - 2 m)^2 DE^2]]];
 Print["\n=== Euler: G = K/Sqrt[S] has weight 2 - 3 = -1 ==="];
 G = K/Sqrt[S];
 sc[f_] := f /. {r -> al r, m -> al m, J -> al J};
-ok["G homogeneous of degree -1", Simplify[sc[G] - al^(-1) G]];
+ok["G homogeneous of degree -1", Simplify[sc[G] - al^(-1) G, al > 0]];
 Print["  Euler:  r dG/dr + m dG/dm + J dG/dJ = -G,  i.e."];
 Print["          m dG/dm + J dG/dJ = -(r G)'"];
 ok["m dG/dm + J dG/dJ + d(r G)/dr", Simplify[m D[G, m] + J D[G, J] + D[r G, r]]];

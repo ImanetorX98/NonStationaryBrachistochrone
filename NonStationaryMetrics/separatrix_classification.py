@@ -6,15 +6,18 @@ Referee obiezioni #7, #8 (CRITICHE). Il paper chiamava "separatrice" un locus di
 radice doppia della curva che, ai parametri dichiarati, cade a raggio NEGATIVO
 (r_d<0): e' una degenerazione algebrica (genus 2->1), NON la separatrice fisica
 (orbita circolare instabile, confine cattura/scattering), che richiede una radice
-doppia ESTERNA r_d>r_+ dove due turning point reali si fondono.
+doppia nel DOMINIO DI CONTROLLO r_d>2M dove due turning point reali si fondono.
+Il criterio e' r_d>2M e non r_d>r_+: tra r_+ e 2M il selettore W=d_eta e'
+spaziale e il problema di controllo compatto non e' posto (Paper II, lemma di
+compattezza); una radice doppia li' e' un oggetto di tipo (A), non una separatrice.
 
 Distinzione da mantenere nel paper:
   J_deg      : locus del discriminante Res_r(curva, d_r curva)=0 (genus-degeneration).
                r_d puo' essere <0, complesso o interno: il closed form (Weierstrass)
                resta valido, ma NON e' una separatrice fisica.
   J_cap(v0)  : soglia dinamica di penetrazione (Sec. 4.2), oggetto FISICO distinto.
-  J_c^phys   : radice doppia ESTERNA (r_d>r_+) = separatrice fisica (merger di due
-               turning point reali).
+  J_c^phys   : radice doppia nel dominio di controllo (r_d>2M) = separatrice fisica
+               (merger di due turning point reali).
 
 Uscita: per ogni ramo, TUTTE le radici doppie reali classificate; per il ramo t
 di Thakurta-Kerr la separatrice fisica esterna e i suoi b_i (sorgente corretta
@@ -31,7 +34,8 @@ mp.mp.dps = 25
 
 def classify(curve, aval, label):
     """Res_r(curve, d_r curve)=0 -> tutte le J con radice doppia; classifica r_d."""
-    rp = 1 + np.sqrt(1 - aval**2) if aval < 1 else 2.0     # orizzonte esterno
+    rp = 1 + np.sqrt(1 - aval**2) if aval < 1 else 2.0     # superficie nulla del seme r_+
+    re = 2.0 * M                                           # limite stazionario: bordo del dominio
     Res = sp.resultant(curve, sp.diff(curve, r), r)
     print(f"\n===== {label}  (r_+={rp:.4f}) =====")
     rows = []
@@ -49,9 +53,18 @@ def classify(curve, aval, label):
         if rd is None:
             continue
         # separatrice fisica = merger di due turning point reali esterni
-        real_ext = sorted([z.real for z in rts if abs(z.imag) < 1e-6 and z.real > rp])
-        phys = rd > rp and any(abs(x - rd) < 1e-3 for x in real_ext)
-        region = "ESTERNO r>r_+" if rd > rp else ("interno" if rd > 0 else "NEGATIVO")
+        real_ext = sorted([z.real for z in rts if abs(z.imag) < 1e-6 and z.real > re])
+        phys = rd > re and any(abs(x - rd) < 1e-3 for x in real_ext)
+        if rd > re:
+            region = "dominio di controllo r>2M"
+        elif rd > rp:
+            region = "r_+<r<2M, W spaziale: tipo (A)"
+        elif rd > 1e-9:
+            region = "interno r<r_+"
+        elif rd > -1e-9:
+            region = "r_d=0, banale"
+        else:
+            region = "NEGATIVO"
         rows.append((jv, rd, region, phys))
     for jv, rd, region, phys in sorted(rows):
         tag = "  <== SEPARATRICE FISICA" if phys else "  (degenerazione algebrica J_deg)"
@@ -78,7 +91,7 @@ print("\n=== ramo t: SEPARATRICE FISICA esterna, b_i con sorgente (E d_E + J d_J
 R6p = sp.lambdify((r, J), R6, 'mpmath'); R6r = sp.lambdify((r, J), sp.diff(R6, r), 'mpmath')
 sol = mp.findroot(lambda rd, jc: [R6p(rd, jc), R6r(rd, jc)], (mp.mpf('3.514'), mp.mpf('-8.0535')))
 rd_v, Jc_v = float(sol[0]), float(sol[1])
-print(f"  raffinato: J_c^phys = {Jc_v:.8f}   r_d = {rd_v:.8f}  (esterno, r_+=1.4359)")
+print(f"  raffinato: J_c^phys = {Jc_v:.8f}   r_d = {rd_v:.8f}  (nel dominio di controllo, r_d>2M)")
 
 Dl9 = r**2 - 2 * M * r + sp.Rational(81, 100)
 Q2s = (2*Es**2*J**2*M*r - Es**2*J**2*r**2 - 4*Es**2*J*M*a*r + 2*Es**2*M*a**2*r + Es**2*a**2*r**2
@@ -105,6 +118,8 @@ def bcoeffs(S, N, rd):
 bc = bcoeffs(S6.subs(J, Jc_v), Ntot.subs(J, Jc_v), rd_v)
 for k in ['b1', 'b2', 'b3']:
     print(f"  {k} = {float(bc[k]):+.6f}")
-print("\nEsito: la separatrice FISICA del ramo t e' J_c^phys=-8.054, r_d=+3.514 (esterna),")
-print("       non J=+19.089/r_d=-6.62 (degenerazione algebrica). Schwarzschild tau (E=1.4)")
+print("\nEsito: la separatrice FISICA del ramo t e' J_c^phys=-8.054, r_d=+3.514 (r_d>2M),")
+print("       l'unica nel dominio di controllo. J=+2.936 (r_+<r_d=1.512<2M) e' un oggetto")
+print("       di tipo (A); J=+19.089/-18.671 (r_d<0), J=+1.267 (r_d<r_+) e J=a (r_d=0)")
+print("       sono degenerazioni algebriche. Schwarzschild tau (E=1.4)")
 print("       NON ha separatrice fisica esterna: il suo r_d=-3.36 e' solo J_deg.")

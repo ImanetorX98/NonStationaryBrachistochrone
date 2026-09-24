@@ -90,11 +90,21 @@ Am1, v1 = A_m(r1), v_of(r1)
 
 term1 = -Efl * (I_poly - alpha0 * Uv[3]
                 + sum(ckf[k] * (Uv[k] * Uv[3] - W3k[k]) / 2 for k in range(5)))
-term2 = -(L_2m - alpha0 * (v1 - Efl * Uv[3])
+# the tortoise primitive r + 2m ln(r-2m) does not vanish at r0: it is the one
+# block taken as a bracket |_{r0}^{r} in eq:vaidya-full
+tort = lambda x: x + 2 * Mfl * mp.log(x - 2 * Mfl)
+term2 = -(L_2m - alpha0 * (tort(r1) - tort(r0))
           + sum(ckf[k] * (r1 * Uv[k] - Uv[k + 1] + 2 * Mfl * Dk[k])
                 for k in range(5)))
 RHS = Am1 * v1 + term1 + term2
 
 print("RHS  eq:vaidya-full assembled   =", mp.nstr(RHS, 20))
 print("\nRHS - LHS                       =", mp.nstr(RHS - LHS, 8))
-print("relative                        =", mp.nstr(abs((RHS - LHS) / LHS), 8))
+rel = abs((RHS - LHS) / LHS)
+print("relative                        =", mp.nstr(rel, 8))
+# falsifiability: dropping the lower limit of the bracket must break the identity
+wrong = RHS - alpha0 * tort(r0)
+print("without the r0 bracket, relative =", mp.nstr(abs((wrong - LHS) / LHS), 8))
+ok = rel < mp.mpf(10)**-30 and abs((wrong - LHS) / LHS) > mp.mpf(10)**-3
+print("\nALL CHECKS PASSED" if ok else "\nFAILED")
+raise SystemExit(0 if ok else 1)
