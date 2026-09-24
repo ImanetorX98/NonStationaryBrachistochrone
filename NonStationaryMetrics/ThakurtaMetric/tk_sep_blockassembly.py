@@ -1,6 +1,13 @@
-# TK tau separatrice: BLOCK ASSEMBLY (decompone int G~ eta' in dilog nominati).
-# delta phi ~ int R_tau eta dz = 1/2 G~ eta + 1/2 sum(c_i d_j - c_j d_i) A[e_i,e_j].
-# c_i = residui di R_tau (N_tau); d_j = residui di eta'; A = dilog ellittici antisimmetrici.
+# TK tau separatrice: BLOCK ASSEMBLY (decompone int G~ T' in dilog nominati).
+# delta phi ~ int R_tau T dz = 1/2 G~ T + 1/2 sum(c_i d_j - c_j d_i) A[e_i,e_j].
+# c_i = residui di R_tau (N_tau); d_j = residui di T'; A = dilog ellittici antisimmetrici.
+#
+# NOTA SULL'OROLOGIO. La formula a blocchi vale per QUALUNQUE orologio T. Qui T e' la
+# densita' di tempo proprio, T' = (r^3-2M r^2)/(r-r_d) (il nome 'eta' nel codice e' storico):
+# e' un orologio di PROVA per l'algebra dell'assemblaggio, NON l'orologio di deriva fisico del
+# ramo tau, che e' il tempo conforme lungo l'orbita, d eta/dr = [E r^3 - 2MaJ r D_E/Delta]/sqrt(S)
+# (Paper II, eq. clock-eta-tau), con blocchi di terza specie in piu' ai punti sopra r_pm.
+# Cosi' e' dichiarato nel Remark rmk:collapse-scope di Paper II.
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try: from tqdm import tqdm
@@ -43,7 +50,7 @@ Fpp=lambda x:((np.polyval(Ntaupp,x)*np.polyval(Q,x)-np.polyval(Ntau,x)*np.polyva
 h0=F(rd); h1=Fp(rd)*s; h2=0.5*(Fpp(rd)*s**2+Fp(rd)*(np.polyval(Qp,rd)/2))
 b1zd=(h2-3*a1*h1+(6*a1**2-3*a2)*h0)/s**3; b2zd=(h1-3*a1*h0)/s**3; b3zd=h0/s**3
 b2h=lambda ei: np.polyval(Ntau,ei)/((ei-rd)**3)*(4/np.polyval(Qp,ei)**2)
-# eta' = (r^3-2M r^2)/(r-r_d): residui
+# T' = (r^3-2M r^2)/(r-r_d) (densita' di tempo proprio, orologio di prova): residui
 e1_zd=(rd**3-2*M*rd**2)/s
 B=c_r+(1/sa)*float(mp.re(wzet(2*z_inf))); Aq=-1/sa
 # eta'-residui a z_inf: eta'=(r^3-2M r^2)/(r-r_d); r->inf ~ r^2 -> stessa struttura Vaidya (P3=r^3-2M r^2)

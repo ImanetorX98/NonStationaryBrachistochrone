@@ -161,6 +161,7 @@ for (nome, F, K), st in ((('$\\tau$ branch', F_tau, J), 'o-'),
             num = float(phip.subs(sub).subs(uu, ustar))
             cf = float(tgt.subs(sub))
             res.append(abs(num - cf) / cf)
+        print(f"  {nome}, J={Jv}: max relative residual of dphi/dr = {max(res):.1e}")
         ax.semilogy(rgrid, np.maximum(res, 1e-17), st, color=col, ms=3,
                     lw=0.9, label=f'{nome}, $J={Jv}$')
 ax.set_xlabel('$r/M$')

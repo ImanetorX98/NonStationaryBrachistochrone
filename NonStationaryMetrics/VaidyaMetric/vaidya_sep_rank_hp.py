@@ -63,7 +63,15 @@ for a,z in enumerate(tqdm(zs,desc="A',W' hp")):
     for b,wf in enumerate(Wf): Wmat[a,b]=wf(z)
 log.info("rango via SVD mpmath: rank([A|W]) - rank(W)")
 def rankmp(M,thr=mp.mpf('1e-28')):
-    U,S,V=mp.svd_r(M); S=[abs(x) for x in S]; s0=max(S)
+    # the entries are real up to rounding (complex only through intermediate theta values):
+    # check that, then take the real part, since mp.svd_r needs a real matrix
+    im=max(abs(mp.im(M[i,j])) for i in range(M.rows) for j in range(M.cols))
+    re=max(abs(mp.re(M[i,j])) for i in range(M.rows) for j in range(M.cols))
+    assert im<=mp.mpf(10)**(-mp.mp.dps+10)*re, "matrix not real: max|Im| = %s"%mp.nstr(im,3)
+    MR=mp.matrix(M.rows,M.cols)
+    for i in range(M.rows):
+        for j in range(M.cols): MR[i,j]=mp.re(M[i,j])
+    U,S,V=mp.svd_r(MR); S=[abs(x) for x in S]; s0=max(S)
     return sum(1 for x in S if x/s0>thr), [x/s0 for x in sorted(S,reverse=True)]
 # [A|W]
 AW=mp.matrix(npts,len(pairs)+len(Wf))
