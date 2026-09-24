@@ -1721,7 +1721,7 @@ $\sqrt S$ positive: solving $H_\tau=0$ for $p_r$ and forming
 $\varphi'=H_{\tau,J}/H_{\tau,p_r}$, $\dd v/\dd r=1/H_{\tau,p_r}$ and $\dd\tau/\dd r$
 returns exactly the three spectral expressions used below,
 $\varphi'=J D_E/\sqrt S$, equation~\eqref{eq:vaidya-clock} and
-$\dd\tau/\dd r=r^2(r-2m)/\sqrt S$ (checked to $10^{-25}$ at several radii). Notably this
+$\dd\tau/\dd r=r^2(r-2m)/\sqrt S$ (checked to $10^{-25}$ at several radii, \texttt{VaidyaMetric/vaidya\_tau\_spectral\_check.py}). Notably this
 sextic keeps six distinct roots: the constrained brachistochrone is genus \emph{two} even in
 Schwarzschild (only the geodesics are elliptic; the genus drop occurs at the algebraic
 degeneration value $|J|=J_{\rm deg}$). The mass derivative reduces exactly, the horizon factor cancelling,
@@ -1914,8 +1914,10 @@ iterated-integral framework---built on Chen's reduced bar construction
 Mittag--Leffler block structure and residue formulae. Construction of the period data and
 numerical Kronecker--Eisenstein/$q$-series evaluation use the archived routine. Every
 coefficient is an algebraic function of $(m,E)$, so
-$\delta\varphi_\tau|_{\rm deg}$ is reconstructed on any curve by evaluating these formulae
-(checked to $10^{-9}$ against the direct integral across $E\in[1.3,1.6]$). The minimal
+the degeneration-family correction is reconstructed on any curve by evaluating these
+formulae, with the drift clock $v$ or, as an algebraic instance, the proper-time density
+$T_\tau$ (the latter checked to $10^{-8}$ against the direct integral across
+$E\in[1.3,1.6]$, \texttt{VaidyaMetric/vaidya\_sep\_validate\_multiparam.py}). The minimal
 dilogarithm-basis dimension and the irreducibility of the weight-two letters remain
 \emph{conjectural}; a secondary numerical rank experiment is in the reproducibility
 package.
@@ -2518,8 +2520,8 @@ the script in the repository~\cite{Rosignoli2026CodeJMP} that generates and veri
 \label{app:residuals}
 The closed forms and reductions above were checked symbolically and numerically. The
 Kodama energy is held to $|{-}u\cdot K-\Ehat|<7\times10^{-16}$ along the Vaidya rail; the
-stationary limit $m'=0$ reproduces the closed-form Schwarzschild ($a{=}0$ Kerr) orbit to
-$10^{-12}$ (figure~\ref{fig:vaidya-kerra0}); no tested perturbation in the stated finite-dimensional
+stationary limit $m'=0$ reproduces the closed-form Schwarzschild ($a{=}0$ Kerr) orbit
+equation to a relative $10^{-11}$ (figure~\ref{fig:vaidya-kerra0}); no tested perturbation in the stated finite-dimensional
 family lowered either travel time---a numerical consistency check only, which does not
 establish local minimality in the full admissible class---with $t$ and $\tau$ distinct curves
 (figure~\ref{fig:verifmin}); and the first-order
@@ -2538,10 +2540,11 @@ adiabatic correction closes to $O(\varepsilon^2)$ against the true non-autonomou
 \begin{figure}[tbp]
     \centering
     % ALT: A numerically integrated orbit and a closed-form reference orbit plotted together
-    %      and visually indistinguishable, with their difference staying below 1e-12.
+    %      and visually indistinguishable, with their difference staying below 1e-11.
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_kerr_a0.pdf}
-    \caption{Stationary-limit check ($m'=0$): the numerical orbit matches the
-    closed-form Kerr $a=0$ solution to a sup-norm residual $<10^{-12}$.}
+    \caption{Stationary-limit check ($m'=0$): the numerical orbit equation matches the
+    closed-form Kerr $a=0$ solution, with relative residual in $\dd\varphi/\dd r$ below
+    $10^{-11}$ on both branches (\texttt{VaidyaMetric/genera\_figure\_vaidya.py}).}
     \label{fig:vaidya-kerra0}
 \end{figure}
 
@@ -2702,7 +2705,7 @@ to the displayed $C_0$.
 \end{proof}
 
 \paragraph{First order with the proper-time density as weight (algebraic instance,
-verified to $10^{-9}$).}
+verified to $3\times10^{-8}$, \texttt{vaidya\_sep\_compact.py}).}
 This block feeds the proper-time density $T_\tau=U_3-2mU_2$ to Lemma~\ref{lem:blocks}.
 It is \emph{not} the ingoing-Vaidya response: the mass runs with $v$, so the drift is
 weighted by $v$ (section~\ref{sec:vaidya-plunge} and the next paragraph). It is kept
@@ -2763,7 +2766,7 @@ $C_0$ was in Lemma~\ref{lem:residues}.
 \end{proof}
 
 \paragraph{First order, advanced-time drift clock: the ingoing-Vaidya response
-(verified to $10^{-8}$).}
+(verified to $2\times10^{-7}$, \texttt{vaidya\_sep\_v\_blockassembly.py}).}
 Clock $v=E\,U_3+r+2m\ln(r-2m)$;
 $\delta\varphi_v=\tilde G(z)\,v-\int_{z_0}^z\tilde G\,v_z\,\dd z$ with
 $v_z=E\,r^3/(r-r_d)+r\sqrt{Q_4}/(r-2m)$. The first term carries dilogarithms of the
@@ -2838,9 +2841,11 @@ $N_{\rm tot}(r_d)=0$ exactly in both systems.
 
 Following the moving genus-degeneration locus therefore softens the strongest
 singularity, precisely where the double root travels. The cancellation is verified
-symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$. The two Vaidya
-branches (proper-time $\tau$ and advanced-time $v$) differ only in $\dd\Jc/\dd\lambda$
-and $N_J$.
+symbolically in Mathematica, $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$. The tracked
+source depends only on the curve and on $K$, so on the proper-time orbit it is the same
+for the $v$-weighted response and for the $T_\tau$ instance of~\ref{app:degeneration}:
+$\Jc$, $\dd\Jc/\dd\lambda$ and $N_J$ coincide, and the two differ only in the clock
+blocks.
 
 \paragraph{Vaidya ($\lambda=m$).}
 The linear scaling $\Jc=m\,j(E)$ gives $\dd\Jc/\dd m=\Jc/m$, with
@@ -2879,9 +2884,12 @@ against the elliptic $\partial_m F$ it yields the horizon elliptic dilogarithm, 
 same transcendental weight as the $T_\tau$ instance---the horizon merely relocates the
 dilogarithm's anchor from infinity to the two-torsion point $r=2m$. The sole
 numerical ingredient anywhere is the optional compression of the weight-two content to
-an apparent minimal five-dimensional dilogarithm basis (a numerically stable rank five,
-singular values falling to $10^{-79}$---strong evidence, \emph{not} a proof, and
-curve-specific), which the block forms above do not require.
+an apparent minimal five-dimensional dilogarithm basis: at eighty digits the
+weight-two content is reproduced in five basis dilogarithms with a residual of
+$10^{-79}$ (\texttt{VaidyaMetric/vaidya\_sep\_fay\_symbolic.wl}), while at double
+precision the rank read from the singular values is threshold-dependent. This is
+strong evidence, \emph{not} a proof, and curve-specific, and the block forms above do
+not require it.
 
 \FloatBarrier
 

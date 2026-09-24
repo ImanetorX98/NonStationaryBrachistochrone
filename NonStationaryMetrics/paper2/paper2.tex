@@ -1580,10 +1580,12 @@ by $K_t$ of~\eqref{eq:optical-gauss}, which is what the propositions use. The
 out-of-plane direction is governed by a second sectional curvature, that of the
 two-planes \emph{tangent to the spheres},
 \begin{equation}
-    K_{\rm tan}=\frac{M\big[{-}64M^3+8(11-6\Ehat^2)M^2r
-      +(9\Ehat^4\!-\!44\Ehat^2\!+\!40)(-M)r^2
-      +2(2\Ehat^2\!-\!3)(\Ehat^2\!-\!1)r^3\big]}
-      {\Ehat^2r^5\big[2M+(\Ehat^2-1)r\big]} ,
+    \begin{split}
+    K_{\rm tan}={}&\frac{M}{\Ehat^2r^5\big[2M+(\Ehat^2-1)r\big]}
+      \Big[{-}64M^3+8(11-6\Ehat^2)M^2r\\
+      &+(9\Ehat^4-44\Ehat^2+40)(-M)r^2
+      +2(2\Ehat^2-3)(\Ehat^2-1)r^3\Big] ,
+    \end{split}
     \label{eq:ktan}
 \end{equation}
 and this one is \emph{not} negative. Two facts settle it. Writing the metric as
@@ -2827,7 +2829,8 @@ $r\Delta-J^2D_E\ge(r-2M)(r^2+\Jc^2)$ and $\Delta(2M)=a^2>0$, and that majorant i
 integrable, so by dominated convergence the shapes anchored at $\re$ converge
 \emph{uniformly} to the marginal one---numerically, $\|\varphi_J-\varphi_{\Jc}\|$ on
 $[2M,6M]$ falls as $2.6\times10^{-2},\,3.7\times10^{-3},\dots,7.1\times10^{-6}$ for
-$\Jc-J=10^{-2},\dots,10^{-6}$, while $K$ grows from $10.6$ to $1069$. What fails is
+$\Jc-J=10^{-2},\dots,10^{-6}$, while $K$ grows from $10.6$ to $1069$
+(\texttt{kerr\_marginal\_convergence.py}). What fails is
 uniformity in $C^1$: the limiting tangent and the normal form change. Case (iii)
 supersedes the statement, made in the previous version of this work, that the
 retrograde marginal reflects with a cusp because counter-rotation is forbidden
@@ -3060,7 +3063,8 @@ the node is placed at the vertex of the parabola through three samples, which is
 an \emph{approximate} extremum, and a target lying between the approximate and
 the true maximum leaves both roots on the same side of the node. At aperture
 $2.038982626262098$ that is exactly what happens, and the two solutions
-$J=1.1338407$ and $1.1338447$ are again missed. What the solver returns is
+$J=1.1338407$ and $1.1338447$ are again missed (both pairs reproduced at fifty
+digits by \texttt{bvp\_missed\_roots\_highprecision.py}). What the solver returns is
 therefore the least-cost candidate found by the sampled search, under the stated
 cuts ($J\ge10^{-4}J_{\max}$, $r\ge2.0001M$); a stronger guarantee would need
 controlled localisation of the extrema, explicit treatment of tangential roots,
@@ -3096,7 +3100,7 @@ non-positivity that a Cartan--Hadamard argument would need fails in the far
 field. Nor does a single candidate per aperture certify that the scan found
 them all: the same sampling limitation applies on this branch. At $r_A=r_B=6M$, $E=1.2$ and half-aperture
 $1.01945$ the class contains two $\tau$-solutions, $r_{\min}=2.585956$ and
-$2.611228$, whose costs differ by $1.8\times10^{-6}$ with the \emph{deeper} one
+$2.611228$ (same script), whose costs differ by $1.8\times10^{-6}$ with the \emph{deeper} one
 dearer; selecting on depth rather than on cost would pick the wrong one.
 Multiply-winding solutions lie outside the class and are not compared.
 
@@ -3506,7 +3510,7 @@ included in the archive under \texttt{Experimental/}, runnable as a single comma
 with its own consistency checks: the oval used there is built from the equatorial
 indicatrix of section~\ref{sec:thakurta} rather than drawn generically---the
 identity closes to $4.4\times10^{-16}$---and the frozen-flow Hamiltonian is
-conserved along the tracked trajectories to $2\times10^{-15}$. It is a design study,
+conserved along the tracked trajectories to $3\times10^{-15}$. It is a design study,
 not measured data, and is labelled as such.
 
 \emph{(B) Analogues in the same Hamiltonian class.} Rotating effective geometries
@@ -3655,7 +3659,7 @@ infinite-dimensional class. We accordingly report such perturbations as
 consistency checks only (the spherical branches are treated in Paper~I).
 Stationary-limit residuals confirm
 that the non-stationary Hamiltonian flow reproduces the closed-form Kerr expressions
-as $A\to1$; the conformal-Killing rail charge $\Ehat$ is conserved to $\sim10^{-16}$ along the rail. The equatorial closed
+as $A\to1$; the conformal-Killing rail charge $\Ehat$ is conserved to $9\times10^{-16}$ along the rail. The equatorial closed
 forms are validated end-to-end by the three-method superposition
 (ODE flow, quadrature, evaluated Weierstrass) through the ergosphere
 (figure~\ref{fig:sep3}), and the fixed-endpoint no-inversion theorem is
@@ -3953,7 +3957,9 @@ $\ln\sigma$-quotients---the exact genus-2 analogue of the $t$-branch $J_+^t$
 [equation~\eqref{eq:t-genus2}]. We built $Y^2=\mathcal S$ in SageMath at $J=-0.9\Jc$
 and computed its Riemann period matrix $\tau$; both Riemann relations hold
 ($\tau=\tau^\top$ to $7\times10^{-12}$, $\operatorname{Im}\tau\succ0$), and
-Equation~\eqref{eq:tau-genus2} reproduces the direct integral to $10^{-15}$. At
+Equation~\eqref{eq:tau-genus2} reproduces the direct integral to $1.4\times10^{-15}$
+(\texttt{kerr\_tau\_general\_genus2\_periods.sage.py},
+\texttt{kerr\_tau\_general\_genus2.py}). At
 $|J|=\Jc$ the factor $f^2$ (from $\Delta-\Jc^2w=f(r^2+c^2)$) makes $r_e$ a
 \emph{double} root of $\mathcal S$; the $(r-2M)$ in $\mathcal K_\tau$ cancels one
 factor, dropping the radical to the quartic $Q_4$---genus~1, the Weierstrass
@@ -4012,9 +4018,11 @@ $\Lambda_0=\Lambda_{\rm poly}-\sum_k\alpha_k/c_k+\sum_k 2\zeta(v_k)\lambda_k$,
 with $\alpha_k$ the residues of $\mathcal G$. For $M=1$, $a=0.9$, $E=1.2$
 ($r_*=3.514$, $J_c^-=-8.05$) the reduced elliptic quadrature reproduces the
 Hamiltonian flow to $2\times10^{-14}$ (figure~\ref{fig:t-sep}); the evaluation
-of~\eqref{eq:t-sep-phi} itself is checked against that quadrature on five arcs,
-with residuals from $2.2\times10^{-16}$ far from $r_*$ to $2.6\times10^{-13}$ on
-the arc $0.006M$ from it. The two checks are distinct and we keep them so. So both separatrices are
+of~\eqref{eq:t-sep-phi} itself, in Mathematica's Weierstrass functions at forty
+digits, is checked against that quadrature on five arcs, down to the arc $0.006M$
+from $r_*$, with relative agreement better than $10^{-46}$ on each
+(\texttt{kerr\_tbranch\_separatrix\_sigma\_eval.wls}). The two checks are distinct
+and we keep them so. So both separatrices are
 genus~1 by different mechanisms; only non-separatrix $t$-orbits need genus-2
 Kleinian functions.
 
@@ -4030,16 +4038,12 @@ Kleinian functions.
     $R_6=(r-r_*)^2Q_4$. What this panel tests is therefore the genus reduction and
     the residues, \emph{not} the evaluation of~\eqref{eq:t-sep-phi} in
     $\wp,\sigma,\zeta$: no special function is evaluated in producing it. That
-    evaluation is checked separately, against an external implementation of the
-    Weierstrass functions, on five arcs at $M{=}1$, $a{=}0.9$, $E{=}1.2$: the
-    agreement with the same quadrature is $2.2\times10^{-16}$ on $[6,60]$,
-    $5\times10^{-15}$ on $[3.6,9]$ and $[4,20]$, $2.0\times10^{-14}$ on
-    $[3.55,4]$ and $2.6\times10^{-13}$ on $[3.52,3.6]$, the arc closest to $r_*$.
-    The degradation towards $r_*$ is the third-kind logarithm, not a defect, and
-    we quote the tested arcs rather than a universal figure. The
-    figure is produced at the integration tolerance that reproduces the residual
-    quoted; at a coarser one the comparison is limited by the ODE side and
-    returns $1.8\times10^{-13}$.}
+    evaluation is checked separately, in Mathematica's own Weierstrass functions
+    at forty digits, with the residues computed as limits, on five arcs at $M{=}1$,
+    $a{=}0.9$, $E{=}1.2$: $[6,60]$, $[3.6,9]$, $[4,20]$, $[3.55,4]$ and $[3.52,3.6]$, the
+    last $0.006M$ from $r_*$. The relative agreement with the quadrature is better
+    than $10^{-46}$ on every arc, and a residue altered by $0.1\%$ breaks it
+    (\texttt{kerr\_tbranch\_separatrix\_sigma\_eval.wls}).}
     \label{fig:t-sep}
 \end{figure}
 
@@ -4059,15 +4063,15 @@ $\mathcal K=c_1 r+c_0+\alpha_+/(r-\rp)+\alpha_-/(r-\rm)$ gives
 \end{equation}
 the holomorphic pair being the Abel-map coordinates (arguments of the Kleinian
 $\sigma$) and the horizon terms the third-kind $\ln\sigma$-quotients---the exact
-genus-2 analogue of equation~\eqref{eq:t-sep-phi}. For $M=1$, $a=0.9$, $E=1.2$ we
+genus-2 analogue of equation~\eqref{eq:t-sep-phi}. For $M=1$, $a=0.9$, $E=1.2$, $J=3$ we
 built $y^2=\mathcal R$ in SageMath and computed its Riemann period matrix
-$\tau$; both Riemann relations hold ($\tau=\tau^\top$ to $4\times10^{-12}$,
-$\operatorname{Im}\tau\succ0$ with eigenvalues $\{0.61,1.08\}$), certifying the
-homology basis. The single Abelian integral $\varphi(r)$ does not invert to a
+$\tau$; both Riemann relations hold ($\tau=\tau^\top$ to $3\times10^{-12}$,
+$\operatorname{Im}\tau\succ0$), certifying the homology basis
+(\texttt{kerr\_tbranch\_genus2\_periods.sage.py}). The single Abelian integral $\varphi(r)$ does not invert to a
 one-$\theta$ quotient $r(\varphi)$ (that needs the 2D Jacobi inversion,
 $r=\wp_{22}$ along the trajectory line in the Jacobian, à la
 Hackmann--L\"ammerzahl); but equation~\eqref{eq:t-genus2} reproduces the Hamiltonian
-flow to $2\times10^{-13}$. Physically these genus-2 orbits are exactly the ones
+flow to $2\times10^{-13}$ at the same parameters (\texttt{kerr\_jpt\_genus2\_figure.py}). Physically these genus-2 orbits are exactly the ones
 that \emph{penetrate the ergosphere}: the prograde threshold $J_+^t$
 [equation~\eqref{eq:Jplus-t}] has its turning point \emph{on} $r_e=2M$ (simple root at
 $r=2$), while for $J$ just inside the penetration window $[J_c^-,J_+^t]$ the turning
@@ -4371,18 +4375,25 @@ matching the direct double integral to $5\times10^{-14}$.
 \label{app:residuals}
 The closed forms and reductions above were checked symbolically and numerically.
 The Weierstrass separatrix~\eqref{eq:sep-phi} reproduces the direct quadrature to
-$|\Delta\varphi|<2.8\times10^{-10}$ through the ergosphere, with the $\wp$-identity
-satisfied to $9\times10^{-28}$ and the antiderivative to $30$ digits; the Doran
-shift reduces to $1.1\times10^{-16}$. The non-autonomous Randers
+$|\Delta\varphi|<2.8\times10^{-10}$ through the ergosphere
+(\texttt{kerr\_separatrix\_trajectories.py}), with the $\wp$-identity satisfied to
+$9\times10^{-28}$, the antiderivative to thirty digits and the partial-fraction
+reduction to $6\times10^{-17}$ (\texttt{kerr\_separatrix\_validation.py},
+\texttt{kerr\_separatrix\_weierstrass.py}). The non-autonomous Randers
 data~\eqref{eq:randers-data} match the Kerr null Fermat metric to
-$\sim10^{-14}$. The equatorial Thakurta--Kerr flow reproduces the $A=1$ Kerr
+$\sim10^{-14}$ (\texttt{thakurta\_kerr\_optical\_sympy.py}). The equatorial
+Thakurta--Kerr flow reproduces the $A=1$ Kerr
 constants~\eqref{eq:kerr-conserved} to ten digits at $r=4,6,9$ ($a=0.9$, $E=1.2$),
-and the $a\to0$ limit the Thakurta--Schwarzschild flow to $10^{-12}$; the $3+1$
+and at $a=0$ its Hamiltonians reduce to the Thakurta--Schwarzschild ones to $10^{-12}$
+(\texttt{thakurta\_kerr\_sympy.py}); the $3+1$
 Hamiltonian reduces to the equatorial one exactly, and conserves
-$L^2$ to $6\times10^{-13}$ at $a=0$. The conformal-Killing rail charge is held to
-$|{-}u\cdot\partial_\eta-\Ehat|<7\times10^{-16}$ along the rail, and the static
-inversion colormap agrees with the analytic
-contours~\eqref{eq:periapsis-root} to a relative $7\times10^{-12}$.
+$L^2$ to $6\times10^{-13}$ at $a=0$ (\texttt{thakurta\_kerr\_dynamic\_K.py}). The
+conformal-Killing rail charge is held to
+$|{-}u\cdot\partial_\eta-\Ehat|<9\times10^{-16}$ along the rail
+(\texttt{rail\_conservation.py}), and the static inversion colormap agrees with the
+analytic contours~\eqref{eq:periapsis-root} to a relative $10^{-11}$
+(\texttt{thakurta\_kerr\_inversione\_t\_tau.py},
+\texttt{thakurta\_kerr\_plunge\_inversion.py}).
 
 \begin{figure}[tbp]
     \centering
@@ -4508,9 +4519,11 @@ triple pole $z_d$, writing $s=\sqrt{Q_4(r_d)}$, $F=N/Q_4$, $a_1=Q_4'(r_d)/4s$,
 $a_2=Q_4''(r_d)/12$, $h_0=F(r_d)$, $h_1=F'(r_d)s$,
 $h_2=\tfrac12F''(r_d)s^2+\tfrac14F'(r_d)Q_4'(r_d)$,
 \begin{equation}
-b_3^{z_d}=\frac{h_0}{s^3},\quad b_2^{z_d}=\frac{h_1-3a_1h_0}{s^3},\quad
-b_1^{z_d}=\frac{h_2-3a_1h_1+(6a_1^2-3a_2)h_0}{s^3},\quad
-b_2^{e_i}=\frac{4N(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
+\begin{split}
+&b_3^{z_d}=\frac{h_0}{s^3},\quad b_2^{z_d}=\frac{h_1-3a_1h_0}{s^3},\quad
+b_1^{z_d}=\frac{h_2-3a_1h_1+(6a_1^2-3a_2)h_0}{s^3},\\
+&b_2^{e_i}=\frac{4N(e_i)}{(e_i-r_d)^3Q_4'(e_i)^2},
+\end{split}
 \end{equation}
 ($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
 $R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
@@ -4647,9 +4660,12 @@ terms, which are anchored at the drift clocks' dipole \emph{at infinity} and
 their horizon letters (the spherical horizon-anchored analogue, at $r=2m$, is in
 Paper~I). The sole
 numerical ingredient anywhere is the optional compression of the weight-two content to
-an apparent minimal five-dimensional dilogarithm basis (a numerically stable rank five,
-singular values falling to $10^{-79}$---strong evidence, \emph{not} a proof, and
-curve-specific), which the block forms above do not require.
+an apparent minimal five-dimensional dilogarithm basis: at eighty digits the
+weight-two content is reproduced in five basis dilogarithms with a residual of
+$10^{-79}$ (\texttt{VaidyaMetric/vaidya\_sep\_fay\_symbolic.wl}), while at double
+precision the rank read from the singular values is threshold-dependent. This is
+strong evidence, \emph{not} a proof, and curve-specific, and the block forms above do
+not require it.
 
 \clearpage
 \section{Complete first-order extended-Hamiltonian correction}
@@ -4785,8 +4801,10 @@ in the standard basis $U_k=\int r^k/\sqrt S\,\dd r$,
     \label{eq:action-reduction}
 \end{equation}
 \begin{equation}
-    a_3=E^2,\quad a_2=2E^2M,\quad a_1=4E^2M^2-(E^2-1)J^2,\quad
-    a_0=2M\big[4E^2M^2-J^2+2(1-E^2)Ja\big],
+    \begin{split}
+    &a_3=E^2,\quad a_2=2E^2M,\quad a_1=4E^2M^2-(E^2-1)J^2,\\
+    &a_0=2M\big[4E^2M^2-J^2+2(1-E^2)Ja\big],
+    \end{split}
     \label{eq:ak}
 \end{equation}
 with $[a_k]=\text{length}^{3-k}$. The kernel is likewise algebraic on the shell,
