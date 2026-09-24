@@ -2302,8 +2302,12 @@ hence admissible. Using $S=(r-r_d)\mathcal{A}$ one computes
 $2\mathcal{A}'S-\mathcal{A}S'=(r-r_d)\mathcal{A}\mathcal{A}'-\mathcal{A}^2
 =S\,(\mathcal{A}'-Q_4)$, and $\deg(\mathcal{A}'-Q_4)=4$, so
 $\big(\mathcal{A},\,\sum_kc_kr^k\big)=\big((r-r_d)Q_4,\,-\tfrac12(\mathcal{A}'-Q_4)\big)$
-is a nonzero admissible kernel vector: the system is singular, with a kernel of dimension
-one. The determinant formula~\eqref{eq:det-disc} is Lemma~\ref{lem:det-res} below.
+is a nonzero admissible kernel vector, so the system is singular. When $r_d$ is the only
+repeated root and it is exactly double ($Q_4$ squarefree, $Q_4(r_d)\neq0$) the kernel is
+one-dimensional: then $\gcd(S,S')=r-r_d$, the homogeneous equation gives
+$S\mid\mathcal{A}S'$, hence $S/(r-r_d)\mid\mathcal{A}\,S'/(r-r_d)$ with coprime factors,
+so $(r-r_d)Q_4\mid\mathcal{A}$; by degree $\mathcal{A}$ is a multiple of $(r-r_d)Q_4$, and
+$\sum_kc_kr^k$ is then fixed by the equation. The determinant formula~\eqref{eq:det-disc} is Lemma~\ref{lem:det-res} below.
 \end{proof}
 
 The determinant of the reduction system is not a Vaidya-specific quantity: it is the
@@ -2311,7 +2315,9 @@ resultant of the radicand with its derivative, for any sextic whatsoever.
 
 \begin{auxlemma}[the reduction determinant is a resultant]\label{lem:det-res}
 Let $S=\sum_{i=0}^{6}s_ir^i$ be arbitrary and let $M$ be the $11\times11$ matrix, in the
-monomial bases, of the linear map
+monomial bases ordered by increasing degree---$(\mathcal A,C)$ by $a_0,\dots,a_5,c_0,\dots,c_4$
+and the image by $r^0,\dots,r^{10}$, the order that fixes the sign of $\det M$---of the
+linear map
 \[
    T:\ \mathbb{P}_5\times\mathbb{P}_4\longrightarrow\mathbb{P}_{10},
    \qquad
@@ -2748,7 +2754,9 @@ $C_e=(e_4^3-2m\,e_4^2)/(e_4-r_d)+2e_1^{z_d}\zeta(z_d)-2e_2^{z_\infty}\wp(z_\inft
 
 \begin{auxlemma}[block form of the first-order correction]\label{lem:blocks}
 Let $\tilde G$ be the antiderivative of $R$ constructed in
-Lemma~\ref{lem:residues}, let $T$ be any clock, and expand both in the even block
+Lemma~\ref{lem:residues}, let $T$ be any clock whose derivative lies in the span of the
+even blocks---as that of $T_\tau$ does; a clock with an odd part or with poles elsewhere,
+such as $v$, needs the additional terms given below---and expand both in the even block
 basis, $\tilde G=\sum_ic_i\,\mathrm{Pe}_i$ and $T=\sum_jd_j\,\mathrm{Pe}_j$, with
 $\mathrm{Pe}$ the primitive of a block. Then
 \begin{equation}
@@ -2827,27 +2835,35 @@ so that the triple-pole residue drops, $b_3^{\rm track}=0$.
 \end{lemma}
 
 \begin{proof}
+The residue formulae of \ref{app:degeneration} are linear in the source numerator and use
+of it only its values and derivatives at the poles, and $N_{\rm tot}$ is a polynomial of the
+same kind as $N$; so they hold verbatim with $N\to N_{\rm tot}$, and the block form with them,
+while $\varphi_0$ and the clocks do not involve $N$ at all.
+
 Evaluating~\eqref{eq:Ntot-track} at $r=r_d$, the terms proportional to $S$ drop because
-$S(r_d)=0$, leaving the first equality in~\eqref{eq:track-cancel}. For the second, note
-that the Vaidya sextic is \emph{jointly homogeneous of degree six} in $(r,m,J)$,
+$S(r_d)=0$, leaving the first equality in~\eqref{eq:track-cancel}. For the second, the
+double-root condition $S\big(r_d(\lambda);\Jc(\lambda),\lambda\big)=0$ holds identically
+along the locus; differentiating it totally in $\lambda$,
+\[
+   S'(r_d)\,\frac{\dd r_d}{\dd\lambda}
+   +\Big[\partial_\lambda S+\frac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)=0 ,
+\]
+and $S'(r_d)=0$ because the root is double. The bracket therefore vanishes, which is the
+second equality in~\eqref{eq:track-cancel}. This uses nothing but the double root, so it
+holds for any one-parameter family of sextics, the rotating curves of the companion paper
+included. Hence $N_{\rm tot}(r_d)=0$, and since the triple-pole residue is proportional
+to $N_{\rm tot}(r_d)$ it vanishes as well.
+
+For Vaidya the same vanishing can be seen from the self-similarity of the frozen family:
+the sextic is jointly homogeneous of degree six in $(r,m,J)$,
 \[
    S(\alpha r,\alpha m,\alpha J)=\alpha^6\,S(r,m,J),
    \qquad\text{hence}\qquad
-   r\,\partial_rS+m\,\partial_mS+J\,\partial_JS=6\,S
+   r\,\partial_rS+m\,\partial_mS+J\,\partial_JS=6\,S ,
 \]
-by Euler's theorem. Homogeneity also fixes the scaling of the degeneration locus,
-$\Jc=m\,j(\Ehat)$ and $r_d=m\,\rho(\Ehat)$, so that $\dd\Jc/\dd m=\Jc/m$ and
-$\dd r_d/\dd m=r_d/m$. Evaluating Euler's identity at the double root, where both $S$ and
-$\partial_rS=S'$ vanish, leaves $m\,\partial_mS+J\,\partial_JS=0$, that is
-\[
-   \Big[\partial_mS+\frac{\Jc}{m}\,\partial_JS\Big](r_d)
-   =\Big[\partial_\lambda S+\frac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)=0 ,
-\]
-which is the bracket in~\eqref{eq:track-cancel}; equivalently it equals
-$-S'(r_d)\,\dd r_d/\dd\lambda$, obtained by differentiating the double-root condition
-$S(r_d(\lambda),\Jc(\lambda);\lambda)=0$ totally in $\lambda$, and this vanishes because
-$S'(r_d)=0$. Hence $N_{\rm tot}(r_d)=0$, and since the triple-pole residue is proportional
-to $N_{\rm tot}(r_d)$ it vanishes as well.
+the locus scales as $\Jc=m\,j(\Ehat)$, $r_d=m\,\rho(\Ehat)$, and Euler's identity at the double
+root leaves $m\,\partial_mS+\Jc\,\partial_JS=0$, the bracket with $\lambda=m$ and
+$\dd\Jc/\dd m=\Jc/m$.
 \end{proof}
 
 \begin{remark}[independent verification]
