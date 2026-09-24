@@ -542,8 +542,8 @@ Work in a Lorentz-orthonormal frame. If $W$ is timelike, $W=|W|e_0$ and
 \eqref{eq:rail-constraints} give $u^0=\Ehat/|W|$ and
 $|\vec u\,|^2=\Ehat^2/|W|^2-1$: a Euclidean sphere, nonempty iff $\Ehat\ge|W|$,
 compact always, and degenerating to the single point $u=e_0$ at $\Ehat=|W|$. If
-$W$ is spacelike, $W=|W|e_1$ and the rail fixes $u^1=-\Ehat/|W|$ while
-$(u^0)^2=1+\Ehat^2/|W|^2+(u^2)^2+(u^3)^2$ leaves $(u^2,u^3)$ unbounded. If $W$ is
+$W$ is spacelike, write $w=\sqrt{g(W,W)}$ and $W=w\,e_1$; the rail fixes $u^1=-\Ehat/w$
+while $(u^0)^2=1+\Ehat^2/w^2+(u^2)^2+(u^3)^2$ leaves $(u^2,u^3)$ unbounded. If $W$ is
 null, $W=w(e_0+e_1)$ and the rail fixes only $u^0-u^1=\Ehat/w$, a paraboloid.
 Both are noncompact.
 \end{proof}
@@ -1479,8 +1479,8 @@ asymptotic.
 threshold; evidence level~(I) for the curvature and its sign, level~(II) for the
 quoted sign-change radii]
 \label{prop:noconj}
-For the frozen, non-rotating \emph{arrival-time} optical surface,
-$K_t(r)<0$ for \emph{every} $r>2M$ if and only if $\Ehat^2\ge3/2$ (the `if' direction
+For the frozen, non-rotating \emph{arrival-time} optical surface at scattering energy
+$\Ehat>1$, $K_t(r)<0$ for \emph{every} $r>2M$ if and only if $\Ehat^2\ge3/2$ (the `if' direction
 by the certificate of Corollary~\ref{cor:static-separation}). Consequently,
 for $\Ehat^2\ge3/2$ no exterior $t$-branch extremal carries a conjugate point
 \emph{for equatorial perturbations}, and every such extremal is a local minimiser
@@ -1495,7 +1495,9 @@ coefficient is $-(2\Ehat^2-3)(\Ehat^2-1)$, positive when $\Ehat^2<3/2$, so that 
 large $r$ below the threshold. Neither fact excludes a sign change at intermediate radii
 above it: that $K_t<0$ on the \emph{whole} exterior for $\Ehat^2\ge3/2$ is the
 positivity certificate of Corollary~\ref{cor:static-separation} below, and the
-proposition rests on it. Below the
+proposition rests on it. The restriction $\Ehat>1$ is needed for the `only if': at the
+marginal energy $\Ehat=1$ the cubic and quadratic coefficients both vanish, the bracket
+reduces to $-2M^2(5r-8M)$, and $K_t<0$ on the whole exterior although $\Ehat^2<3/2$. Below the
 threshold a region of positive curvature opens at large radius, and its inner
 edge runs off to infinity as $\Ehat^2\to(3/2)^-$: numerically it sits at
 $r/M=22.75,\,59.53,\,576.7,\,5751.7$ for $\Ehat^2=1.20,\,1.40,\,1.49,\,1.499$.
@@ -1529,7 +1531,8 @@ exponential map there is a diffeomorphism, so any two points are joined by
 exactly one geodesic, which minimises. Projecting back, each homotopy class of
 equatorial paths carries \emph{exactly one} controlled-rail extremal, and that
 extremal is the \emph{global} minimiser of arrival time within its class of
-equatorial competitors.
+equatorial competitors. It is of type~(E): a geodesic segment is compact and lies in
+$r>2M$, hence in some $r\ge2M+\delta$, where $\bar v^2>0$ since $\Ehat^2\ge3/2>f$.
 \end{proposition}
 
 Two remarks sharpen what this gives. First, the certificate is of the kind the
@@ -1752,7 +1755,9 @@ contribution is $\dd\beta$ contracted with the variation field; part~(iii) is
 $\dd b$ of~\eqref{eq:db} rewritten. For~(ii), take a variation field
 $V=\eta T+\xi N$ through extremals---$\xi$ is its normal \emph{component}, and
 the tangential part cannot be dropped, since $\alpha$-unit speed forces
-$\eta'=-B\xi$. Using $\nabla_T\nabla_TV=\nabla_V\nabla_TT+R(T,V)T$ and
+$\eta'=-B\xi$: along a family of unit-speed curves
+$\langle\nabla_TV,T\rangle=\langle\nabla_VT,T\rangle=\tfrac12V|T|^2=0$, and the tangential
+component of $\nabla_TV$ is $\eta'+B\xi$. Using $\nabla_T\nabla_TV=\nabla_V\nabla_TT+R(T,V)T$ and
 differentiating $\nabla_TT+BN=0$ along the family,
 \begin{equation}
     \nabla_T\nabla_TV+R(V,T)T=-\dd B(V)\,N-B\,J\nabla_TV .
@@ -2905,17 +2910,20 @@ At $M=1$, $a=0.9$, $E=1.2$, $A=1$ the system $N=N'=0$ has the solution
     r_d=3.513905124011657\,M,\qquad J_c^{-}=-8.053516003877019 ,
     \label{eq:exterior-sep}
 \end{equation}
-a genuine double root of $N$, reproduced by the printed closed
-form~\eqref{eq:Jc-minus} to $10^{-12}$. It is an \emph{exterior} degeneration:
+a genuine double root of $N$---of multiplicity exactly two, $N''(r_d)\neq0$---reproduced
+by the printed closed form~\eqref{eq:Jc-minus} to $10^{-12}$. It is an \emph{exterior} degeneration:
 $r_d>2M$, and at $r_d$ both control-domain inequalities
 of~\eqref{eq:two-inequalities} hold strictly,
 \begin{equation}
     g(W,W)\big|_{r_d}=-0.430833<0,
     \qquad \bar v^2\big|_{r_d}=0.700811>0 ,
 \end{equation}
-as they do on the whole approach arc $r\in[r_d,6M]$. It is therefore a
-type-(E) object in the sense of Protocol~\ref{prot:status}: a controlled-rail
-extremal, not an analytic continuation. Moreover $r_d>2M$ at every spin sampled:
+as they do on the whole approach arc $r\in[r_d,6M]$, and indeed on the whole exterior,
+since $g(W,W)=-f<0$ and $\bar v^2=1-f/E^2>0$ there, with $f<1<E^2$. On every finite
+sub-arc the separatrix orbit is an integral curve of the normal Hamiltonian flow of
+$H_t$ at $J=J_c^-$, so it is a type-(E) object in the sense of
+Protocol~\ref{prot:status}: a controlled-rail extremal, not an analytic
+continuation. Moreover $r_d>2M$ at every spin sampled:
 $r_d/M=2.857675,\,3.204756,\,3.513905,\,3.579494$ at
 $a=0.1,\,0.5,\,0.9,\,0.99$. That is a scan of four values, not a proof over the
 continuous range, and we claim it as such; it does indicate that the exterior
