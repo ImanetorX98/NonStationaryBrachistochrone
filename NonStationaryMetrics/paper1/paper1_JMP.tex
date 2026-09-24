@@ -900,8 +900,13 @@ Hence $p_0$ normalizes to $-1$, and the order of the remaining steps matters.
 First, nontriviality together with uniqueness for the linear adjoint equation
 excludes $p(T)=0$ in the abnormal case. Then, once $p_0=-1$, the terminal
 transversality $H(T)=0$ reads $h(p(T))=1$, so $p(T)\neq0$ outright. Finally the
-adjoint equation, being linear in $p$, propagates that non-vanishing backwards:
-$p(\chi)\neq0$ for every $\chi$. A minimizer that touched $\partial\Omega$ would instead require the
+adjoint equation propagates that non-vanishing backwards. This uses the formulation of
+this part of the proof, with the arrival clock $\chi$ as the evolution variable and unit
+running cost, in which $H=p\cdot f(x,\theta,\chi)+p_0$ and $\dot p=-p\cdot\partial_xf$ is
+linear and homogeneous in $p$, so that $p$ cannot vanish at one clock value without
+vanishing at all: $p(\chi)\neq0$ for every $\chi$. (In the arc-parametrised form of part~(i),
+where $F$ is a running cost, the spatial costate obeys an inhomogeneous equation and the
+statement would concern the full costate $(p_x,p_\chi)$ instead.) A minimizer that touched $\partial\Omega$ would instead require the
 state-constrained principle, whose nontriviality is $(p_0,p,\mu)\neq0$ with $\mu$ the
 measure carried on the active set, and there $p$ may vanish where $\mu$ does not; the
 argument above would not apply, and normality would have to be re-established together
