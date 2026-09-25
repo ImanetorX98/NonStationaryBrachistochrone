@@ -318,7 +318,7 @@ mass but is free to exert power against the selector (see below).
         $\mathcal T$ & selected cost clock; $\ell_{\mathcal T}=\dd\mathcal T/\dd\chi$\\
         $\sigma$ & arbitrary monotone parameter used to describe a spatial arc\\
         $s=v/M$ & dimensionless slow coordinate for the Vaidya expansion\\
-        $\lambda$ & elapsed clock from the free-arrival endpoint\\
+        $\lambda$ & elapsed clock from the launch (same-launch comparison)\\
         $\dot m=\dd m/\dd v$ & Vaidya mass rate\\
         $\varepsilon=M\dot m/m$ & dimensionless Vaidya adiabatic parameter\\
         \hline\hline
@@ -1804,7 +1804,10 @@ mass-drift of the frozen family).
 Assume (H) and let the background depend on a single slow parameter with dimensionless
 rate $\varepsilon$. Linearizing the extended Hamiltonian $\mathcal H=p_\chi+H=0$ about the
 frozen extremal, in the original canonical variables $(r,p_r)$ with $\lambda$ the elapsed
-clock measured from the free-arrival endpoint, the momentum-shell shift is
+clock measured forward from the launch, where the drifting extremal starts on the frozen
+shell with the frozen charges (the same-launch comparison), and with $\varepsilon$ the rate
+at which the slow parameter decreases along $\lambda$ (a parameter that increases, as the
+Vaidya mass under accretion, has $\varepsilon<0$), the momentum-shell shift is
 $\delta p_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{p_r}$ and the shape correction is
 \begin{equation}
     \begin{aligned}
@@ -1819,7 +1822,7 @@ which closes the correction to $O(\varepsilon^2)$, uniformly on any compact sub-
 which $|H_{p_r}|$ is bounded away from zero. Here $\Theta$ is the Euler operator
 generating the frozen-family drift and $\mathcal D$ is the drift generator, equal to
 $\Theta$ unless the slow parameter rescales the canonical momenta. For single-parameter
-Vaidya, $\mathcal D=\Theta=m\partial_m$ and the terminally-anchored source collapses to
+Vaidya, $\mathcal D=\Theta=m\partial_m$ and the launch-anchored source collapses to
 the universal boundary form
 \begin{equation}
     S_{\mathcal D}=[\,r\,p_r\,]-\lambda .
@@ -1836,10 +1839,11 @@ Gr\"onwall estimate on the sub-arc.
 \end{proof}
 
 As in Thakurta--Kerr, the interior costate does not
-vanish---$p_v=-H_v=O(\dot m)$ with $p_v(r_1)=0$ only at the free arrival---so the
+vanish---$p_v=-H_v=O(\dot m)$, vanishing only at the anchor (the free arrival in the boundary-value
+problem, the launch in the same-launch comparison used here)---so the
 \emph{complete} first-order term adds the off-shell piece given by the Vaidya analogue
 of equation~\eqref{eq:adiab-exact}, with the single-parameter operator $\Theta=m\partial_m$
-and $S_{\mathcal D}=\int_0^\lambda\Theta H_v\,\dd\lambda'$ terminally anchored; the extra term is
+and $S_{\mathcal D}=\int_0^\lambda\Theta H_v\,\dd\lambda'$ anchored at the launch; the extra term is
 $-\!\int(\partial_{p_r}G/H_{p_r})\,S_{\mathcal D}\,\dd r$, a length-two iterated integral of the
 same horizon-dilogarithm class. Applying the identical canonical perturbation theory
 to $H_v$ closes the Vaidya first order to $O(\dot m^2)$ (residual slope $\approx2$;
@@ -1997,7 +2001,7 @@ $2\mathcal{B}_{\rm hor}=12.225$ (each $\times|\dot m|$).
     \includegraphics[width=0.72\textwidth]{Immagini/fig_vaidya_offshell.pdf}
     \caption{Vaidya $v$-branch first-order correction, residual against the true
     non-autonomous flow versus $\varepsilon=M\dot m/m$ (log--log). The on-shell term
-    alone (dropping the terminally anchored source $S_{\mathcal D}$) is $O(\varepsilon)$;
+    alone (dropping the launch-anchored source $S_{\mathcal D}$) is $O(\varepsilon)$;
     the complete extended-Hamiltonian term of equation~\eqref{eq:adiab-exact}, adding the
     off-shell piece, closes the correction to $O(\varepsilon^2)$. Using five rates
     $\varepsilon\in[2.5\times10^{-3},4.0\times10^{-2}]$, the plotted residual is the
@@ -2979,8 +2983,8 @@ since $\dd m/\dd s=+\varepsilon m$ at leading order.
 fixes: the \emph{ingoing} frozen momentum $p_{r0}(r)$, the root of $H_0=0$ with
 $H_{0,p_r}<0$ (the outgoing arc is its mirror across the turning point); the shape
 integrand $G_0(r)=\dd\varphi/\dd r=H_{0,J}/H_{0,p_r}$; and the clock density
-$\dd\lambda/\dd r=1/H_{0,p_r}$, with $\lambda$ oriented \emph{inward from the
-free-arrival endpoint}.
+$\dd\lambda/\dd r=1/H_{0,p_r}$, with $\lambda$ the elapsed clock from the launch, oriented
+along the ingoing flow.
 
 \paragraph{Drift generator.} Adjoining the slow clock $s$ with conjugate $p_s$, the
 extended Hamiltonian $\mathcal H=p_s+H(r,p_r;\lambda(s))=0$ generates the \emph{canonical}
@@ -2992,12 +2996,17 @@ instead a slow parameter rescales a normalized momentum $P_r$, the rescaling is
 time-dependent (conformally symplectic), \emph{not} canonical: the chain rule adds a
 dilation term and promotes $\Theta$ to a full Euler operator containing
 $P_r\partial_{P_r}$. Here no such rescaling occurs: the canonical pair is $(r,p_r)$ and
-$\mathcal D=\Theta$.
+$\mathcal D=\Theta$. The sign of the shell-departure rate depends on the orientation of the
+drift, and the derivation below is written, as in Theorem~\ref{thm:firstorder}, for a slow
+parameter that \emph{decreases} along the flow---the Thakurta--Kerr charges under a growing
+conformal factor---for which $\dd H/\dd s=-\varepsilon\,\mathcal DH$ as stated. For Vaidya
+accretion, $\dd m/\dd s=+\varepsilon m$, the mass increases along the flow, $\dd H/\dd s$
+changes sign, and so does every source term below.
 
 \paragraph{Extended system and first order.} Adjoining $s$ with conjugate $p_s$,
-$\mathcal H=p_s+H(r,p_r;\lambda(s))=0$; free-arrival transversality sets $H=0$ (hence
-$p_s=0$) at $\lambda=0$. Along the flow $\dd p_s/\dd\lambda=\varepsilon\,\mathcal D H$, so
-the \emph{terminally-anchored} source is
+$\mathcal H=p_s+H(r,p_r;\lambda(s))=0$; the drifting extremal is launched on the frozen
+shell with the frozen charges, so $H=0$ (hence $p_s=0$) at $\lambda=0$. Along the flow
+$\dd p_s/\dd\lambda=\varepsilon\,\mathcal D H$, so the \emph{launch-anchored} source is
 \begin{equation}
     p_s^{(1)}(\lambda)\equiv S_{\mathcal D}(\lambda)
     =\int_0^{\lambda}\mathcal D H\,\dd\lambda',
@@ -3039,7 +3048,7 @@ flow $\dd r/\dd\lambda=H_{p_r}$ and $\dd p_r/\dd\lambda=-H_r$, so
    \overset{\eqref{eq:selfsimilar}}{=}1+\Theta H+H ,
 \]
 and the shell condition $H=0$ removes the last term, leaving
-$\Theta H=\dd(r\,p_r)/\dd\lambda-1$. Integrating from the terminal anchor gives the
+$\Theta H=\dd(r\,p_r)/\dd\lambda-1$. Integrating from the anchor at the launch gives the
 \emph{universal boundary form}
 \begin{equation}
     S_{\mathcal D}(\lambda)=[\,rp_r\,]_0^{\lambda}-\lambda,
@@ -3131,9 +3140,9 @@ and hence no dilation term, so $\mathcal D=\Theta=m\partial_m$ is complete and
     \qquad w=\Ehat^2-f;
     \label{eq:ThetaHv}
 \end{equation}
-since $m$ \emph{increases} along the ingoing flow while the elapsed clock $\lambda$ is
-oriented inward from the free-arrival endpoint, $\lambda$ runs \emph{opposite} to the mass
-drift on this branch. This fixed orientation ($\mathrm{sgn}(\dd\lambda/\dd m)=-1$) is what
+since $m$ \emph{increases} along the ingoing flow, and so along $\lambda$, the slow
+parameter here increases where the derivation above assumed it decreases. That orientation
+($\mathrm{sgn}(\dd m/\dd\lambda)=+1$, the reverse of the Thakurta--Kerr charges) is what
 inverts both source contributions in equation~\eqref{eq:adiab-exact}, i.e.\
 $\lambda\Theta H_0-S_{\mathcal D}\to S_{\mathcal D}-\lambda\Theta H_0$ and
 $-\lambda\Theta G_0\to+\lambda\Theta G_0$---a declared sign convention, not a change of

@@ -2379,8 +2379,9 @@ $\varphi_0+\varepsilon\,\delta\varphi$ shows the \emph{physical} accuracy is $\s
 (linear in $\varepsilon$), far above the algebraic floor
 (figure~\ref{fig:phi-true-dynamic}). Linearizing the extended Hamiltonian
 $\mathcal H=p_s+H=0$ about the frozen extremal---with the slow variable
-$\lambda$ the elapsed clock measured \emph{from the free-arrival endpoint} (where
-$H=0$ by the transversality of Paper I), oriented inward, and
+$\lambda$ the elapsed clock measured forward \emph{from the launch}, where the drifting
+extremal starts on the frozen shell with the frozen charges (so $H=0$ there by
+construction: this is the same-launch comparison validated below), oriented inward, and
 $A(\eta)=A_0(1+\varepsilon\lambda+\cdots)$---gives, in the \emph{normalized} momentum
 $P_r=p_r/A$ (\ref{app:firstorder}), the first-order shift of the momentum shell
 $\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
@@ -2405,8 +2406,7 @@ $O(\varepsilon)$ error against the true flow---this is the correction of
 \ref{app:firstorder}). Here $\Theta$ differentiates only the \emph{dynamical}
 charges $E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$ (the rail invariants $\Ehat,J_{\rm TK}$
 are inert); for single-parameter Vaidya there is no rescaling, $\mathcal D=\Theta=m\partial_m$.
-The source $S_{\mathcal D}$ is \emph{terminally anchored} ($S_{\mathcal D}=0$ at the
-free-arrival endpoint); the reduction holds on compact sub-arcs bounded away from the
+The source $S_{\mathcal D}$ is \emph{anchored at the launch} ($S_{\mathcal D}=0$ there); the reduction holds on compact sub-arcs bounded away from the
 turning point ($H_{P_r}\to0$), and is verified to machine precision against the true
 canonical flow (slope~$\approx2$;
 \texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py}, \texttt{tests/}). What
@@ -4715,14 +4715,16 @@ Euler operator
     \label{eq:theta-op}
 \end{equation}
 since $\dd E_{\rm eff}/\dd s=-\varepsilon E_{\rm eff}$, $\dd J_{\rm eff}/\dd s=-\varepsilon
-J_{\rm eff}$ at leading order (Vaidya: $\dd m/\dd s=+\varepsilon m$).
+J_{\rm eff}$ at leading order: the charges decrease along the flow. (Vaidya:
+$\dd m/\dd s=+\varepsilon m$, the reverse orientation, which flips the sign of both source
+terms; Paper I.)
 
 \paragraph{Frozen data (per branch).} At fixed $s$ the branch Hamiltonian
 $H_0(r,p_r;E_{\rm eff},J_{\rm eff})=0$ fixes: the \emph{ingoing} frozen momentum
 $p_{r0}(r)$, the root of $H_0=0$ with $H_{0,p_r}<0$ (the outgoing arc is its mirror
 across the turning point); the shape integrand $G_0(r)=\dd\varphi/\dd r=H_{0,J}/H_{0,p_r}$;
 and the clock density $\dd\lambda/\dd r=1/H_{0,p_r}$, with $\lambda$ the elapsed clock
-oriented \emph{inward from the free-arrival endpoint}.
+measured forward from the launch, along the ingoing flow.
 
 \paragraph{The conformal rescaling: canonical derivation of the dilation term.} The
 Thakurta--Kerr Hamiltonians factorize as
@@ -4776,9 +4778,9 @@ symplectic) variables rewrites the shell as $\bar H(r,P_r;E_{\rm eff}(s),J_{\rm 
 (since $H_{\rm br}=A\bar H$, $A>0$). Two statements have to be kept apart here.
 The constraint carried along the non-autonomous flow is the extended one,
 $p_s+A\bar H=0$; $\bar H=0$ is the \emph{frozen} shell, and it is imposed at the
-endpoint rather than propagated. Free-arrival transversality
-sets $\bar H=0$, hence $p_s=0$, at $\lambda=0$. Along the flow
-$\dd p_s/\dd\lambda=\varepsilon\,\mathcal D\bar H$, so the \emph{terminally-anchored}
+launch rather than propagated: the drifting extremal starts on the frozen shell with the
+frozen charges, so $\bar H=0$, hence $p_s=0$, at $\lambda=0$. Along the flow
+$\dd p_s/\dd\lambda=\varepsilon\,\mathcal D\bar H$, so the \emph{launch-anchored}
 source is
 \begin{equation}
     p_s^{(1)}(\lambda)\equiv S_{\mathcal D}(\lambda)
