@@ -478,7 +478,8 @@ affine hyperplane $\{-u\cdot W=\Ehat\}$, centred at $(\Ehat/|W|^2)W$ and paralle
 spacelike hyperplane $W^\perp$, hence compact, smooth and strictly convex.
 \end{enumerate}
 In case (iii) the induced set of physical velocities per unit selector time is the image of
-that sphere under an invertible affine map, hence a compact, strictly convex ellipse: this
+that sphere under an invertible affine map, hence a compact, strictly convex ellipsoid; in
+the orbital plane, where the control is the direction $\theta\in S^1$, it is an ellipse: this
 is~\eqref{eq:ellipse}, and its semi-axes vanish exactly as $\Ehat\downarrow|W|$.
 Consequently Hypotheses~\ref{hyp:selector}--\ref{hyp:convex} imply the convexity properties
 used throughout, and Hypothesis~\ref{hyp:coercive} implies the two-sided
@@ -554,7 +555,8 @@ $p\cdot\dot x(\theta)$ over the indicatrix is unique, so the optimal control
 $\theta^\star(x,p)$ is single-valued and smooth and no Filippov relaxation is required;
 \item[(ii)] Pontryagin's maximum principle delivers the branch Hamiltonian
 $H(x,p)=\max_\theta p\cdot\dot x(\theta)$ in closed form;
-\item[(iii)] $p_\varphi=J$ is conserved, and the free-arrival-clock transversality
+\item[(iii)] on the axisymmetric backgrounds considered here, $p_\varphi=J$ is conserved,
+and the free-arrival-clock transversality
 condition forces the branch Hamiltonian to vanish at the free endpoint,
 \begin{equation}
     H\big|_{\chi=\chi_f}=0 \qquad\text{(free arrival time).}
@@ -1002,7 +1004,8 @@ candidate's $\chi_f$; it is the target condition that makes the left-hand side t
 number $c=V(\cdot,x_f)-V(\chi_0,x_0)$ for all of them, and so a lower bound for the cost of
 every competitor. Without it the argument compares values of $V$ at different arrival
 clocks and proves nothing. Along the candidate the inequality is an equality by
-hypothesis, so its cost equals $c$ and no competitor can beat it. Finally $c$ therefore equals the value function, and the candidate realizes it. A merely
+hypothesis, so its cost equals $c$ and no competitor can beat it. Finally $c$ therefore equals the value function of the problem restricted to competitors
+in $\mathcal R$, and the candidate realizes it. A merely
 Lipschitz calibration, or a viscosity subsolution, would need in addition the
 sub-optimality principle along every admissible trajectory---the chain rule can fail on
 the null set where such a $V$ is not differentiable, and a trajectory may run inside it.
@@ -1220,7 +1223,8 @@ $u$ gives the \emph{sharp} bound
 attained when $a$ is parallel to $W_\perp$---the minimum-thrust control. The
 denominator is exactly the quantity that vanishes on the freezing surface
 $\Ehat=|W|$ of Hypothesis~\ref{hyp:convex}, so the minimum thrust \emph{diverges}
-there, as an inverse square root in the margin $\Ehat^2-|W|^2$. It does not
+there, as an inverse square root in the margin $\Ehat^2-|W|^2$, wherever the drift term in
+the numerator does not vanish (as it does not in Vaidya with $m'\neq0$). It does not
 diverge merely because $|W|\to0$. The two boundaries of the control domain are
 therefore of different kinds: one is a loss of compactness at finite cost, the
 other a divergence of cost, and only the second makes the rail physically
@@ -2261,8 +2265,9 @@ transport in dynamical black-hole spacetimes.
 \Ithm{4}
 \begin{lemma}[polynomial reduction]\label{lem:reduction}
 Let the slow derivative of the shape integrand have the form
-$\partial_\lambda F=N_\lambda/S^{3/2}$ with $S$ the sextic radicand and $N_\lambda$
-polynomial. Then the depth-one reduction
+$\partial_\lambda F=N_\lambda/S^{3/2}$ with $S$ the sextic radicand and $N_\lambda$ a
+polynomial of degree at most ten (as every source here is: $N_\lambda=S\,\partial_\lambda K
+-\tfrac12K\,\partial_\lambda S$ with $\deg S=6$ and $K$ of low degree). Then the depth-one reduction
 $\partial_\lambda\varphi_0=\mathcal{A}/\sqrt S+\sum_{k=0}^4 c_k U_k$
 [equation~\eqref{eq:dm-reduction}] holds if and only if
 \begin{equation}
