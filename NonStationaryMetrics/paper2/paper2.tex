@@ -90,8 +90,8 @@ theorem under a same-launch comparison;
 and the first-order adiabatic response, on- and off-shell, verified on compact regular
 subarcs against the true non-autonomous flow to $O(\varepsilon^2)$, its weight-two content a length-two iterated Abelian integral on a
 genus-two curve. The separatrices, the classification and the on-shell reduction are
-proved; the fixed-endpoint no-inversion is proved on explicit regions of the
-coordinate-time turning point, for every spin and, when $E^2\ge3/2$, everywhere beyond the
+proved; for frozen $A$ the symmetric fixed-endpoint no-inversion is proved on explicit
+regions of the coordinate-time turning point, for every spin and, when $E^2\ge3/2$, everywhere beyond the
 single peak of the proper-time half-angle map, its unrestricted extension remaining
 conjectural; a rigorous higher-genus polylogarithm framework remains open.
 \end{abstract}
@@ -2145,8 +2145,8 @@ a product of depth-one objects and is closed in the Kleinian/abelian class.
 
 \paragraph{Clock differentials.} The drift clock $\eta(r)$ enters $\mathcal{C}$ through its
 differential, which we obtain in closed form on the branch curve. On the
-$\tau$-branch the proper-time density is a \emph{rational} second-kind
-differential, the frame-dragging term cancelling identically,
+$\tau$-branch the proper-time density is a \emph{rational} differential with polynomial
+numerator, poles only at the points at infinity, the frame-dragging term cancelling identically,
 \begin{equation}
     \frac{\dd\tau}{\dd r}=\frac{r^2(r-2M)}{\sqrt{S}},
     \label{eq:clock-tau}
@@ -2160,7 +2160,7 @@ converts it into the conformal time elapsed along the same orbit,
     \frac{r\,D_E}{\Delta}=(E^2-1)+\frac{2ME^2r-(E^2-1)a^2}{\Delta},
     \label{eq:clock-eta-tau}
 \end{equation}
-which carries the second-kind vector $b=(-2MaJ(E^2-1),\,0,\,0,\,E,\,0)$ and a
+which carries the coefficient vector $b=(-2MaJ(E^2-1),\,0,\,0,\,E,\,0)$ in the $U_j$ basis and a
 third-kind part at the horizons, $\Delta=0$, with numerator
 $-2MaJ[2ME^2r-(E^2-1)a^2]$. At $a=0$ it reduces to $E\,r^3/\sqrt S$, the
 Schwarzschild coordinate time, which is the bulk part of the advanced-time clock
@@ -2180,12 +2180,12 @@ exactly, $E^2-f=DE/r$), the gravitomagnetic wind collapses and
 \end{equation}
 with $\mathcal K$ the frozen numerator [equation~\eqref{eq:t-K}], the ergosphere pole
 $r=2M$ \emph{removable}, and third-kind poles only at the horizons ($\Delta=0$). The
-second-kind polynomial part is
+polynomial part is
 $P_3=E^2r^3+2E^2Mr^2+4E^2M^2r+8E^2M^3-2(E^2-1)JMa$ (giving the clock vector
 $b=(8E^2M^3-2(E^2-1)JMa,\,4E^2M^2,\,2E^2M,\,E^2,\,0)$, the $t$-analogue of the
 $\tau$-branch vector of~\eqref{eq:clock-eta-tau}), and $R_\Delta$ is the degree-one horizon numerator
 (explicit in \texttt{reproduce\_reductions.py}). Thus \emph{neither} branch leaves
-the genus-two curve---on both the drift clock is a second-kind differential plus a
+the genus-two curve---on both the drift clock is a polynomial-numerator differential plus a
 third-kind horizon letter (the $t$-branch verified against the Hamiltonian flow to
 $10^{-10}$); the apparent Doran double cover of a first analysis was spurious. Table~\ref{tab:branch-adiab}
 collects the branch data: the two solutions share the structure~\eqref{eq:phi-adiab}
@@ -2236,7 +2236,7 @@ $E=\Ehat$) is closed, and the antisymmetric remainder
 \end{equation}
 is a depth-two iterated integral; its energy component alone, with $\Theta$ replaced by
 $\Ehat\,\partial_E$, is the older form $\tfrac12\Ehat\big(\int\partial_E\varphi_0\,\dd\eta
--\int\eta\,\partial_EF\,\dd r\big)$. Expand $\partial_E\varphi_0$ and $\eta$ in the
+-\int\eta\,\partial_EF\,\dd r\big)$. Expand $\Theta\varphi_0$ and $\eta$ in the
 cohomology basis $U_k=\int r^k/\mathcal{R}\,\dd r$: the reduction
 $(E\partial_E+J\partial_J)F=N/\mathcal{R}^3$ with $N=\Ehat\,N_E+J\,N_J$ a degree-seven
 polynomial, $N_v=\mathcal R^2\,\partial_vK-\tfrac12K\,\partial_v\mathcal R^2$, branch by
@@ -2250,7 +2250,8 @@ branch
 (the horizon factor $\Delta$ cancels identically in all four), gives
 $(E\partial_E+J\partial_J)\varphi_0=\mathcal{A}/\mathcal{R}+\sum_{k=0}^{4} C_k U_k$,
 $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$, and the drift clock splits as
-$\eta=\eta_2+\eta_3$, with $\eta_2=\sum_j b_jU_j$ its second-kind part and
+$\eta=\eta_2+\eta_3$, with $\eta_2=\sum_j b_jU_j$ its polynomial-numerator part (first
+kind, and residues at infinity, as well as second kind) and
 $\eta_3=\int R_\Delta/(\Delta\,\mathcal R)\,\dd r$ its horizon part; on the
 $\tau$-branch $b=(-2MaJ(E^2-1),0,0,E,0)$ and
 $R_\Delta=-2MaJ[2ME^2r-(E^2-1)a^2]$, by~\eqref{eq:clock-eta-tau}. The
@@ -2287,7 +2288,7 @@ are not derived here, on either branch, and are left to later work. The drift cl
 first-kind component on both branches, $b_0\neq0$, so the
 holomorphic$\times$holomorphic coefficient $Q_{01}$ does not vanish in general. On
 the $t$-branch the same reorganization holds with $\mathcal{R}^2=R_6$ and $K$ of
-Table~\ref{tab:branch-adiab}: its clock is likewise on-curve, with the second-kind
+Table~\ref{tab:branch-adiab}: its clock is likewise on-curve, with the coefficient
 vector $b$ of equation~\eqref{eq:clock-t} feeding the same $W_{kj}$ of $R_6$, and
 the horizon third-kind part $R_\Delta/\Delta$ of~\eqref{eq:clock-t} playing the
 role of $\eta_3$---no double cover. The full $t$-branch assembly (the
@@ -3209,11 +3210,12 @@ are both manifestly negative, placing the thresholds beyond the larger root
 homogeneous in $(r,a,J,M)$). Hence (A) is a theorem for all $r_{\min}>2M$,
 $E>1$, $a>0$; it holds at $a=0$ as well, where $W(r_{\min})=E^2r_{\min}^3(r_{\min}-2M)$ and
 the slope $E^2r_{\min}^2(r_{\min}-M)$ are positive directly. Lemma~(B), the monotonicity $\Phi_\tau'(r_{\min})<0$, holds on explicit
-regions and not everywhere: at high energy $\Phi_\tau$ has a single maximum, at a
-deflection radius $r_{\rm pk}$ (near $3M$ in the cases of the figures, the
-strong-deflection threshold where the orbit approaches the unstable circular
-$\tau$-orbit), and decreases beyond it, but at low energy it can have several
-(Proposition~\ref{prop:lemmaB} and the remarks after it). In the effective-potential form
+regions and not everywhere. At high energy $\Phi_\tau$ has a single maximum, at a radius
+$r_{\rm pk}$ (near $3M$ in the cases of the figures), and decreases beyond it; at low
+energy it can have several (Proposition~\ref{prop:lemmaB} and the remarks after it). The
+peak is a fold of the fixed-endpoint half-angle map, and its location depends on $E$, $a$
+and $r_0$; it is not an unstable circular $\tau$-orbit, which does not exist in the
+exterior, since on the turning shell $\partial_r[r\Delta-J^2DE]=DE\,V'>0$. In the effective-potential form
 $\Phi_\tau=\sqrt{V_{\min}}\int_{r_{\min}}^{r_0}K/\sqrt{V-V_{\min}}\,\dd r$ with
 $V=r\Delta/DE$, $K=\sqrt{r(r-2M)}/\Delta$, $V_{\min}=V(r_{\min})$, the substitution
 $V=V_{\min}+\sigma^2$ and one integration by parts give, for $W\equiv K/V'$
@@ -3279,8 +3281,9 @@ $r_{\min}>r_{\rm pk}$.
 
 Each region in (i)--(iv) contains every larger $r_{\min}<r_0$ with it, since $V$ is
 increasing; so if $r_{\min}^t$ satisfies one condition, $\Phi_\tau$ is decreasing on
-$[r_{\min}^t,r_0)$ and~\eqref{eq:grazing-noinv} applies. \emph{The fixed-endpoint
-no-inversion is therefore a theorem whenever $r_{\min}^t$ satisfies one of (i)--(iv), and,
+$[r_{\min}^t,r_0)$ and~\eqref{eq:grazing-noinv} applies. \emph{For frozen $A$ and the
+real, single-periastron, symmetric-endpoint family compared in Lemma~(A), the
+fixed-endpoint no-inversion is therefore a theorem whenever $r_{\min}^t$ satisfies one of (i)--(iv), and,
 for $E^2\ge3/2$, whenever $r_{\min}^t>r_{\rm pk}$}, for $0\le a\le M$ where the conditions allow spin,
 and for $a<0$ after the reflection $(a,J,\varphi)\mapsto(-a,-J,-\varphi)$. The symmetric example of Figure~\ref{fig:bvp} ($a=0$, $r_0=6M$, $E=1.2$,
 $r_{\min}^t=4.735M$, $V(r_{\min}^t)/V(r_0)=0.484$; \texttt{KerrScripts/bvp\_estremi\_fissi.py})
@@ -3312,8 +3315,8 @@ For those configurations the argument of~\eqref{eq:grazing-noinv} then gives the
 no-inversion whenever $r_{\min}^t$ lies to the right of the peak. The certificate has been
 carried through over seven configurations, $r_0/M=8$ and $12$ at $E=1.2,\,1.6,\,2.5$ and
 $r_0=10M$ at $b=E^2-1=0.96$, all passing; the five with $E^2\ge3/2$ are now covered
-analytically by Proposition~\ref{prop:lemmaB}(v), and the certificate remains the only
-argument for the two at $E=1.2$
+analytically by Proposition~\ref{prop:lemmaB}(v), and for the two at $E=1.2$ the
+certificate covers the full stated windows, beyond the explicit regions (i)--(ii)
 (\texttt{no\_inversion\_schwarzschild\_CAP\_grid.py}; the runs are archived in
 \texttt{CAP\_grid\_certificates.log}). An earlier version of these runs stopped at the
 quarter-potential radius and relied on the quarter-regime extension above, which is not
@@ -3520,14 +3523,15 @@ extremal families, arrival and proper time $\tau$.
 \paragraph{Conditional and numerical, kept tiered.} Rotation and the conformal factor
 invert the $t/\tau$ ordering under a same-launch comparison. The fixed-endpoint
 no-inversion result is deliberately \emph{not} stated as a single claim: it is
-(i) an analytic integrand inequality; (ii) a \emph{theorem} whenever the
-coordinate-time turning point satisfies one of the conditions of
-Proposition~\ref{prop:lemmaB}---for every spin, and for $E^2\ge3/2$ whenever it lies
+(i) an analytic integrand inequality; (ii) a \emph{theorem}, for frozen $A$ and the
+symmetric single-periastron family, whenever the coordinate-time turning point satisfies
+one of the conditions of Proposition~\ref{prop:lemmaB}---for every spin, and for $E^2\ge3/2$ whenever it lies
 beyond the single peak of the $\tau$ half-angle map; (iii) a computer-assisted proposition
 at the certified static configurations with $E=1.2$; (iv) asymptotic evidence as
 $r_0\to\infty$ at fixed energy in the static case; and (v) a numerically supported
 \emph{conjecture} in full generality, which cannot be proved through single-peakedness,
-since the half-angle map has several maxima at low energy. These five have different evidential status
+since the half-angle map has several maxima at low energy. No corresponding claim is made
+for a time-dependent $A$. These five have different evidential status
 (Protocol~\ref{prot:evidence}) and are not merged. The complete first-order (on-shell
 $+$ off-shell) correction is verified against the true non-autonomous flow to
 $O(\varepsilon^2)$ on compact regular subarcs; the weight-two letters are evaluated by a
@@ -3785,7 +3789,7 @@ the instantaneous orbit shape on a Thakurta--Kerr slice; the time dependence
 enters only through $E_{\rm eff}(\eta)$. The off-equatorial extension is left to future work.
 
 \paragraph{Curve conventions (fixed once for all letters).} Every letter
-below---the second-kind $U_k=\int r^k/\sqrt S\,\dd r$, the weight-two
+below---the Abelian $U_k=\int r^k/\sqrt S\,\dd r$, the weight-two
 $W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$, and the third-kind letters $L,\mathcal
 D_k$---is an integral on the hyperelliptic curve $Y^2=\mathcal S(r)$ read with the
 following fixed data. \emph{(i) Sheet:} $\sqrt S>0$ on the physical outer arc
@@ -4101,8 +4105,8 @@ and a \emph{closed-form} numerator in the problem quantities,
     \label{eq:t-K}
 \end{equation}
 holding for \emph{any} $(M,a,E,J)$: the third-kind poles sit at the two horizons
-$r_\pm$ ($\Delta=0$) and the polynomial part carries the first-/second-kind
-pieces (there is \emph{no} pole at $r=0$, cancelled by the leading factor $r$).
+$r_\pm$ ($\Delta=0$) and the polynomial part carries the first- and second-kind
+pieces and the residues at infinity (there is \emph{no} pole at $r=0$, cancelled by the leading factor $r$).
 By the conformal transfer $n^2_{\rm TK}=n^2_{\rm Kerr}(E_{\rm eff})$
 (section~\ref{sec:thakurta}), equation~\eqref{eq:t-K} is also the Thakurta--Kerr
 $t$-integrand under $E\to E_{\rm eff}=\Ehat/A$, $J\to J/A$, so the conformal
@@ -4393,7 +4397,7 @@ numerator is $N_\lambda=EJ\,r^4(r-2M)^2 DE$ for the $\tau$-branch energy reducti
 -\tfrac12\mathcal K\,\partial_E R_6$ for the $t$-branch (with $Q_2$, $\mathcal K$ of
 Equations~\eqref{eq:t-Q2},~\eqref{eq:t-K}, the $\Delta$ in $\mathcal K$ again cancelling to
 leave a degree-seven polynomial). The $t$-branch clock is entirely on-curve
-[equation~\eqref{eq:clock-t}]: its second-kind vector $b$ feeds the $W_{kj}$ of $R_6$ and
+[equation~\eqref{eq:clock-t}]: its coefficient vector $b$ in the $U_j$ basis feeds the $W_{kj}$ of $R_6$ and
 its horizon part $R_\Delta/\Delta$ the third-kind $\ln\sigma$-quotients, with no
 double cover. Three reference solutions to check against (polynomial residual $0$
 exactly):
@@ -5123,10 +5127,12 @@ $N=br^2+(3-b)r-4$ and $T=rN+c$. Then
 and $T>0$ on $r>2$ because $N(2+z)=bz^2+3(b+1)z+2(b+1)$ has positive coefficients. With
 $x=V(r_{\min})\in(v_h,V_0)$, $v_h=V(2)=c/(b+1)$ and $V_0=V(r_0)$, the half-angle is
 $\Phi(x)=\sqrt x\int_x^{V_0}W(t)(t-x)^{-1/2}\,\dd t$, and since $V$ is increasing the sign
-of $\dd\Phi_\tau/\dd r_{\min}$ is that of $\Phi'(x)$. Every identity and polynomial
-certificate below is checked in exact arithmetic by
-\texttt{verification/verify\_lemma\_B.py}, which also reproduces the two counterexamples
-stated after Proposition~\ref{prop:lemmaB} by outward-rounded interval quadrature.
+of $\dd\Phi_\tau/\dd r_{\min}$ is that of $\Phi'(x)$. The algebraic identities and
+polynomial sign certificates below are checked symbolically by
+\texttt{verification/verify\_lemma\_B.py}, together with the boundary constant $C_c$
+(through $C_c^2=\lim g^2/(V-v_h)$), and the two counterexamples stated after
+Proposition~\ref{prop:lemmaB} by outward-rounded interval quadrature. The analytic steps
+(the integral identities and the limits at the ends) are proved in the text.
 
 \paragraph{The concavity criterion, and part (v).} Let $g=VW$. The substitution
 $t=x\sec^2\theta$ gives $\Phi(x)=2\int_0^{\arccos\sqrt{x/V_0}}g(x\sec^2\theta)\,\dd\theta$,

@@ -14,7 +14,8 @@ b = E^2 - 1, c = a^2:
   (iii) alpha - 1/2 > 0 for r >= 5/2, 0 <= c <= 1;
   (iv)  alpha - 2/3 > 0 for r >= 3,   0 <= c <= 1;
   the elementary inequalities acosh(2) < 4/3 and 8/9 < 4^(1/3)/sqrt(3);
-  the lowered A_c polynomial printed in the appendix;
+  the lowered A_c polynomial and P_{2/3} printed in the appendix, and the
+  boundary constant C_c (exactly, and numerically at three points);
   the five interval-certified derivative signs of the two counterexamples.
 
 The proofs and this script were first written by GPT-6 Astra in an audit of the
@@ -227,6 +228,14 @@ def appendix_Ac():
         Cc=4*(bb+1)**2/(4*(bb+1)+cc)**mp.mpf('1.5')
         assert abs(gr/mp.sqrt(Vr-vh)/Cc-1)<mp.mpf('1e-12')
     print('NUMERIC PASS: g/sqrt(V-v_h) -> C_c = 4(b+1)^2/[4(b+1)+c]^(3/2) at three (b,c)')
+    # exact: g^2 = r^3 D^2 (r-2)/(4 T^2) and V - v_h = V'(2)(r-2) + O((r-2)^2), so
+    # C_c^2 = [r^3 D^2/(4 T^2)]_{r=2} / V'(2)
+    rr_,bb_,cc_=s.symbols('r b c',positive=True)
+    D_=bb_*rr_+2; T_=rr_*(bb_*rr_**2+(3-bb_)*rr_-4)+cc_
+    Vrot=rr_*(rr_**2-2*rr_+cc_)/D_
+    Cc2=(rr_**3*D_**2/(4*T_**2)).subs(rr_,2)/s.diff(Vrot,rr_).subs(rr_,2)
+    assert s.simplify(Cc2-16*(bb_+1)**4/(4*(bb_+1)+cc_)**3)==0
+    print('EXACT PASS: C_c^2 = 16(b+1)^4/[4(b+1)+c]^3')
 
 if __name__=='__main__':
     mode=sys.argv[1] if len(sys.argv)>1 else 'default'

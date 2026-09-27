@@ -15,9 +15,15 @@ Questo script mostra la riduzione a due lemmi (e li verifica robustamente):
   (A) A r_min uguale, l'integrando t domina PUNTUALMENTE: F_t(r;J_t)>F_tau(r;J_tau)
       per r in (r_min,r0). Poiche' J_{t,tau}(r_min) sono ALGEBRICI, questa e' una
       disuguaglianza polinomiale (non trascendente) => Phi_t(r_min)>Phi_tau(r_min).
-  (B) Phi_br e' strettamente decrescente in r_min.
+  (B) Phi_tau strettamente decrescente su [r_min^t, r0).
   Insieme: a Phi fisso, Phi_tau(r_min^tau)=Phi_t(r_min^t)>Phi_tau(r_min^t)
-           => r_min^tau < r_min^t  (tesi).  QED modulo (A) simbolico.
+           => r_min^tau < r_min^t  (tesi).
+  (A) e' dimostrato simbolicamente qui sotto, con M libero. (B) NON e' dimostrato da
+  questo script: vale sulle regioni della Proposizione prop:lemmaB di Paper II
+  (dimostrata nell'appendice app:lemmaB, verificata da
+  paper2/verification/verify_lemma_B.py) e non in generale, perche' a bassa energia
+  Phi_tau ha piu' massimi. I blocchi numerici su (B) qui sotto sono diagnostica su
+  campioni, non una prova.
 """
 import numpy as np
 import sympy as sp
@@ -60,7 +66,8 @@ def phis(a, E):
 
 
 print("Verifica dei due lemmi su vari (a,E):")
-print("  a    E     LemmaA (F_t>F_tau ptwise)  LemmaB (Phi decrescente)  => r_min^t>r_min^tau")
+print("DIAGNOSTICA SU CAMPIONI (non una prova): LemmaA puntuale e monotonia di Phi_t campionata")
+print("  a    E     LemmaA (F_t>F_tau ptwise)  Phi_t campionata decrescente  => r_min^t>r_min^tau")
 for a, E in [(0.3, 1.2), (0.6, 1.2), (0.9, 1.2), (0.9, 1.05), (0.9, 1.5), (0.5, 1.3)]:
     Phi_tau, Phi_t, Ftau, Ft, J2tau, Jt, r0 = phis(a, E)
     A_ok = B_ok = True; prev = None
@@ -78,7 +85,7 @@ for a, E in [(0.3, 1.2), (0.6, 1.2), (0.9, 1.2), (0.9, 1.05), (0.9, 1.5), (0.5, 
     print(f"  {a:.1f}  {E:.2f}   {str(A_ok):>5}                      {str(B_ok):>5}"
           f"                     {str(thesis):>5}")
 print("\nLemma A e' ALGEBRICO (J_{t,tau}(r_min) radici di polinomi) => prova simbolica")
-print("possibile per positivita' polinomiale. QED del teorema modulo (A) simbolico.")
+print("possibile per positivita' polinomiale (fatta sotto). Per (B) vedi verify_lemma_B.py.")
 
 
 # ============================================================================
@@ -183,13 +190,13 @@ if __name__ == '__main__':
 
 
 # ============================================================================
-# LEMMA B (monotonia di Phi_tau) -- CONDIZIONALE. Phi_tau(r_min) NON e' globalmente
-# monotona: ha un massimo a un raggio di deflessione r_pk~3M (soglia
-# strong-deflection/winding, dove l'orbita si avvicina all'orbita circolare instabile
-# del ramo tau). Per r_min>r_pk, Phi_tau e' strettamente DECRESCENTE. I turning point
-# a estremi fissi (r_min^tau, r_min^t ~ 4.7..8 M) stanno tutti in questo regime
-# scattering, dove (B) vale e il teorema no-inversion e' dimostrato (modulo (A), gia'
-# provato). Verifica numerica robusta:
+# LEMMA B (monotonia di Phi_tau) -- DIAGNOSTICA SU CAMPIONI, non una prova.
+# Phi_tau(r_min) non e' globalmente monotona. Nei casi campionati qui ha un solo
+# massimo r_pk ~ 3M: una piega della mappa del semiangolo a estremi fissi, NON
+# un'orbita circolare instabile del ramo tau (che all'esterno non esiste: sulla shell
+# di turning d/dr[r Delta - J^2 DE] = DE V' > 0). A bassa energia puo' avere piu'
+# massimi (E^2 = 1.01, r0 = 1e4 M). Le regioni dimostrate sono quelle della
+# Proposizione prop:lemmaB di Paper II; questa scansione le illustra soltanto:
 def lemma_B_regime():
     from scipy.integrate import quad
     M = 1.0
@@ -208,7 +215,7 @@ def lemma_B_regime():
 
 
 if __name__ == '__main__':
-    print("\n=== Lemma B (conditional monotonicity, r_min > r_pk) ===")
+    print("\n=== Lemma B: sampled diagnostic, not a proof (see verify_lemma_B.py) ===")
     lemma_B_regime()
 
 
