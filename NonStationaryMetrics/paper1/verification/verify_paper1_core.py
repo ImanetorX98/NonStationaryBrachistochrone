@@ -14,8 +14,11 @@ Claims covered, with their location in paper1_JMP.tex:
     Theorem I.1   (ii) closed-form branch Hamiltonian
     Lemma I.4     det M = -32 (Ehat^2 - 1) disc_r S; one-dimensional kernel
                   at the genus-degeneration locus
+    Lemma I.4     also J = 0: S = r^3 (r-2m)^2 D_E, rank M = 8
     Lemma I.6     Euler homogeneity of S; N_tot(r_d) = 0
-    Theorem I.5   Randers-Euler, self-similarity, Theta H_v, boundary form
+    Lemma I.J     nonzero residues at infinity (third kind), k = 2, 3
+    Theorem I.5   Randers-Euler, self-similarity, Theta H_v, boundary form;
+                  the same for H_tau with its cost ell_tau (boundary form - Delta tau)
 """
 import sympy as sp
 
@@ -128,6 +131,19 @@ ok("remainder of 2A'S - A S' modulo S", sp.simplify(rem.as_expr()))
 ok("C - (A' - Q4)", sp.simplify(quot.as_expr() - (sp.diff(Aker, r) - Q4.as_expr())))
 print(f"  deg C = {quot.degree()}  (must be <= 4)")
 
+# The radial case J = 0 is also off the squarefree stratum, and more degenerate:
+# S = r^3 (r-2m)^2 D_E, so the rank drops by three, not one.
+M0, S0 = reduction_matrix(mv, Ev, sp.Integer(0))
+ok("J=0:  S - r^3 (r-2m)^2 D_E",
+   sp.expand(S0 - r**3 * (r - 2 * mv)**2 * ((Ev**2 - 1) * r + 2 * mv)))
+ok("J=0:  rank M - 8", M0.rank() - 8)
+_S = sp.expand(r * (r - 2 * m) * ((E**2 - 1) * r + 2 * m)
+               * (r**2 * (r - 2 * m) - J**2 * ((E**2 - 1) * r + 2 * m)))
+_disc = sp.factor(sp.discriminant(_S, r))
+ok("disc_r S / J^10 is a polynomial not divisible by J (Lemma I.4 statement)",
+   sp.rem(sp.Poly(_disc, J), sp.Poly(J**10, J)).as_expr())
+ok("disc_r S / J^10 nonzero at J = 0", 0 if sp.cancel(_disc / J**10).subs(J, 0) != 0 else 1)
+
 print("\n" + "=" * 66)
 print(" LEMMA I.6 -- degeneration-family derivative")
 print("=" * 66)
@@ -168,6 +184,61 @@ ok("d(r pr)/dlambda - (1 + Theta H) - H   [identically 0]",
                - (1 + m * sp.diff(Hv, m)) - Hv))
 print("  => on the shell H = 0:  Theta H = d(r pr)/dlambda - 1,")
 print("     hence  S_D(lambda) = [r pr]_0^lambda - lambda.   (eq:SD-vaidya)")
+
+# The proper-time branch has a control-dependent cost, ell_tau = dtau/dv, so the
+# Euler identity carries ell_tau and not 1, and the boundary form subtracts the
+# elapsed proper time, not lambda (Theorem I.1(ii); eq:finsler-euler, eq:SD-vaidya).
+Htau = pr * (f - E**2) - E + sp.sqrt(w) * sp.sqrt((E * pr + 1)**2 + J**2 / r**2)
+hsup = lambda P: P * (f - E**2) + sp.sqrt(w) * sp.sqrt(E**2 * P**2 + J**2 / r**2)
+ell_tau = (f - sp.diff(Htau, pr)) / E
+ok("eq:tau-from-v  h(pr+1/E, J) - f/E - H_tau",
+   sp.simplify(hsup(pr + 1 / E) - f / E - Htau))
+ok("H_v = h - 1  (Theorem I.1(ii), unit cost)", sp.simplify(hsup(pr) - 1 - Hv))
+ok("cost-Euler  (J d_J + pr d_pr) H_tau - (H_tau + ell_tau)",
+   sp.simplify((J * sp.diff(Htau, J) + pr * sp.diff(Htau, pr)) - (Htau + ell_tau)))
+ok("self-similarity of H_tau  r H_r + m H_m + J H_J",
+   sp.simplify(m * sp.diff(Htau, m) + r * sp.diff(Htau, r) + J * sp.diff(Htau, J)))
+ok("d(r pr)/dlambda - (ell_tau + Theta H_tau) - H_tau   [identically 0]",
+   sp.simplify((pr * sp.diff(Htau, pr) - r * sp.diff(Htau, r))
+               - (ell_tau + m * sp.diff(Htau, m)) - Htau))
+# ell_tau is not 1 on the shell: exact point quoted in the appendix
+pt = {m: 1, r: 6, E: sp.Rational(7, 5), J: 0}
+pin = -5 * sp.sqrt(291) / 97
+ok("H_tau = 0 at m=1, r=6, E=7/5, J=0, pr=-5 sqrt(291)/97",
+   sp.simplify(Htau.subs(pt).subs(pr, pin)))
+ok("ell_tau there = 7/5 + sqrt(291)/15  (not 1)",
+   sp.simplify(ell_tau.subs(pt).subs(pr, pin) - (sp.Rational(7, 5) + sp.sqrt(291) / 15)))
+print("  => on the tau shell:  Theta H_tau = d(r pr)/dlambda - ell_tau,")
+print("     hence  S_D(lambda) = [r pr]_0^lambda - Delta tau.   (eq:SD-vaidya)")
+
+print("\n" + "=" * 66)
+print(" LEVEL (a) OF THE SELECTOR HIERARCHY -- Killing does not mean force-free")
+print("=" * 66)
+# circular Schwarzschild rail, M=1, r=6, E=7/5, W = d_t Killing: g(a,W)=0 but a^r != 0
+Mc, rc, Ec = 1, sp.Integer(6), sp.Rational(7, 5)
+fc = 1 - 2 * Mc / rc
+utc = Ec / fc
+uphic = sp.sqrt((fc * utc**2 - 1) / rc**2)
+ok("circular rail a^r - (-241/1800)",
+   sp.nsimplify(Mc * fc / rc**2 * utc**2 - rc * fc * uphic**2 + sp.Rational(241, 1800)))
+# a^t = 2 Gamma^t_{tr} u^t u^r = 0 because u^r = 0 on a circle, so g(a, d_t) = 0.
+
+print("\n" + "=" * 66)
+print(" LEMMA I.J -- residues at the points at infinity")
+print("=" * 66)
+t = sp.Symbol('t')
+sc = sp.symbols('s0:7')
+for k, want in [(0, 0), (1, 0), (2, -1 / sp.sqrt(sc[6])),
+                (3, sc[5] / (2 * sc[6]**sp.Rational(3, 2)))]:
+    inner = sum(sc[i] * t**(6 - i) for i in range(7))
+    ser = sp.series(-(t**-k) * t / sp.sqrt(inner), t, 0, 1).removeO()
+    ok(f"sextic: Res_inf r^{k} dr/sqrt(S) - ({want})", sp.simplify(ser.coeff(t, -1) - want))
+a4, a3 = sp.symbols('a4 a3')
+inner4 = a4 + a3 * t + sum(sp.Symbol(f'q{i}') * t**(4 - i) for i in range(3))
+rd_ = sp.Symbol('r_d')
+ser4 = sp.series(-((1 / t) + rd_) * t**-2 * t**2 / sp.sqrt(inner4), t, 0, 1).removeO()
+ok("quartic: Res_inf (r + r_d) dr/sqrt(Q4) - (-1/sqrt(a4))  [dV_2, Lemma I.J(ii)]",
+   sp.simplify(ser4.coeff(t, -1) + 1 / sp.sqrt(a4)))
 
 print("\n" + "=" * 66)
 if FAILS:
