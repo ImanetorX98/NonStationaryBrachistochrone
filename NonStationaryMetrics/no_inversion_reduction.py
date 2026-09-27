@@ -87,17 +87,17 @@ print("possibile per positivita' polinomiale. QED del teorema modulo (A) simboli
 # c_t > c_tau  <=>  D := numeratore di (c_t-c_tau) > 0. Con le condizioni di turning
 # (J_tau^2 = r_d Delta_d/DE_d, Q2(r_d,J_t)=0) si riduce a:
 #     D = 4 r_d Delta(r_d) * B,   B = a DE(r_d) (J* - J_t),
-#     J* = [E^2 r_d(a^2+r_d^2)+2a^2]/(a DE_d)  (>0).
+#     J* = [E^2 r_d(a^2+r_d^2)+2Ma^2]/(a DE_d)  (>0).
 # Catena di segni (r_d>2M, r_d>r_+, E>1, a>0), tutti fattori espliciti:
 #   A   = coeff J_t^2 di Q2(r_d)     = -(r_d-2M) DE_d          < 0   (parabola giu')
-#   J_v = vertice = -B_q/2A          = -2a/(r_d-2M)            < 0
+#   J_v = vertice = -B_q/2A          = -2Ma/(r_d-2M)           < 0
 #   Q2(r_d,J*) = -E^2 r_d^3 (E^2 r_d^2+a^2) Delta_d/[a^2 DE_d] < 0
 #   => J*>0>J_v e Q2(J*)<0 con A<0  => J* oltre la radice grande => J_t<J*
 #   => B>0 => D>0 => c_t>c_tau => F_t^2>F_tau^2 al turning.  QED (parte singolare)
 # La positivita' INTERNA (r lontano da r_min) si riduce a N_G(r)>0 (grado 5),
 # verificata numericamente sopra.
 def symbolic_residue_proof():
-    rd, a, E = sp.symbols('r_d a E', positive=True); M = 1
+    rd, a, E, M = sp.symbols('r_d a E M', positive=True)   # M kept symbolic
     Jt = sp.symbols('J_t', positive=True)
     Q2d = (2*E**2*Jt**2*M*rd - E**2*Jt**2*rd**2 - 4*E**2*Jt*M*a*rd + 2*E**2*M*a**2*rd
            + E**2*a**2*rd**2 + E**2*rd**4 + 4*Jt**2*M**2 - 4*Jt**2*M*rd + Jt**2*rd**2
@@ -105,9 +105,11 @@ def symbolic_residue_proof():
     P = sp.Poly(Q2d, Jt)
     A, Bq = P.coeff_monomial(Jt**2), P.coeff_monomial(Jt)
     DEd = (E**2-1)*rd + 2*M
-    Jstar = (E**2*rd*(a**2+rd**2) + 2*a**2)/(a*DEd)
+    Jstar = (E**2*rd*(a**2+rd**2) + 2*M*a**2)/(a*DEd)
     assert sp.simplify(A - (-(rd-2*M)*DEd)) == 0
-    assert sp.simplify(-Bq/(2*A) - (-2*a/(rd-2*M))) == 0
+    assert sp.simplify(-Bq/(2*A) - (-2*M*a/(rd-2*M))) == 0
+    assert sp.simplify(Q2d.subs(Jt, Jstar)
+                       + E**2*rd**3*(E**2*rd**2+a**2)*(rd**2-2*M*rd+a**2)/(a**2*DEd)) == 0
     Q2star = sp.factor(Q2d.subs(Jt, Jstar))
     print("  A            =", sp.factor(A), "   (<0 for r_d>2M)")
     print("  vertex J_v   =", sp.factor(-Bq/(2*A)), "   (<0)")
@@ -123,30 +125,30 @@ if __name__ == '__main__':
 
 # ============================================================================
 # PROVA SIMBOLICA COMPLETA di Lemma A (F_t^2 > F_tau^2 per ogni r>r_d).
-# Passi (M=1; validi per r_d>2M, E>1, a>0):
+# Passi (M simbolico; validi per r_d>2M, E>1, a>0):
 #   sign(F_t^2-F_tau^2) = sign(N_G),  N_G = (J_t(r-2M)+2Ma)^2 P_tau - J_tau^2(r-2M)Q2.
 #   Ridotto mod turning [J_tau^2=r_d Delta_d/DE_d, Q2(r_d,J_t)=0]:
-#     N_G = (r - r_d) * [4 r Delta(r)/(r_d-2M)] * W(r),   W(r) LINEARE in r.
+#     N_G = (r - r_d) * [4 M r Delta(r)/((r_d-2M) DE_d)] * W(r),   W(r) LINEARE in r.
 #   Serve W(r)>0 per r>r_d. W(r_d) e la pendenza w1 sono entrambi lineari in J_t:
-#     W(r_d) = (r_d-2M) * B,   B = a DE_d (J*  - J_t),   J*  = [E^2 r_d(a^2+r_d^2)+2a^2]/(a DE_d)
-#     w1     = a DE_d (J** - J_t),                        J** = [E^2 r_d^2(r_d-1)+E^2 a^2 r_d + a^2]/(a DE_d)
+#     W(r_d) = (r_d-2M) * B,   B = a DE_d (J*  - J_t),   J*  = [E^2 r_d(a^2+r_d^2)+2Ma^2]/(a DE_d)
+#     w1     = a DE_d (J** - J_t),                        J** = [E^2 r_d^2(r_d-M)+E^2 a^2 r_d + Ma^2]/(a DE_d)
 #   In entrambi J_t (radice prograde di Q2(r_d,.)) e' < J* e < J** perche':
 #     A = coeff J_t^2 di Q2(r_d) = -(r_d-2M)DE_d < 0        (parabola verso il basso)
-#     vertice J_v = -2a/(r_d-2M) < 0,   J*, J** > 0         (a destra del vertice)
+#     vertice J_v = -2Ma/(r_d-2M) < 0,  J*, J** > 0         (a destra del vertice)
 #     Q2(r_d,J*)  = -E^2 r_d^3 (E^2 r_d^2+a^2) Delta_d / [a^2 DE_d] < 0
-#     Q2(r_d,J**) = -(r_d-2M)(E^2 r_d^2+a^2)(E^2 r_d^2[(r_d-1)^2+a^2]+a^2)/[a^2 DE_d] < 0
+#     Q2(r_d,J**) = -(r_d-2M)(E^2 r_d^2+a^2)(E^2 r_d^2[(r_d-M)^2+a^2]+M^2a^2)/[a^2 DE_d] < 0
 #   => J* , J** oltre la radice grande => J_t < J*, J_t < J** => B>0, w1>0.
 #   W lineare con W(r_d)>0 e pendenza w1>0  =>  W(r)>0 per ogni r>r_d.  QED (Lemma A).
 def symbolic_full_proof():
-    rd, a, E = sp.symbols('r_d a E', positive=True); M = 1
+    rd, a, E, M = sp.symbols('r_d a E M', positive=True)   # M kept symbolic
     Jt = sp.symbols('J_t', positive=True)
     DEd = (E**2 - 1) * rd + 2 * M
     Q2d = (2*E**2*Jt**2*M*rd - E**2*Jt**2*rd**2 - 4*E**2*Jt*M*a*rd + 2*E**2*M*a**2*rd
            + E**2*a**2*rd**2 + E**2*rd**4 + 4*Jt**2*M**2 - 4*Jt**2*M*rd + Jt**2*rd**2
            - 8*Jt*M**2*a + 4*Jt*M*a*rd + 4*M**2*a**2)
     A = sp.Poly(Q2d, Jt).coeff_monomial(Jt**2)
-    Jstar = (E**2*rd*(a**2+rd**2) + 2*a**2)/(a*DEd)                       # per W(r_d)>0
-    Jss = (E**2*rd**2*(rd-1) + E**2*a**2*rd + a**2)/(a*DEd)               # per w1>0
+    Jstar = (E**2*rd*(a**2+rd**2) + 2*M*a**2)/(a*DEd)                     # per W(r_d)>0
+    Jss = (E**2*rd**2*(rd-M) + E**2*a**2*rd + M*a**2)/(a*DEd)             # per w1>0
     assert sp.simplify(A + (rd-2*M)*DEd) == 0                            # A = -(r_d-2M)DE_d
     Q2star = sp.factor(Q2d.subs(Jt, Jstar))
     Q2ss = sp.factor(Q2d.subs(Jt, Jss))
@@ -154,9 +156,24 @@ def symbolic_full_proof():
     print("  A = -(r_d-2M)DE_d :", sp.factor(A), " (<0)")
     print("  Q2(r_d,J*)  =", Q2star, " (<0)")
     print("  Q2(r_d,J**) =", Q2ss, " (<0)")
-    print("  bracket in Q2(r_d,J**) = E^2 r_d^2[(r_d-1)^2+a^2]+a^2:",
-          sp.simplify(sp.expand(E**2*rd**2*((rd-1)**2+a**2)+a**2)
-                      - (E**2*a**2*rd**2+E**2*rd**4-2*E**2*rd**3+E**2*rd**2+a**2)) == 0)
+    assert sp.simplify(Q2ss + (rd-2*M)*(E**2*rd**2+a**2)
+                       * (E**2*rd**2*((rd-M)**2+a**2) + M**2*a**2)/(a**2*DEd)) == 0
+    print("  Q2(r_d,J**) = -(r_d-2M)(E^2 r_d^2+a^2)(E^2 r_d^2[(r_d-M)^2+a^2]+M^2 a^2)/(a^2 DE_d): True")
+    # key factorization N_G = (r-r_d) 4 M r Delta(r)/[(r_d-2M) DE_d] W(r), W linear,
+    # W(r_d) = (r_d-2M) a DE_d (J*-J_t), slope a DE_d (J**-J_t)
+    r = sp.symbols('r', positive=True)
+    Q2 = lambda rr, J: (E**2*rr**4 + (E**2*(a**2-J**2)+J**2)*rr**2
+                        + 2*M*(J-a)*(E**2*(J-a)-2*J)*rr + 4*M**2*(J-a)**2)
+    Dl = lambda rr: rr**2 - 2*M*rr + a**2
+    DEr = (E**2-1)*r + 2*M
+    Jtau2 = rd*Dl(rd)/DEd
+    NG = (Jt*(r-2*M)+2*M*a)**2*(r*Dl(r) - Jtau2*DEr) - Jtau2*(r-2*M)*Q2(r, Jt)
+    Wlin = (r-rd)*a*DEd*(Jss-Jt) + (rd-2*M)*a*DEd*(Jstar-Jt)
+    diff = sp.together(NG - (r-rd)*4*M*r*Dl(r)/((rd-2*M)*DEd)*Wlin)
+    num = sp.Poly(sp.expand(sp.numer(diff)), Jt)
+    rem = sp.rem(num, sp.Poly(sp.expand(sp.numer(sp.together(Q2(rd, Jt)))), Jt))
+    assert sp.expand(rem.as_expr()) == 0
+    print("  N_G = (r-r_d) 4 M r Delta/[(r_d-2M) DE_d] W(r) mod Q2(r_d,J_t)=0, W linear: True")
     print("  => J_t<J* and J_t<J** => W(r_d)>0 and slope w1>0 => W(r)>0 for r>r_d.  Lemma A QED")
 
 

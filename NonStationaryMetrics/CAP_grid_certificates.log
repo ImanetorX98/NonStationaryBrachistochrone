@@ -1,3 +1,30 @@
+# RUN 6 -- 27 September 2026.  Windows extended to the HALF-potential radius.
+# The quarter-regime extension of the grazing bound (V(r_min) >= V(r0)/4) is not
+# proved: the closed form leaves a positive boundary term that convexity of W does
+# not control (audit II-01).  The elementary bound that is proved is the grazing
+# one, V(r_min) >= V(r0)/2, so the certified window now runs to r_{1/2} and the
+# weld encloses V(r_{1/2}+1e-10) - V(r0)/2.  The r0 = 10 configuration of
+# no_inversion_schwarzschild_CAP_r0_10.py (b = 0.96), whose window stopped at
+# 6.05 < r_{1/2} = 7.573, is now a grid entry.  All seven PASS; every bridge cell
+# is tagged S; smallest weld enclosure 1.847e-10 (E = 2.5, r0 = 8).  Runs 1-5
+# below are kept verbatim: they certify windows up to the quarter radius only.
+E  r0  bb  rhalf  RESULT  nc S M  time
+E=1.2 r0=8 bb=0.440 rhalf=6.240 : PASS (nc=432 S=68 M=40 449s)
+  weld [6.239593997,6.239593997] tag=S ; V(upper)-V(r0)/2 in [1.61204461438e-9, 1.61204461438e-9] > 0 ? True : OK
+E=1.6 r0=8 bb=1.560 rhalf=6.102 : PASS (nc=488 S=73 M=47 500s)
+  weld [6.102062865,6.102062865] tag=S ; V(upper)-V(r0)/2 in [5.78268162283e-10, 5.78268162283e-10] > 0 ? True : OK
+E=2.5 r0=8 bb=5.250 rhalf=6.035 : PASS (nc=521 S=74 M=51 551s)
+  weld [6.035385618,6.035385619] tag=S ; V(upper)-V(r0)/2 in [1.84726946217e-10, 1.84726946217e-10] > 0 ? True : OK
+E=1.2 r0=12 bb=0.440 rhalf=9.135 : PASS (nc=955 S=142 M=66 1098s)
+  weld [9.134543034,9.134543034] tag=S ; V(upper)-V(r0)/2 in [2.84090303417e-9, 2.84090303417e-9] > 0 ? True : OK
+E=1.6 r0=12 bb=1.560 rhalf=8.936 : PASS (nc=1002 S=146 M=72 1126s)
+  weld [8.936341121,8.936341121] tag=S ; V(upper)-V(r0)/2 in [9.38579432599e-10, 9.38579432599e-10] > 0 ? True : OK
+E=2.5 r0=12 bb=5.250 rhalf=8.852 : PASS (nc=1034 S=151 M=73 1179s)
+  weld [8.852164887,8.852164887] tag=S ; V(upper)-V(r0)/2 in [2.91950781761e-10, 2.91950781761e-10] > 0 ? True : OK
+E=1.4 r0=10 bb=0.960 rhalf=7.573 : PASS (nc=711 S=118 M=57 702s)
+  weld [7.573409956,7.573409957] tag=S ; V(upper)-V(r0)/2 in [1.17219331719e-9, 1.17219331719e-9] > 0 ? True : OK
+GRID DONE
+
 # RUN 5 -- 19 September 2026.  The weld to the grazing bound is now part of the
 # PUBLIC path, not a separate audit script: weld() certifies the bridge cell
 # [rquarter, rquarter+1e-10] like any other cell and encloses

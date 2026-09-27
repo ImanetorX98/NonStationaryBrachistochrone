@@ -53,22 +53,29 @@ def prove(r0f,bb,ra,rb,wthin=0.03,Ncap=(250,600,1500,5000),wmin=0.0015):
         m=(a+b)/2;stack.insert(0,(m,b));stack.insert(0,(a,m))
     return (True,nc,nS,nM,time.time()-t0)
 
-def rquarter(bb,r0):
+# The elementary bound that takes over above the certified window is the
+# GRAZING one, V(r_min) >= V(r0)/2: there both terms of the closed form for
+# sqrt(x) Phi' are <= 0 (no_inversion_schwarzschild_closedform.py).  An earlier
+# version welded at the quarter radius V(r0)/4, where the closed form alone does
+# not settle the sign (the boundary term is positive there), so the window now
+# runs up to the half-potential radius.
+FRAC=2.0
+def rhalf(bb,r0):
     Vf=lambda r: r*(r*r-2*r)/(bb*r+2); V0=Vf(r0)
-    return brentq(lambda r: Vf(r)-V0/4.0, 2.001, r0)
+    return brentq(lambda r: Vf(r)-V0/FRAC, 2.001, r0)
 
 def weld(bb,r0,rq,width=1e-10,N=1500):
     """Close the joint between the certified window and the grazing bound.
 
-    prove() certifies r_min in [2.6, rq], and the elementary quarter-potential
-    bound covers V(r) >= V(r0)/4.  But rq comes from brentq in binary64, so on
-    its own it leaves the true quarter radius unlocated: if r_{1/4} were a hair
+    prove() certifies r_min in [2.6, rq], and the elementary grazing bound
+    covers V(r) >= V(r0)/2.  But rq comes from brentq in binary64, so on
+    its own it leaves the true half radius unlocated: if r_{1/2} were a hair
     above rq, the sliver between them would be covered by neither argument.
 
     Two steps close it, and both are interval arithmetic:
       (a) certify the bridge cell [rq, rq+width] like any other cell;
-      (b) enclose V(rq+width) - V(r0)/4 and check the enclosure is strictly
-          positive, which places rq+width ABOVE the true quarter radius, so the
+      (b) enclose V(rq+width) - V(r0)/2 and check the enclosure is strictly
+          positive, which places rq+width ABOVE the true half radius, so the
           grazing bound applies from there on.
     Together the two windows overlap and the interval is covered with no gap.
 
@@ -80,38 +87,42 @@ def weld(bb,r0,rq,width=1e-10,N=1500):
     rather than of one branch of it.
     """
     upper=rq+width
-    vgap=cf.Vval(iv.mpf(upper),bb)-cf.Vval(iv.mpf(r0),bb)/4
+    vgap=cf.Vval(iv.mpf(upper),bb)-cf.Vval(iv.mpf(r0),bb)/int(FRAC)
     return dict(rq=rq,upper=upper,bridge_tag=cert(iv.mpf(r0),rq,upper,bb,N),
                 # vgap.a / vgap.b are ivmpf, so str()/nstr() on them still prints
                 # '[x, x]'; converting to mp.mpf gives the endpoint itself.
                 inequality_enclosure=[mp.nstr(mp.mpf(vgap.a),12),
                                       mp.nstr(mp.mpf(vgap.b),12)],
-                above_quarter=bool(vgap.a>0))
+                above_half=bool(vgap.a>0))
 
-GRID=[(1.2,8),(1.6,8),(2.5,8),(1.2,12),(1.6,12),(2.5,12)]
+# (E, r0, b=E^2-1).  The r0=10 entry is the configuration of
+# no_inversion_schwarzschild_CAP_r0_10.py, at b=0.96 as there; that run stopped at
+# r_min=6.05, below the half radius, so it is redone here with the weld.
+GRID=[(E,r0,E*E-1.0) for E,r0 in [(1.2,8),(1.6,8),(2.5,8),(1.2,12),(1.6,12),(2.5,12)]]
+GRID.append((1.4,10,0.96))
 _failed = False
 with open('/tmp/cap_grid.log','w',buffering=1) as lg:
-    lg.write("E  r0  bb  rquarter  RESULT  nc S M  time\n")
-    for E,r0 in GRID:
-        bb=E*E-1.0; rq=rquarter(bb,r0)
-        # The window is capped at r0-0.1 as well: if rquarter ever exceeded it the
+    lg.write("E  r0  bb  rhalf  RESULT  nc S M  time\n")
+    for E,r0,bb in GRID:
+        rq=rhalf(bb,r0)
+        # The window is capped at r0-0.1 as well: if rhalf ever exceeded it the
         # certified window would stop short of the weld, so say when that happens
         # instead of letting the joint open silently.
         top=min(rq,r0-0.1)
         ok,nc,nS,nM,dt=prove(r0,bb,2.6,top)
         if not ok: _failed = True
-        line=f"E={E} r0={r0} bb={bb:.3f} rquarter={rq:.3f} : {'PASS' if ok else 'FAIL'} (nc={nc} S={nS} M={nM} {dt:.0f}s)"
+        line=f"E={E} r0={r0} bb={bb:.3f} rhalf={rq:.3f} : {'PASS' if ok else 'FAIL'} (nc={nc} S={nS} M={nM} {dt:.0f}s)"
         print(line,flush=True); lg.write(line+"\n")
         if top<rq:
             _failed=True
-            w=f"  WELD GAP: window capped at r0-0.1={top:.6f} below rquarter={rq:.6f}"
+            w=f"  WELD GAP: window capped at r0-0.1={top:.6f} below rhalf={rq:.6f}"
             print(w,flush=True); lg.write(w+"\n"); continue
         wd=weld(bb,r0,rq)
-        good=(wd['bridge_tag'] is not None) and wd['above_quarter']
+        good=(wd['bridge_tag'] is not None) and wd['above_half']
         if not good: _failed = True
         w=(f"  weld [{wd['rq']:.9f},{wd['upper']:.9f}] tag={wd['bridge_tag']} ; "
-           f"V(upper)-V(r0)/4 in [{wd['inequality_enclosure'][0]}, "
-           f"{wd['inequality_enclosure'][1]}] > 0 ? {wd['above_quarter']} "
+           f"V(upper)-V(r0)/2 in [{wd['inequality_enclosure'][0]}, "
+           f"{wd['inequality_enclosure'][1]}] > 0 ? {wd['above_half']} "
            f": {'OK' if good else 'FAIL'}")
         print(w,flush=True); lg.write(w+"\n")
     print("GRID DONE",flush=True); lg.write("GRID DONE\n")

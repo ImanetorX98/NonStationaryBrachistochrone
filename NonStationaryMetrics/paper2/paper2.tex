@@ -90,9 +90,9 @@ theorem under a same-launch comparison;
 and the first-order adiabatic response, on- and off-shell, verified on compact regular
 subarcs against the true non-autonomous flow to $O(\varepsilon^2)$, its weight-two content a length-two iterated Abelian integral on a
 genus-two curve. The separatrices, the classification and the on-shell reduction are
-proved; the fixed-endpoint no-inversion holds for $r_0\le R_\ast(E,a)$ and is
-machine-certified over the stated $(E,r_0)$ grid, its unrestricted extension remaining
-conjectural; a rigorous higher-genus polylogarithm framework remains open.
+proved; the fixed-endpoint no-inversion is proved in the grazing regime, where the
+coordinate-time turning point satisfies $V(r_{\min})\ge V(r_0)/2$, and machine-certified
+at seven static configurations, its unrestricted extension remaining conjectural; a rigorous higher-genus polylogarithm framework remains open.
 \end{abstract}
 
 \maketitle
@@ -455,8 +455,12 @@ Two objects must be kept apart. The \emph{control set} is the indicatrix
 $\mathcal I_x$ itself---the sphere of admissible unit velocities cut out by the
 rail, which by Lemma~\ref{lem:compact} is the boundary $\partial\mathcal K_x$ of
 a compact convex body $\mathcal K_x$ and not that body. The Hamiltonians below
-are support functions of $\mathcal K_x$, i.e.\ $H(x,p)=\max_{v\in\mathcal
-I_x}\langle p,v\rangle-c(x)$, and the maximum of a linear functional over
+are support functions of $\mathcal K_x$ shifted by the running cost,
+$H(x,p)=\max_{v\in\mathcal I_x}\big[\langle p,v\rangle-c(x,v)\big]$. The cost is affine in
+$v$ on the rail: it is constant for the arrival clocks, and for proper time
+$\dd\tau/\dd\chi=1/u^\chi=-(g_{\chi\chi}+g_{\chi\varphi}v^\varphi)/\Ehat$ from
+$-u_\chi=\Ehat$, so each $H$ is the support function at a covector shifted by the cost,
+plus a function of $x$ (Paper~I, Theorem~I.1(ii)). The maximum of a linear functional over
 $\mathcal K_x$ is always attained on $\partial\mathcal K_x$. Hence taking the
 convex hull changes neither the maximum nor the maximiser, and no relaxation or
 convexification step is needed for the \emph{Pontryagin maximum principle}: the
@@ -1885,10 +1889,13 @@ window. The interval certificate is implemented in
 \texttt{verification/verify\_wsup\_window.py}; \texttt{verify\_rotating\_separation.py},
 cited below, tests the flow and the linearised equation and not this enclosure.
 
-We stop at that. Deciding the sign of $W_{\sup}$ in general is a question about a
-rational function of $(r,\Ehat,a)$---the square roots clear, since $B'<0$ by
-Proposition~\ref{prop:prograde-asym}---and therefore admits the same kind of
-algebraic certificate used for $K_t$ and for $B'$ above. Carrying that out, and
+We stop at that. Deciding the sign of $W_{\sup}$ in general is a question about an
+\emph{algebraic} function of $(r,\Ehat,a)$: $B'<0$ by
+Proposition~\ref{prop:prograde-asym} removes the absolute value, but not the square root
+in $1/\sqrt P$, and $|B'|/\sqrt P$ still carries $\sqrt{\Delta\,D_E/r}$. Once that root is
+isolated and the signs needed to square are checked, the question reduces to polynomial
+sign conditions, and so admits the same kind of algebraic certificate used for $K_t$ and
+for $B'$ above. Carrying that out, and
 with it the resulting local-minimality statement for all $a$, belongs with the
 global question: Cartan--Hadamard is unavailable on the rotating branch, so global
 minimality there needs a calibration argument for a Randers rather than a
@@ -2116,7 +2123,7 @@ the differential $\dd\eta/\dd r$ along each.
 
 \paragraph{Closed piece.} The scaling derivative reduces to the same depth-one
 class as $\varphi_0$ itself, by the classical reduction of abelian differentials to
-first/second kind~\cite{BakerAbelian1897,GriffithsHarris1978}. Both pieces
+first, second and third kind~\cite{BakerAbelian1897,GriffithsHarris1978}. Both pieces
 $\partial_E F$ and $\partial_J F$ share the identical basis: solving
 \begin{equation}
     \big(E\partial_E+J\partial_J\big)F=\dd_r\!\left[\frac{\mathcal{A}(r)}{\mathcal{R}}\right]
@@ -2125,8 +2132,10 @@ $\partial_E F$ and $\partial_J F$ share the identical basis: solving
 \end{equation}
 for a degree-five numerator $\mathcal{A}(r)=\sum_{i=0}^{5}a_i r^i$ and constants
 $c_k=\Ehat\,c_k^{E}+J\,c_k^{J}$ (here $\mathcal{R}$ is the branch sextic radical,
-$\sqrt{R_6}$ or $\sqrt{S}$) closes in the second kind with \emph{no} third-kind
-(horizon-pole) contribution for both branches (verified to machine precision); the
+$\sqrt{R_6}$ or $\sqrt{S}$) closes in the basis $\{\mathcal A/\mathcal R,\,U_k\}$ with
+\emph{no} third-kind contribution at the horizon for both branches (verified to machine
+precision); the only residues are those the $U_k$ with $k\ge2$ carry at the two points at
+infinity; the
 $J\,\partial_J F$ term merely adds its own coefficients $c_k^{J}$ to the existing
 $c_k^{E}$, requiring no new building block
 (\texttt{ThakurtaMetric/conformal\_source\_Jterm.py}). Hence
@@ -2193,8 +2202,8 @@ and differ \emph{only} in the branch curve and the clock.
     functional measures---$t$ or $\tau$---enters the timing, not the drift. Here
     $\Delta=r^2-2Mr+a^2$, $DE=(E^2-1)r+2M$, all at $E=E_{\rm eff}=\Ehat/A$;
     $\varphi_0,\partial_E\varphi_0$ are Kleinian/abelian on $y^2=\mathcal{R}^2$, and
-    $\psi=\tfrac12\Ehat\sum Q_{kj}W_{kj}$ has algebraic coefficients times the
-    genus-two polylogarithms $W_{kj}$ [equation~\eqref{eq:psi-split}].}
+    the weight-two part $\tfrac12\sum Q_{kj}W_{kj}$ of $\psi$, $Q_{kj}=C_kb_j-C_jb_k$, has
+    algebraic coefficients times the genus-two polylogarithms $W_{kj}$ [equation~\eqref{eq:psi-split}].}
     \label{tab:branch-adiab}
     \begin{tabular}{lll}
         \hline\hline
@@ -2215,19 +2224,29 @@ and differ \emph{only} in the branch curve and the clock.
 \paragraph{The correction $\psi$: algebraic coefficients times genus-two
 polylogarithms.} By parts and the shuffle identity---Ree's \cite{Ree1958}, as Chen is careful to
 attribute it \cite[\S1.1]{Chen1977}---the symmetric
-combination $\rho+\tilde\rho=\partial_E\varphi_0\,\eta$
-($\rho=\int\partial_E\varphi_0\,\dd\eta$,
-$\tilde\rho=\int\eta\,\partial_E F\,\dd r$) is closed, and the antisymmetric
-remainder
+combination $\rho+\tilde\rho=\Theta\varphi_0\,\eta$
+($\rho=\int\Theta\varphi_0\,\dd\eta$,
+$\tilde\rho=\int\eta\,\Theta F\,\dd r$, with $\Theta=\Ehat\,\partial_E+J\,\partial_J$ the
+full drift operator of this section, evaluated at the reference $A_0=1$ where
+$E=\Ehat$) is closed, and the antisymmetric remainder
 \begin{equation}
-    \psi(r)=\tfrac12\Ehat\,(\rho-\tilde\rho)
+    \psi(r)=\tfrac12\,(\rho-\tilde\rho)
     \label{eq:psi-irr}
 \end{equation}
-is a depth-two iterated integral. Expand $\partial_E\varphi_0$ and $\eta$ in the
+is a depth-two iterated integral; its energy component alone, with $\Theta$ replaced by
+$\Ehat\,\partial_E$, is the older form $\tfrac12\Ehat\big(\int\partial_E\varphi_0\,\dd\eta
+-\int\eta\,\partial_EF\,\dd r\big)$. Expand $\partial_E\varphi_0$ and $\eta$ in the
 cohomology basis $U_k=\int r^k/\mathcal{R}\,\dd r$: the reduction
 $(E\partial_E+J\partial_J)F=N/\mathcal{R}^3$ with $N=\Ehat\,N_E+J\,N_J$ a degree-seven
-polynomial ($N_E=EJ\,r^4(r-2M)^2\,DE$, and $N_J$ its angular analogue; the horizon
-factor $\Delta$ cancels identically in both) gives
+polynomial, $N_v=\mathcal R^2\,\partial_vK-\tfrac12K\,\partial_v\mathcal R^2$, branch by
+branch
+\[
+\begin{aligned}
+    &\tau:\quad N_E=EJ\,r^4(r-2M)^2\,DE,\qquad N_J=r^3(r-2M)^2\,DE^2,\\
+    &t:\quad N_E=E\,r^5\,DE\,\big[J(r-2M)+2Ma\big],\qquad N_J=E^2r^5\,DE^2
+\end{aligned}
+\]
+(the horizon factor $\Delta$ cancels identically in all four), gives
 $(E\partial_E+J\partial_J)\varphi_0=\mathcal{A}/\mathcal{R}+\sum_{k=0}^{4} C_k U_k$,
 $C_k=\Ehat\,c_k^{E}+J\,c_k^{J}$, and the drift clock splits as
 $\eta=\eta_2+\eta_3$, with $\eta_2=\sum_j b_jU_j$ its second-kind part and
@@ -2771,6 +2790,10 @@ four-case classification, which replaces the trichotomy of the previous version.
 \begin{proposition}[Local classification at $\re$, $\tau$-branch, frozen $A$;
 evidence level~(I), with level~(II) confirmation]
 \label{prop:classification}
+Work in the rotating sector $M>0$, $0<a\le M$, on the scattering shell $E>1$ (the
+energy sector in which the turning function $r\Delta/D_E$ is strictly increasing, so
+that the outer root in (i) exists and is unique); the static limit $a=0$, where the
+thresholds below coincide, is treated separately, and $a<0$ follows by $(a,J)\mapsto(-a,-J)$.
 Let $\Jc=a/E$ and let the extremal be ingoing. Then, as $r\to\re^+$:
 \begin{enumerate}
 \item[\rm(i)] $|J|>\Jc$: here $p_r^2(\re)=0$, as it does for every finite $J$
@@ -3163,25 +3186,26 @@ with $N_G=(J_t(r-2M)+2Ma)^2 P_\tau-J_\tau^2(r-2M)Q_2$ and reducing modulo the tu
 conditions ($J_\tau^2=r_{\min}\Delta_{\min}/DE_{\min}$, $Q_2(r_{\min},J_t)=0$), one
 finds the key factorization
 \begin{equation}
-    N_G=(r-r_{\min})\,\frac{4r\,\Delta(r)}{r_{\min}-2M}\,W(r),\qquad W\ \text{\emph{linear} in }r .
+    N_G=(r-r_{\min})\,\frac{4M\,r\,\Delta(r)}{(r_{\min}-2M)\,DE_{\min}}\,W(r),\qquad W\ \text{\emph{linear} in }r .
 \end{equation}
 The prefactor is positive for $r>r_{\min}>2M$, so (A) reduces to $W(r)>0$; and a
 linear $W$ with $W(r_{\min})>0$ and positive slope stays positive for all
 $r>r_{\min}$. Both $W(r_{\min})=(r_{\min}-2M)\,a\,DE_{\min}(J^\ast-J_t)$ and the slope
 $w_1=a\,DE_{\min}(J^{\ast\ast}-J_t)$ are positive because the prograde root $J_t$ of
 $Q_2(r_{\min},\cdot)$ lies below both thresholds
-$J^\ast=[E^2r_{\min}(a^2+r_{\min}^2)+2a^2]/(a\,DE_{\min})$,
-$J^{\ast\ast}=[E^2r_{\min}^2(r_{\min}-M)+E^2a^2r_{\min}+a^2]/(a\,DE_{\min})$: the
+$J^\ast=[E^2r_{\min}(a^2+r_{\min}^2)+2Ma^2]/(a\,DE_{\min})$,
+$J^{\ast\ast}=[E^2r_{\min}^2(r_{\min}-M)+E^2a^2r_{\min}+Ma^2]/(a\,DE_{\min})$: the
 quadratic opens downward ($A=-(r_{\min}-2M)DE_{\min}<0$) with negative vertex
-$-2a/(r_{\min}-2M)$, while $J^\ast,J^{\ast\ast}>0$ and
+$-2Ma/(r_{\min}-2M)$, while $J^\ast,J^{\ast\ast}>0$ and
 \[
 \begin{aligned}
 Q_2(r_{\min},J^\ast)&=\frac{-E^2r_{\min}^3(E^2r_{\min}^2+a^2)\Delta_{\min}}{a^2DE_{\min}},\\[2pt]
-Q_2(r_{\min},J^{\ast\ast})&=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\min}^2[(r_{\min}-M)^2+a^2]+a^2\big)}{a^2DE_{\min}}
+Q_2(r_{\min},J^{\ast\ast})&=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\min}^2[(r_{\min}-M)^2+a^2]+M^2a^2\big)}{a^2DE_{\min}}
 \end{aligned}
 \]
 are both manifestly negative, placing the thresholds beyond the larger root
-(\texttt{no\_inversion\_reduction.py}). Hence (A) is a theorem for all $r_{\min}>2M$,
+(\texttt{no\_inversion\_reduction.py}, with $M$ kept symbolic; every identity above is
+homogeneous in $(r,a,J,M)$). Hence (A) is a theorem for all $r_{\min}>2M$,
 $E>1$, $a>0$. Lemma~(B), the monotonicity $\Phi_\tau'(r_{\min})<0$, is
 \emph{conditional}: $\Phi_\tau$ has a single maximum at a deflection radius
 $r_{\rm pk}\approx3M$ (the strong-deflection/winding threshold, where the orbit
@@ -3200,57 +3224,85 @@ $\Sigma=\sqrt{V_0-V_{\min}}$, where $g(\sigma)=(V_0-2V_{\min})\sigma/\Sigma+V_{\
 satisfies $g(0)=V_{\min}>0$, $g(\Sigma)=0$ with its other root negative, hence
 $g>0$ on $[0,\Sigma)$; the second term is therefore \emph{manifestly negative}.
 When $V(r_0)\le2V(r_{\min})$ (the grazing regime, $r_{\min}$ near $r_0$) the first
-term is $\le0$ as well, and $\Phi_\tau'<0$ is \emph{proven in closed form}. For $a\neq0$ the signs $W>0$, $W'<0$, $W''>0$ used here fail near $r=2M$, where $K\propto\sqrt{r-2M}$ makes $W$ vanish; numerically they hold for $r\gtrsim2.5M$ at every sampled $(a,E)$, which contains the range $r_{\min}>r_{\rm pk}\approx3M$ the argument uses, and we state them as a hypothesis with that threshold. The same
-closed form---using the exact identity (integration by parts on the Abel integral)
+term is $\le0$ as well, and $\Phi_\tau'<0$ is \emph{proven in closed form}. For $a\neq0$ the signs $W>0$, $W'<0$ used here fail near $r=2M$, where $K\propto\sqrt{r-2M}$ makes $W$ vanish; numerically they hold for $r\gtrsim2.5M$ at every sampled $(a,E)$, which contains the range $r_{\min}>r_{\rm pk}\approx3M$ the argument uses, and we state them as a hypothesis with that threshold.
+
+Beyond the grazing regime the signs of $W$ do not settle the question. The exact identity
+(integration by parts on the Abel integral)
 \begin{equation}
     \sqrt{V_{\min}}\,\Phi_\tau'=\frac{W(V_0)(V_0-2V_{\min})}{\Sigma}
-    +\int_{V_{\min}}^{V_0}\!\frac{W'(t)\,(2V_{\min}-t)}{\sqrt{t-V_{\min}}}\,\dd t ,
+    +\int_{V_{\min}}^{V_0}\!\frac{W'(t)\,(2V_{\min}-t)}{\sqrt{t-V_{\min}}}\,\dd t
     \label{eq:phitau-closed}
 \end{equation}
-together with the convexity of $W$ ($W''>0$)---extends the proof to the quarter
-regime $V(r_0)\le4V(r_{\min})$. We accordingly \emph{define}
+shows why. For $V_0/4\le V_{\min}<V_0/2$ its boundary term is positive, and splitting the
+integral at $t=2V_{\min}$ with $-W'$ decreasing (convex $W$) bounds the integral only by
+zero, so the two terms are never compared. Positivity, monotonicity and convexity of $W$
+cannot close the gap on their own: $W(V)=10-V+V^2/100$ on $1\le V\le4$ is positive,
+decreasing and strictly convex, yet
+$\Phi(v)=2\sqrt v\int_0^{\sqrt{4-v}}W(v+\sigma^2)\,\dd\sigma$ has
+$\Phi'(1)=1528\sqrt3/375>0$ at the quarter point $V_{\min}=V_0/4$. Going beyond the grazing
+regime needs a quantitative property of the actual $W=K/V'$, which we do not supply here.
+
+What the closed form does prove is the no-inversion whenever the $t$-branch turning radius
+is grazing. Let $r_{1/2}(r_0)$ be the half-potential radius, $V(r_{1/2})=\tfrac12V(r_0)$,
+unique because $V$ is strictly increasing [equation~\eqref{eq:V-monotone-rot} below]. Then
 \begin{equation}
-    R_\ast(E,a)=\sup\big\{\,r_0:\ V(r_0)\le 4\,V(r_{\min}(r_0))\ \text{along the marginal
-    turning family}\,\big\},
-    \label{eq:Rstar}
+    r_{\min}^t\ \ge\ r_{1/2}(r_0)\quad\Longrightarrow\quad r_{\min}^\tau<r_{\min}^t .
+    \label{eq:grazing-noinv}
 \end{equation}
-with $V=r\Delta/DE$ the turning potential---an explicit $(E,a)$-dependent radius (it is
-\emph{not} a function of $E$ alone, since $V$ carries the spin through $\Delta$)---so the
-closed-form proof covers all endpoints $r_0\le R_\ast(E,a)$. In the
-static limit $a\to0$ (Vaidya $\dot m=0$ / frozen Thakurta) we can go further:
+Indeed, if $r_{\min}^\tau\ge r_{\min}^t$, both radii lie in $[r_{1/2},r_0)$, where
+$\Phi_\tau$ is strictly decreasing, so $\Phi_\tau(r_{\min}^\tau)\le\Phi_\tau(r_{\min}^t)$,
+contradicting $\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$ from (A).
+Only the $t$-branch radius has to be located, and the condition is explicit in $(E,a,r_0)$
+through $V=r\Delta/DE$; for $a\neq0$ it rests on the sign hypothesis on $W$ just stated.
+The symmetric example of Figure~\ref{fig:bvp} ($r_0=6M$, $E=1.2$) falls just outside it,
+$r_{\min}^t=4.735M$ against $r_{1/2}=4.784M$ (\texttt{KerrScripts/bvp\_estremi\_fissi.py}),
+so that figure illustrates the no-inversion numerically rather than instancing the
+theorem. In the
+static limit $a\to0$ (Vaidya $\dot m=0$ / frozen Thakurta) the large-$r_0$ behaviour is
+also explicit:
 $W(V)=\tfrac1{2V}-\tfrac1{2b^{3/2}V^{3/2}}+O(V^{-2})$ with $b=E^2-1$, so the
 large-$r_0$ angle is
 $\Phi_\tau=\arctan\!\sqrt{V_0/V_{\min}-1}-b^{-3/2}\sqrt{1/V_{\min}-1/V_0}+\cdots$,
 exhibiting a \emph{single, non-degenerate} maximum at $V_{\rm pk}\sim b^{-3/2}\sqrt{V_0}$
-with $\Phi_\tau''(V_{\rm pk})=-\tfrac12 b^{9/4}V_0^{-5/4}<0$; hence (B) holds for all
-sufficiently large $r_0$. For intermediate $r_0$ the single-crossing property
-(at every $r_{\min}$, \emph{either} $\Phi_\tau'<0$ \emph{or} $\Phi_\tau''<0$) is
-established by a validated interval-arithmetic certificate, completed for $r_0=10M$
-over the entire continuum $r_{\min}\in(2.6,6.05)M$ (the elementary grazing bound
-covering $r_{\min}\gtrsim6.05M$; \texttt{no\_inversion\_schwarzschild\_CAP\_r0\_10.py}).
-The same certificate has been carried through over a grid of six configurations,
-$r_0/M=8$ and $12$ at $E=1.2,\,1.6,\,2.5$, all passing
+with $\Phi_\tau''(V_{\rm pk})=-\tfrac12 b^{9/4}V_0^{-5/4}<0$ at leading order. We count this
+as asymptotic evidence for (B) at large $r_0$, not as a proof: turning it into one needs
+remainder bounds on $\Phi_\tau'$ and $\Phi_\tau''$, uniform also outside the region where
+the expansion is used, which we have not written.
+Below the grazing window, at fixed static configurations, a validated
+interval-arithmetic certificate establishes the single-crossing property (at every
+$r_{\min}$, \emph{either} $\Phi_\tau'\neq0$ \emph{or} $\Phi_\tau''<0$) over the whole
+continuum $r_{\min}\in(2.6M,r_{1/2}]$; with the grazing bound on $[r_{1/2},r_0)$ it
+follows that every critical point of $\Phi_\tau$ on $(2.6M,r_0)$ is a strict maximum,
+hence there is at most one, and $\Phi_\tau$ is strictly decreasing to the right of it.
+For those configurations the argument of~\eqref{eq:grazing-noinv} then gives the
+no-inversion whenever $r_{\min}^t$ lies to the right of the peak. The certificate has been
+carried through over seven configurations, $r_0/M=8$ and $12$ at $E=1.2,\,1.6,\,2.5$ and
+$r_0=10M$ at $b=E^2-1=0.96$, all passing
 (\texttt{no\_inversion\_schwarzschild\_CAP\_grid.py}; the runs are archived in
-\texttt{CAP\_grid\_certificates.log}). In these runs each quadrature panel width
+\texttt{CAP\_grid\_certificates.log}). An earlier version of these runs stopped at the
+quarter-potential radius and relied on the quarter-regime extension above, which is not
+proved; the windows now run to $r_{1/2}$, and the earlier $r_0=10M$ run
+(\texttt{no\_inversion\_schwarzschild\_CAP\_r0\_10.py}, window $(2.6,6.05)M$) is
+superseded by the grid entry. In these runs each quadrature panel width
 is an outward-rounded enclosure of the difference of its two endpoints rather
 than a rounded floating-point subtraction, so the reported widths are rigorous;
 the subdivision counts are unchanged by that correction.
 
 Five qualifications delimit what that certificate asserts, and they belong with
 it rather than in a footnote. \emph{(i)} The grid is at $a=0$, over the windows
-$r_{\min}\in(2.6,r_{1/4}]$ with $r_{1/4}$ the quarter-potential radius, the
+$r_{\min}\in(2.6,r_{1/2}]$ with $r_{1/2}$ the half-potential radius, the
 elementary grazing bound covering the complement; the welding of the two regions
-is what makes the statement cover the interval, and the $r_0=10M$ run is at
+is what makes the statement cover the interval, and the $r_0=10M$ entry is at
 $b=E^2-1=0.96$, i.e.\ nominally $E=1.4$. \emph{(ii)} The parameter $E^2-1$ is
 formed in binary64 and then promoted to a point interval, so what is certified is
 that binary parameter and not automatically the exact decimal $E=1.2$ or $1.6$.
-The threshold $r_{1/4}$ likewise comes from a non-interval root-find, so the weld
+The threshold $r_{1/2}$ likewise comes from a non-interval root-find, so the weld
 between the certified window and the grazing bound needs an interval argument of
-its own, and now carries one: the runner certifies the bridge cell
-$[r_{1/4},r_{1/4}+10^{-10}]$ like any other cell---all six come back $S$---and
-encloses $V(r_{1/4}+10^{-10})-V(r_0)/4$, finding it strictly positive in every
-configuration (smallest enclosure $1.32\times10^{-10}$, at $E=2.5$, $r_0=8M$).
-That places the bridge's upper end above the \emph{true} quarter radius, so the
+its own, and carries one: the runner certifies the bridge cell
+$[r_{1/2},r_{1/2}+10^{-10}]$ like any other cell---all seven come back $S$---and
+encloses $V(r_{1/2}+10^{-10})-V(r_0)/2$, finding it strictly positive in every
+configuration (smallest enclosure $1.85\times10^{-10}$, at $E=2.5$, $r_0=8M$).
+That places the bridge's upper end above the \emph{true} half radius, so the
 two windows overlap and the interval is covered with no gap. \emph{(iii)} The code's criterion is $P<0$ or $P>0$ or $PP<0$:
 it excludes zeros of $P$ on the regions it labels $S$ and establishes $PP<0$ on
 the remainder, which supports a statement about the \emph{type} of every critical
@@ -3284,12 +3336,13 @@ the result as certified in that form, and not as an unconditional exact statemen
 about the continuum of real parameters.
 A uniform symbolic proof for all $(a,E,r_0)$ remains open---the deciding inequality is
 tight at the \emph{transcendental} deflection threshold $r_{\rm pk}$. We therefore state
-(B), and hence the fixed-endpoint no-inversion, as a \emph{theorem for $r_0\le R_\ast(E,a)$
-and asymptotically as $r_0\to\infty$ in the static case}, machine-certified over
-the stated $(E,r_0)$ grid, and a numerically supported conjecture in full generality
-(verified over $a\in[0.2,0.9]$, $E\in[1.05,1.5]$); the fixed-endpoint turning points of
-Figure~\ref{fig:bvp} ($r_{\min}^{\tau,t}\gtrsim4.7M$) lie in the certified scattering
-regime.
+the fixed-endpoint no-inversion as a \emph{theorem in the grazing regime}
+$r_{\min}^t\ge r_{1/2}(r_0)$ [equation~\eqref{eq:grazing-noinv}; for $a\neq0$ under the
+stated sign hypothesis on $W$], as a \emph{computer-assisted} statement at the seven certified
+static configurations, where it holds whenever $r_{\min}^t$ lies to the right of the peak of
+$\Phi_\tau$, with asymptotic evidence as $r_0\to\infty$ in the static case, and as a
+numerically supported conjecture in full generality (verified over $a\in[0.2,0.9]$,
+$E\in[1.05,1.5]$).
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
@@ -3318,9 +3371,9 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
     \caption{Protocol dependence of depth inversion. Same-launch
     comparison inverts under either rotation or a conformal factor; the
     genuine fixed-endpoint brachistochrone shows no inversion in every
-    proven and tested regime (proven for $r_0\le R_\ast$ and, in the static
-    case, as $r_0\to\infty$; machine-certified over the stated $(E,r_0)$ grid;
-    numerically verified elsewhere).}
+    proven and tested regime (proven in the grazing regime
+    $r_{\min}^t\ge r_{1/2}(r_0)$; machine-certified at the stated static $(E,r_0)$
+    configurations; numerically verified elsewhere).}
     \label{tab:protocol}
     \begin{tabular}{@{}lcc}
         \br
@@ -3433,7 +3486,7 @@ extremal families, arrival and proper time $\tau$.
 invert the $t/\tau$ ordering under a same-launch comparison. The fixed-endpoint
 no-inversion result is deliberately \emph{not} stated as a single claim: it is
 (i) an analytic integrand inequality; (ii) a \emph{theorem} for
-$r_0\le R_\ast(E,a)$ [equation~\eqref{eq:Rstar}]; (iii) an asymptotic result as
+the grazing regime $r_{\min}^t\ge r_{1/2}(r_0)$ [equation~\eqref{eq:grazing-noinv}]; (iii) asymptotic evidence as
 $r_0\to\infty$ in the static case; (iv) a computer-assisted proposition certified over the stated $(E,r_0)$ grid; and (v) a numerically supported \emph{conjecture}
 in full generality. These five have different evidential status
 (Protocol~\ref{prot:evidence}) and are not merged. The complete first-order (on-shell
@@ -4359,7 +4412,7 @@ matching the direct double integral to $5\times10^{-14}$.
         \hline
         \emph{end-to-end example} $(M,a,E,J)\!\to\!\delta\varphi$
             & \texttt{pipeline\us completa\us deltaphi.py} & $5\times10^{-14}$\\
-        TK $\tau$ reduction $c_k$, $\psi=\tfrac12\Ehat\sum Q_{kj}W_{kj}$ plus horizon part
+        TK $\tau$ reduction $c_k$ and the energy component of $\psi$ ($\Theta\to\Ehat\partial_E$), plus horizon part
             & \texttt{kerr\us psi\us explicit\us verified.py} & $5\times10^{-14}$\\
         TK $\tau$ drift clock~\eqref{eq:clock-eta-tau} against the flow; energy and Euler assembly
             & \texttt{verify\us tau\us branch\us drift\us clock.py} & $1.4\times10^{-13}$\\
@@ -4476,7 +4529,10 @@ $\Jc$ denotes the branch degeneration value (the explicit rotating $\tau$- and
 $t$-branch values are collected below); here $E\equiv E_{\rm eff}=\Ehat/A$ and
 $S=(r-r_d)^2Q_4(r)$ with double root $r_d$ and quartic $Q_4$ (leading coefficient
 $a_4$). The Abel coordinate is
-$z(r)=\int_{r_0}^r\dd r'/\sqrt{Q_4}$; $\sigma,\zeta,\wp$ are the Weierstrass functions
+$z(r)=\int_{e}^r\dd r'/\sqrt{Q_4}$, based at the turning root $e$ of $Q_4$, a branch
+point, so that the sheet involution is $z\mapsto-z$; the launch enters only through
+$z_0=z(r_0)$, and every primitive below is taken from $z_0$ with its logarithms continued
+along the arc. $\sigma,\zeta,\wp$ are the Weierstrass functions
 of $E$ (periods $2\omega_1,2i\omega_{\rm im}$, built from $\theta_1$). Marked points:
 $\pm z_d$ (images of $r_d$), $\pm z_\infty$ (of $r=\infty$), and the two-torsion
 turning image $z=0$.
@@ -4516,11 +4572,14 @@ remark~\ref{rmk:tau-dictionary}.
 
 \paragraph{Zeroth order (frozen orbit), verified to $10^{-12}$.}
 \begin{equation}
-\varphi_0(r)=\Jc\big[(E^2-1)z+((E^2-1)r_d+2M)\,U_0(z)\big],\;\;
-U_0=\rho[\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)]+C_{U_0}z,
+\begin{aligned}
+&\varphi_0(r)=\Jc\big[(E^2-1)(z-z_0)+((E^2-1)r_d+2M)\,U_0(z)\big],\\
+&U_0=\big[\rho\big(\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)\big)+C_{U_0}z\big]_{z_0}^{z},
+\end{aligned}
 \end{equation}
 $\rho=1/\sqrt{Q_4(r_d)}$, $U_k=\int_{r_0}^r r^k/\sqrt S\,\dd r$ (explicit in
-$\sigma,\zeta$ by Hermite recursion).
+$\sigma,\zeta$ by Hermite recursion, with the third-kind letter at $\pm z_\infty$ where the
+residue there is nonzero; Lemma~I.J of Paper~I).
 
 \paragraph{First order: source and antiderivative.}
 By Lemma~I.4 of Paper~I the source is $\partial_\lambda F=N/S^{3/2}$,
@@ -4644,10 +4703,11 @@ separatrices this is verified symbolically in Mathematica,
 $N_{\rm tot}(r_d)\equiv0\pmod{S,\,S'}$.
 
 \paragraph{Fully symbolic coefficients, off-separatrix $q$-series, and independent checks.}
-Off the separatrix (generic $J$, genus two) every block coefficient is a
-\emph{rational function of $(M,a,E,J)$}: the source coefficients $c_k$,
-$Q_{kj}=c_kb_j-c_jb_k$, and the canonical pole coefficients $g_i$ (Taylor
-coefficients of $q_6^{-1/2}$ at the odd-model infinity), with
+Off the separatrix (generic $J$, genus two) every block coefficient is an explicit
+\emph{algebraic} function of $(M,a,E,J)$: the source coefficients $c_k$ and
+$Q_{kj}=c_kb_j-c_jb_k$ are rational, solved from the polynomial system, while the
+canonical pole coefficients $g_i$ (Taylor coefficients of $q_6^{-1/2}$ at the odd-model
+infinity) carry the square root of the leading coefficient, with
 $g_0=1/\sqrt{E^2-1}$ and $g_1=(2E^2-3)/(E^2-1)^{3/2}$ set by the leading behaviour
 ($E$-only), while $g_2$ and the $c_k$ carry the full $(a,J)$ dependence. The
 algebraic remainder is elementary in closed form,
@@ -4810,15 +4870,19 @@ Since $\dd\lambda=\dd r/\bar H_{P_r}$, the extra source piece is the radial acti
 \end{equation}
 and this is elementary to reduce. On the frozen $t$-branch shell the radial momentum is
 \begin{equation}
-    p_{r0}=\frac{\sqrt{S}}{\Delta\,[(E^2-1)r+2M]},\qquad
+    p_{r0}=\sigma_r\,\frac{\sqrt{S}}{\Delta\,[(E^2-1)r+2M]},\qquad
     \Delta=r^2-2Mr+a^2,\qquad S=r\,[(E^2-1)r+2M]\,Q_2(r),
     \label{eq:pr0-tbranch}
 \end{equation}
-with $E\equiv E_{\rm eff}$, $J\equiv J_{\rm eff}$, $Q_2$ the branch quartic (equation~\eqref{eq:t-K})
-and $S$ the on-shell sextic. Polynomial division of $S$ by $\Delta\,[(E^2-1)r+2M]$ gives,
-in the standard basis $U_k=\int r^k/\sqrt S\,\dd r$,
+with $E\equiv E_{\rm eff}$, $J\equiv J_{\rm eff}$, $Q_2$ the branch quartic (equation~\eqref{eq:t-Q2})
+and $S$ the on-shell sextic, and $\sigma_r=\pm1$ the sheet sign. The kinetic term of the
+$t$-branch Hamiltonian is even in $p_r$, so $\operatorname{sign}H_{0,p_r}=\operatorname{sign}p_r$
+in the regular exterior ($\sqrt S>0$, $\Delta>0$, $DE>0$): the ingoing sheet of the frozen
+data above has $\sigma_r=-1$, the outgoing one $\sigma_r=+1$. Polynomial division of $S$ by
+$\Delta\,[(E^2-1)r+2M]$ gives, in the standard basis $U_k=\int r^k/\sqrt S\,\dd r$ taken
+along the arc from the launch in the direction of the flow,
 \begin{equation}
-    \int p_{r0}\,\dd r=\sum_{k=0}^{3}a_k\,U_k+(\text{third kind at }\Delta=0),
+    \int p_{r0}\,\dd r=\sigma_r\Big[\sum_{k=0}^{3}a_k\,U_k+(\text{third kind at }\Delta=0)\Big],
     \label{eq:action-reduction}
 \end{equation}
 \begin{equation}
@@ -4828,7 +4892,9 @@ in the standard basis $U_k=\int r^k/\sqrt S\,\dd r$,
     \end{split}
     \label{eq:ak}
 \end{equation}
-with $[a_k]=\text{length}^{3-k}$. The kernel is likewise algebraic on the shell,
+with $[a_k]=\text{length}^{3-k}$, the coefficients being those of the outgoing sheet;
+on the ingoing leg, where $\dd r<0$ and $p_{r0}<0$, the two signs combine so that the
+action~\eqref{eq:dilation-action} is positive, as $P_r\bar H_{P_r}>0$ requires. The kernel is likewise algebraic on the shell,
 $\partial_{P_r}G_0/\bar H_{P_r}=A(r)/\sqrt S$ with $A$ rational (the inner radical
 $\sqrt{\Delta v/\bar P}$ cancels on shell), so the complete off-shell correction is a
 length-two iterated integral on the single spectral curve $\sqrt S$, with the symbolic
@@ -4839,8 +4905,9 @@ coefficients~\eqref{eq:ak}. Every step is verified to machine precision against 
 
 \paragraph{Special-function class.} The building blocks are graded by length, and
 we use that word rather than a claim about transcendence, which we have not
-proved. The second-kind integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
-\emph{ordinary Abelian integrals} (weight one), reducible to the classical Kleinian
+proved. The integrals $U_0,\dots,U_3=\int r^k/\sqrt S\,\dd r$ are
+\emph{ordinary Abelian integrals} (weight one)---of the first kind for $k=0,1$, with poles
+and in general nonzero residues at the two points at infinity for $k=2,3$--- reducible to the classical Kleinian
 $\zeta,\sigma$ basis (Baker; \ref{app:explicit}), the same class as $\varphi_0$. The
 letters $W_{jk}=\int(r^jU_k-r^kU_j)/\sqrt S\,\dd r$ are \emph{represented by
 length-two iterated} Abelian integrals with algebraic coefficients. \emph{No
@@ -4903,7 +4970,8 @@ the coefficients~\eqref{eq:ak} are polynomials in $J$, hence
 finite there, while the spectral curve \emph{degenerates}, $S=(r-r_d)^2Q_4$ (double root
 $r_d$, genus two $\to$ genus one). Each hyperelliptic letter collapses,
 $U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\sqrt{Q_4}$
-(elliptic second kind, Weierstrass $\wp,\zeta$) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
+(elliptic, poles only at the points at infinity: Weierstrass $\wp,\zeta$ and the
+third-kind letter there, Lemma~I.J of Paper~I) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
 (third kind); the spurious poles at $r_d$ cancel in the physical combination because
 $\sum_k a_k(\Jc)r_d^{\,k}+R(\Jc,r_d)/[\Delta\,((E^2-1)r+2M)]|_{r_d}=[S/\text{deng}](r_d)=0$
 (as $S(r_d)=0$), leaving the weight-two block as a genuine \emph{elliptic}

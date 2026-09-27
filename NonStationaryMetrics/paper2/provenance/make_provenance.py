@@ -435,7 +435,7 @@ MANIFEST: list[tuple[str, str, str]] = [
     ("CAP interval-arithmetic library",
      "python3 cap_full.py",
      "NonStationaryMetrics/cap_full.py"),
-    ("CAP certificate at r0 = 10",
+    ("CAP certificate at r0 = 10 (window to 6.05M; superseded by the grid entry)",
      "python3 no_inversion_schwarzschild_CAP_r0_10.py",
      "NonStationaryMetrics/no_inversion_schwarzschild_CAP_r0_10.py"),
     ("CAP certificates over the (E, r0) grid",
