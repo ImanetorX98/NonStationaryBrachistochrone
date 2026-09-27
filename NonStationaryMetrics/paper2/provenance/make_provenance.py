@@ -412,6 +412,11 @@ MANIFEST: list[tuple[str, str, str]] = [
      "Hamiltonian flow, and the weight-two assembly with its horizon part",
      "python3 verify_tau_branch_drift_clock.py",
      "NonStationaryMetrics/paper2/verification/verify_tau_branch_drift_clock.py"),
+    ("Prop. (lemmaB) and App. (lemmaB): monotonicity regions of the tau "
+     "half-angle map, single peak for E^2 >= 3/2, and the two interval-certified "
+     "counterexamples",
+     "python3 verify_lemma_B.py",
+     "NonStationaryMetrics/paper2/verification/verify_lemma_B.py"),
     ("Figure collection: every compiled figure is the current output of its "
      "generator (hash-compared, not assumed)",
      "python3 collect_figures.py --check",

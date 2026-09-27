@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-27T18:30:29+00:00",
+  "generated_utc": "2026-09-27T20:08:53+00:00",
   "epsilon_window": [
     0.001,
     0.002,
@@ -132,7 +132,7 @@
     "NonStationaryMetrics/ThakurtaMetric/adiabatic_convergence_raw.npz": "758b59f23295"
   },
   "environment": {
-    "validation_seconds": 15.9,
+    "validation_seconds": 15.0,
     "exact_seconds": 9.2,
     "note": "wall-clock timings; excluded from content_sha256"
   },

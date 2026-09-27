@@ -90,9 +90,10 @@ theorem under a same-launch comparison;
 and the first-order adiabatic response, on- and off-shell, verified on compact regular
 subarcs against the true non-autonomous flow to $O(\varepsilon^2)$, its weight-two content a length-two iterated Abelian integral on a
 genus-two curve. The separatrices, the classification and the on-shell reduction are
-proved; the fixed-endpoint no-inversion is proved in the grazing regime, where the
-coordinate-time turning point satisfies $V(r_{\min})\ge V(r_0)/2$, and machine-certified
-at seven static configurations, its unrestricted extension remaining conjectural; a rigorous higher-genus polylogarithm framework remains open.
+proved; the fixed-endpoint no-inversion is proved on explicit regions of the
+coordinate-time turning point, for every spin and, when $E^2\ge3/2$, everywhere beyond the
+single peak of the proper-time half-angle map, its unrestricted extension remaining
+conjectural; a rigorous higher-genus polylogarithm framework remains open.
 \end{abstract}
 
 \maketitle
@@ -3206,11 +3207,13 @@ Q_2(r_{\min},J^{\ast\ast})&=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\m
 are both manifestly negative, placing the thresholds beyond the larger root
 (\texttt{no\_inversion\_reduction.py}, with $M$ kept symbolic; every identity above is
 homogeneous in $(r,a,J,M)$). Hence (A) is a theorem for all $r_{\min}>2M$,
-$E>1$, $a>0$. Lemma~(B), the monotonicity $\Phi_\tau'(r_{\min})<0$, is
-\emph{conditional}: $\Phi_\tau$ has a single maximum at a deflection radius
-$r_{\rm pk}\approx3M$ (the strong-deflection/winding threshold, where the orbit
-approaches the unstable circular $\tau$-orbit) and is strictly decreasing for
-$r_{\min}>r_{\rm pk}$. In the effective-potential form
+$E>1$, $a>0$; it holds at $a=0$ as well, where $W(r_{\min})=E^2r_{\min}^3(r_{\min}-2M)$ and
+the slope $E^2r_{\min}^2(r_{\min}-M)$ are positive directly. Lemma~(B), the monotonicity $\Phi_\tau'(r_{\min})<0$, holds on explicit
+regions and not everywhere: at high energy $\Phi_\tau$ has a single maximum, at a
+deflection radius $r_{\rm pk}$ (near $3M$ in the cases of the figures, the
+strong-deflection threshold where the orbit approaches the unstable circular
+$\tau$-orbit), and decreases beyond it, but at low energy it can have several
+(Proposition~\ref{prop:lemmaB} and the remarks after it). In the effective-potential form
 $\Phi_\tau=\sqrt{V_{\min}}\int_{r_{\min}}^{r_0}K/\sqrt{V-V_{\min}}\,\dd r$ with
 $V=r\Delta/DE$, $K=\sqrt{r(r-2M)}/\Delta$, $V_{\min}=V(r_{\min})$, the substitution
 $V=V_{\min}+\sigma^2$ and one integration by parts give, for $W\equiv K/V'$
@@ -3224,7 +3227,7 @@ $\Sigma=\sqrt{V_0-V_{\min}}$, where $g(\sigma)=(V_0-2V_{\min})\sigma/\Sigma+V_{\
 satisfies $g(0)=V_{\min}>0$, $g(\Sigma)=0$ with its other root negative, hence
 $g>0$ on $[0,\Sigma)$; the second term is therefore \emph{manifestly negative}.
 When $V(r_0)\le2V(r_{\min})$ (the grazing regime, $r_{\min}$ near $r_0$) the first
-term is $\le0$ as well, and $\Phi_\tau'<0$ is \emph{proven in closed form}. For $a\neq0$ the signs $W>0$, $W'<0$ used here fail near $r=2M$, where $K\propto\sqrt{r-2M}$ makes $W$ vanish; numerically they hold for $r\gtrsim2.5M$ at every sampled $(a,E)$, which contains the range $r_{\min}>r_{\rm pk}\approx3M$ the argument uses, and we state them as a hypothesis with that threshold.
+term is $\le0$ as well, and $\Phi_\tau'<0$ is \emph{proven in closed form}. For $a\neq0$ the sign $W'<0$ used here fails near $r=2M$, where $K\propto\sqrt{r-2M}$ makes $W$ vanish; it holds for every $r\ge5M/2$, every $E>1$ and $|a|\le M$ (Proposition~\ref{prop:lemmaB}), so the grazing argument applies with spin whenever $r_{\min}\ge5M/2$.
 
 Beyond the grazing regime the signs of $W$ do not settle the question. The exact identity
 (integration by parts on the Abel integral)
@@ -3240,34 +3243,65 @@ cannot close the gap on their own: $W(V)=10-V+V^2/100$ on $1\le V\le4$ is positi
 decreasing and strictly convex, yet
 $\Phi(v)=2\sqrt v\int_0^{\sqrt{4-v}}W(v+\sigma^2)\,\dd\sigma$ has
 $\Phi'(1)=1528\sqrt3/375>0$ at the quarter point $V_{\min}=V_0/4$. Going beyond the grazing
-regime needs a quantitative property of the actual $W=K/V'$, which we do not supply here.
+regime needs a quantitative property of the actual $W=K/V'$: its logarithmic decay rate
+$\alpha(V)=-VW'(V)/W(V)$, or the concavity of $VW$, which is what the proposition below
+uses.
 
-What the closed form does prove is the no-inversion whenever the $t$-branch turning radius
-is grazing. Let $r_{1/2}(r_0)$ be the half-potential radius, $V(r_{1/2})=\tfrac12V(r_0)$,
-unique because $V$ is strictly increasing [equation~\eqref{eq:V-monotone-rot} below]. Then
+The comparison step needs monotonicity only to the right of the $t$-branch turning radius:
 \begin{equation}
-    r_{\min}^t\ \ge\ r_{1/2}(r_0)\quad\Longrightarrow\quad r_{\min}^\tau<r_{\min}^t .
+    \Phi_\tau\ \text{strictly decreasing on }[r_{\min}^t,r_0)\quad\Longrightarrow\quad
+    r_{\min}^\tau<r_{\min}^t .
     \label{eq:grazing-noinv}
 \end{equation}
-Indeed, if $r_{\min}^\tau\ge r_{\min}^t$, both radii lie in $[r_{1/2},r_0)$, where
-$\Phi_\tau$ is strictly decreasing, so $\Phi_\tau(r_{\min}^\tau)\le\Phi_\tau(r_{\min}^t)$,
-contradicting $\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$ from (A).
-Only the $t$-branch radius has to be located, and the condition is explicit in $(E,a,r_0)$
-through $V=r\Delta/DE$; for $a\neq0$ it rests on the sign hypothesis on $W$ just stated.
-The symmetric example of Figure~\ref{fig:bvp} ($r_0=6M$, $E=1.2$) falls just outside it,
-$r_{\min}^t=4.735M$ against $r_{1/2}=4.784M$ (\texttt{KerrScripts/bvp\_estremi\_fissi.py}),
-so that figure illustrates the no-inversion numerically rather than instancing the
-theorem. In the
-static limit $a\to0$ (Vaidya $\dot m=0$ / frozen Thakurta) the large-$r_0$ behaviour is
-also explicit:
+Indeed, if $r_{\min}^\tau\ge r_{\min}^t$, then $\Phi_\tau(r_{\min}^\tau)\le\Phi_\tau(r_{\min}^t)$,
+contradicting $\Phi_\tau(r_{\min}^\tau)=\Phi_t(r_{\min}^t)>\Phi_\tau(r_{\min}^t)$ from (A);
+$r_{\min}^\tau$ need not be located in advance. The grazing bound gives the hypothesis when
+$V(r_{\min}^t)\ge V(r_0)/2$. The following proposition, whose proofs are in
+\ref{app:lemmaB}, gives it on larger regions.
+
+\begin{proposition}[where the $\tau$ half-angle decreases]\label{prop:lemmaB}
+Let $E>1$ be the frozen energy ($E=E_{\rm eff}$), $|a|\le M$, $r_0>2M$, and let
+$c_\ast=\operatorname{sech}^2U_\ast=0.30518\ldots$, with $U_\ast\tanh U_\ast=1$. Then
+$\dd\Phi_\tau/\dd r_{\min}<0$ at every $r_{\min}\in(2M,r_0)$ satisfying one of
+\begin{enumerate}
+\item[\rm(i)] $a=0$ and $V(r_{\min})\ge c_\ast V(r_0)$;
+\item[\rm(ii)] $a=0$, $r_{\min}\ge9M/4$ and $V(r_{\min})\ge V(r_0)/4$;
+\item[\rm(iii)] $r_{\min}\ge5M/2$ and $V(r_{\min})\ge c_\ast V(r_0)$;
+\item[\rm(iv)] $r_{\min}\ge3M$ and $V(r_{\min})\ge V(r_0)/4$.
+\end{enumerate}
+Moreover $W>0$ and $W'<0$ for $r\ge5M/2$, and:
+\begin{enumerate}
+\item[\rm(v)] if $E^2\ge3/2$, $\Phi_\tau$ has exactly one critical point on $(2M,r_0)$, a
+non-degenerate maximum $r_{\rm pk}$, and $\dd\Phi_\tau/\dd r_{\min}<0$ for
+$r_{\min}>r_{\rm pk}$.
+\end{enumerate}
+\end{proposition}
+
+Each region in (i)--(iv) contains every larger $r_{\min}<r_0$ with it, since $V$ is
+increasing; so if $r_{\min}^t$ satisfies one condition, $\Phi_\tau$ is decreasing on
+$[r_{\min}^t,r_0)$ and~\eqref{eq:grazing-noinv} applies. \emph{The fixed-endpoint
+no-inversion is therefore a theorem whenever $r_{\min}^t$ satisfies one of (i)--(iv), and,
+for $E^2\ge3/2$, whenever $r_{\min}^t>r_{\rm pk}$}, for $0\le a\le M$ where the conditions allow spin,
+and for $a<0$ after the reflection $(a,J,\varphi)\mapsto(-a,-J,-\varphi)$. The symmetric example of Figure~\ref{fig:bvp} ($a=0$, $r_0=6M$, $E=1.2$,
+$r_{\min}^t=4.735M$, $V(r_{\min}^t)/V(r_0)=0.484$; \texttt{KerrScripts/bvp\_estremi\_fissi.py})
+is an instance of (i) and (ii).
+
+Two things cannot be improved as stated. The constant $c_\ast$ is optimal among uniform
+thresholds: at fixed $x=kV_0$ and $r_0\to2M$, $\Phi_\tau'(kV_0)$ takes the sign of
+$\operatorname{arcosh}(1/\sqrt k)-1/\sqrt{1-k}$, positive for $k<c_\ast$; at $k=1/4$,
+$E^2=2$, $r_0=2.01M$ the sign is certified positive by interval arithmetic, so the quarter
+criterion needs the radial margins of (ii) and (iv). And $\Phi_\tau$ is \emph{not}
+single-peaked for every $E>1$: at $a=0$, $E^2=1.01$, $r_0=10^4M$ its derivative has signs
+$+,-,+,-$ at $r_{\min}=3,6,30,9000\,M$, certified by interval arithmetic, so it has at
+least two maxima. A proof of the no-inversion in general cannot therefore run through
+single-peakedness. In the static limit $a\to0$ (Vaidya $\dot m=0$ / frozen Thakurta) the
+large-$r_0$ behaviour is explicit at fixed energy:
 $W(V)=\tfrac1{2V}-\tfrac1{2b^{3/2}V^{3/2}}+O(V^{-2})$ with $b=E^2-1$, so the
 large-$r_0$ angle is
 $\Phi_\tau=\arctan\!\sqrt{V_0/V_{\min}-1}-b^{-3/2}\sqrt{1/V_{\min}-1/V_0}+\cdots$,
-exhibiting a \emph{single, non-degenerate} maximum at $V_{\rm pk}\sim b^{-3/2}\sqrt{V_0}$
-with $\Phi_\tau''(V_{\rm pk})=-\tfrac12 b^{9/4}V_0^{-5/4}<0$ at leading order. We count this
-as asymptotic evidence for (B) at large $r_0$, not as a proof: turning it into one needs
-remainder bounds on $\Phi_\tau'$ and $\Phi_\tau''$, uniform also outside the region where
-the expansion is used, which we have not written.
+with a single non-degenerate maximum at $V_{\rm pk}\sim b^{-3/2}\sqrt{V_0}$ at leading
+order, $\Phi_\tau''(V_{\rm pk})=-\tfrac12 b^{9/4}V_0^{-5/4}<0$. This is asymptotic evidence
+only, and the counterexample shows it is not uniform in the energy.
 Below the grazing window, at fixed static configurations, a validated
 interval-arithmetic certificate establishes the single-crossing property (at every
 $r_{\min}$, \emph{either} $\Phi_\tau'\neq0$ \emph{or} $\Phi_\tau''<0$) over the whole
@@ -3277,7 +3311,9 @@ hence there is at most one, and $\Phi_\tau$ is strictly decreasing to the right 
 For those configurations the argument of~\eqref{eq:grazing-noinv} then gives the
 no-inversion whenever $r_{\min}^t$ lies to the right of the peak. The certificate has been
 carried through over seven configurations, $r_0/M=8$ and $12$ at $E=1.2,\,1.6,\,2.5$ and
-$r_0=10M$ at $b=E^2-1=0.96$, all passing
+$r_0=10M$ at $b=E^2-1=0.96$, all passing; the five with $E^2\ge3/2$ are now covered
+analytically by Proposition~\ref{prop:lemmaB}(v), and the certificate remains the only
+argument for the two at $E=1.2$
 (\texttt{no\_inversion\_schwarzschild\_CAP\_grid.py}; the runs are archived in
 \texttt{CAP\_grid\_certificates.log}). An earlier version of these runs stopped at the
 quarter-potential radius and relied on the quarter-regime extension above, which is not
@@ -3334,15 +3370,13 @@ not extend the rest of the CAP certificate---which is a statement about
 $\Phi'$ and $\Phi''$ at $a=0$---to $a\neq0$ on the strength of this. \emph{(v)} We therefore state
 the result as certified in that form, and not as an unconditional exact statement
 about the continuum of real parameters.
-A uniform symbolic proof for all $(a,E,r_0)$ remains open---the deciding inequality is
-tight at the \emph{transcendental} deflection threshold $r_{\rm pk}$. We therefore state
-the fixed-endpoint no-inversion as a \emph{theorem in the grazing regime}
-$r_{\min}^t\ge r_{1/2}(r_0)$ [equation~\eqref{eq:grazing-noinv}; for $a\neq0$ under the
-stated sign hypothesis on $W$], as a \emph{computer-assisted} statement at the seven certified
-static configurations, where it holds whenever $r_{\min}^t$ lies to the right of the peak of
-$\Phi_\tau$, with asymptotic evidence as $r_0\to\infty$ in the static case, and as a
-numerically supported conjecture in full generality (verified over $a\in[0.2,0.9]$,
-$E\in[1.05,1.5]$).
+We therefore state the fixed-endpoint no-inversion as a \emph{theorem} whenever
+$r_{\min}^t$ satisfies one of the conditions of Proposition~\ref{prop:lemmaB}---in
+particular, for $E^2\ge3/2$ and every spin, whenever $r_{\min}^t$ lies beyond the peak of
+$\Phi_\tau$---as a \emph{computer-assisted} statement at the two certified configurations
+with $E=1.2$, and as a numerically supported conjecture in full generality (verified over
+$a\in[0.2,0.9]$, $E\in[1.05,1.5]$), which the low-energy counterexample above does not
+refute but shows cannot be reached through single-peakedness.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
 of the two brachistochrones---it requires the freedom to let the endpoint
@@ -3371,9 +3405,10 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
     \caption{Protocol dependence of depth inversion. Same-launch
     comparison inverts under either rotation or a conformal factor; the
     genuine fixed-endpoint brachistochrone shows no inversion in every
-    proven and tested regime (proven in the grazing regime
-    $r_{\min}^t\ge r_{1/2}(r_0)$; machine-certified at the stated static $(E,r_0)$
-    configurations; numerically verified elsewhere).}
+    proven and tested regime (proven where $r_{\min}^t$ satisfies a condition of
+    Proposition~\ref{prop:lemmaB}, in particular for $E^2\ge3/2$ beyond the peak of
+    $\Phi_\tau$; machine-certified at the stated static configurations with $E=1.2$;
+    numerically verified elsewhere).}
     \label{tab:protocol}
     \begin{tabular}{@{}lcc}
         \br
@@ -3485,10 +3520,14 @@ extremal families, arrival and proper time $\tau$.
 \paragraph{Conditional and numerical, kept tiered.} Rotation and the conformal factor
 invert the $t/\tau$ ordering under a same-launch comparison. The fixed-endpoint
 no-inversion result is deliberately \emph{not} stated as a single claim: it is
-(i) an analytic integrand inequality; (ii) a \emph{theorem} for
-the grazing regime $r_{\min}^t\ge r_{1/2}(r_0)$ [equation~\eqref{eq:grazing-noinv}]; (iii) asymptotic evidence as
-$r_0\to\infty$ in the static case; (iv) a computer-assisted proposition certified over the stated $(E,r_0)$ grid; and (v) a numerically supported \emph{conjecture}
-in full generality. These five have different evidential status
+(i) an analytic integrand inequality; (ii) a \emph{theorem} whenever the
+coordinate-time turning point satisfies one of the conditions of
+Proposition~\ref{prop:lemmaB}---for every spin, and for $E^2\ge3/2$ whenever it lies
+beyond the single peak of the $\tau$ half-angle map; (iii) a computer-assisted proposition
+at the certified static configurations with $E=1.2$; (iv) asymptotic evidence as
+$r_0\to\infty$ at fixed energy in the static case; and (v) a numerically supported
+\emph{conjecture} in full generality, which cannot be proved through single-peakedness,
+since the half-angle map has several maxima at low energy. These five have different evidential status
 (Protocol~\ref{prot:evidence}) and are not merged. The complete first-order (on-shell
 $+$ off-shell) correction is verified against the true non-autonomous flow to
 $O(\varepsilon^2)$ on compact regular subarcs; the weight-two letters are evaluated by a
@@ -5070,6 +5109,106 @@ scale such failures are known to have, not as a bound on ours.
 
 
 
+\section{Proofs for the $\tau$ half-angle map}
+\label{app:lemmaB}
+
+This appendix proves Proposition~\ref{prop:lemmaB}. Set $M=1$; the general case follows
+from $r\to r/M$, $a\to a/M$, $V\to V/M^2$, which leave the ratios $V(r_{\min})/V(r_0)$
+unchanged. Write $b=E^2-1>0$, $c=a^2\in[0,1]$, $D=br+2$, $\Delta=r^2-2r+c$,
+$N=br^2+(3-b)r-4$ and $T=rN+c$. Then
+\[
+    V=\frac{r\Delta}{D},\qquad V'=\frac{2T}{D^2},\qquad
+    W=\frac{K}{V'}=\frac{D^2\sqrt{r(r-2)}}{2\Delta T},
+\]
+and $T>0$ on $r>2$ because $N(2+z)=bz^2+3(b+1)z+2(b+1)$ has positive coefficients. With
+$x=V(r_{\min})\in(v_h,V_0)$, $v_h=V(2)=c/(b+1)$ and $V_0=V(r_0)$, the half-angle is
+$\Phi(x)=\sqrt x\int_x^{V_0}W(t)(t-x)^{-1/2}\,\dd t$, and since $V$ is increasing the sign
+of $\dd\Phi_\tau/\dd r_{\min}$ is that of $\Phi'(x)$. Every identity and polynomial
+certificate below is checked in exact arithmetic by
+\texttt{verification/verify\_lemma\_B.py}, which also reproduces the two counterexamples
+stated after Proposition~\ref{prop:lemmaB} by outward-rounded interval quadrature.
+
+\paragraph{The concavity criterion, and part (v).} Let $g=VW$. The substitution
+$t=x\sec^2\theta$ gives $\Phi(x)=2\int_0^{\arccos\sqrt{x/V_0}}g(x\sec^2\theta)\,\dd\theta$,
+and differentiating,
+\begin{equation}
+    \sqrt x\,\Phi'(x)=\int_x^{V_0}\frac{g'(t)}{\sqrt{t-x}}\,\dd t-\frac{g(V_0)}{\sqrt{V_0-x}} .
+    \label{eq:app-g}
+\end{equation}
+With $y=V_0-x$ and $t=x+yu^2$, $H(x)\equiv\sqrt{x(V_0-x)}\,\Phi'(x)
+=2y\int_0^1g'(x+yu^2)\,\dd u-g(V_0)$, and
+\[
+    H'(x)=-2\int_0^1g'(x+yu^2)\,\dd u+2y\int_0^1g''(x+yu^2)\,(1-u^2)\,\dd u .
+\]
+If $g'>0$ and $g''<0$ on $(v_h,V_0)$, then $H'<0$. As $x\to V_0$, $H\to-g(V_0)<0$. As
+$x\to v_h$, $g=C_c\sqrt{V-v_h}+O\big((V-v_h)^{3/2}\big)$ with
+$C_c=4(b+1)^2/[4(b+1)+c]^{3/2}>0$, so the integral in~\eqref{eq:app-g} diverges
+logarithmically and $H\to+\infty$. Hence $H$ has exactly one zero, where
+$\Phi''=H'/\sqrt{x(V_0-x)}<0$: a single non-degenerate maximum, with $\Phi'<0$ beyond it.
+It remains to show $g'>0>g''$ for $b\ge1/2$. Here $g=rD\sqrt{r(r-2)}/(2T)$ and
+\[
+    g'=\frac{\sqrt r\,D^2A_c}{4\sqrt{r-2}\,T^3},\qquad
+    g''=-\frac{D^3P_c}{8\sqrt r\,(r-2)^{3/2}\,T^5},
+\]
+with $A_c=r(b^2r^2+br^3-5br^2+10br-2r+8)+c\,(3br^2-5br+4r-6)$ and $P_c$ a polynomial of
+degree nine in $r$. Put $r=2+z$, $b=\tfrac12+u$ with $z>0$, $u\ge0$, and expand in
+$(z,u,c)$. Replacing every monomial that carries $c$ by $0$ if its coefficient is
+positive and by its value at $c=1$ if negative lowers the polynomial on $0\le c\le1$. For
+$A_c$ this leaves
+\[
+    2(2u+3)^2+3(2u+1)(2u+3)\,z+\tfrac12(2u+3)(6u+1)\,z^2
+    +\tfrac14(2u+1)(2u+7)\,z^3+\tfrac12(2u+1)\,z^4 ,
+\]
+and for $P_c$ a polynomial in $(z,u)$ whose ten $z$-coefficients are likewise positive
+polynomials in $u$; both are therefore positive, and (v) follows for every $|a|\le1$.
+
+\paragraph{The power-kernel criterion, and parts (i)--(iv).} For $p\in[\tfrac12,1)$ let
+$q_p=V^pW$, and suppose $q_p$ is positive and non-increasing on $[x,V_0]$. Writing
+$q_p(t)=q_p(V_0)+\int_t^{V_0}(-q_p')\,\dd L$ and exchanging the integrals,
+\[
+    \Phi(x)=q_p(V_0)\,F_p(x,V_0)+\int_x^{V_0}(-q_p'(L))\,F_p(x,L)\,\dd L,\qquad
+    F_p(x,L)=x^{1-p}I_p(L/x),
+\]
+$I_p(R)=\int_1^Rs^{-p}(s-1)^{-1/2}\,\dd s$. Since $F_p(x,x)=0$ the lower limit does not
+contribute, and $\partial_xF_p(x,L)=x^{-p}B_p(L/x)$ with
+\[
+    B_p(R)=(1-p)\,I_p(R)-\frac{R^{1-p}}{\sqrt{R-1}},\qquad
+    B_p'(R)=\frac{R^{1-p}}{2(R-1)^{3/2}}>0 .
+\]
+So $B_p(V_0/x)<0$ implies $B_p(L/x)<0$ for all $L\le V_0$, and $\Phi'(x)<0$. At $p=\tfrac12$,
+$B_{1/2}(R)=\operatorname{arcosh}\sqrt R-\sqrt{R/(R-1)}$; with $R=\cosh^2U$ this is
+$U-\coth U$, negative exactly for $U<U_\ast$, i.e.\ for $x>c_\ast V_0$ (and $\Phi'<0$ still at
+$x=c_\ast V_0$, where $q_{1/2}$ is strictly decreasing). At $p=\tfrac23$ and $R\le4$,
+$I_{2/3}\le I_{1/2}=2\operatorname{arcosh}\sqrt R$ gives
+$B_{2/3}(R)\le\tfrac23\operatorname{arcosh}2-4^{1/3}/\sqrt3<0$, because
+$\operatorname{arcosh}2<\tfrac43$ and $\tfrac89<4^{1/3}/\sqrt3$. Now $q_p$ is non-increasing
+exactly where the logarithmic decay rate $\alpha=-VW'/W$ satisfies $\alpha\ge p$, and:
+\begin{itemize}
+\item at $a=0$, $\dd\log(\sqrt V\,W)/\dd r=-(b^2r^3+5br^2+br+9r-4)/(rDN)<0$ on $r>2$, which
+gives (i);
+\item at $a=0$, $\alpha-\tfrac23=P_{2/3}/(6N^2)$ with
+$P_{2/3}=2b^2r^4-4b^2r^3-b^2r^2+9br^3-13br^2-14br+18r^2-42r+8$, and at $r=\tfrac94+z$ every
+coefficient of $P_{2/3}$ in $(z,b)$ is positive, which gives (ii);
+\item for $0\le c\le1$, $\alpha-\tfrac12$ and $\alpha-\tfrac23$ are polynomials over
+$2(r-2)T^2$ and $6(r-2)T^2$, and the monomial lowering in $c$ used above leaves
+polynomials with positive coefficients at $r=\tfrac52+z$ and $r=3+z$ respectively; this
+gives $\alpha>\tfrac12$ for $r\ge\tfrac52$, hence (iii) and $W'<0$ there, and
+$\alpha>\tfrac23$ for $r\ge3$, hence (iv).
+\end{itemize}
+
+\paragraph{Sharpness.} As $V\to0$ at $a=0$, $W=\tfrac12\sqrt{(b+1)/V}\,[1+O(V)]$, and at
+fixed $x=kV_0$ with $r_0\to2$
+\[
+    \Phi'(kV_0)=\frac{\sqrt{b+1}}{2\sqrt{kV_0}}\Big[\operatorname{arcosh}\frac1{\sqrt k}
+    -\frac1{\sqrt{1-k}}\Big]+O(\sqrt{V_0}),
+\]
+whose bracket is positive for $k<c_\ast$: no uniform threshold below $c_\ast$ exists. At
+$k=\tfrac14$ the bracket is $\operatorname{arcosh}2-2/\sqrt3>0$, and at $b=1$,
+$r_0=2.01$ the interval enclosure $x\Phi'(x)\in[0.005438,0.005460]$ certifies the sign.
+At $b=1/100$, $r_0=10^4$ the enclosures of $x\Phi'(x)$ at $r_{\min}=3,6,30,9000$ are
+$[0.01722,0.01751]$, $[-0.004232,-0.004114]$, $[0.01900,0.01922]$ and
+$[-1.014220,-1.014217]$, so $\Phi$ has at least two local maxima there.
+
 \clearpage
 
 
@@ -5094,7 +5233,10 @@ The author thanks the University of Pavia for a stimulating environment. OpenAI
 GPT-5.6 (Sol) and GPT-6 Astra, OpenAI Codex and Anthropic Claude (Opus~4.8, Opus~5 and
 Opus~5.5) were used to assist with symbolic-algebra checks, numerical-code development,
 the audit and re-execution of the verification scripts, bibliographic verification against
-the primary sources, and language and structural editing of the manuscript;
+the primary sources, and language and structural editing of the manuscript; the arguments
+of \ref{app:lemmaB} and its two counterexamples were first proposed by GPT-6 Astra in an
+audit of the proofs, and were checked step by step, symbolically and by interval
+arithmetic, before inclusion;
 all AI-assisted output was critically reviewed and independently verified by the author,
 who takes full responsibility for the accuracy, originality and integrity of the work. The
 closed-form and hyperelliptic computations relied on \textsc{SageMath}~\cite{SageMath}
