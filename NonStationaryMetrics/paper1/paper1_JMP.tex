@@ -689,9 +689,10 @@ pursue it here.
 \paragraph{Operational reading: thrust.} Maintaining the controlled invariant generally
 requires nonzero \emph{proper} acceleration $a^\mu=Du^\mu/\dd\tau$ ($a=0$ only on a
 free-fall geodesic), so the rail force is the thrust per unit mass, spacelike
-($a\cdot u=0$); where the drift term does not vanish, $|a|$ diverges as the
-freezing/horizon surface is approached (Lemma~\ref{lem:drift}), while a free geodesic of
-a stationary problem keeps its charge with $a=0$. The
+($a\cdot u=0$). The minimum thrust diverges as the freezing margin $\Ehat^2-|W|^2$
+tends to zero, provided the drift numerator stays bounded away from zero
+(Lemma~\ref{lem:drift}); no divergence follows merely from $|W|\to0$, and a free geodesic
+of a stationary problem keeps its charge with $a=0$. The
 present variational problem minimizes the selected elapsed \emph{clock}, not thrust, fuel
 or integrated control effort, which define distinct optimal-control problems. In the
 non-stationary case the $a\cdot W$ term is the proper acceleration that maintains the rail
@@ -719,9 +720,10 @@ capture.
 \end{itemize}
 Eccentricity and center offset are \emph{separate} levers: the first switches on
 the $t/\tau$ split, the second the inversions. The three branches
-\emph{degenerate}---the $t$, $\tau$ and $\eta$ brachistochrones coincide---when the
-optical cost ratios $n_t/n_\tau,\,n_t/n_\eta$ are position-independent, since the
-functionals are then proportional; in the comoving chart of FLRW this shows as an
+\emph{degenerate}---the $t$, $\tau$ and $\eta$ brachistochrones coincide---in FLRW, where the local speed and every
+clock rate depend on time alone: at fixed launch each terminal clock is then a strictly
+increasing function of $\eta_f$, so all branches minimise the same comoving length. In
+the comoving chart of FLRW this shows as an
 indicatrix that is, up to a position-independent scale, a rigid centered circle ($c=0$,
 $a_r=a_\varphi$, radius depending on the flow parameter alone). FLRW is the only such
 case in our ladder (section~\ref{sec:flrw}), whereas a spatial gradient breaks it---even
@@ -976,9 +978,11 @@ together with the rail invariant $-u\cdot W=\Ehat$
 legitimate along the \emph{entire} extremal, and it is the control-theoretic content of
 ``excluding $p=0$'' in the proof of Theorem~\ref{thm:rail}: nontriviality is not an
 assumption but a consequence of the coercivity bound~\eqref{eq:coercive}. That bound
-degenerates at the freezing/horizon surfaces, where the velocity indicatrix of
-section~\ref{sec:indicatrix} collapses and the constants $\rho,R$ cease to be finite and
-positive. Distance from those surfaces is necessary but not sufficient:
+degenerates in two different ways: at freezing the velocity indicatrix of
+section~\ref{sec:indicatrix} collapses to a point, while at the stationary limit or a
+horizon the selector ceases to be timelike and the regular domain, with its compactness,
+is lost; in either case the constants $\rho,R$ cease to be finite and positive. Distance
+from those surfaces is necessary but not sufficient:
 Theorem~\ref{thm:existence} is stated under (H), which also asks for a nonempty admissible
 class and a margin uniform on the space-time cylinder with $R\,T_0/\rho\le\bar T$.
 \end{remark}

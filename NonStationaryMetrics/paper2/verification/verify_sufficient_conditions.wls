@@ -11,7 +11,8 @@
 
    (B) Below the threshold, K < 0 still holds on an INNER REGION r < r_c(Ehat).
        We compute r_c and check it is a genuine sign change, giving a
-       domain-restricted local-minimality statement for every Ehat > 1.
+       domain-restricted local-minimality statement at each energy sampled
+       below (a sample, not every Ehat > 1).
 *)
 $Failures = 0;
 check[l_, c_] := (Print[If[TrueQ[c], "PASS  ", "FAIL  "], l];
@@ -37,10 +38,10 @@ arr = Lam2[r] {{1/f[r], 0}, {0, r^2}};
 dsdr = Sqrt[Lam2[r]/f[r]];                     (* d d / d r for a radial ray *)
 gradsq = Simplify[Inverse[arr][[1, 1]] dsdr^2];
 Print["      a^{rr} (dd/dr)^2 = ", Simplify[gradsq]];
-check["|grad d|_a^2 = 1 identically: the distance saturates the eikonal",
+check["|grad d|_a^2 = 1 for the RADIAL distance: the radial eikonal is saturated",
       Simplify[gradsq - 1] === 0];
-Print["      => d(p,.) is a value function with equality, not an inequality;"];
-Print["         it is a saturated HJB certificate in the sense required."];
+Print["      Radial identity checked here.  The full distance / HJB statement follows"];
+Print["      from the theorem discussed in the manuscript, not from this calculation."];
 
 (* --- (B) the inner region below the threshold -------------------------- *)
 Print["--- (B) below threshold: K < 0 on an inner region r < r_c ---"];

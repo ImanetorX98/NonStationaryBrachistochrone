@@ -164,7 +164,8 @@ Print["  nothing: the fibre term and the dilation term could cancel."];
 Print["  The tension field is therefore computed from the connections in"];
 Print["  verification/verify_tension_sympy.py, which also carries an"];
 Print["  independent check through the composition law for Box_g(u o pi)."];
-Print["  What this file still verifies is only the fibre geometry below."];
+Print["  The fibre geometry and the tension are checked in verify_tension_sympy.py;"];
+Print["  this file checks the horizontal optical factor and the Vaidya rail-drift identity."];
 Print[""];
 
 Print["      So the fibres are not geodesics.  That is a fact about the"];
