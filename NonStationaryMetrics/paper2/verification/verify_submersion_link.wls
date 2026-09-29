@@ -22,9 +22,9 @@
    -m'(v) (u^v)^2 / r : it vanishes exactly in the stationary case.
 
    CONSEQUENCE.  In the stationary case the rail constraint holds AUTOMATICALLY
-   along geodesics -- it is the Clairaut/Noether invariant of the submersion,
-   and by Bishop's theorem the Clairaut property is equivalent to the fibres
-   being totally umbilical, which is the hypothesis class of the cited work.
+   along geodesics -- it is the Noether invariant of W.  (Bishop's theorem ties
+   the Clairaut property to totally umbilical fibres for RIEMANNIAN submersions;
+   that criterion is not imported to the Lorentzian total space here.)
    In the non-stationary case that invariant FAILS, so it must be ENFORCED by
    control, at the cost of proper acceleration.  That is what "controlled rail"
    means, and it is precisely the regime outside the umbilical/Clairaut

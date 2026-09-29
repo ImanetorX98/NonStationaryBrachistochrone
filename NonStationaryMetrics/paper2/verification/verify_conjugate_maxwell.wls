@@ -124,7 +124,8 @@ Print["      from K < 0, but NOT uniqueness: the two extremals related by"];
 Print["      phi -> -phi leave a source with equal and opposite azimuthal"];
 Print["      costate and reconverge at Delta phi = pi.  That antipodal locus"];
 Print["      is a Maxwell set, and it survives however negative K is."];
-Print["      Consequently, for Ehat^2 >= 3/2:"];
+Print["      Consequences argued in the paper (prop:globalmin), NOT tested here;"];
+Print["      this script checks only the sign of K.  For Ehat^2 >= 3/2:"];
 Print["        - no conjugate points anywhere in the exterior;"];
 Print["        - every exterior extremal is a local minimiser of arrival time;"];
 Print["        - the cut locus is the antipodal meridian, of Maxwell type;"];
@@ -133,8 +134,9 @@ Print["          and fails there by symmetry rather than by focusing."];
 Print["      For Ehat^2 < 3/2 a region of positive curvature appears at large"];
 Print["      r and conjugate points must be located directly."];
 
-check["the two mechanisms are logically independent",
-      allNeg[2] (* K<0 everywhere *) && True (* yet the annulus persists *)];
+check["K < 0 on the whole exterior at Ehat^2 = 2 (the focal mechanism is absent;",
+      allNeg[2]];
+Print["      the Maxwell mechanism is topological and is argued, not computed)"];
 
 Print["=========================================================="];
 Print[If[$Failures === 0, "ALL CHECKS PASSED",

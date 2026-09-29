@@ -50,12 +50,14 @@ rc[E2v_] := Module[{rts},
    If[Length[rts] == 0, Infinity, First[rts]]];
 Print["      Ehat^2      Ehat        r_c/M       K just inside   K just outside"];
 Do[Module[{rcv = rc[E2v], a, b},
-   a = N[Nnum[rcv - 1/10, E2v], 20]; b = N[Nnum[rcv + 1/10, E2v], 20];
-   Print["      ", PaddedForm[N[E2v, 5], {6, 3}], "   ",
-     PaddedForm[N[Sqrt[E2v], 5], {6, 3}], "   ",
+   (* no finite r_c at and above the threshold: nothing to evaluate there *)
+   If[rcv === Infinity, a = "-"; b = "-",
+     a = N[Nnum[rcv - 1/10, E2v], 20]; b = N[Nnum[rcv + 1/10, E2v], 20]];
+   Print["      ", ToString[PaddedForm[N[E2v, 5], {6, 3}]], "   ",
+     ToString[PaddedForm[N[Sqrt[E2v], 5], {6, 3}]], "   ",
      If[rcv === Infinity, "  infinity", ToString[PaddedForm[N[rcv, 8], {10, 4}]]],
-     "   ", ToString[ScientificForm[a, 3]], "   ",
-     ToString[ScientificForm[b, 3]]]],
+     "   ", If[StringQ[a], a, ToString[CForm[N[a, 3]]]], "   ",
+     If[StringQ[b], b, ToString[CForm[N[b, 3]]]]]],
   {E2v, {102/100, 11/10, 12/10, 13/10, 14/10, 145/100, 149/100, 15/10, 2}}];
 
 check["below threshold there IS a finite r_c with a sign change",
@@ -67,7 +69,7 @@ check["at and above the threshold no sign change occurs",
       rc[3/2] === Infinity && rc[2] === Infinity];
 check["even at Ehat^2 = 1.02 the inner region is nonempty",
       rc[102/100] > 2];
-Print["      => for EVERY Ehat > 1 the arrival-branch extremals confined to"];
+Print["      => at each energy listed (a sample, not every Ehat > 1) the arrival-branch extremals confined to"];
 Print["         r < r_c(Ehat) carry no conjugate point and are local minimisers;"];
 Print["         above the threshold r_c = infinity and the whole exterior works."];
 

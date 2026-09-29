@@ -42,14 +42,14 @@ so it can be dropped into a regression run.
 
 | Claim | Manuscript | Check |
 |---|---|---|
-| `r - r_d = s_d eps (1 + a_1 eps + a_2 eps^2 + ...)`, `a_1 = Q_4'(r_d)/(4 s_d)`, `a_2 = Q_4''(r_d)/12` | Lemma I.E(i) | order matching in `(dr/dz)^2 = Q_4(r)` |
-| Laurent coefficients `b_3, b_2, b_1` at the triple pole `z_d` | Lemma I.E(ii) | series product, generic `Q_4` and `F` |
-| `r(z)` is even about a two-torsion point: `k_3 = k_5 = 0`, `k_4 != 0` | Lemma I.E(iii) | order matching at a simple root of `Q_4` |
-| `b_2^{e_i} = 4 N_m(e)/((e-r_d)^3 Q_4'(e)^2)` and no residue there | Lemma I.E(iii) | double-pole coefficient |
+| `r - r_d = s_d eps (1 + a_1 eps + a_2 eps^2 + ...)`, `a_1 = Q_4'(r_d)/(4 s_d)`, `a_2 = Q_4''(r_d)/12` | Lemma I.K | order matching in `(dr/dz)^2 = Q_4(r)` |
+| Laurent coefficients `b_3, b_2, b_1` at the triple pole `z_d` | Lemma I.K | series product, generic `Q_4` and `F` |
+| `r(z)` is even about a two-torsion point: `k_3 = k_5 = 0`, `k_4 != 0` | Lemma I.K | order matching at a simple root of `Q_4` |
+| `b_2^{e_i} = 4 N_m(e)/((e-r_d)^3 Q_4'(e)^2)` and no residue there | Lemma I.K | double-pole coefficient |
 
-| `r(z) = -1/(sqrt(a_4)(z-z_inf)) + B + ...` with `B = -a_3/(4 a_4)` | Lemma I.F | order matching at the pole |
-| `e_2^{z_inf} = 1/a_4` and `e_1^{z_inf} = -(2B + r_d - 2m)/sqrt(a_4)` | Lemma I.F | double-pole coefficient and residue of the clock integrand |
-| symmetrised by parts `Int A'B = AB/2 + Int(A'B - AB')/2` | Lemma I.F | differentiate both sides |
+| `r(z) = -1/(sqrt(a_4)(z-z_inf)) + B + ...` with `B = -a_3/(4 a_4)` | Lemma I.K | order matching at the pole |
+| `e_2^{z_inf} = 1/a_4` and `e_1^{z_inf} = -(2B + r_d - 2m)/sqrt(a_4)` | Lemma I.K | double-pole coefficient and residue of the clock integrand |
+| symmetrised by parts `Int A'B = AB/2 + Int(A'B - AB')/2` | Lemma I.K | differentiate both sides |
 
 Nothing Vaidya-specific enters these: they hold for any quartic `Q_4` and any
 numerator `F`, which is why they are stated as a lemma rather than as a table.
@@ -77,7 +77,7 @@ rather than numerical.
 
 ### Conjugate points (`verify_jacobi_conjugate.wls`)
 
-Section 4.5, Theorem I.B and Remarks after it:
+Section 4.5, Theorem I.E and Remarks after it:
 
 | Claim | Check |
 |---|---|
@@ -93,7 +93,7 @@ so the `U_k` coefficients must cancel.
 
 ### Time-dependent optical metric (`verify_optical_metric.wls`)
 
-Section 2.3, Theorem I.B. The threading data `f, omega, h` are carried as free
+Section 2.3, Theorem I.C. The threading data `f, omega, h` are carried as free
 symbols and are never assumed independent of the adapted time:
 
 | Claim | Check |

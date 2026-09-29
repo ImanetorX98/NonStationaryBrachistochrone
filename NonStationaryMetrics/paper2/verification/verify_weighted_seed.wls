@@ -9,8 +9,9 @@
    manifolds e^{-2 f^2} g_{mu nu}, and its section 5 studies the 4-velocity as
    a conformal Killing field, arriving at div(v) = 0 (its Eq. 32).  Its
    Theorem T8 states that a strictly parallel weight, nabla_mu F = 0, is
-   necessary and sufficient for the Ricci solitons to be EINSTEIN solitons,
-   whence constant sectional curvature and space forms (T7, C1).
+   necessary and sufficient for the Ricci solitons to be EINSTEIN solitons.
+   (Einstein does NOT imply constant sectional curvature in dimension four;
+   the manuscript has withdrawn that inference, and it is not used here.)
 
    Reading it makes the relation to Thakurta-Kerr precise, and it is closer
    than expected:
@@ -19,7 +20,9 @@
      the weighted metric IS the Kerr seed, and W = d/d(eta) is a genuine
      KILLING field of it -- div_seed(W) = 0, matching their Eq. (32).
 
-   So their framework describes exactly the FROZEN level of this construction.
+   So their setting corresponds to the FROZEN level of this construction.
+   Whether their theorems apply there depends on their other hypotheses, which
+   this script does not check; only the identities below are verified.
    What separates the two is equally precise:
 
      their central hypothesis is that the weight is strictly parallel,

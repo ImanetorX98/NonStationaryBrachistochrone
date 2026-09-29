@@ -687,8 +687,8 @@ never used interchangeably:
 $\Ehat$ & the maintained rail charge, $\Ehat=-g(u,W)$, a design parameter\\
 $E_{\rm eff}=\Ehat/A$ & the effective seed-Kerr energy at conformal factor $A$\\
 $E$ & shorthand for $E_{\rm eff}$ in the frozen sections, where $A$ is constant\\
-$J=p_\varphi$ & the axial control costate of the $\eta$-branch\\
-$J_{\rm eff}=J/A$ & its seed-Kerr counterpart; and $J_t=A\,J_\eta$ across branches\\
+$J=p_\varphi$ & the axial control costate of the $t$- and $\tau$-branches\\
+$J_{\rm eff}=J/A$ & seed-Kerr counterpart, the $\eta$-branch costate: $J_\eta=J_t/A$\\
 \hline
 \end{tabular}
 \end{center}
@@ -1089,10 +1089,9 @@ the \emph{form} of
 Perlick's metric, a conformal rescaling of $h$ rather than a general deformation,
 and for nothing further: neither the value~\eqref{eq:dilation} of the factor, which
 requires solving the rail jointly with the mass shell, nor harmonicity, which fails.
-Equation~\eqref{eq:fibre-accel} is verified in
-\texttt{verification/verify\_submersion\_link.wls},
-and~\eqref{eq:tension-residual} in \texttt{verification/verify\_tension\_sympy.py},
-which rebuilds $\tau$ from the connections rather than from the two terms above.
+Equations~\eqref{eq:fibre-accel} and~\eqref{eq:tension-residual} are verified in
+\texttt{verification/verify\_tension\_sympy.py}, which rebuilds $\tau$ from the
+connections rather than from the two terms above.
 One caveat belongs with them, and it is the reason the identity had to be bypassed:
 Fuglede works throughout with \emph{Riemannian} manifolds, and his machinery is
 built on the Laplace--Beltrami operator, whereas our total space is Lorentzian. The
@@ -1108,9 +1107,18 @@ inside the Riemannian classification and not an assertion about general Kerr
 parameters or the running case.
 
 The hypotheses of that framework are exactly what the non-stationary problem
-loses, and the loss is quantitative. For the induced structure to descend to a
-base at all, the horizontal conformal geometry must be invariant along the
-fibres, i.e.\ $W$ must be conformal Killing. Moreover, by Bishop's theorem
+loses, and the loss is quantitative. Whether the arrival cost descends to a base is a
+question about the full optical data $(a_{ab},\beta_a)$ of Paper~I, which must be
+invariant along the fibres; it is not settled by $W$ alone, since a tuned metric can keep
+them invariant at one energy with $W$ not conformal Killing (Paper~I,
+section~2.4). For Thakurta--Kerr it is settled by a direct computation: in conformal
+time, with $f_0,h_0$ the seed data, $a_{ab}=\Ehat^2h_{0,ab}/[f_0(\Ehat^2-A^2f_0)]$ and
+\begin{equation}
+    \partial_\eta a_{ab}=\frac{2\Ehat^2AA'\,h_{0,ab}}{(\Ehat^2-A^2f_0)^2}\neq0
+    \qquad\text{wherever }A'\neq0 ,
+    \label{eq:aT-running}
+\end{equation}
+so the optical metric depends on $\eta$ and does not descend. Separately, by Bishop's theorem
 \cite{Bishop1972} a Riemannian submersion with connected fibres is Clairaut with girth
 $f$---so that $f\sin\theta$ is conserved along geodesics---if and only if its
 fibres are totally umbilical \emph{with mean curvature of gradient form},
@@ -1240,9 +1248,10 @@ what the running $A$ establishes. Second,
 their Corollary~7 turns a Clairaut conformal submersion into a Clairaut
 \emph{Riemannian} one by rescaling the base with $1/\lambda$---a construction
 available only when $\lambda$ descends to the base, that is, only when it is
-fibre-constant. This is the precise reason the optical structure of the
-non-stationary problem does not live on a quotient, and why the optical metric of
-Paper~I must instead carry an explicit dependence on the adapted time.
+fibre-constant. That is a Riemannian statement and we do not rest on it. The reason the
+optical structure of the running Thakurta--Kerr problem does not live on a quotient
+is~\eqref{eq:aT-running}, and it is why the optical metric of Paper~I must carry an
+explicit dependence on the adapted time.
 
 The controlled rail is what replaces the Clairaut relation when the submersion
 fails to be Clairaut. In the stationary case $-g(u,W)=\Ehat$ holds
@@ -2089,9 +2098,13 @@ Appendix~\ref{app:firstorder} and rests on
 $F(r;E_{\rm eff},J_{\rm eff})=\dd\varphi/\dd r$ (equation~\eqref{eq:t-K} for the
 $t$-branch, equation~\eqref{eq:tau-sextic} for $\tau$) and linearizing the
 \emph{conformal weights} of the Kerr charges---both $E_{\rm eff}=\Ehat/A$ and
-$J_{\rm eff}=J/A$ carry weight $A^{-1}$, since for $u^{\rm TK}=u^{\rm Kerr}/A$ one
-has $-g^{\rm TK}(u,\partial_\eta)=A\,E_{\rm eff}$ and
-$g^{\rm TK}(u,\partial_\varphi)=A\,J_{\rm eff}$---in
+$J_{\rm eff}=J/A$ carry weight $A^{-1}$. For the energy this is the rail constraint,
+$-g^{\rm TK}(u,\partial_\eta)=\Ehat$ with $u^{\rm TK}=u^{\rm Kerr}/A$; for the angular
+charge it is the factorization of the $t$- and $\tau$-branch Hamiltonians,
+$H_{\rm br}=A\,\bar H_{\rm br}(r,p_r/A,p_\varphi/A;E_{\rm eff})$
+(\ref{app:firstorder}), which makes the conserved costate $J=p_\varphi$ enter the frozen
+data as $J/A$. It is a statement about the control costate, not about the mechanical
+angular momentum $g(u,\partial_\varphi)$---in
 $A(\eta)=A_0(1+\varepsilon\eta+\dots)$, $\varepsilon=A'/A$, gives
 \begin{equation}
     \varphi(r,A)=\underbrace{\varphi_0(r;E_{\rm eff},J_{\rm eff})}_{\text{frozen, Kleinian}}
@@ -2686,9 +2699,12 @@ parameter (section~\ref{sec:thakurta}). They are therefore the exact
 \emph{instantaneous} orbit shapes on a Thakurta--Kerr slice of given $A$; the
 running $A(\eta)$ makes the full problem non-autonomous---the quasi-constant
 drift $K^{\rm TK}(\eta)=K^{\rm Kerr}(E_{\rm
-eff}(\eta))+O(A'/A)$---so a genuinely time-dependent trajectory is recovered by
-letting $E_{\rm eff}=E_{\rm eff}(\eta)$ run through this family, not by a single
-autonomous curve.
+eff}(\eta))+O(A'/A)$---so these shapes are the instantaneous ingredients of the
+time-dependent problem, not its solution. Letting $E_{\rm eff}(\eta)$ run through the
+family does not by itself give a solution of the non-autonomous equations: the first-order
+response involves both $E_{\rm eff}$ and $J_{\rm eff}$, together with the transport and
+off-shell terms of~\eqref{eq:adiab-exact}, and it is that response which is validated
+against the true flow (figure~\ref{fig:phi-true-dynamic}).
 
 \subsection{Separatrix in Weierstrass functions}
 \label{sec:separatrix}
@@ -2735,9 +2751,11 @@ $2.8\times10^{-10}$ through the ergosphere, and general across parameters.
     methods---Hamilton ODE, closed-form quadrature, evaluated Weierstrass
     $\sigma,\zeta,\wp$---overlap. \emph{Bottom:} the two residuals shown \emph{separately}.
     The evaluated Weierstrass agrees with direct quadrature to $2.8\times10^{-10}$ across
-    the interval (green); the Hamiltonian ODE agrees with the closed form away from the
-    asymptotic unstable endpoint, its residual growing near $\re$ from numerical
-    sensitivity (black).}
+    the interval (green); the Hamiltonian ODE agrees with the closed form to within
+    $10^{-4}$, its residual growing near $\re$ because the Hamiltonian formulation
+    degenerates at the stationary limit, the edge of the compact control domain (black).
+    This is a numerical sensitivity, not an orbital instability: at $J=+\Jc$ the
+    extremal crosses $\re$ at a finite rate (Proposition~\ref{prop:classification}).}
     \label{fig:sep3}
 \end{figure}
 
@@ -3408,8 +3426,8 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
     \caption{Protocol dependence of depth inversion. Same-launch
     comparison inverts under either rotation or a conformal factor; the
     genuine fixed-endpoint brachistochrone shows no inversion in every
-    proven and tested regime (proven where $r_{\min}^t$ satisfies a condition of
-    Proposition~\ref{prop:lemmaB}, in particular for $E^2\ge3/2$ beyond the peak of
+    proven and tested regime (proven, for the frozen, symmetric, single-periastron
+    problem, where $r_{\min}^t$ satisfies a condition of Proposition~\ref{prop:lemmaB}, in particular for $E^2\ge3/2$ beyond the peak of
     $\Phi_\tau$; machine-certified at the stated static configurations with $E=1.2$;
     numerically verified elsewhere).}
     \label{tab:protocol}
@@ -3466,7 +3484,9 @@ smooth arcs between turning points and must be joined across them by the standar
 connection formulae (matched asymptotics). On the separatrix the \emph{mathematics}
 is a controlled limit---the genus drops and the reduction degenerates to the elliptic
 (Bloch--Wigner) case---but the \emph{physics} there is delicate for a separate reason:
-the radial period diverges (the orbit asymptotes an unstable circular orbit), so the
+on a dynamical separatrix whose double root is an exterior circular orbit, such as the
+retrograde $t$-branch one at $r_d=3.514M$, the radial period diverges (the orbit asymptotes
+that unstable circular orbit; algebraic degenerations at unphysical roots do not do this), so the
 adiabatic hypothesis itself---``$\lambda$ varies slowly compared with the orbital
 period''---degrades, and the separatrix correction is properly read as an
 \emph{instantaneous, local} first-order statement about the neighbourhood of the
@@ -3776,17 +3796,19 @@ that the non-stationary Hamiltonian flow reproduces the closed-form Kerr express
 as $A\to1$; the conformal-Killing rail charge $\Ehat$ is conserved to $9\times10^{-16}$ along the rail. The equatorial closed
 forms are validated end-to-end by the three-method superposition
 (ODE flow, quadrature, evaluated Weierstrass) through the ergosphere
-(figure~\ref{fig:sep3}), and the fixed-endpoint no-inversion theorem is
-checked over the asymmetric-endpoint grids (figures~\ref{fig:asym-spin}--%
-\ref{fig:asym-conf}).
+(figure~\ref{fig:sep3}), and the numerically observed no-inversion pattern persists
+on the sampled asymmetric-endpoint grids (figures~\ref{fig:asym-spin}--%
+\ref{fig:asym-conf}), which lie outside the symmetric setting of the theorem.
 
 \subsection{Explicit closed forms}
 \label{app:explicit}
 
 All expressions below are at \emph{constant (frozen) conformal factor} $A$:
 stationary Kerr with $E\to E_{\rm eff}=\Ehat/A$, $J\to J/A$ (spin $a$ retained). They give
-the instantaneous orbit shape on a Thakurta--Kerr slice; the time dependence
-enters only through $E_{\rm eff}(\eta)$. The off-equatorial extension is left to future work.
+the instantaneous orbit shape on a Thakurta--Kerr slice. The time-dependent problem is
+not obtained by letting $E_{\rm eff}(\eta)$ run through them: its first-order response,
+through both $E_{\rm eff}$ and $J_{\rm eff}$ with the off-shell terms, is
+equation~\eqref{eq:adiab-exact} and \ref{app:firstorder}. The off-equatorial extension is left to future work.
 
 \paragraph{Curve conventions (fixed once for all letters).} Every letter
 below---the Abelian $U_k=\int r^k/\sqrt S\,\dd r$, the weight-two

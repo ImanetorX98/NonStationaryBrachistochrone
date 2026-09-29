@@ -31,8 +31,8 @@ dsN[rv_] := N[ds[r] /. num /. r -> rv, 30];
 Kin = Simplify[Limit[(r - 2 M) ds[r], r -> 2 M, Direction -> "FromAbove",
    Assumptions -> {M > 0, Eh > 1}], Assumptions -> {M > 0, Eh > 1}];
 Print["      near r = 2M:  (r-2M) ds/dr -> ", Kin];
-check["ds/dr has a simple pole at r = 2M, with residue 2M Ehat/Sqrt(Ehat^2-1)... ",
-      FreeQ[Kin, r] && Simplify[Kin, Assumptions -> {M > 0, Eh > 1}] =!= 0];
+check["ds/dr has a simple pole at r = 2M, with residue exactly 2M",
+      FreeQ[Kin, r] && Simplify[Kin - 2 M, Assumptions -> {M > 0, Eh > 1}] === 0];
 dIn[e_] := NIntegrate[Evaluate[ds[r] /. num], {r, 2 + e, 3},
    WorkingPrecision -> 30];
 Print["      optical distance from r=3M down to r=2M+eps:"];

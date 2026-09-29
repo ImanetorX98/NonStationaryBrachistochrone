@@ -7,8 +7,8 @@
      Lemma I.A   rail indicatrix: tricotomy, Vaidya ellipse, support function
      Theorem I.1 (ii)  H_v is the support function of the indicatrix
      Lemma I.4   nonsingularity; kernel at the degeneration locus
-     Lemma I.B   det M = 32 Res(S,S+) = -32 s6 disc_r S, for a generic sextic
-     Lemma I.C   scaling of the reduction (weights of A and c_k)
+     Lemma I.H   det M = 32 Res(S,S+) = -32 s6 disc_r S, for a generic sextic
+     Lemma I.I   scaling of the reduction (weights of A and c_k)
      Lemma I.6   Euler homogeneity of S ; N_tot(r_d) = 0
      Theorem I.5 Randers-Euler, self-similarity, Theta H_v, boundary form
 
@@ -126,7 +126,7 @@ Print["\ndeg_rr S = ", Exponent[S, rr], " , deg_rr P = ", Exponent[P, rr],
 ok["det M + 32 (Ehat^2-1) disc_r S",
    Factor[Det[M] + 32 (E2 - 1) Discriminant[S, rr]]];
 
-(* Lemma I.B: the same identity for a GENERIC sextic, which is what the
+(* Lemma I.H: the same identity for a GENERIC sextic, which is what the
    proof actually establishes.  det M = 32 Res(S,S') = -32 s6 disc_r S.   *)
 Sgen = Sum[ss[i] rr^i, {i, 0, 6}];
 Agen = Sum[Subscript[aa, i] rr^i, {i, 0, 5}];
@@ -210,7 +210,7 @@ Print["  deg_r A^m = 5 ? ",
    - Exponent[Denominator[Together[AmTex]], rr] === 5];
 Do[ok["c_" <> ToString[k] <> " odd in J",
    Simplify[(ckTex[[k + 1]] /. JJ -> -JJ) + ckTex[[k + 1]]]], {k, 0, 4}];
-(* Lemma I.B: premises of the weight count, then the scaling itself *)
+(* Lemma I.I: premises of the weight count, then the scaling itself *)
 scl[f_] := f /. {rr -> al rr, mm -> al mm, JJ -> al JJ};
 ok["S homogeneous of degree 6", Simplify[scl[S] - al^6 S]];
 ok["dS/dr homogeneous of degree 5", Simplify[scl[D[S, rr]] - al^5 D[S, rr]]];

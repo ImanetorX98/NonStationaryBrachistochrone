@@ -11,7 +11,11 @@ Panel (a)  the three geodesics drawn in one comoving map -- geodesic polar
            coordinates (chi, phi) about a reference point O, same closest
            approach chi_min.  Flat -> straight line; closed bends toward O;
            open bends away.
-Panel (b)  maximal reachable comoving distance in de Sitter,
+Panel (b)  maximal reachable comoving distance for exponential expansion
+           a = exp(H t) on closed slices (a closed FLRW model with a de Sitter-like
+           scale factor, NOT de Sitter space: its scalar curvature
+           12 H^2 + 6 exp(-2Ht)/R_c^2 is not constant; in de Sitter proper the
+           antipode cannot be reached from a finite event at all),
            Delta_max = int v deta  from a = 1 to the freezing surface a = Ehat,
            against the antipodal distance pi of a closed slice of unit comoving
            curvature radius.  Where Delta_max > pi the antipode is reachable and
@@ -88,7 +92,7 @@ def phi_of_chi(chi, chi_min, k):
 
 
 def delta_max(Ehat, H):
-    """de Sitter: comoving distance reachable before freezing, a: 1 -> Ehat."""
+    """a = exp(Ht): comoving distance reachable before freezing, a: 1 -> Ehat."""
     return (np.sqrt(Ehat ** 2 - 1.0) + np.arcsin(1.0 / Ehat)
             - np.pi / 2.0) / (Ehat * H)
 
@@ -144,7 +148,7 @@ axB.annotate('cut locus reachable:\nminimiser not unique', xy=(6.4, 6.6),
              fontsize=6.5, color='0.35')
 axB.set_xlabel(r'rail energy $\hat E$')
 axB.set_ylabel(r'reachable $\Delta_{\max}$  (curvature radii)')
-axB.set_title(r'(b) de Sitter: reach before freezing $a=\hat E$')
+axB.set_title(r'(b) $a=e^{Ht}$, closed slices: reach before freezing $a=\hat E$')
 axB.set_ylim(0, 8)
 axB.set_xlim(1, 12)
 axB.legend(loc='lower right', frameon=False)

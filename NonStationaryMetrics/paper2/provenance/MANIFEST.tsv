@@ -1,6 +1,6 @@
 # artefact	command	path	sha256
 laboratory design study for the three validation routes	python3 Experimental/run_all_codex.py	NonStationaryMetrics/Experimental/run_all_codex.py	9ec7dad98e12c77dd3fdb96c3a33733e8f448a384dac4960fa9a0184fecbee68
-Prop. 3.1 (local classification at r_e), shape	wolframscript -file verify_cusp_corner.wls	NonStationaryMetrics/paper2/verification/verify_cusp_corner.wls	5503d6a6ea56b2bce9e23f714d8edb2260aef24b2e8c0755b8459ac74d20992d
+Prop. 3.1 (local classification at r_e), shape	wolframscript -file verify_cusp_corner.wls	NonStationaryMetrics/paper2/verification/verify_cusp_corner.wls	0e14dd0bafd60985c362f976a7f0ffeeb40bcd012273064dd27ec9af6fc52419
 Prop. 3.1 (local classification at r_e), dynamics	wolframscript -file verify_marginal_hamilton.wls	NonStationaryMetrics/paper2/verification/verify_marginal_hamilton.wls	47344e49f7f6aa7e5af9b55b26bd123d3fd4dd5c30fb649bfee14f7191b5433d
 Prop. 3.2 (exterior retrograde separatrix), eq. (exterior-sep)	wolframscript -file verify_exterior_separatrix.wls	NonStationaryMetrics/paper2/verification/verify_exterior_separatrix.wls	daeda4c0969343ec479191357fb78386377569012f5d530b1d18fee704a97681
 Eqs. (fibre-accel), (tension-residual): Lorentzian submersion tension	python3 verify_tension_sympy.py	NonStationaryMetrics/paper2/verification/verify_tension_sympy.py	48e41f9e420d526073e04e7c818da9b14af1f12dd8de51675d140bf54c5dd598
@@ -24,7 +24,7 @@ archived output of the grid certificates (both runs)	-	NonStationaryMetrics/CAP_
 Fig. (master-pen)	python3 fig_master_penetration_taut.py	KerrScripts/fig_master_penetration_taut.py	5d25cf103145a80a54999dbdb6094de4895725d5034b37dd70301d17664e22da
 Fig. (atlas-tau), Fig. (atlas-t)	python3 fig_atlas_tau_t.py	KerrScripts/fig_atlas_tau_t.py	e772e6f558d01f39d4e3d2a00e267c3d2932f7ff828611b2e8dd8f88f1e730f6
 Fig. (th-cusp)	python3 cuspide_ergosfera.py	NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py	55fc540ecf1794cbcb1930819c1628170d4638f76a43067a593c86e2e3d44c9a
-Fig. (sep3)	python3 kerr_separatrix_trajectories.py	KerrScripts/kerr_separatrix_trajectories.py	3d7b7fde30c7f637ad707d881a4c2dcf4c67b5bc56766a49be9efa70815aa647
+Fig. (sep3)	python3 kerr_separatrix_trajectories.py	KerrScripts/kerr_separatrix_trajectories.py	c29308eb30b2ec6df601ab189636912f5a723288bdb8bc22793c6dce682691e0
 Fig. (jpt-g2)	python3 kerr_jpt_genus2_figure.py	KerrScripts/kerr_jpt_genus2_figure.py	3a54c11148b95d37a5ec52c02db6fcdf2917d43986dc963c25bf738b50c05723
 Fig. (jcm-cap)	python3 kerr_jcm_capture_figure.py	KerrScripts/kerr_jcm_capture_figure.py	504b11ef089596a0a57663f6ec2d8606198f3a052839a15dc5f20f04ea0bafa0
 shared figure style	-	NonStationaryMetrics/paper_style.py	5017370483ed4cca2a3968cc64b2c82541794d0cf8225a5000b078831c62dcf9

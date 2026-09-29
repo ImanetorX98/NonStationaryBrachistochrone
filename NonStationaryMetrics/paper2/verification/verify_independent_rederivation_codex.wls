@@ -198,7 +198,12 @@ check[
     FullSimplify[(gaussLead /. Eh^2 -> 2) < 0, Eh > 1]
 ];
 
-section["D. Tension identity and horizon behaviour"];
+section["D. Riemannian assembly mu + grad_H log Lambda (NOT the tension field)"];
+(* This combination is the RIEMANNIAN assembly of the tension field.  The total
+   space is Lorentzian, so it is not the tension of the optical submersion; the
+   manuscript has withdrawn the claim that the tension is positive.  The
+   Lorentzian tension, rebuilt from the connections, is checked in
+   verify_tension_sympy.py.  What follows are algebraic identities only. *)
 
 lambda2 = Eh^2/(f (Eh^2 - f));
 gradLogLambda = FullSimplify[f D[Log[Sqrt[lambda2]], r], ass];
@@ -213,11 +218,11 @@ check[
   FullSimplify[gradLogLambda == -mu (Eh^2 - 2 f)/(Eh^2 - f), ass]
 ];
 check[
-  "D2  printed positive residual mu+gradH(log Lambda)",
+  "D2  closed form of the Riemannian assembly mu+gradH(log Lambda)",
   FullSimplify[tensionResidual == mu f/(Eh^2 - f), ass]
 ];
 check[
-  "D3  residual is positive outside and tends to zero at r=2M",
+  "D3  the Riemannian assembly is positive outside and tends to zero at r=2M",
   TrueQ[FullSimplify[tensionResidual > 0, ass]] &&
     TrueQ[FullSimplify[
       Limit[tensionResidual, r -> 2 M, Direction -> "FromAbove"] == 0,

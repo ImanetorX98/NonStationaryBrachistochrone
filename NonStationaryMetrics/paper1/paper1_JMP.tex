@@ -689,37 +689,44 @@ pursue it here.
 \paragraph{Operational reading: thrust.} Maintaining the controlled invariant generally
 requires nonzero \emph{proper} acceleration $a^\mu=Du^\mu/\dd\tau$ ($a=0$ only on a
 free-fall geodesic), so the rail force is the thrust per unit mass, spacelike
-($a\cdot u=0$) with $|a|$ diverging as the freezing/horizon surface is approached. The
+($a\cdot u=0$); where the drift term does not vanish, $|a|$ diverges as the
+freezing/horizon surface is approached (Lemma~\ref{lem:drift}), while a free geodesic of
+a stationary problem keeps its charge with $a=0$. The
 present variational problem minimizes the selected elapsed \emph{clock}, not thrust, fuel
 or integrated control effort, which define distinct optimal-control problems. In the
 non-stationary case the $a\cdot W$ term is the proper acceleration that maintains the rail
 against the non-stationary mass-rate drift.
 
-\paragraph{Geometric dictionary.} The indicatrix~\eqref{eq:ellipse} carries two
-independent data---its \emph{center} $c=(c_r,c_\varphi)$ (the Zermelo wind) and
+\paragraph{Geometric dictionary.} In the charts used in this paper the
+indicatrix~\eqref{eq:ellipse} carries two independent data---its \emph{center}
+$c=(c_r,c_\varphi)$ (the Zermelo wind) and
 the \emph{eccentricity} of its semi-axes (the anisotropy of the local speed,
-$a_r\neq a_\varphi$)---and each governs a distinct feature of the
-brachistochrones, the same for every branch:
+$a_r\neq a_\varphi$)---and each is associated with a distinct feature of the
+brachistochrones, the same for every branch. Centre and eccentricity are properties of the
+coordinate components, not invariants: in advanced coordinates even Minkowski space has
+$c_r=f-\Ehat^2=1-\Ehat^2\neq0$. The list is a reading guide in the stated charts, not a
+set of equivalences:
 \begin{itemize}\itemsep2pt
 \item eccentricity $\neq0$ (a spatial gradient $\partial_r f\neq0$)
 $\Rightarrow$ the $t$ and $\tau$ branches split in depth, $n_t/n_\tau=E/f\neq1$;
 \item azimuthal offset $c_\varphi\neq0$ (frame dragging)
 $\Rightarrow$ rotational depth inversion becomes possible;
-\item radial offset $c_r\neq0$ (a non-stationary wind, $m'\neq0$)
-$\Rightarrow$ endpoint-sensitive memory, $p_v\neq0$ along the path;
+\item non-stationarity, $\partial_vH\propto m'(v)\neq0$ (which moves the radial offset
+$c_r=f-\Ehat^2$ in time) $\Rightarrow$ endpoint-sensitive memory, $p_v\neq0$ along the
+path; a constant offset, as at $m'=0$, gives $p_v\equiv0$;
 \item shrinking axes $R\to0$ (local speed $v\to0$) $\Rightarrow$ freezing and
 capture.
 \end{itemize}
 Eccentricity and center offset are \emph{separate} levers: the first switches on
-the $t/\tau$ split, the second the inversions. In particular the three branches
-\emph{degenerate}---the $t$, $\tau$ and $\eta$ brachistochrones coincide---iff the
-indicatrix is, up to a position-independent conformal scale, a rigid centered
-circle ($c=0$, $a_r=a_\varphi$, radius depending on the flow parameter alone),
-equivalently iff the optical cost ratios $n_t/n_\tau,\,n_t/n_\eta$ are
-position-independent. This is exactly spatial homogeneity: FLRW is the unique
-such case in our ladder (section~\ref{sec:flrw}), whereas any gradient or wind
-breaks it---even the static, non-rotating Schwarzschild ellipse, which is
-centered ($c=0$) yet eccentric, already splits $t$ from $\tau$. The indicatrix
+the $t/\tau$ split, the second the inversions. The three branches
+\emph{degenerate}---the $t$, $\tau$ and $\eta$ brachistochrones coincide---when the
+optical cost ratios $n_t/n_\tau,\,n_t/n_\eta$ are position-independent, since the
+functionals are then proportional; in the comoving chart of FLRW this shows as an
+indicatrix that is, up to a position-independent scale, a rigid centered circle ($c=0$,
+$a_r=a_\varphi$, radius depending on the flow parameter alone). FLRW is the only such
+case in our ladder (section~\ref{sec:flrw}), whereas a spatial gradient breaks it---even
+the static, non-rotating Schwarzschild ellipse, centered ($c=0$) in Schwarzschild
+coordinates yet eccentric, already splits $t$ from $\tau$. The indicatrix
 shape is thus the organizing thread of the paper: FLRW (circle) $\to$ Vaidya
 (radial wind) $\to$ Thakurta--Kerr (angular wind) is a progression of ellipse
 deformations, each switching on one further phenomenon.
@@ -733,8 +740,9 @@ deformations, each switching on one further phenomenon.
     \caption{Rail indicatrices (linear constraint $\cap$ normalization
     $=$ ellipse) in the two spherically symmetric applications of this paper.
     Left: spatially flat FLRW gives centered shrinking circles, so the three
-    clock branches remain degenerate. Right: ingoing Vaidya produces a radial
-    wind and an offset, eccentric indicatrix, switching on branch splitting and
+    clock branches remain degenerate. Right: ingoing Vaidya, in advanced
+    coordinates, gives an offset, eccentric indicatrix; the eccentricity switches on
+    branch splitting, and the time dependence of the offset through $m'(v)$ the
     endpoint-sensitive memory.}
     \label{fig:indicatrici}
 \end{figure}
@@ -956,20 +964,23 @@ minimizing sequence chatters between $u\simeq+1$ and $u\simeq-1$ and converges t
 sliding regime whose velocity lies in the convex hull of the velocity set but not in
 the set itself. The distinction drawn in this remark is therefore the operative one:
 convexifying the \emph{indicatrix} would manufacture exactly such sliding
-velocities---superluminal averages violating the unit-mass shell---while convexifying
+velocities---averages lying off the unit-mass shell---while convexifying
 the \emph{epigraph} in the augmented clock variable adds only slower competitors and
 is undone by the saturation step.
 \end{remark}
 
 \begin{remark}[what normality buys, and where the hypotheses fail]
 Part (ii) is what makes the reduction to the branch Hamiltonian
-$H=\max_\theta p\cdot\dot x(\theta)$ together with the rail invariant $-u\cdot W=\Ehat$
+$H=\max_\theta[p\cdot\dot x(\theta)-\ell_{\mathcal T}]$ ($H=h-1$ for a unit-cost clock)
+together with the rail invariant $-u\cdot W=\Ehat$
 legitimate along the \emph{entire} extremal, and it is the control-theoretic content of
 ``excluding $p=0$'' in the proof of Theorem~\ref{thm:rail}: nontriviality is not an
-assumption but a consequence of $\rho>0$. The two-sided bound~\eqref{eq:coercive} fails
-exactly at the freezing/horizon surfaces, where $\rho\to0$ and the velocity indicatrix of
-section~\ref{sec:indicatrix} degenerates; Theorem~\ref{thm:existence} therefore applies on
-any compact subdomain bounded away from them.
+assumption but a consequence of the coercivity bound~\eqref{eq:coercive}. That bound
+degenerates at the freezing/horizon surfaces, where the velocity indicatrix of
+section~\ref{sec:indicatrix} collapses and the constants $\rho,R$ cease to be finite and
+positive. Distance from those surfaces is necessary but not sufficient:
+Theorem~\ref{thm:existence} is stated under (H), which also asks for a nonempty admissible
+class and a margin uniform on the space-time cylinder with $R\,T_0/\rho\le\bar T$.
 \end{remark}
 
 \Ithm{3}
@@ -1278,18 +1289,27 @@ is a \emph{harmonic morphism} if and only if it is semiconformal \emph{and}
 harmonic \cite[\S7]{Fuglede1978}, \cite{Ishihara1979,BairdWood2003}, which is a
 different statement and is discussed in Paper~II.
 
-What fails away from level (a) is that the structure should \emph{descend}. A
-conformal submersion admits a rescaling of the base turning it into a Clairaut
-Riemannian submersion only when its dilation is constant along the fibres
-\cite{MeenaZawadzki2024}, and by Bishop's theorem \cite{Bishop1972} a Riemannian
-submersion with connected fibres is Clairaut---so that the transverse invariant is
-conserved along geodesics---if and only if its fibres are totally umbilical with
-mean curvature of gradient form. When $W$ is not Killing,
-$\Lambda$ varies along the fibres, the horizontal distribution ceases to be
-totally geodesic, and no metric on a quotient reproduces the arrival time. The
-optical geometry then exists only on the total space, with the adapted time as an
-explicit argument. That is the content of Theorem~\ref{thm:optical}, and the
-reason it cannot be stated on a quotient the way Perlick's can.
+What fails for the models of this paper is that the structure should \emph{descend}.
+Whether a metric on the quotient reproduces the arrival time at the given $\Ehat$ is a
+question about the full optical data $(a_{ab},\beta_a)$ of~\eqref{eq:optical-metric}:
+they must be invariant along $W$. It is not settled by $W$ alone, and in particular not by
+the variation of $\Lambda$ along the fibres. The Riemannian criteria for conformal
+submersions---a rescaling of the base to a Clairaut submersion exists only when the
+dilation is constant along the fibres \cite{MeenaZawadzki2024}, and Clairaut holds iff
+the fibres are totally umbilical with mean curvature of gradient form
+\cite{Bishop1972}---concern a different structure, and we do not import them. A
+selector that is not Killing can still leave the optical data invariant at one energy:
+for $g=-f(t)\,\dd t^2+\big[f(E_0^2-f)/E_0^2\big]\delta_{ij}\dd x^i\dd x^j$ with $f$ not
+constant, $W=\partial_t$ is not even conformal Killing, yet at $\Ehat=E_0$ one finds
+$a_{ij}=\delta_{ij}$, $\beta=0$, and an autonomous arrival cost. For ingoing Vaidya, on
+the other hand, the threading form with respect to $\partial_v$ has
+$h=\dd r^2/f+r^2\dd\Omega^2$, so $a_{rr}=\Ehat^2/[f^2(\Ehat^2-f)]$ and
+$a_{\varphi\varphi}=\Ehat^2r^2/[f(\Ehat^2-f)]$, whose $v$-derivatives are $m'(v)$ times
+factors proportional to $2\Ehat^2-3f$ and to $\Ehat^2-2f$; the two never vanish together
+on $f>0$, so $a_{ab}$ depends on $v$ wherever $m'\neq0$. The optical geometry then exists
+only on the total space, with the adapted time as an explicit argument. That is the
+content of Theorem~\ref{thm:optical}, and the reason it cannot be stated on a quotient the
+way Perlick's can.
 
 \begin{remark}
 Two structures from the stationary theory are, for the same reason, unavailable
@@ -1410,13 +1430,18 @@ describe in the abstract. Two points of $S^3$ at geodesic distance $\pi$---antip
 joined by a whole $S^2$ of minimising geodesics, a textbook Maxwell set and cut locus.
 Whether the rail can reach it is quantitative: with $\Delta_{\max}$ the comoving distance
 accumulated up to freezing, the antipode is attainable iff $\Delta_{\max}\ge\pi$ in units
-of the comoving curvature radius $R_{\rm c}$. For de Sitter,
-$\Delta_{\max}=\big[\sqrt{\Ehat^2-1}+\arcsin(1/\Ehat)-\pi/2\big]/(\Ehat H)$, so the
-threshold is a condition on $HR_{\rm c}$ alone
+of the comoving curvature radius $R_{\rm c}$. For exponential expansion $a=e^{Ht}$ on
+closed slices,
+$\Delta_{\max}=\big[\sqrt{\Ehat^2-1}+\arcsin(1/\Ehat)-\pi/2\big]/(\Ehat H)$, so at fixed
+$\Ehat$ the threshold is a condition on $HR_{\rm c}$
 (figure~\ref{fig:flrw-curvature}(b)): a closed universe whose curvature radius is large
 compared with the Hubble radius keeps the minimiser unique, while a small enough one lets
-the extremal reach its own cut locus, where global optimality fails even though every
-competing arc is a perfectly good Pontryagin extremal. The open case $k=-1$ adds no such
+the extremal reach its own cut locus, where uniqueness is lost and past which global
+optimality fails, even though every competing arc is a perfectly good Pontryagin
+extremal. This model has a de Sitter-like scale factor but is not de Sitter space: its
+scalar curvature $12H^2+6e^{-2Ht}/R_{\rm c}^2$ is not constant. In de Sitter space proper,
+whose closed slicing has physical radius $H^{-1}\cosh Ht$, even a null ray leaving at
+$t_0$ sweeps only $\pi/2-\arctan\sinh Ht_0<\pi$, so there the antipode is out of reach. The open case $k=-1$ adds no such
 feature: the slices are non-compact, geodesics between two points are unique, and the
 structure is that of the flat case throughout.
 
@@ -1432,7 +1457,8 @@ structure is that of the flat case throughout.
     polar map $(\chi,\varphi)$ of the slice: the flat geodesic is the horizontal line at
     height $\chi_{\min}$, the closed one bends toward $O$ and the open one away from it.
     Only the half $\varphi\ge0$ is shown; the curves are symmetric about the closest
-    approach. (b)~de Sitter reach before freezing, $\Delta_{\max}$ in comoving curvature
+    approach. (b)~Reach before freezing for $a=e^{Ht}$ on closed slices (not de Sitter
+    space; see the text), $\Delta_{\max}$ in comoving curvature
     radii, against the antipodal distance $\pi$ of a closed slice. Above that line the cut
     locus is attainable and the minimiser stops being unique---the Maxwell obstruction of
     Proposition~\ref{prop:hjb} realised in the simplest member of the ladder.}
@@ -2676,15 +2702,20 @@ $\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+O(\dot\lambda^2)$, $\lamb
 $\Jc=5\sqrt{3011/3072+581\sqrt{249}/9216}$ (at $E=7/5,\,m=1$; in general $\Jc=m\,j(E)$),
 $S=(r-r_d)^2Q_4(r)$ with double root $r_d$ and quartic $Q_4$ (roots
 $e_1<e_2<e_3=2m<e_4$, leading coefficient $a_4$). The Abel coordinate is
-$z(r)=\int_{r_0}^r\dd r'/\sqrt{Q_4}$; $\sigma,\zeta,\wp$ are the Weierstrass functions
+$z(r)=\int_{e_4}^r\dd r'/\sqrt{Q_4}$, based at the branch point $e_4$, so that the sheet
+involution is $z\mapsto-z$; the launch enters through $z_0=z(r_0)$, and every primitive
+below is taken from $z_0$ with its logarithms continued along the arc. $\sigma,\zeta,\wp$
+are the Weierstrass functions
 of $E$ (periods $2\omega_1,2i\omega_{\rm im}$, built from $\theta_1$). Marked points:
 $\pm z_d$ (images of $r_d$), $\pm z_\infty$ (of $r=\infty$), the two-torsion turning
 image $z=0$ ($r=e_4$) and horizon image $z=i\omega_{\rm im}$ ($r=e_3=2m$).
 
 \paragraph{Zeroth order (frozen orbit), verified to $10^{-12}$.}
 \begin{equation}
-\varphi_0(r)=\Jc\big[(E^2-1)z+((E^2-1)r_d+2m)\,U_0(z)\big],\;\;
-U_0=\rho[\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)]+C_{U_0}z,
+\begin{aligned}
+&\varphi_0(r)=\Jc\big[(E^2-1)(z-z_0)+((E^2-1)r_d+2m)\,U_0(z)\big],\\
+&U_0=\big[\rho\big(\ln\sigma(z{-}z_d)-\ln\sigma(z{+}z_d)\big)+C_{U_0}z\big]_{z_0}^{z},
+\end{aligned}
 \end{equation}
 $\rho=1/\sqrt{Q_4(r_d)}$, $U_k=\int_{r_0}^r r^k/\sqrt S\,\dd r$. Both the shape of $U_0$
 and the constant $\rho$ are forced, and the higher $U_k$ reduce to it.

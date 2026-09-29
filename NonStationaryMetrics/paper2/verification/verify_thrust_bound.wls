@@ -122,7 +122,7 @@ aStat = Simplify[aMin /. ff -> 0];
 Print["      at the conformal stationary limit f -> 0:  |a|_min = ", aStat];
 check["thrust stays FINITE at the conformal stationary limit f -> 0",
       Simplify[aStat - epsv/Eh, Assumptions -> {Eh > 0, epsv > 0}] === 0];
-check["and vanishes at frozen A (epsilon = 0): no control needed",
+check["and vanishes at frozen A (epsilon = 0): no compensation of the charge needed",
       Simplify[aMin /. epsv -> 0] === 0];
 
 (* numbers at the paper's representative point *)

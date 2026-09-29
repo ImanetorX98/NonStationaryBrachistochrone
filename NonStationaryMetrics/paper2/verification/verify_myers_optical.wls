@@ -98,9 +98,9 @@ Print["      exterior samples with K > 0: ", Length[posSample],
 If[Length[posSample] > 0,
   Print["        e.g. ", Take[posSample, UpTo[4]]]];
 
-check["K is NOT bounded below by a positive constant on the exterior",
-      Length[posSample] == 0 ||
-      Min[posSample[[All, 3]]] < 10^10];
+(* The sample above is a diagnostic, not a test; the statements about the sign
+   of K are certified by the Reduce checks below. *)
+Print["      (diagnostic sample only; the sign of K is certified below)"];
 
 (* ---------------------------------------------------------------- *)
 (* asymptotic sign of K: a critical rail energy                      *)

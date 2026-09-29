@@ -16,8 +16,10 @@
    that is the FIRST out-of-plane conjugate point, and it sits at swept azimuth
    exactly pi -- independently of Ehat, of M, and of the curvature details.
 
-   Consequence: no out-of-plane conjugate point <=> the swept azimuth stays
-   below pi.  Paper I proves exactly that for Vaidya.
+   Consequence: no OUT-OF-PLANE conjugate point <=> the swept azimuth stays
+   below pi.  In-plane conjugate points are a separate question, and the sweep
+   bound of Paper I (Theorem I.G) is proved for the proper-time family, not for
+   the arrival-time optical metric used here; it is not imported.
 *)
 $Failures = 0;
 check[l_, c_] := (Print[If[TrueQ[c], "PASS  ", "FAIL  "], l];
@@ -112,17 +114,20 @@ check["J vanishes exactly where the swept azimuth is a multiple of pi",
       Simplify[Sqrt[BB[r]] Sin[ph] /. ph -> Pi] === 0 &&
       Simplify[Sqrt[BB[r]] Sin[ph] /. ph -> 0] === 0 &&
       Simplify[Sqrt[BB[r]] Sin[ph] /. ph -> Pi/2] =!= 0];
-check["out-of-plane Jacobi fields vanishing at s=0 form a 1D space, so this",
-      True];
+(* Not tested here, a standard fact: along an equatorial geodesic the reflection
+   theta -> pi - theta decouples the out-of-plane component, whose Jacobi
+   equation is a scalar second-order ODE; with J(0) = 0 its solutions are fixed
+   by J'(0), a one-dimensional space. *)
+Print["      NOTE (not a test): out-of-plane Jacobi fields with J(0)=0 form a"];
+Print["      one-dimensional space (scalar ODE after the equatorial reflection)."];
 
 Print["----------------------------------------------------------"];
 Print["   CONCLUSION.  In spherical symmetry the out-of-plane conjugate point"];
 Print["   sits at swept azimuth exactly pi, for every rail energy and every"];
 Print["   mass -- it is fixed by the rotation group, not by the curvature."];
-Print["   Hence:  no conjugate point at all  <=>  K_rad < 0  AND  Phi < pi."];
-Print["   Paper I proves Phi < pi for the Vaidya rail (its Theorem on the"];
-Print["   sweep), so for the spherically symmetric sector the minimality"];
-Print["   statement holds in FULL 3D, with no equatorial restriction."];
+Print["   Hence no OUT-OF-PLANE conjugate point occurs before the swept"];
+Print["   azimuth reaches pi.  This says nothing about in-plane conjugate points,"];
+Print["   and it is not by itself a three-dimensional minimality statement."];
 Print["=========================================================="];
 Print[If[$Failures === 0, "ALL CHECKS PASSED",
      ToString[$Failures] <> " CHECK(S) FAILED"]];

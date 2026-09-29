@@ -240,8 +240,8 @@ axb.text(2.05, 1e-4, 'ergosphere', fontsize=6.5, color='b')
 axb.set_xlabel('$r$')
 axb.set_ylabel('deviation in $\\phi(r)$')
 axb.set_xlim(1.4, 9)
-axb.set_title('quantitative overlap\n(ODE growth near $r_e$ = '
-              'separatrix instability)')
+axb.set_title('quantitative overlap\n(ODE growth near $r_e$: '
+              'stationary-limit sensitivity)')
 axb.legend()
 HERE = os.path.dirname(os.path.abspath(__file__))
 savefig(fig, HERE, 'fig_separatrix_3traiettorie')

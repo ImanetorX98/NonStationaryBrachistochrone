@@ -72,25 +72,28 @@ check["root r=2M of S is simple for generic J",
 (* ---------------------------------------------------------------- *)
 (* set eps = r - 2M > 0 and expand *)
 asm = {eps > 0, M > 0, E2 > 1, a > 0, J != 0, a^2 - E2 J^2 > 0};
+(* Limit ignores (and warns about) assumptions on the limit variable itself;
+   the one-sided Direction already encodes eps > 0. *)
+asmL = {M > 0, E2 > 1, a > 0, J != 0, a^2 - E2 J^2 > 0};
 gen = Ktau[r]/Sqrt[S[r]] /. r -> 2 M + eps;
 (* dphi/dr vanishes; divide by Sqrt[eps] and the limit is finite nonzero, so
    the exponent is exactly 1/2 and phi - phi_e ~ (2/3) K eps^{3/2}.        *)
 Kgen = Simplify[Limit[gen/Sqrt[eps], eps -> 0, Direction -> "FromAbove",
-    Assumptions -> asm], Assumptions -> asm];
+    Assumptions -> asmL], Assumptions -> asm];
 Print["      generic:  dphi/dr / Sqrt[r-2M]  ->  K = ", Kgen];
 check["generic: dphi/dr -> 0 at r_e (radial tangent)",
       Simplify[Limit[gen, eps -> 0, Direction -> "FromAbove",
-        Assumptions -> asm], Assumptions -> asm] === 0];
+        Assumptions -> asmL], Assumptions -> asm] === 0];
 (* K = (E J / a^2) Sqrt[2M/(a^2 - E^2 J^2)]   (E2 = E^2 in this script) *)
 KgenClosed = (Sqrt[E2] J/a^2) Sqrt[2 M/(a^2 - E2 J^2)];
 check["generic: K = (E J/a^2) Sqrt(2M/(a^2 - E^2 J^2))",
       Simplify[Kgen - KgenClosed, Assumptions -> asm] === 0];
 (* it blows up as |J| -> Jc: the cusp amplitude diverges at the marginal value,
    which is exactly why the marginal case is a different local normal form.  *)
-check["K diverges as |J| -> Jc  (cusp branch does not connect to the corner)",
-      Simplify[Limit[KgenClosed /. J -> -Sqrt[a^2/E2] + d, d -> 0,
-        Direction -> "FromAbove"]] === DirectedInfinity[-1] ||
-      MatchQ[Simplify[1/KgenClosed /. J^2 -> a^2/E2], 0]];
+check["K diverges as |J| -> Jc  (the cusp amplitude diverges at the marginal value)",
+      Simplify[Limit[1/KgenClosed /. J -> -Sqrt[a^2/E2] + d, d -> 0,
+        Direction -> "FromAbove", Assumptions -> {M > 0, E2 > 1, a > 0}],
+        Assumptions -> {M > 0, E2 > 1, a > 0}] === 0];
 check["generic: K finite and nonzero  =>  semicubical cusp, exponent 3/2",
       FreeQ[Kgen, eps] && Simplify[Kgen, Assumptions -> asm] =!= 0];
 
