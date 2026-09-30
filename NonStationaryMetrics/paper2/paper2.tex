@@ -226,22 +226,48 @@ not share extremals even on this static background
 (section~\ref{sec:randers-reduction}). The divergence from a symmetric treatment
 therefore begins earlier than the loss of symmetry.
 
-The same geometry has been approached through two-dimensional objects. Totally
-geodesic and maximal 2-planes of weighted solitons are studied in
-\cite{Lecian2026TwoPlanes}, which also takes up, following Gibbons, the Gaussian
-curvature of the equatorial section of Schwarzschild for the energy-independent
-Randers (Fermat) metric. The contact with the present problem is precise. The
-extremals studied here lie in the equatorial plane, which is totally geodesic for the
-optical data by the reflection symmetry $\vartheta\mapsto\pi-\vartheta$; in the static
-case every extremal lies in such a plane through the centre. The worldsheet swept by
-a rail extremal in time is a timelike ruled surface of the kind built by Ta\c{s}.
-What the rail changes is the energy dependence: the arrival-time optical metric
-depends on $\Ehat$, and that is what places the sign change of the equatorial
-optical Gauss curvature at $\Ehat^2=3/2$
-(Corollary~\ref{cor:static-separation}), a threshold with no counterpart for the
-energy-independent null metric. We do not establish that the brachistochrones are
-generalisations of those 2-planes: they are curves, extremals of a control problem,
-and a surface construction built from them would need its own definition and proof.
+The same geometry has been approached through surfaces. Ta\c{s} defines a
+brachistochrone-ruled timelike surface as an immersed timelike surface
+$\Sigma(s,u)=\gamma_s(u)$ swept by a regular one-parameter family of arrival-time
+extremals with smoothly varying endpoints \cite[Definition~3]{Tas2025}. In Minkowski space
+the rulings are straight timelike segments; suitable planar families give totally geodesic
+timelike planes, the flat analogue of a hyperplane, although a general endpoint family
+need not be planar. In a curved background the surface bends, and the variation field
+along a ruling obeys the linearised Euler--Lagrange equation of the arrival functional
+\cite[Proposition~4]{Tas2025}. Ta\c{s} treats Minkowski space and the static Schwarzschild
+exterior, and leaves rotating backgrounds such as Kerr, and genuinely non-stationary ones,
+open.
+
+The present paper supplies part of that case, within limits we state. At frozen $A$ a
+smooth one-parameter family of our rail extremals defines such a surface in conformal
+Kerr on the portions where the variation map is an immersion. For a family with a common
+launch and varying $J$ the parametrisation is singular at the launch itself, where the
+common endpoint gives his boundary condition $W(0)=0$. Take the Lagrangian $F_T^2/2$, which
+has the same extremals at constant speed and satisfies his strong Legendre condition (the
+homogeneous $F_T$ does not). Then Proposition~\ref{prop:rot-separation} is, after passing to
+arclength of the Riemannian part and removing the tangential component, the normal
+component of that linearised equation, with normal taken in the optical base. The magnetic
+terms are the covariant contribution of $\dd b$; the antisymmetric coordinate matrix in his
+equation also contains terms from the choice of Lagrangian and chart, and is not $\dd b$
+by itself.
+
+Totally geodesic 2-planes of weighted solitons, which generalise the flat planes, are
+studied in \cite{Lecian2026TwoPlanes}, which also takes up, following Gibbons, the
+Gaussian curvature of the equatorial Schwarzschild section for the energy-independent
+Randers metric. Two contacts with the present setting are exact.
+\begin{itemize}
+\item The extremals lie in the equatorial plane, which is totally geodesic for the optical
+data by the reflection $\vartheta\mapsto\pi-\vartheta$; in the static case every optical
+geodesic lies in a plane through the centre.
+\item The energy dependence of the arrival-time optical metric introduces the threshold
+$\Ehat^2=3/2$ for negativity of the optical Gauss curvature throughout the Schwarzschild
+exterior (Corollary~\ref{cor:static-separation}), which has no counterpart for the
+energy-independent null metric, whose Gauss curvature $-M(2r-3M)/r^4$ is negative
+everywhere.
+\end{itemize}
+We have not established whether the brachistochrone-ruled surfaces of the curved case are
+totally geodesic or totally umbilical in the sense of those 2-planes, and we do not
+construct or classify them beyond the linearised equation of their rulings.
 
 All of this presupposes a symmetry: the charge is \emph{conserved},
 by a Killing or conformal-Killing field of the background. The sharpest statement
@@ -983,10 +1009,10 @@ second and independent piece of data, and it is what makes the extremals
 magnetic rather than Riemannian geodesics
 (Proposition~\ref{prop:rot-separation}).\\[2pt]
 Running $A$ & Horizontal conformality can still be stated pointwise, or for a
-family of metrics. What is unavailable is a single autonomous optical metric on a
-spatial quotient, because the optical coefficients themselves depend on $\eta$,
-by~\eqref{eq:aT-running}. That does not make a
-semiconformality hypothesis impossible; it removes the quotient construction.\\
+family of metrics, and the foliation by the orbits of $W$ persists. What is
+unavailable is a single autonomous optical metric on the spatial quotient: the arrival
+cost fixed by the rail charge has coefficients that depend on $\eta$,
+by~\eqref{eq:aT-running}.\\
 \hline
 \end{tabular}
 \end{center}
@@ -1311,9 +1337,10 @@ we do not convert it into the failure of conclusions we have not derived.
 \paragraph{Soliton selectors: the drift is pure curvature.} There is one class of
 selector for which~\eqref{eq:rail-drift} closes in the curvature alone. A Ricci
 soliton is a vector field whose deformation tensor is prescribed by the geometry,
-$\tfrac12\mathcal L_Xg+\mathrm{Ric}=\lambda g$ (in the form used for
-Schwarzschild and generalised-Schwarzschild solitons in
-\cite{Lecian2025GenSchwarzschild}); substituting this
+$\tfrac12\mathcal L_Xg+\mathrm{Ric}=\lambda g$ in the standard normalisation
+(\cite{Lecian2025GenSchwarzschild}, which studies Schwarzschild and
+generalised-Schwarzschild solitons, writes $\mathcal L_Xg+\mathrm{Ric}=\lambda g$, which
+rescales $X$ by a factor of two); substituting this
 into~\eqref{eq:rail-drift} and using $g(u,u)=-1$ gives, for $W=X$,
 \begin{equation}
     \frac{\dd\Ehat}{\dd\tau}\bigg|_{\rm geodesic}
@@ -1332,7 +1359,12 @@ the soliton condition reads $\mathrm{Ric}=(\lambda-\psi)g$, that is, the
 spacetime would have to be \emph{Einstein}. Thakurta--Kerr is not: already at
 $a=0$ the conformal factor sources an imperfect fluid and
 $\mathrm{Ric}-\tfrac14Rg\neq0$ for generic $A(\eta)$, while the seed is
-Ricci-flat at $A$ constant. That this must be so is Birkhoff's theorem: a
+Ricci-flat at $A$ constant. It can be seen directly: for a Ricci-flat seed and
+$A=A(\eta)$ the conformal transformation of the Ricci tensor gives the mixed component
+$\mathrm{Ric}_{\eta r}=2(A'/A)\,\bar\Gamma^\eta{}_{\eta r}$, with
+$\bar\Gamma^\eta{}_{\eta r}=M(r^2+a^2)/(r^2\Delta)$ on the equator, while $g_{\eta r}=0$;
+it is non-zero wherever $A'\neq0$, so the spacetime is not Einstein there. That this must
+be so is also Birkhoff's theorem: a
 spherically symmetric solution of the vacuum field equations is necessarily
 static, so no running conformal factor can be attached to Schwarzschild without
 sourcing matter. The verified statement and the classical one agree, and the
@@ -1346,7 +1378,8 @@ hierarchy has three rungs and not two
 it identifies exactly where the two frameworks meet and where they part. The
 soliton literature cited above works on \emph{weighted} manifolds
 $e^{-2f^2}g_{\mu\nu}$, and studies the four-velocity as a conformal Killing field
-of the weighted metric, arriving at a vanishing divergence. Choosing the weight
+of the weighted metric, arriving at a vanishing divergence
+\cite[eq.~(32)]{Lecian2026Eigenvalues}. Choosing the weight
 as $e^{-2f^2}=A(\eta)^{-2}$, that is $f^2=\ln A$, the weighted metric is
 \emph{precisely the Kerr seed}: $W=\partial_\eta$ is then a genuine Killing field
 of it, with $\operatorname{div}_{\bar g}W=0$, whereas for the full metric
@@ -1354,8 +1387,11 @@ $\operatorname{div}_gW=4A'/A$. So that framework describes exactly the frozen
 level of the present construction.
 
 What separates them is equally precise. The soliton results quoted require the
-weight to be \emph{strictly parallel}, $\nabla_\mu F=0$, which is necessary and
-sufficient there for the solitons to be Einstein. We stop at that conclusion: in
+weight to be \emph{strictly parallel}, $\nabla_\mu F=0$, a condition that
+\cite[Theorem~T8]{Lecian2026Eigenvalues} presents as necessary and sufficient for its
+solitons to be Einstein; we do not adopt that equivalence in general, and use only the
+direct statement for our rescaling, that the weight's derivative vanishes exactly where
+$A$ is constant. We stop there: in
 the four-dimensional setting in which the seed lives, Einstein does not imply
 constant sectional curvature---the Kerr and Schwarzschild seeds are themselves
 Ricci-flat with non-vanishing Weyl part, the latter with Kretschmann invariant
@@ -1475,7 +1511,28 @@ compactness hypothesis is unmet in any case. Independently of that,
 $R_{\rm opt}<0$ everywhere. Conjugate points must therefore be located directly
 from the Jacobi equation, as they are in Paper~I, rather than inferred from a
 curvature-operator or Myers-type hypothesis. Both hypotheses fail for one and the
-same computed reason. Equations~\eqref{eq:optical-gauss}--\eqref{eq:optical-asym}
+same computed reason. The same computation also gives a constructive link with curvature-operator
+methods. In the frozen Schwarzschild case the arrival-time optical metric is the threading
+metric rescaled by a radial factor, $a=\Lambda^2(r)\,h$ with
+$\Lambda^2=\Ehat^2/[f(\Ehat^2-f)]$, which one may write $e^{-F(r)}h$ with $F=-\ln\Lambda^2$:
+a conformal weight fixed by the rail energy and the mass shell, not by itself a soliton or
+a weighted measure structure. Its curvature operator is diagonal on
+$e_r\wedge e_\vartheta$, $e_r\wedge e_\varphi$ and $e_\vartheta\wedge e_\varphi$, with
+eigenvalues the radial sectional curvature, twice, and $K_{\rm tan}$. On the totally
+geodesic equatorial plane the radial sectional curvature is $K_t$, so that
+$R_{\rm opt}=2(2K_t+K_{\rm tan})$. These eigenvalues enter the Jacobi equations of the
+brachistochrones:
+\begin{itemize}
+\item $K_t$ the in-plane one (Corollary~\ref{cor:static-separation});
+\item for a unit tangent at angle $\chi$ to the radial direction, the out-of-plane one
+through $\cos^2\!\chi\,K_t+\sin^2\!\chi\,K_{\rm tan}$ (below).
+\end{itemize}
+Conjugate points decide local minimality; global minimality needs, in addition, the cut
+locus and endpoint analysis of Proposition~\ref{prop:globalmin}. The positivity hypotheses
+of the theorems quoted above fail, and the relevant soliton hypotheses are not
+established for this weighted optical metric, so no subcase relation is claimed. In the
+rotating case the quadratic part is not spherically symmetric and the deviation
+equation also contains $\dd b$ (Proposition~\ref{prop:rot-separation}). Equations~\eqref{eq:optical-gauss}--\eqref{eq:optical-asym}
 and this conclusion are verified in
 \texttt{verification/verify\_myers\_optical.wls}.
 

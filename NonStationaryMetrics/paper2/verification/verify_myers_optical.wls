@@ -229,6 +229,13 @@ check["2-positive curvature operator => positive trace (so R>0), excluded here",
   TrueQ[Reduce[ForAll[{l1, l2, l3}, l1 <= l2 <= l3 && l1 + l2 > 0,
       l1 + l2 + l3 > 0], Reals]]];
 
+(* curvature-operator eigenvalues: radial sectional curvature (= the equatorial
+   Gauss curvature KG, twice) and the tangential one; R = 2 (2 KG + Ktan) *)
+AA3 = Lam2[r]/f[r]; BB3 = Lam2[r] r^2;
+Ktan3 = Simplify[(1 - D[BB3, r]^2/(4 AA3 BB3))/BB3];
+check["R_opt = 2 (2 K_t + K_tan): the curvature-operator eigenvalues",
+      Simplify[Rsc - 2 (2 KG + Ktan3), Assumptions -> {r > 2 M, M > 0, Eh > 1}] === 0];
+
 Print["=========================================================="];
 Print[If[$Failures === 0, "ALL CHECKS PASSED",
      ToString[$Failures] <> " CHECK(S) FAILED"]];
