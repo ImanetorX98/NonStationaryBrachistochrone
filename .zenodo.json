@@ -42,12 +42,12 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://doi.org/10.5281/zenodo.22917051",
+      "identifier": "https://doi.org/10.5281/zenodo.23069154",
       "relation": "isSupplementTo",
       "resource_type": "publication-preprint"
     },
     {
-      "identifier": "https://doi.org/10.5281/zenodo.22917050",
+      "identifier": "https://doi.org/10.5281/zenodo.23069157",
       "relation": "isSupplementTo",
       "resource_type": "publication-preprint"
     }
