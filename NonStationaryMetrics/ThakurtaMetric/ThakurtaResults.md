@@ -833,7 +833,17 @@ prograda `J_+^t` ha radice **semplice** a r_e ⟹ resta genere 2.
 - **Metrica ottica con A variabile:** ∂_η a = 2Ê²AA′h₀/(Ê² − A²f₀)² ≠ 0; la foliazione resta, il costo
   non scende a un'unica metrica autonoma.
 - **Non Einstein:** Ric_{ηr} = 2(A′/A)Γ̄^η_{ηr}, Γ̄^η_{ηr} = M(r²+a²)/(r²Δ) all'equatore; quindi W
-  non è un selettore di solitone di Ricci con A variabile.
+  non è un selettore di solitone di Ricci (non pesato) con A variabile.
+- **Identità di Bakry–Émery (30 settembre 2026):** tensore m-Bakry–Émery generalizzato, definito
+  algebricamente, a m = 2−n = −2 (parametro negativo; nessun risultato quasi-Einstein importato),
+  φ = 2 ln A. Non è la riscalatura conforme della metrica delle fonti di Lecian. Ric_φ^m = μ g,
+  μ = −ḡ^{ηη}(ln A)″/A² (seed Ricci-piatto, tempo BL armonico dove la carta è regolare). Allora
+  ½L_W g + Ric_φ^m = λ g, λ = A′/A + μ: equazione di tipo almost-soliton in questa convenzione. Per M > 0,
+  λ costante sullo spaziotempo ⇔ A = A₀e^{cη} (λ = c), perché all'equatore
+  ḡ^{ηη} = −1 − 2M(r²+a²)/(rΔ) dipende da r; il seed piatto è escluso. Deriva geodetica
+  λ + Ric_φ^m(u,u) = A′/A; sulla rotaia controllata g(∇_u u, W) = A′/A. Caratterizza il selettore,
+  non lo deriva. `verify_weighted_soliton.wls` (Ricci completo di Thakurta–Kerr e del caso a = 0,
+  controllo senza peso che deve fallire).
 - **Tensione della proiezione (Lorentziana):** τ^r = (M/r²)(2Ê²−3f)/(Ê²−f) (a=0, A=1), cambia segno per
   Ê² < 3/2; l'assemblaggio riemanniano μ + ∇ ln Λ non è la tensione.
 - **Spettro di curvatura ottico (Schwarzschild congelato):** K_t, K_t, K_tan; R_opt = 2(2K_t + K_tan);

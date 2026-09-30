@@ -15,11 +15,12 @@
 
    So for a soliton selector the control effort needed to hold the rail is
    PURE CURVATURE: no derivative of W survives.  By the Einstein equations
-   Ric(u,u) is the Raychaudhuri focusing scalar, i.e. the energy density the
-   traveller measures.  Two corollaries:
+   Ric(u,u) is the Ricci focusing term of the Raychaudhuri equation (related by
+   the Einstein equations to the trace-reversed stress-energy).  Two corollaries:
 
      - vacuum + steady (Ric = 0, lambda = 0)  =>  X is Killing and the rail is
-       conserved with no control: the stationary case.
+       conserved along geodesics: the stationary case (a curved rail may still
+       need acceleration orthogonal to X).
      - the rail needs control exactly when lambda + Ric(u,u) != 0.
 
    The script also tests whether the Kodama selector of ingoing Vaidya is a

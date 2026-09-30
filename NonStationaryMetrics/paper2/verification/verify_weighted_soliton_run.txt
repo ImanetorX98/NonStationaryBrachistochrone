@@ -1,0 +1,29 @@
+==========================================================
+ Thakurta-Kerr selector as a weighted (Bakry-Emery) soliton
+==========================================================
+--- Thakurta (a = 0): g = A(eta)^2 gbar ---
+PASS  Thakurta (a = 0): its seed gbar is Ricci-flat
+PASS  Thakurta (a = 0): Box_gbar(U) = gbar^{eta eta} U''  (harmonic time)
+PASS  Thakurta (a = 0): Ric_phi^m = mu g with phi = 2 ln A, m = -2   [1]
+PASS  Thakurta (a = 0): CONTROL - without the weight Ric is not pure trace
+PASS  Thakurta (a = 0): L_W g = 2 psi g, psi = A'/A (conformal Killing)
+PASS  Thakurta (a = 0): (1/2) L_W g + Ric_phi^m = lambda g, lambda = psi + mu   [2]
+PASS  Thakurta (a = 0): lambda depends on r for generic A (A = 1 + eta^2 sampled)
+PASS  Thakurta (a = 0): A = A0 exp(c eta)  =>  lambda = c, constant
+PASS  Thakurta (a = 0): geodesic drift lambda + Ric_phi^m(u,u) = psi for g(u,u) = -1
+PASS  Thakurta (a = 0): mu = (ln A)''/(f A^2)
+--- Thakurta-Kerr: g = A(eta)^2 gbar ---
+PASS  Thakurta-Kerr: its seed gbar is Ricci-flat
+PASS  Thakurta-Kerr: Box_gbar(U) = gbar^{eta eta} U''  (harmonic time)
+PASS  Thakurta-Kerr: Ric_phi^m = mu g with phi = 2 ln A, m = -2   [1]
+PASS  Thakurta-Kerr: CONTROL - without the weight Ric is not pure trace
+PASS  Thakurta-Kerr: L_W g = 2 psi g, psi = A'/A (conformal Killing)
+PASS  Thakurta-Kerr: (1/2) L_W g + Ric_phi^m = lambda g, lambda = psi + mu   [2]
+PASS  Thakurta-Kerr: lambda depends on r for generic A (A = 1 + eta^2 sampled)
+PASS  Thakurta-Kerr: A = A0 exp(c eta)  =>  lambda = c, constant
+PASS  Thakurta-Kerr: geodesic drift lambda + Ric_phi^m(u,u) = psi for g(u,u) = -1
+PASS  Thakurta-Kerr: equatorial gbar^{eta eta} = -1 - 2M(r^2+a^2)/(r Delta)
+PASS  Thakurta-Kerr: d/dr gbar^{eta eta} != 0 on the equator for M > 0
+PASS  flat seed (M = 0): gbar^{eta eta} = -1, the necessity argument does not apply
+
+ALL CHECKS PASSED

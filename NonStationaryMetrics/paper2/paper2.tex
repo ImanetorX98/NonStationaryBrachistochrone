@@ -1347,11 +1347,12 @@ into~\eqref{eq:rail-drift} and using $g(u,u)=-1$ gives, for $W=X$,
       =\lambda+\mathrm{Ric}(u,u) .
     \label{eq:soliton-drift}
 \end{equation}
-No derivative of $W$ survives: the effort required to hold the rail is the
-soliton constant plus the Raychaudhuri focusing scalar, that is, the energy
-density the traveller measures. In vacuum the drift is the constant $\lambda$;
+No derivative of $W$ survives: the geodesic drift of the charge, which the control
+component along the selector must cancel, is the soliton constant plus the Ricci
+focusing term of the Raychaudhuri equation. In vacuum the drift is the constant $\lambda$;
 in vacuum \emph{and} steady ($\lambda=0$) one recovers $\mathcal L_Xg=0$, so $X$
-is Killing and the rail costs nothing---the stationary case. This places the
+is Killing and the charge has no geodesic drift---the stationary case; a curved rail may
+still need acceleration orthogonal to $X$. This places the
 controlled rail inside the soliton literature
 \cite{Hamilton1986,Lecian2026Yamabe,Lecian2026Solitons} in a precise way, and
 locates the present geometry relative to it. For a conformal Killing selector
@@ -1368,13 +1369,50 @@ be so is also Birkhoff's theorem: a
 spherically symmetric solution of the vacuum field equations is necessarily
 static, so no running conformal factor can be attached to Schwarzschild without
 sourcing matter. The verified statement and the classical one agree, and the
-obstruction is therefore structural rather than an artefact of the ansatz. The soliton class therefore does not contain this
-selector, whereas the conformal-Killing class does---which is exactly why the
-hierarchy has three rungs and not two
+obstruction is therefore structural rather than an artefact of the ansatz. The unweighted soliton class therefore does not contain this
+selector, whereas the conformal-Killing class does
 (\texttt{verification/verify\_tk\_ckv\_rail.wls},
 \texttt{verify\_soliton\_rail.wls}).
 
-\paragraph{The weighted seed.} There is a second, sharper point of contact, and
+\paragraph{A Bakry--\'Emery identity.} The obstruction belongs to the unweighted
+equation, and a different weighted structure removes it. It is not the conformal rescaling
+of the metric used in the soliton papers cited above (next paragraph): the same scalar
+$U=\ln A$ enters, but the object differs. Bakry and \'Emery introduced
+$\mathrm{Ric}+\nabla^2\phi$ for the operator $\Delta-\nabla\phi\cdot\nabla$, on Riemannian and
+pseudo-Riemannian manifolds alike \cite[Proposition~3]{BakryEmery1985}; we use its
+finite-dimensional form, the $m$-Bakry--\'Emery tensor
+$\mathrm{Ric}^m_\phi=\mathrm{Ric}+\nabla^2\phi-\tfrac1m\,\dd\phi\otimes\dd\phi$
+\cite{Case2012SMMS}, defined here algebraically and taken at the negative parameter
+$m=2-n=-2$, the value associated with Einstein metrics in a conformal class
+\cite{Case2013Obstructions}. Case's results are Riemannian and quasi-Einstein theory asks for
+a constant on the right-hand side; none of them is imported. With $\phi=2U$, the conformal
+transformation of the Ricci tensor of the Ricci-flat seed, whose Boyer--Lindquist time is
+harmonic wherever that chart is regular, $\Box_{\bar g}\eta=0$, gives
+$\mathrm{Ric}^m_\phi=\mu\,g$ with $\mu=-\bar g^{\eta\eta}(\ln A)''/A^2$. With
+$\mathcal L_Wg=2(A'/A)\,g$ the selector then satisfies
+\begin{equation}
+    \tfrac12\mathcal L_Wg+\mathrm{Ric}^m_\phi=\lambda\,g ,\qquad
+    \lambda=\frac{A'}{A}-\frac{\bar g^{\eta\eta}\,(\ln A)''}{A^2} .
+    \label{eq:weighted-soliton}
+\end{equation}
+In general $\lambda$ is a function, and~\eqref{eq:weighted-soliton} is an almost-soliton
+equation in this convention. For a non-flat seed, $M>0$, $\lambda$ is constant on the
+spacetime domain exactly when $A=A_0e^{c\eta}$, and then $\lambda=c$: on the equator
+$\bar g^{\eta\eta}=-1-2M(r^2+a^2)/(r\Delta)$ is not constant in $r$, so comparing $\lambda$
+at two radii forces $(\ln A)''=0$; the flat seed is not covered by this equivalence. Along
+geodesics~\eqref{eq:soliton-drift} holds with the weighted tensor,
+$\dd\Ehat/\dd\tau|_{\rm geodesic}=\lambda+\mathrm{Ric}^m_\phi(u,u)=A'/A$,
+which is~\eqref{eq:tk-drift}; on the controlled rail the charge is held fixed and the
+control supplies $g(\nabla_uu,W)=A'/A$. The identity characterises the selector further; it
+does not derive it, and it is not a consequence of the metric weighting of the cited
+papers. The selector is still chosen by the hierarchy, which also covers a
+non-exponential $A$ and the Kodama selector of Vaidya, for which we have not examined a
+weighted form; that is why the hierarchy has three rungs and not two
+(\texttt{verification/verify\_weighted\_soliton.wls}: the tensor identities from the full
+Ricci tensor of Thakurta--Kerr and of its $a=0$ case, a sampled non-exponential $A$, and a
+control that must fail).
+
+\paragraph{The weighted seed.} There is a further, sharper point of contact, and
 it identifies exactly where the two frameworks meet and where they part. The
 soliton literature cited above works on \emph{weighted} manifolds
 $e^{-2f^2}g_{\mu\nu}$, and studies the four-velocity as a conformal Killing field
@@ -1531,9 +1569,11 @@ through $\cos^2\!\chi\,K_t+\sin^2\!\chi\,K_{\rm tan}$ (below).
 The absence of conjugate points, with a positive second variation, gives local
 minimality on arcs whose endpoint is not conjugate; it implies neither global minimality
 nor the absence of cut points, which need the analysis of
-Proposition~\ref{prop:globalmin}. The positivity hypotheses
-of the theorems quoted above fail, and the relevant soliton hypotheses are not
-established for this weighted optical metric, so no subcase relation is claimed. In the
+Proposition~\ref{prop:globalmin}. With a trivial weight the weighted curvature
+operator of the cited literature reduces formally to the ordinary one, which is the
+operator whose spectrum is given above; this does not place the optical metric in the
+soliton class studied there. The positivity hypotheses of the theorems quoted above fail
+here, so none of their conclusions applies. In the
 rotating case the quadratic part is not spherically symmetric and the deviation
 equation also contains $\dd b$ (Proposition~\ref{prop:rot-separation}). Equations~\eqref{eq:optical-gauss}--\eqref{eq:optical-asym}
 and this conclusion are verified in
