@@ -110,6 +110,12 @@ Coincidono solo per `a = cost` (Minkowski). La scelta è fisica, non
 matematica: `Ê` è la generalizzazione naturale della rotaia ideale di Kerr
 (nessun lavoro netto), `γ₀` modella una rotaia motorizzata.
 
+> **[Precisazione, settembre 2026]** f·u = 0 dice solo che la forza è ortogonale alla quadrivelocità
+> (conseguenza della normalizzazione), non che la rotaia sia passiva. Va distinto il lavoro contro il
+> selettore, g(a,W), dal controllo necessario a mantenere la carica: con W conforme-Killing la carica
+> deriva al tasso a′/a (tempo conforme) lungo una geodetica libera, e il rail deve compensarlo (Paper I, Lemma I.D).
+> Anche congelamento (Ê = |W|) e superficie stazionaria (W nullo) sono bordi distinti.
+
 ### R7. Limiti di controllo
 - Minkowski `a=1`: `v = √(Ê²−1)/Ê`, `γ = Ê` — standard. ✓
 - Limite nullo: conformemente invariante, retta di Minkowski. ✓
@@ -151,6 +157,16 @@ H_τ   = (v/a)|p| − a/Ê          v(t) = √(1 − a²/Ê²)
   `|p|_t = a₁/v₁`, `|p|_τ = a₁²/(Êv₁)` — analogo esatto di `p_v(r₁)=0`
   in Vaidya; il moltiplicatore `μ(η)` del worldline è il costate riscalato
   (`C = Êv(1+μÊ)` costante).
+
+### R10. Il caso chiuso esponenziale non è de Sitter (audit, settembre 2026)
+
+Con a = e^{Ht} su sezioni chiuse, Δ_max = [√(Ê²−1) + arcsin(1/Ê) − π/2]/(ÊH) resta corretto, ma lo
+scalare di curvatura è **R = 12H² + 6e^{−2Ht}/R_c²**, non costante: non è de Sitter. In de Sitter vero,
+foliazione chiusa con raggio H^{-1}cosh Ht, anche un raggio nullo da t₀ spazza
+**π/2 − arctan sinh Ht₀ < π**: l'antipodo non è raggiungibile. La soglia è in HR_c a Ê fissato; al
+cut point si perde l'unicità, la minimalità globale oltre. Figura `fig_flrw_curvatura` rigenerata con
+il titolo corretto. I rami coincidono in FLRW perché velocità e ritmi dei clock dipendono solo dal
+tempo (monotonia), non per proporzionalità dei funzionali.
 
 ## Figure di validazione
 

@@ -1,18 +1,21 @@
 # Symbolic verification of the formal core of Paper I
 
-Two independent computer-algebra checks of every algebraic step that
-`paper1/paper1_JMP.tex` states as proved in sections 2 and in appendices A–C.
-The two scripts are deliberately redundant: they verify the same claims in
-different systems, so an artefact of one simplifier cannot pass unnoticed.
+Computer-algebra checks of the algebraic steps that `paper1/paper1_JMP.tex` states as
+proved in section 2 and in appendices A–C. `verify_paper1_core.wls` and
+`verify_paper1_core.py` overlap on the core identities, so an artefact of one simplifier
+is unlikely to pass in both; the Python script also carries later checks (the
+proper-time branch, the degenerate cases of the reduction system, the residues at
+infinity) that the Wolfram one does not. `verify_section44_closedform.py` checks a
+closed form numerically, by quadrature, not symbolically.
 
 ```
 wolframscript -file verify_paper1_core.wls     # 55 checks
-python3       verify_paper1_core.py            # 22 checks, exit 1 on failure
+python3       verify_paper1_core.py            # 39 checks, exit 1 on failure
 wolframscript -file verify_appB_residues.wls   # 9 checks (appendix B residues)
 wolframscript -file verify_appB_blocks.wls     # 4 checks (appendix B block form)
 wolframscript -file verify_perlick_recovery.wls # 6 checks (stationary limit)
-wolframscript -file verify_optical_metric.wls   # 4 checks (time-dependent optical metric)
-wolframscript -file verify_jacobi_conjugate.wls # 9 checks (conjugate points)
+wolframscript -file verify_optical_metric.wls   # 3 checks (time-dependent optical metric)
+wolframscript -file verify_jacobi_conjugate.wls # 10 checks (conjugate points)
 python3       verify_section44_closedform.py   # end-to-end quadrature of eq:vaidya-full
 ```
 
@@ -37,6 +40,15 @@ so it can be dropped into a regression run.
 | Self-similarity `r H_r + m H_m + J H_J = 0` — **identically, not only on shell** | `eq:selfsimilar` | direct and by explicit rescaling |
 | `Theta H_v` equals `eq:ThetaHv` | Appendix C | direct |
 | `d(r p_r)/dlambda - (1 + Theta H) = H`, hence `S_D = [r p_r] - lambda` on shell | `eq:SD-vaidya` | direct |
+| `H_v = h - 1`: the branch Hamiltonian is the support function minus the cost | Theorem I.1(ii) | direct |
+| `h(p_r + 1/Ehat, J) - f/Ehat = H_tau` | `eq:tau-from-v` | direct |
+| Euler with cost: `(J d_J + p_r d_pr) H_tau = H_tau + ell_tau`, `ell_tau = (f - d_pr H_tau)/Ehat` | `eq:finsler-euler` | direct |
+| `H_tau` is self-similar of degree zero in `(r, m, J)` | `eq:selfsimilar` | direct |
+| `d(r p_r)/dlambda - (ell_tau + Theta H_tau) = H_tau`, hence `S_D = [r p_r] - Delta tau` on the tau shell | `eq:SD-vaidya` | direct |
+| `ell_tau = 7/5 + sqrt(291)/15` (not 1) on the ingoing tau shell at `m=1, r=6, Ehat=7/5, J=0`, `p_r = -5 sqrt(291)/97` | appendix C, text after `eq:finsler-euler` | exact evaluation |
+| At `J = 0`: `S = r^3 (r-2m)^2 D_E`, `rank M = 8`; `disc_r S` carries the factor `J^10` | Lemma I.4 statement, Remark after I.H | exact rank and factorisation |
+| Residues at infinity of `r^k dr/sqrt(S)`: `0, 0, -1/sqrt(s6), s5/(2 s6^{3/2})` for `k = 0..3`; `dV_2 = (r+r_d) dz` has residue `-1/sqrt(a4)` | Lemma I.J(ii), special-function class | series at `t = 1/r` |
+| Circular Schwarzschild rail at `M=1, r=6, Ehat=7/5`: `a^r = -241/1800`, `g(a, d_t) = 0` | level (a) of the selector hierarchy | exact |
 
 ### Appendix B (`verify_appB_residues.wls`)
 

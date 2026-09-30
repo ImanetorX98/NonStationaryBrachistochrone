@@ -71,6 +71,11 @@ Orbita lanciata **in fuga** da r=4 (J=1.3, Ê=1.2, a(η₀)=1):
 orizzonte) sia in Schwarzschild (niente espansione) — il primo risultato
 genuinamente "BH cosmologico" del programma.
 
+> **[SUPERATO in parte, settembre 2026]** Il contatto con la superficie di congelamento resta; la
+> prosecuzione "cavalca la superficie" non è una dinamica dimostrata. Al congelamento l'indicatrice
+> collassa a un punto e il problema di controllo cessa di essere ben posto: i paper trattano il
+> congelamento come bordo del dominio (Paper I, Lemma I.A(ii); Paper II, `lem:compact`).
+
 ## R7. Thakurta ORIGINALE: Kerr conforme (`thakurta_kerr_sympy.py`)
 Il paper di Thakurta (1981) è "Kerr in un universo in espansione":
 `g = A(η)²·g_Kerr` — il BH cosmologico **rotante** minimale. Equatoriale,
@@ -104,7 +109,15 @@ forme chiuse Kerr equatoriali doranTau/doranT (`𝒦_τ = J`,
   comprime la regione accessibile nella shell orizzonte–congelamento:
   versione rotante della cattura da espansione.
 
+> **[SUPERATO in parte, settembre 2026]** La regolarità algebrica dell'indicatrice oltre la superficie
+> stazionaria non è ammissibilità fisica: il dominio di controllo adottato nei paper è esterno a
+> r = 2M sull'equatore (`lem:compact`), e ciò che sta oltre è continuazione analitica (tipo (A)).
+
 ## R8. Metrica ottica dipendente dal tempo conforme per Thakurta-Kerr
+
+> **[Nota, settembre 2026]** Vale la stessa distinzione di R7a: le formule restano regolari oltre
+> r = 2M, ma il dominio fisico è esterno. Con A variabile la metrica ottica dipende da η
+> (∂_η a = 2Ê²AA′h₀/(Ê² − A²f₀)², `eq:aT-running`), e non si riduce a una metrica autonoma.
 (`thakurta_kerr_optical_sympy.py`)
 
 Risolvendo l'indicatrice per `dη` a spostamento spaziale dato — **Randers
@@ -308,6 +321,12 @@ J grande (orbite debolmente legate, svolta a r*~6–9 fuori ergosfera):
 inversione genuina ma "gentile", non plunge profondo.
 
 ### R10c. L'inversione dipende dal PROTOCOLLO: sparisce a estremi fissi
+
+> **[SUPERATO, settembre 2026 — vedi R13]** Il "teorema" sotto non regge: il rapporto puntuale
+> n_t/n_τ > 1 non ordina i raggi minimi di due funzionali diversi. Vigente: Lemma (A) (integrando t
+> dominante a raggio di svolta uguale, dimostrato, M simbolico) più Lemma (B) sulle regioni di
+> `prop:lemmaB`, a A congelato e per la famiglia simmetrica a singolo periastro; certificati CAP a
+> sette configurazioni statiche; congettura altrove. Le verifiche numeriche sotto restano come evidenza.
 (`KerrMetric/colormap_spin_estremi_fissi.py` → `fig_colormap_spin_estremi_fissi`;
 `KerrMetric/colormap_conforme_estremi_fissi.py` → `fig_colormap_conforme_estremi_fissi`;
 BVP: `KerrMetric/bvp_kerr_simmetrico.py`, `KerrMetric/bvp_conforme_inversione.py`,
@@ -542,6 +561,9 @@ Radicando razionalizzato di `dφ/dr` (verificato sympy):
 | geodetiche equatoriali | 4 | 1 | ellittica (classica) |
 | brachistocrona τ (Schw. E Kerr) | 5, squarefree | **2** | theta di genere 2 (Hackmann–Lämmerzahl) |
 | brachistocrona t | 7 | **3** | oltre |
+
+> **[SUPERATO — vedi R12h]** La riga "brachistocrona t: grado 7, genere 3" è sbagliata: il radicando
+> razionalizzato è la sestica R₆ = r·Q₂·[(E²−1)r+2M], genere 2.
 | **separatrice J = J_c = a/E** | 4 (fattorizzazione doranTau `Δ−J_c²w = f(r²+a²/E²)`, residuo 0) | 1 | **ellittica (Weierstrass ℘)** |
 | limite nullo | 4 | 1 | ellittica (fotoni) |
 | soglie (radici doppie) | degenere | 0 | elementare (coerente con doranT) |
@@ -744,6 +766,10 @@ J=J_c→−0.0001 (liscio), J=0.9>J_c→svolta a r=2.141>r_e; e
 `J→J/A`, `J_c=sA²/Ê` (r_e conforme-invariante). Mette su base rigorosa
 la "riflessione a cuspide" della tricotomia (§ doranTau, R12f).
 
+> **[Precisazione, settembre 2026]** I due marginali non sono equivalenti (`prop:classification`):
+> J = +J_c attraversa r_e a velocità finita (angolo, non cuspide), J = −J_c lo raggiunge solo
+> asintoticamente. "Attraversamento liscio" sopra vale per il ramo +J_c.
+
 **Attraversamento in coordinate di Doran** (figura, ramo verde J_c). Il
 `√(wf)` va immaginario dentro l'ergosfera (`f<0`), ma sulla separatrice
 `√f` si **cancella**: `dφ_BL/dr = J_c√w·r/(Δ√(r²+c²))`, `c=a/E` — regolare
@@ -790,6 +816,32 @@ g₃=−2.578, A=12.985, B=2.639; residui α: r₊→+13.23, r₋→−6.59, r*�
 meccanismi diversi (cancellazione vs radice doppia); solo le orbite t
 **non-separatrici** sono genuinamente genere 2 (Kleinian). La crossing
 prograda `J_+^t` ha radice **semplice** a r_e ⟹ resta genere 2.
+
+### R13. Risultati dell'audit delle dimostrazioni (settembre 2026)
+
+- **Non-inversione a estremi fissi (Lemma B):** vale dove Φ_τ decresce su [r_min^t, r₀) (A congelato,
+  famiglia simmetrica a singolo periastro). Regioni dimostrate: (i) a=0, V ≥ c*V₀, c* = sech²U*,
+  U* tanh U* = 1 (0.30518, ottimale); (ii) a=0, r ≥ 9M/4, V ≥ V₀/4; (iii) r ≥ 5M/2, V ≥ c*V₀; (iv)
+  r ≥ 3M, V ≥ V₀/4; (v) E² ≥ 3/2: picco unico. W′ < 0 per r ≥ 5M/2. Falsi in generale: il quarto senza
+  margine radiale (b=1, r₀=2.01) e l'unimodalità (b=1/100, r₀=10⁴). R_* ritirato. CAP RUN 6: 7
+  configurazioni con raccordo a V₀/2. `verify_lemma_B.py`, `no_inversion_schwarzschild_CAP_grid.py`.
+- **Prova A in M simbolico:** J* = [E²r(a²+r²)+2Ma²]/(aD_E), J** = [E²r²(r−M)+E²a²r+Ma²]/(aD_E),
+  N_G = (r−r_min)·4MrΔ/[(r_min−2M)DE_min]·W; vale anche a a=0. `no_inversion_reduction.py`.
+- **Picco di Φ_τ:** piega della mappa, non orbita circolare τ (∂_r[rΔ − J²D_E] = D_E V′ > 0 sulla shell).
+- **Costati:** J_eff = p_φ/A per i rami t e τ (fattorizzazione dell'Hamiltoniana); J_η = J_t/A;
+  (J_τ/A)/J_η = f/E a a=0.
+- **Metrica ottica con A variabile:** ∂_η a = 2Ê²AA′h₀/(Ê² − A²f₀)² ≠ 0; la foliazione resta, il costo
+  non scende a un'unica metrica autonoma.
+- **Non Einstein:** Ric_{ηr} = 2(A′/A)Γ̄^η_{ηr}, Γ̄^η_{ηr} = M(r²+a²)/(r²Δ) all'equatore; quindi W
+  non è un selettore di solitone di Ricci con A variabile.
+- **Tensione della proiezione (Lorentziana):** τ^r = (M/r²)(2Ê²−3f)/(Ê²−f) (a=0, A=1), cambia segno per
+  Ê² < 3/2; l'assemblaggio riemanniano μ + ∇ ln Λ non è la tensione.
+- **Spettro di curvatura ottico (Schwarzschild congelato):** K_t, K_t, K_tan; R_opt = 2(2K_t + K_tan);
+  fuori piano cos²χ K_t + sin²χ K_tan. Metrica nulla: K = −M(2r−3M)/r⁴. `verify_myers_optical.wls`.
+- **Superfici di Taş:** una famiglia regolare di estremali a A congelato genera una superficie rigata
+  timelike (non immersa al lancio comune); con L = F_T²/2 la separazione magnetica è la componente
+  normale dell'equazione linearizzata delle generatrici. Kerr e non stazionario sono aperti in Taş.
+- **W_sup:** questione algebrica (resta √(ΔD_E/r)); ramo entrante con σ_r = −1 nell'azione radiale.
 
 ## Aperti
 1. Dinamica sulla superficie di congelamento (dopo il contatto il

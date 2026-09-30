@@ -454,6 +454,30 @@ meccanismo di inversione, quello ROTAZIONALE** di Kerr/Thakurta-Kerr
 (`ρ(r*)²=H_t0/H_τ0`, R12c, chiuso perché stazionario). L'affermazione
 "serve rotazione" di R13/R15 è CORRETTA.
 
+### R17. Termine di bordo per ramo e dipendenza temporale della metrica ottica (audit, settembre 2026)
+
+- **Hamiltoniana di ramo con costo:** H = max_θ[p·ẋ − ℓ]. H_v = h − 1; H_τ = h(p_r + 1/Ê, J) − f/Ê,
+  con ℓ_τ = dτ/dv = (f − ∂_{p_r}H_τ)/Ê. Trasversalità libera: h = 1 per il ramo v.
+- **Eulero con costo:** (J∂_J + p_r∂_{p_r})H = H + ℓ. Con l'autosimilarità di grado zero (vale per
+  entrambe le Hamiltoniane) si ottiene sulla shell ΘH = d(r p_r)/dλ − ℓ, quindi
+  **S_D = [r p_r] − Δv sul ramo v e S_D = [r p_r] − Δτ sul ramo τ** (la formula −λ valeva solo per H_v).
+  Controesempio a −λ per τ: m=1, r=6, Ê=7/5, J=0, p_r = −5√291/97 (ingoing), ℓ_τ = 7/5 + √291/15.
+- **Degenerazioni del sistema 11×11:** oltre a |J| = J_c anche J = 0 (S = r³(r−2m)²D_E, rango 8) ed
+  E = 1; disc_r S ∝ Ê¹²J¹⁰m¹⁶ q(J²).
+- **Lettere:** V_k ha residui ai punti all'infinito (dV₂: −1/√a4); U_2, U_3 sulla sestica hanno
+  residui −1/√s6 (U_2) e s5/(2 s6^{3/2}) (U_3), sul foglio all'infinito scelto nel verificatore
+  (sull'altro foglio cambiano segno). Origine di Abel in un punto di ramificazione, primitive dal lancio.
+- **Metrica ottica non autonoma:** nella threading rispetto a ∂_v, h = dr²/f + r²dΩ²,
+  a_rr = Ê²/[f²(Ê²−f)], a_φφ = Ê²r²/[f(Ê²−f)]; ∂_v a_rr ∝ m′(2Ê² − 3f), ∂_v a_φφ ∝ m′(Ê² − 2f),
+  mai nulli insieme su f > 0. La sola non-Killingness di W non basterebbe: una metrica tarata
+  −f(t)dt² + [f(E₀²−f)/E₀²]δ ha a_ij = δ_ij pur con W non conforme-Killing.
+- **Spinta:** diverge al freezing (Ê² − |W|² → 0) se il numeratore di drift resta lontano da zero; non
+  per il solo |W| → 0 (rail radiale entrante: |a| → |m′|/(4rÊ³)).
+Verifica: Hamiltoniane, identità di Eulero, termine di bordo, controesempio ℓ_τ, degenerazioni e
+residui in `paper1/verification/verify_paper1_core.py` (controlli esatti). Derivazioni nel testo,
+ricontrollate in sympy ma non in un verificatore archiviato: le derivate della metrica ottica, il
+controesempio non-CKV, la discussione della spinta.
+
 ## 4. Prossimi passi
 
 1. ~~Fenomenologia di penetrazione: soglie in J / finestre in v~~ — FATTO

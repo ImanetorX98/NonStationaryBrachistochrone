@@ -1,0 +1,125 @@
+# verify_myers_optical.wls, full run
+# date / wolframscript / macOS:
+#   mer 30 set 2026 13:42:54 CEST
+#   WolframScript 1.14.0 for Mac OS X ARM (64-bit)
+#   26.6.1
+# exit code: 0, wall time: 3 s
+
+==========================================================
+ Gauss curvature of the fixed-energy optical metric
+==========================================================
+      a_rr = (Eh^2*r^3)/((-2*M + r)^2*(2*M + (-1 + Eh^2)*r))
+      a_pp = -((Eh^2*r^4)/((2*M - r)*(2*M + (-1 + Eh^2)*r)))
+----------------------------------------------------------
+      Gauss curvature K(r) = 
+        (M*(16*M^3 + 2*(-14 + 9*Eh^2)*M^2*r + (16 - 19*Eh^2 + 3*Eh^4)*M*r^2 + (-3 + 5*Eh^2 - 2*Eh^4)*r^3))/(Eh^2*r^5*(2*M + (-1 + Eh^2)*r))
+PASS  Ric = K a in two dimensions (consistency)
+      null-Fermat limit  K = (M*(3*M - 2*r))/r^4
+PASS  Ehat -> Infinity gives the classical Fermat value -(2M/r^3)(1-3M/(2r))
+PASS  the null-Fermat curvature is NEGATIVE outside r = 2M
+----------------------------------------------------------
+      sign of K at M = 1, over r and Ehat:
+        Ehat = PaddedForm[1.1`3., {4, 2}]   K(2.5)=          -2
+-4.65 × 10  K(3)=          -2
+-2.94 × 10  K(6)=          -3
+-2.89 × 10  K(30)=         -6
+3.20 × 10  K(200)=         -8
+5.10 × 10  
+        Ehat = PaddedForm[1.21`3., {4, 2}]   K(2.5)=          -2
+-4.71 × 10  K(3)=          -2
+-3.03 × 10  K(6)=          -3
+-3.32 × 10  K(30)=          -6
+-7.03 × 10  K(200)=         -9
+1.14 × 10  
+        Ehat = PaddedForm[1.225`3., {4, 2}]   K(2.5)=          -2
+-4.71 × 10  K(3)=          -2
+-3.04 × 10  K(6)=          -3
+-3.38 × 10  K(30)=          -6
+-8.40 × 10  K(200)=          -9
+-4.80 × 10  
+        Ehat = PaddedForm[1.3`3., {4, 2}]   K(2.5)=          -2
+-4.75 × 10  K(3)=          -2
+-3.09 × 10  K(6)=          -3
+-3.69 × 10  K(30)=          -5
+-1.48 × 10  K(200)=          -8
+-3.17 × 10  
+        Ehat = PaddedForm[2.`3., {4, 2}]   K(2.5)=          -2
+-4.94 × 10  K(3)=          -2
+-3.41 × 10  K(6)=          -3
+-5.45 × 10  K(30)=          -5
+-4.63 × 10  K(200)=          -7
+-1.56 × 10  
+      exterior samples with K > 0: 91 out of 28880
+        e.g. {{103/5, 53/50, 3.5936656663257559530432081232233`20.*^-7}, {211/10, 53/50, 1.434056586261141908678018344294`20.*^-6}, {108/5, 53/50, 2.32911452453557395326038897339525`20.*^-6}, {221/10, 53/50, 3.07208906610578015314868650059461`20.*^-6}}
+      (diagnostic sample only; the sign of K is certified below)
+----------------------------------------------------------
+      r^3 K -> (-2 + 3/Eh^2)*M   as r -> Infinity
+PASS  leading behaviour K ~ -M(2 Ehat^2 - 3)/(Ehat^2 r^3)
+PASS  asymptotically NEGATIVE curvature iff Ehat^2 > 3/2
+PASS  Ehat^2 = 3/2 is the critical value: the leading term vanishes
+      => the far optical geometry is asymptotically FOCUSING for
+         Ehat^2 < 3/2 and DEFOCUSING for Ehat^2 > 3/2; the critical
+         rail energy is Ehat = Sqrt[3/2] = 1.2247448713915890491`8.
+         i.e. an asymptotic speed v = 1/Sqrt[3] = 0.5773502691896258421`8.
+      at Ehat^2 = 3/2 the next order is r^4 K -> (-23*M^2)/3
+PASS  at the critical energy the subleading coefficient is nonzero
+      K -> 0 as r -> Infinity
+PASS  K -> 0 at large r, so no uniform positive lower bound exists
+----------------------------------------------------------
+      Myers requires the MEAN curvature -- in his normalisation the
+      trace Ric(v,v) over unit v, his Lemma, p. 402 -- to be >= e^2 > 0
+      at every point and in every direction.  Decay of the SECTIONAL
+      curvature would not by itself settle this: Myers himself points
+      out (Sec. 4) that on S^2 x S^2 the sectional curvature reaches
+      zero while the mean curvature stays constant and positive.  The
+      hypothesis must therefore be tested on Ric, which is done in the
+      three-dimensional block below.  It fails there by SIGN, not by
+      decay, so no diameter (hence no arrival-time) bound follows.
+      Conjugate points must therefore be located directly, from the
+      Jacobi equation, as done in Paper I -- not inferred from a
+      curvature-operator or Myers-type hypothesis.
+      The curvature-operator hypotheses fail for the SAME computed
+      reason.  Boehm-Wilking Thm 1 is about a COMPACT manifold with a
+      2-POSITIVE curvature operator (sum of the two smallest
+      eigenvalues positive -- weaker than positive); Hamilton 1982 is
+      the three-dimensional result, Hamilton 1986 the four-dimensional
+      one, so 1986 is not the applicable citation for a 3d optical
+      base.  Independently of compactness: 2-positivity forces the
+      trace of the curvature operator to be positive, hence R > 0.
+      We proved R < 0 everywhere, so the curvature condition itself
+      is excluded, not merely its compactness hypothesis.
+
+==========================================================
+ Myers' hypothesis on the FULL three-dimensional optical metric
+==========================================================
+  Myers' 'mean curvature' (1941, footnote 3) is the sum of the n-1
+  sectional curvatures of planes through v, i.e. Ric(v,v) for unit v,
+  NOT the average; his diameter bound is Pi Sqrt[n-1]/e accordingly
+  (his footnote 4).  His Lemma needs no completeness -- completeness
+  enters only in Sec. 3, to pass from the Lemma to compactness -- so
+  the Lemma is the relevant instrument for a conjugate-point question.
+
+PASS  Ric is diagonal in the optical frame
+PASS  the two tangential Ricci eigenvalues coincide
+PASS  every Ricci eigenvalue tends to 0 as r -> Infinity
+PASS  far field: the radial coefficient is exactly -2x the tangential one
+      optical scalar curvature R = (-2*M^2*(32*M^2 + 4*(-8 + 3*Eh^2)*M*r + (8 - 6*Eh^2 + 3*Eh^4)*r^2))/(Eh^2*r^5*(2*M + (-1 + Eh^2)*r))
+      numerator at r = 2M(1+s) = -24*Eh^4*M^4 + (48*Eh^2*M^4 - 48*Eh^4*M^4)*sV + (-64*M^4 + 48*Eh^2*M^4 - 24*Eh^4*M^4)*sV^2
+      its three coefficients in s, which are each negative for Eh>1:
+        s^0 : -24*Eh^4*M^4
+        s^1 : -48*Eh^2*(-1 + Eh^2)*M^4
+        s^2 : -8*(8 - 6*Eh^2 + 3*Eh^4)*M^4
+PASS  R < 0 everywhere on the exterior, for every rail energy
+PASS  hence min_v Ric(v,v) < 0 everywhere (Myers would force R >= 3 e^2 > 0)
+
+      So the Myers hypothesis fails not because the curvature decays
+      but because the smallest Ricci eigenvalue is NEGATIVE at every
+      exterior point and every rail energy: Ric(v,v) >= e^2 > 0 for
+      all unit v would force R >= 3 e^2 > 0, and R < 0 here.  The
+      S^2 x S^2 loophole is therefore closed, not merely noted.
+
+PASS  2-positive curvature operator => positive trace (so R>0), excluded here
+PASS  R_opt = 2 (2 K_t + K_tan): the curvature-operator eigenvalues
+==========================================================
+ALL CHECKS PASSED
+==========================================================

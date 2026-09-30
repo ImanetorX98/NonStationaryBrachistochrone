@@ -44,7 +44,7 @@ Coeff (e_i,b_i) SIMBOLICI; valori ζ,℘ ai punti = **period-level**. Verif: `va
 ═══════════════════════════════════════════════════════════════════
 N_tot = N + (dJc/dλ)N_J. TEOREMA: N_tot(r_d)=0 ⟹ b3^track=0 (polo triplo cancellato),
 perché N_tot(r_d)=½K(r_d)S'(r_d)(dr_d/dλ)=0 dato S'(r_d)=0 (doppia radice).
-- dJc/dλ: Vaidya dJc/dm=Jc/m ; TK dJc/dE=−E Jc r_d/DE(r_d).
+- dJc/dλ: Vaidya dJc/dm=Jc/m ; TK, **ramo τ**: dJc/dE=−E Jc r_d/DE(r_d). Per il ramo t vale invece la differenziazione implicita dJ/dE = −Q_{2,E}/Q_{2,J} sulla radice doppia.
 - b_i^track SIMBOLICI in (M,a,E,r_d,Jc).
 | | SYM | WL |
 |---|---|---|
@@ -86,6 +86,58 @@ Script: `kerr_tau_Wij_*.py/.sage`, `*_dilog_qseries*.sage`.
 - 🔴 TRASCENDENTE (period-level): τ, punti marcati z_d,z_∞/e_±, ζ,℘,θ ai punti, Ce,C0, α,β.
   NON razionali, NON universali (cambiano coi parametri — dimostrato), valutati per-curva via
   procedura universale (radici→periodi→ζ,℘/θ). Come K(m): formula universale, valore per-modulo.
+
+═══════════════════════════════════════════════════════════════════
+## 8. AUDIT DELLE DIMOSTRAZIONI (24–30 settembre 2026)
+═══════════════════════════════════════════════════════════════════
+Conti espliciti fatti o rifatti durante gli audit (Claude, gpt-oss, qwen, GPT-6 Astra).
+Metodo: SYM = identità esatta; INT = intervalli outward-rounded; HP = alta precisione
+(non prova); CAS2 = secondo sistema indipendente.
+
+### Paper I
+| Risultato | Conto | Metodo | Script |
+|---|---|---|---|
+| Hamiltoniana di ramo H = h − ℓ (Thm I.1); H_v = h − 1 | identità | SYM | `paper1/verification/verify_paper1_core.py` |
+| H_τ = h(p_r + 1/Ê, J) − f/Ê | identità | SYM | idem |
+| Eulero con costo: (J∂_J + p_r∂_{p_r})H = H + ℓ_T; per τ, ℓ_τ = (f − ∂_{p_r}H_τ)/Ê | identità | SYM | idem |
+| Termine di bordo S_D = [r p_r] − ∫ℓ_T dλ: −λ (ramo v), −Δτ (ramo τ) | identità d(r p_r)/dλ = H + ℓ + ΘH | SYM | idem |
+| Controesempio: ℓ_τ = 7/5 + √291/15 ≠ 1 a m=1, r=6, Ê=7/5, J=0, p_r = −5√291/97 (ingoing) | valutazione esatta | SYM | idem |
+| J = 0: S = r³(r−2m)²D_E, rango M = 8; disc_r S ∝ Ê¹²J¹⁰m¹⁶ q(J²) | rango, fattorizzazione | SYM | idem |
+| Residui all'infinito di r^k dr/√S: 0, 0, −1/√s6, s5/(2 s6^{3/2}); dV₂: −1/√a4 | serie in t = 1/r | SYM | idem |
+| Rotaia circolare Schwarzschild M=1, r=6, Ê=7/5: a^r = −241/1800, g(a,∂_t) = 0 | Christoffel | SYM | idem |
+| Lemma I.A: velocità coordinate u^i/u^χ, mappa proiettiva; controesempio χ = t + x/2 | a mano | — | testo |
+| rem:maxwell: 𝒥′ > 0 ⇒ periastro unico, niente multi-escursioni; sweep < π per raggi diversi | a mano | — | testo |
+| a = e^{Ht} su sezioni chiuse: R = 12H² + 6e^{−2Ht}/R_c² (non de Sitter); de Sitter chiuso: ∫H dt/cosh Ht = π/2 − arctan sinh Ht₀ < π | sympy | SYM | scratch, formula nel testo |
+| Vaidya ottica: ∂_v a_rr ∝ m′(2Ê² − 3f), ∂_v a_φφ ∝ m′(Ê² − 2f), mai nulli insieme su f > 0 | sympy | SYM | testo |
+| Controesempio discesa: g = −f(t)dt² + [f(E₀²−f)/E₀²]δ ⇒ a_ij = δ_ij, W non CKV | sympy | SYM | testo |
+
+### Paper II
+| Risultato | Conto | Metodo | Script |
+|---|---|---|---|
+| Prova A in M simbolico: J* = [E²r(a²+r²)+2Ma²]/(aD_E), J** = […+Ma²]/(aD_E), vertice −2Ma/(r−2M), Q₂(J**) con M²a² | identità | SYM | `no_inversion_reduction.py` |
+| Fattorizzazione N_G = (r−r_min)·4MrΔ/[(r_min−2M)DE_min]·W(r) (manca 1/DE_min nella versione vecchia, anche a M=1) | resto mod Q₂ | SYM + numerico M=1,2 | idem |
+| (A) vale anche a a=0: W(r_min) = E²r_min³(r_min−2M), pendenza E²r_min²(r_min−M) | sostituzione | SYM | testo |
+| Numeratori per ramo: τ: N_E = EJ r⁴(r−2M)²D_E, N_J = r³(r−2M)²D_E²; t: N_E = E r⁵ D_E[J(r−2M)+2Ma], N_J = E²r⁵D_E²; grado 7 | derivazione | SYM | testo |
+| |B′|/√P = 2Ma[3(E²−1)r² − (5E²−13)Mr − 14M²]√(ΔD_E)/(E³r^{13/2}(r−2M)): W_sup algebrica | confronto | numerico | testo |
+| V = rΔ/D_E crescente: numeratore di V′ in r = 2M+s a coefficienti positivi | polinomio | SYM | testo |
+| Quarter regime: controesempio astratto W = 10 − V + V²/100, Φ′(1) = 1528√3/375 > 0 | integrale | SYM | testo |
+| Lemma B: g = VW crescente e concava per b ≥ 1/2 (certificati A_c, P_c); α > 1/2 (r ≥ 5/2), α > 2/3 (r ≥ 3), α > 2/3 statico (r ≥ 9/4); c* = sech²U*, U* tanh U* = 1; C_c² = 16(b+1)⁴/[4(b+1)+c]³ | certificati polinomiali | SYM | `paper2/verification/verify_lemma_B.py` |
+| Controesempi: quarto a b=1, r₀=2.01 (xΦ′ ∈ [0.005438, 0.005460]); unimodalità a b=1/100, r₀=10⁴ (segni +,−,+,− a r_min = 3, 6, 30, 9000) | quadratura | INT | idem |
+| CAP RUN 6: 7 configurazioni, finestre fino a r_{1/2}, raccordo V(r₀)/2 (minimo 1.85e−10) | certificato | INT | `no_inversion_schwarzschild_CAP_grid.py`, `CAP_grid_certificates.log` |
+| Figura BVP r₀=6, E=1.2: r_min^t = 4.735 vs r_{1/2} = 4.784; V/V₀ = 0.484 (istanza di (i),(ii)) | BVP | numerico | `KerrScripts/bvp_estremi_fissi.py` |
+| Nessuna orbita circolare τ esterna: ∂_r[rΔ − J²D_E] = D_E V′ > 0 sulla shell | identità | SYM | testo |
+| Costati: (J_τ/A)/J_η = f/E a a=0 (10/21 a f=2/3, E=7/5); J_η = J_t/A | derivata del funzionale | SYM | testo |
+| TK: ∂_η a = 2Ê²AA′h₀/(Ê² − A²f₀)² ≠ 0 se A′ ≠ 0 | derivata | SYM | testo (`eq:aT-running`) |
+| TK non Einstein: Ric_{ηr} = 2(A′/A)Γ̄^η_{ηr}, Γ̄^η_{ηr} = M(r²+a²)/(r²Δ) all'equatore | Ricci completo (a=0) | SYM | testo |
+| Spettro dell'operatore di curvatura ottico (Schwarzschild congelato): K_t, K_t, K_tan; R_opt = 2(2K_t + K_tan); fuori piano cos²χ K_t + sin²χ K_tan | identità | SYM + CAS2 | `verify_myers_optical.wls` |
+| Metrica nulla: K = −M(2r−3M)/r⁴ < 0 | identità | SYM | testo |
+| Taş Prop. 4 con L = F_T²/2 (Legendre forte); lancio comune = W(0)=0; controesempio alla planarità affine (cono) e B_L − B_Lᵀ ≠ db | confronto | SYM | verifica indipendente nell'audit di GPT-6 Astra; testo |
+| Bound W ≤ W_sup(r) < 0 sulle finestre r/M ∈ [6, 9.275] a a=0.9, E = 1.3 e 1.4 | certificato | INT | `paper2/verification/verify_wsup_window.py` |
+
+Stato dei verificatori al 30/9: Paper I 2 Python + 9 WLS, Paper II 11 Python + 23 WLS, tutti
+eseguiti senza FAIL sulla macchina dell'autore (alcuni WLS di Paper I non legano l'exit code ai
+FAIL: fa fede l'output stampato); `make_provenance.py --check` passa (32 voci, digest 42ed5ab1779c5813).
+Tabelle affermazione → script: `paper1/verification/README.md`, `paper2/verification/README.md`.
 
 ═══════════════════════════════════════════════════════════════════
 ## SINTESI

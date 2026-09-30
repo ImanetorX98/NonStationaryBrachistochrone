@@ -1321,7 +1321,7 @@ the conformal factor of the selector, $\mathcal L_Wg=2\psi g$; the rate at which
 an uncontrolled worldline loses the rail,~\eqref{eq:tk-drift}; the lower bound on
 the thrust needed to hold it,~\eqref{eq:thrust-bound}; the failure of the
 dilation to be constant along the fibres,~\eqref{eq:dilation-fibre}; and the
-failure of the weight $f^2=\ln A$ to be parallel, hence of the associated soliton
+non-vanishing gradient of the weight $U=\ln A$, hence the failure of the associated soliton
 to be Einstein. Those five are computed above and all degenerate together at
 frozen $A$.
 
@@ -1380,7 +1380,8 @@ soliton literature cited above works on \emph{weighted} manifolds
 $e^{-2f^2}g_{\mu\nu}$, and studies the four-velocity as a conformal Killing field
 of the weighted metric, arriving at a vanishing divergence
 \cite[eq.~(32)]{Lecian2026Eigenvalues}. Choosing the weight
-as $e^{-2f^2}=A(\eta)^{-2}$, that is $f^2=\ln A$, the weighted metric is
+as $e^{-2U}=A(\eta)^{-2}$, that is $U=\ln A$ (their $f^2$, which presupposes $A\ge1$), the
+weighted metric is
 \emph{precisely the Kerr seed}: $W=\partial_\eta$ is then a genuine Killing field
 of it, with $\operatorname{div}_{\bar g}W=0$, whereas for the full metric
 $\operatorname{div}_gW=4A'/A$. So that framework describes exactly the frozen
@@ -1396,8 +1397,8 @@ the four-dimensional setting in which the seed lives, Einstein does not imply
 constant sectional curvature---the Kerr and Schwarzschild seeds are themselves
 Ricci-flat with non-vanishing Weyl part, the latter with Kretschmann invariant
 $48M^2/r^6$---so no space-form statement is inherited here, and none is used
-below. Our weight is $f^2=\ln A(\eta)$, with
-$\nabla_\mu f^2=(A'/A,0,0,0)=(\psi,0,0,0)$: it is parallel if and only if $A$ is
+below. Our weight is $U=\ln A(\eta)$, with
+$\nabla_\mu U=(A'/A,0,0,0)=(\psi,0,0,0)$: its gradient vanishes if and only if $A$ is
 constant. The requirement is in fact stronger still in that framework, where the
 admissible weights are taken constant and indeed vanishing, so a running $A$ is
 excluded there twice over. Their hypothesis therefore holds exactly at frozen $A$, and the running
@@ -1527,8 +1528,10 @@ brachistochrones:
 \item for a unit tangent at angle $\chi$ to the radial direction, the out-of-plane one
 through $\cos^2\!\chi\,K_t+\sin^2\!\chi\,K_{\rm tan}$ (below).
 \end{itemize}
-Conjugate points decide local minimality; global minimality needs, in addition, the cut
-locus and endpoint analysis of Proposition~\ref{prop:globalmin}. The positivity hypotheses
+The absence of conjugate points, with a positive second variation, gives local
+minimality on arcs whose endpoint is not conjugate; it implies neither global minimality
+nor the absence of cut points, which need the analysis of
+Proposition~\ref{prop:globalmin}. The positivity hypotheses
 of the theorems quoted above fail, and the relevant soliton hypotheses are not
 established for this weighted optical metric, so no subcase relation is claimed. In the
 rotating case the quadratic part is not spherically symmetric and the deviation
@@ -2566,8 +2569,9 @@ $\mathcal D H=E H_E+(H+1)$, so
 \end{equation}
 the $\lambda$ term universal and $E_{\rm eff}H_{E_{\rm eff}}$ the single
 metric-specific ``energy-Euler'' piece (fixed by $E\partial_E v^2=2(1-v^2)$). The
-non-conformal mass-function (Vaidya) family instead yields the boundary form
-$S_{\mathcal D}=[\,rp_r\,]-\lambda$ (Paper~I): the two deformation classes carry
+non-conformal mass-function (Vaidya) family instead yields, on its arrival branch, the
+boundary form $S_{\mathcal D}=[\,rp_r\,]-\lambda$ (on the proper-time branch the subtracted
+term is the elapsed proper time; Paper~I): the two deformation classes carry
 \emph{different} universal sources---no single formula spans both, since the slow
 parameter couples to the geometry differently (a conformal rescaling of all momenta
 versus a self-similar mass shift)---yet both share the same $\pm\lambda$ Finsler skeleton
