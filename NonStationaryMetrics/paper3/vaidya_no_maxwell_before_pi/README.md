@@ -1,6 +1,6 @@
 # Via B: formalizzazione effettivamente compilata in Lean
 
-6 ottobre 2026, aggiornata con il blocco 1: uniformità Lipschitz sul riferimento compatto e stabilità della fuga dalla continuità iniziale. **88 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
+6 ottobre 2026, aggiornata con il blocco 2a: metrica inversa, Hamiltoniano nullo e derivazione del sistema di direzione sotto riparametrizzazione fornita. **117 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
 
 ## Ambiente e verifica
 
@@ -55,7 +55,11 @@ La verifica esegue `lake build` e `lake env lean AxiomAudit.lean`, controlla la 
 | `ViaB.ExteriorDichotomy` | 2 | Angolo limitato implica fuga; alternativa r→∞ oppure φ→∞ nel caso esterno positivo monotono. |
 | `ViaB.TubeBootstrap` | 3 | Primo attraversamento escluso dalla stima di Grönwall; continuità e stabilità della fuga da un limite locale del campo, senza assumere permanenza dei vicini nel tubo. |
 | `ViaB.CompactFieldBound` | 8 | Uniformità Lipschitz sul riferimento finito regolare; controllo del tubo, dipendenza finita e stabilità della fuga con costanti derivate, apertura dalla continuità iniziale. |
-| **Totale** | **88** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
+| `ViaB.MetricHamiltonian` | 9 | Metrica coordinata e inversa; ramo nullo futuro e sua unicità. |
+| `ViaB.NullHamiltonianDynamics` | 14 | Derivate Hamiltoniane, riduzione del momento radiale e velocità normalizzate. |
+| `ViaB.DirectionFromHamiltonian` | 5 | Ricostruzione di α∈(0,π) e derivazione della sua ODE dai momenti. |
+| `ViaB.AffineReparametrization` | 1 | Sistema di direzione dalle equazioni affini, con derivata della riparametrizzazione fornita. |
+| **Totale** | **117** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
 
 ### Algebra delle curvature
 
@@ -134,7 +138,7 @@ Per q=5/4, m=1, r=20, Lean verifica esattamente P=−45 e Δ<0 con m′=0, L=1. 
 
 ## Cosa rimane per il teorema geometrico
 
-1. Definire metrica G₃, dominio, geodetiche nulle future, parametro affine e schermatura; derivare ODE di Jacobi, formula Δ ed equazione di direzione. Le formule, oggi, sono collegate al problema dai conti esterni a Lean.
+1. Completare il collegamento geometrico alla metrica G₃, geodetiche nulle future, parametro affine e schermatura; derivare ODE di Jacobi e formula Δ. Il blocco 2a certifica ora l’inversione della metrica coordinata e l’equazione di direzione dal suo Hamiltoniano, con una riparametrizzazione fornita. Il collegamento alla connessione di Levi-Civita resta da formalizzare.
 2. Collegare esistenza, continuazione e intervallo angolare alla geometria. Il blocco 1 è chiuso: regolarità del campo e compattezza del riferimento producono la stima locale uniforme, senza assumerla. Grönwall controlla il tubo e trasferisce la continuità iniziale alle valutazioni finite e alla stabilità della fuga. `DirectionFlow` assume ancora soluzioni future globali; il lemma fondamentale di uniformità richiede soltanto un riferimento continuo regolare su un tratto finito, senza ODE o esistenza futura.
 3. Formalizzare la chiusura della traccia e il controllo degli arrivi tardivi: tempi v e affini, cattura trasversale, limite radiale critico, separazione del ricevitore dal bordo. Da qui ottenere properness.
 4. Costruire la traccia come varietà, dimostrare che la mappa angolare è un diffeomorfismo locale, poi che properness implica rivestimento. Dimostrare il conteggio vicino a δ=0 per rT<r0, rT=r0 e rT>r0, compreso il caso vuoto.
@@ -170,3 +174,9 @@ Il campo `directionField q m (r,α)` è formalmente C¹ e localmente Lipschitz, 
 `finite_reference_uniform_field_bound` applica questa costruzione al riferimento aumentato ((r,α),m) su [a,b], con q>1, continuità, r>0 e m≥0. Non richiede ODE, massa monotona, limiti già noti sul raggio, altre traiettorie o esistenza futura. La continuità di m è esplicita e non è contenuta nel vecchio `DirectionFlow`.
 
 `directionFlow_finite_time_dependence` deriva K e ε dal riferimento e dimostra che ogni altra soluzione esistente con la stessa massa sul tratto e scarto iniziale d₀ exp(K(b−a))<ε resta nel tubo; vale inoltre la stima d(t)≤d₀ exp(K(t−a)). I corollari trasferiscono la continuità iniziale alla valutazione finale e alla fuga stabile. Il blocco non dimostra esistenza o continuazione delle soluzioni.
+
+## Blocco 2a: derivazione coordinata del sistema di direzione
+
+I 29 nuovi teoremi sono descritti in [BLOCK2_COORDINATE_HAMILTONIAN.md](BLOCK2_COORDINATE_HAMILTONIAN.md). La nullità futura seleziona il ramo dei momenti e consente di ricostruire α tramite arccos. La regola della catena deduce l’ODE angolare senza assumerla e senza dividere per il momento radiale o per cos α. La massa è il valore istantaneo m(v); non si assume la conservazione di P_v.
+
+Il teorema composto prende le equazioni Hamiltoniane affini, L>0, la nullità all’evento e la derivata di una riparametrizzazione; conclude le ODE in v. Non costruisce l’inversa temporale, non dimostra la conservazione di L o la propagazione della nullità, né esistenza e continuazione. Queste premesse e i collegamenti di Jacobi restano espliciti: il blocco 2 completo e il teorema geometrico non sono ancora certificati.

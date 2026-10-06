@@ -111,3 +111,43 @@ in the declarations and are separately discussed in README.md. -/
 #check ViaB.finite_reference_uniform_field_bound
 #check ViaB.cone_escape_stable_from_regular_reference
 #check ViaB.escaping_set_isOpen_from_initial
+
+-- MetricHamiltonian
+#print axioms ViaB.raise_lower_identity
+#print axioms ViaB.lower_raise_identity
+#print axioms ViaB.metric_of_raised_momentum
+#print axioms ViaB.null_velocity_ellipse
+#print axioms ViaB.cometric_complete_square
+#print axioms ViaB.nullAmplitude_pos
+#print axioms ViaB.nullAmplitude_sq
+#print axioms ViaB.future_null_sheet
+#print axioms ViaB.future_null_sheet_unique
+
+-- NullHamiltonianDynamics
+#print axioms ViaB.hamiltonian_time_momentum_derivative
+#print axioms ViaB.hamiltonian_radial_momentum_derivative
+#print axioms ViaB.hamiltonian_angular_momentum_derivative
+#print axioms ViaB.momentum_direction_circle
+#print axioms ViaB.momentum_direction_sin_pos
+#print axioms ViaB.null_radial_velocity
+#print axioms ViaB.null_angular_velocity
+#print axioms ViaB.vaidyaW_pos
+#print axioms ViaB.exterior_iff_vaidyaW_lt_charge
+#print axioms ViaB.receiver_timelike
+#print axioms ViaB.time_covector_timelike
+#print axioms ViaB.hamiltonian_radius_derivative
+#print axioms ViaB.radial_momentum_future_reduction
+#print axioms ViaB.radial_momentum_direction_combination
+
+-- DirectionFromHamiltonian
+#print axioms ViaB.directionCos_hasDerivAt
+#print axioms ViaB.directionCos_dynamics
+#print axioms ViaB.angle_derivative_from_cosine
+#print axioms ViaB.momentumAngle_properties
+#print axioms ViaB.momentumAngle_dynamics
+
+-- AffineReparametrization
+#print axioms ViaB.affine_hamiltonian_to_direction
+
+#check ViaB.affine_hamiltonian_to_direction
+#check ViaB.momentumAngle_dynamics

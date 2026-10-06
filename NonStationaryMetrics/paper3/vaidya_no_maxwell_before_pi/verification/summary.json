@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-06T09:42:00.748630+00:00",
+  "checked_at": "2026-10-06T10:13:10.981925+00:00",
   "lean": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
-  "public_theorems_checked": 88,
+  "public_theorems_checked": 117,
   "allowed_standard_axioms": [
     "Classical.choice",
     "Quot.sound",
@@ -15,7 +15,12 @@
   "uniform_field_bound_on_regular_finite_time_reference_formalized": true,
   "escape_stability_from_initial_continuity_for_declared_flows_formalized": true,
   "geometric_solution_continuation_formalized": false,
+  "coordinate_metric_inverse_formalized": true,
+  "direction_ode_from_coordinate_hamiltonian_under_supplied_reparam_formalized": true,
+  "local_time_inverse_existence_formalized": false,
+  "geometric_jacobi_curvature_identification_formalized": false,
   "sha256": {
+    "ViaB/AffineReparametrization.lean": "5760f0f090fa04e7e9098ee64b89833b70d603bc6d2b409c2b83dc53d4e4fa48",
     "ViaB/Algebra.lean": "21286a5a52f30dafac5c26235e93493953dbd3f62bca42db086e4721ecf68ae4",
     "ViaB/AngleLimits.lean": "4571b4a82956153740b8667cfdaf546c9d9dbf000f4e1549b9117dfdb743f2a0",
     "ViaB/Barbalat.lean": "68aecbd8f6c080eae5bc0b83009dfb02f3276b4b5da1f68181a9c971a1056190",
@@ -23,6 +28,7 @@
     "ViaB/BoundedLingering.lean": "3d21c47d7a436c92728f912e26473fc75ae03af0be47dfc7dfdf622644161c23",
     "ViaB/CompactFieldBound.lean": "8bf50429f1573fbd9156e343cdc1de71c57363f071a63ce45cf1871ff72190ad",
     "ViaB/ConeEscape.lean": "c3cb9bd604ef2317cb1571cc6f68e6331f57e60b3a205080e9e383c0681d4053",
+    "ViaB/DirectionFromHamiltonian.lean": "33f8abfb98dd7d0b9705bb7591b6f6edf170c2873ecde5d7d9a035af2ae82637",
     "ViaB/Dynamics.lean": "7bccc75e86b9e17fc09d366bdbb7956e27d8a7cb8e99516abcad05f7cf903dbe",
     "ViaB/EscapeStability.lean": "2c901267023b11416f59ae89fc6473a92b00abf8da8f1c3ff4eca669e2e3da4b",
     "ViaB/Excursion.lean": "ec4d11b7a5b39b409f940ca08d1554200eb291f1b427ae99012dac47eaaf4b4f",
@@ -32,18 +38,20 @@
     "ViaB/FlowDependence.lean": "f058831b0c85c1665a6031d1b4213216a36233c10ab395c26f803603f0b44a68",
     "ViaB/LastExit.lean": "b89f4a576da4e0986ada7c5e4292e98324ea33137f672799fe330fd47db4ac66",
     "ViaB/LingeringLimits.lean": "cda080361779f75d521cd40f81adefd369c7c44058fa095e769640f92941a8a7",
+    "ViaB/MetricHamiltonian.lean": "ebfe96bd0227d8c492436d8f900d86d47bcc992cc62fc8b6fe9a7cdccbba0aed",
     "ViaB/NegativeControls.lean": "037f475d11ed1cfeb0aa0d9f3b1d60d4602d5cf43c0aabe9a17272060e96b5e3",
+    "ViaB/NullHamiltonianDynamics.lean": "b1aabb7b8f2c171f422176b6b050ef6651b707142a3d1dba5043aff2041d0a99",
     "ViaB/RadialConvergence.lean": "d082f8172f449faa8fb8c83e8ef2c37096e22a0563986562a708ae61e4a4cd82",
     "ViaB/Sturm.lean": "e6b5ab23e288708a3d899f5425906375fdf76f00e421148a168a14c08a9e4581",
     "ViaB/Trace.lean": "9ba02f33dfc4f54d9845698f73feb1071d364072f0c0ada61ca83aeaecd8c783",
     "ViaB/TubeBootstrap.lean": "75518842d1f60bc8ff4cb5c65a4feadd1f6791f65b45df224538170d8bab7e3d",
     "ViaB/UnboundedEscape.lean": "fd40bbf7967cef6899eae22d384af2fa207f73fdf24ece9103a4d2e464aeab3f",
     "ViaB/Wronskian.lean": "cbae91626cc05609e9b9e40f40773a2767287400d61fe8ad145a5bcd4a93ab74",
-    "ViaB.lean": "05c63b892911391ad5d3707c48fc866ca46accdbf7fa7e99b9d53da28dfec79b",
-    "AxiomAudit.lean": "b422082a1b7344a06493864227e9367e97abd3985c0681cadaabe5cea6e6bf77",
+    "ViaB.lean": "a4f6aed864b126a053b1971cae0ed6b4a887819f39b56aa2106b4478a21b76bf",
+    "AxiomAudit.lean": "a9060d4acd9641c2de3d0645473d22ea322bd04aebb9c7829cb6827c4cd3d637",
     "lakefile.toml": "9701d1d86718ca47aa26c369104e5af19e25d64b3c4032c56a51acf277d3ad28",
     "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
     "lake-manifest.json": "2ef53f06a3b36c4c5f5e1abfae569f64089c141c0a1d69fed6ffe1a33b39c005",
-    "verify.py": "236e169dfdaede6ea1b5639dd0d354b8dd1f8dc6fb69d5093d82842091765045"
+    "verify.py": "2a6b8547df7fa3bf59b3a9b2b13de9e187d3b15247c9be8d38a482f34b5ef04f"
   }
 }

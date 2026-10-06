@@ -21,3 +21,7 @@ import ViaB.FlowDependence
 import ViaB.ExteriorDichotomy
 import ViaB.TubeBootstrap
 import ViaB.CompactFieldBound
+import ViaB.MetricHamiltonian
+import ViaB.NullHamiltonianDynamics
+import ViaB.DirectionFromHamiltonian
+import ViaB.AffineReparametrization

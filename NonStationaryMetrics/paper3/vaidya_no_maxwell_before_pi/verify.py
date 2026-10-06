@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compile the private Via B project and audit every public theorem's axioms.
+"""Compile the Via B project and audit every public theorem's axioms.
 
 Dependencies must already be installed. This script never invokes lake update
 or uploads source files. Use --lean-bin for an isolated Lean installation.
@@ -78,6 +78,10 @@ report = {
     "uniform_field_bound_on_regular_finite_time_reference_formalized": True,
     "escape_stability_from_initial_continuity_for_declared_flows_formalized": True,
     "geometric_solution_continuation_formalized": False,
+    "coordinate_metric_inverse_formalized": True,
+    "direction_ode_from_coordinate_hamiltonian_under_supplied_reparam_formalized": True,
+    "local_time_inverse_existence_formalized": False,
+    "geometric_jacobi_curvature_identification_formalized": False,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }
