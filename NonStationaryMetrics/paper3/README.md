@@ -8,8 +8,8 @@ separate from the sources of Papers I and II.
 The Lean project is in
 [`vaidya_no_maxwell_before_pi/`](vaidya_no_maxwell_before_pi/README.md).
 Its name identifies the target theorem, **not a completed certification of that
-theorem**. The current checkpoint contains **234 verified public lemmas** and
-49 Lean source files, including the axiom audit.
+theorem**. The current checkpoint contains **248 verified public lemmas** and
+51 Lean source files, including the axiom audit.
 
 Certified components include the scalar Sturm comparison, the declared ODE
 escape/lingering lemmas, and finite-time dependence and escape stability with
@@ -41,7 +41,12 @@ geodesic equation is now verified under explicit family-derivative hypotheses.
 Connection differentiability is derived, with C² physical mass a sufficient
 condition along differentiable sampled coordinates. Angular translations give
 a concrete verified family, but do not supply the launch-vanishing screen field.
-Launch-family regularity, mixed-derivative commutation, the Jacobi/curvature bridge,
+Mixed derivatives and the actual affine derivatives of the launch-variation
+field are now certified for supplied jointly C³ geodesic families, including
+Fermat null-geodesic families. Launch from a fixed event forces the variation
+field to vanish there. Joint C³ regularity of the constructed launch family
+is still unproved and is not implied here by C² mass. Launch-family regularity,
+the geometric screen/curvature bridge,
 properness, covering/fiber count and
 the final Maxwell bridge remain to be formalized. These results do not assert
 escape for every exterior launch.

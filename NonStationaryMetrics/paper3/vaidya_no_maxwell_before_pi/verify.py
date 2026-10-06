@@ -113,6 +113,10 @@ report = {
     "fermat_connection_family_differentiability_and_C2_mass_sufficient_condition_formalized": True,
     "angular_translation_null_geodesic_variation_formalized": True,
     "launch_family_differentiability_and_mixed_derivative_commutation_formalized": False,
+    "mixed_derivative_commutation_for_supplied_C3_family_formalized": True,
+    "actual_coordinate_jacobi_equation_for_supplied_C3_fermat_geodesic_family_formalized": True,
+    "fixed_launch_event_implies_variation_field_zero_formalized": True,
+    "joint_C3_regularity_of_constructed_launch_family_formalized": False,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }

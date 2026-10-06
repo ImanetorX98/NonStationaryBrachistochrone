@@ -1,6 +1,6 @@
 # Via B: formalizzazione effettivamente compilata in Lean
 
-6 ottobre 2026, aggiornata con il blocco 2h: linearizzazione geodetica sotto ipotesi esplicite di famiglia e derivabilità della connessione con massa C². **234 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
+6 ottobre 2026, aggiornata con il blocco 2i: scambio delle derivate miste da Schwarz e equazione del campo di variazione effettivo per famiglie geodetiche C³ fornite. **248 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
 
 ## Ambiente e verifica
 
@@ -79,7 +79,9 @@ La verifica esegue `lake build` e `lake env lean AxiomAudit.lean`, controlla la 
 | `ViaB.DirectionGeodesicGerm` | 3 | Geodetiche nulle affini future costruite dalle ODE di direzione, anche sulla curva massimale esterna. |
 | `ViaB.GeodesicVariation` | 7 | Derivata della contrazione, linearizzazione condizionata e famiglia di traslazioni angolari. |
 | `ViaB.ConnectionFamilyRegularity` | 5 | Derivabilità dei coefficienti, condizione sufficiente di massa C² e applicazione condizionata alla variazione di Fermat. |
-| **Totale** | **234** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
+| `ViaB.MixedGeodesicDerivatives` | 12 | Schwarz, derivate affini effettive del campo, equazione di variazione da famiglia C³ e annullamento al lancio fisso. |
+| `ViaB.FermatC3JacobiFamily` | 2 | Applicazione alla connessione di Fermat e a famiglie effettive di geodetiche nulle coordinate C³. |
+| **Totale** | **248** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
 
 ### Algebra delle curvature
 
@@ -256,3 +258,12 @@ Resoconto: [BLOCK2_GEODESIC_VARIATION_AND_REGULARITY.md](BLOCK2_GEODESIC_VARIATI
 La derivata della contrazione della connessione e la linearizzazione dell’equazione geodetica sono ora certificate sotto ipotesi esplicite di derivabilità della famiglia. La derivabilità dei coefficienti di Fermat è dedotta da massa, tasso e raggio campionati differenziabili; massa fisica C² e coordinate di famiglia differenziabili forniscono una condizione sufficiente. La traslazione angolare conserva le geodetiche ed è una famiglia concreta verificata.
 
 Restano da costruire la famiglia regolare dei lanci, scambiare le derivate miste e identificare il campo e la curvatura dello schermo. Il lemma condizionato non assume l’equazione linearizzata, ma richiede esplicitamente l’identificazione delle derivate di velocità e accelerazione con J′ e J″. La traslazione angolare non è il campo di confronto che si annulla al lancio. Il ponte geometrico di Jacobi e il teorema sui Maxwell restano aperti.
+
+
+## Blocco 2i: scambio delle derivate e campo effettivo
+
+Resoconto: [BLOCK2_MIXED_DERIVATIVES_AND_ACTUAL_JACOBI.md](BLOCK2_MIXED_DERIVATIVES_AND_ACTUAL_JACOBI.md).
+
+Schwarz e l’uguaglianza su un intorno provano gli scambi delle derivate fino alla variazione dell’accelerazione per una famiglia congiuntamente C³. L’equazione linearizzata contiene ora le derivate affini ordinarie del campo J=∂εX. La costruzione si applica a una famiglia effettiva di geodetiche nulle coordinate di Fermat, con massa C² per la derivabilità dei coefficienti. Un lancio da un evento fisso implica J=0 al lancio.
+
+La famiglia C³ resta una premessa: non è ancora dedotta dalla costruzione dei lanci, né dall’ipotesi di massa C². Restano la regolarità della famiglia costruita, l’orologio dipendente dal lancio, il dato iniziale dello schermo e l’identificazione della curvatura. Il risultato è coordinato e planare; non certifica ancora Sturm geometrico o l’esclusione dei Maxwell.

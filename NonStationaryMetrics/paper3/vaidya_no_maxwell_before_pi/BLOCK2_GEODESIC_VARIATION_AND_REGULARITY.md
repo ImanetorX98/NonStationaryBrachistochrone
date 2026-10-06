@@ -136,3 +136,8 @@ I prossimi obblighi sono:
    poi provare properness e conteggio delle fibre.
 
 Papers I/II e lettera CQG restano invariati. Questo sviluppo è per Paper III.
+
+
+Aggiornamento successivo: il [blocco 2i](BLOCK2_MIXED_DERIVATIVES_AND_ACTUAL_JACOBI.md)
+prova gli scambi delle derivate per famiglie C³ fornite e conclude l’equazione
+del campo effettivo. La costruzione regolare della famiglia dei lanci resta aperta.

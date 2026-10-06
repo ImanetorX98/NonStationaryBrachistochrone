@@ -45,3 +45,5 @@ import ViaB.HamiltonianGeodesic
 import ViaB.DirectionGeodesicGerm
 import ViaB.GeodesicVariation
 import ViaB.ConnectionFamilyRegularity
+import ViaB.MixedGeodesicDerivatives
+import ViaB.FermatC3JacobiFamily

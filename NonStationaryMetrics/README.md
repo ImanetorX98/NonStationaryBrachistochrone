@@ -40,7 +40,7 @@ PRD) is retained as the reference version.
 The formal verification developments for the follow-up paper are now tracked in
 [`paper3/`](paper3/README.md). The project
 [`paper3/vaidya_no_maxwell_before_pi/`](paper3/vaidya_no_maxwell_before_pi/README.md)
-contains 234 verified public lemmas towards the Vaidya via-B exclusion of Maxwell
+contains 248 verified public lemmas towards the Vaidya via-B exclusion of Maxwell
 points before π, with Lean 4.24.0/mathlib v4.24.0 pinned, an axiom audit and
 reproducible verification logs. **The full geometric theorem is not yet
 formalized.** This checkpoint publishes the formal proof sources; the private

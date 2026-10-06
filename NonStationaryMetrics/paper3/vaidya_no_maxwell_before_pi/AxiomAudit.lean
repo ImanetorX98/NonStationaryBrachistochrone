@@ -318,3 +318,17 @@ in the declarations and are separately discussed in README.md. -/
 #print axioms ViaB.fermatChristoffel_family_differentiable
 #print axioms ViaB.fermatChristoffel_sampled_C2_mass_differentiable
 #print axioms ViaB.fermat_coordinate_jacobi_of_family
+#print axioms ViaB.familyPartial_contDiffAt
+#print axioms ViaB.affine_slice_hasDerivAt
+#print axioms ViaB.launch_slice_hasDerivAt
+#print axioms ViaB.familyPartial_hasFDerivAt
+#print axioms ViaB.familyPartial_commute
+#print axioms ViaB.velocity_launch_variation_hasDerivAt
+#print axioms ViaB.acceleration_launch_variation_hasDerivAt
+#print axioms ViaB.launch_field_affine_hasDerivAt
+#print axioms ViaB.launch_field_affine_second_hasDerivAt
+#print axioms ViaB.C3_geodesic_family_coordinate_jacobi
+#print axioms ViaB.fixed_launch_event_variation_zero
+#print axioms ViaB.affine_slice_second_hasDerivAt
+#print axioms ViaB.fermat_C3_family_actual_coordinate_jacobi
+#print axioms ViaB.fermat_C3_null_geodesic_family_coordinate_jacobi
