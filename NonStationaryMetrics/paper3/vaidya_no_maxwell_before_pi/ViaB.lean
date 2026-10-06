@@ -27,3 +27,6 @@ import ViaB.DirectionFromHamiltonian
 import ViaB.AffineReparametrization
 import ViaB.LocalTimeInverse
 import ViaB.TimeDependentHamiltonian
+import ViaB.LocalDirectionExistence
+import ViaB.FiniteEndpointLimit
+import ViaB.RegularEndpointContinuation

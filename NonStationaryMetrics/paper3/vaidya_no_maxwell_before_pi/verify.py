@@ -85,6 +85,11 @@ report = {
     "direction_ode_with_constructed_local_time_inverse_formalized": True,
     "nonstationary_hamiltonian_null_constraint_propagation_formalized": True,
     "angular_momentum_conservation_for_declared_hamiltonian_flow_formalized": True,
+    "direction_local_existence_under_C1_mass_formalized": True,
+    "direction_local_uniqueness_under_continuous_mass_formalized": True,
+    "regular_compact_direction_endpoint_limit_and_restart_formalized": True,
+    "regular_compact_direction_continuation_with_gluing_formalized": True,
+    "global_future_direction_flow_from_geometric_initial_data_formalized": False,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }

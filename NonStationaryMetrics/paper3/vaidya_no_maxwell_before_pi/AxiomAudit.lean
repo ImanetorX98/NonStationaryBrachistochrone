@@ -171,3 +171,25 @@ in the declarations and are separately discussed in README.md. -/
 
 #check ViaB.hamiltonian_local_direction_exists
 #check ViaB.hamiltonian_flow_null_propagates
+
+-- LocalDirectionExistence
+#print axioms ViaB.liftedDirectionField_contDiffAt
+#print axioms ViaB.direction_local_solution_exists
+#print axioms ViaB.direction_local_solution_unique
+#print axioms ViaB.direction_exterior_local_solution_exists
+#print axioms ViaB.direction_local_initial_value_problem
+
+-- FiniteEndpointLimit
+#print axioms ViaB.planar_lipschitz_extension
+#print axioms ViaB.bounded_speed_endpoint_limit
+#print axioms ViaB.compact_direction_speed_bound
+#print axioms ViaB.compact_direction_endpoint_restart
+
+-- RegularEndpointContinuation
+#print axioms ViaB.direction_endpoint_left_derivative
+#print axioms ViaB.direction_endpoint_backward_agreement
+#print axioms ViaB.compact_direction_continues
+
+#check ViaB.direction_local_initial_value_problem
+#check ViaB.direction_exterior_local_solution_exists
+#check ViaB.compact_direction_continues

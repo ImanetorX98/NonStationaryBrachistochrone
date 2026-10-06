@@ -280,3 +280,35 @@ ViaB.hamiltonian_flow_null_propagates {q a b : ℝ} {s : Set ℝ} {M r pv p L μ
   (hL : ∀ x ∈ s, HasDerivAt L 0 x)
   (hnull : ViaB.cometricQuad q (ViaB.vaidyaW q (M a) (r a)) (r a) (pv a) (p a) (L a) = 0) :
   ViaB.cometricQuad q (ViaB.vaidyaW q (M b) (r b)) (r b) (pv b) (p b) (L b) = 0
+'ViaB.liftedDirectionField_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.direction_local_solution_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.direction_local_solution_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.direction_exterior_local_solution_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.direction_local_initial_value_problem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.planar_lipschitz_extension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.bounded_speed_endpoint_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.compact_direction_speed_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.compact_direction_endpoint_restart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.direction_endpoint_left_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.direction_endpoint_backward_agreement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.compact_direction_continues' depends on axioms: [propext, Classical.choice, Quot.sound]
+ViaB.direction_local_initial_value_problem {q a : ℝ} {m : ℝ → ℝ} {x : ℝ × ℝ} (hq : 1 < q) (hr : 0 < x.1) (hm0 : 0 ≤ m a)
+  (hm : ContDiffAt ℝ 1 m a) :
+  ∃ f,
+    f a = x ∧
+      (∀ᶠ (t : ℝ) in nhds a, HasDerivAt f (ViaB.directionField q (m t) (f t)) t) ∧
+        ∀ (g : ℝ → ℝ × ℝ),
+          g a = x → (∀ᶠ (t : ℝ) in nhds a, HasDerivAt g (ViaB.directionField q (m t) (g t)) t) → f =ᶠ[nhds a] g
+ViaB.direction_exterior_local_solution_exists {q a : ℝ} {m : ℝ → ℝ} {x : ℝ × ℝ} (hq : 1 < q) (hmpos : 0 < m a)
+  (hext : 2 * m a < x.1) (hα : 0 < x.2 ∧ x.2 < Real.pi) (hm : ContDiffAt ℝ 1 m a) :
+  ∃ f,
+    f a = x ∧
+      ∃ ε > 0,
+        ∀ t ∈ Set.Ioo (a - ε) (a + ε),
+          HasDerivAt f (ViaB.directionField q (m t) (f t)) t ∧
+            0 < m t ∧ 2 * m t < (f t).1 ∧ 0 < (f t).2 ∧ (f t).2 < Real.pi
+ViaB.compact_direction_continues {q a b : ℝ} {m : ℝ → ℝ} {f : ℝ → ℝ × ℝ} {C : Set ((ℝ × ℝ) × ℝ)} (hq : 1 < q)
+  (hab : a < b) (hC : IsCompact C) (hr : ∀ z ∈ C, 0 < z.1.1) (hm0 : ∀ z ∈ C, 0 ≤ z.2) (hm : ContDiffAt ℝ 1 m b)
+  (hode : ∀ t ∈ Set.Ioo a b, HasDerivAt f (ViaB.directionField q (m t) (f t)) t)
+  (htube : ∀ t ∈ Set.Ioo a b, (f t, m t) ∈ C) :
+  ∃ h, ∃ ε > 0, Set.EqOn h f (Set.Ioo a b) ∧ ∀ t ∈ Set.Ioo a (b + ε), HasDerivAt h (ViaB.directionField q (m t) (h t)) t

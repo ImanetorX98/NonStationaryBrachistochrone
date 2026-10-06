@@ -1,6 +1,6 @@
 # Via B: formalizzazione effettivamente compilata in Lean
 
-6 ottobre 2026, aggiornata con il blocco 2b: inversa temporale locale costruita, propagazione della nullità e conservazione del momento angolare per il flusso Hamiltoniano dichiarato. **130 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
+6 ottobre 2026, aggiornata con il blocco 2c: esistenza e unicità locali del sistema di direzione e continuazione oltre un estremo finito sotto confinamento in un compatto regolare. **142 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
 
 ## Ambiente e verifica
 
@@ -61,7 +61,10 @@ La verifica esegue `lake build` e `lake env lean AxiomAudit.lean`, controlla la 
 | `ViaB.AffineReparametrization` | 1 | Sistema di direzione dalle equazioni affini, con derivata della riparametrizzazione fornita. |
 | `ViaB.LocalTimeInverse` | 4 | Inversa temporale costruita da velocità continua positiva; ODE locali con inversa costruita. |
 | `ViaB.TimeDependentHamiltonian` | 9 | Derivata temporale di H, cancellazione completa di dH/dλ, propagazione della nullità e conservazione di L. |
-| **Totale** | **130** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
+| `ViaB.LocalDirectionExistence` | 5 | Esistenza locale con massa C¹, unicità con massa continua e permanenza iniziale nel dominio esterno. |
+| `ViaB.FiniteEndpointLimit` | 4 | Estensione Lipschitz ausiliaria, limite finale da velocità limitata e nuovo tratto al limite regolare. |
+| `ViaB.RegularEndpointContinuation` | 3 | Derivata sinistra al bordo, coincidenza all’indietro e prolungamento effettivo dell’ODE sui compatti regolari. |
+| **Totale** | **142** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
 
 ### Algebra delle curvature
 
@@ -141,7 +144,7 @@ Per q=5/4, m=1, r=20, Lean verifica esattamente P=−45 e Δ<0 con m′=0, L=1. 
 ## Cosa rimane per il teorema geometrico
 
 1. Completare il collegamento geometrico alla metrica G₃, geodetiche nulle future, parametro affine e schermatura; derivare ODE di Jacobi e formula Δ. I blocchi 2a–2b certificano l’inversione della metrica coordinata, l’equazione di direzione dal suo Hamiltoniano e l’esistenza dell’inversa temporale locale. Nullità e momento angolare sono propagati dal flusso Hamiltoniano completo dichiarato. Il collegamento alla connessione di Levi-Civita resta da formalizzare.
-2. Collegare esistenza, continuazione e intervallo angolare alla geometria. Il blocco 1 è chiuso: regolarità del campo e compattezza del riferimento producono la stima locale uniforme, senza assumerla. Grönwall controlla il tubo e trasferisce la continuità iniziale alle valutazioni finite e alla stabilità della fuga. `DirectionFlow` assume ancora soluzioni future globali; il lemma fondamentale di uniformità richiede soltanto un riferimento continuo regolare su un tratto finito, senza ODE o esistenza futura.
+2. Collegare esistenza, continuazione e intervallo angolare alla geometria. Il blocco 2c costruisce ora soluzioni locali per massa C¹ e dimostra continuazione con incollamento sui compatti regolari; restano intervalli massimali, confinamento derivato dal problema e permanenza futura nel dominio esterno. Il blocco 1 è chiuso: regolarità del campo e compattezza del riferimento producono la stima locale uniforme, senza assumerla. Grönwall controlla il tubo e trasferisce la continuità iniziale alle valutazioni finite e alla stabilità della fuga. `DirectionFlow` assume ancora soluzioni future globali; il lemma fondamentale di uniformità richiede soltanto un riferimento continuo regolare su un tratto finito, senza ODE o esistenza futura.
 3. Formalizzare la chiusura della traccia e il controllo degli arrivi tardivi: tempi v e affini, cattura trasversale, limite radiale critico, separazione del ricevitore dal bordo. Da qui ottenere properness.
 4. Costruire la traccia come varietà, dimostrare che la mappa angolare è un diffeomorfismo locale, poi che properness implica rivestimento. Dimostrare il conteggio vicino a δ=0 per rT<r0, rT=r0 e rT>r0, compreso il caso vuoto.
 5. Costruire il congelamento futuro liscio e provare la località dell'ODE, per rimuovere le ipotesi di massa limitata e ricevitore eternamente esterno.
@@ -181,10 +184,16 @@ Il campo `directionField q m (r,α)` è formalmente C¹ e localmente Lipschitz, 
 
 I 29 nuovi teoremi sono descritti in [BLOCK2_COORDINATE_HAMILTONIAN.md](BLOCK2_COORDINATE_HAMILTONIAN.md). La nullità futura seleziona il ramo dei momenti e consente di ricostruire α tramite arccos. La regola della catena deduce l’ODE angolare senza assumerla e senza dividere per il momento radiale o per cos α. La massa è il valore istantaneo m(v); non si assume la conservazione di P_v.
 
-Il teorema composto del blocco 2a prende le equazioni Hamiltoniane affini, L>0, la nullità all’evento e la derivata di una riparametrizzazione; conclude le ODE in v. Il blocco 2b successivo costruisce l’inversa locale e dimostra la conservazione di L e la propagazione della nullità, per soluzioni Hamiltoniane esistenti. Esistenza/continuazione e i collegamenti di Jacobi restano aperti: il blocco 2 completo e il teorema geometrico non sono ancora certificati.
+Il teorema composto del blocco 2a prende le equazioni Hamiltoniane affini, L>0, la nullità all’evento e la derivata di una riparametrizzazione; conclude le ODE in v. Il blocco 2b successivo costruisce l’inversa locale e dimostra la conservazione di L e la propagazione della nullità, per soluzioni Hamiltoniane esistenti. Il blocco 2c successivo costruisce soluzioni locali e dimostra continuazione sui compatti regolari. L’esistenza futura globale e i collegamenti di Jacobi restano aperti: il blocco 2 completo e il teorema geometrico non sono ancora certificati.
 
 ## Blocco 2b: inversa locale e vincolo nullo
 
 [BLOCK2_LOCAL_TIME_AND_NULL_PROPAGATION.md](BLOCK2_LOCAL_TIME_AND_NULL_PROPAGATION.md) documenta i 13 nuovi teoremi. Da una velocità temporale continua positiva e dalla sua equazione in un intorno si costruisce una vera inversa locale, con entrambe le identità di inversa. `hamiltonian_local_direction_exists` conclude le ODE all’evento senza assumere la riparametrizzazione.
 
-Il flusso completo include P_{v,λ}=−m_v D_mH. La regola della catena verifica dH/dλ=0 anche per massa variabile; il vincolo nullo si propaga dal dato iniziale su un dominio convesso. L_λ=0 implica la conservazione del momento angolare. Nessuna di queste conclusioni costruisce una soluzione o ne dimostra la continuazione. Il prossimo passo è eliminare la premessa di esistenza futura globale dei vecchi `DirectionFlow`.
+Il flusso completo include P_{v,λ}=−m_v D_mH. La regola della catena verifica dH/dλ=0 anche per massa variabile; il vincolo nullo si propaga dal dato iniziale su un dominio convesso. L_λ=0 implica la conservazione del momento angolare. Queste conclusioni del blocco 2b sono seguite dalla costruzione di soluzioni locali e dalla continuazione sui compatti nel blocco 2c. Resta da eliminare la premessa di esistenza futura globale dei vecchi `DirectionFlow`.
+
+## Blocco 2c: esistenza locale e continuazione
+
+[BLOCK2_LOCAL_EXISTENCE_AND_CONTINUATION.md](BLOCK2_LOCAL_EXISTENCE_AND_CONTINUATION.md) descrive i 12 nuovi teoremi. Picard–Lindelöf costruisce una soluzione locale per massa C¹; l’unicità locale richiede solo massa continua. Per dati strettamente esterni e non radiali, si costruisce un tratto che resta nel dominio esterno.
+
+`compact_direction_continues` dimostra che una soluzione confinata in un compatto regolare dello spazio stato–massa continua oltre un estremo finito, se la massa è C¹ vicino all’estremo. Il limite finale, il nuovo tratto e la loro coincidenza prima dell’estremo vengono tutti dimostrati. Restano da derivare il confinamento dalle ipotesi geometriche, costruire gli intervalli massimali e distinguere cattura e permanenza futura esterna. La continuazione del campo coordinato può attraversare r=2m: non certifica da sola permanenza nel dominio esterno.

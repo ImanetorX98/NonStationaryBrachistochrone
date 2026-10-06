@@ -1,5 +1,9 @@
 # Blocco 2b — inversa temporale costruita e propagazione della nullità
 
+**Aggiornamento successivo:** il [blocco 2c](BLOCK2_LOCAL_EXISTENCE_AND_CONTINUATION.md)
+costruisce soluzioni locali e certifica la continuazione con incollamento sui
+compatti regolari. Questo documento conserva lo stato del checkpoint 2b.
+
 6 ottobre 2026. Questo checkpoint aggiunge 13 teoremi ai 117 del blocco 2a.
 Il progetto raggiunge 130 teoremi pubblici. Il risultato chiude due premesse
 che il checkpoint precedente aveva lasciato esplicite: l'esistenza di una
