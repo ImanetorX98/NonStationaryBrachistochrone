@@ -8,8 +8,8 @@ separate from the sources of Papers I and II.
 The Lean project is in
 [`vaidya_no_maxwell_before_pi/`](vaidya_no_maxwell_before_pi/README.md).
 Its name identifies the target theorem, **not a completed certification of that
-theorem**. The current checkpoint contains **222 verified public lemmas** and
-47 Lean source files, including the axiom audit.
+theorem**. The current checkpoint contains **234 verified public lemmas** and
+49 Lean source files, including the axiom audit.
 
 Certified components include the scalar Sturm comparison, the declared ODE
 escape/lingering lemmas, and finite-time dependence and escape stability with
@@ -36,7 +36,12 @@ The coordinate Levi-Civita connection is now derived from actual metric
 derivatives and proved torsion-free, metric-compatible and unique. Independently
 derived Hamiltonian acceleration agrees with its geodesic equation; actual
 second derivatives, nullness and future orientation hold on a constructed affine
-neighborhood, also for the maximal exterior curve. The Jacobi/curvature bridge,
+neighborhood, also for the maximal exterior curve. Differentiation of the
+geodesic equation is now verified under explicit family-derivative hypotheses.
+Connection differentiability is derived, with C² physical mass a sufficient
+condition along differentiable sampled coordinates. Angular translations give
+a concrete verified family, but do not supply the launch-vanishing screen field.
+Launch-family regularity, mixed-derivative commutation, the Jacobi/curvature bridge,
 properness, covering/fiber count and
 the final Maxwell bridge remain to be formalized. These results do not assert
 escape for every exterior launch.

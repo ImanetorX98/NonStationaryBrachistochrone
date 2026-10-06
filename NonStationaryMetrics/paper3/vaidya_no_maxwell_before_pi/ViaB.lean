@@ -43,3 +43,5 @@ import ViaB.DirectionHamiltonianLift
 import ViaB.CoordinateLeviCivita
 import ViaB.HamiltonianGeodesic
 import ViaB.DirectionGeodesicGerm
+import ViaB.GeodesicVariation
+import ViaB.ConnectionFamilyRegularity

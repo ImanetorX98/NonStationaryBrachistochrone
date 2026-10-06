@@ -306,3 +306,15 @@ in the declarations and are separately discussed in README.md. -/
 #print axioms ViaB.hamiltonian_germ_coordinate_null_geodesic
 #print axioms ViaB.direction_coordinate_null_geodesic_germ_exists
 #print axioms ViaB.maximal_exterior_coordinate_null_geodesic_germ_exists
+#print axioms ViaB.connectionQuadratic_hasDerivAt
+#print axioms ViaB.connectionVariation_torsion_free
+#print axioms ViaB.geodesic_family_acceleration_variation
+#print axioms ViaB.coordinate_jacobi_of_commuted_variation
+#print axioms ViaB.fermat_connectionQuadratic
+#print axioms ViaB.coordinate_null_geodesic_angle_shift
+#print axioms ViaB.angle_shift_family_position_derivative
+#print axioms ViaB.fermatInverseMetric_family_differentiable
+#print axioms ViaB.fermatMetricPartial_family_differentiable
+#print axioms ViaB.fermatChristoffel_family_differentiable
+#print axioms ViaB.fermatChristoffel_sampled_C2_mass_differentiable
+#print axioms ViaB.fermat_coordinate_jacobi_of_family

@@ -1,6 +1,6 @@
 # Via B: formalizzazione effettivamente compilata in Lean
 
-6 ottobre 2026, aggiornata con il blocco 2g: connessione coordinata di Levi-Civita derivata dalla metrica, unicità e passaggio dalle equazioni Hamiltoniane alle geodetiche nulle affini future. **222 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
+6 ottobre 2026, aggiornata con il blocco 2h: linearizzazione geodetica sotto ipotesi esplicite di famiglia e derivabilità della connessione con massa C². **234 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
 
 ## Ambiente e verifica
 
@@ -77,7 +77,9 @@ La verifica esegue `lake build` e `lake env lean AxiomAudit.lean`, controlla la 
 | `ViaB.CoordinateLeviCivita` | 16 | Derivate della metrica, inversa, Koszul, torsione nulla, compatibilità e unicità della connessione; contrazione esplicita. |
 | `ViaB.HamiltonianGeodesic` | 4 | Accelerazione Hamiltoniana uguale alla contrazione negativa della connessione; seconde derivate effettive e nullità della velocità. |
 | `ViaB.DirectionGeodesicGerm` | 3 | Geodetiche nulle affini future costruite dalle ODE di direzione, anche sulla curva massimale esterna. |
-| **Totale** | **222** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
+| `ViaB.GeodesicVariation` | 7 | Derivata della contrazione, linearizzazione condizionata e famiglia di traslazioni angolari. |
+| `ViaB.ConnectionFamilyRegularity` | 5 | Derivabilità dei coefficienti, condizione sufficiente di massa C² e applicazione condizionata alla variazione di Fermat. |
+| **Totale** | **234** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
 
 ### Algebra delle curvature
 
@@ -245,3 +247,12 @@ Le derivate della metrica di Fermat, anche quella temporale contenente m_v, sono
 `direction_coordinate_null_geodesic_germ_exists` costruisce il parametro affine e l’inversa e dimostra l’equazione geodetica, la nullità e l’orientazione futura su uno stesso intorno. `maximal_exterior_coordinate_null_geodesic_germ_exists` applica la costruzione a ogni evento della curva massimale esterna con massa C¹. Le seconde derivate sono conclusioni, non ipotesi.
 
 Il risultato riguarda il chart della metrica efficace di Fermat; non identifica queste curve con le geodetiche nulle della metrica fisica di Vaidya. Non istanzia ancora una connessione su una varietà astratta né dimostra completezza affine futura. Il prossimo blocco deve derivare la variazione di Jacobi, proiettarla sullo schermo e identificarne il coefficiente prima di applicare Sturm alla geometria.
+
+
+## Blocco 2h: variazione e regolarità dei coefficienti
+
+Resoconto: [BLOCK2_GEODESIC_VARIATION_AND_REGULARITY.md](BLOCK2_GEODESIC_VARIATION_AND_REGULARITY.md).
+
+La derivata della contrazione della connessione e la linearizzazione dell’equazione geodetica sono ora certificate sotto ipotesi esplicite di derivabilità della famiglia. La derivabilità dei coefficienti di Fermat è dedotta da massa, tasso e raggio campionati differenziabili; massa fisica C² e coordinate di famiglia differenziabili forniscono una condizione sufficiente. La traslazione angolare conserva le geodetiche ed è una famiglia concreta verificata.
+
+Restano da costruire la famiglia regolare dei lanci, scambiare le derivate miste e identificare il campo e la curvatura dello schermo. Il lemma condizionato non assume l’equazione linearizzata, ma richiede esplicitamente l’identificazione delle derivate di velocità e accelerazione con J′ e J″. La traslazione angolare non è il campo di confronto che si annulla al lancio. Il ponte geometrico di Jacobi e il teorema sui Maxwell restano aperti.

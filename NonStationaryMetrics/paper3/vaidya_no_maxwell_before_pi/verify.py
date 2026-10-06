@@ -109,6 +109,10 @@ report = {
     "hamiltonian_acceleration_equals_coordinate_connection_formalized": True,
     "direction_to_affine_null_coordinate_geodesic_germ_formalized": True,
     "maximal_exterior_curve_to_affine_null_coordinate_geodesic_germ_formalized": True,
+    "coordinate_geodesic_family_linearization_under_derivative_hypotheses_formalized": True,
+    "fermat_connection_family_differentiability_and_C2_mass_sufficient_condition_formalized": True,
+    "angular_translation_null_geodesic_variation_formalized": True,
+    "launch_family_differentiability_and_mixed_derivative_commutation_formalized": False,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }
