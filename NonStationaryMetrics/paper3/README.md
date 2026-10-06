@@ -66,3 +66,13 @@ axiom audit and source hashes. Downloaded dependencies and build artifacts in
 
 Continue development in this directory. The earlier copy under the ignored
 CQG audit directory is a historical checkpoint, not the canonical source.
+
+## Current analytic priority
+
+The next step is analytic: establish differentiable dependence on launch data
+for the affine phase-space geodesic system, then identify the screen curvature.
+The aim is to derive the variation equation from the flow with sufficient mass
+regularity, rather than assume a jointly C³ launch family. This route is under
+audit and is not a new Lean certification. Detailed analytic working notes
+remain in the private Paper III audit directory. The 248-theorem checkpoint
+and the remaining geometric obligations are unchanged.
