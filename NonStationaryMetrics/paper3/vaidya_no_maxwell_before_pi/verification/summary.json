@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-06T10:13:10.981925+00:00",
+  "checked_at": "2026-10-06T11:03:35.085409+00:00",
   "lean": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
-  "public_theorems_checked": 117,
+  "public_theorems_checked": 130,
   "allowed_standard_axioms": [
     "Classical.choice",
     "Quot.sound",
@@ -17,8 +17,11 @@
   "geometric_solution_continuation_formalized": false,
   "coordinate_metric_inverse_formalized": true,
   "direction_ode_from_coordinate_hamiltonian_under_supplied_reparam_formalized": true,
-  "local_time_inverse_existence_formalized": false,
+  "local_time_inverse_existence_formalized": true,
   "geometric_jacobi_curvature_identification_formalized": false,
+  "direction_ode_with_constructed_local_time_inverse_formalized": true,
+  "nonstationary_hamiltonian_null_constraint_propagation_formalized": true,
+  "angular_momentum_conservation_for_declared_hamiltonian_flow_formalized": true,
   "sha256": {
     "ViaB/AffineReparametrization.lean": "5760f0f090fa04e7e9098ee64b89833b70d603bc6d2b409c2b83dc53d4e4fa48",
     "ViaB/Algebra.lean": "21286a5a52f30dafac5c26235e93493953dbd3f62bca42db086e4721ecf68ae4",
@@ -38,20 +41,22 @@
     "ViaB/FlowDependence.lean": "f058831b0c85c1665a6031d1b4213216a36233c10ab395c26f803603f0b44a68",
     "ViaB/LastExit.lean": "b89f4a576da4e0986ada7c5e4292e98324ea33137f672799fe330fd47db4ac66",
     "ViaB/LingeringLimits.lean": "cda080361779f75d521cd40f81adefd369c7c44058fa095e769640f92941a8a7",
+    "ViaB/LocalTimeInverse.lean": "3fa3af9344f66a61cfab0109ad71057d2ac82c96ae2de6e5ab688cc2d7238aea",
     "ViaB/MetricHamiltonian.lean": "ebfe96bd0227d8c492436d8f900d86d47bcc992cc62fc8b6fe9a7cdccbba0aed",
     "ViaB/NegativeControls.lean": "037f475d11ed1cfeb0aa0d9f3b1d60d4602d5cf43c0aabe9a17272060e96b5e3",
     "ViaB/NullHamiltonianDynamics.lean": "b1aabb7b8f2c171f422176b6b050ef6651b707142a3d1dba5043aff2041d0a99",
     "ViaB/RadialConvergence.lean": "d082f8172f449faa8fb8c83e8ef2c37096e22a0563986562a708ae61e4a4cd82",
     "ViaB/Sturm.lean": "e6b5ab23e288708a3d899f5425906375fdf76f00e421148a168a14c08a9e4581",
+    "ViaB/TimeDependentHamiltonian.lean": "70f831d9472de57231cf2caa3df609d4e18e9134fab7d7ce76fdf4cb858a0888",
     "ViaB/Trace.lean": "9ba02f33dfc4f54d9845698f73feb1071d364072f0c0ada61ca83aeaecd8c783",
     "ViaB/TubeBootstrap.lean": "75518842d1f60bc8ff4cb5c65a4feadd1f6791f65b45df224538170d8bab7e3d",
     "ViaB/UnboundedEscape.lean": "fd40bbf7967cef6899eae22d384af2fa207f73fdf24ece9103a4d2e464aeab3f",
     "ViaB/Wronskian.lean": "cbae91626cc05609e9b9e40f40773a2767287400d61fe8ad145a5bcd4a93ab74",
-    "ViaB.lean": "a4f6aed864b126a053b1971cae0ed6b4a887819f39b56aa2106b4478a21b76bf",
-    "AxiomAudit.lean": "a9060d4acd9641c2de3d0645473d22ea322bd04aebb9c7829cb6827c4cd3d637",
+    "ViaB.lean": "a02282e72ea91b699ba987337c05cb87bf90ca0fd27f24c4ccf1cdf6d4da2a75",
+    "AxiomAudit.lean": "2bb5eb78b63b9974ae06b8d97b062e8142f7c9f7d12de2a47606daf640507516",
     "lakefile.toml": "9701d1d86718ca47aa26c369104e5af19e25d64b3c4032c56a51acf277d3ad28",
     "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
     "lake-manifest.json": "2ef53f06a3b36c4c5f5e1abfae569f64089c141c0a1d69fed6ffe1a33b39c005",
-    "verify.py": "2a6b8547df7fa3bf59b3a9b2b13de9e187d3b15247c9be8d38a482f34b5ef04f"
+    "verify.py": "3117a6e8f26abe287c09fd8e8c499adc99cda64be3c7270fce6017a91898ae83"
   }
 }

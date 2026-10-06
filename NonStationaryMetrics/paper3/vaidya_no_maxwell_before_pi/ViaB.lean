@@ -25,3 +25,5 @@ import ViaB.MetricHamiltonian
 import ViaB.NullHamiltonianDynamics
 import ViaB.DirectionFromHamiltonian
 import ViaB.AffineReparametrization
+import ViaB.LocalTimeInverse
+import ViaB.TimeDependentHamiltonian

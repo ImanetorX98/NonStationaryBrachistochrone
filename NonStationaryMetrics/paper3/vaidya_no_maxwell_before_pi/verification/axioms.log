@@ -238,3 +238,45 @@ ViaB.momentumAngle_dynamics {q m L t : ℝ} {r p : ℝ → ℝ} (hq : 0 < q) (hr
     (Real.sin (ViaB.momentumAngle q (r t) (p t) L) / r t *
       ViaB.directionB q (ViaB.vaidyaW q m (r t)) (Real.cos (ViaB.momentumAngle q (r t) (p t) L)))
     t
+'ViaB.local_time_inverse_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.affineTimeSpeed_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_time_inverse_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_local_direction_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.mass_along_affine_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_mass_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_time_coordinate_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_along_path_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_flow_energy_derivative_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_null_level_propagates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_angular_coordinate_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.angular_momentum_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.hamiltonian_flow_null_propagates' depends on axioms: [propext, Classical.choice, Quot.sound]
+ViaB.hamiltonian_local_direction_exists {q L a : ℝ} {v m r pv p φ : ℝ → ℝ} (hq : 0 < q) (hrpos : 0 < r a) (hL : 0 < L)
+  (hwpos : 0 < ViaB.vaidyaW q (m a) (r a)) (hm : ContinuousAt m a) (hr : ContinuousAt r a) (hpv : ContinuousAt pv a)
+  (hp : ContinuousAt p a) (htime : ∀ᶠ (x : ℝ) in nhds a, HasDerivAt v (ViaB.affineTimeSpeed q m r pv p x) x)
+  (hfuture : 0 < ViaB.affineTimeSpeed q m r pv p a)
+  (hnull : ViaB.cometricQuad q (ViaB.vaidyaW q (m a) (r a)) (r a) (pv a) (p a) L = 0)
+  (hr_affine : HasDerivAt r (pv a + (q - ViaB.vaidyaW q (m a) (r a)) * p a) a)
+  (hp_affine : HasDerivAt p (ViaB.radialMomentumAffine q (m a) (r a) (pv a) (p a) L) a)
+  (hphi_affine : HasDerivAt φ (L / r a ^ 2) a) :
+  ∃ ℓ,
+    ℓ (v a) = a ∧
+      (∀ᶠ (x : ℝ) in nhds a, ℓ (v x) = x) ∧
+        (∀ᶠ (t : ℝ) in nhds (v a), v (ℓ t) = t) ∧
+          HasDerivAt (fun t => r (ℓ t))
+              (ViaB.radialSpeed q (ViaB.vaidyaW q (m a) (r a)) (Real.cos (ViaB.momentumAngle q (r a) (p a) L))) (v a) ∧
+            HasDerivAt (fun t => ViaB.momentumAngle q (r (ℓ t)) (p (ℓ t)) L)
+                (Real.sin (ViaB.momentumAngle q (r a) (p a) L) / r a *
+                  ViaB.directionB q (ViaB.vaidyaW q (m a) (r a)) (Real.cos (ViaB.momentumAngle q (r a) (p a) L)))
+                (v a) ∧
+              HasDerivAt (fun t => φ (ℓ t))
+                (√(ViaB.vaidyaW q (m a) (r a)) / r a * Real.sin (ViaB.momentumAngle q (r a) (p a) L)) (v a)
+ViaB.hamiltonian_flow_null_propagates {q a b : ℝ} {s : Set ℝ} {M r pv p L μ : ℝ → ℝ} (hs : Convex ℝ s) (ha : a ∈ s)
+  (hb : b ∈ s) (hr0 : ∀ x ∈ s, r x ≠ 0) (hw0 : ∀ x ∈ s, ViaB.vaidyaW q (M x) (r x) ≠ 0)
+  (hm : ∀ x ∈ s, HasDerivAt M (μ x * (-pv x / ViaB.vaidyaW q (M x) (r x) + p x)) x)
+  (hr : ∀ x ∈ s, HasDerivAt r (pv x + (q - ViaB.vaidyaW q (M x) (r x)) * p x) x)
+  (hpv : ∀ x ∈ s, HasDerivAt pv (-μ x * ViaB.massHamiltonianGradient q (M x) (r x) (pv x) (p x)) x)
+  (hp : ∀ x ∈ s, HasDerivAt p (ViaB.radialMomentumAffine q (M x) (r x) (pv x) (p x) (L x)) x)
+  (hL : ∀ x ∈ s, HasDerivAt L 0 x)
+  (hnull : ViaB.cometricQuad q (ViaB.vaidyaW q (M a) (r a)) (r a) (pv a) (p a) (L a) = 0) :
+  ViaB.cometricQuad q (ViaB.vaidyaW q (M b) (r b)) (r b) (pv b) (p b) (L b) = 0

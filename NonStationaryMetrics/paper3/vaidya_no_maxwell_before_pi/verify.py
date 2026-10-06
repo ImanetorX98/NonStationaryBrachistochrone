@@ -80,8 +80,11 @@ report = {
     "geometric_solution_continuation_formalized": False,
     "coordinate_metric_inverse_formalized": True,
     "direction_ode_from_coordinate_hamiltonian_under_supplied_reparam_formalized": True,
-    "local_time_inverse_existence_formalized": False,
+    "local_time_inverse_existence_formalized": True,
     "geometric_jacobi_curvature_identification_formalized": False,
+    "direction_ode_with_constructed_local_time_inverse_formalized": True,
+    "nonstationary_hamiltonian_null_constraint_propagation_formalized": True,
+    "angular_momentum_conservation_for_declared_hamiltonian_flow_formalized": True,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }

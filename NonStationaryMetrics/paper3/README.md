@@ -8,16 +8,17 @@ separate from the sources of Papers I and II.
 The Lean project is in
 [`vaidya_no_maxwell_before_pi/`](vaidya_no_maxwell_before_pi/README.md).
 Its name identifies the target theorem, **not a completed certification of that
-theorem**. The current checkpoint contains **117 verified public lemmas** and
-29 Lean source files, including the axiom audit.
+theorem**. The current checkpoint contains **130 verified public lemmas** and
+31 Lean source files, including the axiom audit.
 
 Certified components include the scalar Sturm comparison, the declared ODE
 escape/lingering lemmas, and finite-time dependence and escape stability with
 the uniform Lipschitz bound derived from a compact regular reference. The
-coordinate metric inverse and direction ODE from the null Hamiltonian under a
-supplied differentiable reparametrization are now certified. The remaining
-geometric identification, inverse-time existence/continuation, properness, covering/fiber
-count and final Maxwell bridge remain to be formalized.
+coordinate metric inverse, direction ODE with a constructed local time inverse,
+propagation of the null constraint and angular-momentum conservation for the
+declared nonstationary Hamiltonian flow are now certified. Geometric
+identification, solution existence/continuation, properness, covering/fiber count
+and the final Maxwell bridge remain to be formalized.
 
 Lean **4.24.0** and mathlib **v4.24.0** are pinned by the toolchain and dependency
 manifest. From the project directory, after installing the pinned toolchain:

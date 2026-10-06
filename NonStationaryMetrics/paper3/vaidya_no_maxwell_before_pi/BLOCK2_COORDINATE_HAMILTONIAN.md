@@ -1,5 +1,10 @@
 # Blocco 2a — dalla metrica coordinata all'equazione di direzione
 
+**Aggiornamento successivo:** il [blocco 2b](BLOCK2_LOCAL_TIME_AND_NULL_PROPAGATION.md)
+costruisce l’inversa temporale locale e certifica propagazione della nullità e
+conservazione di L per il flusso Hamiltoniano dichiarato. Questo documento
+conserva la descrizione del checkpoint 2a e dei suoi limiti originari.
+
 6 ottobre 2026. Questo documento registra 29 nuovi teoremi Lean, che portano il
 progetto a 117 teoremi pubblici. Il blocco 2 è **parzialmente completato**:
 è verificata la derivazione coordinata del sistema di direzione, sotto una

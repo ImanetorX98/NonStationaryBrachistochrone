@@ -151,3 +151,23 @@ in the declarations and are separately discussed in README.md. -/
 
 #check ViaB.affine_hamiltonian_to_direction
 #check ViaB.momentumAngle_dynamics
+
+-- LocalTimeInverse
+#print axioms ViaB.local_time_inverse_exists
+#print axioms ViaB.affineTimeSpeed_continuousAt
+#print axioms ViaB.hamiltonian_time_inverse_exists
+#print axioms ViaB.hamiltonian_local_direction_exists
+
+-- TimeDependentHamiltonian
+#print axioms ViaB.mass_along_affine_derivative
+#print axioms ViaB.hamiltonian_mass_derivative
+#print axioms ViaB.hamiltonian_time_coordinate_derivative
+#print axioms ViaB.hamiltonian_along_path_derivative
+#print axioms ViaB.hamiltonian_flow_energy_derivative_zero
+#print axioms ViaB.hamiltonian_null_level_propagates
+#print axioms ViaB.hamiltonian_angular_coordinate_derivative
+#print axioms ViaB.angular_momentum_constant
+#print axioms ViaB.hamiltonian_flow_null_propagates
+
+#check ViaB.hamiltonian_local_direction_exists
+#check ViaB.hamiltonian_flow_null_propagates
