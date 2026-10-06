@@ -35,6 +35,18 @@ PRD) is retained as the reference version.
   Thakurta–Kerr. Its control-theory foundations are cited from Paper I.
   Zenodo preprint: [10.5281/zenodo.21740000](https://doi.org/10.5281/zenodo.21740000).
 
+### Paper III — Lean formalization in progress
+
+The formal verification developments for the follow-up paper are now tracked in
+[`paper3/`](paper3/README.md). The project
+[`paper3/vaidya_no_maxwell_before_pi/`](paper3/vaidya_no_maxwell_before_pi/README.md)
+contains 88 verified public lemmas towards the Vaidya via-B exclusion of Maxwell
+points before π, with Lean 4.24.0/mathlib v4.24.0 pinned, an axiom audit and
+reproducible verification logs. **The full geometric theorem is not yet
+formalized.** This checkpoint publishes the formal proof sources; the private
+referee correspondence and other deferred working notes remain outside the
+archive.
+
 ### Which scripts belong to which paper
 
 | Paper | Directories / representative scripts |

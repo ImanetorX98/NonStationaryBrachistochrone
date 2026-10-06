@@ -1,0 +1,5 @@
+.lake/
+__pycache__/
+# Preserve the checked verification evidence despite the root *.log rule.
+!verification/build.log
+!verification/axioms.log

@@ -1,0 +1,187 @@
+'ViaB.curvaturePolynomial_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.screenGap_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionB_at_horizon' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionB_at_infinity_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.wronskian_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.ratio_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.wronskian_strictMonoOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.ratio_deriv_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.derivative_nonpos_at_first_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.no_first_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.positive_right_of_positive_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.exists_first_zero_of_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.sturm_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.sturm_positive_at_reference_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.trace_tangent_nondegenerate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.covering_fiberCount_locallyConstant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.covering_injective_of_one_fiber' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.curvaturePolynomial_negative_below_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.screenGap_negative_below_threshold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.screenGap_radial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionB_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionB_le_at_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionB_uniform_far' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionB_large_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.radialSpeed_at_infinity_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.radialSpeed_le_charge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.radialSpeed_uniform_far' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.increment_ge_of_derivative_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.increment_le_of_derivative_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.positive_right_of_positive_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.positive_pair_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.excursion_log_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.outgoing_cone_margins' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.outgoing_cone_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.outgoing_cone_linear_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.radial_growth_tendsto_atTop' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.outgoing_cone_escape' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.no_zero_limit_of_positive_nondecreasing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.no_radial_horizon_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.positive_future_incompatible_with_negative_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.no_incoming_direction_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.outward_direction_lt_pi_div_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.large_excursion_enters_angular_cone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.exists_last_exit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.derivative_nonneg_at_right_exit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.strict_cone_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.cone_escape_from_nonstrict_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.exists_outgoing_cone_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.unbounded_radius_escapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.bounded_nondecreasing_primitive_converges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.decay_from_convergent_primitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.decay_from_bounded_primitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionBound_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionB_abs_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.bounded_exterior_finite_angle_sine_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.sine_decay_forces_radial_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.bounded_exterior_finite_angle_outgoing_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.angular_speed_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.radialSpeed_lower_near_outgoing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.bounded_radius_converges_from_outgoing_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.bounded_monotone_future_converges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.derivative_limit_zero_on_bounded_positive_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.zero_outgoing_speed_forces_charge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.no_bounded_exterior_finite_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.bounded_exterior_flow_angle_diverges' depends on axioms: [propext, Classical.choice, Quot.sound]
+ViaB.sturm_positive {u du z dz kperp kpar : ℝ → ℝ} {a b : ℝ} (hab : a < b)
+  (hu : ∀ x ∈ Set.Icc a b, HasDerivAt u (du x) x) (hz : ∀ x ∈ Set.Icc a b, HasDerivAt z (dz x) x)
+  (hdu : ∀ x ∈ Set.Icc a b, HasDerivAt du (-kperp x * u x) x) (hdz : ∀ x ∈ Set.Icc a b, HasDerivAt dz (-kpar x * z x) x)
+  (hgap : ∀ x ∈ Set.Ioo a b, 0 < kperp x - kpar x) (hupos : ∀ x ∈ Set.Ioc a b, 0 < u x) (hua : u a = 0) (hza : z a = 0)
+  (hdza : 0 < dz a) (x : ℝ) : x ∈ Set.Ioc a b → 0 < z x
+ViaB.sturm_positive_at_reference_zero {u du z dz kperp kpar : ℝ → ℝ} {a b : ℝ} (hab : a < b)
+  (hu : ∀ x ∈ Set.Icc a b, HasDerivAt u (du x) x) (hz : ∀ x ∈ Set.Icc a b, HasDerivAt z (dz x) x)
+  (hdu : ∀ x ∈ Set.Icc a b, HasDerivAt du (-kperp x * u x) x) (hdz : ∀ x ∈ Set.Icc a b, HasDerivAt dz (-kpar x * z x) x)
+  (hgap : ∀ x ∈ Set.Ioo a b, 0 < kperp x - kpar x) (hupos : ∀ x ∈ Set.Ioo a b, 0 < u x) (hua : u a = 0) (hza : z a = 0)
+  (hdza : 0 < dz a) (hub : u b = 0) (hdub : du b < 0) : 0 < z b
+ViaB.covering_injective_of_one_fiber.{u_1, u_2} {E : Type u_1} {X : Type u_2} [TopologicalSpace E] [TopologicalSpace X]
+  [PreconnectedSpace X] {f : E → X} (hf : IsCoveringMap f) {x₀ : X} (hone : ViaB.fiberCount f x₀ = 1) :
+  Function.Injective f
+ViaB.outgoing_cone_escape {q M a β : ℝ} (flow : ViaB.DirectionFlow q M a) (hq : 1 < q) (hM : 0 < M)
+  (hβ : 0 < β ∧ β < Real.pi / 2) (hcone : q - 1 < q * Real.cos β ^ 2) :
+  ∃ R > 2 * M,
+    R < flow.radius a →
+      flow.angle a < β →
+        (∀ t ≥ a, R < flow.radius t ∧ flow.angle t < β) ∧ Filter.Tendsto flow.radius Filter.atTop Filter.atTop
+ViaB.large_excursion_enters_angular_cone {q M a b β R κ : ℝ} (flow : ViaB.DirectionFlow q M a) (hq : 1 < q)
+  (hab : a ≤ b) (hR : 2 * M < R) (hκ : 0 < κ) (hβ : 0 < β ∧ β < Real.pi / 2)
+  (hB : ∀ (r m c : ℝ), R ≤ r → 0 ≤ m → m ≤ M → c ≤ 1 → ViaB.directionB q (q - 1 + 2 * m / r) c ≤ -κ)
+  (hrR : ∀ t ∈ Set.Icc a b, R ≤ flow.radius t)
+  (hout : 0 ≤ ViaB.radialSpeed q (q - 1 + 2 * flow.mass a / flow.radius a) (Real.cos (flow.angle a)))
+  (hlarge : q * Real.pi < κ * Real.sin β * (Real.log (flow.radius b) - Real.log (flow.radius a))) :
+  ∃ t ∈ Set.Icc a b, flow.angle t < β
+ViaB.no_radial_horizon_limit {r w α : ℝ → ℝ} {q a : ℝ} (hq : 0 < q) (hr : ∀ t ≥ a, 0 < r t)
+  (hα : ∀ t ≥ a, 0 < α t ∧ α t < Real.pi)
+  (hode : ∀ t ≥ a, HasDerivAt α (Real.sin (α t) / r t * ViaB.directionB q (w t) (Real.cos (α t))) t)
+  (hw : Filter.Tendsto w Filter.atTop (nhds q)) : ¬Filter.Tendsto α Filter.atTop (nhds 0)
+ViaB.no_incoming_direction_limit {r w α : ℝ → ℝ} {q a : ℝ} (hq : 1 < q) (hr : ∀ t ≥ a, 0 < r t)
+  (hw : ∀ t ≥ a, q - 1 ≤ w t) (hode : ∀ t ≥ a, HasDerivAt r (ViaB.radialSpeed q (w t) (Real.cos (α t))) t) :
+  ¬Filter.Tendsto α Filter.atTop (nhds Real.pi)
+ViaB.unbounded_radius_escapes {q M a : ℝ} (flow : ViaB.DirectionFlow q M a) (hq : 1 < q) (hM : 0 < M)
+  (hunbounded : ∀ (K : ℝ), ∃ t ≥ a, K < flow.radius t) : Filter.Tendsto flow.radius Filter.atTop Filter.atTop
+ViaB.bounded_exterior_flow_angle_diverges {q M a R : ℝ} (flow : ViaB.DirectionFlow q M a) (φ : ℝ → ℝ) (hq : 1 < q)
+  (hmpositive : 0 < flow.mass a) (hrupper : ∀ t ≥ a, flow.radius t ≤ R)
+  (hexterior : ∀ t ≥ a, 2 * flow.mass t ≤ flow.radius t) (hmmono : MonotoneOn flow.mass (Set.Ici a))
+  (hφode :
+    ∀ t ≥ a, HasDerivAt φ (√(q - 1 + 2 * flow.mass t / flow.radius t) / flow.radius t * Real.sin (flow.angle t)) t) :
+  Filter.Tendsto φ Filter.atTop Filter.atTop
+'ViaB.unbounded_radius_strict_cone_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.cone_entry_stable_in_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.escaping_set_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionField_contDiffAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionField_locally_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.trajectory_gap_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.trajectory_eval_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionFlow_state_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionFlow_eval_continuousAt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.cone_escape_stable_from_initial_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.finite_angle_exterior_escapes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.exterior_escape_or_angle_diverges' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.trajectory_stays_in_tube' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.trajectory_eval_continuousAt_of_local_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.cone_escape_stable_of_local_field_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ViaB.cone_escape_stable_of_local_field_bound.{u_1} {P : Type u_1} [TopologicalSpace P] {q M a s β R κ δ ε : ℝ}
+  (flows : P → ViaB.DirectionFlow q M a) (p : P) (has : a ≤ s) (hβ : 0 < β ∧ β < Real.pi / 2) (hκ : 0 < κ) (hδ : 0 < δ)
+  (hmargins :
+    ∀ (r m c : ℝ),
+      R ≤ r →
+        0 ≤ m →
+          m ≤ M →
+            (c ≤ 1 → ViaB.directionB q (q - 1 + 2 * m / r) c ≤ -κ) ∧
+              (Real.cos β ≤ c → δ ≤ ViaB.radialSpeed q (q - 1 + 2 * m / r) c))
+  (hrp : R < (flows p).radius s) (hαp : (flows p).angle s < β) (m : ℝ → ℝ) (K : ℝ) (hK : 0 ≤ K) (hε : 0 < ε)
+  (hm : ∀ (x : P), ∀ t ∈ Set.Icc a s, (flows x).mass t = m t)
+  (hfield :
+    ∀ t ∈ Set.Ico a s,
+      ∀ (y : ℝ × ℝ),
+        dist y ((flows p).radius t, (flows p).angle t) ≤ ε →
+          dist (ViaB.directionField q (m t) y) (ViaB.directionField q (m t) ((flows p).radius t, (flows p).angle t)) ≤
+            K * dist y ((flows p).radius t, (flows p).angle t))
+  (hinitial : ContinuousAt (fun x => ((flows x).radius a, (flows x).angle a)) p) :
+  ∀ᶠ (x : P) in nhds p,
+    (∀ t ≥ s, δ * (t - s) ≤ (flows x).radius t - (flows x).radius s) ∧
+      Filter.Tendsto (flows x).radius Filter.atTop Filter.atTop
+ViaB.finite_angle_exterior_escapes {q M a U : ℝ} (flow : ViaB.DirectionFlow q M a) (φ : ℝ → ℝ) (hq : 1 < q) (hM : 0 < M)
+  (hmpositive : 0 < flow.mass a) (hexterior : ∀ t ≥ a, 2 * flow.mass t ≤ flow.radius t)
+  (hmmono : MonotoneOn flow.mass (Set.Ici a))
+  (hφode :
+    ∀ t ≥ a, HasDerivAt φ (√(q - 1 + 2 * flow.mass t / flow.radius t) / flow.radius t * Real.sin (flow.angle t)) t)
+  (hφupper : ∀ t ≥ a, φ t ≤ U) : Filter.Tendsto flow.radius Filter.atTop Filter.atTop
+'ViaB.finite_positive_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.compact_uniform_local_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.finite_reference_uniform_field_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionFlow_uniform_field_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionFlow_finite_time_dependence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionFlow_eval_continuousAt_from_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.cone_escape_stable_from_regular_reference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.escaping_set_isOpen_from_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+ViaB.finite_reference_uniform_field_bound {q a b : ℝ} (x : ℝ → ℝ × ℝ) (m : ℝ → ℝ) (hq : 1 < q)
+  (hxcont : ContinuousOn x (Set.Icc a b)) (hmcont : ContinuousOn m (Set.Icc a b)) (hr : ∀ t ∈ Set.Icc a b, 0 < (x t).1)
+  (hm : ∀ t ∈ Set.Icc a b, 0 ≤ m t) :
+  ∃ K,
+    ∃ ε > 0,
+      ∀ t ∈ Set.Icc a b,
+        ∀ (y : ℝ × ℝ),
+          dist y (x t) ≤ ε →
+            dist (ViaB.directionField q (m t) y) (ViaB.directionField q (m t) (x t)) ≤ ↑K * dist y (x t)
+ViaB.cone_escape_stable_from_regular_reference.{u_1} {P : Type u_1} [TopologicalSpace P] {q M a s β R κ δ : ℝ}
+  (flows : P → ViaB.DirectionFlow q M a) (p : P) (hq : 1 < q) (has : a ≤ s) (hβ : 0 < β ∧ β < Real.pi / 2) (hκ : 0 < κ)
+  (hδ : 0 < δ)
+  (hmargins :
+    ∀ (r m c : ℝ),
+      R ≤ r →
+        0 ≤ m →
+          m ≤ M →
+            (c ≤ 1 → ViaB.directionB q (q - 1 + 2 * m / r) c ≤ -κ) ∧
+              (Real.cos β ≤ c → δ ≤ ViaB.radialSpeed q (q - 1 + 2 * m / r) c))
+  (hrp : R < (flows p).radius s) (hαp : (flows p).angle s < β) (hmcont : ContinuousOn (flows p).mass (Set.Icc a s))
+  (hshared : ∀ (x : P), ∀ t ∈ Set.Icc a s, (flows x).mass t = (flows p).mass t)
+  (hinitial : ContinuousAt (fun x => ((flows x).radius a, (flows x).angle a)) p) :
+  ∀ᶠ (x : P) in nhds p,
+    (∀ t ≥ s, δ * (t - s) ≤ (flows x).radius t - (flows x).radius s) ∧
+      Filter.Tendsto (flows x).radius Filter.atTop Filter.atTop
+ViaB.escaping_set_isOpen_from_initial.{u_1} {P : Type u_1} [TopologicalSpace P] {q M a : ℝ}
+  (flows : P → ViaB.DirectionFlow q M a) (hq : 1 < q) (hM : 0 < M)
+  (hmcont : ∀ (p : P) (b : ℝ), a ≤ b → ContinuousOn (flows p).mass (Set.Icc a b))
+  (hshared : ∀ (x p : P) (t : ℝ), a ≤ t → (flows x).mass t = (flows p).mass t)
+  (hinitial : Continuous fun x => ((flows x).radius a, (flows x).angle a)) :
+  IsOpen {p | Filter.Tendsto (flows p).radius Filter.atTop Filter.atTop}
