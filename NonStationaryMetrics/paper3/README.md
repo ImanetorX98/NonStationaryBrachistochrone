@@ -8,8 +8,8 @@ separate from the sources of Papers I and II.
 The Lean project is in
 [`vaidya_no_maxwell_before_pi/`](vaidya_no_maxwell_before_pi/README.md).
 Its name identifies the target theorem, **not a completed certification of that
-theorem**. The current checkpoint contains **179 verified public lemmas** and
-40 Lean source files, including the axiom audit.
+theorem**. The current checkpoint contains **199 verified public lemmas** and
+44 Lean source files, including the axiom audit.
 
 Certified components include the scalar Sturm comparison, the declared ODE
 escape/lingering lemmas, and finite-time dependence and escape stability with
@@ -27,7 +27,12 @@ compatible local extensions. A finite maximal endpoint must be capture; strict
 outgoing-cone entry instead produces a future-global DirectionFlow and radial
 escape, without assuming global existence. The cone launch theorem also
 constructs its initial local segment and cone margins internally.
-Geometric identification/reconstruction, properness, covering/fiber count and
+The converse coordinate bridge is now verified: the direction solution
+constructs its future-null momenta, angular primitive, affine clock and inverse,
+and satisfies all affine Hamiltonian equations on a neighborhood. This also
+applies to the constructed maximal exterior curve. The mass-rate time force is
+derived rather than assumed; future affine completeness is not asserted.
+The Levi-Civita/Jacobi identification, properness, covering/fiber count and
 the final Maxwell bridge remain to be formalized. These results do not assert
 escape for every exterior launch.
 

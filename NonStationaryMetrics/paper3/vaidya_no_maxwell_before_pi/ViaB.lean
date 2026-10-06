@@ -36,3 +36,7 @@ import ViaB.IntervalUniqueness
 import ViaB.MaximalExteriorConstruction
 import ViaB.MaximalExteriorCapture
 import ViaB.MaximalConeEscape
+import ViaB.DirectionMomentumReconstruction
+import ViaB.ReconstructedTimeMomentum
+import ViaB.ConstructedAffineClock
+import ViaB.DirectionHamiltonianLift

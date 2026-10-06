@@ -249,3 +249,31 @@ in the declarations and are separately discussed in README.md. -/
 #print axioms ViaB.maximal_directionFlow_of_unbounded_endpoints
 #print axioms ViaB.directionFlow_exists_and_escapes_after_cone_entry
 #print axioms ViaB.directionFlow_exists_from_strict_cone_launch
+
+-- DirectionMomentumReconstruction
+#print axioms ViaB.reconstructed_nullAmplitude
+#print axioms ViaB.reconstructed_direction
+#print axioms ViaB.reconstructed_future_null
+#print axioms ViaB.reconstructed_time_speed_identity
+#print axioms ViaB.reconstructed_radial_momentum_hasDerivAt
+#print axioms ViaB.reconstructed_radial_momentum_dynamics
+#print axioms ViaB.reconstructed_normalized_hamiltonian_identities
+
+-- ReconstructedTimeMomentum
+#print axioms ViaB.time_momentum_force_from_null_radial_equations
+#print axioms ViaB.reconstructedPv_differentiableAt
+#print axioms ViaB.reconstructed_time_momentum_dynamics
+
+-- ConstructedAffineClock
+#print axioms ViaB.continuous_interval_primitive_exists
+#print axioms ViaB.local_inverse_derivative_on_neighborhood
+#print axioms ViaB.positive_clock_with_inverse_exists
+#print axioms ViaB.directionAffineClockRate_pos
+#print axioms ViaB.directionAffineClockRate_continuousAt
+#print axioms ViaB.direction_affine_clock_exists
+
+-- DirectionHamiltonianLift
+#print axioms ViaB.direction_angular_primitive_exists
+#print axioms ViaB.direction_to_affine_hamiltonian_at
+#print axioms ViaB.direction_affine_hamiltonian_germ_exists
+#print axioms ViaB.maximal_exterior_affine_hamiltonian_germ_exists

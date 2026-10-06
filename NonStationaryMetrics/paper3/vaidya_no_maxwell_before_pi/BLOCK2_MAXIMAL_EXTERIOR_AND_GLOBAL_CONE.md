@@ -167,8 +167,9 @@ La revisione della catena ha verificato anche questi punti:
   nel teorema finale per lanci stretti;
 - il confronto con il bordo usa m(b_*) ≤ M anche all’estremo finale.
 
-Resta da formalizzare la ricostruzione geometrica completa delle soluzioni
-coordinate, l’identificazione dei campi di Jacobi e delle curvature,
+Il successivo [blocco 2f](BLOCK2_DIRECTION_TO_AFFINE_HAMILTONIAN.md)
+ricostruisce dalle soluzioni coordinate il flusso Hamiltoniano nullo affine
+locale. Restano l’identificazione tramite connessione e campi di Jacobi,
 la properness della mappa di arrivo, il rivestimento/conteggio delle fibre
 e il passaggio conclusivo all’esclusione dei Maxwell. Questi 19 teoremi
 non certificano tali collegamenti e non provano che ogni lancio esterno

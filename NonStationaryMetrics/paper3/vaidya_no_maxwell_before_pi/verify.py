@@ -100,6 +100,11 @@ report = {
     "finite_maximal_exterior_endpoint_capture_formalized": True,
     "coordinate_global_future_direction_flow_after_strict_cone_entry_formalized": True,
     "coordinate_strict_cone_launch_global_existence_with_constructed_seed_and_margins_formalized": True,
+    "direction_to_future_null_covector_reconstruction_formalized": True,
+    "reconstructed_radial_and_nonstationary_time_momentum_equations_formalized": True,
+    "constructed_affine_clock_and_inverse_ode_on_neighborhood_formalized": True,
+    "direction_to_full_affine_null_hamiltonian_germ_formalized": True,
+    "maximal_exterior_curve_to_affine_null_hamiltonian_germ_formalized": True,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }

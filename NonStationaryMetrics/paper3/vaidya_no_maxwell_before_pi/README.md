@@ -1,6 +1,6 @@
 # Via B: formalizzazione effettivamente compilata in Lean
 
-6 ottobre 2026, aggiornata con il blocco 2e: unicità su intervalli, costruzione della soluzione massimale esterna, cattura all’estremo finito ed esistenza futura globale dopo ingresso stretto nel cono uscente. **179 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
+6 ottobre 2026, aggiornata con il blocco 2f: ricostruzione dei momenti dalla direzione, forza temporale non stazionaria, parametro affine e inversa costruiti, tutte le equazioni Hamiltoniane locali. **199 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
 
 ## Ambiente e verifica
 
@@ -70,7 +70,11 @@ La verifica esegue `lake build` e `lake env lean AxiomAudit.lean`, controlla la 
 | `ViaB.MaximalExteriorConstruction` | 11 | Soluzione massimale costruita dall’unione di tutti i segmenti ammissibili; dominio finito o illimitato. |
 | `ViaB.MaximalExteriorCapture` | 1 | Un estremo massimale finito è necessariamente di cattura, per massa regolare non decrescente. |
 | `ViaB.MaximalConeEscape` | 5 | Barriera finita senza flusso globale assunto; ingresso nel cono implica esistenza futura e fuga; teorema completo per lanci nel cono. |
-| **Totale** | **179** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
+| `ViaB.DirectionMomentumReconstruction` | 7 | Ricostruzione del covettore nullo futuro e dell’equazione radiale senza invertire r_v. |
+| `ViaB.ReconstructedTimeMomentum` | 3 | Derivazione della forza temporale per massa variabile dal vincolo nullo algebrico e dalle equazioni radiali. |
+| `ViaB.ConstructedAffineClock` | 6 | Primitiva della velocità affine, inversa locale e sua equazione su un intero intorno. |
+| `ViaB.DirectionHamiltonianLift` | 4 | Primitiva angolare e tutte le equazioni Hamiltoniane affini locali; applicazione alla curva massimale. |
+| **Totale** | **199** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
 
 ### Algebra delle curvature
 
@@ -217,4 +221,13 @@ All’estremo finito il prolungamento ha r(b)≥2m(b) e angolo strettamente non 
 
 La barriera del cono uscente viene dimostrata sui soli intervalli finiti già esistenti. Un ingresso stretto nel cono impedisce quindi un estremo finito di cattura: il dominio è futuro illimitato, si costruisce il `DirectionFlow` e si deducono crescita radiale almeno lineare e fuga. `directionFlow_exists_from_strict_cone_launch` costruisce internamente sia il primo segmento sia i margini del cono, da massa C¹ positiva al lancio, non decrescente e limitata superiormente, q>1 e un lancio nel cono appropriato.
 
-Non si conclude che ogni lancio esterno entri nel cono o sfugga. La ricostruzione geometrica completa dalle soluzioni coordinate, l’identificazione di Jacobi, la properness e il conteggio delle fibre restano da formalizzare. La soglia q≥3/2 del confronto di curvatura è distinta dall’ipotesi q>1 usata qui.
+Non si conclude che ogni lancio esterno entri nel cono o sfugga. Il blocco 2f successivo ricostruisce dalle soluzioni coordinate il flusso Hamiltoniano nullo affine locale della metrica di Fermat. L’identificazione tramite connessione e Jacobi, la properness e il conteggio delle fibre restano da formalizzare. La soglia q≥3/2 del confronto di curvatura è distinta dall’ipotesi q>1 usata qui.
+
+
+## Blocco 2f: ricostruzione Hamiltoniana affine dalla direzione
+
+[BLOCK2_DIRECTION_TO_AFFINE_HAMILTONIAN.md](BLOCK2_DIRECTION_TO_AFFINE_HAMILTONIAN.md) documenta 20 nuovi teoremi. Per una normalizzazione L>0 e 0<α<π, si ricostruiscono P_r e P_v, si verifica il covettore nullo futuro e si derivano entrambe le equazioni dei momenti, inclusa la forza temporale proporzionale a m_v. La prova di quest’ultima usa la nullità algebrica della ricostruzione, senza assumere l’equazione che si vuole dimostrare.
+
+Si costruiscono la primitiva angolare φ, il parametro affine e una vera inversa locale con derivata su un intero intorno. `direction_affine_hamiltonian_germ_exists` conclude tutte le equazioni Hamiltoniane affini, il vincolo nullo e l’orientazione futura nello stesso intorno. `maximal_exterior_affine_hamiltonian_germ_exists` applica il risultato alla soluzione massimale esterna, deducendo internamente ODE, r>0 e striscia angolare.
+
+È un risultato locale per la metrica di Fermat coordinata già definita. Non è una prova di completezza affine futura, né l’identificazione con una connessione di Levi-Civita e con i campi di Jacobi in Lean. Questi collegamenti e la properness della mappa di arrivo restano aperti; il teorema geometrico sui Maxwell non è ancora certificato.
