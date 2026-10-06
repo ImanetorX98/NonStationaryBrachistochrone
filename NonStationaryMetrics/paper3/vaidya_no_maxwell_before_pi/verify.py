@@ -95,6 +95,11 @@ report = {
     "finite_exterior_endpoint_capture_or_continuation_formalized": True,
     "nonradial_capture_transversality_under_nonnegative_mass_rate_formalized": True,
     "finite_exterior_coordinate_continuation_preserves_launch_formalized": True,
+    "direction_interval_uniqueness_under_continuous_mass_formalized": True,
+    "maximal_exterior_coordinate_solution_constructed_formalized": True,
+    "finite_maximal_exterior_endpoint_capture_formalized": True,
+    "coordinate_global_future_direction_flow_after_strict_cone_entry_formalized": True,
+    "coordinate_strict_cone_launch_global_existence_with_constructed_seed_and_margins_formalized": True,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }

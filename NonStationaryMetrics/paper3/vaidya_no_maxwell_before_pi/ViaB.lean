@@ -32,3 +32,7 @@ import ViaB.FiniteEndpointLimit
 import ViaB.RegularEndpointContinuation
 import ViaB.ExteriorFiniteTube
 import ViaB.AngularFiniteInvariance
+import ViaB.IntervalUniqueness
+import ViaB.MaximalExteriorConstruction
+import ViaB.MaximalExteriorCapture
+import ViaB.MaximalConeEscape

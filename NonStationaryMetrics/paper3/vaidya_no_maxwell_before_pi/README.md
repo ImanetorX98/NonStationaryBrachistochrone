@@ -1,6 +1,6 @@
 # Via B: formalizzazione effettivamente compilata in Lean
 
-6 ottobre 2026, aggiornata con il blocco 2d: confinamento esterno dedotto a priori, permanenza non radiale dall’angolo iniziale, alternativa cattura/prolungamento e conservazione del dato al lancio. **160 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
+6 ottobre 2026, aggiornata con il blocco 2e: unicità su intervalli, costruzione della soluzione massimale esterna, cattura all’estremo finito ed esistenza futura globale dopo ingresso stretto nel cono uscente. **179 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
 
 ## Ambiente e verifica
 
@@ -66,7 +66,11 @@ La verifica esegue `lake build` e `lake env lean AxiomAudit.lean`, controlla la 
 | `ViaB.RegularEndpointContinuation` | 3 | Derivata sinistra al bordo, coincidenza all’indietro e prolungamento effettivo dell’ODE sui compatti regolari. |
 | `ViaB.ExteriorFiniteTube` | 7 | Limiti finiti di r e m, compatto regolare derivato dall’evoluzione esterna e continuazione. |
 | `ViaB.AngularFiniteInvariance` | 11 | Striscia non radiale dal dato iniziale; controllo del bordo finale, cattura trasversale, alternativa esterna e raccordo al lancio. |
-| **Totale** | **160** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
+| `ViaB.IntervalUniqueness` | 2 | Unicità sull’intero dominio temporale aperto connesso e sull’intervallo comune. |
+| `ViaB.MaximalExteriorConstruction` | 11 | Soluzione massimale costruita dall’unione di tutti i segmenti ammissibili; dominio finito o illimitato. |
+| `ViaB.MaximalExteriorCapture` | 1 | Un estremo massimale finito è necessariamente di cattura, per massa regolare non decrescente. |
+| `ViaB.MaximalConeEscape` | 5 | Barriera finita senza flusso globale assunto; ingresso nel cono implica esistenza futura e fuga; teorema completo per lanci nel cono. |
+| **Totale** | **179** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
 
 ### Algebra delle curvature
 
@@ -186,22 +190,31 @@ Il campo `directionField q m (r,α)` è formalmente C¹ e localmente Lipschitz, 
 
 I 29 nuovi teoremi sono descritti in [BLOCK2_COORDINATE_HAMILTONIAN.md](BLOCK2_COORDINATE_HAMILTONIAN.md). La nullità futura seleziona il ramo dei momenti e consente di ricostruire α tramite arccos. La regola della catena deduce l’ODE angolare senza assumerla e senza dividere per il momento radiale o per cos α. La massa è il valore istantaneo m(v); non si assume la conservazione di P_v.
 
-Il teorema composto del blocco 2a prende le equazioni Hamiltoniane affini, L>0, la nullità all’evento e la derivata di una riparametrizzazione; conclude le ODE in v. Il blocco 2b successivo costruisce l’inversa locale e dimostra la conservazione di L e la propagazione della nullità, per soluzioni Hamiltoniane esistenti. Il blocco 2c successivo costruisce soluzioni locali e dimostra continuazione sui compatti regolari. L’esistenza futura globale e i collegamenti di Jacobi restano aperti: il blocco 2 completo e il teorema geometrico non sono ancora certificati.
+Il teorema composto del blocco 2a prende le equazioni Hamiltoniane affini, L>0, la nullità all’evento e la derivata di una riparametrizzazione; conclude le ODE in v. Il blocco 2b successivo costruisce l’inversa locale e dimostra la conservazione di L e la propagazione della nullità, per soluzioni Hamiltoniane esistenti. Il blocco 2c successivo costruisce soluzioni locali e dimostra continuazione sui compatti regolari. L’esistenza futura dopo ingresso stretto nel cono è ora costruita per il sistema coordinato nel blocco 2e. I collegamenti geometrici e di Jacobi restano aperti: il blocco 2 completo e il teorema geometrico non sono ancora certificati.
 
 ## Blocco 2b: inversa locale e vincolo nullo
 
 [BLOCK2_LOCAL_TIME_AND_NULL_PROPAGATION.md](BLOCK2_LOCAL_TIME_AND_NULL_PROPAGATION.md) documenta i 13 nuovi teoremi. Da una velocità temporale continua positiva e dalla sua equazione in un intorno si costruisce una vera inversa locale, con entrambe le identità di inversa. `hamiltonian_local_direction_exists` conclude le ODE all’evento senza assumere la riparametrizzazione.
 
-Il flusso completo include P_{v,λ}=−m_v D_mH. La regola della catena verifica dH/dλ=0 anche per massa variabile; il vincolo nullo si propaga dal dato iniziale su un dominio convesso. L_λ=0 implica la conservazione del momento angolare. Queste conclusioni del blocco 2b sono seguite dalla costruzione di soluzioni locali e dalla continuazione sui compatti nel blocco 2c. Resta da eliminare la premessa di esistenza futura globale dei vecchi `DirectionFlow`.
+Il flusso completo include P_{v,λ}=−m_v D_mH. La regola della catena verifica dH/dλ=0 anche per massa variabile; il vincolo nullo si propaga dal dato iniziale su un dominio convesso. L_λ=0 implica la conservazione del momento angolare. Queste conclusioni del blocco 2b sono seguite dalla costruzione di soluzioni locali e dalla continuazione sui compatti nel blocco 2c. Il blocco 2e elimina la premessa di esistenza futura globale dopo ingresso stretto nel cono, per il sistema coordinato.
 
 ## Blocco 2c: esistenza locale e continuazione
 
 [BLOCK2_LOCAL_EXISTENCE_AND_CONTINUATION.md](BLOCK2_LOCAL_EXISTENCE_AND_CONTINUATION.md) descrive i 12 nuovi teoremi. Picard–Lindelöf costruisce una soluzione locale per massa C¹; l’unicità locale richiede solo massa continua. Per dati strettamente esterni e non radiali, si costruisce un tratto che resta nel dominio esterno.
 
-`compact_direction_continues` dimostra che una soluzione confinata in un compatto regolare dello spazio stato–massa continua oltre un estremo finito, se la massa è C¹ vicino all’estremo. Il limite finale, il nuovo tratto e la loro coincidenza prima dell’estremo vengono tutti dimostrati. Il blocco 2d successivo deduce il confinamento dalle ipotesi esterne e prova l’alternativa finita cattura/prolungamento esterno; restano gli intervalli massimali e il flusso futuro globale. La continuazione del campo coordinato può attraversare r=2m: non certifica da sola permanenza nel dominio esterno.
+`compact_direction_continues` dimostra che una soluzione confinata in un compatto regolare dello spazio stato–massa continua oltre un estremo finito, se la massa è C¹ vicino all’estremo. Il limite finale, il nuovo tratto e la loro coincidenza prima dell’estremo vengono tutti dimostrati. Il blocco 2d successivo deduce il confinamento dalle ipotesi esterne e prova l’alternativa finita cattura/prolungamento esterno; il blocco 2e successivo costruisce gli intervalli massimali e il flusso futuro globale dopo ingresso stretto nel cono. La continuazione del campo coordinato può attraversare r=2m: non certifica da sola permanenza nel dominio esterno.
 
 ## Blocco 2d: stime esterne e alternativa finale
 
 [BLOCK2_EXTERIOR_APRIORI_AND_CAPTURE.md](BLOCK2_EXTERIOR_APRIORI_AND_CAPTURE.md) registra 18 nuovi teoremi. Per massa positiva al lancio e non decrescente sul tratto finito, il dominio esterno e l’ODE danno 2m(a)≤r(v)≤r(a)+q(b−a) e 0≤m(v)≤m(b). Il compatto di continuazione viene quindi costruito. La striscia 0<α<π è dedotta dall’angolo iniziale mediante l’ODE lineare di sin α e unicità all’indietro, senza assumerla lungo il tratto.
 
-All’estremo finito il prolungamento ha r(b)≥2m(b) e angolo strettamente non radiale. O arriva al bordo di cattura, oppure continua come soluzione esterna non radiale. Al bordo, con m_v≥0, la derivata di r−2m è strettamente negativa. `exterior_nonradial_initial_value_continuation` conserva anche dato e derivata al lancio. Questi risultati partono da una soluzione esterna esistente sul tratto precedente; resta da costruire la soluzione massimale e ricavare un `DirectionFlow` futuro globale senza assumerlo.
+All’estremo finito il prolungamento ha r(b)≥2m(b) e angolo strettamente non radiale. O arriva al bordo di cattura, oppure continua come soluzione esterna non radiale. Al bordo, con m_v≥0, la derivata di r−2m è strettamente negativa. `exterior_nonradial_initial_value_continuation` conserva anche dato e derivata al lancio. Questi risultati partono da una soluzione esterna esistente sul tratto precedente; il blocco 2e successivo costruisce la soluzione massimale e ricava un `DirectionFlow` futuro globale dopo ingresso stretto nel cono senza assumerlo.
+
+
+## Blocco 2e: soluzione massimale e fuga senza esistenza globale assunta
+
+[BLOCK2_MAXIMAL_EXTERIOR_AND_GLOBAL_CONE.md](BLOCK2_MAXIMAL_EXTERIOR_AND_GLOBAL_CONE.md) documenta 19 nuovi teoremi. L’unicità locale si propaga all’intero intervallo comune. La curva sull’unione di tutti i prolungamenti esterni non radiali viene costruita e soddisfa l’ODE; tutti i segmenti concordano e il dato iniziale è conservato. Per massa C¹ agli estremi finiti e non decrescente, un estremo massimale finito è necessariamente di cattura.
+
+La barriera del cono uscente viene dimostrata sui soli intervalli finiti già esistenti. Un ingresso stretto nel cono impedisce quindi un estremo finito di cattura: il dominio è futuro illimitato, si costruisce il `DirectionFlow` e si deducono crescita radiale almeno lineare e fuga. `directionFlow_exists_from_strict_cone_launch` costruisce internamente sia il primo segmento sia i margini del cono, da massa C¹ positiva al lancio, non decrescente e limitata superiormente, q>1 e un lancio nel cono appropriato.
+
+Non si conclude che ogni lancio esterno entri nel cono o sfugga. La ricostruzione geometrica completa dalle soluzioni coordinate, l’identificazione di Jacobi, la properness e il conteggio delle fibre restano da formalizzare. La soglia q≥3/2 del confronto di curvatura è distinta dall’ipotesi q>1 usata qui.

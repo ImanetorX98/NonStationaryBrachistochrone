@@ -7,9 +7,11 @@ di \(\alpha\) in \((0,\pi)\) viene dedotta dal dato iniziale, non
 assunta sull'intero tratto. È inoltre verificata l'alternativa a un estremo
 finito: cattura oppure prolungamento esterno.
 
-Non è ancora costruita in Lean la soluzione massimale esterna, né una famiglia
-di `DirectionFlow` futuri globali dai dati geometrici. Il teorema completo sui
-Maxwell resta aperto nella formalizzazione.
+Al checkpoint descritto qui non era ancora costruita la soluzione massimale
+esterna. Il successivo [blocco 2e](BLOCK2_MAXIMAL_EXTERIOR_AND_GLOBAL_CONE.md)
+la costruisce e ricava flussi futuri globali dopo ingresso stretto nel cono,
+per il sistema coordinato. Il collegamento completo ai dati geometrici e il
+teorema completo sui Maxwell restano aperti nella formalizzazione.
 
 ## 1. Ipotesi effettive
 

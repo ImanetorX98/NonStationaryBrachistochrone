@@ -359,3 +359,22 @@ ViaB.exterior_nonradial_initial_value_continuation {q a b : ℝ} {m : ℝ → �
   (hode : ∀ t ∈ Set.Ico a b, HasDerivAt f (ViaB.directionField q (m t) (f t)) t)
   (hext : ∀ t ∈ Set.Ico a b, 2 * m t < (f t).1) (hinit : 0 < (f a).2 ∧ (f a).2 < Real.pi) :
   ∃ H, ∃ ε > 0, Set.EqOn H f (Set.Ico a b) ∧ ∀ t ∈ Set.Ico a (b + ε), HasDerivAt H (ViaB.directionField q (m t) (H t)) t
+'ViaB.direction_solution_unique_on_open_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.direction_solution_unique_on_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.exterior_segments_agree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximalExteriorDomain_isOpen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximalExteriorDomain_isPreconnected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximalExteriorCurve_agrees' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximalExteriorCurve_solves' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximalExteriorCurve_preserves_launch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.exterior_segment_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximalExteriorDomain_eq_Ioo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximalExteriorDomain_eq_Ioi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.exterior_segment_domain_subset_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.exterior_global_solution_of_unbounded_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximal_exterior_finite_endpoint_is_capture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.outgoing_cone_invariant_on_finite_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximal_exterior_endpoints_unbounded_after_cone_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.maximal_directionFlow_of_unbounded_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionFlow_exists_and_escapes_after_cone_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ViaB.directionFlow_exists_from_strict_cone_launch' depends on axioms: [propext, Classical.choice, Quot.sound]

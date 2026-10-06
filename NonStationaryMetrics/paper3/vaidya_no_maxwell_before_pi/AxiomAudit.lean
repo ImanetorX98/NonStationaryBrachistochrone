@@ -221,3 +221,31 @@ in the declarations and are separately discussed in README.md. -/
 #print axioms ViaB.direction_continuation_preserves_launch
 #print axioms ViaB.exterior_nonradial_initial_value_continuation
 #check ViaB.exterior_nonradial_initial_value_continuation
+
+
+-- IntervalUniqueness
+#print axioms ViaB.direction_solution_unique_on_open_connected
+#print axioms ViaB.direction_solution_unique_on_interval
+
+-- MaximalExteriorConstruction
+#print axioms ViaB.exterior_segments_agree
+#print axioms ViaB.maximalExteriorDomain_isOpen
+#print axioms ViaB.maximalExteriorDomain_isPreconnected
+#print axioms ViaB.maximalExteriorCurve_agrees
+#print axioms ViaB.maximalExteriorCurve_solves
+#print axioms ViaB.maximalExteriorCurve_preserves_launch
+#print axioms ViaB.exterior_segment_exists
+#print axioms ViaB.maximalExteriorDomain_eq_Ioo
+#print axioms ViaB.maximalExteriorDomain_eq_Ioi
+#print axioms ViaB.exterior_segment_domain_subset_maximal
+#print axioms ViaB.exterior_global_solution_of_unbounded_endpoints
+
+-- MaximalExteriorCapture
+#print axioms ViaB.maximal_exterior_finite_endpoint_is_capture
+
+-- MaximalConeEscape
+#print axioms ViaB.outgoing_cone_invariant_on_finite_interval
+#print axioms ViaB.maximal_exterior_endpoints_unbounded_after_cone_entry
+#print axioms ViaB.maximal_directionFlow_of_unbounded_endpoints
+#print axioms ViaB.directionFlow_exists_and_escapes_after_cone_entry
+#print axioms ViaB.directionFlow_exists_from_strict_cone_launch

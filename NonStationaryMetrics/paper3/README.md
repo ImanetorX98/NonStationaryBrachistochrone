@@ -8,8 +8,8 @@ separate from the sources of Papers I and II.
 The Lean project is in
 [`vaidya_no_maxwell_before_pi/`](vaidya_no_maxwell_before_pi/README.md).
 Its name identifies the target theorem, **not a completed certification of that
-theorem**. The current checkpoint contains **160 verified public lemmas** and
-36 Lean source files, including the axiom audit.
+theorem**. The current checkpoint contains **179 verified public lemmas** and
+40 Lean source files, including the axiom audit.
 
 Certified components include the scalar Sturm comparison, the declared ODE
 escape/lingering lemmas, and finite-time dependence and escape stability with
@@ -22,9 +22,14 @@ gluing for trajectories confined to regular compact state–mass tubes are also
 verified. For positive nondecreasing mass, finite exterior evolution now
 derives compact confinement and the nonradial angular strip from the launch,
 and gives capture or longer exterior evolution at a finite endpoint.
-Geometric identification, maximal/global exterior evolution,
-properness, covering/fiber count and the final Maxwell bridge remain to be
-formalized.
+The maximal exterior coordinate solution is now constructed by gluing all
+compatible local extensions. A finite maximal endpoint must be capture; strict
+outgoing-cone entry instead produces a future-global DirectionFlow and radial
+escape, without assuming global existence. The cone launch theorem also
+constructs its initial local segment and cone margins internally.
+Geometric identification/reconstruction, properness, covering/fiber count and
+the final Maxwell bridge remain to be formalized. These results do not assert
+escape for every exterior launch.
 
 Lean **4.24.0** and mathlib **v4.24.0** are pinned by the toolchain and dependency
 manifest. From the project directory, after installing the pinned toolchain:
