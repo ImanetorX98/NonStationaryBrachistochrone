@@ -30,3 +30,5 @@ import ViaB.TimeDependentHamiltonian
 import ViaB.LocalDirectionExistence
 import ViaB.FiniteEndpointLimit
 import ViaB.RegularEndpointContinuation
+import ViaB.ExteriorFiniteTube
+import ViaB.AngularFiniteInvariance

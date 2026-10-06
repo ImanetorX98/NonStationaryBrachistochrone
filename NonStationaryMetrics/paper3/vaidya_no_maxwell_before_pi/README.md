@@ -1,6 +1,6 @@
 # Via B: formalizzazione effettivamente compilata in Lean
 
-6 ottobre 2026, aggiornata con il blocco 2c: esistenza e unicità locali del sistema di direzione e continuazione oltre un estremo finito sotto confinamento in un compatto regolare. **142 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
+6 ottobre 2026, aggiornata con il blocco 2d: confinamento esterno dedotto a priori, permanenza non radiale dall’angolo iniziale, alternativa cattura/prolungamento e conservazione del dato al lancio. **160 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
 
 ## Ambiente e verifica
 
@@ -64,7 +64,9 @@ La verifica esegue `lake build` e `lake env lean AxiomAudit.lean`, controlla la 
 | `ViaB.LocalDirectionExistence` | 5 | Esistenza locale con massa C¹, unicità con massa continua e permanenza iniziale nel dominio esterno. |
 | `ViaB.FiniteEndpointLimit` | 4 | Estensione Lipschitz ausiliaria, limite finale da velocità limitata e nuovo tratto al limite regolare. |
 | `ViaB.RegularEndpointContinuation` | 3 | Derivata sinistra al bordo, coincidenza all’indietro e prolungamento effettivo dell’ODE sui compatti regolari. |
-| **Totale** | **142** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
+| `ViaB.ExteriorFiniteTube` | 7 | Limiti finiti di r e m, compatto regolare derivato dall’evoluzione esterna e continuazione. |
+| `ViaB.AngularFiniteInvariance` | 11 | Striscia non radiale dal dato iniziale; controllo del bordo finale, cattura trasversale, alternativa esterna e raccordo al lancio. |
+| **Totale** | **160** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
 
 ### Algebra delle curvature
 
@@ -144,7 +146,7 @@ Per q=5/4, m=1, r=20, Lean verifica esattamente P=−45 e Δ<0 con m′=0, L=1. 
 ## Cosa rimane per il teorema geometrico
 
 1. Completare il collegamento geometrico alla metrica G₃, geodetiche nulle future, parametro affine e schermatura; derivare ODE di Jacobi e formula Δ. I blocchi 2a–2b certificano l’inversione della metrica coordinata, l’equazione di direzione dal suo Hamiltoniano e l’esistenza dell’inversa temporale locale. Nullità e momento angolare sono propagati dal flusso Hamiltoniano completo dichiarato. Il collegamento alla connessione di Levi-Civita resta da formalizzare.
-2. Collegare esistenza, continuazione e intervallo angolare alla geometria. Il blocco 2c costruisce ora soluzioni locali per massa C¹ e dimostra continuazione con incollamento sui compatti regolari; restano intervalli massimali, confinamento derivato dal problema e permanenza futura nel dominio esterno. Il blocco 1 è chiuso: regolarità del campo e compattezza del riferimento producono la stima locale uniforme, senza assumerla. Grönwall controlla il tubo e trasferisce la continuità iniziale alle valutazioni finite e alla stabilità della fuga. `DirectionFlow` assume ancora soluzioni future globali; il lemma fondamentale di uniformità richiede soltanto un riferimento continuo regolare su un tratto finito, senza ODE o esistenza futura.
+2. Collegare esistenza, continuazione e intervallo angolare alla geometria. Il blocco 2c costruisce ora soluzioni locali per massa C¹ e dimostra continuazione con incollamento sui compatti regolari. Il blocco 2d deduce ora il confinamento dall’evoluzione esterna e la striscia angolare dal dato iniziale; restano costruzione degli intervalli massimali e permanenza futura nel dominio esterno. Il blocco 1 è chiuso: regolarità del campo e compattezza del riferimento producono la stima locale uniforme, senza assumerla. Grönwall controlla il tubo e trasferisce la continuità iniziale alle valutazioni finite e alla stabilità della fuga. `DirectionFlow` assume ancora soluzioni future globali; il lemma fondamentale di uniformità richiede soltanto un riferimento continuo regolare su un tratto finito, senza ODE o esistenza futura.
 3. Formalizzare la chiusura della traccia e il controllo degli arrivi tardivi: tempi v e affini, cattura trasversale, limite radiale critico, separazione del ricevitore dal bordo. Da qui ottenere properness.
 4. Costruire la traccia come varietà, dimostrare che la mappa angolare è un diffeomorfismo locale, poi che properness implica rivestimento. Dimostrare il conteggio vicino a δ=0 per rT<r0, rT=r0 e rT>r0, compreso il caso vuoto.
 5. Costruire il congelamento futuro liscio e provare la località dell'ODE, per rimuovere le ipotesi di massa limitata e ricevitore eternamente esterno.
@@ -196,4 +198,10 @@ Il flusso completo include P_{v,λ}=−m_v D_mH. La regola della catena verifica
 
 [BLOCK2_LOCAL_EXISTENCE_AND_CONTINUATION.md](BLOCK2_LOCAL_EXISTENCE_AND_CONTINUATION.md) descrive i 12 nuovi teoremi. Picard–Lindelöf costruisce una soluzione locale per massa C¹; l’unicità locale richiede solo massa continua. Per dati strettamente esterni e non radiali, si costruisce un tratto che resta nel dominio esterno.
 
-`compact_direction_continues` dimostra che una soluzione confinata in un compatto regolare dello spazio stato–massa continua oltre un estremo finito, se la massa è C¹ vicino all’estremo. Il limite finale, il nuovo tratto e la loro coincidenza prima dell’estremo vengono tutti dimostrati. Restano da derivare il confinamento dalle ipotesi geometriche, costruire gli intervalli massimali e distinguere cattura e permanenza futura esterna. La continuazione del campo coordinato può attraversare r=2m: non certifica da sola permanenza nel dominio esterno.
+`compact_direction_continues` dimostra che una soluzione confinata in un compatto regolare dello spazio stato–massa continua oltre un estremo finito, se la massa è C¹ vicino all’estremo. Il limite finale, il nuovo tratto e la loro coincidenza prima dell’estremo vengono tutti dimostrati. Il blocco 2d successivo deduce il confinamento dalle ipotesi esterne e prova l’alternativa finita cattura/prolungamento esterno; restano gli intervalli massimali e il flusso futuro globale. La continuazione del campo coordinato può attraversare r=2m: non certifica da sola permanenza nel dominio esterno.
+
+## Blocco 2d: stime esterne e alternativa finale
+
+[BLOCK2_EXTERIOR_APRIORI_AND_CAPTURE.md](BLOCK2_EXTERIOR_APRIORI_AND_CAPTURE.md) registra 18 nuovi teoremi. Per massa positiva al lancio e non decrescente sul tratto finito, il dominio esterno e l’ODE danno 2m(a)≤r(v)≤r(a)+q(b−a) e 0≤m(v)≤m(b). Il compatto di continuazione viene quindi costruito. La striscia 0<α<π è dedotta dall’angolo iniziale mediante l’ODE lineare di sin α e unicità all’indietro, senza assumerla lungo il tratto.
+
+All’estremo finito il prolungamento ha r(b)≥2m(b) e angolo strettamente non radiale. O arriva al bordo di cattura, oppure continua come soluzione esterna non radiale. Al bordo, con m_v≥0, la derivata di r−2m è strettamente negativa. `exterior_nonradial_initial_value_continuation` conserva anche dato e derivata al lancio. Questi risultati partono da una soluzione esterna esistente sul tratto precedente; resta da costruire la soluzione massimale e ricavare un `DirectionFlow` futuro globale senza assumerlo.

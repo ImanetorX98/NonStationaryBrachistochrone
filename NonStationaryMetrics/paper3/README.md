@@ -8,8 +8,8 @@ separate from the sources of Papers I and II.
 The Lean project is in
 [`vaidya_no_maxwell_before_pi/`](vaidya_no_maxwell_before_pi/README.md).
 Its name identifies the target theorem, **not a completed certification of that
-theorem**. The current checkpoint contains **142 verified public lemmas** and
-34 Lean source files, including the axiom audit.
+theorem**. The current checkpoint contains **160 verified public lemmas** and
+36 Lean source files, including the axiom audit.
 
 Certified components include the scalar Sturm comparison, the declared ODE
 escape/lingering lemmas, and finite-time dependence and escape stability with
@@ -19,7 +19,10 @@ propagation of the null constraint and angular-momentum conservation for the
 declared nonstationary Hamiltonian flow are now certified. Local existence
 under C¹ mass, local uniqueness under continuous mass, and continuation with
 gluing for trajectories confined to regular compact state–mass tubes are also
-verified. Geometric identification, maximal/global exterior evolution,
+verified. For positive nondecreasing mass, finite exterior evolution now
+derives compact confinement and the nonradial angular strip from the launch,
+and gives capture or longer exterior evolution at a finite endpoint.
+Geometric identification, maximal/global exterior evolution,
 properness, covering/fiber count and the final Maxwell bridge remain to be
 formalized.
 

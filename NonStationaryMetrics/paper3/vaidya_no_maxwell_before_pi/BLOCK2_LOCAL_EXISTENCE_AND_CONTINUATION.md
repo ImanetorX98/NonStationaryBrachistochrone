@@ -1,5 +1,10 @@
 # Blocco 2c — esistenza locale, unicità e continuazione sui compatti regolari
 
+**Aggiornamento successivo:** il [blocco 2d](BLOCK2_EXTERIOR_APRIORI_AND_CAPTURE.md)
+deduce il compatto dall’evoluzione esterna, esclude gli angoli radiali dal dato
+iniziale e certifica l’alternativa cattura/prolungamento all’estremo finito.
+Questo documento conserva il checkpoint 2c e i suoi limiti originari.
+
 6 ottobre 2026. Questo checkpoint aggiunge 12 teoremi e porta il progetto a
 142 teoremi pubblici. Sono ora formalizzati esistenza locale del sistema di
 direzione, unicità locale, permanenza iniziale nel dominio esterno e

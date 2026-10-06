@@ -193,3 +193,31 @@ in the declarations and are separately discussed in README.md. -/
 #check ViaB.direction_local_initial_value_problem
 #check ViaB.direction_exterior_local_solution_exists
 #check ViaB.compact_direction_continues
+
+-- ExteriorFiniteTube
+#print axioms ViaB.direction_radial_derivative
+#print axioms ViaB.exterior_w_bounds
+#print axioms ViaB.exterior_radial_speed_le_charge
+#print axioms ViaB.exterior_finite_radius_upper
+#print axioms ViaB.exterior_finite_state_bounds
+#print axioms ViaB.exterior_finite_regular_compact_tube
+#print axioms ViaB.exterior_finite_coordinate_continuation
+
+-- AngularFiniteInvariance
+#print axioms ViaB.direction_angular_derivative
+#print axioms ViaB.linear_ode_initial_nonzero
+#print axioms ViaB.sine_direction_coefficient_bound
+#print axioms ViaB.finite_direction_angle_stays_nonradial
+#print axioms ViaB.exterior_finite_angle_invariance
+#print axioms ViaB.exterior_nonradial_finite_coordinate_continuation
+#print axioms ViaB.exterior_nonradial_endpoint_control
+#print axioms ViaB.nonradial_capture_gap_derivative
+#print axioms ViaB.exterior_finite_endpoint_capture_or_continues
+
+#check ViaB.exterior_nonradial_endpoint_control
+#check ViaB.exterior_finite_endpoint_capture_or_continues
+#check ViaB.nonradial_capture_gap_derivative
+
+#print axioms ViaB.direction_continuation_preserves_launch
+#print axioms ViaB.exterior_nonradial_initial_value_continuation
+#check ViaB.exterior_nonradial_initial_value_continuation

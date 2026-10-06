@@ -90,6 +90,11 @@ report = {
     "regular_compact_direction_endpoint_limit_and_restart_formalized": True,
     "regular_compact_direction_continuation_with_gluing_formalized": True,
     "global_future_direction_flow_from_geometric_initial_data_formalized": False,
+    "exterior_finite_compact_tube_from_existing_exterior_solution_formalized": True,
+    "nonradial_strip_from_initial_angle_for_existing_exterior_solution_formalized": True,
+    "finite_exterior_endpoint_capture_or_continuation_formalized": True,
+    "nonradial_capture_transversality_under_nonnegative_mass_rate_formalized": True,
+    "finite_exterior_coordinate_continuation_preserves_launch_formalized": True,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }
