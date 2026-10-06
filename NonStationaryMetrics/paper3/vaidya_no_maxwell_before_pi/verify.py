@@ -105,6 +105,10 @@ report = {
     "constructed_affine_clock_and_inverse_ode_on_neighborhood_formalized": True,
     "direction_to_full_affine_null_hamiltonian_germ_formalized": True,
     "maximal_exterior_curve_to_affine_null_hamiltonian_germ_formalized": True,
+    "coordinate_levi_civita_metric_derivatives_torsion_compatibility_uniqueness_formalized": True,
+    "hamiltonian_acceleration_equals_coordinate_connection_formalized": True,
+    "direction_to_affine_null_coordinate_geodesic_germ_formalized": True,
+    "maximal_exterior_curve_to_affine_null_coordinate_geodesic_germ_formalized": True,
     "sha256": {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
                for path in project_files},
 }

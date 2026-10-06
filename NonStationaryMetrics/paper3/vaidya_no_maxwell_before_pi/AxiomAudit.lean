@@ -277,3 +277,32 @@ in the declarations and are separately discussed in README.md. -/
 #print axioms ViaB.direction_to_affine_hamiltonian_at
 #print axioms ViaB.direction_affine_hamiltonian_germ_exists
 #print axioms ViaB.maximal_exterior_affine_hamiltonian_germ_exists
+
+-- CoordinateLeviCivita
+#print axioms ViaB.fermatMetric_symmetric
+#print axioms ViaB.fermatMetricPartial_symmetric
+#print axioms ViaB.fermatMetric_mul_inverse
+#print axioms ViaB.fermatInverseMetric_mul_metric
+#print axioms ViaB.fermatMetric_time_derivative
+#print axioms ViaB.fermatMetric_radius_derivative
+#print axioms ViaB.fermatMetric_angle_derivative
+#print axioms ViaB.coordinateKoszul_torsion_free
+#print axioms ViaB.coordinateKoszul_metric_compatible
+#print axioms ViaB.coordinateKoszul_unique
+#print axioms ViaB.fermatChristoffel_lowered
+#print axioms ViaB.fermatChristoffel_torsion_free
+#print axioms ViaB.fermatChristoffel_metric_compatible
+#print axioms ViaB.fermatChristoffel_unique
+#print axioms ViaB.lowered_connection_contraction_formula
+#print axioms ViaB.fermatChristoffel_contraction_formula
+
+-- HamiltonianGeodesic
+#print axioms ViaB.hamiltonian_raised_velocity_derivative
+#print axioms ViaB.hamiltonian_acceleration_equals_connection
+#print axioms ViaB.hamiltonian_germ_coordinate_geodesic
+#print axioms ViaB.hamiltonian_lift_null_coordinate_velocity
+
+-- DirectionGeodesicGerm
+#print axioms ViaB.hamiltonian_germ_coordinate_null_geodesic
+#print axioms ViaB.direction_coordinate_null_geodesic_germ_exists
+#print axioms ViaB.maximal_exterior_coordinate_null_geodesic_germ_exists

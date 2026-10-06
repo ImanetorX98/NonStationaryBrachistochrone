@@ -1,6 +1,6 @@
 # Via B: formalizzazione effettivamente compilata in Lean
 
-6 ottobre 2026, aggiornata con il blocco 2f: ricostruzione dei momenti dalla direzione, forza temporale non stazionaria, parametro affine e inversa costruiti, tutte le equazioni Hamiltoniane locali. **199 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
+6 ottobre 2026, aggiornata con il blocco 2g: connessione coordinata di Levi-Civita derivata dalla metrica, unicità e passaggio dalle equazioni Hamiltoniane alle geodetiche nulle affini future. **222 teoremi compilati.** Sorgenti di verifica per Paper III, ancora in sviluppo. **Certificazione parziale: non è ancora una formalizzazione del teorema geometrico di esclusione dei Maxwell prima di π.**
 
 ## Ambiente e verifica
 
@@ -74,7 +74,10 @@ La verifica esegue `lake build` e `lake env lean AxiomAudit.lean`, controlla la 
 | `ViaB.ReconstructedTimeMomentum` | 3 | Derivazione della forza temporale per massa variabile dal vincolo nullo algebrico e dalle equazioni radiali. |
 | `ViaB.ConstructedAffineClock` | 6 | Primitiva della velocità affine, inversa locale e sua equazione su un intero intorno. |
 | `ViaB.DirectionHamiltonianLift` | 4 | Primitiva angolare e tutte le equazioni Hamiltoniane affini locali; applicazione alla curva massimale. |
-| **Totale** | **199** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
+| `ViaB.CoordinateLeviCivita` | 16 | Derivate della metrica, inversa, Koszul, torsione nulla, compatibilità e unicità della connessione; contrazione esplicita. |
+| `ViaB.HamiltonianGeodesic` | 4 | Accelerazione Hamiltoniana uguale alla contrazione negativa della connessione; seconde derivate effettive e nullità della velocità. |
+| `ViaB.DirectionGeodesicGerm` | 3 | Geodetiche nulle affini future costruite dalle ODE di direzione, anche sulla curva massimale esterna. |
+| **Totale** | **222** | Tutti compilati; nessun `sorry`, `admit` o assioma geometrico aggiunto. |
 
 ### Algebra delle curvature
 
@@ -153,8 +156,8 @@ Per q=5/4, m=1, r=20, Lean verifica esattamente P=−45 e Δ<0 con m′=0, L=1. 
 
 ## Cosa rimane per il teorema geometrico
 
-1. Completare il collegamento geometrico alla metrica G₃, geodetiche nulle future, parametro affine e schermatura; derivare ODE di Jacobi e formula Δ. I blocchi 2a–2b certificano l’inversione della metrica coordinata, l’equazione di direzione dal suo Hamiltoniano e l’esistenza dell’inversa temporale locale. Nullità e momento angolare sono propagati dal flusso Hamiltoniano completo dichiarato. Il collegamento alla connessione di Levi-Civita resta da formalizzare.
-2. Collegare esistenza, continuazione e intervallo angolare alla geometria. Il blocco 2c costruisce ora soluzioni locali per massa C¹ e dimostra continuazione con incollamento sui compatti regolari. Il blocco 2d deduce ora il confinamento dall’evoluzione esterna e la striscia angolare dal dato iniziale; restano costruzione degli intervalli massimali e permanenza futura nel dominio esterno. Il blocco 1 è chiuso: regolarità del campo e compattezza del riferimento producono la stima locale uniforme, senza assumerla. Grönwall controlla il tubo e trasferisce la continuità iniziale alle valutazioni finite e alla stabilità della fuga. `DirectionFlow` assume ancora soluzioni future globali; il lemma fondamentale di uniformità richiede soltanto un riferimento continuo regolare su un tratto finito, senza ODE o esistenza futura.
+1. Completare il collegamento geometrico alla metrica G₃, geodetiche nulle future, parametro affine e schermatura; derivare ODE di Jacobi e formula Δ. I blocchi 2a–2b certificano l’inversione della metrica coordinata, l’equazione di direzione dal suo Hamiltoniano e l’esistenza dell’inversa temporale locale. Nullità e momento angolare sono propagati dal flusso Hamiltoniano completo dichiarato. Il blocco 2g deriva ora la connessione coordinata dalla metrica, ne prova unicità e collega il flusso alle seconde derivate geodetiche effettive. Restano lo schermo di Jacobi e l’identificazione della curvatura.
+2. Collegare esistenza, continuazione e intervallo angolare alla geometria. Il blocco 2c costruisce ora soluzioni locali per massa C¹ e dimostra continuazione con incollamento sui compatti regolari. Il blocco 2d deduce ora il confinamento dall’evoluzione esterna e la striscia angolare dal dato iniziale; il blocco 2e costruisce gli intervalli massimali e prova esistenza futura dopo ingresso stretto nel cono. La permanenza futura per ogni lancio esterno non è affermata. Il blocco 1 è chiuso: regolarità del campo e compattezza del riferimento producono la stima locale uniforme, senza assumerla. Grönwall controlla il tubo e trasferisce la continuità iniziale alle valutazioni finite e alla stabilità della fuga. `DirectionFlow` assume ancora soluzioni future globali; il lemma fondamentale di uniformità richiede soltanto un riferimento continuo regolare su un tratto finito, senza ODE o esistenza futura.
 3. Formalizzare la chiusura della traccia e il controllo degli arrivi tardivi: tempi v e affini, cattura trasversale, limite radiale critico, separazione del ricevitore dal bordo. Da qui ottenere properness.
 4. Costruire la traccia come varietà, dimostrare che la mappa angolare è un diffeomorfismo locale, poi che properness implica rivestimento. Dimostrare il conteggio vicino a δ=0 per rT<r0, rT=r0 e rT>r0, compreso il caso vuoto.
 5. Costruire il congelamento futuro liscio e provare la località dell'ODE, per rimuovere le ipotesi di massa limitata e ricevitore eternamente esterno.
@@ -194,7 +197,7 @@ Il campo `directionField q m (r,α)` è formalmente C¹ e localmente Lipschitz, 
 
 I 29 nuovi teoremi sono descritti in [BLOCK2_COORDINATE_HAMILTONIAN.md](BLOCK2_COORDINATE_HAMILTONIAN.md). La nullità futura seleziona il ramo dei momenti e consente di ricostruire α tramite arccos. La regola della catena deduce l’ODE angolare senza assumerla e senza dividere per il momento radiale o per cos α. La massa è il valore istantaneo m(v); non si assume la conservazione di P_v.
 
-Il teorema composto del blocco 2a prende le equazioni Hamiltoniane affini, L>0, la nullità all’evento e la derivata di una riparametrizzazione; conclude le ODE in v. Il blocco 2b successivo costruisce l’inversa locale e dimostra la conservazione di L e la propagazione della nullità, per soluzioni Hamiltoniane esistenti. Il blocco 2c successivo costruisce soluzioni locali e dimostra continuazione sui compatti regolari. L’esistenza futura dopo ingresso stretto nel cono è ora costruita per il sistema coordinato nel blocco 2e. I collegamenti geometrici e di Jacobi restano aperti: il blocco 2 completo e il teorema geometrico non sono ancora certificati.
+Il teorema composto del blocco 2a prende le equazioni Hamiltoniane affini, L>0, la nullità all’evento e la derivata di una riparametrizzazione; conclude le ODE in v. Il blocco 2b successivo costruisce l’inversa locale e dimostra la conservazione di L e la propagazione della nullità, per soluzioni Hamiltoniane esistenti. Il blocco 2c successivo costruisce soluzioni locali e dimostra continuazione sui compatti regolari. L’esistenza futura dopo ingresso stretto nel cono è ora costruita per il sistema coordinato nel blocco 2e. Il collegamento alla connessione coordinata è chiuso nel blocco 2g; Jacobi resta aperto: il blocco 2 completo e il teorema geometrico non sono ancora certificati.
 
 ## Blocco 2b: inversa locale e vincolo nullo
 
@@ -221,7 +224,7 @@ All’estremo finito il prolungamento ha r(b)≥2m(b) e angolo strettamente non 
 
 La barriera del cono uscente viene dimostrata sui soli intervalli finiti già esistenti. Un ingresso stretto nel cono impedisce quindi un estremo finito di cattura: il dominio è futuro illimitato, si costruisce il `DirectionFlow` e si deducono crescita radiale almeno lineare e fuga. `directionFlow_exists_from_strict_cone_launch` costruisce internamente sia il primo segmento sia i margini del cono, da massa C¹ positiva al lancio, non decrescente e limitata superiormente, q>1 e un lancio nel cono appropriato.
 
-Non si conclude che ogni lancio esterno entri nel cono o sfugga. Il blocco 2f successivo ricostruisce dalle soluzioni coordinate il flusso Hamiltoniano nullo affine locale della metrica di Fermat. L’identificazione tramite connessione e Jacobi, la properness e il conteggio delle fibre restano da formalizzare. La soglia q≥3/2 del confronto di curvatura è distinta dall’ipotesi q>1 usata qui.
+Non si conclude che ogni lancio esterno entri nel cono o sfugga. Il blocco 2f successivo ricostruisce dalle soluzioni coordinate il flusso Hamiltoniano nullo affine locale della metrica di Fermat. Il blocco 2g identifica ora la connessione coordinata e l’equazione geodetica; Jacobi, properness e conteggio delle fibre restano da formalizzare. La soglia q≥3/2 del confronto di curvatura è distinta dall’ipotesi q>1 usata qui.
 
 
 ## Blocco 2f: ricostruzione Hamiltoniana affine dalla direzione
@@ -230,4 +233,15 @@ Non si conclude che ogni lancio esterno entri nel cono o sfugga. Il blocco 2f su
 
 Si costruiscono la primitiva angolare φ, il parametro affine e una vera inversa locale con derivata su un intero intorno. `direction_affine_hamiltonian_germ_exists` conclude tutte le equazioni Hamiltoniane affini, il vincolo nullo e l’orientazione futura nello stesso intorno. `maximal_exterior_affine_hamiltonian_germ_exists` applica il risultato alla soluzione massimale esterna, deducendo internamente ODE, r>0 e striscia angolare.
 
-È un risultato locale per la metrica di Fermat coordinata già definita. Non è una prova di completezza affine futura, né l’identificazione con una connessione di Levi-Civita e con i campi di Jacobi in Lean. Questi collegamenti e la properness della mappa di arrivo restano aperti; il teorema geometrico sui Maxwell non è ancora certificato.
+È un risultato locale per la metrica di Fermat coordinata già definita. Non è una prova di completezza affine futura, né, da solo, il ponte di Jacobi. Il blocco 2g successivo chiude l’identificazione con la connessione coordinata di Levi-Civita. Jacobi e la properness della mappa di arrivo restano aperti; il teorema geometrico sui Maxwell non è ancora certificato.
+
+
+## Blocco 2g: connessione e geodetiche coordinate
+
+Resoconto: [BLOCK2_COORDINATE_LEVI_CIVITA_AND_GEODESICS.md](BLOCK2_COORDINATE_LEVI_CIVITA_AND_GEODESICS.md).
+
+Le derivate della metrica di Fermat, anche quella temporale contenente m_v, sono verificate come `HasDerivAt`. La formula di Koszul definisce una connessione coordinata: Lean prova torsione nulla, compatibilità metrica e unicità, quindi calcola la contrazione con la velocità. Una derivazione indipendente dalle equazioni Hamiltoniane produce la stessa accelerazione con segno opposto.
+
+`direction_coordinate_null_geodesic_germ_exists` costruisce il parametro affine e l’inversa e dimostra l’equazione geodetica, la nullità e l’orientazione futura su uno stesso intorno. `maximal_exterior_coordinate_null_geodesic_germ_exists` applica la costruzione a ogni evento della curva massimale esterna con massa C¹. Le seconde derivate sono conclusioni, non ipotesi.
+
+Il risultato riguarda il chart della metrica efficace di Fermat; non identifica queste curve con le geodetiche nulle della metrica fisica di Vaidya. Non istanzia ancora una connessione su una varietà astratta né dimostra completezza affine futura. Il prossimo blocco deve derivare la variazione di Jacobi, proiettarla sullo schermo e identificarne il coefficiente prima di applicare Sturm alla geometria.

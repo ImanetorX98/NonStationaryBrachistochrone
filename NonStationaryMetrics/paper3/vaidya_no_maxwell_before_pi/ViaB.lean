@@ -40,3 +40,6 @@ import ViaB.DirectionMomentumReconstruction
 import ViaB.ReconstructedTimeMomentum
 import ViaB.ConstructedAffineClock
 import ViaB.DirectionHamiltonianLift
+import ViaB.CoordinateLeviCivita
+import ViaB.HamiltonianGeodesic
+import ViaB.DirectionGeodesicGerm

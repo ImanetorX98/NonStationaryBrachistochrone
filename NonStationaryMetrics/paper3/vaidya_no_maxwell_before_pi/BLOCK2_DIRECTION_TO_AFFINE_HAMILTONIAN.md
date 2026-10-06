@@ -179,3 +179,10 @@ in v non implica automaticamente λ → +∞. Non sono ancora formalizzati
 una connessione di Levi-Civita, il ponte completo di Jacobi, la properness
 o la conclusione geometrica sui Maxwell. Papers I/II e la lettera CQG
 restano invariati; questi sviluppi appartengono a Paper III.
+
+
+Aggiornamento successivo (blocco 2g): la connessione coordinata e il ponte
+Hamiltoniano–geodetica sono ora verificati. Vedere
+[il nuovo resoconto](BLOCK2_COORDINATE_LEVI_CIVITA_AND_GEODESICS.md).
+Le indicazioni precedenti descrivono il checkpoint storico di 199 teoremi;
+Jacobi, properness e conclusione sui Maxwell rimangono aperti.
