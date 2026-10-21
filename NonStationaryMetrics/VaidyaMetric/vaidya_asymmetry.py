@@ -1,22 +1,22 @@
 # ASIMMETRIA accrescimento/evaporazione della correzione adiabatica delta phi_V.
 # Accrescimento (mdot>0): Vaidya INGOING  ds^2=-f dv^2+2 dv dr, clock AVANZATO  v = t + r_*.
 # Evaporazione (mdot<0): Vaidya OUTGOING ds^2=-f du^2-2 du dr, clock RITARDATO u = t - r_*.
-# DERIVAZIONE del clock uscente (referee Issue 4, non un flip ad-hoc): u,v sono definiti dal MEDESIMO
-#   tempo di Killing t via u=t-r_*, v=t+r_* (r_*=tortoise). Quindi lungo QUALSIASI traiettoria
-#   v - u = 2 r_*  =>  du/dr = dv/dr - 2 dr_*/dr. Con la brachistocrona congelata dv/dr=E r^3/sqrt(S)+r/(r-2m)
-#   (v-branch, derivato dalla metrica ingoing) e dr_*/dr=r/(r-2m):
-#     du/dr = E r^3/sqrt(S) - r/(r-2m)   =>   u = E U_3 - r_*   (DERIVATO dalla metrica outgoing).
-#   (r_* = (r-r0) + 2m ln((r-2m)/(r0-2m)),  dr_*/dr=r/(r-2m).)
+# DERIVAZIONE dei clock sull'arco ENTRANTE (lanciato in r0 verso il punto di svolta):
+#   u,v sono definiti dal MEDESIMO tempo di Killing t via u=t-r_*, v=t+r_*.  Sull'arco entrante
+#   il tempo di Schwarzschild trascorso e' T=-E U_3>0 (dt/dr=-E r^3/sqrt(S)), quindi
+#     v = T + r_*  (dv/dr = -E r^3/sqrt(S) + r/(r-2m)),   u = T - r_*.
+#   (r_* = (r-r0) + 2m ln((r-2m)/(r0-2m)),  dr_*/dr=r/(r-2m).)  Le densita' E r^3/sqrt(S) +/- r/(r-2m)
+#   valgono sull'arco USCENTE; usarle qui scambiava avanzato e ritardato (corretto il 20/10/2026).
 # Stessa riduzione dM F (dipende solo da S congelata: ingoing/outgoing Schwarzschild = stessa geometria);
 # cambiano SOLO il clock (v vs u) e il segno di mdot (accrescimento m su' / evaporazione m giu').
 # => delta phi/mdot|_accr = A + B ,  delta phi/mdot|_evap = A - B  (COEFFICIENTI, /mdot con segno),
-#    A = int dM F * E U_3 dr   (parte all'INFINITO, polilog)
-#    B = int dM F * r_*   dr   (parte d'ORIZZONTE, dilog tortoise)
+#    A = int d_m(dphi/dr) * T dr   (parte all'INFINITO, polilog), lungo il moto
+#    B = int d_m(dphi/dr) * r_* dr  (parte d'ORIZZONTE, dilog tortoise)
 # PHYSICS (delta phi = mdot*[.]; mdot>0 accr, mdot<0 evap): delta phi_accr=+|mdot|(A+B),
 #    delta phi_evap=-|mdot|(A-B). Quindi (a |mdot| uguale):
 #    DIFFERENZA fisica = accr - evap = |mdot|*2A   (portata da A -- NON da B!)
 #    SOMMA fisica      = accr + evap = |mdot|*2B   = FALLIMENTO DELL'ANTISIMMETRIA (portata da B, orizzonte)
-# (referee Issue 4 FIX: B controlla il fallimento dell'antisimmetria, non la differenza fisica.)
+# (Correzione: B controlla il fallimento dell'antisimmetria, non la differenza fisica.)
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -35,22 +35,49 @@ rs=np.linspace(2.01,r0,20000); vv=Sn(rs); idx=np.where(np.diff(np.sign(vv)))[0]
 rmin=max(brentq(Sn,rs[i],rs[i+1]) for i in idx if rs[i]>2.0); xf=rmin+0.4
 def U3(x): return quad(lambda t:t**3/sq(t),r0,x,limit=200)[0]
 def rstar(x): return (x-r0)+2*M*(np.log(x-2*M)-np.log(r0-2*M))
-def v_adv(x): return E*U3(x)+rstar(x)     # accrescimento (ingoing, derivato metrica ingoing)
-def u_ret(x): return E*U3(x)-rstar(x)     # evaporazione (outgoing, DERIVATO: u=v-2r_*)
+# The arc is INGOING: launched at r0 and run inward to xf.  On it the Schwarzschild
+# time elapsed is T = -E U_3 > 0 (U_3 anchored at r0 is negative for x < r0), so
+#   advanced  v = T + r_*,   retarded  u = T - r_*,
+# and the shape integrand along the motion is dphi/dr = -J D_E/sqrt(S), hence -dMF.
+# An earlier version used the OUTGOING densities E U_3 +/- r_* on this ingoing arc:
+# that swaps the advanced and retarded coefficients and flips the sign of B.
+def T_el(x): return -E*U3(x)
+def v_adv(x): return T_el(x)+rstar(x)     # accrescimento (ingoing, tempo avanzato trascorso)
+def u_ret(x): return T_el(x)-rstar(x)     # evaporazione (outgoing, u = v - 2 r_*)
+dMF_mot=lambda x: -dMFn(x)                 # d_m (dphi/dr) along the ingoing motion
 
-# --- verifica derivazione clock outgoing: du/dr = dv/dr - 2 dr_*/dr (referee Issue 4) ---
-def dvdr(x): return E*x**3/sq(x)+x/(x-2*M)      # v-branch (metrica ingoing)
-def dudr(x): return E*x**3/sq(x)-x/(x-2*M)      # u-branch (derivato)
-def drstardr(x): return x/(x-2*M)
-print("verifica clock outgoing derivato: du/dr == dv/dr - 2 dr_*/dr :",
-      f"{max(abs(dudr(xx)-(dvdr(xx)-2*drstardr(xx))) for xx in [6.0,8.0,10.0]):.1e}")
+# --- independent check of the clock and of the orientation against the TRUE frozen
+#     Hamiltonian flow of H_tau (eq:Htau-vaidya), whose flow parameter is v ---
+from scipy.integrate import solve_ivp
+rr_,pp_=sp.symbols('rr pp')
+fv=1-2*M/rr_; wv=E**2-fv
+JJ_=sp.Symbol('JJ')
+HsJ=pp_*(fv-E**2)-E+sp.sqrt(wv)*sp.sqrt((E*pp_+1)**2+JJ_**2/rr_**2)
+Hs=HsJ.subs(JJ_,J)
+Hn=sp.lambdify((rr_,pp_),Hs,'numpy'); Hp=sp.lambdify((rr_,pp_),sp.diff(Hs,pp_),'numpy')
+Hr=sp.lambdify((rr_,pp_),sp.diff(Hs,rr_),'numpy')
+HJ=sp.lambdify((rr_,pp_),sp.diff(HsJ,JJ_).subs(JJ_,J),'numpy')
+pg=np.linspace(-30,30,60001); hv=Hn(r0,pg)
+roots=[brentq(lambda q:Hn(r0,q),pg[i],pg[i+1]) for i in range(len(pg)-1) if hv[i]*hv[i+1]<0]
+p0=[q for q in roots if Hp(r0,q)<0][0]                       # ingoing root
+ev=lambda t,y: y[0]-xf; ev.terminal=True
+fl=solve_ivp(lambda t,y:[Hp(y[0],y[1]),-Hr(y[0],y[1]),HJ(y[0],y[1])],[0,200],[r0,p0,0.0],
+             rtol=1e-12,atol=1e-14,events=ev,dense_output=True)
+worst_v=worst_phi=0.0
+for lam in np.linspace(0.1*fl.t[-1],fl.t[-1],6):
+    x,_,ph=fl.sol(lam)
+    worst_v=max(worst_v,abs(lam-v_adv(x)))
+    worst_phi=max(worst_phi,abs(ph-quad(lambda t:-J*((E**2-1)*t+2*M)/sq(t),r0,x,limit=200)[0]))
+print(f"clock check against the H_tau flow: max|v_flow - (T + r_*)| = {worst_v:.1e}, "
+      f"max|phi_flow - int(-J D_E/sqrt S)| = {worst_phi:.1e}")
+assert worst_v<1e-8 and worst_phi<1e-8, "ingoing clock or orientation inconsistent with the flow"
 
 # --- parti A (simmetrica) e B (antisimmetrica=orizzonte) ---
-A=quad(lambda x:dMFn(x)*E*U3(x), r0,xf,limit=150)[0]
-B=quad(lambda x:dMFn(x)*rstar(x),r0,xf,limit=150)[0]
+A=quad(lambda x:dMF_mot(x)*T_el(x), r0,xf,limit=150)[0]
+B=quad(lambda x:dMF_mot(x)*rstar(x),r0,xf,limit=150)[0]
 # --- diretti coi due clock ---
-accr=quad(lambda x:dMFn(x)*v_adv(x),r0,xf,limit=150)[0]
-evap=quad(lambda x:dMFn(x)*u_ret(x),r0,xf,limit=150)[0]
+accr=quad(lambda x:dMF_mot(x)*v_adv(x),r0,xf,limit=150)[0]
+evap=quad(lambda x:dMF_mot(x)*u_ret(x),r0,xf,limit=150)[0]
 
 print("=== delta phi_V : coefficienti (/mdot con segno) e quantita' FISICHE ===")
 print(f"  A (parte INFINITO, polilog)  = {A:+.8f}")
@@ -65,14 +92,14 @@ print(f"  delta phi_accr/|mdot| = +(A+B) = {dphi_accr:+.6f}")
 print(f"  delta phi_evap/|mdot| = -(A-B) = {dphi_evap:+.6f}")
 print(f"  DIFFERENZA  accr-evap = 2A = {dphi_accr-dphi_evap:+.6f}   (portata da A, l'INFINITO -- NON da B!)")
 print(f"  SOMMA       accr+evap = 2B = {dphi_accr+dphi_evap:+.6f}   = FALLIMENTO DELL'ANTISIMMETRIA (B, orizzonte)")
-print("  (referee Issue 4 FIX: la vecchia dicitura 'asimmetria=2B' confondeva la differenza dei coeff")
+print("  (Correzione: la vecchia dicitura 'asimmetria=2B' confondeva la differenza dei coeff")
 print("   (A+B)-(A-B)=2B con la differenza FISICA accr-evap=2A; B misura la deviazione dall'antisimmetria.)")
 
 # --- struttura di B: bulk (2a specie) + settore d'ORIZZONTE (dilog D_k) ---
 # r_* = (r-r0)  +  2m ln((r-2m)/(r0-2m))
 #        \___bulk___/     \____log d'orizzonte____/
-B_bulk=quad(lambda x:dMFn(x)*(x-r0), r0,xf,limit=150)[0]
-B_hor =quad(lambda x:dMFn(x)*2*M*(np.log(x-2*M)-np.log(r0-2*M)), r0,xf,limit=150)[0]
+B_bulk=quad(lambda x:dMF_mot(x)*(x-r0), r0,xf,limit=150)[0]
+B_hor =quad(lambda x:dMF_mot(x)*2*M*(np.log(x-2*M)-np.log(r0-2*M)), r0,xf,limit=150)[0]
 print("\n=== struttura dell'asimmetria B = B_bulk + B_hor ===")
 print(f"  B_bulk (2a specie, r-r0)           = {B_bulk:+.8f}")
 print(f"  B_hor  (log d'orizzonte -> dilog D_k)= {B_hor:+.8f}")

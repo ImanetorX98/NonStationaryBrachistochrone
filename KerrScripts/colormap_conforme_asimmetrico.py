@@ -25,7 +25,7 @@ from scipy.optimize import brentq
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _ROOT)
 # paper_style.py lives in NonStationaryMetrics/; a fresh clone must find it
-# without relying on an unarchived sibling directory (CQG-116884, major 10)
+# without relying on an unarchived sibling directory
 sys.path.insert(0, os.path.join(_ROOT, "NonStationaryMetrics"))
 from paper_style import COL, set_style, savefig
 import matplotlib.pyplot as plt
@@ -34,6 +34,12 @@ try:
 except ImportError:
     def tqdm(x, **k):
         return x
+
+import warnings
+# NaN-producing branches of the lambdified radicals are expected and filtered by
+# np.isfinite below; silence only these messages so they do not break the bar.
+warnings.filterwarnings('ignore', message='invalid value encountered', category=RuntimeWarning)
+warnings.filterwarnings('ignore', message='divide by zero encountered', category=RuntimeWarning)
 
 set_style()
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -98,9 +104,10 @@ def Dr(E, J_tau):
 Jg = np.linspace(0.5, 5.0, 44)
 Eg = np.linspace(1.05, 2.4, 40)
 Z = np.full((len(Eg), len(Jg)), np.nan)
-for i, E in enumerate(tqdm(Eg, desc='E_eff (=Eh/A)', ncols=70)):
-    for j, J in enumerate(Jg):
-        Z[i, j] = Dr(E, J)
+# one progress step per cell (same row-major order as before), with an ETA
+cells = [(i, j) for i in range(len(Eg)) for j in range(len(Jg))]
+for i, j in tqdm(cells, desc='cells', ncols=70, mininterval=1.0):
+    Z[i, j] = Dr(Eg[i], Jg[j])
 
 print(f"Delta_r in [{np.nanmin(Z):+.3f}, {np.nanmax(Z):+.3f}]", flush=True)
 print(">>> " + ("INVERSIONE (cambia segno)" if np.nanmin(Z) * np.nanmax(Z) < 0

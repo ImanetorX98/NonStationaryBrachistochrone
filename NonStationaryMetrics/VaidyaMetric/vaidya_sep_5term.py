@@ -97,7 +97,8 @@ resid=np.max(np.abs(Des@coef-LHS))
 beta=coef[:5]
 print(f"residuo sistema (deve essere ~1e-13): {resid:.1e}")
 print("beta (coeff dei 5 dilog-base):",np.array2string(beta.real,precision=6))
-np.save('/tmp/fay_beta.npy',{'basis':basis,'beta':beta,'gamma':coef[5:],'pairs':pairs,'enam':enam})
+import os, tempfile
+np.save(os.path.join(os.environ.get('NSM_OUTDIR', tempfile.gettempdir()), 'fay_beta.npy'),{'basis':basis,'beta':beta,'gamma':coef[5:],'pairs':pairs,'enam':enam})
 
 # ===== VERIFICA END-TO-END: delta phi = 1/2 G~ eta + sum_5 beta A_base + peso-1  vs diretto =====
 gamma=coef[5:]

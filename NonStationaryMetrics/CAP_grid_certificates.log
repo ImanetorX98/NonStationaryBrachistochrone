@@ -1,7 +1,7 @@
 # RUN 6 -- 27 September 2026.  Windows extended to the HALF-potential radius.
 # The quarter-regime extension of the grazing bound (V(r_min) >= V(r0)/4) is not
 # proved: the closed form leaves a positive boundary term that convexity of W does
-# not control (audit II-01).  The elementary bound that is proved is the grazing
+# not control.  The elementary bound that is proved is the grazing
 # one, V(r_min) >= V(r0)/2, so the certified window now runs to r_{1/2} and the
 # weld encloses V(r_{1/2}+1e-10) - V(r0)/2.  The r0 = 10 configuration of
 # no_inversion_schwarzschild_CAP_r0_10.py (b = 0.96), whose window stopped at

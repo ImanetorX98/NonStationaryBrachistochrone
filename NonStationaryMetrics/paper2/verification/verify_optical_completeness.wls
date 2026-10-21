@@ -2,8 +2,8 @@
 (* verify_optical_completeness.wls
    Is the fixed-energy optical surface COMPLETE?  If it is, and K < 0, then
    Cartan-Hadamard applies on its universal cover and yields a genuine GLOBAL
-   minimality statement within each homotopy class -- an "equivalent global
-   result" in the sense of referee 1, major comment 2.
+   minimality statement within each homotopy class -- an equivalent global
+   result to a second-variation argument.
 
    Optical 2-metric (a -> 0 frozen limit, equatorial):
        a = Lambda^2 (dr^2/f + r^2 dphi^2),  Lambda^2 = Eh^2/(f (Eh^2 - f)),

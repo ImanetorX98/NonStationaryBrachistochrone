@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-PHYSICS anchor for the closed-form off-shell reduction (main11 methodology).
+PHYSICS anchor for the closed-form off-shell reduction (methodology).
 
 Every intermediate reduction check (p_r = rational*sqrt(S); int p_r dr = sum a_k U_k; kernel
 = A/sqrt(S); IBP into W_jk) is math-vs-math -- correct but self-referential, exactly the chain

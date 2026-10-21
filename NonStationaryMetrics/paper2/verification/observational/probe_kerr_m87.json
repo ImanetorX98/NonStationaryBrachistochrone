@@ -1,0 +1,360 @@
+{
+  "model": "frozen equatorial Kerr, Ehat = 1, arrival-time rail, endpoints (r0,0)-(r0,1.8), one turn, zero winding; spin illustrative; M = 6.5e9 Msun",
+  "rows": [
+    {
+      "a": -0.8,
+      "r0_M": 120.0,
+      "rmin_M": 47.982107218408345,
+      "t_M": 1236.2952988334828,
+      "tau_M": 1202.8453201767836,
+      "impulse_over_c": 0.3287719115540131,
+      "peak_accel_over_M": 0.0008906085540432955,
+      "peak_r_M": 47.982107218408345,
+      "beta_static_peak": 0.20416220117120096,
+      "peak_g": 0.8504014803190411,
+      "t_days": 458.11167216401566,
+      "photon_mass_ratio": 1.3892609450771387,
+      "spin_shift_minutes": 28.705084216722888
+    },
+    {
+      "a": 0.0,
+      "r0_M": 120.0,
+      "rmin_M": 47.98555465301422,
+      "t_M": 1236.241503179215,
+      "tau_M": 1202.8427212081529,
+      "impulse_over_c": 0.32756816505806086,
+      "peak_accel_over_M": 0.0008872653111603665,
+      "peak_r_M": 47.98555465301422,
+      "beta_static_peak": 0.20415486720908962,
+      "peak_g": 0.8472091702027711,
+      "t_days": 458.09173807775403,
+      "photon_mass_ratio": 1.387589633202257
+    },
+    {
+      "a": 0.8,
+      "r0_M": 120.0,
+      "rmin_M": 47.96340003977146,
+      "t_M": 1236.1950790666474,
+      "tau_M": 1202.8404307930916,
+      "impulse_over_c": 0.3265637045037032,
+      "peak_accel_over_M": 0.0008851330643353848,
+      "peak_r_M": 47.96340003977146,
+      "beta_static_peak": 0.20420201201058163,
+      "peak_g": 0.8451731849788048,
+      "t_days": 458.0745355308728,
+      "photon_mass_ratio": 1.3861965539137948,
+      "spin_shift_minutes": -24.771667508788443
+    },
+    {
+      "a": -0.8,
+      "r0_M": 38.0,
+      "rmin_M": 17.552053130422824,
+      "t_M": 230.81476109155932,
+      "tau_M": 212.04035438951445,
+      "impulse_over_c": 0.5587379069353304,
+      "peak_accel_over_M": 0.007017553282552316,
+      "peak_r_M": 17.552053130422824,
+      "beta_static_peak": 0.33756004445443305,
+      "peak_g": 6.700741501535279,
+      "t_days": 85.52886698150749,
+      "photon_mass_ratio": 1.7484643823932207,
+      "spin_shift_minutes": 91.6690162381655
+    },
+    {
+      "a": 0.0,
+      "r0_M": 38.0,
+      "rmin_M": 17.546406843966192,
+      "t_M": 230.64296592567914,
+      "tau_M": 212.01825799842706,
+      "impulse_over_c": 0.5491260459308739,
+      "peak_accel_over_M": 0.006901328318974709,
+      "peak_r_M": 17.546406843966192,
+      "beta_static_peak": 0.33761435208044377,
+      "peak_g": 6.589763585785753,
+      "t_days": 85.46520794245322,
+      "photon_mass_ratio": 1.7317388960724303
+    },
+    {
+      "a": 0.8,
+      "r0_M": 38.0,
+      "rmin_M": 17.487951689363552,
+      "t_M": 230.51426339491766,
+      "tau_M": 212.0115708336499,
+      "impulse_over_c": 0.541905422512544,
+      "peak_accel_over_M": 0.006843007973925897,
+      "peak_r_M": 17.487951689363552,
+      "beta_static_peak": 0.33817813551318116,
+      "peak_g": 6.534076148766352,
+      "t_days": 85.41751696471148,
+      "photon_mass_ratio": 1.7192796973684592,
+      "spin_shift_minutes": -68.67500794809798
+    }
+  ],
+  "photon_rocket_power_W_per_tonne_at_1g": 2939959708245.6997,
+  "checks": [
+    {
+      "name": "zero Killing power g(b, d_t) symbolic",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "geodesic acceleration identically zero",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=120.0 endpoint angle",
+      "value": -3.511413382284445e-12,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=120.0 mass shell",
+      "value": 7.771561172376096e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=120.0 charge Ehat=1",
+      "value": 3.3306690738754696e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=120.0 endpoint angle",
+      "value": 1.9053647548616937e-12,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=120.0 mass shell",
+      "value": 7.771561172376096e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=120.0 charge Ehat=1",
+      "value": 3.3306690738754696e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "quadrature refinement a=-0.8 r0=120.0 t",
+      "value": -1.0593523827104814e-12,
+      "atol": 3e-08,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=120.0 endpoint angle",
+      "value": -4.765077221691172e-13,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=120.0 mass shell",
+      "value": 4.440892098500626e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=120.0 charge Ehat=1",
+      "value": 2.220446049250313e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=120.0 endpoint angle",
+      "value": 7.562839243746566e-13,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=120.0 mass shell",
+      "value": 4.440892098500626e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=120.0 charge Ehat=1",
+      "value": 1.1102230246251565e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "quadrature refinement a=0.0 r0=120.0 t",
+      "value": -2.468251321931089e-13,
+      "atol": 3e-08,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=120.0 endpoint angle",
+      "value": 1.0169198816356584e-11,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=120.0 mass shell",
+      "value": 5.551115123125783e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=120.0 charge Ehat=1",
+      "value": 2.220446049250313e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=120.0 endpoint angle",
+      "value": 9.005907131154345e-12,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=120.0 mass shell",
+      "value": 5.551115123125783e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=120.0 charge Ehat=1",
+      "value": 2.220446049250313e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "quadrature refinement a=0.8 r0=120.0 t",
+      "value": 2.1869307254169031e-13,
+      "atol": 3e-08,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=38.0 endpoint angle",
+      "value": -3.0446756227320293e-12,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=38.0 mass shell",
+      "value": 7.771561172376096e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=38.0 charge Ehat=1",
+      "value": 3.3306690738754696e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=38.0 endpoint angle",
+      "value": -7.949196856316121e-13,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=38.0 mass shell",
+      "value": 7.771561172376096e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=-0.8 r0=38.0 charge Ehat=1",
+      "value": 3.3306690738754696e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "quadrature refinement a=-0.8 r0=38.0 t",
+      "value": -5.459870028174721e-13,
+      "atol": 3e-08,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=38.0 endpoint angle",
+      "value": 4.799938224664402e-12,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=38.0 mass shell",
+      "value": 4.440892098500626e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=38.0 charge Ehat=1",
+      "value": 1.1102230246251565e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=38.0 endpoint angle",
+      "value": -3.6133318559450345e-12,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=38.0 mass shell",
+      "value": 4.440892098500626e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.0 r0=38.0 charge Ehat=1",
+      "value": 1.1102230246251565e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "quadrature refinement a=0.0 r0=38.0 t",
+      "value": 2.0082494028304724e-12,
+      "atol": 3e-08,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=38.0 endpoint angle",
+      "value": -9.868994510497942e-12,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=38.0 mass shell",
+      "value": 5.551115123125783e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=38.0 charge Ehat=1",
+      "value": 2.220446049250313e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=38.0 endpoint angle",
+      "value": -3.348432642269472e-13,
+      "atol": 2e-09,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=38.0 mass shell",
+      "value": 4.440892098500626e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "a=0.8 r0=38.0 charge Ehat=1",
+      "value": 2.220446049250313e-16,
+      "atol": 1e-10,
+      "status": "PASS"
+    },
+    {
+      "name": "quadrature refinement a=0.8 r0=38.0 t",
+      "value": -2.277171675797069e-12,
+      "atol": 3e-08,
+      "status": "PASS"
+    }
+  ]
+}

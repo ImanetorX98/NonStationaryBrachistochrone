@@ -18,8 +18,7 @@ b = E^2 - 1, c = a^2:
   boundary constant C_c (exactly, and numerically at three points);
   the five interval-certified derivative signs of the two counterexamples.
 
-The proofs and this script were first written by GPT-6 Astra in an audit of the
-proofs (27 September 2026) and checked independently before inclusion.  Every
+The proofs and this script were checked independently before inclusion.  Every
 assertion raises, so any failure gives a nonzero exit code.
 """
 import sys

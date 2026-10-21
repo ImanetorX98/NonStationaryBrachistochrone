@@ -1,0 +1,21 @@
+{
+  "slow_motion_residual": "0",
+  "newtonian_parameter": "m A",
+  "H0_per_year": 6.893079992407985e-11,
+  "EPM2019_dGM_over_GM_per_year": [
+    -1.02e-13,
+    1.4e-14
+  ],
+  "ratio_H0_to_ephemeris": 675.79215611843,
+  "H0_in_ephemeris_3sigma_units": 4930.9142802914175,
+  "checks": [
+    {
+      "name": "slow-motion limit gives m A",
+      "status": "PASS"
+    },
+    {
+      "name": "H0 outside the EPM2019 interval",
+      "status": "PASS"
+    }
+  ]
+}

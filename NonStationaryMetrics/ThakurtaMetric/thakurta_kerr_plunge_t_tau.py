@@ -1,42 +1,32 @@
 # -*- coding: utf-8 -*-
 """
-Plunge inversion t vs tau nel piano (a, J) — Kerr e Thakurta-Kerr.
+Same-launch depth comparison t vs tau in Thakurta-Kerr (equatorial), protocol (P1) of Paper II:
+same launch event, same numerical axial costate J, each radial momentum on ITS OWN branch shell
+(H_br = 0), free arrival.  The quantity compared is the outer turning radius r_min reached inward
+from r0; if a branch has no turning point in (2M, r0) it REACHES the conformal stationary limit
+r = 2M, which is the end of the control domain: a limiting contact (type C), outside the
+normality lemma, not an optimal crossing.
 
-PROTOCOLLO (evidence_t_plunges_deeper.txt): stesse condizioni iniziali
-(r0, p_r0, J) nei flussi delle Hamiltoniane ottiche QUADRATICHE dei due
-rami equatoriali; integrazione fino a p_r = 0; confronto del raggio
-minimo raggiunto rispetto alla singolarita'. In Kerr: il ramo t affonda
-di piu' (soppressione centrifuga 1/E^2), TRANNE a J piccolo dove il
-dragging inverte l'ordinamento: l'inversione vive nel piano
-(a = spin del BH, J = momento angolare z della particella).
+r_min of each branch is the outer root of the PMP turning condition H_br(r, p_r = 0; J) = 0 below
+r0 (same functions as inversione_conformale_AJ.py), checked against the PMP Hamiltonian flow
+launched on the shell (A = 1, where the branch Hamiltonians are those of fig_phi_validation_corrected.py).
 
-Hamiltoniane quadratiche (equatoriali; a A=1 identiche al progetto Kerr):
+An earlier version launched both QUADRATIC optical Hamiltonians with the same radial momentum
+p_r = -0.5: that puts the two branches on DIFFERENT energy levels, and produced a spurious
+"rotational inversion" in the (a, J) plane.  A later version used the cost -1 (H_eta) for the t-branch
+at every A, i.e. compared eta with tau at J_eta = J_tau (J_t = A J_tau).  With the declared protocol,
+H_t at J_t = J_tau, no inversion is found on the scanned grids, rotational or conformal: the t-branch
+turns deeper or reaches r = 2M.
 
-  H_tau = (1/2k^2)[(f Dl/r^2) p_r^2 + (f^2/Dl) J^2]
-  H_t   = (1/2n^2)[(f Dl/r^2) p_r^2 + (f^2/Dl) X^2],  X = J + 2Ma/(rf)
-  n^2 = Ehat^2/(Ehat^2 - A^2 f),   k = A^2 f n/Ehat,   Dl = r^2-2Mr+a^2
-
-RAPPORTO DELLE HAMILTONIANE (potenziali centrifughi a p_r=0):
-
-  V_t/V_tau = rho^2 ,   rho = A^2 [ f + 2Ma/(rJ) ] / Ehat
-
-  rho < 1: t piu' profondo;  rho > 1: tau piu' profondo.
-  La curva di inversione J_inv(a) cresce con lo spin (dragging);
-  il fattore conforme A^2 la SPOSTA verso J piu' alti: a A > sqrt(Ehat)
-  l'inversione diventa generica (E_eff = Ehat/A < 1: vince la
-  dilatazione temporale, crossover tipo TOV).
-
-Con A costante H e' conservata: r_min = radice algebrica di
-V(r) = H(r0,p_r0): luogo esatto di inversione algebrico; le ODE lo
-validano. Figura: (a) colormap (J, a) a A=1 con luogo esatto + formula
-rho=1; (b) drift del luogo esatto con A = 1, 1.1, 1.2.
+Panels: (a) Delta r = r_min^t - r_min^tau on (J, a) at A = 1, E = 1.2, r0 = 10, with the region
+where the t-branch reaches r = 2M marked; (b) Delta r along J at a = 0.9 for A = 1, 1.3, 1.4, launched
+at r0 = 20 or just inside the freezing surface.
 """
-
 import os
 import sys
 import numpy as np
-import matplotlib.pyplot as plt
 import sympy as sp
+import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from scipy.optimize import brentq
 
@@ -46,212 +36,133 @@ from paper_style import COL, set_style, savefig
 
 set_style()
 OUT = os.path.join(HERE, 'Thakurtafigures')
+M, Eh = 1.0, 1.2
+R_E = 2 * M
 
-M_n, E_n = 1.0, 1.2
-r0, pr0 = 10.0, -0.5
 
-r, pr, A, J, a_ = sp.symbols('r p_r A J a', positive=True)
-f = 1 - 2 * M_n / r
-Dl = r**2 - 2 * M_n * r + a_**2
-n2 = E_n**2 / (E_n**2 - A**2 * f)
-k2 = A**4 * f**2 * n2 / E_n**2
-X = J + 2 * M_n * a_ / (r * f)
+def geom(r, A, a):
+    f = 1 - 2 * M / r
+    Dl = r**2 - 2 * M * r + a**2
+    P = r**2 + a**2 + 2 * M * a**2 / r
+    b = 2 * M * a / r
+    vb2 = 1 - A**2 * f / Eh**2
+    Pb = P + A**2 * b**2 / Eh**2
+    return f, Dl, b, vb2, Pb
 
-H_tau = ((f * Dl / r**2) * pr**2 + (f**2 / Dl) * J**2) / (2 * k2)
-H_t = ((f * Dl / r**2) * pr**2 + (f**2 / Dl) * X**2) / (2 * n2)
 
-lamb = lambda ex: sp.lambdify((r, pr, A, J, a_), ex, 'numpy')
-Hs = {'tau': (lamb(H_tau), lamb(sp.diff(H_tau, pr)), lamb(sp.diff(H_tau, r))),
-      't': (lamb(H_t), lamb(sp.diff(H_t, pr)), lamb(sp.diff(H_t, r)))}
+def H0(r, A, J, a, br):
+    """PMP branch Hamiltonian at p_r = 0.  The coordinate-time branch is H_t = h - A (paper:
+    H_eta = h - 1, H_t = h - A, h the support function); at A = 1 the two coincide.  An earlier
+    version used the cost -1 (H_eta) for all A, which compares eta with tau at J_eta = J_tau,
+    i.e. J_t = A J_tau, not the declared J_t = J_tau."""
+    f, Dl, b, vb2, Pb = geom(r, A, a)
+    if vb2 <= 0:
+        return np.nan
+    php0 = b * vb2 / Pb
+    S = np.sqrt(vb2 * Dl) / Pb
+    if br == 'tau':
+        ptp = J - A**2 * b / Eh
+        return ptp * php0 + S * abs(ptp) - A**2 * f / Eh
+    return J * php0 + S * abs(J) - A
 
-def r_plus(av):
-    return M_n + np.sqrt(max(M_n**2 - av**2, 1e-12))
 
-def r_min_alg(Jv, av, Av, ramo):
-    Hx = Hs[ramo][0]
-    H0 = Hx(r0, pr0, Av, Jv, av)
-    def g(rv):
-        return Hx(rv, 0.0, Av, Jv, av) - H0
-    rg = np.linspace(r0, r_plus(av) * 1.001, 4000)
-    with np.errstate(invalid='ignore', divide='ignore'):
-        gv = np.array([g(x) for x in rg])
-    for i in range(len(rg) - 1):
-        if np.isfinite(gv[i]) and np.isfinite(gv[i + 1]) \
-                and gv[i] < 0 <= gv[i + 1]:
-            return brentq(g, rg[i], rg[i + 1])
-    return 0.0
+def r_min(J, a, A, r0, br):
+    """Outer turning radius below r0; R_E if the branch reaches r = 2M; nan if r0 is off-shell."""
+    if not H0(r0, A, J, a, br) <= 0:
+        return np.nan                       # no real inward momentum at launch
+    rs = np.linspace(r0, R_E + 1e-7, 6000)
+    v = np.array([H0(x, A, J, a, br) for x in rs])
+    for i in range(len(rs) - 1):
+        if np.isfinite(v[i]) and np.isfinite(v[i + 1]) and v[i] <= 0 < v[i + 1]:
+            return brentq(lambda x: H0(x, A, J, a, br), rs[i + 1], rs[i])
+    return R_E
 
-def r_min_ode(Jv, av, Av, ramo):
-    Hx, dHp, dHr = Hs[ramo]
-    def rhs(t_, y):
-        return [dHp(y[0], y[1], Av, Jv, av), -dHr(y[0], y[1], Av, Jv, av)]
-    ev_t = lambda t_, y: y[1]
-    ev_t.terminal, ev_t.direction = True, 1
-    ev_h = lambda t_, y: y[0] - r_plus(av) * 1.002
-    ev_h.terminal, ev_h.direction = True, -1
-    s = solve_ivp(rhs, [0, 20000], [r0, pr0], rtol=1e-10, atol=1e-12,
-                  method='DOP853', events=[ev_t, ev_h])
-    if len(s.t_events[0]):
-        return s.y_events[0][0][0]
-    return 0.0
+
+# ---- independent check at A = 1: PMP Hamiltonian flow launched on the shell ----
+rr, pr, Js = sp.symbols('r p_r J')
+def H_full(a, br):
+    f = 1 - 2 * M / rr; Dl = rr**2 - 2 * M * rr + a**2; b = 2 * M * a / rr
+    v = 1 - f / Eh**2; P = rr**2 + a**2 + 2 * M * a**2 / rr; Pb = P + b**2 / Eh**2
+    if br == 'tau':
+        pt = Js - b / Eh
+        return pt * b * v / Pb + sp.sqrt(Dl * v / Pb) * sp.sqrt((Dl / rr**2) * pr**2 + pt**2 / Pb) - f / Eh
+    return Js * b * v / Pb + sp.sqrt(Dl * v / Pb) * sp.sqrt((Dl / rr**2) * pr**2 + Js**2 / Pb) - 1
+
+
+def r_min_flow(J, a, r0, br):
+    H = H_full(a, br)
+    Hn = sp.lambdify((rr, pr, Js), H, 'numpy')
+    Hp = sp.lambdify((rr, pr, Js), sp.diff(H, pr), 'numpy')
+    Hr = sp.lambdify((rr, pr, Js), sp.diff(H, rr), 'numpy')
+    p0 = brentq(lambda p: Hn(r0, p, J), -60.0, 0.0)          # ingoing root (H even in p_r)
+    ev_t = lambda s, y: y[1]; ev_t.terminal, ev_t.direction = True, 1
+    ev_e = lambda s, y: y[0] - (R_E + 1e-4); ev_e.terminal, ev_e.direction = True, -1
+    so = solve_ivp(lambda s, y: [Hp(y[0], y[1], J), -Hr(y[0], y[1], J)], [0, 5000], [r0, p0],
+                   rtol=1e-11, atol=1e-13, events=[ev_t, ev_e])
+    if len(so.t_events[0]):
+        return so.y_events[0][0][0]
+    return R_E
+
 
 print("=" * 72)
-print(f"[V1] Kerr A=1, a=0.4: confronto con l'evidence (r0={r0}, pr0={pr0})")
-print("=" * 72)
-for Jv in (0.5, 1.5, 2.5, 3.5, 4.5):
-    rt = r_min_ode(Jv, 0.4, 1.0, 'tau')
-    rtt = r_min_ode(Jv, 0.4, 1.0, 't')
-    print(f"  J={Jv:4.1f}:  r_min(t)={rtt:7.4f}  r_min(tau)={rt:7.4f}"
-          f"  Delta={rtt - rt:+8.4f}")
-print("  evidence (a=0.4, r0=10): +0.06, -0.45(J=1) ... -0.42(J=4.5)")
+print("check: turning radius from H(r,0)=0 vs PMP flow launched on the shell (A=1, r0=10)")
+worst = 0.0
+for a in (0.2, 0.5, 0.9):
+    for J in (0.5, 2.5, 4.5, -2.0):
+        for br in ('t', 'tau'):
+            ra, rf = r_min(J, a, 1.0, 10.0, br), r_min_flow(J, a, 10.0, br)
+            if np.isfinite(ra):
+                worst = max(worst, abs(ra - rf) if ra > R_E else abs(rf - R_E) * (rf > R_E + 1e-3))
+print(f"  max |r_min(turning condition) - r_min(flow)| = {worst:.1e}")
+assert worst < 1e-5, "turning-condition and flow disagree"
 
-print()
-print("=" * 72)
-print("[V2] colormap (J, a) a A=1 + luogo esatto + formula rho=1")
-print("=" * 72)
-J_g = np.linspace(0.05, 3.0, 28)
-a_g = np.linspace(0.05, 0.98, 28)
+# ---- (a) map on (J, a) at A = 1 ----
+J_g = np.linspace(-6.0, 6.0, 97)
+a_g = np.linspace(0.05, 0.98, 48)
+D = np.full((len(a_g), len(J_g)), np.nan)
+reach = np.zeros_like(D, dtype=bool)
+for i, a in enumerate(a_g):
+    for j, J in enumerate(J_g):
+        rt, ru = r_min(J, a, 1.0, 10.0, 't'), r_min(J, a, 1.0, 10.0, 'tau')
+        if np.isfinite(rt) and np.isfinite(ru):
+            D[i, j] = rt - ru
+            reach[i, j] = rt <= R_E
+n_tau = int(np.nansum(D > 1e-9)); n_tot = int(np.sum(np.isfinite(D)))
+print(f"(a) A=1: tau deeper in {n_tau}/{n_tot} cells; t reaches r=2M in {int(reach.sum())}")
 
-def mappa_ode(Av):
-    """colormap INTERAMENTE numerica (flussi ODE, nessuna algebra)."""
-    d = np.full((len(a_g), len(J_g)), np.nan)
-    for i, av in enumerate(a_g):
-        for j, Jv in enumerate(J_g):
-            rt_ = r_min_ode(Jv, av, Av, 't')
-            ru_ = r_min_ode(Jv, av, Av, 'tau')
-            if rt_ > 0 and ru_ > 0:
-                d[i, j] = rt_ - ru_
-    return d
+# ---- (b) Delta r along J at a = 0.9; launch at r0 = 20 or just inside the freezing
+#      surface A^2 f = Ehat^2 when that lies closer (r_w = 2M/(1 - Ehat^2/A^2)) ----
+Jb = np.linspace(0.5, 30.0, 300)
+curves = {}
+A_b = (1.0, 1.3, 1.4)
+def r0_of(A):
+    return 20.0 if A <= Eh else min(20.0, 0.999 * 2 * M / (1 - Eh**2 / A**2))
+for A in A_b:
+    d = []
+    r0b = r0_of(A)
+    for J in Jb:
+        rt, ru = r_min(J, 0.9, A, r0b, 't'), r_min(J, 0.9, A, r0b, 'tau')
+        d.append(rt - ru if np.isfinite(rt) and np.isfinite(ru) else np.nan)
+    curves[A] = np.array(d)
+    pos = Jb[np.array(curves[A]) > 1e-9]
+    print(f"(b) A={A} (r0={r0b:.3f}): tau deeper for J in "
+          + (f"[{pos.min():.2f}, {pos.max():.2f}]" if len(pos) else "none"))
 
-print("  ... colormap ODE 28x28x2 in corso ...")
-d1 = mappa_ode(1.0)
-
-# validazione ODE a campione
-res_max = 0.0
-for av in (0.2, 0.5, 0.9):
-    for Jv in (0.5, 1.5, 2.5):
-        for ramo in ('t', 'tau'):
-            ra = r_min_alg(Jv, av, 1.0, ramo)
-            ro = r_min_ode(Jv, av, 1.0, ramo)
-            if ra > 0 and ro > 0:
-                res_max = max(res_max, abs(ra - ro) / ra)
-print(f"  residuo ODE vs algebrico (campione): {res_max:.2e}")
-
-def J_inv_esatta(av, Av):
-    """luogo esatto: Delta r(J) = 0 (bisezione in J)."""
-    def dd(Jv):
-        rt_ = r_min_alg(Jv, av, Av, 't')
-        ru_ = r_min_alg(Jv, av, Av, 'tau')
-        if rt_ <= 0 or ru_ <= 0:
-            return np.nan
-        return rt_ - ru_
-    Jg = np.linspace(0.02, 4.5, 120)
-    vals = np.array([dd(Jv) for Jv in Jg])
-    for i in range(len(Jg) - 1):
-        if np.isfinite(vals[i]) and np.isfinite(vals[i + 1]) \
-                and vals[i] > 0 >= vals[i + 1]:
-            return brentq(dd, Jg[i], Jg[i + 1])
-    return np.nan
-
-def rho_r(rv, Jv, av, Av):
-    fv = 1 - 2 * M_n / rv
-    return Av**2 * (fv + 2 * M_n * av / (rv * Jv)) / E_n
-
-def J_inv_rho(av, Av):
-    """FORMULA CORRETTA:  rho(r*)^2 = H_t0/H_tau0  alla svolta tau.
-
-    I due rami partono con valori hamiltoniani DIVERSI (stesse
-    (r0, p_r0, J) ma coefficienti diversi): il criterio del rapporto dei
-    potenziali va normalizzato al rapporto di lancio, non a 1.
-    In campo lontano H_t0/H_tau0 ~ rho(r0)^2: inversione dove
-    rho(r*) = rho(r0)."""
-    Ht0f = Hs['t'][0]
-    Hu0f = Hs['tau'][0]
-    def eq(Jv):
-        ru_ = r_min_alg(Jv, av, Av, 'tau')
-        if ru_ <= 0:
-            return np.nan
-        rapporto = Ht0f(r0, pr0, Av, Jv, av) / Hu0f(r0, pr0, Av, Jv, av)
-        return rho_r(ru_, Jv, av, Av)**2 - rapporto
-    Jg = np.linspace(0.02, 4.5, 120)
-    vals = np.array([eq(Jv) for Jv in Jg])
-    for i in range(len(Jg) - 1):
-        if np.isfinite(vals[i]) and np.isfinite(vals[i + 1]) \
-                and vals[i] * vals[i + 1] <= 0:
-            return brentq(eq, Jg[i], Jg[i + 1])
-    return np.nan
-
-a_c = np.linspace(0.05, 0.98, 30)
-Ji_1 = np.array([J_inv_esatta(av, 1.0) for av in a_c])
-Jr_1 = np.array([J_inv_rho(av, 1.0) for av in a_c])
-print(f"  A=1: J_inv esatta da {np.nanmin(Ji_1):.2f} (a piccolo) a "
-      f"{np.nanmax(Ji_1):.2f} (a={a_c[np.nanargmax(Ji_1)]:.2f})")
-dev = np.nanmax(np.abs(Ji_1 - Jr_1) / Ji_1)
-print(f"  formula corretta rho(r*)^2 = H_t0/H_tau0 vs luogo esatto: "
-      f"deviazione max = {dev:.2e}")
-
-# luogo di inversione NUMERICO (bisezione sui flussi ODE)
-def J_inv_ode(av, Av):
-    def dd(Jv):
-        rt_ = r_min_ode(Jv, av, Av, 't')
-        ru_ = r_min_ode(Jv, av, Av, 'tau')
-        if rt_ <= 0 or ru_ <= 0:
-            return np.nan
-        return rt_ - ru_
-    Jg = np.linspace(0.02, 4.5, 100)
-    vals = np.array([dd(Jv) for Jv in Jg])
-    for i in range(len(Jg) - 1):
-        if np.isfinite(vals[i]) and np.isfinite(vals[i + 1]) \
-                and vals[i] > 0 >= vals[i + 1]:
-            return brentq(dd, Jg[i], Jg[i + 1], xtol=1e-8)
-    return np.nan
-
-a_pts = np.linspace(0.05, 0.96, 14)
-J_ode_pts = np.array([J_inv_ode(av, 1.0) for av in a_pts])
-J_ana_pts = np.array([J_inv_rho(av, 1.0) for av in a_pts])
-devs = np.abs(J_ode_pts - J_ana_pts)
-print("  luogo NUMERICO (ODE) vs FORMULA analitica, punto per punto:")
-for av, jo, ja in zip(a_pts, J_ode_pts, J_ana_pts):
-    print(f"    a={av:.2f}:  J_inv ODE = {jo:.6f}   analitica = {ja:.6f}"
-          f"   |diff| = {abs(jo - ja):.2e}")
-print(f"  deviazione massima ODE vs analitica: {np.nanmax(devs):.2e}")
-
-print()
-print("=" * 72)
-print("[V3] drift conforme del luogo di inversione nel piano (a, J)")
-print("=" * 72)
-curves = {1.0: Ji_1}
-for Av in (1.1, 1.2):
-    curves[Av] = np.array([J_inv_esatta(av, Av) for av in a_c])
-    print(f"  A={Av}: J_inv(a=0.9) = {curves[Av][np.argmin(np.abs(a_c-0.9))]:.2f}"
-          f"   (A=1: {Ji_1[np.argmin(np.abs(a_c-0.9))]:.2f})")
-
-# --------------------------------------------------------------- figura
 fig, (axa, axb) = plt.subplots(2, 1, figsize=(COL, 6.6))
-vmax = np.nanmax(np.abs(d1))
-im = axa.pcolormesh(J_g, a_g, d1, cmap='RdBu_r', vmin=-vmax, vmax=vmax,
-                    shading='auto')
-plt.colorbar(im, ax=axa, label='$\\Delta r = r_{min}^{t} - r_{min}^{\\tau}$')
-CS = axa.contour(J_g, a_g, d1, levels=[0.0], colors='k', linewidths=1.8)
-axa.plot(Jr_1, a_c, 'w--', lw=1.4,
-         label='analytic $\\rho(r_*)^2 = H_{t0}/H_{\\tau 0}$')
-axa.plot(J_ode_pts, a_pts, 'o', mfc='none', mec='lime', ms=6, mew=1.3,
-         label='$\\Delta r=0$ numerical (ODE bisection)')
-axa.set_xlabel('$J$ (axial control costate)')
-axa.set_ylabel('$a$ (TK spin)')
-axa.set_title(f'Kerr ($A=1$, $E={E_n}$, $r_0={r0}$, $p_r={pr0}$):\n'
-              'colormap + black contour = PURE ODE; '
-              f'ODE vs analytic max {np.nanmax(devs):.1e}')
-axa.legend(loc='lower right')
-
-axb.plot(J_ana_pts, a_pts, 'k-', lw=1.5, label='analytic')
-axb.plot(J_ode_pts, a_pts, 'o', mfc='none', mec='C3', ms=7, mew=1.4,
-         label='numerical (ODE)')
-axb.set_xlabel('$J_{inv}(a)$')
-axb.set_ylabel('$a$')
-axb.set_title('numerical/analytic overlap of the inversion\n'
-              f'locus: max $|\\Delta J| = {np.nanmax(devs):.1e}$')
-axb.grid(alpha=0.3)
-axb.legend()
+vmax = np.nanmax(np.abs(D))
+im = axa.pcolormesh(J_g, a_g, D, cmap='RdBu_r', vmin=-vmax, vmax=vmax, shading='auto')
+plt.colorbar(im, ax=axa, label=r'$\Delta r = r_{\min}^{t}-r_{\min}^{\tau}$')
+axa.contourf(J_g, a_g, reach.astype(float), levels=[0.5, 1.5], colors='none', hatches=['///'])
+axa.plot([], [], ' ', label=r'hatched: $t$ reaches $r=2M$ (limiting contact)')
+axa.set_xlabel(r'$J$ (axial costate)'); axa.set_ylabel(r'$a$')
+axa.set_title(f'same launch, each branch on its own shell ($A=1$, $E={Eh}$, $r_0=10$):\n'
+              f'$\\tau$ deeper in {n_tau} of {n_tot} cells', fontsize=7)
+axa.legend(loc='lower right', fontsize=6)
+for A, st in zip(A_b, ('k-', 'C0--', 'C3-.')):
+    axb.plot(Jb, curves[A], st, lw=1.2, label=f'$A={A}$')
+axb.axhline(0, color='0.5', lw=0.6)
+axb.set_xlabel(r'$J$'); axb.set_ylabel(r'$\Delta r$')
+axb.set_title(r'$a=0.9$, $t$ vs $\tau$ at $J_t=J_\tau$, launch inside the freezing surface', fontsize=7)
+axb.legend(fontsize=6); axb.grid(alpha=0.3)
 savefig(fig, OUT, 'fig_thakurta_kerr_plunge_t_tau')
 print('\nFATTO.')

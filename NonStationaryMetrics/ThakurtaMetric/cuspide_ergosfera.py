@@ -15,8 +15,7 @@ Vicino a r_e (f -> 0):
  => dphi/dr ~ K sqrt(r - r_e),   K = J E r_e / (a^2 sqrt(a^2 - J^2 E^2) sqrt(2M))
  => phi - phi_e ~ (2K/3)(r - r_e)^{3/2}   (CUSPIDE: potenza 3/2)
 
-Classificazione locale a r_e -- QUATTRO casi, non tre (rivisto per CQG-116884,
-commento maggiore 4).  Il radicale di forma S(r) dipende da J solo via J^2 e
+Classificazione locale a r_e -- QUATTRO casi, non tre (versione rivista).  Il radicale di forma S(r) dipende da J solo via J^2 e
 quindi NON puo' distinguere +J_c da -J_c; le equazioni di Hamilton si', perche'
 ptilde_phi(r_e) = J - J_c e' lineare in J.
 
@@ -190,7 +189,7 @@ def traiettoria_retro_marginale():
     is FINITE at r_e; and the radial Hamilton equation gives dr/ds ~ C (r-r_e)
     with C = -sqrt(4M^2+J_c^2)/(8M^2), so the parameter diverges logarithmically
     and r_e is an asymptotic endpoint.  The extremal therefore neither cusps nor
-    reflects, and only the ingoing branch exists.  (CQG-116884, major 4.)
+    reflects, and only the ingoing branch exists.
     """
     rg = np.linspace(r_e, r0, 600)
     ph = np.array([-quad(dphiBL_sep, r_e, rv, limit=300)[0] for rv in rg])

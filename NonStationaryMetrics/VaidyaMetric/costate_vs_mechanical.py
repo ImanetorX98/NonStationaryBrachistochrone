@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# main14 memo 4.3: the axial control costate J = p_phi is NOT the mechanical angular
+# The axial control costate J = p_phi is NOT the mechanical angular
 # momentum L_mech = g(u, d_phi). Along the forced rail worldline L_mech is not conserved.
 #
 # From the Vaidya v-branch indicatrix (eq:vaidya-ind), reconstructing the four-velocity

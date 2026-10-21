@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, together with the companion papers."
+title: "NonStationaryBrachistochrone: reproducibility package for controlled-rail brachistochrones in non-stationary spacetimes"
+type: software
+authors:
+  - family-names: Rosignoli
+    given-names: Iman
+    orcid: "https://orcid.org/0009-0004-4536-0285"
+    affiliation: "University of Pavia"
+version: "1.8.0"
+license: MIT
+doi: 10.5281/zenodo.21707377
+repository-code: "https://github.com/ImanetorX98/NonStationaryBrachistochrone"
+references:
+  - type: article
+    status: preprint
+    authors:
+      - family-names: Rosignoli
+        given-names: Iman
+        orcid: "https://orcid.org/0009-0004-4536-0285"
+    title: "Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry, Kodama energy, and Vaidya dynamics"
+    doi: 10.5281/zenodo.21739997
+  - type: article
+    status: preprint
+    authors:
+      - family-names: Rosignoli
+        given-names: Iman
+        orcid: "https://orcid.org/0009-0004-4536-0285"
+    title: "Brachistochrones in conformal Kerr spacetimes: control domain, exterior separatrices, and adiabatic response"
+    doi: 10.5281/zenodo.21739999

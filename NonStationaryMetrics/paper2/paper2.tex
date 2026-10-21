@@ -18,7 +18,7 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 
-% numbered statements: the referee asks that each result identify its object
+% numbered statements: each result identifies its object
 % (exterior extremal / limiting contact / analytic continuation) explicitly
 \theoremstyle{plain}
 \newtheorem{proposition}{Proposition}
@@ -39,8 +39,8 @@
 \graphicspath{{../paper/}}
 
 % Generated provenance macros (slopes, epsilon window, SHA-256 hashes).
-% Produced by provenance/make_provenance.py -- never edit by hand; see
-% CQG-116884 referee major comments 7 and 10 for why these are generated.
+% Produced by provenance/make_provenance.py -- never edit by hand; they are
+% generated so that slopes and hashes cannot drift from the data.
 \input{provenance/adiabatic_slopes.tex}
 
 % prose placeholder helper
@@ -70,29 +70,31 @@ control domain, exterior separatrices, and adiabatic response}
 
 \begin{abstract}
 What is the fastest constrained worldline when the spacetime not only evolves but
-rotates? We study this for the controlled-rail brachistochrone---the time-optimal
-worldline reaching a fixed target at a free arrival clock---in Thakurta--Kerr, the
-conformal Kerr geometry $g=A(\eta)^2 g_{\rm Kerr}$. Its foundations---existence and
-normality, Hamilton--Jacobi verification, the selector hierarchy---are the companion
-paper's; what rotation adds is frame dragging, a conformal
-stationary limit and genus-two spectral curves. The domain is delimited at the outset:
-since $g(\partial_\eta,\partial_\eta)=-A^2(1-2M/r)$, the admissible-velocity set is
-compact only outside the stationary limit $r=2M$, where the compact-control problem
-\emph{ends}, and every curve is labelled an exterior extremal, a limiting contact, or an
-analytic continuation with no optimality claim. We derive the breathing-indicatrix
-Hamiltonians and the conformal-time arrival branch $t\equiv\eta$, distinct from proper
-time $\tau$; equatorial separatrices closed in Weierstrass functions, the exterior
-retrograde one at $r_d=3.5139M$; a local classification at that limit in which the marginal
-momenta $\pm J_c$ prove \emph{dynamically inequivalent} though the shape radical is even
-in $J$---the retrograde reaches it only asymptotically, the prograde crosses at a finite
-rate; the rotational and conformal depth inversion, the latter with an existence
-theorem under a same-launch comparison;
-and the first-order adiabatic response, on- and off-shell, verified on compact regular
-subarcs against the true non-autonomous flow to $O(\varepsilon^2)$, its weight-two content a length-two iterated Abelian integral on a
-genus-two curve. The separatrices, the classification and the on-shell reduction are
-proved; for frozen $A$ the symmetric fixed-endpoint no-inversion is proved on explicit
-regions of the coordinate-time turning point, for every spin and, when $E^2\ge3/2$, everywhere beyond the
-single peak of the proper-time half-angle map, its unrestricted extension remaining
+rotates? We study the controlled-rail brachistochrone---the time-optimal worldline
+reaching a fixed target at a free arrival clock---in Thakurta--Kerr, the conformal Kerr
+geometry $g=A(\eta)^2 g_{\rm Kerr}$. Existence, Hamilton--Jacobi verification and the
+selector hierarchy are taken from the companion paper; the interior free-arrival
+normality lemma is proved here. Since $g(\partial_\eta,\partial_\eta)=-A^2(1-2M/r)$,
+regular compact controls require $r>2M$ and $\Ehat^2>A^2(1-2M/r)$; the compact-control
+problem ends at the stationary limit $r=2M$, and every curve is labelled an exterior
+extremal, a limiting contact, or an analytic continuation with no optimality claim. We
+derive the breathing-indicatrix Hamiltonians and the conformal-time arrival branch,
+distinct from proper time; equatorial separatrices in closed Weierstrass form, including
+an exterior retrograde one at $r_d=3.5139M$ for the representative parameters; a local
+classification at the stationary limit, where the marginal momenta $\pm J_c$ are
+dynamically inequivalent although the shape radical is even in $J$; a same-launch depth
+ordering with no prograde inversion at equal level, $J_t=J_\tau$ and frozen $A$ (proved), a
+conformal inversion when the costates of the two branches are paired in conformal time, and
+a rotational inversion in a different-level diagnostic whose arrival-branch curves are not
+rail extremals of the same metric; and the first-order adiabatic response, verified on compact
+regular subarcs against the true non-autonomous flow to $O(\varepsilon^2)$, whose
+weight-two content is a length-two iterated Abelian integral on a genus-two curve. We
+also classify three families of rail-swept surfaces for any positive conformal factor,
+and give observational scales, rotating benchmarks and controlled-probe examples without
+identifying a detected source with Thakurta--Kerr. The classification and the on-shell
+reduction are proved, and the exterior separatrix is computed to sixteen digits with its
+domain inequalities proved; for frozen $A$ the symmetric fixed-endpoint
+no-inversion is proved on explicit regions, its unrestricted extension remaining
 conjectural; a rigorous higher-genus polylogarithm framework remains open.
 \end{abstract}
 
@@ -123,6 +125,13 @@ section~\ref{sec:bvp} below, and the difference is exactly the one this paper tu
 on: there they are developed for light, here for a timelike rail at fixed
 $\Ehat$, whose optical metric~\eqref{eq:dilation} reduces to the null one only as
 $\Ehat\to\infty$.
+Earlier, Goldstein and Bender had posed the special-relativistic problem in uniform
+fields, already distinguishing the laboratory-time and the proper-time brachistochrone
+\cite{GoldsteinBender1986}; Kamath extended it to the weak static field of a spherical
+source, for a particle falling from rest at infinity \cite{Kamath1988}. Wang and Jia
+have recently treated a traveller at constant local speed in static spherically
+symmetric spacetimes, whose extremals are null geodesics of the optical metric
+\cite{WangJia2026}: a different constraint from the maintained energy of the rail.
 
 \paragraph{What is established, and what is new here.} It is useful to state the division
 explicitly. \emph{Established:} the stationary problem itself, together with its reduction
@@ -232,9 +241,10 @@ $\Sigma(s,u)=\gamma_s(u)$ swept by a regular one-parameter family of arrival-tim
 extremals with smoothly varying endpoints \cite[Definition~3]{Tas2025}. In Minkowski space
 the rulings are straight timelike segments; suitable planar families give totally geodesic
 timelike planes, the flat analogue of a hyperplane, although a general endpoint family
-need not be planar. In a curved background the surface bends, and the variation field
-along a ruling obeys the linearised Euler--Lagrange equation of the arrival functional
-\cite[Proposition~4]{Tas2025}. Ta\c{s} treats Minkowski space and the static Schwarzschild
+need not be planar. In a curved background the extrinsic geometry of the swept surface
+is a separate question from the extremality of its rulings; in the regular stationary
+reduction the variation field along a ruling obeys the linearised Euler--Lagrange
+equation of the arrival functional \cite[Proposition~4]{Tas2025}. Ta\c{s} treats Minkowski space and the static Schwarzschild
 exterior, and leaves rotating backgrounds such as Kerr, and genuinely non-stationary ones,
 open.
 
@@ -245,8 +255,9 @@ launch and varying $J$ the parametrisation is singular at the launch itself, whe
 common endpoint gives his boundary condition $W(0)=0$. Take the Lagrangian $F_T^2/2$, which
 has the same extremals at constant speed and satisfies his strong Legendre condition (the
 homogeneous $F_T$ does not). Then Proposition~\ref{prop:rot-separation} is, after passing to
-arclength of the Riemannian part and removing the tangential component, the normal
-component of that linearised equation, with normal taken in the optical base. The magnetic
+arclength of the Riemannian part, retaining the tangential component imposed by unit
+$\alpha$-speed and eliminating it after projection, the normal component of that
+linearised equation, with normal taken in the optical base. The magnetic
 terms are the covariant contribution of $\dd b$; the antisymmetric coordinate matrix in his
 equation also contains terms from the choice of Lagrangian and chart, and is not $\dd b$
 by itself.
@@ -265,12 +276,24 @@ exterior (Corollary~\ref{cor:static-separation}), which has no counterpart for t
 energy-independent null metric, whose Gauss curvature $-M(2r-3M)/r^4$ is negative
 everywhere.
 \end{itemize}
-We have not established whether the brachistochrone-ruled surfaces of the curved case are
-totally geodesic or totally umbilical in the sense of those 2-planes, and we do not
-construct or classify them beyond the linearised equation of their rulings.
+The optical variation equation and the spacetime second fundamental form of a swept
+surface describe different objects, and the latter can be computed directly. We do so in
+Lemma~\ref{lem:rail-surfaces} of~\ref{app:rail-surfaces}, for $g=A(\eta)^2g_{\rm Kerr}$
+with $A$ an arbitrary positive function and three equatorial rail families. Azimuthal
+translates of a regular rail arc monotone in $r$ sweep a timelike surface that is neither
+totally umbilical nor totally geodesic when $Ma\neq0$. In the non-rotating radial family,
+total umbilicity holds precisely when the areal radius $A(\eta)\,r(\eta)$ is constant
+along the rulings, and total geodesicity is excluded throughout the regular exterior. A
+common-launch family with fixed charge and regularly varying initial direction is
+neither, on its regular portion close to the launch. These statements concern the
+Lorentzian metric and the specified families: they are not consequences of the Randers
+extremality of the frozen spatial projections, and they do not classify arbitrary swept
+surfaces.
 
 All of this presupposes a symmetry: the charge is \emph{conserved},
-by a Killing or conformal-Killing field of the background. The sharpest statement
+by a Killing field of the background (a conformal Killing field conserves the
+corresponding charge along null geodesics, not in general along timelike curves, as the
+identity below shows). The sharpest statement
 of what that presupposition costs is Giannoni and Piccione's own: their trial paths
 are timelike, like ours, and constrained so that the four-acceleration does no work
 against the observer field---a frictionless slide---whence, by the identity
@@ -301,8 +324,9 @@ structural, not cosmetic. Their constraint set is the union over all values of t
 charge, and is a submanifold \emph{because} the charge is conserved; ours is a single
 prescribed level $\{-g(u,W)=\Ehat\}$, and the argument that makes theirs a submanifold is
 unavailable once the charge is not conserved. This is why the existence theorem of
-Paper~I proceeds by the direct method on an augmented state, closing the non-autonomous
-clock equation by a Gr\"onwall estimate and invoking Filippov--Cesari, rather than by
+Paper~I proceeds by the direct method on an augmented state---a Gr\"onwall estimate makes
+the clock equation well posed, the Filippov--Cesari theorem closes the relaxed problem, and
+a scalar comparison lemma returns an admissible arc of no greater cost---rather than by
 restricting a functional to a constraint submanifold. We do not import that structure,
 and say so here to forestall the assumption that it carries over. The same caution
 applies to the compactness available in the stationary theory: the Palais--Smale property
@@ -312,7 +336,7 @@ nor assume its analogue for the rail.
 Three
 consequences have no stationary counterpart: the admissible-velocity set can lose
 compactness, so the problem possesses a causal boundary at which it ceases to be posed
-(section~\ref{sec:domain}); the reduced Hamiltonian is not an interior first integral, so
+(section~\ref{sec:domain}); the reduced Hamiltonian is not constant along a non-autonomous arc, so
 the optical metric acquires an explicit dependence on the adapted time; and the response to
 slow evolution of the background is a genuine first-order perturbation problem with its own
 hyperelliptic transcendental content. Our results should be read as extending the
@@ -348,8 +372,9 @@ conformal Kerr spacetime $g=A(\eta)^2 g_{\rm Kerr}$, in which frame dragging, an
 ergosphere and genus-two spectral curves appear. We derive the breathing-indicatrix
 Hamiltonians and the conformal-time ($\eta$) brachistochrone (the arrival branch
 $t\equiv\eta$, distinct from proper time $\tau$); the closed-form equatorial separatrices
-in Weierstrass functions; the local classification at the conformal stationary limit, with its exact normal forms; the exterior retrograde separatrix; the rotational and
-conformal depth inversion; and the first-order adiabatic response, on-shell and
+in Weierstrass functions; the local classification at the conformal stationary limit, with its exact normal forms; the exterior retrograde separatrix; the same-launch depth ordering, with no prograde inversion at
+equal level and its rotational and conformal inversions in the alternative comparisons
+(a conformal pairing of costates, and a different-level diagnostic); and the first-order adiabatic response, on-shell and
 off-shell, verified against the true non-autonomous flow.
 
 Because the selector fixes where the problem exists, we begin by delimiting it. For
@@ -369,20 +394,105 @@ framework.
 \section{Thakurta--Kerr: conformal rotating compact object}
 \label{sec:thakurta}
 % ----------------------------------------------------------------------
-\paragraph{The controlled-rail formalism (from Paper I).} We use the controlled-rail
-variational problem established in the companion Paper~I. On a regular domain where the
-selector $W$ is timelike and the velocity indicatrix is smooth, compact and uniformly
-convex, minimizing the arrival clock is a time-optimal control problem whose minimizer is
-a \emph{normal} Pontryagin extremal (Paper~I, Theorem~I.1 and Theorem~I.2). Normality
-there is stated for \emph{interior} minimizers, the state constraint being inactive along
-them; every object of type~(E) below is interior by construction, living on a compact
-region $r\ge2M+\delta$ with $\bar v^2>0$. The arrival
-clock is free, so the transversality is $H|_{s_f}=0$. Global optimality is certified only
-\emph{under the hypotheses} of the non-autonomous Hamilton--Jacobi \emph{verification}
-criterion of Paper~I (Proposition~I.3)---the existence of a $C^1$ calibration saturated by
-the candidate extremal and constant along the arrival line---which we invoke as a verification
-criterion, not an automatic global guarantee. We do not reprove these; we specialize the
-construction to the conformal Kerr geometry.
+\paragraph{The controlled-rail formalism (from Paper I).}
+We use the controlled-rail variational problem of the companion Paper~I.
+Its existence and Hamilton--Jacobi verification results are invoked only
+under their stated hypotheses. The following local lemma makes explicit
+the normality argument needed here; it does not itself prove existence.
+The equalities $g(u,u)=-1$ and $-g(u,W)=\Ehat$ define the admissible
+velocities. In the reduced formulation they are incorporated into the
+control set. They remain imposed even when a spatial state constraint
+$x\in\Omega$ is inactive.
+
+\begin{lemma}[Normality for an interior free-arrival minimiser; evidence level~(I), proved below]
+\label{lem:normality}
+Use $\eta$ as the independent variable and write
+$x'=f(x,\theta,\eta)$, $\theta\in S^1$, for the equatorial rail
+indicatrix. Let $x^\ast$ be a strong local minimiser of
+$\int_{\eta_0}^{\eta_f}\ell(x,\theta,\eta)\,\dd\eta$, with fixed
+spatial endpoints and a genuinely free finite terminal $\eta_f>\eta_0$.
+If a clock window is imposed, $\eta_f$ is strictly inside it.
+Assume that the arc, endpoints included, has a positive margin from
+all state-constraint boundaries and that its graph has a compact
+neighbourhood inside the regular domain. On this neighbourhood assume
+that $f,\ell$ are continuous in $\theta$, $C^1$ in $(x,\eta)$ with
+uniformly bounded derivatives, and $\ell\ge\ell_{\min}>0$.
+The indicatrix is the smooth strictly convex boundary of a compact
+body $K(x,\eta)$ containing a ball of radius $1/R>0$ about the origin
+uniformly. Controls are measurable and states are absolutely continuous.
+
+With $\widetilde H=p\cdot f+p_0\ell$, $p_0\le0$, and
+$H^\ast=\max_\theta\widetilde H$, every PMP multiplier system of
+this minimiser is normal: $p_0<0$ and can be normalised to $-1$.
+Moreover $H^\ast(\eta_f)=0$ and $p(\eta_f)\ne0$.
+If $\partial_x\ell=0$, then $p(\eta)\ne0$ along the entire arc.
+For an autonomous dynamics and cost, $H^\ast$ is constant and zero
+along the arc; otherwise its vanishing is a terminal condition only.
+\end{lemma}
+
+\begin{proof}
+Interiority makes the state constraint inactive: sufficiently close
+competitors, including small variations of the terminal time, remain
+in the same regular neighbourhood. Thus the minimiser is also a strong
+local minimiser of the problem without the spatial wall. The classical
+PMP \cite{Pontryagin,Liberzon} gives $p_0$ constant, an absolutely
+continuous costate, nontriviality, the maximum condition, and
+\begin{equation}
+ p'=-\big(\partial_x f\big)^{\!T}p-p_0\partial_x\ell,
+ \qquad H^\ast(\eta_f)=0.
+\end{equation}
+No active state-constraint measure is needed. For
+$h(x,p,\eta)=\max_{v\in\partial K}p\cdot v$,
+\begin{equation}
+ h(x,p,\eta)=\max_{v\in K}p\cdot v\ge |p|/R.
+ \label{eq:normality-support}
+\end{equation}
+If $p_0=0$, the adjoint equation is homogeneous. Its uniqueness and
+nontriviality imply $p(\eta_f)\ne0$. Hence the bound gives
+$H^\ast(\eta_f)=h>0$, a contradiction. Thus $p_0<0$.
+Positive rescaling of the full pair $(p_0,p)$ preserves the PMP
+conditions, so we take $p_0=-1$. If $p(\eta_f)=0$, then
+$H^\ast(\eta_f)=-\min_\theta\ell<0$, another contradiction.
+If $\partial_x\ell=0$, uniqueness of the homogeneous adjoint equation
+propagates this non-vanishing along the arc. In general that last
+argument is not available. The PMP Hamiltonian is absolutely continuous
+and obeys
+$\dd H^\ast/\dd\eta=p\cdot\partial_\eta f+p_0\partial_\eta\ell$
+almost everywhere along the selected control; in the autonomous case
+this proves constancy.
+\end{proof}
+
+The maximum convention $p_0=-1$ is equivalent to the minimum convention
+$\lambda=-p$, $\lambda_0=-p_0=1$. Interiority is a strict hypothesis,
+not a consequence of compactness. A boundary-touching minimiser requires
+the state-constrained PMP and suitable qualifications.
+For a finite regular arc, a compact tube around its graph supplies the
+uniform constants. A fixed product $\Omega\times I$ supplies them only
+when it is itself uniformly regular; margins along the graph alone do
+not imply that stronger property.
+
+In the clock-$\eta$ formulation the three running costs are
+\begin{equation}
+ \ell_\eta=1,\qquad \ell_t=A(\eta),\qquad
+ \ell_\tau=\frac{A^2f}{\Ehat}
+       +\frac{2MaA^2}{r\Ehat}v^\varphi,
+ \quad v^\varphi=\frac{\dd\varphi}{\dd\eta}.
+\end{equation}
+They are positive and regular on compact regular tubes.
+For the proper-time cost the shift
+$\tilde p_\varphi=p_\varphi-2MaA^2/(r\Ehat)$ remains inside the maximum
+and gives~\eqref{eq:Htau-tk}. Its state derivative enters the adjoint
+equation; the lemma does not assert non-vanishing of the spatial
+costate throughout an arbitrary non-autonomous proper-time arc.
+For the two arrival costs $\partial_x\ell=0$, so that additional
+conclusion does hold.
+
+The lemma is necessary-condition theory, not a certificate that an
+extremal minimises. Global optimality is asserted only under the
+hypotheses of the Hamilton--Jacobi verification criterion of Paper~I,
+Proposition~I.3. Launch-normalised IVP families are distinguished from
+free-arrival boundary-value solutions, which must also satisfy their
+shooting and terminal conditions.
 
 Thakurta--Kerr is conformal Kerr, $g=A(\eta)^2 g_{\rm Kerr}$
 \cite{Thakurta1981,Kerr1963}. Its place among the cosmological
@@ -437,7 +547,7 @@ caveat, $\rp$ is rigid, $\re=2M$ is crossed regularly, and the freezing surface
 $A^2 f=\Ehat^2$ breathes.
 
 The status of $\re$ can in fact be settled, and by a published criterion rather
-than by our own argument. the terminology used here is Dyer and
+than by our own argument. The terminology used here is Dyer and
 Honig's---they define the conformal stationary limit surface as the hypersurface on
 which the conformal Killing field becomes null, and the \emph{conformal Killing
 horizon} as the case in which that surface is itself null
@@ -461,13 +571,14 @@ control-domain boundary, not a horizon---and it also explains why the
 conformal-\emph{Schwarzschild} constructions in the same literature
 \cite{SultanaDyer2005} do obtain one: there the twist vanishes identically.
 
-The conclusion is moreover the published one for this very metric. Mello, Maciel
-and Zanchin analyse the Thakurta spacetime in detail and find that for increasing
-and unbounded $a(t)$, the cosmological case, it ``does not describe a cosmological
-black hole but rather an inhomogeneous expanding universe'', an event horizon at
-$r=2m$ appearing only for \emph{bounded} $a(t)$ and under further sufficient
-conditions \cite[abstract, \S I]{MelloMaciel2017}. Their route is global and causal
-where ours is the local twist criterion, and the two agree.
+In the non-rotating limit, Mello, Maciel and Zanchin analyse the Thakurta spacetime
+globally and find that for increasing and unbounded $a(t)$, the cosmological case, it
+``does not describe a cosmological black hole but rather an inhomogeneous expanding
+universe'', an event horizon at $r=2m$ appearing only for \emph{bounded} $a(t)$ and
+under further sufficient conditions \cite[abstract, \S I]{MelloMaciel2017}. This is a
+useful spherical comparison, but it does not classify the global horizons of the
+rotating background considered here; our twist calculation concerns only the local
+character of the rotating conformal stationary limit.
 Equation~\eqref{eq:twist-csls} is verified in
 \texttt{verification/verify\_conformal\_killing\_horizon.wls}.
 
@@ -475,12 +586,14 @@ Equation~\eqref{eq:twist-csls} is verified in
 only axisymmetric, no Kodama vector exists and the rail invariant is instead tied to the
 conformal Killing vector $\partial_\eta$ (with factor $A'/A$). Along a \emph{geodesic} the
 associated energy $\Ehat=-g^{\rm TK}(u,\partial_\eta)$ drifts at exactly the conformal
-rate $\dd\Ehat/\dd\tau=A'/A$ (verified numerically to $\sim\!10^{-11}$), whereas along the
-\emph{brachistochrone}---instantaneously an on-shell Kerr orbit at
-$E_{\rm eff}=\Ehat/A(\eta)$---the rail holds $\Ehat$ constant to $8.9\times10^{-16}$, the
-exact analogue of the spherical Kodama value of Paper~I
-(\texttt{ThakurtaMetric/rail\_conservation.py}). This confirms that the controlled charges
-$E_{\rm eff}=\Ehat/A$ and $J_{\rm eff}=J/A$ are carried consistently along the orbit.
+rate $\dd\Ehat/\dd\tau=A'/A$ (verified numerically to $\sim\!10^{-11}$), whereas the
+rail holds $\Ehat$ fixed by construction. A kinematic check reconstructs $\Ehat$ to
+$8.9\times10^{-16}$ along a curve built from on-shell Kerr data at
+$E_{\rm eff}=\Ehat/A(\eta)$ (\texttt{ThakurtaMetric/rail\_conservation.py}); this tests the
+charge reconstruction, not the canonical flow. The normalized canonical flow is derived
+in \texttt{ThakurtaMetric/canonical\_dilation\_check.py}, and the first-order response is
+validated against the true non-autonomous flow in
+\texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py}.
 
 \paragraph{Indicatrix and Hamiltonians.} Equatorially, write
 $\Delta=r^2-2Mr+a^2$, $\bar v^2=1-A^2f/\Ehat^2$, and
@@ -506,7 +619,8 @@ $H(x,p)=\max_{v\in\mathcal I_x}\big[\langle p,v\rangle-c(x,v)\big]$. The cost is
 $v$ on the rail: it is constant for the arrival clocks, and for proper time
 $\dd\tau/\dd\chi=1/u^\chi=-(g_{\chi\chi}+g_{\chi\varphi}v^\varphi)/\Ehat$ from
 $-u_\chi=\Ehat$, so each $H$ is the support function at a covector shifted by the cost,
-plus a function of $x$ (Paper~I, Theorem~I.1(ii)). The maximum of a linear functional over
+plus a function of $x$; this is the argument used for the Vaidya proper-time cost in the
+proof of Theorem~I.1(ii) of Paper~I, applied here to the shift $\tilde p_\varphi$. The maximum of a linear functional over
 $\mathcal K_x$ is always attained on $\partial\mathcal K_x$. Hence taking the
 convex hull changes neither the maximum nor the maximiser, and no relaxation or
 convexification step is needed for the \emph{Pontryagin maximum principle}: the
@@ -519,8 +633,10 @@ function; it does not make $\mathcal I_x$ closed under the convergence an
 existence argument uses, and in fact $\partial\mathcal K_x$ is not---weak-$*$
 limits of velocities valued on the sphere need only lie in the body. Existence
 therefore does require the passage to $\mathcal K_x$, together with the
-observation that an arrival-time optimum cannot use an interior velocity, since
-moving in the same direction more slowly increases the elapsed clock. The
+observation that a relaxed clock is a supersolution of the clock equation, so that by the
+scalar comparison lemma of Paper~I the saturated clock along the same spatial arc is no
+later (the naive argument that moving more slowly always arrives later can fail when the
+cost depends on the clock, which is why Paper~I uses the comparison lemma). The
 relaxation is thus harmless rather than unnecessary, and it is carried out in
 that form in Paper~I. The distinction matters only where $\mathcal K_x$
 degenerates: at $\bar v^2=0$ the body collapses to a point and boundary and body
@@ -547,8 +663,8 @@ of the extremal, and the two do not agree once the rail is enforced. Since
 $\varphi$ is cyclic, $J$ is constant along an extremal at frozen $A$; across
 branches it is relabelled by the conformal weight, $J_t=A\,J_\eta$
 (Protocol~\ref{prot:names}). The arrival-time branch $H_t$ differs
-from $H_\eta$ only in the unit cost ($-1\to-A$) and reduces to it for $A=1$; it is
-the branch compared with $\tau$ in the depth inversion
+from $H_\eta$ only in the cost term ($-1\to-A$) and reduces to it for $A=1$; it is
+the branch compared with $\tau$ in the same-launch depth ordering
 (section~\ref{sec:inversion}), where its turning potential
 $H_{t0}=H_t|_{p_r=0}$ enters. All three are regular through the
 ergosphere ($f=0\Rightarrow R^2=\bar v^2\Delta/\bar P>0$) and degenerate only at
@@ -660,11 +776,24 @@ the geometry rather than of our formalism.
 \label{prot:status}
 Throughout, each object is one of the following three, and is named accordingly.
 \begin{enumerate}
-\item[\rm(E)] a \emph{controlled-rail extremal}: a normal Pontryagin extremal of
-the compact-control problem, on a compact region $r\ge2M+\delta$ with
-$\bar v^2>0$;
+\item[\rm(E)] a \emph{controlled-rail extremal}: a regular arc of the
+normalised controlled-rail Hamiltonian flow with $p_0=-1$, in the
+domain where $W$ is timelike and the indicatrix is nondegenerate.
+Each finite sub-arc considered here has a compact regular graph
+neighbourhood with positive margins from $r=2M$ and from freezing,
+$\bar v^2=0$. For a control-dependent cost, any use of a smooth support
+Hamiltonian flow also requires its relevant shifted covector to be
+nonzero. For a fixed-spatial-target, free-arrival problem, type~(E)
+also requires the stated endpoint shooting and terminal transversality;
+a launch-normalised initial-value family is identified explicitly as
+such and is not by itself a certified solution of that boundary-value
+problem. Normality of interior minimisers follows from
+Lemma~\ref{lem:normality}, whereas minimality needs a separate certificate;
 \item[\rm(C)] a \emph{limiting contact}: a curve of type (E) whose closure meets
-$r=2M$, the limit being taken from $r>2M$;
+$r=2M$, the limit being taken from $r>2M$. Lemma~\ref{lem:normality} applies only to
+its finite sub-arcs at positive distance from $r=2M$; at the contact the selector is
+null, the control set ceases to be compact (Lemma~\ref{lem:compact}) and the support
+bound degenerates, so no normality or minimality is claimed there;
 \item[\rm(A)] an \emph{analytic continuation}: a solution of the frozen
 Hamiltonian equations continued into $r<2M$, where the control set is not
 compact. No optimality of any kind---global, local, or PMP---is claimed for
@@ -692,7 +821,10 @@ selects the extremal reaching that target. Comparisons between the $\eta$- and
 $t$-branches are made at the \emph{relabelled} costate $J_t=A\,J_\eta$, not at the
 same numerical value of $J$: at frozen $A$ the two branches trace the same spatial
 curve only under that relabelling, so ``same $J$'' and ``same endpoints'' are
-different comparisons. The distinct two-spatial-endpoint comparison used in
+different comparisons. With drifting $A$ the costates normalised by the terminal
+transversality of the two branches are related by the constant factor $A(\eta_f)$,
+$J_t=A(\eta_f)\,J_\eta$, since $H_\eta=h-1$ and $H_t=h-A$ share the homogeneous adjoint
+equation. The distinct two-spatial-endpoint comparison used in
 section~\ref{sec:bvp} is flagged there.
 \end{protocol}
 
@@ -991,7 +1123,7 @@ fact we \emph{verify} by computation, not one the abstract theory confers.
 
 \begin{remark}[what horizontal conformality supplies, regime by regime]
 \label{rmk:hc-scope}
-Since it has been put to us that the construction is a routine application of a
+Since the construction could be read as a routine application of a
 semiconformality statement, it is worth setting out what such a statement gives
 in each of the three regimes this paper passes through. In all three the
 hypothesis---that the projection is horizontally conformal---is established here
@@ -1646,7 +1778,7 @@ $r/M=22.75,\,59.53,\,576.7,\,5751.7$ for $\Ehat^2=1.20,\,1.40,\,1.49,\,1.499$.
 Negative curvature does \emph{not}, however, give global minimality here, and the
 reason is worth stating because it is not a focusing effect. The optical surface
 is $\{r>2M\}\times S^1$, an annulus: it is not simply connected, so
-Cartan--Hadamard yields local minimality without uniqueness. (On a \emph{simply
+Cartan--Hadamard yields local minimality without uniqueness. (On a \emph{complete, simply
 connected} manifold of nonpositive sectional curvature there is exactly one
 geodesic between any two points, the fact underlying the finiteness results of
 \cite{GiannoniMasielloPiccione2001}; the annular topology is precisely what
@@ -2061,8 +2193,10 @@ curvature satisfies
     \label{eq:ktau-asym}
 \end{equation}
 \emph{positive for every rail energy}: there is no threshold, and the distant
-proper-time optical geometry always focuses. A scan over the exterior finds
-$K_\tau>0$ on all but a negligible set. Nor is that surface complete: the radial
+proper-time optical geometry always focuses. A scan over $2<r/M<200$ finds $K_\tau>0$
+throughout for $E\ge1.1$; close to the marginal energy it is negative on a bounded
+interval (for $E=1.01$, $4.31<r/M<9.95$). Positivity at large radius holds for every
+$E$ and is what the argument below uses. Nor is that surface complete: the radial
 element tends to $1/\Ehat$ at $r\to2M$ rather than developing a pole, so the
 stationary limit lies at \emph{finite} proper-time distance---as it must, a
 falling worldline reaching it in finite proper time. Both hypotheses of
@@ -2082,8 +2216,10 @@ time''---while the $t$-brachistochrones ``cover any point in
 $U_{\mathcal C}$ and are \emph{free of cut points}''
 \cite[\S3, Figs.~5--6]{Perlick1991}. Flat spacetime in an accelerated frame is
 about as far from Schwarzschild as one can get while keeping a static Killing
-field, and the conclusion is the same: the arrival branch is the one with the
-good global behaviour. What the curvature computation adds is the mechanism---%
+field, and the conclusion is the same: in the regimes where it is proved (for the
+frozen, non-rotating arrival branch, $\Ehat^2\ge3/2$, Proposition~\ref{prop:globalmin}) the
+arrival branch is the one with the good global behaviour; below that threshold it too can
+develop conjugate points on long arcs that reach the region of positive curvature. What the curvature computation adds is the mechanism---%
 $K_\tau>0$ and incompleteness at the stationary limit---and the fact that it
 persists for every rail energy. Both computations are in
 \texttt{verification/verify\_two\_branch\_optics.wls}.
@@ -2158,11 +2294,11 @@ the non-rotating frozen limit, and the rotating case is not claimed.
     \label{fig:th-branches}
 \end{figure}
 
-\paragraph{The Thakurta--Kerr optical metric.} Paper~I established the indicatrix
+\paragraph{The Thakurta--Kerr optical metric.} Paper~I established the arrival-time
+optical metric for an adapted selector (its Theorem~I.C) and the indicatrix
 ladder---FLRW circle $\to$ Vaidya radial-wind ellipse $\to$ conformal-Kerr azimuthal-wind
-ellipse---casting every branch as a Randers form $\dd(\text{cost})=n\,\alpha+\beta$ with
-the wind one-form $\beta$ shared by the branches of a given metric and only the scalar
-index $n$ set by the clock. The present paper develops the last member, where frame
+ellipse---in which every cost clock shares the same indicatrix and only the cost
+one-form changes. The present paper develops the last member, where frame
 dragging shifts the centre azimuthally and the conformal factor makes the semi-axes
 breathe (figure~\ref{fig:indicatrici-tk}). For Thakurta--Kerr (Table~\ref{tab:optical}): the proper-time branch is
 \emph{Riemannian-pure}, $\beta_\tau=0$ (the gravitomagnetic wind cancels in $\tau$); the
@@ -2188,7 +2324,7 @@ wind $\beta=-2Ma/(rf)\,\dd\varphi$ is rigid.
     \caption{Thakurta--Kerr branch optical (Randers) metric $\dd(\text{cost})=n\,\alpha+\beta$
     ($f=1-2M/r$, $\Delta=r^2-2Mr+a^2$, $w_A=\Ehat^2-A^2f$); the wind $\beta$ acts on the
     arrival branches ($\eta,t$), $\tau$ being Riemannian-pure. Native index
-    $n_\eta=\Ehat/\sqrt{w_A}$. The FLRW and Vaidya rows of the ladder are in Paper~I.}
+    $n_\eta=\Ehat/\sqrt{w_A}$. The FLRW and Vaidya indicatrices are described in Paper~I.}
     \label{tab:optical}
     \begin{tabular}{lcccc}
     \hline
@@ -2204,10 +2340,14 @@ wind $\beta=-2Ma/(rf)\,\dd\varphi$ is rigid.
 
 \subsection{On-shell adiabatic response}
 \label{sec:adiabatic}
-By Lemma~I.4 of the companion Paper~I, every source of the form
+By Lemma~I.4 of the companion Paper~I, whenever $\deg S=6$ and $S$ is squarefree
+($\mathrm{disc}_rS\neq0$, $E\neq1$), every source of the form
 $\partial_\lambda F=N_\lambda/S^{3/2}$ reduces \emph{uniquely} to the Abelian basis
 $\{U_k=\int r^k/\sqrt S\,\dd r\}$ through the degree-ten polynomial identity (a
-nonsingular $11\times11$ linear system, no fit); for Thakurta--Kerr the slow parameter is
+nonsingular $11\times11$ linear system, no fit). This excludes every degeneration of the
+branch curve, physical or algebraic: the separatrices, $J=0$ on the $\tau$-branch, $J=a$ on
+the $t$-branch (where $R_6=r^3(E^2r^2+a^2)[(E^2-1)r+2M]$), the roots with $r_d<0$, and the
+marginal energy $E=1$; for Thakurta--Kerr the slow parameter is
 $A$ and the source is generated by $E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm
 eff}\partial_{J_{\rm eff}}$. We give the resulting coefficients below and do not repeat
 the reduction lemma. The dynamical quasi-constant drifts; the
@@ -2230,14 +2370,20 @@ $H_{\rm br}=A\,\bar H_{\rm br}(r,p_r/A,p_\varphi/A;E_{\rm eff})$
 (\ref{app:firstorder}), which makes the conserved costate $J=p_\varphi$ enter the frozen
 data as $J/A$. It is a statement about the control costate, not about the mechanical
 angular momentum $g(u,\partial_\varphi)$---in
-$A(\eta)=A_0(1+\varepsilon\eta+\dots)$, $\varepsilon=A'/A$, gives
+$A(\eta)=A_0(1+\varepsilon\eta+\dots)$, $\varepsilon=A'/A$ (in units $M=1$, so that
+$\varepsilon$ coincides with the dimensionless rate $M A_{,\eta}/A$ of \ref{app:firstorder}),
+gives the \emph{on-shell}
+part of the orbit-shape response,
 \begin{equation}
-    \varphi(r,A)=\underbrace{\varphi_0(r;E_{\rm eff},J_{\rm eff})}_{\text{frozen, Kleinian}}
-    +\varepsilon\big[\mathcal{C}(r)+\psi(r)\big]+O(\varepsilon^2),
+    \varphi_{\rm os}(r,A)=\underbrace{\varphi_0(r;E_{\rm eff},J_{\rm eff})}_{\text{frozen, Kleinian}}
+    +\varepsilon\big[\mathcal{C}(r)+\psi(r)\big],
     \label{eq:phi-adiab}
 \end{equation}
-where the first-order coefficient is the elapsed-clock--weighted \emph{scaling}
-derivative
+which is not by itself the orbit to $O(\varepsilon^2)$: the true shape is
+$\varphi=\varphi_{\rm os}+\varepsilon\,\chi_{\rm off}+O(\varepsilon^2)$, with the
+off-shell coefficient $\chi_{\rm off}$ of equation~\eqref{eq:adiab-exact} below, and
+$\varphi_{\rm os}$ alone leaves an $O(\varepsilon)$ error. The on-shell coefficient is the
+elapsed-clock--weighted \emph{scaling} derivative
 \begin{equation}
     \delta\varphi=-\!\int\!\big(\Ehat\,\partial_E F+J\,\partial_J F\big)\,\eta\,\dd r
     =-\!\int\!\big(E\,\partial_E+J\,\partial_J\big)F\,\eta\,\dd r,
@@ -2254,7 +2400,7 @@ functional measures. On the $t$-branch it coincides with the branch clock,
 $t=\eta$ at $A=1$. On the $\tau$-branch it does not: the proper time $\tau(r)$ is
 the clock the functional measures and fixes the timing, but it is not the slow
 variable, and weighting the drift by it would lower the energy part of the
-first-order coefficient by $46\%$ at the $\tau$-branch parameters of
+on-shell coefficient by $46\%$ at the $\tau$-branch parameters of
 Table~\ref{tab:adiab-valid}.
 Equation~\eqref{eq:phi-adiab} is therefore common to both branches with the
 same weight $\eta(r)$, and the branches differ in the curve, the numerator and
@@ -2331,7 +2477,7 @@ and differ \emph{only} in the branch curve and the clock.
 \begin{table}[htbp]
     \centering
     \caption{The two branches of the adiabatic solution~\eqref{eq:phi-adiab}. They
-    share $\varphi=\varphi_0+\varepsilon[\mathcal{C}+\psi]$;
+    share the on-shell part $\varphi_{\rm os}=\varphi_0+\varepsilon[\mathcal{C}+\psi]$;
     only the branch curve $\mathcal{R}^2$, the frozen numerator $K$
     ($F=K/\mathcal{R}$), and the differential $\dd\eta/\dd r$ of the drift clock
     along each orbit change. The drift clock is the conformal time $\eta$ on both
@@ -2393,7 +2539,7 @@ kind, and residues at infinity, as well as second kind) and
 $\eta_3=\int R_\Delta/(\Delta\,\mathcal R)\,\dd r$ its horizon part; on the
 $\tau$-branch $b=(-2MaJ(E^2-1),0,0,E,0)$ and
 $R_\Delta=-2MaJ[2ME^2r-(E^2-1)a^2]$, by~\eqref{eq:clock-eta-tau}. The
-\emph{complete} first-order coefficient $\delta\varphi=\mathcal{C}+\psi
+\emph{complete} on-shell coefficient $\delta\varphi=\mathcal{C}+\psi
 =-\!\int(\Ehat\,\partial_E F+J\,\partial_J F)\,\eta\,\dd r$ then reorganizes, with
 \emph{no term discarded}, into
 \begin{equation}
@@ -2534,19 +2680,23 @@ $\mathcal{C}+\psi$ equals the direct integral of the same coefficient); they do 
 themselves test the adiabatic form against the actual non-autonomous dynamics. Integrating
 the true non-autonomous optical-metric geodesic---the branch-Hamiltonian flow with
 $E_{\rm eff}=\Ehat/A(\eta)$, $J_{\rm eff}=J/A(\eta)$---and comparing to
-$\varphi_0+\varepsilon\,\delta\varphi$ shows the \emph{physical} accuracy is $\sim2\%$
-(linear in $\varepsilon$), far above the algebraic floor
-(figure~\ref{fig:phi-true-dynamic}). Linearizing the extended Hamiltonian
+the on-shell shape $\varphi_0+\varepsilon\,\delta\varphi$ leaves a residual linear in
+$\varepsilon$, far above the algebraic floor
+(figure~\ref{fig:phi-true-dynamic}): the on-shell coefficient is not the physical
+first-order response. Linearizing the extended Hamiltonian
 $\mathcal H=p_s+H=0$ about the frozen extremal---with the slow variable
 $\lambda$ the elapsed clock measured forward \emph{from the launch}, where the drifting
 extremal starts on the frozen shell with the frozen charges (so $H=0$ there by
-construction: this is the same-launch comparison validated below), oriented inward, and
+construction: this is the same-launch comparison validated below, an initial-value
+family whose $J$ is a launch-normalised label rather than a costate fixed by terminal
+transversality), oriented inward, and
 $A(\eta)=A_0(1+\varepsilon\lambda+\cdots)$---gives, in the \emph{normalized} momentum
 $P_r=p_r/A$ (\ref{app:firstorder}), the first-order shift of the momentum shell
-$\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
+$\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and the complete first-order
+coefficient
 \begin{equation}
     \begin{aligned}
-    &\frac{\delta\varphi}{\varepsilon}=\int\!\Big[\frac{\partial_{P_r}G}{H_{P_r}}\,
+    &\delta\varphi+\chi_{\rm off}=\int\!\Big[\frac{\partial_{P_r}G}{H_{P_r}}\,
     \big(\lambda\,\Theta H-S_{\mathcal D}\big)-\lambda\,\Theta G\Big]\dd r,\qquad
     G=\frac{H_J}{H_{P_r}}=\varphi',\\[2pt]
     &S_{\mathcal D}(\lambda)=\!\int_0^{\lambda}\!\mathcal D H\,\dd\lambda',\qquad
@@ -2555,7 +2705,18 @@ $\delta P_r=(\lambda\,\Theta H-S_{\mathcal D})/H_{P_r}$ and
     \end{aligned}
     \label{eq:adiab-exact}
 \end{equation}
-which closes the correction to $O(\varepsilon^2)$. The source uses the \emph{full} Euler
+which closes the correction to $O(\varepsilon^2)$. On the frozen shell
+$\Theta F=\Theta G-(\partial_{P_r}G/H_{P_r})\,\Theta H$, by implicit differentiation of
+$H(r,P_0,E,J)=0$ (the shell momentum moves with the charges), so the integrand splits
+exactly as $-\lambda\,\Theta F-(\partial_{P_r}G/H_{P_r})S_{\mathcal D}$: the first term
+integrates to the on-shell coefficient $\delta\varphi$ of
+equation~\eqref{eq:deltaphi-EJ}, the second is the off-shell coefficient
+\begin{equation}
+    \chi_{\rm off}=-\!\int\!\frac{\partial_{P_r}G}{H_{P_r}}\,S_{\mathcal D}\,\dd r .
+    \label{eq:chi-off}
+\end{equation}
+Relative to the on-shell coefficient, the off-shell part therefore involves the
+\emph{whole} source $S_{\mathcal D}$, not only its dilation letter. The source uses the \emph{full} Euler
 operator $\mathcal D$: the normalization $P_r=p_r/A$ is a time-dependent (conformally
 symplectic) rescaling---\emph{not} canonical---so the canonical flow in the original
 $(r,p_r)$ carries, after passing to $P_r$, a dilation term
@@ -2566,23 +2727,29 @@ $O(\varepsilon)$ error against the true flow---this is the correction of
 charges $E_{\rm eff}=\Ehat/A$, $J_{\rm eff}=J/A$ (the rail invariants $\Ehat,J_{\rm TK}$
 are inert); for single-parameter Vaidya there is no rescaling, $\mathcal D=\Theta=m\partial_m$.
 The source $S_{\mathcal D}$ is \emph{anchored at the launch} ($S_{\mathcal D}=0$ there); the reduction holds on compact sub-arcs bounded away from the
-turning point ($H_{P_r}\to0$), and is verified to machine precision against the true
-canonical flow (slope~$\approx2$;
-\texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py}, \texttt{tests/}). What
+turning point ($H_{P_r}\to0$), and is validated against the true canonical flow by an
+$O(\varepsilon^2)$ convergence test (residual slope~$\approx2$ on both branches;
+\texttt{ThakurtaMetric/adiabatic\_first\_order\_exact.py},
+\texttt{fig\_phi\_validation\_corrected.py}, \texttt{tests/}). What
 that validation is, exactly, should be stated: it is an initial-value test, started
 at $r_0$ with $\bar H=0$ and $\lambda=0$ and integrated inward at fixed charges,
 so it certifies the \emph{flow} and the order of the correction. It is not by
 itself a test of the two-point problem with fixed launch and free arrival, which
 would require a shooting step and a terminal check; we do not present it as one,
-and the endpoint results quoted elsewhere rest on their own computations. This splits
-into an \emph{on-shell} part (parameter drift, the closed form $\mathcal C+\psi$ of
-Section~\ref{sec:thakurta}: weight-one clock$\times$Abelian terms together with the
-weight-two $W_{jk}$; the on-shell source has no residue at $\Delta=0$, and the
-horizon letters enter it only through the drift clock)
-and an \emph{off-shell}
-part driven by the dilation letter $\int P_r H_{P_r}\dd\lambda=\int p_{r0}\dd r$ (the
-radial action, reduced in closed form in \ref{app:firstorder},
-Equations~\eqref{eq:action-reduction}--\eqref{eq:ak}): a length-two iterated integral on the
+and the endpoint results quoted elsewhere rest on their own computations. The two
+parts are, first, the \emph{on-shell} coefficient (parameter drift, the closed form
+$\mathcal C+\psi$ of Section~\ref{sec:thakurta}: weight-one clock$\times$Abelian terms
+together with the weight-two $W_{jk}$; the on-shell source has no residue at $\Delta=0$,
+and the horizon letters enter it only through the drift clock) and, second, the
+\emph{off-shell} coefficient~\eqref{eq:chi-off}. They are not of different sizes: on the
+validation windows of figure~\ref{fig:phi-true-dynamic} the on-shell coefficient exceeds
+the complete one by more than an order of magnitude in the sampled sup norm (by factors of
+about 41, 38 and 19 in the three configurations), and $\chi_{\rm off}$ cancels most of
+it, so neither part may be dropped. The source of $\chi_{\rm off}$ contains, besides the
+earlier letter $\int\Theta H\,\dd\lambda$, the dilation letter $\int P_r H_{P_r}\dd\lambda=\int
+p_{r0}\dd r$ (the radial action, reduced in closed form in \ref{app:firstorder},
+Equations~\eqref{eq:action-reduction}--\eqref{eq:ak}); the off-shell coefficient is a
+length-two iterated integral on the
 same spectral curve, closing in $\zeta,\sigma$ \emph{plus} one further length-two
 iterated Abelian integral sourced by the third-kind letter at the seed Kerr null
 surface $\Delta=0$ (the object we call, descriptively only, a genus-two
@@ -2601,22 +2768,28 @@ gives the identity
 \end{equation}
 valid for \emph{arbitrary} $\beta,A_{rr},A_{\varphi\varphi}$ (verified symbolically).
 On the frozen shell $H=0$ this collapses the integrand of $S_{\mathcal D}$ to a
-universal skeleton. For the \emph{conformal} family ($\mathcal D=\Theta+P_r\partial_{P_r}$),
-$\mathcal D H=E H_E+(H+1)$, so
+universal skeleton. For the \emph{conformal} family ($\mathcal D=\Theta+P_r\partial_{P_r}$) on
+its arrival-time branches, $\mathcal D H=E H_E+(H+1)$, so
 \begin{equation}
     S_{\mathcal D}(\lambda)=\lambda+\int_0^{\lambda}E_{\rm eff}H_{E_{\rm eff}}\,\dd\lambda',
     \label{eq:SD-conformal}
 \end{equation}
 the $\lambda$ term universal and $E_{\rm eff}H_{E_{\rm eff}}$ the single
 metric-specific ``energy-Euler'' piece (fixed by $E\partial_E v^2=2(1-v^2)$). The
+proper-time branch is not of the arrival-time form: its cost is $f/E$ and its azimuthal
+momentum is shifted, $\tilde p_\varphi=J-b/E$, so Euler's theorem in $(P_r,\tilde p_\varphi)$ gives
+$(J\partial_J+P_r\partial_{P_r})H_\tau=H_\tau+(f+b\,H_{\tau,J})/E$; with
+$\dd\tau/\dd\lambda=(f+b\,\dd\varphi/\dd\lambda)/E$ along the flow this yields
+$S_{\mathcal D}=\Delta\tau+\int_0^{\lambda}E_{\rm eff}H_{E_{\rm eff}}\,\dd\lambda'$, the elapsed proper
+time in place of $\lambda$. The
 non-conformal mass-function (Vaidya) family instead yields, on its arrival branch, the
 boundary form $S_{\mathcal D}=[\,rp_r\,]-\lambda$ (on the proper-time branch the subtracted
 term is the elapsed proper time; Paper~I): the two deformation classes carry
 \emph{different} universal sources---no single formula spans both, since the slow
 parameter couples to the geometry differently (a conformal rescaling of all momenta
 versus a self-similar mass shift)---yet both share the same $\pm\lambda$ Finsler skeleton
-from~\eqref{eq:finsler-euler}. Equation~\eqref{eq:SD-conformal} is verified to machine
-precision against the direct $\int\mathcal D H\,\dd\lambda$
+from~\eqref{eq:finsler-euler}. Equation~\eqref{eq:SD-conformal} and its proper-time
+counterpart are verified to machine precision against the direct $\int\mathcal D H\,\dd\lambda$
 (\texttt{ThakurtaMetric/universal\_SD\_source\_check.py}).
 
 \subsection{Fixed-charge and fixed-endpoint perturbations}
@@ -2633,11 +2806,18 @@ azimuth,
     J_1=-\,\frac{\delta\varphi_{\rm dyn}}{\partial_J\varphi_0},
     \label{eq:J1-fixedendpoint}
 \end{equation}
-where $\delta\varphi_{\rm dyn}$ is the fixed-charge displacement above. The
-fixed-endpoint shape then adds $\varepsilon J_1\,\partial_J\varphi_0$, which merely
+where $\delta\varphi_{\rm dyn}$ is the fixed-charge displacement above. This is the
+implicit function theorem, and it holds only on a regular, nonfocal shooting branch,
+$\partial_J\varphi_0(J_0)\neq0$ (with several free parameters, the relevant terminal
+Jacobian must be invertible). At a fold, $\partial_J\varphi_0(J_*)=0$, the balance is
+$0=\varepsilon\,\delta\varphi_{\rm dyn}+\tfrac12\partial_J^2\varphi_0(J_*)(J-J_*)^2+\cdots$: the
+charge moves by $O(\sqrt\varepsilon)$, or no nearby real solution exists, and the expansion
+in powers of $\varepsilon$ does not apply. Solving for the spatial shape also does not
+replace the terminal PMP check: the launch label $J$ is not by itself the multiplier fixed
+by terminal transversality. The fixed-endpoint shape then adds $\varepsilon J_1\,\partial_J\varphi_0$, which merely
 re-selects the launch angle and does not alter the transcendental class. We report
 the fixed-charge form throughout and quote~\eqref{eq:J1-fixedendpoint} as the explicit
-map to the fixed-endpoint problem.
+map to the fixed-endpoint problem on such a branch.
 
 \begin{table}[htbp]
     \centering
@@ -2646,16 +2826,18 @@ map to the fixed-endpoint problem.
     integration-by-parts identity---an algebraic self-consistency, \emph{not} a test
     against the true dynamics; for the latter see figure~\ref{fig:phi-true-dynamic}).
     Both branches, each weighted by the conformal time elapsed along its own orbit,
-    equation~\eqref{eq:clock-eta-tau} on the $\tau$-branch; the residual is the
-    numerical-quadrature floor.}
+    equation~\eqref{eq:clock-eta-tau} on the $\tau$-branch; the source is the energy
+    part $\Ehat\,\partial_E F$, the axial part being checked separately. The residual is
+    $\varepsilon$ times a fixed quadrature difference, hence exactly linear in
+    $\varepsilon$ (\texttt{ThakurtaMetric/fig\_phi\_closed\_validation.py}).}
     \label{tab:adiab-valid}
     \begin{tabular}{lcc}
         \hline\hline
         $\varepsilon=A'/A$ & $t$-branch & $\tau$-branch\\
         \hline
-        $0.005$ & $1.4\times10^{-6}$ & $5.9\times10^{-8}$\\
-        $0.02$  & $5.6\times10^{-6}$ & $2.4\times10^{-7}$\\
-        $0.06$  & $1.7\times10^{-5}$ & $7.1\times10^{-7}$\\
+        $0.005$ & $2.3\times10^{-6}$ & $2.5\times10^{-6}$\\
+        $0.02$  & $9.1\times10^{-6}$ & $9.9\times10^{-6}$\\
+        $0.06$  & $2.7\times10^{-5}$ & $3.0\times10^{-5}$\\
         \hline\hline
     \end{tabular}
 \end{table}
@@ -2683,8 +2865,8 @@ $\varepsilon_{\max}=\provSubwindowEpsMax$ in every configuration---the falsifiab
 form of the claim, and it passes. Finally, the residual is far above the
 algebraic integration-by-parts floor of
 figure~\ref{fig:phi-closed}/Table~\ref{tab:adiab-valid} ($\sim10^{-6}$), so the
-test is not floor-limited, and the $\sim2\%$ leading-term gap is precisely the
-off-shell (costate) residual. Figure, slopes, uncertainties and raw data come
+test is not floor-limited, and the gap left by the on-shell coefficient alone is the
+off-shell coefficient~\eqref{eq:chi-off}, which the complete term supplies. Figure, slopes, uncertainties and raw data come
 from one archived command (\ref{app:validation}).
 
 \begin{figure}[tbp]
@@ -2697,14 +2879,15 @@ from one archived command (\ref{app:validation}).
     figure~\ref{fig:phi-true-dynamic}). Panels (a,b): the closed form
     $\varphi_0+\varepsilon\,\delta\varphi$ (dashed), with $\delta\varphi$ assembled
     from equation~\eqref{eq:psi-split}, overlies the direct quadrature of the same
-    first-order coefficient (solid) on compact sub-arcs bounded away from the
-    turning point (marker); the orbits wind close to the ergosphere $r_e$. Panel
-    (c): the residual $\max_r|\varphi_{\rm closed}-\varphi_{\rm quad}|$ grows
-    approximately \emph{linearly} with $\varepsilon=A'/A$ over the tested range
-    (residual$/\varepsilon\approx5\times10^{-4}$ on both branches), for the $t$-branch
-    ($J=6$) and $\tau$-branch ($J=2.5$). This linear growth measures the size of
-    the retained first-order correction and a fixed numerical floor; it is
-    \emph{not} an $O(\varepsilon^2)$ truncation test. The dedicated log--log
+    first-order coefficient (solid) on compact sub-arcs ending at a regular point
+    (marker) bounded away from the turning point; the orbits wind close to the
+    ergosphere $r_e$. Panel (c): the residual
+    $\max_r|\varphi_{\rm closed}-\varphi_{\rm quad}|$ is $\varepsilon=A'/A$ times the
+    difference of two evaluations of the same first-order coefficient (energy part
+    $\Ehat\,\partial_E F$ of the source), hence exactly \emph{linear} in $\varepsilon$
+    (residual$/\varepsilon\approx4.6\times10^{-4}$ and $4.9\times10^{-4}$), for the
+    $t$-branch ($J=6$) and $\tau$-branch ($J=2.5$). It measures a fixed numerical
+    floor; it is \emph{not} an $O(\varepsilon^2)$ truncation test. The dedicated log--log
     convergence study against the full non-autonomous flow (slope two once the
     complete first-order, on-shell $+$ off-shell, term is used) is supplied in
     figure~\ref{fig:phi-true-dynamic}. All coefficients in $\delta\varphi$ are algebraic
@@ -2719,8 +2902,8 @@ from one archived command (\ref{app:validation}).
     \caption{\emph{Physical} validation against the \emph{true canonical flow}
     (equation~\eqref{eq:normflow}, with the dilation term $-\!\left(A'/A\right)P_r$).
     Left: the actual optical-metric geodesic ($t$-branch) versus the frozen shape
-    plus the \emph{leading} on-shell correction (dashed) and plus the \emph{exact}
-    equation~\eqref{eq:adiab-exact} correction ($S_{\mathcal D}$, dotted), at
+    plus the on-shell coefficient $\delta\varphi$ of equation~\eqref{eq:deltaphi-EJ} (dashed)
+    and plus the complete equation~\eqref{eq:adiab-exact} correction ($S_{\mathcal D}$, dotted), at
     $A'/A=0.04$, drawn on the radial window common to all three curves. The two
     runs stop at \emph{different} boundaries and each marker names the one
     reached. Grey square: the turning point $p_r=0$ of the \emph{frozen} orbit, at
@@ -2733,9 +2916,9 @@ from one archived command (\ref{app:validation}).
     Right: the residual on a compact sub-arc bounded away from the turning point,
     for \emph{both branches} and \emph{two parameter sets} ($M{=}1$ throughout;
     $t$: $a{=}0.9,\Ehat{=}1.4,J{=}6$; $\tau$: $a{=}0.9,\Ehat{=}1.4,J{=}2.5$
-    scattering; $t$: $a{=}0.5,\Ehat{=}1.3,J{=}5$), absolute. The on-shell term
-    alone (dotted; source $\int\Theta H\dd\lambda$ without the $P_r H_{P_r}$
-    dilation) has an $O(\varepsilon)$ physical error, least-squares log--log slope
+    scattering; $t$: $a{=}0.5,\Ehat{=}1.3,J{=}5$), absolute. The on-shell coefficient
+    alone (dotted; equation~\eqref{eq:deltaphi-EJ}, no off-shell term) has an
+    $O(\varepsilon)$ physical error, least-squares log--log slope
     \provLeadSlope; the complete first-order term (solid; source $S_{\mathcal D}$)
     closes it to $O(\varepsilon^2)$, slope \provExactSlope\ for all three curves.
     The fit windows, the regularity margins and the finite-window bias of the
@@ -2772,7 +2955,8 @@ swallowed at
     \label{eq:Awall}
 \end{equation}
 beyond which no orbit issues from $r_0$. Below the wall the $t$-orbit crosses the
-ergosphere iff its outer turning lies inside $r_e$; the prograde boundary is
+ergosphere iff its outer turning lies inside $r_e$; at the spins considered here (see
+Remark~\ref{rmk:prograde-inner} for small spin) the prograde boundary is
 \begin{equation}
     J_c^+(A)=\frac{2M^2}{a}+a+\frac{a\,A^2}{2\Ehat^2}
     \label{eq:Jcplus}
@@ -2867,7 +3051,8 @@ via the doranTau factorization, the $t$ one via a double root---while generic
 Kleinian functions.
 The Kerr geodesic structure and its constants are classical
 \cite{Carter1968,Chandrasekhar}. Validated end-to-end to
-$2.8\times10^{-10}$ through the ergosphere, and general across parameters.
+$2.8\times10^{-10}$ through the ergosphere, at the parameters shown and at the further
+sampled values listed in the scripts.
 
 \begin{figure}[ht]
     \centering
@@ -3061,8 +3246,9 @@ At $J=J_+^t$ the ergosphere is a \emph{root} of the turning function, and the
 root is simple with $N'(\re)>0$: at $M=1$, $a=9/10$, $E=6/5$ one finds
 $J_+^t=2473/720$, $N(\re)=0$ and $N'(\re)=243251699/16588800>0$, so $N<0$
 immediately inside $\re$ and $p_r^2$ is negative there. The edge value therefore
-\emph{turns} at $\re$ rather than crossing it; what crosses is the open band
-below. Instead the retrograde $t$-branch is
+\emph{turns} at $\re$ rather than crossing it; what crosses, at these parameters, is the
+open band below (at smaller spin the prograde end can be set instead by an exterior
+prograde double root; see the discussion of Table~\ref{tab:penetration}). Instead the retrograde $t$-branch is
 bounded by the \emph{marginal} (double-root) condition $N=N'=0$ at a radius
 $r_*>\re$---the massive analogue of the retrograde photon sphere---which closes
 to
@@ -3070,8 +3256,8 @@ to
     J_c^{-}=-\,\frac{\bar P}{\bar v\,(\sqrt\Delta-b\bar v)}\bigg|_{r_*}<0 .
     \label{eq:Jc-minus}
 \end{equation}
-This retrograde saddle-node is the sharpest exact statement in the paper that
-lies wholly inside the control domain, and we record it as such.
+This retrograde saddle-node is the sharpest statement in the paper that lies wholly
+inside the control domain, and we record it with its evidence level.
 
 \begin{proposition}[Exterior retrograde separatrix; evidence level~(I) for the
 factorisation and the domain inequalities, level~(II) for the quoted roots]
@@ -3092,9 +3278,10 @@ of~\eqref{eq:two-inequalities} hold strictly,
 as they do on the whole approach arc $r\in[r_d,6M]$, and indeed on the whole exterior,
 since $g(W,W)=-f<0$ and $\bar v^2=1-f/E^2>0$ there, with $f<1<E^2$. On every finite
 sub-arc the separatrix orbit is an integral curve of the normal Hamiltonian flow of
-$H_t$ at $J=J_c^-$, so it is a type-(E) object in the sense of
-Protocol~\ref{prot:status}: a controlled-rail extremal, not an analytic
-continuation. Moreover $r_d>2M$ at every spin sampled:
+$H_t$ at $J=J_c^-$, inside the control domain with positive margins: a regular extremal
+arc of a launch-normalised family, not an analytic continuation. In the sense of
+Protocol~\ref{prot:status} it carries the label~(E) only as such an arc; no
+boundary-value or terminal-transversality statement is attached to it. Moreover $r_d>2M$ at every spin sampled:
 $r_d/M=2.857675,\,3.204756,\,3.513905,\,3.579494$ at
 $a=0.1,\,0.5,\,0.9,\,0.99$. That is a scan of four values, not a proof over the
 continuous range, and we claim it as such; it does indicate that the exterior
@@ -3108,7 +3295,10 @@ $r_d=1.512292\,M$, $J=2.936351$. For this spin that radius lies outside the seed
 Kerr null surface $\rp=1.435890\,M$ but \emph{inside} $2M$, where
 $W=\partial_\eta$ is spacelike. It is an algebraic degeneration of the
 analytically continued frozen equations---type~(A)---and we do not call it a
-physical control separatrix for this selector. Both values, and the
+physical control separatrix for this selector. This placement depends on the spin: at
+$E=1.2$ the prograde double root moves outside $2M$ for $a\lesssim0.65M$, where it becomes an
+exterior prograde separatrix and closes the $t$-branch crossing band before $J_+^t$; the
+analysis of this paper is at $a=0.9$. Both values, and the
 control-domain certificates above, are verified in
 \texttt{verification/verify\_exterior\_separatrix.wls}.
 \end{remark}
@@ -3159,42 +3349,132 @@ $\Jc^{\tau}=aA^2/\Ehat$.
     \label{fig:th-cusp}
 \end{figure}
 
-\subsection{Plunge inversion: rotational and conformal}
+\subsection{Same-launch depth ordering}
 \label{sec:inversion}
-Throughout this section the comparison is protocol (P1) of
-section~\ref{sec:bvp}---same launch event, same initial data, free arrival---and
-the ordering it produces is a statement about that protocol, not about the
-extremals alone. Two mechanisms invert the $t/\tau$ ordering. Rotationally, in
-the $(a,J)$ plane, $\rho(r_*)^2=H_{t0}/H_{\tau0}$, extending the stationary Kerr
-analysis \cite{RosignoliKerr}. Conformally, the inversion locus is
+The default physical comparison in this section is protocol (P1) of
+section~\ref{sec:bvp}---same launch event, same numerical axial costate $J_t=J_\tau=J$, each
+radial momentum on its own branch shell, free arrival---and the ordering it produces is a
+statement about that protocol, not about the extremals alone; the alternative comparisons
+discussed below are labelled as such. The arrival branch is $H_t$ of~\eqref{eq:Ht-tk}, with
+cost term $-A$. At $p_r=0$ both branch Hamiltonians are affine and increasing in their
+azimuthal costate, with the same slope $q=Q/\bar P>0$, so on the prograde sector ($J>0$ and
+$\tilde p_\varphi=J-A^2b/\Ehat>0$) the radially admissible region is $J\le J_{\rm br}(r)$, with
 \begin{equation}
-    \mathrm{cond}(r,A)=A^2 b\,Q-\bar P(\Ehat-A^2 f)=0,\quad
-    Q=b\bar v^2+\sqrt{\bar v^2\Delta},
+    J_t(r)=\frac{A\bar P}{Q},\qquad
+    J_\tau(r)=\frac{A^2}{\Ehat}\Big(b+\frac{f\bar P}{Q}\Big)=\frac{A^2}{\Ehat}\sqrt{\frac{\Delta}{\bar v^2}},\qquad
+    Q=b\bar v^2+\sqrt{\bar v^2\Delta}.
+    \label{eq:turning-J}
+\end{equation}
+
+\begin{proposition}[No same-launch inversion on the prograde sector; evidence level~(I)]
+\label{prop:same-launch}
+Let $A$ be constant, $0<a\le M$, $\Ehat>1$, and consider the region $r>2M$, $A^2f<\Ehat^2$. Then
+\begin{equation}
+    0<\frac{J_\tau}{J_t}<1,\qquad
+    J_t-J_\tau=-\frac{A}{\Ehat Q}\,\mathrm{cond}_t,\qquad
+    \mathrm{cond}_t=A\,b\,Q-\bar P(\Ehat-Af)<0 .
     \label{eq:condinv}
 \end{equation}
-with $\mathrm{cond}(1)<0$ and
-$\mathrm{cond}(\Af)=\Ehat r\Delta(\Ehat-1)/(r-2M)$. Under the explicit hypotheses
-$\Ehat>1$ (scattering energy), $r>2M$ and $\Delta>0$ (exterior, off-horizon), the
-latter is $>0$, so by the intermediate value theorem a root
-$A_{\rm inv}\in(1,\Af)$ exists; it is reachable when $A_{\rm inv}<\Af$, with far
-field $A_{\rm inv}\to\sqrt{\Ehat}$. For $\Ehat\le1$ the sign is non-positive and no
-such root is guaranteed: the conformal inversion is thus a \emph{conditional}
-statement, holding in the stated energy/domain window rather than universally.
+Launch both branches from a common radius $r_0$ in this region, inward, with the same $J>0$,
+each radial momentum on its own shell, and with a launch margin $J<J_\tau(r_0)$. Then the
+$t$-branch is radially admissible on the whole connected component accessible to the
+$\tau$-branch. If the $\tau$-branch has an exterior turning point $r_\tau>2M$, the
+$t$-branch is not yet at its own turning condition there and turns strictly deeper or
+reaches $r=2M$; if it has none, both branches have limiting depth $2M$. In all cases
+$r^t_{\inf}\le r^\tau_{\inf}$, with equality only when both reach $2M$.
+\end{proposition}
+
+\begin{proof}
+The turning conditions $H_t(r,0,J)=0$ and $H_\tau(r,0,J)=0$ are affine in $J$ and in
+$\tilde p_\varphi$ with slope $q$, and give~\eqref{eq:turning-J}; subtracting gives the
+identity in~\eqref{eq:condinv}. For the sign put $x=A/\Ehat$ and $u=\bar v^2=1-x^2f>0$. One has
+$\Delta=fP+b^2$ and $P-\Delta=2M(r^2+a^2)/r>0$, and $q$ is the positive root of
+$\bar Pq^2-2buq-fu=0$. Then $J_\tau/J_t=x(f+bq)>0$ and
+\[
+    \Big(\frac{J_\tau}{J_t}\Big)^2=x^2(f+bq)^2=f+2bq-Pq^2
+    =\frac{\Delta}{P}-P\Big(q-\frac bP\Big)^2\le\frac{\Delta}{P}<1 ,
+\]
+so $J_\tau<J_t$ and $\mathrm{cond}_t<0$. Coming in from $r_0$, the $\tau$-branch is admissible
+while $J<J_\tau(r)$, hence the $t$-branch, with $J<J_\tau(r)<J_t(r)$, is admissible on the same
+interval; at $r_\tau$ one has $J=J_\tau(r_\tau)<J_t(r_\tau)$. Since $\Delta$ increases and $\bar v^2$
+decreases with $r$, $J_\tau(r)$ is strictly increasing, so the exterior $\tau$-turn, when it
+exists, is unique and not a double root. Every step is checked symbolically, and the sign is
+also decided independently by cylindrical algebraic decomposition (\texttt{Reduce} returns
+\texttt{False} for $\mathrm{cond}_t\ge0$ on the stated domain;
+\texttt{verification/verify\_same\_launch\_ordering.wls}, with its run log).
+\end{proof}
+
+At $A=1$ this is the rotational statement: rotation alone does not invert the ordering on
+the prograde sector, and a scan of both sectors over $a\in[0.05,0.98]$, $J\in[-6,6]$ at
+$E=1.2$, $r_0=10$ finds the $t$-branch deeper, or both at $r=2M$, in every cell
+(figure~\ref{fig:th-plungeAJ}; the retrograde sector is covered by the scan only). An
+$r=2M$ arrival is a limiting contact of type~(C), outside the normality lemma, not an
+optimal crossing.
+
+\paragraph{Levels, and two alternative comparisons that do invert.} Write each branch, at frozen $A$, through
+its quadratic optical Hamiltonian $Q_{\rm br}=\tfrac12\,|\,\cdot\,|^2$ of the branch optical
+metric (a centrifugal potential $V_{\rm br}$ at $p_r=0$). The \emph{level} of a launch is the
+value $Q_0=Q_{\rm br}(r_0,p_{r0},J)$; the PMP shell $H_{\rm br}=0$ is the level $Q=\tfrac12$
+(checked symbolically on both branches). Protocol (P1) launches both branches at this common
+level. Launching them instead with the same covector $(r_0,p_{r0},J)$ places them on
+\emph{different} levels, $Q_{t0}\neq Q_{\tau0}$. We use this comparison only as a diagnostic, and
+only at $A=1$, where the formulas below hold. For the proper-time branch $Q_\tau$ is
+homogeneous of degree two in $(p_r,J)$, so a curve at level $Q_0$ is the same proper-time
+optical extremal, with normalised costate $J/\sqrt{2Q_0}$. For the arrival branch it is not:
+$Q_t$ depends on $J$ through $X=J+2Ma/(rf)$, and a curve at level $Q_0\neq\tfrac12$ is the level-$\tfrac12$ curve with the
+frame-dragging shift divided by $\sqrt{2Q_0}$, which for $a\neq0$ is not an arrival-time rail
+extremal of the same metric. With this comparison the ordering does invert at small $J$, along
+a locus $J_{\rm inv}(a)$ given by $V_t/V_\tau=\rho^2$ at the $\tau$ turning point equal to the
+launch ratio $Q_{t0}/Q_{\tau0}$, with
+$\rho=(A^2/\Ehat)\,[f+2Ma/(rJ)]$ (figure~\ref{fig:th-plungeLevels}). The inversion belongs to
+this different-level diagnostic, whose arrival-branch curves are not rail extremals of the
+same metric, not to the rail extremals compared at equal level. The second comparison that
+inverts does compare rail extremals of the same metric, but pairs their costates differently:
+it uses the unit cost $-1$ for the arrival branch at $A\neq1$, i.e.\
+compares $\eta$ with $\tau$ at $J_\eta=J_\tau$, that is $J_t=AJ_\tau$: the coincidence
+condition becomes $A^2bQ-\bar P(\Ehat-A^2f)=0$, which does change sign, and the ordering
+inverts at large $J$ and $A>1$ (figure~\ref{fig:th-invAJ}, bottom). The depth ordering under a
+same-launch comparison therefore depends, in the alternative comparisons examined here, on the
+level and on the costate pairing, which is the protocol dependence this section is about.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_plunge_levels.png}
+    \caption{Different-level comparison: both branches launched with the same covector
+    $(r_0,p_r,J)=(10,-0.5,J)$ of their quadratic optical Hamiltonians, hence on different
+    levels $Q_{t0}\neq Q_{\tau0}$ ($A=1$, $E=1.2$). Top: $\Delta r=r_{\min}^t-r_{\min}^\tau$ on
+    the $(J,a)$ plane from the Hamiltonian flows, with the inversion locus ($\tau$ deeper at
+    small $J$) and the analytic criterion $\rho(r_*)^2=Q_{t0}/Q_{\tau0}$. Bottom: numerical
+    against analytic locus. This is a diagnostic of the quadratic flows: at $a\neq0$ the
+    arrival-branch curves at a level other than $\tfrac12$ are not rail extremals of the same
+    metric. At equal level, $J_t=J_\tau$ and frozen $A$, there is no prograde inversion (Proposition~\ref{prop:same-launch}, figure~\ref{fig:th-plungeAJ}).}
+    \label{fig:th-plungeLevels}
+\end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_plunge_t_tau.png}
-    \caption{Rotational inversion in the $(a,J)$ plane; ODE locus vs analytic
-    $\rho(r_*)^2=H_{t0}/H_{\tau0}$.}
+    \caption{Same-launch depth comparison, protocol (P1): $t$ against $\tau$ at
+    $J_t=J_\tau$, each branch on its own shell. Top: $\Delta r=r_{\min}^t-r_{\min}^\tau$ on
+    the $(J,a)$ plane at $A=1$, $E=1.2$, $r_0=10$; hatched, the $t$-branch reaches the
+    stationary limit $r=2M$ (limiting contact). No cell has $\tau$ deeper. Bottom:
+    $\Delta r$ along $J$ at $a=0.9$ for $A=1,1.3,1.4$, launched at $r_0=20$ or just inside
+    the freezing surface; again $\Delta r\le0$ throughout, with equality where both branches
+    reach the limiting depth $2M$, as Proposition~\ref{prop:same-launch} requires on the
+    prograde sector. Turning radii from the PMP turning conditions; at $A=1$ the exterior
+    turning radii are checked against the Hamiltonian flow ($2\times10^{-11}$).}
     \label{fig:th-plungeAJ}
 \end{figure}
 
 \begin{figure}[tbp]
     \centering
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_thakurta_kerr_inversione_AJ.png}
-    \caption{Conformal inversion in the $(J,A)$ plane: $\Delta r$ changes sign;
-    analytic $\mathrm{cond}=0$ matches the numerical contour; reachable
-    ($A_{\rm inv}<\Af$).}
+    \caption{The same-launch ordering depends on the costate normalisation ($a=0.9$,
+    $\Ehat=1.2$, $(J,A)$ plane). Top: the declared protocol, $t$ against $\tau$ at
+    $J_t=J_\tau$: no inversion (Proposition~\ref{prop:same-launch}). Bottom: $\eta$ against
+    $\tau$ at $J_\eta=J_\tau$, i.e.\ $J_t=AJ_\tau$: $\Delta r$ changes sign along the
+    analytic coincidence curve $A^2bQ-\bar P(\Ehat-A^2f)=0$ (dashed), which matches the
+    numerical contour.}
     \label{fig:th-invAJ}
 \end{figure}
 
@@ -3206,10 +3486,11 @@ section is the one place where the comparison is \emph{not} the default of
 Protocol~\ref{prot:endpoint}. Two distinct protocols are in play and must not be
 confused.
 
-\emph{(P1) Same launch.} Fixed launch event and fixed initial data
-$(r_0,J,p_r)$, free arrival: the $t$-branch reaches deeper,
-$r_{\min}^t<r_{\min}^\tau$. This is the protocol of
-section~\ref{sec:inversion}. Note that ``same $J$'' here means the same
+\emph{(P1) Same launch.} Fixed launch event and the same numerical axial costate $J$,
+with each radial momentum $p_r$ selected on its own branch shell (the two shells differ,
+$H_\tau-H_t=1-f/E>0$ at $a=0$, $A=1$, so no single covector lies on both), free arrival. This is the protocol of section~\ref{sec:inversion}; its outcome, on the
+prograde sector, is that the $t$-branch turns deeper or reaches $r=2M$
+(Proposition~\ref{prop:same-launch}). Note that ``same $J$'' here means the same
 \emph{numerical} costate; comparing the $\eta$- and $t$-branches on the same
 spatial curve instead requires the relabelling $J_t=A\,J_\eta$
 (Protocol~\ref{prot:endpoint}), so (P1) at a common numerical $J$ compares
@@ -3300,11 +3581,9 @@ Multiply-winding solutions lie outside the class and are not compared.
     \label{fig:bvp}
 \end{figure}
 
-Crucially, neither driver of same-launch inversion survives the
-fixed-endpoint constraint. Scanning the spin $a$ over the entire
-Kerr flow with fixed symmetric endpoints $(r_0,\pm\Phi)$ leaves
-$\Delta r=r_{\min}^t-r_{\min}^\tau$ strictly positive
-($\Delta r\in[+0.45,+2.06]$ on $a\in[0.05,0.95]$); the map is nearly flat
+The fixed-endpoint comparison is likewise free of inversion on the sampled grids. On the sampled grid $a\in[0.05,0.95]$, with fixed symmetric
+endpoints $(r_0,\pm\Phi)$, the difference $\Delta r=r_{\min}^t-r_{\min}^\tau$ stays positive,
+$\Delta r\in[+0.45,+2.06]$; the map is nearly flat
 in $a$, its gradient set almost entirely by the endpoint angle
 $\Phi$ (encoded by $J$). The conformal scan (via the transfer
 $E_{\rm eff}=\hat E/A$) is likewise everywhere positive
@@ -3352,7 +3631,9 @@ Q_2(r_{\min},J^{\ast\ast})&=\frac{-(r_{\min}-2M)(E^2r_{\min}^2+a^2)\big(E^2r_{\m
 are both manifestly negative, placing the thresholds beyond the larger root
 (\texttt{no\_inversion\_reduction.py}, with $M$ kept symbolic; every identity above is
 homogeneous in $(r,a,J,M)$). Hence (A) is a theorem for all $r_{\min}>2M$,
-$E>1$, $a>0$; it holds at $a=0$ as well, where $W(r_{\min})=E^2r_{\min}^3(r_{\min}-2M)$ and
+$E>1$, $a>0$ on the co-rotating family ($aJ\ge0$, the prograde root $J_t$ used above); the
+counter-rotating family ($aJ<0$, the negative root of $Q_2$) would require comparing
+$|F_t|$ with $F_\tau$ and is not covered by this proof. It holds at $a=0$ as well, where $W(r_{\min})=E^2r_{\min}^3(r_{\min}-2M)$ and
 the slope $E^2r_{\min}^2(r_{\min}-M)$ are positive directly. Lemma~(B), the monotonicity $\Phi_\tau'(r_{\min})<0$, holds on explicit
 regions and not everywhere. At high energy $\Phi_\tau$ has a single maximum, at a radius
 $r_{\rm pk}$ (near $3M$ in the cases of the figures), and decreases beyond it; at low
@@ -3429,7 +3710,8 @@ $[r_{\min}^t,r_0)$ and~\eqref{eq:grazing-noinv} applies. \emph{For frozen $A$ an
 real, single-periastron, symmetric-endpoint family compared in Lemma~(A), the
 fixed-endpoint no-inversion is therefore a theorem whenever $r_{\min}^t$ satisfies one of (i)--(iv), and,
 for $E^2\ge3/2$, whenever $r_{\min}^t>r_{\rm pk}$}, for $0\le a\le M$ where the conditions allow spin,
-and for $a<0$ after the reflection $(a,J,\varphi)\mapsto(-a,-J,-\varphi)$. The symmetric example of Figure~\ref{fig:bvp} ($a=0$, $r_0=6M$, $E=1.2$,
+on the co-rotating family ($aJ\ge0$), and for $a<0$ after the reflection
+$(a,J,\varphi)\mapsto(-a,-J,-\varphi)$, which maps co-rotating orbits to co-rotating orbits. The symmetric example of Figure~\ref{fig:bvp} ($a=0$, $r_0=6M$, $E=1.2$,
 $r_{\min}^t=4.735M$, $V(r_{\min}^t)/V(r_0)=0.484$; \texttt{KerrScripts/bvp\_estremi\_fissi.py})
 is an instance of (i) and (ii).
 
@@ -3526,8 +3808,8 @@ $a\in[0.2,0.9]$, $E\in[1.05,1.5]$), which the low-energy counterexample above do
 refute but shows cannot be reached through single-peakedness.
 Table~\ref{tab:protocol} summarizes the resulting protocol dependence:
 inversion is a property of the \emph{comparison protocol}, not an invariant
-of the two brachistochrones---it requires the freedom to let the endpoint
-move.
+of the two brachistochrones: in the comparisons examined here it appears only in the
+same-launch diagnostic at different levels or with costates paired in conformal time.
 
 \begin{figure}[tbp]
     \centering
@@ -3541,16 +3823,18 @@ move.
 \end{figure}
 
 
-The verdict is independent of the endpoint symmetry: repeating both scans
-with \emph{asymmetric} fixed endpoints ($r_A=10,r_B=6$) leaves
-$\Delta r>0$ everywhere as well (spin $[+0.76,+2.64]$, conformal
-$[+0.16,+3.24]$; figures~\ref{fig:asym-spin}--\ref{fig:asym-conf}),
-consistent with the pointwise bound $n_t/n_\tau=E/f$.
+Repeating both scans with \emph{asymmetric} fixed endpoints ($r_A=10,r_B=6$), the sampled
+grids again give $\Delta r>0$ (spin $[+0.76,+2.64]$, conformal $[+0.16,+3.24]$;
+figures~\ref{fig:asym-spin}--\ref{fig:asym-conf}); this lies outside the symmetric setting
+of the theorem and is a numerical observation only.
 
 \begin{table}[t]
     \centering
-    \caption{Protocol dependence of depth inversion. Same-launch
-    comparison inverts under either rotation or a conformal factor; the
+    \caption{Protocol dependence of depth inversion. The same-launch comparison at
+    equal level and $J_t=J_\tau$ does not invert on the prograde sector
+    (Proposition~\ref{prop:same-launch}); it inverts with costates paired in conformal time,
+    $J_\eta=J_\tau$, and in the auxiliary different-level diagnostic, whose arrival-branch
+    curves are not rail extremals of the same metric; the
     genuine fixed-endpoint brachistochrone shows no inversion in every
     proven and tested regime (proven, for the frozen, symmetric, single-periastron
     problem, where $r_{\min}^t$ satisfies a condition of Proposition~\ref{prop:lemmaB}, in particular for $E^2\ge3/2$ beyond the peak of
@@ -3561,7 +3845,9 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
         \br
         protocol & spin $a$ & conformal $A$ \\
         \mr
-        same launch & inverts (\S\ref{sec:inversion}) & inverts (\S\ref{sec:inversion}) \\
+        same launch, equal level, $J_t=J_\tau$ & no inversion (\S\ref{sec:inversion}) & no inversion (\S\ref{sec:inversion}) \\
+        \emph{auxiliary:} same covector, different levels & inverts (diagnostic) & --- \\
+        same launch, $J_\eta=J_\tau$ & --- & inverts (\S\ref{sec:inversion}) \\
         fixed endpoints & no inversion$^\ast$ & no inversion$^\ast$ \\
         \mr
         \multicolumn{3}{@{}l}{\footnotesize $^\ast$Tiered status (see caption); the
@@ -3575,16 +3861,20 @@ consistent with the pointwise bound $n_t/n_\tau=E/f$.
 Combining Lemma~I.4 with the on-shell part of Theorem~I.5 of Paper~I yields the
 indicatrix-breathing response: for a one-parameter family
 of rail indicatrices with frozen integrand $F(r;\lambda)$ on the genus-two curve
-$y^2=S(r;\lambda)$, a slow drift $\lambda=\lambda(\text{clock})$ gives, on-shell,
+$y^2=S(r;\lambda)$, a slow drift $\lambda=\lambda(\text{clock})$ gives the on-shell part
 \begin{equation}
-    \varphi(r)=\varphi_0(r;\lambda)+\dot\lambda\Big[\sum_{k<j} q_{kj}\,W_{kj}
-    +(\text{elementary})\Big]+O(\dot\lambda^2),
+    \varphi_{\rm os}(r)=\varphi_0(r;\lambda)+\dot\lambda\Big[\sum_{k<j} q_{kj}\,W_{kj}
+    +(\text{elementary})\Big],
     \label{eq:unified}
 \end{equation}
+and the orbit is $\varphi=\varphi_{\rm os}+\dot\lambda\,\chi_{\rm off}+O(\dot\lambda^2)$, with
+$\chi_{\rm off}$ the off-shell coefficient~\eqref{eq:chi-off}; $\varphi_{\rm os}$ alone carries an
+$O(\dot\lambda)$ error,
 with $q_{kj}$ \emph{algebraic} (Lemma~I.4, via the reduction $\partial_\lambda
 F=N_\lambda/S^{3/2}$) and $W_{kj}=\int(U_j\dd U_k-U_k\dd U_j)$ length-two iterated Abelian
 integrals of the frozen curve; the \emph{complete} first-order term adds the off-shell
-(costate) piece of Theorem~I.5, itself of the same class (a $\sim2\%$ correction here). We
+(costate) piece of Theorem~I.5, itself of the same class and not small here (it cancels
+most of the on-shell term, figure~\ref{fig:phi-true-dynamic}). We
 now specialize to $\lambda=A$, equivalently $E_{\rm eff}=\Ehat/A$: every
 $E_{\rm eff}$-dependent datum of the Thakurta--Kerr indicatrix breathes through
 $\partial_A E_{\rm eff}=-\Ehat/A^2$---both the \emph{azimuthal} frame-dragging centre-wind
@@ -3598,18 +3888,21 @@ backbone.
 \paragraph{Domain of validity.} The statement is a \emph{first-order} adiabatic
 theorem, and it rests on two \emph{exact} lemmas---the algebraic reduction
 $\partial_\lambda F=N_\lambda/S^{3/2}$ with the unique rational $c_k$ from the
-polynomial identity~\eqref{eq:reduction-identity} (nonsingular whenever $S$ has
-distinct roots, i.e.\ away from the separatrix), and the integration-by-parts
+polynomial identity~\eqref{eq:reduction-identity} (nonsingular exactly when $S$ is squarefree of degree six, i.e.\ off every degeneration
+locus, physical or algebraic, and for $E\neq1$), and the integration-by-parts
 assembly~\eqref{eq:psi-split} using the shuffle relation---so the closed form is
 rigorous, not fitted, wherever those hypotheses hold. Two caveats bound it honestly.
 First, it is $O(\dot\lambda)$: the second-order term needs the next reduction.
 Second, and more importantly, the expansion \emph{fails at the turning points}
 $S(r)=0$: there $\partial_\lambda F\sim N_\lambda/S^{3/2}$ diverges and the na\"ive
 $\dot\lambda\,\delta\varphi$ is not uniformly valid, so the closed forms hold on the
-smooth arcs between turning points and must be joined across them by the standard WKB
-connection formulae (matched asymptotics). On the separatrix the \emph{mathematics}
-is a controlled limit---the genus drops and the reduction degenerates to the elliptic
-(Bloch--Wigner) case---but the \emph{physics} there is delicate for a separate reason:
+smooth arcs between turning points. Joining them across a turning point requires a local
+matched analysis that we do not provide; no connection formula has been derived for this
+control problem. On the separatrix the genus drops and the reduction is redone directly on the
+elliptic curve (appendix~\ref{app:separatrix}), giving an elliptic dilogarithm; this is a
+separate computation at $J=\Jc$, not a proved limit of the generic genus-two formula, whose
+coefficients $c_k$ have poles on the degeneration locus. The \emph{physics} there is
+delicate for a further reason:
 on a dynamical separatrix whose double root is an exterior circular orbit, such as the
 retrograde $t$-branch one at $r_d=3.514M$, the radial period diverges (the orbit asymptotes
 that unstable circular orbit; algebraic degenerations at unphysical roots do not do this), so the
@@ -3618,16 +3911,19 @@ period''---degrades, and the separatrix correction is properly read as an
 \emph{instantaneous, local} first-order statement about the neighbourhood of the
 separatrix rather than a long-time orbit pinned to the moving locus. Moreover the degeneration
 locus is not fixed under the evolution it responds to: under the conformal drift the
-dilation ray $(\Ehat/A,J/A)$ leaves the marginal locus $J=\Jc(E_{\rm eff})$, so a
-particle of conserved $J$ \emph{crosses} the moving separatrix as $A(\eta)$ runs---a
-genuinely non-perturbative regime (a Neishtadt separatrix-crossing problem, appendix~C),
-beyond first order. Within these bounds, which
-are the usual bounds of first-order WKB, this closed form is the \emph{on-shell
+dilation ray $(\Ehat/A,J/A)$ leaves the marginal locus $J=\Jc(E_{\rm eff})$ of the frozen
+zero shell. That alone does not show that the true trajectory crosses a moving
+separatrix, because the flow itself leaves $\bar H=0$ (which is why $S_{\mathcal D}$
+appears); deciding a crossing would require following the actual phase point against the
+level of the frozen saddle, which we do not do. What the computation does show is a loss
+of uniformity near the frozen critical locus, which motivates a separatrix-crossing
+analysis (appendix~C) beyond first order. Within these bounds, which
+are the usual bounds of a first-order adiabatic expansion, this closed form is the \emph{on-shell
 component} of the first-order response---the parameter drift along the frozen
 family---and is exact as such; the \emph{complete} first-order term is the
 extended-Hamiltonian expression equation~\eqref{eq:adiab-exact}, which adds the
-off-shell (costate $p_\eta$) displacement of the momentum shell (a $\sim2\%$
-correction here, figure~\ref{fig:phi-true-dynamic}). The separatrix results in particular
+off-shell (costate $p_\eta$) displacement of the momentum shell, equation~\eqref{eq:chi-off},
+which is not a small correction here (figure~\ref{fig:phi-true-dynamic}). The separatrix results in particular
 quantify the response \emph{at} the instantaneous marginal configuration
 $J=\Jc(E_{\rm eff})$, not a trajectory pinned to it. The complementary
 adiabatic derivative along the degeneration family
@@ -3639,6 +3935,372 @@ $N=\Ehat N_E+J N_J$ and $\dd\Jc/\dd E_{\rm eff}$ (\ref{app:tracking}).
 % ======================================================================
 
 % ======================================================================
+\section{Observational context and tests}
+\label{sec:observational-context}
+
+Dormant Gaia systems provide nearby, measured reference environments for
+the physical scales of the controlled-rail problem. Gaia BH1 is at
+$477\pm4$ pc and Gaia BH3 has a dark-companion mass of
+$32.70\pm0.82\,M_\odot$ \cite{ElBadry2023BH1,Gaia2024BH3}.
+Using the latter mass as a dimensional reference, $6GM/c^2$ is about
+$290$ km and the illustrative transits below last milliseconds.
+The frozen results describe a controlled probe in a Kerr background
+scaled to these parameters; the companion orbits do not themselves
+test the rail. If $A$ is identified with the cosmological scale factor,
+the drift on a local transit is very small
+(equation~\eqref{eq:obs-drift}); a general prescribed $A(\eta)$ need not
+vary on a cosmological timescale. None of the listed systems is identified
+with TK, which is used here as a prescribed compact-object background,
+not an established astrophysical matter model.
+
+\paragraph{Measured reference environments.}
+Table~\ref{tab:observational-context} gives values from the cited papers, not a
+new fit or a complete census. Dormancy means observational inactivity, not a
+proof of vanishing matter flux. For the Gaia systems the luminous companion
+supplies the orbit, while the spin is not determined by the fits used here.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrrl}
+\hline
+Source & $M/M_\odot$ & Distance & Spin information\\
+\hline
+Gaia BH1 & $9.62\pm0.18$ & $477\pm4$ pc & not determined\\
+Gaia BH2 & $8.94\pm0.34$ & $\simeq1.16$ kpc & not determined\\
+Gaia BH3 & $32.70\pm0.82$ & $590.6\pm5.8$ pc & not determined\\
+Sahu lens & $7.1\pm1.3$ & $1.58\pm0.18$ kpc & not determined\\
+Sgr A* & $(4.297\pm0.012)\times10^6$ & $8277\pm9$ pc & model dependent\\
+M87* & $(6.5\pm0.2\pm0.7)\times10^9$ & $16.8^{+0.8}_{-0.7}$ Mpc & model dependent\\
+Cygnus X-1 & $21.2\pm2.2$ & $2.22^{+0.18}_{-0.17}$ kpc & $a/M>0.9985$ (model)\\
+\hline
+\end{tabular}
+\caption{Reference environments, from
+\cite{ElBadry2023BH1,ElBadry2023BH2,Gaia2024BH3,Sahu2022,GRAVITY2022,EHT2019VI,EHT2022V,MillerJones2021,Zhao2021}.
+The Sgr A* errors are statistical only; the two M87* mass errors are statistical
+and systematic. The Cygnus X-1 bound is a $3\sigma$ continuum-fitting result
+under disk and alignment assumptions, for an accreting X-ray binary. No entry is
+an identification with TK.}
+\label{tab:observational-context}
+\end{table}
+
+Three observational channels bear on such objects, and none of them tests a
+controlled timelike rail. Astrometric microlensing detects an object without
+detectable intrinsic light: Sahu et al.\ combine astrometry, photometry and
+parallax to infer the mass and distance of an isolated dark lens
+\cite{Sahu2022}. A positive conformal rescaling preserves unparametrised null
+geodesics, so a single lensing event does not separate a seed mass from a
+time-dependent $A$; redshifts, fluxes and the source--observer model must still
+be specified. Ciurlo et al.\ reconstruct the orbits of dust-enshrouded material
+tracers around the Galactic centre from astrometry and radial velocities
+\cite{Ciurlo2020}; gas and dust make a tracer visible without identifying its
+light with central accretion, and their Keplerian fits are not paths at
+maintained $\Ehat$. Masterson et al.\ observe accretion-driven line emission and
+dust reprocessing in tidal disruption events \cite{Masterson2025}; this motivates
+a radiative forward model but does not demonstrate absence of accretion during
+the flare.
+
+\paragraph{Angular momentum, mass and source.}
+The axial field $\partial_\varphi$ remains an exact Killing field of
+$g=A(\eta)^2g_{\rm Kerr}$, and its Komar angular momentum on every
+Boyer--Lindquist sphere $\{\eta,r\}={\rm const}$ is exactly
+\begin{equation}
+    J[S_{\eta,r}]=A(\eta)^2\,Ma ,
+    \label{eq:obs-komar}
+\end{equation}
+independent of $r$ (\ref{app:tk-energy}). For the mass no Killing time is
+available; the geometric Hawking--Hayward energy of the same spheres is
+$A\,[m_K(S)+(A'/A)^2C(S)]$, where $m_K$ is that of the Kerr seed
+\cite{Prain2016HH,Hammad2016HH}. The inherited term scales exactly as $A$, and the
+correction is quadratic in the drift and negligible at the benchmark radii under the fiducial cosmological identification of $A$, so with
+the central scale $M_c=AM$ the dimensionless ratio $J/M_c^2=a/M$ is constant; with
+the full quasi-local energy the ratio depends on the surface. This is a statement
+about geometry, not about the history of a source's material mass. Thakurta built
+the metric with a perfect fluid with heat flow as source
+\cite{Thakurta1981}, as recorded by Patel and Koppar \cite{PatelKoppar1988}, who
+also obtain a different rotating construction with a conformal factor in a
+coordinate paired with a null one. In the spherical case Thakurta's mass growth is
+read as accretion by some authors and not by others \cite{Hutsi2021,Boehm2021},
+and its effective stress--energy violates all the standard energy conditions in
+a region around the object \cite{Harada2022}. The rotating metric behaves in the
+same way: it has Hawking--Ellis type-IV regions with violated null and weak
+energy conditions (\ref{app:tk-energy}). For the Gaia BH3 mass and a local flat
+matter--$\Lambda$ expansion law that region extends to about $3.5\times10^4$ au.
+Thakurta--Kerr is therefore used here as a prescribed background for the control
+problem; the metric alone establishes neither luminosity nor vanishing accretion.
+
+\paragraph{A rotating transit benchmark.}
+For an explicit frozen equatorial comparison take $A=1$, $M=1$,
+$\Ehat=7/5$, an illustrative $a/M=0.8$, and spatial endpoints
+$(r_A,\varphi_A)=(6M,0)$ and $(r_B,\varphi_B)=(6M,1.8)$, with the arrival free on
+the receiver worldline. Among zero-winding, single-turn extremals with
+$2.001\le r_{\min}/M\le5.999$ one arrival-cost and two proper-cost candidates are
+found (table~\ref{tab:rotating-observational-benchmark}).
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrrr}
+\hline
+Candidate & $\Delta t/t_g$ & $\Delta\tau/t_g$ & $r_{\min}/M$\\
+\hline
+Arrival-cost extremal & 14.6029762913 & 6.7500485689 & 4.6833124281\\
+Least proper-cost candidate & 15.4255151565 & 6.5189197545 & 3.6633349313\\
+Second proper-cost candidate & 20.9011726037 & 6.7185472882 & 2.1551299377\\
+\hline
+\end{tabular}
+\caption{Frozen rotating benchmark, $t_g=GM/c^3$. The selected candidates
+minimise their own costs among the regular candidates found, not over a proved
+complete class. Grids of 91 and 181 turning radii return the same candidates;
+quadratures at 35 and 55 digits agree within $4\times10^{-29}$, and an independent
+Hamiltonian integration agrees within $2\times10^{-14}$.}
+\label{tab:rotating-observational-benchmark}
+\end{table}
+
+Using the Gaia BH3 mass only as a dimensional reference and the nominal solar
+gravitational parameter \cite{Prsa2016}, the arrival-cost curve takes
+$\Delta t\simeq2.352$ ms with $\Delta\tau\simeq1.087$ ms on board, and the
+proper-cost curve $\Delta t\simeq2.484$ ms with $\Delta\tau\simeq1.050$ ms. Each
+wins on its own clock, and the arrival-cost curve turns higher, at a
+Boyer--Lindquist coordinate of about $226$ km against $177$ km (coordinates, not
+areal radii). The Gaia spin is not measured, and this example shows no depth
+inversion.
+
+\paragraph{A low-energy probe benchmark.}
+A nonrelativistic asymptotic approach in the rest frame of a frozen seed
+has $\Ehat=\gamma_\infty\simeq1+v_\infty^2/(2c^2)$.
+This motivates the marginal value $\Ehat=1$ as a limiting thought
+experiment, not a claim that the Earth's heliocentric escape velocity
+determines the approach energy relative to a particular compact object.
+For illustration, constant cruising at $16.9$ km s$^{-1}$ would give
+$\Ehat-1\simeq1.59\times10^{-9}$ and would require about
+$2.76\times10^7$ years to cover $477$ pc, neglecting acceleration,
+relative motion, navigation and deceleration. This cruising speed is
+distinct from the relativistic local speed near the compact object.
+In the static frozen limit, an observer at rest measures
+$v/c=\sqrt{2M/r}$ at $\Ehat=1$, or $0.57735$ at $r=6M$;
+this energy relation alone does not make a controlled rail a geodesic.
+
+For the same rotating endpoints and illustrative spin as
+Table~\ref{tab:rotating-observational-benchmark}, the $\Ehat=1$ results
+are given in Table~\ref{tab:obs-E1}. The curves remain strictly inside
+the compact regular control domain: $r>2M$ and
+$\bar v^2=2M/r\ge1/3$ throughout the computed arcs.
+The degeneracy at this energy occurs only as $r\to\infty$.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrrr}
+\hline
+Candidate & $\Delta t/t_g$ & $\Delta\tau/t_g$ & $r_{\min}/M$\\
+\hline
+Arrival-cost & 19.5292932579 & 12.0634029745 & 4.2723932116\\
+Least proper-cost found & 22.1141693523 & 11.4751377151 & 2.7461804472\\
+Second proper-cost & 23.0777614990 & 11.4764596990 & 2.5128512004\\
+\hline
+\end{tabular}
+\caption{Frozen benchmark at $\Ehat=1$, $a/M=0.8$, $A=1$, endpoints
+$(6M,0)\to(6M,1.8)$, zero winding and one radial turning point.
+The search and selection are restricted to the stated class and
+$2.001\le r_{\min}/M\le5.999$; no completeness or global-minimum
+certificate is asserted. The 91/181-point searches agree, and
+45/65-digit shooting and quadrature agree within $4.1\times10^{-27}$
+for the selected curves, with independent Hamiltonian reproduction.}
+\label{tab:obs-E1}
+\end{table}
+
+With the Gaia BH3 mass used only as a dimensional reference, the selected
+arrival-cost candidate has $\Delta t\simeq3.145$ ms and
+$\Delta\tau\simeq1.943$ ms, while the selected proper-cost candidate
+has $\Delta t\simeq3.562$ ms and $\Delta\tau\simeq1.848$ ms.
+Their BL turning coordinates are about $206$ and $133$ km, not areal radii.
+The ZAMO speeds vary approximately from $0.554c$ to $0.617c$ on the
+arrival candidate and from $0.571c$ to $0.731c$ on the selected proper-cost
+candidate. The latter maximum occurs near $r=3.000M$, not at its turning
+point. Spin is illustrative, not inferred for the Gaia system.
+These are controlled trajectories rather than free-fall transfers or
+an interstellar mission design. A direct probe test remains a thought
+experiment; numerical feedback tests and suitably mapped laboratory
+analogues can test the control implementation, not establish TK as
+the geometry of a detected object.
+
+\paragraph{A proposed Solar-System control comparison.}
+\label{par:obs-solar-probe}
+The weak-field Schwarzschild limit of
+equations~\eqref{eq:randers}--\eqref{eq:randers-data} motivates a two-probe
+control experiment, not a test of TK; the corresponding relativistic
+brachistochrone of a particle falling from rest at infinity is Kamath's
+\cite{Kamath1988}. At maintained Newtonian energy the
+arrival-cost rail needs a thrust $2GM_\odot\sin\alpha/r^2$ normal to the
+velocity, twice the normal component of solar gravity, where $\alpha$ is the
+angle between velocity and radial direction: this is the ``rule of 2'' of
+brachistochrones under a conservative force, with $r\sin\alpha/v$ conserved for
+a central one \cite{Routh1898,AgmonMann2026}. In the static, central, fixed-energy model
+the arrival functional for paths monotone in $r$ is strictly convex, so the rail
+is the unique minimum in that class; in the prescribed moving-planet model below
+we compute the corresponding extremal and compare it with a family of smooth
+reference paths, without a global minimality certificate. After a Saturn flyby, a mother and a daughter probe could start
+together outside the planet's Hill sphere, with the same position, velocity
+and energy; the turn angle and pericentre of the flyby follow from the
+patched-conic relations \cite[\S\S9.1--9.2]{Battin1999}, with the mass, radius and
+pole of Saturn of \cite{Jacobson2006,Archinal2018}. The mother would follow the arrival-cost rail; the daughter a
+smooth reference path $x_{\rm rail}(u)+d\sin^2(\pi u)\,n$, with the same
+endpoints and initial tangent, so that no release manoeuvre is needed. In an
+illustrative model with prescribed planetary orbits, a free transfer from
+Earth with perihelion $1$ au and aphelion $20$ au reaches Saturn in about
+$3.1$ years, with a launch energy $C_3\simeq128$ km$^2$\,s$^{-2}$ below the
+$157.75$ km$^2$\,s$^{-2}$ achieved by New Horizons \cite{GuoFarquhar2008}; a flyby at about $2.7$ Saturn radii turns the relative velocity
+by $85^\circ$, crossing the ring plane outside the main rings, and sends the
+probes almost radially inwards; Cassini flew closer still, between the rings
+and the planet \cite{Spilker2019}. Rails to $4$ and
+$3$ au then last about $2.8$ and $3.0$ years and require peak thrust accelerations
+of $3.8\times10^{-5}$ and $1.1\times10^{-4}$ m\,s$^{-2}$, about $0.04$ and $0.11$ N per
+tonne: a fraction of one NEXT ion thruster (up to $236$ mN at $6.9$ kW)
+\cite{PattersonBenson2007}, a system already studied for Saturn missions
+\cite{BensonRiehlOleson2007}. Beyond a few au the electric power could come, as a
+conceptual option, from a kilowatt-class fission source of the Kilopower type, so
+far demonstrated in a ground test \cite{Gibson2018}. For $d=0.05$ au the daughter arrives about
+$7.4$ and $6.3$ hours later. Because the rail makes the arrival time
+stationary, the lag grows as $d^2$: from about $0.3$ hours at $d=0.01$ au to
+about $29$ hours at $d=0.1$ au on the rail to $4$ au ($25$ hours to $3$ au), with $\mbox{lag}/d^2$ constant within
+$0.2\%$. Several daughters at different $d$ would therefore measure the
+quadratic response of the arrival time along this family of perturbations, not
+merely a slower path. Representative X-band tracking noise is $0.03$ mm\,s$^{-1}$
+for a 60-s Doppler average and $0.6$ m in range, with additional instrumental and
+propagation biases \cite{ThorntonBorder2003}; this precision motivates the
+comparison, but an arrival-time uncertainty budget including orbit
+determination and control errors remains to be established. The absence of
+conjugate points is not automatic. In the planar rotating Earth--Moon problem, with
+the required normal thrust available, a rail at fixed Jacobi constant $C$ is a
+geodesic of the optical metric $|{\rm d}x|^2/(2\Omega-C)$, since the Coriolis force is
+normal to the velocity; its curvature $K=\Delta\Omega-2|\nabla\Omega|^2/(2\Omega-C)$,
+with the two-dimensional Laplacian, is positive near the Lagrange points wherever
+$2\Omega>C$. For two illustrative rays launched from $L_4$ at $1.02$ km\,s$^{-1}$ the
+first conjugate point occurs after about $4.26$ and $13.35$ days; beyond it, suitable
+fixed-endpoint deformations reduce the arrival time. Positive curvature also appears
+on hyperbolic rails winding around a planet, where $K=E\mu/[r^2(Er+\mu)]>0$. The
+rails proposed here avoid both regimes: the flyby is unpowered, and the rail starts
+outside the Hill sphere at negative heliocentric energy, where $K<0$ in the solar
+field. For the prescribed moving-planet model, a sampled variational calculation
+finds no zero of the transverse endpoint map along the common ray up to nine years;
+this supports the local comparison but is not a global minimality certificate. This is a quantitative
+concept: launch targeting, ring and dust safety, power-system mass and
+closed-loop navigation remain to be assessed. It tests the control law in
+the Newtonian limit, not the much smaller separation between arrival- and
+proper-cost extremals, nor the conformal factor.
+
+\paragraph{A Kerr thought experiment.}
+\label{par:obs-kerr-thought}
+Large relativistic and spin effects in these examples require strong fields. Scaling the frozen
+Kerr background to the reference mass of M87$^*$ in
+Table~\ref{tab:observational-context}, with $\Ehat=1$ and equal-radius
+endpoints separated by $1.8$ radians at $120M$ or $38M$, the arrival-cost
+rails turn near $48M$ and $17.5M$ and need peak proper accelerations of about
+$0.85g$ and $6.5$--$6.7g$; the static speeds reach $0.20c$ and $0.34c$.
+Changing the illustrative spin from zero to $a/M=\pm0.8$ shifts the
+coordinate arrival, after $458$ or $85$ days, by about $25$--$92$ minutes. The
+corresponding thrust budgets, $0.33c$ and $0.55c$ in integrated proper
+acceleration, are out of reach of chemical or electric propulsion; an ideal
+photon rocket would need mass ratios of about $1.4$ and $1.7$ and a power of
+order $3\times10^{12}$ W per tonne at $1g$. This remains a thought experiment
+with prescribed spin, geometry and control, not an operational mission or an
+identified astrophysical TK source. Both examples are reproduced by the
+\texttt{probe\_*} scripts in \texttt{verification/observational}.
+
+\paragraph{A conditional mass--age comparison.}
+The catalogue supplies reference mass scales, but does not establish
+that its objects follow a cosmologically coupled material-mass law.
+The central geometric scale $AM$ and the inherited term of the HH
+energy motivate a phenomenological comparison, not an observational
+identification. If one additionally assumes
+$M_{\rm material}\propto A^k$, $A_0=1$, specified formation ages and
+no merger or accretion contribution, the implied formation mass is
+$M_{\rm today}A_{\rm form}^k$.
+Table~\ref{tab:obs-birth-mass} illustrates this conditional exercise
+in the fiducial flat $\Lambda$CDM model \cite{Planck2020VI}.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Object & $M_{\rm today}/M_\odot$ & assumed age (Gyr) & $k=1$ & $k=3$\\
+\hline
+Gaia BH3 & $32.70$ & 12 & $7.26$ & $0.358$\\
+         &         & 13 & $4.21$ & $0.070$\\
+Gaia BH2 & $8.94$ & 5 & $6.07$ & $2.80$\\
+         &        & 8 & $4.44$ & $1.10$\\
+         &        & 12 & $1.99$ & $0.098$\\
+\hline
+\end{tabular}
+\caption{Conditional masses at formation, in $M_\odot$, under $M\propto A^k$.
+The ages are those assumed for the companions, not measured ages of the compact
+objects: isochrones of 12--14 Gyr for Gaia BH3 \cite{Gaia2024BH3} and
+5--13 Gyr (8--12 Gyr if thick disk) for Gaia BH2 \cite{ElBadry2023BH2}.
+Formation priors, coevality and mergers are not modelled.}
+\label{tab:obs-birth-mass}
+\end{table}
+
+For the illustrative $k=1$ law the assumed ages give the formation masses
+listed in the table; older assumed ages with $k=3$ give much smaller
+values, as in the conditional Gaia constraints discussed by
+\cite{AndraeElBadry2023}. This is not a fit of rotating TK to these
+systems, and $k=1$ is not an exact surface-independent law for its
+total HH energy. Companion-age assumptions do not directly measure
+the compact object's formation time; coevality, formation priors and
+merger histories remain to be modelled. Neither the catalogue nor this
+calculation establishes material mass growth proportional to $A$.
+We do not infer a universal coupling law, or an exclusion of one for
+neutron stars, from this illustration. Cluster ages do not date neutron stars
+either: the double neutron star PSR B2127+11C in the globular cluster M15, with
+masses $1.358$ and $1.354\,M_\odot$, has a characteristic spin-down age of about
+$0.1$ Gyr, which is not a direct formation age, and did not follow the standard
+high-mass binary evolution \cite{Jacoby2006}.
+
+\paragraph{Drift and requirements for a test.}
+If $A$ is identified with the cosmological scale factor, $A'/A=AH_{\rm cos}$, and
+with $A_0=1$ and $H_0=67.4$ km s$^{-1}$ Mpc$^{-1}$ \cite{Planck2020VI} the drift
+parameter is
+\begin{equation}
+    \begin{array}{l}
+    \displaystyle\epsilon_0=H_0\,\frac{GM}{c^3}\simeq
+    3.5\times10^{-22}\ \ (\mbox{Gaia BH3}),\\[4pt]
+    \qquad 4.6\times10^{-17}\ \ (\mbox{Sgr A*}),\quad
+    7.0\times10^{-14}\ \ (\mbox{M87*}).
+    \end{array}
+    \label{eq:obs-drift}
+\end{equation}
+At $r=6M$, $a=0.8M$ the relative quasi-local drift correction for the Gaia BH3
+mass is $2\times10^{-41}$. Neither probe example above isolates the
+conformal factor. Null trajectories, as unparametrised curves, are conformally
+invariant, but measured frequencies and clock-based observables need not be, and
+freely falling massive bodies also respond to $A$. The examples above are computed
+in the frozen background with the prescribed control law; isolating $A$ would
+require a specified evolving-background observable and a model of the source,
+observers and signals. In the Solar System the slow-motion limit of
+$A^2g_{\rm Schw}$ with a constant seed mass has Newtonian parameter
+$GM_\odot A$, which under the cosmological identification would grow at
+$H_0\simeq6.9\times10^{-11}$ yr$^{-1}$; the EPM2019 ephemerides give
+$\dot{(GM_\odot)}/GM_\odot=(-10.2\pm1.4)\times10^{-14}$ yr$^{-1}$ ($3\sigma$)
+\cite{Pitjeva2021}, which excludes that identification for the Sun. The observed
+decrease is consistent with the expected net solar mass loss: including radiation,
+the solar wind and infalling material, the same work estimates
+$-13.4\times10^{-14}<\dot M_\odot/M_\odot<-8.7\times10^{-14}$ yr$^{-1}$. The bound
+concerns an additional local growth of $GM_\odot A$ under the stated constant-seed-mass
+model, not the cosmological expansion itself. A test
+specific to TK would therefore require a compact object around which $A$ varies
+appreciably during a transit, or a specified local coupling law; we regard this
+as the open experimental question posed by the metric. A direct test of the rail would need a probe
+maintaining $\Ehat$ relative to the chosen reference field, common spatial
+endpoints, calibrated onboard and receiver clocks, and a synchronisation and
+light-propagation model; a static receiver at $r=6M$ converts coordinate
+intervals on its worldline by $\sqrt{2/3}$. Numerical feedback benchmarks or
+properly mapped laboratory analogues can test the control implementation,
+while natural tracer orbits, lensing and emission constrain the background once a
+dynamical or radiative model is supplied. Mass--age comparisons can constrain a
+proposed law $M\propto A^k$ under formation priors \cite{AndraeElBadry2023,Cadoni2023},
+but they do not test the brachistochrone. None of the cited data is presented as
+an experimental verification of the controlled minimum-time trajectories. The
+scales, the benchmark and the quasi-local quantities are reproduced by the
+scripts in \texttt{verification/observational}.
+
 \section{Conclusions}
 \label{sec:concl-II}
 \paragraph{Where the problem lives.} The first result is negative and delimiting, and it
@@ -3649,8 +4311,9 @@ stationary limit. Every curve in this paper is accordingly an exterior extremal,
 limiting contact, or an explicitly labelled analytic continuation carrying no optimality
 claim (Protocol~\ref{prot:status}).
 
-\paragraph{Proved, in the exterior domain.} The flagship exact result is the
-\emph{exterior} retrograde separatrix of Proposition~\ref{prop:exterior-sep}: a genuine
+\paragraph{Established in the exterior domain.} The flagship result is the
+\emph{exterior} retrograde separatrix (domain inequalities and factorisation proved, roots
+computed to sixteen digits) of Proposition~\ref{prop:exterior-sep}: a genuine
 double root of the $t$-branch turning function at
 $r_d=3.513905\,M$, $J_c^{-}=-8.053516$ for the representative parameters, lying strictly
 inside the control domain (both regularity inequalities hold on the whole approach arc)
@@ -3666,12 +4329,16 @@ weight-one Abelian primitives (their reduction to weight one conjectural). The a
 branch is $t\equiv\eta$ (a monotone reparametrization), leaving two genuinely distinct
 extremal families, arrival and proper time $\tau$.
 
-\paragraph{Conditional and numerical, kept tiered.} Rotation and the conformal factor
-invert the $t/\tau$ ordering under a same-launch comparison. The fixed-endpoint
+\paragraph{Conditional and numerical, kept tiered.} Under a same-launch comparison at equal level and
+$J_t=J_\tau$ neither rotation nor a constant conformal factor inverts the $t/\tau$ ordering on
+the prograde sector (Proposition~\ref{prop:same-launch}); a conformal inversion appears when
+the costates are paired in conformal time, and a rotational one only in the different-level
+diagnostic, whose arrival-branch curves are not rail extremals of the same metric. The fixed-endpoint
 no-inversion result is deliberately \emph{not} stated as a single claim: it is
 (i) an analytic integrand inequality; (ii) a \emph{theorem}, for frozen $A$ and the
 symmetric single-periastron family, whenever the coordinate-time turning point satisfies
-one of the conditions of Proposition~\ref{prop:lemmaB}---for every spin, and for $E^2\ge3/2$ whenever it lies
+one of the conditions of Proposition~\ref{prop:lemmaB}---for every spin on the co-rotating
+family, and for $E^2\ge3/2$ whenever it lies
 beyond the single peak of the $\tau$ half-angle map; (iii) a computer-assisted proposition
 at the certified static configurations with $E=1.2$; (iv) asymptotic evidence as
 $r_0\to\infty$ at fixed energy in the static case; and (v) a numerically supported
@@ -3683,6 +4350,27 @@ $+$ off-shell) correction is verified against the true non-autonomous flow to
 $O(\varepsilon^2)$ on compact regular subarcs; the weight-two letters are evaluated by a
 convergent theta-nome series, their irreducibility and single-valued completion
 conjectural.
+
+\paragraph{Surfaces, normality and observation.}
+The rail-surface classification is family-specific and includes the
+radial umbilical case $Ar=\mathrm{const}$; the interior free-arrival
+normality lemma has explicit regularity and strict-margin hypotheses
+and is not a certificate of minimality. The observational section gives
+measured reference environments rather than detections of a controlled
+brachistochrone. With the Gaia BH3 mass used only for dimensional
+conversion, the rotating $\Ehat=1$ candidates have millisecond transits
+and BL turning coordinates of order a hundred kilometres, with the
+ZAMO speed ranges stated in Table~\ref{tab:obs-E1} and its discussion.
+For a cosmological identification of $A$, $H_0GM/c^3\simeq3.5\times10^{-22}$
+at that mass favours a local frozen benchmark; it is not a universal
+error bound on observables. The geometric scalings $J=A^2Ma$ and
+$M_{\rm HH}=A[m_K+(A'/A)^2C]$ do not establish a material mass--age
+law for the Gaia objects. For the expansion laws examined, the effective
+source has regions violating the energy conditions, so TK remains a
+prescribed background, not a demonstrated classical source model.
+A direct maintained-charge probe test is a thought experiment;
+numerical and laboratory tests must state the control and clock mapping
+that they actually validate.
 
 \paragraph{Outlook.} Open threads: a general theory of moving turning points and of
 adiabatic separatrices (a genuine crossing of a moving separatrix is a Neishtadt inner
@@ -3733,8 +4421,9 @@ closed form, say---agreeing to a stated precision. This excludes transcription
 and bookkeeping error. It is \emph{not} a proof, and we never cite it as one.
 \item[\rm(III)] \emph{Recovery of established limits.} The formalism must
 reproduce results validated elsewhere: $a\to0$ gives Schwarzschild, $A\to1$ the
-stationary Kerr constants of Carter and Chandrasekhar
-\cite{Carter1968,Chandrasekhar}, $\Ehat\to\infty$ the Fermat--Randers metric,
+Kerr background and the stationary rail problem on it (the free-geodesic constants of
+Carter and Chandrasekhar \cite{Carter1968,Chandrasekhar} are recovered only in the
+force-free geodesic sector, not by the rail), $\Ehat\to\infty$ the Fermat--Randers metric,
 and the stationary rail reproduces Perlick's fixed-energy optical metric
 \cite{Perlick1991} exactly (Paper~I). These are falsifiable external constraints
 and are the closest analogue available, in a problem of this kind, to an
@@ -3816,10 +4505,13 @@ is precisely because the rail is \emph{timelike} at fixed $\Ehat$ that the confo
 factor acts on it at all, which is the same reason the problem does not reduce to
 Fermat's principle.
 
-\emph{(C) Gravitational or astrophysical validation.} This would require observables
-from a body actually described by the metric of section~\ref{sec:thakurta}, together
-with a model of its matter, horizons and emission. None is available, and none is
-claimed.
+\emph{(C) Gravitational or astrophysical validation.}
+Section~\ref{sec:observational-context} gives measured reference environments,
+physical scales and a rotating common-endpoint benchmark, and distinguishes
+background observations from a direct maintained-charge rail test.
+Thakurta--Kerr remains a prescribed background; no realistic matter model, no
+luminosity or non-accretion mechanism, and no astronomical measurement of a
+controlled brachistochrone is claimed.
 
 \paragraph{What would falsify this work.} Since no measurement is on offer, it is
 worth stating in one place the quantities an independent recomputation---or a
@@ -4340,12 +5032,19 @@ $r=2$), while for $J$ just inside the penetration window $[J_c^-,J_+^t]$ the tur
 point moves \emph{inside} the ergoregion and the closed form stays accurate
 across and below $r_e$ (figure~\ref{fig:jpt-g2}). This penetration is generic in a
 sharp sense that distinguishes the two branches (Table~\ref{tab:penetration}). The
-$t$-branch obeys a \emph{dichotomy}: it penetrates over the whole finite interval
-$J\in(J_c^-,J_+^t)=(-8.05,3.43)$---every $J$ inside crosses, every $J$ outside
-reflects at a smooth periapsis $r_{\min}>r_e$, with \emph{no} cusp---because the
+turning function factors as $N=\bar P\,B$ with
+$B=\bar P-2b\bar v^2J-f\bar v^2J^2$, concave in $J$ for $r>2M$, so the set of momenta whose
+frozen $t$-orbit reaches $\re$ is always an interval. At the representative parameters
+$a=0.9$, $E=1.2$ the $t$-branch obeys a \emph{dichotomy}: it penetrates over the whole
+finite interval $J\in(J_c^-,J_+^t)=(-8.05,3.43)$---every $J$ inside crosses, every $J$
+outside reflects at a smooth periapsis $r_{\min}>r_e$, with \emph{no} cusp---because the
 frame-dragging term auto-tunes the effective momentum
 $\mathcal K(r_e)=fJ_t/E+2Ma/(rE)\to a/E$ to the critical value for \emph{all}
-$J_t$, so a whole family (retrograde included) is carried across. The
+$J_t$, so a whole family (retrograde included) is carried across. The identification of
+the prograde end with $J_+^t$ is not general: at smaller spin a prograde double root of
+$B$ lies outside $r=2M$ and closes the band first, in line with the prograde photon orbit
+lying outside $r=2M$ for $a<M/\sqrt2$. At $E=1.2$ this happens for $a\lesssim0.65M$; at
+$a=0.5$, for instance, $r_d=2.2076M$ and $J=4.4400<J_+^t=4.6736$. The
 $\tau$-branch obeys the four-case law of
 Proposition~\ref{prop:classification}: its proper-time cost carries the reality
 wall $\sqrt{wf}$ ($w=\Ehat^2-f$), imaginary for $f<0$ inside $r_e$, which
@@ -4495,24 +5194,24 @@ closed form tracking it to $\sim10^{-9}$ (figure~\ref{fig:jcm-cap}).
     \label{fig:atlas-t}
 \end{figure}
 
-\paragraph{Stationary-limit conserved quantities.} At $A=1$ the branch flows admit
-the closed first integrals used for validation,
+\paragraph{Stationary-limit orbit-shape factors.} At $A=1$, on regular exterior legs where
+$r>2M$, $w=E^2-f>0$ and $\Delta-\kappa^2w>0$, the equatorial branch orbits obey the closed
+orbit-shape relation
+$\dd\varphi/\dd r=\sigma_r\,\kappa\,r\sqrt{wf}\big/\big(\Delta\sqrt{\Delta-\kappa^2w}\big)$,
+with $\sigma_r=\operatorname{sgn}(\dd r/\dd s)$ along the future-oriented Hamiltonian
+parameter $s$, and with the shape factors
 \begin{equation}
-    \mathcal K_\tau=J,\qquad
-    \mathcal K_t=\frac{fJ+2Ma/r}{E},\qquad
-    \mathcal K_\eta=\frac{fJ}{E},
+    \kappa_\tau=J,\qquad
+    \kappa_t(r)=\frac{fJ+2Ma/r}{E},
     \label{eq:kerr-conserved}
 \end{equation}
-the equatorial Kerr doranTau/doranT constants.
+used for validation. Only $\kappa_\tau=J$ is a conserved canonical momentum; $\kappa_t$
+depends on $r$ and is not a first integral.
 
-\paragraph{Rotational inversion function.} The same-launch $t/\tau$ ordering
-inverts where $\rho(r_*)^2=H_{t0}/H_{\tau0}$ with the explicit ratio of
-centrifugal potentials
-\begin{equation}
-    \rho=\frac{A^2}{\Ehat}\Big(f+\frac{2Ma}{rJ}\Big),
-    \label{eq:rho-explicit}
-\end{equation}
-$\rho<1$ giving $t$ deeper, $\rho>1$ giving $\tau$ deeper.
+\paragraph{Turning conditions of the two branches.} The same-launch ordering is decided by the
+turning conditions~\eqref{eq:turning-J}, not by a pointwise ratio of potentials, which can
+cross between the two turning radii; Proposition~\ref{prop:same-launch} compares the two
+conditions directly.
 
 \paragraph{Conformal form of the classification.} With constant $A$ the separatrix momentum is
 $\Jc=aA^2/\Ehat$, and above it the smooth periapsis is the outer root of
@@ -4587,8 +5286,11 @@ Table~\ref{tab:script-map} maps each result to
 the script in the repository~\cite{Rosignoli2026Code} that generates and verifies it;
 the first entry, \texttt{pipeline\_completa\_deltaphi.py}, runs the entire chain in one
 file---from $(M,a,E,J)$ through the $11\times11$ solve, the algebraic $c_k,b,Q_{kj}$,
-and the building blocks $U_k,W_{kj},\mathcal{I}_j$, to the assembled $\delta\varphi$,
-matching the direct double integral to $5\times10^{-14}$.
+and the building blocks $U_k,W_{kj},\mathcal{I}_j$, to the assembled energy component
+of $\delta\varphi$ (source $\Ehat\,\partial_E F$), matching the direct double integral to
+$5\times10^{-14}$; the axial part $J\,\partial_J F$, which is not small (about $40\%$ of the
+Euler source at the $\tau$-branch parameters), is assembled with the same blocks in
+\texttt{verify\_tau\_branch\_drift\_clock.py}.
 \begin{table}[htbp]
     \centering
     \caption{Result-to-script map with the achieved numerical residual, so each
@@ -4601,7 +5303,7 @@ matching the direct double integral to $5\times10^{-14}$.
         \hline\hline
         result & script & residual\\
         \hline
-        \emph{end-to-end example} $(M,a,E,J)\!\to\!\delta\varphi$
+        \emph{end-to-end example} $(M,a,E,J)\!\to\!\delta\varphi$, energy component
             & \texttt{pipeline\us completa\us deltaphi.py} & $5\times10^{-14}$\\
         TK $\tau$ reduction $c_k$ and the energy component of $\psi$ ($\Theta\to\Ehat\partial_E$), plus horizon part
             & \texttt{kerr\us psi\us explicit\us verified.py} & $5\times10^{-14}$\\
@@ -4644,18 +5346,18 @@ reduction to $6\times10^{-17}$ (\texttt{kerr\_separatrix\_validation.py},
 \texttt{kerr\_separatrix\_weierstrass.py}). The non-autonomous Randers
 data~\eqref{eq:randers-data} match the Kerr null Fermat metric to
 $\sim10^{-14}$ (\texttt{thakurta\_kerr\_optical\_sympy.py}). The equatorial
-Thakurta--Kerr flow reproduces the $A=1$ Kerr
-constants~\eqref{eq:kerr-conserved} to ten digits at $r=4,6,9$ ($a=0.9$, $E=1.2$),
+Thakurta--Kerr flow reproduces the $A=1$ Kerr orbit-shape
+relations~\eqref{eq:kerr-conserved} for $\dd\varphi/\dd r$ to ten digits at $r=4,6,9$
+($a=0.9$, $E=1.2$), a check of the tangent, not of a conservation law,
 and at $a=0$ its Hamiltonians reduce to the Thakurta--Schwarzschild ones to $10^{-12}$
 (\texttt{thakurta\_kerr\_sympy.py}); the $3+1$
 Hamiltonian reduces to the equatorial one exactly, and conserves
 $L^2$ to $6\times10^{-13}$ at $a=0$ (\texttt{thakurta\_kerr\_dynamic\_K.py}). The
 conformal-Killing rail charge is held to
 $|{-}u\cdot\partial_\eta-\Ehat|<9\times10^{-16}$ along the rail
-(\texttt{rail\_conservation.py}), and the static inversion colormap agrees with the
-analytic contours~\eqref{eq:periapsis-root} to a relative $10^{-11}$
-(\texttt{thakurta\_kerr\_inversione\_t\_tau.py},
-\texttt{thakurta\_kerr\_plunge\_inversion.py}).
+(\texttt{rail\_conservation.py}), and the static periapsis map of the $\tau$-branch agrees
+with the analytic contours~\eqref{eq:periapsis-root} to a relative $10^{-11}$
+(\texttt{thakurta\_kerr\_plunge\_inversion.py}).
 
 \begin{figure}[tbp]
     \centering
@@ -4712,8 +5414,9 @@ genus-two$\,\to\,$genus-one machinery is recalled below on a representative locu
 coefficients closed in the Weierstrass $\sigma,\zeta,\wp$); the spherical Vaidya
 $J_{\rm deg}$ case ($r_d<0$, a purely algebraic degeneration) is in Paper~I. All objects
 live on the elliptic curve $E:\,w^2=Q_4(r)$ into which the branch sextic collapses; the
-adiabatic expansion is $\varphi(r)=\varphi_0(r)+\dot\lambda\,\delta\varphi(r)+
-O(\dot\lambda^2)$, $\lambda=A$ via $E_{\rm eff}=\Ehat/A$.
+adiabatic expansion is $\varphi(r)=\varphi_0(r)+\dot\lambda\,[\delta\varphi(r)+\chi_{\rm off}(r)]+
+O(\dot\lambda^2)$, $\lambda=A$ via $E_{\rm eff}=\Ehat/A$, with $\delta\varphi$ the on-shell
+coefficient treated here and $\chi_{\rm off}$ the off-shell coefficient~\eqref{eq:chi-off}.
 
 \paragraph{Curve and special functions.}
 $\Jc$ denotes the branch degeneration value (the explicit rotating $\tau$- and
@@ -4795,9 +5498,9 @@ b_1^{z_d}=\frac{h_2-3a_1h_1+(6a_1^2-3a_2)h_0}{s^3},\\
 \end{equation}
 ($e_i=e_4,e_3$ the two-torsion poles) and the constant closing at $z_\infty$, where
 $R$ vanishes: $C_0=-\sum_a[b_1^a\zeta(z_\infty-a)+b_2^a\wp(z_\infty-a)-\tfrac12
-b_3^a\wp'(z_\infty-a)]$. The axial ($J_{\rm eff}$) part shifts $b_1$ by
-about a third ($34\%$ and $37\%$ at the two degenerations tabulated) relative to the
-source without it and is tabulated in
+b_3^a\wp'(z_\infty-a)]$. The axial ($J_{\rm eff}$) contribution changes the magnitude of $b_1$
+by about $12\%$ and $14\%$ at the two degenerations tabulated, relative to the
+energy-only source $\Ehat\,\partial_E F$; the contributions are tabulated in
 \texttt{ThakurtaMetric/conformal\_source\_Jterm.py}.
 
 \subsection{Adiabatic derivative of the degeneration family}
@@ -4848,7 +5551,7 @@ must be classified by the sign and location of the associated double root $r_d$
 \emph{physical} separatrix is the one the selector imposes throughout this
 paper, $r_d>2M$---not $r_d>\rp$, which is the seed criterion and admits radii on
 which $W=\partial_\eta$ is spacelike and the compact-control problem is not
-posed. On that criterion exactly one branch qualifies: the retrograde
+posed. On that criterion, at the representative parameters, exactly one branch qualifies: the retrograde
 $\Jc^-=-8.054$ at $r_d=+3.514>2M$ of equation~\eqref{eq:Jc-minus}, consistent
 with the body. The prograde branch $\Jc=+2.936$ sits at
 $\rp<r_d=1.512<2M$ and is therefore a type-(A) object in the sense of
@@ -4876,8 +5579,10 @@ $J\,\partial_J F$ term) gives $b=(b_1,b_2,b_3)=(-0.685,-0.074,-0.0035)$ and the
 \end{equation}
 (the earlier $\mp148$--$150$ magnitudes belonged to the unphysical $J_{\rm deg}$
 roots at $r_d<0$). All family-derivative coefficients are closed-form residues, symbolic in
-$(M,a,E,r_d,\Jc)$; the triple-pole cancellation below is an algebraic identity at
-\emph{any} double root, hence holds on the physical branch as well.
+$(M,a,E,r_d,\Jc)$; the triple-pole cancellation below is an algebraic identity at every
+exactly double root $r_d$ at which the numerator $K$ is finite ($\Delta(r_d)\neq0$) and along
+which $r_d(\lambda)$ and $\Jc(\lambda)$ are differentiable, hence holds on the physical branch
+as well.
 
 \paragraph{The degeneration-family derivative cancels the leading pole.}
 By Lemma~I.6 of Paper~I, at the double root the total family-derivative source \emph{vanishes},
@@ -4949,7 +5654,10 @@ dilation term $-(A'/A)P_r$ and the full Euler operator
 $\mathcal D=E_{\rm eff}\partial_{E_{\rm eff}}+J_{\rm eff}\partial_{J_{\rm eff}}+P_r
 \partial_{P_r}$. This appendix specializes the theorem to the conformal $t$- and
 $\tau$-branches and gives the resulting Abelian reduction; the general canonical-variable
-proof and the (non-conformal) Vaidya specialization are in Paper~I.
+proof and the (non-conformal) Vaidya specialization are in Paper~I. Only the local content of the standing hypotheses of Paper~I is used here:
+smoothness and the two strict regularity inequalities on a compact tube around the frozen
+sub-arc, with $|H_{P_r}|$ bounded away from zero. The global cylinder condition of Paper~I,
+which serves existence, is neither needed nor verified for these perturbative statements.
 
 \paragraph{Notation and the slow datum.} $\Ehat$ and $J\equiv J_{\rm TK}=p_\varphi$ are
 the \emph{conserved} control charges (the conformal-Killing rail charge and the axial costate); the effective
@@ -5024,14 +5732,17 @@ the \emph{full} Euler operator
 
 \paragraph{Extended system and first order.} The canonical extended system adjoins $s$
 with conjugate $p_s$ in the \emph{original} variables,
-$\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$; passing to the normalized (conformally
-symplectic) variables rewrites the shell as $\bar H(r,P_r;E_{\rm eff}(s),J_{\rm eff}(s))=0$
-(since $H_{\rm br}=A\bar H$, $A>0$). Two statements have to be kept apart here.
+$\mathcal H=p_s+H_{\rm br}(r,p_r;A(s))=0$; passing to the normalised (conformally
+symplectic) variables, with $H_{\rm br}=A\bar H$ and $A>0$, rewrites this constraint as
+$p_s+A\,\bar H(r,P_r;E_{\rm eff}(s),J_{\rm eff}(s))=0$, not as $\bar H=0$ along the
+drifting flow. Two statements have to be kept apart here.
 The constraint carried along the non-autonomous flow is the extended one,
 $p_s+A\bar H=0$; $\bar H=0$ is the \emph{frozen} shell, and it is imposed at the
 launch rather than propagated: the drifting extremal starts on the frozen shell with the
 frozen charges, so $\bar H=0$, hence $p_s=0$, at $\lambda=0$. Along the flow
-$\dd p_s/\dd\lambda=\varepsilon\,\mathcal D\bar H$, so the \emph{launch-anchored}
+$\dd p_s/\dd s=-\partial_s H_{\rm br}=\alpha A(\mathcal D\bar H-\bar H)$ exactly, with
+$\alpha=A'/A$; to first order about $A_0=1$, $\bar H_0=0$ this is
+$\dd p_s/\dd\lambda=\varepsilon\,\mathcal D\bar H+O(\varepsilon^2)$, so the \emph{launch-anchored}
 source is
 \begin{equation}
     p_s^{(1)}(\lambda)\equiv S_{\mathcal D}(\lambda)
@@ -5089,8 +5800,20 @@ action~\eqref{eq:dilation-action} is positive, as $P_r\bar H_{P_r}>0$ requires. 
 $\partial_{P_r}G_0/\bar H_{P_r}=A(r)/\sqrt S$ with $A$ rational (the inner radical
 $\sqrt{\Delta v/\bar P}$ cancels on shell), so the complete off-shell correction is a
 length-two iterated integral on the single spectral curve $\sqrt S$, with the symbolic
-coefficients~\eqref{eq:ak}. Every step is verified to machine precision against the
-\emph{true} canonical flow~\eqref{eq:normflow}
+coefficients~\eqref{eq:ak}. On the $\tau$-branch the same steps, with the proper-time
+cost $f/E$ in place of $1$ in the branch Hamiltonian, give
+$p_{r0}^2=\mathcal S/\{[(E^2-1)r+2M]^2\Delta^2\}$ with $\mathcal S$ the sextic~\eqref{eq:tau-sextic},
+and
+\begin{equation}
+    p_{r0}\,\dd r=\sigma_r\Big[r^3-2Mr^2-(E^2-1)J^2r-2MJ^2
+    +\frac{J^2a^2[(E^2-1)r+2M]}{\Delta}\Big]\frac{\dd r}{\sqrt{\mathcal S}},
+    \label{eq:action-reduction-tau}
+\end{equation}
+again $U_k$ letters plus third-kind terms at $\Delta=0$ (checked symbolically, and in the
+script against the true, unsquared, branch Hamiltonian and the printed sextic). The
+algebraic steps are verified to machine precision, and the assembled correction is validated
+against the \emph{true} canonical flow~\eqref{eq:normflow} by the $O(\varepsilon^2)$ convergence
+test
 (\texttt{ThakurtaMetric/adiabatic\_offshell\_reduction.py},
 \texttt{adiabatic\_first\_order\_exact.py}, \texttt{tests/test\_adiabatic\_noreg.py}).
 
@@ -5165,18 +5888,25 @@ $U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\
 third-kind letter there, Lemma~I.J of Paper~I) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
 (third kind); the spurious poles at $r_d$ cancel in the physical combination because
 $\sum_k a_k(\Jc)r_d^{\,k}+R(\Jc,r_d)/[\Delta\,((E^2-1)r+2M)]|_{r_d}=[S/\text{deng}](r_d)=0$
-(as $S(r_d)=0$), leaving the weight-two block as a genuine \emph{elliptic}
+(as $S(r_d)=0$ and $\mathrm{deng}(r_d)\neq0$, Remark~\ref{rmk:collapse-scope}), leaving the weight-two block as a genuine \emph{elliptic}
 dilogarithm~\cite{BeilinsonLevin1994,BrownLevin2011} plus third kind at $\Delta=0$. Thus
 the separatrix off-shell form is one degree \emph{lower} than the generic genus-two case.
 
 \begin{remark}[what the collapse is, and where it was checked]
 \label{rmk:collapse-scope}
-The cancellation just displayed is an \emph{algebraic} identity. It requires only
-$S(r_d)=0$: the evaluation $[S/\mathrm{deng}](r_d)$ vanishes at a double root
-whatever that root is, so the collapse holds at \emph{every} degeneration of the
-curve---real or complex, inside the control domain or outside it. It is therefore
-inherited by the exterior retrograde separatrix of
-Proposition~\ref{prop:exterior-sep} without a separate derivation.
+The cancellation just displayed is an \emph{algebraic} identity, under two hypotheses:
+$S(r_d)=0$ and $\mathrm{deng}(r_d)\neq0$, with $\mathrm{deng}=\Delta\,[(E^2-1)r+2M]$.
+Only then is $[S/\mathrm{deng}](r_d)$ a value and not a $0/0$ limit. The statement
+therefore covers the \emph{ordinary} degenerations, $S=(r-r_d)^2Q_4$ with
+$Q_4(r_d)\neq0$, a nondegenerate residual quartic and a double root separated from the
+poles of $\mathrm{deng}$, real or complex, inside the control domain or outside it. A
+double root that coincides with a pole needs its own limit: at $M=a=1$, $E=6/5$, $J=2$ the
+$t$-branch sextic is $S=\tfrac{4}{625}r(r-1)^2(11r+50)(9r^2+18r+25)$, so $r_d=1$ is a
+double root, but it is also the double zero of $\Delta$, and
+$\lim_{r\to1}S/\mathrm{deng}=208/25\neq0$; triple and higher roots are likewise excluded.
+The exterior retrograde separatrix of Proposition~\ref{prop:exterior-sep}, at
+$r_d\simeq3.514M$ where $\Delta$ and $(E^2-1)r+2M$ are positive, is an ordinary
+degeneration and inherits the collapse without a separate derivation.
 
 The numerical checks were run at particular degenerations, and it is worth
 saying which, because a small residual certifies the algebra at that root and
@@ -5188,7 +5918,7 @@ nothing about its physical status:
 script & curve & $\Jc$ & $r_d/M$ & status of that root\\
 \hline
 \texttt{tk\_sep\_offshell\_} & $t$ & $-8.054$ & $+3.514$
-  & exterior retrograde, $r_d>2M$: type~(E)\\
+  & exterior retrograde, $r_d>2M$: regular arc, (E) as a launch-normalised arc\\
 \quad\texttt{elliptic.py} & $t$ & $+2.936$ & $+1.512$
   & prograde, inside $\re$: type~(A)\\
 \texttt{tk\_sep\_blockassembly.py} & $\tau$ & $20.328$ & $-7.130$
@@ -5210,46 +5940,49 @@ is in Paper~I.
 For Thakurta--Kerr the relevant double root is the \emph{exterior retrograde} one,
 $r_d=3.5139M>\re$ of Proposition~\ref{prop:exterior-sep}: it sits \emph{outside}
 the conformal stationary limit and on the physical arc, which is exactly what
-makes it a type-(E) object rather than a continuation. (The prograde degeneration
+makes it a regular extremal arc (label~(E) in the sense of Proposition~\ref{prop:exterior-sep})
+rather than a continuation. (The prograde degeneration
 at $r_d=1.512M$ lies inside $\re$, where $W$ is spacelike, and is therefore
 type~(A) and \emph{not} on the physical arc; the two must not be conflated, and
 an earlier version of this sentence did conflate them.) There
 the dilation letter injects a power pole $1/(r-r_d)^2$ (residue
 $\propto\Delta S(r_d)$, verified against the true flow) that is \emph{not} removed by
-differentiation along the marginal family, $\dd J_c/\dd E$: the pole comes from the kernel $A\sim1/Q_2^2$, not
+differentiation along the marginal family, $\dd J_c/\dd E$: the pole comes from the kernel $A=P_5/Q_2$, with $P_5$ a quintic, hence $A\sim1/(r-r_d)^2$, not
 from the source. Crucially this is not a missing algebraic counterterm. Under the
 adiabatic evolution the dilation ray $(\Ehat/A,\,J/A)$ leaves the separatrix locus
-$J=J_c(E)$, so the double root does not merely move---it \emph{dissolves}, and the orbit
-\emph{crosses} the separatrix. The off-shell non-uniformity at $r_d$ is therefore a
-separatrix-crossing phenomenon: the first-order
-adiabatic term is non-uniform there and its uniform completion requires inner/outer
-matched asymptotics, outside the symbolic-coefficient reduction. The setting is
-exactly the classical one---a Hamiltonian $H(p,q,\lambda)$ with $\lambda=\varepsilon
-t$ slowly varying, whose phase portrait at fixed $\lambda$ has regions of closed
-orbits separated by separatrices, so that slow variation of $\lambda$ carries a
-phase point across a separatrix of the frozen problem---and for that setting a
-general formula for the resulting change of the adiabatic invariant is known
-\cite{Timofeev1978,CaryEscandeTennyson1986,Neishtadt1986}. That literature also
-identifies the mechanism, which is worth naming because it is visible in our own
-system. Adiabatic theory requires $\delta=\varepsilon T_0(h,\lambda)\ll1$ with $T_0$
-the period of the frozen orbit; on a separatrix $T_0$ \emph{diverges}, so $\delta$ is
-large in some neighbourhood of it \emph{no matter how small $\varepsilon$ is}
-\cite[\S I]{CaryEscandeTennyson1986}. The non-uniformity at $r_d$ is that
-divergence, not a defect of the expansion, and the standard remedy is exactly the
-three-region treatment quoted above: ordinary adiabatic theory long before and long
-after the crossing, matched through an inner analysis across it.
+$J=J_c(E)$ of the frozen zero shell, so the double root does not merely move---it
+\emph{dissolves}. This does not by itself show that the orbit crosses a separatrix: the
+true flow leaves $\bar H=0$, and a crossing would have to be decided by following the
+actual phase point against the level of the frozen saddle, for instance through
+$\bar H(z(s);E(s),J_{\rm eff}(s))-\bar H(z_{\rm saddle}(s);E(s),J_{\rm eff}(s))$, with its
+initial data, transversality and phase portrait, which we have not done. What is
+established is that the first-order adiabatic term is non-uniform near the frozen critical
+locus, and that a uniform completion there would need inner/outer matched asymptotics,
+outside the symbolic-coefficient reduction. The classical setting for such a completion is
+a Hamiltonian $H(p,q,\lambda)$ with $\lambda=\varepsilon t$ slowly varying, whose phase
+portrait at fixed $\lambda$ has regions of closed orbits separated by separatrices, so
+that slow variation of $\lambda$ carries a phase point across a separatrix of the frozen
+problem; for that setting a general formula for the resulting change of the adiabatic
+invariant is known \cite{Timofeev1978,CaryEscandeTennyson1986,Neishtadt1986}. Whether
+our rail satisfies its hypotheses---the periodic regions, the lobes, the convention for the
+action---is not established here: the scattering separatrix does not by itself provide the
+lobe structure those results assume. That literature also identifies a mechanism that is
+visible in our own system. Adiabatic theory requires $\delta=\varepsilon T_0(h,\lambda)\ll1$
+with $T_0$ the period of the frozen orbit; on a separatrix $T_0$ \emph{diverges}, so
+$\delta$ is large in some neighbourhood of it \emph{no matter how small $\varepsilon$ is}
+\cite[\S I]{CaryEscandeTennyson1986}. The non-uniformity at $r_d$ is consistent with that
+divergence, and the standard remedy in that setting is a three-region treatment: ordinary
+adiabatic theory long before and long after the crossing, matched through an inner
+analysis across it.
 
-What such a treatment delivers is worth stating precisely, since it is less
-pessimistic than one might assume. To lowest order the outcome is
-\emph{deterministic}: the final action equals the area enclosed by the lobe in which
-the orbit ends, evaluated at the pseudocrossing time. Sensitivity to initial
-conditions enters only at the next order, as a phase-dependent deviation of size
-$O(\varepsilon\ln\varepsilon)$, so the adiabatic invariant survives the crossing at
-lowest order and fails to be conserved only beyond it
-\cite{CaryEscandeTennyson1986}. Finally, the dilation ray crosses the locus
-\emph{once}; we therefore claim nothing about the accumulation of jumps over
-repeated crossings, which is what destroys adiabatic invariance outright in the
-systems where that has been studied. For Vaidya the double
+If a crossing does occur and those hypotheses hold, the classical results are less
+pessimistic than one might assume: to lowest order the outcome is \emph{deterministic},
+the final action being the area enclosed by the lobe in which the orbit ends, evaluated
+at the pseudocrossing time, and sensitivity to initial conditions enters only at the
+next order, as a phase-dependent deviation of size $O(\varepsilon\ln\varepsilon)$
+\cite{CaryEscandeTennyson1986}. We state this as conditional on those hypotheses, not as
+an outcome established for this rail, and we claim nothing about the number of crossings
+or about the accumulation of jumps over repeated crossings. For Vaidya the double
 root is a branch point off the physical arc, $\mathcal D=\Theta$ carries no dilation,
 and no such crossing occurs.
 The closest quantitative statement we know of is for a different class of
@@ -5365,21 +6098,230 @@ At $b=1/100$, $r_0=10^4$ the enclosures of $x\Phi'(x)$ at $r_{\min}=3,6,30,9000$
 $[0.01722,0.01751]$, $[-0.004232,-0.004114]$, $[0.01900,0.01922]$ and
 $[-1.014220,-1.014217]$, so $\Phi$ has at least two local maxima there.
 
+\section{Extrinsic geometry of rail-swept surfaces}
+\label{app:rail-surfaces}
+
+Here $h=\Sigma^*g$ is the induced metric of a timelike surface $\Sigma$, and for a unit
+normal covector $n$ the second fundamental form is $b_{ab}=n_\mu(\nabla_{e_a}e_b)^\mu$,
+with $e_a$ the coordinate tangent fields of $\Sigma$. A surface is totally umbilical when
+the trace-free part of its vector-valued second fundamental form vanishes, and totally
+geodesic when the whole form vanishes; the second implies the first. In the equatorial
+cases below the polar normal component of the second fundamental form vanishes, so a
+single normal $n$ remains and umbilicity means that the $2\times2$ minors
+$b_{ab}h_{cd}-b_{cd}h_{ab}$ vanish.
+
+\begin{lemma}[Rail-swept surfaces in Thakurta--Kerr; evidence level~(I), proved below]
+\label{lem:rail-surfaces}
+Let $g=A(\eta)^2g_{\rm Kerr}$ with $A>0$ of class $C^2$ and $M>0$, work in the regular
+exterior $r>2M$ of the equatorial plane, and write $A_\eta=\dd A/\dd\eta$.
+\begin{enumerate}
+\item[\rm(i)] \emph{Azimuthal translates.} Let a timelike equatorial rail arc be monotone
+in $r$. Its azimuthal translates sweep a surface with local parametrisation
+$\Sigma(r,\psi)=(T(r),r,\pi/2,\psi)$. Set $q=T'$, $k=-2Ma/r$, $p=r^2+a^2+2Ma^2/r$ and
+$S=\Delta q^2/r^2-p/\Delta$, which is positive where $\Sigma$ is timelike. With the unit
+normal covector $A(-1,q,0,0)/\sqrt S$,
+\begin{equation}
+    b_{r\psi}h_{\psi\psi}-b_{\psi\psi}h_{r\psi}
+    =-\frac{A^3Ma\,(3r^2+a^2)}{r^2}\,\sqrt S .
+    \label{eq:rail-surface-minor}
+\end{equation}
+For $a\neq0$ the surface is therefore neither totally umbilical nor totally geodesic.
+\item[\rm(ii)] \emph{Radial rails.} Let $a=0$, and let the outgoing radial rail of
+charge $\Ehat>0$, with $D=\Ehat^2-A^2f>0$, be swept in azimuth. The surface is totally
+umbilical on an arc if and only if $A(\eta)\,r(\eta)$ is constant there, and it is never
+totally geodesic.
+\item[\rm(iii)] \emph{Common launch.} Let a family of unit timelike equatorial rails,
+jointly $C^3$ in the direction parameter $\lambda$ and proper time $\tau$, have a common
+launch event, the same charge $\Ehat>|W|$ there, and initial direction $\chi(\lambda)$
+with $\chi_\lambda\neq0$. On a sufficiently short regular portion after the launch the
+swept surface is neither totally umbilical nor totally geodesic.
+\end{enumerate}
+No assertion is made at the launch point, where the parametrisation is singular, nor
+across turning points of $r$, which require another chart.
+\end{lemma}
+
+\begin{proof}
+\emph{Conformal change.} For $g=A^2g_0$ and $\ell=\dd\ln A$,
+$\nabla^g_XY=\nabla^0_XY+\ell(X)Y+\ell(Y)X-g_0(X,Y)\operatorname{grad}_0\ln A$. The first
+two added terms are tangent to $\Sigma$, and the normal bundle of $\Sigma$ is unchanged by
+the conformal rescaling, so for
+the same immersion $\mathrm{II}_g=\mathrm{II}_0-h_0(\operatorname{grad}_0\ln A)^\perp$ and
+$h_g=A^2h_0$. The added term is pure trace: the trace-free part of the vector-valued
+form is unchanged, while scalar coefficients taken in unit normals scale by $A$, since
+the $g$-unit normal is $A^{-1}$ times the $g_0$-unit one. Umbilicity is thus decided in
+the Kerr seed, and the minors in unit normals scale by $A^3$. Total geodesicity also
+depends on $A$. Since $A$ does not depend on $\vartheta$, the reflection
+$\vartheta\mapsto\pi-\vartheta$ is an isometry of $g$; the equatorial hypersurface is
+totally geodesic, and the polar normal component of the second fundamental form vanishes.
+
+\emph{(i)} In the coordinates $(r,\psi)$ of $\Sigma$,
+\begin{equation}
+    h_0=\begin{pmatrix}r^2/\Delta-fq^2&kq\\ kq&p\end{pmatrix},
+    \qquad \det h_0=-r^2S ,
+\end{equation}
+and, for the seed unit normal covector $(-1,q,0,0)/\sqrt S$,
+\begin{equation}
+    b^0_{r\psi}=\frac{1}{\sqrt S}\Big[\frac{pk'-kp'}{2\Delta}
+        -\frac{q^2\Delta k'}{2r^2}\Big],
+    \qquad
+    b^0_{\psi\psi}=-\frac{q\Delta p'}{2r^2\sqrt S} .
+\end{equation}
+With $pk'-kp'=2Ma(3r^2+a^2)/r^2$ the seed minor is $-Ma(3r^2+a^2)\sqrt S/r^2$, and the
+factor $A^3$ gives~\eqref{eq:rail-surface-minor}. A rail arc is mapped to a rail arc by
+the azimuthal translations, because they preserve $g$, $W=\partial_\eta$ and the rail
+charge for every $A(\eta)$.
+
+\emph{(ii)} The charge $\Ehat=A^2f\dot\eta$ and the mass shell give
+$\dot\eta=\Ehat/(A^2f)$ and $\dot r^2=D/A^4$, so on the outgoing branch
+$q=\Ehat/(f\sqrt D)$, with $q'$ the total derivative along the rail,
+$\dd A/\dd r=A_\eta q$. The unit normal covector is $\sqrt D\,(-1,q,0,0)$, the mixed
+coefficients of $h$ and $b$ vanish, and
+\begin{equation}
+    h_{rr}=-\frac{A^4}{D},\quad h_{\psi\psi}=A^2r^2,\quad
+    b_{rr}=-\frac{A^3A_\eta}{D^{3/2}},\quad
+    b_{\psi\psi}=-\Ehat r-\frac{A_\eta r^2\sqrt D}{Af} .
+\end{equation}
+The diagonal minor is
+\begin{equation}
+    b_{rr}h_{\psi\psi}-b_{\psi\psi}h_{rr}
+    =-\frac{A^3\Ehat r}{D^{3/2}}\Big(A\sqrt D+\frac{A_\eta\Ehat r}{f}\Big).
+\end{equation}
+Since $\dd r/\dd\eta=f\sqrt D/\Ehat$, it vanishes exactly when
+$A_\eta r+A\,\dd r/\dd\eta=0$, that is $\dd(Ar)/\dd\eta=0$. Total geodesicity would
+force this relation, and then $b_{\psi\psi}=-A^2fr/\Ehat\neq0$. Since $Ar$ is the
+areal radius, the condition asks the rail to keep its sphere of fixed area. For an
+exact exponential profile $A=A_0e^{h\eta}$ no regular radial arc of this family is
+totally umbilical: assuming $Ar=c$ on an interval yields a non-zero polynomial
+equation in $r$, of degree seven when $h\neq0$, which cannot hold on that interval.
+This exact example is distinct from the first-order drift expansion used elsewhere;
+umbilical arcs exist for adapted profiles, such as the one given after this proof.
+
+\emph{(iii)} Take a smooth chart in which $g$ is the Minkowski metric at the launch event,
+with time axis $W/|W|$ there. Then $u_0(\lambda)=(\gamma,\sigma\cos\chi,\sigma\sin\chi)$,
+with $\gamma=\Ehat/|W|>1$ and $\sigma=\sqrt{\gamma^2-1}$. Since
+$\Sigma_\lambda=\Sigma_{\lambda\lambda}=0$ at $\tau=0$, joint $C^3$ regularity gives
+$\Sigma_\lambda=\tau u_{0,\lambda}+o(\tau)$ and
+$\Sigma_{\lambda\lambda}=\tau u_{0,\lambda\lambda}+o(\tau)$; the Christoffel symbols are
+bounded, so their contribution to $b_{\lambda\lambda}$ is $O(\tau^2)$. With the limiting
+normal $n_0=(\sigma,\gamma\cos\chi,\gamma\sin\chi)$,
+\begin{equation}
+    \begin{array}{l}
+    h_{\tau\tau}=-1,\quad h_{\tau\lambda}=o(\tau),\quad
+    h_{\lambda\lambda}=\sigma^2\chi_\lambda^2\tau^2+o(\tau^2),\\[2pt]
+    b_{\lambda\lambda}=-\gamma\sigma\chi_\lambda^2\tau+o(\tau),\quad
+    b_{\tau\tau}=O(1).
+    \end{array}
+\end{equation}
+The induced metric is Lorentzian for small $\tau>0$, and
+$b_{\lambda\lambda}h_{\tau\tau}-b_{\tau\tau}h_{\lambda\lambda}
+=\gamma\sigma\chi_\lambda^2\tau+o(\tau)\neq0$. The argument does not use constancy of $A$.
+\end{proof}
+
+The umbilical case of~(ii) occurs. For $c>0$, the equation
+$\dd r/\dd\eta=f\sqrt{\Ehat^2-c^2f/r^2}/\Ehat$ has a smooth local solution wherever
+$r>2M$ and the root is positive, and $A=c/r(\eta)$ is then a smooth positive profile
+along which the outgoing radial rail keeps the areal radius $Ar=c$; in proper time the
+induced metric is $-\dd\tau^2+c^2\dd\psi^2$. Since $\max_{r>2M}f/r^2=1/(27M^2)$, the
+condition $c<3\sqrt3\,M\Ehat$ keeps the root positive at every $r>2M$. We do not use this
+profile elsewhere.
+
+The identities of this appendix are checked by two independent scripts in the folder
+\texttt{verification}: in Mathematica by \texttt{verify\_rail\_surfaces.wls}, which also
+checks the elimination of the tangential component quoted in the introduction, and in
+SymPy by \texttt{verify\_rail\_surfaces\_sympy.py}.
+
+\section{Quasi-local quantities and effective stress--energy of Thakurta--Kerr}
+\label{app:tk-energy}
+
+Here $g=A(\eta)^2g_K$, $h=A'/A$, and $g_K$ is Kerr in Boyer--Lindquist coordinates,
+with $\Sigma=r^2+a^2\cos^2\theta$, $\Delta=r^2-2Mr+a^2$,
+$\mathcal B=(r^2+a^2)^2-a^2\Delta\sin^2\theta$, lapse $N^2=\Delta\Sigma/\mathcal B$ and
+frame-dragging rate $\omega=2Mar/\mathcal B$. The surfaces are
+$S_{\eta,r}=\{\eta,r\}={\rm const}$ in the regular exterior; for $a\neq0$ they are
+not round spheres. Units $G=c=1$.
+
+\paragraph{Komar angular momentum.}
+Since $\partial_\varphi A=0$, $\xi=\partial_\varphi$ is Killing for $g$, and
+$\xi^\flat=A^2\xi_K^\flat$ gives
+$\dd\xi^\flat=A^2\dd\xi_K^\flat+2AA'\,\dd\eta\wedge\xi_K^\flat$. The Hodge dual of a
+2-form is conformally invariant in four dimensions, and the second term has only
+an $\eta\varphi$ component, whose dual has zero pullback to $S_{\eta,r}$. Hence
+$J[S_{\eta,r}]=A^2J_K=A^2Ma$, with the orientation chosen so that $J_K=+Ma$; it is
+independent of $r$ because $\star\dd\xi_K^\flat$ is closed in the vacuum seed, and
+$\dd J/\dd\eta=2hJ$. Constant-$t$ spheres, $t=\int A\,\dd\eta$, are the same sets.
+
+\paragraph{Hawking--Hayward energy.}
+With the conformal transformation law of the geometric Hawking--Hayward energy
+\cite{Prain2016HH} and the normal-transport convention adapted to the
+zero-angular-momentum observer, $A$ is constant on $S_{\eta,r}$, its tangential
+derivatives vanish, and $-\nabla_aA\nabla^aA/A^2=h^2\mathcal B/(\Sigma\Delta)$, so that
+exactly
+\begin{equation}
+    M_{\rm HH}[S]=A\left[m_K(S)+h^2C(S)\right],\qquad
+    C(S)=\frac{R_{\mathcal A}}{4}\int_{-1}^{1}
+         \frac{\mathcal B^{3/2}}{\Sigma\Delta}\,\dd u ,
+    \label{eq:hh-tk}
+\end{equation}
+with $u=\cos\theta$ and $R_{\mathcal A}$ the area radius of $S$ in the seed. There
+are no terms linear in $h$ or in $h'$. The seed energy $m_K(S)$ is not $M$ at
+finite radius: $m_K=M-4M^2a^2/r^3+O(r^{-4})$, and $m_K/M\simeq0.98854$ at $r=6M$,
+$a=0.8M$; $C=r^3/2+Mr^2+O(r)$. For $a=0$ one recovers the Misner--Sharp mass,
+$M_{\rm HH}=A\,[M+h^2r^3/(2f)]$. At fixed nonzero drift the total energy grows as
+$r^3$, so it has no finite asymptotically flat limit; Hammad discusses the
+distinction between this geometric energy and a material mass
+\cite{Hammad2016HH}.
+
+\paragraph{Effective stress--energy.}
+The seed is Ricci flat, and the conformal transformation gives
+\begin{equation}
+    G_{ab}=2h\,\Gamma^{\eta}_{ab}[g_K]+2(h^2-h')\,\delta_a^{\eta}\delta_b^{\eta}
+          +g^K_{ab}\,g_K^{\eta\eta}\,(2h'+h^2).
+    \label{eq:einstein-tk}
+\end{equation}
+In the physical zero-angular-momentum frame, $8\pi T_{\hat a\hat b}$ equals
+$(A^2N^2)^{-1}$ times a matrix with energy density $\rho^\ast=3h^2$, isotropic
+pressure $p^\ast=-(2h'+h^2)$, heat-flux components
+$q=2h\,(\sqrt{\Delta/\Sigma}\,\partial_rN,\Sigma^{-1/2}\partial_\theta N)$ and, from the
+rotation, off-diagonal stresses
+$s=h\sqrt{q_{\varphi\varphi}}\,(\sqrt{\Delta/\Sigma}\,\partial_r\omega,
+\Sigma^{-1/2}\partial_\theta\omega)$, $q_{\varphi\varphi}=\mathcal B\sin^2\theta/\Sigma$.
+With $\beta=\rho^\ast+p^\ast$, $Q=q\cdot q$, $S=s\cdot s$ and $C_{qs}=q\cdot s$, the
+characteristic polynomial of the mixed tensor in $x=\lambda-p^\ast$ is
+\begin{equation}
+    x^4+\beta x^3+(Q-S)x^2-\beta Sx-(QS-C_{qs}^2),
+\end{equation}
+and the Hawking--Ellis type is IV where it has a complex pair
+\cite{MartinMorunoVisser2018}. The null energy condition holds if and only if
+$\beta\ge2\max_{|z|\le1}\sqrt{1-z^2}\,|q+zs|$. For $a=0$ and $A\propto\eta^\alpha$
+this reproduces the type-IV region $\eta>(\alpha+1)r^2/(2M)$ of
+Harada et al.\ \cite{Harada2022}, whose outer boundary has areal radius
+$R_\ast^2=[2\alpha/(\alpha+1)]\,r_gc/H$; for a local flat matter--$\Lambda$ law with
+$\Omega_m=0.315$ at $A_0=1$, $h'/h^2=1-\tfrac32\Omega_m$ and
+$R_\ast^2=[4/(3\Omega_m)]\,r_gc/H_0$, about $3.5\times10^4$ au for the Gaia BH3
+mass. Rotation deforms the boundary by
+$\delta r_\ast/r_\ast=(a^2/r_\ast^2)(5/2-4\cos^2\theta)+O(Ma^2/r_\ast^3)$, below
+$2\times10^{-22}$ in that example. These regions are conditional on the prescribed
+$A(\eta)$; constant $A$ gives the vacuum Kerr seed. The identities, tables and
+boundaries are reproduced by the scripts in \texttt{verification/observational}.
+
 \clearpage
 
 
 \section*{Data availability}
 The numerical data and the symbolic and numerical code supporting the findings of this
 study are openly available under the MIT licence in the Zenodo repository
-\emph{NonStationaryBrachistochrone}, release \texttt{\ProvenanceRelease}, at the
-persistent DOI~\cite{Rosignoli2026Code} (\url{https://doi.org/\ProvenanceDOI});
-the concept DOI \url{https://doi.org/\ProvenanceConceptDOI} always resolves to
-the latest version. The development history is available in the associated GitHub
-repository \url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}.
+\emph{NonStationaryBrachistochrone}~\cite{Rosignoli2026Code}, release
+\texttt{\ProvenanceRelease}, at the concept DOI \url{https://doi.org/\ProvenanceDOI},
+which resolves to the latest version; the Zenodo record lists the version-specific DOI
+of each release, and the release is the tag \texttt{\ProvenanceRelease} of the GitHub
+repository \url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}, which
+also holds the development history.
 That release is dependency-complete: a fresh clone requires no parent or sibling
-directory, and regenerating the provenance returns the content digest
-\ProvenanceDigest\ printed in \ref{app:validation}, wall-clock timings
-excepted. The release identifier, its DOI and that digest are emitted by the same
+directory, and regenerating the provenance in the reference environment pinned by
+\texttt{requirements-lock.txt} returns the content digest \ProvenanceDigest\ printed in
+\ref{app:validation}, wall-clock timings excepted; in other environments the regenerated
+data agree numerically, although floating-point differences of order $10^{-16}$ can change
+the digest. The release identifier, its DOI and that digest are emitted by the same
 generator run, so they cannot disagree: the earlier \texttt{v1.6.1} carried the
 digest \texttt{5ddfa913\dots} and the tree has since moved to the value printed
 above, which is precisely the drift this apparatus exists to prevent.

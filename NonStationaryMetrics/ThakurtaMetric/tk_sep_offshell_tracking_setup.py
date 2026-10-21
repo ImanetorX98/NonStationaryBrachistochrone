@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-SETUP of the off-shell extension of the separatrix-tracking theorem (main11 -> separatrix).
+SETUP of the off-shell extension of the separatrix-tracking theorem (to the separatrix).
 
 The on-shell tracking (tk_t_sep_track_blockassembly.py) cancels the triple pole of the
 adiabatic source via N_tot = N_t + (dJc/dE) N_J, dJc/dE = -Q2_E/Q2_J at (r_d, Jc): the
 charge-tracking follows the moving double root in the (E,J) plane.
 
-The main11 off-shell source is D H = (E d_E + J d_J + P_r d_Pr) H. The NEW piece P_r d_Pr
+The off-shell source is D H = (E d_E + J d_J + P_r d_Pr) H. The NEW piece P_r d_Pr
 (the conformal dilation letter, = int p_r dr) injects a triple-pole residue at the separatrix
 double root r_d:
     kernel  A/sqrt(S) ~ c3/(r-r_d)^3  (A ~ 1/Q2 double pole, sqrt(S) ~ (r-r_d)),

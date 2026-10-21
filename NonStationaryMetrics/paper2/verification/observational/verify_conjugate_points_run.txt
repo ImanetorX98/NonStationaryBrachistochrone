@@ -1,0 +1,8 @@
+PASS  curvature K = Lap Omega - 2|grad Omega|^2/(2 Omega - C)
+PASS  Kepler: K = E mu/(r^2 (E r + mu))
+L4 ray 290 deg: t_c = 4.262761946612103 d;  L4 ray 326 deg: t_c = 13.34707058700683 d
+PASS  L4 ray 290 deg: t_c within 1e-6 d of the Python value 4.262761947
+PASS  L4 ray 326 deg: t_c within 1e-6 d of the Python value 13.347070586
+Jupiter hyperbolic rail (v_inf 6 km/s, offset 0.5 R from 100 R): t_c = 9.014412504068156 d
+PASS  Jupiter: t_c within 1e-6 d of the Python value 9.014412504
+ALL CHECKS PASSED

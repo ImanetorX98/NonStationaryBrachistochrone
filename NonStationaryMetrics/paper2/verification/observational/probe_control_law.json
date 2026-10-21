@@ -1,0 +1,27 @@
+{
+  "model": "Newtonian weak-field rail, maintained energy, arrival-time functional",
+  "results": {
+    "rail_thrust": "2 mu sin(alpha)/r^2",
+    "chord_thrust": "mu sin(alpha)/r^2",
+    "convexity": "strict in phi_prime for monotone r",
+    "snell_turning_radius": "unique"
+  },
+  "checks": [
+    {
+      "name": "rail thrust = 2 mu sin(alpha)/r^2",
+      "status": "PASS"
+    },
+    {
+      "name": "chord thrust = mu sin(alpha)/r^2",
+      "status": "PASS"
+    },
+    {
+      "name": "d2L/dphi_prime2 = n r^2/(1+r^2 phi_prime^2)^(3/2) > 0",
+      "status": "PASS"
+    },
+    {
+      "name": "H'(r) = 2r + 2 mu k^2/r^2 > 0",
+      "status": "PASS"
+    }
+  ]
+}

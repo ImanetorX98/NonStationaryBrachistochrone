@@ -1,47 +1,69 @@
 # Constrained-worldline brachistochrones in non-stationary spacetimes
 
-Source code, closed-form derivations and manuscript for the fastest constrained
-"rail" worldline between two events, extended from stationary to **non-stationary**
-spacetimes — FLRW, Vaidya (dynamical black hole), and Thakurta–Kerr (conformal
-rotating) — built on the stationary-Kerr optical/genus-2 machinery.
+Reproducibility package for two companion papers on the fastest constrained **"rail"
+worldline** from a fixed departure event to a fixed spatial target, with free arrival
+time: a timelike curve held at a maintained energy by a controlled thrust, whose arrival
+time (or proper time) is minimised. The study extends
+the stationary-Kerr optical and genus-two machinery to **non-stationary** spacetimes:
+FLRW, Vaidya (a dynamical black hole) and Thakurta–Kerr (the conformal Kerr geometry
+`g = A(eta)^2 g_Kerr`).
 
-Every closed form has a script that **derives it symbolically and verifies it
-numerically**; the substantive results are additionally **cross-checked
-independently in Mathematica** (`paper/crosscheck_*.wl`).
+The closed forms come with scripts that derive them symbolically and check them
+numerically, and many results are cross-checked independently in Mathematica. The
+evidence is not uniform: some checks are exact symbolic identities, some are numerical
+or sampled, some use a single computer-algebra system, and a few long certificates are
+archived rather than re-run by default. Each paper has its own verification map
+(below) stating, claim by claim, where a result appears, which script reproduces it,
+and at what level.
 
-> Generated binaries (`*.png`, `*.pdf`, videos) are **not** tracked; regenerate from
-> the figure scripts.
+> Generated binaries (`*.png`, `*.pdf`, videos, raw `.npz` data) are **not** tracked;
+> regenerate them from the scripts.
 
-> **Note on structure.** This folder gathers the non-stationary study. The broader
-> **stationary-Kerr base machinery** (`KerrScripts/`, `KerrMetric/`) remains at the
-> repository root as **siblings** (`../KerrScripts/`, `../KerrMetric/`); the paper
-> builds on it. The genus-2 closure scripts used in this study are copied here under
-> `KerrSessionScripts/`.
+> **Structure.** This folder holds the non-stationary study and both manuscripts. The
+> stationary-Kerr scripts the papers use (`KerrScripts/`) sit one level up, as a sibling
+> (`../KerrScripts/`); the genus-two closure scripts used here
+> are copied under `KerrSessionScripts/`.
 
 ---
 
-## Two companion papers (split)
+## The two papers and the code
 
-The manuscript is split into two companion papers that share this reproducibility
-package. The combined master (`paper/main.tex`, iopart/CQG; `paper/main_prd_revtex.tex`,
-PRD) is retained as the reference version.
+| | Title | DOI (always resolves to the latest version) |
+|---|---|---|
+| **Paper I** | *Controlled-rail brachistochrones in non-stationary spacetimes: conformal symmetry, Kodama energy, and Vaidya dynamics* | [10.5281/zenodo.21739997](https://doi.org/10.5281/zenodo.21739997) |
+| **Paper II** | *Brachistochrones in conformal Kerr spacetimes: control domain, exterior separatrices, and adiabatic response* | [10.5281/zenodo.21739999](https://doi.org/10.5281/zenodo.21739999) |
+| **Code** | this repository | [10.5281/zenodo.21707377](https://doi.org/10.5281/zenodo.21707377) |
 
-- **Paper I** — *Controlled-rail brachistochrones in non-stationary spacetimes: conformal
-  symmetry, Kodama energy, and Vaidya dynamics* (`paper1/paper1.tex`). Spherically
-  symmetric sector: the controlled-rail foundations, FLRW, and Vaidya.
-  Zenodo preprint: [10.5281/zenodo.21781850](https://doi.org/10.5281/zenodo.21781850).
-- **Paper II** — *Brachistochrones in conformal Kerr spacetimes: ergosphere trichotomy,
-  separatrices, and adiabatic response* (`paper2/paper2.tex`). Axisymmetric sector:
-  Thakurta–Kerr. Its control-theory foundations are cited from Paper I.
-  Zenodo preprint: [10.5281/zenodo.21740000](https://doi.org/10.5281/zenodo.21740000).
+These are Zenodo concept DOIs. Each deposited version also has its own DOI, listed on
+the Zenodo record; cite a version DOI to fix the exact text or code you used (the
+manuscripts cite the code release that reproduces their printed numbers).
+
+- **Paper I** (`paper1/paper1_JMP.tex`) is the spherically symmetric sector: the
+  controlled-rail formalism as a time-optimal control problem (existence, normality of
+  interior minimizers, Hamilton–Jacobi verification), FLRW, Kodama energy and Vaidya.
+- **Paper II** (`paper2/paper2.tex`) is the axisymmetric sector, Thakurta–Kerr. It takes
+  its control-theory foundations from Paper I and adds: the compact-control domain and
+  its end at the conformal stationary limit `r = 2M`; a normality lemma for interior
+  free-arrival minimisers; equatorial separatrices in closed Weierstrass form, including
+  an exterior retrograde one; the first-order adiabatic response, validated against the
+  true non-autonomous flow; the classification of rail-swept surfaces (umbilicity and
+  geodesicity under a conformal factor); and an observational section with physical
+  scales, rotating benchmarks, a proposed Solar-System two-probe comparison (Saturn
+  flyby), a Kerr thought experiment scaled to M87*, an ephemeris bound on a locally
+  cosmological conformal factor, and the conjugate-point conditions under which a rail
+  stops being a local minimum.
+
+The combined master `paper/main.tex` (iopart) and `paper/main_prd_revtex.tex` (PRD) are
+the **historical** single-paper version, kept for reference; the two companion papers
+supersede them.
 
 ### Which scripts belong to which paper
 
 | Paper | Directories / representative scripts |
 |---|---|
-| **Paper I** (rail / Kodama / Vaidya, spherical) | `FLRWmetric/`, `VaidyaMetric/`; shared control-theory checks `KerrSessionScripts/perlick_equivalence*.py`; `VaidyaMetric/costate_vs_mechanical.py`, `VaidyaMetric/universal_SD_source_vaidya.py` |
-| **Paper II** (Thakurta–Kerr, axisymmetric) | `ThakurtaMetric/`, `KerrSessionScripts/` (genus-2 closure), `../KerrMetric/`, `../KerrScripts/`; `ThakurtaMetric/eta_brachistochrone_check.py`, `ThakurtaMetric/canonical_dilation_check.py`, `ThakurtaMetric/universal_SD_source_check.py` |
-| **Shared** | `paper/` (master + `crosscheck_*.wl`), `PaperFigures/`, `run_regression.py`, `requirements-lock.txt`, `paper_style.py`, `VERIFICATION_STATUS.md` |
+| **Paper I** (rail / Kodama / Vaidya, spherical) | `FLRWmetric/`, `VaidyaMetric/`, `paper1/verification/`; shared control-theory checks `KerrSessionScripts/perlick_equivalence*.py`; `VaidyaMetric/costate_vs_mechanical.py`, `VaidyaMetric/universal_SD_source_vaidya.py` |
+| **Paper II** (Thakurta–Kerr, axisymmetric) | `ThakurtaMetric/`, `KerrSessionScripts/` (genus-2 closure), `paper2/verification/` (including `observational/`), `paper2/provenance/`, `../KerrScripts/` |
+| **Shared** | `paper/` (bibliography, historical master, `crosscheck_*.wl`), `PaperFigures/`, `run_regression.py`, `requirements*.txt`, `paper_style.py` |
 
 ---
 
@@ -49,41 +71,59 @@ PRD) is retained as the reference version.
 
 | Path | Contents |
 |------|----------|
-| `paper/` | LaTeX sources (`main.tex` CQG/iopart, `main_prd_revtex.tex` PRD) **and** all Mathematica cross-checks `crosscheck_*.wl`. |
-| `FLRWmetric/` | FLRW (degenerate base) analysis + the perturbed-FLRW genus-jump proof of concept. |
-| `VaidyaMetric/` | Vaidya (dynamical BH, parameter = mass `m`) analysis, closed forms, figures. |
-| `ThakurtaMetric/` | Thakurta–Kerr (conformal rotating, parameter = `A` via `E_eff=Ê/A`) analysis, closed forms, figures. |
-| `KerrSessionScripts/` | Genus-2 machinery + the **generic-J (genus-2) closure pipeline** used in this study. |
-| `paper1/` | Paper I sources. `paper1_JMP.tex` is the JMP variant, whose formal core is proved rather than asserted; `paper1/verification/` holds its symbolic verification suite. |
-| `reproduce_reductions.py` | One-file check of the algebraic heart. |
+| `paper1/` | Paper I: `paper1_JMP.tex` (the live manuscript), `build_paper1.sh` (figures + compilation from a clean checkout), `verification/` (symbolic verification suite), `submitted_JMP_2026-08/` (frozen copy of the version submitted to JMP). |
+| `paper2/` | Paper II: `paper2.tex`; `verification/` (Mathematica and Python checks of every numbered statement, and `observational/` for the observational section and the probe experiments); `provenance/` (generated slopes, hashes and cross-references; see below). |
+| `paper/` | Shared bibliography (`refs.bib`, `companionI.bib`, `companionII.bib`), the historical master, and the Mathematica cross-checks `crosscheck_*.wl`. |
+| `FLRWmetric/` | FLRW (degenerate base) analysis and the perturbed-FLRW genus-jump proof of concept. |
+| `VaidyaMetric/` | Vaidya (dynamical BH, parameter = mass `m`): analysis, closed forms, figures. |
+| `ThakurtaMetric/` | Thakurta–Kerr (conformal rotating, parameter `A` via `E_eff = Ê/A`): analysis, closed forms, figures. |
+| `KerrSessionScripts/` | Genus-2 machinery and the generic-J (genus-2) closure pipeline. Two files marked DEPRECATED are exploratory diagnostics kept for the record. |
+| `Experimental/` | Laboratory design studies (proofs of concept, not measured data). |
+| `Fonti/` | `README.md` only: the bibliographic audit (what each source says and where it is cited). The PDFs are not distributed. |
+| `reproduce_reductions.py` | One-file check of the algebraic heart of the adiabatic reductions. |
 | `paper_style.py` | Shared matplotlib style helper. |
 
 ### Reference documents (read these first)
 | File | What it collects |
 |------|------------------|
-| `VERIFICATION_STATUS.md` | **Master table** of every result and its verification (SYM / NUM / SAGE / Mathematica). Start here. |
-| `paper1/verification/README.md` | Symbolic verification of the formal core of Paper I: which claim, where it appears in the manuscript, and how it is checked. Every check is an exact symbolic zero, run in two independent CAS. |
-| `paper1/verification/REPRODUCTION_section4.2.md` | Re-run of the archived trajectory scripts behind section 4.2 (penetration threshold, bounce, timing), with the numbers obtained. |
-| `ThakurtaMetric/ThakurtaResults.md`, `VaidyaMetric/VaidyaResults.md`, `FLRWmetric/FLRWresults.md` | Per-geometry results: what was derived, with the numbers obtained. |
-| `ThakurtaMetric/phi_adiabatic_closed_form.md`, `VaidyaMetric/vaidya_adiabatic_setup.md` | The adiabatic closed form, set up and assembled. |
+| `paper1/verification/README.md` | Verification map of Paper I: which claim, where it appears, how it is checked (symbolic identities in two CAS for the formal core, plus a numerical quadrature of the §4.4 closed form). |
+| `paper2/verification/README.md` | Verification map of Paper II: each numbered statement, its script, and the evidence level (full proof, sampled, or numerical). |
+| `paper2/verification/observational/README.md` | Observational section: scales, rotating benchmarks, probe experiments (Saturn flyby, M87*), conjugate points, ephemeris bound. |
+| `paper1/verification/REPRODUCTION_section4.2.md` | Re-run of the trajectory scripts behind section 4.2 of Paper I, with the numbers obtained. |
+| `ThakurtaMetric/ThakurtaResults.md`, `VaidyaMetric/VaidyaResults.md`, `FLRWmetric/FLRWresults.md` | Per-geometry results: what was derived, with the numbers obtained. *Historical working notes, mostly in Italian; they may refer to scripts or sibling folders that are not distributed. The verification maps above are the current reference.* |
+| `ThakurtaMetric/phi_adiabatic_closed_form.md`, `VaidyaMetric/vaidya_adiabatic_setup.md` | The adiabatic closed form, set up and assembled (historical working notes, as above). |
+| `Fonti/README.md` | Bibliographic audit of both papers. |
 
-Some working notes that earlier editions of this file listed are no longer
-distributed with the archive. They fell into two groups. The first is the
-correspondence with the journal and its referees --- reports, point-by-point
-responses, revision logs and editorial reviews --- which is not ours to publish
-and is not needed to reproduce anything here. The second is the derivation of
-results reserved for the follow-up study: the universal off-shell source, the
-eta-brachistochrone, the genus-two closed forms and the separatrix crossing. The
-two manuscripts state what those results are and where they are deferred to;
-this archive supports the manuscripts, and nothing in the checks below depends on
-the withheld notes.
+Private working notes, editorial correspondence and separate ongoing research are
+not included in this release and are not required by any of the verification routes
+listed here.
+
+### Provenance of the printed numbers (Paper II)
+
+The adiabatic slopes, the validation window and the SHA-256 prefixes of the scripts
+printed in Paper II are not typed by hand: `paper2/provenance/make_provenance.py`
+generates them as LaTeX macros from one dataset, and `--check` regenerates everything
+in a scratch directory and fails on any difference. The comparison is exact in the
+reference environment of `requirements-lock.txt` (Python 3.13, NumPy 2); in other
+environments floating-point differences of order 1e-16 in the raw data can change the
+hashes while the results agree. On a fresh clone, generate the raw dataset once first:
+
+```bash
+python3 ThakurtaMetric/fig_phi_validation_corrected.py      # writes the raw .npz (~15 s)
+python3 paper2/provenance/make_provenance.py --check        # regenerate and compare
+python3 paper2/provenance/make_provenance.py --help         # options
+```
+
+`paper2/provenance/collect_figures.py --check` compares each compiled figure with its
+generator's last output (it does not re-run the generators; two figures written directly
+into `paper/Immagini` and one without a listed generator are reported, not checked).
 
 ### Fixed-endpoint no-inversion (Lemma B)
 
 > **Status (tiered, not absolute).** The fixed-endpoint no-inversion is **proved**
-> for `r0 <= R*(E)` and, in the static case, asymptotically as `r0 -> infinity`;
-> **machine-certified** (interval arithmetic) at representative `r0`; and
-> **conjectural** in general. The static/frozen branch ordering does not invert
+> for `r0 <= R*(E)`; **machine-certified** (interval arithmetic) at representative `r0`;
+> supported, in the static case, by a large-`r0` asymptotic analysis checked numerically;
+> and **conjectural** in general. The static/frozen branch ordering does not invert
 > under the outgoing-clock replacement; the full outgoing-Vaidya optimal-control
 > boundary-value problem **remains open**.
 
@@ -94,35 +134,47 @@ the withheld notes.
 | `no_inversion_schwarzschild_asymptotic.py` | Large-`r0` asymptotic: `Phi=arctan(...)-b^{-3/2}sqrt(...)`, single non-degenerate max, `Phi''(x_pk)=-1/2 b^{9/4} V0^{-5/4}`. |
 | `no_inversion_schwarzschild_CAP.py`, `..._CAP_r0_10.py`, `..._CAP_grid.py` | Computer-assisted proof (mpmath interval arithmetic): single-crossing certificates. Complete at `r0=10`; grid `E in {1.2,1.6,2.5} x r0 in {8,12}` (`CAP_grid_certificates.txt`). |
 | `verify_lemmaB_mathematica.wls` | Independent Mathematica cross-check of all no-inversion derivations. |
-| `ThakurtaMetric/adiabatic_offshell_validation.py`, `adiabatic_tk_geodesic_check.py` | Validation of the adiabatic correction against the true optical-metric geodesic: `1/2`-Euler captures ~98%; off-shell (`H2!=0`, costate `p_eta`) term is the ~2% residual (referee 4.6). |
+| `ThakurtaMetric/adiabatic_offshell_validation.py` | **Superseded, kept for the record.** Early exploration: it integrates a *surrogate* flow (radial momentum evolved with `-H_r` only, without the dilation term `-eps P_r`) and compares it with half the on-shell Euler coefficient. It is not a validation of the true canonical dynamics, and its old "~98% / ~2%" reading is withdrawn; use `fig_phi_validation_corrected.py` below. |
+| `ThakurtaMetric/adiabatic_tk_geodesic_check.py` | Integrates the time-dependent Thakurta–Kerr geodesic equations and checks what drifts along the orbit (`E_eff`, `J_eff`). |
 
 ### Complete first-order extended-Hamiltonian correction (Eq. 40, on-shell + off-shell)
 | File | What it does |
 |------|--------------|
-| `ThakurtaMetric/adiabatic_first_order_exact.py` | Exact canonical PT of the non-autonomous optical Hamiltonian: `delta p_r=(lambda ThetaH - S)/H_pr`, `S=int Theta H dlambda`; closes the **Thakurta–Kerr** first order to `O(eps^2)` (residual slope ~1.86). |
+| `ThakurtaMetric/adiabatic_first_order_exact.py` | Exact canonical PT of the non-autonomous optical Hamiltonian: first-order coefficient `P_r^(1) = (s Theta Hbar - S_D)/Hbar_Pr`, with the complete source `S_D = int (Theta Hbar + P_r Hbar_Pr) du` and `Theta = E_eff d_E_eff + J_eff d_J_eff`; the increment is `eps P_r^(1)`; closes the **Thakurta–Kerr** first order to `O(eps^2)` (fitted residual slope about 2.15, robust fit 2.21, on the stated window). |
 | `VaidyaMetric/vaidya_first_order_offshell.py` | **Vaidya** `v`-branch analogue (`Theta=m d_m`, sign flip for accreting `m`, terminal anchoring of `p_v`); closes to `O(eps^2)` (slope **2.00** full vs **1.00** on-shell only). Emits `fig_vaidya_offshell`. |
-| `ThakurtaMetric/fig_phi_validation_corrected.py` | True-dynamics validation figure (`fig_phi_validation_true_dynamic`): leading on-shell (slope ~1, ~2% physical error) vs exact Eq. (40) (slope ~1.86) vs the true non-autonomous flow. |
+| `ThakurtaMetric/fig_phi_validation_corrected.py` | True-dynamics validation figure (`fig_phi_validation_true_dynamic`): on-shell coefficient alone, `-int lam Theta F dr` with `Theta F = Theta G - (G_Pr/H_Pr) Theta H` (checked against finite differences of the explicit frozen integrand), slope ~1, vs the complete Eq. (40) correction (slope about 2.12, approaching 2 as the epsilon window shrinks), both against the true non-autonomous flow. It also prints the size of the two parts: on the fit windows the on-shell coefficient exceeds the complete one by a factor of about 19 to 41 (sampled sup norms), the off-shell part `-int (G_Pr/H_Pr) S_D dr` cancelling most of it. |
 
 ---
 
 ## Install / run
 
 ```bash
-python3 -m pip install -r requirements.txt      # numpy scipy sympy matplotlib mpmath Pillow
+python3 -m pip install -r requirements.txt        # numpy scipy sympy matplotlib mpmath Pillow
+python3 -m pip install -r requirements-lock.txt   # exact reference environment
 ```
 
-- **Python (sympy/mpmath)** — algebraic reductions + genus-1 (Weierstrass via
-  `mpmath.jtheta`) closed forms. Most `.py` scripts. Standalone: `python3 <script>.py`.
-- **SageMath + `abelfunctions`** — genus-2 objects (Riemann matrix, `RiemannTheta`,
-  Abel map): the `.sage` scripts. Run inside `sage` from a neutral cwd.
-- **Mathematica / `wolframscript`** — independent cross-checks `paper/crosscheck_*.wl`
-  (native `WeierstrassP`, `GroebnerBasis`, `Series`, `Resultant`).
+`requirements-lock.txt` pins the reference environment (Python 3.13, NumPy 2). The
+figure generators need NumPy 2 (`np.trapezoid`); the verification suites were also
+re-run in October 2026 with Python 3.11, NumPy 1.24 and SciPy 1.11.
 
-Verification scripts print numerical residuals; ~machine precision means the identity holds.
+- **Python (sympy/mpmath/numpy/scipy)** — algebraic reductions, genus-1 closed forms
+  (Weierstrass via `mpmath.jtheta`), numerical checks, figures. Standalone:
+  `python3 <script>.py`.
+- **SageMath 10.9 + `abelfunctions`** — genus-2 objects (Riemann matrix,
+  `RiemannTheta`, Abel map): the `.sage` scripts. Run inside `sage` from a neutral cwd.
+  The environment is rebuilt by `sage_env/setup_sage_env.sh` (conda-forge Sage, fixed
+  `abelfunctions` revision and patch), and `sage_env/run_sage_checks.py` checks the four
+  Sage results cited in Paper II; see `sage_env/SAGE_SETUP.md`.
+- **Mathematica / `wolframscript`** (13.3) — independent cross-checks
+  (`paper/crosscheck_*.wl`, `paper1/verification/*.wls`, `paper2/verification/*.wls`).
+
+Verification scripts print their residuals or PASS/FAIL lines; the newer ones also exit
+with a non-zero status on failure. Read the printed lines in any case: an exit code
+alone is not the evidence.
 
 > **Run all commands from inside this folder** (`.../NonStationaryMetrics/`), so paths like
 > `VaidyaMetric/…`, `KerrSessionScripts/…`, `paper/…` resolve. The stationary-Kerr base lives
-> one level up, so reference it as `../KerrScripts/…` and `../KerrMetric/…`.
+> one level up, so reference it as `../KerrScripts/…`.
 
 ### Quick start — key commands (explicit paths, run from `NonStationaryMetrics/`)
 ```bash
@@ -232,15 +284,46 @@ Run any of them: `wolframscript -file paper/crosscheck_<name>.wl`.
   trichotomy, accretion↔evaporation asymmetry, plunge inversion, hybrid adiabatic orbit.
 - `genera_figure_*.py`, `fig_*.py` — regenerate paper figures (need `paper_style.py` on the path).
 
-### Compile the paper
+### Compile the papers
 ```bash
-cd paper && pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex
+# from NonStationaryMetrics/; each line runs in its own subshell
+(cd paper1 && ./build_paper1.sh)          # Paper I: regenerates its figures, then compiles
+(cd paper2 && pdflatex paper2.tex && bibtex paper2 && pdflatex paper2.tex && pdflatex paper2.tex && pdflatex paper2.tex)
 ```
+Paper II reads its figures from `paper/Immagini` (`\graphicspath`); since figures are not
+tracked, regenerate them with their scripts and run
+`python3 paper2/provenance/collect_figures.py --collect` before compiling.
+Each script is run from its own directory (paths from the repository root):
+
+| Script | Figures of Paper II |
+|---|---|
+| `NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py` | `fig_phi_validation_true_dynamic` (also writes the raw NPZ data) |
+| `NonStationaryMetrics/ThakurtaMetric/fig_phi_closed_validation.py` | `fig_phi_closed_validation` |
+| `NonStationaryMetrics/ThakurtaMetric/fig_phi_penetrating.py` | `fig_phi_penetrating` |
+| `NonStationaryMetrics/ThakurtaMetric/genera_indicatrici_separate_codex.py` | `fig_indicatrici_thakurta_kerr` |
+| `NonStationaryMetrics/ThakurtaMetric/genera_figure_thakurta_rami.py` | `fig_thakurta_kerr_rami` |
+| `NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py` | `fig_thakurta_cuspide_ergosfera` |
+| `NonStationaryMetrics/ThakurtaMetric/thakurta_kerr_plunge_t_tau.py` | `fig_thakurta_kerr_plunge_t_tau` |
+| `NonStationaryMetrics/ThakurtaMetric/thakurta_kerr_plunge_levels.py` | `fig_thakurta_kerr_plunge_levels` |
+| `NonStationaryMetrics/ThakurtaMetric/inversione_conformale_AJ.py` | `fig_thakurta_kerr_inversione_AJ` |
+| `KerrScripts/fig_atlas_tau_t.py` | `fig_atlas_t`, `fig_atlas_tau` |
+| `KerrScripts/fig_master_penetration_taut.py` | `fig_master_penetration_taut` |
+| `KerrScripts/fig_penetrate_bounce_orbit.py` | `fig_penetrate_bounce_orbit` |
+| `KerrScripts/kerr_penetration_threshold.py` | `fig_penetration_threshold` |
+| `KerrScripts/kerr_separatrix_trajectories.py` | `fig_separatrix_3traiettorie` |
+| `KerrScripts/kerr_tbranch_separatrix_figure.py` | `fig_tbranch_separatrix` |
+| `KerrScripts/kerr_jcm_capture_figure.py` | `fig_jcm_capture` |
+| `KerrScripts/kerr_jpt_genus2_figure.py` | `fig_jpt_genus2` |
+| `KerrScripts/bvp_estremi_fissi.py` | `fig_bvp_estremi_fissi` |
+| `KerrScripts/colormap_conforme_asimmetrico.py` | `fig_colormap_conforme_asimmetrico` (about 5 min) |
+| `KerrScripts/colormap_conforme_estremi_fissi.py` | `fig_colormap_conforme_estremi_fissi` (about 5 min) |
+| `KerrScripts/colormap_spin_asimmetrico.py` | `fig_colormap_spin_asimmetrico` (slow: about 2 hours on one core) |
+| `KerrScripts/colormap_spin_estremi_fissi.py` | `fig_colormap_spin_estremi_fissi` (slow: about 2 hours on one core) |
 
 ---
 
 ## How to reproduce a result
-1. Open `VERIFICATION_STATUS.md`, find the result and its script.
+1. Open `paper1/verification/README.md` or `paper2/verification/README.md`, find the result and its script.
 2. Run the script (`python3 …` or `sage …`); each prints its own numeric verification.
 3. For independent confirmation, run the matching `paper/crosscheck_*.wl` with `wolframscript`.
 

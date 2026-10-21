@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Outer-kernel structure of the new off-shell adiabatic term (main11, level-C wrap).
+Outer-kernel structure of the new off-shell adiabatic term (level-C wrap).
 
 delta phi_extra = - int (G_Pr/H_Pr) * Delta S(r) dr,   Delta S = int p_r dr (reduced, level B).
 

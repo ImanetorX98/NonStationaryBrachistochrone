@@ -6,8 +6,8 @@
    The rail-drift identity for THAKURTA-KERR, the geometry of this paper.
 
    (An earlier draft illustrated the identity on ingoing Vaidya.  That is the
-   companion paper's geometry, not this one; the referee is reviewing the
-   conformal-Kerr manuscript, so the worked case must be conformal Kerr.)
+   companion paper's geometry, not this one; this manuscript concerns
+   conformal Kerr, so the worked case is conformal Kerr.)
 
    Thakurta-Kerr is g = A(eta)^2 gbar, with gbar the Kerr metric and eta the
    conformal time.  The selector is W = d/d(eta).  Since gbar is eta-independent

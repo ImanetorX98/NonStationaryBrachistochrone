@@ -1,0 +1,8 @@
+{
+  "z": "1/r",
+  "HH_Kerr_through_r_minus3": "-4*M**2*a**2*z**3 + M",
+  "C_over_r_cubed_through_r_minus3": "4*M**3*z**3 + 2*M**2*z**2 + 7*M*a**2*z**3/6 + M*z + a**2*z**2/2 + 1/2",
+  "q_squared_over_spherical_flux_squared": "-7*a**2*u**2*z**2 + a**2*z**2 + 1",
+  "s_squared_over_spherical_flux_squared": "-9*a**2*u**2*z**2 + 9*a**2*z**2",
+  "assumptions": "BL eta,r surfaces; fixed M,a; formal r -> infinity"
+}

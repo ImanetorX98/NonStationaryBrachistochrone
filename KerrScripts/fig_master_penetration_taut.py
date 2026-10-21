@@ -3,7 +3,7 @@
 Master plot: behaviour of the tau- and t-branch controlled-rail extremals at the
 conformal stationary limit r_e = 2M, as a function of the control costate J.
 
-REVISED for CQG-116884, referee major comment 4.  The previous version painted
+REVISED.  The previous version painted
 the whole closed interval [-Jc, +Jc] as "cusp bounce", which is wrong at BOTH
 endpoints.  The correct tau-branch law has FOUR cases (Proposition 3.1 of the
 manuscript), established in
@@ -40,7 +40,7 @@ import numpy as np
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _ROOT)
 # paper_style.py lives in NonStationaryMetrics/; a fresh clone must find it
-# without relying on an unarchived sibling directory (CQG-116884, major 10)
+# without relying on an unarchived sibling directory
 sys.path.insert(0, os.path.join(_ROOT, "NonStationaryMetrics"))
 from paper_style import COL, set_style, savefig
 import matplotlib.pyplot as plt

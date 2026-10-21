@@ -3,7 +3,7 @@
 cap_full -- shared interval-arithmetic library for the frozen-Schwarzschild
 fixed-endpoint no-inversion computer-assisted proposition.
 
-RESTORED for CQG-116884, referee major comment 10.  The CAP runners
+Restored so that a fresh clone can run the CAP.  The CAP runners
 
     no_inversion_schwarzschild_CAP_r0_10.py
     no_inversion_schwarzschild_CAP_grid.py
@@ -12,8 +12,7 @@ RESTORED for CQG-116884, referee major comment 10.  The CAP runners
 all begin with `import cap_full as cf`, but the module was never archived: it
 had been factored out of no_inversion_schwarzschild_CAP.py during development
 and existed only in the working tree.  A fresh clone therefore could not run the
-representative computer-assisted proposition at all -- exactly the referee's
-finding.  This file is that library, extracted verbatim from the prototype so
+representative computer-assisted proposition at all.  This file is that library, extracted verbatim from the prototype so
 that the two cannot drift apart.
 
 Everything here is mpmath INTERVAL arithmetic with outward rounding, so every

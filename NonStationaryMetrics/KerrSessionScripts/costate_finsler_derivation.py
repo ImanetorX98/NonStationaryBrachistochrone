@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
-# Referee Issue 2 (BLOCKER) -- RIGOROUS Legendre map for the rail brachistochrone.
+# DEPRECATED -- exploratory diagnostic, kept for the record; not used by either manuscript.
+# Outcome: the Pontryagin costate p_phi = dF/dphi' differs from the mechanical u_phi, and the
+# papers' on-shell p_r0 matches the Finsler costate p_r (up to the sign convention of r'), not the
+# geodesic u_r: the papers' J is the costate. The "decisive" conformal test below uses a constant A
+# with the coordinate clock; with dt = A d(eta) the physical arrival functional carries the factor A,
+# so that test alone does not decide the conformal weight of the costate in the non-stationary problem.
+# Legendre map for the rail brachistochrone.
 # Min-time Finsler function F(r,r',phi') = dt/dsigma for the controlled worldline x'^mu=(t',r',phi')
 # with rail u_t = g_{t mu}x'^mu / N = -E,  N=sqrt(-g_{ab}x'^a x'^b).  Solve the rail quadratic for
 # t'=F; the Pontryagin costate is p_phi=dF/dphi'.  Compare to the MECHANICAL angular momentum
@@ -66,11 +72,12 @@ print(f"  => costate {'==' if abs(pphi-uphi)<1e-4 else '!='} mechanical")
 prr=costate_pr(r,rp,phip,E); euler=rp*prr+phip*pphi
 print(f"\nEuler check: r' p_r + phi' p_phi = {euler:+.6f}  vs F={Fv:+.6f}  (equal => F degree-1 homog OK)")
 
-# ---- DECISIVE conformal-weight test: min-COORDINATE-TIME is conformally invariant ----
+# ---- frozen coordinate-clock comparison: min-COORDINATE-TIME is conformally invariant ----
 # Physical problem (metric A^2 g, rail Ehat) vs frozen-Kerr description (metric g, rail Ehat/A).
 # If F_phys(Ehat,A) == F_frozen(Ehat/A,1) then the costate p_phi is conformally INVARIANT (weight 0);
-# the mechanical u_phi carries the A-weight. This settles which object the frozen J_eff=J/A is.
-print("\nDECISIVE test  F(Ehat,A) vs F(Ehat/A, 1)  [min-coordinate-time conformal invariance]:")
+# the mechanical u_phi carries the A-weight. This comparison alone does not determine the
+# physical-clock costate weight (see header).
+print("\nFrozen coordinate-clock comparison  F(Ehat,A) vs F(Ehat/A, 1):")
 Ehat=1.4
 for A in [1.5,2.0]:
     fa=F(r,rp,phip,Ehat,A); fb=F(r,rp,phip,Ehat/A,1.0)
@@ -81,8 +88,8 @@ for A in [1.5,2.0]:
     print(f"  A={A}: F_phys={fa:+.5f} F_frozen(E/A)={fb:+.5f} diff={abs(fa-fb):.1e}")
     print(f"        p_phi: phys={pa:+.5f} frozen(E/A)={pb:+.5f}  (equal=>costate weight 0)")
     print(f"        u_phi: phys={ua:+.5f} frozen(E/A)={ub:+.5f}  ratio phys/frozen={ua/ub:.4f} (=A =>u_phi weight -1 frozen)")
-print("\nInterpretation: if costate p_phi is conformally invariant but the paper's J_eff scales as 1/A,")
-print("then the paper's 'J' is the MECHANICAL angular momentum, NOT the conserved Pontryagin costate.")
+print("\nNote: this compares frozen descriptions at constant A with the coordinate clock; it does not by")
+print("itself decide the conformal weight of the costate when dt = A d(eta) (see header).")
 
 # ---- FINAL: is the paper's (p_r0,J) the Finsler costate or the mechanical geodesic momentum? ----
 # paper on-shell p_r0 = sqrt(S)/(Delta*Emu),  S=r*Emu*Q2.
@@ -111,4 +118,7 @@ p0=paper_pr0(rv,Ev,Jv); gur=geodesic_ur(rv,Ev,Jv); fb=finsler_pr_at(rv,Ev,Jv)
 print("\n=== FINAL: identify the paper's J ===")
 print(f"  paper p_r0(E,J)          = {p0:+.6f}")
 print(f"  geodesic (mechanical) u_r = {gur:+.6f}  (if paper==this => J is mechanical u_phi, weight -1)")
-print(f"  Finsler costate p_r @ p_phi=J = {fb[1]:+.6f} (match |p_phi-J|={fb[0]:.1e}) (if paper==this => J is costate, weight 0)")
+print(f"  Finsler costate p_r @ p_phi=J = {fb[1]:+.6f} (match |p_phi-J|={fb[0]:.1e})")
+_is_costate = abs(abs(fb[1]) - p0) < abs(gur - p0)
+print("  => the paper's p_r0 matches the " + ("Finsler COSTATE (|p_r| up to the sign of r'): J is the Pontryagin costate."
+      if _is_costate else "geodesic u_r: J would be the mechanical u_phi."))

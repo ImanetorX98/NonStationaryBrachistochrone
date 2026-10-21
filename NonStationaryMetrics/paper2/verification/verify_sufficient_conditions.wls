@@ -5,9 +5,9 @@
    (A) The optical distance function is a saturated HJB certificate.  On the
        universal cover of the arrival-time surface (complete, K<0), Cartan-
        Hadamard makes d(p,.) smooth away from p with |grad d|_a = 1 exactly.
-       That is a value function saturating the eikonal equation, so referee 1's
-       route "a value function / a saturated Hamilton-Jacobi-Bellman
-       certificate" is available, not only "an equivalent global result".
+       That is a value function saturating the eikonal equation, so the
+       route through a value function, a saturated Hamilton-Jacobi-Bellman
+       certificate, is available, not only an equivalent global result.
 
    (B) Below the threshold, K < 0 still holds on an INNER REGION r < r_c(Ehat).
        We compute r_c and check it is a genuine sign change, giving a

@@ -111,13 +111,22 @@ for k, (B, name, col) in enumerate([(Bt, 't', 'C0'), (Bta, r'\tau', 'C3')]):
     ax[k].plot(2*M*np.cos(th), 2*M*np.sin(th), 'b:', lw=0.6, label='$r_e$ (ergo.)')
     ax[k].plot(B['r0'], 0, 'ks', ms=3)
     ax[k].plot(rg[-1]*np.cos(phi_closed[-1]), rg[-1]*np.sin(phi_closed[-1]),
-               'r^', ms=4, label='turning')
+               'r^', ms=4, label='regular subarc endpoint')
     ax[k].set_aspect('equal'); ax[k].set_xlabel('$x$'); ax[k].set_ylabel('$y$')
     ax[k].set_title(rf'${name}$-branch: $\varphi(r,A)$ closed vs numerical'
                     '\n' rf'($A^\prime/A={eps_show}$)', fontsize=6.6)
     ax[k].legend(fontsize=5.6, loc='upper left', framealpha=0.9)
-# pannello c: errore vs A'/A
+# pannello c: errore vs A'/A. phi_closed - phi_num = eps*(Closed + psi - dfull): due valutazioni dello
+# STESSO coefficiente del primo ordine, quindi il residuo e' esattamente lineare in eps (non un test O(eps^2)).
 epss = np.array([0.005, 0.01, 0.02, 0.04, 0.06])
+import json
+_table = {}
+for B, name in [(Bt, 't'), (Bta, 'tau')]:
+    base = float(np.nanmax(np.abs((B['Closed']+B['psi'])-B['dfull'])))
+    _table[name] = {'residual_over_eps': base, **{f'eps={e}': base*e for e in (0.005, 0.02, 0.06)}}
+    print(f"  ramo {name}: max|closed-quad|/eps = {base:.6e};  tabella: " +
+          ", ".join(f"eps={e}: {base*e:.2e}" for e in (0.005, 0.02, 0.06)))
+open(os.path.join(HERE, 'fig_phi_closed_validation_table.json'), 'w').write(json.dumps(_table, indent=2))
 for B, name, col, mk in [(Bt, 't', 'C0', 'o'), (Bta, r'\tau', 'C3', 's')]:
     base = np.nanmax(np.abs((B['Closed']+B['psi'])-B['dfull']))
     errs = base*epss

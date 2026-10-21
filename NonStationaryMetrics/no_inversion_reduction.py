@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Riduzione analitica del no-inversion a estremi fissi (referee obiezione #11).
+Riduzione analitica del no-inversion a estremi fissi.
 
 Il paper afferma che, a ENDPOINT FISSI, la brachistocrona del ramo t resta piu'
-SUPERFICIALE di quella tau: r_min^t > r_min^tau. Il referee nota che il bound
+SUPERFICIALE di quella tau: r_min^t > r_min^tau. Il bound
 puntuale n_t/n_tau=E/f>1 NON basta a ordinare i minimi di due funzionali diversi.
 Corretto: a stesso J l'ordine e' addirittura OPPOSTO (t piu' profondo); il risultato
 a estremi fissi e' un'inversione guidata dalla mappa angolo J->Phi.

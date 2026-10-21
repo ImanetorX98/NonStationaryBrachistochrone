@@ -1,0 +1,5 @@
+PASS 60/60 independent algebra checks
+Unit TK obstruction: -A**3*M*a*(3*r**2+a**2)*sqrt(S)/r**2
+Radial b_rr=-A**3*A_eta/D**(3/2)
+Radial b_ss=-Ehat*r-A_eta*r**2*sqrt(D)/(A*f)
+Radial umbilicity: A_eta=-A*f*sqrt(D)/(Ehat*r)

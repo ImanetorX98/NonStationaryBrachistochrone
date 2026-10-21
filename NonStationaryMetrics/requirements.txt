@@ -18,7 +18,8 @@ tqdm
 #       and reproduces the tolerance quoted in the paper (kappa symmetry 1.4e-12).
 #
 #   (b) SageMath PLUS the `abelfunctions` library (RiemannTheta).  Not shipped
-#       with Sage and not on PyPI; it must be built against the Sage in use:
+#       with Sage and not on PyPI; it must be built against the Sage in use
+#       (sage_env/setup_sage_env.sh does it: fixed revision, patch, Cython 3.0):
 #         KerrScripts/kerr_thirdkind_theta_closed.sage  (third-kind L = theta-ratio)
 #         KerrScripts/kerr_psi_forward_abel.sage        (Abel map + RiemannTheta)
 #         VaidyaMetric/vaidya_thirdkind_fay.sage        (Fay third-kind, Vaidya)

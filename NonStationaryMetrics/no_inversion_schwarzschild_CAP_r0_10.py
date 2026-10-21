@@ -66,5 +66,6 @@ def prove(r0f,bb,ra,rb,wthin=0.03,Ncap=(250,600,1500,5000),wmin=0.0015,logpath=N
 
 if __name__=="__main__":
     print("=== COMPLETE CAP r0=10 rmin(2.6,6.05) graded dps18 ===",flush=True)
-    ok=prove(10.0,0.96,2.6,6.05,logpath='/tmp/cap10_progress.log')
+    import os, tempfile
+    ok=prove(10.0,0.96,2.6,6.05,logpath=os.path.join(os.environ.get('NSM_OUTDIR', tempfile.gettempdir()), 'cap10_progress.log'))
     print("RESULT:",ok,flush=True)

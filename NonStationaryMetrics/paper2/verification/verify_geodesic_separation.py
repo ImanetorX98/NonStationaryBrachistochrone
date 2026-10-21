@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 verify_geodesic_separation.py -- the geodesic separation on the fixed-energy
-optical surface, i.e. the Jacobi (geodesic-deviation) equation the Round-2
-referee asks to have calculated.
+optical surface, i.e. the Jacobi (geodesic-deviation) equation.
 
-The referee's cited source (Lecian, `10.13140/RG.2.2.24140.58246`, section 7)
+The source cited in the manuscript (Lecian, `10.13140/RG.2.2.24140.58246`, section 7)
 states the spacetime form, D^2 xi^mu / dtau^2 = R^mu_{nu alpha beta} u^nu u^alpha
 xi^beta.  On a two-dimensional surface that reduces to the scalar Jacobi equation
 

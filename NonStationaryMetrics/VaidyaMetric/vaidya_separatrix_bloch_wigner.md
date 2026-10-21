@@ -60,5 +60,5 @@ indefinito) D_0 a una combinazione specifica di D^E — è teoria dei polilog el
 macchina. Funzione tabulata: in mano.
 
 Script: `vaidya_separatrix_ell.py` (Stage A), `vaidya_bloch_wigner.py` (τ, Abel,
-2-torsione), `vaidya_ell_dilog_match.py` (σ,ζ closed form + D^E q-serie),
-`/tmp/sep_abel2.sage` (Sage cross-check τ).
+2-torsione), `vaidya_ell_dilog_match.py` (σ,ζ closed form + D^E q-serie); il cross-check Sage di τ
+era uno script di lavoro non distribuito.

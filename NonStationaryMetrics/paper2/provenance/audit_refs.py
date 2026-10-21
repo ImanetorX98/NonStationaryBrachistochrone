@@ -4,7 +4,7 @@
 audit_refs.py -- check the bibliography against the DOI registry.
 
 Written after the CQG revision found a wrong page range in a reference we had
-been citing for months, and after a referee's own citation of the same paper
+been citing for months, and after a second citation of the same paper
 turned out to name the wrong author. Neither is catchable by reading the
 manuscript; both are catchable here.
 
@@ -47,7 +47,7 @@ def crossref(doi: str) -> dict | None:
     try:
         r = subprocess.run(
             ["curl", "-s", "--max-time", "25",
-             "-H", "User-Agent: refs-audit (mailto:iman.rosignoli@gmail.com)",
+             "-H", "User-Agent: refs-audit (https://github.com/ImanetorX98/NonStationaryBrachistochrone)",
              f"https://api.crossref.org/works/{doi}"],
             capture_output=True, text=True, timeout=40)
         return json.loads(r.stdout)["message"]

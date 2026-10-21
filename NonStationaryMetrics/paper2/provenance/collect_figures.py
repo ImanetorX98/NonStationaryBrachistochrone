@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-collect_figures.py -- prove that every compiled figure is the current output of
-its generator, and collect the ones that are not.
+collect_figures.py -- check that each compiled figure equals the last output of its
+generator, and collect the ones that do not.  It compares files; it does not re-run
+the generators, and it cannot check figures whose generator writes straight into the
+compiled folder (reported as DIRECT) or that have no generator listed.
 
 WHY THIS EXISTS.  The manuscript reads its figures from ``paper/Immagini`` via
 ``\\graphicspath``, while most generators write into their OWN directory:
 ``savefig(fig, HERE, ...)`` in KerrScripts, and so on.  Nothing connected the two.
-An external audit put it exactly right: an inventory of candidate generators does
+An inventory of candidate generators does
 not prove the identity of the compiled figure with the generator's latest output.
 
 It was not hypothetical.  A correction to the master penetration bar -- excluding
@@ -56,7 +58,7 @@ GENERATOR_DIR = {
     "fig_separatrix_3traiettorie.png": ROOT / "KerrScripts",
     "fig_jpt_genus2.png": ROOT / "KerrScripts",
     "fig_jcm_capture.png": ROOT / "KerrScripts",
-    "fig_thakurta_cuspide_ergosfera.png": COMPILED / "Immagini",
+    "fig_thakurta_cuspide_ergosfera.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     "fig_phi_validation_true_dynamic.pdf": COMPILED / "Immagini",
     # Added after the September 2026 cross-audit.  The eight entries above were
     # the only ones under this check, so fourteen of the paper's twenty-two
@@ -74,6 +76,7 @@ GENERATOR_DIR = {
     "fig_phi_penetrating.pdf": NSM / "ThakurtaMetric",
     "fig_thakurta_kerr_inversione_AJ.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     "fig_thakurta_kerr_plunge_t_tau.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
+    "fig_thakurta_kerr_plunge_levels.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     "fig_thakurta_kerr_rami.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     # fig_indicatrici_thakurta_kerr.pdf is produced by
     # ThakurtaMetric/genera_indicatrici_separate_codex.py, which writes through
@@ -97,15 +100,26 @@ def main(argv: list[str]) -> int:
     print(f"{len(figs)} figures included by {TEX.name}; "
           f"{'collecting' if collect else 'checking'} against the generators\n")
 
-    n_ok = n_diff = n_missing = n_untracked = 0
+    n_ok = n_diff = n_missing = n_untracked = n_direct = 0
     for rel in figs:
         name = Path(rel).name
         target = COMPILED / rel
+        src_dir = GENERATOR_DIR.get(name)
         if not target.exists():
+            # On a fresh clone nothing is compiled yet (figures are not tracked):
+            # --collect must create the file, not only refresh an existing one.
+            src = src_dir / name if src_dir is not None else None
+            if collect and src is not None and src.exists():
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src, target)
+                print(f"  COLLECTED {name}  (new)\n"
+                      f"              from {src.relative_to(ROOT)}\n"
+                      f"              hash {sha(target)[:12]}")
+                n_ok += 1
+                continue
             print(f"  MISSING   {rel}  (not in {COMPILED.name})")
             n_missing += 1
             continue
-        src_dir = GENERATOR_DIR.get(name)
         if src_dir is None:
             # figure with no generator in the table: report, do not guess
             n_untracked += 1
@@ -117,7 +131,11 @@ def main(argv: list[str]) -> int:
             n_missing += 1
             continue
         if src.resolve() == target.resolve():
-            n_ok += 1
+            # the generator writes straight into the compiled folder: comparing the
+            # file with itself proves nothing, so report it rather than count it as fresh
+            print(f"  DIRECT    {name}  (generator writes into {COMPILED.name}/; "
+                  f"re-run it to refresh -- not checkable here)")
+            n_direct += 1
             continue
         if sha(src) == sha(target):
             n_ok += 1
@@ -138,7 +156,10 @@ def main(argv: list[str]) -> int:
 
     print()
     print(f"  {n_ok} up to date, {n_diff} differing, {n_missing} missing, "
+          f"{n_direct} written directly (not checkable), "
           f"{n_untracked} with no generator in the table")
+    print("  This compares files only: it does not re-run the generators, so it shows that a")
+    print("  compiled figure equals the generator's last output, not that the output is current.")
     if n_untracked:
         print("  (figures with no generator listed are not checked here; adding "
               "one to GENERATOR_DIR brings it under this check)")

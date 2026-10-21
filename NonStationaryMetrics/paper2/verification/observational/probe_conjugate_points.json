@@ -1,0 +1,173 @@
+{
+  "caveat": "planar optical-metric model; the Earth-Moon and Jupiter cases are illustrations, not mission designs",
+  "cr3bp_units": {
+    "L_km": 384400.0,
+    "T_days": 4.348376629249755,
+    "V_km_s": 1.02315748,
+    "A_m_s2": 0.002723338264516
+  },
+  "earth_moon_L4": {
+    "290": {
+      "direction_deg": 290,
+      "t_c_days": 4.262761946650346,
+      "peak_thrust_m_s2": 0.337429764579252,
+      "delta_v_to_tc_km_s": 4.8179376195516745,
+      "lags": {
+        "0.8": {
+          "lowest_eigenvalue": 12.904196370199188,
+          "lag_s_d1000km": 5.761920529059867,
+          "lag_s_d5000km": 144.54700211400902
+        },
+        "1.2": {
+          "lowest_eigenvalue": -175.40858683904912,
+          "lag_s_d1000km": -6.72297140234496,
+          "lag_s_d5000km": -71.06647640837689
+        }
+      }
+    },
+    "326": {
+      "direction_deg": 326,
+      "t_c_days": 13.347070585937324,
+      "peak_thrust_m_s2": 0.005492898113119423,
+      "delta_v_to_tc_km_s": 2.8981881225416326,
+      "lags": {
+        "0.8": {
+          "lowest_eigenvalue": 0.23095976231895216,
+          "lag_s_d1000km": 0.2665439648102647,
+          "lag_s_d5000km": 6.958351266955134
+        },
+        "1.2": {
+          "lowest_eigenvalue": -0.08499110271911048,
+          "lag_s_d1000km": -0.11455386029662705,
+          "lag_s_d5000km": -2.546729436980106
+        }
+      }
+    }
+  },
+  "jupiter_hyperbolic": {
+    "v_inf_km_s": 6.0,
+    "start_R": 100,
+    "impact_offset_R": 0.5,
+    "t_c_days": 9.014412503674862,
+    "pericentre_R": 2.333760169353015,
+    "swept_deg": 120.72369093135171,
+    "rule_of_2_thrust_at_pericentre_m_s2": 9.101922011232467,
+    "lags": {
+      "0.8": {
+        "lowest_eigenvalue": 2.4539281083471776e-11,
+        "lag_s_d01R": 2.0730955321341753,
+        "lag_s_d05R": 51.82633712142706
+      },
+      "1.2": {
+        "lowest_eigenvalue": -1.482698638141355e-11,
+        "lag_s_d01R": -0.056122752372175455,
+        "lag_s_d05R": -0.9563647573813796
+      }
+    }
+  },
+  "saturn_rails": {
+    "heliocentric_energy_AU2_yr2": -3.6618013934973934,
+    "rail_duration_years": {
+      "4.0": 2.791383195486588,
+      "3.0": 3.0486391534004618
+    },
+    "horizon_years": 9.0,
+    "difference_convergence": 1.4000317994879928e-06,
+    "min_in_plane_over_t": 1.044379567035579,
+    "min_out_of_plane_over_t": 1.044379680853455,
+    "in_plane_zeros": 0,
+    "out_of_plane_zeros": 0
+  },
+  "checks": [
+    {
+      "name": "curvature K = Lap Omega - 2|grad Omega|^2/f (symbolic)",
+      "residual": 0.0,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Kepler: K = E mu/(r^2 (E r + mu)) (symbolic)",
+      "residual": 0.0,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "CR3BP L4 ray 290 deg: conjugate time (days) vs independent Mathematica value 4.2628",
+      "residual": -3.8053349654454394e-05,
+      "tolerance": 0.002,
+      "status": "PASS"
+    },
+    {
+      "name": "CR3BP L4 ray 290 deg: daughter late before t_c (0.8 t_c)",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "CR3BP L4 ray 290 deg: daughter early beyond t_c (1.2 t_c)",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "CR3BP L4 ray 326 deg: conjugate time (days) vs independent Mathematica value 13.347",
+      "residual": 7.058593732445217e-05,
+      "tolerance": 0.002,
+      "status": "PASS"
+    },
+    {
+      "name": "CR3BP L4 ray 326 deg: daughter late before t_c (0.8 t_c)",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "CR3BP L4 ray 326 deg: daughter early beyond t_c (1.2 t_c)",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "Jupiter hyperbolic rail: conjugate time (days) vs independent Mathematica value 9.0144",
+      "residual": 1.2503674861719105e-05,
+      "tolerance": 0.002,
+      "status": "PASS"
+    },
+    {
+      "name": "Jupiter rail: daughter late before t_c (0.8 t_c)",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "Jupiter rail: daughter early beyond t_c (1.2 t_c)",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "Saturn rails: heliocentric energy negative, so K < 0 in the solar field",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "Saturn rails: centred differences at 1e-5 and 1e-6 agree (relative)",
+      "residual": 1.4000317994879928e-06,
+      "tolerance": 1e-05,
+      "status": "PASS"
+    },
+    {
+      "name": "Saturn rails: no zero of the in-plane Jacobi field within 9 years",
+      "residual": 0.0,
+      "tolerance": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Saturn rails: no zero of the out-of-plane Jacobi field within 9 years",
+      "residual": 0.0,
+      "tolerance": 0,
+      "status": "PASS"
+    }
+  ]
+}

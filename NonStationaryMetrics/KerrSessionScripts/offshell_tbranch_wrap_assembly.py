@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# GENERIC off-shell wrap (t-branch, main11 "open" piece) -- SECOND-KIND block closed in the
+# GENERIC off-shell wrap (t-branch, "open" piece) -- SECOND-KIND block closed in the
 # canonical genus-2 basis {u1,u2,R1,R2,L}, REUSING the verified tau-branch machinery
 # (kerr_tau_Wij_assembly.py). Only the curve and the two input letters change:
 #   curve  S = r*Emu*Q2  (t-branch genuine quartic Q2),  Emu=(E^2-1)r+2M

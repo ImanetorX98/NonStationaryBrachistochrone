@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Complete symbolic coefficient table for the new off-shell adiabatic term (t/eta branch, main11).
+Complete symbolic coefficient table for the new off-shell adiabatic term (t/eta branch).
 
 STATUS (honest): the off-shell term is REDUCED to the genus-2 basis with symbolic coefficients
 in (M, a, E, J); the quadratures U_k, W_jk (and third-kind letters) are NOT evaluated here --

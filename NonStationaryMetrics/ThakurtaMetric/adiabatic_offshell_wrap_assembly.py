@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Weight-two assembly of the new off-shell adiabatic term into the genus-2 W_jk basis (main11).
+Weight-two assembly of the new off-shell adiabatic term into the genus-2 W_jk basis.
 
   delta phi_extra = - int (A/sqrt(S)) * Delta S dr ,   A/sqrt(S)=sum_j p_j r^j/sqrt(S)+(poles),
                     Delta S = int p_r dr = sum_k a_k U_k + (third kind).

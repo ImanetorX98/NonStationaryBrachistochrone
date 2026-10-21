@@ -3,18 +3,17 @@
 
 (* verify_conjugate_maxwell.wls
    -------------------------------------------------------------------------
-   Conjugate points and Maxwell points on the frozen optical surface.
+   Conjugate points and Maxwell points on the frozen optical surface of the
+   arrival-time (t) branch, proposition prop:noconj.
 
-   Referee 1, major comment 2:
-     "A local-minimum claim requires a suitable second-variation or
-      Jacobi/conjugate-point argument, or another sufficient condition. [...]
-      Maxwell points and cut-locus effects must also be considered."
+   A local-minimum statement needs a second-variation (Jacobi) argument, and
+   global minimality must also address Maxwell points and the cut locus.
 
-   On the frozen tau-branch the optical geometry is Riemannian-pure (the
-   gravitomagnetic wind cancels), so equatorial extremals are geodesics of a
+   For the frozen, non-rotating background the arrival-time optical geometry is
+   static and purely Riemannian, so equatorial extremals are geodesics of a
    genuine Riemannian surface and the classical machinery applies verbatim:
-   the Jacobi equation is  J'' + K J = 0  with K the Gauss curvature computed
-   in verify_myers_optical.wls.  Hence
+   the Jacobi equation is  J'' + K J = 0  with K the Gauss curvature
+   (eq:optical-gauss).  Hence
 
      K < 0 on the domain  =>  no conjugate points  =>  every extremal is a
      LOCAL minimiser of arrival time there.

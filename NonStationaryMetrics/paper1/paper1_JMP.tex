@@ -259,8 +259,9 @@ controlled-rail brachistochrone to a time-optimal control problem with compact c
 $S^1$, whose maximized Hamiltonian is single-valued in closed form and requires no
 Filippov relaxation.
 \item \textbf{Theorem~\ref{thm:existence}} (section~\ref{sec:control-foundations})
-establishes existence of a minimizer by the direct method and the \emph{normality} of every
-regular extremal, so that the reduction to the rail invariant is never vacuous.
+establishes existence of a minimizer by the direct method under the stated hypotheses and
+the \emph{normality} of every interior arrival-time minimizer, so that the normal reduction
+to the rail invariant applies to such minimizers.
 \item \textbf{Proposition~\ref{prop:hjb}} (section~\ref{sec:control-foundations}) supplies
 the non-autonomous Hamilton--Jacobi verification criterion that upgrades a saturated
 extremal to a global minimizer, together with an explicit statement of what is
@@ -561,10 +562,11 @@ $\theta\in S^1$, and:
 \item[(i)] for every nonzero costate $p$ the maximizer of the support function
 $p\cdot\dot x(\theta)$ over the indicatrix is unique, so the optimal control
 $\theta^\star(x,p)$ is single-valued and smooth and no Filippov relaxation is required;
-\item[(ii)] Pontryagin's maximum principle, in its normal form, delivers the branch
-Hamiltonian
-$H(x,p)=\max_\theta\big[p\cdot\dot x(\theta)-\ell_{\mathcal T}(x,\theta,\chi)\big]$ in
-closed form: the support function $h(p)=\max_\theta p\cdot\dot x(\theta)$ of the
+\item[(ii)] for interior arrival-time minimizers Theorem~\ref{thm:existence}(ii)
+justifies the normal form of Pontryagin's maximum principle; more generally, on a
+normal extremal for a specified running cost, the branch Hamiltonian
+$H(x,p)=\max_\theta\big[p\cdot\dot x(\theta)-\ell_{\mathcal T}(x,\theta,\chi)\big]$ is
+obtained in closed form: the support function $h(p)=\max_\theta p\cdot\dot x(\theta)$ of the
 indicatrix minus the running cost, so $H=h-1$ for a unit-cost clock, while a
 control-dependent cost such as $\ell_\tau$ stays inside the maximum;
 \item[(iii)] on the axisymmetric backgrounds considered here, $p_\varphi=J$ is conserved,
@@ -600,8 +602,10 @@ normality statement of Theorem~\ref{thm:existence}, which is proved independentl
 below---the optimal control $\theta^\star(x,p)$ is single-valued and smooth away from the
 freezing and horizon degeneracies, where Hypothesis~\ref{hyp:coercive} fails and which are
 treated separately. Pontryagin's maximum principle (PMP) \cite{Pontryagin,Liberzon},
-with the multiplier of the cost normalized to $p_0=-1$ (Theorem~\ref{thm:existence}(ii)),
-then delivers the branch Hamiltonian
+with the multiplier of the cost normalized to $p_0=-1$---justified for the arrival-time
+problem by Theorem~\ref{thm:existence}(ii); for other running costs the formulas below
+describe the normal branch, without an additional normality claim---then delivers the
+branch Hamiltonian
 $H(x,p)=\max_\theta[p\cdot\dot x(\theta)-\ell_{\mathcal T}]$, evaluated in closed form in
 section~\ref{sec:vaidya} [$H_v=h-1$ and~\eqref{eq:tau-from-v}], which is (ii). For a
 control-dependent cost the maximizer is that of $p\cdot\dot x-\ell_{\mathcal T}$, not of
@@ -735,17 +739,18 @@ deformations, each switching on one further phenomenon.
 
 \begin{figure}[tbp]
     \centering
-    % ALT: Two panels of closed curves in the local velocity plane: left, nested circles
-    %      centred on the origin and shrinking; right, ellipses displaced toward negative
-    %      radial velocity and elongated radially.
-    \includegraphics[width=\textwidth]{Immagini/fig_indicatrici.pdf}
+    % ALT: Three stacked panels of closed curves in the local velocity plane: top, nested
+    %      circles centred on the origin and shrinking; middle, ellipses displaced toward
+    %      negative radial velocity; bottom, ellipses displaced along the angular direction.
+    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{Immagini/fig_indicatrici.pdf}
     \caption{Rail indicatrices (linear constraint $\cap$ normalization
-    $=$ ellipse) in the two spherically symmetric applications of this paper.
-    Left: spatially flat FLRW gives centered shrinking circles, so the three
-    clock branches remain degenerate. Right: ingoing Vaidya, in advanced
-    coordinates, gives an offset, eccentric indicatrix; the eccentricity switches on
-    branch splitting, and the time dependence of the offset through $m'(v)$ the
-    endpoint-sensitive memory.}
+    $=$ ellipse). Top: spatially flat FLRW gives centered shrinking circles, so the
+    three clock branches remain degenerate. Middle: ingoing Vaidya, in advanced
+    coordinates, gives an offset, eccentric indicatrix (radial wind); the eccentricity
+    switches on branch splitting, and the time dependence of the offset through
+    $m'(v)$ the endpoint-sensitive memory. Bottom: for comparison, Thakurta--Kerr, the
+    subject of the companion paper, displaces the ellipse along the angular direction
+    (frame dragging).}
     \label{fig:indicatrici}
 \end{figure}
 
@@ -754,8 +759,8 @@ deformations, each switching on one further phenomenon.
 The Pontryagin reduction above supplies only \emph{necessary} conditions. We
 record here the three complementary facts that make the constrained problem well
 posed for the non-stationary rail: an existence theorem for the minimizer, the
-normality of every regular extremal (so the reduction $-u\cdot W=\Ehat$ is never
-vacuous), and a Hamilton--Jacobi certificate that upgrades a saturated extremal to
+normality of every interior minimizer (so the reduction $-u\cdot W=\Ehat$ is not
+vacuous for such minimizers), and a Hamilton--Jacobi certificate that upgrades a saturated extremal to
 a \emph{global} optimum. All three are elementary under the standing hypothesis
 that the indicatrix is a compact, uniformly convex oval [equation~\eqref{eq:ellipse}].
 
@@ -942,9 +947,12 @@ statement would concern the full costate $(p_x,p_\chi)$ instead.) A minimizer th
 state-constrained principle, whose nontriviality is $(p_0,p,\mu)\neq0$ with $\mu$ the
 measure carried on the active set, and there $p$ may vanish where $\mu$ does not; the
 argument above would not apply, and normality would have to be re-established together
-with a constraint qualification. We do not need that case: every extremal used in this
-paper and in the companion is interior by construction, living on a compact region on
-which the two scalar regularity inequalities hold strictly.
+with a constraint qualification. The regular extremal arcs computed in this paper belong to
+the normal branch by construction, since they are integrated with $p_0=-1$; on compact
+subarcs contained in $\Omega$ the two scalar regularity inequalities hold strictly, while
+limiting approaches to $\partial\Omega$ are not covered by this assertion. Whether the minimizer of a given boundary-value problem is
+interior is a hypothesis to be checked case by case; the theorem gives normality only
+under it.
 \end{proof}
 
 \begin{remark}[relaxation of the epigraph is not convexification of the indicatrix]
@@ -972,10 +980,11 @@ is undone by the saturation step.
 \end{remark}
 
 \begin{remark}[what normality buys, and where the hypotheses fail]
-Part (ii) is what makes the reduction to the branch Hamiltonian
-$H=\max_\theta[p\cdot\dot x(\theta)-\ell_{\mathcal T}]$ ($H=h-1$ for a unit-cost clock)
-together with the rail invariant $-u\cdot W=\Ehat$
-legitimate along the \emph{entire} extremal, and it is the control-theoretic content of
+For interior arrival-time minimizers, part (ii) is what makes the reduction to the
+branch Hamiltonian $H=h-1$ of the unit-cost clock, together with the rail invariant
+$-u\cdot W=\Ehat$, legitimate along the \emph{entire} regular arc; a control-dependent
+cost such as $\ell_\tau$ requires its own normality argument, since the adjoint equation
+is then inhomogeneous. Part (ii) is also the control-theoretic content of
 ``excluding $p=0$'' in the proof of Theorem~\ref{thm:rail}: nontriviality is not an
 assumption but a consequence of the coercivity bound~\eqref{eq:coercive}. That bound
 degenerates in two different ways: at freezing the velocity indicatrix of
@@ -1820,12 +1829,20 @@ to $10^{-15}$). The clock is now the \emph{advanced time}: from $v=t+r_*$,
     \frac{\dd v}{\dd r}=\frac{E}{f}\frac{\dd\tau}{\dd r}+\frac1f
     =\frac{E\,r^3}{\sqrt S}+\frac{r}{r-2m}
     \;\Rightarrow\;
-    v=E\,U_3+r+2m\ln(r-2m),
+    \lambda_v\equiv v-v_0=E\,U_3+(r-r_0)+2m\ln\frac{r-2m}{r_0-2m},
     \label{eq:vaidya-clock}
 \end{equation}
-the tortoise term injecting a \emph{horizon logarithm}. Because the mass runs with
-the advanced time, $m=m(v)$, it is $v(r)$---the advanced time elapsed along the
-orbit---that weights the drift, and this is so whichever clock the cost
+with $\lambda_v(r_0)=0$, the tortoise term injecting a \emph{horizon logarithm}. This is
+the outgoing orientation, $\dd r>0$. The radial wind makes the ingoing one different, not
+its mirror image: on an arc launched at $r_0$ and run inward the bulk density changes
+sign, $\lambda_v=-E\,U_3+(r-r_0)+2m\ln[(r-2m)/(r_0-2m)]$, and the closed form below then
+holds with the explicit $E$ of its clock terms replaced by $-E$ and with $\varphi$
+measured along the motion (both orientations verified to $10^{-39}$,
+\texttt{paper1/verification/verify\_section44\_closedform.py} and
+\texttt{verify\_section44\_ingoing.py}). Because the
+mass runs with the advanced time, $m=m(v)$, it is $\lambda_v(r)$---the advanced time elapsed
+along the orbit from the launch, consistently with the elapsed clock $\lambda$ of
+Theorem~\ref{thm:firstorder}---that weights the drift, and this is so whichever clock the cost
 functional measures. The proper-time density $\dd\tau/\dd r=r^2(r-2m)/\sqrt S$,
 i.e.\ $T_\tau=U_3-2m\,U_2$, $b=(0,0,-2m,1,0)$ (no horizon log), is the
 \emph{timing} of the proper-time functional, not a drift clock: weighting by it
@@ -1846,11 +1863,11 @@ $r_*=r+2m\ln(r-2m)$ acquires $\dd m$ terms and no Killing time survives. The ret
 time $u=t-r_*$ of the outgoing metric is a \emph{separate} outgoing-Vaidya problem
 (its own Hamiltonians, costates, and transversality), not a third clock of the ingoing
 family. The advanced-time first-order correction
-$\delta\varphi=\dot m\!\int\!\partial_m F\,v\,\dd r$ then integrates by parts into a
+$\delta\varphi=\dot m\!\int\!\partial_m F\,\lambda_v\,\dd r$ then integrates by parts into a
 fully explicit closed form (verified to $9\times10^{-14}$, coefficients given),
 \begin{equation}
     \frac{\delta\varphi}{\dot m}
-    =A_m\,v-E\!\int\! A_m\,\frac{r^3}{\sqrt S}\,\dd r
+    =A_m\,\lambda_v-E\!\int\! A_m\,\frac{r^3}{\sqrt S}\,\dd r
     -\int\! A_m\,\frac{r}{r-2m}\,\dd r,\qquad A_m\equiv\partial_m\varphi_0,
     \label{eq:vaidya-deltaphi}
 \end{equation}
@@ -1904,12 +1921,19 @@ vanish---$p_v=-H_v=O(\dot m)$, vanishing only at the anchor (the free arrival in
 problem, the launch in the same-launch comparison used here)---so the
 \emph{complete} first-order term adds the off-shell piece given by the Vaidya analogue
 of equation~\eqref{eq:adiab-exact}, with the single-parameter operator $\Theta=m\partial_m$
-and $S_{\mathcal D}=\int_0^\lambda\Theta H_v\,\dd\lambda'$ anchored at the launch; the extra term is
-$-\!\int(\partial_{p_r}G/H_{p_r})\,S_{\mathcal D}\,\dd r$, a length-two iterated integral of the
-same horizon-dilogarithm class. Applying the identical canonical perturbation theory
-to $H_v$ closes the Vaidya first order to $O(\dot m^2)$ (residual slope $\approx2$;
-\texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}). We display the on-shell
-component in closed form below;
+and $S_{\mathcal D}=\int_0^\lambda\Theta H\,\dd\lambda'$ anchored at the launch, on the branch
+Hamiltonian in use. In the convention of this section, $\varepsilon=M\dot m/m>0$ under
+accretion (the sign of Theorem~\ref{thm:firstorder} with $\varepsilon\to-\varepsilon$), the
+extra term is $+(\dot m/m)\!\int(\partial_{p_r}G/H_{p_r})\,S_{\mathcal D}\,\dd r$---the source
+is built with $\Theta=m\partial_m$, so it multiplies the relative rate; equivalently
+$+\dot m\!\int(\partial_{p_r}G/H_{p_r})\,\widetilde S_{\mathcal D}\,\dd r$ with
+$\widetilde S_{\mathcal D}=\int_0^\lambda\partial_mH\,\dd\lambda'$---a length-two
+iterated integral of the same horizon-dilogarithm class. The identical canonical perturbation
+theory closes the Vaidya first order to $O(\dot m^2)$ against the true flow on both branches:
+residual slope $2.00$ on $H_v$ and $1.98$ on $H_\tau$, against $1.00$ for the on-shell term
+alone; a run at frozen mass $m_0=2$ confirms the relative-rate prefactor (slope $2.00$,
+against $1.00$ with $\dot m$ in its place) (\texttt{VaidyaMetric/vaidya\_first\_order\_offshell.py}). We display the on-shell
+component on the $H_\tau$ branch in closed form below;
 its two integrals expand into named building blocks with algebraic coefficients.
 Writing $A_m=\mathcal{A}^m/\sqrt S-\alpha_0+\sum_k c_k^m U_k$ with the constant
 $\alpha_0=\mathcal{A}^m(r_0)/\sqrt{S(r_0)}$, integration by parts in each factor gives
@@ -1917,21 +1941,22 @@ the \emph{fully assembled} closed form (verified to $2\times10^{-13}$)
 \begin{equation}
 \begin{aligned}
     \frac{\delta\varphi}{\dot m}
-    ={}&A_m\,v
+    ={}&A_m\,\lambda_v
     -E\Big[\mathcal{I}_{\rm poly}-\alpha_0 U_3
         +\tfrac12\sum_{k=0}^4 c_k^m\big(U_kU_3-W_{3k}\big)\Big]\\
-    &{}-\Big[\mathcal{L}_{2m}-\alpha_0\,\big(v-E\,U_3\big)\Big|_{r_0}^{\,r}
+    &{}-\Big[\mathcal{L}_{2m}-\alpha_0\,\big(\lambda_v-E\,U_3\big)
         +\sum_{k=0}^4 c_k^m\big(r\,U_k-U_{k+1}+2m\,\mathcal{D}_k\big)\Big],
 \end{aligned}
     \label{eq:vaidya-full}
 \end{equation}
 All blocks below are normalized to \emph{vanish at the lower limit} $r_0$, i.e.\ every
 integral is $\int_{r_0}^{r}$; this is what makes the boundary term of the integration by
-parts reduce to $A_m(r)\,v(r)$, since $A_m(r_0)=0$ by the choice of $\alpha_0$. The one
-elementary primitive that is not of this form is the tortoise term, which is why it is
-displayed with an explicit bracket $\big|_{r_0}^{\,r}$: evaluating it at the upper limit
-alone would spoil the identity by the constant
-$\alpha_0\,[r_0+2m\ln(r_0-2m)]$. With that convention the assembled
+parts reduce to $A_m(r)\,\lambda_v(r)$, since $A_m(r_0)=0$ by the choice of $\alpha_0$. The
+tortoise part of the clock, $\lambda_v-E\,U_3=(r-r_0)+2m\ln[(r-2m)/(r_0-2m)]$, also
+vanishes at $r_0$. The origin of the clock is not a convention that drops out: weighting by
+the unanchored $v=E\,U_3+r+2m\ln(r-2m)$ instead would add $v(r_0)\,A_m(r)$ to the
+coefficient, a different weight (by about $2.67$ at the parameters below). With the
+elapsed clock the assembled
 right-hand side reproduces the quadrature of~\eqref{eq:vaidya-deltaphi} to $10^{-39}$ at
 $m=1$, $E=7/5$, $J=5/2$, $r_0=5$, $r=9$ (forty-digit arithmetic).
 
@@ -1955,7 +1980,10 @@ genus-two curve this letter carries the divisor $2\,(r{=}2m)-\infty_+-\infty_-$ 
 summing to zero) and closes as a Fay prime-form $\theta$-ratio; one integration by parts
 then closes $\mathcal{D}_k$ onto a \emph{single} weight-two letter (verified to
 $10^{-12}$). Displayed horizon logarithms carry a fixed reference length,
-$\ln(r-2m)\equiv\ln[(r-2m)/L]$, which cancels in every assembled result.
+$\ln(r-2m)\equiv\ln[(r-2m)/L]$. It cancels in every assembled result: in the clock the
+logarithm enters as the ratio $\ln[(r-2m)/(r_0-2m)]$, and $\mathcal{D}_k$ below does not
+depend on $L$, since $U_k$ and $\mathcal{G}_k$, both anchored at $r_0$, shift by the same
+$U_k\ln L$.
 \begin{equation}
     \mathcal{D}_k=U_k\,\ln(r-2m)-\mathcal{G}_k,\qquad
     \mathcal{G}_k=\int\ln(r-2m)\,\frac{r^k}{\sqrt S}\,\dd r,
@@ -2019,14 +2047,18 @@ described by the \emph{ingoing} Vaidya model and its \emph{advanced} clock $v=t+
 whereas the \emph{retarded} clock $u=t-r_*$ ($\dd s^2=-f\dd u^2-2\dd u\,\dd r$) belongs to
 the outgoing geometry. The frozen reduction $\partial_m F$ is identical
 (it depends only on $S$); only the clock changes, and $v\leftrightarrow u$ flips the
-sign of the tortoise $r_*$. Splitting the clock into its bulk and tortoise parts,
-$v=E\,U_3+r_*$ with $r_*=(r-r_0)+2m\ln\!\frac{r-2m}{r_0-2m}$,
+sign of the tortoise $r_*$. On the ingoing arc, launched at $r_0$, the elapsed
+Schwarzschild time is $T(r)=E\int_r^{r_0}r'^3/\sqrt S\,\dd r'>0$, and the clocks split into
+bulk and tortoise parts, $v=T+r_*$ and $u=T-r_*$, with
+$r_*=(r-r_0)+2m\ln\!\frac{r-2m}{r_0-2m}$ (the densities $E r^3/\sqrt S\pm r/(r-2m)$ of
+equation~\eqref{eq:vaidya-clock} belong to the outgoing orientation, and the radial wind
+makes the two orientations differ); with $\partial_m F$ taken along the motion,
 \begin{equation}
     \frac{\delta\varphi}{\dot m}\Big|_{\rm adv}=\mathcal{A}_\infty+\mathcal{B}_{\rm hor},
     \quad
     \frac{\delta\varphi}{\dot m}\Big|_{\rm ret}=\mathcal{A}_\infty-\mathcal{B}_{\rm hor},
     \quad
-    \mathcal{A}_\infty=\!\int\!\partial_m F\,E\,U_3\,\dd r,\;\;
+    \mathcal{A}_\infty=\!\int\!\partial_m F\,T\,\dd r,\;\;
     \mathcal{B}_{\rm hor}=\!\int\!\partial_m F\,r_*\,\dd r,
     \label{eq:vaidya-asymmetry}
 \end{equation}
@@ -2047,12 +2079,13 @@ the horizon term $2m\!\int\!\partial_m F\ln(r-2m)\,\dd r$, which by parts is the
 horizon dilogarithm $\mathcal{D}_k$ of equation~\eqref{eq:horizon-dilog}. Thus the
 advanced/retarded frozen-clock asymmetry isolates the contribution of the
 horizon-anchored weight-two sector. For
-$m=1,E=1.4,J=2.5$: $\mathcal{A}_\infty=8.7276$, $\mathcal{B}_{\rm hor}=6.1127$ (of which
-$1.5301$ is the horizon-log dilogarithm sector), giving
-$\delta\varphi/\dot m|_{\rm adv}=14.840$ against
-$\delta\varphi/\dot m|_{\rm ret}=2.615$ (both verified to $10^{-15}$); the frozen-clock
-difference is then $2\mathcal{A}_\infty=17.455$ and the deviation from antisymmetry
-$2\mathcal{B}_{\rm hor}=12.225$ (each $\times|\dot m|$).
+$m=1,E=1.4,J=2.5$, on the ingoing arc from $r_0=12$: $\mathcal{A}_\infty=8.7276$,
+$\mathcal{B}_{\rm hor}=-6.1127$ (of which $-1.5301$ is the horizon-log dilogarithm sector),
+giving $\delta\varphi/\dot m|_{\rm adv}=2.615$ against
+$\delta\varphi/\dot m|_{\rm ret}=14.840$ (the block sums agree with the direct quadratures to
+$10^{-15}$, and the clock and orientation agree with the frozen $H_\tau$ flow to
+$10^{-11}$); the frozen-clock difference is then $2\mathcal{A}_\infty=17.455$ and the
+deviation from antisymmetry $2\mathcal{B}_{\rm hor}=-12.225$ (each $\times|\dot m|$).
 
 
 \begin{figure}[htbp]
@@ -2970,9 +3003,11 @@ along the locus; differentiating it totally in $\lambda$,
    +\Big[\partial_\lambda S+\frac{\dd\Jc}{\dd\lambda}\,\partial_JS\Big](r_d)=0 ,
 \]
 and $S'(r_d)=0$ because the root is double. The bracket therefore vanishes, which is the
-second equality in~\eqref{eq:track-cancel}. This uses nothing but the double root, so it
-holds for any one-parameter family of sextics, the rotating curves of the companion paper
-included. Hence $N_{\rm tot}(r_d)=0$, and since the triple-pole residue is proportional
+second equality in~\eqref{eq:track-cancel}. This uses only an exactly double root at which
+the numerator $K$ is finite, along a differentiable degeneration locus $r_d(\lambda)$,
+$J_{\rm deg}(\lambda)$, so it holds for any one-parameter family of sextics with these
+properties; for the rotating curves of the companion paper this excludes double roots on
+$\Delta=0$. Hence $N_{\rm tot}(r_d)=0$, and since the triple-pole residue is proportional
 to $N_{\rm tot}(r_d)$ it vanishes as well.
 
 For Vaidya the same vanishing can be seen from the self-similarity of the frozen family:
@@ -3090,7 +3125,11 @@ since $\dd m/\dd s=+\varepsilon m$ at leading order.
 
 \paragraph{Frozen data.} At fixed $s$ the frozen Hamiltonian $H_0(r,p_r;\lambda)=0$
 fixes: the \emph{ingoing} frozen momentum $p_{r0}(r)$, the root of $H_0=0$ with
-$H_{0,p_r}<0$ (the outgoing arc is its mirror across the turning point); the shape
+$H_{0,p_r}<0$ (the outgoing arc is the other root, with $H_{0,p_r}>0$; it is not in
+general the mirror image of the ingoing one: a Hamiltonian even in $p_r$, such as the
+Thakurta--Kerr branches, gives mirror arcs, but the radial wind of Vaidya, linear in
+$p_r$, breaks the symmetry of the clock density, so the two orientations must be treated
+separately); the shape
 integrand $G_0(r)=\dd\varphi/\dd r=H_{0,J}/H_{0,p_r}$; and the clock density
 $\dd\lambda/\dd r=1/H_{0,p_r}$, with $\lambda$ the elapsed clock from the launch, oriented
 along the ingoing flow.
@@ -3179,8 +3218,8 @@ the evolution clock $v$ on both branches; only the subtracted cost differs. Iden
 and~\eqref{eq:selfsimilar}, the expression~\eqref{eq:ThetaHv} for $\Theta H_v$, and the
 combination $p_rH_{p_r}-rH_r-(1+\Theta H)=H$ were each verified symbolically in
 \textsc{Mathematica}, all four residuals reducing to zero identically in
-$(r,m,\Ehat,J,p_r)$; the numerical cross-check is
-\texttt{VaidyaMetric/universal\_SD\_source\_vaidya.py}. The proper-time counterparts---the
+$(r,m,\Ehat,J,p_r)$; the numerical cross-check, along the frozen flows of both $H_v$ and
+$H_\tau$, is \texttt{VaidyaMetric/universal\_SD\_source\_vaidya.py}. The proper-time counterparts---the
 shift~\eqref{eq:tau-from-v}, identity~\eqref{eq:finsler-euler} with $\ell_\tau$, the
 self-similarity of $H_\tau$, the combination
 $p_rH_{p_r}-rH_r-(\ell_\tau+\Theta H_\tau)=H_\tau$, and the exact value of $\ell_\tau$ quoted
@@ -3193,8 +3232,11 @@ statement about the Hamiltonian flow, and on the sub-arcs where the reduction is
 carries a genuine bound. Fix a compact sub-arc $[\lambda_-,\lambda_+]$ on which the frozen
 solution stays in a compact subset $\mathcal K$ of the regular domain and on which
 $|H_{p_r}|\ge\kappa>0$ (i.e.\ bounded away from the turning point). On a neighbourhood of
-$\mathcal K$ the extended Hamiltonian $\mathcal H=p_s+H(r,p_r;m(s))$ is $C^2$ with bounded
-derivatives, so writing $z=(r,p_r)$ and $z_\varepsilon$ for the exact flow, the exact and
+$\mathcal K$ the extended Hamiltonian $\mathcal H=p_s+H(r,p_r;m(s))$ is $C^3$, jointly in
+the phase variables and the slow parameter, with bounded derivatives (a $C^2$ Hamiltonian
+gives only a $C^1$ vector field, which does not by itself yield a uniform quadratic
+remainder; the Hamiltonians treated here are real-analytic on the regular domain, so the
+stronger hypothesis holds there), so writing $z=(r,p_r)$ and $z_\varepsilon$ for the exact flow, the exact and
 first-order flows obey
 \[
    \big|z_\varepsilon(\lambda)-z_0(\lambda)-\varepsilon\,z_1(\lambda)\big|
@@ -3203,7 +3245,7 @@ first-order flows obey
 \]
 by the standard Gr\"onwall estimate applied to the difference between the exact flow and
 its first variation, with $L$ a bound for $\|\partial_z^2\mathcal H\|$ on $\mathcal K$ and
-$C$ depending on the same $C^2$ bounds. Dividing by $H_{p_r}$, legitimate since
+$C$ depending on the bounds of the derivatives up to third order. Dividing by $H_{p_r}$, legitimate since
 $|H_{p_r}|\ge\kappa$, transfers the estimate to $\dd\varphi/\dd r$ and, after integration
 over the sub-arc, to $\delta\varphi$; this is the precise sense in
 which~\eqref{eq:adiab-exact} closes the correction to $O(\varepsilon^2)$. The estimate
@@ -3291,7 +3333,9 @@ $U_k=\int r^k/\sqrt S\to V_k+r_d^{\,k}\,\Pi_{r_d}$ with $V_k=\int(\text{poly})/\
 (elliptic, with poles only at the points at infinity: Weierstrass $\wp,\zeta$ and, through
 the residues there, the third-kind letter at infinity of Lemma~\ref{lem:U0}(ii)) and $\Pi_{r_d}=\int\dd r/[(r-r_d)\sqrt{Q_4}]$
 (third kind); the spurious poles at $r_d$ cancel in the physical combination (as
-$S(r_d)=0$), leaving the weight-two block as a genuine \emph{elliptic}
+$S(r_d)=0$ at an ordinary double root, separated from the poles of the reduction
+denominator; a double root on such a pole is a $0/0$ limit and needs its own
+evaluation), leaving the weight-two block as a genuine \emph{elliptic}
 dilogarithm~\cite{BeilinsonLevin1994,Zagier1990} plus the horizon third kind. Thus the
 degeneration off-shell form is one degree \emph{lower} than the generic genus-two case;
 verified letter by letter to machine precision
@@ -3299,9 +3343,10 @@ verified letter by letter to machine precision
 branch point \emph{off} the physical arc and $\mathcal D=\Theta$ carries no dilation, so
 the degeneration limit is regular and elliptic (non-uniform only at $r_d$) and no
 orbit crosses it under the mass drift. The rotating case is qualitatively
-different---there the conformal dilation ray drives the orbit \emph{across} the moving
-separatrix, a Neishtadt separatrix-crossing problem
-\cite{Neishtadt1986} treated in Appendix~C of Paper~II.
+different: there the conformal dilation ray leaves the frozen marginal locus, and the
+first-order term loses uniformity near it; whether the true orbit then crosses a moving
+separatrix, a Neishtadt separatrix-crossing problem \cite{Neishtadt1986}, is left open
+in Appendix~C of Paper~II.
 
 
 
@@ -3327,8 +3372,10 @@ This research received no external funding.
 
 \section*{Data availability}
 The data that support the findings of this study are openly available in the Zenodo
-repository \emph{NonStationaryBrachistochrone}, version~1.7.3, at
-\url{https://doi.org/10.5281/zenodo.23071786}, reference~\cite{Rosignoli2026CodeJMP}. This
+repository \emph{NonStationaryBrachistochrone}, release~v1.8.0, at the concept DOI
+\url{https://doi.org/10.5281/zenodo.21707377}, which resolves to the latest version,
+reference~\cite{Rosignoli2026CodeJMP}; the release is the tag v1.8.0 of the GitHub
+repository. This
 comprises the numerical data together with the symbolic and numerical code, released under
 the MIT licence; the development history is available in the associated GitHub repository
 \url{https://github.com/ImanetorX98/NonStationaryBrachistochrone}.

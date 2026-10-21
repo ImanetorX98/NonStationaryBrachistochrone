@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Anti-regression oracle for the first-order adiabatic correction (main11 referee).
+Anti-regression oracle for the first-order adiabatic correction.
 
 Why this test exists
 --------------------

@@ -5,14 +5,11 @@
    -------------------------------------------------------------------------
    The proper acceleration required to hold the rail, and where it diverges.
 
-   Referee 1, major comment 9:
-     "The rail minimises a selected elapsed clock; it does not minimise thrust,
-      fuel, impulse, or integrated acceleration.  Paper I notes that the
-      required proper acceleration can diverge near freezing or horizon limits.
-      These distinctions should remain visible in the abstract, figures, and
-      conclusion."
+   The rail minimises a selected elapsed clock; it does not minimise thrust,
+   fuel, impulse, or integrated acceleration, and Paper I notes that the
+   required proper acceleration can diverge near freezing or horizon limits.
 
-   That was a caveat in prose.  It can be made a sharp theorem.
+   That caveat can be made a sharp theorem.
 
    Differentiating the rail charge along an arbitrary (non-geodesic) worldline,
         d/dtau (-g(u,W)) = -g(a,W) - (1/2)(L_W g)_{mu nu} u^mu u^nu,
@@ -32,7 +29,7 @@
    The bound is attained by a parallel to W_perp -- the minimum-thrust control.
    It DIVERGES at the freezing surface vbar -> 0 and stays FINITE at the
    conformal stationary limit f -> 0.  That distinction is sharp and is the
-   content of the referee's caveat.
+   content of the caveat.
 *)
 
 $Failures = 0;

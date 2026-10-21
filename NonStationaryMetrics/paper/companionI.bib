@@ -1,20 +1,16 @@
 % Companion entry cited BY Paper II (points to Paper I). Kept in a separate
 % file so Paper I never lists itself in its own bibliography.
 %
-% VERSION DOI, with the concept DOI kept in the note.  The two papers are
-% deposited as a matched pair: each cites the exact companion version that
-% carries the results it relies on, so a reader following this reference lands
-% on the text that was actually used, not on whatever supersedes it later.  The
-% concept DOI 10.5281/zenodo.21739997 is given alongside and always resolves to
-% the latest version, which is the same arrangement refs.bib uses for the code
-% archive (version DOI in `doi`, concept DOI in the note).
+% CONCEPT DOI 10.5281/zenodo.21739997, which always resolves to the latest version
+% of the companion, so the cross-reference does not need updating at each deposit;
+% the Zenodo record lists the version-specific DOIs.
 %
 % Previous values, for the record: 10.5281/zenodo.22206237 pinned v4 (31 August
 % 2026), then the bare concept DOI was used for one round, then
 % 10.5281/zenodo.22917051 pinned v5 (23 September 2026), then
 % 10.5281/zenodo.22927144 pinned v6 (24 September 2026), then
 % 10.5281/zenodo.23069154 pinned v7 (30 September 2026).  The current value pins
-% v8 (1 October 2026), deposited with the Round-2 response to CQG.
+% v8 (1 October 2026); from the third revision the concept DOI is cited.
 %
 % On the locator: iopart-num's `misc` formatter prints howpublished, note,
 % eprint and url, but NOT doi, so a bare doi field is invisible in the rendered
@@ -32,9 +28,8 @@
                   spacetimes: conformal symmetry, {Kodama} energy, and {Vaidya}
                   dynamics},
   year         = {2026},
-  howpublished = {companion paper (Paper~I); Zenodo preprint},
-  doi          = {10.5281/zenodo.23071751},
-  url          = {https://doi.org/10.5281/zenodo.23071751},
-  note         = {concept DOI \url{https://doi.org/10.5281/zenodo.21739997}
-                  always resolves to the latest version}
+  howpublished = {companion paper (Paper~I); Zenodo preprint;},
+  doi          = {10.5281/zenodo.21739997},
+  url          = {https://doi.org/10.5281/zenodo.21739997},
+  note         = {concept DOI, resolving to the latest version}
 }

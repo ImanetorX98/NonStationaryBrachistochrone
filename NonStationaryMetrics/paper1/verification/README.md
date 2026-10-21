@@ -16,11 +16,13 @@ wolframscript -file verify_appB_blocks.wls     # 4 checks (appendix B block form
 wolframscript -file verify_perlick_recovery.wls # 6 checks (stationary limit)
 wolframscript -file verify_optical_metric.wls   # 3 checks (time-dependent optical metric)
 wolframscript -file verify_jacobi_conjugate.wls # 10 checks (conjugate points)
-python3       verify_section44_closedform.py   # end-to-end quadrature of eq:vaidya-full
+python3       verify_section44_closedform.py   # end-to-end quadrature of eq:vaidya-full (outgoing arc)
+python3       verify_section44_ingoing.py      # the same assembly on an ingoing arc (clock E -> -E)
 ```
 
-Both print `[OK]` per claim, and every `[OK]` is an exact symbolic zero — not a
-numerical tolerance. `verify_paper1_core.py` exits non-zero if any check fails,
+Both print `[OK]` per claim. The core checks use exact algebra, not a numerical tolerance;
+the map below distinguishes general symbolic identities from exact checks at sampled
+rational parameters, and the separate quadrature check of §4.4 is numerical. `verify_paper1_core.py` exits non-zero if any check fails,
 so it can be dropped into a regression run.
 
 ## What is checked, and where it appears in the manuscript
@@ -151,8 +153,10 @@ in `paper/Immagini`, and `paper1_JMP.pdf` builds.
 
 ## Not covered
 
-These scripts verify the formal core only. They do **not** check the closed
-forms of §4.4 (`eq:vaidya-full`, the `W_3k` blocks, the horizon dilogarithm),
-the genus-two machinery of Appendix B beyond Lemma I.6, or §3 (FLRW). The
-numerical validation of those lives in the reproducibility package
-(`VaidyaMetric/`, `reproduce_reductions.py`, `run_regression.py`).
+The symbolic scripts verify the formal core only. They do **not** check
+symbolically the closed forms of §4.4 (`eq:vaidya-full`, the `W_3k` blocks, the
+horizon dilogarithm), the genus-two machinery of Appendix B beyond Lemma I.6, or §3
+(FLRW). `eq:vaidya-full` is checked numerically, end to end, by
+`verify_section44_closedform.py`; the other numerical validations live in the
+reproducibility package (`VaidyaMetric/`, `reproduce_reductions.py`,
+`run_regression.py`).

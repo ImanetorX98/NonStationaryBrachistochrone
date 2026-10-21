@@ -20,7 +20,7 @@ from scipy.optimize import brentq
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _ROOT)
 # paper_style.py lives in NonStationaryMetrics/; a fresh clone must find it
-# without relying on an unarchived sibling directory (CQG-116884, major 10)
+# without relying on an unarchived sibling directory
 sys.path.insert(0, os.path.join(_ROOT, "NonStationaryMetrics"))
 from paper_style import COL, set_style, savefig
 import matplotlib.pyplot as plt
@@ -74,7 +74,7 @@ def orbit_asymptote(dphidr, r_end, retro=False):
     r_e is an asymptotic endpoint, never attained.  The extremal therefore does
     NOT reflect, and drawing a mirrored outgoing branch (as the previous version
     did) is wrong.  dphi/dr stays finite there, so the arc terminates at a
-    definite angle with a definite tangent.  See CQG-116884 major comment 4 and
+    definite angle with a definite tangent.  See
     NonStationaryMetrics/paper2/verification/verify_marginal_hamilton.wls.
     """
     rr = np.linspace(r0, r_end, 700)
@@ -190,7 +190,7 @@ def panel(ax, rr, ph, col, ttl, sub, L, rstart, kind='plain'):
                    frozen equations, not a controlled-rail extremal: there
                    g(W,W) > 0 for W = d/d(eta), the admissible-velocity set is
                    not compact, and no optimality is claimed.  Drawn dashed
-                   (Protocol 2.1 type (A), referee minor comment M6).
+                   (Protocol 2.1 type (A)).
     'asymptote' -- r_e is approached but never attained; mark the open endpoint.
     """
     th = np.linspace(0, 2*np.pi, 300)

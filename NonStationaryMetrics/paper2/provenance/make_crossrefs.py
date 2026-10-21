@@ -8,15 +8,15 @@ The response document cites the revised manuscript by number ("Proposition 3",
 "section 2.1", ...).  Those numbers are produced by LaTeX when paper2.tex is
 compiled, and they move whenever a section or environment is inserted.  Typing
 them by hand into a separate document is the same failure mode that produced the
-drifting hashes and slopes of referee major comments 7 and 10 -- and it did
-happen: a first draft of the response cited section 2.2, Protocol 2.2 and
+drifting hashes and slopes -- and it did
+happen: a first draft of a cover document cited section 2.2, Protocol 2.2 and
 Proposition 3.1 where the manuscript actually says 2.1, Protocol 1 and
 Proposition 2.
 
 So they are read out of paper2.aux instead.  Run this after compiling paper2.tex
 and before compiling the response.
 
-Writes: crossrefs.tex  (\\input by response_to_referees_CQG.tex)
+Writes: crossrefs.tex  (\\input by a private cover document)
 """
 from __future__ import annotations
 

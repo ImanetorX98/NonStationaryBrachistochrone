@@ -160,7 +160,7 @@ print(f"  energia di Kodama che la rotaia risparmia (drift geo. cumulato) "
 # --------------------------------------------------------------- figura
 fig, (a1, a2) = plt.subplots(2, 1, figsize=(COL, 5.2))
 # top panel: the conservation RESIDUAL on a log scale (a near-flat linear plot
-# cannot show ~1e-16 constancy; referee 4/Fig 4).
+# cannot show ~1e-16 constancy; Fig 4).
 resid = np.abs(E_K_num - E_n) + 1e-18
 a1.semilogy(rg, resid, 'C0-', lw=1.5,
             label='$|{-}u\\cdot K-E|$ (brachistochrone)')

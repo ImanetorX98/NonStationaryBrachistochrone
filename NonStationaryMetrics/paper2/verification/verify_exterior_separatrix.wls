@@ -1,14 +1,14 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-(* verify_exterior_separatrix.wls -- referee major comment 5 (CQG-116884).
+(* verify_exterior_separatrix.wls -- the exterior retrograde separatrix.
 
-   The referee proposes that the EXTERIOR retrograde separatrix replace the
-   interior classification as the flagship exact result, quoting
+   For the representative parameters the EXTERIOR retrograde separatrix,
 
        J = -8.053516,   r_d = 3.513905 M
 
-   and warns that the prograde degeneration of the same classification,
+   is the exact result quoted in the manuscript, while the prograde degeneration
+   of the same classification,
 
        J =  2.93635,    r_d = 1.51229 M
 
@@ -34,7 +34,7 @@ check[label_, cond_] := (
   If[! TrueQ[cond], $Failures++]);
 
 Print["=========================================================="];
-Print[" exterior retrograde separatrix (referee major 5)"];
+Print[" exterior retrograde separatrix"];
 Print["=========================================================="];
 
 ClearAll[r, J, M, a, EE];
@@ -58,9 +58,9 @@ rdR = r /. solRetro; JR = J /. solRetro;
 Print["   retrograde saddle-node:"];
 Print["     r_d = ", N[rdR, 20]];
 Print["     J   = ", N[JR, 20]];
-check["retrograde r_d reproduces the referee's 3.513905 M",
+check["retrograde r_d reproduces the quoted 3.513905 M",
       Abs[N[rdR - 3513905/1000000, 30]] < 10^-6];
-check["retrograde J reproduces the referee's -8.053516",
+check["retrograde J reproduces the quoted -8.053516",
       Abs[N[JR + 8053516/1000000, 30]] < 10^-6];
 check["retrograde degeneration is EXTERIOR: r_d > 2M", N[rdR, 30] > 2];
 
@@ -69,9 +69,9 @@ rdP = r /. solPro; JP = J /. solPro;
 Print["   prograde degeneration:"];
 Print["     r_d = ", N[rdP, 20]];
 Print["     J   = ", N[JP, 20]];
-check["prograde r_d reproduces the referee's 1.51229 M",
+check["prograde r_d reproduces the quoted 1.51229 M",
       Abs[N[rdP - 151229/100000, 30]] < 10^-5];
-check["prograde J reproduces the referee's 2.93635",
+check["prograde J reproduces the quoted 2.93635",
       Abs[N[JP - 293635/100000, 30]] < 10^-5];
 check["prograde degeneration is INTERIOR: r_d < 2M", N[rdP, 30] < 2];
 rplus = N[1 + Sqrt[1 - (9/10)^2], 30];

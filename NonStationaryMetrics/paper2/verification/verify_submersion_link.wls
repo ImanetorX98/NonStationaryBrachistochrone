@@ -4,7 +4,7 @@
 (* verify_submersion_link.wls
    -------------------------------------------------------------------------
    The structural link between the controlled rail and the theory of
-   (semi)conformal submersions, requested during the CQG-116884 revision.
+   (semi)conformal submersions.
 
    CLAIM A.  In a stationary spacetime the projection along the rail selector
    is a HORIZONTALLY CONFORMAL SUBMERSION onto the optical base, and its

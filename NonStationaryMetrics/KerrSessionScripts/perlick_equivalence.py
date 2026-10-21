@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Perlick equivalence (referee Issue 1): the controlled-rail arrival-time Finsler F_rail equals a
+# Perlick equivalence: the controlled-rail arrival-time Finsler F_rail equals a
 # RANDERS metric = Perlick's fixed-energy stationary optical metric. Derivation:
 #   rail u_t=-E, g(u,u)=-1 => quadratic for t'=dt/dsigma => F_rail = beta_a v^a + sqrt(a_ab v^a v^b),
 #   beta_a = g_ta/f,  a_ab = E^2(g_ta g_tb + f g_ab)/(f^2 (E^2-f)),  f=-g_tt.

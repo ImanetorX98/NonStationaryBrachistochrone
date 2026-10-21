@@ -72,7 +72,7 @@ S_closed = r**3 * f**2 * DE * (r**2 + Jc**2)
 check("S(marginal) = r^3 f^2 DE (r^2 + Jc^2)",
       sp.simplify(sp.expand(S_marg - S_closed)) == 0)
 
-# A4 -- w = DE/r at A = 1, so r^4 f^2 w = r^3 f^2 DE  (the response's form)
+# A4 -- w = DE/r at A = 1, so r^4 f^2 w = r^3 f^2 DE  (the equivalent algebraic form)
 w = Eh**2 - f
 check("w = DE/r at A=1, Ehat=E", sp.simplify((w - DE/r).subs(Eh, E)) == 0)
 

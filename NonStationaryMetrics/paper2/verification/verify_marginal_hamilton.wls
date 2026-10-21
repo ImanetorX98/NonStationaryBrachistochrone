@@ -1,10 +1,10 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-(* verify_marginal_hamilton.wls -- referee major comment 4 (CQG-116884), part 2.
-   The referee asks that the case J = -Jc be rederived "from the original
-   Hamilton equations, including one-sided expansions, signs, branch
-   orientation, and numerical convergence tests".  verify_cusp_corner.wls
+(* verify_marginal_hamilton.wls -- the marginal case |J| = Jc, part 2.
+   The case J = -Jc is rederived from the original Hamilton equations,
+   including one-sided expansions, signs, branch orientation, and numerical
+   convergence tests.  verify_cusp_corner.wls
    settles the ORBIT SHAPE dphi/dr.  This script settles the DYNAMICS: whether
    r_e is reached in finite parameter time, and why the two marginal signs
    behave differently even though the shape radical S(r) is even in J.

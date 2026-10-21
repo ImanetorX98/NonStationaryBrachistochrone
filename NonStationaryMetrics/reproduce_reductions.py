@@ -1,4 +1,4 @@
-# Reviewer script: regenerate ALL adiabatic reduction coefficients c_k from scratch,
+# Reproduction script: regenerate ALL adiabatic reduction coefficients c_k from scratch,
 # solving the SINGLE polynomial identity of App. "Reproducing the reductions":
 #     2 A'(r) R(r) - A(r) R'(r) + 2 R(r) sum_k c_k r^k = 2 N_lambda(r),
 #     A = sum_{i=0}^5 a_i r^i  (deg 5),   c_k, k=0..4,   R = branch sextic (R6 or S).
@@ -42,7 +42,7 @@ K_t = r*DE*(J*(r-2*M) + 2*M*a)/Delta          # eq. (t-K); third-kind poles at h
 N_t = sp.simplify(sp.diff(K_t/sp.sqrt(R6), E) * R6**sp.Rational(3,2))   # Delta cancels -> polynomial
 solve_reduction(R6, N_t, sub_tk, "TK t-branch  (M=1,a=0.9,E=1.2,J=2.5)")
 
-# ---- angular reductions c_k^J (referee #5: conformal J_eff=J/A also drifts) ----
+# ---- angular reductions c_k^J (the conformal J_eff=J/A also drifts) ----
 # Under g^TK=A^2 g^Kerr both Kerr charges weight A^-1, so the source is the Euler
 # operator (E d_E + J d_J)F; the d_J piece reduces in the SAME basis: C_k = E c_k^E + J c_k^J.
 N_tau_J = sp.simplify(sp.diff(K_tau/sp.sqrt(S_tk), J) * S_tk**sp.Rational(3,2))

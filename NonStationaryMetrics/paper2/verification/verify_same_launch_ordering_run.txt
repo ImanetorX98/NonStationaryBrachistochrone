@@ -1,0 +1,14 @@
+Run: 2026-10-20 22:09 CEST
+Kernel: 13.3.1 for Mac OS X ARM (64-bit) (July 24, 2023)
+Null
+[PASS] (1) H_t(r,0,J_t(r)) = 0
+[PASS] (1) H_tau(r,0,J_tau(r)) = 0
+[PASS] (2) J_t - J_tau = -(A/(E Q)) cond_t
+[PASS] (3) Reduce[domain && cond_t >= 0] is False
+[PASS] (4) conformal-normalised condition takes positive values (instance checked)
+[PASS] (5a) Delta = f P + b^2
+[PASS] (5b) P - Delta = 2M(r^2+a^2)/r > 0
+[PASS] (5c) Pb q^2 - 2 b u q - f u = 0
+[PASS] (5d) (J_tau/J_t)^2 = x^2 (f + b q)^2 = Delta/P - P (q - b/P)^2
+[PASS] (5e) J_tau = (A^2/E) Sqrt[Delta/u], increasing in r
+ALL CHECKS PASSED

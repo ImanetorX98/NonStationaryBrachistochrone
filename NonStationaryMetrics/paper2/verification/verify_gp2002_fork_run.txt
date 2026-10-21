@@ -1,0 +1,19 @@
+==========================================================
+ Giannoni-Piccione (1.6) versus the controlled rail
+==========================================================
+PASS  identity  d/dtau(-g(u,W)) = -g(A,W) - (1/2)(L_W g)(u,u)
+
+  Consequences, read off the identity:
+   (a) under Giannoni-Piccione (1.6), g(A,W) = 0, the charge drifts at
+       -(1/2)(L_W g)(u,u) -- the Killing defect, exactly as for a free
+       geodesic.  Their constraint force cannot hold the charge.
+   (b) the two problems coincide iff W is Killing, where the defect
+       vanishes and their (1.7), g(u,Y) = -k T_sigma, IS our rail.
+   (c) holding the charge off-symmetry forces g(A,W) = -(1/2)(L_W g)(u,u)
+       exactly: that is the thrust, and it is what our problem pays to
+       stay second order where theirs becomes integro-differential.
+PASS  (a) with g(A,W)=0 the drift is exactly the Killing defect
+PASS  (b) the drift vanishes for every u iff L_W g = 0 (W Killing), given (1.6)
+==========================================================
+ALL CHECKS PASSED
+==========================================================

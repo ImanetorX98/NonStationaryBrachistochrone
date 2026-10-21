@@ -1,0 +1,220 @@
+{
+  "caveat": "mission concept in a prescribed circular-planet model; not launch targeting, ring/dust safety, power-system or navigation certification",
+  "transfer": {
+    "perihelion_AU": 1,
+    "aphelion_AU": 20,
+    "Earth_v_infinity_km_s": 11.322088225662206,
+    "C3_km2_s2": 128.18968178967876,
+    "Earth_to_Saturn_years": 3.1044798772302333
+  },
+  "model_phase": {
+    "launch": "2030-07-29",
+    "flyby": "2033-09-05",
+    "rail_start": "2033-11-15"
+  },
+  "flyby": {
+    "theta_deg": -85.0,
+    "v_infinity_Saturn_km_s": 10.523084180788308,
+    "rp_over_RS": 2.7291940179216985,
+    "max_deflection_at_2p3RS_deg": 90.78099009909513,
+    "epoch_peri": 33.67740485802281,
+    "exit_after_days": 71.00258843010737,
+    "exit_epoch": 33.8717993506446,
+    "exit_position_AU": [
+      -1.433988428607455,
+      9.273914190872905,
+      0.0
+    ],
+    "exit_velocity_km_s": [
+      0.6871336515137628,
+      -4.901154551261276,
+      0.0
+    ],
+    "ring_plane_crossings_RS": [
+      3.6053790574090545,
+      55.23303731242995
+    ]
+  },
+  "results": {
+    "4.0": {
+      "T_years": 2.791383195486588,
+      "delta_v_km_s": 0.6076699992939125,
+      "peak_thrust_m_s2": 3.7835842253700716e-05,
+      "min_Jupiter_distance_AU": 2.820481540953061,
+      "B_AU": [
+        -0.6917860191215485,
+        3.93972487665674,
+        0.0
+      ],
+      "lag_over_d2_relative_spread": 0.001427459918049111,
+      "daughters": [
+        {
+          "T_years": 2.791416874489172,
+          "delta_v_km_s": 0.6867968259143403,
+          "peak_thrust_m_s2": 3.4030961880791574e-05,
+          "min_Jupiter_distance_AU": 2.820410829796881,
+          "amplitude_AU": 0.01,
+          "lag_hours": 0.29523013665229314,
+          "lag_over_amplitude_squared_h_per_AU2": 2952.3013665229314
+        },
+        {
+          "T_years": 2.791686252493688,
+          "delta_v_km_s": 0.8733413222188143,
+          "peak_thrust_m_s2": 3.0153964714200012e-05,
+          "min_Jupiter_distance_AU": 2.8198452614446117,
+          "amplitude_AU": 0.03,
+          "lag_hours": 2.656597724239422,
+          "lag_over_amplitude_squared_h_per_AU2": 2951.775249154913
+        },
+        {
+          "T_years": 2.792224803575342,
+          "delta_v_km_s": 1.0683627598482952,
+          "peak_thrust_m_s2": 3.6852987400721725e-05,
+          "min_Jupiter_distance_AU": 2.818714594957504,
+          "amplitude_AU": 0.05,
+          "lag_hours": 7.377536506016572,
+          "lag_over_amplitude_squared_h_per_AU2": 2951.014602406628
+        },
+        {
+          "T_years": 2.7947462950551643,
+          "delta_v_km_s": 1.9207945324566018,
+          "peak_thrust_m_s2": 5.465529183944892e-05,
+          "min_Jupiter_distance_AU": 2.813421537297794,
+          "amplitude_AU": 0.1,
+          "lag_hours": 29.480930818139647,
+          "lag_over_amplitude_squared_h_per_AU2": 2948.093081813964
+        }
+      ]
+    },
+    "3.0": {
+      "T_years": 3.0486391534004618,
+      "delta_v_km_s": 1.1312851609711394,
+      "peak_thrust_m_s2": 0.0001089548840979325,
+      "min_Jupiter_distance_AU": 2.71993025012609,
+      "B_AU": [
+        -0.5737563048688012,
+        2.9446228455649974,
+        0.0
+      ],
+      "lag_over_d2_relative_spread": 0.0013584228968878866,
+      "daughters": [
+        {
+          "T_years": 3.048668087970369,
+          "delta_v_km_s": 1.199691289101039,
+          "peak_thrust_m_s2": 0.00010576554391837972,
+          "min_Jupiter_distance_AU": 2.7197672991992707,
+          "amplitude_AU": 0.01,
+          "lag_hours": 0.2536404398061425,
+          "lag_over_amplitude_squared_h_per_AU2": 2536.4043980614247
+        },
+        {
+          "T_years": 3.0488995145016746,
+          "delta_v_km_s": 1.3632705469665356,
+          "peak_thrust_m_s2": 9.938689955057251e-05,
+          "min_Jupiter_distance_AU": 2.7190905654085236,
+          "amplitude_AU": 0.03,
+          "lag_hours": 2.2823254132319146,
+          "lag_over_amplitude_squared_h_per_AU2": 2535.9171258132387
+        },
+        {
+          "T_years": 3.0493621943737628,
+          "delta_v_km_s": 1.535506317562091,
+          "peak_thrust_m_s2": 9.300830121577623e-05,
+          "min_Jupiter_distance_AU": 2.717997380266825,
+          "amplitude_AU": 0.05,
+          "lag_hours": 6.338177171956596,
+          "lag_over_amplitude_squared_h_per_AU2": 2535.2708687826375
+        },
+        {
+          "T_years": 3.05152868518504,
+          "delta_v_km_s": 1.973836441454161,
+          "peak_thrust_m_s2": 7.70619905130306e-05,
+          "min_Jupiter_distance_AU": 2.713475323290461,
+          "amplitude_AU": 0.1,
+          "lag_hours": 25.329635623613306,
+          "lag_over_amplitude_squared_h_per_AU2": 2532.9635623613303
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "rail starts outside Saturn Hill sphere",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "positive lag d=0.01 rB=4.0",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "positive lag d=0.03 rB=4.0",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "positive lag d=0.05 rB=4.0",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "positive lag d=0.1 rB=4.0",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "quadratic lag: spread of lag/d^2 over d = 0.01-0.10 AU below 0.2% (rB=4.0)",
+      "residual": 0.001427459918049111,
+      "tolerance": 0.002,
+      "status": "PASS"
+    },
+    {
+      "name": "fixed-endpoint shooting residual AU rB=4.0",
+      "residual": 2.6412110087008496e-14,
+      "tolerance": 1e-08,
+      "status": "PASS"
+    },
+    {
+      "name": "positive lag d=0.01 rB=3.0",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "positive lag d=0.03 rB=3.0",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "positive lag d=0.05 rB=3.0",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "positive lag d=0.1 rB=3.0",
+      "residual": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS"
+    },
+    {
+      "name": "quadratic lag: spread of lag/d^2 over d = 0.01-0.10 AU below 0.2% (rB=3.0)",
+      "residual": 0.0013584228968878866,
+      "tolerance": 0.002,
+      "status": "PASS"
+    },
+    {
+      "name": "fixed-endpoint shooting residual AU rB=3.0",
+      "residual": 3.6919715093164e-14,
+      "tolerance": 1e-08,
+      "status": "PASS"
+    }
+  ]
+}

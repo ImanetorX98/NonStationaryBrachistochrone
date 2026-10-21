@@ -8,6 +8,11 @@
 ##   fig_thakurta_kerr_inversione_AJ. Teorema in ThakurtaResults.md R10b   ##
 ##   (cond(r,A)=0; A_inv in (1, A_freeze), sempre raggiungibile).          ##
 ## Lo script resta valido come cross-check ρ(r*)²=H_t0/H_τ0 (R10).         ##
+## 20/10/2026: usa H_eta (costo -1), cioe' confronta eta e tau a           ##
+## J_eta = J_tau. Con il protocollo dichiarato nel paper (H_t, costo -A,   ##
+## J_t = J_tau) non c'e' inversione nel settore progrado (Paper II, Prop.  ##
+## prop:same-launch; verification/verify_same_launch_ordering.wls).        ##
+## L'«inversione conforme» e' un effetto della normalizzazione del costate.##
 ############################################################################
 
 Inversione di plunge t vs tau in Thakurta-Kerr (equatoriale).

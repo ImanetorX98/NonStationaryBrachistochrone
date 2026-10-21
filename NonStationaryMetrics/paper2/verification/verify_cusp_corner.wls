@@ -1,7 +1,7 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
-(* verify_cusp_corner.wls -- referee major comment 4 (CQG-116884).
+(* verify_cusp_corner.wls -- local geometry at the conformal stationary limit.
    Settles the local geometry of the equatorial tau-branch controlled-rail
    extremal at the conformal stationary limit r_e = 2M, for
 

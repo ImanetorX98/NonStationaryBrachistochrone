@@ -73,11 +73,10 @@ NonStationaryMetrics/tmp/
 /TOVInternalMetric/
 /tmp/
 
-# Cross-audit handoff: Claude's verification record for Codex to repeat.
+# Internal cross-check records.
 NonStationaryMetrics/AUDIT_CLAUDE_PER_CODEX.md
 
-# Cross-audit working documents produced by the second agent. Same category as
-# AUDIT_CLAUDE_PER_CODEX.md: scaffolding, not part of the submission record.
+# Internal working documents: scaffolding, not part of the submission record.
 NonStationaryMetrics/AUDIT_APPROFONDITO_RESPONSE_CQG_R2_codex.md
 NonStationaryMetrics/AUDIT_INDIPENDENTE_CLAUDE_SCRIPTS_codex.md
 NonStationaryMetrics/LETTERA_RISPOSTA_CQG_ITALIANO_codex.md
@@ -94,10 +93,9 @@ NonStationaryMetrics/LETTERA_RISPOSTA_CQG_ITALIANO_codex.md
 # The running ledger: what is established, what is retracted, who found what.
 NonStationaryMetrics/AVANZAMENTI_ROUND2.md
 
-# Handoffs written for the second agent, and its replies.  The pattern needs the
-# leading ** : without it, paper1/HANDOFF_CODEX_round2.md and
-# paper1/HANDOFF_CODEX_production.md were tracked for months.
+# Internal handoff notes and replies (the leading ** matches every subfolder).
 **/HANDOFF_CODEX_*.md
+**/RISPOSTA_CLAUDE_*.md
 **/SESSION_HANDOFF_*.md
 NonStationaryMetrics/audit_CQG_2026-09-10/
 
@@ -132,8 +130,7 @@ NonStationaryMetrics/paper2/RELEASE_NOTES_v*.md
 # written in the author's own voice.
 NonStationaryMetrics/paper2/referee_response_round2_draft.*
 
-# Independent C1-C8 verification report answering the Codex handoff.
-# Working document, same category as the handoff itself.
+# Internal verification report: working document.
 NonStationaryMetrics/VERIFICA_CATENA_C1_C8.md
 
 
@@ -153,10 +150,12 @@ NonStationaryMetrics/paper2/response_to_referees_CQG.tex
 NonStationaryMetrics/paper2/referee_response_def*.tex
 NonStationaryMetrics/paper2/referee_response_round2.*
 NonStationaryMetrics/paper2/referee_response_round2_v*.*
+NonStationaryMetrics/paper2/referee_response_round3*.*
 NonStationaryMetrics/paper2/**/paper2_highlighted*
 NonStationaryMetrics/paper2/upload_CQG*/
 NonStationaryMetrics/paper2/submission_CQG*/
 NonStationaryMetrics/paper2/baseline_R1_asfiled/
+NonStationaryMetrics/paper2/baseline_R2_asfiled/
 
 # ---------------------------------------------------------------------------
 # WORK TOWARDS THE NEXT PAPER, and the scaffolding around it.  These carry the
@@ -203,6 +202,9 @@ NonStationaryMetrics/DERIVAZIONI_POST_REFERAGGIO_review.md
 # Referee task PDFs sent by the journal: correspondence, same category as above.
 NonStationaryMetrics/Response/
 
+# Private round-3 calculations and guided revision notes for Paper II.
+NonStationaryMetrics/paper2/round3_work/
+
 # Build output and Sage preparse artefacts.
 output/
 *.sage.py
@@ -214,3 +216,35 @@ output/
 # ---------------------------------------------------------------------------
 !NonStationaryMetrics/CAP_grid_certificates.log
 NonStationaryMetrics/AUDIT_CLAUDE_COMPLETO_2026-09-23.md
+
+# Separate project folder with its own repository: never versioned here.
+NonStationaryProof/
+
+# One-off scripts that insert sections into the manuscripts: never versioned.
+**/*innesta*
+**/*_install_*.py
+
+# Former location of the separate project above: never versioned here.
+NonStationaryMetrics/paper3/
+
+# ---------------------------------------------------------------------------
+# Internal notes and manifests in Fonti/, backups, an unrelated local project, and editorial correspondence.
+NonStationaryMetrics/Fonti/FONTI_*.md
+NonStationaryMetrics/Fonti/MANIFEST_*
+PortHamiltonian/
+**/*.bak_*
+NonStationaryMetrics/paper1/cover_letter_paperI*.tex
+NonStationaryMetrics/paper2/response_short.tex
+NonStationaryMetrics/paper2/cover_letter_paperII.tex
+
+# Internal working material: an editorial-report generator and two superseded drafts of Paper I.
+NonStationaryMetrics/generate_ultime_avvertenze_editoriali_bibliografiche_codex.py
+NonStationaryMetrics/paper1/paper1_preCodex.tex
+NonStationaryMetrics/paper1/paper1_preRound2_codex.tex
+# Archived submission packages and an internal verification summary.
+NonStationaryMetrics/paper2/submission_CQG_R2_source.zip
+NonStationaryMetrics/paper2/submission_CQG_R1.zip
+NonStationaryMetrics/GRG.zip
+# Unused style file of the publisher's author kit (no stated licence; not loaded by any manuscript).
+NonStationaryMetrics/paper/setstack.sty
+NonStationaryMetrics/VERIFICATION_STATUS.md

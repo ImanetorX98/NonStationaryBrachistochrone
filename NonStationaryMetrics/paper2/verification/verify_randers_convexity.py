@@ -5,8 +5,7 @@ verify_randers_convexity.py -- the Randers form of the *arrival-time* rail cost 
 the frozen branch, its convexity domain, and its relation to the Jacobi-Maupertuis
 metric of free geodesics.
 
-Answers the Round-2 referee request to exhibit the map to Randers-Finsler
-geodesics.  The object is the arrival-time functional, not the free-fall one:
+Exhibits the map to Randers-Finsler geodesics.  The object is the arrival-time functional, not the free-fall one:
 this file supersedes an earlier version that computed the Jacobi-Maupertuis data
 of Chanda, Gibbons, Guha, Maraner & Werner, JMP 60 (2019) 122501 eq. (16), and
 mistook it for the brachistochrone cost.
@@ -30,7 +29,7 @@ different stationary spacetime (his eq. (50)).  Chanda eq. (16) is of the 3.3 ty
 Proved here:
   (1) the quadratic part of F_T is Lambda^2 h, i.e. the manuscript already carries
       the correct Randers metric -- and Lambda is the dilation of the semiconformal
-      projection, which is what the Round-1 "T2" objection is about;
+      projection, which is the geometric issue addressed here;
   (2) F_T and the Jacobi-Maupertuis functional differ by the position-dependent
       factor E^2/(E^2-f)^2 on the quadratic part, hence have different extremals;
       explicit witness: the circular extremal in Schwarzschild at E^2 = 2;

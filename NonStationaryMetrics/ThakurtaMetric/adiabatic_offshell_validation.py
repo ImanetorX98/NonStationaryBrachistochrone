@@ -1,3 +1,10 @@
+# SUPERSEDED -- kept for the record, not a validation of the true dynamics.
+# This early exploration evolves the radial momentum with -H_r only, WITHOUT the
+# dilation term -eps*P_r of the normalized momentum P_r = p_r/A, i.e. a surrogate
+# flow; and it compares that flow with HALF the on-shell Euler coefficient.  Its
+# old reading ("1/2-Euler captures ~98%, the off-shell term is the ~2% residual")
+# is withdrawn.  The validation against the true canonical flow is
+# ThakurtaMetric/fig_phi_validation_corrected.py.
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid as ct
 from scipy.optimize import brentq
@@ -46,7 +53,7 @@ for lbl,clock in [("affine λ",lam_of_r),("coord t",t_of_r)]:
     res=np.array(res); sl=np.polyfit(np.log(epss),np.log(res),1)[0]
     print(f"  1/2 Euler + {lbl}: coeff={np.mean(ec(rc)):+.4f}  slope={sl:.2f}  res@0.0025={res[0]:.2e}")
 
-print("\n=== OFF-SHELL costate p_eta (referee 4.6 term): dp_eta/dlam = +(E dH/dE + J dH/dJ) ===")
+print("\n=== OFF-SHELL costate p_eta (off-shell term): dp_eta/dlam = +(E dH/dE + J dH/dJ) ===")
 # along frozen orbit compute Euler_H = E*dHE + J*dHJ, integrate -> p_eta/eps
 # need pr along frozen orbit
 _,rFa,phiFa,tFa=flow(0.0)

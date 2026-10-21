@@ -7,7 +7,8 @@ Analogo esatto di VaidyaMetric/kodama_conservation.py, ma per Thakurta-Kerr
 NON e' sfericamente simmetrico, non esiste un vettore di Kodama; il ruolo del
 selettore/rotaia W e' svolto dal vettore conforme di Killing d/deta.
 
-Tre affermazioni, tutte verificate:
+Tre controlli; [A] e [B] sono verifiche della geometria, [C] e' solo un controllo
+cinematico di ricostruzione della carica (vedi sotto).
 
  [A] d/deta e' un CONFORMAL KILLING di g^TK con fattore psi = A'/A
      (proprieta' dello spaziotempo, simbolico esatto). L'energia associata
@@ -18,17 +19,15 @@ Tre affermazioni, tutte verificate:
      cioe' l'energia di rotaia driftra al tasso A'/A. Verifica numerica
      (Christoffel per differenze finite): dEhat/dtau = A'/A a ~1e-11.
 
- [C] Lungo la BRACHISTOCRONA (rotaia accesa: l'orbita e' istantaneamente
-     un'orbita di Kerr on-shell a E_eff = Ehat/A(eta), con J conservato)
+ [C] CONTROLLO CINEMATICO DI RICOSTRUZIONE DELLA CARICA, non una validazione del
+     flusso canonico. Si costruisce una curva risolvendo H2=0 per p_r a ogni punto,
+     con E_eff = Ehat/A(eta) imposto e J fissato, e si ricostruisce Ehat da u;
      l'identita' conforme da'
         -g^TK(u, d_eta) = A * (-g^Kerr(u^Kerr, d_eta)) = A * E_eff = Ehat = cost.
-     Verifica numerica: Ehat piatta a precisione macchina lungo la
-     brachistocrona, mentre la geodetica con lo stesso dato iniziale driftra.
-
-Conseguenza: E_eff = Ehat/A(eta) traccia in modo prescritto (Ehat costante),
-l'orbita resta on-shell a E_eff, dunque dphi/dr = F(r; E_eff, J) e' esatta e
-delta phi = int dE F * eta e' la correzione adiabatica al prim'ordine CORRETTA
-(nessun termine off-shell mancante).
+     Il valore ~1e-16 controlla quindi la ricostruzione, non che la successione di
+     orbite on-shell sia la soluzione dinamica: il flusso canonico vero (con la
+     dilatazione) e la correzione al prim'ordine sono verificati altrove
+     (canonical_dilation_check.py, adiabatic_first_order_exact.py).
 """
 import os, sys
 import numpy as np
@@ -173,17 +172,17 @@ for i, r in enumerate(rB):
     Eeff_chk[i] = E
 print()
 print("=" * 70)
-print("[C] BRACHISTOCRONA (rotaia): Ehat = -g^TK(u, d_eta) lungo l'orbita")
+print("[C] CONTROLLO CINEMATICO (non validazione del flusso canonico): Ehat ricostruita")
 print("=" * 70)
 print("  Ehat0 (imposto via E_eff=Ehat/A) = %.6f" % Ehat0)
 print("  Ehat ricostruito da u:  min %.12f  max %.12f" % (EhB.min(), EhB.max()))
-print("  => spread (max-min) = %.2e   (=> Ehat COSTANTE: la rotaia lo conserva)" % (EhB.max() - EhB.min()))
+print("  => spread (max-min) = %.2e   (ricostruzione coerente del vincolo imposto)" % (EhB.max() - EhB.min()))
 print("  => |Ehat(u) - Ehat0| max = %.2e   (deve ~0)" % np.max(np.abs(EhB - Ehat0)))
 print("  E_eff = Ehat/A(eta) varia da %.4f (r=%.1f) a %.4f (r=%.2f): traccia, on-shell"
       % (Eeff_chk[0], rB[0], Eeff_chk[-1], rB[-1]))
 print()
-print("  CONTRASTO: stesso spaziotempo, geodetica driftra a A'/A=%.3f; la rotaia lo annulla" % eps)
+print("  CONTRASTO: stesso spaziotempo, geodetica driftra a A'/A=%.3f; la rotaia tiene Ehat fisso per costruzione" % eps)
 print("  (esattamente come Vaidya: -u.K=E costante a 6.66e-16 vs drift geodetico -m'(u^v)^2/r).")
 print()
-print("FATTO. Ehat conservata sulla brachistocrona => dphi/dr=F(r;E_eff) esatta")
-print("       => delta phi = int dE F * eta e' la correzione 1o ordine corretta.")
+print("FATTO. [C] verifica la ricostruzione cinematica della carica, non la dinamica vera;")
+print("       per il flusso canonico vedi canonical_dilation_check.py e adiabatic_first_order_exact.py.")

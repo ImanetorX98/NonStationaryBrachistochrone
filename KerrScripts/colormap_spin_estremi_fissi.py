@@ -22,7 +22,7 @@ from scipy.optimize import brentq
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _ROOT)
 # paper_style.py lives in NonStationaryMetrics/; a fresh clone must find it
-# without relying on an unarchived sibling directory (CQG-116884, major 10)
+# without relying on an unarchived sibling directory
 sys.path.insert(0, os.path.join(_ROOT, "NonStationaryMetrics"))
 from paper_style import COL, set_style, savefig
 import matplotlib.pyplot as plt
@@ -31,6 +31,12 @@ try:
 except ImportError:
     def tqdm(x, **k):
         return x
+
+import warnings
+# NaN-producing branches of the lambdified radicals are expected and filtered by
+# np.isfinite below; silence only these messages so they do not break the bar.
+warnings.filterwarnings('ignore', message='invalid value encountered', category=RuntimeWarning)
+warnings.filterwarnings('ignore', message='divide by zero encountered', category=RuntimeWarning)
 
 set_style()
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -117,9 +123,10 @@ def Dr(av, Jtau):
 a_g = np.linspace(0.05, 0.95, 20)
 J_g = np.linspace(1.2, 4.0, 18)          # momento del ramo tau
 Z = np.full((len(a_g), len(J_g)), np.nan)
-for i, av in enumerate(tqdm(a_g, desc='spin a', ncols=70)):
-    for j, Jt in enumerate(J_g):
-        Z[i, j] = Dr(av, Jt)
+# one progress step per cell (same row-major order as before), with an ETA
+cells = [(i, j) for i in range(len(a_g)) for j in range(len(J_g))]
+for i, j in tqdm(cells, desc='cells', ncols=70, mininterval=1.0):
+    Z[i, j] = Dr(a_g[i], J_g[j])
 
 print(f"Delta_r in [{np.nanmin(Z):+.3f}, {np.nanmax(Z):+.3f}]", flush=True)
 print(">>> " + ("INVERSIONE (cambia segno)" if np.nanmin(Z)*np.nanmax(Z) < 0

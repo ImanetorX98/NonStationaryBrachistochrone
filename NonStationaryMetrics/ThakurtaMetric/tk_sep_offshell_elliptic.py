@@ -16,7 +16,10 @@ S = (r-r_d)^2 Q4, and the paper states three things, all checked here:
       and so does the weight-two block W_jk = int (r^j U_k - r^k U_j)/sqrt(S) dr,
       which is recomputed from the collapsed letters and compared with the direct one.
 
-The identities are algebraic and hold at EVERY double root; the numbers are spot checks.
+The identities are algebraic and hold at every ORDINARY degeneration: a double root r_d with
+deng(r_d) != 0 (deng = Delta [(E^2-1)r+2M]) and Q4(r_d) != 0.  If r_d coincides with a pole of
+deng, [S/deng](r_d) is a 0/0 limit, not a value, and it need not vanish: at M=a=1, E=6/5, J=2,
+r_d=1 the limit is 208/25 (checked at the end of this script).  The numbers are spot checks.
 They are run at two degenerations of the t-branch at M=1, a=9/10, E=6/5:
 
   J_c^- = -8.0535  r_d = +3.514   exterior retrograde separatrix, the physical one (r_d > 2M);
@@ -74,6 +77,10 @@ for label, (jg, rg) in targets.items():
     Q4, rem = sp.div(Sj, sp.Poly((r - rd)**2, r))
     check("(1) S = (r-r_d)^2 Q4", max(abs(c) for c in rem.all_coeffs()) < 1e-25,
           f"remainder {float(max(abs(c) for c in rem.all_coeffs())):.1e}")
+    # hypotheses of (2): an ORDINARY degeneration, separated from the poles of deng
+    check("hypothesis: deng(r_d) != 0 and Q4(r_d) != 0",
+          abs(deng.subs(r, rd)) > 1e-6 and abs(Q4.as_expr().subs(r, rd)) > 1e-6,
+          f"deng(r_d) = {float(deng.subs(r, rd)):.3e}, Q4(r_d) = {float(Q4.as_expr().subs(r, rd)):.3e}")
     # (2) residue cancellation at r_d
     val = sum(a_k[k].subs(J, jv)*rd**k for k in range(4)) + (R.as_expr()/deng).subs({J: jv, r: rd})
     Sd = (S/deng).subs({J: jv, r: rd})
@@ -101,6 +108,20 @@ for label, (jg, rg) in targets.items():
     bad = mp.quad(lambda t: 1/((t - rdm - mp.mpf('0.01'))*mp.sqrt(fQ(t))), [r0, r1])
     check("falsifiability: displacing r_d by 0.01 breaks (3)",
           abs(U(0, r1) - (V(0, r1) + bad)) > mp.mpf(10)**-6)
+
+# excluded case: a double root that is also a pole of deng.  The cancellation must NOT be
+# claimed there; the 0/0 limit is nonzero.
+print("\n=== excluded case: double root on a pole of deng (M=a=1, E=6/5, J=2, r_d=1)")
+Mx, ax_, Ex, Jx = sp.Integer(1), sp.Integer(1), sp.Rational(6, 5), sp.Integer(2)
+DEx = (Ex**2 - 1)*r + 2*Mx
+Q2x = (Ex**2*r**4 + (Ex**2*(ax_**2 - Jx**2) + Jx**2)*r**2
+       + 2*Mx*(Jx - ax_)*(Ex**2*(Jx - ax_) - 2*Jx)*r + 4*Mx**2*(Jx - ax_)**2)
+Sx = sp.expand(r*DEx*Q2x); dengx = sp.expand((r**2 - 2*Mx*r + ax_**2)*DEx)
+check("excluded case: S(1) = S'(1) = 0 and deng(1) = 0",
+      Sx.subs(r, 1) == 0 and sp.diff(Sx, r).subs(r, 1) == 0 and dengx.subs(r, 1) == 0)
+lim = sp.limit(Sx/dengx, r, 1)
+check("excluded case: lim S/deng = 208/25 != 0, so the collapse formula does not apply",
+      lim == sp.Rational(208, 25), f"limit {lim}")
 
 print()
 if FAIL:

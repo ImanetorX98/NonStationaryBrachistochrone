@@ -1,6 +1,11 @@
 """End-to-end numerical audit of eq:vaidya-full (section 4.4 closed form).
 
-LHS : delta_phi/mdot = int_{r0}^{r} (dF/dm) * v dr        [eq:vaidya-deltaphi]
+LHS : delta_phi/mdot = int_{r0}^{r} (dF/dm) * lambda_v dr [eq:vaidya-deltaphi]
+
+lambda_v = v - v0 is the advanced time ELAPSED from the launch, lambda_v(r0) = 0
+[eq:vaidya-clock].  An earlier version used the unanchored v = E U_3 + r + 2m ln(r-2m)
+on both sides; the identity then held for that weight, but that weight is not the elapsed
+clock, and it changes the coefficient by v(r0) A_m(r).  Both facts are checked below.
 RHS : the fully assembled block expression                [eq:vaidya-full]
 
 with F = phi' = K/sqrt(S), K = J D_E, and the reduction coefficients A^m, c_k
@@ -72,12 +77,15 @@ print("\ncheck  d(A_m)/dr - dF/dm  at r=7 :",
       mp.nstr(mp.diff(A_m, xt) - dFdm(xt), 8))
 print("check  A_m(r0)                    :", mp.nstr(A_m(r0), 8))
 
-# advanced-time clock  v = E U_3 + r + 2m ln(r-2m)
-v_of = lambda x: Efl * U(3, x) + x + 2 * Mfl * mp.log(x - 2 * Mfl)
+# elapsed advanced-time clock  lambda_v = E U_3 + (r - r0) + 2m ln[(r-2m)/(r0-2m)]
+v_of = lambda x: (Efl * U(3, x) + (x - r0)
+                  + 2 * Mfl * mp.log((x - 2 * Mfl) / (r0 - 2 * Mfl)))
+print("check  lambda_v(r0)                :", mp.nstr(v_of(r0), 8))
+assert v_of(r0) == 0, "the elapsed clock must vanish at the launch"
 
 # ------------------------------------------------------------------ LHS
 LHS = mp.quad(lambda t: dFdm(t) * v_of(t), [r0, r1])
-print("\nLHS  int dF/dm * v dr           =", mp.nstr(LHS, 20))
+print("\nLHS  int dF/dm * lambda_v dr    =", mp.nstr(LHS, 20))
 
 # ------------------------------------------------------------------ RHS
 I_poly = Q(lambda t: f_Am(t) * t**3 / f_S(t), r1)
@@ -90,10 +98,9 @@ Am1, v1 = A_m(r1), v_of(r1)
 
 term1 = -Efl * (I_poly - alpha0 * Uv[3]
                 + sum(ckf[k] * (Uv[k] * Uv[3] - W3k[k]) / 2 for k in range(5)))
-# the tortoise primitive r + 2m ln(r-2m) does not vanish at r0: it is the one
-# block taken as a bracket |_{r0}^{r} in eq:vaidya-full
-tort = lambda x: x + 2 * Mfl * mp.log(x - 2 * Mfl)
-term2 = -(L_2m - alpha0 * (tort(r1) - tort(r0))
+# tortoise part of the elapsed clock, lambda_v - E U_3, vanishing at r0
+tort = lambda x: (x - r0) + 2 * Mfl * mp.log((x - 2 * Mfl) / (r0 - 2 * Mfl))
+term2 = -(L_2m - alpha0 * tort(r1)
           + sum(ckf[k] * (r1 * Uv[k] - Uv[k + 1] + 2 * Mfl * Dk[k])
                 for k in range(5)))
 RHS = Am1 * v1 + term1 + term2
@@ -102,9 +109,14 @@ print("RHS  eq:vaidya-full assembled   =", mp.nstr(RHS, 20))
 print("\nRHS - LHS                       =", mp.nstr(RHS - LHS, 8))
 rel = abs((RHS - LHS) / LHS)
 print("relative                        =", mp.nstr(rel, 8))
-# falsifiability: dropping the lower limit of the bracket must break the identity
-wrong = RHS - alpha0 * tort(r0)
-print("without the r0 bracket, relative =", mp.nstr(abs((wrong - LHS) / LHS), 8))
-ok = rel < mp.mpf(10)**-30 and abs((wrong - LHS) / LHS) > mp.mpf(10)**-3
+# the origin of the clock matters: the unanchored v = lambda_v + v(r0) changes the
+# coefficient by v(r0) * A_m(r1), which is not small
+v_abs0 = r0 + 2 * Mfl * mp.log(r0 - 2 * Mfl)
+LHS_abs = mp.quad(lambda t: dFdm(t) * (v_of(t) + v_abs0), [r0, r1])
+shift = LHS_abs - LHS
+print("unanchored minus elapsed clock    =", mp.nstr(shift, 12),
+      "  v(r0)*A_m(r1) =", mp.nstr(v_abs0 * Am1, 12))
+ok = (rel < mp.mpf(10)**-30 and abs(shift - v_abs0 * Am1) < mp.mpf(10)**-30
+      and abs(shift) > 1)
 print("\nALL CHECKS PASSED" if ok else "\nFAILED")
 raise SystemExit(0 if ok else 1)

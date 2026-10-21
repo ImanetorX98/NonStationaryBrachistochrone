@@ -101,7 +101,8 @@ def weld(bb,r0,rq,width=1e-10,N=1500):
 GRID=[(E,r0,E*E-1.0) for E,r0 in [(1.2,8),(1.6,8),(2.5,8),(1.2,12),(1.6,12),(2.5,12)]]
 GRID.append((1.4,10,0.96))
 _failed = False
-with open('/tmp/cap_grid.log','w',buffering=1) as lg:
+import os, tempfile
+with open(os.path.join(os.environ.get('NSM_OUTDIR', tempfile.gettempdir()), 'cap_grid.log'),'w',buffering=1) as lg:
     lg.write("E  r0  bb  rhalf  RESULT  nc S M  time\n")
     for E,r0,bb in GRID:
         rq=rhalf(bb,r0)

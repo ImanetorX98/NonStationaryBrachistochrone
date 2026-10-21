@@ -227,7 +227,7 @@ fisica mappata: rotaia motorizzata γ₀ (FLRWresults R6).
 - variazionale: lettura VAKONOMICA/controllo ottimo (si ottimizza la
   rotaia, non si simula una rotaia data): PMP (nessuna autonomia
   richiesta) + esistenza dei minimi via FILIPPOV (indicatrice compatta
-  convessa). Nota da referee: per vincoli lineari in velocità la
+  convessa). Nota: per vincoli lineari in velocità la
   procedura di d'Alembert–Chetaev differisce dalla vakonomica in
   generale; qui non rileva (problema di ottimizzazione di forma) e le
   due collassano nel limite stazionario (Perlick).

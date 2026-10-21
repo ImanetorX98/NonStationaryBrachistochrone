@@ -4,7 +4,7 @@
 verify_prograde_asymmetry.py -- the prograde/retrograde asymmetry of the
 separation weight, proved rather than sampled.
 
-WHAT THIS REPLACES.  The manuscript and the response reported, from one
+WHAT THIS REPLACES.  An earlier numerical diagnostic reported, from one
 integrated extremal at M=1, a=0.9, E=1.4, that W - K = B^2 + dB(N) is positive at
 every sample, and separately that the two azimuthal senses give different minima
 of W (-2.27e-03 prograde against -6.59e-03 retrograde).  Both were numerical

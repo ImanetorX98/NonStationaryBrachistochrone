@@ -6,10 +6,9 @@
    Curvature of the fixed-energy optical metric, and what Myers-type theorems
    do and do not give for controlled-rail extremals.
 
-   Referee 2 asks that the results be related to the eigenvalues of the
-   curvature operator (Hamilton 1986; Boehm-Wilking 2008) and to the Myers
-   curvature.  Referee 1 (major 2) asks for conjugate-point and cut-locus
-   analysis.  These are the same question asked twice, because the object that
+   Relating the results to the eigenvalues of the curvature operator
+   (Hamilton 1986; Boehm-Wilking 2008) and to the Myers curvature, and analysing
+   conjugate points and the cut locus, are the same question asked twice, because the object that
    controls conjugate points along a curve is the Jacobi (tidal) operator,
    whose trace is Ric(u,u) -- the same scalar that appears in the rail-drift
    identity of verify_soliton_rail.wls.

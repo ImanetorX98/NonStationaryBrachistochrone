@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # EXACT first-order adiabatic correction (Thakurta-Kerr), closing to O(eps^2), slope ~2,
-# against the TRUE canonical flow of the physical Hamiltonian (main11 referee fix).
+# against the TRUE canonical flow of the physical Hamiltonian.
 #
 # The optical Hamiltonian H2 = Hbar(r, P_r, J_eff; E_eff) is written in the NORMALIZED
 # momentum P_r = p_r/A. Because A = A(lambda) is time-dependent, the physical canonical

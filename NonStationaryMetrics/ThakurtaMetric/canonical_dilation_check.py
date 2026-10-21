@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# main14 memo 4.4: the dilation term -alpha*P_r in the normalized flow (eq:normflow) is a
+# The dilation term -alpha*P_r in the normalized flow (eq:normflow) is a
 # CONSEQUENCE of the canonical flow in the ORIGINAL variables (r, p_r) plus the chain rule
 # for the time-dependent normalization P_r = p_r/A(s) -- NOT the generator of a canonical
 # transformation (P_r = p_r/A is conformally symplectic: dr ^ dp_r = A dr ^ dP_r).

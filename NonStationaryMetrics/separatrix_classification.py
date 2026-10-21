@@ -2,7 +2,7 @@
 """
 Classificazione delle degenerazioni della sestica: locus algebrico vs separatrice fisica.
 
-Referee obiezioni #7, #8 (CRITICHE). Il paper chiamava "separatrice" un locus di
+Correzione critica: una versione precedente chiamava "separatrice" un locus di
 radice doppia della curva che, ai parametri dichiarati, cade a raggio NEGATIVO
 (r_d<0): e' una degenerazione algebrica (genus 2->1), NON la separatrice fisica
 (orbita circolare instabile, confine cattura/scattering), che richiede una radice
@@ -21,7 +21,7 @@ Distinzione da mantenere nel paper:
 
 Uscita: per ogni ramo, TUTTE le radici doppie reali classificate; per il ramo t
 di Thakurta-Kerr la separatrice fisica esterna e i suoi b_i (sorgente corretta
-E d_E + J d_J, cfr. obiezione #5).
+E d_E + J d_J, cfr. conformal_source_Jterm.py).
 """
 import sympy as sp
 import numpy as np

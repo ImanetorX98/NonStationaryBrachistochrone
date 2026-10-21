@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
-# Referee Issue 2 (BLOCKER): derive that the conserved Pontryagin costate p_phi = J is the
-# MECHANICAL covariant angular momentum u_phi = g(u, d_phi), and that the conformal weights
-# E_eff = Ehat/A, J_eff = J/A follow from the covariant transformation (not asserted).
+# DEPRECATED -- exploratory diagnostic, kept for the record; not used by either manuscript.
+# It TESTS the hypothesis that the conserved Pontryagin costate p_phi = J is the MECHANICAL
+# covariant angular momentum u_phi = g(u, d_phi). The test FAILS (the branch shell is not the
+# Kerr geodesic mass shell), so J is the Pontryagin costate, distinct from u_phi, as in the
+# manuscripts; see costate_finsler_derivation.py. Part 2 only checks how the MECHANICAL charges
+# scale under g~ = A^2 g; it is not the derivation of the costate weights used in the papers.
+#
+# Original description of the hypothesis tested:
 #
 # PART 1 (Legendre identification): the branch Hamiltonian shell H2=0 is the Kerr mass-shell
 #   g_Kerr^{mu nu} u_mu u_nu = -1 with covariant momenta u_mu = (-E, p_r, J). If the on-shell p_r
@@ -34,7 +39,11 @@ pr0_2=sp.simplify(S/(Dl*Emu)**2)   # (sqrt(S)/(Delta*Emu))^2
 diff=sp.simplify(pr2-pr0_2)
 print("  paper p_r0^2 = S/(Delta*Emu)^2")
 print("  shell p_r^2 - paper p_r0^2 =",diff,"  => equal?",diff==0)
-print("  => the branch-shell momenta are the COVARIANT u_mu; hence p_phi=J = u_phi (mechanical).")
+if diff == 0:
+    print("  => the branch-shell momenta are the COVARIANT u_mu; hence p_phi=J = u_phi (mechanical).")
+else:
+    print("  => NOT equal: the branch Hamiltonian shell is not the Kerr geodesic mass shell, so")
+    print("     p_phi=J is the Pontryagin costate, not the mechanical u_phi.")
 
 # numeric cross-check + timelike unit + u_t=-E + u_phi=J via raising/lowering
 print("\nnumeric check (r=6,E=1.4,J=6):")
@@ -60,5 +69,5 @@ for A in [1.0,1.5,2.3]:
     Jphys=(g_til_low[2]@u_up_t)          #  g~(u~,d_phi)
     print(f"  A={A}: Ehat={Ehat:+.5f} (A*E_Kerr={A*1.4:.5f}), J_phys={Jphys:+.5f} (A*J_Kerr={A*6.0:.5f})"
           f"  => E_eff=Ehat/A={Ehat/A:.5f}, J_eff=J_phys/A={Jphys/A:.5f}")
-print("\n=> DERIVED: costate p_phi=J is the covariant mechanical L=g(u,d_phi); conformal weights")
-print("   E_eff=Ehat/A and J_eff=J/A follow from u~=u/A. Both charges scale as A^-1 (Issue 2 closed).")
+print("\n=> RESULT: the identification costate = mechanical L " + ("HOLDS" if diff == 0 else "FAILS") + " (Part 1).")
+print("   Part 2: the MECHANICAL charges of u~=u/A scale as A; this alone does not fix the costate weights.")

@@ -1,0 +1,40 @@
+diff --git a/abelfunctions/puiseux_series_ring.py b/abelfunctions/puiseux_series_ring.py
+index 4315886..5e2d12a 100644
+--- a/abelfunctions/puiseux_series_ring.py
++++ b/abelfunctions/puiseux_series_ring.py
+@@ -40,13 +40,16 @@ from sage.rings.ring import Field
+ from abelfunctions.puiseux_series_ring_element import PuiseuxSeries
+ from sage.categories.complete_discrete_valuation import CompleteDiscreteValuationFields
+ from sage.categories.fields import Fields
+-from sage.rings.laurent_series_ring import (
+-    is_LaurentSeriesRing,
+-    LaurentSeriesRing,
+-)
+-from sage.rings.laurent_series_ring_element import is_LaurentSeries
+-from sage.rings.power_series_ring import is_PowerSeriesRing
+-from sage.rings.power_series_ring_element import is_PowerSeries
++from sage.rings.laurent_series_ring import LaurentSeriesRing
++from sage.rings.laurent_series_ring_element import LaurentSeries as _LS
++from sage.rings.power_series_ring import PowerSeriesRing_generic as _PSR
++from sage.rings.power_series_ring_element import PowerSeries as _PS
++
++# is_* helpers were removed from Sage 10.x; isinstance shims.
++def is_LaurentSeriesRing(x): return isinstance(x, LaurentSeriesRing)
++def is_LaurentSeries(x): return isinstance(x, _LS)
++def is_PowerSeriesRing(x): return isinstance(x, _PSR)
++def is_PowerSeries(x): return isinstance(x, _PS)
+ 
+ 
+ puiseux_series = {}
+diff --git a/abelfunctions/puiseux_series_ring_element.pyx b/abelfunctions/puiseux_series_ring_element.pyx
+index 38f219c..0feee75 100644
+--- a/abelfunctions/puiseux_series_ring_element.pyx
++++ b/abelfunctions/puiseux_series_ring_element.pyx
+@@ -110,7 +110,6 @@ try:
+ except ImportError:
+     from sage.rings.all import CC
+ from sage.rings.infinity import infinity
+-from sage.rings.laurent_series_ring_element import is_LaurentSeries
+ from sage.rings.laurent_series_ring_element cimport LaurentSeries
+ from sage.rings.power_series_ring_element cimport PowerSeries
+ from sage.structure.element cimport (

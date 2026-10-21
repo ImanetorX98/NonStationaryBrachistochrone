@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Inversione di plunge conformale in Thakurta-Kerr equatoriale, piano (J, A).
+Same-launch depth comparison in Thakurta-Kerr equatoriale, piano (J, A), in DUE normalizzazioni
+del costate: (1) protocollo dichiarato nel paper, t vs tau a J_t = J_tau (H_t = h - A);
+(2) eta vs tau a J_eta = J_tau, cioe' J_t = A J_tau (H_eta = h - 1).  Solo la (2) inverte l'ordine:
+l'inversione "conforme" e' un effetto della normalizzazione del costate, non della rotaia.
+(Una versione precedente usava H_eta chiamandolo H_t.)
+Per la (1) nessuna inversione nel settore progrado: Paper II, prop:same-launch.
+
+DESCRIZIONE PRECEDENTE (OBSOLETA, solo per memoria; vale per la normalizzazione (2), non per H_t):
 Stavolta col RANGE DI J GIUSTO: l'inversione vive a J ~ 16-24, fuori dal
 vecchio scan [3.9, 5.5]. Mostra il rosso (tau piu' profondo).
 
@@ -49,13 +56,18 @@ def Htau0(r, A, J):
     S = np.sqrt(vb2 * Dl) / Pb
     return ptp * php0 + S * abs(ptp) - A**2 * f / Eh
 
-def Ht0(r, A, J):
+def Heta0(r, A, J):
+    """conformal-time branch H_eta = h - 1 at p_r = 0."""
     f, Dl, P, b, vb2, Pb = geom(r, A)
     if vb2 <= 0:
         return np.nan
     php0 = b * vb2 / Pb
     S = np.sqrt(vb2 * Dl) / Pb
     return J * php0 + S * abs(J) - 1.0
+
+def Ht0(r, A, J):
+    """coordinate-time branch H_t = h - A at p_r = 0 (paper eq:Ht-tk); = H_eta at A = 1."""
+    return Heta0(r, A, J) + 1.0 - A
 
 def r_outer(func, A, J):
     rs = np.linspace(20.0, r_e + 1e-4, 3000)
@@ -66,22 +78,23 @@ def r_outer(func, A, J):
             return brentq(lambda rr: func(rr, A, J), rs[i + 1], rs[i])
     return np.nan
 
-# ---- griglia (J, A) --------------------------------------------------
+# ---- griglia (J, A): declared protocol t/tau at J_t = J_tau, and eta/tau at J_eta = J_tau ----
 J_g = np.linspace(5.0, 30.0, 60)
 A_g = np.linspace(1.0, 1.5, 55)
-Dr = np.full((len(A_g), len(J_g)), np.nan)
+Dr = {'t': np.full((len(A_g), len(J_g)), np.nan), 'eta': np.full((len(A_g), len(J_g)), np.nan)}
 for i, Av in enumerate(A_g):
     for j, Jv in enumerate(J_g):
         rtau = r_outer(Htau0, Av, Jv)
-        rt = r_outer(Ht0, Av, Jv)
-        if np.isfinite(rtau) and np.isfinite(rt):
-            Dr[i, j] = rt - rtau
-n_red = int(np.nansum(Dr > 0))
-print(f"celle con INVERSIONE (Dr>0, tau piu' profondo): {n_red}/"
-      f"{np.sum(np.isfinite(Dr))}")
-print(f"  Dr range: min {np.nanmin(Dr):+.3f}, max {np.nanmax(Dr):+.3f}")
+        for k, fn in (('t', Ht0), ('eta', Heta0)):
+            rx = r_outer(fn, Av, Jv)
+            if np.isfinite(rtau) and np.isfinite(rx):
+                Dr[k][i, j] = rx - rtau
+for k in ('t', 'eta'):
+    print(f"{k}/tau: cells with tau deeper (Dr>0): {int(np.nansum(Dr[k] > 0))}/"
+          f"{np.sum(np.isfinite(Dr[k]))};  Dr range [{np.nanmin(Dr[k]):+.3f}, {np.nanmax(Dr[k]):+.3f}]")
 
-# ---- curva analitica cond=0: J_inv(A) --------------------------------
+# ---- algebraic coincidence conditions of the two outer turning points (prograde sector) ----
+#   eta/tau:  A^2 b Q - Pb (Ehat - A^2 f) = 0      t/tau:  A b Q - Pb (Ehat - A f) = 0
 r_s, A_s = sp.symbols('r A', positive=True)
 f_s = 1 - 2 * M / r_s
 Dl_s = r_s**2 - 2 * M * r_s + a**2
@@ -91,49 +104,42 @@ vb2_s = 1 - A_s**2 * f_s / Eh**2
 Pb_s = P_s + A_s**2 * b_s**2 / Eh**2
 Q_s = b_s * vb2_s + sp.sqrt(vb2_s * Dl_s)
 cond = A_s**2 * b_s * Q_s - Pb_s * (Eh - A_s**2 * f_s)
+cond_t = A_s * b_s * Q_s - Pb_s * (Eh - A_s * f_s)
 condf = sp.lambdify((r_s, A_s), cond, 'numpy')
+condtf = sp.lambdify((r_s, A_s), cond_t, 'numpy')
 Jinvf = sp.lambdify((r_s, A_s), Pb_s / Q_s, 'numpy')
 A_curve, J_curve = [], []
 for Av in np.linspace(A_g[0] + 0.02, A_g[-1], 120):
-    Afr = Eh / np.sqrt(1 - 2 * M / 3.0)   # dummy large; trova radice r*>2M
     rs = np.linspace(2.05, 40.0, 8000)
     with np.errstate(invalid='ignore'):
         cv = np.array([condf(rr, Av) for rr in rs])
-    rstar = None
     for k in range(len(rs) - 1):
-        if np.isfinite(cv[k]) and np.isfinite(cv[k + 1]) \
-                and cv[k] * cv[k + 1] < 0:
+        if np.isfinite(cv[k]) and np.isfinite(cv[k + 1]) and cv[k] * cv[k + 1] < 0:
             rstar = brentq(lambda rr: condf(rr, Av), rs[k], rs[k + 1])
+            A_curve.append(Av); J_curve.append(float(Jinvf(rstar, Av)))
             break
-    if rstar is not None:
-        A_curve.append(Av)
-        J_curve.append(float(Jinvf(rstar, Av)))
 A_curve, J_curve = np.array(A_curve), np.array(J_curve)
+with np.errstate(invalid='ignore'):
+    ct_max = np.nanmax([condtf(rr, Av) for Av in np.linspace(1.0, 1.5, 120)
+                        for rr in np.linspace(2.05, 40.0, 800)])
+print(f"max of the t/tau coincidence condition on the grid: {ct_max:+.3f} (negative: no coincidence)")
 
 # --------------------------------------------------------------- figura
-fig, ax = plt.subplots(figsize=(COL, COL * 0.92))
-# scala colore clippata perche' il blu profondo (Dr~-5) slaverebbe il rosso
-vmax = min(1.5, np.nanmax(Dr) * 4) if np.nanmax(Dr) > 0 else 1.5
-vmax = max(vmax, 1.0)
-im = ax.pcolormesh(J_g, A_g, Dr, cmap='RdBu_r', vmin=-vmax, vmax=vmax,
-                   shading='auto')
-cb = plt.colorbar(im, ax=ax, extend='min',
-                  label='$\\Delta r = r_{\\min}^{t}-r_{\\min}^{\\tau}$')
-CS = ax.contour(J_g, A_g, Dr, levels=[0.0], colors='k', linewidths=1.6)
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(COL, 2 * COL * 0.85))
+vmax = 1.5
+for ax, k, ttl in ((ax1, 't', 'declared protocol: $t$ vs $\\tau$ at $J_t=J_\\tau$'),
+                   (ax2, 'eta', 'conformal normalisation: $\\eta$ vs $\\tau$ at $J_\\eta=J_\\tau$ ($J_t=AJ_\\tau$)')):
+    im = ax.pcolormesh(J_g, A_g, Dr[k], cmap='RdBu_r', vmin=-vmax, vmax=vmax, shading='auto')
+    plt.colorbar(im, ax=ax, extend='min', label='$\\Delta r$ (branch $-$ $\\tau$)')
+    if np.nanmax(Dr[k]) > 0:
+        ax.contour(J_g, A_g, Dr[k], levels=[0.0], colors='k', linewidths=1.4)
+    ax.set_xlabel('$J$'); ax.set_ylabel('$A$')
+    ax.set_title(ttl + f"\n$\\tau$ deeper in {int(np.nansum(Dr[k] > 0))} of {int(np.sum(np.isfinite(Dr[k])))} cells",
+                 fontsize=6.6)
 msk = J_curve <= J_g[-1]
-ax.plot(J_curve[msk], A_curve[msk], 'w--', lw=1.6,
-        label='analytic $\\mathrm{cond}(r,A)=0$')
-ax.text(9, 1.05, 'blue: $t$ deeper', fontsize=6.5, color='magenta',
-        fontweight='bold')
-ax.text(24, 1.42, 'red:\n$\\tau$ deeper', fontsize=6.5, color='darkred',
-        ha='center', fontweight='bold')
-ax.set_xlabel('$J$ (axial control costate)')
-ax.set_ylabel('$A$ (conformal factor)')
-ax.set_xlim(J_g[0], J_g[-1])
-ax.set_ylim(A_g[0], A_g[-1])
-ax.set_title('Conformal plunge inversion (Thakurta-Kerr, $s=0.9$,\n'
-             f'$\\hat E=1.2$): $\\Delta r$ changes sign; inversion curve\n'
-             'analytic $=$ numeric, REACHABLE ($A_{inv}<A_{freeze}$)')
-ax.legend(loc='lower right', fontsize=6)
+ax2.plot(J_curve[msk], A_curve[msk], 'w--', lw=1.4, label='analytic coincidence condition')
+ax2.legend(loc='lower right', fontsize=6)
+fig.suptitle(f'Thakurta--Kerr, $a={a}$, $\\hat E={Eh}$: the same-launch ordering depends on the costate normalisation',
+             fontsize=6.6)
 savefig(fig, OUT, 'fig_thakurta_kerr_inversione_AJ')
 print('FATTO.')

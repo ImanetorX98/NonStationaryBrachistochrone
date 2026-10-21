@@ -67,3 +67,39 @@ print("  max|H| on frozen orbit        =", np.nanmax(np.abs(Hval)))
 print("  max|DH - (1 + E H_E)| (H=0)   =", np.nanmax(np.abs(DH - (1 + EHE))))
 print("  max|S_D - (lam + int E H_E)|  =", np.nanmax(np.abs(S_D_direct - S_D_universal)))
 print("  S_D end: direct=%.6f  universal=%.6f" % (S_D_direct[-1], S_D_universal[-1]))
+
+# ---------- proper-time branch H_tau (paper eq:Htau-tk) ----------
+# H_tau is NOT of the arrival-time form: its cost is f/E and its azimuthal momentum is shifted,
+# pt = J - b/E.  Euler in (P_r, pt) then gives
+#     (J d_J + pr d_pr) H_tau = H_tau + (f + b H_J)/E,
+# and along the frozen flow (f + b dphi/dlambda)/E = dtau/dlambda, so on the shell
+#     S_D = Delta tau + int_0^lambda E_eff H_{E_eff} dlambda'.
+# The arrival-time formula S_D = lambda + int E H_E does NOT hold on this branch.
+J0t = 2.5
+Ht = (J - b2/E)*b2*v2/Pb2 + sp.sqrt(Dl2*v2/Pb2)*sp.sqrt((Dl2/rr**2)*pr**2 + (J - b2/E)**2/Pb2) - f2/E
+# identity checked exactly in Mathematica; here at random points (sympy's simplify is slow)
+idt_f = sp.lambdify((rr, pr, E, J), J*sp.diff(Ht, J) + pr*sp.diff(Ht, pr) - (Ht + (f2 + b2*sp.diff(Ht, J))/E), 'numpy')
+rng = np.random.default_rng(1)
+pts = [(rng.uniform(2.5, 20), rng.uniform(-3, 3), rng.uniform(1.05, 3), rng.uniform(-8, 8)) for _ in range(20)]
+print("\nPROPER-TIME branch:")
+print("  max|(J d_J + pr d_pr)H_tau - (H_tau + (f + b H_J)/E)| at 20 random points =",
+      max(abs(idt_f(*q)) for q in pts), " [expect ~1e-15]")
+Lt = lambda X: sp.lambdify((rr, pr, E, J), X, 'numpy')
+tHn, tHp, tHr, tHJ, tHE = Lt(Ht), Lt(sp.diff(Ht, pr)), Lt(sp.diff(Ht, rr)), Lt(sp.diff(Ht, J)), Lt(sp.diff(Ht, E))
+pg = np.linspace(-80, 80, 3001); hv = tHn(r0, pg, Ehat, J0t)
+rts = [brentq(lambda p: tHn(r0, p, Ehat, J0t), pg[i], pg[i+1]) for i in range(len(pg)-1)
+       if np.isfinite(hv[i]) and np.isfinite(hv[i+1]) and hv[i]*hv[i+1] < 0]
+p0t = min(p for p in rts if tHp(r0, p, Ehat, J0t) < 0)
+sot = solve_ivp(lambda l, y: [tHp(y[0], y[1], Ehat, J0t), -tHr(y[0], y[1], Ehat, J0t)],
+                [0, 300], [r0, p0t], rtol=1e-12, atol=1e-14, max_step=0.004,
+                dense_output=True, events=ev)
+lt = np.linspace(0, sot.t[-1], 16000); rT, pT = sot.sol(lt)
+DHt = Ehat*tHE(rT, pT, Ehat, J0t) + J0t*tHJ(rT, pT, Ehat, J0t) + pT*tHp(rT, pT, Ehat, J0t)
+EHEt = Ehat*tHE(rT, pT, Ehat, J0t)
+dtau = ((1 - 2*M/rT) + (2*M*a/rT)*tHJ(rT, pT, Ehat, J0t))/Ehat
+S_dir_t = ct(DHt, lt, initial=0)
+S_tau = ct(dtau, lt, initial=0) + ct(EHEt, lt, initial=0)
+S_arr = lt + ct(EHEt, lt, initial=0)
+print("  max|S_D - (Delta tau + int E H_E)| =", np.nanmax(np.abs(S_dir_t - S_tau)))
+print("  S_D end: direct=%.6f  Delta tau + int E H_E=%.6f  (arrival formula lam + int E H_E=%.6f)"
+      % (S_dir_t[-1], S_tau[-1], S_arr[-1]))

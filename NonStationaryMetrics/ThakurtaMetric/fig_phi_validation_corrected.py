@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Validation figure for the adiabatic correction against the TRUE canonical flow (main11 fix).
- Left  : true non-autonomous optical-metric geodesic vs frozen + leading (on-shell) AND vs
+Validation figure for the adiabatic correction against the TRUE canonical flow.
+ Left  : true non-autonomous optical-metric geodesic vs frozen + on-shell coefficient AND vs
          frozen + the exact Eq.(40) correction (t-branch).
  Right : residual vs A'/A for BOTH branches (t and tau) and a SECOND (a,E,J) parameter set.
 
 The true flow integrates the PHYSICAL canonical dynamics: in the normalized momentum
-P_r=p_r/A the radial equation carries the dilation term -(A'/A) P_r (main11 referee). The
+P_r=p_r/A the radial equation carries the dilation term -(A'/A) P_r. The
 exact source is therefore the FULL Euler operator, S_D = int (Theta H + P_r H_Pr) dlambda;
 the extra P_r H_Pr = int p_r dr (radial action) reduces in closed form to the on-shell U_k
 basis + third-kind at the seed Kerr null surfaces r_pm (see tests/test_adiabatic_noreg.py and
@@ -107,13 +107,32 @@ def analyse(Hbuilder,M,a,Ehat,J0,r0,VBAR2_STOP=1e-9):
     # compact evaluation window: middle 45% of the arc, away from turning point
     rc=np.linspace(rturn+0.35*(r0-rturn),rturn+0.80*(r0-rturn),2000)
     prg=interp1d(rF,prF,bounds_error=False,fill_value='extrapolate')(rg)
-    # leading (on-shell 1/2-Euler), from the Hamiltonian frame: dphi/dr=G, ThetaG on-shell
+    # On-shell coefficient of eq:deltaphi-EJ, c_os = -int lam * Theta F dr, where
+    # F(r,E,J) = G(r,P0(r,E,J),E,J) is the frozen orbit integrand and P0 solves the
+    # frozen shell H = 0.  Theta = E d_E + J d_J moves the shell momentum too, so by
+    # implicit differentiation  Theta F = Theta G - (G_Pr / H_Pr) Theta H.
+    # An earlier version integrated -1/2 lam Theta G at FIXED P_r instead: that is
+    # not the manuscript's on-shell coefficient, and the factor 1/2 does not stand
+    # in for the implicit term.
     ThetaG=Ehat*D['GE'](rg,prg,Ehat,J0)+J0*D['GJ'](rg,prg,Ehat,J0)
-    eul=-0.5*ct(lam_r(rg)*ThetaG,rg,initial=0); ec=interp1d(rg,eul,bounds_error=False,fill_value='extrapolate')
-    # exact Eq.(40) with the CORRECTED terminally-anchored source
+    EulerH=Ehat*D['HE'](rg,prg,Ehat,J0)+J0*D['HJ'](rg,prg,Ehat,J0)
+    ThetaF=ThetaG-D['Gpr'](rg,prg,Ehat,J0)*EulerH/D['Hp'](rg,prg,Ehat,J0)
+    # independent check of Theta F: central differences of the explicit frozen
+    # integrand F = G(r, P0(r,E,J), E, J), with P0 re-solved on the shell at the
+    # displaced charges (no implicit-function formula used)
+    def F_of(rv,E,Jv):
+        p0=prof(D,rv,E,Jv); return D['HJ'](rv,p0,E,Jv)/D['Hp'](rv,p0,E,Jv)
+    for i in (500,2500,4500):
+        h=1e-4; rv=rg[i]
+        fd=(F_of(rv,Ehat*(1+h),J0*(1+h))-F_of(rv,Ehat*(1-h),J0*(1-h)))/(2*h)
+        assert abs(fd-ThetaF[i])<1e-5*max(1.0,abs(fd)), \
+            f"Theta F check failed at r={rv}: implicit {ThetaF[i]} vs explicit {fd}"
+    eul=-ct(lam_r(rg)*ThetaF,rg,initial=0); ec=interp1d(rg,eul,bounds_error=False,fill_value='extrapolate')
+    # complete first-order correction, eq:adiab-exact, with the launch-anchored source
     # S_D = int (Theta H + P_r H_Pr) dlam  (the extra P_r*H_Pr = int p_r dr is the radial-momentum
     # dilation of the time-dependent transform P_r=p_r/A; omitting it gives a spurious O(eps) error).
-    EulerH=Ehat*D['HE'](rg,prg,Ehat,J0)+J0*D['HJ'](rg,prg,Ehat,J0)
+    # Note c_full = c_os - int (G_Pr/H_Pr) S_D dr: relative to the on-shell coefficient
+    # the off-shell part involves the whole S_D, not only its P_r H_Pr letter.
     PrHpr=prg*D['Hp'](rg,prg,Ehat,J0)
     S=ct((EulerH+PrHpr)*np.gradient(lam_r(rg),rg),rg,initial=0)        # S_D
     integ=D['Gpr'](rg,prg,Ehat,J0)*(lam_r(rg)*EulerH-S)/D['Hp'](rg,prg,Ehat,J0)-lam_r(rg)*ThetaG
@@ -140,10 +159,17 @@ for name,Hb,M,a,E,J,r0,col,mk in cfgs:
     epss,rh,rx,rc,phi0,ec,xc,flow=analyse(Hb,M,a,E,J,r0)
     sh,she=slope_pm(epss,rh); sx,sxe=slope_pm(epss,rx)
     out[name]=(epss,rh,rx,sh,she,sx,sxe,col,mk,flow,phi0,ec,xc,rc)
+    # "leading" = the on-shell coefficient of eq:deltaphi-EJ; the label is kept
+    # because paper2/provenance/make_provenance.py parses this line.
     print(f"{name}: leading slope {sh:.2f}+/-{she:.2f}  exact slope {sx:.2f}+/-{sxe:.2f}")
+    # size of the two parts on the fit window: the on-shell coefficient is NOT a
+    # small-correction approximation of the complete one; the off-shell part
+    # -int (G_Pr/H_Pr) S_D dr cancels most of it.
+    _cos, _cf = np.abs(ec(rc)).max(), np.abs(xc(rc)).max()
+    print(f"    on window: max|c_os| = {_cos:.3f}, max|c_full| = {_cf:.3f}, ratio = {_cos/_cf:.1f}")
 
 # Dump the raw (eps, residual) pairs so the figure, the table and any refit come
-# from ONE dataset (CQG-116884, referee major 7).  paper2/provenance reads this
+# from ONE dataset.  paper2/provenance reads this
 # file; nothing downstream re-runs the physics or re-types a number.
 _raw = {}
 for i, (name, *_rest) in enumerate(cfgs):
@@ -205,7 +231,7 @@ ax[0].plot([_rtF*np.cos(float(phi0(_rtF)))],[_rtF*np.sin(float(phi0(_rtF)))],
            's',ms=4.0,mfc='none',mec='0.45',mew=1.0,
            label=r'frozen: turning point ($p_r=0$)')
 ph_h=phi0(rr2)+eps*ec(rr2); ph_x=phi0(rr2)+eps*xc(rr2)
-ax[0].plot(rr2*np.cos(ph_h),rr2*np.sin(ph_h),'k--',lw=1.0,label=r'frozen $+\,\varepsilon\cdot$leading (on-shell)')
+ax[0].plot(rr2*np.cos(ph_h),rr2*np.sin(ph_h),'k--',lw=1.0,label=r'frozen $+\,\varepsilon\cdot$on-shell coefficient')
 ax[0].plot(rr2*np.cos(ph_x),rr2*np.sin(ph_x),'C3:',lw=1.3,label=r'frozen $+\,\varepsilon\cdot$ complete first-order (exact)')
 ax[0].set_aspect('equal'); ax[0].set_xlabel('$x$'); ax[0].set_ylabel('$y$')
 ax[0].set_title(r'true dynamics vs adiabatic ($t$-branch, $A^\prime/A=0.04$)',fontsize=6.6)
@@ -216,7 +242,7 @@ for name,(epss,rh,rx,sh,she,sx,sxe,col,mk,flow,phi0,ec,xc,rc) in out.items():
                  label=f'{name}: exact slope ${sx:.2f}\\pm{sxe:.2f}$')
     ax[1].loglog(epss,rh,col+mk+':',ms=3.0,lw=0.8,alpha=0.55)
 ax[1].loglog(out[nm0][0],out[nm0][0]**2*out[nm0][2][2]/out[nm0][0][2]**2,'C7--',lw=0.6,label=r'$O(\varepsilon^2)$ guide')
-ax[1].loglog(out[nm0][0],out[nm0][0]*out[nm0][1][2]/out[nm0][0][2],'C7:',lw=0.6,label=r'$O(\varepsilon)$ guide (leading, dotted)')
+ax[1].loglog(out[nm0][0],out[nm0][0]*out[nm0][1][2]/out[nm0][0][2],'C7:',lw=0.6,label=r'$O(\varepsilon)$ guide (on-shell, dotted)')
 ax[1].set_xlabel(r"$A^\prime/A$"); ax[1].set_ylabel('residual vs true flow')
 ax[1].set_title('exact term closes to $O(\\varepsilon^2)$: both branches, two parameter sets',fontsize=6.4)
 ax[1].legend(fontsize=4.9,loc='upper left')

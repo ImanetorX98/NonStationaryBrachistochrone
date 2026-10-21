@@ -1,8 +1,8 @@
 # Experimental proof-of-concept generators
 
 This directory contains deterministic, reproducible design studies for three
-laboratory validation layers discussed in
-`PIANO_VALIDAZIONE_SPERIMENTALE_PAPER_I_II_codex.md`.
+laboratory analogue platforms (active particles, a draining vortex, a ring
+Bose--Einstein condensate).
 
 They are deliberately separated from the manuscript figures.  Nothing here is
 claimed to be measured data, a construction blueprint, or a direct realization
@@ -10,7 +10,7 @@ of the Einstein dynamics of Vaidya or Thakurta--Kerr.
 
 ## Quick start
 
-From the repository root:
+From `NonStationaryMetrics/`:
 
 ```bash
 python3 Experimental/run_all_codex.py

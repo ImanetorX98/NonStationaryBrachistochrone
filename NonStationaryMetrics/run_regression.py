@@ -65,7 +65,7 @@ NUM = (r"(?>[-+]?(?:\d+\.?\d*(?:[eE][-+]?\d+)?|nan|inf(?:inity)?))"
 #   horizon dilogarithm the residual is the LAST column, elsewhere it follows the
 #   keyword -- and that is exactly why a single generic rule was unsafe.
 CHECKS = [
-    ("KerrMetric/pipeline_completa_deltaphi.py",
+    ("KerrScripts/pipeline_completa_deltaphi.py",
      "residual", rf"differenza\s*=\s*({NUM})", 1e-12,
      "end-to-end (M,a,E,J)->delta phi", 1),
     # Two field names in this script's output, and a prose line "se diff~1e-12"
@@ -75,7 +75,7 @@ CHECKS = [
     ("KerrScripts/kerr_psi_explicit_verified.py",
      "residual", rf"(?:differenza|diff)\s*=\s*({NUM})", 1e-11,
      "TK tau reduction psi", 5),
-    ("KerrMetric/kerr_tbranch_psi_assembly.py",
+    ("KerrScripts/kerr_tbranch_psi_assembly.py",
      "residual", rf"diff\s*=\s*({NUM})", 1e-10,
      "TK t-branch clock + assembly", 2),
     ("NonStationaryMetrics/VaidyaMetric/vaidya_dMF_reduction.py",
@@ -99,7 +99,7 @@ CHECKS = [
      "TK t exact PT, delta phi vs true flow", 1),
     ("NonStationaryMetrics/VaidyaMetric/vaidya_first_order_offshell.py",
      "slope", rf"slope\s+full\s*=\s*({NUM})", (1.7, 2.3),
-     "Vaidya v exact PT off-shell", 1),
+     "Vaidya v and tau exact PT off-shell", 2),
     ("NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py",
      "slope", rf"exact\s+slope\s+({NUM})", (1.7, 2.3),
      "true-dynamics validation (t,tau)", 3),

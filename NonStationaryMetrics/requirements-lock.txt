@@ -13,13 +13,15 @@ sympy==1.13.3
 tqdm==4.68.3   # progress bar for the CAP runners (no_inversion_schwarzschild_CAP_r0_10.py)
 
 # --- SageMath (NOT pip-installable; used ONLY by the four .sage genus-2 scripts) ---
-# Reference: SageMath 10.9 (x86_64 build) with the abelfunctions library.
-# Only required for KerrScripts/*.sage (Riemann surface / theta / Abel map).
+# Reference: SageMath 10.9 from conda-forge (sage 10.9 py313hc25858d_0, native
+# arm64 on macOS) with abelfunctions at revision d98843e plus a small patch, built
+# with Cython 3.0.  Recipe, patch and a checking runner: sage_env/SAGE_SETUP.md.
+# (The earlier x86_64 SageMath app needs Rosetta, which macOS 27 no longer has.)
 
 # ---------------------------------------------------------------------------
 # Computer-algebra system used by the symbolic verification suite
 # (paper2/verification/*.wls).  Not installable by pip; recorded here so the
-# environment is fully specified (CQG-116884, referee major comment 10).
+# environment is fully specified.
 #   Wolfram Mathematica 13.3.1 for Mac OS X ARM (64-bit), 24 July 2023
 #   invoked as: wolframscript -file <script>.wls
 # The Python stack above is sufficient for every figure, every numerical check
