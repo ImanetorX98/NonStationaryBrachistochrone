@@ -1,4 +1,6 @@
 {
+  "separation_coefficient_GM_over_c2": -0.9214746352442288,
+  "separation_coefficient_km": -1.3606725185142843,
   "model": "static Schwarzschild field of the Sun, Ehat = 1, symmetric arcs r0 = 2^(2/3) rmin, ideal sail; daughters r = r_t(phi) + d sin^2(pi u); a concept, not a mission design",
   "sigma_critical_g_m2": 1.5312980297718546,
   "sigma_beta4_g_m2": 0.38282450744296365,
@@ -19,6 +21,15 @@
       "sin_alpha_end": 0.5000000182626146,
       "beta_required": 3.9999998538990886,
       "sail_T_eq_K": 699.962665163835,
+      "modulation_q_range_beta4": [
+        0.5,
+        1.0
+      ],
+      "daughter_beta_max": {
+        "-1000": 3.999573633616224,
+        "1000": 4.000426366383776
+      },
+      "absorption_tangential_over_g_endpoints": 0.08660254037844387,
       "energy_k": 3.6656280968142596e-08,
       "allowed_arrival_shift_s": 2.5677664965434115,
       "clock_stability_10pct": 3.629001774981911e-13,
@@ -86,6 +97,15 @@
       "sin_alpha_end": 0.5000000365252357,
       "beta_required": 3.999999707798135,
       "sail_T_eq_K": 989.8966942295131,
+      "modulation_q_range_beta4": [
+        0.5,
+        1.0
+      ],
+      "daughter_beta_max": {
+        "-1000": 3.9991472672324484,
+        "1000": 4.000852732767552
+      },
+      "absorption_tangential_over_g_endpoints": 0.08660254037844387,
       "energy_k": 7.331257060345404e-08,
       "allowed_arrival_shift_s": 1.8154202012043994,
       "clock_stability_10pct": 1.4513888285382179e-12,
@@ -170,6 +190,12 @@
       "status": "PASS"
     },
     {
+      "name": "energy sensitivity of X / of t = 1 - E exactly",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
       "name": "rmin=0.1 au: the two inversions agree (second order)",
       "value": 2.9477375566785054e-07,
       "atol": 1e-05,
@@ -191,6 +217,54 @@
       "name": "rmin=0.1 au: t(d) quadratic (stationary rail)",
       "value": 6.375956385610076e-05,
       "atol": 0.001,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: separation agrees with the post-Newtonian coefficient",
+      "value": 2.4208094151489945e-07,
+      "atol": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: Newtonian rail closed form, Phi = 4 pi/9",
+      "value": 9.938437202094974e-06,
+      "atol": 0.0001,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: mother thrust normal (rule of 2 holds)",
+      "value": 6.130680781421075e-46,
+      "atol": 1e-20,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: mother thrust has no tangential part",
+      "value": 2.5526177550436486e-46,
+      "atol": 1e-20,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: mother thrust points outward",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: mother lightness 2 at the pericentre, 4 at the endpoints",
+      "value": 1.401298464324817e-45,
+      "atol": 1e-20,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au d=-1000 km: daughter thrust normal and outward",
+      "value": 2.666577585168862e-46,
+      "atol": 1e-20,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au d=1000 km: daughter thrust normal and outward",
+      "value": 2.2349117183021336e-46,
+      "atol": 1e-20,
       "status": "PASS"
     },
     {
@@ -227,6 +301,54 @@
       "name": "rmin=0.05 au: t(d) quadratic (stationary rail)",
       "value": 0.00012751500224960895,
       "atol": 0.001,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: separation agrees with the post-Newtonian coefficient",
+      "value": 4.841620020457071e-07,
+      "atol": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: Newtonian rail closed form, Phi = 4 pi/9",
+      "value": 1.9876878127433883e-05,
+      "atol": 0.0001,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: mother thrust normal (rule of 2 holds)",
+      "value": 6.130680781421075e-46,
+      "atol": 1e-20,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: mother thrust has no tangential part",
+      "value": 2.5526177550436486e-46,
+      "atol": 1e-20,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: mother thrust points outward",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: mother lightness 2 at the pericentre, 4 at the endpoints",
+      "value": 1.401298464324817e-45,
+      "atol": 1e-20,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au d=-1000 km: daughter thrust normal and outward",
+      "value": 2.4602083787684478e-46,
+      "atol": 1e-20,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au d=1000 km: daughter thrust normal and outward",
+      "value": 2.7603937743873196e-46,
+      "atol": 1e-20,
       "status": "PASS"
     },
     {

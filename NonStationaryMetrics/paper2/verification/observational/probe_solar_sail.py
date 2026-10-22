@@ -13,8 +13,15 @@ normal is the outward normal to the velocity (force beta g sin^2(alpha)); the cr
 L_sun/(2 pi c GM_sun) and the sail equilibrium temperature for absorptance 0.1 and total emissivity 1.
 Daughters follow r(phi) = r_t(phi) + d sin^2(pi u), u = (phi + Phi/2)/Phi, with the same endpoints:
 t(d) - t(0) is quadratic (the rail is stationary), tau(d) has its vertex at d* != 0, and X = t - tau is
-linear and antisymmetric in d. The local energy sensitivity of X is -(Ehat - 1) times that of t
-(weak-field series, symbolic). Writes probe_solar_sail.json.
+linear and antisymmetric in d. The local energy sensitivity of X is (1 - Ehat) times that of t (exact identity
+at fixed position and direction). Separation to first post-Newtonian order: -I sqrt(q^3 - 1)/2 GM/c^2 with
+I = 4 int_1^q x(x-1)/(x^3-1)^(3/2) dx, q = 2^(2/3).
+Sail law, at Newtonian order: the Ehat = 1 rail is r = r_min cos(3 phi/2)^(-2/3) with Phi = 4 pi/9; the thrust it
+needs is normal, outward and equal to 2 g sin(alpha); an ideal reflector of maximum lightness beta_max delivers
+q beta_max g sin^2(alpha) along the outward normal, so it follows the rail only with the modulation
+q = 2/(beta_max sin(alpha)); the lightness required by the daughters is computed on the same footing. For a sail with
+absorptance A the absorbed momentum adds (beta/2) A sin(alpha) cos(alpha) g along the velocity (no thermal recoil),
+reported at the endpoints for A = 0.1; the equilibrium temperature is indicative only. Writes probe_solar_sail.json.
 """
 from pathlib import Path
 import json
@@ -46,6 +53,40 @@ def symbolic():
     w = {r: 1/(l*U), E: 1 + l*eps}
     ratio = sp.series((sp.diff(x, E)/sp.diff(sp.sqrt(lt2), E)).subs(w), l, 0, 2).removeO()
     check('energy sensitivity of X / of t = -(E-1) + O(l^2)', sp.simplify(ratio + l*eps) != 0, 0)
+    Lt, Ltau = E/(sp.sqrt(f)*sp.sqrt(E**2 - f)), sp.sqrt(f)/sp.sqrt(E**2 - f)     # explicit positive roots
+    check('energy sensitivity of X / of t = 1 - E exactly',
+          sp.simplify(sp.diff(Lt - Ltau, E) - (1 - E)*sp.diff(Lt, E)) != 0, 0)
+
+
+def separation_coefficient():
+    """leading post-Newtonian separation of the two pericentres, in units of GM/c^2"""
+    q = mp.mpf(2)**(mp.mpf(2)/3)
+    I = 4*mp.quad(lambda x: x*(x - 1)/(x**3 - 1)**mp.mpf(1.5), [1, q])
+    return -I*mp.sqrt(q**3 - 1)/2
+
+
+def sail_law(rmin, d=0, samples=400):
+    """Newtonian thrust along r(phi) = r_min cos(3phi/2)^(-2/3) + d sin^2(pi u) at zero energy (v^2 = 2/r, M = 1).
+    Returns max |tangential|/g, min outward component sign, the lightness |a|/(g sin^2 alpha) along the path,
+    and, on the mother, the deviation from the rule of 2."""
+    P = 4*mp.pi/9
+    rf = lambda p: rmin*mp.cos(3*p/2)**(-mp.mpf(2)/3) + d*mp.sin(mp.pi*(p + P/2)/P)**2
+    out = dict(tangential=0, outward=1, beta=[], rule2=0)
+    for i in range(samples + 1):
+        p = -P/2 + P*i/samples
+        r, rp, rpp = rf(p), mp.diff(rf, p), mp.diff(rf, p, 2)
+        er = mp.matrix([mp.cos(p), mp.sin(p)]); ep = mp.matrix([-mp.sin(p), mp.cos(p)])
+        T = rp*er + r*ep; T = T/mp.norm(T); N = mp.matrix([-T[1], T[0]])
+        kap = (r*r + 2*rp*rp - r*rpp)/(r*r + rp*rp)**mp.mpf(1.5)
+        g = -er/r**2; gn = g - (g[0]*T[0] + g[1]*T[1])*T     # the tangential part of gravity changes the speed
+        a = (2/r)*kap*N - gn
+        sa = r/mp.sqrt(r*r + rp*rp); gmag = 1/r**2
+        out['tangential'] = max(out['tangential'], abs(a[0]*T[0] + a[1]*T[1])/gmag)
+        out['outward'] = min(out['outward'], 1 if a[0]*er[0] + a[1]*er[1] > 0 else -1)
+        out['beta'].append(mp.norm(a)/(gmag*sa*sa))
+        if d == 0:
+            out['rule2'] = max(out['rule2'], abs(mp.norm(a)/(2*gmag*sa) - 1))
+    return out
 
 
 class Rails:
@@ -143,6 +184,7 @@ def gauss_legendre(degree):
 
 def main():
     symbolic()
+    coef = separation_coefficient()
     sigma_star = L_SUN/(2*mp.pi*C*GM)
     cases = []
     for q in ['0.1', '0.05']:
@@ -156,6 +198,24 @@ def main():
         lag = [z['t_lag_over_d2'] for z in drows]
         check(f'rmin={q} au: t(d) quadratic (stationary rail)', (max(lag) - min(lag))/max(lag), 1e-3)
         D = {z['d_km']: z for z in drows}
+        check(f'rmin={q} au: separation agrees with the post-Newtonian coefficient', row['separation_km']/float(coef*LM/1000) - 1, 1e-6)
+        # sail law at Newtonian order
+        mom = sail_law(R.rmin)
+        check(f'rmin={q} au: Newtonian rail closed form, Phi = 4 pi/9', row['phi_deg'] - 80, 1e-4)
+        check(f'rmin={q} au: mother thrust normal (rule of 2 holds)', mom['rule2'], 1e-20)
+        check(f'rmin={q} au: mother thrust has no tangential part', mom['tangential'], 1e-20)
+        check(f'rmin={q} au: mother thrust points outward', 0 if mom['outward'] > 0 else 1, 0)
+        check(f'rmin={q} au: mother lightness 2 at the pericentre, 4 at the endpoints',
+              max(abs(min(mom['beta']) - 2), abs(max(mom['beta']) - 4)), 1e-20)
+        row['modulation_q_range_beta4'] = [float(2/(4*1)), float(2/(4*mp.mpf(1)/2))]
+        bd = {}
+        for dk in (-1000, 1000):
+            dau = sail_law(R.rmin, mp.mpf(dk)*1000/LM)
+            check(f'rmin={q} au d={dk} km: daughter thrust normal and outward', dau['tangential'] + (0 if dau['outward'] > 0 else 1), 1e-20)
+            bd[dk] = float(max(dau['beta']))
+        row['daughter_beta_max'] = bd
+        # absorbing sail (absorptance 0.1, beta 4): component along the velocity at the endpoints, in units of g
+        row['absorption_tangential_over_g_endpoints'] = float(4/2*mp.mpf('0.1')*mp.mpf(0.5)*mp.sqrt(3)/2)
         k = R.energy_sensitivity(); row['energy_k'] = float(k)
         check(f'rmin={q} au: X suppresses energy errors (|k| < 1e-7)', 0 if abs(k) < 1e-7 else 1, 0)
         # arrival shift allowed by a 10% measurement of X at d = 1000 km, and the clock stability it needs
@@ -173,12 +233,13 @@ def main():
     check('self-similarity: same tau vertex', (cases[0]['tau_vertex_km'] - cases[1]['tau_vertex_km'])/cases[1]['tau_vertex_km'], 1e-4)
     check('tau vertex agrees with an independent minimisation (-0.6814747 km)', cases[1]['tau_vertex_km'] + 0.6814747, 1e-5)
     check('X slope scales as rmin^(-1/2)', cases[1]['X_slope_ns_per_km']/cases[0]['X_slope_ns_per_km'] - mp.sqrt(2), 1e-3)
-    out = dict(model='static Schwarzschild field of the Sun, Ehat = 1, symmetric arcs r0 = 2^(2/3) rmin, ideal sail; '
+    out = dict(separation_coefficient_GM_over_c2=float(coef), separation_coefficient_km=float(coef*LM/1000), model='static Schwarzschild field of the Sun, Ehat = 1, symmetric arcs r0 = 2^(2/3) rmin, ideal sail; '
                      'daughters r = r_t(phi) + d sin^2(pi u); a concept, not a mission design',
                sigma_critical_g_m2=float(sigma_star*1000), sigma_beta4_g_m2=float(sigma_star*250), cases=cases, checks=checks)
     (HERE/'probe_solar_sail.json').write_text(json.dumps(out, indent=2))
     print('checks', len(checks), 'PASS', sum(c['status'] == 'PASS' for c in checks))
     print('critical areal density %.4f g/m^2; beta = 4 -> %.4f g/m^2' % (sigma_star*1000, sigma_star*250))
+    print('post-Newtonian separation %.10f GM/c^2 = %.7f km' % (coef, coef*LM/1000))
     for z in cases:
         print('rmin %.3f au (%.2f Rsun): Phi %.5f deg, %.3f h, v_p %.2f km/s, separation %.4f km, inversions %.5f / %.5f ns, '
               'g_p %.3f m/s^2, dv %.1f km/s, beta %.4f, T_eq %.0f K' %
@@ -186,6 +247,8 @@ def main():
                z['inversion_t_ns'], z['inversion_tau_ns'], z['g_peri'], z['delta_v_kms'], z['beta_required'], z['sail_T_eq_K']))
         for y in z['daughters']:
             print('    d=%+5d km: t lag %.6e s, tau lag %.6e s, X %+.4f ns' % (y['d_km'], y['t_lag_s'], y['tau_lag_s'], y['X_ns']))
+        print('    daughters need beta up to %.6f (d=-1000) and %.6f (d=+1000); absorbing sail: %.4f g along v at the endpoints' %
+              (z['daughter_beta_max'][-1000], z['daughter_beta_max'][1000], z['absorption_tangential_over_g_endpoints']))
         print('    X slope %.5f ns/km, tau vertex %.5f km, energy k %.3e, allowed arrival shift %.2f s, clock %.2e, end separation %.0f m' %
               (z['X_slope_ns_per_km'], z['tau_vertex_km'], z['energy_k'], z['allowed_arrival_shift_s'], z['clock_stability_10pct'], z['end_separation_m']))
     for c in checks:

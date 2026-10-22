@@ -4118,12 +4118,13 @@ analogues can test the control implementation, not establish TK as
 the geometry of a detected object.
 
 \paragraph{Three probe proposals.}
-The three proposals below are ordered by decreasing feasibility, and each step
-reaches a deeper class of effects: the control law in the Newtonian limit, with
-probes after a Saturn flyby and present electric propulsion; the weak-field
-relativistic separation between the arrival- and proper-cost rails, with solar
-sails near the Sun; and strong-field and spin effects, with a thought experiment
-around M87$^*$.
+The three proposals below are ordered by increasing physical and technological
+ambition, and each reaches a deeper class of effects: the control law in the
+Newtonian limit, with probes after a Saturn flyby and present electric propulsion;
+the weak-field relativistic separation between the arrival- and proper-cost rails,
+with an idealised solar sail near the Sun; and strong-field and spin effects, with a
+thought experiment around M87$^*$. The ordering is qualitative, not the result of
+comparable mission assessments.
 
 \paragraph{A proposed Solar-System control comparison.}
 \label{par:obs-solar-probe}
@@ -4192,44 +4193,54 @@ proper-cost extremals, nor the conformal factor.
 
 \paragraph{A solar-sail clock comparison.}
 \label{par:obs-sail}
-That separation becomes accessible closer to the Sun. In the static Schwarzschild
-field a rail at maintained $\Ehat$ is a geodesic of
+Closer to the Sun that separation can be approached, under idealised control. In the
+static Schwarzschild field a rail at maintained $\Ehat$ is a geodesic of
 $\Lambda^2({\rm d}r^2/f+r^2{\rm d}\Omega^2)$, with $\Lambda_t^2=\Ehat^2/[f(\Ehat^2-f)]$
 for the arrival cost and $\Lambda_\tau^2=f/(\Ehat^2-f)$ for the onboard cost. Their
 ratio, $f^2/\Ehat^2=({\rm d}\tau/{\rm d}t)^2$, is fixed by redshift and time dilation,
 so the two rails coincide at Newtonian order and separate at order $GM_\odot/(rc^2)$;
-each wins on its own clock. At $\Ehat=1$ the weak-field problem is scale invariant: on arcs
-symmetric about the pericentre $r_{\min}$, with endpoints at $r_0=2^{2/3}r_{\min}$,
-the two pericentres differ by $1.361$ km for every $r_{\min}$. For
-$r_{\min}=0.1$ au ($0.05$ au) the arc spans $80^\circ$ and lasts $72$ h ($25$ h),
-and each rail beats the other on its own clock by only $0.96$ ns ($1.36$ ns). The
-normal thrust $2g\sin\alpha$ adds up to $174$ ($246$) km\,s$^{-1}$, beyond onboard
-propellant. An ideal sail with its normal along the outward normal to the velocity
-gives $\beta g\sin^2\alpha$ with no tangential component, so it maintains $\Ehat$
-for a lightness $\beta\ge2/\sin\alpha$, equal to $4$ at the endpoints: an areal
-density of $0.38$ g\,m$^{-2}$ including payload, against the critical value
-$L_\odot/(2\pi cGM_\odot)\simeq1.53$ g\,m$^{-2}$, with an equilibrium temperature
-of about $700$ ($990$) K for an absorptance of $0.1$ and unit total emissivity.
-The two inversions taken separately are not measurable, because arrival
-times depend at first order on $\Ehat$. The accumulated dilation $X=t-\tau$ is
-far less sensitive: since $\Lambda_t-\Lambda_\tau=(\Ehat-f)/(\sqrt f\sqrt{\Ehat^2-f})$,
-its local response to $\Ehat$ is $-(\Ehat-1)$ times that of $t$, and on the arcs
-above, with fixed endpoints, $3.7\times10^{-8}$ ($7.3\times10^{-8}$) times. A
-mother on the arrival rail and daughters displaced radially by $d\sin^2(\pi u)$,
-with $u$ the normalised polar angle and the same endpoints, make $X$ linear in $d$:
-$t(d)-t(0)$ is quadratic because the rail is stationary for $t$, whereas $\tau(d)$
-has its vertex at $d^*=-0.681$ km, the trace of the proper-cost optimum on this
+each wins on its own clock. At $\Ehat=1$, on arcs symmetric about the pericentre
+$r_{\min}$ with endpoints at $r_0=2^{2/3}r_{\min}$, the two pericentres differ by
+$0.9215\,GM_\odot/c^2\simeq1.361$ km to first post-Newtonian order, independently of
+$r_{\min}$, the proper-cost rail being the inner one. For $r_{\min}=0.1$ au
+($0.05$ au) the arc spans $80^\circ$ and lasts $72$ h ($25$ h), and each rail beats
+the other on its own clock by only $0.96$ ns ($1.36$ ns). At Newtonian order the
+arrival rail is $r=r_{\min}\cos^{-2/3}(3\varphi/2)$ and needs a thrust $2g\sin\alpha$
+along the outward normal to the velocity, $174$ ($246$) km\,s$^{-1}$ in total, beyond
+onboard propellant. An ideal reflector with its normal along that direction delivers
+$q\beta_{\max}g\sin^2\alpha$ with no tangential component; it follows the rail, and does
+not merely maintain $\Ehat$, only if this force is modulated, for instance through its
+effective area or reflectance, as $q=2/(\beta_{\max}\sin\alpha)$: for $\beta_{\max}=4$,
+from $q=1$ at the endpoints to $q=1/2$ at the pericentre. The daughters described below
+need up to $4.0009$, so $\beta_{\max}$ slightly above $4$, an areal density of about
+$0.38$ g\,m$^{-2}$ including payload, against the critical value
+$L_\odot/(2\pi cGM_\odot)\simeq1.53$ g\,m$^{-2}$. Such a modulated reflector is an
+assumed ideal actuator. A real sail also absorbs: for an absorptance of $0.1$ the
+absorbed momentum alone adds about $0.09g$ in magnitude along the velocity at the endpoints, to be
+cancelled by attitude and force control, and the same absorptance with unit total
+emissivity gives an equilibrium temperature of about $700$ ($990$) K at the
+pericentre, an indicative figure only.
+Arrival times depend at first order on $\Ehat$, so a direct nanosecond comparison of
+the two inversions is not supported by this illustrative budget. The accumulated
+dilation $X=t-\tau$ is less sensitive: since
+$\Lambda_t-\Lambda_\tau=(\Ehat-f)/(\sqrt f\sqrt{\Ehat^2-f})$, at fixed position and
+direction its response to $\Ehat$ is exactly $1-\Ehat$ times that of $\Lambda_t$, which
+vanishes at $\Ehat=1$; for a change of $\Ehat$ between optimal rails with fixed endpoints
+the ratio is $3.7\times10^{-8}$ ($7.3\times10^{-8}$). A mother on the arrival rail and
+daughters displaced radially by $d\sin^2(\pi u)$, with $u$ the normalised polar angle
+and the same endpoints, make $X$ linear in $d$: $t(d)-t(0)$ is quadratic because the
+rail is stationary for $t$, whereas $\tau(d)$ has its vertex at $d^*=-0.681$ km on this
 family. Hence $X(d)-X(0)\simeq-0.94\,d$ ($-1.33\,d$) ns with $d$ in km, about
 $\mp0.94$ ($\mp1.33$) $\mu$s at $d=\pm1000$ km, while the arrival lags are only
-$0.69$ ($0.98$) ms: with ideal control mother and daughter reach the end within
-about $150$ m of each other and can compare their clocks over a short link. A $10\%$ measurement then requires a fractional clock
-stability of about $4\times10^{-13}$ ($1.5\times10^{-12}$) over the arc, and a
-differential energy error that shifts the arrival by less than about $2.6$ ($1.8$)
-s, that is relative speed errors of order $10^{-5}$: this, not the clocks, is the
-demanding requirement. The comparison tests the first post-Newtonian separation of
-the two rails, that is, the redshift and dilation structure of the control problem,
-not TK nor the conformal factor; the sail itself, its thermal design and the
-navigation remain to be assessed.
+$0.69$ ($0.98$) ms: with ideal control mother and daughter reach the end within about
+$150$ m of each other and can compare their clocks over a short link, correcting for
+the propagation delay and the non-simultaneous arrivals. A $10\%$ measurement of this
+response needs a fractional clock stability of about $4\times10^{-13}$
+($1.5\times10^{-12}$) over the arc and, for the energy perturbation above, an arrival
+shift below about $2.6$ ($1.8$) s; a joint budget of attitude, force, navigation and
+time-transfer errors remains to be made. The comparison would test the first
+post-Newtonian separation of the two rails, that is, the redshift and dilation
+structure of the control problem, not global minimality, TK or the conformal factor.
 
 \paragraph{A Kerr thought experiment.}
 \label{par:obs-kerr-thought}
