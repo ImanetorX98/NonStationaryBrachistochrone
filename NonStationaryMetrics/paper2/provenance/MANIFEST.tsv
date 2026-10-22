@@ -28,6 +28,6 @@ Fig. (sep3)	python3 kerr_separatrix_trajectories.py	KerrScripts/kerr_separatrix_
 Fig. (jpt-g2)	python3 kerr_jpt_genus2_figure.py	KerrScripts/kerr_jpt_genus2_figure.py	74d3622be32771fb3c3516d8af39b5c4f12f0cc356607324d3c2b47873cf407d
 Fig. (jcm-cap)	python3 kerr_jcm_capture_figure.py	KerrScripts/kerr_jcm_capture_figure.py	7c4d8a9d4fdec0daaa566213d20c89ea8114a1be8cac8741b96ec201606925c2
 shared figure style	-	NonStationaryMetrics/paper_style.py	5017370483ed4cca2a3968cc64b2c82541794d0cf8225a5000b078831c62dcf9
-environment lock (Python stack + CAS version)	-	NonStationaryMetrics/requirements-lock.txt	2877f9ac083a2ee17078501b332c958d6c79e63705b5a4a575287f50e71da9a7
+environment lock (Python stack + CAS version)	-	NonStationaryMetrics/requirements-lock.txt	67c594961f7ff7a6cfd546521f1ba3514abfe28ee7b9a1152086cf74bb3921d5
 bibliography audit against the DOI registry	python3 audit_refs.py	NonStationaryMetrics/paper2/provenance/audit_refs.py	c97b8b868af9dcba766896e3da8bf45d7511de0c82073083b5a58334ce787575
 bibliography audit by title, for entries with no DOI	python3 audit_by_title.py	NonStationaryMetrics/paper2/provenance/audit_by_title.py	69e5f5186d6eb342dc93739bbd891b70afbf167fe86e7586a50c03c9f6ca7380

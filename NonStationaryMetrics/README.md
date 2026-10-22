@@ -88,7 +88,7 @@ supersede them.
 |------|------------------|
 | `paper1/verification/README.md` | Verification map of Paper I: which claim, where it appears, how it is checked (symbolic identities in two CAS for the formal core, plus a numerical quadrature of the §4.4 closed form). |
 | `paper2/verification/README.md` | Verification map of Paper II: each numbered statement, its script, and the evidence level (full proof, sampled, or numerical). |
-| `paper2/verification/observational/README.md` | Observational section: scales, rotating benchmarks, probe experiments (Saturn flyby, M87*), conjugate points, ephemeris bound. |
+| `paper2/verification/observational/README.md` | Observational section: scales, rotating benchmarks, probe experiments (Saturn flyby, solar sails, M87*), conjugate points, ephemeris bound. |
 | `paper1/verification/REPRODUCTION_section4.2.md` | Re-run of the trajectory scripts behind section 4.2 of Paper I, with the numbers obtained. |
 | `ThakurtaMetric/ThakurtaResults.md`, `VaidyaMetric/VaidyaResults.md`, `FLRWmetric/FLRWresults.md` | Per-geometry results: what was derived, with the numbers obtained. *Historical working notes, mostly in Italian; they may refer to scripts or sibling folders that are not distributed. The verification maps above are the current reference.* |
 | `ThakurtaMetric/phi_adiabatic_closed_form.md`, `VaidyaMetric/vaidya_adiabatic_setup.md` | The adiabatic closed form, set up and assembled (historical working notes, as above). |

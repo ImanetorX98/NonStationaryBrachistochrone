@@ -4117,6 +4117,14 @@ experiment; numerical feedback tests and suitably mapped laboratory
 analogues can test the control implementation, not establish TK as
 the geometry of a detected object.
 
+\paragraph{Three probe proposals.}
+The three proposals below are ordered by decreasing feasibility, and each step
+reaches a deeper class of effects: the control law in the Newtonian limit, with
+probes after a Saturn flyby and present electric propulsion; the weak-field
+relativistic separation between the arrival- and proper-cost rails, with solar
+sails near the Sun; and strong-field and spin effects, with a thought experiment
+around M87$^*$.
+
 \paragraph{A proposed Solar-System control comparison.}
 \label{par:obs-solar-probe}
 The weak-field Schwarzschild limit of
@@ -4182,9 +4190,50 @@ closed-loop navigation remain to be assessed. It tests the control law in
 the Newtonian limit, not the much smaller separation between arrival- and
 proper-cost extremals, nor the conformal factor.
 
+\paragraph{A solar-sail clock comparison.}
+\label{par:obs-sail}
+That separation becomes accessible closer to the Sun. In the static Schwarzschild
+field a rail at maintained $\Ehat$ is a geodesic of
+$\Lambda^2({\rm d}r^2/f+r^2{\rm d}\Omega^2)$, with $\Lambda_t^2=\Ehat^2/[f(\Ehat^2-f)]$
+for the arrival cost and $\Lambda_\tau^2=f/(\Ehat^2-f)$ for the onboard cost. Their
+ratio, $f^2/\Ehat^2=({\rm d}\tau/{\rm d}t)^2$, is fixed by redshift and time dilation,
+so the two rails coincide at Newtonian order and separate at order $GM_\odot/(rc^2)$;
+each wins on its own clock. At $\Ehat=1$ the weak-field problem is scale invariant: on arcs
+symmetric about the pericentre $r_{\min}$, with endpoints at $r_0=2^{2/3}r_{\min}$,
+the two pericentres differ by $1.361$ km for every $r_{\min}$. For
+$r_{\min}=0.1$ au ($0.05$ au) the arc spans $80^\circ$ and lasts $72$ h ($25$ h),
+and each rail beats the other on its own clock by only $0.96$ ns ($1.36$ ns). The
+normal thrust $2g\sin\alpha$ adds up to $174$ ($246$) km\,s$^{-1}$, beyond onboard
+propellant. An ideal sail with its normal along the outward normal to the velocity
+gives $\beta g\sin^2\alpha$ with no tangential component, so it maintains $\Ehat$
+for a lightness $\beta\ge2/\sin\alpha$, equal to $4$ at the endpoints: an areal
+density of $0.38$ g\,m$^{-2}$ including payload, against the critical value
+$L_\odot/(2\pi cGM_\odot)\simeq1.53$ g\,m$^{-2}$, with an equilibrium temperature
+of about $700$ ($990$) K for an absorptance of $0.1$ and unit total emissivity.
+The two inversions taken separately are not measurable, because arrival
+times depend at first order on $\Ehat$. The accumulated dilation $X=t-\tau$ is
+far less sensitive: since $\Lambda_t-\Lambda_\tau=(\Ehat-f)/(\sqrt f\sqrt{\Ehat^2-f})$,
+its local response to $\Ehat$ is $-(\Ehat-1)$ times that of $t$, and on the arcs
+above, with fixed endpoints, $3.7\times10^{-8}$ ($7.3\times10^{-8}$) times. A
+mother on the arrival rail and daughters displaced radially by $d\sin^2(\pi u)$,
+with $u$ the normalised polar angle and the same endpoints, make $X$ linear in $d$:
+$t(d)-t(0)$ is quadratic because the rail is stationary for $t$, whereas $\tau(d)$
+has its vertex at $d^*=-0.681$ km, the trace of the proper-cost optimum on this
+family. Hence $X(d)-X(0)\simeq-0.94\,d$ ($-1.33\,d$) ns with $d$ in km, about
+$\mp0.94$ ($\mp1.33$) $\mu$s at $d=\pm1000$ km, while the arrival lags are only
+$0.69$ ($0.98$) ms: with ideal control mother and daughter reach the end within
+about $150$ m of each other and can compare their clocks over a short link. A $10\%$ measurement then requires a fractional clock
+stability of about $4\times10^{-13}$ ($1.5\times10^{-12}$) over the arc, and a
+differential energy error that shifts the arrival by less than about $2.6$ ($1.8$)
+s, that is relative speed errors of order $10^{-5}$: this, not the clocks, is the
+demanding requirement. The comparison tests the first post-Newtonian separation of
+the two rails, that is, the redshift and dilation structure of the control problem,
+not TK nor the conformal factor; the sail itself, its thermal design and the
+navigation remain to be assessed.
+
 \paragraph{A Kerr thought experiment.}
 \label{par:obs-kerr-thought}
-Large relativistic and spin effects in these examples require strong fields. Scaling the frozen
+Large relativistic and spin effects require strong fields. Scaling the frozen
 Kerr background to the reference mass of M87$^*$ in
 Table~\ref{tab:observational-context}, with $\Ehat=1$ and equal-radius
 endpoints separated by $1.8$ radians at $120M$ or $38M$, the arrival-cost
@@ -4197,7 +4246,7 @@ acceleration, are out of reach of chemical or electric propulsion; an ideal
 photon rocket would need mass ratios of about $1.4$ and $1.7$ and a power of
 order $3\times10^{12}$ W per tonne at $1g$. This remains a thought experiment
 with prescribed spin, geometry and control, not an operational mission or an
-identified astrophysical TK source. Both examples are reproduced by the
+identified astrophysical TK source. The three proposals are reproduced by the
 \texttt{probe\_*} scripts in \texttt{verification/observational}.
 
 \paragraph{A conditional mass--age comparison.}
@@ -4263,7 +4312,7 @@ parameter is
     \label{eq:obs-drift}
 \end{equation}
 At $r=6M$, $a=0.8M$ the relative quasi-local drift correction for the Gaia BH3
-mass is $2\times10^{-41}$. Neither probe example above isolates the
+mass is $2\times10^{-41}$. None of the probe examples above isolates the
 conformal factor. Null trajectories, as unparametrised curves, are conformally
 invariant, but measured frequencies and clock-based observables need not be, and
 freely falling massive bodies also respond to $A$. The examples above are computed

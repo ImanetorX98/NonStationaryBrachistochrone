@@ -1,0 +1,269 @@
+{
+  "model": "static Schwarzschild field of the Sun, Ehat = 1, symmetric arcs r0 = 2^(2/3) rmin, ideal sail; daughters r = r_t(phi) + d sin^2(pi u); a concept, not a mission design",
+  "sigma_critical_g_m2": 1.5312980297718546,
+  "sigma_beta4_g_m2": 0.38282450744296365,
+  "cases": [
+    {
+      "rmin_au": 0.1,
+      "rmin_Rsun": 21.503215567054767,
+      "r0_au": 0.15874010519681994,
+      "phi_deg": 80.0000099384372,
+      "duration_h": 72.04672554460211,
+      "onboard_h": 72.04671375754656,
+      "v_peri_kms": 133.20119124911355,
+      "separation_km": -1.3606728479071688,
+      "inversion_t_ns": 0.9625328297639784,
+      "inversion_tau_ns": 0.9625325460345612,
+      "g_peri": 0.5930083518957107,
+      "delta_v_kms": 173.86685916881373,
+      "sin_alpha_end": 0.5000000182626146,
+      "beta_required": 3.9999998538990886,
+      "sail_T_eq_K": 699.962665163835,
+      "energy_k": 3.6656280968142596e-08,
+      "allowed_arrival_shift_s": 2.5677664965434115,
+      "clock_stability_10pct": 3.629001774981911e-13,
+      "end_separation_m": 73.02413440135221,
+      "daughters": [
+        {
+          "d_km": -1000,
+          "t_lag_s": 0.0006906753388907758,
+          "tau_lag_s": 0.0006897338163345438,
+          "X_ns": 941.5225562319436,
+          "t_lag_over_d2": 6.906753388907758e-10
+        },
+        {
+          "d_km": -100,
+          "t_lag_s": 6.906951582325209e-06,
+          "tau_lag_s": 6.812811695284241e-06,
+          "X_ns": 94.13988704096732,
+          "t_lag_over_d2": 6.906951582325208e-10
+        },
+        {
+          "d_km": -10,
+          "t_lag_s": 6.90697140044583e-08,
+          "tau_lag_s": 5.965584898507845e-08,
+          "X_ns": 9.413865019379848,
+          "t_lag_over_d2": 6.906971400445829e-10
+        },
+        {
+          "d_km": 10,
+          "t_lag_s": 6.906975804442482e-08,
+          "tau_lag_s": 7.848359557833932e-08,
+          "X_ns": -9.413837533914505,
+          "t_lag_over_d2": 6.906975804442481e-10
+        },
+        {
+          "d_km": 100,
+          "t_lag_s": 6.906995622291722e-06,
+          "tau_lag_s": 7.001132760786155e-06,
+          "X_ns": -94.13713849443292,
+          "t_lag_over_d2": 6.906995622291722e-10
+        },
+        {
+          "d_km": 1000,
+          "t_lag_s": 0.0006907193788571188,
+          "tau_lag_s": 0.0006916606265586975,
+          "X_ns": -941.2477015787844,
+          "t_lag_over_d2": 6.907193788571187e-10
+        }
+      ],
+      "X_slope_ns_per_km": 0.9413851276770012,
+      "tau_vertex_km": -0.6814761219275542
+    },
+    {
+      "rmin_au": 0.05,
+      "rmin_Rsun": 10.751607783527383,
+      "r0_au": 0.07937005259840997,
+      "phi_deg": 80.00001987687813,
+      "duration_h": 25.472368844004336,
+      "onboard_h": 25.472360509295832,
+      "v_peri_kms": 188.37493118874883,
+      "separation_km": -1.360673177300215,
+      "inversion_t_ns": 1.3612279756595558,
+      "inversion_tau_ns": 1.3612271731509515,
+      "g_peri": 2.3720334075828426,
+      "delta_v_kms": 245.88492240055118,
+      "sin_alpha_end": 0.5000000365252357,
+      "beta_required": 3.999999707798135,
+      "sail_T_eq_K": 989.8966942295131,
+      "energy_k": 7.331257060345404e-08,
+      "allowed_arrival_shift_s": 1.8154202012043994,
+      "clock_stability_10pct": 1.4513888285382179e-12,
+      "end_separation_m": 146.05295869792127,
+      "daughters": [
+        {
+          "d_km": -1000,
+          "t_lag_s": 0.000976731517318051,
+          "tau_lag_s": 0.0009753998086947402,
+          "X_ns": 1331.708623310843,
+          "t_lag_over_d2": 9.76731517318051e-10
+        },
+        {
+          "d_km": -100,
+          "t_lag_s": 9.767875787061598e-06,
+          "tau_lag_s": 9.634739908720274e-06,
+          "X_ns": 133.13587834132449,
+          "t_lag_over_d2": 9.7678757870616e-10
+        },
+        {
+          "d_km": -10,
+          "t_lag_s": 9.767931841542465e-08,
+          "tau_lag_s": 8.436608041493757e-08,
+          "X_ns": 13.313238000487075,
+          "t_lag_over_d2": 9.767931841542464e-10
+        },
+        {
+          "d_km": 10,
+          "t_lag_s": 9.767944297923197e-08,
+          "tau_lag_s": 1.1099260323906337e-07,
+          "X_ns": -13.313160259831404,
+          "t_lag_over_d2": 9.767944297923197e-10
+        },
+        {
+          "d_km": 100,
+          "t_lag_s": 9.768000350868906e-06,
+          "tau_lag_s": 9.901128455144664e-06,
+          "X_ns": -133.1281042757577,
+          "t_lag_over_d2": 9.768000350868906e-10
+        },
+        {
+          "d_km": 1000,
+          "t_lag_s": 0.000976856081123433,
+          "tau_lag_s": 0.0009781870123401904,
+          "X_ns": -1330.9312167573428,
+          "t_lag_over_d2": 9.76856081123433e-10
+        }
+      ],
+      "X_slope_ns_per_km": 1.331319913085411,
+      "tau_vertex_km": -0.6814778418369143
+    }
+  ],
+  "checks": [
+    {
+      "name": "Lt^2 = E^2/(f(E^2-f))",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Ltau^2 = f/(E^2-f)",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Ltau^2/Lt^2 = f^2/E^2",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Lt - Ltau = (E-f)/(sqrt f sqrt(E^2-f))",
+      "value": 0.0,
+      "atol": 1e-35,
+      "status": "PASS"
+    },
+    {
+      "name": "energy sensitivity of X / of t = -(E-1) + O(l^2)",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: the two inversions agree (second order)",
+      "value": 2.9477375566785054e-07,
+      "atol": 1e-05,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: both inversions positive",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: beta = 4 at the endpoints",
+      "value": -1.4610091136901815e-07,
+      "atol": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: t(d) quadratic (stationary rail)",
+      "value": 6.375956385610076e-05,
+      "atol": 0.001,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: X suppresses energy errors (|k| < 1e-7)",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.1 au: X antisymmetric at 100 km",
+      "value": -2.919726027754974e-05,
+      "atol": 0.001,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: the two inversions agree (second order)",
+      "value": 5.895475398582021e-07,
+      "atol": 1e-05,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: both inversions positive",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: beta = 4 at the endpoints",
+      "value": -2.9220186492651123e-07,
+      "atol": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: t(d) quadratic (stationary rail)",
+      "value": 0.00012751500224960895,
+      "atol": 0.001,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: X suppresses energy errors (|k| < 1e-7)",
+      "value": 0.0,
+      "atol": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "rmin=0.05 au: X antisymmetric at 100 km",
+      "value": -5.839537495921533e-05,
+      "atol": 0.001,
+      "status": "PASS"
+    },
+    {
+      "name": "self-similarity at Ehat = 1: same separation",
+      "value": -2.4208094321802235e-07,
+      "atol": 1e-06,
+      "status": "PASS"
+    },
+    {
+      "name": "self-similarity: same tau vertex",
+      "value": -2.523793518226295e-06,
+      "atol": 0.0001,
+      "status": "PASS"
+    },
+    {
+      "name": "tau vertex agrees with an independent minimisation (-0.6814747 km)",
+      "value": -3.1418369142999225e-06,
+      "atol": 1e-05,
+      "status": "PASS"
+    },
+    {
+      "name": "X slope scales as rmin^(-1/2)",
+      "value": 3.1666982978859085e-07,
+      "atol": 0.001,
+      "status": "PASS"
+    }
+  ]
+}
