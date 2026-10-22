@@ -337,7 +337,7 @@ passages relevant to the manuscripts were read; no observational data were re-an
 
 Collected on 2026-10-22 to anchor the clock requirement of the solar-sail proposal (fractional stability of about
 4×10⁻¹³ over 72 h, or 1.5×10⁻¹² over 25 h, for a 10% measurement of the response of X = t − τ; about 3×10⁻¹⁵ over a
-day for the ~1 ns inversions without daughters). Not yet cited in the manuscript.
+day for the ~1 ns inversions without daughters). Delva2018, Burt2021 and Samain2014 are cited in `par:obs-sail`; ACES is not cited.
 
 | File | Reference | Checked |
 |---|---|---|
