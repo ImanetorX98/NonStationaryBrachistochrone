@@ -4184,25 +4184,14 @@ is the unique minimum in that class; in the prescribed moving-planet model below
 we compute the corresponding extremal and compare it with a family of smooth
 reference paths, without a global minimality certificate. After a Saturn flyby, a mother and a daughter probe could start
 together outside the planet's Hill sphere, with the same position, velocity
-and energy; the turn angle and pericentre of the flyby follow from the
-patched-conic relations \cite[\S\S9.1--9.2]{Battin1999}, with the mass, radius and
-pole of Saturn of \cite{Jacobson2006,Archinal2018}. The mother would follow the arrival-cost rail; the daughter a
+and energy; the transfer, the flyby and the power supply are described in
+\ref{app:probe-details}. The mother would follow the arrival-cost rail; the daughter a
 smooth reference path $x_{\rm rail}(u)+d\sin^2(\pi u)\,n$, with the same
 endpoints and initial tangent, so that no release manoeuvre is needed. In an
-illustrative model with prescribed planetary orbits, a free transfer from
-Earth with perihelion $1$ au and aphelion $20$ au reaches Saturn in about
-$3.1$ years, with a launch energy $C_3\simeq128$ km$^2$\,s$^{-2}$ below the
-$157.75$ km$^2$\,s$^{-2}$ achieved by New Horizons \cite{GuoFarquhar2008}; a flyby at about $2.7$ Saturn radii turns the relative velocity
-by $85^\circ$, crossing the ring plane outside the main rings, and sends the
-probes almost radially inwards; Cassini flew closer still, between the rings
-and the planet \cite{Spilker2019}. Rails to $4$ and
-$3$ au then last about $2.8$ and $3.0$ years and require peak thrust accelerations
-of $3.8\times10^{-5}$ and $1.1\times10^{-4}$ m\,s$^{-2}$, about $0.04$ and $0.11$ N per
-tonne: a fraction of one NEXT ion thruster (up to $236$ mN at $6.9$ kW)
-\cite{PattersonBenson2007}, a system already studied for Saturn missions
-\cite{BensonRiehlOleson2007}. Beyond a few au the electric power could come, as a
-conceptual option, from a kilowatt-class fission source of the Kilopower type, so
-far demonstrated in a ground test \cite{Gibson2018}. For $d=0.05$ au the daughter arrives about
+illustrative model with prescribed planetary orbits, the flyby sends the probes almost
+radially inwards. Rails to $4$ and $3$ au then last about $2.8$ and $3.0$ years and require
+peak thrust accelerations of $3.8\times10^{-5}$ and $1.1\times10^{-4}$ m\,s$^{-2}$, within
+reach of present electric propulsion. For $d=0.05$ au the daughter arrives about
 $7.4$ and $6.3$ hours later. Because the rail makes the arrival time
 stationary, the lag grows as $d^2$: from about $0.3$ hours at $d=0.01$ au to
 about $29$ hours at $d=0.1$ au on the rail to $4$ au ($25$ hours to $3$ au), with $\mbox{lag}/d^2$ constant within
@@ -4371,18 +4360,11 @@ the circuit lies farther out than the encounter orbits, which are free, since at
 $r_{\min}=10^5M$ the rail would need about $38g$. With the
 turns made at maintained local speed and charge, each costs $\gamma v\theta/c$ for a turn
 angle $\theta$, and the integrated budget $I=\int|b|\,\dd\tau/c$ of the circuit is about
-$0.019$. For a purely emitting photon rocket powered by its onboard rest-mass energy, energy
-and momentum balance in the instantaneous rest frame gives $P_\gamma=-c^2\,\dd m/\dd\tau$ and
-$mb=-\dot p_\gamma$, with $b$ the proper acceleration and $P_\gamma$, $\dot p_\gamma$ the
-emitted power and momentum rate. Since $c|\dot p_\gamma|\le P_\gamma$, following the
-prescribed trajectory requires $m_{\rm i}/m_{\rm f}\ge e^{I}$; a perfectly collimated exhaust
-attains this ideal limit \cite{Fuzfa2019}. The ideal mass ratio is about $1.02$ per circuit.
-Kinnersley's exact self-gravitating solution has instead a monopole--dipole emission profile
-\cite{Kinnersley1969,Bonnor1994}; positivity of such a profile limits its recoil efficiency
-$c|\dot p_\gamma|/P_\gamma$ to $1/3$ \cite{Bonnor1994}, so imposing that emission law on the
-same trajectory would require a mass ratio of at least $e^{3I}$. More general
-Robinson--Trautman photon rockets contain higher multipoles \cite{Bonnor1996}, so this factor
-of three is not a universal restriction on purely emitting photon rockets. The static station needs thrust as well:
+$0.019$. A purely emitting photon rocket powered by its onboard rest-mass energy needs
+$m_{\rm i}/m_{\rm f}\ge e^{I}$ to follow the prescribed trajectory, a limit attained by a
+perfectly collimated exhaust \cite{Fuzfa2019}; the ideal mass ratio is about $1.02$ per
+circuit, and \ref{app:probe-details} derives the bound and discusses other emission
+profiles. The static station needs thrust as well:
 its proper acceleration is about $3.35g$, an ideal budget $I\approx0.0037$ per circuit but
 about $3.5$ per year, so it is held static only during the circuit measurements and kept on a
 free orbit otherwise; leaving and rejoining the circular orbit at $r_0$ costs $I\approx0.004$ with ideal
@@ -4402,51 +4384,10 @@ force, geometry, timing and tidal-model errors. The three proposals are reproduc
 \paragraph{A conditional mass--age comparison.}
 The catalogue supplies reference mass scales, but does not establish
 that its objects follow a cosmologically coupled material-mass law.
-The central geometric scale $AM$ and the inherited term of the HH
-energy motivate a phenomenological comparison, not an observational
-identification. If one additionally assumes
-$M_{\rm material}\propto A^k$, $A_0=1$, specified formation ages and
-no merger or accretion contribution, the implied formation mass is
-$M_{\rm today}A_{\rm form}^k$.
-Table~\ref{tab:obs-birth-mass} illustrates this conditional exercise
-in the fiducial flat $\Lambda$CDM model \cite{Planck2020VI}.
-
-\begin{table}[ht]
-\centering\small
-\begin{tabular}{lrrrr}
-\hline
-Object & $M_{\rm today}/M_\odot$ & assumed age (Gyr) & $k=1$ & $k=3$\\
-\hline
-Gaia BH3 & $32.70$ & 12 & $7.26$ & $0.358$\\
-         &         & 13 & $4.21$ & $0.070$\\
-Gaia BH2 & $8.94$ & 5 & $6.07$ & $2.80$\\
-         &        & 8 & $4.44$ & $1.10$\\
-         &        & 12 & $1.99$ & $0.098$\\
-\hline
-\end{tabular}
-\caption{Conditional masses at formation, in $M_\odot$, under $M\propto A^k$.
-The ages are those assumed for the companions, not measured ages of the compact
-objects: isochrones of 12--14 Gyr for Gaia BH3 \cite{Gaia2024BH3} and
-5--13 Gyr (8--12 Gyr if thick disk) for Gaia BH2 \cite{ElBadry2023BH2}.
-Formation priors, coevality and mergers are not modelled.}
-\label{tab:obs-birth-mass}
-\end{table}
-
-For the illustrative $k=1$ law the assumed ages give the formation masses
-listed in the table; older assumed ages with $k=3$ give much smaller
-values, as in the conditional Gaia constraints discussed by
-\cite{AndraeElBadry2023}. This is not a fit of rotating TK to these
-systems, and $k=1$ is not an exact surface-independent law for its
-total HH energy. Companion-age assumptions do not directly measure
-the compact object's formation time; coevality, formation priors and
-merger histories remain to be modelled. Neither the catalogue nor this
-calculation establishes material mass growth proportional to $A$.
-We do not infer a universal coupling law, or an exclusion of one for
-neutron stars, from this illustration. Cluster ages do not date neutron stars
-either: the double neutron star PSR B2127+11C in the globular cluster M15, with
-masses $1.358$ and $1.354\,M_\odot$, has a characteristic spin-down age of about
-$0.1$ Gyr, which is not a direct formation age, and did not follow the standard
-high-mass binary evolution \cite{Jacoby2006}.
+\ref{app:mass-age} gives, under an assumed law $M_{\rm material}\propto A^k$, assumed
+formation ages and no merger or accretion contribution, the implied formation masses of
+Gaia BH2 and BH3: a conditional exercise, not a fit of TK to these systems or a test of
+the coupling.
 
 \paragraph{Drift and requirements for a test.}
 If $A$ is identified with the cosmological scale factor, $A'/A=AH_{\rm cos}$, and
@@ -6485,10 +6426,11 @@ point; as an expansion, this describes small spin, not arbitrary spin. The scrip
 by integrating the extremals as magnetic geodesics and by recomputing the order-$a^2$
 umbilicity minors from the exact metric $h_t$.
 
-The identities of this appendix are checked by two independent scripts in the folder
-\texttt{verification}: in Mathematica by \texttt{verify\_rail\_surfaces.wls}, which also
+The spacetime-surface identities of Lemma~\ref{lem:rail-surfaces} are checked by two
+independent scripts in the folder \texttt{verification}: in Mathematica by \texttt{verify\_rail\_surfaces.wls}, which also
 checks the elimination of the tangential component quoted in the introduction, and in
-SymPy by \texttt{verify\_rail\_surfaces\_sympy.py}.
+SymPy by \texttt{verify\_rail\_surfaces\_sympy.py}. The optical-plane statements are checked
+separately by \texttt{verify\_optical\_planes.py}, as described above.
 
 \section{Quasi-local quantities and effective stress--energy of Thakurta--Kerr}
 \label{app:tk-energy}
@@ -6563,6 +6505,90 @@ $\delta r_\ast/r_\ast=(a^2/r_\ast^2)(5/2-4\cos^2\theta)+O(Ma^2/r_\ast^3)$, below
 $2\times10^{-22}$ in that example. These regions are conditional on the prescribed
 $A(\eta)$; constant $A$ gives the vacuum Kerr seed. The identities, tables and
 boundaries are reproduced by the scripts in \texttt{verification/observational}.
+
+\section{Details of the probe proposals}
+\label{app:probe-details}
+
+\paragraph{Transfer, flyby and power for the Saturn proposal.}
+The turn angle and pericentre of the flyby follow from the patched-conic relations
+\cite[\S\S9.1--9.2]{Battin1999}, with the mass, radius and pole of Saturn of
+\cite{Jacobson2006,Archinal2018}. In the
+illustrative model with prescribed planetary orbits, a free transfer from
+Earth with perihelion $1$ au and aphelion $20$ au reaches Saturn in about
+$3.1$ years, with a launch energy $C_3\simeq128$ km$^2$\,s$^{-2}$ below the
+$157.75$ km$^2$\,s$^{-2}$ achieved by New Horizons \cite{GuoFarquhar2008}; a flyby at about $2.7$ Saturn radii turns the relative velocity
+by $85^\circ$, crossing the ring plane outside the main rings, and sends the
+probes almost radially inwards; Cassini flew closer still, between the rings
+and the planet \cite{Spilker2019}. The peak thrust accelerations of the rails to $4$
+and $3$ au, $3.8\times10^{-5}$ and $1.1\times10^{-4}$ m\,s$^{-2}$, are about $0.04$ and
+$0.11$ N per tonne: a fraction of one NEXT ion thruster (up to $236$ mN at $6.9$ kW)
+\cite{PattersonBenson2007}, a system already studied for Saturn missions
+\cite{BensonRiehlOleson2007}. Beyond a few au the electric power could come, as a
+conceptual option, from a kilowatt-class fission source of the Kilopower type, so
+far demonstrated in a ground test \cite{Gibson2018}.
+
+\paragraph{Photon-rocket bound and emission profiles.}
+For a purely emitting photon rocket powered by its onboard rest-mass energy, energy
+and momentum balance in the instantaneous rest frame gives $P_\gamma=-c^2\,\dd m/\dd\tau$ and
+$mb=-\dot p_\gamma$, with $b$ the proper acceleration and $P_\gamma$, $\dot p_\gamma$ the
+emitted power and momentum rate. Since $c|\dot p_\gamma|\le P_\gamma$, following a
+prescribed trajectory requires $m_{\rm i}/m_{\rm f}\ge e^{I}$, with $I=\int|b|\,\dd\tau/c$;
+a perfectly collimated exhaust attains this ideal limit \cite{Fuzfa2019}.
+Kinnersley's exact self-gravitating solution has instead a monopole--dipole emission profile
+\cite{Kinnersley1969,Bonnor1994}; positivity of such a profile limits its recoil efficiency
+$c|\dot p_\gamma|/P_\gamma$ to $1/3$ \cite{Bonnor1994}, so imposing that emission law on the
+same trajectory would require a mass ratio of at least $e^{3I}$. More general
+Robinson--Trautman photon rockets contain higher multipoles \cite{Bonnor1996}, so this factor
+of three is not a universal restriction on purely emitting photon rockets.
+
+\section{A conditional mass--age comparison}
+\label{app:mass-age}
+
+The central geometric scale $AM$ and the inherited term of the HH
+energy motivate a phenomenological comparison, not an observational
+identification. If one additionally assumes
+$M_{\rm material}\propto A^k$, $A_0=1$, specified formation ages and
+no merger or accretion contribution, the implied formation mass is
+$M_{\rm today}A_{\rm form}^k$.
+Table~\ref{tab:obs-birth-mass} illustrates this conditional exercise
+in the fiducial flat $\Lambda$CDM model \cite{Planck2020VI}.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrrrr}
+\hline
+Object & $M_{\rm today}/M_\odot$ & assumed age (Gyr) & $k=1$ & $k=3$\\
+\hline
+Gaia BH3 & $32.70$ & 12 & $7.26$ & $0.358$\\
+         &         & 13 & $4.21$ & $0.070$\\
+Gaia BH2 & $8.94$ & 5 & $6.07$ & $2.80$\\
+         &        & 8 & $4.44$ & $1.10$\\
+         &        & 12 & $1.99$ & $0.098$\\
+\hline
+\end{tabular}
+\caption{Conditional masses at formation, in $M_\odot$, under $M\propto A^k$.
+The ages are those assumed for the companions, not measured ages of the compact
+objects: isochrones of 12--14 Gyr for Gaia BH3 \cite{Gaia2024BH3} and
+5--13 Gyr (8--12 Gyr if thick disk) for Gaia BH2 \cite{ElBadry2023BH2}.
+Formation priors, coevality and mergers are not modelled.}
+\label{tab:obs-birth-mass}
+\end{table}
+
+For the illustrative $k=1$ law the assumed ages give the formation masses
+listed in the table; older assumed ages with $k=3$ give much smaller
+values, as in the conditional Gaia constraints discussed by
+\cite{AndraeElBadry2023}. This is not a fit of rotating TK to these
+systems, and $k=1$ is not an exact surface-independent law for its
+total HH energy. Companion-age assumptions do not directly measure
+the compact object's formation time; coevality, formation priors and
+merger histories remain to be modelled. Neither the catalogue nor this
+calculation establishes material mass growth proportional to $A$.
+We do not infer a universal coupling law, or an exclusion of one for
+neutron stars, from this illustration. Cluster ages do not date neutron stars
+either: the double neutron star PSR B2127+11C in the globular cluster M15, with
+masses $1.358$ and $1.354\,M_\odot$, has a characteristic spin-down age of about
+$0.1$ Gyr, which is not a direct formation age, and did not follow the standard
+high-mass binary evolution \cite{Jacoby2006}.
 
 \clearpage
 
