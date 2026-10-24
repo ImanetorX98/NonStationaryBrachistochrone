@@ -1,0 +1,31 @@
+PASS normalisation g(u,u) = -1 (exact data, 40 digits)
+PASS charge -g(d_eta,u) = Ehat (exact data, 40 digits)
+PASS alpha_K^2 rr on the equator = r^2/(f Delta)
+PASS alpha_K^2 phiphi on the equator = Delta/f^2
+PASS beta_K on the equator = -2Ma/(r f)
+PASS n on the equator = Ehat/sqrt(Ehat^2 - A^2 f)
+PASS n^2 alpha_K^2 even in a
+PASS beta_K odd in a
+PASS d_theta (n^2 alpha_K^2)_rr = 0 on the equator
+PASS d_theta (n^2 alpha_K^2)_thth = 0 on the equator
+PASS d_theta (n^2 alpha_K^2)_phiphi = 0 on the equator
+PASS d_theta beta_phi = 0 on the equator
+PASS off-diagonal r-theta, theta-phi terms vanish
+PASS a = 0: h_thth = r^2 n^2 / f
+PASS a = 0: h_phiphi = h_thth sin^2(theta)
+PASS a = 0: n depends on r only
+PASS beta_K at first order = -2Ma sin^2(theta)/(r - 2M)
+normal magnetic force: 4*M*a*sin(iota)*cos(s)/(rho**2*(-2*M + rho))
+PASS normal magnetic force d beta(T, m) = 4Ma cos(s) sin(iota)/((rho-2M) rho^2)
+PASS normal magnetic force vanishes on the equator (iota = 0)
+PASS on an inclined plane the contraction also vanishes where cos(s) = 0
+PASS proper-time data even in a
+numerical: out-of-plane displacement after the arc (M units): a=0 6.128e-14, a=+1e-3 3.981298e-08, a=-1e-3 -3.993419e-08, a=2e-3 7.950465e-08; equator with a=1e-3 3.178e-15; |H - 1/2| <= 1.0e-14
+PASS numerical: a = 0 stays in the inclined plane
+PASS numerical: equator invariant for a != 0
+PASS numerical: odd part dominates (even part < 1% at a = 1e-3)
+PASS numerical: even part quadratic in a (ratio 4)
+PASS numerical: displacement linear in a (ratio 2)
+PASS numerical: displacement nonzero for a = 1e-3
+PASS numerical: Hamiltonian conserved
+28/28 checks passed

@@ -1,0 +1,6 @@
+PASS gamma^2 (v^2 kappa + g_perp) = 2 g_perp
+PASS zero Killing power g(b, d_t) = 0 (symbolic)
+largest relative deviation of |b| from 2 g_s sin(alpha): 2.52e-37
+PASS |b| = 2 g_s sin(alpha) along the rails (40 digits)
+PASS mutation: factor 1.9 is rejected
+4/4 checks passed

@@ -264,7 +264,12 @@ Randers metric. Two contacts with the present setting are exact.
 \begin{itemize}
 \item The extremals lie in the equatorial plane, which is totally geodesic for the optical
 data by the reflection $\vartheta\mapsto\pi-\vartheta$; in the static case every optical
-geodesic lies in a plane through the centre.
+geodesic lies in a plane through the centre. With rotation an inclined central plane is
+not totally geodesic for the arrival-time data: the normal second fundamental form of their
+Riemannian part is $O(a^2)$, but $\dd\beta_K$ does not vanish on generic tangent directions
+of the plane, so tangent extremals generically leave it at first order in $a$. The
+proper-time data have no one-form, and for them inclined central planes are totally
+geodesic through first order in $a$ (\ref{app:rail-surfaces}).
 \item The energy dependence of the arrival-time optical metric introduces the threshold
 $\Ehat^2=3/2$ for negativity of the optical Gauss curvature throughout the Schwarzschild
 exterior (Corollary~\ref{cor:static-separation}), which has no counterpart for the
@@ -4122,9 +4127,9 @@ The three proposals below are ordered by increasing physical and technological
 ambition, and each reaches a deeper class of effects: the control law in the
 Newtonian limit, with probes after a Saturn flyby and present electric propulsion;
 the weak-field relativistic separation between the arrival- and proper-cost rails,
-with an idealised solar sail near the Sun; and strong-field and spin effects, with a
-thought experiment around M87$^*$. The ordering is qualitative, not the result of
-comparable mission assessments.
+with an idealised solar sail near the Sun; and spin effects, with a thought experiment
+of clocks around Gaia BH3. The ordering is qualitative, not the result of comparable
+mission assessments.
 
 \paragraph{A proposed Solar-System control comparison.}
 \label{par:obs-solar-probe}
@@ -4137,7 +4142,41 @@ arrival-cost rail needs a thrust $2GM_\odot\sin\alpha/r^2$ normal to the
 velocity, twice the normal component of solar gravity, where $\alpha$ is the
 angle between velocity and radial direction: this is the ``rule of 2'' of
 brachistochrones under a conservative force, with $r\sin\alpha/v$ conserved for
-a central one \cite{Routh1898,AgmonMann2026}. In the static, central, fixed-energy model
+a central one \cite{Routh1898,AgmonMann2026}. The rule is exact in any static spacetime:
+\begin{proposition}[Relativistic rule of two; evidence level~(I), proved below]
+\label{prop:rule-of-two}
+Let $g=-f\,\dd t^2+\gamma_{ij}\dd x^i\dd x^j$ be static, with $f>0$ and $\gamma$ regular, and
+consider an arrival-time extremal at maintained charge $\Ehat=f\,\dd t/\dd\tau$, with
+$\Ehat^2>f$ so that the speed relative to the static observers is nonzero. Its proper
+acceleration is $b=2\,(g_s)_\perp$, where $g_s=c^2\,{\rm grad}_\gamma\ln\sqrt f$ is the proper
+acceleration of the static observers and $(\cdot)_\perp$ the component $\gamma$-orthogonal to
+the spatial path; hence $|b|=2|(g_s)_\perp|$. In Schwarzschild,
+$|b|=2GM\sin\alpha/\bigl(r^2\sqrt{1-2GM/(rc^2)}\bigr)$ for every $\Ehat$, with $\alpha$ the
+angle between velocity and radial direction.
+\end{proposition}
+\begin{proof}
+Set $c=1$. With speed $v$ relative to the static observers and Lorentz factor
+$\lambda=\Ehat/\sqrt f$, $v^2=1-f/\Ehat^2$. Keeping $\Ehat$ requires $g(b,\partial_t)=0$,
+which with $g(b,u)=0$ makes $b$ spatial and $\gamma$-orthogonal to the unit tangent $e$ of the
+path. Write $u=\lambda(f^{-1/2}\partial_t+v\,e)$ and let $l$ be the $\gamma$-arclength, so that
+$\dd l/\dd\tau=\lambda v$. The spatial components of the four-acceleration are
+$b^i=e^i\,\dd(\lambda v)/\dd\tau+\lambda^2v^2(\nabla_ee)^i+\lambda^2f^{-1}\,\Gamma^i_{tt}$,
+where $\nabla$ is the Levi-Civita connection of $\gamma$ and
+$\Gamma^i_{tt}=\tfrac12\gamma^{ij}\partial_jf$. Projected orthogonally to $e$, the first term
+drops and $b=\lambda^2\bigl(v^2\kappa+(g_s)_\perp\bigr)$, where $\kappa=(\nabla_ee)_\perp$ is
+the curvature vector of the path. The arrival time is $\dd t=n\,\dd l$ with
+$n=1/(v\sqrt f)$, so the path is a geodesic of $n^2\gamma$ and
+$\kappa=({\rm grad}_\gamma\ln n)_\perp$. Substituting,
+$v^2\kappa+(g_s)_\perp=({\rm grad}_\gamma f)_\perp/\Ehat^2$, hence
+$b=\lambda^2({\rm grad}_\gamma f)_\perp/\Ehat^2=({\rm grad}_\gamma f)_\perp/f=2(g_s)_\perp$.
+\end{proof}
+In a stationary background with frame dragging, such as Kerr, the one-form $\beta_K$ adds a
+gravitomagnetic term that is not included here. The script
+\texttt{verify\_rule\_of\_two.py} checks the identity symbolically and compares $|b|$ with
+$2g_\perp$ from the exact Christoffel symbols along Schwarzschild rails, including the
+strong field.
+
+Returning to the Solar System: in the static, central, fixed-energy model
 the arrival functional for paths monotone in $r$ is strictly convex, so the rail
 is the unique minimum in that class; in the prescribed moving-planet model below
 we compute the corresponding extremal and compare it with a family of smooth
@@ -4250,39 +4289,102 @@ time-transfer errors remains to be made. The comparison would test the first
 post-Newtonian separation of the two rails, that is, the redshift and dilation
 structure of the control problem, not global minimality, TK or the conformal factor.
 
-\paragraph{A Kerr thought experiment.}
+\paragraph{A clock thought experiment around Gaia BH3.}
 \label{par:obs-kerr-thought}
-Large relativistic and spin effects require strong fields. At fixed dimensionless geometry
-and spin, lengths and times grow as $M$ while proper accelerations scale as $c^4/(GM)$; for
-the rails considered here, a supermassive reference mass brings the peak acceleration to the
-order of $g$. Scaling the frozen
-Kerr background to the reference mass of M87$^*$ in
-Table~\ref{tab:observational-context}, with $\Ehat=1$ and equal-radius
-endpoints separated by $1.8$ radians at $120M$ or $38M$, the arrival-cost
-rails turn near $48M$ and $17.5M$ and need peak proper accelerations of about
-$0.85g$ and $6.5$--$6.7g$; the static speeds reach $0.20c$ and $0.34c$.
-Changing the illustrative spin from zero to $a/M=\pm0.8$ shifts the
-coordinate arrival, after $458$ or $85$ days, by about $25$--$92$ minutes. The
-corresponding thrust budgets, $0.33c$ and $0.55c$ in integrated proper
-acceleration, are out of reach of chemical or electric propulsion. Here the probe is a test
-body in the frozen background. For a purely emitting photon rocket powered by its onboard
-rest-mass energy, energy and momentum balance in the instantaneous rest frame gives
-$P_\gamma=-c^2\,{\rm d}m/{\rm d}\tau$ and $mb=-\dot p_\gamma$, with $b$ the proper
-acceleration and $P_\gamma$, $\dot p_\gamma$ the emitted power and momentum rate. Since
-$c|\dot p_\gamma|\le P_\gamma$, following the prescribed trajectory requires
-$m_{\rm i}/m_{\rm f}\ge e^{I}$, with $I=\int|b|\,{\rm d}\tau/c$ the budget above; a perfectly
-collimated exhaust attains this ideal limit \cite{Fuzfa2019}. The ideal mass ratios are
-about $1.4$ and $1.7$, with a power of order $3\times10^{12}$ W per tonne of instantaneous
-mass at $1g$. Kinnersley's exact self-gravitating solution has instead a monopole--dipole
-emission profile \cite{Kinnersley1969,Bonnor1994}; positivity of such a profile limits its
-recoil efficiency $c|\dot p_\gamma|/P_\gamma$ to $1/3$ \cite{Bonnor1994}, so imposing that
-emission law on the same trajectory would require a mass ratio of at least $e^{3I}$. More
-general Robinson--Trautman photon rockets contain higher multipoles \cite{Bonnor1996}, so
-this factor of three is not a universal restriction on purely emitting photon rockets. This remains a thought experiment
-with prescribed spin, geometry and control, not an operational mission or an
-identified astrophysical TK source; the accretion flow and jet of M87$^*$, and the
-transfer to it, are outside the model. The three proposals are reproduced by the
-\texttt{probe\_*} scripts in \texttt{verification/observational}.
+Spin effects are small in weak fields, but clocks compared locally can still reach them.
+We consider probes already placed around Gaia BH3, the most massive of the three Gaia
+black-hole systems in Table~\ref{tab:observational-context}, with $M=32.70\,M_\odot$ at 590.6~pc and a very
+metal-poor giant companion of $0.76\,M_\odot$ on an 11.6-year orbit of eccentricity 0.729,
+which recedes to 28.6~au at apastron \cite{Gaia2024BH3}. Its spin is not measured, and we use
+$a/M=0.5$ for illustration. Transfer and orbital insertion are outside the model, the
+propulsion is an ideal photon rocket, and frozen Kerr replaces TK, as for the other
+proposals. The choice of Gaia BH3 is made below, through the companion.
+
+The spin is measured first. Two free probes on the same spherical orbit of constant radius
+$r$ and inclination $i$ to the equator, in opposite senses, meet twice per revolution and
+compare their clocks locally; at first order in $a$ their orbital planes precess together. At
+first order in $a$ and exactly in $r$ ($G=c=1$), the difference of their proper times grows
+at each encounter by
+\begin{equation}
+    \Delta\tau=\frac{6\pi Ma\cos i}{\sqrt{r(r-3M)}} .
+    \label{eq:encounter-clock}
+\end{equation}
+This is not the difference $4\pi a$ of the equatorial coordinate periods in the
+gravitomagnetic clock effect \cite{MashhoonGronwaldLichtenegger2001}, which compares returns
+to a fixed azimuth: at the encounter the effect is smaller by a factor of order $M/r$, but it
+needs no remote reference. At $r=10^5M$, 4.8 million km, the jump is 15.2~ns, a fractional
+rate difference of $9.5\times10^{-13}$, and 200 encounters take 37 days. Reversing the
+velocities of both probes flips the sign of the spin term but not that of a clock-rate
+offset, and three orbital planes with linearly independent normals give the spin vector. A
+full estimate must still model clock biases, the orbits and the companion.
+
+The rail comes second. The odd part of the arrival delay of an open rail depends on how
+distant clocks are synchronised; a closed circuit with a single station avoids this. Two
+probes leave a static station together and run, in opposite senses, the circuit formed by
+the zero-spin arrival rail at $\Ehat=1$, imposed as a fixed curve from the station to a
+second point, and by the circular arc at the station radius $r_0$ back. On a curve imposed
+in the equatorial plane the Riemannian part of~\eqref{eq:randers} is reversible and the
+proper time is $f\alpha$ at $\Ehat=1$, so the arrival times differ by $2\oint\beta_K$ in
+coordinate time exactly in $a$, read by the station as $\sqrt{f(r_0)}$ times this on its own
+clock, while the onboard proper times agree; off the equator the corresponding projection
+holds at first order in $a$. For $r_{\min}=1.5\times10^5M$, 7.2 million km from the black
+hole, and endpoints at $r_0=2^{2/3}r_{\min}$, 11.5 million km, where the station sits, the
+signal is $-742$~ps for $a/M=0.5$, the circuit takes 9.4 hours, and the velocity turns by
+$120^\circ$ at the two junctions. A 10\% measurement requires an uncertainty below about
+74~ps in the arrival-time difference read by the station. A timing error accumulated
+uniformly over the whole circuit would correspond to a fractional rate of about
+$2\times10^{-15}$; this is only an equivalent single-contribution scale, not a derived
+specification of any clock or a complete error budget, and it is not a comparison with the
+instability figures quoted above. Laboratory clocks have reached a systematic uncertainty of
+$8\times10^{-19}$ \cite{Aeppli2024}. The circuit measures the gravitomagnetic flux through it,
+not the optimality of the rail.
+
+The companion breaks the symmetry between the two senses through its time-dependent tide,
+and the arrival times respond to it far more than the clocks: as a characteristic
+weak-field sensitivity, a tidal potential $\delta\Phi$ changes the speed by
+$\delta v/v\simeq\delta\Phi/v^2$, larger than its clock effect $\delta\Phi/c^2$ by
+$c^2/v^2=r/(2M)$. We compute the first-order shift of the arrival-time difference in a
+Newtonian model: the black hole's freely falling frame, the companion's quadrupole tide, the
+circuit held fixed by forces normal to the velocity, coordinate times (the conversion to the
+station's clock changes the results by factors close to one), and a sample of orientations of
+the circuit plane. In this model the static part of the tide cancels exactly between the two
+senses. We consider two control laws. If the probes slide on the circuit with no tangential
+thrust, so that their charge with respect to the black hole is no longer kept, the shift is about 40--290~ps near apastron, from the
+median to the largest sampled case, and of order microseconds near periastron. If instead
+an ideal tangential thrust compensates the modelled tide, the charge with respect to the black
+hole is kept exactly when the model is exact, and a model potential equal to $1-\epsilon$ times
+the true one on the whole circuit leaves $\epsilon$ times the free-sliding shift. With
+$\epsilon$ from the published companion mass, $0.76\pm0.05\,M_\odot$, and the companion
+orbit, the circuit and the actuation held fixed, this is about 3--19~ps near apastron, a few
+per cent of the signal; it illustrates one parameter and is not a joint uncertainty budget.
+Around Gaia BH1, whose companion is at 2~au on a 186-day orbit, the same circuit at the same
+$r_{\min}/M$ gives a free-sliding shift of 40--320~ns near apastron, two to three orders of
+magnitude larger than its signal, so that a much more accurate compensation would be needed:
+this is why the experiment is placed around Gaia BH3.
+
+The probes are test bodies in the frozen background, and the rail, the arc and the turns
+need thrust. By Proposition~\ref{prop:rule-of-two}, at zero spin the rail needs twice the
+local static gravity, about $17g$ at its turning point, and the arc about $3.3g$. With the
+turns made at maintained local speed and charge, each costs $\gamma v\theta/c$ for a turn
+angle $\theta$, and the integrated budget $I=\int|b|\,\dd\tau/c$ of the circuit is about
+$0.019$. For a purely emitting photon rocket powered by its onboard rest-mass energy, energy
+and momentum balance in the instantaneous rest frame gives $P_\gamma=-c^2\,\dd m/\dd\tau$ and
+$mb=-\dot p_\gamma$, with $b$ the proper acceleration and $P_\gamma$, $\dot p_\gamma$ the
+emitted power and momentum rate. Since $c|\dot p_\gamma|\le P_\gamma$, following the
+prescribed trajectory requires $m_{\rm i}/m_{\rm f}\ge e^{I}$; a perfectly collimated exhaust
+attains this ideal limit \cite{Fuzfa2019}. The ideal mass ratio is about $1.02$ per circuit.
+Kinnersley's exact self-gravitating solution has instead a monopole--dipole emission profile
+\cite{Kinnersley1969,Bonnor1994}; positivity of such a profile limits its recoil efficiency
+$c|\dot p_\gamma|/P_\gamma$ to $1/3$ \cite{Bonnor1994}, so imposing that emission law on the
+same trajectory would require a mass ratio of at least $e^{3I}$. More general
+Robinson--Trautman photon rockets contain higher multipoles \cite{Bonnor1996}, so this factor
+of three is not a universal restriction on purely emitting photon rockets. For scale only,
+an ideal photon rocket with a total mass ratio of 20, shared between acceleration and
+braking, would cover the 590.6~pc in about 2130 years, 910 of them on board; the transfer is
+not modelled here. This remains a thought experiment with prescribed spin, geometry and
+control, not an operational mission. The three proposals are reproduced by the
+\texttt{probe\_*} scripts in \texttt{verification/observational}, this one by
+\texttt{probe\_gaia\_bh3.py}.
 
 \paragraph{A conditional mass--age comparison.}
 The catalogue supplies reference mass scales, but does not establish
@@ -6303,6 +6405,44 @@ along which the outgoing radial rail keeps the areal radius $Ar=c$; in proper ti
 induced metric is $-\dd\tau^2+c^2\dd\psi^2$. Since $\max_{r>2M}f/r^2=1/(27M^2)$, the
 condition $c<3\sqrt3\,M\Ehat$ keeps the root positive at every $r>2M$. We do not use this
 profile elsewhere.
+
+\paragraph{Central planes of the optical data.}
+The results above concern the Lorentzian surfaces; the spatial optical data behave
+differently. At frozen $A$ and fixed charge the arrival functional off the equator is
+$\dd\eta=n\,\alpha_K+\beta_K$, where, for the Kerr seed, $N^2=-g_{tt}$,
+$\alpha_K^2=(g_{ij}-g_{ti}g_{tj}/g_{tt})\,\dd x^i\dd x^j/N^2$,
+$\beta_K=-(g_{ti}/g_{tt})\,\dd x^i$ and $n=\Ehat/\sqrt{\Ehat^2-A^2N^2}$; these data reduce
+to~\eqref{eq:randers}--\eqref{eq:randers-data} on the equator. The three families of the
+lemma lie in the equatorial plane, which is totally geodesic for these data: the
+$\vartheta$-derivatives of $n\alpha_K$ and of $\beta_K$ vanish there, so its second
+fundamental form for $n\alpha_K$ is zero and the magnetic force of $\dd\beta_K$ is tangent
+to it. The obstruction~\eqref{eq:rail-surface-minor} therefore comes from the timelike
+direction of the swept surface, not from its spatial projection. Inclined central planes
+behave differently when $a\neq0$. The Riemannian part $n\alpha_K$ is even in $a$ and
+spherically symmetric at $a=0$, so the normal second fundamental form of every central plane
+for it is $O(a^2)$: central planes are totally geodesic for it through first order in $a$. The one-form is odd: at first order
+$\beta_K=-2Ma\sin^2\vartheta\,\dd\varphi/(r-2M)$, and on the central plane of inclination
+$\iota$, at radius $\rho$ and angle $s$ from its line of steepest inclination,
+\begin{equation}
+    \dd\beta_K(T,m)=\frac{4Ma\cos s\,\sin\iota}{(\rho-2M)\rho^2},
+    \label{eq:inclined-plane-force}
+\end{equation}
+where, in the Cartesian chart built on Boyer--Lindquist coordinates with the spin along
+$z$, the plane is spanned by $e_1=(\cos\iota,0,-\sin\iota)$ and $e_2=(0,1,0)$, its normal is
+$m=e_1\times e_2$, the point is $\rho(\cos s\,e_1+\sin s\,e_2)$, and
+$T=-\sin s\,e_1+\cos s\,e_2$; $T$ and $m$ have unit Euclidean length. For extremals at unit
+speed in the Riemannian part, $h(\nabla_vv,w)=\dd\beta_K(w,v)$ with $h=n^2\alpha_K^2$, so,
+up to the normalisation of $T$ and $m$ in $h$ and the sign fixed by this convention,
+\eqref{eq:inclined-plane-force} is the normal magnetic force. It vanishes on the equator and,
+on an inclined plane, only where $\cos s=0$. Generically, therefore, tangent extremals acquire
+an out-of-plane component at first order in $a$, and an inclined central plane is not
+totally geodesic for the arrival-time data. The proper-time data,
+$(A^2N^2/\Ehat)\,n\,\alpha_K$, have no one-form and are even in $a$, so for them inclined
+central planes are totally geodesic through first order in $a$. Under a drift the reflection still holds, since $A$ does not depend on
+$\vartheta$, and the equator stays invariant for the extremals. We use total geodesicity,
+which is unambiguous for Randers data, and adopt no notion of umbilicity for Finsler
+submanifolds. The script \texttt{verify\_optical\_planes.py} checks these statements
+symbolically and, independently, by integrating the extremals as magnetic geodesics.
 
 The identities of this appendix are checked by two independent scripts in the folder
 \texttt{verification}: in Mathematica by \texttt{verify\_rail\_surfaces.wls}, which also

@@ -1,0 +1,318 @@
+{
+  "model": "frozen Kerr, A = 1; Gaia BH3 M = 32.70 Msun, companion from the Gaia Collaboration (2024); a* = 0.5 illustrative",
+  "encounter": {
+    "formula": "Delta tau = 6 pi a cos(i)/sqrt(r(r-3)) (first order in a, exact in r)",
+    "cubic_to_linear_ratio_over_a2": {
+      "100": 3.489566726892768e-05,
+      "100000": 3.333483339333283e-11
+    },
+    "rows": [
+      {
+        "r_M": 10000.0,
+        "jump_ns": 151.82159835939794,
+        "fractional_rate": 3.000900270081024e-10,
+        "period_days": 0.011712872176805156,
+        "campaign_200_encounters_coordinate_days": 1.1712872176805158
+      },
+      {
+        "r_M": 100000.0,
+        "jump_ns": 15.180110044497939,
+        "fractional_rate": 9.48711759403296e-13,
+        "period_days": 0.3703935402111872,
+        "campaign_200_encounters_coordinate_days": 37.03935402111872
+      },
+      {
+        "r_M": 1000000.0,
+        "jump_ns": 1.517990511101423,
+        "fractional_rate": 3.0000090000270005e-15,
+        "period_days": 11.712872176805156,
+        "campaign_200_encounters_coordinate_days": 1171.2872176805156
+      }
+    ]
+  },
+  "circuit": [
+    {
+      "r_min_M": 100000.0,
+      "k2_ps_per_unit_astar": -2227.3775852242043,
+      "signal_ps_astar_half": -1113.6887926121021,
+      "station_proper_ps_astar_half": -1113.6817767902394,
+      "duration_s": 18374.89203020986,
+      "r_min_million_km": 4.828563875078815,
+      "station_r0_million_km": 7.664867374795755,
+      "requirement_y": 6.060927001808253e-15,
+      "angle_tangents_deg": 59.999877589629754,
+      "velocity_turn_deg": 120.00012241037024
+    },
+    {
+      "r_min_M": 150000.0,
+      "k2_ps_per_unit_astar": -1484.8966127638378,
+      "signal_ps_astar_half": -742.4483063819189,
+      "station_proper_ps_astar_half": -742.4451882878724,
+      "duration_s": 33756.619692915134,
+      "r_min_million_km": 7.242845812618222,
+      "station_r0_million_km": 11.497301062193632,
+      "requirement_y": 2.1994154424702203e-15,
+      "angle_tangents_deg": 59.99991839359699,
+      "velocity_turn_deg": 120.000081606403
+    },
+    {
+      "r_min_M": 200000.0,
+      "k2_ps_per_unit_astar": -1113.6642931815998,
+      "signal_ps_astar_half": -556.8321465907999,
+      "station_proper_ps_astar_half": -556.8303926766807,
+      "duration_s": 51971.55235189775,
+      "r_min_million_km": 9.65712775015763,
+      "station_r0_million_km": 15.32973474959151,
+      "requirement_y": 1.0714171915060511e-15,
+      "angle_tangents_deg": 59.99993879538919,
+      "velocity_turn_deg": 120.0000612046108
+    }
+  ],
+  "companion_station_shift_benchmark_sampled": {
+    "apastron": {
+      "lawB_max_ps": 291.4785978684907,
+      "lawB_median_ps": 39.355860696100116,
+      "lawA_eps_for_10pc_worst": 0.2547179490402574,
+      "lawA_eps_for_10pc_median": 1.8864999856437907,
+      "lawA_eps_mass": 0.06578947368421052,
+      "lawA_residual_mass_only_max_ps": 19.17622354397965,
+      "lawA_residual_mass_only_median_ps": 2.5892013615855336
+    },
+    "periastron": {
+      "lawB_max_ps": 3084879.9744368372,
+      "lawB_median_ps": 414975.19180521043,
+      "lawA_eps_for_10pc_worst": 2.4067332036717482e-05,
+      "lawA_eps_for_10pc_median": 0.00017891390161232207,
+      "lawA_eps_mass": 0.06578947368421052,
+      "lawA_residual_mass_only_max_ps": 202952.62989716034,
+      "lawA_residual_mass_only_median_ps": 27300.999460869105
+    }
+  },
+  "companion_comparison_same_rmin": {
+    "Gaia BH1": {
+      "signal_ps": 218.42057209156144,
+      "apastron_lawB_max_ps": 316760.46327572654,
+      "apastron_lawB_median_ps": 42831.161692186535
+    },
+    "Gaia BH2": {
+      "signal_ps": 202.98128009340533,
+      "apastron_lawB_max_ps": 680.537606153578,
+      "apastron_lawB_median_ps": 91.89259304850708
+    }
+  },
+  "thrust_budget": [
+    {
+      "r_min_M": 100000.0,
+      "peak_rail_g": 37.96095136592122,
+      "arc_g": 7.532283989962743,
+      "I_rail": 0.005837529519482129,
+      "I_arc": 0.0024780440320526015,
+      "junction_turn_maintained_charge": 0.007434186612002977,
+      "junction_direct_boost_lower_bound": 0.006148010677375998,
+      "I_total": 0.023183946775540684,
+      "photon_mass_ratio": 1.0234547834405836,
+      "rule_of_two_peak_g": 37.960951365921225
+    },
+    {
+      "r_min_M": 150000.0,
+      "peak_rail_g": 16.871477701119375,
+      "arc_g": 3.347688803399799,
+      "I_rail": 0.004766302831688864,
+      "I_arc": 0.002023314488655879,
+      "junction_turn_maintained_charge": 0.006069973140392536,
+      "junction_direct_boost_lower_bound": 0.0050198207597895545,
+      "I_total": 0.018929563601129816,
+      "photon_mass_ratio": 1.0191098636604514,
+      "rule_of_two_peak_g": 16.871477701119375
+    },
+    {
+      "r_min_M": 200000.0,
+      "peak_rail_g": 9.490190389697949,
+      "arc_g": 1.8830769291283593,
+      "I_rail": 0.004127730647339637,
+      "I_arc": 0.0017522417509788168,
+      "junction_turn_maintained_charge": 0.005256744526864219,
+      "junction_direct_boost_lower_bound": 0.004347288430289218,
+      "I_total": 0.01639346145204689,
+      "photon_mass_ratio": 1.0165285715388515,
+      "rule_of_two_peak_g": 9.490190389697949
+    }
+  ],
+  "transfer_for_scale": [
+    {
+      "mass_ratio": 10.0,
+      "beta": 0.8181818181818182,
+      "gamma": 1.7392527130926088,
+      "years_inertial": 2354.3416927495496,
+      "years_onboard": 1353.651298069983
+    },
+    {
+      "mass_ratio": 20.0,
+      "beta": 0.9047619047619048,
+      "gamma": 2.3478713763747794,
+      "years_inertial": 2129.045836984043,
+      "years_onboard": 906.7983273731915
+    }
+  ],
+  "checks": [
+    {
+      "name": "spherical orbit at zeroth order: R = R' = 0",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "dt/dlambda independent of theta at first order",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "nodal periods T+ - T- = 12 pi a cos i (first order)",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "encounter interval pi r^(3/2) at first order",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "Delta tau per encounter = 6 pi a cos i / sqrt(r(r-3))",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "equatorial encounter interval exactly pi (r^3 - a^2)/r^(3/2)",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "exact equatorial Delta tau odd in a",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "exact equatorial linear coefficient = 6 pi / sqrt(r(r-3))",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "encounter jump at 1e5 M = 4.46583 ns x (M/9.62 Msun) = 15.18 ns",
+      "status": "PASS",
+      "value": 15.18011
+    },
+    {
+      "name": "companion semi-major axis agrees with Kepler III",
+      "status": "PASS",
+      "value": 16.546
+    },
+    {
+      "name": "fixed curve, opposite senses: dt(+) - dt(-) = 2 b dphi exactly in a",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "fixed curve, opposite senses: dtau(+) = dtau(-)",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "circuit k2 at 1e5 M per unit a* and per (M/9.62 Msun) = -655.27 ps (scale invariance)",
+      "status": "PASS",
+      "value": -2227.378
+    },
+    {
+      "name": "benchmark 1.5e5 M: signal about -742 ps (a* = 0.5), duration about 9.4 h",
+      "status": "PASS",
+      "value": [
+        -742.448,
+        9.3768
+      ]
+    },
+    {
+      "name": "benchmark 1.5e5 M: turning point 7.24 and station 11.5 million km from the black hole",
+      "status": "PASS",
+      "value": [
+        7.2428,
+        11.4973
+      ]
+    },
+    {
+      "name": "velocity turn at the junctions = 120 degrees",
+      "status": "PASS",
+      "value": 120.000082
+    },
+    {
+      "name": "companion held fixed: the two senses cancel exactly",
+      "status": "PASS",
+      "value": 6.352747104407253e-22
+    },
+    {
+      "name": "quadrature converged (8001 vs 20001 points)",
+      "status": "PASS",
+      "value": 1.0685158250339376e-06
+    },
+    {
+      "name": "apastron, law B: shift of the station difference below the signal in every sampled orientation",
+      "status": "PASS",
+      "value": 291.48
+    },
+    {
+      "name": "apastron, law A with a mass-only model error eps = 0.05/0.76: residual below 3% of the signal",
+      "status": "PASS",
+      "value": 19.176
+    },
+    {
+      "name": "periastron, law B: shift larger than the signal (campaign near apastron)",
+      "status": "PASS",
+      "value": 3084880.0
+    },
+    {
+      "name": "nonlinear sliding motion reproduces the first-order shift (largest periastron case, within 2%)",
+      "status": "PASS",
+      "value": [
+        -3088054.7,
+        -3084880.0
+      ]
+    },
+    {
+      "name": "Gaia BH1 at the same r_min/M: companion shift exceeds the signal by more than 100",
+      "status": "PASS",
+      "value": 196.1
+    },
+    {
+      "name": "Christoffel check: circular geodesic has zero acceleration",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "rail peak = 2 g_s at r_min (relativistic rule of two)",
+      "status": "PASS",
+      "value": [
+        37.961,
+        16.871,
+        9.49
+      ]
+    },
+    {
+      "name": "arc proper time: dtau/dt = f0 at Ehat = 1",
+      "status": "PASS",
+      "value": null
+    },
+    {
+      "name": "benchmark 1.5e5 M: rail peak about 17 g, arc about 3.4 g",
+      "status": "PASS",
+      "value": [
+        16.871,
+        3.348
+      ]
+    },
+    {
+      "name": "transfer R = 20: about 2129 years (907 on board)",
+      "status": "PASS",
+      "value": [
+        2129.0,
+        906.8
+      ]
+    }
+  ]
+}
