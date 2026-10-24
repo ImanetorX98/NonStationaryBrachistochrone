@@ -269,7 +269,9 @@ not totally geodesic for the arrival-time data: the normal second fundamental fo
 Riemannian part is $O(a^2)$, but $\dd\beta_K$ does not vanish on generic tangent directions
 of the plane, so tangent extremals generically leave it at first order in $a$. The
 proper-time data have no one-form, and for them inclined central planes are totally
-geodesic through first order in $a$ (\ref{app:rail-surfaces}).
+geodesic through first order in $a$. For both Riemannian metrics the equatorial and
+meridional planes are totally geodesic exactly, while inclined central planes have no
+umbilical point at order $a^2$ (\ref{app:rail-surfaces}).
 \item The energy dependence of the arrival-time optical metric introduces the threshold
 $\Ehat^2=3/2$ for negativity of the optical Gauss curvature throughout the Schwarzschild
 exterior (Corollary~\ref{cor:static-separation}), which has no counterpart for the
@@ -4364,7 +4366,9 @@ this is why the experiment is placed around Gaia BH3.
 
 The probes are test bodies in the frozen background, and the rail, the arc and the turns
 need thrust. By Proposition~\ref{prop:rule-of-two}, at zero spin the rail needs twice the
-local static gravity, about $17g$ at its turning point, and the arc about $3.3g$. With the
+local static gravity, about $17g$ at its turning point, and the arc about $3.3g$; this is why
+the circuit lies farther out than the encounter orbits, which are free, since at
+$r_{\min}=10^5M$ the rail would need about $38g$. With the
 turns made at maintained local speed and charge, each costs $\gamma v\theta/c$ for a turn
 angle $\theta$, and the integrated budget $I=\int|b|\,\dd\tau/c$ of the circuit is about
 $0.019$. For a purely emitting photon rocket powered by its onboard rest-mass energy, energy
@@ -4378,11 +4382,20 @@ Kinnersley's exact self-gravitating solution has instead a monopole--dipole emis
 $c|\dot p_\gamma|/P_\gamma$ to $1/3$ \cite{Bonnor1994}, so imposing that emission law on the
 same trajectory would require a mass ratio of at least $e^{3I}$. More general
 Robinson--Trautman photon rockets contain higher multipoles \cite{Bonnor1996}, so this factor
-of three is not a universal restriction on purely emitting photon rockets. For scale only,
+of three is not a universal restriction on purely emitting photon rockets. The static station needs thrust as well:
+its proper acceleration is about $3.35g$, an ideal budget $I\approx0.0037$ per circuit but
+about $3.5$ per year, so it is held static only during the circuit measurements and kept on a
+free orbit otherwise; leaving and rejoining the circular orbit at $r_0$ costs $I\approx0.004$ with ideal
+impulses. It cannot simply stay on that orbit, since during one circuit it would advance
+by about $100^\circ$, more than the arc, and the probes would not return to it at the
+prescribed circuit endpoints. For scale only,
 an ideal photon rocket with a total mass ratio of 20, shared between acceleration and
 braking, would cover the 590.6~pc in about 2130 years, 910 of them on board; the transfer is
 not modelled here. This remains a thought experiment with prescribed spin, geometry and
-control, not an operational mission. The three proposals are reproduced by the
+control, not an operational mission. Not modelled are the number of circuits and the duration
+of their campaign, the preparation of the station, the transfer of the probes between the two
+phases, the companion's effect on the free orbits of the first phase, and a joint budget of
+force, geometry, timing and tidal-model errors. The three proposals are reproduced by the
 \texttt{probe\_*} scripts in \texttt{verification/observational}, this one by
 \texttt{probe\_gaia\_bh3.py}.
 
@@ -6441,8 +6454,36 @@ $(A^2N^2/\Ehat)\,n\,\alpha_K$, have no one-form and are even in $a$, so for them
 central planes are totally geodesic through first order in $a$. Under a drift the reflection still holds, since $A$ does not depend on
 $\vartheta$, and the equator stays invariant for the extremals. We use total geodesicity,
 which is unambiguous for Randers data, and adopt no notion of umbilicity for Finsler
-submanifolds. The script \texttt{verify\_optical\_planes.py} checks these statements
-symbolically and, independently, by integrating the extremals as magnetic geodesics.
+submanifolds.
+
+Ordinary umbilicity is defined for the Riemannian metrics $h_t=n^2\alpha_K^2$ and
+$h_\tau=(A^2N^2/\Ehat)^2h_t$. With $\Xi=r^2-2Mr+a^2\cos^2\vartheta$ one has $\alpha_K^2=\Psi^2\bar h$,
+$\Psi^2=(r^2+a^2\cos^2\vartheta)^2/(\Delta\,\Xi)$ and
+$\bar h=\dd r^2+\Delta\,\dd\vartheta^2+\Delta^2\sin^2\vartheta\,\dd\varphi^2/\Xi$, so both metrics
+are conformal to $\bar h$, and umbilicity is conformally invariant: the trace-free part of the
+second fundamental form is only rescaled. Since $\bar h$ is diagonal, independent of
+$\varphi$ and even under $\vartheta\to\pi-\vartheta$, the reflections across the equatorial
+and the meridional coordinate planes are isometries of $h_t$ and $h_\tau$, and these planes
+are totally geodesic for them exactly in $a$. For the full arrival-time data this holds on
+the equator only, since $\beta_K$ changes sign under the azimuthal reflection. On a central
+plane inclined by $0<\iota<\pi/2$, with $B=r(r-2M)$,
+$\bar h=\dd r^2+B\,\dd\Omega^2+a^2[\dd\Omega^2+(\sin^2\vartheta\,\dd\varphi)^2]+O(a^4)$, and in the
+basis $\partial_r$, $\partial_s$, whose induced metric at $a=0$ is $g_0={\rm diag}(1,B)$,
+umbilicity of $\bar h$ at order $a^2$ is equivalent to the simultaneous vanishing of the two
+minors $\mathrm{II}_{2,rs}g_{0,rr}-\mathrm{II}_{2,rr}g_{0,rs}$ and
+$\mathrm{II}_{2,rr}g_{0,ss}-\mathrm{II}_{2,ss}g_{0,rr}$ of its second fundamental form
+$\mathrm{II}=a^2\mathrm{II}_2+O(a^4)$, namely
+\begin{equation}
+    -\frac{(r-M)\cos\iota\,\sin\iota\,\sin s}{B^{3/2}},\qquad
+    -\frac{\sin 2\iota\,\cos s}{B^{1/2}},
+    \label{eq:inclined-plane-umbilicity}
+\end{equation}
+which never vanish together for $r>2M$. At first order in $a$ an inclined central plane is
+therefore totally geodesic for $h_t$ and $h_\tau$, and at order $a^2$ it has no umbilical
+point; as an expansion, this describes small spin, not arbitrary spin. The script
+\texttt{verify\_optical\_planes.py} checks these statements symbolically and, independently,
+by integrating the extremals as magnetic geodesics and by recomputing the order-$a^2$
+umbilicity minors from the exact metric $h_t$.
 
 The identities of this appendix are checked by two independent scripts in the folder
 \texttt{verification}: in Mathematica by \texttt{verify\_rail\_surfaces.wls}, which also

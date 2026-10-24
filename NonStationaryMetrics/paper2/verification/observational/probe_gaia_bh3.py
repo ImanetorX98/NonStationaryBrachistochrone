@@ -26,6 +26,9 @@ a1 = 16.17 au (checked against Kepler's third law); illustrative spin a* = 0.5 (
 4. Thrust budget of the circuit at a = 0: rail peak (2 g_s at r_min, relativistic rule of two) and arc (exact Christoffel
    symbols); I = int |b| dtau / c with onboard proper time and the two 120-degree turns at maintained local speed and
    charge (gamma beta theta each; the direct boost is printed as a lower bound); ideal photon-rocket ratio exp(I).
+5. Static station: proper acceleration, station-keeping budget per circuit and per year, ideal reference for leaving and
+   rejoining the free circular orbit, advance of a free station during one circuit; encounter jump at 1.5e5 M for
+   comparison with the circuit radius.
    Transfer from the Sun for scale only (two symmetric rapidity changes, total mass ratio 10 and 20, cruise at 590.6 pc).
 Writes probe_gaia_bh3.json. Exit status 1 if a check fails.
 """
@@ -96,7 +99,7 @@ check('exact equatorial linear coefficient = 6 pi / sqrt(r(r-3))',
       all(abs(sp.N((lin - 6*sp.pi/sp.sqrt(r*(r - 3))).subs(r, rv), 40)) < 1e-35 for rv in (sp.Rational(37, 3), 200, 10**5)))
 cub_ratio = {rv: float(sp.N((sp.series(d_ex, a, 0, 4).removeO().coeff(a, 3)/lin).subs(r, rv), 12)) for rv in (100, 10**5)}
 enc = []
-for rv in (1e4, 1e5, 1e6):
+for rv in (1e4, 1e5, 1e6, 1.5e5):
     d1 = 6*math.pi*0.5/math.sqrt(rv*(rv - 3))*TG
     taum = math.pi*rv**1.5*math.sqrt(1 - 3/rv)*TG
     enc.append(dict(r_M=rv, jump_ns=d1*1e9, fractional_rate=d1/taum, period_days=2*math.pi*rv**1.5*TG/DAY,
@@ -331,6 +334,27 @@ check('rail peak = 2 g_s at r_min (relativistic rule of two)', all(abs(z['peak_r
 check('arc proper time: dtau/dt = f0 at Ehat = 1', abs(tau_arc/R['Tarc'] - (1 - 2/r0)) < 1e-15)
 check('benchmark 1.5e5 M: rail peak about 17 g, arc about 3.4 g', 16.5 < rows4[1]['peak_rail_g'] < 17.5 and 3.2 < rows4[1]['arc_g'] < 3.6,
       (round(rows4[1]['peak_rail_g'], 3), round(rows4[1]['arc_g'], 3)))
+# 5. the static station (zero-spin reference, Schwarzschild): proper acceleration GM/(r0^2 sqrt(f0)), proper time
+#    sqrt(f0) T per circuit, station-keeping budget I = g sqrt(f0) T/c = GM T/(c r0^2); ideal reference for stopping from and
+#    restarting into the free circular orbit at r0 (two collinear impulses): 2 artanh(v_circ), v_circ the local speed of
+#    the circular geodesic relative to the static observers, v_circ^2 = (M/r0)/(1 - 2M/r0). A station on that free orbit
+#    advances by 2 pi T/P_circ during one circuit, P_circ = 2 pi r0^(3/2) (coordinate time), more than the 80-degree arc.
+r0M = 2**(2/3)*RMB; f0 = 1 - 2/r0M; Tc = circ[1]['duration_s']
+g_st = 1/(r0M**2*math.sqrt(f0))*C*C/RG
+vcirc = math.sqrt((1/r0M)/(1 - 2/r0M))
+station = dict(r0_km=r0M*RG/1e3, accel_ms2=g_st, accel_g=g_st/9.80665, proper_time_per_circuit_s=math.sqrt(f0)*Tc,
+               I_per_circuit=g_st*math.sqrt(f0)*Tc/C, I_per_year=g_st*math.sqrt(f0)*365.25*DAY/C,
+               I_stop_restart_ideal=2*math.atanh(vcirc), v_circ_kms=vcirc*C/1e3,
+               free_orbit_advance_deg_per_circuit=360*Tc/(2*math.pi*r0M**1.5*TG),
+               rail_speed_turning_kms=C*math.sqrt(2/RMB)/1e3, arc_speed_kms=C*math.sqrt(2/r0M)/1e3)
+station['I_per_circuit_closed_form'] = MASS*GM_SUN*Tc/(C*(r0M*RG)**2)
+check('station: proper acceleration about 3.35 g; I per circuit = GM T/(c r0^2) about 0.0037',
+      abs(station['accel_g'] - 3.3477) < 1e-3 and abs(station['I_per_circuit']/station['I_per_circuit_closed_form'] - 1) < 1e-12 and abs(station['I_per_circuit'] - 0.0036966) < 1e-6,
+      (round(station['accel_g'], 4), round(station['I_per_circuit'], 7)))
+check('station on the free circular orbit would advance by more than the 80-degree arc during one circuit', station['free_orbit_advance_deg_per_circuit'] > 80, round(station['free_orbit_advance_deg_per_circuit'], 3))
+check('encounters at 1.5e5 M: jump about 10.1 ns; rail peak 38 g at 1e5 M against 17 g at 1.5e5 M',
+      abs(enc[3]['jump_ns'] - 10.12) < 0.01 and rows4[0]['peak_rail_g'] > 2*rows4[1]['peak_rail_g'], (round(enc[3]['jump_ns'], 4), round(enc[3]['campaign_200_encounters_coordinate_days'], 2)))
+
 # transfer, for scale only: total mass ratio R, two symmetric rapidity changes, D = 590.6 pc, cruise only
 PC = 3.0856775814913673e16; YR = 365.25*DAY
 transfer = []
@@ -343,16 +367,17 @@ check('transfer R = 20: about 2129 years (907 on board)', abs(transfer[1]['years
 out = dict(model='frozen Kerr, A = 1; Gaia BH3 M = 32.70 Msun, companion from the Gaia Collaboration (2024); a* = 0.5 illustrative',
            encounter=dict(formula='Delta tau = 6 pi a cos(i)/sqrt(r(r-3)) (first order in a, exact in r)',
                           cubic_to_linear_ratio_over_a2=cub_ratio, rows=enc),
-           circuit=circ, companion_station_shift_benchmark_sampled=companion, companion_comparison_same_rmin=comparison, thrust_budget=rows4, transfer_for_scale=transfer, checks=checks)
+           circuit=circ, companion_station_shift_benchmark_sampled=companion, companion_comparison_same_rmin=comparison, thrust_budget=rows4, static_station=station, transfer_for_scale=transfer, checks=checks)
 (HERE/'probe_gaia_bh3.json').write_text(json.dumps(out, indent=2, default=str))
 for z in enc:
-    print('encounters r=%.0eM: jump %.4f ns (a*=0.5, cos i=1), fractional %.3e, period %.4f d, 200 encounters %.3f d (coordinate time)' %
+    print('encounters r=%.3gM: jump %.4f ns (a*=0.5, cos i=1), fractional %.3e, period %.4f d, 200 encounters %.3f d (coordinate time)' %
           (z['r_M'], z['jump_ns'], z['fractional_rate'], z['period_days'], z['campaign_200_encounters_coordinate_days']))
 for z in circ:
     print('circuit r_min=%.3gM: k2 %.4f ps, signal %.4f ps (a*=0.5; station proper time %.4f ps), duration %.2f s, |y| < %.3e, turn %.4f deg' %
           (z['r_min_M'], z['k2_ps_per_unit_astar'], z['signal_ps_astar_half'], z['station_proper_ps_astar_half'], z['duration_s'], z['requirement_y'], z['velocity_turn_deg']))
 for z in rows4:
     print('thrust r_min=%.3g M: rail peak %.3f g (rule of two %.3f g), arc %.3f g, I_rail %.5f, I_arc %.5f, junction turn %.5f each (direct-boost lower bound %.5f), I %.5f, exp(I) %.5f' % (z['r_min_M'], z['peak_rail_g'], z['rule_of_two_peak_g'], z['arc_g'], z['I_rail'], z['I_arc'], z['junction_turn_maintained_charge'], z['junction_direct_boost_lower_bound'], z['I_total'], z['photon_mass_ratio']))
+print('station at r0 = %.4g km: %.4f m/s^2 = %.4f g, proper time per circuit %.2f s, I per circuit %.7f, per year %.4f (ratio %.2f), ideal stop and restart from the free orbit %.7f (v_circ %.3f km/s); free orbit advances %.3f deg per circuit; speeds: rail turning point %.2f km/s, arc %.2f km/s' % (station['r0_km'], station['accel_ms2'], station['accel_g'], station['proper_time_per_circuit_s'], station['I_per_circuit'], station['I_per_year'], math.exp(station['I_per_year']), station['I_stop_restart_ideal'], station['v_circ_kms'], station['free_orbit_advance_deg_per_circuit'], station['rail_speed_turning_kms'], station['arc_speed_kms']))
 for z in transfer:
     print('transfer R=%g: beta %.5f, %.1f years, %.1f on board' % (z['mass_ratio'], z['beta'], z['years_inertial'], z['years_onboard']))
 for k, z in companion.items():

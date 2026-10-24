@@ -28,4 +28,13 @@ PASS numerical: even part quadratic in a (ratio 4)
 PASS numerical: displacement linear in a (ratio 2)
 PASS numerical: displacement nonzero for a = 1e-3
 PASS numerical: Hamiltonian conserved
-28/28 checks passed
+PASS alpha_K^2 = Omega^2 hbar with Omega^2 = Sigma^2/(Delta Xi), Xi = Sigma - 2Mr
+PASS hbar invariant under theta -> pi - theta (and diagonal, independent of phi)
+PASS hbar = dr^2 + B dOmega^2 + a^2 [dOmega^2 + (sin^2 theta dphi)^2] + O(a^4)
+umbilicity: largest tangential Hess_h0 S and g0_rs 4.18e-41 ; largest relative deviation of the a^2 minors 3.71e-40 (M = 1, 2; r/M = 3, 10, 1000; iota = 30, 45, 60 deg; s in all quadrants)
+PASS a = 0: inclined central planes totally geodesic for hbar, induced metric diagonal (sampled, 40 digits)
+PASS order a^2 minors of hbar: -(r-M) cos(i) sin(i) sin(s)/B^(3/2) and -sin(2i) cos(s)/sqrt(B) (sampled, 40 digits)
+PASS mutation: factor (r - 2M) in place of (r - M) is rejected
+umbilicity, independent Cartesian route with the exact metric h_t: largest relative deviation 2.02e-17
+PASS independent route: exact h_t minors = Omega_t0^3 x hbar minors (two points, Richardson)
+35/35 checks passed

@@ -27,6 +27,13 @@
         "fractional_rate": 3.0000090000270005e-15,
         "period_days": 11.712872176805156,
         "campaign_200_encounters_coordinate_days": 1171.2872176805156
+      },
+      {
+        "r_M": 150000.0,
+        "jump_ns": 10.120022761493276,
+        "fractional_rate": 3.442720717709836e-13,
+        "period_days": 0.6804563831553389,
+        "campaign_200_encounters_coordinate_days": 68.04563831553389
       }
     ]
   },
@@ -138,6 +145,20 @@
       "rule_of_two_peak_g": 9.490190389697949
     }
   ],
+  "static_station": {
+    "r0_km": 11497301.062193632,
+    "accel_ms2": 32.829888159938925,
+    "accel_g": 3.3477169226941847,
+    "proper_time_per_circuit_s": 33756.47792369835,
+    "I_per_circuit": 0.0036966286687187583,
+    "I_per_year": 3.4558178495710905,
+    "I_stop_restart_ideal": 0.004098674843224258,
+    "v_circ_kms": 614.3750428159254,
+    "free_orbit_advance_deg_per_circuit": 103.35165157948414,
+    "rail_speed_turning_kms": 1094.6872787768007,
+    "arc_speed_kms": 868.8538689532495,
+    "I_per_circuit_closed_form": 0.003696628668718758
+  },
   "transfer_for_scale": [
     {
       "mass_ratio": 10.0,
@@ -304,6 +325,27 @@
       "value": [
         16.871,
         3.348
+      ]
+    },
+    {
+      "name": "station: proper acceleration about 3.35 g; I per circuit = GM T/(c r0^2) about 0.0037",
+      "status": "PASS",
+      "value": [
+        3.3477,
+        0.0036966
+      ]
+    },
+    {
+      "name": "station on the free circular orbit would advance by more than the 80-degree arc during one circuit",
+      "status": "PASS",
+      "value": 103.352
+    },
+    {
+      "name": "encounters at 1.5e5 M: jump about 10.1 ns; rail peak 38 g at 1e5 M against 17 g at 1.5e5 M",
+      "status": "PASS",
+      "value": [
+        10.12,
+        68.05
       ]
     },
     {
