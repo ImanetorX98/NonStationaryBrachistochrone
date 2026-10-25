@@ -1,23 +1,24 @@
 # -*- coding: utf-8 -*-
 """
-Verifica che le curve trovate SONO le brachistocrone: perturbazione a
-estremi fissi e controllo che il tempo di percorrenza sia il minimo,
-RISPETTIVAMENTE (t minimizza il tempo coordinato, tau il tempo proprio).
+Check that the curves found ARE the brachistochrones: a perturbation with
+fixed endpoints and a check that the travel time is the minimum,
+RESPECTIVELY (t minimises the coordinate time, tau the proper time),
+within the perturbation family tested.
 
-Statico Schwarzschild equatoriale (M=1), rotaia con invariante E:
-  velocita' locale  v = sqrt(1 - f/E^2),  f = 1 - 2M/r
-  elemento di lunghezza propria  dl = sqrt(dr^2/f + r^2 dphi^2)
-  tempo coordinato   dt   = n_t  dl ,  n_t   = E / sqrt(f (E^2 - f))
-  tempo proprio      dtau = n_tau dl ,  n_tau = sqrt(f / (E^2 - f))
+Static equatorial Schwarzschild (M=1), rail with invariant E:
+  local speed  v = sqrt(1 - f/E^2),  f = 1 - 2M/r
+  proper length element  dl = sqrt(dr^2/f + r^2 dphi^2)
+  coordinate time   dt   = n_t  dl ,  n_t   = E / sqrt(f (E^2 - f))
+  proper time       dtau = n_tau dl ,  n_tau = sqrt(f / (E^2 - f))
 
-Ogni ramo e' la geodetica del PROPRIO indice ottico (Fermat). La curva
-si costruisce dalla ODE di Beltrami  dr/dphi = (r/J) sqrt(f (n^2 r^2 - J^2))
-con J = n(r_min) r_min (INDIPENDENTE dai funzionali di tempo qui sotto).
-Poi si perturba r(phi) a estremi fissi e si valutano T_t, T_tau per
-quadratura diretta.
+Each branch is the geodesic of ITS OWN optical index (Fermat). The curve
+is built from the Beltrami ODE  dr/dphi = (r/J) sqrt(f (n^2 r^2 - J^2))
+with J = n(r_min) r_min (INDEPENDENT of the time functionals below).
+Then r(phi) is perturbed with fixed endpoints and T_t, T_tau are evaluated by
+direct quadrature.
 
-Atteso:  T_tau minimo (eps=0) sulla curva tau ma NON sulla curva t;
-         T_t   minimo (eps=0) sulla curva t   ma NON sulla curva tau.
+Expected:  T_tau minimal (eps=0) on the tau curve but NOT on the t curve;
+           T_t   minimal (eps=0) on the t curve   but NOT on the tau curve.
 """
 
 import os
@@ -44,7 +45,7 @@ def n_t(r):
     return E / np.sqrt(f(r) * (E**2 - f(r)))
 
 def costruisci(indice, r_min, r0):
-    """Curva brachistocrona (mezzo ramo) dalla ODE di Beltrami."""
+    """Brachistochrone curve (half branch) from the Beltrami ODE."""
     J = indice(r_min) * r_min
     def drdphi(phi, y):
         r = y[0]
@@ -57,7 +58,7 @@ def costruisci(indice, r_min, r0):
     Phi = s.t_events[0][0]
     ph = np.linspace(0, Phi, 400)
     r_half = s.sol(ph)[0]
-    # ramo completo simmetrico phi in [-Phi, Phi]
+    # complete symmetric branch phi in [-Phi, Phi]
     phi_full = np.concatenate([-ph[::-1], ph[1:]])
     r_full = np.concatenate([r_half[::-1], r_half[1:]])
     return phi_full, r_full, Phi, J
@@ -70,7 +71,7 @@ def tempo(phi, r, indice):
 
 def test_ramo(nome, indice, r_min, r0):
     phi, r, Phi, J = costruisci(indice, r_min, r0)
-    bump = 1 - (phi / Phi)**2                       # 0 agli estremi
+    bump = 1 - (phi / Phi)**2                       # 0 at the endpoints
     eps = np.linspace(-0.30, 0.30, 61)
     Tt, Ttau = [], []
     for e in eps:
@@ -81,20 +82,20 @@ def test_ramo(nome, indice, r_min, r0):
     i0 = len(eps) // 2
     print(f"[{nome}]  r_min={r_min}, r0={r0}, span 2Phi={2*Phi:.3f} rad, "
           f"J={J:.4f}")
-    print(f"    argmin T_t   a eps = {eps[np.argmin(Tt)]:+.4f}"
-          f"   (curva {nome})")
-    print(f"    argmin T_tau a eps = {eps[np.argmin(Ttau)]:+.4f}"
-          f"   (curva {nome})")
+    print(f"    argmin T_t   at eps = {eps[np.argmin(Tt)]:+.4f}"
+          f"   (curve {nome})")
+    print(f"    argmin T_tau at eps = {eps[np.argmin(Ttau)]:+.4f}"
+          f"   (curve {nome})")
     return dict(nome=nome, phi=phi, r=r, eps=eps, Tt=Tt, Ttau=Ttau, i0=i0,
                 r_min=r_min)
 
 print("=" * 66)
-print("costruzione curve dalle ODE + test di minimo per perturbazione")
+print("building the curves from the ODEs + minimum test by perturbation")
 print("=" * 66)
 Ctau = test_ramo('tau', n_tau, 3.0, 7.0)
 Ct = test_ramo('t', n_t, 3.0, 7.0)
 
-# --------------------------------------------------------------- figura
+# --------------------------------------------------------------- figure
 fig, (a1, a2) = plt.subplots(2, 1, figsize=(COL, 5.6))
 for C, ax, titolo in ((Ctau, a1, r'$\tau$-brachistochrone'),
                       (Ct, a2, r'$t$-brachistochrone')):
@@ -110,6 +111,6 @@ for C, ax, titolo in ((Ctau, a1, r'$\tau$-brachistochrone'),
 a2.set_xlabel(r'perturbation amplitude $\varepsilon$ '
               r'($\delta r = \varepsilon(1-(\varphi/\Phi)^2)$)')
 savefig(fig, OUT, 'fig_verifica_minimo_brachi')
-print("\nletto atteso: sulla curva tau -> min di T_tau a eps=0 (T_t no);")
-print("              sulla curva t   -> min di T_t   a eps=0 (T_tau no).")
-print('FATTO.')
+print("\nexpected reading: on the tau curve -> minimum of T_tau at eps=0 (not T_t);")
+print("                  on the t curve   -> minimum of T_t   at eps=0 (not T_tau).")
+print('DONE.')

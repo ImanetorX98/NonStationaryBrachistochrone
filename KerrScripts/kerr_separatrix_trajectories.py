@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-TEST FINALE della forma chiusa R12a: tre traiettorie della separatrice
-J = J_c = a/E (Kerr equatoriale, ramo tau), stesse condizioni iniziali,
-evolute fin dentro l'ergosfera:
+FINAL TEST of the closed form R12a: three trajectories of the separatrix
+J = J_c = a/E (equatorial Kerr, tau branch), same initial conditions,
+evolved down into the ergosphere:
 
-  T1  ODE: flusso di Hamilton PMP (integratore, nessuna forma chiusa)
-  T2  quadratura diretta di dphi/dr = (a/E) sqrt(Q4)/(Dl P2)
-  T3  FORMULA DI WEIERSTRASS valutata davvero: sigma/zeta/P costruite
-      con le theta di Jacobi sul reticolo VERO (rombico, tau = 1/2+iy)
+  T1  ODE: PMP Hamiltonian flow (integrator, no closed form)
+  T2  direct quadrature of dphi/dr = (a/E) sqrt(Q4)/(Dl P2)
+  T3  WEIERSTRASS FORMULA actually evaluated: sigma/zeta/P built
+      from the Jacobi theta functions on the TRUE lattice (rhombic, tau = 1/2+iy)
 
-Se si sovrappongono, la forma chiusa e' verificata end-to-end,
-inclusa la valutazione delle funzioni speciali.
-Figura: fig_separatrix_3traiettorie (in KerrMetric/).
+If they overlap, the closed form is verified end to end,
+including the evaluation of the special functions.
+Figure: fig_separatrix_3traiettorie (written next to this script).
 """
 
 import numpy as np
@@ -43,12 +43,12 @@ Dl = lambda r: r**2 - 2 * M * r + a**2
 P2 = lambda r: r**2 + c**2
 dphidr = lambda r: (a / E) * np.sqrt(Q4(r)) / (Dl(r) * P2(r))
 
-# ------------------------------------------------- T2: quadratura
+# ------------------------------------------------- T2: quadrature
 rg = np.linspace(r_end, r0, 400)
 phi2 = np.array([quad(dphidr, rv, r0, limit=300)[0] for rv in rg])
 
 # ------------------------------------------------- T1: ODE Hamilton
-# H_tau PMP equatoriale Kerr (R7 con A=1)
+# equatorial PMP H_tau of Kerr (R7 with A=1)
 import sympy as sp
 r_s, pr_s = sp.symbols('r p_r', real=True)
 f_s = 1 - 2 * M / r_s
@@ -68,7 +68,7 @@ dphi_val = sp.lambdify((r_s, pr_s),
                        ptp * (php0 * 0 + 1) * 0 + sp.diff(H, sp.Symbol('x'))
                        if False else
                        (php0 * ptp / ptp), 'numpy')  # placeholder
-# dphi/deta = dH/dp_phi: ricostruita simbolicamente
+# dphi/deta = dH/dp_phi: rebuilt symbolically
 pphi_s = sp.Symbol('p_phi', real=True)
 ptp_g = pphi_s - 2 * M * a / (r_s * E)
 H_g = ptp_g * php0 + sp.sqrt(R2s) * sp.sqrt((Dl_s / r_s**2) * pr_s**2
@@ -92,23 +92,23 @@ def lancio_ode(r_start, span, ev_list):
                      atol=1e-14, method='DOP853', events=ev_list,
                      dense_output=True, max_step=2.0)
 
-# ramo ESTERNO: da r0=9 in caduta, fino alla svolta marginale
+# OUTER branch: falling from r0=9 down to the marginal turn
 ev_turn = lambda t_, y: y[1]
 ev_turn.terminal, ev_turn.direction = True, 1
 sA = lancio_ode(r0, [0, 4000], [ev_turn])
 tA = np.linspace(0, sA.t[-1], 600)
 rA = sA.sol(tA)[0]
 phiA = sA.sol(tA)[2]
-print(f"ODE ramo esterno: svolta marginale a r = {rA.min():.6f} (r_e = 2)")
+print(f"ODE outer branch: marginal turn at r = {rA.min():.6f} (r_e = 2)")
 
-# NOTA: dentro l'ergoregione H(p) > 0 per ogni p: la descrizione PMP-eta
-# del ramo tau TERMINA a r_e (il costo F = f + b phi' cambia segno sul
-# ramo spurio dell'ellisse): versione hamiltoniana della singolarita'
-# intrinseca della riduzione (doranTau). L'ODE puo' solo sfiorare r_e;
-# la forma chiusa segue l'orbita del worldline vincolato attraverso
-# (validata dentro dal confronto Doran di doranTau: max|dphi| = 4.4e-6).
+# NOTE: inside the ergoregion H(p) > 0 for every p: the PMP-eta description
+# of the tau branch ENDS at r_e (the cost F = f + b phi' changes sign on the
+# spurious branch of the ellipse): the Hamiltonian version of the intrinsic
+# singularity of the reduction (doranTau). The ODE can only graze r_e;
+# the closed form follows the orbit of the constrained worldline across it
+# (validated inside by the Doran comparison of doranTau: max|dphi| = 4.4e-6).
 
-# ------------------------------------------------- T3: Weierstrass vero
+# ------------------------------------------------- T3: true Weierstrass
 A_ = M * a**2 / (2 * E**2)
 B_ = a**2 * (E**2 - 1) / (12 * E**2)
 g2 = a**4 * (E**2 - 1)**2 / (12 * E**4) - a**2 * M**2 / E**2
@@ -118,13 +118,13 @@ g3 = a**4 * (36 * E**2 * M**2 * (1 - E**2)
 Q4m = lambda r: r * (2 * M + (E**2 - 1) * r) * (r**2 + c**2)
 z_of_r = lambda rv: mp.quad(lambda t: 1 / mp.sqrt(Q4m(t)), [0, rv])
 
-# periodo reale: ramo r>0 fino a oo + ramo r<r_neg
+# real period: branch r>0 up to oo + branch r<r_neg
 r_neg = -2 * M / (E**2 - 1)
 w1 = mp.quad(lambda t: 1 / mp.sqrt(Q4m(t)), [0, mp.inf]) \
     + mp.quad(lambda t: 1 / mp.sqrt(abs(Q4m(t))), [-mp.inf, r_neg])
-print(f"omega_1 (semiperiodo reale) = {mp.nstr(w1, 10)}")
+print(f"omega_1 (real half-period) = {mp.nstr(w1, 10)}")
 
-# reticolo rombico: tau = 1/2 + i y — trova y col fit dell'identita'
+# rhombic lattice: tau = 1/2 + i y; find y by fitting the identity
 def make_wz(y_):
     tau = mp.mpc(0.5, y_)
     q = mp.exp(1j * mp.pi * tau)
@@ -159,7 +159,7 @@ y0 = ys[int(np.argmin(res))]
 y_opt = float(mp.findroot(lambda y_: mp.mpf(resid(float(y_))), y0,
                           solver='mnewton', tol=1e-18)) \
     if False else y0
-# raffina con sezione aurea sul residuo
+# refine by golden-section search on the residual
 lo, hi = y0 - 0.06, y0 + 0.06
 for _ in range(60):
     m1 = lo + 0.382 * (hi - lo)
@@ -170,15 +170,15 @@ for _ in range(60):
         lo = m1
 y_opt = 0.5 * (lo + hi)
 zeta_w, sigma_w, wp_w = make_wz(y_opt)
-print(f"tau = 1/2 + {y_opt:.10f} i;  residuo identita' Weierstrass: "
+print(f"tau = 1/2 + {y_opt:.10f} i;  residual of the Weierstrass identity: "
       f"{resid(y_opt):.2e}")
-# check indipendente: P(z(r*)) = A/r* + B
+# independent check: P(z(r*)) = A/r* + B
 r_star = 5.0
 z_star = z_of_r(r_star)
 err_p = abs(wp_w(z_star) - (A_ / r_star + B_))
-print(f"check uniformizzazione: |P(z(r))-(A/r+B)| a r=5: {mp.nstr(err_p,3)}")
+print(f"uniformisation check: |P(z(r))-(A/r+B)| at r=5: {mp.nstr(err_p,3)}")
 
-# costanti della formula
+# constants of the formula
 alpha = {}
 lam = {}
 vv = {}
@@ -204,11 +204,11 @@ for rv in rg:
     phi3.append(float(mp.re(val)))
 phi3 = np.array(phi3)
 
-# ------------------------------------------------- confronto e figura
+# ------------------------------------------------- comparison and figure
 devA = np.abs(phiA - np.interp(rA, rg, phi2))
 print(f"max |phi_Weierstrass - phi_quad| = {np.max(np.abs(phi3 - phi2)):.2e}")
-print(f"ODE vs forma chiusa (r>2.2): {np.max(devA[rA > 2.2]):.2e}")
-print(f"ODE vs forma chiusa (r>2.05): {np.max(devA[rA > 2.05]):.2e}")
+print(f"ODE vs closed form (r>2.2): {np.max(devA[rA > 2.2]):.2e}")
+print(f"ODE vs closed form (r>2.05): {np.max(devA[rA > 2.05]):.2e}")
 
 set_style()
 fig, (ax, axb) = plt.subplots(2, 1, figsize=(COL, 6.6))
@@ -245,4 +245,4 @@ axb.set_title('quantitative overlap\n(ODE growth near $r_e$: '
 axb.legend()
 HERE = os.path.dirname(os.path.abspath(__file__))
 savefig(fig, HERE, 'fig_separatrix_3traiettorie')
-print('salvata fig_separatrix_3traiettorie')
+print('saved fig_separatrix_3traiettorie')

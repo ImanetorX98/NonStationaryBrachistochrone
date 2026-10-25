@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Colormap Delta_r(a, J) per brachistocrone t/tau a ESTREMI FISSI (Kerr
-equatoriale, flusso di Hamilton -- pesante). Asse J = momento del ramo
-tau, che fissa l'apertura angolare Delta_phi degli estremi (entrambi a
-r0). Per ogni (a, J_tau):
-  - ramo tau con J_tau: (Delta_phi, r_min^tau) dall'integrazione;
-  - ramo t agli STESSI estremi: spara J_t -> Delta_phi_t = Delta_phi;
-    prende la soluzione SHALLOW (r_min max = brachistocrona minima);
+Colormap Delta_r(a, J) for t/tau brachistochrones with FIXED ENDPOINTS (equatorial
+Kerr, Hamiltonian flow -- heavy). The J axis is the momentum of the tau
+branch, which fixes the angular opening Delta_phi of the endpoints (both at
+r0). For each (a, J_tau):
+  - tau branch with J_tau: (Delta_phi, r_min^tau) from the integration;
+  - t branch between the SAME endpoints: shoot J_t -> Delta_phi_t = Delta_phi;
+    take the SHALLOW solution (largest r_min = minimal brachistochrone);
   - Delta_r = r_min^t - r_min^tau.
-Atteso (dal caso conforme e dallo studio a Phi fisso): Delta_r > 0
-ovunque -> nessuna inversione a estremi fissi anche con spin.
+Expected (from the conformal case and the fixed-Phi study): Delta_r > 0
+on the sampled grid -> no inversion with fixed endpoints, also with spin.
 """
 
 import os
@@ -92,7 +92,7 @@ def orbita(branch, av, Jv):
     return s.y_events[0][0][2], s.y[0].min()      # (Dphi, r_min)
 
 def t_rmin(av, Dphi_target):
-    """spara J_t: Dphi_t = target; shallow (r_min max)."""
+    """shoot J_t: Dphi_t = target; shallow solution (largest r_min)."""
     Js = np.linspace(0.5, 16.0, 45)
     dat = []
     for Jv in Js:
@@ -121,7 +121,7 @@ def Dr(av, Jtau):
     return rm_t - rm_tau if np.isfinite(rm_t) else np.nan
 
 a_g = np.linspace(0.05, 0.95, 20)
-J_g = np.linspace(1.2, 4.0, 18)          # momento del ramo tau
+J_g = np.linspace(1.2, 4.0, 18)          # momentum of the tau branch
 Z = np.full((len(a_g), len(J_g)), np.nan)
 # one progress step per cell (same row-major order as before), with an ETA
 cells = [(i, j) for i in range(len(a_g)) for j in range(len(J_g))]
@@ -129,10 +129,10 @@ for i, j in tqdm(cells, desc='cells', ncols=70, mininterval=1.0):
     Z[i, j] = Dr(a_g[i], J_g[j])
 
 print(f"Delta_r in [{np.nanmin(Z):+.3f}, {np.nanmax(Z):+.3f}]", flush=True)
-print(">>> " + ("INVERSIONE (cambia segno)" if np.nanmin(Z)*np.nanmax(Z) < 0
-                else "NESSUNA inversione: Delta_r > 0 ovunque"), flush=True)
+print(">>> " + ("INVERSION (sign change)" if np.nanmin(Z)*np.nanmax(Z) < 0
+                else "NO inversion: Delta_r > 0 on the sampled grid"), flush=True)
 
-# --------------------------------------------------------------- figura
+# --------------------------------------------------------------- figure
 fig, ax = plt.subplots(figsize=(COL, COL * 0.9))
 im = ax.pcolormesh(J_g, a_g, Z, cmap='viridis', shading='auto')
 plt.colorbar(im, ax=ax, label=r'$\Delta r = r_{\min}^{t}-r_{\min}^{\tau}$')
@@ -146,4 +146,4 @@ ax.set_ylabel('$a$ (TK spin)')
 ax.set_title('Fixed symmetric endpoints, Kerr: $\\Delta r$ in $(J,a)$\n'
              '$\\Delta r>0$ on the sampled grid: no inversion found in this scan')
 savefig(fig, HERE, 'fig_colormap_spin_estremi_fissi')
-print("FATTO.", flush=True)
+print("DONE.", flush=True)

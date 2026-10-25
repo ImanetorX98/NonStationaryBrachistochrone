@@ -1,34 +1,34 @@
 # -*- coding: utf-8 -*-
 """
-Quasi-costanti per A(eta) NON costante — Thakurta-Kerr 3D dinamico.
+Quasi-constants for NON-constant A(eta) -- dynamical 3D Thakurta-Kerr.
 
-Hamiltoniana PMP 3D (nuova, off-equatoriale, eta come evoluzione):
-dal vincolo -u_eta = Ehat sul Kerr conforme (BL, Sigma = r^2+a^2cos^2th):
+3D PMP Hamiltonian (new, off the equator, eta as the evolution parameter):
+from the constraint -u_eta = Ehat on conformal Kerr (BL, Sigma = r^2+a^2cos^2th):
 
     f_S = 1 - 2Mr/Sigma ,   b = 2Mar sin^2th/Sigma ,
     G   = (r^2+a^2+2Ma^2 r sin^2th/Sigma) sin^2th
     vbS^2 = 1 - A^2 f_S/Ehat^2 ,   Gb = G + A^2 b^2/Ehat^2
     phi'_0 = b vbS^2/Gb ,          R^2 = vbS^2 * Dl * sin^2th / Gb
-        [identita' chiave: f_S G + b^2 = Dl sin^2th  (det blocco t-phi)]
+        [key identity: f_S G + b^2 = Dl sin^2th  (determinant of the t-phi block)]
 
     H_tau = pt_phi phi'_0 + R sqrt( (Dl/Sigma)p_r^2 + p_th^2/Sigma
                                     + pt_phi^2/Gb )  -  A^2 f_S/Ehat
-    pt_phi = J - A^2 b/Ehat          (shift gravitomagnetico conforme)
+    pt_phi = J - A^2 b/Ehat          (conformal gravitomagnetic shift)
 
-Verifiche strutturali:
-  V1  identita' f_S G + b^2 = Dl sin^2th (sympy esatta) e riduzione
-      equatoriale = H_tau di R7 (numerica, random)
-  V2  a = 0, A(eta) dinamico: L^2 = p_th^2 + J^2/sin^2th conservata
-      ESATTAMENTE lungo il flusso non autonomo (Noether spaziale):
-      drift atteso ~ precisione macchina
-  V3  gerarchia dei candidati lungo il flusso dinamico (a=0.4):
-        L^2 (riferimento), Q_std(E_eff(eta)), K_NLO(E_eff(eta)),
-        K_NLO(E congelata al lancio)
-      + scaling del drift nuovo in eps = A'/A (H_c vs H_c/2)
-  V4  sorgente dell'equazione di trasporto per il controtermine h:
-        dK/deta|_espl = -eps * E * dK/dE = eps a^2 S1(r,th,p_th)
-      S1 stampata esplicitamente;  {h, H_0} = -S1  e' il conto analitico
-      successivo (h = primo oggetto senza analogo in Kerr).
+Structural checks:
+  V1  identity f_S G + b^2 = Dl sin^2th (exact, sympy) and equatorial
+      reduction = H_tau of R7 (numerical, random points)
+  V2  a = 0, dynamical A(eta): L^2 = p_th^2 + J^2/sin^2th conserved
+      EXACTLY along the non-autonomous flow (spatial Noether theorem):
+      expected drift ~ machine precision
+  V3  hierarchy of the candidates along the dynamical flow (a=0.4):
+        L^2 (reference), Q_std(E_eff(eta)), K_NLO(E_eff(eta)),
+        K_NLO(E frozen at launch)
+      + scaling of the new drift in eps = A'/A (H_c vs H_c/2)
+  V4  source of the transport equation for the counterterm h:
+        dK/deta|_expl = -eps * E * dK/dE = eps a^2 S1(r,th,p_th)
+      S1 printed explicitly;  {h, H_0} = -S1  is the subsequent
+      analytical computation (h = the first object with no analogue in Kerr).
 """
 
 import numpy as np
@@ -37,13 +37,13 @@ from scipy.integrate import solve_ivp
 
 M_n, Eh_n = 1.0, 1.2
 
-# ------------------------------------------------------- H 3D simbolica
+# ------------------------------------------------------- symbolic 3D H
 ee = sp.Symbol('ee', negative=True)          # eta
 Hc = sp.Symbol('H_c', positive=True)
 r, th = sp.symbols('r theta', positive=True)
 pr, pth = sp.symbols('p_r p_theta', real=True)
 a, J = sp.symbols('a J', positive=True)
-A = sp.Symbol('A', positive=True)            # fattore conforme (simbolo)
+A = sp.Symbol('A', positive=True)            # conformal factor (symbol)
 
 Sig = r**2 + a**2 * sp.cos(th)**2
 Dl = r**2 - 2 * M_n * r + a**2
@@ -61,11 +61,11 @@ H3 = ptphi * php0 + sp.sqrt(R2) * sp.sqrt((Dl / Sig) * pr**2
     - A**2 * f_S / Eh_n
 
 print("=" * 72)
-print("[V1] identita' chiave e riduzione equatoriale")
+print("[V1] key identity and equatorial reduction")
 print("=" * 72)
 idk = sp.simplify(f_S * G + b**2 - Dl * sp.sin(th)**2)
 print("  f_S G + b^2 - Dl sin^2th =", idk)
-# riduzione equatoriale: confronto con H_tau di R7 (P, Pb, ecc.)
+# equatorial reduction: comparison with H_tau of R7 (P, Pb, etc.)
 P_eq = r**2 + a**2 + 2 * M_n * a**2 / r
 vb2_eq = 1 - A**2 * (1 - 2 * M_n / r) / Eh_n**2
 Pb_eq = P_eq + A**2 * (2 * M_n * a / r)**2 / Eh_n**2
@@ -84,9 +84,9 @@ for _ in range(8):
     if float(vb2_eq.subs(sub)) <= 0:
         continue
     w_ = max(w_, abs(float(diff_eq.subs(sub))))
-print(f"  |H3(equatore) - H_eq(R7)| max su punti casuali = {w_:.2e}")
+print(f"  max |H3(equator) - H_eq(R7)| over random points = {w_:.2e}")
 
-# ------------------------------------------------ lambdify flusso dinamico
+# ------------------------------------------------ lambdify the dynamical flow
 def make_flow(a_v, Hc_v):
     A_din = -1 / (Hc_v * ee)
     Hd = H3.subs([(A, A_din), (a, a_v)])
@@ -111,7 +111,7 @@ def integra(a_v, Hc_v, y0, Jv, eta0, eta1):
 
 print()
 print("=" * 72)
-print("[V2] a=0, A(eta) dinamico: L^2 esatta (Noether spaziale)")
+print("[V2] a=0, dynamical A(eta): L^2 exact (spatial Noether theorem)")
 print("=" * 72)
 Hc_v = 0.005
 eta0 = -1.0 / Hc_v                      # A(eta0) = 1
@@ -120,12 +120,12 @@ s = integra(1e-12, Hc_v, [8.0, 1.1, -0.2, 0.8], 1.2, eta0, eta1)
 lg = np.linspace(eta0, s.t[-1], 300)
 Y = s.sol(lg)
 L2 = Y[3]**2 + 1.2**2 / np.sin(Y[1])**2
-print(f"  drift relativo di L^2 su Delta_eta = {s.t[-1]-eta0:.0f}:"
-      f"  {np.std(L2)/np.mean(L2):.2e}   (atteso ~1e-12)")
+print(f"  relative drift of L^2 over Delta_eta = {s.t[-1]-eta0:.0f}:"
+      f"  {np.std(L2)/np.mean(L2):.2e}   (expected ~1e-12)")
 
 print()
 print("=" * 72)
-print("[V3] gerarchia dinamica dei candidati (a=0.4)")
+print("[V3] dynamical hierarchy of the candidates (a=0.4)")
 print("=" * 72)
 a_v = 0.4
 D0s = r**2 - 2 * M_n * r
@@ -163,28 +163,28 @@ def drift_dinamico(Hc_v, n_traj=10):
 
 for Hc_v in (0.005, 0.0025):
     d = drift_dinamico(Hc_v)
-    print(f"  H_c = {Hc_v}:  drift mediano:")
-    print(f"    L^2 (a=0 rif.)          : {d['L2']:.3e}")
+    print(f"  H_c = {Hc_v}:  median drift:")
+    print(f"    L^2 (a=0 reference)     : {d['L2']:.3e}")
     print(f"    Q_std(E_eff(eta))       : {d['Q_run']:.3e}")
     print(f"    K_NLO(E_eff(eta))       : {d['K_run']:.3e}")
-    print(f"    K_NLO(E congelata)      : {d['K_froz']:.3e}")
+    print(f"    K_NLO(E frozen)         : {d['K_froz']:.3e}")
 
 print()
 print("=" * 72)
-print("[V4] sorgente del controtermine h (equazione di trasporto)")
+print("[V4] source of the counterterm h (transport equation)")
 print("=" * 72)
-# dK/deta|_espl = (dK/dE)*Edot,  Edot = -E*(A'/A) => S1 = -E dK/dE / a^2
+# dK/deta|_expl = (dK/dE)*Edot,  Edot = -E*(A'/A) => S1 = -E dK/dE / a^2
 S1 = -Es * sp.diff(K_NLO_s, Es) / a**2
-# forma compatta (usando DE0 - N2 = -2M D0/r  =>  d_E f2 = -2ME cos2th/(r DE0^2)):
+# compact form (using DE0 - N2 = -2M D0/r  =>  d_E f2 = -2ME cos2th/(r DE0^2)):
 S1c = 2 * Es**2 * (sp.cos(th)**2
                    + M_n * sp.cos(2 * th) * pth**2 / (r * DE0s**2))
-print("  dK/deta|_espl = eps * a^2 * S1,   eps = A'/A")
+print("  dK/deta|_expl = eps * a^2 * S1,   eps = A'/A")
 print("  S1 = 2 E_eff^2 [ cos^2(th) + M cos(2th) p_th^2 / (r DE0^2) ]")
-print("  verifica forma compatta:", sp.simplify(S1 - S1c))
-print("  NOTA: DE0 = r^2 w_eff  =>  POLO DOPPIO sul muro di congelamento")
-print("\n  EQUAZIONE DI TRASPORTO per il controtermine (ordine a^2 eps):")
+print("  check of the compact form:", sp.simplify(S1 - S1c))
+print("  NOTE: DE0 = r^2 w_eff  =>  DOUBLE POLE on the freezing wall")
+print("\n  TRANSPORT EQUATION for the counterterm (order a^2 eps):")
 print("     {h, H_0(Thakurta-Schw 3D)} = -S1(r, theta, p_theta)")
-print("  con H_0 = vbar sqrt(f) sqrt(f p_r^2 + (p_th^2+J^2/sin^2th)/r^2)")
-print("           - A^2 f/Ehat  (non autonoma: A congelata al leading).")
-print("  h e' il primo oggetto del programma SENZA analogo in Kerr.")
-print("\nFATTO.")
+print("  with H_0 = vbar sqrt(f) sqrt(f p_r^2 + (p_th^2+J^2/sin^2th)/r^2)")
+print("           - A^2 f/Ehat  (non-autonomous: A frozen at leading order).")
+print("  h is the first object of the programme WITHOUT an analogue in Kerr.")
+print("\nDONE.")

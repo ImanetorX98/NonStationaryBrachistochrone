@@ -1,6 +1,6 @@
-# VALIDAZIONE MULTI-PARAMETRO del pipeline separatrice (ramo tau).
-# Gira l'INTERO metodo (coeff ANALITICI) per vari E; ogni E -> Jc, r_d, curva diversi.
-# Verifica: Sum_{ij} R_i eta'_j J[f1,f2]  ==  int diretto ∂_mF·eta,  per ogni E.
+# MULTI-PARAMETER VALIDATION of the separatrix pipeline (tau branch).
+# Runs the WHOLE method (ANALYTIC coefficients) for several E; each E gives a different Jc, r_d and curve.
+# Check: Sum_{ij} R_i eta'_j J[f1,f2]  ==  direct int ∂_mF·eta,  for every E.
 import numpy as np, mpmath as mp, sympy as sp
 from scipy.integrate import quad
 mp.mp.dps=40
@@ -9,7 +9,7 @@ def run(Efloat):
     r,J=sp.symbols('r J'); Es=sp.nsimplify(Efloat)
     Ssym=sp.expand(r*(r-2)*((Es**2-1)*r+2)*(r**2*(r-2)-J**2*((Es**2-1)*r+2)))
     sols=[s for s in sp.solve(sp.Eq(sp.resultant(Ssym,sp.diff(Ssym,r),r),0),J) if s.is_real and float(s)>0.5]
-    # scegli Jc con separatrice fisica: turning e4 in (2,r0), r_d reale
+    # choose Jc with a physical separatrix: turning point e4 in (2,r0), real r_d
     Jc=None
     for sc in sorted(set(float(x) for x in sols)):
         Sc0=np.polymul(np.polymul(np.polymul([1,0],[1,-2]),[E**2-1,2.0]),
@@ -41,7 +41,7 @@ def run(Efloat):
     c_r=float(mp.re(e4r-(2/sa)*wzet(z_inf))); z_d=z_inf+float(mp.re(mp.quad(lambda x:1/mp.sqrt(Q4(x)),[-mp.inf,rd])))
     def zr(rv): return float(quad(lambda x:1/np.sqrt(Q4(x)),e4r,rv,limit=400)[0])
     z0f=mp.mpf(zr(r0))
-    # residui ANALITICI
+    # ANALYTIC residues
     s=np.sqrt(Q4(rd)); Q4prd=np.polyval(Qp,rd); Q4pprd=np.polyval(Qpp,rd)
     F=lambda x: np.polyval(Nm,x)/np.polyval(Q,x)
     Fp=lambda x:(np.polyval(Nmp,x)*np.polyval(Q,x)-np.polyval(Nm,x)*np.polyval(Qp,x))/np.polyval(Q,x)**2
@@ -52,7 +52,7 @@ def run(Efloat):
     def b2_half(ei): return np.polyval(Nm,ei)/((ei-rd)**3)*(4/np.polyval(Qp,ei)**2)
     e1_zd=(rd**3-2*rd**2)/s; B=c_r+(1/sa)*float(mp.re(wzet(2*z_inf))); Aa=-1/sa
     e1_zi=Aa*(2*B+rd-2); e2_zi=Aa**2
-    # trova quale e_i (tra e2,e3) mappa a z=iw_im: quello con N_m(e_i)!=0
+    # find which e_i (among e2,e3) maps to z=iw_im: the one with N_m(e_i)!=0
     ei_iw=None
     for ei in [e1r,e2r,e3r]:
         if abs(np.polyval(Nm,ei))>1e-3*abs(np.polyval(Nm,e4r)): ei_iw=ei
@@ -88,11 +88,11 @@ def run(Efloat):
         def Fm(mv): return np.polyval(np.polymul([Jc],[E**2-1,2*mv]),x)/np.sqrt(np.polyval(pS(mv,Jc),x))
         return (Fm(m+1e-6)-Fm(m-1e-6))/2e-6
     def dphi_direct(x): return quad(lambda t: dmF(t)*eta(t), r0, x, limit=200)[0]
-    xtest=0.5*(e4r+r0)  # meta' orbita
+    xtest=0.5*(e4r+r0)  # half orbit
     z=mp.mpf(zr(xtest)); dt=complex(dphi_terms(z)).real; dd=dphi_direct(xtest)
     return dict(E=E,Jc=Jc,rd=rd,e4=e4r,chkR=chkR,xtest=xtest,dterms=dt,ddir=dd,diff=abs(dt-dd))
 
-print("=== VALIDAZIONE MULTI-PARAMETRO (M=1, vari E) ===")
+print("=== MULTI-PARAMETER VALIDATION (M=1, several E) ===")
 print(" E      Jc        r_d       e4(turn)  checkR    delta_terms   delta_direct   diff")
 for Ev in [1.30,1.40,1.50,1.60,1.25]:
     res=run(Ev)

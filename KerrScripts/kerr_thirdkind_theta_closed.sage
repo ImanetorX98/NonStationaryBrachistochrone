@@ -1,9 +1,9 @@
-# VALIDAZIONE forma chiusa theta del 3a-specie vs diretto (livello differenziale).
-# psi_b usa eta_b = int h_b, h_b = -2M r^2/sqrt(S) (dipolo 3a specie).
+# VALIDATION of the theta closed form of the third kind vs direct (differential level).
+# psi_b uses eta_b = int h_b, h_b = -2M r^2/sqrt(S) (third-kind dipole).
 # Claim: eta_b(r) = rho0 * log[ theta[delta](w-e+) / theta[delta](w-e-) ] + holo,
-#   delta = caratteristica ODD (theta[delta](0)=0). Valido:
-#   d/dr log-ratio = c0 * h_b + c1 du1/dr + c2 du2/dr   (holo = normalizz. a-periodi).
-# Modello dispari (quintica), w normalizzato, base al branch point s_b=1/r_min -> e-=-e+.
+#   delta = ODD characteristic (theta[delta](0)=0). Valid if:
+#   d/dr log-ratio = c0 * h_b + c1 du1/dr + c2 du2/dr   (holo = a-period normalisation).
+# Odd model (quintic), normalised w, base at the branch point s_b=1/r_min -> e-=-e+.
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 from abelfunctions import RiemannTheta
@@ -16,22 +16,22 @@ Rs = PolynomialRing(QQ, ['s', 'Y']); s, Y = Rs.gens()
 lam = [QQ(1200), QQ(-2300), QQ(-11428), QQ(-5519), QQ(24700), QQ(62500)]
 qpoly = sum(lam[i]*s**i for i in range(6))
 X = SageRS(Y**2 - qpoly, prec=80)
-omega = np.array(X.matrix_of_integral_values([Rs(1), s]), dtype=complex)[:, :2]  # a-per 1a specie
+omega = np.array(X.matrix_of_integral_values([Rs(1), s]), dtype=complex)[:, :2]  # a-periods, first kind
 tau = np.array(X.riemann_matrix(), dtype=complex)
 ominv = np.linalg.inv(omega)
 
 def qn(sv): return sum(float(lam[i])*sv**i for i in range(6))
-rmin = 4.046197656444178; s_b = 1.0/rmin                        # branch point base
-def Iu(s_to):   # int_{s_to}^{s_b} (1,s)/sqrt(q) ds regolarizzato s=s_b-u^2
+rmin = 4.046197656444178; s_b = 1.0/rmin                        # base branch point
+def Iu(s_to):   # int_{s_to}^{s_b} (1,s)/sqrt(q) ds regularised by s=s_b-u^2
     U = np.sqrt(s_b - s_to)
     g0 = lambda u: 2*u*(1.0)/np.sqrt(qn(s_b-u**2))
     g1 = lambda u: 2*u*(s_b-u**2)/np.sqrt(qn(s_b-u**2))
     I0 = quad(g0, 0, U, limit=200)[0]; I1 = quad(g1, 0, U, limit=200)[0]
-    return -np.array([I0, I1])                                  # segno per s_b->s_to
+    return -np.array([I0, I1])                                  # sign for s_b->s_to
 def w_of(s_to): return ominv @ Iu(s_to)
 e_plus = w_of(0.0); e_minus = -e_plus                           # base branch pt -> e-=-e+
 
-# caratteristiche: 16 half-integer; odd = theta[delta](0)=0
+# characteristics: 16 half-integer ones; odd = theta[delta](0)=0
 def theta_d(z, av, bv, derivs=None):
     av = np.array(av); bv = np.array(bv)
     zz = z + tau @ av + bv
@@ -48,9 +48,9 @@ for av in halfs:
     for bv in halfs:
         if abs(theta_d(np.zeros(2), av, bv)) < 1e-6:
             odd.append((av, bv))
-print("caratteristiche ODD trovate:", len(odd))
+print("ODD characteristics found:", len(odd))
 
-# campiona orbita, costruisci h_b(r), du_i/dr(r)
+# sample the orbit, build h_b(r), du_i/dr(r)
 def Sn(rv):
     f=1-2*M/rv; Dl=rv**2-2*M*rv+a**2; Emu=(Ehat**2-1)*rv+2*M
     return rv*(rv-2*M)*Emu*(rv*Dl-J**2*Emu)
@@ -61,10 +61,10 @@ du1dr = (1/np.sqrt(qn(sr)))*dsdr; du2dr = (sr/np.sqrt(qn(sr)))*dsdr
 W = np.array([w_of(sv) for sv in sr])                          # w(r) (2,) each
 dwdr = (ominv @ np.vstack([du1dr, du2dr])).T                   # (N,2)
 
-# base completa 1a+2a+3a specie in x-coord: {r^k/sqrt(S)}, k=0..3
+# complete first+second+third-kind basis in x-coordinates: {r^k/sqrt(S)}, k=0..3
 sqrtS = np.sqrt(Sn(rg))
 basis = np.vstack([rg**k/sqrtS for k in range(4)]).T            # (N,4)
-print("\n delta_id   fit_residuo(D ~ sum_k c_k r^k/sqrtS)   c2(coeff 3a specie)")
+print("\n delta_id   fit_residual(D ~ sum_k c_k r^k/sqrtS)   c2(third-kind coeff)")
 best=None
 for k,(av,bv) in enumerate(odd):
     D = np.array([ (theta_d(W[i]-e_plus,av,bv,1)-theta_d(W[i]-e_minus,av,bv,1)) @ dwdr[i]
@@ -73,6 +73,6 @@ for k,(av,bv) in enumerate(odd):
     resid = np.max(np.abs(basis@coef - D))/max(np.max(np.abs(D)),1e-30)
     print(f"  {k}: {resid:.3e}    c2={coef[2]:+.4f}")
     if best is None or resid<best[0]: best=(resid,k,coef)
-print(f"\nMIGLIORE: delta #{best[1]}, residuo rel {best[0]:.2e}, c0={best[2][0]:.4f}")
-print("=> se residuo ~0: eta_b (3a specie) = forma chiusa theta[delta] CONFERMATA.")
-print("   rho0 atteso ~1.06 (residuo 3a specie); c0 lo riflette (a meno di norm.)")
+print(f"\nBEST: delta #{best[1]}, relative residual {best[0]:.2e}, c0={best[2][0]:.4f}")
+print("=> if the residual is ~0: eta_b (third kind) = theta[delta] closed form CONFIRMED.")
+print("   rho0 expected ~1.06 (third-kind residue); c0 reflects it (up to normalisation)")

@@ -1,27 +1,27 @@
 # -*- coding: utf-8 -*-
-# Quasi-periodi di 2a specie (matrice eta / kappa di Klein) per la curva genus-2
-# del ramo tau -> ingrediente MANCANTE per la forma chiusa Kleiniana di psi.
+# Second-kind quasi-periods (matrix eta / Klein's kappa) for the genus-2 curve
+# of the tau branch -> the MISSING ingredient of the Kleinian closed form of psi.
 #
-# psi = 1/2 Ehat (rho - rho~) e' un integrale iterato lunghezza-2 di forme di
-# 1a/2a specie (NO 3a specie: provato beta_+=delta_+=0). Per la teoria classica
-# Baker-Klein CHIUDE nelle funzioni Kleiniane zeta,sigma (peso 1, stessa classe
-# di phi_0), NON e' un polilog. Serve la matrice dei quasi-periodi eta (2a specie).
+# psi = 1/2 Ehat (rho - rho~) is a length-2 iterated integral of forms of the
+# first/second kind (NO third kind: shown beta_+=delta_+=0). By the classical Baker-Klein
+# theory it CLOSES in the Kleinian functions zeta, sigma (weight 1, the same class
+# as phi_0); it is NOT a polylogarithm. The matrix of quasi-periods eta (second kind) is needed.
 #
-# METODO (rompe il muro "Sage non da' eta" di doranTau.md sec.7-iii):
-#   - modello DISPARI (quintica, 1 punto all'infinito) via x=1/s: le 2a-specie
-#     s^2,s^3 ds/Y sono pulite (doppio polo, no residuo). Il modello PARI (deg 6)
-#     ha 2 punti all'infinito -> x^2 dx/y e' 3a specie (residuo) -> eta sbagliato.
-#   - 2a-specie CANONICHE di Baker-Enolski-Leykin (coeff della quintica):
+# METHOD (breaks the wall "Sage does not give eta" of doranTau.md sec.7-iii):
+#   - ODD model (quintic, 1 point at infinity) via x=1/s: the second-kind forms
+#     s^2,s^3 ds/Y are clean (double pole, no residue). The EVEN model (deg 6)
+#     has 2 points at infinity -> x^2 dx/y is of the third kind (residue) -> wrong eta.
+#   - CANONICAL second-kind forms of Baker-Enolski-Leykin (coefficients of the quintic):
 #       dr_1 = (lam3 s + 2 lam4 s^2 + 3 lam5 s^3) ds/(4y)
 #       dr_2 = lam5 s^2 ds/(4y)
-#   - periodi via matrix_of_integral_values di Sage sui 4 cicli (INTERI: no crash
-#     Singular). Pairing du=[1,s] <-> dr=[dr1,dr2].
+#   - periods through Sage's matrix_of_integral_values on the 4 cycles (INTEGERS: no
+#     Singular crash). Pairing du=[1,s] <-> dr=[dr1,dr2].
 #
-# VALIDAZIONE: kappa=eta*omega^-1 SIMMETRICA (1.4e-12); Legendre generalizzata
-#   omega' eta^T - omega eta'^T = -i pi I (canonica).
+# VALIDATION: kappa=eta*omega^-1 SYMMETRIC (1.4e-12); generalised Legendre relation
+#   omega' eta^T - omega eta'^T = -i pi I (canonical).
 #
-# Quintica: Y^2 = s^6 S(1/s), S_tau = 1200x^6-2300x^5-11428x^4-5519x^3+24700x^2
-#   +62500x (params M=1,a=9/10,E=7/5,J=5/2). lam_i = coeff (interi).
+# Quintic: Y^2 = s^6 S(1/s), S_tau = 1200x^6-2300x^5-11428x^4-5519x^3+24700x^2
+#   +62500x (parameters M=1,a=9/10,E=7/5,J=5/2). lam_i = coefficients (integers).
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 import numpy as np
@@ -32,22 +32,22 @@ q = sum(lam[i]*s**i for i in range(6))
 X = SageRS(Y**2 - q, prec=100)
 assert X.genus == 2
 
-# 2a-specie canoniche BEL (fattore /2 = 4y->2y della convenzione f_y)
+# canonical BEL second-kind forms (factor /2 = 4y->2y of the f_y convention)
 dr1 = (lam[3]*s + 2*lam[4]*s**2 + 3*lam[5]*s**3)/2
 dr2 = lam[5]*s**2/2
 du = [Rs(1), s]                    # du_1=1, du_2=s
 Pi = np.array(X.matrix_of_integral_values(du + [dr1, dr2]), dtype=complex)  # 4x4
-omega, omega_p = Pi[:2, :2], Pi[:2, 2:]     # 1a specie a,b
-eta,   eta_p   = Pi[2:, :2], Pi[2:, 2:]     # 2a specie a,b
+omega, omega_p = Pi[:2, :2], Pi[:2, 2:]     # first kind a,b
+eta,   eta_p   = Pi[2:, :2], Pi[2:, 2:]     # second kind a,b
 tau = np.linalg.solve(omega, omega_p)
-kappa = eta @ np.linalg.inv(omega)          # matrice di Klein (per sigma)
+kappa = eta @ np.linalg.inv(omega)          # Klein's matrix (for sigma)
 Leg = omega_p @ eta.T - omega @ eta_p.T
 
 print('tau =\n', np.round(tau, 5))
 print('tau sym err        =', np.linalg.norm(tau - tau.T))
 print('kappa =\n', np.round(kappa, 5))
 print('kappa SYM ERR      =', np.linalg.norm(kappa - kappa.T))
-print('Legendre/(2 pi i)  =\n', np.round(Leg/(2j*np.pi), 4), '  (atteso -I/2)')
-print("\nOK: eta (2a specie) calcolata e validata -> sigma/zeta di Klein pronti.")
-print("    Prossimo: sigma=exp(-1/2 u^T kappa u) theta(...), zeta_i=d_i log sigma,")
-print("    psi(r) = combinazione chiusa di zeta(u(r)); validare vs psi numerico.")
+print('Legendre/(2 pi i)  =\n', np.round(Leg/(2j*np.pi), 4), '  (expected -I/2)')
+print("\nOK: eta (second kind) computed and validated -> Klein's sigma/zeta ready.")
+print("    Next: sigma=exp(-1/2 u^T kappa u) theta(...), zeta_i=d_i log sigma,")
+print("    psi(r) = closed combination of zeta(u(r)); validate against the numerical psi.")

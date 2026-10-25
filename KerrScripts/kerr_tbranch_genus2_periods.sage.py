@@ -6,7 +6,9 @@ penetrates the ergosphere and reproduces the Hamiltonian flow to ~2e-13. Checks 
 Riemann relations: tau = tau^T and Im(tau) positive definite. The eigenvalues of Im(tau)
 depend on the homology basis RiemannSurface chooses and are printed for the record only.
 
-Run with:  sage -python kerr_tbranch_genus2_periods.sage.py
+Run with the Python of the Sage environment (conda's `sage` has no `-python` option; see
+NonStationaryMetrics/sage_env/SAGE_SETUP.md), e.g. via NonStationaryMetrics/sage_env/run_sage_checks.py, or
+    <env>/bin/python kerr_tbranch_genus2_periods.sage.py
 """
 import sys
 from sage.all import QQ, PolynomialRing, lcm, expand, RealField, matrix

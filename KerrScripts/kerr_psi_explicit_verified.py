@@ -1,4 +1,4 @@
-# FIX METODOLOGICO: riduzione di dE F, con verifica numerica ad OGNI passo.
+# METHODOLOGICAL FIX: reduction of dE F, with a numerical check at EVERY step.
 import sympy as sp
 import numpy as np
 from scipy.integrate import quad
@@ -10,56 +10,56 @@ S = sp.expand(r*(r-2*M)*Emu*(r*Dl-J**2*Emu))
 K = J*r*(r-2*M)*Emu/Dl
 F = K/sp.sqrt(S)
 
-# --- PASSO 1: verifica dE F = N/S^(3/2), N = E J r^4 (r-2M)^2 Emu ---
+# --- STEP 1: check dE F = N/S^(3/2), N = E J r^4 (r-2M)^2 Emu ---
 dEF = sp.diff(F, E)
 N = E*J*r**4*(r-2*M)**2*Emu
 check1 = sp.simplify(dEF - N/S**sp.Rational(3,2))
-print("PASSO 1: dE F - N/S^(3/2) =", check1, " (deve essere 0)")
+print("STEP 1: dE F - N/S^(3/2) =", check1, " (must be 0)")
 
-# --- PASSO 2: riduzione 2N = 2S A' - A S' + 2S Mpoly ---
+# --- STEP 2: reduction 2N = 2S A' - A S' + 2S Mpoly ---
 # A deg 4, Mpoly = sum_{k=0}^3 c_k r^k  (cohomology, deg<=3)
 Ac=[sp.Symbol(f'A{i}') for i in range(5)]; ck=[sp.Symbol(f'c{i}') for i in range(4)]
 Acal=sum(Ac[i]*r**i for i in range(5)); Mp=sum(ck[i]*r**i for i in range(4))
 eq = sp.expand(2*N - (2*S*sp.diff(Acal,r) - Acal*sp.diff(S,r) + 2*S*Mp))
 sol = sp.solve(sp.Poly(eq, r).all_coeffs(), Ac+ck, dict=True)
-print("PASSO 2: soluzione trovata?", bool(sol))
+print("STEP 2: solution found?", bool(sol))
 if not sol:
-    print("  nessuna soluzione con A deg4, M deg3 -> provo A deg5, M deg4")
+    print("  no solution with A deg4, M deg3 -> trying A deg5, M deg4")
     Ac=[sp.Symbol(f'A{i}') for i in range(6)]; ck=[sp.Symbol(f'c{i}') for i in range(5)]
     Acal=sum(Ac[i]*r**i for i in range(6)); Mp=sum(ck[i]*r**i for i in range(5))
     eq=sp.expand(2*N-(2*S*sp.diff(Acal,r)-Acal*sp.diff(S,r)+2*S*Mp))
     sol=sp.solve(sp.Poly(eq,r).all_coeffs(), Ac+ck, dict=True)
-    print("  con A deg5,M deg4:", bool(sol))
+    print("  with A deg5,M deg4:", bool(sol))
 sol=sol[0] if isinstance(sol,list) else sol
 Aexpr=Acal.subs(sol); Mexpr=Mp.subs(sol)
 print("  Mpoly =", sp.expand(Mexpr))
 print("  Acal  =", sp.expand(Aexpr))
 
-# --- PASSO 3: VERIFICA numerica dE F(diretto) == d(A/sqrtS)/dr + M/sqrtS ---
+# --- STEP 3: numerical CHECK dE F(direct) == d(A/sqrtS)/dr + M/sqrtS ---
 E0=sp.Rational(7,5)
 dEF_n = sp.lambdify(r, dEF.subs(E,E0),'numpy')
 rhs = sp.diff(Aexpr/sp.sqrt(S), r) + Mexpr/sp.sqrt(S)
 rhs_n = sp.lambdify(r, rhs.subs(E,E0),'numpy')
-print("\nPASSO 3: verifica numerica dE F == d(A/sqrtS)+M/sqrtS")
+print("\nSTEP 3: numerical check dE F == d(A/sqrtS)+M/sqrtS")
 for rv in [11.0, 9.0, 7.0, 5.0]:
     d=dEF_n(rv); rr=rhs_n(rv)
     print(f"  r={rv}: dEF={d:.8e}  rhs={rr:.8e}  diff={abs(d-rr):.2e}")
-print("=> se diff~1e-12: riduzione CORRETTA (Delta gestito bene).")
+print("=> if diff~1e-12: the reduction is CORRECT (Delta handled properly).")
 
-# ===== PASSO 4: decomposizione di psi, VERIFICATA =====
-# Orologio di DERIVA lungo l'orbita tau (A = A(eta)):
+# ===== STEP 4: decomposition of psi, VERIFIED =====
+# DRIFT clock along the tau orbit (A = A(eta)):
 #   d eta/dr = [E r^3 - 2MaJ r D_E/Delta]/sqrt(S) = sum_j b_j r^j/sqrt(S) + R_D/(Delta sqrt(S))
-#   b = (-2MaJ(E^2-1), 0, 0, E, 0),   R_D = -2MaJ [2ME^2 r - (E^2-1)a^2]   (terza specie a r_pm)
-# Una versione precedente usava il tempo proprio, b=(0,0,-2M,1,0): e' l'orologio che il
-# funzionale misura, non la variabile lenta (paper2/verification/verify_tau_branch_drift_clock.py).
+#   b = (-2MaJ(E^2-1), 0, 0, E, 0),   R_D = -2MaJ [2ME^2 r - (E^2-1)a^2]   (third kind at r_pm)
+# An earlier version used the proper time, b=(0,0,-2M,1,0): that is the clock the
+# functional measures, not the slow variable (paper2/verification/verify_tau_branch_drift_clock.py).
 import numpy as _np
 from scipy.integrate import quad as _quad
 from scipy.optimize import brentq as _brentq
 Mf,af,Ef,Jf = 1.0,0.9,1.4,2.5
 cval=[float(sp.simplify(sol.get(ck[i],0)).subs(E,E0)) for i in range(5)]
 Anum=[float(sp.simplify(sol.get(Ac[i],0)).subs(E,E0)) for i in range(6)]
-print("\nPASSO 4: decomposizione psi (orologio di deriva eta lungo l'orbita tau)")
-print("c_k (verificati) =", [f"{c:.5f}" for c in cval])
+print("\nSTEP 4: decomposition of psi (drift clock eta along the tau orbit)")
+print("c_k (verified) =", [f"{c:.5f}" for c in cval])
 def Sn(x):
     Dl=x**2-2*Mf*x+af**2; Em=(Ef**2-1)*x+2*Mf
     return x*(x-2*Mf)*Em*(x*Dl-Jf**2*Em)
@@ -78,7 +78,7 @@ def deta(x): return (Ef*x**3-2*Mf*af*Jf*x*((Ef**2-1)*x+2*Mf)/Dn(x))/sq(x)
 rho =_quad(lambda x:A_of(x)*deta(x),r0,xf,limit=100)[0]
 rhot=_quad(lambda x:(eta2(x)+eta3(x))*dEFn(x),r0,xf,limit=100)[0]
 LHS=rho-rhot
-# (a) parte di seconda specie: Q_kj W_kj + termini algebrici (come prima, con il nuovo b)
+# (a) second-kind part: Q_kj W_kj + algebraic terms (as before, with the new b)
 def Wkj(k,j): return _quad(lambda x:(Uk(x,k)*x**j-Uk(x,j)*x**k)/sq(x),r0,xf,limit=100)[0]
 poly=sum((cval[k]*b[j]-cval[j]*b[k])*Wkj(k,j) for k in range(5) for j in range(5) if k<j and abs(cval[k]*b[j]-cval[j]*b[k])>1e-14)
 def Acaln(x): return sum(Anum[i]*x**i for i in range(6))
@@ -86,15 +86,15 @@ def A_alg(x): return Acaln(x)/sq(x)
 const_A=-A_alg(r0)
 int_Aalg_d2=_quad(lambda x:Acaln(x)*sum(b[j]*x**j for j in range(5))/Sn(x),r0,xf,limit=100)[0]
 gA_terms=2*int_Aalg_d2 + eta2(xf)*(const_A - A_alg(xf))
-# (b) parte d'orizzonte: per parti, 2 int A_of d eta3 - A_of(xf) eta3(xf), con
+# (b) horizon part: by parts, 2 int A_of d eta3 - A_of(xf) eta3(xf), with
 #     int A_of d eta3 = int A_alg d eta3 + const_A eta3 + sum_k c_k int U_k d eta3
-#     (le ultime sono lettere di peso due con una lettera di terza specie a Delta=0)
+#     (the last ones are weight-two words with one third-kind letter at Delta=0)
 int_Aalg_d3=_quad(lambda x:A_alg(x)*RD(x)/(Dn(x)*sq(x)),r0,xf,limit=100)[0]
 WkD=[_quad(lambda x:Uk(x,k)*RD(x)/(Dn(x)*sq(x)),r0,xf,limit=100)[0] for k in range(5)]
 e3=eta3(xf)
 hor=2*(int_Aalg_d3+const_A*e3+sum(cval[k]*WkD[k] for k in range(5))) - A_of(xf)*e3
 RHS=poly+gA_terms+hor
-print(f"rho-rho~ diretto                   = {LHS:.8f}")
-print(f"decomposizione(Q W + gA + orizzonte)= {RHS:.8f}")
-print(f"   di cui parte d'orizzonte        = {hor:.8f}")
-print(f"differenza = {abs(LHS-RHS):.2e}   (identita', coeff DATI dai c_k, NO fit)")
+print(f"rho-rho~ direct                     = {LHS:.8f}")
+print(f"decomposition (Q W + gA + horizon) = {RHS:.8f}")
+print(f"   of which horizon part           = {hor:.8f}")
+print(f"difference = {abs(LHS-RHS):.2e}   (identity, coefficients GIVEN by the c_k, NO fit)")

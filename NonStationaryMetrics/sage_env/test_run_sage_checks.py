@@ -20,13 +20,13 @@ import run_sage_checks as R  # noqa: E402
 
 VALID = {
     "kerr_tau_general_genus2_periods.sage.py":
-        "[ 7.4s] |tau-tau^T| = 7.29e-12 (simmetrica); autovalori Im(tau) = "
+        "[ 7.4s] |tau-tau^T| = 7.29e-12 (symmetric); eigenvalues of Im(tau) = "
         "[0.18961075409624165, 1.7573154131112518] (>0)\n",
     "kerr_tbranch_genus2_periods.sage.py":
         "|tau - tau^T| = 2.27e-12\neigenvalues of Im(tau) = [0.235, 1.565]  (basis-dependent)\n",
     "kerr_quasiperiods_bel.sage": "kappa SYM ERR      = 2.651609927327309e-12\n",
     "kerr_thirdkind_theta_closed.sage":
-        "MIGLIORE: delta #1, residuo rel 7.25e-05, c0=23.4368-1.9615j\n",
+        "BEST: delta #1, relative residual 7.25e-05, c0=23.4368-1.9615j\n",
 }
 
 
@@ -74,8 +74,12 @@ CASES = [
     ("kappa 0e+", with_(KAP, "kappa SYM ERR      = 0e+\n"), {}, set(), 1),
     ("kappa nan", with_(KAP, "kappa SYM ERR      = nan\n"), {}, set(), 1),
     ("kappa above bound", with_(KAP, "kappa SYM ERR      = 3e-10\n"), {}, set(), 1),
-    ("theta residual 7.25e-05x", with_(TH, "MIGLIORE: delta #1, residuo rel 7.25e-05x, c0=1\n"), {}, set(), 1),
-    ("symmetry inf", with_(TAU, "|tau-tau^T| = inf (simmetrica); autovalori Im(tau) = [0.1, 1.7]\n"), {}, set(), 1),
+    ("theta residual 7.25e-05x", with_(TH, "BEST: delta #1, relative residual 7.25e-05x, c0=1\n"), {}, set(), 1),
+    ("symmetry inf", with_(TAU, "|tau-tau^T| = inf (symmetric); eigenvalues of Im(tau) = [0.1, 1.7]\n"), {}, set(), 1),
+    # the Italian field names used before v1.8.3 must no longer be read: a stale producer fails loudly
+    ("old theta field name", with_(TH, "MIGLIORE: delta #1, residuo rel 7.25e-05, c0=1\n"), {}, set(), 1),
+    ("old eigenvalue field name", with_(TAU, "|tau-tau^T| = 7.29e-12 (simmetrica); autovalori Im(tau) = [0.1, 1.7]\n"), {}, set(), 1),
+    ("negative tau eigenvalue", with_(TAU, "|tau-tau^T| = 7.29e-12 (symmetric); eigenvalues of Im(tau) = [0.1, -1.7]\n"), {}, set(), 1),
     ("field missing", with_(KAP, "nothing here\n"), {}, set(), 1),
     ("non-zero exit", VALID, {KAP: 1}, set(), 1),
     ("timeout", VALID, {}, {TH}, 1),

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Validazione forma chiusa vs numerica di phi(r,A) adiabatica, rami t e tau.
-Forma chiusa: phi = phi_0 + (A'/A)[Closed + psi], psi = 1/2 Ehat (rho-rho~)
-  (= sum Q_kj W_kj, coeff algebrici, identita' verificata 5e-14 altrove).
-Numerica: phi_full = phi_0 + (A'/A)[-Ehat int dEF eta dr] (coefficiente ODE diretto).
-Pannelli (a,b): curve x-y (chiusa vs numerica) per t e tau a A'/A=0.06.
-Pannello (c): errore max|phi_chiusa - phi_num| vs A'/A (log-log), entrambi i rami.
+Validation of the closed form against the numerical adiabatic phi(r,A), t and tau branches.
+Closed form: phi = phi_0 + (A'/A)[Closed + psi], psi = 1/2 Ehat (rho-rho~)
+  (= sum Q_kj W_kj, algebraic coefficients, identity checked to 5e-14 elsewhere).
+Numerical: phi_full = phi_0 + (A'/A)[-Ehat int dEF eta dr] (direct ODE coefficient).
+Panels (a,b): x-y curves (closed vs numerical) for t and tau at A'/A=0.06.
+Panel (c): error max|phi_closed - phi_num| vs A'/A (log-log), both branches.
 """
 import os, sys
 import numpy as np, sympy as sp
@@ -22,7 +22,7 @@ M, a, Ehat = 1.0, 0.9, 1.4
 
 
 def build_branch(branch, backoff, npts):
-    """ritorna rg, phi0, Closed, psi, dphi_full (coeff O(A'/A))."""
+    """return rg, phi0, Closed, psi, dphi_full (coefficients O(A'/A))."""
     r, Es = sp.symbols('r E'); Dl = r**2-2*M*r+a**2
     if branch == 't':
         J, r0 = 6.0, 12.0
@@ -37,11 +37,11 @@ def build_branch(branch, backoff, npts):
     Fn = sp.lambdify(r, (Kf/sp.sqrt(R)).subs(Es, Ehat), 'numpy')
     dEF = sp.lambdify(r, sp.diff(Kf/sp.sqrt(R), Es).subs(Es, Ehat), 'numpy')
     Rn = sp.lambdify(r, R.subs(Es, Ehat), 'numpy')
-    # turning fisico della forma chiusa: R=0 (dove F diverge)
+    # physical turning point of the closed form: R=0 (where F diverges)
     rs = np.linspace(2.05, r0, 40000); v = Rn(rs)
     idx = np.where(np.diff(np.sign(v)))[0]
     r_turn = max([brentq(Rn, rs[i], rs[i+1]) for i in idx if rs[i] > 2.0], default=2.1)
-    # flusso congelato -> clock eta(r) (Hamilton, ramo t/tau)
+    # frozen flow -> clock eta(r) (Hamilton, t/tau branch)
     rr, pr, Ess, Jss = sp.symbols('r pr E J_')
     f2 = 1-2*M/rr; Dl2 = rr**2-2*M*rr+a**2; b2 = 2*M*a/rr; v2 = 1-f2/Ess**2
     P2 = rr**2+a**2+2*M*a**2/rr; Pb2 = P2+b2**2/Ess**2
@@ -62,7 +62,7 @@ def build_branch(branch, backoff, npts):
                   dense_output=True, events=ev)
     lam = np.linspace(0, s.t[-1], 6000); rlam = s.sol(lam)[0]
     lam_of_r = interp1d(rlam, lam)
-    # griglia GRADUATA: densa vicino al turning (integrando ~1/sqrt(r-r_turn)).
+    # GRADED grid: dense near the turning point (integrand ~1/sqrt(r-r_turn)).
     r_stop = max(r_turn, rlam.min()) + backoff
     u = np.linspace(0, 1, npts)
     rg = r0-0.02 - (r0-0.02 - r_stop)*(1-np.cos(u*np.pi/2))  # concentra su r_stop
@@ -88,14 +88,14 @@ def build_branch(branch, backoff, npts):
     return dict(rg=rg, phi0=phi0, Closed=Closed, psi=psi, dfull=dphi_full, r0=r0)
 
 
-print("costruisco ramo t..."); Bt = build_branch('t', backoff=0.10, npts=3000)
-print("costruisco ramo tau..."); Bta = build_branch('tau', backoff=0.10, npts=3000)
+print("building the t branch..."); Bt = build_branch('t', backoff=0.10, npts=3000)
+print("building the tau branch..."); Bta = build_branch('tau', backoff=0.10, npts=3000)
 
 fig, ax = plt.subplots(1, 3, figsize=(3*COL, COL*0.95))
 th = np.linspace(0, 2*np.pi, 200)
 eps_show = 0.06
 def full_orbit(rg, phi):
-    """incoming + outgoing (mirror alla svolta): parametro affine avanti."""
+    """incoming + outgoing (mirrored at the turn): affine parameter forward."""
     rr = np.concatenate([rg, rg[::-1]])
     ph = np.concatenate([phi, 2*phi[-1]-phi[::-1]])
     return rr, ph
@@ -116,15 +116,15 @@ for k, (B, name, col) in enumerate([(Bt, 't', 'C0'), (Bta, r'\tau', 'C3')]):
     ax[k].set_title(rf'${name}$-branch: $\varphi(r,A)$ closed vs numerical'
                     '\n' rf'($A^\prime/A={eps_show}$)', fontsize=6.6)
     ax[k].legend(fontsize=5.6, loc='upper left', framealpha=0.9)
-# pannello c: errore vs A'/A. phi_closed - phi_num = eps*(Closed + psi - dfull): due valutazioni dello
-# STESSO coefficiente del primo ordine, quindi il residuo e' esattamente lineare in eps (non un test O(eps^2)).
+# panel c: error vs A'/A. phi_closed - phi_num = eps*(Closed + psi - dfull): two evaluations of the
+# SAME first-order coefficient, so the residual is exactly linear in eps (not an O(eps^2) test).
 epss = np.array([0.005, 0.01, 0.02, 0.04, 0.06])
 import json
 _table = {}
 for B, name in [(Bt, 't'), (Bta, 'tau')]:
     base = float(np.nanmax(np.abs((B['Closed']+B['psi'])-B['dfull'])))
     _table[name] = {'residual_over_eps': base, **{f'eps={e}': base*e for e in (0.005, 0.02, 0.06)}}
-    print(f"  ramo {name}: max|closed-quad|/eps = {base:.6e};  tabella: " +
+    print(f"  branch {name}: max|closed-quad|/eps = {base:.6e};  tabella: " +
           ", ".join(f"eps={e}: {base*e:.2e}" for e in (0.005, 0.02, 0.06)))
 open(os.path.join(HERE, 'fig_phi_closed_validation_table.json'), 'w').write(json.dumps(_table, indent=2))
 for B, name, col, mk in [(Bt, 't', 'C0', 'o'), (Bta, r'\tau', 'C3', 's')]:
@@ -140,4 +140,4 @@ ax[2].set_title('closed form matches numerical\n(residual = quadrature floor)',
                 fontsize=6.6)
 ax[2].legend(fontsize=6.0, loc='upper left')
 savefig(fig, HERE, 'fig_phi_closed_validation')
-print('FATTO.')
+print('DONE.')

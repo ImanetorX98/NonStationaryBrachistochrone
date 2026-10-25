@@ -1,38 +1,38 @@
 # -*- coding: utf-8 -*-
 """
-Brachistocrona tau in Vaidya — parametro v (regolare al periasse).
+tau brachistochrone in Vaidya -- parameter v (regular at the periapsis).
 
-La parametrizzazione in r degenera al periasse (dv/dr -> oo). Con v come
-parametro (' = d/dv):
+The parametrisation in r degenerates at the periapsis (dv/dr -> oo). With v as the
+parameter (' = d/dv):
 
     Lam = dtau/dv = sqrt(f - 2 r' - r^2 phi'^2)
-    vincolo -u_v = E  =>  Lam = (f - r')/E
+    constraint -u_v = E  =>  Lam = (f - r')/E
     =>  phi'^2 = W_v(v, r, r') = [ f - 2 r' - (f - r')^2/E^2 ] / r^2
 
-Funzionale ridotto (J = momento di Fermat, costante):
+Reduced functional (J = Fermat momentum, constant):
 
     F_tau = (f - r')/E - J sqrt(W_v)       T_tau = int (f - r')/E dv
 
-Identico al funzionale in parametro r via cambio di variabile
-((f v'-1) dr = (f - r') dv), quindi STESSE curve estremali — ma l'EL in
-v(r) resta regolare a r'=0: si integra ATTRAVERSO il rimbalzo.
+Identical to the functional in the parameter r through the change of variable
+((f v'-1) dr = (f - r') dv), hence the SAME extremal curves -- but the EL equation in
+v(r) stays regular at r'=0: one integrates THROUGH the bounce.
 
-Trasversalita' all'arrivo (istante v1 libero): presa dalla forma r-param
-gia' validata, p_v(r1) = 0, che fissa r'(v1) = 1/v'(r1).
+Transversality at arrival (free instant v1): taken from the already validated
+r-parametrised form, p_v(r1) = 0, which fixes r'(v1) = 1/v'(r1).
 
-Verifiche / studio:
-  V1  EL in parametro v: r'' esplicito; forzante dF/dv = (dF/dm) m'
-  V2  cross-check r-param: stessi (v, Delta_phi, T_tau) al passaggio
-      r = 3.5 per Schwarzschild e Vaidya mu=0.01 (tabella VaidyaResults R4)
-  V3  rimbalzo: integrazione attraverso il periasse; statico: r_min
-      coincide con la radice esatta di  r^2 f - J^2 (E^2 - f) = 0
-      (tricotomia doranTau con a=0); Vaidya: periasse ~ dove la r-param
-      moriva (r ~ 3.0105)
-  V4  scan di timing: r_min in funzione dell'istante d'arrivo v1 per
-      mu = +0.01 (accresce), 0 (statico), -0.01 (evapora):
-      il caso statico e' piatto, i dinamici NO — prima misura della
-      "finestra temporale" genuinamente non stazionaria.
-Figure: Vaidyafigures/fig_vaidya_bounce, fig_vaidya_timing.
+Checks / study:
+  V1  EL equation in the parameter v: explicit r''; forcing dF/dv = (dF/dm) m'
+  V2  cross-check with the r parametrisation: the same (v, Delta_phi, T_tau) at the passage
+      r = 3.5 for Schwarzschild and Vaidya mu=0.01 (table VaidyaResults R4)
+  V3  bounce: integration through the periapsis; static: r_min
+      coincides with the exact root of  r^2 f - J^2 (E^2 - f) = 0
+      (doranTau trichotomy with a=0); Vaidya: periapsis ~ where the r parametrisation
+      broke down (r ~ 3.0105)
+  V4  timing scan: r_min as a function of the arrival instant v1 for
+      mu = +0.01 (accreting), 0 (static), -0.01 (evaporating):
+      the static case is flat, the dynamical ones are NOT -- a first measurement of the
+      genuinely non-stationary "time window".
+Figures: Vaidyafigures/fig_vaidya_bounce, fig_vaidya_timing.
 """
 
 import os
@@ -62,18 +62,18 @@ p_r = sp.diff(F_tau, rp)
 dp_tot = (sp.diff(p_r, vv) + sp.diff(p_r, mm) * mp
           + sp.diff(p_r, rr) * rp + sp.diff(p_r, rp) * q)
 EL = dp_tot - (sp.diff(F_tau, rr) + sp.diff(F_tau, mm) * 0)
-# ATTENZIONE: dF/dr e' derivata esplicita in r; la dipendenza da v e' via
-# m(v) e sta in dp_tot (termine mp). dF/dv = (dF/dm) m' entra con segno
-# opposto? No: EL = d/dv(dF/dr') - dF/dr; dF/dr non contiene m'.
+# CAUTION: dF/dr is the explicit derivative in r; the dependence on v is through
+# m(v) and sits in dp_tot (term mp). Does dF/dv = (dF/dm) m' enter with the opposite
+# sign? No: EL = d/dv(dF/dr') - dF/dr; dF/dr does not contain m'.
 rpp_sol = sp.solve(sp.Eq(EL, 0), q)[0]
 
 print("=" * 72)
-print("[V1] EL in parametro v")
+print("[V1] EL equation in the parameter v")
 print("=" * 72)
 prop = sp.simplify(sp.diff(F_tau, vv)) == 0
-print("  F non dipende esplicitamente da v (solo via m):", prop)
+print("  F does not depend explicitly on v (only through m):", prop)
 print("  dF/dm =", sp.factor_terms(sp.radsimp(sp.diff(F_tau, mm))))
-print("  r'' risolto (lineare in q):  ok, regolare dove W_v > 0")
+print("  r'' solved (linear in q):  ok, regular where W_v > 0")
 
 m0v, E_n, J_n = 1.0, 1.2, 1.3
 r1 = 10.0
@@ -83,7 +83,7 @@ rpp_fn = sp.lambdify(args, rpp_sol.subs(subs_n), 'numpy')
 Wv_fn = sp.lambdify(args, Wv.subs(subs_n), 'numpy')
 Lam_fn = sp.lambdify(args, ((f - rp) / E).subs(subs_n), 'numpy')
 
-# trasversalita' dalla forma r-param (validata): p_v(r1) = 0
+# transversality from the r-parametrised form (validated): p_v(r1) = 0
 u_ = sp.Symbol('u_', real=True)
 f_r = 1 - 2 * mm / rr
 W_r = (f_r * u_**2 - 2 * u_ - (f_r * u_ - 1)**2 / E**2) / rr**2
@@ -106,7 +106,7 @@ def rp_arrivo(mu_n, v1):
     return 1.0 / brentq(lambda z: pv_fn(r1, v1, z, mu_n), lo, hi)
 
 def orbita(mu_n, v1, v_min=-1e6):
-    """Backward da (v1, r1) attraverso il periasse fino a r = r1."""
+    """Backward from (v1, r1) through the periapsis back to r = r1."""
     rp1 = rp_arrivo(mu_n, v1)
 
     def rhs(v_, y):
@@ -121,15 +121,15 @@ def orbita(mu_n, v1, v_min=-1e6):
     s1 = solve_ivp(rhs, [v1, v_min], [r1, rp1, 0.0, 0.0],
                    rtol=1e-11, atol=1e-13, dense_output=True,
                    events=[ev_peri, ev_r35])
-    assert s1.status == 1, 'periasse non trovato'
+    assert s1.status == 1, 'periapsis not found'
     v_p, y_p = s1.t_events[0][0], s1.y_events[0][0]
     ev_r10 = lambda v_, y: y[0] - r1
     ev_r10.terminal, ev_r10.direction = True, 0
     s2 = solve_ivp(rhs, [v_p, v_min], y_p, rtol=1e-11, atol=1e-13,
                    dense_output=True, events=[ev_r10])
     out = dict(v_peri=v_p, r_min=y_p[0], sol1=s1, sol2=s2)
-    if len(s1.t_events[1]):        # passaggio a r=3.5 (ramo entrante? no:
-        ve = s1.t_events[1][0]     # backward: e' il ramo USCENTE finale)
+    if len(s1.t_events[1]):        # passage at r=3.5 (ingoing branch? no:
+        ve = s1.t_events[1][0]     # backward: it is the final OUTGOING branch)
         ye = s1.y_events[1][0]
         out.update(v_35=ve, dphi_35=-ye[2], Ttau_35=-ye[3])
     if s2.status == 1:
@@ -139,7 +139,7 @@ def orbita(mu_n, v1, v_min=-1e6):
 
 print()
 print("=" * 72)
-print("[V2] cross-check con la parametrizzazione in r (tabella R4)")
+print("[V2] cross-check with the parametrisation in r (table R4)")
 print("=" * 72)
 rif = {0.0: (16.103201, 0.401351, 7.757186),
        0.01: (13.043582, 0.529307, 7.479964)}
@@ -156,19 +156,19 @@ for mu_n in (0.0, 0.01):
 
 print()
 print("=" * 72)
-print("[V3] rimbalzo attraverso il periasse")
+print("[V3] bounce through the periapsis")
 print("=" * 72)
-# statico: radice esatta di r^2 f - J^2 (E^2 - f) = 0
+# static: exact root of r^2 f - J^2 (E^2 - f) = 0
 g_static = lambda r_: r_**2 * (1 - 2 / r_) - J_n**2 * (E_n**2 - 1 + 2 / r_)
 r_p_exact = brentq(g_static, 2.01, 6.0)
 o_s = orbita(0.0, 40.0)
-print(f"  statico:  r_min integrato = {o_s['r_min']:.8f}   "
-      f"radice esatta = {r_p_exact:.8f}   diff = "
+print(f"  static:  integrated r_min = {o_s['r_min']:.8f}   "
+      f"exact root = {r_p_exact:.8f}   diff = "
       f"{abs(o_s['r_min']-r_p_exact):.2e}")
 o_v = orbita(0.01, 40.0)
-print(f"  Vaidya mu=0.01: r_min = {o_v['r_min']:.6f} a v = "
-      f"{o_v['v_peri']:.4f}  (r-param moriva a r=3.0105)")
-print(f"  orbita completa (r1 -> r_min -> r1): statico  v in "
+print(f"  Vaidya mu=0.01: r_min = {o_v['r_min']:.6f} at v = "
+      f"{o_v['v_peri']:.4f}  (the r parametrisation broke down at r=3.0105)")
+print(f"  full orbit (r1 -> r_min -> r1): static   v in "
       f"[{o_s['v_start']:.3f}, 40], Dphi = {o_s['dphi_tot']:.5f}, "
       f"T_tau = {o_s['Ttau_tot']:.5f}")
 print(f"                                       mu=0.01  v in "
@@ -177,7 +177,7 @@ print(f"                                       mu=0.01  v in "
 
 print()
 print("=" * 72)
-print("[V4] scan di timing: r_min vs istante d'arrivo v1")
+print("[V4] timing scan: r_min vs arrival instant v1")
 print("=" * 72)
 mus = [(-0.01, 'C0', 'formal negative-rate continuation, $\\mu=-0.01$'),
        (0.0, 'k', 'static ingoing model, $\\mu=0$'),
@@ -245,4 +245,4 @@ axb.set_title('penetration relative to the apparent horizon\n'
               'at periapsis')
 axb.legend()
 salva(fig, 'fig_vaidya_timing')
-print('\nFATTO.')
+print('\nDONE.')

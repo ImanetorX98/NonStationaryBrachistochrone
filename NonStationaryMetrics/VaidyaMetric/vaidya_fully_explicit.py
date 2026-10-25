@@ -1,17 +1,17 @@
-# FORMA COMPLETAMENTE ESPLICITA di delta phi_V/Mdot (Vaidya adiabatico).
-# Ogni integrale espanso in building block NOMINATI:
-#   U_k      = int r^k/sqrt(S) dr                     (2a specie, polilog genus-2)
-#   W_3k     = int (U_3 dU_k - U_k dU_3)              (polilog peso-2, genus-2)
-#   D_k      = int U_k/(r-2M) dr                      (dilog ORIZZONTE, peso-2)
-#   L_2M     = int Acal^M r/((r-2M) sqrt(S)) dr       (3a specie, polo orizzonte)   [nota sotto]
-#   I_poly   = int Acal^M r^3/S dr                    (ELEMENTARE: log/fratti razionali)
-# Coefficienti c_k^M, a_j^M ALGEBRICI (da riduzione dM F = d(Acal^M/sqrtS)+sum c_k^M r^k/sqrtS).
+# FULLY EXPLICIT FORM of delta phi_V/Mdot (adiabatic Vaidya).
+# Every integral expanded in NAMED building blocks:
+#   U_k      = int r^k/sqrt(S) dr                     (second kind, genus-2 polylogarithm)
+#   W_3k     = int (U_3 dU_k - U_k dU_3)              (weight-2 polylogarithm, genus 2)
+#   D_k      = int U_k/(r-2M) dr                      (HORIZON dilogarithm, weight 2)
+#   L_2M     = int Acal^M r/((r-2M) sqrt(S)) dr       (third kind, horizon pole)   [note below]
+#   I_poly   = int Acal^M r^3/S dr                    (ELEMENTARY: logs/rational fractions)
+# ALGEBRAIC coefficients c_k^M, a_j^M (from the reduction dM F = d(Acal^M/sqrtS)+sum c_k^M r^k/sqrtS).
 #
-# ASSEMBLAGGIO (per parti + riduzione, esatto):
+# ASSEMBLY (by parts + reduction, exact):
 #   delta phi_V/Mdot = A_M v
 #       - E*I_poly - (E/2) sum_k c_k^M (U_k U_3 - W_3k)
 #       - sum_j a_j^M U_j - sum_k c_k^M (r U_k - U_{k+1}) - 2M*Lh - 2M sum_k c_k^M D_k
-# con A_M = Acal^M/sqrtS + sum_k c_k^M U_k,  v = E U_3 + (r-r0) + 2M ln((r-2M)/(r0-2M)).
+# with A_M = Acal^M/sqrtS + sum_k c_k^M U_k,  v = E U_3 + (r-r0) + 2M ln((r-2M)/(r0-2M)).
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -23,20 +23,20 @@ Ssym=sp.expand(r*(r-2*Ms)*Emu*(r**2*(r-2*Ms)-Js**2*Emu))
 sub={Ms:1,Es:sp.Rational(7,5),Js:sp.Rational(5,2)}
 Sn=sp.lambdify(r,Ssym.subs(sub),'numpy'); sq=lambda x:np.sqrt(Sn(x))
 
-# ---- riduzione: dM F = d(Acal/sqrtS) + sum c_k r^k/sqrtS ----
+# ---- reduction: dM F = d(Acal/sqrtS) + sum c_k r^k/sqrtS ----
 K=Js*Emu; NM=sp.expand(Ssym*sp.diff(K,Ms)-K*sp.diff(Ssym,Ms)/2)
 Ac=[sp.Symbol(f'A{i}') for i in range(6)]; ck=[sp.Symbol(f'c{i}') for i in range(5)]
 Acal=sum(Ac[i]*r**i for i in range(6)); Mp=sum(ck[i]*r**i for i in range(5))
 sol=sp.solve(sp.Poly(sp.expand(2*NM-(2*Ssym*sp.diff(Acal,r)-Acal*sp.diff(Ssym,r)+2*Ssym*Mp)),r).all_coeffs(),Ac+ck,dict=True)[0]
 cM=[float(sp.simplify(sol[ck[i]]).subs(sub)) for i in range(5)]
-aM=[float(sp.simplify(sol.get(Ac[i],0)).subs(sub)) for i in range(6)]  # coeff di Acal^M, deg5
+aM=[float(sp.simplify(sol.get(Ac[i],0)).subs(sub)) for i in range(6)]  # coefficients of Acal^M, deg5
 def Acaln(x): return sum(aM[i]*x**i for i in range(6))
 dMF=(sp.diff(K,Ms)/sp.sqrt(Ssym)-K*sp.diff(Ssym,Ms)/(2*Ssym**sp.Rational(3,2)))
 dMFn=sp.lambdify(r,dMF.subs(sub),'numpy')
 print('c_k^M =',[round(c,5) for c in cM])
 print('a_j^M =',[round(a,5) for a in aM])
 
-# ---- estremo di integrazione (dentro, oltre il turning) ----
+# ---- integration endpoint (inside, beyond the turning point) ----
 rs=np.linspace(2.01,r0,20000); vv=Sn(rs); idx=np.where(np.diff(np.sign(vv)))[0]
 rmin=max(brentq(Sn,rs[i],rs[i+1]) for i in idx if rs[i]>2.0); xf=rmin+0.4
 
@@ -50,11 +50,11 @@ def Ipoly(x): return quad(lambda t:Acaln(t)*t**3/Sn(t),r0,x,limit=150)[0]
 def AM(x): return Acaln(x)/sq(x)-Acaln(r0)/sq(r0)+sum(cM[k]*Uk(x,k) for k in range(5))
 def vclock(x): return E*Uk(x,3)+(x-r0)+2*M*(np.log(x-2*M)-np.log(r0-2*M))
 
-# ---- DIRETTO ----
+# ---- DIRECT ----
 dphi_dir=quad(lambda x:dMFn(x)*vclock(x),r0,xf,limit=150)[0]
 
-# ---- ASSEMBLAGGIO COMPLETAMENTE ESPLICITO ----
-# A_M = Acal/sqrtS - alpha0 + sum c_k U_k,  alpha0 = Acal(r0)/sqrtS(r0) costante.
+# ---- FULLY EXPLICIT ASSEMBLY ----
+# A_M = Acal/sqrtS - alpha0 + sum c_k U_k,  alpha0 = Acal(r0)/sqrtS(r0) constant.
 x=xf
 a0 = Acaln(r0)/np.sqrt(Sn(r0))
 bdy = AM(x)*vclock(x)
@@ -66,11 +66,11 @@ p3  = ( Lh(x) - a0*(vclock(x)-E*Uk(x,3))
       + 2*M*sum(cM[k]*Dk(x,k) for k in range(5)) )
 dphi_expl = bdy - p2 - p3
 
-print(f'\ndelta phi_V/Mdot  DIRETTO        = {dphi_dir:.10f}')
-print(f'                  ESPLICITO full = {dphi_expl:.10f}')
-print(f'  diff = {abs(dphi_dir-dphi_expl):.2e}   <-- identita (coeff algebrici dati)')
+print(f'\ndelta phi_V/Mdot  DIRECT         = {dphi_dir:.10f}')
+print(f'                  FULL EXPLICIT  = {dphi_expl:.10f}')
+print(f'  diff = {abs(dphi_dir-dphi_expl):.2e}   <-- identity (algebraic coefficients given)')
 
-# ---- valori dei building block (per il paper) ----
+# ---- values of the building blocks (for the paper) ----
 print('\nBuilding block @ xf=%.4f:'%xf)
 print('  U_k   =',[round(Uk(x,k),4) for k in range(6)])
 print('  W_3k  =',[round(W3k(x,k),4) for k in range(5)])

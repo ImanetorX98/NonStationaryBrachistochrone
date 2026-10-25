@@ -14,7 +14,7 @@ Eq. (clock-eta-tau): the drift clock of the tau-branch against the Hamiltonian f
 Prop. (lemmaB) and App. (lemmaB): monotonicity regions of the tau half-angle map, single peak for E^2 >= 3/2, and the two interval-certified counterexamples	python3 verify_lemma_B.py	NonStationaryMetrics/paper2/verification/verify_lemma_B.py	6be35f8ea10350969f95ad43377eb1e8bca31ce430693021981d828723ab15be
 Figure collection: every compiled figure is the current output of its generator (hash-compared, not assumed)	python3 collect_figures.py --check	NonStationaryMetrics/paper2/provenance/collect_figures.py	78d96513f52a065ca3aa97f3396a963cd4a733aef7dacc55fba7942d414d31e6
 Props. 3.1-3.2, sec. 2.2, Paper I Vaidya: independent re-derivation	python3 verify_independent_rederivation.py	NonStationaryMetrics/paper2/verification/verify_independent_rederivation.py	e1d14205942f76096872d831b09022332dcd4687dd33e8b6468df1c7392375bf
-Fig. (phi-true-dynamic) and Table A3 slopes	python3 make_provenance.py	NonStationaryMetrics/paper2/provenance/make_provenance.py	f66e410e495561f6e4e8a44a18d70560667d315d79eaf195f9b6e5e404f60d7e
+Fig. (phi-true-dynamic) and Table A3 slopes	python3 make_provenance.py	NonStationaryMetrics/paper2/provenance/make_provenance.py	cf3a58113bd8ba1bf9c154f550f30d8a5c57e923ff037e241da21c65b9d671a6
 true-dynamics validation run	python3 fig_phi_validation_corrected.py	NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py	0a891a0f556c816cd84330a5637fa742cbcc147ca3774e1dd717db53f78e17a3
 exact first-order PT run	python3 adiabatic_first_order_exact.py	NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py	a2b60bfae72f9f6777bc89bd28f8a50d0129fdcde1175168be675588a38fc654
 CAP interval-arithmetic library	python3 cap_full.py	NonStationaryMetrics/cap_full.py	117895113a2eeb6ac57a552571131bf29a3f2500018b452b258cbc528bac2d61
@@ -22,11 +22,11 @@ CAP certificate at r0 = 10 (window to 6.05M; superseded by the grid entry)	pytho
 CAP certificates over the (E, r0) grid	python3 no_inversion_schwarzschild_CAP_grid.py	NonStationaryMetrics/no_inversion_schwarzschild_CAP_grid.py	b6380dcdd452c4d24e944106ac429dbe4a3cacca027d9499da82dac1198ee733
 archived output of the grid certificates (both runs)	-	NonStationaryMetrics/CAP_grid_certificates.log	08abbc077114c3f8ac12ee4468186939a4326dd690ebece830a60ea14eade8ae
 Fig. (master-pen)	python3 fig_master_penetration_taut.py	KerrScripts/fig_master_penetration_taut.py	30a3b32fab97e30a891547d0e555542827e839395a4d8041747ee08e931b6d3e
-Fig. (atlas-tau), Fig. (atlas-t)	python3 fig_atlas_tau_t.py	KerrScripts/fig_atlas_tau_t.py	4ea0c15e71cbeca22abcafea581e883b55f218b3e4453cc3d4a107573b08bf0d
-Fig. (th-cusp)	python3 cuspide_ergosfera.py	NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py	5231059714f45cb6e934ce6660f0bcf8f9c50e36327f7cc3aa6ee7fb6dc601f0
-Fig. (sep3)	python3 kerr_separatrix_trajectories.py	KerrScripts/kerr_separatrix_trajectories.py	6a50472f760e85f08ebab446edbe27b8ceae0fb61fad7f5a320a7499c85b03e2
-Fig. (jpt-g2)	python3 kerr_jpt_genus2_figure.py	KerrScripts/kerr_jpt_genus2_figure.py	74d3622be32771fb3c3516d8af39b5c4f12f0cc356607324d3c2b47873cf407d
-Fig. (jcm-cap)	python3 kerr_jcm_capture_figure.py	KerrScripts/kerr_jcm_capture_figure.py	7c4d8a9d4fdec0daaa566213d20c89ea8114a1be8cac8741b96ec201606925c2
+Fig. (atlas-tau), Fig. (atlas-t)	python3 fig_atlas_tau_t.py	KerrScripts/fig_atlas_tau_t.py	f790704c98f5a4669163a1352d97af2bfb1d10520b8ecd6ca69e5e09b29bf380
+Fig. (th-cusp)	python3 cuspide_ergosfera.py	NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py	907e1bbf4c60ffd46929362cbc8ea8a8db88df9e21a31900f8853365c79c443d
+Fig. (sep3)	python3 kerr_separatrix_trajectories.py	KerrScripts/kerr_separatrix_trajectories.py	b80a4c8c2abdeb4c32ca678d90594ac05efb59970fa425803cfce96d7c107601
+Fig. (jpt-g2)	python3 kerr_jpt_genus2_figure.py	KerrScripts/kerr_jpt_genus2_figure.py	ef5c12941c9b93dc6b9fd6226267e15bbf47df66123bacac44484c82eca09113
+Fig. (jcm-cap)	python3 kerr_jcm_capture_figure.py	KerrScripts/kerr_jcm_capture_figure.py	3c2f8522c1c09e3a45b41f23e5b3983d215db1c510d91c49102f60261db49a5b
 shared figure style	-	NonStationaryMetrics/paper_style.py	5017370483ed4cca2a3968cc64b2c82541794d0cf8225a5000b078831c62dcf9
 environment lock (Python stack + CAS version)	-	NonStationaryMetrics/requirements-lock.txt	67c594961f7ff7a6cfd546521f1ba3514abfe28ee7b9a1152086cf74bb3921d5
 bibliography audit against the DOI registry	python3 audit_refs.py	NonStationaryMetrics/paper2/provenance/audit_refs.py	c97b8b868af9dcba766896e3da8bf45d7511de0c82073083b5a58334ce787575

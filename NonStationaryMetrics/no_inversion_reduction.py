@@ -1,29 +1,34 @@
 # -*- coding: utf-8 -*-
 """
-Riduzione analitica del no-inversion a estremi fissi.
+Analytic reduction of the fixed-endpoint no-inversion statement.
 
-Il paper afferma che, a ENDPOINT FISSI, la brachistocrona del ramo t resta piu'
-SUPERFICIALE di quella tau: r_min^t > r_min^tau. Il bound
-puntuale n_t/n_tau=E/f>1 NON basta a ordinare i minimi di due funzionali diversi.
-Corretto: a stesso J l'ordine e' addirittura OPPOSTO (t piu' profondo); il risultato
-a estremi fissi e' un'inversione guidata dalla mappa angolo J->Phi.
+The paper states that, with FIXED ENDPOINTS, the brachistochrone of the t branch stays
+SHALLOWER than the tau one: r_min^t > r_min^tau. The pointwise
+bound n_t/n_tau=E/f>1 is NOT enough to order the minima of two different functionals.
+Correct: at the same J the order is even the OPPOSITE (t deeper); the fixed-endpoint
+result is an inversion driven by the angle map J->Phi.
 
-Questo script mostra la riduzione a due lemmi (e li verifica robustamente):
-  Parametrizza ogni ramo per il raggio di turning r_min (che fissa J via la
-  condizione di turning: rDelta=J^2 DE per tau, Q2=0 per t). Sia
-     Phi_br(r_min) = int_{r_min}^{r0} F_br(r; J_br(r_min)) dr   (semi-angolo).
-  (A) A r_min uguale, l'integrando t domina PUNTUALMENTE: F_t(r;J_t)>F_tau(r;J_tau)
-      per r in (r_min,r0). Poiche' J_{t,tau}(r_min) sono ALGEBRICI, questa e' una
-      disuguaglianza polinomiale (non trascendente) => Phi_t(r_min)>Phi_tau(r_min).
-  (B) Phi_tau strettamente decrescente su [r_min^t, r0).
-  Insieme: a Phi fisso, Phi_tau(r_min^tau)=Phi_t(r_min^t)>Phi_tau(r_min^t)
-           => r_min^tau < r_min^t  (tesi).
-  (A) e' dimostrato simbolicamente qui sotto, con M libero. (B) NON e' dimostrato da
-  questo script: vale sulle regioni della Proposizione prop:lemmaB di Paper II
-  (dimostrata nell'appendice app:lemmaB, verificata da
-  paper2/verification/verify_lemma_B.py) e non in generale, perche' a bassa energia
-  Phi_tau ha piu' massimi. I blocchi numerici su (B) qui sotto sono diagnostica su
-  campioni, non una prova.
+This script shows the reduction to two lemmas (it proves Lemma A and only samples Lemma B):
+  Parametrise each branch by the turning radius r_min (which fixes J through the
+  turning condition: rDelta=J^2 DE for tau, Q2=0 for t). Let
+     Phi_br(r_min) = int_{r_min}^{r0} F_br(r; J_br(r_min)) dr   (half-angle).
+  (A) At equal r_min, the t integrand dominates POINTWISE: F_t(r;J_t)>F_tau(r;J_tau)
+      for r in (r_min,r0). Since J_{t,tau}(r_min) are ALGEBRAIC, this is a
+      polynomial (not transcendental) inequality => Phi_t(r_min)>Phi_tau(r_min).
+  (B) Phi_tau strictly decreasing on [r_min^t, r0).
+  Together: assume that a real tau curve of the compared family (one turning point)
+  with the same half-angle exists. Then at fixed Phi,
+           Phi_tau(r_min^tau)=Phi_t(r_min^t)>Phi_tau(r_min^t)
+           => r_min^tau < r_min^t  (thesis).
+  The argument excludes r_min^tau >= r_min^t when such a tau curve exists; it does
+  not construct it. When Phi_t(r_min^t) exceeds the maximum of Phi_tau, the compared
+  family has no tau curve with that half-angle: this is not an inversion.
+  (A) is proved symbolically below, with M free. (B) is NOT proved by
+  this script: it holds on the regions of Proposition prop:lemmaB of Paper II
+  (proved in appendix app:lemmaB, checked by
+  paper2/verification/verify_lemma_B.py) and not in general, because at low energy
+  Phi_tau has several maxima. The numerical blocks on (B) below are diagnostics on
+  samples, not a proof.
 """
 import numpy as np
 import sympy as sp
@@ -65,44 +70,47 @@ def phis(a, E):
     return Phi_tau, Phi_t, Ftau, Ft, J2tau, Jt, r0
 
 
-print("Verifica dei due lemmi su vari (a,E):")
-print("DIAGNOSTICA SU CAMPIONI (non una prova): LemmaA puntuale e monotonia di Phi_t campionata")
-print("  a    E     LemmaA (F_t>F_tau ptwise)  Phi_t campionata decrescente  => r_min^t>r_min^tau")
+print("Check of the two lemmas for several (a,E):")
+print("SAMPLED DIAGNOSTIC (not a proof): pointwise Lemma A and sampled monotonicity of Phi_tau")
+print("  a    E     LemmaA (F_t>F_tau ptwise)  Phi_tau sampled, decreasing   sampled A and B checks")
 for a, E in [(0.3, 1.2), (0.6, 1.2), (0.9, 1.2), (0.9, 1.05), (0.9, 1.5), (0.5, 1.3)]:
     Phi_tau, Phi_t, Ftau, Ft, J2tau, Jt, r0 = phis(a, E)
     A_ok = B_ok = True; prev = None
     for rm in np.linspace(3, 8, 12):
         Jta, Jtt = np.sqrt(J2tau(rm)), Jt(rm)
         if np.isnan(Jtt): continue
-        # (A) integrando puntuale
+        # (A) pointwise integrand
         for rr in np.linspace(rm + 0.2, r0, 8):
             if Ft(rr, Jtt) <= Ftau(rr, Jta): A_ok = False
-        # (B) monotonia
-        pt = Phi_t(rm)
+        # (B) monotonicity of Phi_tau, the function the deduction needs
+        pt = Phi_tau(rm)
         if prev is not None and pt > prev: B_ok = False
         prev = pt
-    thesis = A_ok and B_ok
+    sampled_AB = A_ok and B_ok
     print(f"  {a:.1f}  {E:.2f}   {str(A_ok):>5}                      {str(B_ok):>5}"
-          f"                     {str(thesis):>5}")
-print("\nLemma A e' ALGEBRICO (J_{t,tau}(r_min) radici di polinomi) => prova simbolica")
-print("possibile per positivita' polinomiale (fatta sotto). Per (B) vedi verify_lemma_B.py.")
+          f"                     {str(sampled_AB):>5}")
+print("The last column only combines the two sampled checks. It does not solve the matching")
+print("Phi_tau(r_min^tau) = Phi_t(r_min^t), so it neither tests that a tau curve with that half-angle")
+print("exists nor proves that Phi_tau decreases between grid points (12 points on [3,8]).")
+print("\nLemma A is ALGEBRAIC (J_{t,tau}(r_min) are roots of polynomials) => a symbolic proof")
+print("is possible through polynomial positivity (done below). For (B) see verify_lemma_B.py.")
 
 
 # ============================================================================
-# PROVA SIMBOLICA di Lemma A al TURNING POINT (parte singolare dominante).
-# Il segno di F_t^2 - F_tau^2 vicino a r_min e' dato dai RESIDUI: F^2 ~ c/(r-r_min).
-# c_t > c_tau  <=>  D := numeratore di (c_t-c_tau) > 0. Con le condizioni di turning
-# (J_tau^2 = r_d Delta_d/DE_d, Q2(r_d,J_t)=0) si riduce a:
+# SYMBOLIC PROOF of Lemma A at the TURNING POINT (dominant singular part).
+# The sign of F_t^2 - F_tau^2 near r_min is given by the RESIDUES: F^2 ~ c/(r-r_min).
+# c_t > c_tau  <=>  D := numerator of (c_t-c_tau) > 0. With the turning conditions
+# (J_tau^2 = r_d Delta_d/DE_d, Q2(r_d,J_t)=0) it reduces to:
 #     D = 4 r_d Delta(r_d) * B,   B = a DE(r_d) (J* - J_t),
 #     J* = [E^2 r_d(a^2+r_d^2)+2Ma^2]/(a DE_d)  (>0).
-# Catena di segni (r_d>2M, r_d>r_+, E>1, a>0), tutti fattori espliciti:
-#   A   = coeff J_t^2 di Q2(r_d)     = -(r_d-2M) DE_d          < 0   (parabola giu')
-#   J_v = vertice = -B_q/2A          = -2Ma/(r_d-2M)           < 0
+# Chain of signs (r_d>2M, r_d>r_+, E>1, a>0), all factors explicit:
+#   A   = coefficient of J_t^2 in Q2(r_d) = -(r_d-2M) DE_d     < 0   (downward parabola)
+#   J_v = vertex = -B_q/2A           = -2Ma/(r_d-2M)           < 0
 #   Q2(r_d,J*) = -E^2 r_d^3 (E^2 r_d^2+a^2) Delta_d/[a^2 DE_d] < 0
-#   => J*>0>J_v e Q2(J*)<0 con A<0  => J* oltre la radice grande => J_t<J*
-#   => B>0 => D>0 => c_t>c_tau => F_t^2>F_tau^2 al turning.  QED (parte singolare)
-# La positivita' INTERNA (r lontano da r_min) si riduce a N_G(r)>0 (grado 5),
-# verificata numericamente sopra.
+#   => J*>0>J_v and Q2(J*)<0 with A<0  => J* beyond the large root => J_t<J*
+#   => B>0 => D>0 => c_t>c_tau => F_t^2>F_tau^2 at the turning point.  QED (singular part)
+# The INTERIOR positivity (r away from r_min) reduces to N_G(r)>0 (degree 5),
+# checked numerically above.
 def symbolic_residue_proof():
     rd, a, E, M = sp.symbols('r_d a E M', positive=True)   # M kept symbolic
     Jt = sp.symbols('J_t', positive=True)
@@ -131,21 +139,21 @@ if __name__ == '__main__':
 
 
 # ============================================================================
-# PROVA SIMBOLICA COMPLETA di Lemma A (F_t^2 > F_tau^2 per ogni r>r_d).
-# Passi (M simbolico; validi per r_d>2M, E>1, a>0):
+# COMPLETE SYMBOLIC PROOF of Lemma A (F_t^2 > F_tau^2 for every r>r_d).
+# Steps (M symbolic; valid for r_d>2M, E>1, a>0):
 #   sign(F_t^2-F_tau^2) = sign(N_G),  N_G = (J_t(r-2M)+2Ma)^2 P_tau - J_tau^2(r-2M)Q2.
-#   Ridotto mod turning [J_tau^2=r_d Delta_d/DE_d, Q2(r_d,J_t)=0]:
-#     N_G = (r - r_d) * [4 M r Delta(r)/((r_d-2M) DE_d)] * W(r),   W(r) LINEARE in r.
-#   Serve W(r)>0 per r>r_d. W(r_d) e la pendenza w1 sono entrambi lineari in J_t:
+#   Reduced modulo the turning conditions [J_tau^2=r_d Delta_d/DE_d, Q2(r_d,J_t)=0]:
+#     N_G = (r - r_d) * [4 M r Delta(r)/((r_d-2M) DE_d)] * W(r),   W(r) LINEAR in r.
+#   W(r)>0 is needed for r>r_d. W(r_d) and the slope w1 are both linear in J_t:
 #     W(r_d) = (r_d-2M) * B,   B = a DE_d (J*  - J_t),   J*  = [E^2 r_d(a^2+r_d^2)+2Ma^2]/(a DE_d)
 #     w1     = a DE_d (J** - J_t),                        J** = [E^2 r_d^2(r_d-M)+E^2 a^2 r_d + Ma^2]/(a DE_d)
-#   In entrambi J_t (radice prograde di Q2(r_d,.)) e' < J* e < J** perche':
-#     A = coeff J_t^2 di Q2(r_d) = -(r_d-2M)DE_d < 0        (parabola verso il basso)
-#     vertice J_v = -2Ma/(r_d-2M) < 0,  J*, J** > 0         (a destra del vertice)
+#   In both, J_t (prograde root of Q2(r_d,.)) is < J* and < J** because:
+#     A = coefficient of J_t^2 in Q2(r_d) = -(r_d-2M)DE_d < 0   (downward parabola)
+#     vertex J_v = -2Ma/(r_d-2M) < 0,  J*, J** > 0         (to the right of the vertex)
 #     Q2(r_d,J*)  = -E^2 r_d^3 (E^2 r_d^2+a^2) Delta_d / [a^2 DE_d] < 0
 #     Q2(r_d,J**) = -(r_d-2M)(E^2 r_d^2+a^2)(E^2 r_d^2[(r_d-M)^2+a^2]+M^2a^2)/[a^2 DE_d] < 0
-#   => J* , J** oltre la radice grande => J_t < J*, J_t < J** => B>0, w1>0.
-#   W lineare con W(r_d)>0 e pendenza w1>0  =>  W(r)>0 per ogni r>r_d.  QED (Lemma A).
+#   => J* , J** beyond the large root => J_t < J*, J_t < J** => B>0, w1>0.
+#   W linear with W(r_d)>0 and slope w1>0  =>  W(r)>0 for every r>r_d.  QED (Lemma A).
 def symbolic_full_proof():
     rd, a, E, M = sp.symbols('r_d a E M', positive=True)   # M kept symbolic
     Jt = sp.symbols('J_t', positive=True)
@@ -190,13 +198,13 @@ if __name__ == '__main__':
 
 
 # ============================================================================
-# LEMMA B (monotonia di Phi_tau) -- DIAGNOSTICA SU CAMPIONI, non una prova.
-# Phi_tau(r_min) non e' globalmente monotona. Nei casi campionati qui ha un solo
-# massimo r_pk ~ 3M: una piega della mappa del semiangolo a estremi fissi, NON
-# un'orbita circolare instabile del ramo tau (che all'esterno non esiste: sulla shell
-# di turning d/dr[r Delta - J^2 DE] = DE V' > 0). A bassa energia puo' avere piu'
-# massimi (E^2 = 1.01, r0 = 1e4 M). Le regioni dimostrate sono quelle della
-# Proposizione prop:lemmaB di Paper II; questa scansione le illustra soltanto:
+# LEMMA B (monotonicity of Phi_tau) -- SAMPLED DIAGNOSTIC, not a proof.
+# Phi_tau(r_min) is not globally monotonic. In the cases sampled here it has a single
+# maximum r_pk ~ 3M: a fold of the fixed-endpoint half-angle map, NOT
+# an unstable circular orbit of the tau branch (which does not exist outside: on the turning
+# shell d/dr[r Delta - J^2 DE] = DE V' > 0). At low energy it can have several
+# maxima (E^2 = 1.01, r0 = 1e4 M). The proved regions are those of
+# Proposition prop:lemmaB of Paper II; this scan only illustrates them:
 def lemma_B_regime():
     from scipy.integrate import quad
     M = 1.0
@@ -220,17 +228,17 @@ if __name__ == '__main__':
 
 
 # ============================================================================
-# LEMMA B -- prova parziale in forma chiusa (regime grazing) + struttura.
-# Forma potenziale efficace: Phi_tau = sqrt(Vmin) int_{rmin}^{r0} K/sqrt(V-Vmin) dr,
+# LEMMA B -- partial closed-form proof (grazing regime) + structure.
+# Effective-potential form: Phi_tau = sqrt(Vmin) int_{rmin}^{r0} K/sqrt(V-Vmin) dr,
 #   V=r Delta/DE,  K=sqrt(r(r-2M))/Delta,  Vmin=V(rmin),  W=K/V' (>0, W'<0).
-# Con V=Vmin+sigma^2 e una IBP:
+# With V=Vmin+sigma^2 and an integration by parts:
 #   dPhi/dVmin = (V0-2Vmin) W(Vmin)/(Sigma sqrt(Vmin))
 #                + (2/sqrt(Vmin)) int_0^Sigma W'(Vmin+sigma^2) g(sigma) dsigma,
 #   g(sigma) = (V0-2Vmin) sigma/Sigma + Vmin - sigma^2,  Sigma=sqrt(V0-Vmin).
-# g(0)=Vmin>0, g(Sigma)=0, altra radice <0 => g>0 su [0,Sigma) => secondo termine <0.
-# Se V(r0)<=2 V(rmin) (grazing): primo termine <=0 => dPhi/dVmin<0 PROVATO.
-# Se V(r0)>2 V(rmin): primo termine >0, dominato dall'integrale (verificato, ma
-# disuguaglianza stretta alla soglia trascendente r_pk: prova simbolica aperta).
+# g(0)=Vmin>0, g(Sigma)=0, other root <0 => g>0 on [0,Sigma) => second term <0.
+# If V(r0)<=2 V(rmin) (grazing): first term <=0 => dPhi/dVmin<0 PROVED.
+# If V(r0)>2 V(rmin): first term >0, dominated by the integral (checked, but
+# the inequality is tight at the transcendental threshold r_pk: symbolic proof open).
 def lemma_B_partial():
     import sympy as sp
     r, a, E, s = sp.symbols('r a E sigma', positive=True); M = 1
@@ -239,10 +247,10 @@ def lemma_B_partial():
     print("  g(sigma) =", g)
     print("  g(0) =", g.subs(s, 0), " (>0);  g(Sigma) =", sp.simplify(g.subs(s, Sig).subs(Sig**2, V0-Vmin)), " (=0)")
     roots = sp.solve(sp.Eq(g, 0), s)
-    print("  radici di g:", [sp.simplify(rt.subs(Sig, sp.sqrt(V0-Vmin))) for rt in roots],
-          " => una =Sigma, l'altra <0  =>  g>0 su [0,Sigma)")
-    print("  => secondo termine (2/sqrt Vmin) int W' g dsigma < 0 (W'<0).")
-    print("  Grazing V0<=2Vmin: primo termine <=0 => dPhi/dVmin<0 PROVATO in forma chiusa.")
+    print("  roots of g:", [sp.simplify(rt.subs(Sig, sp.sqrt(V0-Vmin))) for rt in roots],
+          " => one =Sigma, the other <0  =>  g>0 on [0,Sigma)")
+    print("  => second term (2/sqrt Vmin) int W' g dsigma < 0 (W'<0).")
+    print("  Grazing V0<=2Vmin: first term <=0 => dPhi/dVmin<0 PROVED in closed form.")
 
 
 if __name__ == '__main__':

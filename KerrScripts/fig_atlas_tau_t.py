@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Atlante delle brachistocrone all'ergosfera: piccoli multipli, 5 pannelli per
-ramo, uno per regime rispetto ai valori critici.
+Atlas of the brachistochrones at the ergosphere: small multiples, 5 panels per
+branch, one for each regime relative to the critical values.
 
-Ramo tau (critici +-J_c, J_c=a/E):
+tau branch (critical values +-J_c, J_c=a/E):
   J>+J_c  smooth bounce | J=+J_c penetrates | -J_c<J<+J_c cusp bounce |
   J=-J_c cusp (retro) | J<-J_c smooth bounce
-Ramo t (critici J_c^-, J_c^+ = -8.05, 3.43):
+t branch (critical values J_c^-, J_c^+ = -8.05, 3.43):
   J>J_c^+ smooth bounce | J=J_c^+ tangent | J_c^-<J<J_c^+ penetrates |
   J=J_c^- spirals onto r_* | J<J_c^- smooth bounce
 """
@@ -49,7 +49,7 @@ def R6(r, J):
 
 
 def clip_wind(rr, ph, phimax=1.9*np.pi):
-    """taglia l'arco quando |phi-phi0| supera phimax (leggibilita')."""
+    """cut the arc when |phi-phi0| exceeds phimax (readability)."""
     d = np.abs(ph - ph[0])
     k = np.argmax(d > phimax) if np.any(d > phimax) else len(ph)
     return rr[:k], ph[:k]
@@ -104,7 +104,7 @@ def tau_turn(J):
     return re
 
 
-# --- t: flusso di Hamilton (adattivo, solve_ivp) ---
+# --- t: Hamiltonian flow (adaptive, solve_ivp) ---
 _r, _pr, _pp = sp.symbols('r pr pp')
 _f = 1 - 2*M/_r
 _Dl = _r**2 - 2*M*_r + a**2
@@ -130,18 +130,18 @@ def _prof(rv, J):
     return min(ing) if ing else np.nan
 
 
-rt0 = 6.0   # start radius per il ramo t (fuori da tutti i turning, max 4.77)
+rt0 = 6.0   # start radius for the t branch (outside all turning points, max 4.77)
 
 
 def t_orbit_ivp(J, lam_max=400.0, r_floor=None):
-    """orbita t per flusso di Hamilton adattivo; ferma a r_+ o a lam_max."""
+    """t orbit from the adaptive Hamiltonian flow; stops at r_+ or at lam_max."""
     if r_floor is None:
         r_floor = rp + 0.02
     p0 = _prof(rt0, J)
-    ev_in = lambda t, y: y[0] - r_floor        # stop vicino orizzonte/r_*
+    ev_in = lambda t, y: y[0] - r_floor        # stop near the horizon/r_*
     ev_in.terminal = True
     ev_in.direction = -1
-    ev_out = lambda t, y: y[0] - (rt0 + 0.01)   # stop se riesce oltre rt0
+    ev_out = lambda t, y: y[0] - (rt0 + 0.01)   # stop if it gets out beyond rt0
     ev_out.terminal = True
     ev_out.direction = 1
     s = solve_ivp(lambda t, y: [_dHp(y[0], y[1], J), -_dHr(y[0], y[1], J),
@@ -164,7 +164,7 @@ def tau_orbit(J):
 
 
 def t_orbit(J):
-    if abs(J - 0.99*Jtm) < 1e-3:                # cattura retrograda: plunge a r_+
+    if abs(J - 0.99*Jtm) < 1e-3:                # retrograde capture: plunge to r_+
         rr, ph = t_orbit_ivp(J, lam_max=6000, r_floor=rp + 0.02)
         return clip_wind(rr, ph, phimax=4.0*np.pi)
     rr, ph = t_orbit_ivp(J, lam_max=600)
@@ -232,7 +232,7 @@ def make_fig(branch):
         else:
             kind = 'plain'
         panel(axes[i], rr, ph, cols[i], ttl, sub, L, rstart, kind=kind)
-    # ultimo pannello: didascalia riassuntiva del ramo
+    # last panel: summary caption of the branch
     axes[5].axis('off')
     lab = (r'$\bf \tau$-branch''\n'r'(grey: $r<2M$, $W$ spacelike)''\n\n'
            'FOUR CASES:\ncrosses only\n'r'at $J{=}{+}J_c{=}0.75$'
@@ -253,4 +253,4 @@ def make_fig(branch):
 
 make_fig('tau')
 make_fig('t')
-print('FATTO.')
+print('DONE.')

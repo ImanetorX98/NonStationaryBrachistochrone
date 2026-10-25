@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-Figure di validazione — Thakurta (Schwarzschild e Kerr conforme).
+Validation figures -- Thakurta (Schwarzschild and conformal Kerr).
 
 Output in Thakurtafigures/:
-  fig_thakurta_cattura        cattura da espansione: orbita vs superficie
-                              di congelamento + regione accessibile (eta,r)
-  fig_thakurta_kerr_superfici (A, r): orizzonte rigido vs congelamento
-                              che respira; shell accessibile
-  fig_thakurta_kerr_residui   flusso H vs forme chiuse Kerr (A=1),
-                              residui entrambi i rami
-e in ../PaperFigures/:
-  fig_indicatrici             figura concettuale: le indicatrici ellittiche
-                              nei tre casi (FLRW, Vaidya, Thakurta-Kerr)
+  fig_thakurta_cattura        capture by expansion: orbit vs freezing
+                              surface + accessible region (eta,r)
+  fig_thakurta_kerr_superfici (A, r): rigid horizon vs breathing
+                              freezing surface; accessible shell
+  fig_thakurta_kerr_residui   flow H vs Kerr closed forms (A=1),
+                              residuals of both branches
+and in ../PaperFigures/:
+  fig_indicatrici             conceptual figure: the elliptic indicatrices
+                              in the three cases (FLRW, Vaidya, Thakurta-Kerr)
 """
 
 import os
@@ -36,8 +36,8 @@ def salva(fig, nome, cart=OUT):
 
 M_n, E_n, J_n = 1.0, 1.2, 1.3
 
-# ------------------------------------------------------- fig 1: cattura
-print('fig 1: cattura da espansione (Thakurta-Schwarzschild)...')
+# ------------------------------------------------------- fig 1: capture
+print('fig 1: capture by expansion (Thakurta-Schwarzschild)...')
 H_c, r_l = 0.02, 4.0
 eta0 = -1.0 / H_c
 
@@ -107,8 +107,8 @@ ax2.set_title('rail-accessible region (blue):\n'
               'the horizon-freezing shell closes')
 salva(fig, 'fig_thakurta_cattura')
 
-# ------------------------------------- fig 2: superfici Thakurta-Kerr
-print('fig 2: superfici critiche Thakurta-Kerr...')
+# ------------------------------------- fig 2: Thakurta-Kerr surfaces
+print('fig 2: critical surfaces of Thakurta-Kerr...')
 s_n = 0.9
 r_p = M_n + np.sqrt(M_n**2 - s_n**2)
 fig, ax = plt.subplots(figsize=(COL, COL * 0.85))
@@ -135,8 +135,8 @@ ax.set_title(f'Thakurta-Kerr ($s={s_n}$, $\\hat E={E_n}$): '
 ax.legend(loc='upper right')
 salva(fig, 'fig_thakurta_kerr_superfici')
 
-# ------------------------------------- fig 3: residui Kerr statico
-print('fig 3: residui forme chiuse Kerr (A=1)...')
+# ------------------------------------- fig 3: residuals, static Kerr
+print('fig 3: residuals of the Kerr closed forms (A=1)...')
 r_, pr_ = sp.symbols('r_ p_r_', positive=True), sp.Symbol('p_r_', real=True)
 r_ = sp.Symbol('r_', positive=True)
 f_k = 1 - 2 * M_n / r_
@@ -189,8 +189,8 @@ ax.set_title('Thakurta-Kerr, static limit $A=1$: Hamilton flow\n'
 ax.legend()
 salva(fig, 'fig_thakurta_kerr_residui')
 
-# ------------------------------------- fig 4: indicatrici (concettuale)
-print('fig 4: indicatrici (figura concettuale, PaperFigures)...')
+# ------------------------------------- fig 4: indicatrices (conceptual)
+print('fig 4: indicatrices (conceptual figure, PaperFigures)...')
 fig, axs = plt.subplots(3, 1, figsize=(COL, 8.4))
 
 # (a) FLRW: shrinking circles v(eta)
@@ -224,7 +224,7 @@ ax.set_ylim(-2.0, 2.0)
 
 # (c) Thakurta-Kerr: angular wind (dragging), ellipse shrinks with A
 ax = axs[2]
-rv = 2.2   # dentro quasi-ergosfera per vento visibile
+rv = 2.2   # just outside the ergosphere, so that the wind is visible
 fv = 1 - 2.0 / rv
 Dv = rv**2 - 2 * rv + s_n**2
 Pv = rv**2 + s_n**2 + 2 * s_n**2 / rv
@@ -252,4 +252,4 @@ for ax in axs:
 fig.suptitle('Rail indicatrices (linear constraint $\\cap$ normalization'
              '\n= ellipse): the unifying formalism')
 salva(fig, 'fig_indicatrici', OUTP)
-print('\nFATTO.')
+print('\nDONE.')

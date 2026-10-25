@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Figure di validazione — brachistocrone in Vaidya (accrescimento lineare).
+Validation figures -- brachistochrones in Vaidya (linear accretion).
 
 Output in Vaidyafigures/ (png+pdf):
-  fig_vaidya_orizzonti     (a) EH vs AH per accrescimento con stop
-                           (b) raggi autosimilari x(v) e x_pm per m = mu*v
-  fig_vaidya_kerr_a0       residui |dphi/dr - forma chiusa Kerr a=0| (m'=0)
-  fig_vaidya_traiettorie   orbite tau Schwarzschild vs Vaidya + p_v(r)
-  fig_vaidya_variazionale  T_tau su famiglia perturbata a Delta_phi fisso:
-                           minimo sulla soluzione EL (validazione diretta)
+  fig_vaidya_orizzonti     (a) EH vs AH for accretion that stops
+                           (b) self-similar radii x(v) and x_pm for m = mu*v
+  fig_vaidya_kerr_a0       residuals |dphi/dr - Kerr a=0 closed form| (m'=0)
+  fig_vaidya_traiettorie   tau orbits, Schwarzschild vs Vaidya + p_v(r)
+  fig_vaidya_variazionale  T_tau on a perturbed family at fixed Delta_phi:
+                           minimum on the EL solution (direct validation)
 """
 
 import os
@@ -44,7 +44,7 @@ EL = dp_tot - sp.diff(F_tau, mm) * mp
 vpp_tau = sp.solve(sp.Eq(EL, 0), q)[0]
 
 m0v, E_n, J_n = 1.0, 1.2, 1.3
-r1, r0 = 10.0, 3.5     # periasse (E=1.2, J=1.3) a r~3.01: restare sopra
+r1, r0 = 10.0, 3.5     # periapsis (E=1.2, J=1.3) at r~3.01: stay above it
 lin = [(mm, m0v + mu * vv), (mp, mu), (E, E_n), (J, J_n)]
 args = (r, vv, uu, mu)
 vpp_fn = sp.lambdify(args, vpp_tau.subs(lin), 'numpy')
@@ -73,11 +73,11 @@ def integra(mu_n, v_arrivo, dense=False):
 
     sol = solve_ivp(rhs, [r1, r0], [v_arrivo, up1, 0.0, 0.0],
                     rtol=1e-11, atol=1e-13, dense_output=True)
-    assert sol.status == 0, f'integrazione fallita a r={sol.t[-1]}'
+    assert sol.status == 0, f'integration failed at r={sol.t[-1]}'
     return sol
 
 # ---------------------------------------------------------------- fig 1
-print('fig 1: orizzonti...')
+print('fig 1: horizons...')
 mu_a, v_stop = 0.02, 50.0
 
 def mass(vq):
@@ -138,7 +138,7 @@ axb.set_title(f'$m=\\mu v$, $\\mu={mu_n}$: outgoing rays;\n'
 salva(fig, 'fig_vaidya_orizzonti')
 
 # ---------------------------------------------------------------- fig 2
-print('fig 2: residui forma chiusa Kerr a=0...')
+print('fig 2: residuals of the Kerr a=0 closed form...')
 F_t = uu - J * phip
 w_ = E**2 - f
 Dl = r**2 * f
@@ -172,7 +172,7 @@ ax.legend()
 salva(fig, 'fig_vaidya_kerr_a0')
 
 # ---------------------------------------------------------------- fig 3
-print('fig 3: traiettorie...')
+print('fig 3: trajectories...')
 v_arr = 40.0
 sol_s = integra(0.0, v_arr)
 sol_v = integra(0.01, v_arr)
@@ -182,7 +182,7 @@ for sol, mu_c, col, lab in ((sol_s, 0.0, 'C0', 'Schwarzschild $m=1$'),
                             (sol_v, 0.01, 'C3', 'Vaidya $m=1+0.01v$')):
     rr = np.linspace(r1, r0, 800)
     Y = sol.sol(rr)
-    phi = Y[2] - Y[2, -1]           # phi=0 alla partenza
+    phi = Y[2] - Y[2, -1]           # phi=0 at the start
     axo.plot(rr * np.cos(phi), rr * np.sin(phi), color=col, label=lab)
     m_dep = m0v + mu_c * Y[0, -1]
     m_arr = m0v + mu_c * v_arr
@@ -209,16 +209,16 @@ axp.legend()
 salva(fig, 'fig_vaidya_traiettorie')
 
 # ---------------------------------------------------------------- fig 4
-print('fig 4: validazione variazionale diretta...')
+print('fig 4: direct variational validation...')
 mu_c = 0.01
 sol = sol_v
 rr = np.linspace(r0, r1, 1500)
 v_el = CubicSpline(rr, sol.sol(rr)[0])
-dphi_target = float(sol.sol(r0)[2] * -1)   # Delta_phi della soluzione EL
+dphi_target = float(sol.sol(r0)[2] * -1)   # Delta_phi of the EL solution
 T_el = float(-sol.sol(r0)[3])
 
-psi1 = lambda x: np.sin(np.pi * (x - r0) / (r1 - r0))     # 0 agli estremi
-psi2 = lambda x: (r1 - x) / (r1 - r0)                     # libera in partenza
+psi1 = lambda x: np.sin(np.pi * (x - r0) / (r1 - r0))     # 0 at the endpoints
+psi2 = lambda x: (r1 - x) / (r1 - r0)                     # free at the start
 dpsi1 = lambda x: np.pi / (r1 - r0) * np.cos(np.pi * (x - r0) / (r1 - r0))
 dpsi2 = lambda x: -1.0 / (r1 - r0) + 0 * x
 
@@ -233,7 +233,7 @@ def funzionali(e1, e2):
     return Tq, dphi
 
 def risolvi_e2(e1):
-    """Trova e2 con Delta_phi = target: scansione + brentq locale."""
+    """Find e2 with Delta_phi = target: scan + local brentq."""
     def gap(e2):
         _, d = funzionali(e1, e2)
         return np.nan if d is None else d - dphi_target
@@ -266,6 +266,6 @@ ax.set_title('variational check: the non-autonomous EL solution\n'
 ax.legend()
 salva(fig, 'fig_vaidya_variazionale')
 imin = np.nanargmin(Tt)
-print(f'  [validazione] argmin T_tau a eps1 = {eps_grid[imin]:.4f} '
+print(f'  [validation] argmin T_tau at eps1 = {eps_grid[imin]:.4f} '
       f'(T_min={np.nanmin(Tt):.8f} vs T_EL={T_el:.8f})')
-print('FATTO.')
+print('DONE.')

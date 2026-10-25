@@ -1,8 +1,8 @@
-# COMPATTIFICAZIONE di delta phi|_sep via simmetria +/- (involuzione z->-z, r(z) pari).
-# Blocchi PARI: Z_a=ζ(z-a)-ζ(z+a), P_a=℘(z-a)+℘(z+a), Pp_a=℘'(z-a)-℘'(z+a).
-# R (pari) = C0 + b1 Z_zd + b2 P_zd - (b3/2) Pp_zd + b2h0 ℘(z) + b2h2 ℘(z-iw)   [6 blocchi]
-# eta'(pari)= Ce + e1d Z_zd + e2i P_zinf + e1i Z_zinf                            [4 blocchi]
-# delta phi = sum_{blkR,blk eta'} coeff * J[blkR,blk eta'],  J = iterato length-2.
+# COMPACTIFICATION of delta phi|_sep through the +/- symmetry (involution z->-z, r(z) even).
+# EVEN blocks: Z_a=ζ(z-a)-ζ(z+a), P_a=℘(z-a)+℘(z+a), Pp_a=℘'(z-a)-℘'(z+a).
+# R (even) = C0 + b1 Z_zd + b2 P_zd - (b3/2) Pp_zd + b2h0 ℘(z) + b2h2 ℘(z-iw)   [6 blocks]
+# eta'(even)= Ce + e1d Z_zd + e2i P_zinf + e1i Z_zinf                            [4 blocks]
+# delta phi = sum_{blkR,blk eta'} coeff * J[blkR,blk eta'],  J = length-2 iterated integral.
 import numpy as np, mpmath as mp, sympy as sp
 from scipy.integrate import quad
 mp.mp.dps=40
@@ -31,7 +31,7 @@ z_inf=float(mp.re(mp.quad(lambda x:1/mp.sqrt(Q4(x)),[e4r,mp.inf]))); sa=float(mp
 c_r=float(mp.re(e4r-(2/sa)*wzet(z_inf))); z_d=z_inf+float(mp.re(mp.quad(lambda x:1/mp.sqrt(Q4(x)),[-mp.inf,rd])))
 def zr(rv): return float(quad(lambda x:1/np.sqrt(Q4(x)),e4r,rv,limit=400)[0]); 
 z0f=mp.mpf(zr(r0))
-# residui analitici
+# analytic residues
 s=np.sqrt(Q4(rd)); a1=np.polyval(Qp,rd)/(4*s); a2=np.polyval(Qpp,rd)/12
 F=lambda x: np.polyval(Nm,x)/np.polyval(Q,x)
 Fp=lambda x:(np.polyval(Nmp,x)*np.polyval(Q,x)-np.polyval(Nm,x)*np.polyval(Qp,x))/np.polyval(Q,x)**2
@@ -42,16 +42,16 @@ b1zd=(h2-3*a1*h1+(6*a1**2-3*a2)*h0)/s**3; b2zd=(h1-3*a1*h0)/s**3; b3zd=h0/s**3
 def b2h(ei): return np.polyval(Nm,ei)/((ei-rd)**3)*(4/np.polyval(Qp,ei)**2)
 e1_zd=(rd**3-2*rd**2)/s; B=c_r+(1/sa)*float(mp.re(wzet(2*z_inf))); Aa=-1/sa
 e1_zi=Aa*(2*B+rd-2); e2_zi=Aa**2
-# blocchi PARI
+# EVEN blocks
 Zf =lambda a: (lambda z: wzet(z-a)-wzet(z+a))
 Pf =lambda a: (lambda z: wp(z-a)+wp(z+a))
 Ppf=lambda a: (lambda z: wpp(z-a)-wpp(z+a))
 one=lambda z: mp.mpf(1); wp0=lambda z: wp(z); wpiw=lambda z: wp(z-1j*mp.mpf(w_im))
-# liste (coeff, funzione, nome)
+# lists (coefficient, function, name)
 zdm=mp.mpf(z_d); zim=mp.mpf(z_inf)
 Rblk=[('C0',one),(b1zd,Zf(zdm)),(b2zd,Pf(zdm)),(-b3zd/2,Ppf(zdm)),(b2h(e4r),wp0),(b2h(e3r),wpiw)]
 Eblk=[('Ce',one),(e1_zd,Zf(zdm)),(e2_zi,Pf(zim)),(e1_zi,Zf(zim))]
-# fissa C0,Ce
+# fix C0, Ce
 def r_of_z(z): return c_r-(1/sa)*(wzet(z-z_inf)-wzet(z+z_inf))
 def Rexact(z): rr=r_of_z(z); return np.polyval(Nm,rr)/((rr-rd)**3*np.polyval(Q,complex(rr)))
 def Epexact(z): rr=r_of_z(z); return (rr**3-2*rr**2)/(rr-rd)
@@ -59,10 +59,10 @@ zt=mp.mpf('0.19')
 C0=complex(Rexact(zt)-sum(c*f(zt) for c,f in Rblk if not isinstance(c,str)))
 Ce=complex(Epexact(zt)-sum(c*f(zt) for c,f in Eblk if not isinstance(c,str)))
 Rblk[0]=(C0,one); Eblk[0]=(Ce,one)
-print("blocchi R:",len(Rblk)," blocchi eta':",len(Eblk)," prodotti:",len(Rblk)*len(Eblk))
-print("check R (blocchi pari):",float(max(abs(complex(Rexact(mp.mpf(t))-sum(c*f(mp.mpf(t)) for c,f in Rblk))) for t in [0.15,0.22])))
-print("check eta' (blocchi pari):",float(max(abs(complex(Epexact(mp.mpf(t))-sum(c*f(mp.mpf(t)) for c,f in Eblk))) for t in [0.15,0.22])))
-# J[blkR,blk eta'] iterato + assemblaggio
+print("R blocks:",len(Rblk)," eta' blocks:",len(Eblk)," products:",len(Rblk)*len(Eblk))
+print("check R (even blocks):",float(max(abs(complex(Rexact(mp.mpf(t))-sum(c*f(mp.mpf(t)) for c,f in Rblk))) for t in [0.15,0.22])))
+print("check eta' (even blocks):",float(max(abs(complex(Epexact(mp.mpf(t))-sum(c*f(mp.mpf(t)) for c,f in Eblk))) for t in [0.15,0.22])))
+# iterated J[blkR,blk eta'] + assembly
 _ic={}
 def inner(f2,t):
     key=(id(f2),float(t))
@@ -77,9 +77,9 @@ def dmF(x):
     def Fm(mv): return np.polyval(np.polymul([Jc],[E**2-1,2*mv]),x)/np.sqrt(np.polyval(pS(mv,Jc),x))
     return (Fm(m+1e-6)-Fm(m-1e-6))/2e-6
 def dphi_direct(x): return quad(lambda t: dmF(t)*eta(t), r0, x, limit=200)[0]
-print("\n=== delta phi COMPATTO (24 prodotti di blocchi pari) vs DIRETTO ===")
+print("\n=== COMPACT delta phi (24 products of even blocks) vs DIRECT ===")
 for rr in [11.0,10.0,9.2]:
     z=mp.mpf(zr(rr)); dc=complex(dphi_compact(z)).real; dd=dphi_direct(rr)
-    print(f"  r={rr:4.1f}  compatto={dc:+.8f}  diretto={dd:+.8f}  diff={abs(dc-dd):.1e}")
+    print(f"  r={rr:4.1f}  compact={dc:+.8f}  direct={dd:+.8f}  diff={abs(dc-dd):.1e}")
 nz=sum(1 for c1,f1 in Rblk for c2,f2 in Eblk if abs(c1*c2)>1e-9)
-print(f"\ntermini non nulli: {nz} (era 63).  Blocchi PARI: R={len(Rblk)}, eta'={len(Eblk)}.")
+print(f"\nnon-zero terms: {nz} (was 63).  EVEN blocks: R={len(Rblk)}, eta'={len(Eblk)}.")

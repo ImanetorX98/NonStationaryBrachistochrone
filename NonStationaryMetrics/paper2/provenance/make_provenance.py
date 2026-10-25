@@ -64,7 +64,7 @@ from pathlib import Path
 # containing the current code exists, these stay PENDING and the generated
 # macros say so in the PDF, where it cannot be overlooked.
 RELEASE = {
-    "version": "v1.8.2",           # cited through the concept DOI; the tag fixes the exact code
+    "version": "v1.8.3",           # cited through the concept DOI; the tag fixes the exact code
     "doi": "10.5281/zenodo.21707377",
     "concept_doi": "10.5281/zenodo.21707377",
 }

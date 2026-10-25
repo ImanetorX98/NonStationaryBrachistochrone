@@ -1,26 +1,26 @@
 # -*- coding: utf-8 -*-
 """
-Legge del raggio minimo di plunge per le brachistocrone t e tau in Vaidya,
-e coerenza con il limite Schwarzschild (m' = 0).
+Law of the minimum plunge radius for the t and tau brachistochrones in Vaidya,
+and consistency with the Schwarzschild limit (m' = 0).
 
-Rami (parametro v, r' = dr/dv, rail invariant E = -u.K = energia di Kodama):
+Branches (parameter v, r' = dr/dv, rail invariant E = -u.K = Kodama energy):
   W_v = (f - 2 r' - (f - r')^2/E^2)/r^2 = (dphi/dv)^2 ,  f = 1 - 2 m(v)/r
-  tau:  F_tau = (f - r')/E - J sqrt(W_v)     (minimizza tempo proprio)
-  t  :  F_t   =    1      - J sqrt(W_v)       (minimizza v = tempo avanzato;
-                                              a estremi radiali fissi
-                                              equivale a min. t: v = t + r_*)
+  tau:  F_tau = (f - r')/E - J sqrt(W_v)     (minimises the proper time)
+  t  :  F_t   =    1      - J sqrt(W_v)       (minimises v = advanced time;
+                                              with fixed radial endpoints
+                                              this is equivalent to min. t: v = t + r_*)
 
-LEGGE (condizione di svolta LOCALE, p_r = 0, all'evento di periasse):
+LAW (LOCAL turning condition, p_r = 0, at the periapsis event):
   tau:  (E^2 - f_*) J^2 = f_*   r_min^2
   t  :  (E^2 - f_*) J^2 = E^2   r_min^2 / f_*
-  con f_* = 1 - 2 m(v_peri)/r_min.
-La forma NON contiene m': m' governa solo v_peri (il timing), non
-l'algebra locale. => m' -> 0 (f_* -> 1 - 2 m0/r) recupera esattamente
-Schwarzschild (R13); continuo, nessuna discontinuita'.
+  with f_* = 1 - 2 m(v_peri)/r_min.
+The form does NOT contain m': m' governs only v_peri (the timing), not
+the local algebra. => m' -> 0 (f_* -> 1 - 2 m0/r) recovers Schwarzschild
+exactly (R13); continuous, with no discontinuity.
 
-Verifica: integra entrambi i rami per mu < 0, 0, > 0; estrae (r_min,
-v_peri); controlla che la legge locale valga a m(v_peri); confronta con
-le radici statiche e il segno r_min^t < r_min^tau.
+Check: integrates both branches for mu < 0, 0, > 0; extracts (r_min,
+v_peri); checks whether the local law holds at m(v_peri); compares with
+the static roots and the sign r_min^t < r_min^tau.
 """
 
 import os
@@ -37,8 +37,8 @@ import matplotlib.pyplot as plt
 set_style()
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Vaidyafigures')
 
-m0, E_n, J_n, r1 = 1.0, 1.2, 8.0, 15.0    # J grande: ANCHE il ramo t gira
-#   (per J piccolo il ramo t cattura: nessuna svolta, coerente con t piu' fondo)
+m0, E_n, J_n, r1 = 1.0, 1.2, 8.0, 15.0    # large J: the t branch ALSO turns
+#   (for small J the t branch is captured: no turning point, consistent with t being deeper)
 
 vv, rr, rp, q = sp.symbols('vv rr rp q', real=True)
 E, J, mm, mp, mu = sp.symbols('E J mm mp mu', real=True)
@@ -62,7 +62,7 @@ F_t = 1 - J * sp.sqrt(Wv)
 rpp_tau, Wv_tau, dpr_tau = make_branch(F_tau)
 rpp_t, Wv_t, dpr_t = make_branch(F_t)
 
-# aim r'(r1) alla partenza: p_v = 0 (trasversalita', ramo r-param)
+# aim r'(r1) at the start: p_v = 0 (transversality, r-parametrised branch)
 u_ = sp.Symbol('u_', real=True)
 Wr = (f * u_**2 - 2 * u_ - (f * u_ - 1)**2 / E**2) / rr**2
 pv_tau = sp.lambdify((rr, vv, u_, mu),
@@ -91,7 +91,7 @@ def orbita(rpp_fn, Wv_fn, pv_fn, mu_n, v1):
     ev.terminal, ev.direction = True, 0
     s = solve_ivp(rhs, [v1, -1e6], [r1, rp1], rtol=1e-11, atol=1e-13,
                   events=[ev], dense_output=True)
-    assert s.status == 1, 'periasse non trovato'
+    assert s.status == 1, 'periapsis not found'
     return s.t_events[0][0], s.y_events[0][0][0]   # v_peri, r_min
 
 def legge_residuo(ramo, r_min, v_peri):
@@ -99,7 +99,7 @@ def legge_residuo(ramo, r_min, v_peri):
     return fstar
 
 print("=" * 74)
-print("radici statiche (mu=0) = legge R13 di Schwarzschild")
+print("static roots (mu=0) = Schwarzschild law R13")
 print("=" * 74)
 g_tau = lambda r: (E_n**2 - (1 - 2 / r)) * J_n**2 - (1 - 2 / r) * r**2
 g_t = lambda r: (E_n**2 - (1 - 2 / r)) * J_n**2 - E_n**2 * r**2 / (1 - 2 / r)
@@ -113,14 +113,14 @@ def radice_esterna(g, lo=2.02, hi=14.0, n=2000):
 
 r_tau_0 = radice_esterna(g_tau)
 r_t_0 = radice_esterna(g_t)
-print(f"  r_min^tau (statico) = {r_tau_0:.6f}")
-print(f"  r_min^t   (statico) = {r_t_0:.6f}")
+print(f"  r_min^tau (static) = {r_tau_0:.6f}")
+print(f"  r_min^t   (static) = {r_t_0:.6f}")
 print(f"  r_min^t < r_min^tau : {r_t_0 < r_tau_0}   "
       f"(gap {r_tau_0 - r_t_0:.4f})")
 
 print()
 print("=" * 74)
-print("Vaidya: integrazione dei due rami, legge locale a m(v_peri)")
+print("Vaidya: integration of the two branches, local law at m(v_peri)")
 print("=" * 74)
 v1 = 40.0
 print(f"{'mu':>7} | {'r_min^tau':>10} {'r_min^t':>9} {'t<tau':>6} "
@@ -138,21 +138,21 @@ for mu_g in (-0.02, -0.01, -0.005, 0.0, 0.005, 0.01, 0.02):
           f"{rt_ - rtt:7.4f} | {sc_tau:12.1f} {sc_t:11.1f}")
 
 print()
-print("LETTURA:")
-print(" - forma della legge di svolta (locale, R13):")
+print("READING:")
+print(" - form of the turning law (local, R13):")
 print("     tau: (E^2 - f) J^2 = f r^2      t: (E^2 - f) J^2 = E^2 r^2/f")
-print(" - coerenza m'=0: a mu=0 l'integrazione RIPRODUCE le radici")
-print("   statiche di Schwarzschild (residuo ~1e-9); limite continuo.")
-print(" - segno: r_min^t < r_min^tau per OGNI mu (t affonda di piu'):")
-print("   l'ordinamento di Schwarzschild sopravvive alla dinamica, NON")
-print("   c'e' inversione (serve rotazione, non m' -- cfr. R13).")
-print(" - dinamica: la legge NON e' la statica valutata a m(v_peri): il")
-print("   residuo cresce ~lineare in m' (colonne res/|mu| ~ costanti) =")
-print("   correzione non autonoma dal p_v teleologico (memoria propto m').")
-print("   L'accrescimento ALLARGA il gap (tau esce, t affonda).")
+print(" - consistency m'=0: at mu=0 the integration REPRODUCES the static")
+print("   Schwarzschild roots (residual ~1e-9); continuous limit.")
+print(" - sign: r_min^t < r_min^tau for EVERY mu in the scan (t sinks deeper):")
+print("   the Schwarzschild ordering survives the dynamics, there is NO")
+print("   inversion (it needs rotation, not m' -- cf. R13).")
+print(" - dynamics: the law is NOT the static one evaluated at m(v_peri): the")
+print("   residual grows ~linearly in m' (columns res/|mu| ~ constant) =")
+print("   a non-autonomous correction from the teleological p_v (memory proportional to m').")
+print("   Accretion WIDENS the gap (tau moves out, t sinks).")
 
-# --------------------------------------------------------------- figura
-print("\ngenerazione figura (grid mu fine)...")
+# --------------------------------------------------------------- figure
+print("\ngenerating the figure (fine mu grid)...")
 mu_fine = np.linspace(-0.025, 0.025, 21)
 rtau_a, rt_a = [], []
 for mu_g in mu_fine:
@@ -180,4 +180,4 @@ a2.set_xlabel(r"ingoing mass-rate parameter $\mu = m'$")
 a2.set_ylabel(r'gap $r_{\min}^{\tau}-r_{\min}^{t}$')
 a2.set_title('accretion widens the gap, negative-rate continuation shrinks it')
 savefig(fig, OUT, 'fig_vaidya_plunge_t_tau')
-print("FATTO.")
+print("DONE.")

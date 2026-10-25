@@ -49,7 +49,8 @@ manuscripts cite the code release that reproduces their printed numbers).
   true non-autonomous flow; the classification of rail-swept surfaces (umbilicity and
   geodesicity under a conformal factor); and an observational section with physical
   scales, rotating benchmarks, a proposed Solar-System two-probe comparison (Saturn
-  flyby), a Kerr thought experiment scaled to M87*, an ephemeris bound on a locally
+  flyby), a solar-sail clock comparison, a clock thought experiment around Gaia BH3
+  (which replaces the earlier one scaled to M87*), an ephemeris bound on a locally
   cosmological conformal factor, and the conjugate-point conditions under which a rail
   stops being a local minimum.
 
@@ -88,7 +89,7 @@ supersede them.
 |------|------------------|
 | `paper1/verification/README.md` | Verification map of Paper I: which claim, where it appears, how it is checked (symbolic identities in two CAS for the formal core, plus a numerical quadrature of the §4.4 closed form). |
 | `paper2/verification/README.md` | Verification map of Paper II: each numbered statement, its script, and the evidence level (full proof, sampled, or numerical). |
-| `paper2/verification/observational/README.md` | Observational section: scales, rotating benchmarks, probe experiments (Saturn flyby, solar sails, M87*), conjugate points, ephemeris bound. |
+| `paper2/verification/observational/README.md` | Observational section: scales, rotating benchmarks, probe experiments (Saturn flyby, solar sails, clocks around Gaia BH3; the earlier M87* experiment is kept for the archived releases), conjugate points, ephemeris bound. |
 | `paper1/verification/REPRODUCTION_section4.2.md` | Re-run of the trajectory scripts behind section 4.2 of Paper I, with the numbers obtained. |
 | `ThakurtaMetric/ThakurtaResults.md`, `VaidyaMetric/VaidyaResults.md`, `FLRWmetric/FLRWresults.md` | Per-geometry results: what was derived, with the numbers obtained. *Historical working notes, mostly in Italian; they may refer to scripts or sibling folders that are not distributed. The verification maps above are the current reference.* |
 | `ThakurtaMetric/phi_adiabatic_closed_form.md`, `VaidyaMetric/vaidya_adiabatic_setup.md` | The adiabatic closed form, set up and assembled (historical working notes, as above). |
@@ -156,6 +157,12 @@ python3 -m pip install -r requirements-lock.txt   # exact reference environment
 `requirements-lock.txt` pins the reference environment (Python 3.13, NumPy 2). The
 figure generators need NumPy 2 (`np.trapezoid`); the verification suites were also
 re-run in October 2026 with Python 3.11, NumPy 1.24 and SciPy 1.11.
+
+Activate the environment in which you installed the requirements before running the
+scripts, and use the same Python interpreter for installation and execution;
+`python3 -c "import sys; print(sys.executable)"` shows which interpreter is selected.
+`run_regression.py` runs every script with the interpreter that launched it, so a
+`python3` without NumPy makes all twelve checks fail with `ModuleNotFoundError`.
 
 - **Python (sympy/mpmath/numpy/scipy)** — algebraic reductions, genus-1 closed forms
   (Weierstrass via `mpmath.jtheta`), numerical checks, figures. Standalone:

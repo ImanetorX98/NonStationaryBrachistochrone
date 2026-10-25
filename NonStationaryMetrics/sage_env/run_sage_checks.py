@@ -51,7 +51,7 @@ def parse_list(body: str):
 CHECKS = [
     (NSM / "KerrSessionScripts/kerr_tau_general_genus2_periods.sage.py", "python", [
         ("Riemann symmetry |tau-tau^T| (paper: 7e-12)", r"\|tau-tau\^T\| = " + FIELD, "max", 1e-11),
-        ("Im(tau) positive definite", r"autovalori Im\(tau\) = \[([^\]]*)\]", "pos", 2),
+        ("Im(tau) positive definite", r"eigenvalues of Im\(tau\) = \[([^\]]*)\]", "pos", 2),
     ]),
     (ROOT / "KerrScripts/kerr_tbranch_genus2_periods.sage.py", "python", [
         ("Riemann symmetry |tau-tau^T| (paper: 3e-12)", r"\|tau - tau\^T\| = " + FIELD, "max", 1e-11),
@@ -62,7 +62,7 @@ CHECKS = [
     ]),
     (ROOT / "KerrScripts/kerr_thirdkind_theta_closed.sage", "sage", [
         ("third-kind theta closed form, best relative residual (paper: 7e-5)",
-         r"MIGLIORE: delta #\d+, residuo rel " + FIELD, "max", 1e-4),
+         r"BEST: delta #\d+, relative residual " + FIELD, "max", 1e-4),
     ]),
 ]
 

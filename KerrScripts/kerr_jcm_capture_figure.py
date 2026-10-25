@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Figura informativa: cattura dall'ergosfera per J=0.95 J_c^- (ramo t retrogrado).
+Explanatory figure: capture through the ergosphere for J=0.95 J_c^- (retrograde t branch).
 
-Al saddle-node J_c^- il sestico R6 ha una radice DOPPIA reale a r_*=3.514>r_e:
-barriera a phi infinito, l'orbita spirala su r_* e NON penetra.  Spostando J
-appena dentro la finestra (J=0.95 J_c^-=-7.65) la radice doppia si stacca in
-COPPIA COMPLESSA (3.393+-0.601i): la barriera sparisce, l'orbita fa PLUNGE
-attraverso l'ergosfera fino all'orizzonte -> CATTURATA.
+At the saddle-node J_c^- the sextic R6 has a real DOUBLE root at r_*=3.514>r_e:
+a barrier at infinite phi, the orbit spirals onto r_* and does NOT penetrate.  Moving J
+just inside the window (J=0.95 J_c^-=-7.65) the double root splits into a
+COMPLEX PAIR (3.393+-0.601i): the barrier disappears and the orbit PLUNGES
+through the ergosphere down to the horizon -> CAPTURED.
 
-Pannello (a): traiettoria J=0.95 J_c^- (plunge, penetra r_e) -- flusso di
-  Hamilton vs forma chiusa genere-2; separatrice J_c^- (spirale su r_*) grigia.
-Pannello (b): meccanismo saddle-node -- le due radici rilevanti di R6 nel piano
-  complesso al variare di J da J_c^- (doppia reale) a 0.95 J_c^- (coppia
-  complessa): collisione -> distacco = cattura.
+Panel (a): trajectory J=0.95 J_c^- (plunge, penetrates r_e) -- Hamiltonian
+  flow vs the genus-2 closed form; the separatrix J_c^- (spiral onto r_*) in grey.
+Panel (b): saddle-node mechanism -- the two relevant roots of R6 in the complex
+  plane as J moves from J_c^- (real double root) to 0.95 J_c^- (complex
+  pair): collision -> splitting = capture.
 """
 
 import os
@@ -65,7 +65,7 @@ rst, Jst = fsolve(lambda x: [R6(x[0], x[1]),
 J = 0.95*Jst
 print(f"J_c^-={Jst:.4f} (r_*={rst:.4f}); J=0.95 J_c^-={J:.4f}")
 
-# --- flusso di Hamilton (ramo t) per J=0.95 J_c^- ---
+# --- Hamiltonian flow (t branch) for J=0.95 J_c^- ---
 r, pr, pphi = sp.symbols('r pr pphi')
 f = 1 - 2*M/r
 Dl = r**2 - 2*M*r + a**2
@@ -101,12 +101,12 @@ phiA = sA.sol(tA)[2]
 integ = lambda rv: K_gen(rv, J)/np.sqrt(abs(R6(rv, J)))
 phiR = np.array([quad(integ, rv, r0, limit=500)[0] for rv in rA])
 devA = np.abs(phiA - phiR)
-print(f"orbita: r {rA[0]:.2f}->{rA[-1]:.3f}; penetra r_e? {'SI' if rA.min()<re else 'NO'}; "
-      f"cattura r_+? {'SI' if rA.min()<rp+0.06 else 'no'}")
+print(f"orbit: r {rA[0]:.2f}->{rA[-1]:.3f}; penetrates r_e? {'YES' if rA.min()<re else 'NO'}; "
+      f"captured at r_+? {'YES' if rA.min()<rp+0.06 else 'no'}")
 print(f"max|phi_ODE - phi_genus2| = {devA.max():.2e}")
 
-# --- separatrice J_c^-: spirale su r_* (per confronto) ---
-p0s = prof(r0)  # stessa profondita' iniziale non serve; uso il flusso a J_c^-
+# --- separatrix J_c^-: spiral onto r_* (for comparison) ---
+p0s = prof(r0)  # the same initial depth is not needed; use the flow at J_c^-
 Hns = sp.lambdify((r, pr), H.subs(pphi, Jst), 'numpy')
 dHps = sp.lambdify((r, pr), sp.diff(H, pr).subs(pphi, Jst), 'numpy')
 dHrs = sp.lambdify((r, pr), sp.diff(H, r).subs(pphi, Jst), 'numpy')
@@ -132,7 +132,7 @@ ts = np.linspace(0, ss.t_events[0][0], 700)
 rS = ss.sol(ts)[0]
 phiS = ss.sol(ts)[2]
 
-# --- moto delle due radici rilevanti da J_c^- a 0.95 J_c^- ---
+# --- motion of the two relevant roots from J_c^- to 0.95 J_c^- ---
 Jscan = np.linspace(Jst, J, 60)
 tracks = []
 for Jv in Jscan:
@@ -141,10 +141,10 @@ for Jv in Jscan:
     tracks.append(sorted(near, key=lambda z: z.imag))
 tracks = np.array(tracks)
 
-# ----------------------------------------------------------- figura
+# ----------------------------------------------------------- figure
 fig, (ax, axb) = plt.subplots(2, 1, figsize=(COL, 6.8))
 th = np.linspace(0, 2*np.pi, 400)
-# (a) traiettoria
+# (a) trajectory
 ax.fill(re*np.cos(th), re*np.sin(th), color='0.9', zorder=0)
 ax.plot(re*np.cos(th), re*np.sin(th), 'b--', lw=1.0, label=r'ergosphere $r_e$')
 ax.plot(rp*np.cos(th), rp*np.sin(th), 'C3--', lw=0.9, label=r'horizon $r_+$')
@@ -163,7 +163,7 @@ ax.set_title('retrograde capture: $0.95\\,J_c^-$ plunges through $r_e$\n'
              'to the horizon; $J_c^-$ only spirals onto $r_*$')
 ax.legend(fontsize=5.3, loc='upper left', framealpha=0.9)
 
-# (b) saddle-node: le due radici nel piano complesso
+# (b) saddle-node: the two roots in the complex plane
 axb.plot(tracks[:, 0].real, tracks[:, 0].imag, 'C0.-', ms=2, lw=0.9)
 axb.plot(tracks[:, 1].real, tracks[:, 1].imag, 'C0.-', ms=2, lw=0.9)
 axb.plot(rst, 0, 'ks', ms=7, label=r'$J_c^-$: double root at $r_*$ (real)')
@@ -177,4 +177,4 @@ axb.set_title('saddle-node: double root splits into a complex pair\n'
               '(barrier removed $\\Rightarrow$ capture)')
 axb.legend(fontsize=6, loc='upper right', framealpha=0.9)
 savefig(fig, HERE, 'fig_jcm_capture')
-print('FATTO.')
+print('DONE.')

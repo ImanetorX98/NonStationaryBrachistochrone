@@ -1,22 +1,22 @@
-# ASIMMETRIA accrescimento/evaporazione della correzione adiabatica delta phi_V.
-# Accrescimento (mdot>0): Vaidya INGOING  ds^2=-f dv^2+2 dv dr, clock AVANZATO  v = t + r_*.
-# Evaporazione (mdot<0): Vaidya OUTGOING ds^2=-f du^2-2 du dr, clock RITARDATO u = t - r_*.
-# DERIVAZIONE dei clock sull'arco ENTRANTE (lanciato in r0 verso il punto di svolta):
-#   u,v sono definiti dal MEDESIMO tempo di Killing t via u=t-r_*, v=t+r_*.  Sull'arco entrante
-#   il tempo di Schwarzschild trascorso e' T=-E U_3>0 (dt/dr=-E r^3/sqrt(S)), quindi
+# ACCRETION/EVAPORATION ASYMMETRY of the adiabatic correction delta phi_V.
+# Accretion (mdot>0): INGOING Vaidya  ds^2=-f dv^2+2 dv dr, ADVANCED clock  v = t + r_*.
+# Evaporation (mdot<0): OUTGOING Vaidya ds^2=-f du^2-2 du dr, RETARDED clock u = t - r_*.
+# DERIVATION of the clocks on the INGOING arc (launched at r0 towards the turning point):
+#   u, v are defined by the SAME Killing time t through u=t-r_*, v=t+r_*.  On the ingoing arc
+#   the elapsed Schwarzschild time is T=-E U_3>0 (dt/dr=-E r^3/sqrt(S)), hence
 #     v = T + r_*  (dv/dr = -E r^3/sqrt(S) + r/(r-2m)),   u = T - r_*.
-#   (r_* = (r-r0) + 2m ln((r-2m)/(r0-2m)),  dr_*/dr=r/(r-2m).)  Le densita' E r^3/sqrt(S) +/- r/(r-2m)
-#   valgono sull'arco USCENTE; usarle qui scambiava avanzato e ritardato (corretto il 20/10/2026).
-# Stessa riduzione dM F (dipende solo da S congelata: ingoing/outgoing Schwarzschild = stessa geometria);
-# cambiano SOLO il clock (v vs u) e il segno di mdot (accrescimento m su' / evaporazione m giu').
-# => delta phi/mdot|_accr = A + B ,  delta phi/mdot|_evap = A - B  (COEFFICIENTI, /mdot con segno),
-#    A = int d_m(dphi/dr) * T dr   (parte all'INFINITO, polilog), lungo il moto
-#    B = int d_m(dphi/dr) * r_* dr  (parte d'ORIZZONTE, dilog tortoise)
+#   (r_* = (r-r0) + 2m ln((r-2m)/(r0-2m)),  dr_*/dr=r/(r-2m).)  The densities E r^3/sqrt(S) +/- r/(r-2m)
+#   hold on the OUTGOING arc; using them here swapped advanced and retarded (corrected on 20/10/2026).
+# The same reduction dM F (it depends only on the frozen S: ingoing/outgoing Schwarzschild = the same geometry);
+# ONLY the clock (v vs u) and the sign of mdot change (accretion: m up / evaporation: m down).
+# => delta phi/mdot|_accr = A + B ,  delta phi/mdot|_evap = A - B  (COEFFICIENTS, /mdot with sign),
+#    A = int d_m(dphi/dr) * T dr   (part at INFINITY, polylogarithm), along the motion
+#    B = int d_m(dphi/dr) * r_* dr  (HORIZON part, tortoise dilogarithm)
 # PHYSICS (delta phi = mdot*[.]; mdot>0 accr, mdot<0 evap): delta phi_accr=+|mdot|(A+B),
-#    delta phi_evap=-|mdot|(A-B). Quindi (a |mdot| uguale):
-#    DIFFERENZA fisica = accr - evap = |mdot|*2A   (portata da A -- NON da B!)
-#    SOMMA fisica      = accr + evap = |mdot|*2B   = FALLIMENTO DELL'ANTISIMMETRIA (portata da B, orizzonte)
-# (Correzione: B controlla il fallimento dell'antisimmetria, non la differenza fisica.)
+#    delta phi_evap=-|mdot|(A-B). Hence (at equal |mdot|):
+#    physical DIFFERENCE = accr - evap = |mdot|*2A   (carried by A -- NOT by B!)
+#    physical SUM        = accr + evap = |mdot|*2B   = FAILURE OF ANTISYMMETRY (carried by B, horizon)
+# (Correction: B controls the failure of antisymmetry, not the physical difference.)
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -42,8 +42,8 @@ def rstar(x): return (x-r0)+2*M*(np.log(x-2*M)-np.log(r0-2*M))
 # An earlier version used the OUTGOING densities E U_3 +/- r_* on this ingoing arc:
 # that swaps the advanced and retarded coefficients and flips the sign of B.
 def T_el(x): return -E*U3(x)
-def v_adv(x): return T_el(x)+rstar(x)     # accrescimento (ingoing, tempo avanzato trascorso)
-def u_ret(x): return T_el(x)-rstar(x)     # evaporazione (outgoing, u = v - 2 r_*)
+def v_adv(x): return T_el(x)+rstar(x)     # accretion (ingoing, elapsed advanced time)
+def u_ret(x): return T_el(x)-rstar(x)     # evaporation (outgoing, u = v - 2 r_*)
 dMF_mot=lambda x: -dMFn(x)                 # d_m (dphi/dr) along the ingoing motion
 
 # --- independent check of the clock and of the orientation against the TRUE frozen
@@ -72,38 +72,38 @@ print(f"clock check against the H_tau flow: max|v_flow - (T + r_*)| = {worst_v:.
       f"max|phi_flow - int(-J D_E/sqrt S)| = {worst_phi:.1e}")
 assert worst_v<1e-8 and worst_phi<1e-8, "ingoing clock or orientation inconsistent with the flow"
 
-# --- parti A (simmetrica) e B (antisimmetrica=orizzonte) ---
+# --- parts A (symmetric) and B (antisymmetric = horizon) ---
 A=quad(lambda x:dMF_mot(x)*T_el(x), r0,xf,limit=150)[0]
 B=quad(lambda x:dMF_mot(x)*rstar(x),r0,xf,limit=150)[0]
-# --- diretti coi due clock ---
+# --- direct values with the two clocks ---
 accr=quad(lambda x:dMF_mot(x)*v_adv(x),r0,xf,limit=150)[0]
 evap=quad(lambda x:dMF_mot(x)*u_ret(x),r0,xf,limit=150)[0]
 
-print("=== delta phi_V : coefficienti (/mdot con segno) e quantita' FISICHE ===")
-print(f"  A (parte INFINITO, polilog)  = {A:+.8f}")
-print(f"  B (parte ORIZZONTE, dilog)   = {B:+.8f}")
-print(f"  coeff accr = A+B (clock v)   = {A+B:+.8f}   diretto={accr:+.8f}  diff={abs(A+B-accr):.1e}")
-print(f"  coeff evap = A-B (clock u)   = {A-B:+.8f}   diretto={evap:+.8f}  diff={abs(A-B-evap):.1e}")
-# --- FISICA: delta phi = mdot*[.], mdot>0 accr, mdot<0 evap => segni ---
+print("=== delta phi_V : coefficients (/mdot with sign) and PHYSICAL quantities ===")
+print(f"  A (INFINITY part, polylog)   = {A:+.8f}")
+print(f"  B (HORIZON part, dilog)      = {B:+.8f}")
+print(f"  coeff accr = A+B (clock v)   = {A+B:+.8f}   direct={accr:+.8f}  diff={abs(A+B-accr):.1e}")
+print(f"  coeff evap = A-B (clock u)   = {A-B:+.8f}   direct={evap:+.8f}  diff={abs(A-B-evap):.1e}")
+# --- PHYSICS: delta phi = mdot*[.], mdot>0 accr, mdot<0 evap => signs ---
 dphi_accr=(A+B)     # /|mdot|, mdot>0
 dphi_evap=-(A-B)    # /|mdot|, mdot<0 (delta phi_evap = mdot(A-B) = -|mdot|(A-B))
-print("\n=== FISICA (delta phi / |mdot|) ===")
+print("\n=== PHYSICS (delta phi / |mdot|) ===")
 print(f"  delta phi_accr/|mdot| = +(A+B) = {dphi_accr:+.6f}")
 print(f"  delta phi_evap/|mdot| = -(A-B) = {dphi_evap:+.6f}")
-print(f"  DIFFERENZA  accr-evap = 2A = {dphi_accr-dphi_evap:+.6f}   (portata da A, l'INFINITO -- NON da B!)")
-print(f"  SOMMA       accr+evap = 2B = {dphi_accr+dphi_evap:+.6f}   = FALLIMENTO DELL'ANTISIMMETRIA (B, orizzonte)")
-print("  (Correzione: la vecchia dicitura 'asimmetria=2B' confondeva la differenza dei coeff")
-print("   (A+B)-(A-B)=2B con la differenza FISICA accr-evap=2A; B misura la deviazione dall'antisimmetria.)")
+print(f"  DIFFERENCE  accr-evap = 2A = {dphi_accr-dphi_evap:+.6f}   (carried by A, INFINITY -- NOT by B!)")
+print(f"  SUM         accr+evap = 2B = {dphi_accr+dphi_evap:+.6f}   = FAILURE OF ANTISYMMETRY (B, horizon)")
+print("  (Correction: the old wording 'asymmetry=2B' confused the difference of the coefficients")
+print("   (A+B)-(A-B)=2B with the PHYSICAL difference accr-evap=2A; B measures the deviation from antisymmetry.)")
 
-# --- struttura di B: bulk (2a specie) + settore d'ORIZZONTE (dilog D_k) ---
+# --- structure of B: bulk (second kind) + HORIZON sector (dilogarithm D_k) ---
 # r_* = (r-r0)  +  2m ln((r-2m)/(r0-2m))
-#        \___bulk___/     \____log d'orizzonte____/
+#        \___bulk___/     \_____horizon log_____/
 B_bulk=quad(lambda x:dMF_mot(x)*(x-r0), r0,xf,limit=150)[0]
 B_hor =quad(lambda x:dMF_mot(x)*2*M*(np.log(x-2*M)-np.log(r0-2*M)), r0,xf,limit=150)[0]
-print("\n=== struttura dell'asimmetria B = B_bulk + B_hor ===")
-print(f"  B_bulk (2a specie, r-r0)           = {B_bulk:+.8f}")
-print(f"  B_hor  (log d'orizzonte -> dilog D_k)= {B_hor:+.8f}")
-print(f"  somma = {B_bulk+B_hor:+.8f}   B diretto = {B:+.8f}   diff={abs(B_bulk+B_hor-B):.1e}")
-# B_hor per parti: 2m[ A_m ln(r-2m) ]_{r0}^{xf} - 2m int A_m/(r-2m) dr,  int A_m/(r-2m) = sum c_k D_k
-print("  => B_hor = 2m[A_m ln(r-2m)] - 2m*int A_m/(r-2m);  int A_m/(r-2m) = dilog d'ORIZZONTE D_k.")
-print("     L'asimmetria accr/evap trascendente (log-orizzonte) E' il dilog D_k gia' derivato.")
+print("\n=== structure of the asymmetry B = B_bulk + B_hor ===")
+print(f"  B_bulk (second kind, r-r0)         = {B_bulk:+.8f}")
+print(f"  B_hor  (horizon log -> dilog D_k)  = {B_hor:+.8f}")
+print(f"  sum = {B_bulk+B_hor:+.8f}   direct B = {B:+.8f}   diff={abs(B_bulk+B_hor-B):.1e}")
+# B_hor by parts: 2m[ A_m ln(r-2m) ]_{r0}^{xf} - 2m int A_m/(r-2m) dr,  int A_m/(r-2m) = sum c_k D_k
+print("  => B_hor = 2m[A_m ln(r-2m)] - 2m*int A_m/(r-2m);  int A_m/(r-2m) = HORIZON dilogarithm D_k.")
+print("     The transcendental accr/evap asymmetry (horizon log) IS the dilogarithm D_k derived above.")

@@ -66,14 +66,14 @@ NUM = (r"(?>[-+]?(?:\d+\.?\d*(?:[eE][-+]?\d+)?|nan|inf(?:inity)?))"
 #   keyword -- and that is exactly why a single generic rule was unsafe.
 CHECKS = [
     ("KerrScripts/pipeline_completa_deltaphi.py",
-     "residual", rf"differenza\s*=\s*({NUM})", 1e-12,
+     "residual", rf"difference\s*=\s*({NUM})", 1e-12,
      "end-to-end (M,a,E,J)->delta phi", 1),
-    # Two field names in this script's output, and a prose line "se diff~1e-12"
+    # Two field names in this script's output, and a prose line "if diff~1e-12"
     # that the old loose pattern parsed as a fifth residual -- a sample invented
     # from a comment.  The alternation must put the longer name first, and "~"
     # is not "=", so the prose no longer matches.
     ("KerrScripts/kerr_psi_explicit_verified.py",
-     "residual", rf"(?:differenza|diff)\s*=\s*({NUM})", 1e-11,
+     "residual", rf"(?:difference|diff)\s*=\s*({NUM})", 1e-11,
      "TK tau reduction psi", 5),
     ("KerrScripts/kerr_tbranch_psi_assembly.py",
      "residual", rf"diff\s*=\s*({NUM})", 1e-10,
@@ -84,7 +84,7 @@ CHECKS = [
      "residual", rf"diff\s*=\s*({NUM})", 1e-11,
      "Vaidya clock v + assembled delta phi", 1),
     ("NonStationaryMetrics/VaidyaMetric/vaidya_tau_assembly.py",
-     "residual", rf"differenza\s*=\s*({NUM})", 1e-12,
+     "residual", rf"difference\s*=\s*({NUM})", 1e-12,
      "Vaidya tau-branch assembly", 1),
     ("NonStationaryMetrics/VaidyaMetric/vaidya_horizon_dilog.py",
      "residual", rf"^\s*\d+\s*:.*\s({NUM})\s*$", 1e-10,
@@ -154,7 +154,7 @@ def run_one(rel, kind, pattern, bound, label, timeout, nexp=None):
         return "NOVALUE", f"no '{pattern}' line in output", dt
     # A matching line carrying no number is NOT an error: the per-script
     # patterns are deliberately loose, and prose trips them -- "Kerr" contains
-    # "err", "DIFFERENZA" contains "diff", "residuo" contains "resid".  Failing
+    # "err", "DIFFERENCE" contains "diff", "residual" contains "resid".  Failing
     # on that flagged three healthy scripts.  What guards against a dropped
     # sample is instead that nan/inf are now parsed rather than skipped, plus
     # the expected-count test below.
