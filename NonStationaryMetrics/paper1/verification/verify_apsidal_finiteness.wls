@@ -1,4 +1,10 @@
 #!/usr/bin/env wolframscript
+(* Finiteness of the apsidal angle, Vaidya/Schwarzschild tau branch (Paper I).
+   C(r) = r^3 - 2m r^2 - J^2 (b r + 2m), b = Ehat^2 - 1.  Eliminating J^2 between C = 0 and C' = 0 gives the
+   locus (Ehat^2-1) r^2 - m(Ehat^2-4) r - 4m^2 = 0, whose positive root lies in (0, 4m/3), where J^2 < 0.
+   Hence for every physical J the turning point is a SIMPLE root of C and the apsidal integral converges
+   (the same fact that puts the genus degeneration at r_d < 0 in appendix B).
+   Run: wolframscript -file verify_apsidal_finiteness.wls *)
 ok[l_, v_] := Print[If[PossibleZeroQ[Simplify[v]], "  [OK]   ", "  [FAIL] "], l,
    "  ->  ", Simplify[v]];
 b = Eh^2 - 1;

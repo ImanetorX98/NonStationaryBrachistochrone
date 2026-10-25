@@ -1,4 +1,9 @@
 #!/usr/bin/env wolframscript
+(* Chord bound for the turning function J(r) = r^2 (r - 2m)/D_E, D_E = b r + 2m, b = Ehat^2 - 1 > 0 (Paper I).
+   Checks J'(r) D_E^2 = 2r (b r (r - m) + m (3r - 4m)) > 0 for r > 2m, and the pointwise comparison
+   [b r (r - m) + m (3r - 4m)]^2 > (b r + 2m)^2 r (r - 2m) on the whole domain r > 2m > 0, b > 0
+   (polynomial in s = r - 2m with nonnegative coefficients, then Resolve); equality at m = 0, the flat chord.
+   Run: wolframscript -file verify_chord_bound.wls *)
 ok[l_, v_] := Print[If[PossibleZeroQ[Simplify[v]], "  [OK]   ", "  [FAIL] "], l,
    "  ->  ", Simplify[v]];
 DE = b r + 2 m;                       (* b = Ehat^2 - 1 > 0 *)

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Physical TK-tau separatrix from the GENUINE branch quartic Q2 (kerr/wrap_assembly.py),
+# Physical TK-tau separatrix from the GENUINE branch quartic Q2 (kerr/wrap_assembly.py, not distributed),
 # not the simplified r*Delta-J^2*DE. Determine Jc, r_d and whether r_d is ON the
 # physical integration path [turning, r0] -> decides if off-shell wrap has an on-path
 # power divergence (open counterterm) or an off-path branch pole (closed like on-shell).

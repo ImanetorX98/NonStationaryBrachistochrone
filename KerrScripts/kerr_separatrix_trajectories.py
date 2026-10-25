@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-FINAL TEST of the closed form R12a: three trajectories of the separatrix
+FINAL TEST of the closed form of the separatrix (Paper II, eq. sep-phi; R12a in
+ThakurtaMetric/ThakurtaResults.md): three trajectories of the separatrix
 J = J_c = a/E (equatorial Kerr, tau branch), same initial conditions,
 evolved down into the ergosphere:
 

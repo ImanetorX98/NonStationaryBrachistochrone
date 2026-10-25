@@ -23,10 +23,10 @@ r-parametrised form, p_v(r1) = 0, which fixes r'(v1) = 1/v'(r1).
 Checks / study:
   V1  EL equation in the parameter v: explicit r''; forcing dF/dv = (dF/dm) m'
   V2  cross-check with the r parametrisation: the same (v, Delta_phi, T_tau) at the passage
-      r = 3.5 for Schwarzschild and Vaidya mu=0.01 (table VaidyaResults R4)
+      r = 3.5 for Schwarzschild and Vaidya mu=0.01 (VaidyaMetric/VaidyaResults.md, R4, in Italian)
   V3  bounce: integration through the periapsis; static: r_min
       coincides with the exact root of  r^2 f - J^2 (E^2 - f) = 0
-      (doranTau trichotomy with a=0); Vaidya: periapsis ~ where the r parametrisation
+      (the tau-branch turning condition at a=0); Vaidya: periapsis ~ where the r parametrisation
       broke down (r ~ 3.0105)
   V4  timing scan: r_min as a function of the arrival instant v1 for
       mu = +0.01 (accreting), 0 (static), -0.01 (evaporating):

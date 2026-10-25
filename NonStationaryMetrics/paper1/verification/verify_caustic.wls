@@ -1,4 +1,10 @@
 #!/usr/bin/env wolframscript
+(* Interior maximum of the half-angle map Phi(J), Vaidya/Schwarzschild tau branch (Paper I).
+   Checks the turning condition J^2 = r_t^2 (r_t - 2m)/D_E(r_t) and the exact division C(r) = (r - r_t) Q(r);
+   that r = r_t + u^2 removes the endpoint singularity (P(0) finite and nonzero); and the two endpoint limits
+   Phi -> 0 as r_t -> 2m (J -> 0, radial plunge) and as r_t -> R.  Phi is then positive inside and vanishes at
+   both ends, so Phi'(J) = 0 has a solution.
+   Run: wolframscript -file verify_caustic.wls *)
 ok[l_, v_] := Print[If[PossibleZeroQ[Simplify[v]], "  [OK]   ", "  [FAIL] "], l,
    "  ->  ", Simplify[v]];
 b = Eh^2 - 1; DE = b r + 2 m;

@@ -281,7 +281,8 @@ The `W_ij` closure pipeline for TK-τ (archetype), brick by brick:
 | `crosscheck_sep_bi.wl`, `crosscheck_tkt_bi.wl` | Separatrix b_i (Vaidya τ, TK τ, TK t±) via independent Laurent extraction (1e-16…1e-38). |
 | `crosscheck_clock_res.wl` | Clock residues (v: 4M via native Weierstrass; t: formula). |
 | `crosscheck_tracking.wl` | Tracking theorem: N_tot(r_d)=0 mod {S,S'} (triple pole cancelled). |
-| `crosscheck_identities.wl`, `crosscheck_tk_numeric.wl`, `crosscheck_vt_numeric.wl`, `crosscheck_tkt_flat.wl` | Separatrix identities and v/t numeric (found+fixed the original t-branch bug). |
+| `crosscheck_identities.wl`, `crosscheck_tk_numeric.wl` | Separatrix identities; TK τ separatrix numeric. |
+| `crosscheck_vt_numeric.wl` | Vaidya v numeric (the check). Its TK-t block, and `crosscheck_tkt_flat.wl`, are historical diagnostics that do **not** validate the t branch (see their headers); for the t branch use `crosscheck_generic.wl` and `crosscheck_tkt_bi.wl`. |
 
 Run any of them: `wolframscript -file paper/crosscheck_<name>.wl`.
 

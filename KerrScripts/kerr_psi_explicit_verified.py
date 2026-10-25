@@ -1,4 +1,18 @@
-# METHODOLOGICAL FIX: reduction of dE F, with a numerical check at EVERY step.
+"""Energy reduction and drift-clock assembly of psi for the Thakurta-Kerr tau branch, checked at every step.
+
+M = 1, a = 9/10, J = 5/2, E symbolic (numerical steps at E = 7/5).  The four steps print:
+  1. dE F = N/S^(3/2) with N = E J r^4 (r-2M)^2 DE (Paper II, the tau-branch numerator
+     N_E in sec. adiabatic): exact, must print 0;
+  2. the second-kind reduction 2N = 2S A' - A S' + 2S sum c_k r^k, solved for the
+     polynomial A and the coefficients c_k (no fit);
+  3. a numerical check of the reduction at sample radii (differences ~1e-12 or below);
+  4. the decomposition of rho - rho~ with the DRIFT clock eta of the tau orbit (Paper II,
+     eq. clock-eta-tau): second-kind part Q_kj W_kj plus algebraic terms plus the horizon
+     part, against the direct double integral ("difference =", read by run_regression.py).
+The script was written to replace an earlier reduction checked only at the end
+(hence the step-by-step checks).  An identical copy lives in
+NonStationaryMetrics/KerrSessionScripts/ and KerrScripts/.
+"""
 import sympy as sp
 import numpy as np
 from scipy.integrate import quad

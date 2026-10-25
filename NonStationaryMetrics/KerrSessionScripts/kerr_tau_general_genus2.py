@@ -23,8 +23,14 @@ kerr_jpt_genus2_kleinian.py (not distributed) for the same machinery applied to 
 Reduction to |J|=J_c=a/E: f^2 makes r_e=2M a DOUBLE root; the factor (r-2M) of K_tau
 cancels one of them -> √Q4 (quartic) = GENUS 1 (Weierstrass) = separatrix.
 
-Validation here: decomposition vs direct integration ~1e-15; reduction to J_c
-vs the separatrix eq.59 ~1e-14.
+Validation here: the decomposition against direct integration of dphi/dr on
+r in [2.05, 6], at J = k J_c for k = -1.5, -1.01, -0.9, -0.5, 0.5, 1.2.  Where the
+turning radius lies below 2.05 (k = -1.01, -0.9, -0.5, 0.5) the two agree to ~1e-15.
+For k = -1.5 and 1.2 the turning radius (about 2.35 and 2.14) lies inside the
+interval, which then enters the forbidden region, so the comparison prints nan.  The reduction to
+|J| = J_c described above is not checked here; the separatrix closed form
+(Paper II, eq. sep-phi) is checked by KerrScripts/kerr_separatrix_validation.py
+and KerrScripts/kerr_separatrix_trajectories.py.
 """
 import numpy as np
 import sympy as sp

@@ -3,12 +3,14 @@
 Atlas of the brachistochrones at the ergosphere: small multiples, 5 panels per
 branch, one for each regime relative to the critical values.
 
-tau branch (critical values +-J_c, J_c=a/E):
-  J>+J_c  smooth bounce | J=+J_c penetrates | -J_c<J<+J_c cusp bounce |
-  J=-J_c cusp (retro) | J<-J_c smooth bounce
+tau branch (critical values +-J_c, J_c=a/E; Paper II, Proposition prop:classification):
+  J>+J_c  smooth bounce | J=+J_c crosses r_e | 0<|J|<J_c cusp at r_e (panel: J=0.3) |
+  J=-J_c asymptotic endpoint, r_e not attained | J<-J_c smooth bounce
+  (J=0 is radial: no cusp.)
 t branch (critical values J_c^-, J_c^+ = -8.05, 3.43):
   J>J_c^+ smooth bounce | J=J_c^+ tangent | J_c^-<J<J_c^+ penetrates |
-  J=J_c^- spirals onto r_* | J<J_c^- smooth bounce
+  J=0.99 J_c^- captured, down to r_+ (at J=J_c^- itself the orbit spirals onto
+  r_*=3.514) | J<J_c^- smooth bounce
 """
 import os
 import sys

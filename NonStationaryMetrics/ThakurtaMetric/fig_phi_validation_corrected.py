@@ -2,7 +2,7 @@
 """
 Validation figure for the adiabatic correction against the TRUE canonical flow.
  Left  : true non-autonomous optical-metric geodesic vs frozen + on-shell coefficient AND vs
-         frozen + the exact Eq.(40) correction (t-branch).
+         frozen + the exact correction of eq. (adiab-exact) of Paper II (t-branch).
  Right : residual vs A'/A for BOTH branches (t and tau) and a SECOND (a,E,J) parameter set.
 
 The true flow integrates the PHYSICAL canonical dynamics: in the normalized momentum
@@ -27,13 +27,13 @@ set_style(); HERE=os.path.dirname(os.path.abspath(__file__))
 rr,pr,Ess,Jss=sp.symbols('r pr E J_')
 
 def H_eta(M,a):
-    """conformal/optical (t-family) frozen Hamiltonian H_eta (paper Eq.(29))."""
+    """conformal/optical (t-family) frozen Hamiltonian H_eta (Paper II, eq. Heta)."""
     f=1-2*M/rr; Dl=rr**2-2*M*rr+a**2; b=2*M*a/rr; v=1-f/Ess**2
     P=rr**2+a**2+2*M*a**2/rr; Pb=P+b**2/Ess**2
     return Jss*b*v/Pb+sp.sqrt(Dl*v/Pb)*sp.sqrt((Dl/rr**2)*pr**2+Jss**2/Pb)-1
 
 def H_tau(M,a):
-    """proper-time (tau) frozen Hamiltonian H_tau (paper Eq.(34), A0=1); shape verified
+    """proper-time (tau) frozen Hamiltonian H_tau (Paper II, eq. Htau-tk, A0=1); shape verified
     against the Boyer-Lindquist F_tau to machine precision (see module docstring)."""
     f=1-2*M/rr; Dl=rr**2-2*M*rr+a**2; b=2*M*a/rr; v=1-f/Ess**2
     P=rr**2+a**2+2*M*a**2/rr; pt=Jss-b/Ess; Pb=P+b**2/Ess**2

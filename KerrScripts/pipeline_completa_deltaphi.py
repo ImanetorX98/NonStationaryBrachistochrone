@@ -1,5 +1,9 @@
-# COMPLETE COMPUTATIONAL CHAIN: from (M,a,E,J) to the number delta phi (Thakurta-Kerr, tau branch).
-# Shows EVERY piece: 11x11 solve -> c_k -> clock b -> Q_kj -> U_k,W_kj,I_j -> assembly.
+# COMPLETE COMPUTATIONAL CHAIN: from (M,a,E,J) to the number delta phi (Thakurta-Kerr, tau branch),
+# the closed form of Paper II, eq. psi-split, at M=1, a=9/10, E=6/5, J=5/2.
+# Shows EVERY piece: the 11x11 linear solve of the reduction -> coefficients c_k -> drift-clock
+# vector b (eq. clock-eta-tau) -> Q_kj = c_k b_j - c_j b_k -> the building blocks U_k (second
+# kind), W_kj (genus-2 polylogarithms), I_j -> assembly, compared with the direct double integral
+# ("difference =", read by run_regression.py).
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -19,7 +23,7 @@ print("  S = r(r-2M)DE[r*Delta - J^2 DE]   (degree", sp.degree(sp.Poly(S,r)),"->
 print("  K = J r(r-2M)DE/Delta")
 
 print("="*70)
-print("STEP 2 -- reduction: dE F = N/S^{3/2}, N polynomial (Lemma 1, exact algebra)")
+print("STEP 2 -- reduction: dE F = N/S^{3/2}, N polynomial (exact algebra)")
 N=sp.simplify(sp.diff(K/sp.sqrt(S),E)*S**sp.Rational(3,2))
 print("  N = E J r^4 (r-2M)^2 DE ?  ->", sp.simplify(N-E*J*r**4*(r-2*M)**2*DE)==0)
 

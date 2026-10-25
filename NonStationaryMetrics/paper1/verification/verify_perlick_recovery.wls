@@ -1,4 +1,10 @@
 #!/usr/bin/env wolframscript
+(* Stationary limit, Paper I (section 2.3, eq. perlick-randers): 6 checks on a generic stationary metric.
+   F_rail = beta.nu + sqrt(a.nu.nu) solves the squared rail condition (rational part and coefficient of the
+   radical vanish separately) and is its future-directed root; beta_a = omega_a in threading form;
+   g_ta g_tb + f g_ab = f h_ab; a_ab = Ehat^2 h_ab/(f(Ehat^2 - f)) is Perlick's fixed-energy optical metric;
+   Ehat -> infinity gives h_ab/f (Fermat-Randers).
+   Run: wolframscript -file verify_perlick_recovery.wls *)
 ok[l_, v_] := Print[If[PossibleZeroQ[Simplify[v]], "  [OK]   ", "  [FAIL] "], l,
    "  ->  ", Simplify[v]];
 n = 2;

@@ -1,3 +1,10 @@
+"""Frozen FLRW slice as a static Perlick metric: numerical check of the rail cost against Perlick's optical metric.
+
+On g = a0^2 diag(-1, 1, 1) (constant a0) the rail cost F_rail, obtained by solving the rail and mass-shell
+conditions for the time increment, is compared with Perlick's isotropic optical norm sqrt(a_ab v^a v^b),
+a_ab = E^2 h_ab/(f(E^2 - f)), beta = 0, for a few (a0, v, E); the index is n = E/sqrt(E^2 - a0^2).
+Exploratory check of the stationary limit used in Paper I.
+"""
 import numpy as np
 # FLRW frozen slice: g = a0^2 diag(-1, 1, 1) in (eta, x, y). Static conformally-flat (constant a0).
 # Perlick: f=-g_tt=a0^2, g_ta=0 => beta=0; h_ab=g_ab=a0^2 delta; a_ab=E^2 h_ab/(f(E^2-f))=E^2 delta/(E^2-a0^2).
@@ -21,5 +28,5 @@ for a0,vx,vy,E in itertools.product([0.8,1.2],[1.0,-0.5],[0.3],[1.4,2.0]):
     if E<=a0: continue
     Fr=F_rail(a0,vx,vy,E); Fp=F_perlick(a0,vx,vy,E); n=E/np.sqrt(E**2-a0**2)
     print(f"{a0:4.1f} {vx:5.1f} {vy:5.1f} {E:4.1f} {Fr:11.6f} {Fp:11.6f} {abs(Fr-Fp):9.1e} {n:18.6f}")
-print("\n=> FLRW frozen = static Perlick ISOTROPO (beta=0, pura Riemanniana), indice n=E/sqrt(E^2-a0^2).")
-print("   FLRW pieno (a=a(eta)) = generalizzazione CONFORME (Fermat con indice tempo-dipendente), livello (b).")
+print("\n=> frozen FLRW = ISOTROPIC static Perlick metric (beta=0, purely Riemannian), index n=E/sqrt(E^2-a0^2).")
+print("   full FLRW (a=a(eta)) = CONFORMAL generalisation (Fermat with a time-dependent index), level (b).")

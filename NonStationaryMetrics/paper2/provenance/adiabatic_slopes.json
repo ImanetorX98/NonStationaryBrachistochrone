@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-25T15:43:21+00:00",
+  "generated_utc": "2026-10-25T23:36:18+00:00",
   "epsilon_window": [
     0.001,
     0.002,
@@ -126,17 +126,17 @@
     ]
   },
   "hashes": {
-    "NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py": "0a891a0f556c",
+    "NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py": "f2cd6f0fa844",
     "NonStationaryMetrics/ThakurtaMetric/adiabatic_first_order_exact.py": "a2b60bfae72f",
     "NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py": "907e1bbf4c60",
     "NonStationaryMetrics/ThakurtaMetric/adiabatic_convergence_raw.npz": "c7e8d2209a1b"
   },
   "environment": {
-    "validation_seconds": 13.4,
-    "exact_seconds": 8.7,
+    "validation_seconds": 13.7,
+    "exact_seconds": 8.6,
     "note": "wall-clock timings; excluded from content_sha256"
   },
-  "content_sha256": "07ec0658e1d17cd7b674ac243d65269d7c3cee7fdba7302c0258cb0a01184c41",
+  "content_sha256": "1f20a6502eae6ef255d112a4fb68792db3bc9ef642fbef612c06e4002bf0e5ca",
   "subwindow": {
     "available": true,
     "configs": [

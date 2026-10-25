@@ -366,13 +366,13 @@ MANIFEST: list[tuple[str, str, str]] = [
      "python3 Experimental/run_all_codex.py",
      "NonStationaryMetrics/Experimental/run_all_codex.py"),
     # --- claims verified symbolically -------------------------------------
-    ("Prop. 3.1 (local classification at r_e), shape",
+    ("Prop. (classification): local classification at r_e, shape",
      "wolframscript -file verify_cusp_corner.wls",
      "NonStationaryMetrics/paper2/verification/verify_cusp_corner.wls"),
-    ("Prop. 3.1 (local classification at r_e), dynamics",
+    ("Prop. (classification): local classification at r_e, dynamics",
      "wolframscript -file verify_marginal_hamilton.wls",
      "NonStationaryMetrics/paper2/verification/verify_marginal_hamilton.wls"),
-    ("Prop. 3.2 (exterior retrograde separatrix), eq. (exterior-sep)",
+    ("Prop. (exterior-sep): exterior retrograde separatrix",
      "wolframscript -file verify_exterior_separatrix.wls",
      "NonStationaryMetrics/paper2/verification/verify_exterior_separatrix.wls"),
     # the tension field, rebuilt from the connections, plus a second route
@@ -419,11 +419,11 @@ MANIFEST: list[tuple[str, str, str]] = [
      "NonStationaryMetrics/paper2/provenance/collect_figures.py"),
     # independent re-derivation of the headline claims of both papers, built from
     # the printed definitions rather than from the .wls scripts it cross-checks
-    ("Props. 3.1-3.2, sec. 2.2, Paper I Vaidya: independent re-derivation",
+    ("Props. (classification), (exterior-sep), sec. (randers-reduction), Paper I Vaidya: independent re-derivation",
      "python3 verify_independent_rederivation.py",
      "NonStationaryMetrics/paper2/verification/verify_independent_rederivation.py"),
     # --- adiabatic validation ---------------------------------------------
-    ("Fig. (phi-true-dynamic) and Table A3 slopes",
+    ("Fig. (phi-true-dynamic) and Table (adiab-valid) slopes",
      "python3 make_provenance.py",
      "NonStationaryMetrics/paper2/provenance/make_provenance.py"),
     ("true-dynamics validation run",

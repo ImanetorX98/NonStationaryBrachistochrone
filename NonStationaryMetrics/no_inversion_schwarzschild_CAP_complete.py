@@ -1,3 +1,12 @@
+"""Complete computer-assisted cover for one r0 (frozen Schwarzschild, E = 1.4, b = 0.96, M = 1).
+
+    python3 no_inversion_schwarzschild_CAP_complete.py [r0] [rmin_a] [rmin_b]     (defaults 10, 2.6, r0)
+
+Covers r_min in [rmin_a, rmin_b] with adaptive cells and certifies on each, with cap_full.PhiP_PhiPP, the
+single-crossing condition: 0 is not in the enclosure of Phi', or the enclosure of Phi'' is negative.  Prints
+the cover statistics and RESULT.  The certificate is for the configuration and the window given, not for all
+energies; the grid of no_inversion_schwarzschild_CAP_grid.py is the runner cited by the paper.
+"""
 import cap_full as cf
 from mpmath import iv
 import mpmath as mp

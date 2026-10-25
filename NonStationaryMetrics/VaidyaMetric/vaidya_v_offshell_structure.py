@@ -1,3 +1,10 @@
+"""Structure of the off-shell term of the Vaidya v branch (m = 1, E = 1.4, J = 2.5, r0 = 12).
+
+Checks numerically, at sample radii: (i) the kernel equals A_kern/sqrt(S_v), A_kern = E^2 J D_E r^4/Q2v (pure
+second kind); (ii) the inner source m H_m/H_pr splits into an elementary part plus a second-kind part; (iii) the
+wrapped integral -int kernel * Sigma dr equals block1 (second x second kind, genus 2) plus block2 (second kind x
+elementary, log x Abelian), printed with the share of block2.  Exploratory.
+"""
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq

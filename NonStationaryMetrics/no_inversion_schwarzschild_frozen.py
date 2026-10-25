@@ -1,3 +1,12 @@
+"""Frozen-case reduction of the tau half-angle map Phi(r_min) (Vaidya mu = 0 / Thakurta a = 0), M = 1.
+
+Compares two quadratures of Phi_tau with the endpoint fixed at r0 = 10 M, for E in {1.2, 1.4, 2.0}: the direct
+angle integral in r (Phi_direct) and the form in the potential variable V (Phi_clean),
+    Phi = sqrt(V_min) int_[V_min, V0] W(V)/sqrt(V - V_min) dV = 2 sqrt(V_min) int_[0, sqrt(V0 - V_min)] W(V_min + s^2) ds,
+with W = K/V'; it prints both and their difference.  The comment block at the end records the closed
+reduction, the monotonicity criterion (STAR) and what it does and does not settle; the scripts it cites for
+those numerics (schw_ineq.py, check_grazing.py) are not distributed.
+"""
 import numpy as np
 from scipy.integrate import quad
 M=1.0

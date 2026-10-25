@@ -1,3 +1,17 @@
+"""Computer-assisted certificates over a grid of static configurations (frozen Schwarzschild, fixed-endpoint
+no-inversion), with the joint to the elementary grazing bound closed in interval arithmetic.
+
+Grid: E in {1.2, 1.6, 2.5} x r0 in {8, 12} M, plus (E, r0) = (1.4, 10) at b = 0.96; M = 1.  For each entry:
+  - interval certificates (cap_full.py, as in no_inversion_schwarzschild_CAP_r0_10.py) of the single-crossing
+    condition on r_min in [2.6, r_half], with r_half the half-potential radius, V(r_half) = V(r0)/2;
+  - above r_half the elementary grazing bound applies (no_inversion_schwarzschild_closedform.py);
+  - weld() closes the joint: it certifies the bridge cell [r_half, r_half + 1e-10] and encloses
+    V(r_half + 1e-10) - V(r0)/2, which must be strictly positive.
+Prints PASS/FAIL per entry and the weld result, writes cap_grid.log to $NSM_OUTDIR (default: the system
+temporary directory), and exits 1 if any entry or weld fails.  About 90 minutes on one core.
+
+Run: python3 no_inversion_schwarzschild_CAP_grid.py
+"""
 import mpmath as mp
 mp.iv.dps=18; mp.mp.dps=18
 import cap_full as cf

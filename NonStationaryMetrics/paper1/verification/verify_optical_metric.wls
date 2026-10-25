@@ -1,4 +1,9 @@
 #!/usr/bin/env wolframscript
+(* Time-dependent optical metric, Paper I (section 2.3, Theorem I.C): 3 checks, threading data f, omega, h free.
+   beta_a = omega_a and a_ab = Ehat^2 h_ab/(f(Ehat^2 - f)); a_ab > 0 iff Ehat > |W| (hypothesis H2);
+   ||beta||_a^2 = [f(Ehat^2 - f)/Ehat^2] |omega|_h^2, increasing in Ehat with limit f |omega|_h^2: the rail
+   Randers condition is implied by the null Fermat-Randers one at every rail energy.
+   Run: wolframscript -file verify_optical_metric.wls *)
 ok[l_, v_] := Print[If[PossibleZeroQ[Simplify[v]], "  [OK]   ", "  [FAIL] "], l,
    "  ->  ", Simplify[v]];
 n = 2;

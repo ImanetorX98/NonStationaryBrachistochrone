@@ -16,7 +16,7 @@ LAW (LOCAL turning condition, p_r = 0, at the periapsis event):
   with f_* = 1 - 2 m(v_peri)/r_min.
 The form does NOT contain m': m' governs only v_peri (the timing), not
 the local algebra. => m' -> 0 (f_* -> 1 - 2 m0/r) recovers Schwarzschild
-exactly (R13); continuous, with no discontinuity.
+exactly (R13 in VaidyaMetric/VaidyaResults.md); continuous, with no discontinuity.
 
 Check: integrates both branches for mu < 0, 0, > 0; extracts (r_min,
 v_peri); checks whether the local law holds at m(v_peri); compares with

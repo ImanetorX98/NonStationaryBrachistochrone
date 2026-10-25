@@ -1,3 +1,11 @@
+"""Which parameters drift along a GEODESIC of Thakurta-Kerr with A = exp(eps t)?  Equatorial, M = 1, a = 0.9.
+
+Integrates the geodesic Hamiltonian flow of g = A^2 g_Kerr (E0 = 1.4, J = 6, r0 = 12, ingoing), with sanity
+checks at eps = 0 (H = -1/2, E = -p_t constant) and the rate dE/ds = A'/A at eps = 0.01.  It then prints the
+ranges, on r in [8, 11], of E_eff = E_BL/A, J_eff = J/A, E_BL and A, and tests whether dphi/dr is the frozen
+Kerr shape F(r; E_eff, J_eff) along the geodesic: which frozen parameters the adiabatic correction must
+differentiate.  Exploratory; the rail (not geodesic) problem is treated in adiabatic_first_order_exact.py.
+"""
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid as ct
 from scipy.interpolate import interp1d

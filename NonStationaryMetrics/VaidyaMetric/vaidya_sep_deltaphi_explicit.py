@@ -1,6 +1,7 @@
-# MICROSTEP FINALE (numerico robusto): delta phi_tau|_sep ESPLICITO via riduzione POLE-ADAPTED.
+# FINAL MICROSTEP (robust numerics): EXPLICIT delta phi_tau|_sep through a POLE-ADAPTED reduction.
 # G = P(r)/((r-r_d)^2 sqrtQ) + sum c_k U_k,   sqrtS=(r-r_d)sqrtQ,  Q = S/((r-r_d)^2) (deg4).
-# Identita' polinomiale: P'(r-r_d)Q - P(2Q + (1/2)(r-r_d)Q') + (sum c_k r^k)(r-r_d)^2 Q = N_m.
+# Polynomial identity: P'(r-r_d)Q - P(2Q + (1/2)(r-r_d)Q') + (sum c_k r^k)(r-r_d)^2 Q = N_m.
+# (Exploratory script; the remaining comments are in Italian.)
 import numpy as np, mpmath as mp, sympy as sp
 from scipy.integrate import quad
 from scipy.optimize import brentq

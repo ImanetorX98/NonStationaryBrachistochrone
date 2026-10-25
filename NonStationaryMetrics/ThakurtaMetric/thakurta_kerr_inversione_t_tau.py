@@ -11,7 +11,7 @@
 ## 20/10/2026: usa H_eta (costo -1), cioe' confronta eta e tau a           ##
 ## J_eta = J_tau. Con il protocollo dichiarato nel paper (H_t, costo -A,   ##
 ## J_t = J_tau) non c'e' inversione nel settore progrado (Paper II, Prop.  ##
-## prop:same-launch; verification/verify_same_launch_ordering.wls).        ##
+## prop:same-launch; paper2/verification/verify_same_launch_ordering.wls).        ##
 ## L'«inversione conforme» e' un effetto della normalizzazione del costate.##
 ############################################################################
 

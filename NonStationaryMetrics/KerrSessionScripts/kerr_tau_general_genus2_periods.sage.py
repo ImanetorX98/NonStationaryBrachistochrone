@@ -1,3 +1,15 @@
+"""Riemann period matrix of the generic tau-branch curve y^2 = sextic (Paper II, genus-2 tau branch).
+
+M = 1, a = 9/10, E = 6/5, J = -0.9 J_c = -27/40 (J_c = a/E); sextic = r (r-2M)((E^2-1)r+2M)(r Delta - J^2((E^2-1)r+2M)),
+the curve of kerr_tau_general_genus2.py.  Prints the six branch points, the integral model, the genus and the Riemann
+matrix tau computed by SageMath's RiemannSurface (40 bits), and checks the two Riemann relations: tau = tau^T and
+Im(tau) positive definite.  The eigenvalues of Im(tau) depend on the homology basis RiemannSurface chooses and are
+printed for the record only.  The t-branch companion is KerrScripts/kerr_tbranch_genus2_periods.sage.py.
+
+Run with the Python of the Sage environment (conda's `sage` has no `-python` option; see
+NonStationaryMetrics/sage_env/SAGE_SETUP.md), e.g. via NonStationaryMetrics/sage_env/run_sage_checks.py, or
+    <env>/bin/python kerr_tau_general_genus2_periods.sage.py
+"""
 import time
 t0=time.time()
 from sage.all import QQ, ZZ, PolynomialRing, lcm, expand

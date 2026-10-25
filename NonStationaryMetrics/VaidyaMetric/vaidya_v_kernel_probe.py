@@ -1,3 +1,9 @@
+"""Exploratory probe, Vaidya v branch (m = 1, E = 1.4, J = 2.5): is the off-shell kernel a pure second-kind form?
+
+On the shell of H_v at r = 10, 8, 6, 5 it evaluates A(r) = kernel * sqrt(S_v), kernel = d_pr(H_J/H_pr)/H_pr, and
+prints candidate rational ratios (A Q2v/D_E, A Q2v/(E^2 D_E), divided by r^2 and r^3).  A rational A(r) would
+make the kernel pure second kind; vaidya_v_offshell_structure.py uses the resulting form.
+"""
 import sympy as sp, numpy as np
 from scipy.optimize import brentq
 r,pr,m,E,J=sp.symbols('r p_r m E J',positive=True)

@@ -32,7 +32,7 @@ Checks:
   V1  quadric and elliptic form: exact sympy identities
   V2  s -> 0: they reduce to the Thakurta-Schwarzschild Hamiltonians
   V3  A = 1 (static Kerr): dphi_BL/dr from the flow H=0 vs the closed forms
-      doranTau/doranT:  K r sqrt(wf) / ( Dl sqrt(Dl - K^2 w) ),
+      of the tau and t branches (Paper II):  K r sqrt(wf) / ( Dl sqrt(Dl - K^2 w) ),
       K_tau = J,  K_t = (f J + 2Ms/r)/E   [w = E^2 - f]
   V4  breathing light surface: R^2 = 0.
       Outside the ergosphere (f>0): only vb = 0 (conformal freezing

@@ -5,8 +5,8 @@ conformal stationary limit r_e = 2M, as a function of the control costate J.
 
 REVISED.  The previous version painted
 the whole closed interval [-Jc, +Jc] as "cusp bounce", which is wrong at BOTH
-endpoints.  The correct tau-branch law has FOUR cases (Proposition 3.1 of the
-manuscript), established in
+endpoints.  The correct tau-branch law has FOUR cases (Proposition
+prop:classification of Paper II), established in
     NonStationaryMetrics/paper2/verification/verify_cusp_corner.wls
     NonStationaryMetrics/paper2/verification/verify_marginal_hamilton.wls
 

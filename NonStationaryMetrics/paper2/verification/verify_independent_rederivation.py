@@ -5,15 +5,16 @@ Every quantity is rebuilt from the DEFINITIONS
 printed in the manuscript, not read back from the existing .wls scripts, so that
 agreement is evidence and not tautology.
 
-Definitions used (paper2.tex):
-    f      = 1 - 2M/r                                        (sec. 2)
-    Delta  = r^2 - 2Mr + a^2                                 (l. 432, 1493)
-    DE     = (E^2-1) r + 2M                                  (l. 1615)
-    w      = Ehat^2 - A^2 f   -> DE/r at A=1                 (l. 1493)
-    S      = r (r-2M) DE [ r Delta - J^2 DE ]     tau-branch  (l. 1624)
-    R6     = r Q2 DE                              t-branch    (l. 1624)
-    Q2     from  (r-2M) Q2 + DE (J(r-2M)+2Ma)^2 = E^2 r^3 Delta   (l. 1588)
-    R_opt  eq. (optical-scalar)                              (l. ~1030)
+Definitions used (paper2.tex; locations by LaTeX label, which do not move when
+the text is edited):
+    f      = 1 - 2M/r                                        (sec:thakurta)
+    Delta  = r^2 - 2Mr + a^2                                 (sec:thakurta, with eq:tk-ind)
+    DE     = (E^2-1) r + 2M                                  (sec:adiabatic, sec:trichotomy)
+    w      = Ehat^2 - A^2 f   -> DE/r at A=1                 (sec:thakurta, sec:trichotomy)
+    S      = r (r-2M) DE [ r Delta - J^2 DE ]     tau-branch  (sec:adiabatic, table of curves)
+    R6     = r Q2 DE                              t-branch    (sec:adiabatic, table of curves)
+    Q2     from  (r-2M) Q2 + DE (J(r-2M)+2Ma)^2 = E^2 r^3 Delta   (sec:adiabatic, after eq:clock-t)
+    R_opt  eq. (optical-scalar)                              (sec:submersion)
 
 Run:  python3 verify_independent_rederivation.py
 Exit code 0 iff every check passes.

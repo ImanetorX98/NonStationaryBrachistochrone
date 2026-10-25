@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 phi(r) in closed form for the SEPARATRIX J = J_c = a/E of the
-equatorial tau brachistochrone of Kerr (the penetrating orbit, doranTau).
+equatorial tau brachistochrone of Kerr (the penetrating orbit).
 
-From the doranTau factorisation  Dl - J_c^2 w = f (r^2 + c^2),  c = a/E:
+From the factorisation  Dl - J_c^2 w = f (r^2 + c^2),  c = a/E
+(equivalent to Paper II, eq. marginal-factor):
 
     dphi/dr = (a/E) sqrt(Q4(r)) / ( Dl(r) P2(r) )
     Q4(r) = r (2M + (E^2-1) r) (r^2 + c^2)      [QUARTIC => elliptic]

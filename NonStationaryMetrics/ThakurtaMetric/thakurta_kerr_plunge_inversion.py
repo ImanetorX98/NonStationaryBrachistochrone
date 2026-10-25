@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Inversion of the tau branch and trichotomy at the ergosphere in Thakurta-Kerr.
+Inversion of the tau branch and the four-case classification at the ergosphere in Thakurta-Kerr.
 
-NOTE: the trichotomy classifies the behaviour at the ERGOSPHERE r_e = 2M
-(light surface): J>J_c smooth periapsis; J<J_c cusp on r_e;
-J=J_c crosses and spirals onto r_+ (capture, measure zero).
+NOTE: the behaviour at the ERGOSPHERE r_e = 2M (conformal stationary limit) has
+FOUR cases (Paper II, Proposition prop:classification): |J|>J_c smooth periapsis
+outside r_e; 0<|J|<J_c cusp on r_e; J=+J_c crosses r_e and plunges to r_+
+(capture, measure zero); J=-J_c reaches r_e only asymptotically.  This script uses
+the periapsis formula (*) and the crossing line (**); the cusp and the two marginal
+cases are treated in cuspide_ergosfera.py.
 
 ANALYTIC FORMULA (derivation): with constant A, g = A^2 g_Kerr is rescaled
 Kerr: the rail worldline with Ehat = -u_eta is equivalent to the Kerr
@@ -14,7 +17,7 @@ problem with  E_eff = Ehat/A  and Fermat momentum  J_eff = J/A
 
     g(r) = Dl(r) - (J/A)^2 [ (Ehat/A)^2 - f(r) ]        (*)
 
-and the critical crossing line (doranTau trichotomy, J_c = s/E):
+and the critical crossing line (J_c = s/E, s the spin):
 
     J_c(A) = s A^2 / Ehat                                (**)
 

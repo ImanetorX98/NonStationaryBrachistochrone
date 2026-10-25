@@ -1,4 +1,9 @@
 #!/usr/bin/env wolframscript
+(* Conjugate points, Paper I (section 4.5, Theorem I.E and the remarks after it): 10 checks.
+   N_J = S d_J K - K d_J S/2 = r^3 (r-2m)^2 D_E^2; G = K/sqrt(S) has weight -1, so m d_m G + J d_J G = -(rG)';
+   hence m N_m + J N_J = (r K S' - 2 S (rK)')/2, a total derivative, and the two reductions are proportional:
+   c_k^J = -(m/J) c_k^m for all five k, and m A^m + J A^J = -rK.
+   Run: wolframscript -file verify_jacobi_conjugate.wls *)
 ok[l_, v_] := Print[If[PossibleZeroQ[Simplify[v]], "  [OK]   ", "  [FAIL] "], l,
    "  ->  ", Simplify[v]];
 DE = (Eh^2 - 1) r + 2 m;

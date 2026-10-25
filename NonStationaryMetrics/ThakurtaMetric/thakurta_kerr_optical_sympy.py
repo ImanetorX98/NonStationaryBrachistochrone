@@ -37,10 +37,10 @@ Checks:
   V1  deta = n alpha + beta satisfies the quadric of the indicatrix
       (exact sympy identity, future root)
   V2  beta and alpha coincide with the Randers data of the NULL Fermat principle of
-      Kerr (derived independently from ds^2 = 0)
+      Kerr (derived independently of them, from ds^2 = 0)
   V3  limits: s=0, A=1, Ehat->oo, and f->1 (FLRW)
   V4  numerical: dphi/dr from the EL equation of F = n alpha + beta (at fixed eta, plus
-      a non-autonomous term that vanishes for A=1) vs the closed form doranT
+      a non-autonomous term that vanishes for A=1) vs the closed t-branch form of Paper II
 """
 
 import numpy as np

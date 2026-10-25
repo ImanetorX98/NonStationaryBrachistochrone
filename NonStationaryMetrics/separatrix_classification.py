@@ -15,7 +15,7 @@ Distinction to keep in the paper:
   J_deg      : discriminant locus Res_r(curve, d_r curve)=0 (genus degeneration).
                r_d can be <0, complex or interior: the closed form (Weierstrass)
                stays valid, but it is NOT a physical separatrix.
-  J_cap(v0)  : dynamical penetration threshold (Sec. 4.2), a distinct PHYSICAL object.
+  J_cap(v0)  : dynamical penetration threshold, a distinct PHYSICAL object.
   J_c^phys   : double root in the control domain (r_d>2M) = physical separatrix
                (merger of two real turning points).
 

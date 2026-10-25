@@ -1,3 +1,19 @@
+"""Computer-assisted certificate (interval arithmetic) for the fixed-endpoint no-inversion statement in
+frozen Schwarzschild: r0 = 10 M, E = 1.4 (b = E^2 - 1 = 0.96), M = 1.
+
+With the interval library cap_full.py (mpmath, 18 digits, outward rounding) the window r_min in [2.6, 6.05] M
+is covered by adaptive cells.  On each cell the enclosures, taken in the potential variable V_min = V(r_min)
+(V increasing in r), certify the single-crossing condition of the tau half-angle map: either 0 is not in the
+enclosure of Phi' (sign certified, tag S) or the enclosure of Phi'' is negative (near the peak, tag M).
+Prints COMPLETE, or FAIL with the first cell that cannot be certified; the progress log goes to
+$NSM_OUTDIR/cap10_progress.log (default: the system temporary directory).
+
+This run stops at r_min = 6.05 M, below the half-potential radius where the elementary grazing bound takes
+over.  The entry (E, r0) = (1.4, 10) of no_inversion_schwarzschild_CAP_grid.py redoes it up to that radius,
+closes the joint, and supersedes it.
+
+Run: python3 no_inversion_schwarzschild_CAP_r0_10.py
+"""
 import mpmath as mp
 mp.iv.dps=18; mp.mp.dps=18
 import cap_full as cf

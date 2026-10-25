@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Is the evaporative inversion of R16 physical, or an artefact of the negative-mass
+Is the evaporative inversion of R16 (VaidyaMetric/VaidyaResults.md) physical, or an artefact of the negative-mass
 regime? The linear model m=1+mu*v becomes NEGATIVE for v>1/|mu|, and at
 mu_inv~-0.058 with v1=40 one has m(v1)<0 (naked singularity).
 

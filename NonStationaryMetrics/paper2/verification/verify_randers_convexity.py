@@ -21,7 +21,7 @@ Held rail at specific energy E:  E = f (tdot + w_i xdot^i), so h_ij xdot xdot =
     F_T = sqrt( [E^2/(f(E^2-f))] h_ij dx^i dx^j ) - w_i dx^i,
 
 a Randers functional whose quadratic part is exactly Lambda^2 h with the dilation
-Lambda^2 of the manuscript's eq. (12).  This is Perlick 1991 (JMP 32, 3148),
+Lambda^2 of the manuscript's eq. (dilation).  This is Perlick 1991 (JMP 32, 3148),
 Proposition 3.2, p. 3153; his Proposition 3.3 is the *free fall* counterpart, and
 his comparison of Props 3.1-3.3 shows the two coincide only after passing to a
 different stationary spacetime (his eq. (50)).  Chanda eq. (16) is of the 3.3 type.
@@ -63,7 +63,7 @@ f_, h_ = sp.symbols('f h', positive=True)             # f = g_00, h = h_ij dx dx
 dtau = sp.sqrt(f_*h_/(E**2 - f_))                     # from h_ij xdot xdot = (E^2-f)/f
 quad_T = sp.simplify((E/f_*dtau)**2/h_)               # coefficient of h in F_T^2
 Lam2 = E**2/(f_*(E**2 - f_))
-check('quadratic part of the arrival cost is Lambda^2 = E^2/(f(E^2-f)), eq. (12)',
+check('quadratic part of the arrival cost is Lambda^2 = E^2/(f(E^2-f)), eq. (dilation)',
       sp.simplify(quad_T - Lam2) == 0)
 
 quad_J = (E**2 - f_)/f_                               # Chanda eq. (16), m = 1

@@ -1,5 +1,8 @@
 """Kerr thought experiment scaled to M87* (section `sec:observational-context`).
 
+SUPERSEDED: Paper II now places the thought experiment around Gaia BH3
+(probe_gaia_bh3.py, paragraph `par:obs-kerr-thought`).  Kept for the record.
+
 Frozen equatorial Kerr, A = M = 1, Ehat = 1, arrival-time (t-branch) rail with endpoints
 (r0, 0) and (r0, 1.8), zero winding and one radial turn; r0 = 120M and 38M, a/M = -0.8, 0, 0.8.
 Proper acceleration b of the controlled worldline from the exact Christoffel symbols, written in a

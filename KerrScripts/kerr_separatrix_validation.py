@@ -9,8 +9,8 @@ The derivation chain has two links:
  (ii) classical antiderivative (Whittaker-Watson 20.53):
       int dz/(P(z) - P(v)) = (1/P'(v)) [ 2 zeta(v) z
                                         + ln sigma(z-v)/sigma(z+v) ]
-      -> validated HERE on a test lattice, with sigma, zeta, P built
-      independently from the Jacobi theta functions (mpmath.jtheta).
+      -> validated HERE on a test lattice, with sigma, zeta and P constructed
+      from the Jacobi theta functions (mpmath.jtheta).
       SCOPE OF THIS TEST.  The identity is a CLASSICAL THEOREM
       (Whittaker-Watson 20.53), not something this script proves.
       What the test establishes is that the IMPLEMENTATION of sigma, zeta and P

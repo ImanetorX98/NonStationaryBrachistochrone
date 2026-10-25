@@ -1,5 +1,10 @@
 (* Mathematica CROSS-CHECK of the v (Vaidya) and t (TK, 2 separatrices) branches:
-   DIRECT delta phi (ground truth) + new building blocks (sqrtQ4=dr/dz; rho_t; z(r_pm)), against Python. *)
+   DIRECT delta phi (ground truth) + new building blocks (sqrtQ4=dr/dz; rho_t; z(r_pm)), against Python.
+   The Vaidya v block is the check.  The TK t block is a HISTORICAL DIAGNOSTIC, NOT A VALIDATING CHECK: its
+   dEFt uses the tau-branch numerator E J r^4 (r-2)^2 DE instead of the t-branch one; the reconstruction of
+   rho drops the factor 2500 of Denominator[rhoC] = 2500 Delta and compares with an undefined rho; and the
+   final NIntegrate is left unevaluated.  Current checks of the t branch: crosscheck_generic.wl and
+   crosscheck_tkt_bi.wl. *)
 $MinPrecision=35; prec=30;
 Off[NIntegrate::ncvb];Off[NIntegrate::slwcon];Off[General::stop];Off[NIntegrate::inumr];
 Print["===== CROSS-CHECK v (Vaidya) + t (TK) ====="];
@@ -33,7 +38,7 @@ dphiv[x_?NumericQ]:=NIntegrate[dmF[t]vcl[t],{t,r0v,x},WorkingPrecision->prec];
 Print["  DIRECT delta phi_v (11) = ",N[dphiv[11],9]," (Python 0.09066210)"];
 
 (* ============ TK t (coordinate time), M=1 a=9/10 E=6/5, TWO separatrices ============ *)
-Print["\n--- TK t (M=1, a=9/10, E=6/5) ---"];
+Print["\n--- TK t (M=1, a=9/10, E=6/5): historical diagnostic, NOT a validating check (see the header) ---"];
 Et=6/5; at=9/10; r0t=20;
 DEt=(Et^2-1)r+2; Delt=r^2-2r+at^2;
 Q2t=2Et^2 J^2 r-Et^2 J^2 r^2-4Et^2 J at r+2Et^2 at^2 r+Et^2 at^2 r^2+Et^2 r^4+4J^2-4J^2 r+J^2 r^2-8J at+4J at r+4at^2;

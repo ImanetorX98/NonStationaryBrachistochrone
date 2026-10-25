@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Tension field of the optical submersion -- rebuilt from the connections.
 
-Section 2.2, eq. (tension-residual).
+Paper II, section on the optical submersion (sec:submersion), eq. (tension-residual).
 
 WHAT CHANGED, AND WHY IT MATTERS.  An earlier version of this file checked the
 sum mu + grad_H log Lambda and called it the tension field.  That sum is correct

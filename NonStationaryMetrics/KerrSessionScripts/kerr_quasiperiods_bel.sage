@@ -7,7 +7,7 @@
 # theory it CLOSES in the Kleinian functions zeta, sigma (weight 1, the same class
 # as phi_0); it is NOT a polylogarithm. The matrix of quasi-periods eta (second kind) is needed.
 #
-# METHOD (breaks the wall "Sage does not give eta" of doranTau.md sec.7-iii):
+# METHOD (gets round the obstacle "Sage does not give eta" met in the working note doranTau.md, sec. 7-iii, not distributed):
 #   - ODD model (quintic, 1 point at infinity) via x=1/s: the second-kind forms
 #     s^2,s^3 ds/Y are clean (double pole, no residue). The EVEN model (deg 6)
 #     has 2 points at infinity -> x^2 dx/y is of the third kind (residue) -> wrong eta.

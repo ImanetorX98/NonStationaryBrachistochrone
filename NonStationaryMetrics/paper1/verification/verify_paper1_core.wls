@@ -4,7 +4,7 @@
 
    Covers every algebraic step that paper1_JMP.tex states as proved:
 
-     Lemma I.A   rail indicatrix: tricotomy, Vaidya ellipse, support function
+     Lemma I.A   rail indicatrix: trichotomy, Vaidya ellipse, support function
      Theorem I.1 (ii)  H_v is the support function of the indicatrix
      Lemma I.4   nonsingularity; kernel at the degeneration locus
      Lemma I.H   det M = 32 Res(S,S+) = -32 s6 disc_r S, for a generic sextic
@@ -24,7 +24,7 @@ Print["=================================================================="];
 Print[" LEMMA I.A -- rail indicatrix"];
 Print["=================================================================="];
 
-(* (a) tricotomy in the rest frame of W: gamma is fixed by the rail alone *)
+(* (a) trichotomy in the rest frame of W: gamma is fixed by the rail alone *)
 Print["\n(a) rest-frame decomposition u = gamma n + wbar,  n = W/|W|"];
 Print["    rail  -u.W = |W| gamma = Ehat   =>  gamma = Ehat/|W|"];
 Print["    shell -gamma^2 + |wbar|^2 = -1  =>  |wbar|^2 = Ehat^2/|W|^2 - 1"];
