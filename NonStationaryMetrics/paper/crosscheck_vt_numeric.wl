@@ -1,13 +1,21 @@
-(* Mathematica CROSS-CHECK of the v (Vaidya) and t (TK, 2 separatrices) branches:
-   DIRECT delta phi (ground truth) + new building blocks (sqrtQ4=dr/dz; rho_t; z(r_pm)), against Python.
-   The Vaidya v block is the check.  The TK t block is a HISTORICAL DIAGNOSTIC, NOT A VALIDATING CHECK: its
-   dEFt uses the tau-branch numerator E J r^4 (r-2)^2 DE instead of the t-branch one; the reconstruction of
-   rho drops the factor 2500 of Denominator[rhoC] = 2500 Delta and compares with an undefined rho; and the
-   final NIntegrate is left unevaluated.  Current checks of the t branch: crosscheck_generic.wl and
-   crosscheck_tkt_bi.wl. *)
+(* Mathematica CROSS-CHECK of the v (Vaidya) and t (Thakurta-Kerr, two double roots) branches:
+   DIRECT first-order responses (ground truth) and new building blocks, against the independent Python
+   references of crosscheck_t_reference.py (ODE and mpmath quadrature), relative tolerance 1e-12.
+   Vaidya v (M=1, E=7/5, r0=12): sqrtQ4 = dr/dz through Weierstrass P; delta phi_v(11) = int (d_m F) v dr.
+   Thakurta-Kerr t (M=1, a=9/10, E=6/5, r0=20): the drift clock rho_t = P3 + R_Delta/Delta of Paper II,
+   eq. clock-t (denominator a constant multiple of Delta, P3 equal to the printed one); then, at the prograde
+   and retrograde double roots of Q2, delta phi_t(x) = int_{r0}^{x} (d_E F_t) eta dr, eta' = rho_t/sqrt(R6),
+   at x = 19 and 18, with the t-branch numerator N_t = (d_E K) R6 - K (d_E R6)/2 (E symbolic, J fixed).
+   Each check prints PASS or FAIL; the script exits with status 1 if any fails.
+   An earlier version of the t block used the tau-branch numerator, lost the constant factor of the
+   denominator of rho_t, compared with an undefined symbol and left the final integral unevaluated.
+   Both double roots have r_d < 0: algebraic genus degenerations, not physical separatrices
+   (separatrix_classification.py; Paper II, Proposition prop:exterior-sep); the integrals are real on the
+   exterior arcs used.  Run: wolframscript -file crosscheck_vt_numeric.wl *)
 $MinPrecision=35; prec=30;
 Off[NIntegrate::ncvb];Off[NIntegrate::slwcon];Off[General::stop];Off[NIntegrate::inumr];
 Print["===== CROSS-CHECK v (Vaidya) + t (TK) ====="];
+fails=0; verdict[ok_]:=(If[!TrueQ[ok],fails++]; If[TrueQ[ok],"PASS","FAIL"]);
 r=.;J=.;
 
 (* ============ VAIDYA v (advanced time), M=1 E=7/5 ============ *)
@@ -35,40 +43,45 @@ dmF[x_?NumericQ]:=Module[{h=10^-8},((Jcvn((Ev^2-1)x+2(Mv+h)))/Sqrt[Sm[x,Mv+h]]-(
 Uv[x_?NumericQ,k_]:=NIntegrate[t^k/((t-rdv)Sqrt[Q4[t]]),{t,r0v,x},WorkingPrecision->prec];
 vcl[x_?NumericQ]:=Ev Uv[x,3]+(x-r0v)+2Mv(Log[Abs[x-2Mv]]-Log[Abs[r0v-2Mv]]);
 dphiv[x_?NumericQ]:=NIntegrate[dmF[t]vcl[t],{t,r0v,x},WorkingPrecision->prec];
-Print["  DIRECT delta phi_v (11) = ",N[dphiv[11],9]," (Python 0.09066210)"];
+vv=dphiv[11]; refv=0.0906620968390034`20; relv=If[NumericQ[vv],Abs[vv-refv]/Abs[refv],Infinity];
+Print["  DIRECT delta phi_v (11) = ",N[vv,16],"   Python reference ",refv,"   rel. diff ",N[relv,3],"  ",verdict[NumericQ[vv]&&relv<10^-12]];
 
-(* ============ TK t (coordinate time), M=1 a=9/10 E=6/5, TWO separatrices ============ *)
-Print["\n--- TK t (M=1, a=9/10, E=6/5): historical diagnostic, NOT a validating check (see the header) ---"];
+(* ============ TK t (coordinate time), M=1 a=9/10 E=6/5, the two double roots of Q2 ============ *)
+Print["\n--- TK t (M=1, a=9/10, E=6/5): direct delta phi at the two double roots of Q2 ---"];
 Et=6/5; at=9/10; r0t=20;
 DEt=(Et^2-1)r+2; Delt=r^2-2r+at^2;
 Q2t=2Et^2 J^2 r-Et^2 J^2 r^2-4Et^2 J at r+2Et^2 at^2 r+Et^2 at^2 r^2+Et^2 r^4+4J^2-4J^2 r+J^2 r^2-8J at+4J at r+4at^2;
 R6=Expand[r Q2t DEt]; Kt=r DEt(J(r-2)+2 at)/Delt;
-rhoC=Cancel[Together[(Et^2 r^3-2 at Kt/r)/((r-2)/r)]]; numR=Numerator[rhoC];
-P3=Expand[PolynomialQuotient[numR,Delt,r]]; RD=Expand[PolynomialRemainder[numR,Delt,r]];  (* rho = P3 + RD/Delta *)
-Print["  Denominator[Cancel rho] = ",Denominator[rhoC]," (must be Delta)"];
-Print["  rho_t = P3 + R_Delta/Delta ? P3 + RD/Delta - rho = ",Simplify[P3+RD/Delt-rho]," (must be 0)"];
+(* t-branch numerator of d_E F_t = N_t/R6^(3/2): E symbolic, J fixed *)
+EE=.; DEe=(EE^2-1)r+2;
+Q2e=2EE^2 J^2 r-EE^2 J^2 r^2-4EE^2 J at r+2EE^2 at^2 r+EE^2 at^2 r^2+EE^2 r^4+4J^2-4J^2 r+J^2 r^2-8J at+4J at r+4at^2;
+R6e=r Q2e DEe; Kte=r DEe(J(r-2)+2 at)/Delt;
+Ntsym=Together[D[Kte,EE] R6e-Kte D[R6e,EE]/2];
+(* drift clock rho_t (Paper II, eq. clock-t) = P3 + R_Delta/Delta *)
+rhoC=Together[(Et^2 r^3-2 at Kt/r)/((r-2)/r)];
+ratio=Cancel[Denominator[rhoC]/Delt];
+Print["  Denominator[rho_t]/Delta = ",ratio,"  (constant: the pole r = 2M is removable)  ",verdict[FreeQ[ratio,r]]];
+P3=PolynomialQuotient[Numerator[rhoC],Denominator[rhoC],r]; RD=Cancel[(rhoC-P3)Delt];
+res=Simplify[P3+RD/Delt-rhoC];
+Print["  rho_t - (P3 + R_Delta/Delta) = ",res,", R_Delta of degree ",Exponent[RD,r],"  ",verdict[res===0&&PolynomialQ[RD,r]&&Exponent[RD,r]==1]];
+resP=Expand[P3-(Et^2 r^3+2Et^2 r^2+4Et^2 r+8Et^2-2(Et^2-1)J at)];
+Print["  P3 - (P3 printed in Paper II) = ",resP,"  ",verdict[resP===0]];
 Do[
-  {Jc0,rg,tag,pyanchor}=cfg; Jctn=N[Jc0,prec];
-  R6n=Expand[R6/.J->Jctn]; a4t=N[Coefficient[R6n,r,6],prec];
-  (* refine r_d, Jc with the double root of Q2 *)
-  sol=FindRoot[{(Q2t/.J->Jj)==0,(D[Q2t,r]/.J->Jj)==0},{{r,rg},{Jj,Jc0}},WorkingPrecision->prec];
-  rdt=r/.sol; Jctn=Jj/.sol; R6n=Expand[R6/.J->Jctn]; a4t=N[Coefficient[R6n,r,6],prec];
-  Qt4=Cancel[R6n/(r-rdt)^2];
-  et=Sort[N[r/.Solve[Qt4==0,r],prec],Re[#1]<Re[#2]&]; {f1,f2,f3,f4}=et;
-  Q4t[x_]:=a4t(x-f1)(x-f2)(x-f3)(x-f4);
-  k2t=((f3-f2)(f4-f1))/((f4-f2)(f3-f1)); preft=2/Sqrt[(f4-f2)(f3-f1)]/Sqrt[a4t];
-  o1=N[preft EllipticK[k2t],prec]; wi=N[preft EllipticK[1-k2t],prec];
-  {gg2,gg3}=WeierstrassInvariants[{o1,I wi}]; WZt[z_]:=WeierstrassZeta[z,{gg2,gg3}];
-  zit=NIntegrate[1/Sqrt[Q4t[x]],{x,f4,Infinity},WorkingPrecision->prec]; sat=Sqrt[a4t]; crt=f4-(2/sat)WZt[zit];
-  rzt[z_]:=crt-(1/sat)(WZt[z-zit]-WZt[z+zit]);
-  rpm=1+Sqrt[1-at^2]; zrp=z/.FindRoot[rzt[z]==rpm,{z,I wi/2},WorkingPrecision->prec];
-  P3n=P3/.J->Jctn; RDn=RD/.J->Jctn;
-  Sn6[x_?NumericQ]:=R6n/.r->x;
-  dEFt[x_?NumericQ]:=(Et Jctn x^4 (x-2)^2 ((Et^2-1)x+2))/Sn6[x]^(3/2);  (* N_t/R6^{3/2} *)
-  Ut[x_?NumericQ,k_]:=NIntegrate[t^k/((t-rdt)Sqrt[Q4t[t]]),{t,r0t,x},WorkingPrecision->prec];
-  etat[x_?NumericQ]:=NIntegrate[((P3n/.r->tt)+(RDn/.r->tt)/(tt^2-2tt+at^2))/((tt-rdt)Sqrt[Q4t[tt]]),{tt,r0t,x},WorkingPrecision->prec];
-  dphit[x_?NumericQ]:=NIntegrate[dEFt[t]etat[t],{t,r0t,x},WorkingPrecision->prec];
-  Print["  ",tag,": Jc=",N[Jctn,9]," r_d=",N[rdt,6]," z(r+)=",N[zrp,5]];
-  Print["       DIRECT delta phi_t (19) = ",N[dphit[19],9]," (Python ",pyanchor,")"],
-  {cfg,{{19.089,-6.62,"prograde","8.71960819"},{-18.671,-6.588,"retrograde","-7.95252758"}}}];
+  {Jg,rg,tag,ref19,ref18}=cfg;
+  sol=FindRoot[{(Q2t/.J->Jj)==0,(D[Q2t,r]/.J->Jj)==0},{{r,rg},{Jj,Jg}},WorkingPrecision->prec];
+  rdt=r/.sol; Jctn=Jj/.sol;
+  R6n=Expand[R6/.J->Jctn]; rhon=rhoC/.J->Jctn; Ntn=Ntsym/.EE->Et/.J->Jctn;
+  etat[x_?NumericQ]:=NIntegrate[(rhon/.r->tt)/Sqrt[R6n/.r->tt],{tt,r0t,x},WorkingPrecision->prec];
+  dEFt[x_?NumericQ]:=(Ntn/.r->x)/(R6n/.r->x)^(3/2);
+  dphit[x_?NumericQ]:=NIntegrate[dEFt[t] etat[t],{t,r0t,x},WorkingPrecision->prec];
+  Print["  ",tag,": Jc=",N[Jctn,12]," r_d=",N[rdt,9],"   R6 > 0 on [18,20]: ",
+    verdict[And@@Table[(R6n/.r->y)>0,{y,18,20,1/10}]]];
+  Do[{xx,ref}=xr; vt=dphit[xx]; rel=If[NumericQ[vt],Abs[vt-ref]/Abs[ref],Infinity];
+    Print["       DIRECT delta phi_t (",xx,") = ",N[vt,16],"   Python reference ",ref,"   rel. diff ",N[rel,3],"  ",
+      verdict[NumericQ[vt]&&rel<10^-12]],
+    {xr,{{19,ref19},{18,ref18}}}],
+  {cfg,{{19.089,-6.62,"prograde",0.08719608191295993`20,0.3993812410101394`20},
+        {-18.671,-6.588,"retrograde",-0.07952527575427483`20,-0.3613357695835678`20}}}];
+Print[If[fails==0,"ALL CHECKS PASSED",ToString[fails]<>" CHECK(S) FAILED"]];
 Print["\n===== END ====="];
+Exit[If[fails==0,0,1]];
