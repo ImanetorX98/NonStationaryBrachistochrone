@@ -44,23 +44,32 @@ run_figs () {
     fi
   done
   echo "  ($failed script(s) failed)"
+  [ "$failed" -eq 0 ]
 }
 
 collect_figs () {
   # each generator writes into its own directory; the manuscript looks in
   # paper/Immagini, so gather them there
   echo "== collecting figures into paper/Immagini =="
-  mkdir -p "$ROOT/paper/Immagini"
-  local n=0
+  mkdir -p "$ROOT/paper/Immagini" || return 1
+  local n=0 failed=0
   for d in "$ROOT/PaperFigures" "$ROOT/FLRWmetric/FLRWfigures" \
            "$ROOT/VaidyaMetric/Vaidyafigures" "$ROOT/ThakurtaMetric/Thakurtafigures"; do
     [ -d "$d" ] || continue
     for f in "$d"/fig_*.pdf; do
       [ -e "$f" ] || continue
-      cp -f "$f" "$ROOT/paper/Immagini/" && n=$((n+1))
+      if cp -f "$f" "$ROOT/paper/Immagini/"; then
+        n=$((n+1))
+      else
+        failed=$((failed+1))
+      fi
     done
   done
   echo "  copied $n file(s)"
+  if [ "$failed" -ne 0 ]; then
+    echo "  $failed figure(s) could not be copied" >&2
+    return 1
+  fi
 }
 
 check_figs () {
@@ -73,12 +82,15 @@ check_figs () {
     [ -f "$ROOT/paper/Immagini/$f.pdf" ] || { echo "  missing: $f.pdf"; missing=$((missing+1)); }
   done
   echo "== $((13-missing))/13 figures present =="
-  return 0
+  [ "$missing" -eq 0 ]
 }
 
 run_paper () {
   echo "== compiling paper1_JMP.tex =="
-  ( cd "$HERE" && latexmk -pdf -interaction=nonstopmode -halt-on-error paper1_JMP.tex >/dev/null 2>&1 )
+  if ! ( cd "$HERE" && latexmk -pdf -interaction=nonstopmode -halt-on-error paper1_JMP.tex >/dev/null 2>&1 ); then
+    echo "  BUILD FAILED - see paper1_JMP.log" >&2
+    return 1
+  fi
   if [ -f "$HERE/paper1_JMP.pdf" ]; then
     echo "  built paper1_JMP.pdf"
   else
@@ -87,7 +99,7 @@ run_paper () {
 }
 
 case "$MODE" in
-  --figures) run_figs; collect_figs; check_figs ;;
-  --paper)   collect_figs; check_figs; run_paper ;;
-  *)         run_figs; collect_figs; check_figs; run_paper ;;
+  --figures) run_figs && collect_figs && check_figs ;;
+  --paper)   collect_figs && check_figs && run_paper ;;
+  *)         run_figs && collect_figs && check_figs && run_paper ;;
 esac

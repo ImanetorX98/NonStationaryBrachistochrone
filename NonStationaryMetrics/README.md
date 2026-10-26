@@ -99,6 +99,11 @@ Private working notes, editorial correspondence and separate ongoing research ar
 not included in this release and are not required by any of the verification routes
 listed here.
 
+In v1.8.3 the former `_codex` filename suffix was removed. Commands and imports
+use the current names, such as `Experimental/run_all.py`,
+`ThakurtaMetric/genera_indicatrici_separate.py` and
+`VaidyaMetric/vaidya_first_order_offshell_plot.py`.
+
 ### Provenance of the printed numbers (Paper II)
 
 The adiabatic slopes, the validation window and the SHA-256 prefixes of the scripts
@@ -142,7 +147,7 @@ into `paper/Immagini` and one without a listed generator are reported, not check
 | File | What it does |
 |------|--------------|
 | `ThakurtaMetric/adiabatic_first_order_exact.py` | Exact canonical PT of the non-autonomous optical Hamiltonian: first-order coefficient `P_r^(1) = (s Theta Hbar - S_D)/Hbar_Pr`, with the complete source `S_D = int (Theta Hbar + P_r Hbar_Pr) du` and `Theta = E_eff d_E_eff + J_eff d_J_eff`; the increment is `eps P_r^(1)`; closes the **Thakurta–Kerr** first order to `O(eps^2)` (fitted residual slope about 2.15, robust fit 2.21, on the stated window). |
-| `VaidyaMetric/vaidya_first_order_offshell.py` | **Vaidya** `v`-branch analogue (`Theta=m d_m`, sign flip for accreting `m`, terminal anchoring of `p_v`); closes to `O(eps^2)` (slope **2.00** full vs **1.00** on-shell only). Emits `fig_vaidya_offshell`. |
+| `VaidyaMetric/vaidya_first_order_offshell.py` | **Vaidya** `v`-branch analogue (`Theta=m d_m`, sign flip for accreting `m`, terminal anchoring of `p_v`); closes to `O(eps^2)` (slope **2.00** full vs **1.00** on-shell only). Writes `Vaidyafigures/fig_vaidya_offshell_diagnostic`; the Paper I figure `fig_vaidya_offshell` is generated from these data by `VaidyaMetric/vaidya_first_order_offshell_plot.py`. |
 | `ThakurtaMetric/fig_phi_validation_corrected.py` | True-dynamics validation figure (`fig_phi_validation_true_dynamic`): on-shell coefficient alone, `-int lam Theta F dr` with `Theta F = Theta G - (G_Pr/H_Pr) Theta H` (checked against finite differences of the explicit frozen integrand), slope ~1, vs the complete Eq. (40) correction (slope about 2.12, approaching 2 as the epsilon window shrinks), both against the true non-autonomous flow. It also prints the size of the two parts: on the fit windows the on-shell coefficient exceeds the complete one by a factor of about 19 to 41 (sampled sup norms), the off-shell part `-int (G_Pr/H_Pr) S_D dr` cancelling most of it. |
 
 ---
@@ -298,6 +303,14 @@ Run any of them: `wolframscript -file paper/crosscheck_<name>.wl`.
 (cd paper1 && ./build_paper1.sh)          # Paper I: regenerates its figures, then compiles
 (cd paper2 && pdflatex paper2.tex && bibtex paper2 && pdflatex paper2.tex && pdflatex paper2.tex && pdflatex paper2.tex)
 ```
+The Paper I build stops with a non-zero exit status if a generator fails, a figure
+cannot be collected or is missing, or LaTeX fails. Its failure handling can be
+tested without running the scientific generators or LaTeX:
+
+```bash
+python3 tests/test_build_paper1.py
+```
+
 Paper II reads its figures from `paper/Immagini` (`\graphicspath`); since figures are not
 tracked, regenerate them with their scripts and run
 `python3 paper2/provenance/collect_figures.py --collect` before compiling.
