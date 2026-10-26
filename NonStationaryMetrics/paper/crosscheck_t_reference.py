@@ -2,7 +2,8 @@
 
 Frozen Kerr (A = 1), M = 1, a = 9/10, E = 6/5, endpoint r0 = 20.  At each of the two double roots of the
 t-branch quartic Q2 (prograde J ~ +19.089, r_d ~ -6.62; retrograde J ~ -18.671, r_d ~ -6.59) it computes the
-first-order energy response
+energy-response integral at fixed J (one ingredient of the first-order adiabatic correction of the papers, not
+the whole non-autonomous correction, which also involves the J variation and the off-shell term)
 
     delta phi_t(x) = int_{r0}^{x} (d_E F_t)(r) eta(r) dr,     eta(r) = int_{r0}^{r} rho_t/sqrt(R6) dr',
 
@@ -12,10 +13,12 @@ t-branch numerator N_t = (d_E K_t) R6 - K_t (d_E R6)/2, derived symbolically at 
 
 Two independent routes, which must agree:
   (A) the initial-value problem eta' = rho_t/sqrt(R6), (delta phi)' = (d_E F_t) eta, integrated with DOP853;
-  (B) nested adaptive quadrature in mpmath at 30 digits.
+  (B) nested adaptive quadrature in mpmath, working precision 30 digits (not 30 certified digits).
+They share Q2, N_t, rho_t and the roots, so they check the integration, not those inputs; the inputs are
+checked by the Mathematica scripts, which derive them in another computer-algebra system.
 It also checks that the polynomial part of rho_t equals the P_3 printed in Paper II after eq. clock-t.
 r_d < 0 at both roots: they are algebraic genus degenerations, not physical separatrices; the integrals are
-nevertheless real on the exterior arc [18, 20] used here (R6 > 0 there, checked).
+nevertheless real on the exterior arc [18, 20] used here (R6 > 0 at 41 sample points there).
 
 Vaidya v branch (M = 1, E = 7/5, r0 = 12), at the double root J_c of the spectral curve S (r_d ~ -3.364 < 0):
     delta phi_v(11) = int_{r0}^{11} (d_m F) v dr,   F = J D_E/sqrt(S),   v = E U_3 + (r - r0) + 2m ln((r-2m)/(r0-2m)),
@@ -70,7 +73,7 @@ for tag, guess in (('prograde', (-6.62, 19.089)), ('retrograde', (-6.588, -18.67
     rhon = sp.lambdify(r, rho.subs(sub), 'mpmath')
     dEF = sp.lambdify(r, (Nt.subs(sub)), 'mpmath')
     dEFn = lambda x: dEF(x)/R6n(x)**mp.mpf(1.5)
-    check(f"{tag}: R6 > 0 on [18, 20]", all(R6n(mp.mpf(x)) > 0 for x in np.linspace(18, 20, 41)))
+    check(f"{tag}: R6 > 0 at 41 sample points of [18, 20]", all(R6n(mp.mpf(x)) > 0 for x in np.linspace(18, 20, 41)))
     # (B) nested quadrature, 30 digits
     eta = lambda x: mp.quad(lambda t: rhon(t)/mp.sqrt(R6n(t)), [r0, x])
     dphiB = {x: mp.quad(lambda t: dEFn(t)*eta(t), [r0, x]) for x in (19, 18)}
@@ -79,6 +82,7 @@ for tag, guess in (('prograde', (-6.62, 19.089)), ('retrograde', (-6.588, -18.67
     Ntd = sp.lambdify(r, Nt.subs(sub), 'numpy')
     rhs = lambda x, y: [rhod(x)/np.sqrt(R6d(x)), Ntd(x)/R6d(x)**1.5*y[0]]
     sol = solve_ivp(rhs, [r0, 18], [0.0, 0.0], method='DOP853', rtol=1e-13, atol=1e-16, dense_output=True)
+    check(f"{tag}: ODE integration completed down to r = 18", sol.success and abs(sol.t[-1] - 18) < 1e-12)
     dphiA = {x: sol.sol(x)[1] for x in (19, 18)}
     print(f"  {tag}: J = {mp.nstr(Jc, 15)}, r_d = {mp.nstr(rd, 12)}")
     for x in (19, 18):
@@ -107,6 +111,7 @@ dphivB = mp.quad(lambda t: dmF(t)*vclock(t), [r0v, 11])
 dmFd = sp.lambdify(r, sp.diff(Fv, m).subs({m: 1, J: Jcv}), 'numpy'); Svd = sp.lambdify(r, Sv1.subs(J, Jcv), 'numpy')
 rhsv = lambda y, z: [y**3/np.sqrt(Svd(y)), dmFd(y)*(float(Evv)*z[0] + (y - r0v) + 2*np.log((y - 2)/(r0v - 2)))]
 solv = solve_ivp(rhsv, [r0v, 11], [0.0, 0.0], method='DOP853', rtol=1e-13, atol=1e-16)
+check("Vaidya: ODE integration completed down to r = 11", solv.success and abs(solv.t[-1] - 11) < 1e-12)
 dphivA = solv.y[1, -1]
 relv = abs(float(dphivB) - dphivA)/abs(float(dphivB))
 print(f"  J_c = {mp.nstr(Jcv_mp, 15)}, r_d = {mp.nstr(rdv, 12)}")

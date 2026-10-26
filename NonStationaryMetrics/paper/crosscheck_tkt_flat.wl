@@ -2,7 +2,8 @@
    At the double root of the t-branch quartic Q2 found from (r, J) = (-6.62, 19.089):
      (1) rho_t = P3 + RD/Delta exactly (the t-branch drift clock of Paper II, eq. clock-t);
      (2) z(r_+) in the Weierstrass uniformisation of the quartic Q4 = R6/(r - r_d)^2, with |r(z(r_+)) - r_+| < 1e-20;
-     (3) the direct first-order response delta phi_t(x) = int_{r0}^{x} (d_E F_t) eta dr, eta' = rho_t/sqrt(R6),
+     (3) the direct energy-response integral delta phi_t(x) = int_{r0}^{x} (d_E F_t) eta dr, eta' = rho_t/sqrt(R6)
+         (at fixed J: one ingredient of the first-order correction, not the whole non-autonomous correction),
          at x = 19 and 18 by nested quadrature (d_E F_t with the t-branch numerator, E symbolic), against the
          independent Python references of crosscheck_t_reference.py (ODE and mpmath quadrature), relative
          tolerance 1e-12.

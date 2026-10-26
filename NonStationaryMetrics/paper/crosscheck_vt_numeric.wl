@@ -1,7 +1,10 @@
 (* Mathematica CROSS-CHECK of the v (Vaidya) and t (Thakurta-Kerr, two double roots) branches:
-   DIRECT first-order responses (ground truth) and new building blocks, against the independent Python
-   references of crosscheck_t_reference.py (ODE and mpmath quadrature), relative tolerance 1e-12.
-   Vaidya v (M=1, E=7/5, r0=12): sqrtQ4 = dr/dz through Weierstrass P; delta phi_v(11) = int (d_m F) v dr.
+   direct mass- and energy-response integrals and new building blocks, against the independent Python
+   references of crosscheck_t_reference.py (ODE and mpmath quadrature), relative tolerance 1e-12.  These
+   integrals, at fixed J, are one ingredient of the first-order adiabatic correction of the papers, not the
+   whole non-autonomous correction (which also involves the J variation and the off-shell term).
+   Vaidya v (M=1, E=7/5, r0=12): sqrtQ4 = dr/dz through Weierstrass P (relative residual < 1e-20);
+   delta phi_v(11) = int (d_m F) v dr.
    Thakurta-Kerr t (M=1, a=9/10, E=6/5, r0=20): the drift clock rho_t = P3 + R_Delta/Delta of Paper II,
    eq. clock-t (denominator a constant multiple of Delta, P3 equal to the printed one); then, at the prograde
    and retrograde double roots of Q2, delta phi_t(x) = int_{r0}^{x} (d_E F_t) eta dr, eta' = rho_t/sqrt(R6),
@@ -35,8 +38,9 @@ zinf=NIntegrate[1/Sqrt[Q4[x]],{x,e4,Infinity},WorkingPrecision->prec]; sa=Sqrt[a
 rz[z_]:=cr-(1/sa)(WZ[z-zinf]-WZ[z+zinf]); zr[rv_]:=NIntegrate[1/Sqrt[Q4[x]],{x,e4,rv},WorkingPrecision->prec];
 (* new v building block: sqrtQ4(z) = dr/dz = (1/sqrt a4)[P(z-zinf)-P(z+zinf)] *)
  ztest=zr[11]; Print["  Jc=",N[Jcvn,8]," (7.026624); r_d=",N[rdv,6]," (-3.36371)"];
-Print["  sqrtQ4=dr/dz check: (1/sqrt a4)(P(z-zinf)-P(z+zinf)) - sqrtQ4(r(z)) = ",
-   N[(1/sa)(WP[ztest-zinf]-WP[ztest+zinf])-Sqrt[Q4[11]],8]," (must be ~0)"];
+resW=(1/sa)(WP[ztest-zinf]-WP[ztest+zinf])-Sqrt[Q4[11]]; relW=If[NumericQ[resW],Abs[resW]/Abs[Sqrt[Q4[11]]],Infinity];
+Print["  sqrtQ4=dr/dz check: (1/sqrt a4)(P(z-zinf)-P(z+zinf)) - sqrtQ4(r(z)) = ",N[resW,8],
+   "   relative ",N[relW,3]," (tolerance 1e-20)  ",verdict[NumericQ[resW]&&relW<10^-20]];
 (* DIRECT delta phi_v = int dm F * v dr, v=E U3 + r + 2m ln(r-2m) *)
 Sm[x_?NumericQ,mv_]:=x(x-2mv)((Ev^2-1)x+2mv)(x^2(x-2mv)-Jcvn^2((Ev^2-1)x+2mv));
 dmF[x_?NumericQ]:=Module[{h=10^-8},((Jcvn((Ev^2-1)x+2(Mv+h)))/Sqrt[Sm[x,Mv+h]]-(Jcvn((Ev^2-1)x+2(Mv-h)))/Sqrt[Sm[x,Mv-h]])/(2h)];
@@ -74,7 +78,7 @@ Do[
   etat[x_?NumericQ]:=NIntegrate[(rhon/.r->tt)/Sqrt[R6n/.r->tt],{tt,r0t,x},WorkingPrecision->prec];
   dEFt[x_?NumericQ]:=(Ntn/.r->x)/(R6n/.r->x)^(3/2);
   dphit[x_?NumericQ]:=NIntegrate[dEFt[t] etat[t],{t,r0t,x},WorkingPrecision->prec];
-  Print["  ",tag,": Jc=",N[Jctn,12]," r_d=",N[rdt,9],"   R6 > 0 on [18,20]: ",
+  Print["  ",tag,": Jc=",N[Jctn,12]," r_d=",N[rdt,9],"   R6 > 0 at 21 sample points of [18,20]: ",
     verdict[And@@Table[(R6n/.r->y)>0,{y,18,20,1/10}]]];
   Do[{xx,ref}=xr; vt=dphit[xx]; rel=If[NumericQ[vt],Abs[vt-ref]/Abs[ref],Infinity];
     Print["       DIRECT delta phi_t (",xx,") = ",N[vt,16],"   Python reference ",ref,"   rel. diff ",N[rel,3],"  ",

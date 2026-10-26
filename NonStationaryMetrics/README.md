@@ -282,7 +282,7 @@ The `W_ij` closure pipeline for TK-τ (archetype), brick by brick:
 | `crosscheck_clock_res.wl` | Clock residues (v: 4M via native Weierstrass; t: formula). |
 | `crosscheck_tracking.wl` | Tracking theorem: N_tot(r_d)=0 mod {S,S'} (triple pole cancelled). |
 | `crosscheck_identities.wl`, `crosscheck_tk_numeric.wl` | Separatrix identities; TK τ separatrix numeric. |
-| `crosscheck_vt_numeric.wl`, `crosscheck_tkt_flat.wl` | Direct first-order responses: Vaidya v and TK t at both double roots of Q2 (the t-branch drift clock checked against Paper II, eq. clock-t), compared with the independent Python references of `crosscheck_t_reference.py` (ODE and 30-digit quadrature) to 1e-12; PASS/FAIL, exit 1 on failure. Repaired in v1.8.3: the earlier t block used the tau-branch numerator and hand-copied references 100 times too large. |
+| `crosscheck_vt_numeric.wl`, `crosscheck_tkt_flat.wl` | Direct mass- and energy-response integrals at fixed J (one ingredient of the first-order correction): Vaidya v and TK t at both double roots of Q2 (the t-branch drift clock checked against Paper II, eq. clock-t), compared with the independent Python references of `crosscheck_t_reference.py` (ODE and 30-digit quadrature) to 1e-12; PASS/FAIL, exit 1 on failure. Repaired in v1.8.3: the earlier t block used the tau-branch numerator and hand-copied references 100 times too large. |
 
 Run any of them: `wolframscript -file paper/crosscheck_<name>.wl`.
 
