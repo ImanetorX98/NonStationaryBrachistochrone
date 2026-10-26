@@ -13,7 +13,7 @@ of the Einstein dynamics of Vaidya or Thakurta--Kerr.
 From `NonStationaryMetrics/`:
 
 ```bash
-python3 Experimental/run_all_codex.py
+python3 Experimental/run_all.py
 ```
 
 Dependencies already used by the project:
@@ -27,13 +27,13 @@ Every generator writes PNG, vector PDF and SVG files to
 `Experimental/output/`.  That output directory is ignored by Git; the scripts
 and this document are not ignored.
 
-The final runner also executes `validate_pocs_codex.py`.  A failed endpoint,
+The final runner also executes `validate_pocs.py`.  A failed endpoint,
 an indicatrix inconsistency, excessive Hamiltonian drift, a non-finite BEC
 solution, or a missing render makes the command exit with an error.
 
 ## What each script does
 
-### `active_particle_poc_codex.py`
+### `active_particle_poc.py`
 
 Produces a four-panel design study for the most direct controlled-rail test.
 
@@ -68,7 +68,7 @@ The labels in millimetres and seconds use the provisional display map
 readable but is not yet a hardware calibration; measured propulsion speed,
 actuator bandwidth and particle size must set the final \((L_0,T_0)\).
 
-### `draining_vortex_poc_codex.py`
+### `draining_vortex_poc.py`
 
 Produces a three-panel design study for a shallow-water draining vortex.
 
@@ -93,7 +93,7 @@ needs PIV inference of \(u_r(r,\varphi,t)\) and
 This platform probes null/acoustic Kerr-like phenomenology and separatrix drift;
 it does not directly test a massive controlled rail.
 
-### `ring_bec_poc_codex.py`
+### `ring_bec_poc.py`
 
 Produces a three-panel design study for a slowly breathing toroidal condensate.
 The numerical observable is a transparent linear-phonon model,
@@ -195,12 +195,12 @@ The required implementation upgrade is therefore:
 5. compare synthetic time slices with the same radial integration and imaging
    pipeline used for laboratory data.
 
-### `experimental_style_codex.py` and `run_all_codex.py`
+### `experimental_style.py` and `run_all.py`
 
 The first keeps paper-compatible styles and saves three formats.  The second is
 the reproducible entry point for all generators.
 
-### `validate_pocs_codex.py`
+### `validate_pocs.py`
 
 Checks fixed-endpoint arrival and annular clearance for both the frozen and
 ramped rails, the exact ellipse identity, the DBT radius ordering and

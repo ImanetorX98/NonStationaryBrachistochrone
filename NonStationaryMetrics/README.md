@@ -308,7 +308,7 @@ Each script is run from its own directory (paths from the repository root):
 | `NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py` | `fig_phi_validation_true_dynamic` (also writes the raw NPZ data) |
 | `NonStationaryMetrics/ThakurtaMetric/fig_phi_closed_validation.py` | `fig_phi_closed_validation` |
 | `NonStationaryMetrics/ThakurtaMetric/fig_phi_penetrating.py` | `fig_phi_penetrating` |
-| `NonStationaryMetrics/ThakurtaMetric/genera_indicatrici_separate_codex.py` | `fig_indicatrici_thakurta_kerr` |
+| `NonStationaryMetrics/ThakurtaMetric/genera_indicatrici_separate.py` | `fig_indicatrici_thakurta_kerr` |
 | `NonStationaryMetrics/ThakurtaMetric/genera_figure_thakurta_rami.py` | `fig_thakurta_kerr_rami` |
 | `NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py` | `fig_thakurta_cuspide_ergosfera` |
 | `NonStationaryMetrics/ThakurtaMetric/thakurta_kerr_plunge_t_tau.py` | `fig_thakurta_kerr_plunge_t_tau` |

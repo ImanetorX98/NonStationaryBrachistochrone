@@ -79,7 +79,7 @@ GENERATOR_DIR = {
     "fig_thakurta_kerr_plunge_levels.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     "fig_thakurta_kerr_rami.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     # fig_indicatrici_thakurta_kerr.pdf is produced by
-    # ThakurtaMetric/genera_indicatrici_separate_codex.py, which writes through
+    # ThakurtaMetric/genera_indicatrici_separate.py, which writes through
     # its own path logic rather than paper_style.savefig; left out deliberately
     # rather than guessed at.
 }

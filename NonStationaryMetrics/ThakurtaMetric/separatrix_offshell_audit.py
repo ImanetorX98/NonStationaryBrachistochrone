@@ -20,7 +20,7 @@ The script separates two mathematically different degenerations:
    required unless the canonical boundary condition produces an additional
    genuine cubic-pole term.  The latter is now constructed for the
    terminally anchored separatrix BVP in
-   separatrix_canonical_cubic_codex.py: re-anchoring the radial action at
+   separatrix_canonical_cubic.py: re-anchoring the radial action at
    r_d adds +I_d*K_off and cancels the cubic coefficient exactly.  It is not
    available in the distinct fixed-launch IVP.
 
@@ -294,7 +294,7 @@ def main() -> None:
     print("  therefore a coordinate/root shift alone cannot cancel the dilation pole.")
     print("  terminal canonical anchoring supplies +I_d*K_off and cancels it;")
     print("  in the fixed-launch IVP the inner scale remains |x|=O(sqrt(epsilon)).")
-    print("  see separatrix_canonical_cubic_codex.py for the two-BVP distinction.")
+    print("  see separatrix_canonical_cubic.py for the two-BVP distinction.")
 
 
 if __name__ == "__main__":

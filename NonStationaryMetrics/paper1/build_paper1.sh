@@ -31,7 +31,7 @@ run_figs () {
     "VaidyaMetric/plunge_vaidya_t_tau.py"             # fig_vaidya_plunge_t_tau
     "VaidyaMetric/inversione_fisica.py"               # fig_vaidya_no_inversione_evaporazione
     "VaidyaMetric/vaidya_brachistochrone_vparam.py"   # fig_vaidya_bounce, fig_vaidya_timing
-    "VaidyaMetric/vaidya_first_order_offshell_plot_codex.py"  # fig_vaidya_offshell
+    "VaidyaMetric/vaidya_first_order_offshell_plot.py"  # fig_vaidya_offshell
     "VaidyaMetric/verifica_minimo_brachi.py"          # fig_verifica_minimo_brachi
   )
   for s in "${scripts[@]}"; do

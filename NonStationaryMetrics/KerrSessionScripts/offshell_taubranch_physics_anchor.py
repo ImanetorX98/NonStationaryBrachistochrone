@@ -14,7 +14,7 @@ Hamiltonian flow.
 
 Sign convention
 ---------------
-offshell_taubranch_closed_form_codex.py uses the positive algebraic radical
+offshell_taubranch_closed_form.py uses the positive algebraic radical
 p_plus=+sqrt(S)/(Delta*D).  The ingoing physical shell has
 P_r=-sqrt(S)/(Delta*D), while the on-shell kernel is +A/sqrt(S).  Therefore
 the physical ingoing dilation wrap is the negative of the positive-radical
@@ -37,7 +37,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from tests.test_adiabatic_noreg import _TK_TAU, _tk_slope
-from KerrSessionScripts.offshell_taubranch_closed_form_codex import (
+from KerrSessionScripts.offshell_taubranch_closed_form import (
     E,
     J,
     M,

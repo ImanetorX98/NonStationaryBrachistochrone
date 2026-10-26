@@ -37,7 +37,7 @@ def log_fit(epsilon: np.ndarray, residual: np.ndarray) -> dict[str, float]:
 
 
 def main() -> None:
-    data = runpy.run_path(str(SOURCE), run_name="__codex_validation_source__")
+    data = runpy.run_path(str(SOURCE), run_name="__validation_source__")
     epsilon = np.asarray(data["epss"], dtype=float)
     residual_on = np.asarray(data["res_on"], dtype=float)
     residual_full = np.asarray(data["res"], dtype=float)
@@ -77,7 +77,7 @@ def main() -> None:
         markersize=4.8,
         markerfacecolor="0.65",
         linestyle="-",
-        label=rf"complete Eq. (22): slope {fit_full['slope']:.3f}",
+        label=rf"complete correction (off-shell included): slope {fit_full['slope']:.3f}",
     )
 
     # Unit-normalized guide lines make the convergence orders readable without

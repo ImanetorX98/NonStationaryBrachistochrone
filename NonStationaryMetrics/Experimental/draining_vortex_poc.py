@@ -12,7 +12,7 @@ from __future__ import annotations
 import numpy as np
 from scipy.integrate import solve_ivp
 
-from experimental_style_codex import configure_style, panel_label, save_figure
+from experimental_style import configure_style, panel_label, save_figure
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch
 
@@ -185,7 +185,7 @@ def main() -> None:
     for ax, label in zip(axes, ("(a)", "(b)", "(c)")):
         panel_label(ax, label)
     fig.suptitle("Experimental proof of concept II — slowly modulated draining vortex", fontsize=12)
-    save_figure(fig, "draining_vortex_poc_codex")
+    save_figure(fig, "draining_vortex_poc")
 
 
 if __name__ == "__main__":

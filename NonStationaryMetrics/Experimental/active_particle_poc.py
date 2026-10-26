@@ -15,7 +15,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from experimental_style_codex import configure_style, panel_label, save_figure
+from experimental_style import configure_style, panel_label, save_figure
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch
 
@@ -256,7 +256,7 @@ def main() -> None:
     for ax, label in zip(axes.flat, ("(a)", "(b)", "(c)", "(d)")):
         panel_label(ax, label)
     fig.suptitle("Experimental proof of concept I — actively controlled rail", fontsize=12)
-    save_figure(fig, "active_particle_poc_codex")
+    save_figure(fig, "active_particle_poc")
 
 
 if __name__ == "__main__":

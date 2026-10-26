@@ -29,7 +29,7 @@ This is a boundary-condition statement:
   correct integration constant and the O(sqrt(epsilon)) inner layer remains.
 
 Run:
-    python3 ThakurtaMetric/separatrix_canonical_cubic_codex.py
+    python3 ThakurtaMetric/separatrix_canonical_cubic.py
 """
 
 from __future__ import annotations

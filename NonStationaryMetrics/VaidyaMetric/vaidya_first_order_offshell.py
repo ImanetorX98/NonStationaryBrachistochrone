@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
 # Vaidya analogue of the exact first-order adiabatic correction.
-# Same canonical perturbation theory as Thakurta Eq.(40), single slow parameter m(v):
-#   Theta = m d_m,  S = int_0^lambda Theta H_v dlambda,  H_v the v-branch Hamiltonian (Eq 11),
+# Same canonical perturbation theory as the Thakurta-Kerr exact first-order correction
+# (Paper II, eq. adiab-exact), single slow parameter m(v):
+#   Theta = m d_m,  S = int_0^lambda Theta H_v dlambda,  H_v the v-branch Hamiltonian (Paper I, eq. Hv),
 #   delta p_r/eps = (S - lambda Theta H)/H_pr  [sign: m INCREASES, opposite to Thakurta E,J],
 #   delta phi/eps = int[ G_pr (S - lambda Theta H)/H_pr + lambda Theta G ] dr,  G=H_J/H_pr.
 # Off-shell costate: H_ext=p_v+H_v=0 => p_v=-H_v=O(mdot). Verified: residual slope ~2.00
-# (closes the Vaidya first order to O(eps^2)), so Eqs (17-21) on-shell horizon-dilogarithm
-# are the on-shell COMPONENT; the complete first-order term adds this off-shell piece.
+# (closes the Vaidya first order to O(eps^2)), so the on-shell horizon-dilogarithm closed form
+# (Paper I, sec. vaidya-adiabatic) is the on-shell COMPONENT; the complete first-order term adds
+# this off-shell piece.
+# The figure of Paper I (fig:vaidya-offshell) is drawn from these data by
+# vaidya_first_order_offshell_plot.py; the diagnostic plot below is written to Vaidyafigures/
+# under its own name, so that running this script (as run_regression.py does) never overwrites
+# the manuscript figure.
 import os,sys
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid as ct
@@ -64,16 +70,16 @@ s_on=np.polyfit(np.log(epss),np.log(res_on),1)[0]
 print(f"  SLOPE full = {s_full:.2f}  (2 => off-shell PT closes Vaidya too)")
 print(f"  SLOPE on-shell only = {s_on:.2f}  (1 => costate piece needed)")
 
-# ---- convergence figure (fig:vaidya-offshell) ----
+# ---- diagnostic convergence plot (the manuscript figure is drawn by vaidya_first_order_offshell_plot.py) ----
 fig,ax=plt.subplots(1,1,figsize=(COL,COL*0.85))
 ax.loglog(epss,res_on,'ko-',ms=4,label=r'on-shell only: slope $\approx%.2f$'%s_on)
-ax.loglog(epss,res,'C3s-',ms=4,label=r'complete Eq.(40): slope $\approx%.2f$'%s_full)
+ax.loglog(epss,res,'C3s-',ms=4,label=r'complete correction: slope $\approx%.2f$'%s_full)
 ax.loglog(epss,epss**2*res[2]/epss[2]**2,'C3:',lw=0.6,alpha=0.6,label=r'$O(\varepsilon^2)$ guide')
 ax.loglog(epss,epss*res_on[2]/epss[2],'k:',lw=0.6,alpha=0.6,label=r'$O(\varepsilon)$ guide')
 ax.set_xlabel(r"$\varepsilon=M\dot m/m$"); ax.set_ylabel('residual vs true flow')
 ax.set_title('Vaidya first order: off-shell costate closes to $O(\\varepsilon^2)$',fontsize=6.6)
 ax.legend(fontsize=5.6,loc='upper left')
-savefig(fig,os.path.join(os.path.dirname(HERE),'paper','Immagini'),'fig_vaidya_offshell')
+savefig(fig,os.path.join(HERE,'Vaidyafigures'),'fig_vaidya_offshell_diagnostic')
 
 # ---- the proper-time branch H_tau (eq:Htau-vaidya) ----
 # The on-shell closed form of Paper I section 4.4 is written on H_tau, not on H_v, so the

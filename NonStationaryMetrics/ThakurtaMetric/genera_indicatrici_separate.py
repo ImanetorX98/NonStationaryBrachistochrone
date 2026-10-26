@@ -4,12 +4,13 @@
 The historical three-panel asset mixed FLRW, Vaidya and Thakurta-Kerr.  This
 generator preserves both scientific parts as independent vector figures:
 
-* fig_indicatrici / fig_indicatrici_vaidya: FLRW + Vaidya, used by Paper I;
-* fig_indicatrici_thakurta_kerr: rotating Thakurta-Kerr, retained for Paper II.
+* fig_indicatrici_vaidya: FLRW + Vaidya, a two-panel variant (not included by either paper);
+* fig_indicatrici_thakurta_kerr: rotating Thakurta-Kerr, included by Paper II.
 
-Every asset is exported as PDF and PNG to both PaperFigures/ and
-paper/Immagini/.  The unsuffixed fig_indicatrici name deliberately remains the
-Paper-I include target.
+Every asset is exported as PDF and PNG to both PaperFigures/ and paper/Immagini/.
+Paper I includes the three-panel fig_indicatrici drawn by genera_figure_thakurta.py
+(see paper1/build_paper1.sh); this script does not write that name, so running it
+cannot replace the Paper I figure.
 """
 
 from pathlib import Path
@@ -147,7 +148,7 @@ def make_paper_i_figure():
         va="bottom",
     )
 
-    save_figure(fig, ("fig_indicatrici", "fig_indicatrici_vaidya"))
+    save_figure(fig, ("fig_indicatrici_vaidya",))
 
 
 def make_thakurta_kerr_figure():

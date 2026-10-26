@@ -8,9 +8,9 @@ from pathlib import Path
 import numpy as np
 from scipy.integrate import solve_ivp
 
-import active_particle_poc_codex as active
-import draining_vortex_poc_codex as vortex
-import ring_bec_poc_codex as bec
+import active_particle_poc as active
+import draining_vortex_poc as vortex
+import ring_bec_poc as bec
 
 
 HERE = Path(__file__).resolve().parent
@@ -114,9 +114,9 @@ def check_outputs() -> list[str]:
     expected = [
         HERE / "output" / f"{stem}.{suffix}"
         for stem in (
-            "active_particle_poc_codex",
-            "draining_vortex_poc_codex",
-            "ring_bec_poc_codex",
+            "active_particle_poc",
+            "draining_vortex_poc",
+            "ring_bec_poc",
         )
         for suffix in ("png", "pdf", "svg")
     ]
