@@ -204,7 +204,7 @@ python3 SEP_COEFF_SYMBOLIC.py                       # separatrix b1,b2,b3 (all b
 python3 sep_tracking_coeff.py                       # tracking coeffs + triple-pole cancellation
 python3 VaidyaMetric/vaidya_generic_coeff.py        # Vaidya generic c_k,Q_kj,g_i,P in (m,E,J)
 python3 ThakurtaMetric/tk_t_generic_coeff.py        # TK-t generic c_k,Q_kj,g_i in (a,E,J)
-python3 KerrSessionScripts/kerr_psi_explicit_verified.py     # TK-τ source reduction (c_k)
+python3 ../KerrScripts/kerr_psi_explicit_verified.py         # TK-τ source reduction (c_k)
 python3 KerrSessionScripts/kerr_tau_Wij_principalparts.py    # g_i (principal parts)
 python3 KerrSessionScripts/kerr_tau_Talg_explicit.py         # T_alg explicit (poly + logs)
 python3 VaidyaMetric/vaidya_sep_residui_analitici.py         # closed-form residues (foundational)
@@ -266,7 +266,7 @@ Frozen orbit + first-order adiabatic δφ in Weierstrass σ,ζ,℘ + Brown–Lev
 
 ### 2. Generic-J closed forms (genus-2, off-separatrix) — `KerrSessionScripts/`
 The `W_ij` closure pipeline for TK-τ (archetype), brick by brick:
-- `kerr_psi_explicit_verified.py` — **★ source reduction** ∂_E F → Σ c_k r^k/√S (symbolic c_k).
+- `../KerrScripts/kerr_psi_explicit_verified.py` — **★ source reduction** ∂_E F → Σ c_k r^k/√S (symbolic c_k); single copy, run by `run_regression.py`.
 - `kerr_tau_Wij_reduction.sage` — ★ U_0..U_4 independent; U_2 = unique 3rd-kind (dilog source).
 - `kerr_tau_Wij_oddmodel_reduce.py` — ★ 2nd-kind reduction of U_k to canonical Abelian integrals (odd model), symbolic; verified diff/integral.
 - `kerr_tau_Wij_assembly.py` — ★ assembles ψ = ½Ê Σ P_ab w_ab + T_alg; isolates the single dilog (end-to-end 1e-15).

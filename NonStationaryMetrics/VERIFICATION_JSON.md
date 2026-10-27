@@ -13,6 +13,7 @@ python3 run_regression.py --report-json /tmp/nsb-regression.json
 python3 sage_env/run_sage_checks.py --env sage-nsb --report-json /tmp/nsb-sage.json
 python3 tests/test_verification_results.py
 python3 tests/test_producer_header.py           # producer header; standalone use
+python3 tests/test_json_stdout_matching.py       # fast: the matching rules of that comparison
 python3 tests/test_json_stdout_consistency.py    # slow: JSON values against the printed logs
 ```
 
@@ -41,7 +42,11 @@ the Sage runner invokes that supported CLI entry point, rather than `load()`.
 The runners decide on the JSON values; the printed log is what a reader sees.
 `tests/test_json_stdout_consistency.py` runs the producers and requires every JSON
 sample to match the field the legacy parser reads, within the rounding of the
-printed digits (with `--sage-prefix` also for the Sage producers). In the Sage
+printed digits (with `--sage-prefix` also for the Sage producers). Printed tokens
+must be complete finite numbers, and a printed list (the eigenvalues of Im tau)
+must match the JSON samples one to one, in any order; the fast cases of
+`tests/test_json_stdout_matching.py` cover reordering, equal and unequal
+multiplicities, suffixed tokens and extra `nan` elements. In the Sage
 runner each check names the JSON metric it reads, and the names must cover the
 expected metrics exactly, so reordering either table cannot swap checks and bounds.
 

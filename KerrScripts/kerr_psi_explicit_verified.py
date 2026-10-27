@@ -10,8 +10,8 @@ M = 1, a = 9/10, J = 5/2, E symbolic (numerical steps at E = 7/5).  The four ste
      eq. clock-eta-tau): second-kind part Q_kj W_kj plus algebraic terms plus the horizon
      part, against the direct double integral ("difference =", read by run_regression.py).
 The script was written to replace an earlier reduction checked only at the end
-(hence the step-by-step checks).  An identical copy lives in
-NonStationaryMetrics/KerrSessionScripts/ and KerrScripts/.
+(hence the step-by-step checks).  This is the single copy of the script; run_regression.py
+runs it.
 """
 # Stable verification fields are independent of the human-readable messages.
 # Without verification_results.py (e.g. a script copied out of the repository) the
