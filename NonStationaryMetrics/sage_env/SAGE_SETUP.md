@@ -49,7 +49,18 @@ installed package.
 
 The tolerances in `run_sage_checks.py` are acceptance margins around the orders of magnitude quoted in
 the paper (1e-11 for the symmetries, 1e-4 for the residual), to absorb run-to-run and platform variability;
-they are not the printed values themselves, and they do not certify every digit. Each value is read as a
-complete token and must be finite; the eigenvalues of Im τ must be exactly two (genus two), finite and
+they are not the printed values themselves, and they do not certify every digit. By default each value is read from a versioned JSON result with exact metric and sample IDs,
+independently of stdout; the eigenvalues of Im τ must be exactly two (genus two), finite and
 positive. The runner checks only the six quantities in the table above, not every other property a script
 may print (for instance the full Legendre relation).
+
+
+## Structured results
+
+The four producers optionally export finite binary64 measurements through
+`NSB_RESULT_JSON`; the runner uses this interface by default and applies its own
+bounds. `--report-json /tmp/nsb-sage.json` writes the measurements and verdicts.
+`--format legacy` retains the former text parser for migration comparisons;
+`test_run_sage_checks.py` explicitly tests that legacy mode. The shared adversarial
+JSON tests are `../tests/test_verification_results.py` (standard library only).
+See [VERIFICATION_JSON.md](../VERIFICATION_JSON.md) for the schema and failure rules.

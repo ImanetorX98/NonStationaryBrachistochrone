@@ -17,6 +17,28 @@
 #    physical DIFFERENCE = accr - evap = |mdot|*2A   (carried by A -- NOT by B!)
 #    physical SUM        = accr + evap = |mdot|*2B   = FAILURE OF ANTISYMMETRY (carried by B, horizon)
 # (Correction: B controls the failure of antisymmetry, not the physical difference.)
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -82,7 +104,9 @@ evap=quad(lambda x:dMF_mot(x)*u_ret(x),r0,xf,limit=150)[0]
 print("=== delta phi_V : coefficients (/mdot with sign) and PHYSICAL quantities ===")
 print(f"  A (INFINITY part, polylog)   = {A:+.8f}")
 print(f"  B (HORIZON part, dilog)      = {B:+.8f}")
+_results.add('residual', 'accretion', abs(A+B-accr))
 print(f"  coeff accr = A+B (clock v)   = {A+B:+.8f}   direct={accr:+.8f}  diff={abs(A+B-accr):.1e}")
+_results.add('residual', 'evaporation', abs(A-B-evap))
 print(f"  coeff evap = A-B (clock u)   = {A-B:+.8f}   direct={evap:+.8f}  diff={abs(A-B-evap):.1e}")
 # --- PHYSICS: delta phi = mdot*[.], mdot>0 accr, mdot<0 evap => signs ---
 dphi_accr=(A+B)     # /|mdot|, mdot>0
@@ -103,7 +127,10 @@ B_hor =quad(lambda x:dMF_mot(x)*2*M*(np.log(x-2*M)-np.log(r0-2*M)), r0,xf,limit=
 print("\n=== structure of the asymmetry B = B_bulk + B_hor ===")
 print(f"  B_bulk (second kind, r-r0)         = {B_bulk:+.8f}")
 print(f"  B_hor  (horizon log -> dilog D_k)  = {B_hor:+.8f}")
+_results.add('residual', 'horizon_split', abs(B_bulk+B_hor-B))
 print(f"  sum = {B_bulk+B_hor:+.8f}   direct B = {B:+.8f}   diff={abs(B_bulk+B_hor-B):.1e}")
 # B_hor by parts: 2m[ A_m ln(r-2m) ]_{r0}^{xf} - 2m int A_m/(r-2m) dr,  int A_m/(r-2m) = sum c_k D_k
 print("  => B_hor = 2m[A_m ln(r-2m)] - 2m*int A_m/(r-2m);  int A_m/(r-2m) = HORIZON dilogarithm D_k.")
 print("     The transcendental accr/evap asymmetry (horizon log) IS the dilogarithm D_k derived above.")
+
+_results.finish()

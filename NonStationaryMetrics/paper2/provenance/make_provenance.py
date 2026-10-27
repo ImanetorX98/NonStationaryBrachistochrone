@@ -64,7 +64,7 @@ from pathlib import Path
 # containing the current code exists, these stay PENDING and the generated
 # macros say so in the PDF, where it cannot be overlooked.
 RELEASE = {
-    "version": "v1.8.3",           # cited through the concept DOI; the tag fixes the exact code
+    "version": "v1.8.4-dev",       # unreleased working tree; freeze only after the final audit
     "doi": "10.5281/zenodo.21707377",
     "concept_doi": "10.5281/zenodo.21707377",
 }
@@ -362,6 +362,21 @@ def report_subwindow(sub: dict) -> bool:
 # --------------------------------------------------------------------------
 # artefact -> (command, path-relative-to-root)
 MANIFEST: list[tuple[str, str, str]] = [
+    ("JSON verification result transport (shared by Python and Sage)",
+     "python3 tests/test_verification_results.py",
+     "NonStationaryMetrics/verification_results.py"),
+    ("JSON verification result structural schema, version 1",
+     "python3 tests/test_verification_results.py",
+     "NonStationaryMetrics/schemas/verification-result-v1.schema.json"),
+    ("JSON verification transport failure and runner tests",
+     "python3 tests/test_verification_results.py",
+     "NonStationaryMetrics/tests/test_verification_results.py"),
+    ("JSON results against the printed logs of the producers (slow)",
+     "python3 tests/test_json_stdout_consistency.py",
+     "NonStationaryMetrics/tests/test_json_stdout_consistency.py"),
+    ("JSON header of the producers: identical, harmless outside the repository",
+     "python3 tests/test_producer_header.py",
+     "NonStationaryMetrics/tests/test_producer_header.py"),
     ("laboratory design study for the three validation routes",
      "python3 Experimental/run_all.py",
      "NonStationaryMetrics/Experimental/run_all.py"),

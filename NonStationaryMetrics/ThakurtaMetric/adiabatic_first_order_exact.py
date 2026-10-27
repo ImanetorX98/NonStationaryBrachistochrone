@@ -16,6 +16,28 @@
 # The earlier version used S = int Theta H dlambda and a surrogate flow (no -eps*P_r): it
 # closed only against that surrogate, giving a spurious slope 2; against the true flow it is
 # O(eps) (slope 1). See tests/test_adiabatic_noreg.py for the independent ground-truth oracle.
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid as ct
 from scipy.optimize import brentq
@@ -103,4 +125,7 @@ epss=np.array([0.002,0.004,0.008,0.016,0.032]); res=[]
 for eps in epss:
     _,rL,_,pL=flow(eps); pt=interp1d(rL,pL,bounds_error=False,fill_value='extrapolate')(rc)
     res.append(np.nanmax(np.abs(pt-(phi0f(rc)+eps*(Ar(rc)+Br(rc))))))
+_results.add('slope', 'robust', np.polyfit(np.log(epss),np.log(res),1)[0])
 res=np.array(res); print(f"  robust SLOPE = {np.polyfit(np.log(epss),np.log(res),1)[0]:.2f}")
+
+_results.finish()

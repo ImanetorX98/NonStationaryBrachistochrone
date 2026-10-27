@@ -73,7 +73,7 @@ def run_case(script, stdout, code, timeout):
     real = R.subprocess.run
     R.subprocess.run = fake_run
     try:
-        return R.run_one(rel, kind, pat, bound, label, 10, nexp)
+        return R.run_one(rel, kind, pat, bound, label, 10, nexp, output_format="legacy")
     finally:
         R.subprocess.run = real
 

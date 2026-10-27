@@ -169,6 +169,15 @@ scripts, and use the same Python interpreter for installation and execution;
 `run_regression.py` runs every script with the interpreter that launched it, so a
 `python3` without NumPy makes all twelve checks fail with `ModuleNotFoundError`.
 
+The Python regression runner and the Sage checking runner use versioned JSON
+measurements by default, independently of the printed messages. Optional
+`--report-json /tmp/nsb-report.json` retains a structured summary; `--format legacy`
+is available for migration comparisons only. See [VERIFICATION_JSON.md](VERIFICATION_JSON.md)
+for the format, strict failure rules and supported scope. Run
+`python3 tests/test_verification_results.py` to check the JSON contracts without
+scientific dependencies. This development change is intended for the next release;
+the archived v1.8.3 remains unchanged.
+
 - **Python (sympy/mpmath/numpy/scipy)** — algebraic reductions, genus-1 closed forms
   (Weierstrass via `mpmath.jtheta`), numerical checks, figures. Standalone:
   `python3 <script>.py`.

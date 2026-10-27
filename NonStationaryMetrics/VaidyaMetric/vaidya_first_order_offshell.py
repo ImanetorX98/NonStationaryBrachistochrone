@@ -13,6 +13,28 @@
 # vaidya_first_order_offshell_plot.py; the diagnostic plot below is written to Vaidyafigures/
 # under its own name, so that running this script (as run_regression.py does) never overwrites
 # the manuscript figure.
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import os,sys
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid as ct
@@ -67,6 +89,7 @@ print("  coeff on [8,11]: %.4f"%np.mean(xc(rc)))
 for e,r,ro in zip(epss,res,res_on): print(f"  eps={e:.4f}  res_full={r:.2e}  res_onshell={ro:.2e}")
 s_full=np.polyfit(np.log(epss),np.log(res),1)[0]
 s_on=np.polyfit(np.log(epss),np.log(res_on),1)[0]
+_results.add('slope', 'v', s_full)
 print(f"  SLOPE full = {s_full:.2f}  (2 => off-shell PT closes Vaidya too)")
 print(f"  SLOPE on-shell only = {s_on:.2f}  (1 => costate piece needed)")
 
@@ -119,6 +142,7 @@ for eps in epss:
     rt_.append(np.nanmax(np.abs(pt-(phi0t(rct)+eps*xt(rct)))))
     rto.append(np.nanmax(np.abs(pt-(phi0t(rct)+eps*xt_on(rct)))))
 st_full=np.polyfit(np.log(epss),np.log(rt_),1)[0]; st_on=np.polyfit(np.log(epss),np.log(rto),1)[0]
+_results.add('slope', 'tau', st_full)
 print(f"Vaidya tau-branch (E={Et}, J={Jt}): SLOPE full = {st_full:.2f}, on-shell only = {st_on:.2f}")
 
 # ---- normalisation test at a frozen mass different from 1 ----
@@ -157,3 +181,5 @@ sq_=np.polyfit(np.log(qs),np.log(res_q),1)[0]; smd=np.polyfit(np.log(qs),np.log(
 print(f"m0={m2}: off-shell prefactor mdot/m -> slope {sq_:.2f};  prefactor mdot -> slope {smd:.2f}")
 assert sq_>1.8 and smd<1.2, "mass-normalisation test failed"
 print("FATTO")
+
+_results.finish()

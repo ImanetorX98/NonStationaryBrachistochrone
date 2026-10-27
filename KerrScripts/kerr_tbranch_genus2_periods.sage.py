@@ -10,6 +10,28 @@ Run with the Python of the Sage environment (conda's `sage` has no `-python` opt
 NonStationaryMetrics/sage_env/SAGE_SETUP.md), e.g. via NonStationaryMetrics/sage_env/run_sage_checks.py, or
     <env>/bin/python kerr_tbranch_genus2_periods.sage.py
 """
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import sys
 from sage.all import QQ, PolynomialRing, lcm, expand, RealField, matrix
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface
@@ -31,4 +53,8 @@ print(f"|tau - tau^T| = {sym:.2e}")
 print(f"eigenvalues of Im(tau) = {[round(e, 3) for e in eig]}  (basis-dependent)")
 ok = S.genus == 2 and sym < 1e-10 and min(eig) > 0
 print("ALL CHECKS PASSED" if ok else "FAILED")
+_results.add('symmetry', 'norm', sym)
+for _i, _e in enumerate(eig):
+    _results.add('positive_eigenvalues', f'eigenvalue_{_i}', _e)
+_results.finish()
 sys.exit(0 if ok else 1)

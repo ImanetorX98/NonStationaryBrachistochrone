@@ -5,6 +5,28 @@
 #   I = -1/2 sum_{k<j} Q_kj W_kj + eta2*(Acal/sqrt(R6)+1/2 sum c_k U_k) - sum_j b_j Ical_j
 #   Q_kj=c_k b_j-c_j b_k,  W_kj=int(U_k dU_j-U_j dU_k),  Ical_j=int Acal r^j/R6 dr.
 # Full: int dE F * t dr = I + int dE F * eta3 dr  (il pezzo orizzonte, log-sigma a r_pm).
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -65,6 +87,7 @@ I_asm=-0.5*Qsum + eta2(x)*(Acaln(x)/sq(x)+0.5*sum(cN[k]*Uv[k] for k in range(5))
 print(f'\nSECOND-KIND assembly (eq:psi-split):')
 print(f'  I_direct    = {I_dir:.10f}')
 print(f'  I_assembled = {I_asm:.10f}')
+_results.add('residual', 'second_kind_assembly', abs(I_dir-I_asm))
 print(f'  diff = {abs(I_dir-I_asm):.2e}   <-- W_kj reorganization for t-branch')
 
 # --- full clock closure: int dE F * t = I + int dE F * eta3 ---
@@ -73,5 +96,8 @@ dphi3=quad(lambda t:dEF(t)*eta3(t),r0,xf,limit=200)[0]
 print(f'\nFULL clock t = eta2 + eta3 (horizon 3rd-kind):')
 print(f'  int dEF*t direct         = {full_dir:.10f}')
 print(f'  I_assembled + int dEF*eta3 = {I_asm+dphi3:.10f}')
+_results.add('residual', 'full_clock_assembly', abs(full_dir-(I_asm+dphi3)))
 print(f'  diff = {abs(full_dir-(I_asm+dphi3)):.2e}')
 print(f'  horizon piece int dEF*eta3 = {dphi3:.6f}  (= log-sigma at r_pm, weight-2)')
+
+_results.finish()

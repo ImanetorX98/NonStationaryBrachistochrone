@@ -12,6 +12,28 @@
 #       - E*I_poly - (E/2) sum_k c_k^M (U_k U_3 - W_3k)
 #       - sum_j a_j^M U_j - sum_k c_k^M (r U_k - U_{k+1}) - 2M*Lh - 2M sum_k c_k^M D_k
 # with A_M = Acal^M/sqrtS + sum_k c_k^M U_k,  v = E U_3 + (r-r0) + 2M ln((r-2M)/(r0-2M)).
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -68,6 +90,7 @@ dphi_expl = bdy - p2 - p3
 
 print(f'\ndelta phi_V/Mdot  DIRECT         = {dphi_dir:.10f}')
 print(f'                  FULL EXPLICIT  = {dphi_expl:.10f}')
+_results.add('residual', 'assembly', abs(dphi_dir-dphi_expl))
 print(f'  diff = {abs(dphi_dir-dphi_expl):.2e}   <-- identity (algebraic coefficients given)')
 
 # ---- values of the building blocks (for the paper) ----
@@ -77,3 +100,5 @@ print('  W_3k  =',[round(W3k(x,k),4) for k in range(5)])
 print('  D_k   =',[round(Dk(x,k),4) for k in range(5)])
 print('  L_2M  =',round(Lh(x),4),'   I_poly =',round(Ipoly(x),4))
 print('  A_M   =',round(AM(x),4),'   v =',round(vclock(x),4))
+
+_results.finish()

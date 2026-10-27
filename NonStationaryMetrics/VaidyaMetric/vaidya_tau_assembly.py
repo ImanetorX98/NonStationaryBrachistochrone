@@ -4,6 +4,28 @@
 # Assembly (eq:psi-split), Q_kj = c_k^m b_j - c_j^m b_k, ALL algebraic (no fit):
 #   delta phi_tau / mdot = int dm F * eta dr
 #      = -1/2 sum_{k<j} Q_kj W_kj + eta(Acal^m/sqrtS + 1/2 sum c_k^m U_k) - sum_j b_j I_j
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -59,4 +81,7 @@ I_asm=(-0.5*sum(Q*W(x,k,j) for k,j,Q in Qlist)
        - sum(b[j]*Ical(x,j) for j in range(5)))
 print(f"\ndelta phi_tau/mdot  DIRECT    = {I_dir:.10f}")
 print(f"                    ASSEMBLED = {I_asm:.10f}")
+_results.add('residual', 'assembly', abs(I_dir-I_asm))
 print(f"  difference = {abs(I_dir-I_asm):.2e}   <-- Vaidya tau branch, all algebraic")
+
+_results.finish()

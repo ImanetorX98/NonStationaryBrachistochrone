@@ -48,7 +48,7 @@ def run_with(outputs: dict, rc: dict | None = None, timeout: set | None = None) 
         for exe in ("python", "sage"):
             (Path(d) / "bin" / exe).write_text("")
         old_run, old_argv = R.subprocess.run, sys.argv
-        R.subprocess.run, sys.argv = fake_run_kw, ["x", "--prefix", d]
+        R.subprocess.run, sys.argv = fake_run_kw, ["x", "--prefix", d, "--format", "legacy"]
         try:
             return R.main()
         finally:

@@ -14,6 +14,28 @@ the pass1-3 checks). Result: on-shell term slope ~1 (O(eps)); exact S_D slope ~2
 both against the true flow. The tau-branch H_tau reproduces the Boyer-Lindquist tau shape
 (kerr_adiabatic_phi_hybrid_tau.py) exactly.
 """
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import os,sys
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid as ct
@@ -161,6 +183,7 @@ for name,Hb,M,a,E,J,r0,col,mk in cfgs:
     out[name]=(epss,rh,rx,sh,she,sx,sxe,col,mk,flow,phi0,ec,xc,rc)
     # "leading" = the on-shell coefficient of eq:deltaphi-EJ; the label is kept
     # because paper2/provenance/make_provenance.py parses this line.
+    _results.add('slope', f'{"t" if Hb is H_eta else "tau"}_M{M:g}_a{a:g}_E{E:g}_J{J:g}_r0{r0:g}', sx)
     print(f"{name}: leading slope {sh:.2f}+/-{she:.2f}  exact slope {sx:.2f}+/-{sxe:.2f}")
     # size of the two parts on the fit window: the on-shell coefficient is NOT a
     # small-correction approximation of the complete one; the off-shell part
@@ -248,3 +271,5 @@ ax[1].set_title('exact term closes to $O(\\varepsilon^2)$: both branches, two pa
 ax[1].legend(fontsize=4.9,loc='upper left')
 savefig(fig,os.path.join(os.path.dirname(HERE),'paper','Immagini'),'fig_phi_validation_true_dynamic')
 print("FATTO")
+
+_results.finish()

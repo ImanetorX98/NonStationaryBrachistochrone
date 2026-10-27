@@ -13,6 +13,28 @@ The script was written to replace an earlier reduction checked only at the end
 (hence the step-by-step checks).  An identical copy lives in
 NonStationaryMetrics/KerrSessionScripts/ and KerrScripts/.
 """
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import sympy as sp
 import numpy as np
 from scipy.integrate import quad
@@ -57,6 +79,7 @@ rhs_n = sp.lambdify(r, rhs.subs(E,E0),'numpy')
 print("\nSTEP 3: numerical check dE F == d(A/sqrtS)+M/sqrtS")
 for rv in [11.0, 9.0, 7.0, 5.0]:
     d=dEF_n(rv); rr=rhs_n(rv)
+    _results.add('residual', f'reduction_r{rv:g}', abs(d-rr))
     print(f"  r={rv}: dEF={d:.8e}  rhs={rr:.8e}  diff={abs(d-rr):.2e}")
 print("=> if diff~1e-12: the reduction is CORRECT (Delta handled properly).")
 
@@ -111,4 +134,7 @@ RHS=poly+gA_terms+hor
 print(f"rho-rho~ direct                     = {LHS:.8f}")
 print(f"decomposition (Q W + gA + horizon) = {RHS:.8f}")
 print(f"   of which horizon part           = {hor:.8f}")
+_results.add('residual', 'clock_decomposition', abs(LHS-RHS))
 print(f"difference = {abs(LHS-RHS):.2e}   (identity, coefficients GIVEN by the c_k, NO fit)")
+
+_results.finish()

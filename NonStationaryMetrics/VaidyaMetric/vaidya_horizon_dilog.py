@@ -10,6 +10,28 @@
 #         (companion of W_kj, which has the dipole letter at INFINITY).
 # SEPARATRIX |J|=Jc: S acquires a double root -> the genus drops to 1 ->
 #   G_k, D_k CLOSE in the ELLIPTIC DILOGARITHM (Bloch-Wigner), tabulated (STEP2).
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -33,6 +55,7 @@ c=np.log(abs(r0-2*M))   # note: U_k(r0)=0, so the boundary term at r0 vanishes
 for k in range(5):
     d_dir=Dk_dir(xf,k)
     d_ibp=Uk(xf,k)*np.log(abs(xf-2*M)) - Gk(xf,k)
+    _results.add('residual', f'horizon_k{k}', abs(d_dir-d_ibp))
     print(f' {k} : {d_dir:+.9f}   {d_ibp:+.9f}   {abs(d_dir-d_ibp):.2e}')
 
 # ---- separatrix Jc: the bracket B(r)=r^2(r-2m)-J^2 DE has a double root ----
@@ -47,3 +70,5 @@ roots=sorted([complex(x).real for x in np.roots([float(c) for c in Bc.all_coeffs
 print(f'  roots of the bracket @Jc: {[round(x,5) for x in roots]}  (double = genus 1)')
 print('  => on Jc: sqrt(S)=(r-r_d) sqrt(quartic), U_k elliptic,')
 print('     D_k = ELLIPTIC DILOGARITHM (Bloch-Wigner), tabulated.')
+
+_results.finish()

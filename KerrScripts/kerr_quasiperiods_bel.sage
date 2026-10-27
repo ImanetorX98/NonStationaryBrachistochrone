@@ -22,6 +22,28 @@
 #
 # Quintic: Y^2 = s^6 S(1/s), S_tau = 1200x^6-2300x^5-11428x^4-5519x^3+24700x^2
 #   +62500x (parameters M=1,a=9/10,E=7/5,J=5/2). lam_i = coefficients (integers).
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(_result_sys.argv[0]).resolve()  # Sage CLI keeps the source in argv[0].
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 import numpy as np
@@ -46,8 +68,11 @@ Leg = omega_p @ eta.T - omega @ eta_p.T
 print('tau =\n', np.round(tau, 5))
 print('tau sym err        =', np.linalg.norm(tau - tau.T))
 print('kappa =\n', np.round(kappa, 5))
+_results.add('symmetry', 'kappa_norm', np.linalg.norm(kappa-kappa.T))
 print('kappa SYM ERR      =', np.linalg.norm(kappa - kappa.T))
 print('Legendre/(2 pi i)  =\n', np.round(Leg/(2j*np.pi), 4), '  (expected -I/2)')
 print("\nOK: eta (second kind) computed and validated -> Klein's sigma/zeta ready.")
 print("    Next: sigma=exp(-1/2 u^T kappa u) theta(...), zeta_i=d_i log sigma,")
 print("    psi(r) = closed combination of zeta(u(r)); validate against the numerical psi.")
+
+_results.finish()

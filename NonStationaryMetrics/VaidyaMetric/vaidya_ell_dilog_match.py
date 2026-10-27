@@ -2,6 +2,28 @@
 # Weight 1: U_0 = rho[ln sigma(z-z_d) - ln sigma(z+z_d)] + C z + const  (elliptic third kind)
 #   rho = 1/sqrt(Q4(r_d)) (residue, DERIVED), C from the holomorphic part, const from U_0(r0)=0.
 # sigma, zeta toolkit from theta1 (mpmath), lattice self-consistent with z(r)=int dr/sqrt(Q4).
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import numpy as np, mpmath as mp
 from scipy.integrate import quad
 mp.mp.dps=25
@@ -61,10 +83,12 @@ print("derivative check dU0/dz = 1/(r-r_d) vs rho[zeta(z-z_d)-zeta(z+z_d)]+C:")
 for rv in [11.0,10.0,9.2]:
     z=mp.mpf(zr(rv)); lhs=1.0/(rv-r_d)
     rhs=mp.re(rho*(wzeta(z-z_d)-wzeta(z+z_d))+C)
+    _results.add('residual', f'derivative_r{rv:g}', abs(lhs-float(rhs)))
     print(f"  r={rv}: lhs={lhs:.8f} rhs={float(rhs):.8f} diff={abs(lhs-float(rhs)):.2e}")
 print("WEIGHT 1  U_0: direct vs sigma closed form (elliptic third kind)")
 for rv in [11.0,10.0,9.2,e4+0.35]:
     ud=U0_dir(rv); uc=float(U0_closed(rv))
+    _results.add('residual', (f'primitive_r{rv:g}' if rv in (11.0, 10.0, 9.2) else 'primitive_turning_offset_0.35'), abs(ud-uc))
     print(f"  r={rv:.3f}: dir={ud:+.9f}  sigma={uc:+.9f}  diff={abs(ud-uc):.2e}")
 
 # =====================================================================
@@ -93,6 +117,7 @@ def D0_dir(rv): return quad(lambda t:U0c(t)/(t-2*M), r0v, rv, limit=200)[0]
 print(" loop check  D_0 = U_0 ln(r-2m) - G~_0 :")
 for rv in [11.0,10.0,9.2]:
     lhs=D0_dir(rv); rhs=U0c(rv)*np.log(abs(rv-2*M))-Gtil_dir(rv)
+    _results.add('residual', f'loop_r{rv:g}', abs(lhs-rhs))
     print(f"  r={rv}: D0={lhs:+.8f}  U0 ln-G~={rhs:+.8f}  diff={abs(lhs-rhs):.1e}")
 
 # --- Zagier: elliptic dilogarithm (Bloch-Wigner) q-series, a TABULATED function ---
@@ -109,3 +134,5 @@ for zc in [0.2+0.3j, complex(z_d), complex(z_d)-complex(z_h)]:
     print(f"   D^E({complex(zc):.4f}) = {float(Dell(zc)):+.8f}")
 print(" NB: real z => zeta=e^{2pi i z/2om1} on the unit circle (phase) => q^n zeta")
 print("     complex => D^E != 0: the single-valued elliptic dilogarithm IS the content.")
+
+_results.finish()

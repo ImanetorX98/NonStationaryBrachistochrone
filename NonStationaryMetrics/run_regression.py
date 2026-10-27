@@ -11,7 +11,10 @@ Usage:
     python3 run_regression.py --quick    # skip the slow symbolic/ODE scripts
     python3 run_regression.py -k vaidya  # only scripts whose key matches
 
-The figure of merit is pulled from stdout with a per-script regex carrying one
+By default the figure of merit is read from a versioned JSON result file, with
+exact metric/sample IDs and finite numerical values. The optional legacy mode
+is retained for migration comparisons only: it pulls values from stdout with a
+per-script regex carrying one
 capture group around the field being checked, and the captured token must be
 complete -- see the notes on NUM and CHECKS.  A residual must satisfy
 |x| <= tol; a slope must lie in [1.7, 2.3] (second-order canonical perturbation
@@ -20,11 +23,15 @@ configuration that stops being printed fails loudly instead of shrinking the
 sample set in silence.
 """
 import argparse
+import os
 import re
 import subprocess
 import sys
 import time
+import tempfile
 from pathlib import Path
+
+from verification_results import read_results, write_json
 
 ROOT = Path(__file__).resolve().parent.parent  # repo root (Brachistocrona/)
 
@@ -113,6 +120,23 @@ SLOW = {
     "adiabatic_first_order_exact.py",
 }
 
+# Consumer-owned sample identities. Reordering or translating stdout has no
+# effect; a missing, substituted or duplicate sample must fail verification.
+RESULT_SAMPLES = {
+    "pipeline_completa_deltaphi.py": ("assembly",),
+    "kerr_psi_explicit_verified.py": ("reduction_r11", "reduction_r9", "reduction_r7", "reduction_r5", "clock_decomposition"),
+    "kerr_tbranch_psi_assembly.py": ("second_kind_assembly", "full_clock_assembly"),
+    "vaidya_dMF_reduction.py": ("reduction_r11", "reduction_r9", "reduction_r7", "reduction_r5"),
+    "vaidya_fully_explicit.py": ("assembly",),
+    "vaidya_tau_assembly.py": ("assembly",),
+    "vaidya_horizon_dilog.py": tuple(f"horizon_k{k}" for k in range(5)),
+    "vaidya_ell_dilog_match.py": ("derivative_r11", "derivative_r10", "derivative_r9.2", "primitive_r11", "primitive_r10", "primitive_r9.2", "primitive_turning_offset_0.35", "loop_r11", "loop_r10", "loop_r9.2"),
+    "vaidya_asymmetry.py": ("accretion", "evaporation", "horizon_split"),
+    "adiabatic_first_order_exact.py": ("robust",),
+    "vaidya_first_order_offshell.py": ("v", "tau"),
+    "fig_phi_validation_corrected.py": ("t_M1_a0.9_E1.4_J6_r012", "tau_M1_a0.9_E1.4_J2.5_r012", "t_M1_a0.5_E1.3_J5_r010"),
+}
+
 
 def all_numbers(text, pattern, floats=False):
     """Return the captured field from every line matching `pattern`.
@@ -133,23 +157,47 @@ def all_numbers(text, pattern, floats=False):
     return hits, n_lines
 
 
-def run_one(rel, kind, pattern, bound, label, timeout, nexp=None):
+def run_one(rel, kind, pattern, bound, label, timeout, nexp=None,
+            output_format="json", record=None):
     path = ROOT / rel
     if not path.exists():
         return "MISSING", f"{rel} not found", None
     t0 = time.time()
     try:
-        p = subprocess.run([sys.executable, str(path)],
-                           capture_output=True, text=True, timeout=timeout,
-                           cwd=path.parent)
+        with tempfile.TemporaryDirectory(prefix="nsb-result-") as folder:
+            result_path = Path(folder) / "result.json"
+            env = dict(os.environ)
+            env.pop("NSB_RESULT_JSON", None)
+            if output_format == "json":
+                env["NSB_RESULT_JSON"] = str(result_path)
+            p = subprocess.run([sys.executable, str(path)],
+                               capture_output=True, text=True, timeout=timeout,
+                               cwd=path.parent, env=env)
+            fields = None
+            if p.returncode == 0 and output_format == "json":
+                try:
+                    samples = RESULT_SAMPLES[path.name]
+                    if nexp is not None and len(samples) != nexp:
+                        raise ValueError("inconsistent consumer sample configuration")
+                    fields = read_results(result_path, rel, {kind: samples})
+                except (OSError, ValueError, KeyError, OverflowError) as exc:
+                    return "INVALID", f"invalid JSON result: {exc}", time.time() - t0
     except subprocess.TimeoutExpired:
         return "TIMEOUT", f"exceeded {timeout}s", time.time() - t0
+    except OSError as exc:
+        return "ERROR", str(exc), time.time() - t0
     dt = time.time() - t0
     if p.returncode != 0:
         tail = p.stderr.strip().splitlines()[-1:] or ["(no stderr)"]
         return "ERROR", f"exit {p.returncode}: {tail[-1]}", dt
     out = p.stdout
-    vals, n_lines = all_numbers(out, pattern, floats=(kind == "slope"))
+    if fields is not None:
+        vals = [fields[kind][sid] for sid in RESULT_SAMPLES[path.name]]
+        n_lines = len(vals)
+    else:
+        vals, n_lines = all_numbers(out, pattern, floats=(kind == "slope"))
+    if record is not None:
+        record["values"] = fields if fields is not None else vals
     if not vals:
         return "NOVALUE", f"no '{pattern}' line in output", dt
     # A matching line carrying no number is NOT an error: the per-script
@@ -186,6 +234,9 @@ def main():
     ap.add_argument("--quick", action="store_true", help="skip slow scripts")
     ap.add_argument("-k", metavar="SUBSTR", help="only checks whose label/path match")
     ap.add_argument("--timeout", type=int, default=1800)
+    ap.add_argument("--format", choices=("json", "legacy"), default="json",
+                    help="result transport (legacy stdout is for migration comparisons)")
+    ap.add_argument("--report-json", type=Path, help="write a structured run summary")
     args = ap.parse_args()
 
     checks = CHECKS
@@ -197,9 +248,13 @@ def main():
 
     print(f"Regression runner -- {len(checks)} checks (root {ROOT})\n" + "=" * 78)
     n_pass = n_fail = 0
+    records = []
     for rel, kind, pattern, bound, label, nexp in checks:
+        record = {"producer": rel, "kind": kind, "bound": bound, "label": label}
         status, detail, dt = run_one(rel, kind, pattern, bound, label,
-                                     args.timeout, nexp)
+                                     args.timeout, nexp, args.format, record)
+        record.update(status=status, detail=detail, seconds=dt)
+        records.append(record)
         tstr = f"{dt:5.1f}s" if dt else "  -  "
         mark = {"PASS": "✓"}.get(status, "✗")
         print(f"[{mark} {status:7}] {tstr}  {label}")
@@ -210,7 +265,12 @@ def main():
             n_fail += 1
     print("=" * 78)
     print(f"{n_pass} passed, {n_fail} failed / {len(checks)} total")
-    return 0 if n_fail == 0 else 1
+    ok = n_fail == 0 and bool(checks)
+    if args.report_json:
+        write_json(args.report_json, {"schema_version": 1, "runner": "python-regression",
+                                     "format": args.format, "complete": True, "passed": ok,
+                                     "checks": records})
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":

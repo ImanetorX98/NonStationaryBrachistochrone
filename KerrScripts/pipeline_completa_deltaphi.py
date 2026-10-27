@@ -4,6 +4,28 @@
 # vector b (eq. clock-eta-tau) -> Q_kj = c_k b_j - c_j b_k -> the building blocks U_k (second
 # kind), W_kj (genus-2 polylogarithms), I_j -> assembly, compared with the direct double integral
 # ("difference =", read by run_regression.py).
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(__file__).resolve()
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 import sympy as sp, numpy as np
 from scipy.integrate import quad
 from scipy.optimize import brentq
@@ -93,6 +115,7 @@ I_dir = quad(lambda t:dEF(t)*(sum(b[j]*U(t,j) for j in range(5))+eta3(t)),r0,x,l
 print(f"  horizon part int dEF*eta_3 = {I_hor:.10f}")
 print(f"  I_assembled = {I_asm:.10f}")
 print(f"  I_direct    = {I_dir:.10f}   (= int dE F * eta dr)")
+_results.add('residual', 'assembly', abs(I_asm-I_dir))
 print(f"  difference  = {abs(I_asm-I_dir):.2e}   <-- chain closed")
 
 print("="*70)
@@ -100,3 +123,5 @@ print("STEP 8 -- FINAL NUMBER: delta phi = -E_hat * I   (E_hat=E=1.2)")
 Ehat=1.2
 print(f"  delta phi (coefficient of eps=A'/A) = {-Ehat*I_dir:+.8f}")
 print("  => from (M,a,E,J) to the number, through EVERY piece. No fit.")
+
+_results.finish()

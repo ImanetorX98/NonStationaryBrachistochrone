@@ -4,6 +4,28 @@
 #   delta = ODD characteristic (theta[delta](0)=0). Valid if:
 #   d/dr log-ratio = c0 * h_b + c1 du1/dr + c2 du2/dr   (holo = a-period normalisation).
 # Odd model (quintic), normalised w, base at the branch point s_b=1/r_min -> e-=-e+.
+# Stable verification fields are independent of the human-readable messages.
+# Without verification_results.py (e.g. a script copied out of the repository) the
+# program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.
+import sys as _result_sys
+from pathlib import Path as _ResultPath
+_result_source = _ResultPath(_result_sys.argv[0]).resolve()  # Sage CLI keeps the source in argv[0].
+_result_module = next((p / "NonStationaryMetrics" for p in _result_source.parents
+                       if (p / "NonStationaryMetrics" / "verification_results.py").is_file()), None)
+if _result_module is not None:
+    _result_sys.path.insert(0, str(_result_module))
+    from verification_results import ResultWriter as _ResultWriter
+    _results = _ResultWriter(_result_source)
+else:
+    import os as _result_os
+    if _result_os.environ.get("NSB_RESULT_JSON"):
+        raise SystemExit("cannot export NSB_RESULT_JSON: verification_results.py not found above "
+                         + str(_result_source))
+    class _NoResults:
+        def add(self, metric, sample, value): pass
+        def finish(self): pass
+    _results = _NoResults()
+
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 from abelfunctions import RiemannTheta
@@ -73,6 +95,9 @@ for k,(av,bv) in enumerate(odd):
     resid = np.max(np.abs(basis@coef - D))/max(np.max(np.abs(D)),1e-30)
     print(f"  {k}: {resid:.3e}    c2={coef[2]:+.4f}")
     if best is None or resid<best[0]: best=(resid,k,coef)
+_results.add('relative_residual', 'best_characteristic', best[0])
 print(f"\nBEST: delta #{best[1]}, relative residual {best[0]:.2e}, c0={best[2][0]:.4f}")
 print("=> if the residual is ~0: eta_b (third kind) = theta[delta] closed form CONFIRMED.")
 print("   rho0 expected ~1.06 (third-kind residue); c0 reflects it (up to normalisation)")
+
+_results.finish()
