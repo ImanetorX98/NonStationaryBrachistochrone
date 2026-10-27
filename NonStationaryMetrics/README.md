@@ -217,7 +217,6 @@ sage KerrSessionScripts/kerr_tau_Wij_diffform_integral.sage # naming U_k in θ[�
 sage KerrSessionScripts/kerr_tau_dilog_qseries5.sage        # dilog q-series (geometric convergence)
 sage VaidyaMetric/vaidya_dilog_qseries.sage                 # Vaidya dilog q-series
 sage ThakurtaMetric/tk_t_dilog_qseries.sage                 # TK-t dilog q-series
-sage KerrSessionScripts/kerr_quasiperiods_bel.sage          # genus-2 quasi-periods κ
 
 # --- independent cross-checks (Mathematica) ---
 wolframscript -file paper/crosscheck_generic.wl     # Vaidya+TK-t generic coeffs
@@ -279,7 +278,7 @@ The `W_ij` closure pipeline for TK-τ (archetype), brick by brick:
 - `kerr_tau_Wij_holomorphic.sage` — ★ diagnostic: holomorphic part not orbit-extractable.
 - `kerr_tau_siegel_reduce.py` — ★ Siegel reduction of τ (nomes <1 via S = −τ⁻¹).
 - `kerr_tau_dilog_qseries{1,3,4,5}.sage` — ★ **dilog q-series**: θ nome series, split Q(elem)+L(dilog), geometric convergence (N=4→1e-13).
-- `kerr_quasiperiods_bel.sage`, `kerr_psi_forward_abel.sage`, `kerr_thirdkind_theta_closed.sage`, `kerr_holo_component_check.sage` — genus-2 quasi-periods (κ), Abel map, 3rd-kind θ closure, Hodge component check.
+- `kerr_psi_forward_abel.sage`, `kerr_thirdkind_theta_closed.sage`, `kerr_holo_component_check.sage` — Abel map, 3rd-kind θ closure, Hodge component check. The genus-2 quasi-periods (κ) are computed by `../KerrScripts/kerr_quasiperiods_bel.sage`, the single copy, also used by `sage_env/run_sage_checks.py`.
 
 **★ Other generic-J branches (this effort, same template):**
 - `VaidyaMetric/vaidya_generic_coeff.py` — Vaidya generic (param m): c_k, Q_kj, g_i, P symbolic in (m,E,J), verified 1e-15.
