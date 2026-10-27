@@ -278,7 +278,7 @@ The `W_ij` closure pipeline for TK-τ (archetype), brick by brick:
 - `kerr_tau_Wij_holomorphic.sage` — ★ diagnostic: holomorphic part not orbit-extractable.
 - `kerr_tau_siegel_reduce.py` — ★ Siegel reduction of τ (nomes <1 via S = −τ⁻¹).
 - `kerr_tau_dilog_qseries{1,3,4,5}.sage` — ★ **dilog q-series**: θ nome series, split Q(elem)+L(dilog), geometric convergence (N=4→1e-13).
-- `kerr_psi_forward_abel.sage`, `kerr_thirdkind_theta_closed.sage`, `kerr_holo_component_check.sage` — Abel map, 3rd-kind θ closure, Hodge component check. The genus-2 quasi-periods (κ) are computed by `../KerrScripts/kerr_quasiperiods_bel.sage`, the single copy, also used by `sage_env/run_sage_checks.py`.
+- The base genus-2 Sage scripts live only in `../KerrScripts/` (single copies): `kerr_quasiperiods_bel.sage` (quasi-periods κ, also run by `sage_env/run_sage_checks.py`), `kerr_psi_forward_abel.sage` (Abel map), `kerr_thirdkind_theta_closed.sage` (third-kind θ closure, also run by `sage_env/run_sage_checks.py`) and `kerr_holo_component_check.sage` (Hodge component check).
 
 **★ Other generic-J branches (this effort, same template):**
 - `VaidyaMetric/vaidya_generic_coeff.py` — Vaidya generic (param m): c_k, Q_kj, g_i, P symbolic in (m,E,J), verified 1e-15.
