@@ -1,0 +1,19 @@
+--- (A) conformal reduction of the optical metric
+PASS  alpha_K^2 = Psi^2 hbar, Psi^2 = Sigma^2/(Delta Xi), exactly in a
+--- (B) equatorial and meridional planes, exactly in a
+PASS  equator (theta = pi/2): II on d_r, d_phi vanishes
+PASS  meridional plane (phi = 0): II on d_r, d_theta vanishes
+--- (C) inclined central plane, orders a^0, a^1, a^2
+PASS  the parametrised point lies on the plane, and d_r, d_s are tangent
+PASS  order a^0: II = 0
+PASS  order a^1: II = 0 (totally geodesic through first order in a)
+PASS  induced metric at a = 0: diag(1, B), B = r(r - 2M)
+PASS  order a^2, first minor = -(r - M) cos(iota) sin(iota) sin(s)/B^(3/2)
+PASS  order a^2, second minor = -sin(2 iota) cos(s)/B^(1/2)
+PASS  order a^2, third minor = B x first minor (no further condition)
+PASS  the two minors never vanish together for r > 2M, 0 < iota < pi/2
+PASS  mutation: (r - 2M) in place of (r - M) is rejected
+--- (D) normal magnetic force on the inclined plane, first order in a
+PASS  beta_K = -2 M a sin^2(theta) dphi/(r - 2M) + O(a^2)
+PASS  d beta_K(T, m) = 4 M a cos(s) sin(iota)/((rho - 2M) rho^2)
+ALL CHECKS PASSED
