@@ -1,5 +1,5 @@
-# (b) Riduzione di FAY: rango dei 21 A[e_i,e_j] MODULO peso-1, via SVD su molti z.
-# rango < 21 => esistono relazioni (riducibile). rango = 21 => shuffle e' gia' minimale.
+# (b) FAY reduction: rank of the 21 A[e_i,e_j] MODULO weight 1, by SVD over many z.
+# rank < 21 => relations exist (reducible). rank = 21 => the shuffle form is already minimal.
 import numpy as np, mpmath as mp, sympy as sp
 from scipy.integrate import quad
 mp.mp.dps=25
@@ -33,11 +33,11 @@ efun=[lambda z: mp.mpf(1), lambda z: wzet(z-zdm)-wzet(z+zdm), lambda z: wp(z-zdm
       lambda z: wpp(z-zdm)-wpp(z+zdm), lambda z: wp(z), lambda z: wp(z-iw),
       lambda z: wp(z-zim)+wp(z+zim), lambda z: wzet(z-zim)-wzet(z+zim)]
 enam=['1','Z_zd','P_zd','Pp_zd','wp0','wpiw','P_zi','Z_zi']
-Rset=[1,2,3,4,5]; Eset=[1,6,7]  # indici non-costanti in R e eta' (piu' l'1 condiviso)
+Rset=[1,2,3,4,5]; Eset=[1,6,7]  # non-constant indices in R and eta' (plus the shared 1)
 Rall=[0,1,2,3,4,5]; Eall=[0,1,6,7]
 pairs=[(i,j) for i in range(8) for j in range(i+1,8)
        if (i in Rall and j in Eall) or (j in Rall and i in Eall)]
-# togli coppie con coeff sempre nullo (R×R o E×E): tienile se i in R&j in E o viceversa
+# drop pairs whose coefficient always vanishes (R×R or E×E): keep them if i in R and j in E or vice versa
 pairs=[(i,j) for (i,j) in pairs if (i in Rall and j in Eall) or (i in Eall and j in Rall)]
 _pc={}
 def Pe(i,z):
@@ -45,12 +45,12 @@ def Pe(i,z):
     if key in _pc: return _pc[key]
     v=mp.quad(lambda t: efun[i](t),[z0f,z]); _pc[key]=v; return v
 def Aij(i,j,z): return mp.quad(lambda t: efun[i](t)*Pe(j,t)-efun[j](t)*Pe(i,t),[z0f,z],maxdegree=6)
-# campiona z su molti punti fisici
+# sample z at many physical points
 zs=[mp.mpf(zr(rr)) for rr in np.linspace(11.8,9.0,26)]
-print("valuto 21 A e base peso-1 su",len(zs),"punti...")
-# matrice A: righe=z, colonne=coppie
+print("evaluating the 21 A and the weight-1 basis at",len(zs),"points...")
+# matrix A: rows = z, columns = pairs
 Amat=np.array([[complex(Aij(i,j,z)) for (i,j) in pairs] for z in zs])
-# base peso-1: prodotti Pe_i*Pe_j (i<=j), z*Pe_i, Pe_i, z^2,z,1  (span del peso-1)
+# weight-1 basis: products Pe_i*Pe_j (i<=j), z*Pe_i, Pe_i, z^2,z,1  (span of weight 1)
 Wcols=[]
 for z in zs:
     row=[]
@@ -62,13 +62,13 @@ for z in zs:
     row+=[zz*zz,zz,1.0]
     Wcols.append(row)
 Wmat=np.array(Wcols)
-# proietta A sull'ortocomplemento di span(W): A_perp = A - W (W^+ A)
+# project A onto the orthogonal complement of span(W): A_perp = A - W (W^+ A)
 Wp=np.linalg.pinv(Wmat)
 Aperp=Amat-Wmat@(Wp@Amat)
-# rango di Aperp
+# rank of Aperp
 sv=np.linalg.svd(Aperp,compute_uv=False)
 sv=sv/sv[0]
 rank=int(np.sum(sv>1e-8))
-print("valori singolari (norm.):",np.array2string(sv,precision=2,max_line_width=200))
-print(f"\nRANGO dei {len(pairs)} A modulo peso-1 = {rank}")
-print(f"=> relazioni di Fay indipendenti: {len(pairs)-rank}")
+print("singular values (normalised):",np.array2string(sv,precision=2,max_line_width=200))
+print(f"\nRANK of the {len(pairs)} A modulo weight 1 = {rank}")
+print(f"=> independent Fay relations: {len(pairs)-rank}")

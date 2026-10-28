@@ -1,7 +1,7 @@
-# RAMO v (tempo avanzato) sulla separatrice: ASSEMBLAGGIO in blocchi.
+# v BRANCH (advanced time) on the separatrix: block ASSEMBLY.
 # delta phi_v = G~(z) v(r) - int G~ v_z dz,  v_z = E r^3/(r-r_d) + r sqrt(Q4)/(r-2m).
-# v_z = [pari: E r^3/(r-r_d)] + [dispari orizzonte: r sqrt(Q4)/(r-2m)].
-# Decompongo v_z in parti principali (poli z_d,+-z_inf, orizzonte i w_im) -> dilog con coeff chiusi.
+# v_z = [even: E r^3/(r-r_d)] + [odd, horizon: r sqrt(Q4)/(r-2m)].
+# Decompose v_z into principal parts (poles z_d,+-z_inf, horizon i w_im) -> dilogs with closed coefficients.
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try: from tqdm import tqdm
@@ -47,28 +47,28 @@ def Gt(z):
     for nm,(a,b) in PPr.items(): s+= b.get(1,0)*mp.log(wsig(z-a))-b.get(2,0)*wzet(z-a)-(b.get(3,0)/2)*wp(z-a)
     return s
 def Gt_r(x): z=mp.mpf(zr(x)); return complex(Gt(z)-Gt(z0)).real
-# --- sqrt(Q4) come funzione di z (SEGNO fisico: r decresce da r0, dz>0; su (e4,r0) Q4>0) ---
-def sqQ_z(z):  # sqrt(Q4(r(z))) col segno coerente con dr/dz>0 sul ramo fisico
+# --- sqrt(Q4) as a function of z (physical SIGN: r decreases from r0, dz>0; Q4>0 on (e4,r0)) ---
+def sqQ_z(z):  # sqrt(Q4(r(z))) with the sign consistent with dr/dz>0 on the physical branch
     rr=float(np.real(r_of_z(z))); return np.sqrt(Q4(rr))
 # --- v_z(z) = E r^3/(r-r_d) + r sqrt(Q4)/(r-2m) ---
 def vz(z):
     rr=r_of_z(z); return E*rr**3/(rr-rd) + rr*sqQ_z(z)/(rr-2*m)
-# --- clock v(r) diretto (per il bordo) ---
+# --- direct clock v(r) (for the boundary term) ---
 def sQ(x): return np.sqrt(Q4(x))
 def U(x,k): return quad(lambda t:t**k/((t-rd)*sQ(t)),r0,x,limit=200)[0]
 def vclock(x): return E*U(x,3)+(x-r0)+2*m*(np.log(abs(x-2*m))-np.log(abs(r0-2*m)))
-# --- diretto: delta phi_v = int dm F v dr ---
+# --- direct: delta phi_v = int dm F v dr ---
 def dmF(x):
     def Fm(mv): return np.polyval(np.polymul([Jc],[E**2-1,2*mv]),x)/np.sqrt(np.polyval(pS(mv,Jc),x))
     return (Fm(m+1e-6)-Fm(m-1e-6))/2e-6
 def dphi_direct(x): return quad(lambda t: dmF(t)*vclock(t), r0, x, limit=200)[0]
-# --- assemblato: G~ v - int G~ v_z dz ---
+# --- assembled: G~ v - int G~ v_z dz ---
 def dphi_asm(x):
     zx=mp.mpf(zr(x)); bnd=Gt_r(x)*vclock(x)
     intg=complex(mp.quad(lambda z: complex(Gt(z)-Gt(z0)).real*vz(z),[z0,zx])).real
     return bnd-intg
-log.info("v-branch assembly: G~ v - int G~ v_z  vs diretto")
-print("=== delta phi_v|_sep : ASSEMBLATO (G~,v_z espliciti in z) vs DIRETTO ===")
+log.info("v-branch assembly: G~ v - int G~ v_z  against direct")
+print("=== delta phi_v|_sep : ASSEMBLED (G~, v_z explicit in z) against DIRECT ===")
 for x in tqdm([11.0,10.5,10.0],desc="v-assembly"):
     da=dphi_asm(x); dd=dphi_direct(x)
     print(f"  r={x:4.2f}  asm={da:+.8f}  dir={dd:+.8f}  diff={abs(da-dd):.1e}")

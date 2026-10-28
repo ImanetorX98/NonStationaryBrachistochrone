@@ -1,6 +1,6 @@
-# (b) FAY veloce: relazioni tra A[e_i,e_j] modulo peso-1, via DERIVATE (forma chiusa).
-# A'_k = e_i Pe_j - e_j Pe_i  (peso-1, chiusa: Pe = zeta/lnsigma/z).  W_basis' = derivate prodotti.
-# rango di [A' | W'] -> null space con parte-A != 0 = relazioni di Fay.
+# (b) fast FAY: relations among the A[e_i,e_j] modulo weight 1, through DERIVATIVES (closed form).
+# A'_k = e_i Pe_j - e_j Pe_i  (weight 1, closed: Pe = zeta/lnsigma/z).  W_basis' = derivatives of the products.
+# rank of [A' | W'] -> null space with a non-zero A part = Fay relations.
 import numpy as np, mpmath as mp, sympy as sp
 from scipy.integrate import quad
 mp.mp.dps=30
@@ -31,7 +31,7 @@ z_inf=float(mp.re(mp.quad(lambda x:1/mp.sqrt(Q4(x)),[e4r,mp.inf]))); sa=float(mp
 z_d=z_inf+float(mp.re(mp.quad(lambda x:1/mp.sqrt(Q4(x)),[-mp.inf,rd])))
 def zr(rv): return float(quad(lambda x:1/np.sqrt(Q4(x)),e4r,rv,limit=400)[0])
 z0=mp.mpf(zr(r0)); zdm=mp.mpf(z_d); zim=mp.mpf(z_inf); iw=1j*mp.mpf(w_im)
-# funzioni e_i e loro primitive Pe_i (chiuse), riferite a base z0
+# functions e_i and their antiderivatives Pe_i (closed), based at z0
 ef=[lambda z: mp.mpf(1),
     lambda z: wzet(z-zdm)-wzet(z+zdm),
     lambda z: wp(z-zdm)+wp(z+zdm),
@@ -52,10 +52,10 @@ def Pe(i,z):
 Rall=[0,1,2,3,4,5]; Eall=[0,1,6,7]
 pairs=[(i,j) for i in range(8) for j in range(i+1,8) if (i in Rall and j in Eall) or (i in Eall and j in Rall)]
 enam=['1','Z_zd','P_zd','Pp_zd','wp0','wpiw','P_zi','Z_zi']
-# A'_k(z) = e_i Pe_j - e_j Pe_i (peso-1 chiuso)
+# A'_k(z) = e_i Pe_j - e_j Pe_i (closed, weight 1)
 def dA(i,j,z): return ef[i](z)*Pe(j,z)-ef[j](z)*Pe(i,z)
-# base peso-1 W e sue derivate W' = d/dz(Pe_i Pe_j) = e_i Pe_j + e_j Pe_i ; d/dz(z Pe_i)=Pe_i+z e_i; d/dz Pe_i=e_i
-wbasis=[]  # lista di funzioni z->derivata
+# weight-1 basis W and its derivatives W' = d/dz(Pe_i Pe_j) = e_i Pe_j + e_j Pe_i ; d/dz(z Pe_i)=Pe_i+z e_i; d/dz Pe_i=e_i
+wbasis=[]  # list of functions z -> derivative
 for i in range(8):
     for j in range(i,8): wbasis.append((lambda i,j: (lambda z: ef[i](z)*Pe(j,z)+ef[j](z)*Pe(i,z)))(i,j))
 for i in range(8): wbasis.append((lambda i:(lambda z: Pe(i,z)+z*ef[i](z)))(i))
@@ -64,24 +64,24 @@ wbasis.append(lambda z: 2*z); wbasis.append(lambda z: mp.mpf(1))
 zs=[mp.mpf(zr(rr)) for rr in np.linspace(11.9,8.9,120)]
 M=np.array([[complex(dA(i,j,z)) for (i,j) in pairs]+[complex(w(z)) for w in wbasis] for z in zs])
 nA=len(pairs)
-# SVD; conta null space e quanti null vector hanno parte-A non banale
+# SVD; count the null space and how many null vectors have a non-trivial A part
 U,S,Vt=np.linalg.svd(M,full_matrices=True)
 S=S/S[0]; nz=int(np.sum(S>1e-9)); nnull=M.shape[1]-nz
-# proietta: rango della sola parte-A modulo la parte-W
+# project: rank of the A part alone modulo the W part
 MA=M[:,:nA]; MW=M[:,nA:]
 MAperp=MA-MW@np.linalg.lstsq(MW,MA,rcond=None)[0]
 sA=np.linalg.svd(MAperp,compute_uv=False); sA=sA/sA[0]
 rankA=int(np.sum(sA>1e-7))
 print(f"pairs A = {nA}")
-print(f"rango di A modulo peso-1 = {rankA}")
-print(f"=> relazioni di Fay indipendenti = {nA-rankA}")
-print("valori singolari A_perp (norm):",np.array2string(sA,precision=2,max_line_width=220))
+print(f"rank of A modulo weight 1 = {rankA}")
+print(f"=> independent Fay relations = {nA-rankA}")
+print("singular values of A_perp (normalised):",np.array2string(sA,precision=2,max_line_width=220))
 
-# ===== VERIFICA che le relazioni siano REALI (su A annidati, non solo derivate) =====
-# null space di A_perp -> combinazioni lambda con sum lambda_k A_k = peso-1.
+# ===== CHECK that the relations are REAL (on the nested A, not only on derivatives) =====
+# null space of A_perp -> combinations lambda with sum lambda_k A_k = weight 1.
 Uu,Ss,Vt2=np.linalg.svd(MAperp,full_matrices=True)
-null=Vt2[rankA:]   # righe = vettori nulli (relazioni), 16 di essi
-print("\nverifica %d relazioni su integrali ANNIDATI veri:"%null.shape[0])
+null=Vt2[rankA:]   # rows = null vectors (relations), 16 of them
+print("\ncheck of %d relations on true NESTED integrals:"%null.shape[0])
 _pc={}
 def Penum(i,z):
     k=(i,float(z.real),float(z.imag))
@@ -90,12 +90,12 @@ def Penum(i,z):
 def Atrue(i,j,z): return mp.quad(lambda t: ef[i](t)*Penum(j,t)-ef[j](t)*Penum(i,t),[z0,z],maxdegree=7)
 ztest=[mp.mpf(zr(11.0)),mp.mpf(zr(10.0)),mp.mpf(zr(9.5))]
 Avals=np.array([[complex(Atrue(i,j,z)) for (i,j) in pairs] for z in ztest])  # 3 x 21
-Wvals=np.array([[complex(w(z)) for w in wbasis]+[1.0] for z in ztest])       # peso-1 (aggiungo cost)
-# per ogni relazione: R(z)=sum lambda A_k(z); deve essere in span(W) (peso-1)
+Wvals=np.array([[complex(w(z)) for w in wbasis]+[1.0] for z in ztest])       # weight 1 (adding a constant)
+# for each relation: R(z)=sum lambda A_k(z); it must lie in span(W) (weight 1)
 for ri in range(min(4,null.shape[0])):
     lam=null[ri]
-    Rz=Avals@lam                       # 3 valori
-    # residuo di Rz rispetto a span(Wvals)
+    Rz=Avals@lam                       # 3 values
+    # residual of Rz with respect to span(Wvals)
     mu,res,rk,sv=np.linalg.lstsq(Wvals,Rz,rcond=None)
     resid=np.max(np.abs(Wvals@mu-Rz))
-    print(f"  relazione {ri}: |sum lambda*A_true - (peso-1 fit)| = {resid:.1e}   (|lambda|max={np.max(np.abs(lam)):.2f})")
+    print(f"  relation {ri}: |sum lambda*A_true - (weight-1 fit)| = {resid:.1e}   (|lambda|max={np.max(np.abs(lam)):.2f})")

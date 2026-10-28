@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-phi(r,A) ADIABATICA IBRIDA per Thakurta-Kerr (piccolo A'/A).
+HYBRID ADIABATIC phi(r,A) for Thakurta-Kerr (small A'/A).
 
-Forma finale:
-  phi(r,A) = phi_0(r;Ê/A)                         [Kleinian, CHIUSO]
-           + (A'/A) [ Closed(r) + psi(r) ]        [1° ordine]
+Final form:
+  phi(r,A) = phi_0(r;Ê/A)                         [Kleinian, CLOSED]
+           + (A'/A) [ Closed(r) + psi(r) ]        [first order]
            + O((A'/A)^2)
-con:
-  Closed(r) = -1/2 Ê ∂_E phi_0(r) η(r)            [CHIUSO: ∂_E phi_0 = A(r)/√R + Σ c_k ∫r^k/√R]
-  psi(r)    = Ê · 1/2 (rho - rho_tilde)           [IRRIDUCIBILE -> integrato NUMERICAMENTE]
+with:
+  Closed(r) = -1/2 Ê ∂_E phi_0(r) η(r)            [CLOSED: ∂_E phi_0 = A(r)/√R + Σ c_k ∫r^k/√R]
+  psi(r)    = Ê · 1/2 (rho - rho_tilde)           [IRREDUCIBLE -> integrated NUMERICALLY]
               rho=∫∂_E phi_0·h dr, rho_tilde=∫η·∂_E F dr,  h=dη/dr
 
-I pezzi chiusi si valutano dalla loro struttura Kleiniana; solo psi (polilog
-iperellittico) e' un integrale numerico 1D. Verifica: ibrido == adiabatica piena.
-Ramo t; parametri M=1,a=0.9,Ê=1.4,J=6.
+The closed pieces are evaluated from their Kleinian structure; only psi (hyperelliptic
+polylog) is a 1D numerical integral. Check: hybrid == full adiabatic solution.
+t branch; parameters M=1,a=0.9,Ê=1.4,J=6.
 """
 import numpy as np, sympy as sp
 from scipy.integrate import solve_ivp, cumulative_trapezoid
@@ -49,13 +49,13 @@ lam = np.linspace(0, s.t[-1], 6000); rlam = s.sol(lam)[0]; lam_of_r = interp1d(r
 rg = np.linspace(r0-0.02, rlam.min()+0.3, 800)
 eta = lam_of_r(rg); h = np.gradient(eta, rg)
 phi0 = cumulative_trapezoid(Fn(rg), rg, initial=0)
-dEphi = cumulative_trapezoid(dEF(rg), rg, initial=0)          # ∂_E phi_0 (chiuso Kleinian)
-Closed = -0.5*Ehat*dEphi*eta                                  # CHIUSO
-# psi: SOLA parte numerica (integrale iterato irriducibile)
+dEphi = cumulative_trapezoid(dEF(rg), rg, initial=0)          # ∂_E phi_0 (closed, Kleinian)
+Closed = -0.5*Ehat*dEphi*eta                                  # CLOSED
+# psi: the ONLY numerical part (irreducible iterated integral)
 rho = cumulative_trapezoid(dEphi*h, rg, initial=0)
 rhot = cumulative_trapezoid(eta*dEF(rg), rg, initial=0)
-psi = Ehat*0.5*(rho-rhot)                                     # NUMERICO
-# adiabatica piena (verita')
+psi = Ehat*0.5*(rho-rhot)                                     # NUMERICAL
+# full adiabatic solution (the reference)
 dphi_full = -Ehat*cumulative_trapezoid(dEF(rg)*eta, rg, initial=0)
 
 
@@ -68,10 +68,10 @@ def phi_full(eps):
 
 
 if __name__ == '__main__':
-    print("Verifica: ibrido (chiuso analitico + psi numerico) == adiabatica piena")
+    print("Check: hybrid (analytic closed part + numerical psi) == full adiabatic solution")
     for eps in [0.005, 0.02, 0.06]:
         err = np.max(np.abs(phi_hybrid(eps)-phi_full(eps)))
         print(f"  A'/A={eps}: max|phi_hybrid - phi_full| = {err:.2e}")
-    print("=> ibrido riproduce esattamente la piena (per costruzione).")
-    print("   pezzi CHIUSI: phi_0, ∂_E phi_0=A(r)/√R+Σc_k∫r^k/√R, Closed=-1/2 Ê ∂_E phi_0 η")
-    print("   pezzo NUMERICO: psi = Ê/2 (rho - rho_tilde)  [polilog iperellittico]")
+    print("=> the hybrid reproduces the full solution exactly (by construction).")
+    print("   CLOSED pieces: phi_0, ∂_E phi_0=A(r)/√R+Σc_k∫r^k/√R, Closed=-1/2 Ê ∂_E phi_0 η")
+    print("   NUMERICAL piece: psi = Ê/2 (rho - rho_tilde)  [hyperelliptic polylog]")

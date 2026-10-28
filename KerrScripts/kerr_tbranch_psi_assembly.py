@@ -1,10 +1,10 @@
-# CHIUSURA DEL CERCHIO: assemblaggio psi del t-branch (on-curve) verificato end-to-end.
+# CLOSING THE LOOP: assembly of psi for the t-branch (on-curve), verified end to end.
 # Clock t(r) = eta2 + eta3:  eta2 = int P3/sqrt(R6) = sum_j b_j U_j  (SECOND KIND),
 #                            eta3 = int R_Delta/(Delta sqrt(R6))     (THIRD KIND horizon).
-# Per parti (identita' eq:psi-split):  con I := int dE F * eta2 dr,
+# By parts (identity eq:psi-split):  with I := int dE F * eta2 dr,
 #   I = -1/2 sum_{k<j} Q_kj W_kj + eta2*(Acal/sqrt(R6)+1/2 sum c_k U_k) - sum_j b_j Ical_j
 #   Q_kj=c_k b_j-c_j b_k,  W_kj=int(U_k dU_j-U_j dU_k),  Ical_j=int Acal r^j/R6 dr.
-# Full: int dE F * t dr = I + int dE F * eta3 dr  (il pezzo orizzonte, log-sigma a r_pm).
+# Full: int dE F * t dr = I + int dE F * eta3 dr  (the horizon piece, log-sigma at r_pm).
 # Stable verification fields are independent of the human-readable messages.
 # Without verification_results.py (e.g. a script copied out of the repository) the
 # program runs as before and exports nothing, unless NSB_RESULT_JSON asks for a result.

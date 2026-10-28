@@ -12,7 +12,7 @@ and the (r - r_m)^{-1/2} singularity is removed analytically (r = r_m + u^2, the
 N^2 r^2 - J^2 divided exactly by r - r_m).  Reproduced here:
 
   (1) aperture 2.038982616263322: two roots J = 1.13366..., 1.13402..., 3.6e-4 apart,
-      closer than the J-grid step 2.7e-3 of bvp_estremi_fissi.py, so a sign-change scan
+      closer than the J-grid step 2.7e-3 of bvp_fixed_endpoints.py, so a sign-change scan
       misses both;
   (2) aperture 2.038982626262098, between the three-sample vertex and the true maximum of
       Phi: roots J = 1.1338407..., 1.1338447..., on the same side of the sampled node;

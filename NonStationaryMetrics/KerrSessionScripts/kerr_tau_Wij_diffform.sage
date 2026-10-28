@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# NAMING KLEINIANO forma-DIFFERENZA (TK tau, genus-2). Riuso la convenzione VALIDATA
-# di kerr_thirdkind_theta_closed (delta dispari, e_pm=+-w(r=inf), base al branch point,
-# misura 1/sqrt(q)). Nomino i differenziali canonici in r ai punti e_pm:
-#   3a specie (U_2): D3 = [zeta_d(w-e+) - zeta_d(w-e-)] . dw/dr   (log theta-ratio)
-#   2a specie (U_3,U_4): G_pm,k = [grad zeta_d(w-e_pm)]_k . dw/dr  (zeta shiftata)
-# VERIFICA (differenziale, robusto al divisore-theta perche' argomenti SHIFTATI a e_pm):
-#   r^k/sqrt(S) = sum coeff * {du1/dr,du2/dr, D3, G+_1,G+_2,G-_1,G-_2}  (residuo ~0).
+# KLEINIAN NAMING in DIFFERENCE form (TK tau, genus-2). Reuses the VALIDATED convention
+# of kerr_thirdkind_theta_closed (odd delta, e_pm=+-w(r=inf), base point at the branch point,
+# measure 1/sqrt(q)). Name the canonical differentials in r at the points e_pm:
+#   third kind (U_2): D3 = [zeta_d(w-e+) - zeta_d(w-e-)] . dw/dr   (log theta-ratio)
+#   second kind (U_3,U_4): G_pm,k = [grad zeta_d(w-e_pm)]_k . dw/dr  (shifted zeta)
+# CHECK (differential, robust against the theta divisor because the arguments are SHIFTED to e_pm):
+#   r^k/sqrt(S) = sum coeff * {du1/dr,du2/dr, D3, G+_1,G+_2,G-_1,G-_2}  (remainder ~0).
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 from abelfunctions import RiemannTheta
@@ -29,7 +29,7 @@ def Iu(s_to):
 def w_of(s_to): return ominv@Iu(s_to)
 e_plus=w_of(0.0); e_minus=-e_plus
 
-# caratteristiche odd
+# odd characteristics
 def theta_d(z,av,bv,order=0):
     av=np.array(av); bv=np.array(bv); zz=z+tau@av+bv
     pref=np.exp(1j*np.pi*(av@tau@av)+2j*np.pi*(av@(z+bv)))
@@ -52,9 +52,9 @@ du1dr=(1/np.sqrt(qn(sr)))*dsdr; du2dr=(sr/np.sqrt(qn(sr)))*dsdr
 W=np.array([w_of(sv) for sv in sr]); dwdr=(ominv@np.vstack([du1dr,du2dr])).T
 sqrtS=np.sqrt(Sn(rg))
 
-print("\n delta  | k=2 resid | k=3 resid | k=4 resid  (r^k/sqrtS su base Kleiniana differenza)")
+print("\n delta  | k=2 resid | k=3 resid | k=4 resid  (r^k/sqrtS on the Kleinian difference basis)")
 for di,(av,bv) in enumerate(odd):
-    # colonne base ai punti r
+    # basis columns at the points r
     col_du1=du1dr; col_du2=du2dr
     D3=np.array([ (theta_d(W[i]-e_plus,av,bv,1)-theta_d(W[i]-e_minus,av,bv,1))@dwdr[i] for i in range(len(rg))])
     Gp=np.array([ theta_d(W[i]-e_plus,av,bv,2)@dwdr[i] for i in range(len(rg))])   # (N,2)
@@ -67,5 +67,5 @@ for di,(av,bv) in enumerate(odd):
         resids.append(np.max(np.abs(B@coef-target))/max(np.max(np.abs(target)),1e-30))
     if min(resids)<1e-2 or di<2 or max(resids)<0.5:
         print(f"  #{di} a={av} b={bv} | {resids[0]:.2e} | {resids[1]:.2e} | {resids[2]:.2e}")
-print("\n=> se una delta da' residui ~0 per k=2,3,4: U_2,U_3,U_4 CHIUSI in forma-differenza")
-print("   Kleiniana (theta[delta] dispari agli e_pm). Naming peso-1 robusto al divisore-theta.")
+print("\n=> if one delta gives residuals ~0 for k=2,3,4: U_2,U_3,U_4 CLOSED in Kleinian")
+print("   difference form (odd theta[delta] at e_pm). Weight-1 naming robust against the theta divisor.")

@@ -180,6 +180,6 @@ for q in qs:
 sq_=np.polyfit(np.log(qs),np.log(res_q),1)[0]; smd=np.polyfit(np.log(qs),np.log(res_md),1)[0]
 print(f"m0={m2}: off-shell prefactor mdot/m -> slope {sq_:.2f};  prefactor mdot -> slope {smd:.2f}")
 assert sq_>1.8 and smd<1.2, "mass-normalisation test failed"
-print("FATTO")
+print("DONE")
 
 _results.finish()

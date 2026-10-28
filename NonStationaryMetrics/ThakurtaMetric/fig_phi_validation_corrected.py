@@ -270,6 +270,6 @@ ax[1].set_xlabel(r"$A^\prime/A$"); ax[1].set_ylabel('residual vs true flow')
 ax[1].set_title('exact term closes to $O(\\varepsilon^2)$: both branches, two parameter sets',fontsize=6.4)
 ax[1].legend(fontsize=4.9,loc='upper left')
 savefig(fig,os.path.join(os.path.dirname(HERE),'paper','Immagini'),'fig_phi_validation_true_dynamic')
-print("FATTO")
+print("DONE")
 
 _results.finish()

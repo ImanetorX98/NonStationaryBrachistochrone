@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# COEFFICIENTI TRACKING (separatrice mobile Jc(lambda)) SIMBOLICI in (M,a,E,r_d,Jc).
-# b_i^track: stessa formula b3=h0/s^3 ma con F=N_tot/Q4, N_tot=N + (dJc/dlambda) N_J.
-# Verifica: b_i^track(simbolico) vs valori numerici del tracking.
+# SYMBOLIC TRACKING COEFFICIENTS (moving separatrix Jc(lambda)) in (M,a,E,r_d,Jc).
+# b_i^track: same formula b3=h0/s^3 but with F=N_tot/Q4, N_tot=N + (dJc/dlambda) N_J.
+# Check: symbolic b_i^track vs the numerical tracking values.
 import sympy as sp, numpy as np
 r,M,a,E,Jc,rd=sp.symbols('r M a E Jc r_d')
 
@@ -22,9 +22,9 @@ K=Jc*r*(r-2*M)*DE/Dl
 
 # ---- Vaidya tau tracking (param m=M, a=0) ----
 Sv=S.subs(a,0); Kv=Jc*DE   # a=0: K=Jc DE
-Nm=sp.expand(Sv*sp.diff(Kv,M)-sp.Rational(1,2)*Kv*sp.diff(Sv,M))       # sorgente fissa
+Nm=sp.expand(Sv*sp.diff(Kv,M)-sp.Rational(1,2)*Kv*sp.diff(Sv,M))       # fixed source
 NJv=sp.expand(Sv*DE+Jc**2*r*(r-2*M)*DE**3)                             # N_J
-dJcdm=Jc/M                                                            # scaling lineare
+dJcdm=Jc/M                                                            # linear scaling
 Ntot_v=sp.expand(Nm+dJcdm*NJv)
 bv_fix=bcoeffs(Sv,Nm); bv_trk=bcoeffs(Sv,Ntot_v)
 
@@ -36,7 +36,7 @@ dJcdE=-E*Jc*rd/DErd
 Ntot_t=sp.expand(Ntau+dJcdE*NJt)
 bt_fix=bcoeffs(S,Ntau); bt_trk=bcoeffs(S,Ntot_t)
 
-# ===== VERIFICA numerica =====
+# ===== NUMERICAL CHECK =====
 def numcheck(Scurve,name,params,Jmin,bfix,btrk,Ntot,dJc_formula):
     Sub={M:params['M'],a:params['a'],E:params['E']}
     Sn=Scurve.subs(Sub)
@@ -46,13 +46,13 @@ def numcheck(Scurve,name,params,Jmin,bfix,btrk,Ntot,dJc_formula):
     rdv=float(np.real((rts[pr[0][0]]+rts[pr[0][1]])/2))
     sub={M:params['M'],a:params['a'],E:params['E'],Jc:Jcv,rd:rdv}
     print(f"\n{name}: Jc={Jcv:.5f} r_d={rdv:.5f}  dJc/dlambda={float(dJc_formula.subs(sub)):+.5f}")
-    print(f"  N_tot(r_d) = {float(Ntot.subs(sub).subs(r,rdv)):.2e}  (=0 => tracking CANCELLA polo triplo)")
+    print(f"  N_tot(r_d) = {float(Ntot.subs(sub).subs(r,rdv)):.2e}  (=0 => tracking CANCELS the triple pole)")
     for k in ['b3','b2','b1']:
         print(f"  {k}: fixed={float(bfix[k].subs(sub)):+.8f}  track={float(btrk[k].subs(sub)):+.8f}")
 
-print("=== COEFFICIENTI TRACKING SIMBOLICI (b_i con N_tot=N+(dJc/dl)N_J) ===")
+print("=== SYMBOLIC TRACKING COEFFICIENTS (b_i with N_tot=N+(dJc/dl)N_J) ===")
 numcheck(Sv,"Vaidya tau TRACKING (dJc/dm=Jc/m)",{'M':1,'a':0,'E':sp.Rational(7,5)},1,bv_fix,bv_trk,Ntot_v,dJcdm)
 numcheck(S,"TK tau TRACKING (dJc/dE=-E Jc r_d/DE(r_d))",{'M':1,'a':sp.Rational(9,10),'E':sp.Rational(6,5)},5,bt_fix,bt_trk,Ntot_t,dJcdE)
-print("\n=> RISULTATO: il tracking ha N_tot(r_d)=0 -> b3^track=0 (polo triplo cancellato).")
-print("   b_i^track SIMBOLICI in (M,a,E,r_d,Jc), F=N_tot/Q4. Seguire la separatrice mobile addolcisce")
-print("   la singolarita' a r_d. Fixed-Jc (SEP_COEFF_SYMBOLIC) ha b3!=0; tracking b3=0.")
+print("\n=> RESULT: tracking has N_tot(r_d)=0 -> b3^track=0 (triple pole cancelled).")
+print("   b_i^track SYMBOLIC in (M,a,E,r_d,Jc), F=N_tot/Q4. Following the moving separatrix softens")
+print("   the singularity at r_d. Fixed Jc (SEP_COEFF_SYMBOLIC) has b3!=0; tracking b3=0.")

@@ -1,7 +1,7 @@
-# SEPARATRICE Thakurta-Kerr ramo t (tempo COORDINATA). Curva R6=r Q2 DE; clock 2a+3a specie.
+# Thakurta-Kerr SEPARATRIX, t branch (COORDINATE time). Curve R6=r Q2 DE; clock of the second + third kind.
 # delta phi_t = -Ehat(A'/A) int eta_t * dE F dr,  dE F = N_t/R6^{3/2}.
-# clock t = eta2 + eta3: eta2'=P3/sqrt R6 (2a specie), eta3'=R_Delta/(Delta sqrt R6) (3a, orizzonti).
-# In z (separatrice sqrt R6=(r-r_d)sqrt Q4): eta_t'(dz) = rho_t/(r-r_d), rho_t=P3+R_Delta/Delta.
+# clock t = eta2 + eta3: eta2'=P3/sqrt R6 (second kind), eta3'=R_Delta/(Delta sqrt R6) (third kind, horizons).
+# In z (separatrix sqrt R6=(r-r_d)sqrt Q4): eta_t'(dz) = rho_t/(r-r_d), rho_t=P3+R_Delta/Delta.
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try: from tqdm import tqdm
@@ -17,28 +17,28 @@ Q2=(2*Esy**2*J**2*Msy*r-Esy**2*J**2*r**2-4*Esy**2*J*Msy*asy*r+2*Esy**2*Msy*asy**
 R6f=sp.expand(r*Q2*DE); Ktf=r*DE*(J*(r-2*Msy)+2*Msy*asy)/Delta
 Ntf=sp.expand(sp.simplify(sp.diff(Ktf/sp.sqrt(R6f),Esy)*R6f**sp.Rational(3,2)))
 rho_tf=sp.cancel(sp.together((Esy**2*r**3-2*Msy*asy*Ktf/r)/((r-2*Msy)/r)))
-# sostituisco M,a numerici (E,J restano simbolici per ora)
+# substitute numerical M,a (E,J stay symbolic for now)
 R6=sp.expand(R6f.subs(asub)); Nt=sp.expand(Ntf.subs(asub)); rho_t=sp.cancel(rho_tf.subs(asub)); DeltaN=Delta.subs(asub)
-# FIX: dividi per il denominatore VERO (=2500*Delta), non Delta (bug: P3 era 2500x)
+# FIX: divide by the TRUE denominator (=2500*Delta), not Delta (bug: P3 was 2500 times too large)
 P3poly,_=sp.div(sp.Poly(sp.numer(rho_t),r),sp.Poly(sp.denom(rho_t),r))
 P3=sp.expand(P3poly.as_expr()); RD=sp.expand(sp.simplify((rho_t-P3)*DeltaN))   # rho_t = P3 + RD/Delta
 Delta=DeltaN
-log.info("simbolico OK. Jc=%.5f (%s), raffino (Jc,r_d) ad alta prec"%(Jc,SIGN))
-# raffina: Q2(rd,Jc)=0 e dQ2/dr(rd,Jc)=0  (sistema doppia radice), near (r_d0,Jc)
+log.info("symbolic part OK. Jc=%.5f (%s), refining (Jc,r_d) at high precision"%(Jc,SIGN))
+# refine: Q2(rd,Jc)=0 and dQ2/dr(rd,Jc)=0  (double-root system), near (r_d0,Jc)
 Q2E=Q2.subs(asub).subs(Esy,sp.Rational(6,5))
 Q2n=sp.lambdify((r,J),Q2E,'mpmath'); Q2rn=sp.lambdify((r,J),sp.diff(Q2E,r),'mpmath')
 sol=mp.findroot(lambda rd_,Jc_:[Q2n(rd_,Jc_),Q2rn(rd_,Jc_)], (mp.mpf('-6.588'),mp.mpf(str(Jc))))
 rd_hp=float(sol[0]); Jc=float(sol[1]); rd0=rd_hp
-log.info("raffinato: Jc=%.10f  r_d=%.10f"%(Jc,rd_hp))
-# numerico a Jc
+log.info("refined: Jc=%.10f  r_d=%.10f"%(Jc,rd_hp))
+# numerics at Jc
 R6c=np.array([float(c) for c in sp.Poly(R6.subs(Esy,sp.Rational(6,5)).subs(J,Jc),r).all_coeffs()])
 Ntc=np.array([float(c) for c in sp.Poly(sp.expand(Nt.subs(Esy,sp.Rational(6,5))).subs(J,Jc),r).all_coeffs()])
 P3n=sp.lambdify(r,P3.subs(Esy,sp.Rational(6,5)).subs(J,Jc),'numpy'); RDn=sp.lambdify(r,RD.subs(Esy,sp.Rational(6,5)).subs(J,Jc),'numpy'); Dn=sp.lambdify(r,Delta,'numpy')
 rd=rd_hp; Q,rem=np.polydiv(R6c,np.polymul([1,-rd],[1,-rd]))
-log.info("resto polydiv R6/(r-r_d)^2 = %.1e (deve ~0)"%np.max(np.abs(rem)))
+log.info("polydiv remainder R6/(r-r_d)^2 = %.1e (must be ~0)"%np.max(np.abs(rem)))
 er=np.sort(np.real(np.roots(Q))); a4=Q[0]; e1r,e2r,e3r,e4r=er
 def Q4(x): return np.polyval(Q,x)
-log.info("r_d=%.4f  radici Q4=%s  turning e4=%.4f  orizzonti r_pm=%.4f,%.4f"%(rd,np.round(er,3),e4r,1+np.sqrt(1-a*a),1-np.sqrt(1-a*a)))
+log.info("r_d=%.4f  roots of Q4=%s  turning point e4=%.4f  horizons r_pm=%.4f,%.4f"%(rd,np.round(er,3),e4r,1+np.sqrt(1-a*a),1-np.sqrt(1-a*a)))
 k2=((e3r-e2r)*(e4r-e1r))/((e4r-e2r)*(e3r-e1r)); pref=2/mp.sqrt((e4r-e2r)*(e3r-e1r))/mp.sqrt(a4)
 om1=mp.mpf(float(pref*mp.ellipk(k2))); w_im=float(pref*mp.ellipk(1-k2)); tau=mp.mpc(0,w_im)/om1; qn=mp.exp(mp.pi*1j*tau)
 L1=lambda u: mp.jtheta(1,u,qn); L1p=lambda u: mp.jtheta(1,u,qn,1); L1pp=lambda u: mp.jtheta(1,u,qn,2); th1p0=L1p(0)
@@ -72,9 +72,9 @@ def etatp(x): return (P3n(x)+RDn(x)/Dn(x))/((x-rd)*sQ(x))   # dt/dr
 def etat(x): return quad(lambda t: etatp(t), r0, x, limit=200)[0]
 def dEF(x): return np.polyval(Ntc,x)/np.polyval(R6c,x)**1.5
 def dphi_direct(x): return quad(lambda t: dEF(t)*etat(t), r0, x, limit=200)[0]
-# eta_t' in z-form per IBP: rho_t/(r-r_d)  (dz = dr/sqrtQ4)
+# eta_t' as a z form for the integration by parts: rho_t/(r-r_d)  (dz = dr/sqrtQ4)
 def etatp_z(x): return (P3n(x)+RDn(x)/Dn(x))/(x-rd)
 def dphi_asm(x): return Gt_r(x)*etat(x)-quad(lambda t: Gt_r(t)*etatp_z(mp.mpf(zr(t)) and t)/sQ(t)*sQ(t),r0,x,limit=120)[0] if False else Gt_r(x)*etat(x)-quad(lambda t: Gt_r(t)*etatp(t),r0,x,limit=120)[0]
-print("\n=== TK t-branch prograda: delta phi ~ int eta_t dEF : ASM vs DIR ===")
+print("\n=== TK t-branch, prograde: delta phi ~ int eta_t dEF : assembled against direct ===")
 for x in tqdm([19.0,18.0,17.0],desc="TK-t"):
     print(f"  r={x:4.1f}  asm={dphi_asm(x):+.8e}  dir={dphi_direct(x):+.8e}  diff={abs(dphi_asm(x)-dphi_direct(x)):.1e}")

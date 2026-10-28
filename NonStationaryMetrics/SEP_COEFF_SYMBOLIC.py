@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# COEFFICIENTI SEPARATRICE pienamente SIMBOLICI in (M,a,E,r_d,Jc) per TUTTI i rami.
-# Formula UNIVERSALE (residui R al polo triplo z_d, F=N/Q4):
-#   Q4(rd)=S''(rd)/2, Q4'(rd)=S'''(rd)/6, Q4''(rd)=S''''(rd)/12, a4=[r^6]S (o [r^6]curva)
+# Separatrix coefficients, fully SYMBOLIC in (M,a,E,r_d,Jc), for ALL branches.
+# UNIVERSAL formula (residues R at the triple pole z_d, F=N/Q4):
+#   Q4(rd)=S''(rd)/2, Q4'(rd)=S'''(rd)/6, Q4''(rd)=S''''(rd)/12, a4=[r^6]S (or [r^6] of the curve)
 #   s=sqrt(Q4(rd)); a1=Q4'(rd)/(4s); a2=Q4''(rd)/12
 #   h0=F(rd); h1=F'(rd)s; h2=(1/2)(F''(rd)s^2+F'(rd)Q4'(rd)/2)
 #   b3=h0/s^3; b2=(h1-3a1 h0)/s^3; b1=(h2-3a1 h1+(6a1^2-3a2)h0)/s^3
-# r_d,Jc: doppia radice (S(rd)=0,S'(rd)=0). Cambiano solo S (curva) e N (sorgente).
+# r_d,Jc: double root (S(rd)=0,S'(rd)=0). Only S (the curve) and N (the source) change.
 import sympy as sp, numpy as np
 r,M,a,E,Jc,rd=sp.symbols('r M a E Jc r_d')
 
@@ -32,25 +32,25 @@ def verify(S,N,name,params,contour_brd=None):
     bc=bcoeffs(S,N); sub={M:params['M'],a:params['a'],E:params['E'],Jc:Jcv,rd:rdv}
     print(f"\n=== {name}: M={params['M']},a={params['a']},E={params['E']} -> Jc={Jcv:.6f}, r_d={rdv:.6f} ===")
     for k in ['b1','b2','b3']:
-        print(f"  {k}(simbolico) = {float(bc[k].subs(sub)):+.8f}")
-    print("  a4=[r^6]curva =",sp.simplify(sp.Poly(S,r).coeff_monomial(r**6)))
+        print(f"  {k}(symbolic) = {float(bc[k].subs(sub)):+.8f}")
+    print("  a4=[r^6] of the curve =",sp.simplify(sp.Poly(S,r).coeff_monomial(r**6)))
 
-# ---------- RAMO tau (Vaidya a=0 e TK a!=0): stesso S, sorgenti diverse ----------
+# ---------- tau BRANCH (Vaidya a=0 and TK a!=0): same S, different sources ----------
 DE=(E**2-1)*r+2*M; Dl=r**2-2*M*r+a**2
-S_tau=sp.expand(r*(r-2*M)*DE*(r*Dl-Jc**2*DE))    # sestica tau (TK; Vaidya = a->0)
-# Vaidya tau: sorgente mass-derivative N_m=S dm K - 1/2 K dm S, K=Jc DE
+S_tau=sp.expand(r*(r-2*M)*DE*(r*Dl-Jc**2*DE))    # tau sextic (TK; Vaidya = a->0)
+# Vaidya tau: mass-derivative source N_m=S dm K - 1/2 K dm S, K=Jc DE
 K=Jc*DE; N_vaidya=sp.expand(S_tau*sp.diff(K,M)-sp.Rational(1,2)*K*sp.diff(S_tau,M))
-# TK tau: sorgente E-derivative N_tau = E Jc r^4 (r-2M)^2 DE
+# TK tau: E-derivative source N_tau = E Jc r^4 (r-2M)^2 DE
 N_tk=sp.expand(E*Jc*r**4*(r-2*M)**2*DE)
 
-print("############ RAMO TAU ############")
-print("Curva: S_tau = r(r-2M)DE(rDelta-Jc^2 DE), DE=(E^2-1)r+2M, Delta=r^2-2Mr+a^2")
-print("Coeff b_i = formula universale con F=N/Q4; Q4^(k)(rd) da S^(k+2)(rd).")
-verify(S_tau.subs(a,0),N_vaidya.subs(a,0),"Vaidya tau (a=0), sorgente N_m",{'M':1,'a':0,'E':sp.Rational(7,5)})
-verify(S_tau,N_tk,"TK tau, sorgente N_tau",{'M':1,'a':sp.Rational(9,10),'E':sp.Rational(6,5),'Jmin':5})
+print("############ TAU BRANCH ############")
+print("Curve: S_tau = r(r-2M)DE(rDelta-Jc^2 DE), DE=(E^2-1)r+2M, Delta=r^2-2Mr+a^2")
+print("Coeffs b_i = universal formula with F=N/Q4; Q4^(k)(rd) from S^(k+2)(rd).")
+verify(S_tau.subs(a,0),N_vaidya.subs(a,0),"Vaidya tau (a=0), source N_m",{'M':1,'a':0,'E':sp.Rational(7,5)})
+verify(S_tau,N_tk,"TK tau, source N_tau",{'M':1,'a':sp.Rational(9,10),'E':sp.Rational(6,5),'Jmin':5})
 
-print("\n############ RAMO t (TK) ############")
-# curva R6 = r Q2 DE ; Q2 quartica (M=1); due separatrici Jc+- (doppia radice di Q2)
+print("\n############ t BRANCH (TK) ############")
+# curve R6 = r Q2 DE ; Q2 quartic (M=1); two separatrices Jc+- (double root of Q2)
 Q2=(2*E**2*Jc**2*r - E**2*Jc**2*r**2 - 4*E**2*Jc*a*r + 2*E**2*a**2*r + E**2*a**2*r**2
     + E**2*r**4 + 4*Jc**2 - 4*Jc**2*r + Jc**2*r**2 - 8*Jc*a + 4*Jc*a*r + 4*a**2)  # M=1
 R6=sp.expand(r*Q2*DE)
@@ -63,11 +63,11 @@ def verify_t(sign,Jguess,rdguess):
     rdv=float(sl[0]); Jcv=float(sl[1])
     bc=bcoeffs(R6,N_t); sub={M:1,a:sp.Rational(9,10),E:sp.Rational(6,5),Jc:Jcv,rd:rdv}
     print(f"\n=== TK t {sign}: Jc={Jcv:.6f}, r_d={rdv:.6f} ===")
-    for k in ['b1','b2','b3']: print(f"  {k}(simbolico) = {float(bc[k].subs(sub)):+.8f}")
-print("Curva: R6 = r Q2 DE (Q2 quartica in r, LINEARE in Jc -> Jc+ != Jc-, frame dragging)")
-verify_t("prograda (Jc+)",19.09,-6.62)
-verify_t("retrograda (Jc-)",-18.67,-6.588)
+    for k in ['b1','b2','b3']: print(f"  {k}(symbolic) = {float(bc[k].subs(sub)):+.8f}")
+print("Curve: R6 = r Q2 DE (Q2 quartic in r, LINEAR in Jc -> Jc+ != Jc-, frame dragging)")
+verify_t("prograde (Jc+)",19.09,-6.62)
+verify_t("retrograde (Jc-)",-18.67,-6.588)
 
-print("\n=> TUTTI i rami: b1,b2,b3 SIMBOLICI in (M,a,E,r_d,Jc). r_d,Jc=doppia radice della curva.")
-print("   tau (Vaidya/TK): curva S_tau. t (TK): curva R6, due Jc+-. v (Vaidya)=stesso b_i di tau,")
-print("   clock diverso. Riutilizzabile: dato (M,a,E), risolvi doppia radice -> plug nelle formule.")
+print("\n=> ALL branches: b1,b2,b3 SYMBOLIC in (M,a,E,r_d,Jc). r_d,Jc=double root of the curve.")
+print("   tau (Vaidya/TK): curve S_tau. t (TK): curve R6, two Jc+-. v (Vaidya)=same b_i as tau,")
+print("   different clock. Reusable: given (M,a,E), solve for the double root -> plug into the formulas.")

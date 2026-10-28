@@ -1,37 +1,37 @@
-# Asimmetria accrescimento/evaporazione della correzione adiabatica δφ_V
+# Accretion/evaporation asymmetry of the adiabatic correction δφ_V
 
-## Idea fisica
-A primo ordine δφ ∝ ṁ ⇒ ṁ→−ṁ flippa solo il segno (banale). L'asimmetria vera:
-- **Accrescimento** (ṁ>0): Vaidya **ingoing**, clock = tempo **avanzato** v=t+r∗.
-- **Evaporazione** (ṁ<0): Vaidya **outgoing**, clock = tempo **ritardato** u=t−r∗
+## Physical idea
+At first order δφ ∝ ṁ ⇒ ṁ→−ṁ only flips the sign (trivial). The real asymmetry:
+- **Accretion** (ṁ>0): **ingoing** Vaidya, clock = **advanced** time v=t+r∗.
+- **Evaporation** (ṁ<0): **outgoing** Vaidya, clock = **retarded** time u=t−r∗
   (ds²=−f du²−2du dr).
 
-La riduzione congelata ∂_m F è IDENTICA (dipende solo da S); cambia solo il clock, e
-v↔u flippa il segno del tortoise r∗.
+The frozen reduction ∂_m F is IDENTICAL (it depends only on S); only the clock changes, and
+v↔u flips the sign of the tortoise coordinate r∗.
 
-## Decomposizione (verificata 1e-15)
-Con v = E U₃ + r∗,  r∗ = (r−r₀) + 2m ln((r−2m)/(r₀−2m)):
+## Decomposition (verified to 1e-15)
+With v = E U₃ + r∗,  r∗ = (r−r₀) + 2m ln((r−2m)/(r₀−2m)):
 
     δφ/ṁ|accr = A∞ + B_hor        δφ/ṁ|evap = A∞ − B_hor
-    A∞  = ∫ ∂_m F · E U₃ dr   (SIMMETRICA, polilog all'INFINITO)
-    B_hor = ∫ ∂_m F · r∗   dr   (ANTISIMMETRICA, tortoise)
+    A∞  = ∫ ∂_m F · E U₃ dr   (SYMMETRIC, polylog at INFINITY)
+    B_hor = ∫ ∂_m F · r∗   dr   (ANTISYMMETRIC, tortoise)
 
-**Asimmetria netta** (a |ṁ| uguale): δφ_accr − δφ_evap = 2|ṁ| B_hor,
-portata INTERAMENTE dal tortoise; A∞ (settore E U₃) è comune e si CANCELLA.
+**Net asymmetry** (at equal |ṁ|): δφ_accr − δφ_evap = 2|ṁ| B_hor,
+carried ENTIRELY by the tortoise term; A∞ (the E U₃ sector) is common and CANCELS.
 
-## Numeri (M=1, E=1.4, J=2.5)
-- A∞ = 8.72756968   (polilog ∞)
-- B  = 6.11272429 = B_bulk(4.58262818, 2a specie) + B_hor-log(1.53009610, dilog D_k)
-- accr = A+B = 14.84029397  (= clock v, match diretto 3.6e-15)
-- evap = A−B =  2.61484540  (= clock u, match diretto 8.9e-16)
-- asimmetria = 2B = 12.22544857
-- (i tre pezzi 8.73/4.58/1.53 coincidono con lo split del clock in vaidya_clock.py)
+## Numbers (M=1, E=1.4, J=2.5)
+- A∞ = 8.72756968   (polylog at ∞)
+- B  = 6.11272429 = B_bulk(4.58262818, second kind) + B_hor-log(1.53009610, dilog D_k)
+- accr = A+B = 14.84029397  (= clock v, direct match 3.6e-15)
+- evap = A−B =  2.61484540  (= clock u, direct match 8.9e-16)
+- asymmetry = 2B = 12.22544857
+- (the three pieces 8.73/4.58/1.53 coincide with the split of the clock in vaidya_clock.py)
 
-## Struttura
-B_hor per parti: 2m[A_m ln(r−2m)] − 2m ∫A_m/(r−2m) dr, e ∫A_m/(r−2m) = Σ c_k^M D_k
-(dilog d'ORIZZONTE). ⇒ la parte trascendente dell'asimmetria È il dilog D_k già
-derivato. L'asimmetria accr/evap = faccia FISICA del pezzo peso-2 d'orizzonte, come la
-finestra di penetrazione dell'ergosfera (misura finita per un segno di J, nulla per
-l'altro) è la faccia FENOMENOLOGICA della stessa geometria d'orizzonte.
+## Structure
+B_hor by parts: 2m[A_m ln(r−2m)] − 2m ∫A_m/(r−2m) dr, and ∫A_m/(r−2m) = Σ c_k^M D_k
+(HORIZON dilog). ⇒ the transcendental part of the asymmetry IS the dilog D_k already
+derived. The accretion/evaporation asymmetry is the PHYSICAL face of the weight-2 horizon piece, as the
+ergosphere penetration window (finite measure for one sign of J, zero for
+the other) is the PHENOMENOLOGICAL face of the same horizon geometry.
 
 Script: `vaidya_asymmetry.py`. Paper: eq:vaidya-asymmetry (main + PRD).

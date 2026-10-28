@@ -42,7 +42,7 @@ print(f"tau={complex(tau):.8f}  (expected 0.90597 i)   q={complex(q):.6e}")
 def th1(u):  return mp.jtheta(1,u,q)
 def th1p(u): return mp.jtheta(1,u,q,1)
 th1p0=th1p(0); th1ppp0=mp.jtheta(1,0,q,3)
-eta1=-(mp.pi**2/(12*om1))*(th1ppp0/th1p0)          # quasi-periodo
+eta1=-(mp.pi**2/(12*om1))*(th1ppp0/th1p0)          # quasi-period
 def wsigma(z):
     z=mp.mpc(z); a=mp.pi*z/(2*om1)
     return (2*om1/mp.pi)*mp.exp(eta1*z**2/(2*om1))*th1(a)/th1p0

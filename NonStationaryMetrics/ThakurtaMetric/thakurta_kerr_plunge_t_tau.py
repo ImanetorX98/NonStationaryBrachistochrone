@@ -8,7 +8,7 @@ r = 2M, which is the end of the control domain: a limiting contact (type C), out
 normality lemma, not an optimal crossing.
 
 r_min of each branch is the outer root of the PMP turning condition H_br(r, p_r = 0; J) = 0 below
-r0 (same functions as inversione_conformale_AJ.py), checked against the PMP Hamiltonian flow
+r0 (same functions as conformal_inversion_AJ.py), checked against the PMP Hamiltonian flow
 launched on the shell (A = 1, where the branch Hamiltonians are those of fig_phi_validation_corrected.py).
 
 An earlier version launched both QUADRATIC optical Hamiltonians with the same radial momentum
@@ -165,4 +165,4 @@ axb.set_xlabel(r'$J$'); axb.set_ylabel(r'$\Delta r$')
 axb.set_title(r'$a=0.9$, $t$ vs $\tau$ at $J_t=J_\tau$, launch inside the freezing surface', fontsize=7)
 axb.legend(fontsize=6); axb.grid(alpha=0.3)
 savefig(fig, OUT, 'fig_thakurta_kerr_plunge_t_tau')
-print('\nFATTO.')
+print('\nDONE.')

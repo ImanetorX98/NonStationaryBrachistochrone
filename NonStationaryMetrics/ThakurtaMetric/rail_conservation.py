@@ -94,7 +94,7 @@ def Ehat_of(y):
     e, r, ph, ue, ur, up = y[:6]; g = gmat(e, r)
     return -(g[0, 0]*ue + g[0, 2]*up)          # -g(u, d_eta)
 
-# dato iniziale entrante, u.u = -1
+# ingoing initial datum, u.u = -1
 ur0, up0 = -0.20, 0.030
 g0 = gmat(0.0, r_start)
 Aq = g0[0, 0]; Bq = 2*g0[0, 2]*up0; Cq = g0[2, 2]*up0**2 + g0[1, 1]*ur0**2 + 1

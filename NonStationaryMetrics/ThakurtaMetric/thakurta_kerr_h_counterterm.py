@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Il controtermine h: soluzione del trasporto e legge secolare chiusa.
+The counterterm h: solution of the transport equation and closed secular law.
 
-Dal R11d:  dK/deta|espl = eps a^2 S1,  eps = A'/A,
+From R11d:  dK/deta|expl = eps a^2 S1,  eps = A'/A,
            S1 = 2E^2 [ cos^2th + M cos2th p_th^2/(r DE0^2) ].
 
-MEDIE ANGOLARI IN FORMA CHIUSA (piano orbitale: cos th = sin i sin psi,
+ANGULAR AVERAGES IN CLOSED FORM (orbital plane: cos th = sin i sin psi,
 k = sin^2 i = 1 - J^2/L^2, L^2 = p_th^2 + J^2/sin^2 th):
 
     <cos^2 th>        = k/2
@@ -13,22 +13,22 @@ k = sin^2 i = 1 - J^2/L^2, L^2 = p_th^2 + J^2/sin^2 th):
     <p_th^2>          = L (L - |J|)
     <cos2th p_th^2>   = |J| (L - |J|)
 
-=> LEGGE SECOLARE (il drift ineliminabile della quasi-costante):
+=> SECULAR LAW (the irremovable drift of the quasi-constant):
 
     <dK/deta> = eps a^2 <S1>,
     <S1> = E_eff^2 (1 - J^2/L^2) + 2 M E_eff^2 |J| (L-|J|) / (r DE0^2)
 
-e il controtermine h = parte oscillatoria, valutabile lungo il flusso:
-    h(eta) = -a^2 int eps (S1 - <S1>) deta'    [compensazione completa:
-    K_comp = K(E_eff(eta)) - a^2 int eps S1 deta' toglie TUTTO il drift
-    esplicito; il residuo e' il puro drift alla Kerr O(a^2)].
+and the counterterm h = oscillatory part, which can be evaluated along the flow:
+    h(eta) = -a^2 int eps (S1 - <S1>) deta'    [complete compensation:
+    K_comp = K(E_eff(eta)) - a^2 int eps S1 deta' removes ALL the explicit
+    drift; the residual is the pure Kerr-like drift O(a^2)].
 
-Verifiche:
-  V1  medie angolari chiuse vs medie temporali sul flusso sferico (a=0)
-  V2  legge secolare: int <S1>(r(eta)) deta vs int S1 deta (esatto)
-  V3  dinamico (a=0.4): sigma(K_run) vs sigma(K_comp) vs residuo Kerr
-      (controllo ad A costante): il controtermine riporta il drift al
-      livello del residuo statico.
+Checks:
+  V1  closed angular averages against time averages on the spherical flow (a=0)
+  V2  secular law: int <S1>(r(eta)) deta against int S1 deta (exact)
+  V3  dynamical (a=0.4): sigma(K_run) against sigma(K_comp) against the Kerr residual
+      (control at constant A): the counterterm brings the drift back to the
+      level of the static residual.
 """
 
 import numpy as np
@@ -37,7 +37,7 @@ from scipy.integrate import solve_ivp
 
 M_n, Eh_n = 1.0, 1.2
 
-# --------------------------- H 3D (come thakurta_kerr_dynamic_K, param.)
+# --------------------------- 3D H (as in thakurta_kerr_dynamic_K, parametrised)
 ee = sp.Symbol('ee', negative=True)
 r, th = sp.symbols('r theta', positive=True)
 pr, pth = sp.symbols('p_r p_theta', real=True)
@@ -80,7 +80,7 @@ def S1_med(rv, Jv, Lv, Ev):
             + 2 * M_n * Ev**2 * abs(Jv) * (Lv - abs(Jv)) / (rv * DE0**2))
 
 print("=" * 72)
-print("[V1] medie angolari: forme chiuse vs quadratura in psi")
+print("[V1] angular averages: closed forms against quadrature in psi")
 print("=" * 72)
 # cos th = sin i sin psi;  p_th^2 = L^2 - J^2/sin^2 th;  k = sin^2 i
 from scipy.integrate import quad
@@ -97,24 +97,24 @@ tab = [("<cos^2 th>", Q(lambda ps: cth(ps)**2), kq / 2),
        ("<cos2th p_th^2>", Q(lambda ps: (1 - 2 * cth(ps)**2) * pth2(ps)),
         abs(Jq) * (Lq - abs(Jq)))]
 for nome, num, ana in tab:
-    print(f"  {nome:18s} quad = {num:+.10f}   chiusa = {ana:+.10f}   "
+    print(f"  {nome:18s} quad = {num:+.10f}   closed = {ana:+.10f}   "
           f"diff = {abs(num-ana):.1e}")
-print("  NOTA (risultato): per E_eff < 1 il ramo tau NON ha orbite legate:")
-print("  W_eff(r) e' monotona decrescente verso il muro => il muro e'")
-print("  ATTRATTORE GLOBALE anche ad A costante (p_r -> oo in eta finito):")
-print("  estende la cattura universale R11 oltre il caso dinamico.")
+print("  NOTE (result): for E_eff < 1 the tau branch has NO bound orbits:")
+print("  W_eff(r) decreases monotonically towards the wall => the wall is a")
+print("  GLOBAL ATTRACTOR even at constant A (p_r -> oo at finite eta):")
+print("  this extends the universal capture R11 beyond the dynamical case.")
 
 print()
 print()
 print("=" * 72)
-print("[V3] dinamico a=0.15, regime legato: controtermine end-to-end")
+print("[V3] dynamical a=0.15, bound regime: end-to-end counterterm")
 print("=" * 72)
 a_v, Hc_v = 0.15, 0.002
-eta0 = -1.0 / Hc_v                    # A: 1 -> (arco di scattering)
+eta0 = -1.0 / Hc_v                    # A: 1 -> (scattering arc)
 eta1 = -1.0 / (Hc_v * 1.30)
 A_din = -1 / (Hc_v * ee)
 
-# derivate simboliche costruite UNA volta (J argomento)
+# symbolic derivatives built ONCE (J as an argument)
 Hd_sym = H3.subs([(A, A_din), (a, a_v)])
 args_d = (ee, r, th, pr, pth, J)
 d = {k: sp.lambdify(args_d, sp.diff(Hd_sym, v_), 'numpy', cse=True)
@@ -129,7 +129,7 @@ n_ok, n_try = 0, 0
 while n_ok < 10 and n_try < 60:
     n_try += 1
     y0 = [rng.uniform(10, 13), rng.uniform(0.8, 2.0), -0.3,
-          rng.uniform(0.5, 1.2)]                 # arco di scattering
+          rng.uniform(0.5, 1.2)]                 # scattering arc
     Jv = rng.uniform(0.6, 1.6)
 
 
@@ -143,7 +143,7 @@ while n_ok < 10 and n_try < 60:
                 epsv * a_v**2 * s1]
     ev = lambda e_, y: y[0] - 2.6
     ev.terminal, ev.direction = True, -1
-    ev_w = lambda e_, y: y[0] - 16.0            # fine arco (uscita)
+    ev_w = lambda e_, y: y[0] - 16.0            # end of the arc (exit)
     ev_w.terminal, ev_w.direction = True, 1
     sD = solve_ivp(rhs_d, [eta0, eta1], y0 + [0.0], rtol=1e-10,
                    atol=1e-12, method='DOP853', events=[ev, ev_w],
@@ -160,14 +160,14 @@ while n_ok < 10 and n_try < 60:
     f2q = N2q * np.cos(2 * Yd[1]) / (2 * Yd[0]**2 * D0q * DE0q)
     K_run = (Yd[3]**2 + Jv**2 / np.tan(Yd[1])**2
              - a_v**2 * Eq**2 * np.cos(Yd[1])**2 + a_v**2 * f2q * Yd[3]**2)
-    K_comp = K_run - Yd[4]                 # controtermine completo
-    # deriva END-TO-END (media sulle ultime/prime 5% per smussare psi)
+    K_comp = K_run - Yd[4]                 # complete counterterm
+    # END-TO-END drift (average over the last/first 5% to smooth out psi)
     n5 = 30
     e2e = lambda q: abs(np.mean(q[-n5:]) - np.mean(q[:n5])) \
         / max(abs(np.mean(q)), 1e-14)
     res['K_run'].append(e2e(K_run))
     res['K_comp'].append(e2e(K_comp))
-    # legge secolare: drift esplicito esatto vs forma chiusa <S1>
+    # secular law: exact explicit drift against the closed form <S1>
     Lq = np.sqrt(Yd[3]**2 + Jv**2 / np.sin(Yd[1])**2)
     epsq = Hc_v * Aq
     I_med = np.trapezoid(epsq * a_v**2
@@ -175,7 +175,7 @@ while n_ok < 10 and n_try < 60:
     if abs(I_med) > 0:
         res.setdefault('sec_ratio', []).append(Yd[4, -1] / I_med)
 
-    # controllo statico LEGATO: A = 1.3 costante, stessa durata
+    # BOUND static control: constant A = 1.3, same duration
     def rhs_s(e_, y):
         return [ds['pr'](-1e3, *y, Jv), ds['pth'](-1e3, *y, Jv),
                 -ds['r'](-1e3, *y, Jv), -ds['th'](-1e3, *y, Jv)]
@@ -193,21 +193,21 @@ while n_ok < 10 and n_try < 60:
             + a_v**2 * f2s_ * Ys[3]**2)
     res['K_static'].append(e2e(K_st))
     n_ok += 1
-    print(f'    traiettoria {n_ok}/10 ok (tentativi {n_try})', flush=True)
+    print(f'    trajectory {n_ok}/10 ok (attempts {n_try})', flush=True)
 
-print(f"  deriva end-to-end mediana su {n_ok} traiettorie "
-      f"(archi di scattering, A dinamico da 1):")
-print(f"    K(E_eff(eta))  senza controtermine : "
+print(f"  median end-to-end drift over {n_ok} trajectories "
+      f"(scattering arcs, dynamical A from 1):")
+print(f"    K(E_eff(eta))  without counterterm  : "
       f"{np.median(res['K_run']):.3e}")
 print(f"    K_comp = K - a^2 int eps S1        : "
       f"{np.median(res['K_comp']):.3e}")
-print(f"    residuo Kerr puro (A=1 costante)   : "
+print(f"    pure Kerr residual (constant A=1)  : "
       f"{np.median(res['K_static']):.3e}")
-print(f"    LEGGE SECOLARE: drift esplicito esatto / previsione <S1>:")
-print(f"      rapporto mediano = {np.median(res['sec_ratio']):.4f}   "
-      f"(spread: {np.percentile(res['sec_ratio'], 25):.3f} - "
+print(f"    SECULAR LAW: exact explicit drift / prediction <S1>:")
+print(f"      median ratio = {np.median(res['sec_ratio']):.4f}   "
+      f"(interquartile range: {np.percentile(res['sec_ratio'], 25):.3f} - "
       f"{np.percentile(res['sec_ratio'], 75):.3f})")
-print("  NOTA: su questi archi (eps=0.002, a=0.15) il drift conforme")
-print("  esplicito e' subdominante al residuo Kerr end-to-end: K_comp ~ K_run;")
-print("  il contenuto analitico validato e' la legge secolare <S1>.")
-print("\nFATTO.")
+print("  NOTE: on these arcs (eps=0.002, a=0.15) the explicit conformal")
+print("  drift is subdominant to the end-to-end Kerr residual: K_comp ~ K_run;")
+print("  the validated analytic content is the secular law <S1>.")
+print("\nDONE.")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# q-serie dilog genus-2 TK-t generico (M=1,a=9/10,E=6/5,J=5 scattering). Template TK-tau:
-# naming theta[delta] + Omega=log theta-ratio nome-serie + dilog split Q(elem)+L(dilog).
-# NB: il ramo t ha ANCHE dilog agli orizzonti (da rho_t); qui il pezzo Omega (infinito).
+# genus-2 dilog q-series for generic TK-t (M=1,a=9/10,E=6/5,J=5, scattering). TK-tau template:
+# naming theta[delta] + Omega = log theta-ratio as a nome series + dilog split into Q(elementary)+L(dilog).
+# NB: the t branch ALSO has dilogs at the horizons (from rho_t); here, the Omega piece (infinity).
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 from abelfunctions import RiemannTheta
@@ -25,7 +25,7 @@ def theta0_latt(z,t,N=8):
 odd=[(av,bv) for av in halfs for bv in halfs if abs(theta_af(np.zeros(2),av,bv,tau))<1e-6]
 av,bv=odd[1]
 def qn(sv): return sum(float(lam[i])*sv**i for i in range(6))
-# curva even + sorgente dE F_t
+# even curve + source dE F_t
 r,a,E,J=sp.symbols('r a E J'); M=1
 DE=(E**2-1)*r+2*M; Delta=r**2-2*M*r+a**2
 Q2=(2*E**2*J**2*r-E**2*J**2*r**2-4*E**2*J*a*r+2*E**2*a**2*r+E**2*a**2*r**2+E**2*r**4+4*J**2-4*J**2*r+J**2*r**2-8*J*a+4*J*a*r+4*a**2)
@@ -48,14 +48,14 @@ def L_partN(rv,N=8):
     w=w_of(1.0/rv);zeta1=(w-e_plus)+tau@av+bv;zeta2=(w-e_minus)+tau@av+bv
     return np.log(theta0_latt(tinv@zeta1,taup,N)/theta0_latt(tinv@zeta2,taup,N)).real
 r0=20.0
-print("\n=== TK-t dilog (pezzo Omega, infinito): split Q(elem)+L(dilog) ===")
+print("\n=== TK-t dilog (Omega piece, infinity): split Q(elementary)+L(dilog) ===")
 for rv in [15.,10.,5.]:
     LQ=quad(lambda x:Q_part(x)*dEFn(x),r0,rv,limit=60)[0]
     LL=quad(lambda x:L_partN(x)*dEFn(x),r0,rv,limit=60)[0]
     print(f"  r={rv}: int Q dA={LQ:+.6f}  int L dA(dilog)={LL:+.6f}")
-print("\n=== convergenza q-serie del dilog in ordine di nome N (r=10) ===")
+print("\n=== convergence of the dilog q-series in the nome order N (r=10) ===")
 rv=10.0; ref=quad(lambda x:L_partN(x,8)*dEFn(x),r0,rv,limit=60)[0]
 for N in [1,2,3,4,6]:
     val=quad(lambda x:L_partN(x,N)*dEFn(x),r0,rv,limit=60)[0]
-    print(f"  N={N}: int L dA = {val:+.7f}  |diff da N=8| = {abs(val-ref):.1e}")
-print("\n=> TK-t: dilog(infinito) = serie di nome KE convergente. + dilog ORIZZONTE (da rho_t, a z(r_pm)).")
+    print(f"  N={N}: int L dA = {val:+.7f}  |diff from N=8| = {abs(val-ref):.1e}")
+print("\n=> TK-t: dilog(infinity) = convergent Kronecker-Eisenstein nome series. + HORIZON dilog (from rho_t, at z(r_pm)).")

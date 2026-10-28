@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Figura: separatrice del ramo t (saddle-node retrogrado J_c^-), GENERE 1.
-Pannello (a) traiettoria: flusso di Hamilton (ODE) vs QUADRATURA del
-differenziale ellittico ridotto su Q4.  NB: questo script non valuta
-sigma, zeta o P -- non contiene alcuna chiamata a funzioni speciali.  La
-forma chiusa in Weierstrass e' verificata altrove, contro un'implementazione
-esterna (PARI), e quel controllo e' distinto da questo.  Pannello (b)
-deviazione |phi_ODE - phi_quad|.
+Figure: separatrix of the t-branch (retrograde saddle-node J_c^-), GENUS 1.
+Panel (a) trajectory: Hamilton flow (ODE) against the QUADRATURE of the
+reduced elliptic differential on Q4.  NB: this script does not evaluate
+sigma, zeta or P -- it contains no call to special functions.  The
+Weierstrass closed form is verified elsewhere, against an external
+implementation (PARI), and that check is distinct from this one.  Panel (b):
+deviation |phi_ODE - phi_quad|.
 
-Radicando sestico R6=(r-r*)^2 Q4 al saddle-node -> Q4 quartico (genere 1);
+Sextic radicand R6=(r-r*)^2 Q4 at the saddle-node -> Q4 quartic (genus 1);
 phi(r)=Lam0 z + sum lam_k ln(sig(z-v_k)/sig(z+v_k)),  z=P^-1(A/r+B).
 """
 
@@ -51,7 +51,7 @@ rst, Jst = fsolve(lambda x: [R6(x[0], x[1]),
                   [3.51, -8.05])
 print(f"r*={rst:.6f}, J_c^-={Jst:.6f}")
 
-# --- quartica Q4 e invarianti di Weierstrass ---
+# --- quartic Q4 and Weierstrass invariants ---
 r = sp.Symbol('r')
 c6 = [float(x) for x in sp.Poly(sp.expand(r*Q2(r, Jst)*((E**2-1)*r+2*M)),
                                 r).all_coeffs()]
@@ -65,7 +65,7 @@ B_ = Q4p[2]/12
 Q4m = lambda t: np.polyval(Q4p, t)
 print(f"g2={g2:.5f} g3={g3:.5f} A={A_:.5f} B={B_:.5f}")
 
-# --- flusso di Hamilton (ramo t) ---
+# --- Hamilton flow (t-branch) ---
 pr, pphi = sp.symbols('pr pphi')
 f = 1 - 2*M/r
 Dl = r**2 - 2*M*r + a**2
@@ -103,7 +103,7 @@ tA = np.linspace(0, sA.t_events[0][0], 700)
 rA = sA.sol(tA)[0]
 phiA = sA.sol(tA)[2]
 
-# --- forma chiusa: G in frazioni parziali, residui ESATTI (niente fit) ---
+# --- closed form: G in partial fractions, EXACT residues (no fit) ---
 def sqrtQ4(rv): return np.sqrt(abs(R6(rv, Jst)))/abs(rv - rst)
 def dphidr(rv):
     p = prof(rv)
@@ -141,21 +141,21 @@ _pf = max(abs(dphidr(rv)*sqrtQ4(rv)
           for rv in np.linspace(3.9, 40, 60))
 print(f"partial-fraction residual (closed form vs flow) = {_pf:.2e}  (sign {sigma:+.0f})")
 
-# quadratura (T2): valutata direttamente sui punti dell'orbita (no interp)
+# quadrature (T2): evaluated directly at the orbit points (no interpolation)
 _integ = lambda t: (Lam + sum(al[p]/(t-p) for p in poles))/sqrtQ4(t)
 rg = rA.copy()
 phi2 = np.array([quad(_integ, r0, rv, limit=400)[0] for rv in rA])
 devA = np.abs(phiA - phi2)
 print(f"max|phi_ODE - phi_genus1| = {np.max(devA):.2e}")
 
-# --- prova indipendente del genere: R6 = (r-r*)^2 Q4, radice DOPPIA ---
+# --- independent proof of the genus: R6 = (r-r*)^2 Q4, DOUBLE root ---
 rr = np.linspace(rst-0.6, rst+0.6, 400)
 R6v = R6(rr, Jst)
 
-# ----------------------------------------------------------- figura
+# ----------------------------------------------------------- figure
 fig, (ax, axb) = plt.subplots(2, 1, figsize=(COL, 6.6))
 th = np.linspace(0, 2*np.pi, 300)
-# (a) traiettoria: ODE vs forma chiusa genere-1 (quadratura ellittica)
+# (a) trajectory: ODE against the genus-1 closed form (elliptic quadrature)
 ax.plot(rA*np.cos(phiA), rA*np.sin(phiA), 'k-', lw=2.4,
         label='T1: Hamilton ODE')
 xg = rg*np.cos(phi2); yg = rg*np.sin(phi2)
@@ -175,7 +175,7 @@ ax.set_title(f'$t$-branch separatrix (saddle-node $J_c^-={Jst:.2f}$, '
              f'$r_*={rst:.3f}$):\nspirals onto $r_*$; genus 1 via a double root')
 ax.legend(fontsize=6, loc='upper right', framealpha=0.9)
 
-# (b) sinistra: deviazione ODE vs forma chiusa; destra (inset): R6 doppia radice
+# (b) left: deviation of the ODE from the closed form; right (inset): double root of R6
 axb.semilogy(rA, devA+1e-18, 'k-')
 axb.axvline(rst, color='C3', ls='--', lw=1.0)
 axb.text(rst+0.05, np.nanmax(devA)*0.3 + 1e-15, '$r_*$', color='C3', fontsize=7)
@@ -188,4 +188,4 @@ axins.axvline(rst, color='C3', ls='--', lw=0.8)
 axins.set_title(r'$R_6=(r-r_*)^2Q_4$', fontsize=6)
 axins.set_xlabel('$r$', fontsize=6); axins.tick_params(labelsize=5)
 savefig(fig, HERE, 'fig_tbranch_separatrix')
-print('FATTO.')
+print('DONE.')

@@ -27,7 +27,7 @@ must already exist. Producer documents and runner summaries are distinct formats
 To retain a producer result directly, for example:
 
 ```bash
-NSB_RESULT_JSON=/tmp/nsb-assembly.json python3 ../KerrScripts/pipeline_completa_deltaphi.py
+NSB_RESULT_JSON=/tmp/nsb-assembly.json python3 ../KerrScripts/deltaphi_full_pipeline.py
 ```
 
 The producers still print their usual output when this variable is absent, also
@@ -55,7 +55,7 @@ expected metrics exactly, so reordering either table cannot swap checks and boun
 ```json
 {
   "schema_version": 1,
-  "producer": "KerrScripts/pipeline_completa_deltaphi.py",
+  "producer": "KerrScripts/deltaphi_full_pipeline.py",
   "complete": true,
   "metrics": [
     {

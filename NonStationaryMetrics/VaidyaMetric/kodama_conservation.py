@@ -20,7 +20,7 @@ The Kodama vector along the Vaidya brachistochrones.
      The rail supplies exactly the compensation: it is the "missing
      symmetry" made manifest.
 
-Output: prints the checks + fig_kodama_conservazione (E_K flat along
+Output: prints the checks + fig_kodama_conservation (E_K flat along
 the brachistochrone vs the geodesic drift that the rail cancels).
 """
 
@@ -178,5 +178,5 @@ a2.set_ylabel('$d(-u\\cdot K)/d\\tau$')
 a2.set_title('what the rail cancels: the free-particle Kodama drift\n'
              "($\\propto m'$): non-zero, this is the missing symmetry")
 a2.legend()
-savefig(fig, OUT, 'fig_kodama_conservazione')
+savefig(fig, OUT, 'fig_kodama_conservation')
 print('\nDONE.')

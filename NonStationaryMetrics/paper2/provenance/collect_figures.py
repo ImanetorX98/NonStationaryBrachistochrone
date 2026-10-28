@@ -55,31 +55,31 @@ GENERATOR_DIR = {
     "fig_master_penetration_taut.png": ROOT / "KerrScripts",
     "fig_atlas_tau.png": ROOT / "KerrScripts",
     "fig_atlas_t.png": ROOT / "KerrScripts",
-    "fig_separatrix_3traiettorie.png": ROOT / "KerrScripts",
+    "fig_separatrix_3trajectories.png": ROOT / "KerrScripts",
     "fig_jpt_genus2.png": ROOT / "KerrScripts",
     "fig_jcm_capture.png": ROOT / "KerrScripts",
-    "fig_thakurta_cuspide_ergosfera.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
+    "fig_thakurta_ergosphere_cusp.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     "fig_phi_validation_true_dynamic.pdf": COMPILED / "Immagini",
     # Added after the September 2026 cross-audit.  The eight entries above were
     # the only ones under this check, so fourteen of the paper's twenty-two
     # figures were unwatched -- which is how a corrected generator once failed
     # to reach the compiled PDF without anything reporting it.
-    "fig_bvp_estremi_fissi.png": ROOT / "KerrScripts",
-    "fig_colormap_conforme_asimmetrico.png": ROOT / "KerrScripts",
-    "fig_colormap_conforme_estremi_fissi.png": ROOT / "KerrScripts",
-    "fig_colormap_spin_asimmetrico.png": ROOT / "KerrScripts",
-    "fig_colormap_spin_estremi_fissi.png": ROOT / "KerrScripts",
+    "fig_bvp_fixed_endpoints.png": ROOT / "KerrScripts",
+    "fig_colormap_conformal_asymmetry.png": ROOT / "KerrScripts",
+    "fig_colormap_conformal_fixed_endpoints.png": ROOT / "KerrScripts",
+    "fig_colormap_spin_asymmetry.png": ROOT / "KerrScripts",
+    "fig_colormap_spin_fixed_endpoints.png": ROOT / "KerrScripts",
     "fig_penetrate_bounce_orbit.pdf": ROOT / "KerrScripts",
     "fig_penetration_threshold.pdf": ROOT / "KerrScripts",
     "fig_tbranch_separatrix.png": ROOT / "KerrScripts",
     "fig_phi_closed_validation.pdf": NSM / "ThakurtaMetric",
     "fig_phi_penetrating.pdf": NSM / "ThakurtaMetric",
-    "fig_thakurta_kerr_inversione_AJ.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
+    "fig_thakurta_kerr_inversion_AJ.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     "fig_thakurta_kerr_plunge_t_tau.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
     "fig_thakurta_kerr_plunge_levels.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
-    "fig_thakurta_kerr_rami.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
-    # fig_indicatrici_thakurta_kerr.pdf is produced by
-    # ThakurtaMetric/genera_indicatrici_separate.py, which writes through
+    "fig_thakurta_kerr_branches.png": NSM / "ThakurtaMetric" / "Thakurtafigures",
+    # fig_indicatrices_thakurta_kerr.pdf is produced by
+    # ThakurtaMetric/make_indicatrices_separate.py, which writes through
     # its own path logic rather than paper_style.savefig; left out deliberately
     # rather than guessed at.
 }

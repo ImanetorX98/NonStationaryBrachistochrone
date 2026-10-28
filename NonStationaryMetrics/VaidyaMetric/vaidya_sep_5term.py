@@ -1,6 +1,6 @@
-# (1) ESTRAZIONE forma esplicita a 5 termini di delta phi|_sep via riduzione di Fay.
-# delta phi = 1/2 G~ eta + sum_{b=1}^5 beta_b A_base_b + [peso-1].
-# beta da ALGEBRA LINEARE ESATTA (residuo ~1e-15, non fit): risolvo su derivate (forma chiusa).
+# (1) EXTRACTION of the explicit 5-term form of delta phi|_sep through Fay reduction.
+# delta phi = 1/2 G~ eta + sum_{b=1}^5 beta_b A_base_b + [weight 1].
+# beta from EXACT LINEAR ALGEBRA (residual ~1e-15, not a fit): solved on derivatives (closed form).
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try:
@@ -37,7 +37,7 @@ z_inf=float(mp.re(mp.quad(lambda x:1/mp.sqrt(Q4(x)),[e4r,mp.inf]))); sa=float(mp
 c_r=float(mp.re(e4r-(2/sa)*wzet(z_inf))); z_d=z_inf+float(mp.re(mp.quad(lambda x:1/mp.sqrt(Q4(x)),[-mp.inf,rd])))
 def zr(rv): return float(quad(lambda x:1/np.sqrt(Q4(x)),e4r,rv,limit=400)[0])
 z0=mp.mpf(zr(r0)); zdm=mp.mpf(z_d); zim=mp.mpf(z_inf); iw=1j*mp.mpf(w_im)
-# residui (coeff R e eta')
+# residues (coefficients of R and eta')
 s=np.sqrt(Q4(rd)); a1=np.polyval(Qp,rd)/(4*s); a2=np.polyval(Qpp,rd)/12
 F=lambda x: np.polyval(Nm,x)/np.polyval(Q,x)
 Fp=lambda x:(np.polyval(Nmp,x)*np.polyval(Q,x)-np.polyval(Nm,x)*np.polyval(Qp,x))/np.polyval(Q,x)**2
@@ -70,39 +70,39 @@ dvec[0]=complex(Eex(zt)-sum(dvec[i]*ef[i](zt) for i in range(1,8)))
 Rall=[0,1,2,3,4,5]; Eall=[0,1,6,7]
 pairs=[(i,j) for i in range(8) for j in range(i+1,8) if (i in Rall and j in Eall) or (i in Eall and j in Rall)]
 enam=['1','Z_zd','P_zd','Pp_zd','wp0','wpiw','P_zi','Z_zi']
-wk=[0.5*(cvec[i]*dvec[j]-cvec[j]*dvec[i]) for (i,j) in pairs]     # coeff di A_k in delta phi_w2
+wk=[0.5*(cvec[i]*dvec[j]-cvec[j]*dvec[i]) for (i,j) in pairs]     # coefficients of A_k in delta phi_w2
 def dApair(i,j,z): return ef[i](z)*Pe(j,z)-ef[j](z)*Pe(i,z)      # A'_{ij}
-# base peso-1 V e derivate V'
+# weight-1 basis V and derivatives V'
 Vp=[]
 for i in range(8):
     for j in range(i,8): Vp.append((lambda i,j:(lambda z: ef[i](z)*Pe(j,z)+ef[j](z)*Pe(i,z)))(i,j))
 for i in range(8): Vp.append((lambda i:(lambda z: Pe(i,z)+z*ef[i](z)))(i))
 Vp.append(lambda z: 2*z); Vp.append(lambda z: mp.mpf(1))
-# QR-pivot per scegliere 5 pair-base
-log.info("setup curva: Jc=%.6f r_d=%.6f e4=%.4f  |  costruisco matrici derivate (forma chiusa)"%(Jc,rd,e4r))
+# QR pivoting to choose the 5 base pairs
+log.info("curve set-up: Jc=%.6f r_d=%.6f e4=%.4f  |  building the derivative matrices (closed form)"%(Jc,rd,e4r))
 zsQ=[mp.mpf(zr(rr)) for rr in np.linspace(11.9,8.9,60)]
 Amat=np.array([[complex(dApair(i,j,z)) for (i,j) in pairs] for z in tqdm(zsQ,desc="QR-pivot sampling")])
 Vmat=np.array([[complex(v(z)) for v in Vp] for z in zsQ])
 Aperp=Amat-Vmat@np.linalg.lstsq(Vmat,Amat,rcond=None)[0]
 import scipy.linalg as sla
 _,_,P=sla.qr(Aperp,pivoting=True)
-basis=list(P[:5]); print("5 dilog-base scelti:",[f"A[{enam[pairs[b][0]]},{enam[pairs[b][1]]}]" for b in basis])
-# risolvi delta phi_w2' = sum_b beta_b A'_base + sum_l gamma_l V'_l   (derivate, forma chiusa)
-log.info("risolvo sistema lineare esatto su 160 punti (derivate)")
+basis=list(P[:5]); print("5 base dilogs chosen:",[f"A[{enam[pairs[b][0]]},{enam[pairs[b][1]]}]" for b in basis])
+# solve delta phi_w2' = sum_b beta_b A'_base + sum_l gamma_l V'_l   (derivatives, closed form)
+log.info("solving the exact linear system at 160 points (derivatives)")
 zs=[mp.mpf(zr(rr)) for rr in np.linspace(11.95,8.85,160)]
 LHS=np.array([complex(sum(wk[k]*dApair(pairs[k][0],pairs[k][1],z) for k in range(len(pairs)))) for z in tqdm(zs,desc="LHS delta_phi_w2'")])
 Des=np.array([[complex(dApair(pairs[b][0],pairs[b][1],z)) for b in basis]+[complex(v(z)) for v in Vp] for z in tqdm(zs,desc="design matrix")])
 coef,res_,rk_,sv_=np.linalg.lstsq(Des,LHS,rcond=None)
 resid=np.max(np.abs(Des@coef-LHS))
 beta=coef[:5]
-print(f"residuo sistema (deve essere ~1e-13): {resid:.1e}")
-print("beta (coeff dei 5 dilog-base):",np.array2string(beta.real,precision=6))
+print(f"system residual (must be ~1e-13): {resid:.1e}")
+print("beta (coefficients of the 5 base dilogs):",np.array2string(beta.real,precision=6))
 import os, tempfile
 np.save(os.path.join(os.environ.get('NSM_OUTDIR', tempfile.gettempdir()), 'fay_beta.npy'),{'basis':basis,'beta':beta,'gamma':coef[5:],'pairs':pairs,'enam':enam})
 
-# ===== VERIFICA END-TO-END: delta phi = 1/2 G~ eta + sum_5 beta A_base + peso-1  vs diretto =====
+# ===== END-TO-END CHECK: delta phi = 1/2 G~ eta + sum_5 beta A_base + weight 1  against direct =====
 gamma=coef[5:]
-# primitive integrate del peso-1 (V_int): {Pe_i Pe_j}, {z Pe_i}, {z^2}, {z}
+# integrated weight-1 antiderivatives (V_int): {Pe_i Pe_j}, {z Pe_i}, {z^2}, {z}
 def Vint(l,z):
     idx=0
     for i in range(8):
@@ -131,8 +131,8 @@ def dmF(x):
     def Fm(mv): return np.polyval(np.polymul([Jc],[E**2-1,2*mv]),x)/np.sqrt(np.polyval(pS(mv,Jc),x))
     return (Fm(m+1e-6)-Fm(m-1e-6))/2e-6
 def dphi_direct(x): return quad(lambda t: dmF(t)*eta_dir(t), r0, x, limit=200)[0]
-log.info("verifica end-to-end su integrali annidati veri (5 dilog-base)")
-print("\n=== delta phi = 1/2 G~eta + 5 dilog-base + peso-1  vs DIRETTO ===")
-for rr in tqdm([11.0,10.0,9.2],desc="verifica nested"):
+log.info("end-to-end check on true nested integrals (5 base dilogs)")
+print("\n=== delta phi = 1/2 G~eta + 5 base dilogs + weight 1  against DIRECT ===")
+for rr in tqdm([11.0,10.0,9.2],desc="nested check"):
     z=mp.mpf(zr(rr)); d5=dphi_5term(z).real; dd=dphi_direct(rr)
-    print(f"  r={rr:4.1f}  5-term={d5:+.8f}  diretto={dd:+.8f}  diff={abs(d5-dd):.1e}")
+    print(f"  r={rr:4.1f}  5-term={d5:+.8f}  direct={dd:+.8f}  diff={abs(d5-dd):.1e}")

@@ -12,7 +12,7 @@ evolved down into the ergosphere:
 
 If they overlap, the closed form is verified end to end,
 including the evaluation of the special functions.
-Figure: fig_separatrix_3traiettorie (written next to this script).
+Figure: fig_separatrix_3trajectories (written next to this script).
 """
 
 import numpy as np
@@ -245,5 +245,5 @@ axb.set_title('quantitative overlap\n(ODE growth near $r_e$: '
               'stationary-limit sensitivity)')
 axb.legend()
 HERE = os.path.dirname(os.path.abspath(__file__))
-savefig(fig, HERE, 'fig_separatrix_3traiettorie')
-print('saved fig_separatrix_3traiettorie')
+savefig(fig, HERE, 'fig_separatrix_3trajectories')
+print('saved fig_separatrix_3trajectories')

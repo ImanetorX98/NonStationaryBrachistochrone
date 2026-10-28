@@ -1,8 +1,8 @@
-# TRACKING Thakurta-Kerr: separatrice mobile J=Jc(A) (via E_eff=Ehat/A).
-# sorgente = dE F + (dJc/dEeff) dJ F = N_tot/S^{3/2},  N_tot = N_tau + (dJc/dE) N_J.
-#   N_tau = E J r^4 (r-2M)^2 DE  (E-deriv);  N_J = S dJ K - 1/2 K dJ S  (J-deriv, Delta cancella).
-#   dJc/dE = -E Jc r_d / DE(r_d)  (implicit function su g=rDelta-J^2 DE, dJc/dE=-g_E/g_J).
-# Stessa macchina genus-1 (pole-adapted G). Verifica assemblato=diretto.
+# Thakurta-Kerr TRACKING: moving separatrix J=Jc(A) (through E_eff=Ehat/A).
+# source = dE F + (dJc/dEeff) dJ F = N_tot/S^{3/2},  N_tot = N_tau + (dJc/dE) N_J.
+#   N_tau = E J r^4 (r-2M)^2 DE  (E derivative);  N_J = S dJ K - 1/2 K dJ S  (J derivative, Delta cancels).
+#   dJc/dE = -E Jc r_d / DE(r_d)  (implicit function theorem on g=rDelta-J^2 DE, dJc/dE=-g_E/g_J).
+# Same genus-1 machinery (pole-adapted G). Check: assembled = direct.
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try: from tqdm import tqdm
@@ -17,26 +17,26 @@ g=sp.expand(r*Delta-J**2*DE)
 Jc=float([complex(s).real for s in sp.solve(sp.Eq(sp.resultant(g,sp.diff(g,r),r),0),J) if abs(complex(s).imag)<1e-9 and complex(s).real>5][0])
 S_sym=sp.expand(r*(r-2*Ms)*DE*(r*Delta-J**2*DE))
 Ktau=J*r*(r-2*Ms)*DE/Delta
-# N_J = S dJ K - 1/2 K dJ S  (verifico polinomiale)
+# N_J = S dJ K - 1/2 K dJ S  (check that it is polynomial)
 N_J_sym=sp.simplify(S_sym*sp.diff(Ktau,J)-sp.Rational(1,2)*Ktau*sp.diff(S_sym,J))
-log.info("N_J polinomiale? %s ;  N_J - r^3(r-2M)^2 DE^2 = %s"%(
+log.info("N_J polynomial? %s ;  N_J - r^3(r-2M)^2 DE^2 = %s"%(
     sp.Poly(sp.expand(N_J_sym),r).is_polynomial if hasattr(sp.Poly(sp.expand(N_J_sym),r),'is_polynomial') else 'poly',
     sp.simplify(N_J_sym - r**3*(r-2*Ms)**2*DE**2)))
-# valori a J=Jc
+# values at J=Jc
 Sc=np.array([float(c) for c in sp.Poly(S_sym.subs(J,Jc),r).all_coeffs()])
 Ntau=np.array([float(c) for c in sp.Poly(sp.expand(Es*J*r**4*(r-2*Ms)**2*DE).subs(J,Jc),r).all_coeffs()])
 NJ=np.array([float(c) for c in sp.Poly(sp.expand(N_J_sym).subs(J,Jc),r).all_coeffs()])
 rts=np.roots(Sc); pr=[(i,j) for i in range(6) for j in range(i+1,6) if abs(rts[i]-rts[j])<1e-6]
 rd=float(np.real((rts[pr[0][0]]+rts[pr[0][1]])/2))
-# dJc/dE analitico = -E Jc r_d / DE(r_d)
+# analytic dJc/dE = -E Jc r_d / DE(r_d)
 DE_rd=(E**2-1)*rd+2*M
 dJcdE=-E*Jc*rd/DE_rd
-# verifica dJc/dE vs finite diff
+# check of dJc/dE against a finite difference
 def Jc_of(Ev):
     Ee=sp.nsimplify(Ev); DEe=(Ee**2-1)*r+2*Ms; gg=sp.expand(r*(r**2-2*Ms*r+asq)-J**2*DEe)
     return float([complex(s).real for s in sp.solve(sp.Eq(sp.resultant(gg,sp.diff(gg,r),r),0),J) if abs(complex(s).imag)<1e-9 and complex(s).real>5][0])
 dfd=(Jc_of(1.201)-Jc_of(1.199))/0.002
-log.info("dJc/dE: analitico=%.5f  finite-diff=%.5f  (r_d=%.4f, Jc=%.4f)"%(dJcdE,dfd,rd,Jc))
+log.info("dJc/dE: analytic=%.5f  finite difference=%.5f  (r_d=%.4f, Jc=%.4f)"%(dJcdE,dfd,rd,Jc))
 Ntot=Ntau*1.0
 Lm=max(len(Ntau),len(NJ)); Ntot=np.r_[np.zeros(Lm-len(Ntau)),Ntau]+dJcdE*np.r_[np.zeros(Lm-len(NJ)),NJ]
 Q,_=np.polydiv(Sc,np.polymul([1,-rd],[1,-rd])); er=np.sort(np.real(np.roots(Q))); a4=Q[0]; e1r,e2r,e3r,e4r=er
@@ -75,6 +75,6 @@ def Sn(x): return np.polyval(Sc,x)
 def src(x): return np.polyval(Ntot,x)/Sn(x)**1.5   # dE F + (dJc/dE) dJ F
 def dphi_direct(x): return quad(lambda t: src(t)*eta(t), r0, x, limit=200)[0]
 def dphi_asm(x): return Gt_r(x)*eta(x)-quad(lambda t: Gt_r(t)*etap(t), r0, x, limit=120)[0]
-print("\n=== TK tau TRACKING (J=Jc(A)): I_track = int [dEF+(dJc/dE)dJF] eta dr : ASM vs DIR ===")
+print("\n=== TK tau TRACKING (J=Jc(A)): I_track = int [dEF+(dJc/dE)dJF] eta dr : assembled against direct ===")
 for x in tqdm([19.0,18.0,17.0],desc="TK-track"):
     print(f"  r={x:4.1f}  asm={dphi_asm(x):+.8e}  dir={dphi_direct(x):+.8e}  diff={abs(dphi_asm(x)-dphi_direct(x)):.1e}")

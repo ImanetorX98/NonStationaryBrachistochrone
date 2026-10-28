@@ -1,7 +1,7 @@
-# COMPATTIFICAZIONE (a): forma ANTISIMMETRICA (shuffle).
+# COMPACTIFICATION (a): ANTISYMMETRIC form (shuffle).
 # delta phi = 1/2 G~ eta + 1/2 sum_{i<j} (c_i d_j - c_j d_i) A[e_i,e_j],
-#   A[g,h]=int(g*Ph - h*Pg)dz  (antisimmetrico=dilog ellittico genuino);  Pg=int_{z0}^z g.
-# e = 8 funzioni PARI comuni; c=coeff in R, d=coeff in eta'. R×R e eta'×eta' -> 0 automatico.
+#   A[g,h]=int(g*Ph - h*Pg)dz  (antisymmetric = genuine elliptic dilog);  Pg=int_{z0}^z g.
+# e = 8 common EVEN functions; c = coefficients in R, d = coefficients in eta'. R×R and eta'×eta' -> 0 automatically.
 import numpy as np, mpmath as mp, sympy as sp
 from scipy.integrate import quad
 mp.mp.dps=40
@@ -45,28 +45,28 @@ Zf =lambda a: (lambda z: wzet(z-a)-wzet(z+a))
 Pf =lambda a: (lambda z: wp(z-a)+wp(z+a))
 Ppf=lambda a: (lambda z: wpp(z-a)-wpp(z+a))
 one=lambda z: mp.mpf(1)
-# lista unificata di 8 funzioni; c=coeff R, d=coeff eta'
+# unified list of 8 functions; c = coefficients of R, d = coefficients of eta'
 efun=[one, Zf(zdm), Pf(zdm), Ppf(zdm), (lambda z: wp(z)), (lambda z: wp(z-1j*mp.mpf(w_im))), Pf(zim), Zf(zim)]
 enam=['1','Z_zd','P_zd','Pp_zd','wp_0','wp_iw','P_zi','Z_zi']
 def r_of_z(z): return c_r-(1/sa)*(wzet(z-z_inf)-wzet(z+z_inf))
 def Rexact(z): rr=r_of_z(z); return np.polyval(Nm,rr)/((rr-rd)**3*np.polyval(Q,complex(rr)))
 def Epexact(z): rr=r_of_z(z); return (rr**3-2*rr**2)/(rr-rd)
 zt=mp.mpf('0.19')
-cvec=[None,b1zd,b2zd,-b3zd/2,b2h(e4r),b2h(e3r),0.0,0.0]        # coeff R (indice0=C0)
-dvec=[None,e1_zd,0.0,0.0,0.0,0.0,e2_zi,e1_zi]                  # coeff eta' (indice0=Ce)
+cvec=[None,b1zd,b2zd,-b3zd/2,b2h(e4r),b2h(e3r),0.0,0.0]        # coefficients of R (index 0 = C0)
+dvec=[None,e1_zd,0.0,0.0,0.0,0.0,e2_zi,e1_zi]                  # coefficients of eta' (index 0 = Ce)
 C0=complex(Rexact(zt)-sum(cvec[i]*efun[i](zt) for i in range(1,8))); cvec[0]=C0
 Ce=complex(Epexact(zt)-sum(dvec[i]*efun[i](zt) for i in range(1,8))); dvec[0]=Ce
-# primitive P_e = int_{z0}^z e
+# antiderivatives P_e = int_{z0}^z e
 _pc={}
 def Pe(i,z):
     key=(i,float(z))
     if key in _pc: return _pc[key]
     v=mp.quad(lambda t: efun[i](t),[z0f,z]); _pc[key]=v; return v
-def A(i,j,z):  # antisimmetrico
+def A(i,j,z):  # antisymmetric
     return mp.quad(lambda t: efun[i](t)*Pe(j,t)-efun[j](t)*Pe(i,t),[z0f,z],maxdegree=8)
 def Gt(z): return sum(cvec[i]*Pe(i,z) for i in range(8))     # int R
 def etaf(z): return sum(dvec[i]*Pe(i,z) for i in range(8))   # int eta'
-# coppie sopravvissute
+# surviving pairs
 pairs=[(i,j) for i in range(8) for j in range(i+1,8) if abs(cvec[i]*dvec[j]-cvec[j]*dvec[i])>1e-9]
 def dphi_anti(z):
     tot=0.5*Gt(z)*etaf(z)
@@ -79,9 +79,9 @@ def dmF(x):
     def Fm(mv): return np.polyval(np.polymul([Jc],[E**2-1,2*mv]),x)/np.sqrt(np.polyval(pS(mv,Jc),x))
     return (Fm(m+1e-6)-Fm(m-1e-6))/2e-6
 def dphi_direct(x): return quad(lambda t: dmF(t)*eta_dir(t), r0, x, limit=200)[0]
-print("coppie A sopravvissute:",len(pairs))
+print("surviving A pairs:",len(pairs))
 for i,j in pairs: print("   A[%s,%s] coeff=%+.5f"%(enam[i],enam[j],(cvec[i]*dvec[j]-cvec[j]*dvec[i]).real))
-print("\n=== delta phi ANTISIMMETRICO (1/2 G~eta + 1/2 sum A) vs DIRETTO ===")
+print("\n=== ANTISYMMETRIC delta phi (1/2 G~eta + 1/2 sum A) against DIRECT ===")
 for rr in [11.0,10.0,9.2]:
     z=mp.mpf(zr(rr)); dc=complex(dphi_anti(z)).real; dd=dphi_direct(rr)
-    print(f"  r={rr:4.1f}  antisym={dc:+.8f}  diretto={dd:+.8f}  diff={abs(dc-dd):.1e}")
+    print(f"  r={rr:4.1f}  antisym={dc:+.8f}  direct={dd:+.8f}  diff={abs(dc-dd):.1e}")

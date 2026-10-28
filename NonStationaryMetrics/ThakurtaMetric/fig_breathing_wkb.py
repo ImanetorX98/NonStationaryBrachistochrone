@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-WKB adiabatico: la famiglia "che respira" delle brachistocrone Thakurta-Kerr e
-la traiettoria non-autonoma che la infila.
+Adiabatic WKB: the "breathing" family of the Thakurta-Kerr brachistochrones and
+the non-autonomous trajectory that threads through it.
 
-Rail energy Ehat FISSO; fattore conforme A che cresce lungo l'orbita (universo
-in espansione, eta aumenta) => E_eff = Ehat/A decresce. La forma chiusa
-Kerr(E_eff) e' l'ordine adiabatico DOMINANTE (famiglia congelata). La
-traiettoria non-autonoma vera (E che scorre come A(lambda)) HUGGA la famiglia,
-con errore adiabatico O(A'/A).
+FIXED rail energy Ehat; conformal factor A growing along the orbit (expanding
+universe, eta increases) => E_eff = Ehat/A decreases. The closed form
+Kerr(E_eff) is the LEADING adiabatic order (frozen family). The true
+non-autonomous trajectory (E running with A(lambda)) HUGS the family,
+with an adiabatic error O(A'/A).
 
-Pannello (a): famiglia congelata (grigia) + traiettoria non-autonoma (colorata).
-Pannello (b): errore adiabatico (scostamento della r_min vera dalla predizione
-  congelata istantanea) vs tasso A'/A -> lineare = O(A'/A) confermato.
+Panel (a): frozen family (grey) + non-autonomous trajectory (coloured).
+Panel (b): adiabatic error (deviation of the true r_min from the instantaneous frozen
+  prediction) against the rate A'/A -> linear = O(A'/A) confirmed.
 """
 import os
 import sys
@@ -73,7 +73,7 @@ def frozen_rmin(E):
 
 
 def frozen_orbit(E):
-    """incoming a turning, poi mirror."""
+    """incoming to the turning point, then mirrored."""
     p0 = prof(r0, E)
     s = solve_ivp(lambda t, y: [dHp(y[0], y[1], E, J), -dHr(y[0], y[1], E, J),
                                 dHj(y[0], y[1], E, J)],
@@ -88,8 +88,8 @@ def frozen_orbit(E):
 
 
 def nonauto(eps, want_orbit=False):
-    """A(lambda)=1+eps*lambda; ferma alla svolta. Ritorna (r_turn, A_turn)
-       o l'orbita completa (mirror)."""
+    """A(lambda)=1+eps*lambda; stops at the turn. Returns (r_turn, A_turn)
+       or the complete orbit (mirrored)."""
     Ael = lambda lam: 1.0 + eps*lam
     p0 = prof(r0, Ehat/Ael(0.0))
     def rhs(lam, y):
@@ -116,20 +116,20 @@ except ImportError:
 _t0 = time.time()
 def log(m): print(f"[{time.time()-_t0:6.1f}s] {m}", flush=True)
 
-# --- famiglia congelata (sfondo) ---
+# --- frozen family (background) ---
 As = np.array([1.0, 1.1, 1.2, 1.3, 1.35])
-log("famiglia congelata (orbite t per scala di A)...")
+log("frozen family (t orbits for a ladder of A)...")
 fam = [frozen_orbit(Ehat/A) for A in tqdm(As, desc="frozen family")]
-log("  fatta.")
+log("  done.")
 
-# --- traiettoria non-autonoma adiabatica (eps piccolo) ---
-log("traiettoria non-autonoma eps=0.02...")
+# --- adiabatic non-autonomous trajectory (small eps) ---
+log("non-autonomous trajectory eps=0.02...")
 rr_na, ph_na, rturn_na, Aturn_na = nonauto(0.02, want_orbit=True)
-log(f"  turning r={rturn_na:.4f} a A={Aturn_na:.4f}; "
-    f"congelato r_min(E_eff={Ehat/Aturn_na:.3f})={frozen_rmin(Ehat/Aturn_na):.4f}")
+log(f"  turning point r={rturn_na:.4f} at A={Aturn_na:.4f}; "
+    f"frozen r_min(E_eff={Ehat/Aturn_na:.3f})={frozen_rmin(Ehat/Aturn_na):.4f}")
 
-# --- errore adiabatico vs eps (A'/A) ---
-log("scan errore adiabatico vs eps...")
+# --- adiabatic error against eps (A'/A) ---
+log("scan of the adiabatic error against eps...")
 epss_all = [0.004, 0.008, 0.015, 0.03, 0.05]
 epss, errs = [], []
 for e in tqdm(epss_all, desc="eps scan"):
@@ -137,13 +137,13 @@ for e in tqdm(epss_all, desc="eps scan"):
     pred = frozen_rmin(Ehat/At)
     if np.isfinite(rt) and np.isfinite(pred):
         epss.append(e); errs.append(abs(rt - pred))
-        log(f"  eps={e:.3f}: r_turn={rt:.4f}, congelato={pred:.4f}, "
+        log(f"  eps={e:.3f}: r_turn={rt:.4f}, frozen={pred:.4f}, "
             f"err={errs[-1]:.2e}")
     else:
-        log(f"  eps={e:.3f}: skip (nan, E_eff fuori range)")
+        log(f"  eps={e:.3f}: skipped (nan, E_eff out of range)")
 epss = np.array(epss); errs = np.array(errs)
 
-# ---------------------------------------------------------------- figura
+# ---------------------------------------------------------------- figure
 fig, (ax, axb) = plt.subplots(1, 2, figsize=(2*COL, COL*1.0))
 th = np.linspace(0, 2*np.pi, 200)
 for (rr, ph), A in zip(fam, As):
@@ -169,4 +169,4 @@ axb.set_ylabel(r'$|r_{\min}^{\rm actual}-r_{\min}^{\rm frozen}|$')
 axb.set_title('WKB error is $O(A^\\prime/A)$\n(adiabatic theorem)', fontsize=6.8)
 axb.legend(fontsize=6, loc='upper left')
 savefig(fig, HERE, 'fig_breathing_wkb')
-print('FATTO.')
+print('DONE.')

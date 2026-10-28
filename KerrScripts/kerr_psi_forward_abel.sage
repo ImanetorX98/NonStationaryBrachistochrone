@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# MATTONE livello 3 (corretto): Abel map IN AVANTI u(r) sulla sestica tau +
-# theta(u(r)) con derivate (ingredienti kernel polilog genus-2 per psi).
+# BUILDING BLOCK, level 3 (corrected): FORWARD Abel map u(r) on the tau sextic +
+# theta(u(r)) with derivatives (ingredients of the genus-2 polylog kernel for psi).
 #
-# Toolchain ROBUSTO (aggira il bug Singular di abelfunctions.integralbasis):
-#   - periodi tau, A|B  -> RiemannSurface di Sage (base coomologia (1,x))
-#   - Abel map u(r)     -> integrazione diretta di (1,x)/(2 sqrt(S)) (conv. f_y=2y)
-#                          normalizzata: u = A^{-1} I(r)
-#   - theta + derivate  -> RiemannTheta di abelfunctions (numpy, ogni tau)
-# psi(r)=1/2 Ehat (rho-rho~) diventa polilog genus-2 nella coordinata u(r).
-# Params RAZIONALI: M=1, a=9/10, E=7/5, J=5/2 (scattering, orbita reale r>=r_min).
+# ROBUST toolchain (works around the Singular bug in abelfunctions.integralbasis):
+#   - periods tau, A|B  -> Sage RiemannSurface (cohomology basis (1,x))
+#   - Abel map u(r)     -> direct integration of (1,x)/(2 sqrt(S)) (convention f_y=2y)
+#                          normalised: u = A^{-1} I(r)
+#   - theta + derivatives -> RiemannTheta from abelfunctions (numpy, any tau)
+# psi(r)=1/2 Ehat (rho-rho~) becomes a genus-2 polylog in the coordinate u(r).
+# RATIONAL parameters: M=1, a=9/10, E=7/5, J=5/2 (scattering, real orbit r>=r_min).
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 from abelfunctions import RiemannTheta
@@ -20,7 +20,7 @@ Mf, af, Ef, Jf = 1.0, 0.9, 1.4, 2.5
 
 Rr = PolynomialRing(QQ, ['x', 'y']); x, y = Rr.gens()
 Dl = x**2 - 2*M*x + a**2; Emu = (E**2 - 1)*x + 2*M
-Sint = (1250*x*(x - 2*M)*Emu*(x*Dl - J**2*Emu)).change_ring(QQ)   # modello intero
+Sint = (1250*x*(x - 2*M)*Emu*(x*Dl - J**2*Emu)).change_ring(QQ)   # integral model
 print('Sint =', Sint)
 
 X = SageRS(y**2 - Sint, prec=80)
@@ -30,22 +30,22 @@ Amat, Bmat = PM[:, :2], PM[:, 2:]
 print('genus =', X.genus, ' tau sym err =', np.linalg.norm(tau - tau.T))
 print('||A^{-1}B - tau|| =', np.linalg.norm(np.linalg.solve(Amat, Bmat) - tau))
 
-# sestica numerica (stesso modello intero) e differenziali (1,x)/(2 sqrt(Sint))
+# numerical sextic (same integral model) and differentials (1,x)/(2 sqrt(Sint))
 cS = [float(c) for c in Sint.polynomial(x).list()]      # coeff crescenti
 def Snum(r): return sum(c*r**k for k, c in enumerate(cS))
 def w0(r): return 1.0/(2.0*np.sqrt(Snum(r)))            # dx/(2y)
 def w1(r): return r/(2.0*np.sqrt(Snum(r)))              # x dx/(2y)
 
 r0 = 12.0
-rmin = 4.046197656444178                                # turning (branch point)
-def abel_unnorm(r):    # I(r)=int_{r0}^{r}(w0,w1)dx  (asse reale, S>0 su orbita)
+rmin = 4.046197656444178                                # turning point (branch point)
+def abel_unnorm(r):    # I(r)=int_{r0}^{r}(w0,w1)dx  (real axis, S>0 on the orbit)
     I0 = quad(w0, r0, r, limit=200)[0]
     I1 = quad(w1, r0, r, limit=200)[0]
     return np.array([I0, I1], dtype=complex)
-def u_of_r(r):         # Abel map normalizzata
+def u_of_r(r):         # normalised Abel map
     return np.linalg.solve(Amat, abel_unnorm(r))
 
-# theta e derivate lungo l'orbita
+# theta and derivatives along the orbit
 print("\n r      u1            u2           |theta|      |grad|       |Hess|")
 for r in [12.0, 10.0, 8.0, 6.0, 5.0, 4.3]:
     u = u_of_r(r)
@@ -56,7 +56,7 @@ for r in [12.0, 10.0, 8.0, 6.0, 5.0, 4.3]:
     gn = np.linalg.norm(g); Hn = np.linalg.norm(np.array(H))
     print(f"{r:5.1f}  {u[0]:+.4f}  {u[1]:+.4f}  {abs(th):.4e}  {gn:.3e}  {Hn:.3e}")
 
-print("\nOK: coordinata u(r) in avanti + theta/grad/Hess disponibili.")
-print("=> ingredienti kernel Kronecker-Eisenstein genus-2 per psi(r) pronti.")
-print("   (rho-rho~ = integrale iterato lunghezza-2 nelle 1-forme dEF, L; il")
-print("    kernel g^(n)(u,tau) si costruisce da theta e derivate qui valutate.)")
+print("\nOK: forward coordinate u(r) + theta/grad/Hess available.")
+print("=> ingredients of the genus-2 Kronecker-Eisenstein kernel for psi(r) ready.")
+print("   (rho-rho~ = length-2 iterated integral in the 1-forms dEF, L; the")
+print("    kernel g^(n)(u,tau) is built from theta and the derivatives evaluated here.)")

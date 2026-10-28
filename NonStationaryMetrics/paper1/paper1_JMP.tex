@@ -742,7 +742,7 @@ deformations, each switching on one further phenomenon.
     % ALT: Three stacked panels of closed curves in the local velocity plane: top, nested
     %      circles centred on the origin and shrinking; middle, ellipses displaced toward
     %      negative radial velocity; bottom, ellipses displaced along the angular direction.
-    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{Immagini/fig_indicatrici.pdf}
+    \includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{Immagini/fig_indicatrices.pdf}
     \caption{Rail indicatrices (linear constraint $\cap$ normalisation
     $=$ ellipse). Top: spatially flat FLRW gives centred shrinking circles, so the
     three clock branches remain degenerate. Middle: ingoing Vaidya, in advanced
@@ -1389,12 +1389,12 @@ it exhibits freezing at $a=\Ehat$ but, under perturbation, no branch structure
         % ALT: Two stacked plots against cosmic time: four local-speed curves falling to
         %      zero, each ending at its own vertical dotted line; below, four decaying
         %      rail-redshift curves crossing a dashed unit line.
-        \includegraphics[width=\textwidth]{Immagini/fig_flrw_cinematica.pdf}\\{\footnotesize (a)}
+        \includegraphics[width=\textwidth]{Immagini/fig_flrw_kinematics.pdf}\\{\footnotesize (a)}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.48\textwidth}\centering
         % ALT: Two travel-time curves against the amplitude of a sinusoidal path
         %      deformation, both smooth with their minimum at zero amplitude.
-        \includegraphics[width=\textwidth]{Immagini/fig_flrw_variazionale.pdf}\\{\footnotesize (b)}
+        \includegraphics[width=\textwidth]{Immagini/fig_flrw_variational.pdf}\\{\footnotesize (b)}
     \end{minipage}
     \caption{FLRW base case. (a)~Rail kinematics: local speed $v$ and rail redshift
     $E_{\rm phys}=\Ehat/a$, with freezing at $a=\Ehat$. (b)~Numerical perturbation check:
@@ -1464,7 +1464,7 @@ structure is that of the flat case throughout.
     %      the flat one horizontal, the closed one bending toward O, the open one away.
     %      Panel (b): three saturating curves of reachable distance against rail energy,
     %      with a horizontal line at pi and the region above it shaded.
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_flrw_curvatura.pdf}
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_flrw_curvature.pdf}
     \caption{FLRW at arbitrary spatial curvature. (a)~Comoving brachistochrones with a
     common closest approach $\chi_{\min}$ to a reference point $O$, drawn in the geodesic
     polar map $(\chi,\varphi)$ of the slice: the flat geodesic is the horizontal line at
@@ -1627,7 +1627,7 @@ $L_{\rm mech}$ being a derived, non-conserved quantity.
     \centering
     % ALT: Two stacked plots against radius: above, on a logarithmic axis, a nearly flat
     %      residual trace below 1e-15; below, a smooth nowhere-vanishing drift curve.
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_kodama_conservazione.pdf}
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_kodama_conservation.pdf}
     \caption{Kodama energy along the $\tau$-brachistochrone. Top: the
     \emph{residual} $|{-}u\cdot K-\Ehat|$ on a \emph{log} scale, held below
     $6.7\times10^{-16}$---an \emph{actively controlled} (rail-maintained) invariant,
@@ -1686,7 +1686,7 @@ horizon units.
     % ALT: Two nearly coincident equatorial orbit shapes separating inward, and a second
     %      panel showing the costate p_v against radius, zero at the outer endpoint and
     %      nonzero along the inward path.
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_traiettorie.pdf}
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_trajectories.pdf}
     \caption{$\tau$-brachistochrones for Schwarzschild and Vaidya, and $p_v(r)$,
     at $E=1.2$, $J=1.3$, $r_1=10$, arrival time $v_1=40$, with
     $m(v)=1+\mu v$ and $\mu\in\{0,0.01\}$. Transversality gives
@@ -1757,7 +1757,7 @@ trajectory to accompany figure~\ref{fig:vaidya-noinv}---to future work.
     % ALT: The branch gap against the mass-rate parameter, crossing zero only inside a
     %      shaded unphysical negative-mass band, with a second curve approaching zero from
     %      above without crossing.
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_no_inversione_evaporazione.pdf}
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_no_inversion_evaporation.pdf}
     \caption{Absence of inversion in the ingoing, positive-mass model: the
     linear-model sign change lies entirely in the unphysical $m<0$ region, and with
     $m=e^{-\lambda v}>0$ the branch gap shrinks but does not invert. This is a
@@ -2668,7 +2668,7 @@ the script in the repository~\cite{Rosignoli2026CodeJMP} that generates and veri
     \end{tabular}
     \\[2pt]
     {\footnotesize SHA-256 (first 12 hex) of
-    \texttt{vaidya\_first\_order\_offshell.py}: \texttt{5dc9fe177f2f}.}
+    \texttt{vaidya\_first\_order\_offshell.py}: \texttt{3062b526bae8}.}
 \end{table}
 
 \subsection{Consistency residuals}
@@ -2699,7 +2699,7 @@ adiabatic correction closes to $O(\varepsilon^2)$ against the true non-autonomou
     \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_vaidya_kerr_a0.pdf}
     \caption{Stationary-limit check ($m'=0$): the numerical orbit equation matches the
     closed-form Kerr $a=0$ solution, with relative residual in $\dd\varphi/\dd r$ below
-    $10^{-11}$ on both branches (\texttt{VaidyaMetric/genera\_figure\_vaidya.py}).}
+    $10^{-11}$ on both branches (\texttt{VaidyaMetric/make\_figures\_vaidya.py}).}
     \label{fig:vaidya-kerra0}
 \end{figure}
 
@@ -2708,7 +2708,7 @@ adiabatic correction closes to $O(\varepsilon^2)$ against the true non-autonomou
     \centering
     % ALT: Travel time against perturbation amplitude, one smooth curve per clock branch,
     %      each with a single minimum at zero amplitude and the two curves separated.
-    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_verifica_minimo_brachi.pdf}
+    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{Immagini/fig_brachistochrone_minimum_check.pdf}
     \caption{Local perturbation check: within the tested family each branch is a minimiser
     of its own travel time; $t$ and $\tau$ are distinct curves.}
     \label{fig:verifmin}

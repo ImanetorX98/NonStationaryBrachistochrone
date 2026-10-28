@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Orbite PENETRANTI ramo t (J=3 < J_c^+): la brachistocrona congelata phi_0(r;E_eff)
-ATTRAVERSA l'ergosfera (r_e=2M) e gira dentro, vicino all'orizzonte r_+.
-Famiglia che respira: A cresce -> E_eff=Ehat/A decresce -> l'orbita evolve.
-BL: dphi/dr=K/sqrt(R6); il turning interno (R6=0) e' DENTRO l'ergosfera.
-Pannello (a): famiglia penetrante x-y. (b): raggio di turning interno vs A.
+PENETRATING orbits of the t branch (J=3 < J_c^+): the frozen brachistochrone phi_0(r;E_eff)
+CROSSES the ergosphere (r_e=2M) and turns inside it, near the horizon r_+.
+Breathing family: A grows -> E_eff=Ehat/A decreases -> the orbit evolves.
+BL: dphi/dr=K/sqrt(R6); the inner turning point (R6=0) is INSIDE the ergosphere.
+Panel (a): penetrating family in x-y. (b): inner turning radius against A.
 """
 import os, sys
 import numpy as np
@@ -34,7 +34,7 @@ def Kf(r, E): return r*((E**2-1)*r+2*M)*(J*(r-2*M)+2*M*a)/(r**2-2*M*r+a**2)
 
 
 def inner_turning(E):
-    """radice piu' esterna di R6 SOPRA r_+ (turning interno all'ergosfera)."""
+    """outermost root of R6 ABOVE r_+ (turning point inside the ergosphere)."""
     rs = np.linspace(r_plus+0.005, r0, 30000); v = R6(rs, E)
     idx = np.where(np.diff(np.sign(v)))[0]
     roots = [brentq(lambda r: R6(r, E), rs[i], rs[i+1]) for i in idx]
@@ -46,15 +46,15 @@ def orbit(E):
     rt = inner_turning(E)
     if not np.isfinite(rt):
         return None
-    # griglia GRADUATA (passo ridotto vicino al turning, integrando ~1/sqrt(r-rt))
+    # GRADED grid (smaller step near the turning point, integrand ~1/sqrt(r-rt))
     u = np.linspace(0, 1, 2500)
     rr = r0 - (r0-(rt+5e-4))*(1-np.cos(u*np.pi/2))
-    # phi(r) con substituzione che addolcisce la singolarita' al turning
+    # phi(r) with a substitution that softens the singularity at the turning point
     ph = np.empty_like(rr)
     for i, rc in enumerate(rr):
         ph[i] = quad(lambda x: Kf(x, E)/np.sqrt(max(R6(x, E), 1e-300)),
                      rc, r0, limit=400, points=[rt] if rc < rt+0.05 else None)[0]
-    # incoming + outgoing (mirror alla svolta)
+    # incoming + outgoing (mirrored at the turn)
     return (np.concatenate([rr, rr[::-1]]),
             np.concatenate([ph, 2*ph[-1]-ph[::-1]]), rt)
 
@@ -68,16 +68,16 @@ rts = []
 for E, A, c in zip(Eeffs, As, cols):
     o = orbit(E)
     if o is None:
-        print(f"  A={A}: nessuna orbita"); continue
+        print(f"  A={A}: no orbit"); continue
     rr, ph, rt = o; rts.append((A, rt))
-    if rt < r_e:      # pannello (a): solo orbite che PENETRANO l'ergosfera
+    if rt < r_e:      # panel (a): only orbits that PENETRATE the ergosphere
         ax.plot(rr*np.cos(ph), rr*np.sin(ph), color=c, lw=1.5,
                 label=rf'$A={A:.2f}$ ($r_{{\rm t}}={rt:.2f}$)')
-        # turning: marca che sta FUORI dall'orizzonte (dentro l'ergosfera)
+        # turning point: a marker lying OUTSIDE the horizon (inside the ergosphere)
         i_t = len(rr)//2; ax.plot(rr[i_t]*np.cos(ph[i_t]), rr[i_t]*np.sin(ph[i_t]),
                                   'o', color=c, ms=4, mec='k', mew=0.4)
-    print(f"  A={A:.2f}: E_eff={E:.3f}, turning interno r={rt:.3f} "
-          f"({'DENTRO' if rt < r_e else 'fuori'} ergosfera)")
+    print(f"  A={A:.2f}: E_eff={E:.3f}, inner turning point r={rt:.3f} "
+          f"({'INSIDE' if rt < r_e else 'outside'} the ergosphere)")
 ax.fill(r_e*np.cos(th), r_e*np.sin(th), color='b', alpha=0.06)
 ax.plot(r_e*np.cos(th), r_e*np.sin(th), 'b:', lw=0.9, label='$r_e$ (ergosphere)')
 ax.plot(r_plus*np.cos(th), r_plus*np.sin(th), 'k-', lw=0.9, label='$r_+$ (horizon)')
@@ -90,7 +90,7 @@ ax.annotate(r'turnings $r_+<r_{\rm t}<r_e$', xy=(0.3, -1.5),
             fontsize=5.6, ha='center', color='0.2')
 ax.legend(fontsize=5.2, loc='lower right', framealpha=0.9,
           title=r'$E_{\rm eff}=\hat E/A$ (penetrating)', title_fontsize=5.2)
-# pannello b: turning interno vs A (evoluzione adiabatica)
+# panel b: inner turning point against A (adiabatic evolution)
 Ap, rtp = zip(*rts)
 axb.plot(Ap, rtp, 'o-', color='C3', lw=1.4)
 axb.axhline(r_e, color='b', ls=':', lw=0.9); axb.axhline(r_plus, color='k', lw=0.9)
@@ -100,4 +100,4 @@ axb.set_xlabel('$A$'); axb.set_ylabel('inner turning $r_{\\rm turn}$')
 axb.set_title('penetration depth vs conformal factor\n'
               r'($A\uparrow$: orbit turns deeper toward $r_+$)', fontsize=6.6)
 savefig(fig, HERE, 'fig_phi_penetrating')
-print('FATTO.')
+print('DONE.')

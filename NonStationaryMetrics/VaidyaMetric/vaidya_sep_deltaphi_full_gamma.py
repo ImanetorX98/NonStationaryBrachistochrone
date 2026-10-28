@@ -1,8 +1,8 @@
-# delta phi_tau|_sep : FORMULA 100% TERMINE-PER-TERMINE in Brown-Levin Gamma-tilde.
-# delta phi = int_{z0}^z R(z') eta(z') dz',  eta=int eta'  (NIENTE termine di bordo).
+# delta phi_tau|_sep : FORMULA 100% TERM BY TERM in Brown-Levin Gamma-tilde.
+# delta phi = int_{z0}^z R(z') eta(z') dz',  eta=int eta'  (NO boundary term).
 #   = sum_{i,j} R_i eta'_j  J[f1^i, f2^j],   J[f1,f2]=int f1(z')[int_{z0}^{z'} f2] dz'
-# f1 in {1, zeta_a, P_a, P'_a} (a: poli di R),  f2 in {1, zeta_b, P_b} (b: poli di eta').
-# Ogni J = iterato length-2 di forme Weierstrass = Gamma-tilde(m,n; ahat,bhat), zeta->g1,P->g2,P'->g3.
+# f1 in {1, zeta_a, P_a, P'_a} (a: poles of R),  f2 in {1, zeta_b, P_b} (b: poles of eta').
+# Each J = length-2 iterated integral of Weierstrass forms = Gamma-tilde(m,n; ahat,bhat), zeta->g1,P->g2,P'->g3.
 import numpy as np, mpmath as mp, sympy as sp
 from scipy.integrate import quad
 mp.mp.dps=40
@@ -33,7 +33,7 @@ c_r=float(mp.re(e4r-(2/sa)*wzet(z_inf))); z_d=z_inf+float(mp.quad(lambda x:1/mp.
 def zr(rv): return float(quad(lambda x:1/np.sqrt(Q4(x)),e4r,rv,limit=400)[0])
 z0f=mp.mpf(zr(r0))
 
-# ===== residui ANALITICI (coeff dei termini) =====
+# ===== ANALYTIC residues (coefficients of the terms) =====
 s=np.sqrt(Q4(rd)); Q4prd=np.polyval(Qp,rd); Q4pprd=np.polyval(Qpp,rd)
 F=lambda x: np.polyval(Nm,x)/np.polyval(Q,x)
 Fp=lambda x:(np.polyval(Nmp,x)*np.polyval(Q,x)-np.polyval(Nm,x)*np.polyval(Qp,x))/np.polyval(Q,x)**2
@@ -41,34 +41,34 @@ Fpp=lambda x:((np.polyval(Nmpp,x)*np.polyval(Q,x)-np.polyval(Nm,x)*np.polyval(Qp
    -2*np.polyval(Qp,x)*(np.polyval(Nmp,x)*np.polyval(Q,x)-np.polyval(Nm,x)*np.polyval(Qp,x)))/np.polyval(Q,x)**3
 a1=Q4prd/(4*s); a2=Q4pprd/12; h0=F(rd); h1=Fp(rd)*s; h2=0.5*(Fpp(rd)*s**2+Fp(rd)*(Q4prd/2))
 b1zd=(h2-3*a1*h1+(6*a1**2-3*a2)*h0)/s**3; b2zd=(h1-3*a1*h0)/s**3; b3zd=h0/s**3
-# R half-period residui (b2 solo) via analitico: al punto e_i, R~N_m/((r-rd)^3 Q), Q~Q'(e_i)(r-e_i),
-# r-e_i ~ (Q'(e_i)/4)(z-w_i)^2  => b2 = N_m(e_i)/((e_i-rd)^3) * 4/Q'(e_i)^2 * ... uso valore da residui gia' noti:
+# half-period residues of R (b2 only), analytically: at the point e_i, R~N_m/((r-rd)^3 Q), Q~Q'(e_i)(r-e_i),
+# r-e_i ~ (Q'(e_i)/4)(z-w_i)^2  => b2 = N_m(e_i)/((e_i-rd)^3) * 4/Q'(e_i)^2 * ... the value from the residues already known is used:
 def b2_half(ei):
     Qpe=np.polyval(Qp,ei); return np.polyval(Nm,ei)/((ei-rd)**3)*(4/Qpe**2)
-# C0: R = C0 + sum principal; C0 = valore medio. Uso: C0 = R(zt)-somma parti principali (numerico da forme)
-# eta' residui analitici
+# C0: R = C0 + sum of principal parts; C0 = mean value. Used: C0 = R(zt) - sum of principal parts (numerical, from the forms)
+# analytic residues of eta'
 e1_zd=(rd**3-2*rd**2)/s
 B=c_r+(1/sa)*float(mp.re(wzet(2*z_inf))); A=-1/sa
 e1_zi=A*(2*B+rd-2); e2_zi=A**2
-Ce=None  # calcolato sotto per consistenza
+Ce=None  # computed below for consistency
 
-# ---- funzioni base ----
+# ---- basis functions ----
 def fbasis(kind,p):
     if kind=='1':  return lambda z: mp.mpf(1)
     if kind=='z':  return lambda z: z
     if kind=='ze': return lambda z: wzet(z-p)
     if kind=='wp': return lambda z: wp(z-p)
     if kind=='wpp':return lambda z: wpp(z-p)       # P'(z-p) plain
-# R e eta' come liste (coeff, kind, pole)
-hp=[mp.mpf(0), 1j*mp.mpf(w_im)]                     # semi-periodi con polo (e4->0, e2->iw_im)
-Rlist=[('C0','1',mp.mpf(0))]  # C0 sotto
+# R and eta' as lists (coeff, kind, pole)
+hp=[mp.mpf(0), 1j*mp.mpf(w_im)]                     # half-periods with a pole (e4->0, e2->iw_im)
+Rlist=[('C0','1',mp.mpf(0))]  # C0 below
 for (nm,a,sg) in [('zd',z_d,1),('mzd',-z_d,1)]:
     Rlist+=[ (sg*b1zd if a>0 else -b1zd,'ze',mp.mpf(a)),(b2zd,'wp',mp.mpf(a)),((-1)*( b3zd if a>0 else -b3zd)/2,'wpp',mp.mpf(a)) ]
 Rlist+=[(b2_half(e4r),'wp',mp.mpf(0)),(b2_half(e3r),'wp',1j*mp.mpf(w_im))]  # e4->z=0, e3->z=iw_im
 Elist=[('Ce','1',mp.mpf(0))]
 Elist+=[(e1_zd,'ze',mp.mpf(z_d)),(-e1_zd,'ze',mp.mpf(-z_d)),(e2_zi,'wp',mp.mpf(z_inf)),(e2_zi,'wp',mp.mpf(-z_inf)),
         (e1_zi,'ze',mp.mpf(z_inf)),(-e1_zi,'ze',mp.mpf(-z_inf))]
-# R(z), eta'(z) espliciti (per fissare C0, Ce e verifica)
+# explicit R(z), eta'(z) (to fix C0, Ce and for the check)
 def r_of_z(z): return c_r-(1/sa)*(wzet(z-z_inf)-wzet(z+z_inf))
 def Rexact(z): rr=r_of_z(z); return np.polyval(Nm,rr)/((rr-rd)**3*np.polyval(Q,complex(rr)))
 def Epexact(z): rr=r_of_z(z); return (rr**3-2*rr**2)/(rr-rd)
@@ -81,7 +81,7 @@ print("C0=%.6f  Ce=%.6f"%(C0.real,Ce.real))
 print("check R:",float(max(abs(complex(Rexact(mp.mpf(t))-sum(c*fbasis(k,p)(mp.mpf(t)) for c,k,p in Rlist))) for t in [0.15,0.22])))
 print("check eta':",float(max(abs(complex(Epexact(mp.mpf(t))-sum(c*fbasis(k,p)(mp.mpf(t)) for c,k,p in Elist))) for t in [0.15,0.22])))
 
-# ---- J[f1,f2] = iterato length-2 (Brown-Levin Gamma-tilde) ----
+# ---- J[f1,f2] = length-2 iterated integral (Brown-Levin Gamma-tilde) ----
 _ic={}
 def inner(k2_,p2,t):
     key=(k2_,float(p2.real),float(p2.imag),float(t.real),float(t.imag))
@@ -95,7 +95,7 @@ def dphi_terms(z):
         for c2,k2_,p2 in Elist:
             tot+=c1*c2*Jatom(k1,p1,k2_,p2,z)
     return tot
-# ---- diretto ----
+# ---- direct ----
 def sQ(x): return np.sqrt(Q4(x))
 def U(x,kk): return quad(lambda t:t**kk/((t-rd)*sQ(t)),r0,x,limit=200)[0]
 def eta(x): return U(x,3)-2*U(x,2)
@@ -103,10 +103,10 @@ def dmF(x):
     def Fm(mv): return np.polyval(np.polymul([Jc],[E**2-1,2*mv]),x)/np.sqrt(np.polyval(pS(mv,Jc),x))
     return (Fm(m+1e-6)-Fm(m-1e-6))/2e-6
 def dphi_direct(x): return quad(lambda t: dmF(t)*eta(t), r0, x, limit=200)[0]
-print("\n=== delta phi = Sum_ij R_i eta'_j J[f1,f2]  (100% termine-per-termine)  vs DIRETTO ===")
+print("\n=== delta phi = Sum_ij R_i eta'_j J[f1,f2]  (100% term by term)  against DIRECT ===")
 for rr in [11.0,10.5,10.0]:
     z=mp.mpf(zr(rr)); dt=complex(dphi_terms(z)).real; dd=dphi_direct(rr)
-    print(f"  r={rr:4.1f}  Sum_termini={dt:+.8f}  diretto={dd:+.8f}  diff={abs(dt-dd):.1e}")
-# conteggio termini
+    print(f"  r={rr:4.1f}  Sum_terms={dt:+.8f}  direct={dd:+.8f}  diff={abs(dt-dd):.1e}")
+# count of the terms
 nt=sum(1 for c1,k1,p1 in Rlist for c2,k2_,p2 in Elist if abs(c1*c2)>1e-9)
-print(f"\ntermini non nulli: {nt}  (ogni J = Gamma-tilde(m,n) via zeta->g1,P->g2,P'->g3)")
+print(f"\nnon-zero terms: {nt}  (each J = Gamma-tilde(m,n) via zeta->g1,P->g2,P'->g3)")

@@ -1,6 +1,6 @@
-# TK tau separatrice: BLOCK ASSEMBLY (decompone int G~ eta' in dilog nominati).
+# TK tau separatrix: BLOCK ASSEMBLY (decomposes int G~ eta' into named dilogs).
 # delta phi ~ int R_tau eta dz = 1/2 G~ eta + 1/2 sum(c_i d_j - c_j d_i) A[e_i,e_j].
-# c_i = residui di R_tau (N_tau); d_j = residui di eta'; A = dilog ellittici antisimmetrici.
+# c_i = residues of R_tau (N_tau); d_j = residues of eta'; A = antisymmetric elliptic dilogs.
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try: from tqdm import tqdm
@@ -12,7 +12,7 @@ M=1.0; a=0.9; E=1.2; r0=20.0
 r,J=sp.symbols('r J'); Ms=1; asq=sp.Rational(81,100); Es=sp.Rational(6,5)
 DE=(Es**2-1)*r+2*Ms; Delta=r**2-2*Ms*r+asq; g=sp.expand(r*Delta-J**2*DE)
 Jc=float([complex(s).real for s in sp.solve(sp.Eq(sp.resultant(g,sp.diff(g,r),r),0),J) if abs(complex(s).imag)<1e-9 and complex(s).real>5][0])
-log.info("Jc=%.6f, costruisco curva e sorgente"%Jc)
+log.info("Jc=%.6f, building the curve and the source"%Jc)
 Sc=np.array([float(c) for c in sp.Poly(sp.expand(r*(r-2*Ms)*DE*(r*Delta-J**2*DE)).subs(J,Jc),r).all_coeffs()])
 Ntau=np.array([float(c) for c in sp.Poly(sp.expand(Es*J*r**4*(r-2*Ms)**2*DE).subs(J,Jc),r).all_coeffs()])
 # --- TRACKING: N_tot = N_tau + (dJc/dE) N_J,  N_J=r^3(r-2M)^2 DE^2, dJc/dE=-E Jc r_d/DE(r_d) ---
@@ -20,8 +20,8 @@ NJ=np.array([float(c) for c in sp.Poly(sp.expand(r**3*(r-2*Ms)**2*DE**2).subs(J,
 _rtsS=np.roots(Sc); _pr=[(i,j) for i in range(6) for j in range(i+1,6) if abs(_rtsS[i]-_rtsS[j])<1e-6]
 _rd=float(np.real((_rtsS[_pr[0][0]]+_rtsS[_pr[0][1]])/2)); _DErd=(E**2-1)*_rd+2*M
 dJcdE=-E*Jc*_rd/_DErd
-_L=max(len(Ntau),len(NJ)); Ntau=np.r_[np.zeros(_L-len(Ntau)),Ntau]+dJcdE*np.r_[np.zeros(_L-len(NJ)),NJ]  # ora Ntau = N_tot
-log.info('TRACKING: dJc/dE=%.5f, uso N_tot=N_tau+(dJc/dE)N_J'%dJcdE)
+_L=max(len(Ntau),len(NJ)); Ntau=np.r_[np.zeros(_L-len(Ntau)),Ntau]+dJcdE*np.r_[np.zeros(_L-len(NJ)),NJ]  # now Ntau = N_tot
+log.info('TRACKING: dJc/dE=%.5f, using N_tot=N_tau+(dJc/dE)N_J'%dJcdE)
 rts=np.roots(Sc); pr=[(i,j) for i in range(6) for j in range(i+1,6) if abs(rts[i]-rts[j])<1e-6]
 rd=float(np.real((rts[pr[0][0]]+rts[pr[0][1]])/2)); Q,_=np.polydiv(Sc,np.polymul([1,-rd],[1,-rd]))
 er=np.sort(np.real(np.roots(Q))); a4=Q[0]; e1r,e2r,e3r,e4r=er; Qp=np.polyder(Q); Qpp=np.polyder(Qp)
@@ -42,7 +42,7 @@ c_r=float(mp.re(e4r-(2/sa)*wzet(z_inf))); z_d=z_inf+float(mp.re(mp.quad(lambda x
 def zr(rv): return float(quad(lambda x:1/np.sqrt(Q4(x)),e4r,rv,limit=400)[0])
 z0=mp.mpf(zr(r0)); zdm=mp.mpf(z_d); zim=mp.mpf(z_inf); iw=1j*mp.mpf(w_im)
 def r_of_z(z): return c_r-(1/sa)*(wzet(z-z_inf)-wzet(z+z_inf))
-# --- residui R_tau (analitici, stesse formule Vaidya con N_tau) ---
+# --- residues of R_tau (analytic, same formulas as Vaidya with N_tau) ---
 s=np.sqrt(Q4(rd)); a1=np.polyval(Qp,rd)/(4*s); a2=np.polyval(Qpp,rd)/12
 F=lambda x: np.polyval(Ntau,x)/np.polyval(Q,x)
 Fp=lambda x:(np.polyval(Ntaup,x)*np.polyval(Q,x)-np.polyval(Ntau,x)*np.polyval(Qp,x))/np.polyval(Q,x)**2
@@ -50,13 +50,13 @@ Fpp=lambda x:((np.polyval(Ntaupp,x)*np.polyval(Q,x)-np.polyval(Ntau,x)*np.polyva
 h0=F(rd); h1=Fp(rd)*s; h2=0.5*(Fpp(rd)*s**2+Fp(rd)*(np.polyval(Qp,rd)/2))
 b1zd=(h2-3*a1*h1+(6*a1**2-3*a2)*h0)/s**3; b2zd=(h1-3*a1*h0)/s**3; b3zd=h0/s**3
 b2h=lambda ei: np.polyval(Ntau,ei)/((ei-rd)**3)*(4/np.polyval(Qp,ei)**2)
-# eta' = (r^3-2M r^2)/(r-r_d): residui
+# eta' = (r^3-2M r^2)/(r-r_d): residues
 e1_zd=(rd**3-2*M*rd**2)/s
 B=c_r+(1/sa)*float(mp.re(wzet(2*z_inf))); Aq=-1/sa
-# eta'-residui a z_inf: eta'=(r^3-2M r^2)/(r-r_d); r->inf ~ r^2 -> stessa struttura Vaidya (P3=r^3-2M r^2)
-# uso formule Vaidya con 2m->2M:
-e1_zi=Aq*(2*B*0+0)  # placeholder; calcolo via contorno sotto
-# blocchi pari
+# residues of eta' at z_inf: eta'=(r^3-2M r^2)/(r-r_d); r->inf ~ r^2 -> same structure as Vaidya (P3=r^3-2M r^2)
+# using the Vaidya formulas with 2m->2M:
+e1_zi=Aq*(2*B*0+0)  # placeholder; computed by contour below
+# even blocks
 Zf=lambda A_: (lambda z: wzet(z-A_)-wzet(z+A_)); Pf=lambda A_: (lambda z: wp(z-A_)+wp(z+A_)); Ppf=lambda A_: (lambda z: wpp(z-A_)-wpp(z+A_))
 ef=[lambda z: mp.mpf(1), Zf(zdm), Pf(zdm), Ppf(zdm), (lambda z: wp(z)), (lambda z: wp(z-iw)), Pf(zim), Zf(zim)]
 def Pe(i,z):
@@ -68,10 +68,10 @@ def Pe(i,z):
     if i==5: return (-wzet(z-iw))-(-wzet(z0-iw))
     if i==6: return (-(wzet(z-zim)+wzet(z+zim)))-(-(wzet(z0-zim)+wzet(z0+zim)))
     if i==7: return (mp.log(wsig(z-zim))-mp.log(wsig(z+zim)))-(mp.log(wsig(z0-zim))-mp.log(wsig(z0+zim)))
-# coeff R (c) e eta' (d) sui blocchi. Fisso C0,Ce e i residui z_inf per match numerico a un punto.
+# coefficients of R (c) and eta' (d) on the blocks. C0, Ce and the z_inf residues are fixed by a numerical match at one point.
 def Rex(z): rr=r_of_z(z); return np.polyval(Ntau,rr)/((rr-rd)**3*np.polyval(Q,complex(rr)))
 def Epex(z): rr=r_of_z(z); return (rr**3-2*M*rr**2)/(rr-rd)
-# eta'-residui z_inf via principio: e2_zi, e1_zi da parti principali (contorno, 1 volta)
+# residues of eta' at z_inf from first principles: e2_zi, e1_zi from the principal parts (contour, once)
 def lauf(fun,A_,order,eps=1e-3):
     return {n:complex(mp.quad(lambda th: fun(A_+eps*mp.exp(1j*th))*(eps*mp.exp(1j*th))**(n-1)*(1j*eps*mp.exp(1j*th)),[0,2*mp.pi])/(2j*mp.pi)) for n in range(1,order+1)}
 ez=lauf(Epex,zim,2); e2_zi=ez[2].real; e1_zi=ez[1].real
@@ -80,7 +80,7 @@ dvec=[0,e1_zd,0.0,0.0,0.0,0.0,e2_zi,e1_zi]
 zt=mp.mpf('0.05')
 cvec[0]=complex(Rex(zt)-sum(cvec[i]*ef[i](zt) for i in range(1,8)))
 dvec[0]=complex(Epex(zt)-sum(dvec[i]*ef[i](zt) for i in range(1,8)))
-log.info("check R,eta' ricostruiti: R=%.1e eta'=%.1e"%(
+log.info("check of the rebuilt R,eta': R=%.1e eta'=%.1e"%(
     max(abs(complex(Rex(mp.mpf(t))-sum(cvec[i]*ef[i](mp.mpf(t)) for i in range(8)))) for t in [0.03,0.07]),
     max(abs(complex(Epex(mp.mpf(t))-sum(dvec[i]*ef[i](mp.mpf(t)) for i in range(8)))) for t in [0.03,0.07])))
 Rall=[0,1,2,3,4,5]; Eall=[0,1,6,7]
@@ -103,9 +103,9 @@ def U(x,k): return quad(lambda t:t**k/((t-rd)*sQ(t)),r0,x,limit=200)[0]
 def eta_dir(x): return U(x,3)-2*M*U(x,2)
 def dEF(x): return np.polyval(Ntau,x)/np.polyval(Sc,x)**1.5
 def dphi_direct(x): return quad(lambda t: dEF(t)*eta_dir(t), r0, x, limit=200)[0]
-log.info("block assembly (%d atomi A) vs diretto"%len(pairsnz))
-print("=== TK tau TRACKING BLOCK ASSEMBLY: 1/2 G~eta + 1/2 sum(cd-cd)A[e_i,e_j] vs DIRETTO ===")
+log.info("block assembly (%d A atoms) against direct"%len(pairsnz))
+print("=== TK tau TRACKING BLOCK ASSEMBLY: 1/2 G~eta + 1/2 sum(cd-cd)A[e_i,e_j] against DIRECT ===")
 for rr in tqdm([19.0,18.0,17.0],desc="TK-block"):
     z=mp.mpf(zr(rr)); db=complex(dphi_block(z)).real; dd=dphi_direct(rr)
     print(f"  r={rr:4.1f}  block={db:+.8e}  dir={dd:+.8e}  diff={abs(db-dd):.1e}")
-print("atomi A[e_i,e_j] (dilog ellittici) = %d ; coeff = prodotti di residui chiusi (N_tau)."%len(pairsnz))
+print("atoms A[e_i,e_j] (elliptic dilogs) = %d ; coefficients = products of closed residues (N_tau)."%len(pairsnz))

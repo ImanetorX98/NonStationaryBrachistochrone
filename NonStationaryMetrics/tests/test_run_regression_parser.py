@@ -22,12 +22,12 @@ PAT = {rel.split('/')[-1]: pat for rel, kind, pat, bound, label, nexp in R.CHECK
 
 CASES = [
     # (script, output text, expected list of parsed values)
-    ("pipeline_completa_deltaphi.py", "  difference  = 3.21e-14   <-- chain closed\n", [3.21e-14]),
-    ("pipeline_completa_deltaphi.py", "  differenza   = 3.21e-14   <-- catena chiusa\n", []),
-    ("pipeline_completa_deltaphi.py", "  difference  = 3.21e-14x\n", []),
-    ("pipeline_completa_deltaphi.py", "  difference  = nan\n", [float('nan')]),
-    ("pipeline_completa_deltaphi.py", "  difference  = inf\n", [float('inf')]),
-    ("pipeline_completa_deltaphi.py", "  difference  = 1e999\n", [float('inf')]),
+    ("deltaphi_full_pipeline.py", "  difference  = 3.21e-14   <-- chain closed\n", [3.21e-14]),
+    ("deltaphi_full_pipeline.py", "  differenza   = 3.21e-14   <-- catena chiusa\n", []),
+    ("deltaphi_full_pipeline.py", "  difference  = 3.21e-14x\n", []),
+    ("deltaphi_full_pipeline.py", "  difference  = nan\n", [float('nan')]),
+    ("deltaphi_full_pipeline.py", "  difference  = inf\n", [float('inf')]),
+    ("deltaphi_full_pipeline.py", "  difference  = 1e999\n", [float('inf')]),
     ("kerr_psi_explicit_verified.py",
      "  r=11.0: dEF=1e-3  rhs=1e-3  diff=2.10e-16\n"
      "  r=9.0: dEF=1e-3  rhs=1e-3  diff=0.00e+00\n"

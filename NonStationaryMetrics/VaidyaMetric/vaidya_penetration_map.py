@@ -1,29 +1,29 @@
 # -*- coding: utf-8 -*-
 """
-Mappa di penetrazione della brachistocrona tau in Vaidya lineare.
+Penetration map of the tau-brachistochrone in linear Vaidya.
 
-Setup (parametro v, ' = d/dv, E fissa, m(v) = m0 + mu*v):
-  - lancio ENTRANTE da r0 = 10 all'istante v0, con la mira localmente
-    ottima p_v = 0 (famiglia brachistocrona; in statico e' esatta e
-    riproduce l'orbita chiusa doranTau a=0);
-  - integrazione forward; esiti:
-      RIFLETTE:  r' = 0 con r > 2m(v)  (periasse esterno)
-      CATTURATA: attraversa r = 2m(v) verso l'interno
-  - soglia J_c(v0): bisezione in J tra i due esiti.
+Set-up (parameter v, ' = d/dv, fixed E, m(v) = m0 + mu*v):
+  - INGOING launch from r0 = 10 at the instant v0, with the locally optimal
+    aim p_v = 0 (brachistochrone family; in the static case it is exact and
+    reproduces the closed doranTau orbit at a=0);
+  - forward integration; outcomes:
+      REFLECTS:  r' = 0 with r > 2m(v)  (outer periastron)
+      CAPTURED:  crosses r = 2m(v) inwards
+  - threshold J_c(v0): bisection in J between the two outcomes.
 
-Riferimento statico (Kerr a=0, tricotomia doranTau): il ramo tau penetra
-SOLO a J = J_c = a/E = 0: soglia nulla, penetrazione a misura zero.
-Atteso non stazionario: J_c FINITO (accrescimento: l'orizzonte cresce
-verso l'orbita e inghiotte periassi marginali; evaporazione: l'orizzonte
-si ritira e riflette anche mire piu' strette... o viceversa — misuriamo).
+Static reference (Kerr a=0, doranTau trichotomy): the tau branch penetrates
+ONLY at J = J_c = a/E = 0: zero threshold, penetration of measure zero.
+Expected in the non-stationary case: FINITE J_c (accretion: the horizon grows
+towards the orbit and swallows marginal periastra; evaporation: the horizon
+recedes and reflects even tighter aims... or the other way round -- we measure).
 
-Stima analitica small-J (statico): il periasse sta sopra l'orizzonte di
+Small-J analytic estimate (static): the periastron lies above the horizon by
   delta = r_p - 2m ~ J^2 E^2 / (2m)
-=> in accrescimento la cattura richiede che 2m cresca di ~delta durante
-l'avvicinamento: J_c ~ sqrt(2m * Delta(2m))/E, finito.
+=> under accretion, capture requires 2m to grow by ~delta during
+the approach: J_c ~ sqrt(2m * Delta(2m))/E, finite.
 
-Output: fig_vaidya_penetration_map (Jc vs v0; traiettorie di esempio
-vicino alla soglia con inseguimento dell'orizzonte).
+Output: fig_vaidya_penetration_map (Jc against v0; example trajectories
+near the threshold, with the horizon chase).
 """
 
 import os
@@ -61,7 +61,7 @@ args = (vv, rr, rp, mu, J)
 rpp_fn = sp.lambdify(args, rpp_sol.subs(subs_n), 'numpy')
 Wv_fn = sp.lambdify(args, Wv.subs(subs_n), 'numpy')
 
-# p_v della forma r-param per la mira al lancio (ramo entrante u < u_-)
+# p_v of the r-parametrised form, for the aim at launch (ingoing branch u < u_-)
 u_ = sp.Symbol('u_', real=True)
 W_r = (f * u_**2 - 2 * u_ - (f * u_ - 1)**2 / E**2) / rr**2
 F_r = (f * u_ - 1) / E - J * sp.sqrt(W_r)
@@ -69,12 +69,12 @@ pv_fn = sp.lambdify((rr, vv, u_, mu, J),
                     sp.diff(F_r, u_).subs(subs_n), 'numpy')
 
 def rp_lancio(mu_n, v0, J_n):
-    """r'(v0) entrante: mira p_v=0 (m congelata) + riflessione temporale.
+    """Ingoing r'(v0): aim p_v=0 (frozen m) + time reflection.
 
     p_v = 0  <=>  sqrt(W) = J E W'/(2f)  <=>  N(u) = K (2 a2 u + a1)^2
-    con N = a2 u^2 + a1 u + a0 (numeratore di W_r) e K = J^2E^2/(4f^2r^2):
-    quadratica esatta, robusta anche a J piccolissimo. Poi riflessione
-    temporale u_in = 2/f - u_out (vertice di W in u = 1/f).
+    with N = a2 u^2 + a1 u + a0 (numerator of W_r) and K = J^2E^2/(4f^2r^2):
+    an exact quadratic, robust even at very small J. Then the time
+    reflection u_in = 2/f - u_out (vertex of W at u = 1/f).
     """
     fl = 1 - 2 * (m0v + mu_n * v0) / r0
     a2 = fl - fl**2 / E_n**2
@@ -89,7 +89,7 @@ def rp_lancio(mu_n, v0, J_n):
     return 1.0 / u_in
 
 def lancio(mu_n, v0, J_n, v_max_extra=400.0):
-    """Integra forward; ritorna esito e diagnostica."""
+    """Integrate forward; return the outcome and diagnostics."""
     rp0 = rp_lancio(mu_n, v0, J_n)
     v_end = v0 + v_max_extra
     if mu_n < 0:                # m(v) > 0.03
@@ -101,71 +101,71 @@ def lancio(mu_n, v0, J_n, v_max_extra=400.0):
     ev_turn = lambda v_, y: y[1]
     ev_turn.terminal, ev_turn.direction = True, 1        # r': - -> +
     ev_hor = lambda v_, y: y[0] - 2 * (m0v + mu_n * v_)
-    ev_hor.terminal, ev_hor.direction = True, -1         # entra
+    ev_hor.terminal, ev_hor.direction = True, -1         # goes in
     ev_W = lambda v_, y: Wv_fn(v_, y[0], y[1], mu_n, J_n) - 1e-12
     ev_W.terminal, ev_W.direction = True, -1
     s = solve_ivp(rhs, [v0, v_end], [r0, rp0], rtol=1e-12, atol=1e-14,
                   method='DOP853', events=[ev_turn, ev_hor, ev_W],
                   dense_output=True)
     if len(s.t_events[1]):
-        return dict(esito='cattura', v_ev=s.t_events[1][0],
+        return dict(esito='captured', v_ev=s.t_events[1][0],
                     r_ev=s.y_events[1][0][0], sol=s)
     if len(s.t_events[0]):
         y = s.y_events[0][0]
-        return dict(esito='riflette', v_ev=s.t_events[0][0], r_ev=y[0],
+        return dict(esito='reflects', v_ev=s.t_events[0][0], r_ev=y[0],
                     r_min=y[0], sol=s)
     if len(s.t_events[2]):
-        # radializzazione W->0: dentro l'orizzonte = plunge catturato
+        # radialisation W->0: inside the horizon = captured plunge
         v_e, r_e = s.t_events[2][0], s.y_events[2][0][0]
         dentro = r_e < 2 * (m0v + mu_n * v_e)
-        return dict(esito='cattura' if dentro else 'W=0-fuori',
+        return dict(esito='captured' if dentro else 'W=0-outside',
                     v_ev=v_e, r_ev=r_e, sol=s)
-    return dict(esito='indeterminato', v_ev=s.t[-1], r_ev=s.y[0, -1], sol=s)
+    return dict(esito='undetermined', v_ev=s.t[-1], r_ev=s.y[0, -1], sol=s)
 
 def J_critico(mu_n, v0, J_hi=1.6, tol=2e-5):
-    """J_c = sup{J : cattura}. Scala di sonde + bisezione.
+    """J_c = sup{J : capture}. Ladder of probes + bisection.
 
-    Nota: a J -> 0 la riduzione degenera (d2F/dr'^2 ∝ J): sotto J ~ 0.01
-    l'EL e' stiff e gli esiti numerici non sono affidabili; le sonde
-    partono da 0.01. J_c = 0 significa 'nessuna cattura sopra 0.01'.
+    Note: as J -> 0 the reduction degenerates (d2F/dr'^2 ∝ J): below J ~ 0.01
+    the Euler-Lagrange equation is stiff and the numerical outcomes are not reliable; the probes
+    start from 0.01. J_c = 0 means 'no capture above 0.01'.
     """
     probes = [0.01, 0.03, 0.1, 0.3]
     lo = None
     for p in probes:
-        if lancio(mu_n, v0, p)['esito'] == 'cattura':
+        if lancio(mu_n, v0, p)['esito'] == 'captured':
             lo = p
             break
     if lo is None:
         return 0.0
     e_hi = lancio(mu_n, v0, J_hi)['esito']
-    assert e_hi == 'riflette', f'J_hi={J_hi} non riflette ({e_hi})'
+    assert e_hi == 'reflects', f'J_hi={J_hi} does not reflect ({e_hi})'
     hi = J_hi
     while hi - lo > tol:
         mid = 0.5 * (lo + hi)
-        if lancio(mu_n, v0, mid)['esito'] == 'cattura':
+        if lancio(mu_n, v0, mid)['esito'] == 'captured':
             lo = mid
         else:
             hi = mid
     return 0.5 * (lo + hi)
 
-# --------------------------------------------------------------- studio
+# --------------------------------------------------------------- study
 print("=" * 72)
-print("[V1] validazione statica: J piccolo riflette (soglia J_c -> 0)")
+print("[V1] static validation: small J reflects (threshold J_c -> 0)")
 print("=" * 72)
 for J_t in (0.05, 0.02, 0.005):
     o = lancio(0.0, 0.0, J_t)
-    extra = f", r_min = {o['r_min']:.6f}" if o['esito'] == 'riflette' else ''
-    print(f"  statico J={J_t:6.3f}: {o['esito']}{extra}"
-          f"   [periasse teorico 2m + J^2E^2/(2m) ~ "
+    extra = f", r_min = {o['r_min']:.6f}" if o['esito'] == 'reflects' else ''
+    print(f"  static J={J_t:6.3f}: {o['esito']}{extra}"
+          f"   [theoretical periastron 2m + J^2E^2/(2m) ~ "
           f"{2 + J_t**2 * E_n**2 / 2:.6f}]")
 Jc_st = J_critico(0.0, 0.0)
-print(f"  J_c statico (bisezione) = {Jc_st:.2e}")
-print("  [floor numerico: il margine r_p - 2m = J^2 E^2/(2m) scende sotto")
-print("   la risoluzione dell'integratore; teoricamente J_c = 0, misura nulla]")
+print(f"  static J_c (bisection) = {Jc_st:.2e}")
+print("  [numerical floor: the margin r_p - 2m = J^2 E^2/(2m) drops below")
+print("   the resolution of the integrator; in theory J_c = 0, measure zero]")
 
 print()
 print("=" * 72)
-print("[V2] mappa J_c(v0) per mu = +0.01 (accresce), -0.01 (evapora)")
+print("[V2] map J_c(v0) for mu = +0.01 (accreting), -0.01 (evaporating)")
 print("=" * 72)
 v0_grid = np.linspace(0.0, 60.0, 9)
 mappe = {}
@@ -181,7 +181,7 @@ for mu_n, lab in ((0.01, 'accresce'), (-0.01, 'evapora')):
 
 print()
 print("=" * 72)
-print("[V3] scala small-J (accrescimento): J_c vs sqrt(mu)")
+print("[V3] small-J scaling (accretion): J_c against sqrt(mu)")
 print("=" * 72)
 mu_scan = [0.0025, 0.005, 0.01, 0.02]
 Jc_mu = [J_critico(m_, 0.0) for m_ in mu_scan]
@@ -203,7 +203,7 @@ axa.set_title('penetration threshold $J_c(v_0)$: below $J_c$ the\n'
               '$\\tau$-brachistochrone crosses $r=2m(v)$ ($E=1.2$, $r_0=10$)')
 axa.legend()
 
-# esempi vicino alla soglia (accrescimento, v0=0)
+# examples near the threshold (accretion, v0=0)
 Jc0 = mappe[0.01][0]
 v_ev_max = 0.0
 for J_t, col, lab in ((Jc0 * 0.97, 'C3', 'below threshold: captured'),
@@ -224,4 +224,4 @@ axb.set_title(f'horizon chase near the threshold\n'
               f'($\\mu=+0.01$, $v_0=0$, $J_c={Jc0:.4f}$)')
 axb.legend()
 salva(fig, 'fig_vaidya_penetration_map')
-print('\nFATTO.')
+print('\nDONE.')

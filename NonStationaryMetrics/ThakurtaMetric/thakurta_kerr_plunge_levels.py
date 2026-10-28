@@ -15,36 +15,36 @@ The inversion below is therefore a property of this comparison, not of the rail 
 equal level there is no prograde inversion (Paper II, prop:same-launch).
 
 Original description (OBSOLETE, kept for the record; not current documentation):
-Plunge inversion t vs tau nel piano (a, J) — Kerr e Thakurta-Kerr.
+Plunge inversion t vs tau in the (a, J) plane -- Kerr and Thakurta-Kerr.
 
-PROTOCOLLO (evidence_t_plunges_deeper.txt): stesse condizioni iniziali
-(r0, p_r0, J) nei flussi delle Hamiltoniane ottiche QUADRATICHE dei due
-rami equatoriali; integrazione fino a p_r = 0; confronto del raggio
-minimo raggiunto rispetto alla singolarita'. In Kerr: il ramo t affonda
-di piu' (soppressione centrifuga 1/E^2), TRANNE a J piccolo dove il
-dragging inverte l'ordinamento: l'inversione vive nel piano
-(a = spin del BH, J = momento angolare z della particella).
+PROTOCOL (evidence_t_plunges_deeper.txt): the same initial conditions
+(r0, p_r0, J) in the flows of the QUADRATIC optical Hamiltonians of the two
+equatorial branches; integration down to p_r = 0; comparison of the minimum
+radius reached relative to the singularity. In Kerr: the t branch goes
+deeper (centrifugal suppression 1/E^2), EXCEPT at small J, where
+frame dragging inverts the ordering: the inversion lives in the plane
+(a = black-hole spin, J = z angular momentum of the particle).
 
-Hamiltoniane quadratiche (equatoriali; a A=1 identiche al progetto Kerr):
+Quadratic Hamiltonians (equatorial; at A=1 identical to the Kerr project):
 
   H_tau = (1/2k^2)[(f Dl/r^2) p_r^2 + (f^2/Dl) J^2]
   H_t   = (1/2n^2)[(f Dl/r^2) p_r^2 + (f^2/Dl) X^2],  X = J + 2Ma/(rf)
   n^2 = Ehat^2/(Ehat^2 - A^2 f),   k = A^2 f n/Ehat,   Dl = r^2-2Mr+a^2
 
-RAPPORTO DELLE HAMILTONIANE (potenziali centrifughi a p_r=0):
+RATIO OF THE HAMILTONIANS (centrifugal potentials at p_r=0):
 
   V_t/V_tau = rho^2 ,   rho = A^2 [ f + 2Ma/(rJ) ] / Ehat
 
-  rho < 1: t piu' profondo;  rho > 1: tau piu' profondo.
-  La curva di inversione J_inv(a) cresce con lo spin (dragging);
-  il fattore conforme A^2 la SPOSTA verso J piu' alti: a A > sqrt(Ehat)
-  l'inversione diventa generica (E_eff = Ehat/A < 1: vince la
-  dilatazione temporale, crossover tipo TOV).
+  rho < 1: t deeper;  rho > 1: tau deeper.
+  The inversion curve J_inv(a) grows with the spin (frame dragging);
+  the conformal factor A^2 SHIFTS it towards higher J: at A > sqrt(Ehat)
+  the inversion becomes generic (E_eff = Ehat/A < 1: time dilation
+  wins, a TOV-like crossover).
 
-Con A costante H e' conservata: r_min = radice algebrica di
-V(r) = H(r0,p_r0): luogo esatto di inversione algebrico; le ODE lo
-validano. Figura: (a) colormap (J, a) a A=1 con luogo esatto + formula
-rho=1; (b) drift del luogo esatto con A = 1, 1.1, 1.2.
+At constant A, H is conserved: r_min = algebraic root of
+V(r) = H(r0,p_r0): exact algebraic inversion locus; the ODEs
+validate it. Figure: (a) colormap (J, a) at A=1 with the exact locus + the formula
+rho=1; (b) drift of the exact locus with A = 1, 1.1, 1.2.
 """
 
 import os
@@ -111,7 +111,7 @@ def r_min_ode(Jv, av, Av, ramo):
     return 0.0
 
 print("=" * 72)
-print(f"[V1] Kerr A=1, a=0.4: confronto con l'evidence (r0={r0}, pr0={pr0})")
+print(f"[V1] Kerr A=1, a=0.4: comparison with the evidence (r0={r0}, pr0={pr0})")
 print("=" * 72)
 for Jv in (0.5, 1.5, 2.5, 3.5, 4.5):
     rt = r_min_ode(Jv, 0.4, 1.0, 'tau')
@@ -122,13 +122,13 @@ print("  evidence (a=0.4, r0=10): +0.06, -0.45(J=1) ... -0.42(J=4.5)")
 
 print()
 print("=" * 72)
-print("[V2] colormap (J, a) a A=1 + luogo esatto + formula rho=1")
+print("[V2] colormap (J, a) at A=1 + exact locus + formula rho=1")
 print("=" * 72)
 J_g = np.linspace(0.05, 3.0, 28)
 a_g = np.linspace(0.05, 0.98, 28)
 
 def mappa_ode(Av):
-    """colormap INTERAMENTE numerica (flussi ODE, nessuna algebra)."""
+    """ENTIRELY numerical colormap (ODE flows, no algebra)."""
     d = np.full((len(a_g), len(J_g)), np.nan)
     for i, av in enumerate(a_g):
         for j, Jv in enumerate(J_g):
@@ -138,10 +138,10 @@ def mappa_ode(Av):
                 d[i, j] = rt_ - ru_
     return d
 
-print("  ... colormap ODE 28x28x2 in corso ...")
+print("  ... ODE colormap 28x28x2 in progress ...")
 d1 = mappa_ode(1.0)
 
-# validazione ODE a campione
+# ODE validation on a sample
 res_max = 0.0
 for av in (0.2, 0.5, 0.9):
     for Jv in (0.5, 1.5, 2.5):
@@ -150,10 +150,10 @@ for av in (0.2, 0.5, 0.9):
             ro = r_min_ode(Jv, av, 1.0, ramo)
             if ra > 0 and ro > 0:
                 res_max = max(res_max, abs(ra - ro) / ra)
-print(f"  residuo ODE vs algebrico (campione): {res_max:.2e}")
+print(f"  residual of ODE against algebra (sample): {res_max:.2e}")
 
 def J_inv_esatta(av, Av):
-    """luogo esatto: Delta r(J) = 0 (bisezione in J)."""
+    """exact locus: Delta r(J) = 0 (bisection in J)."""
     def dd(Jv):
         rt_ = r_min_alg(Jv, av, Av, 't')
         ru_ = r_min_alg(Jv, av, Av, 'tau')
@@ -173,12 +173,12 @@ def rho_r(rv, Jv, av, Av):
     return Av**2 * (fv + 2 * M_n * av / (rv * Jv)) / E_n
 
 def J_inv_rho(av, Av):
-    """FORMULA CORRETTA:  rho(r*)^2 = H_t0/H_tau0  alla svolta tau.
+    """CORRECTED FORMULA:  rho(r*)^2 = H_t0/H_tau0  at the tau turning point.
 
-    I due rami partono con valori hamiltoniani DIVERSI (stesse
-    (r0, p_r0, J) ma coefficienti diversi): il criterio del rapporto dei
-    potenziali va normalizzato al rapporto di lancio, non a 1.
-    In campo lontano H_t0/H_tau0 ~ rho(r0)^2: inversione dove
+    The two branches start with DIFFERENT Hamiltonian values (the same
+    (r0, p_r0, J) but different coefficients): the criterion of the ratio of the
+    potentials must be normalised to the launch ratio, not to 1.
+    In the far field H_t0/H_tau0 ~ rho(r0)^2: inversion where
     rho(r*) = rho(r0)."""
     Ht0f = Hs['t'][0]
     Hu0f = Hs['tau'][0]
@@ -199,13 +199,13 @@ def J_inv_rho(av, Av):
 a_c = np.linspace(0.05, 0.98, 30)
 Ji_1 = np.array([J_inv_esatta(av, 1.0) for av in a_c])
 Jr_1 = np.array([J_inv_rho(av, 1.0) for av in a_c])
-print(f"  A=1: J_inv esatta da {np.nanmin(Ji_1):.2f} (a piccolo) a "
+print(f"  A=1: exact J_inv from {np.nanmin(Ji_1):.2f} (small a) to "
       f"{np.nanmax(Ji_1):.2f} (a={a_c[np.nanargmax(Ji_1)]:.2f})")
 dev = np.nanmax(np.abs(Ji_1 - Jr_1) / Ji_1)
-print(f"  formula corretta rho(r*)^2 = H_t0/H_tau0 vs luogo esatto: "
-      f"deviazione max = {dev:.2e}")
+print(f"  corrected formula rho(r*)^2 = H_t0/H_tau0 against the exact locus: "
+      f"max deviation = {dev:.2e}")
 
-# luogo di inversione NUMERICO (bisezione sui flussi ODE)
+# NUMERICAL inversion locus (bisection on the ODE flows)
 def J_inv_ode(av, Av):
     def dd(Jv):
         rt_ = r_min_ode(Jv, av, Av, 't')
@@ -225,15 +225,15 @@ a_pts = np.linspace(0.05, 0.96, 14)
 J_ode_pts = np.array([J_inv_ode(av, 1.0) for av in a_pts])
 J_ana_pts = np.array([J_inv_rho(av, 1.0) for av in a_pts])
 devs = np.abs(J_ode_pts - J_ana_pts)
-print("  luogo NUMERICO (ODE) vs FORMULA analitica, punto per punto:")
+print("  NUMERICAL locus (ODE) against the analytic FORMULA, point by point:")
 for av, jo, ja in zip(a_pts, J_ode_pts, J_ana_pts):
-    print(f"    a={av:.2f}:  J_inv ODE = {jo:.6f}   analitica = {ja:.6f}"
+    print(f"    a={av:.2f}:  J_inv ODE = {jo:.6f}   analytic = {ja:.6f}"
           f"   |diff| = {abs(jo - ja):.2e}")
-print(f"  deviazione massima ODE vs analitica: {np.nanmax(devs):.2e}")
+print(f"  maximum deviation ODE against analytic: {np.nanmax(devs):.2e}")
 
 print()
 print("=" * 72)
-print("[V3] drift conforme del luogo di inversione nel piano (a, J)")
+print("[V3] conformal drift of the inversion locus in the (a, J) plane")
 print("=" * 72)
 curves = {1.0: Ji_1}
 for Av in (1.1, 1.2):
@@ -241,7 +241,7 @@ for Av in (1.1, 1.2):
     print(f"  A={Av}: J_inv(a=0.9) = {curves[Av][np.argmin(np.abs(a_c-0.9))]:.2f}"
           f"   (A=1: {Ji_1[np.argmin(np.abs(a_c-0.9))]:.2f})")
 
-# --------------------------------------------------------------- figura
+# --------------------------------------------------------------- figure
 fig, (axa, axb) = plt.subplots(2, 1, figsize=(COL, 6.6))
 vmax = np.nanmax(np.abs(d1))
 im = axa.pcolormesh(J_g, a_g, d1, cmap='RdBu_r', vmin=-vmax, vmax=vmax,
@@ -268,4 +268,4 @@ axb.set_title('numerical/analytic overlap of the inversion\n'
 axb.grid(alpha=0.3)
 axb.legend()
 savefig(fig, OUT, 'fig_thakurta_kerr_plunge_levels')
-print('\nFATTO.')
+print('\nDONE.')

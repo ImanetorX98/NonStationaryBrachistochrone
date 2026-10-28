@@ -65,7 +65,7 @@ def pmp_check(row):
     branch=row['branch'];j=row['J'];rm=row['rmin'];r=(rm+r0)/2
     P,Q,b=coefficients(branch,r);q=j-b;rad=Q-q*q
     pr=mp.sqrt(P*rad/Q)
-    # Hamiltonians copied algebraically from colormap_spin_estremi_fissi.build.
+    # Hamiltonians copied algebraically from colormap_spin_fixed_endpoints.build.
     f=1-2/r;de=r*r-2*r+a*a;PP=r*r+a*a+2*a*a/r;bb=2*a/r
     v2=1-f/E**2;Pb=PP+bb*bb/E**2;wind=bb*v2/Pb;R=mp.sqrt(v2*de/Pb)
     pshift=j-bb/E if branch=='tau' else j
@@ -89,7 +89,7 @@ def ode_check(row):
     import numpy as np
     import hashlib
     from scipy.integrate import solve_ivp
-    source=Path(__file__).resolve().parents[4]/'KerrScripts/colormap_spin_estremi_fissi.py'
+    source=Path(__file__).resolve().parents[4]/'KerrScripts/colormap_spin_fixed_endpoints.py'
     text=source.read_text();part=text[text.index('r, pr, J, a ='):text.index('\nFN =')]
     namespace=dict(sp=sp,np=np,M=1.,E=float(E))
     exec(compile(part,str(source),'exec'),namespace)
@@ -115,7 +115,7 @@ def ode_check(row):
              angle=yy[2]-float(target),rmin=sol.y_events[1][0][0]-float(rm))
         assert max(abs(z) for z in residuals.values())<1e-8
         outputs.append(dict(rtol=tol,residuals=residuals))
-    return dict(source='KerrScripts/colormap_spin_estremi_fissi.py',source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),comparisons=outputs)
+    return dict(source='KerrScripts/colormap_spin_fixed_endpoints.py',source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),comparisons=outputs)
 
 if __name__=='__main__':
     rows={b:solve(b) for b in ['t','tau']}

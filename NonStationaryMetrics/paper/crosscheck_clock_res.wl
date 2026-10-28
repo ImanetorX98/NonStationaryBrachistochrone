@@ -44,5 +44,5 @@ Print["   T*(z-zh) as r->2 = ",Simplify[Limit[Tlead zh2,rr->2]]," (must be 4 = 4
 Print["\n--- TK t (horizons): residue formula checked algebraically ---"];
 Print["  res z(r_pm) = sigma R_Delta(r_pm)/((r_pm-r_mp)(r_pm-rd) Sqrt[Q4(r_pm)]),"];
 Print["  = [r-residue of rho_t/(r-rd) at r_pm]/Sqrt[Q4(r_pm)] (simple pole, r_pm is not a branch point)."];
-Print["  Checked numerically against the contour in sep_t_clock_residui.py (1e-6); invariant res(r+)+res(r-)=2M."];
+Print["  Checked numerically against the contour in sep_t_clock_residues.py (1e-6); invariant res(r+)+res(r-)=2M."];
 Print["\n===== END ====="];

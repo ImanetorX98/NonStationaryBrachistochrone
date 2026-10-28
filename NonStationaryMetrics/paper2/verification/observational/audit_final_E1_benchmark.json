@@ -90,8 +90,8 @@
         "mass_shell_residual": "0.0"
       },
       "ode": {
-        "source": "KerrScripts/colormap_spin_estremi_fissi.py",
-        "source_sha256": "91dfa0e1f19a6b27c73fd8e9786eb709fc3e6e6f4f21701fb5af80a7992223b3",
+        "source": "KerrScripts/colormap_spin_fixed_endpoints.py",
+        "source_sha256": "cef59d6c5de9d90c35648cca0e6066ec0b097a5f4f6fbf579e80e244c99bb594",
         "comparisons": [
           {
             "rtol": 1e-09,
@@ -123,8 +123,8 @@
         "mass_shell_residual": "-5.254869241218064015963985937337185492301e-46"
       },
       "ode": {
-        "source": "KerrScripts/colormap_spin_estremi_fissi.py",
-        "source_sha256": "91dfa0e1f19a6b27c73fd8e9786eb709fc3e6e6f4f21701fb5af80a7992223b3",
+        "source": "KerrScripts/colormap_spin_fixed_endpoints.py",
+        "source_sha256": "cef59d6c5de9d90c35648cca0e6066ec0b097a5f4f6fbf579e80e244c99bb594",
         "comparisons": [
           {
             "rtol": 1e-09,

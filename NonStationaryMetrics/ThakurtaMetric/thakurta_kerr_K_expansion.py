@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
 """
-K_tau al sesto ordine PER THAKURTA-KERR: trasferimento e verifica.
+K_tau at sixth order FOR THAKURTA-KERR: transfer and check.
 
-Fatto stabilito (riscalamento conforme esatto, A costante):
+Established fact (exact conformal rescaling, constant A):
     H_tau^{TK}(A, Ehat) = (1/A^2) * H_tau^{Kerr}(E -> E_eff = Ehat/A)
-=> stesse traiettorie (il fattore 1/A^2 riscala solo il parametro):
-   le quasi-costanti di Kerr si trasferiscono per SOSTITUZIONE
-   E -> E_eff nei coefficienti (f2, f4, f6 di K_tau_expansion.txt).
+=> the same trajectories (the factor 1/A^2 only rescales the parameter):
+   the Kerr quasi-constants transfer by SUBSTITUTION
+   E -> E_eff in the coefficients (f2, f4, f6 of K_tau_expansion.txt).
 
-Cio' che va VERIFICATO (e' nuovo):
-  V1  {K_NLO(E), H_tau(E)} = O(a^4) resta vero anche per E < 1
-      (regime E_eff<1 mai testato in Kerr, dove E>1): test di scala
-      numerico del bracket di Poisson (rapporto 16x per dimezzamento
-      di a => O(a^4); 4x => O(a^2)).
-  V2  drift test 3D (protocollo numtest di Kerr): sigma(Q_std) vs
-      sigma(K_NLO) lungo traiettorie off-equatoriali del flusso
-      H_tau(E_eff), sia a E_eff = 1.2 (controllo Kerr) sia a
-      E_eff = 0.96 (Thakurta-Kerr con A = 1.25): mediane e win-rate.
-  V3  il polo nuovo: DE0(r) = r^2 w(r) esattamente => i coefficienti
-      f2k divergono sul muro di congelamento r_w = 2M/(1-E_eff^2)
-      (esiste solo per E_eff < 1): verifica numerica della posizione.
+What must be CHECKED (it is new):
+  V1  {K_NLO(E), H_tau(E)} = O(a^4) still holds for E < 1
+      (the regime E_eff<1 was never tested in Kerr, where E>1): numerical scaling
+      test of the Poisson bracket (ratio 16x when a is halved
+      => O(a^4); 4x => O(a^2)).
+  V2  3D drift test (Kerr numtest protocol): sigma(Q_std) against
+      sigma(K_NLO) along off-equatorial trajectories of the flow
+      H_tau(E_eff), both at E_eff = 1.2 (Kerr control) and at
+      E_eff = 0.96 (Thakurta-Kerr with A = 1.25): medians and win rate.
+  V3  the new pole: DE0(r) = r^2 w(r) exactly => the coefficients
+      f2k diverge on the freezing wall r_w = 2M/(1-E_eff^2)
+      (it exists only for E_eff < 1): numerical check of its position.
 """
 
 import numpy as np
@@ -60,10 +60,10 @@ PB_f = sp.lambdify((r, th, pr, pth, J, E, a), PB, 'numpy')
 PBQ_f = sp.lambdify((r, th, pr, pth, J, E, a), PB_Q, 'numpy')
 
 print("=" * 72)
-print("[V1] scala del bracket: {K,H} ~ a^n (rapporto 2^n al dimezzare a)")
+print("[V1] scaling of the bracket: {K,H} ~ a^n (ratio 2^n when a is halved)")
 print("=" * 72)
 rng = np.random.default_rng(9)
-for E_v, nome in ((1.2, 'E_eff = 1.2 (regime Kerr)'),
+for E_v, nome in ((1.2, 'E_eff = 1.2 (Kerr regime)'),
                   (0.96, 'E_eff = 0.96 (Thakurta-Kerr, A=1.25)')):
     rQ, rK = [], []
     for _ in range(8):
@@ -76,17 +76,17 @@ for E_v, nome in ((1.2, 'E_eff = 1.2 (regime Kerr)'),
         rQ.append(vQ)
         rK.append(vK)
     print(f"  {nome}:")
-    print(f"    {{Q_std,H}}: rapporto mediano = {np.median(rQ):6.2f}"
+    print(f"    {{Q_std,H}}: median ratio = {np.median(rQ):6.2f}"
           f"   (O(a^2))")
-    print(f"    {{K_NLO,H}}: rapporto mediano = {np.median(rK):6.2f}"
-          f"   (O(a^2): NESSUNA costante esatta con ansatz p_theta^2 —")
-    print("      coerente con la non-integrabilita' del summary Kerr §3;")
-    print("      l'NLO riduce il drift LUNGO le traiettorie, non l'ordine")
-    print("      puntuale del bracket)")
+    print(f"    {{K_NLO,H}}: median ratio = {np.median(rK):6.2f}"
+          f"   (O(a^2): NO exact constant with a p_theta^2 ansatz --")
+    print("      consistent with the non-integrability in section 3 of the Kerr summary;")
+    print("      the NLO term reduces the drift ALONG the trajectories, not the pointwise")
+    print("      order of the bracket)")
 
 print()
 print("=" * 72)
-print("[V2] drift test 3D (protocollo numtest): sigma(Q_std) vs sigma(K_NLO)")
+print("[V2] 3D drift test (numtest protocol): sigma(Q_std) against sigma(K_NLO)")
 print("=" * 72)
 lamb = lambda ex, Ev, av: sp.lambdify((r, th, pr, pth, J),
                                       ex.subs([(E, Ev), (a, av)]), 'numpy')
@@ -102,7 +102,7 @@ def drift_test(E_v, a_v, n_traj=24, lam_end=140.0):
     rng2 = np.random.default_rng(11)
     n_ok = 0
     while n_ok < n_traj:
-        # regione interna: e' li' che f2 conta (poli a r=2M)
+        # inner region: this is where f2 matters (poles at r=2M)
         r0 = rng2.uniform(4.0, 7.0)
         th0 = rng2.uniform(np.deg2rad(45), np.deg2rad(80))
         Jv = rng2.uniform(0.5, 2.0)
@@ -136,17 +136,17 @@ def drift_test(E_v, a_v, n_traj=24, lam_end=140.0):
         wins += sK < sQ
     return np.median(ratios), wins, n_ok
 
-for E_v, a_v, nome in ((1.2, 0.4, 'Kerr di controllo (E=1.2, a=0.4)'),
+for E_v, a_v, nome in ((1.2, 0.4, 'Kerr control (E=1.2, a=0.4)'),
                        (0.96, 0.4, 'Thakurta-Kerr A=1.25 (E_eff=0.96, a=0.4)'),
                        (0.96, 0.7, 'Thakurta-Kerr A=1.25 (E_eff=0.96, a=0.7)')):
     med, wins, n = drift_test(E_v, a_v)
     print(f"  {nome}:")
-    print(f"    sigma_std/sigma_NLO mediana = {med:.3f}   NLO vince: "
+    print(f"    median sigma_std/sigma_NLO = {med:.3f}   NLO wins: "
           f"{wins}/{n}")
 
 print()
 print("=" * 72)
-print("[V3] il polo nuovo: coefficienti divergono sul muro r_w")
+print("[V3] the new pole: the coefficients diverge on the wall r_w")
 print("=" * 72)
 E_v = 0.96
 r_w = 2 * M_n / (1 - E_v**2)
@@ -154,5 +154,5 @@ f2_f = sp.lambdify((r, th), f2.subs([(E, E_v)]), 'numpy')
 print(f"  E_eff = {E_v}:  r_w = 2M/(1-E_eff^2) = {r_w:.4f}")
 for rv in (0.6 * r_w, 0.9 * r_w, 0.99 * r_w, 0.999 * r_w):
     print(f"    f2(r = {rv:7.3f}, th=60deg) = {f2_f(rv, np.pi/3):+.3e}")
-print("  (in Kerr, E>1: DE0 = r^2 w > 0 ovunque, il polo non esiste)")
-print("\nFATTO.")
+print("  (in Kerr, E>1: DE0 = r^2 w > 0 everywhere, the pole does not exist)")
+print("\nDONE.")

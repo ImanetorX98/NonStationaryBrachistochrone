@@ -75,10 +75,11 @@ supersede them.
 | `paper1/` | Paper I: `paper1_JMP.tex` (the live manuscript), `build_paper1.sh` (figures + compilation from a clean checkout), `verification/` (symbolic verification suite), `submitted_JMP_2026-08/` (frozen copy of the version submitted to JMP). |
 | `paper2/` | Paper II: `paper2.tex`; `verification/` (Mathematica and Python checks of every numbered statement, and `observational/` for the observational section and the probe experiments); `provenance/` (generated slopes, hashes and cross-references; see below). |
 | `paper/` | Shared bibliography (`refs.bib`, `companionI.bib`, `companionII.bib`), the historical master, and the Mathematica cross-checks `crosscheck_*.wl`. |
-| `FLRWmetric/` | FLRW (degenerate base) analysis and the perturbed-FLRW genus-jump proof of concept. |
+| `FLRWmetric/` | FLRW (degenerate base) analysis. The perturbed-FLRW genus-jump proof of concept is in `exploratory/FLRWmetric/`. |
 | `VaidyaMetric/` | Vaidya (dynamical BH, parameter = mass `m`): analysis, closed forms, figures. |
 | `ThakurtaMetric/` | Thakurta–Kerr (conformal rotating, parameter `A` via `E_eff = Ê/A`): analysis, closed forms, figures. |
-| `KerrSessionScripts/` | Genus-2 machinery and the generic-J (genus-2) closure pipeline. Two files marked DEPRECATED are exploratory diagnostics kept for the record. |
+| `KerrSessionScripts/` | Genus-2 machinery and the generic-J (genus-2) closure pipeline. |
+| `exploratory/` | Superseded or exploratory scripts kept for the record, in subfolders that mirror the folders they came from. None is cited by either manuscript, listed in the provenance manifest or run by the regression suites; `exploratory/README.md` says what each one tried and what replaced it. |
 | `Experimental/` | Laboratory design studies (proofs of concept, not measured data). |
 | `Fonti/` | `README.md` only: the bibliographic audit (what each source says and where it is cited). The PDFs are not distributed. |
 | `reproduce_reductions.py` | One-file check of the algebraic heart of the adiabatic reductions. |
@@ -91,7 +92,7 @@ supersede them.
 | `paper2/verification/README.md` | Verification map of Paper II: each numbered statement, its script, and the evidence level (full proof, sampled, or numerical). |
 | `paper2/verification/observational/README.md` | Observational section: scales, rotating benchmarks, probe experiments (Saturn flyby, solar sails, clocks around Gaia BH3; the earlier M87* experiment is kept for the archived releases), conjugate points, ephemeris bound. |
 | `paper1/verification/REPRODUCTION_section4.2.md` | Re-run of the trajectory scripts behind section 4.2 of Paper I, with the numbers obtained. |
-| `ThakurtaMetric/ThakurtaResults.md`, `VaidyaMetric/VaidyaResults.md`, `FLRWmetric/FLRWresults.md` | Per-geometry results: what was derived, with the numbers obtained. *Historical working notes, mostly in Italian; they may refer to scripts or sibling folders that are not distributed. The verification maps above are the current reference.* |
+| `ThakurtaMetric/ThakurtaResults.md`, `VaidyaMetric/VaidyaResults.md`, `FLRWmetric/FLRWresults.md` | Per-geometry results: what was derived, with the numbers obtained. *Historical working notes (translated into English in v1.8.4); they may refer to scripts or sibling folders that are not distributed. The verification maps above are the current reference.* |
 | `ThakurtaMetric/phi_adiabatic_closed_form.md`, `VaidyaMetric/vaidya_adiabatic_setup.md` | The adiabatic closed form, set up and assembled (historical working notes, as above). |
 | `Fonti/README.md` | Bibliographic audit of both papers. |
 
@@ -101,8 +102,33 @@ listed here.
 
 In v1.8.3 the former `_codex` filename suffix was removed. Commands and imports
 use the current names, such as `Experimental/run_all.py`,
-`ThakurtaMetric/genera_indicatrici_separate.py` and
+`ThakurtaMetric/make_indicatrices_separate.py` and
 `VaidyaMetric/vaidya_first_order_offshell_plot.py`.
+
+In v1.8.4 every script, figure, comment and printed label was given an English
+name or text, and the superseded scripts were moved to `exploratory/`. The table
+below maps the old names that appear in the archived releases and in the
+submitted manuscripts to the current ones; the full list of moves is in
+`exploratory/README.md`.
+
+| Old name (v1.8.3 and earlier) | Current name |
+|---|---|
+| `../KerrScripts/bvp_estremi_fissi.py` | `../KerrScripts/bvp_fixed_endpoints.py` |
+| `../KerrScripts/pipeline_completa_deltaphi.py` | `../KerrScripts/deltaphi_full_pipeline.py` |
+| `../KerrScripts/colormap_{conforme,spin}_{asimmetrico,estremi_fissi}.py` | `../KerrScripts/colormap_{conformal,spin}_{asymmetry,fixed_endpoints}.py` |
+| `VaidyaMetric/genera_figure_vaidya.py` | `VaidyaMetric/make_figures_vaidya.py` |
+| `VaidyaMetric/inversione_fisica.py` | `VaidyaMetric/physical_inversion.py` |
+| `VaidyaMetric/inversione_evaporazione.py` (deprecated, wrong) | `exploratory/VaidyaMetric/evaporation_inversion.py` |
+| `VaidyaMetric/verifica_minimo_brachi.py` | `VaidyaMetric/verify_brachistochrone_minimum.py` |
+| `VaidyaMetric/sep_v_clock_residui.py`, `vaidya_sep_residui_analitici.py` | `VaidyaMetric/sep_v_clock_residues.py`, `vaidya_sep_analytic_residues.py` |
+| `FLRWmetric/genera_figure_flrw.py`, `genera_fig_flrw_curvatura.py` | `FLRWmetric/make_figures_flrw.py`, `make_fig_flrw_curvature.py` |
+| `ThakurtaMetric/genera_figure_thakurta.py`, `genera_figure_thakurta_rami.py` | `ThakurtaMetric/make_figures_thakurta.py`, `make_figure_thakurta_branches.py` |
+| `ThakurtaMetric/genera_drift_map{,_A}.py`, `genera_indicatrici_separate.py` | `ThakurtaMetric/make_drift_map{,_A}.py`, `make_indicatrices_separate.py` |
+| `ThakurtaMetric/tricotomia_equatoriale.py`, `tricotomia_figura.py`, `cuspide_ergosfera.py` | `ThakurtaMetric/equatorial_trichotomy.py`, `trichotomy_figure.py`, `ergosphere_cusp.py` |
+| `ThakurtaMetric/inversione_conformale_AJ.py`, `thakurta_kerr_inversione_t_tau.py` | `ThakurtaMetric/conformal_inversion_AJ.py`, `thakurta_kerr_inversion_t_tau.py` |
+| `ThakurtaMetric/thakurta_kerr_quasicostanti.py`, `sep_t_clock_residui.py` | `ThakurtaMetric/thakurta_kerr_quasi_constants.py`, `sep_t_clock_residues.py` |
+| `PaperFigures/genera_fig_confronto.py` | `exploratory/PaperFigures/make_fig_brachistochrone_comparison.py` |
+| figures `fig_*` with Italian names (e.g. `fig_bvp_estremi_fissi`, `fig_vaidya_traiettorie`) | English names (`fig_bvp_fixed_endpoints`, `fig_vaidya_trajectories`, ...) |
 
 ### Provenance of the printed numbers (Paper II)
 
@@ -140,7 +166,7 @@ into `paper/Immagini` and one without a listed generator are reported, not check
 | `no_inversion_schwarzschild_asymptotic.py` | Large-`r0` asymptotic: `Phi=arctan(...)-b^{-3/2}sqrt(...)`, single non-degenerate max, `Phi''(x_pk)=-1/2 b^{9/4} V0^{-5/4}`. |
 | `no_inversion_schwarzschild_CAP.py`, `..._CAP_r0_10.py`, `..._CAP_grid.py` | Computer-assisted proof (mpmath interval arithmetic): single-crossing certificates. Complete at `r0=10`; grid `E in {1.2,1.6,2.5} x r0 in {8,12}` (`CAP_grid_certificates.txt`). |
 | `verify_lemmaB_mathematica.wls` | Independent Mathematica cross-check of all no-inversion derivations. |
-| `ThakurtaMetric/adiabatic_offshell_validation.py` | **Superseded, kept for the record.** Early exploration: it integrates a *surrogate* flow (radial momentum evolved with `-H_r` only, without the dilation term `-eps P_r`) and compares it with half the on-shell Euler coefficient. It is not a validation of the true canonical dynamics, and its old "~98% / ~2%" reading is withdrawn; use `fig_phi_validation_corrected.py` below. |
+| `exploratory/ThakurtaMetric/adiabatic_offshell_validation.py` | **Superseded, kept for the record.** Early exploration: it integrates a *surrogate* flow (radial momentum evolved with `-H_r` only, without the dilation term `-eps P_r`) and compares it with half the on-shell Euler coefficient. It is not a validation of the true canonical dynamics, and its old "~98% / ~2%" reading is withdrawn; use `fig_phi_validation_corrected.py` below. |
 | `ThakurtaMetric/adiabatic_tk_geodesic_check.py` | Integrates the time-dependent Thakurta–Kerr geodesic equations and checks what drifts along the orbit (`E_eff`, `J_eff`). |
 
 ### Complete first-order extended-Hamiltonian correction (Eq. 40, on-shell + off-shell)
@@ -207,9 +233,9 @@ python3 ThakurtaMetric/tk_t_generic_coeff.py        # TK-t generic c_k,Q_kj,g_i 
 python3 ../KerrScripts/kerr_psi_explicit_verified.py         # TK-τ source reduction (c_k)
 python3 KerrSessionScripts/kerr_tau_Wij_principalparts.py    # g_i (principal parts)
 python3 KerrSessionScripts/kerr_tau_Talg_explicit.py         # T_alg explicit (poly + logs)
-python3 VaidyaMetric/vaidya_sep_residui_analitici.py         # closed-form residues (foundational)
-python3 VaidyaMetric/sep_v_clock_residui.py                  # v-branch clock residues (4M)
-python3 ThakurtaMetric/sep_t_clock_residui.py               # t-branch clock residues (2M)
+python3 VaidyaMetric/vaidya_sep_analytic_residues.py         # closed-form residues (foundational)
+python3 VaidyaMetric/sep_v_clock_residues.py                  # v-branch clock residues (4M)
+python3 ThakurtaMetric/sep_t_clock_residues.py               # t-branch clock residues (2M)
 
 # --- genus-2 assembly / naming / q-series (SageMath) ---
 sage KerrSessionScripts/kerr_tau_Wij_assembly.py            # NB: pure-sympy, also runs with python3
@@ -226,7 +252,7 @@ wolframscript -file paper/crosscheck_tracking.wl    # tracking theorem N_tot(r_d
 wolframscript -file paper/crosscheck_clock_res.wl   # clock residues (native Weierstrass)
 
 # --- stationary-Kerr base machinery (sibling at repo root) ---
-python3 ../KerrScripts/pipeline_completa_deltaphi.py   # full base (M,a,E,J)→δφ chain
+python3 ../KerrScripts/deltaphi_full_pipeline.py   # full base (M,a,E,J)→δφ chain
 python3 ../KerrScripts/kerr_psi_explicit_verified.py   # base TK-τ reduction
 sage    ../KerrScripts/kerr_quasiperiods_bel.sage      # base genus-2 quasi-periods
 ```
@@ -247,7 +273,7 @@ Naming: `sep_` = separatrix (genus-1); `generic`/`Wij`/`dilog` = generic-J (genu
 
 ### 1. Separatrix closed forms (genus-1, `|J|=Jc`)
 Frozen orbit + first-order adiabatic δφ in Weierstrass σ,ζ,℘ + Brown–Levin Γ̃.
-- `VaidyaMetric/vaidya_sep_residui_analitici.py` — **closed-form residues** b1,b2,b3 (source at the triple pole) + clock residues. Foundational.
+- `VaidyaMetric/vaidya_sep_analytic_residues.py` — **closed-form residues** b1,b2,b3 (source at the triple pole) + clock residues. Foundational.
 - `vaidya_sep_G_partialfractions.py`, `vaidya_sep_deltaphi*.py`, `vaidya_sep_weight2_*.py` — pole-adapted reduction, δφ block assembly, weight-2 (elliptic dilog) closure.
 - `vaidya_sep_C0Ce_closed.py` — additive constants Ce, C0 in closed form (ζ,℘ at marked points).
 - `vaidya_sep_vbranch*.py`, `vaidya_sep_v_*assembly.py`, `vaidya_sep_v_track*.py` — advanced-time (v) branch + tracking.
@@ -259,8 +285,8 @@ Frozen orbit + first-order adiabatic δφ in Weierstrass σ,ζ,℘ + Brown–Lev
 
 **★ Reusable symbolic coefficients (this effort):**
 - `SEP_COEFF_SYMBOLIC.py` — **b1,b2,b3 symbolic in (M,a,E,r_d,Jc) for ALL branches**, via S-derivatives at r_d. `VaidyaMetric/sep_coeff_symbolic.py` = Vaidya-only version.
-- `VaidyaMetric/sep_v_clock_residui.py` — v-branch clock residues (E r_d³/s, horizon **4M**).
-- `ThakurtaMetric/sep_t_clock_residui.py` — t-branch clock residues (horizon r±, invariant 2M).
+- `VaidyaMetric/sep_v_clock_residues.py` — v-branch clock residues (E r_d³/s, horizon **4M**).
+- `ThakurtaMetric/sep_t_clock_residues.py` — t-branch clock residues (horizon r±, invariant 2M).
 - `sep_tracking_coeff.py` — **tracking coefficients**; theorem: tracking cancels the triple pole (b3=0 because N_tot(r_d)=0).
 - `VaidyaMetric/sep_periodlevel_test.py` — period-level quantities change with parameters (not universal).
 
@@ -272,12 +298,12 @@ The `W_ij` closure pipeline for TK-τ (archetype), brick by brick:
 - `kerr_tau_Wij_assembly.py` — ★ assembles ψ = ½Ê Σ P_ab w_ab + T_alg; isolates the single dilog (end-to-end 1e-15).
 - `kerr_tau_Wij_principalparts.py` — ★ symbolic pole coefficients g_i = Taylor of q6^{-1/2}.
 - `kerr_tau_Talg_explicit.py` — ★ T_alg in explicit elementary form (polynomial + Σ log over roots of S).
-- `kerr_tau_Wij_naming{,2,3}.sage` — ★ naming U_k in Kleinian ζ (θ-divisor wall documented).
+- `exploratory/KerrSessionScripts/kerr_tau_Wij_naming{,2,3}.sage` — naming U_k in bare Kleinian ζ; superseded (θ-divisor wall documented), replaced by the difference form below.
 - `kerr_tau_Wij_diffform.sage`, `_diffform_integral.sage` — ★ **difference-form naming** that avoids the θ-divisor wall (θ[δ] at e_±), verified 1e-6.
 - `kerr_tau_Wij_aperiods.sage` — ★ holomorphic coefficients α_k,β_k from a-periods (period-level).
 - `kerr_tau_Wij_holomorphic.sage` — ★ diagnostic: holomorphic part not orbit-extractable.
 - `kerr_tau_siegel_reduce.py` — ★ Siegel reduction of τ (nomes <1 via S = −τ⁻¹).
-- `kerr_tau_dilog_qseries{1,3,4,5}.sage` — ★ **dilog q-series**: θ nome series, split Q(elem)+L(dilog), geometric convergence (N=4→1e-13).
+- `kerr_tau_dilog_qseries5.sage` — ★ **dilog q-series**: θ nome series, split Q(elem)+L(dilog), geometric convergence (N=4→1e-13). Steps 1, 3 and 4 that led to it are in `exploratory/KerrSessionScripts/`.
 - The base genus-2 Sage scripts live only in `../KerrScripts/` (single copies): `kerr_quasiperiods_bel.sage` (quasi-periods κ, also run by `sage_env/run_sage_checks.py`), `kerr_psi_forward_abel.sage` (Abel map), `kerr_thirdkind_theta_closed.sage` (third-kind θ closure, also run by `sage_env/run_sage_checks.py`) and `kerr_holo_component_check.sage` (Hodge component check).
 
 **★ Other generic-J branches (this effort, same template):**
@@ -300,10 +326,53 @@ The `W_ij` closure pipeline for TK-τ (archetype), brick by brick:
 Run any of them: `wolframscript -file paper/crosscheck_<name>.wl`.
 
 ### 4. Phenomenology, inversion, figures
-- `*_penetration_*.py`, `*_asymmetry.py`, `plunge_*_t_tau.py`, `inversione_*.py`,
-  `thakurta_kerr_inversione_t_tau.py`, `kerr_adiabatic_phi_hybrid*.py` — penetration/scattering
+- `*_penetration_*.py`, `*_asymmetry.py`, `plunge_*_t_tau.py`, `physical_inversion.py`,
+  `conformal_inversion_AJ.py`, `thakurta_kerr_inversion_t_tau.py`, `kerr_adiabatic_phi_hybrid*.py` — penetration/scattering
   trichotomy, accretion↔evaporation asymmetry, plunge inversion, hybrid adiabatic orbit.
-- `genera_figure_*.py`, `fig_*.py` — regenerate paper figures (need `paper_style.py` on the path).
+- `make_figure*_*.py`, `make_fig_*.py`, `fig_*.py` — regenerate paper figures (need `paper_style.py` on the path).
+
+### 5. Other scripts in the main folders
+Scripts not listed in the sections above, by folder (one line each; the header of
+each file gives the details).
+
+**Root**
+- `cap_full.py` — shared interval-arithmetic library of the frozen-Schwarzschild no-inversion computer-assisted proof.
+- `no_inversion_schwarzschild_CAP_complete.py` — complete computer-assisted cover for one `r0` (arguments `r0 rmin_a rmin_b`, defaults 10, 2.6, `r0`).
+- `separatrix_classification.py` — classifies the degenerations of the sextic: algebraic double-root locus (genus 2 → 1) against the physical separatrix.
+
+**FLRWmetric/**
+- `flrw_brachistochrone_sympy.py` — t- and τ-brachistochrones in flat FLRW (SymPy derivation in conformal time).
+
+**ThakurtaMetric/**
+- `thakurta_brachistochrone_sympy.py`, `thakurta_kerr_sympy.py` — equatorial brachistochrones of conformal Schwarzschild and of Thakurta–Kerr with the conformal rail `Ê = −u_η`.
+- `thakurta_kerr_optical_sympy.py` — optical metric depending on conformal time, from the indicatrix.
+- `eta_brachistochrone_check.py` — the conformal-time (η) brachistochrone coincides with the t brachistochrone as a spatial curve.
+- `rail_conservation.py` — the rail energy along the Thakurta–Kerr brachistochrones: constant because the rail constraint imposes it (a kinematic statement, not a new dynamical integral), while along a geodesic it would drift; analogue of `VaidyaMetric/kodama_conservation.py`.
+- `thakurta_kerr_K_expansion.py`, `thakurta_kerr_dynamic_K.py`, `thakurta_kerr_h_counterterm.py` — sixth-order quasi-constant `K_τ`, its behaviour for non-constant `A(η)`, and the counterterm `h` with its secular law.
+- `thakurta_kerr_plunge_inversion.py` — τ-branch inversion and the four cases at the ergosphere (Paper II, `prop:classification`).
+- `canonical_dilation_check.py` — the dilation term `−αP_r` of the normalised flow follows from the canonical flow and the chain rule.
+- `conformal_source_Jterm.py` — the `∂_J F` term of the conformal adiabatic source.
+- `universal_SD_source_check.py` — universal form of the off-shell source `S_D` in the conformally stationary case.
+- `adiabatic_offshell_reduction.py`, `adiabatic_offshell_coefficients.py` — reduction of the off-shell source term to the genus-2 basis (both branches), and the symbolic coefficient table of the t/η branch. The coefficients are symbolic; the genus-2 quadratures `U_k`, `W_jk` are evaluated numerically in the check, not in θ functions.
+
+**VaidyaMetric/**
+- `vaidya_brachistochrone_sympy.py`, `vaidya_optical_nonautonomous_sympy.py` — t- and τ-brachistochrones in ingoing Vaidya, and the non-autonomous optical forms obtained from the indicatrix.
+- `vaidya_tau_spectral_check.py` — Paper I, section 4.4: the spectral curve from the proper-time Hamiltonian.
+- `vaidya_clock.py`, `vaidya_dMF_reduction.py` — advanced-time clock `v(r)` and the reduction of `∂_M F` (regression producer).
+- `vaidya_explicit.py`, `vaidya_fully_explicit.py`, `vaidya_tau_assembly.py` — explicit closed forms of `δφ_V` in named building blocks, and the τ-branch first-order assembly (regression producers: `vaidya_fully_explicit.py`, `vaidya_tau_assembly.py`).
+- `vaidya_horizon_dilog.py` — closure of the horizon dilogarithm `D_k = ∫U_k/(r−2m) dr` (regression producer).
+- `vaidya_separatrix_ell.py`, `vaidya_separatrix_explicit_Uk.py`, `vaidya_bloch_wigner.py`, `vaidya_ell_dilog_match.py` — separatrix: elliptic reduction of `U_k` and `D_k`, explicit `U_k` in Weierstrass σ, ζ, ℘, the elliptic (Bloch–Wigner) dilogarithm, and the numerical match of the elliptic closed form (regression producer: `vaidya_ell_dilog_match.py`).
+- `vaidya_sep_validate_multiparam.py` — the separatrix pipeline rerun for several `E`.
+- `vaidya_sep_fay_symbolic.wl` — Mathematica: Fay relations and the coefficients β of the five elliptic dilogarithms in symbolic form.
+- `vaidya_sep_offshell_elliptic.py` — elliptic collapse of the weight-two letters at the genus degeneration (Paper I, off-shell paragraph).
+
+**paper2/provenance/**
+- `audit_refs.py`, `audit_by_title.py` — check the bibliography against Crossref (by DOI, and by title for entries without one); they only report mismatches.
+- `make_crossrefs.py` — keeps the cross-references of the author response to the manuscript consistent (the response itself is not distributed).
+
+**tests/**
+- `test_adiabatic_noreg.py` — anti-regression test of the first-order adiabatic correction against an independent integration.
+- `test_run_regression_parser.py` — parser tests of `run_regression.py`; on purpose it still contains the Italian labels of v1.8.2 (for example `differenza`), to check that they are rejected.
 
 ### Compile the papers
 ```bash
@@ -329,25 +398,25 @@ Each script is run from its own directory (paths from the repository root):
 | `NonStationaryMetrics/ThakurtaMetric/fig_phi_validation_corrected.py` | `fig_phi_validation_true_dynamic` (also writes the raw NPZ data) |
 | `NonStationaryMetrics/ThakurtaMetric/fig_phi_closed_validation.py` | `fig_phi_closed_validation` |
 | `NonStationaryMetrics/ThakurtaMetric/fig_phi_penetrating.py` | `fig_phi_penetrating` |
-| `NonStationaryMetrics/ThakurtaMetric/genera_indicatrici_separate.py` | `fig_indicatrici_thakurta_kerr` |
-| `NonStationaryMetrics/ThakurtaMetric/genera_figure_thakurta_rami.py` | `fig_thakurta_kerr_rami` |
-| `NonStationaryMetrics/ThakurtaMetric/cuspide_ergosfera.py` | `fig_thakurta_cuspide_ergosfera` |
+| `NonStationaryMetrics/ThakurtaMetric/make_indicatrices_separate.py` | `fig_indicatrices_thakurta_kerr` |
+| `NonStationaryMetrics/ThakurtaMetric/make_figure_thakurta_branches.py` | `fig_thakurta_kerr_branches` |
+| `NonStationaryMetrics/ThakurtaMetric/ergosphere_cusp.py` | `fig_thakurta_ergosphere_cusp` |
 | `NonStationaryMetrics/ThakurtaMetric/thakurta_kerr_plunge_t_tau.py` | `fig_thakurta_kerr_plunge_t_tau` |
 | `NonStationaryMetrics/ThakurtaMetric/thakurta_kerr_plunge_levels.py` | `fig_thakurta_kerr_plunge_levels` |
-| `NonStationaryMetrics/ThakurtaMetric/inversione_conformale_AJ.py` | `fig_thakurta_kerr_inversione_AJ` |
+| `NonStationaryMetrics/ThakurtaMetric/conformal_inversion_AJ.py` | `fig_thakurta_kerr_inversion_AJ` |
 | `KerrScripts/fig_atlas_tau_t.py` | `fig_atlas_t`, `fig_atlas_tau` |
 | `KerrScripts/fig_master_penetration_taut.py` | `fig_master_penetration_taut` |
 | `KerrScripts/fig_penetrate_bounce_orbit.py` | `fig_penetrate_bounce_orbit` |
 | `KerrScripts/kerr_penetration_threshold.py` | `fig_penetration_threshold` |
-| `KerrScripts/kerr_separatrix_trajectories.py` | `fig_separatrix_3traiettorie` |
+| `KerrScripts/kerr_separatrix_trajectories.py` | `fig_separatrix_3trajectories` |
 | `KerrScripts/kerr_tbranch_separatrix_figure.py` | `fig_tbranch_separatrix` |
 | `KerrScripts/kerr_jcm_capture_figure.py` | `fig_jcm_capture` |
 | `KerrScripts/kerr_jpt_genus2_figure.py` | `fig_jpt_genus2` |
-| `KerrScripts/bvp_estremi_fissi.py` | `fig_bvp_estremi_fissi` |
-| `KerrScripts/colormap_conforme_asimmetrico.py` | `fig_colormap_conforme_asimmetrico` (about 5 min) |
-| `KerrScripts/colormap_conforme_estremi_fissi.py` | `fig_colormap_conforme_estremi_fissi` (about 5 min) |
-| `KerrScripts/colormap_spin_asimmetrico.py` | `fig_colormap_spin_asimmetrico` (slow: about 2 hours on one core) |
-| `KerrScripts/colormap_spin_estremi_fissi.py` | `fig_colormap_spin_estremi_fissi` (slow: about 2 hours on one core) |
+| `KerrScripts/bvp_fixed_endpoints.py` | `fig_bvp_fixed_endpoints` |
+| `KerrScripts/colormap_conformal_asymmetry.py` | `fig_colormap_conformal_asymmetry` (about 5 min) |
+| `KerrScripts/colormap_conformal_fixed_endpoints.py` | `fig_colormap_conformal_fixed_endpoints` (about 5 min) |
+| `KerrScripts/colormap_spin_asymmetry.py` | `fig_colormap_spin_asymmetry` (slow: about 2 hours on one core) |
+| `KerrScripts/colormap_spin_fixed_endpoints.py` | `fig_colormap_spin_fixed_endpoints` (slow: about 2 hours on one core) |
 
 ---
 

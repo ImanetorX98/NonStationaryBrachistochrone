@@ -23,16 +23,16 @@ run_figs () {
   local failed=0
   # one entry per generating script; several produce more than one figure
   local scripts=(
-    "ThakurtaMetric/genera_figure_thakurta.py"        # fig_indicatrici
-    "FLRWmetric/genera_figure_flrw.py"                # fig_flrw_cinematica, _variazionale
-    "FLRWmetric/genera_fig_flrw_curvatura.py"         # fig_flrw_curvatura
-    "VaidyaMetric/kodama_conservation.py"             # fig_kodama_conservazione
-    "VaidyaMetric/genera_figure_vaidya.py"            # fig_vaidya_traiettorie, _kerr_a0
+    "ThakurtaMetric/make_figures_thakurta.py"        # fig_indicatrices
+    "FLRWmetric/make_figures_flrw.py"                # fig_flrw_kinematics, _variational
+    "FLRWmetric/make_fig_flrw_curvature.py"         # fig_flrw_curvature
+    "VaidyaMetric/kodama_conservation.py"             # fig_kodama_conservation
+    "VaidyaMetric/make_figures_vaidya.py"            # fig_vaidya_trajectories, _kerr_a0
     "VaidyaMetric/plunge_vaidya_t_tau.py"             # fig_vaidya_plunge_t_tau
-    "VaidyaMetric/inversione_fisica.py"               # fig_vaidya_no_inversione_evaporazione
+    "VaidyaMetric/physical_inversion.py"               # fig_vaidya_no_inversion_evaporation
     "VaidyaMetric/vaidya_brachistochrone_vparam.py"   # fig_vaidya_bounce, fig_vaidya_timing
     "VaidyaMetric/vaidya_first_order_offshell_plot.py"  # fig_vaidya_offshell
-    "VaidyaMetric/verifica_minimo_brachi.py"          # fig_verifica_minimo_brachi
+    "VaidyaMetric/verify_brachistochrone_minimum.py"          # fig_brachistochrone_minimum_check
   )
   for s in "${scripts[@]}"; do
     printf '  %-56s ' "$s"
@@ -74,11 +74,11 @@ collect_figs () {
 
 check_figs () {
   local missing=0
-  for f in fig_indicatrici fig_flrw_cinematica fig_flrw_variazionale \
-           fig_flrw_curvatura fig_kodama_conservazione fig_vaidya_traiettorie \
-           fig_vaidya_plunge_t_tau fig_vaidya_no_inversione_evaporazione \
+  for f in fig_indicatrices fig_flrw_kinematics fig_flrw_variational \
+           fig_flrw_curvature fig_kodama_conservation fig_vaidya_trajectories \
+           fig_vaidya_plunge_t_tau fig_vaidya_no_inversion_evaporation \
            fig_vaidya_bounce fig_vaidya_timing fig_vaidya_offshell \
-           fig_vaidya_kerr_a0 fig_verifica_minimo_brachi; do
+           fig_vaidya_kerr_a0 fig_brachistochrone_minimum_check; do
     [ -f "$ROOT/paper/Immagini/$f.pdf" ] || { echo "  missing: $f.pdf"; missing=$((missing+1)); }
   done
   echo "== $((13-missing))/13 figures present =="

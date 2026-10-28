@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# CHIUSURA parte OLOMORFA nella base canonica (TK tau, genus-2).
-# Fisso i coeff di POLO ai g_i simbolici (parti principali); il residuo U_k-(polo) e'
-# OLOMORFO -> risolvo i coeff di u1,u2 (+const) BEN CONDIZIONATO (non piu' fit degenere).
-# Status atteso: come C0/Ce separatrice (principio a-periodi, no fit, dipendenti dai periodi).
+# CLOSURE of the HOLOMORPHIC part in the canonical basis (TK tau, genus-2).
+# Fix the POLE coeffs to the symbolic g_i (principal parts); the remainder U_k-(pole) is
+# HOLOMORPHIC -> solve for the coeffs of u1,u2 (+const), WELL CONDITIONED (no longer a degenerate fit).
+# Expected status: like C0/Ce of the separatrix (a-period principle, no fit, depending on the periods).
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 from abelfunctions import RiemannTheta
@@ -34,9 +34,9 @@ def Iu(sv):
     return -np.array([quad(g0,0,U,limit=200)[0],quad(g1,0,U,limit=200)[0]])
 def w_of(sv): return ominv@Iu(sv)
 e_plus=w_of(0.0); e_minus=-e_plus
-# g_i simbolici (parti principali)
+# symbolic g_i (principal parts)
 Es=sp.Symbol('E'); E0=sp.Rational(7,5)
-q6=sp.Symbol('q6'); # ricostruisco g_i:
+q6=sp.Symbol('q6'); # rebuild g_i:
 r_,ss=sp.symbols('r s'); Ms,as_,Js=sp.Rational(1),sp.Rational(9,10),sp.Rational(5,2)
 Dl=r_**2-2*Ms*r_+as_**2;Em=(Es**2-1)*r_+2*Ms
 Ssym=sp.expand(r_*(r_-2*Ms)*Em*(r_*Dl-Js**2*Em)); q6e=sp.expand(ss**6*Ssym.subs(r_,1/ss))
@@ -44,11 +44,11 @@ gser=sp.series(1/sp.sqrt(q6e),ss,0,4).removeO(); gsym=[sp.simplify(gser.coeff(ss
 gv=[float(gsym[i].subs(Es,E0)) for i in range(3)]
 print("g_i (num) =",np.round(gv,5))
 # named primitives
-def Om(rv):   # 3a specie log theta-ratio (canonica: residuo 1 in s a e_+)
+def Om(rv):   # third kind, log theta-ratio (canonical: residue 1 in s at e_+)
     w=w_of(1.0/rv); return np.log(theta_d(w-e_plus,av,bv,0)/theta_d(w-e_minus,av,bv,0))
-def Zvec(rv): # zeta_delta agli e_pm (2a specie), 2-vettori
+def Zvec(rv): # zeta_delta at e_pm (second kind), 2-vectors
     w=w_of(1.0/rv); return theta_d(w-e_plus,av,bv,1),theta_d(w-e_minus,av,bv,1)
-def Pvec(rv): # wp_delta agli e_pm (2a specie triplo), matrici 2x2
+def Pvec(rv): # wp_delta at e_pm (second kind, triple pole), 2x2 matrices
     w=w_of(1.0/rv); return theta_d(w-e_plus,av,bv,2),theta_d(w-e_minus,av,bv,2)
 def uhol(rv):
     s_to=1.0/rv
@@ -59,8 +59,8 @@ def Sn(x):
     E2=1.96; Dl=x**2-2*x+0.81; Emm=(E2-1)*x+2
     return x*(x-2)*Emm*(x*Dl-6.25*Emm)   # M=1,a=0.9,E=7/5,J=5/2
 def Uk(k,rv): return quad(lambda x:x**k/np.sqrt(Sn(x)),60.0,rv,limit=300)[0]
-# --- normalizzazioni canoniche di Om,Z,P via U_2 (puro 3a specie) su range LARGO ---
-# U_2 = A*Om + hol(u1,u2)+c.  Om ben separato (log-polo) da u1,u2 -> ben condizionato.
+# --- canonical normalisations of Om,Z,P through U_2 (pure third kind) on a WIDE range ---
+# U_2 = A*Om + hol(u1,u2)+c.  Om well separated (log pole) from u1,u2 -> well conditioned.
 rg=np.array([50.,30.,20.,12.,8.,6.,5.,4.5])
 def build_and_solve(k, cols):
     Bcols=[];
@@ -69,10 +69,10 @@ def build_and_solve(k, cols):
     coef,_,_,_=np.linalg.lstsq(B,y,rcond=None)
     cond=np.linalg.cond(B); res=np.max(np.abs(B@coef-y))
     return coef,cond,res
-# U_2: base {Om, u1, u2, 1}
+# U_2: basis {Om, u1, u2, 1}
 c2=lambda rv:Om(rv); u1=lambda rv:uhol(rv)[0]; u2=lambda rv:uhol(rv)[1]; one=lambda rv:1.0
 coef2,cond2,res2=build_and_solve(2,[c2,u1,u2,one])
 print(f"\nU_2 = A*Om + a*u1 + b*u2 + c : cond={cond2:.1e} res={res2:.1e}")
-print(f"  A(Om)={coef2[0]:+.5f}  (atteso -g0={-gv[0]:+.5f})  a(u1)={coef2[1]:+.5f} b(u2)={coef2[2]:+.5f} c={coef2[3]:+.5f}")
-print("=> se A ~ -g0 e cond piccola: parte OLOMORFA (a,b) determinata BEN CONDIZIONATA (no fit degenere).")
-print("   a,b = coeff olomorfi: numerici (dipendono dai periodi) ma da principio, come C0/Ce separatrice.")
+print(f"  A(Om)={coef2[0]:+.5f}  (expected -g0={-gv[0]:+.5f})  a(u1)={coef2[1]:+.5f} b(u2)={coef2[2]:+.5f} c={coef2[3]:+.5f}")
+print("=> if A ~ -g0 and cond is small: HOLOMORPHIC part (a,b) determined, WELL CONDITIONED (no degenerate fit).")
+print("   a,b = holomorphic coeffs: numerical (they depend on the periods) but from a principle, like C0/Ce of the separatrix.")

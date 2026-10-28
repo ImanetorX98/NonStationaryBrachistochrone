@@ -1,271 +1,271 @@
-# Brachistocrone in spaziotempi NON stazionari — FLRW e Vaidya
+# Brachistochrones in NON-stationary spacetimes — FLRW and Vaidya
 
-**Documento di avvio ricerca (handoff).** Obiettivo: estendere il formalismo del
-*worldline vincolato* (sviluppato per Kerr, dove funziona grazie alla
-stazionarietà) a spaziotempi **dinamici**, dove non esiste un vettore di Killing
-di tipo tempo. Da qui una nuova chat deve **derivare le equazioni del moto e un
-principio variazionale nuovo** per la brachistocrona.
+**Research kick-off note (handoff).** Goal: extend the formalism of the
+*constrained worldline* (developed for Kerr, where it works thanks to
+stationarity) to **dynamical** spacetimes, where no timelike Killing vector
+exists. From here a new session must **derive the equations of motion and a
+new variational principle** for the brachistochrone.
 
-Progetto di origine: `../KerrMetric/` (vedi `doranTau.md`, `doranT.md`,
-`doranOffEq.md` per il caso stazionario completo).
+Originating project: `../KerrMetric/` (see `doranTau.md`, `doranT.md`,
+`doranOffEq.md` for the complete stationary case).
 
 ---
 
-## 0. Cosa portiamo dal caso stazionario (Kerr)
+## 0. What we carry over from the stationary case (Kerr)
 
-La brachistocrona relativistica (Perlick 1991): tra due punti **spaziali**, la
-curva che minimizza il tempo di percorrenza (proprio `T_τ` o coordinato `T_t`)
-per una particella a **energia specifica fissa** `E = −u_t` (rotaia ideale che
-conserva l'energia). Due formulazioni equivalenti:
+The relativistic brachistochrone (Perlick 1991): between two **spatial** points, the
+curve that minimises the travel time (proper `T_τ` or coordinate `T_t`)
+for a particle at **fixed specific energy** `E = −u_t` (an ideal rail that
+conserves the energy). Two equivalent formulations:
 
-- **Riduzione ottica/Randers** (comprime a una geometria di Finsler 3D fissa sullo
-  spazio quoziente). Elegante ma **singolare alla superficie di luce** (ergosfera:
-  `g_tt→0`), e **esiste solo se lo spaziotempo è stazionario**.
-- **Worldline vincolato** (curva 4D `x^μ(τ)` con moltiplicatore per `−u_t=E`).
-  Regolare in coordinate regolari (Doran), integrabile attraverso l'ergosfera.
-  Lagrangiana:
+- **Optical/Randers reduction** (it compresses to a fixed 3D Finsler geometry on the
+  quotient space). Elegant but **singular at the light surface** (ergosphere:
+  `g_tt→0`), and it **exists only if the spacetime is stationary**.
+- **Constrained worldline** (4D curve `x^μ(τ)` with a multiplier for `−u_t=E`).
+  Regular in regular coordinates (Doran), integrable through the ergosphere.
+  Lagrangian:
   ```
   L = (1 + μ E) Λ + μ g_{tν} ẋ^ν ,     Λ = √(−g_{αβ} ẋ^α ẋ^β) = dτ/dλ
   ```
-  Forza-rotaia `f^μ` con `f·u=0` e `f_t=0` (⟹ `E` conservata perché `∂_t` è di Killing).
+  Rail force `f^μ` with `f·u=0` and `f_t=0` (⟹ `E` conserved because `∂_t` is Killing).
 
-**Ingredienti che dipendono dalla stazionarietà** (e che qui vanno sostituiti):
-- `∂_t` (Killing tempo) → energia conservata `E = −u_t` (il vincolo della rotaia);
-- `∂_φ` (Killing assisimmetria) → momento di Fermat `J` conservato;
-- il **quoziente** per il flusso di `∂_t` → "spazio" e "tempo di percorrenza" canonici;
-- la **riduzione ottica** a Finsler 3D fissa.
+**Ingredients that depend on stationarity** (and must be replaced here):
+- `∂_t` (timelike Killing field) → conserved energy `E = −u_t` (the rail constraint);
+- `∂_φ` (axisymmetry Killing field) → conserved Fermat momentum `J`;
+- the **quotient** by the flow of `∂_t` → canonical "space" and "travel time";
+- the **optical reduction** to a fixed 3D Finsler geometry.
 
 ---
 
-## 1. Il principio variazionale generale (nucleo invariante)
+## 1. The general variational principle (invariant core)
 
-Il funzionale `∫dτ` è invariante; ciò che va riformulato è il **vincolo**. Tre vie
-note, da sviluppare:
+The functional `∫dτ` is invariant; what must be reformulated is the **constraint**. Three known
+routes, to be developed:
 
-1. **Fermat di Kovner–Perlick** (Kovner 1990, Perlick 1990, *Living Reviews* Perlick 2004):
-   per la luce, i raggi da una sorgente a una **worldline-osservatore** estremizzano
-   il **tempo d'arrivo** (tempo proprio dell'osservatore al ricevimento). Vale in
-   spaziotempi **arbitrari**. → La brachistocrona **nulla** (limite `E→∞`) generalizza
-   pienamente.
+1. **Kovner–Perlick Fermat principle** (Kovner 1990, Perlick 1990, *Living Reviews* Perlick 2004):
+   for light, the rays from a source to an **observer worldline** extremise
+   the **arrival time** (the observer's proper time at reception). It holds in
+   **arbitrary** spacetimes. → The **null** brachistochrone (limit `E→∞`) generalises
+   fully.
 
-2. **Navigazione di Zermelo / Finsler non-autonomo**: prescrivere il campo di
-   velocità locale `v(x,t)` (invece di derivarlo dall'energia). Least-time path =
-   geodetica di Randers–Finsler, ora **dipendente dal tempo**. È la generalizzazione
-   naturale della brachistocrona **massiva**.
+2. **Zermelo navigation / non-autonomous Finsler geometry**: prescribe the local
+   velocity field `v(x,t)` (instead of deriving it from the energy). Least-time path =
+   Randers–Finsler geodesic, now **time-dependent**. It is the natural generalisation
+   of the **massive** brachistochrone.
 
-3. **Worldline vincolato covariante**: la Lagrangiana con moltiplicatore, ma con
-   vincolo riferito a una **congruenza di osservatori scelta** `n^μ` (foliamento
-   `t=cost`). Vincolo: `−u·n = γ` prescritto (velocità locale rispetto a `n`).
-   Equazioni **non-autonome**; nessuna riduzione ottica statica; si integra il
-   worldline 4D direttamente.
+3. **Covariant constrained worldline**: the Lagrangian with a multiplier, but with the
+   constraint referred to a **chosen observer congruence** `n^μ` (foliation
+   `t=const`). Constraint: `−u·n = γ` prescribed (local speed relative to `n`).
+   **Non-autonomous** equations; no static optical reduction; the 4D worldline is
+   integrated directly.
 
-**Tabella di cosa sopravvive:**
+**Table of what survives:**
 
-| ingrediente | stazionario | non stazionario |
+| ingredient | stationary | non-stationary |
 |---|---|---|
-| `∫dτ` da minimizzare | ✓ | ✓ (invariante) |
-| energia conservata `E=−u_t` | ✓ | ✗ (serve Killing) |
-| Finsler 3D fissa | ✓ | ✗ (Finsler non-autonomo) |
-| Fermat per la luce | ✓ | ✓ (Kovner–Perlick) |
-| "punti spaziali" canonici | ✓ | ✗ (serve scelta di foliamento) |
+| `∫dτ` to be minimised | ✓ | ✓ (invariant) |
+| conserved energy `E=−u_t` | ✓ | ✗ (needs a Killing field) |
+| fixed 3D Finsler geometry | ✓ | ✗ (non-autonomous Finsler) |
+| Fermat for light | ✓ | ✓ (Kovner–Perlick) |
+| canonical "spatial points" | ✓ | ✗ (needs a choice of foliation) |
 
 ---
 
-## 2. Caso FLRW (universo in espansione) — struttura conforme
+## 2. The FLRW case (expanding universe) — conformal structure
 
-**Metrica** (spazialmente piatta k=0, generalizzabile a k=±1):
+**Metric** (spatially flat k=0, generalisable to k=±1):
 ```
 ds² = −dt² + a(t)² [ dr² + r² dΩ² ]
 ```
-con `a(t)` fattore di scala. **No Killing tempo** (`a` dipende da `t`). MA:
+with `a(t)` the scale factor. **No timelike Killing field** (`a` depends on `t`). BUT:
 
-**Tempo conforme** `η`, con `dt = a dη`:
+**Conformal time** `η`, with `dt = a dη`:
 ```
 ds² = a(η)² [ −dη² + dr² + r² dΩ² ] = a(η)² · η_μν^(Mink)
 ```
-FLRW è **conformemente piatta**. `∂_η` è un **Killing conforme** della metrica
-fisica (Killing genuino della metrica conforme statica `ĝ = η_Mink`).
+FLRW is **conformally flat**. `∂_η` is a **conformal Killing field** of the physical
+metric (a genuine Killing field of the static conformal metric `ĝ = η_Mink`).
 
-**Conseguenze da sfruttare:**
-- **Luce**: le geodetiche nulle sono invarianti conformi → la **brachistocrona
-  nulla in FLRW = brachistocrona nulla in Minkowski** (banale) via la
-  trasformazione conforme. Buon test di consistenza.
-- **Massive**: `Ê = −u_η` è conservata per la metrica **conforme** `ĝ`, ma l'energia
-  fisica `E_phys` **redshifta** (`E_phys ∝ 1/a`). Il vincolo della rotaia può essere
-  posto sulla **quantità conforme** `Ê` (conservata!) invece che su `E_phys`.
+**Consequences to exploit:**
+- **Light**: null geodesics are conformally invariant → the **null brachistochrone
+  in FLRW = the null brachistochrone in Minkowski** (trivial) through the
+  conformal transformation. A good consistency test.
+- **Massive particles**: `Ê = −u_η` is conserved for the **conformal** metric `ĝ`, but the physical
+  energy `E_phys` is **redshifted** (`E_phys ∝ 1/a`). The rail constraint can be
+  placed on the **conformal quantity** `Ê` (conserved!) instead of on `E_phys`.
 
-**Principio variazionale proposto (FLRW):** riformulare la brachistocrona nella
-metrica conforme statica `ĝ` (dove `∂_η` è Killing genuino), risolvere lì col
-formalismo stazionario, poi **ri-mappare** in tempo cosmico `t` via `dt=a dη`.
-La velocità locale fisica `v(x,t)` diventa dipendente dal tempo attraverso `a(t)`.
+**Proposed variational principle (FLRW):** reformulate the brachistochrone in the
+static conformal metric `ĝ` (where `∂_η` is a genuine Killing field), solve it there with the
+stationary formalism, then **map it back** to cosmic time `t` through `dt=a dη`.
+The local physical speed `v(x,t)` becomes time-dependent through `a(t)`.
 
-**Domande aperte per la nuova chat (FLRW):**
-1. Derivare la Lagrangiana della brachistocrona massiva in FLRW, distinguendo il
-   vincolo su `Ê` (conforme, conservato) vs `E_phys` (redshiftato). Quale è la
-   "rotaia" fisicamente corretta?
-2. La brachistocrona che minimizza il **tempo cosmico** `t` vs quella che minimizza
-   il **tempo conforme** `η` vs il **tempo proprio** `τ`: sono diverse? Come?
-3. Effetto dell'**espansione** (Hubble `H=ȧ/a`): un'orbita che parte "dopo"
-   (universo più grande) è più veloce/lenta? Analogo del θ-focusing?
-4. Casi concreti di `a(t)`: radiation (`a∝t^{1/2}`), matter (`a∝t^{2/3}`),
-   de Sitter (`a∝e^{Ht}`, che HA un Killing conforme aggiuntivo). de Sitter è il
-   più simmetrico — buon punto di partenza.
-5. Confine/orizzonte: l'**orizzonte di Hubble** `r_H = 1/H` è l'analogo dinamico
-   della superficie di luce? La brachistocrona lo penetra?
+**Open questions for the new session (FLRW):**
+1. Derive the Lagrangian of the massive brachistochrone in FLRW, distinguishing the
+   constraint on `Ê` (conformal, conserved) from that on `E_phys` (redshifted). Which is the
+   physically correct "rail"?
+2. The brachistochrone that minimises **cosmic time** `t`, the one that minimises
+   **conformal time** `η`, and the one that minimises **proper time** `τ`: are they different? How?
+3. Effect of the **expansion** (Hubble rate `H=ȧ/a`): is an orbit that starts "later"
+   (larger universe) faster or slower? An analogue of θ-focusing?
+4. Concrete cases of `a(t)`: radiation (`a∝t^{1/2}`), matter (`a∝t^{2/3}`),
+   de Sitter (`a∝e^{Ht}`, which HAS an additional conformal Killing field). de Sitter is the
+   most symmetric — a good starting point.
+5. Boundary/horizon: is the **Hubble horizon** `r_H = 1/H` the dynamical analogue
+   of the light surface? Does the brachistochrone penetrate it?
 
 ---
 
-## 3. Caso Vaidya (buco nero che accresce/evapora) — struttura nulla
+## 3. The Vaidya case (accreting/evaporating black hole) — null structure
 
-**Metrica** (Vaidya entrante, coordinate di Eddington–Finkelstein avanzate):
+**Metric** (ingoing Vaidya, advanced Eddington–Finkelstein coordinates):
 ```
 ds² = −(1 − 2m(v)/r) dv² + 2 dv dr + r² dΩ²
 ```
-con `v` = tempo avanzato (`v=cost` sono coni di luce entranti) e `m(v)` = **massa
-dinamica**: `dm/dv > 0` accrescimento, `dm/dv < 0` evaporazione (radiazione di
-Hawking modellata). **No Killing tempo** (se `m` dipende da `v`).
+with `v` = advanced time (`v=const` are ingoing light cones) and `m(v)` = **dynamical
+mass**: `dm/dv > 0` accretion, `dm/dv < 0` evaporation (modelled Hawking
+radiation). **No timelike Killing field** (if `m` depends on `v`).
 
-**Struttura utile:**
-- La coordinata `v` è **regolare attraverso l'orizzonte** (come Eddington–Finkelstein).
-  Niente singolarità di coordinata al raggio di Schwarzschild dinamico.
-- **Orizzonte apparente**: `r = 2m(v)` (dinamico, si muove con `m`). Diverso
-  dall'orizzonte degli eventi (globale, non locale in Vaidya).
-- Le geodetiche nulle radiali entranti: `v = cost`. Le uscenti: `dr/dv = (1−2m(v)/r)/2`.
-- `g_vv = −(1−2m/r)` cambia segno all'orizzonte apparente — analogo di `g_tt` ma
-  **dipendente da `v`**.
+**Useful structure:**
+- The coordinate `v` is **regular across the horizon** (as Eddington–Finkelstein).
+  No coordinate singularity at the dynamical Schwarzschild radius.
+- **Apparent horizon**: `r = 2m(v)` (dynamical, it moves with `m`). Different
+  from the event horizon (global, not local in Vaidya).
+- Radial ingoing null geodesics: `v = const`. Outgoing ones: `dr/dv = (1−2m(v)/r)/2`.
+- `g_vv = −(1−2m/r)` changes sign at the apparent horizon — the analogue of `g_tt` but
+  **dependent on `v`**.
 
-**Principio variazionale proposto (Vaidya):**
-- **Luce**: Fermat di Kovner–Perlick — estremizzare il tempo d'arrivo a una
-  worldline osservatore. Diretto, ben posto.
-- **Massive**: worldline vincolato covariante. Il vincolo `−u_t=E` NON è conservato
-  (`m(v)` rompe la simmetria). Sostituire con: velocità locale prescritta rispetto
-  agli osservatori entranti (`v=cost` slicing) OPPURE rispetto agli osservatori
-  ZAMO/Doran dinamici. Equazioni **non-autonome** in `v`.
+**Proposed variational principle (Vaidya):**
+- **Light**: Kovner–Perlick Fermat principle — extremise the arrival time at an
+  observer worldline. Direct and well posed.
+- **Massive particles**: covariant constrained worldline. The constraint `−u_t=E` is NOT conserved
+  (`m(v)` breaks the symmetry). Replace it by: local speed prescribed relative
+  to the ingoing observers (`v=const` slicing) OR relative to the dynamical
+  ZAMO/Doran observers. **Non-autonomous** equations in `v`.
 
-**Domande aperte per la nuova chat (Vaidya):**
-1. Derivare le equazioni del moto della brachistocrona in Vaidya col worldline
-   vincolato non-autonomo. Quale vincolo sostituisce `−u_t=E`?
-2. **Orizzonte apparente in movimento**: se il buco nero **accresce** (`dm/dv>0`),
-   l'orizzonte cresce verso la particella — può "inghiottirla" anche se stava
-   riflettendo? Se **evapora** (`dm/dv<0`), l'orizzonte si ritira — la penetrante
-   può "sfuggire"? È un fenomeno **genuinamente non stazionario**, senza analogo in Kerr.
-3. La penetrazione dipende dal **timing** dell'arrivo relativo a `m(v)`: c'è una
-   finestra temporale di penetrazione? Un `v_c` critico oltre `J_c`?
-4. Caso semplice: **Vaidya lineare** `m(v)=m_0 + μ v` (accrescimento costante) o
-   `m(v)=m_0(1 − v/v_evap)` (evaporazione). Integrabili numericamente.
-5. Limite quasi-statico (`dm/dv → 0`): recupero del caso Schwarzschild? Espansione
-   perturbativa in `dm/dv` (analogo dell'espansione in `a` per Kerr?).
-
----
-
-## 4. Strategia consigliata per la nuova chat
-
-1. **Partire dal worldline vincolato covariante** (§1.3) — è il formalismo giusto,
-   già validato su Kerr, e l'unico che si estende senza stazionarietà.
-2. **FLRW de Sitter** come primo caso (massima simmetria residua, Killing conforme
-   esplicito) — deriva EOM, verifica il limite Minkowski, poi generalizza a `a(t)`.
-3. **Vaidya lineare** come secondo caso (struttura nulla semplice, orizzonte mobile
-   calcolabile) — deriva EOM non-autonome, studia penetrazione con orizzonte in moto.
-4. **Punto di forza atteso**: fenomeni **genuinamente dinamici** senza analogo
-   stazionario — orizzonte che insegue/ritira, finestre temporali di penetrazione,
-   redshift della "rotaia". Questo è il contributo nuovo.
-5. **Strumenti**: sympy per le metriche/EOM (come in KerrMetric), integrazione
-   numerica dei worldline non-autonomi, verifica dei limiti statici.
+**Open questions for the new session (Vaidya):**
+1. Derive the equations of motion of the brachistochrone in Vaidya with the
+   non-autonomous constrained worldline. Which constraint replaces `−u_t=E`?
+2. **Moving apparent horizon**: if the black hole **accretes** (`dm/dv>0`),
+   the horizon grows towards the particle — can it "swallow" it even if it was
+   reflecting? If it **evaporates** (`dm/dv<0`), the horizon recedes — can the penetrating
+   orbit "escape"? It is a **genuinely non-stationary** phenomenon, with no analogue in Kerr.
+3. Does penetration depend on the **timing** of the arrival relative to `m(v)`: is there a
+   temporal penetration window? A critical `v_c` beyond `J_c`?
+4. Simple case: **linear Vaidya** `m(v)=m_0 + μ v` (constant accretion) or
+   `m(v)=m_0(1 − v/v_evap)` (evaporation). Numerically integrable.
+5. Quasi-static limit (`dm/dv → 0`): is the Schwarzschild case recovered? Perturbative
+   expansion in `dm/dv` (an analogue of the expansion in `a` for Kerr?).
 
 ---
 
-## 4b. RISPOSTA AL §1 (luglio 2026): il principio variazionale generale
+## 4. Recommended strategy for the new session
 
-Trovato e validato su FLRW, Vaidya, SdS, Thakurta(-Kerr). Tre ingredienti,
-nessuno dei quali richiede simmetrie:
+1. **Start from the covariant constrained worldline** (§1.3) — it is the right formalism,
+   already validated on Kerr, and the only one that extends without stationarity.
+2. **de Sitter FLRW** as the first case (maximal residual symmetry, explicit conformal
+   Killing field) — derive the equations of motion, check the Minkowski limit, then generalise to `a(t)`.
+3. **Linear Vaidya** as the second case (simple null structure, computable moving
+   horizon) — derive the non-autonomous equations of motion, study penetration with a moving horizon.
+4. **Expected strength**: **genuinely dynamical** phenomena with no stationary
+   analogue — a horizon that chases or recedes, temporal penetration windows,
+   redshift of the "rail". This is the new contribution.
+5. **Tools**: SymPy for the metrics and equations of motion (as in KerrMetric), numerical integration
+   of the non-autonomous worldlines, checks of the static limits.
 
-1. una funzione tempo v (scelta della foliazione = cosa si minimizza);
-2. il vincolo rotaia −u·W = E con W = ∂_v: LINEARE nella velocità;
-3. la normalizzazione u·u = −1: quadratica.
+---
 
-Lineare ∩ quadratica = **indicatrice ellittica** a ogni evento ⇒ forma di
-Randers/Zermelo `dv = deriva + norma` (Legendre-duale delle Hamiltoniane
-PMP con trasversalità H=0). Esiste per QUALUNQUE spaziotempo.
+## 4b. ANSWER TO §1 (July 2026): the general variational principle
 
-La "quantità conservata" è sostituita dal **vincolo attivo**: E è un
-invariante controllato (Noether → controllo). Costo misurabile: f·ξ della
-forza-rotaia (Kerr: f_t=0 gratis; FLRW: f_η=aH; Vaidya: f_v ∝ m′).
+Found and validated on FLRW, Vaidya, SdS and Thakurta(-Kerr). Three ingredients,
+none of which requires symmetries:
 
-Gerarchia di cosa compra la simmetria:
-- ∂_v Killing → F autonoma (Perlick 1991 recuperato), H conservata;
-- CKV/omotetia → scheletro rigido (indice scalare n(η,r), vento rigido
-  in Thakurta-Kerr, quoziente autosimilare in Vaidya lineare);
-- ∂_φ Killing → momento di Fermat J (Noether puro): integrabilità ODE;
-- nessuna → F esiste ma respira tutta; senza ∂_φ servirebbe HJ (PDE).
+1. a time function v (choice of foliation = what is minimised);
+2. the rail constraint −u·W = E with W = ∂_v: LINEAR in the velocity;
+3. the normalisation u·u = −1: quadratic.
 
-**Liceità del vincolo (status per il paper):**
-1. buona posizione: μ esiste, f·u = 0 identico (= "ideale" covariante:
-   la preservazione di u·u = −1 equivale a f·u = 0) — dimostrato;
-2. esistenza dei minimi anche non autonomi: teorema di FILIPPOV
-   (indicatrice compatta e convessa = la nostra ellisse); PMP non
-   richiede autonomia;
-3. limite nullo Ê→∞ = Fermat di KOVNER-PERLICK, dimostrato per
-   spaziotempi arbitrari (ancoraggio di letteratura);
-4. equivalenza con la navigazione di ZERMELO (v(x,t) prescritta): il
-   vincolo è una derivazione simmetrica del campo di velocità, non
-   un postulato ad hoc.
-Status della scelta di W: teorema (Killing) → selezione canonica (CKV:
-unica che degenera a Perlick + limite nullo + costo f·ξ minimo) →
-selezione quasi-locale (KODAMA, sferico dinamico: -u·K = energia di
-Kodama, VaidyaResults 3f) → convenzione da dichiarare (generico;
-analogo classico: brachistocrona con filo in movimento). Alternativa
-fisica mappata: rotaia motorizzata γ₀ (FLRWresults R6).
+Linear ∩ quadratic = **elliptic indicatrix** at every event ⇒ Randers/Zermelo
+form `dv = drift + norm` (Legendre dual of the PMP Hamiltonians
+with transversality H=0). It exists for ANY spacetime.
 
-**Realizzabilità del controllo (non euristica):**
-- costruttiva: f := Du/dτ ha f·u = 0 automaticamente (identità di
-  normalizzazione) ed è di tipo magnetico (f^μ = F^{μν}u_ν con F
-  antisimmetrico): ogni curva ammissibile è realizzabile da forza
-  esterna senza lavoro proprio; mantenere -u·W = E è UNA condizione
-  lineare su 3 gradi di libertà di forza ⇒ risolvibile fuori dal
-  luogo critico (v̄→0, orizzonte) — che coincide con le superfici
-  critiche mappate; μ calcolato esplicitamente (finito).
-- variazionale: lettura VAKONOMICA/controllo ottimo (si ottimizza la
-  rotaia, non si simula una rotaia data): PMP (nessuna autonomia
-  richiesta) + esistenza dei minimi via FILIPPOV (indicatrice compatta
-  convessa). Nota: per vincoli lineari in velocità la
-  procedura di d'Alembert–Chetaev differisce dalla vakonomica in
-  generale; qui non rileva (problema di ottimizzazione di forma) e le
-  due collassano nel limite stazionario (Perlick).
+The "conserved quantity" is replaced by the **active constraint**: E is a
+controlled invariant (Noether → control). Measurable cost: f·ξ of the
+rail force (Kerr: f_t=0 for free; FLRW: f_η=aH; Vaidya: f_v ∝ m′).
 
-Dettagli: `../VaidyaMetric/VaidyaResults.md`,
+Hierarchy of what symmetry buys:
+- ∂_v Killing → autonomous F (Perlick 1991 recovered), H conserved;
+- conformal Killing field / homothety → rigid skeleton (scalar index n(η,r), rigid wind
+  in Thakurta-Kerr, self-similar quotient in linear Vaidya);
+- ∂_φ Killing → Fermat momentum J (pure Noether): integrability of the ODE;
+- none → F exists but "breathes" entirely; without ∂_φ one would need HJ (a PDE).
+
+**Legitimacy of the constraint (status for the paper):**
+1. well-posedness: μ exists, f·u = 0 identically (= covariant "ideal" constraint:
+   preserving u·u = −1 is equivalent to f·u = 0) — proved;
+2. existence of minimisers also in the non-autonomous case: FILIPPOV's theorem
+   (compact convex indicatrix = our ellipse); the PMP does not
+   require autonomy;
+3. the null limit Ê→∞ = KOVNER-PERLICK Fermat principle, proved for
+   arbitrary spacetimes (anchor in the literature);
+4. equivalence with ZERMELO navigation (prescribed v(x,t)): the
+   constraint is a symmetric derivation of the velocity field, not
+   an ad hoc postulate.
+Status of the choice of W: theorem (Killing) → canonical selection (conformal Killing field:
+the only one that degenerates to Perlick + the null limit + minimal cost f·ξ) →
+quasi-local selection (KODAMA, dynamical spherical case: -u·K = Kodama energy,
+VaidyaResults 3f) → a convention to be declared (generic case;
+classical analogue: a brachistochrone with a moving wire). Mapped physical
+alternative: powered rail γ₀ (FLRWresults R6).
+
+**Realisability of the control (not heuristic):**
+- constructive: f := Du/dτ has f·u = 0 automatically (normalisation
+  identity) and is of magnetic type (f^μ = F^{μν}u_ν with F
+  antisymmetric): every admissible curve can be realised by an external
+  force without proper work; maintaining -u·W = E is ONE linear
+  condition on 3 force degrees of freedom ⇒ solvable away from the
+  critical locus (v̄→0, horizon) — which coincides with the mapped critical
+  surfaces; μ computed explicitly (finite).
+- variational: VAKONOMIC/optimal-control reading (the rail is optimised,
+  not a given rail simulated): PMP (no autonomy
+  required) + existence of minimisers through FILIPPOV (compact convex
+  indicatrix). Note: for constraints linear in the velocity the
+  d'Alembert–Chetaev procedure differs from the vakonomic one in
+  general; here it does not matter (a shape-optimisation problem) and the
+  two collapse in the stationary limit (Perlick).
+
+Details: `../VaidyaMetric/VaidyaResults.md`,
 `../ThakurtaMetric/ThakurtaResults.md`, `../SdSMetric/SdSresults.md`,
 `FLRWresults.md`.
 
-## 5. Riferimenti chiave
+## 5. Key references
 
 - **Perlick, V.** (1991), *The brachistochrone problem in a stationary space-time*,
-  J. Math. Phys. 32, 3148. [base stazionaria]
+  J. Math. Phys. 32, 3148. [stationary basis]
 - **Kovner, I.** (1990), *Fermat principle in arbitrary gravitational fields*,
-  ApJ 351, 114. [Fermat non stazionario per la luce]
+  ApJ 351, 114. [non-stationary Fermat principle for light]
 - **Perlick, V.** (2004), *Gravitational Lensing from a Spacetime Perspective*,
-  Living Rev. Relativity 7, 9. [Fermat generale, review]
+  Living Rev. Relativity 7, 9. [general Fermat principle, review]
 - **Gibbons, Herdeiro, Warnick, Werner** (2009), *Stationary metrics and optical
   Zermelo–Randers–Finsler geometry*, PRD 79, 044022. [Zermelo/Randers]
-- **Vaidya, P. C.** (1951), *The gravitational field of a radiating star*. [metrica di Vaidya]
-- Progetto Kerr di origine: `../KerrMetric/doranTau.md`, `doranT.md`, `doranOffEq.md`.
+- **Vaidya, P. C.** (1951), *The gravitational field of a radiating star*. [Vaidya metric]
+- Originating Kerr project: `../KerrMetric/doranTau.md`, `doranT.md`, `doranOffEq.md`.
 
 ---
 
-## 6. Contesto dal lavoro su Kerr (per continuità)
+## 6. Context from the Kerr work (for continuity)
 
-Risultati stazionari già stabiliti (da riusare come limite/confronto):
-- **Ramo τ** (tempo proprio, Riemanniano puro): penetra l'ergosfera **solo** a
-  `J=J_c=a/E` (misura nulla, prograde). Off-equatore riflette; θ-focusing verso
-  ~65° = manifestazione di `â_θθ=F→0` (metrica ottica "molle" in θ).
-- **Ramo t** (tempo coordinata, Randers): penetra un **intervallo** limitato
-  `(J_t^{c,−}, J_t^{c,+})` che include retrograde (frame dragging forza co-rotazione
-  a `F=0`). Soglie in **forma chiusa** (elementare + saddle-node). Crossover di
-  meccanismo a `a* ≈ M/√2`.
-- **Worldline vincolato**: regolare; il ramo t raggiunge l'ergosfera off-equatore
-  da ogni θ_0 con velocità/accelerazione finite (`dr/dτ→0` a `F=0`).
-- La singolarità `1/F` è **intrinseca alla riduzione ottica** (superficie di luce),
-  non alle coordinate. Nessun Carter esatto off-equatore.
+Stationary results already established (to be reused as limits or comparisons):
+- **τ branch** (proper time, purely Riemannian): penetrates the ergosphere **only** at
+  `J=J_c=a/E` (measure zero, prograde). Off the equator it reflects; θ-focusing towards
+  ~65° = a manifestation of `â_θθ=F→0` (optical metric "soft" in θ).
+- **t branch** (coordinate time, Randers): penetrates for a bounded **interval**
+  `(J_t^{c,−}, J_t^{c,+})` that includes retrograde orbits (frame dragging forces co-rotation
+  at `F=0`). Thresholds in **closed form** (elementary + saddle-node). Crossover of
+  mechanism at `a* ≈ M/√2`.
+- **Constrained worldline**: regular; the t branch reaches the ergosphere off the equator
+  from every θ_0 with finite velocity/acceleration (`dr/dτ→0` at `F=0`).
+- The `1/F` singularity is **intrinsic to the optical reduction** (light surface),
+  not to the coordinates. No exact Carter constant off the equator.
 
-L'aspettativa: in FLRW/Vaidya la "superficie di luce" diventa **dinamica**
-(orizzonte di Hubble / apparente in moto), e la fenomenologia di penetrazione
-acquista una **dimensione temporale** assente nel caso stazionario.
+The expectation: in FLRW/Vaidya the "light surface" becomes **dynamical**
+(Hubble horizon / moving apparent horizon), and the penetration phenomenology
+acquires a **temporal dimension** absent in the stationary case.

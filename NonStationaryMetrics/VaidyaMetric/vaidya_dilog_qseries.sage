@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# q-serie dilog genus-2 VAIDYA generico (a=0, param m). Template TK-tau: naming theta[delta]
-# + Omega=log theta-ratio nome-serie + dilog Lambda split Q(elem)+L(dilog), convergenza nome.
+# genus-2 dilog q-series for GENERIC VAIDYA (a=0, parameter m). TK-tau template: naming theta[delta]
+# + Omega = log theta-ratio as a nome series + dilog Lambda split into Q(elementary)+L(dilog), convergence in the nome.
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 from abelfunctions import RiemannTheta
@@ -25,14 +25,14 @@ def theta0_latt(z,t,N=8):
 odd=[(av,bv) for av in halfs for bv in halfs if abs(theta_af(np.zeros(2),av,bv,tau))<1e-6]
 av,bv=odd[1]
 def qn(sv): return sum(float(lam[i])*sv**i for i in range(6))
-# curva even + sorgente dm F (Vaidya)
+# even curve + source dm F (Vaidya)
 r,m,E,J=sp.symbols('r m E J')
 DE=(E**2-1)*r+2*m; S=sp.expand(r*(r-2*m)*DE*(r**2*(r-2*m)-J**2*DE)); K=J*DE
 dmF=sp.diff(K/sp.sqrt(S),m).subs({m:1,E:sp.Rational(7,5),J:sp.Rational(5,2)})
 dmFn=sp.lambdify(r,dmF,'numpy')
 def Sn(x):
     E7=1.4;DEn=(E7**2-1)*x+2; return float(x*(x-2)*DEn*(x**2*(x-2)-6.25*DEn))
-# turning e branch points (per w_of base)
+# turning point and branch points (for the base of w_of)
 Scoef=[float(c) for c in sp.Poly(S.subs({m:1,E:sp.Rational(7,5),J:sp.Rational(5,2)}),r).all_coeffs()]
 rts=np.sort(np.real(np.roots(Scoef))); rmin=rts[rts>3][0] if any(rts>3) else rts[-1]
 s_b=1.0/rmin
@@ -53,10 +53,10 @@ print("\n=== VAIDYA dilog: split Lambda = int Q dA (elem) + int L dA (dilog) ===
 for rv in [10.,8.,6.5]:
     LQ=quad(lambda x:Q_part(x)*dmFn(x),r0,rv,limit=60)[0]
     LL=quad(lambda x:L_partN(x)*dmFn(x),r0,rv,limit=60)[0]
-    print(f"  r={rv}: int Q dA(elem)={LQ:+.6f}  int L dA(dilog)={LL:+.6f}")
-print("\n=== convergenza q-serie del dilog in ordine di nome N (r=8) ===")
+    print(f"  r={rv}: int Q dA(elementary)={LQ:+.6f}  int L dA(dilog)={LL:+.6f}")
+print("\n=== convergence of the dilog q-series in the nome order N (r=8) ===")
 rv=8.0; ref=quad(lambda x:L_partN(x,8)*dmFn(x),r0,rv,limit=60)[0]
 for N in [1,2,3,4,6]:
     val=quad(lambda x:L_partN(x,N)*dmFn(x),r0,rv,limit=60)[0]
-    print(f"  N={N}: int L dA = {val:+.7f}  |diff da N=8| = {abs(val-ref):.1e}")
-print("\n=> VAIDYA: dilog = elem + serie di nome KE genus-2 convergente. Naming theta[delta] agli e_pm.")
+    print(f"  N={N}: int L dA = {val:+.7f}  |diff from N=8| = {abs(val-ref):.1e}")
+print("\n=> VAIDYA: dilog = elementary + convergent genus-2 Kronecker-Eisenstein nome series. Naming theta[delta] at the e_pm.")

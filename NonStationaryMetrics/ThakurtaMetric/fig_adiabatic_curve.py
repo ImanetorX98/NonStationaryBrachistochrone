@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-La curva WKB adiabatica singola: A(eta) varia lentamente LUNGO l'orbita.
+The single adiabatic WKB curve: A(eta) varies slowly ALONG the orbit.
 
-Equazione (ordine dominante WKB): la stessa forma chiusa, ma con E_eff che scorre
-DENTRO l'integrale:
+Equation (leading WKB order): the same closed form, but with E_eff running
+INSIDE the integral:
     phi_ad(r) = int_{r0}^r F(r'; Ehat/A(eta(r')), J/A(...)) dr'
-La curva adiabatica NON resta sull'orbita congelata iniziale: DERIVA attraverso
-la famiglia, interpolando tra la congelata a A_iniziale e quella a A_finale.
-Scostamento dalla congelata iniziale = O(A'/A).
+The adiabatic curve does NOT stay on the initial frozen orbit: it DRIFTS across
+the family, interpolating between the frozen orbit at the initial A and the one at the final A.
+Deviation from the initial frozen orbit = O(A'/A).
 
-Ramo t. A(eta(r)) modellato monotono lungo l'orbita (proxy del tempo trascorso).
+t branch. A(eta(r)) modelled as monotone along the orbit (a proxy for the elapsed time).
 """
 import os
 import sys
@@ -55,8 +55,8 @@ def frozen(A):
 
 
 def adiabatic(A_i, A_f):
-    """A(eta(r)) cresce da A_i a A_f andando verso il turning (proxy monotono)."""
-    rmn = rmin(Ehat/((A_i+A_f)/2))   # turning approx col E medio
+    """A(eta(r)) grows from A_i to A_f towards the turning point (monotone proxy)."""
+    rmn = rmin(Ehat/((A_i+A_f)/2))   # approximate turning point with the mean E
     def Aloc(r, going_in=True):
         s = max(0.0, min(1.0, (r0-r)/(r0-rmn)))
         return A_i + (A_f-A_i)*s
@@ -90,5 +90,5 @@ ax.legend(fontsize=5.4, loc='upper left', framealpha=0.9)
 savefig(fig, HERE, 'fig_adiabatic_curve')
 print(f"frozen A=1 turning r={rr_i.min():.3f}, A=1.2 turning r={rr_f.min():.3f}, "
       f"adiabatic turning r={rr_a.min():.3f}")
-print("=> l'adiabatica parte come A=1 (fuori) e vira come ~A=1.2 (dentro): infila la famiglia.")
-print('FATTO.')
+print("=> the adiabatic orbit starts like A=1 (outside) and turns like ~A=1.2 (inside): it threads the family.")
+print('DONE.')

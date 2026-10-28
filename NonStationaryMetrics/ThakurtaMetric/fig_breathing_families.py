@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 """
-Famiglie "che respirano" (ordine adiabatico dominante WKB) per ENTRAMBI i rami
-t e tau della brachistocrona Thakurta-Kerr.
+"Breathing" families (leading WKB adiabatic order) for BOTH the t and the tau
+branch of the Thakurta-Kerr brachistochrone.
 
-Rail energy Ehat FISSO; fattore conforme A che cresce => E_eff = Ehat/A decresce.
-Le forme chiuse Kerr(E_eff) sono l'ordine dominante WKB (famiglia congelata);
-la traiettoria vera le infila a O(A'/A) (correzione quasi-costante, Sec.V).
+FIXED rail energy Ehat; growing conformal factor A => E_eff = Ehat/A decreases.
+The closed forms Kerr(E_eff) are the leading WKB order (frozen family);
+the true trajectory threads through them at O(A'/A) (quasi-constant correction, Sec. V).
 
-Entrambi i rami respirano via LO STESSO E_eff (il ramo tau ha in piu' solo il
-prefattore A^-2 sul timing, non sulla forma). Mostro anche la soglia
-J_c = a/E_eff = a A/Ehat che CRESCE con A (la finestra di regimi si sposta).
+Both branches breathe through THE SAME E_eff (the tau branch only has, in addition, the
+prefactor A^-2 on the timing, not on the shape). Also shown is the threshold
+J_c = a/E_eff = a A/Ehat, which GROWS with A (the window of regimes moves).
 
-Uso le forme chiuse d(phi)/dr (BL):
+Closed forms d(phi)/dr used (BL):
   tau: J r sqrt(wf)/(Δ sqrt(Δ - J^2 w))
   t:   K(r)/sqrt(R6),  K=r[(E^2-1)r+2M](J(r-2M)+2Ma)/Δ
-integrando l'orbita di scattering (turning esterno) per una scala di A.
+integrating the scattering orbit (outer turning point) for a ladder of A.
 """
 import os
 import sys
@@ -57,7 +57,7 @@ def dphidr_t(r, E, J):
 
 
 def rmin_tau(E, J):
-    # turning esterno: Δ - J^2 w = 0 (se sopra r_e)
+    # outer turning point: Δ - J^2 w = 0 (if above r_e)
     try:
         return brentq(lambda r: Dl(r)-J**2*w(r, E), 2.0+1e-6, r0)
     except Exception:
@@ -85,7 +85,7 @@ def orbit(dphidr, rmin, E, J):
 
 As = np.array([1.0, 1.1, 1.2, 1.3, 1.4])
 Eeffs = Ehat/As
-Jt, Jtau = 6.0, 2.5   # scattering per entrambi (|J|>J_c nel range)
+Jt, Jtau = 6.0, 2.5   # scattering for both (|J|>J_c in the range)
 
 fig, axes = plt.subplots(1, 2, figsize=(2*COL, COL*1.02))
 th = np.linspace(0, 2*np.pi, 200)
@@ -111,6 +111,6 @@ for ax, (dphidr, rmin, Jv, name) in zip(
               title=r'$E_{\rm eff}=\hat E/A$', title_fontsize=5.2)
     print(f"{name}: r_min(A) = {[(round(A,1),round(r,3)) for A,r in rmins]}")
     print(f"     J_c=a/E_eff=aA/Ehat: "
-          f"{[(round(A,1),round(a*A/Ehat,3)) for A in As]}  (cresce con A)")
+          f"{[(round(A,1),round(a*A/Ehat,3)) for A in As]}  (grows with A)")
 savefig(fig, HERE, 'fig_breathing_families')
-print('FATTO.')
+print('DONE.')

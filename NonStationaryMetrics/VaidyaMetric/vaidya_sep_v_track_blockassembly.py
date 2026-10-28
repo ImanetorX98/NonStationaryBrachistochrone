@@ -1,6 +1,6 @@
-# VAIDYA ramo v: BLOCK ASSEMBLY del weight-2. delta phi_v = G~ v - int G~ v_z dz.
-# v_z = E r^3/(r-r_d) + r sqrt(Q4)/(r-2m)  [2o termine DISPARI, orizzonte 2-torsione].
-# Decompongo v_z in parti principali (contorno) -> int G~ v_z = sum coeff * dilog. Verifico=diretto.
+# VAIDYA v branch: BLOCK ASSEMBLY of the weight-2 part. delta phi_v = G~ v - int G~ v_z dz.
+# v_z = E r^3/(r-r_d) + r sqrt(Q4)/(r-2m)  [the second term is ODD, horizon = 2-torsion point].
+# Decompose v_z into principal parts (contour) -> int G~ v_z = sum coeff * dilog. Check = direct.
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try: from tqdm import tqdm
@@ -21,9 +21,9 @@ K=np.polymul([Jc],[E**2-1,2.0]); Nm=np.polysub(np.polymul(Sc,np.array([2*Jc])),0
 Msy=sp.symbols('M'); DEs=(Es**2-1)*r+2*Msy; Ss=r*(r-2*Msy)*DEs*(r**2*(r-2*Msy)-J**2*DEs); Ks=J*DEs
 N_J_sym=sp.expand((Ss*sp.diff(Ks,J)-sp.Rational(1,2)*Ks*sp.diff(Ss,J)).subs(Msy,m).subs(J,Jc))
 NJ=np.array([float(c) for c in sp.Poly(N_J_sym,r).all_coeffs()])
-dJcdm=Jc/m   # = j(E), scaling lineare Vaidya
+dJcdm=Jc/m   # = j(E), linear Vaidya scaling
 _L=max(len(Nm),len(NJ)); Nm=np.r_[np.zeros(_L-len(Nm)),Nm]+dJcdm*np.r_[np.zeros(_L-len(NJ)),NJ]  # Nm = N_tot
-log.info('TRACKING v: dJc/dm=Jc/m=%.5f, uso N_tot'%dJcdm)
+log.info('TRACKING v: dJc/dm=Jc/m=%.5f, using N_tot'%dJcdm)
 rts=np.roots(Sc); pr=[(i,j) for i in range(6) for j in range(i+1,6) if abs(rts[i]-rts[j])<1e-6]
 rd=float(np.real((rts[pr[0][0]]+rts[pr[0][1]])/2)); Q,_=np.polydiv(Sc,np.polymul([1,-rd],[1,-rd]))
 er=np.sort(np.real(np.roots(Q))); a4=Q[0]; e1r,e2r,e3r,e4r=er
@@ -53,10 +53,10 @@ def Gt(z):
     for nm,(aa,b) in PPr.items(): s+= b.get(1,0)*mp.log(wsig(z-aa))-b.get(2,0)*wzet(z-aa)-(b.get(3,0)/2)*wp(z-aa)
     return s
 def Gt_r(x): z=mp.mpf(zr(x)); return complex(Gt(z)-Gt(z0)).real
-def sqQ_z(z): return (1/sa)*(wp(z-z_inf)-wp(z+z_inf))   # = dr/dz = sqrt(Q4), meromorfa (ok z complesso)
-def vz(z):    rr=r_of_z(z); return E*rr**3/(rr-rd)+rr*sqQ_z(z)/(rr-2*m)   # esplicito (dispari, sqQ=dr/dz)
-log.info("decompongo v_z in parti principali (contorno)")
-# v_z poli: z_d,-z_d (da r^3/(r-r_d)); z_inf,-z_inf (da r^3 e sqrt(Q4)); iw (orizzonte, termine dispari)
+def sqQ_z(z): return (1/sa)*(wp(z-z_inf)-wp(z+z_inf))   # = dr/dz = sqrt(Q4), meromorphic (complex z is fine)
+def vz(z):    rr=r_of_z(z); return E*rr**3/(rr-rd)+rr*sqQ_z(z)/(rr-2*m)   # explicit (odd, sqQ=dr/dz)
+log.info("decomposing v_z into principal parts (contour)")
+# poles of v_z: z_d,-z_d (from r^3/(r-r_d)); z_inf,-z_inf (from r^3 and sqrt(Q4)); iw (horizon, odd term)
 def vz_c(z): return complex(vz(z))
 PPv={'zd':(mp.mpf(z_d),lau(vz_c,mp.mpf(z_d),1)),'mzd':(mp.mpf(-z_d),lau(vz_c,mp.mpf(-z_d),1)),
      'zi':(mp.mpf(z_inf),lau(vz_c,mp.mpf(z_inf),2)),'mzi':(mp.mpf(-z_inf),lau(vz_c,mp.mpf(-z_inf),2)),
@@ -64,13 +64,13 @@ PPv={'zd':(mp.mpf(z_d),lau(vz_c,mp.mpf(z_d),1)),'mzd':(mp.mpf(-z_d),lau(vz_c,mp.
 ztv=mp.mpf('0.12')
 def prcv(z): return sum(b.get(1,0)*wzet(z-aa)+b.get(2,0)*wp(z-aa) for aa,b in PPv.values())
 Cv=complex(vz_c(ztv)-prcv(ztv))
-# verifica ricostruzione v_z
+# check of the reconstruction of v_z
 recerr=max(abs(complex(vz_c(mp.mpf(t))-(Cv+prcv(mp.mpf(t))))) for t in [0.10,0.15,0.20])
-log.info("check v_z ricostruito da parti principali: %.1e  (poli: +-z_d,+-z_inf,iw)"%recerr)
-for nm,(aa,b) in PPv.items(): log.info("  v_z polo %s: res=%s  P-coeff=%s"%(nm,mp.nstr(b.get(1,0),4),mp.nstr(b.get(2,0),4)))
+log.info("check of v_z rebuilt from its principal parts: %.1e  (poles: +-z_d,+-z_inf,iw)"%recerr)
+for nm,(aa,b) in PPv.items(): log.info("  v_z pole %s: res=%s  P-coeff=%s"%(nm,mp.nstr(b.get(1,0),4),mp.nstr(b.get(2,0),4)))
 
-# --- BLOCK ASSEMBLY: int G~ v_z dz = somma atomi (G~-termini x v_z-parti-principali) ---
-# G~ termini: (coeff,kind,polo); v_z: Cv + sum e1 zeta(z-a) + e2 P(z-a)
+# --- BLOCK ASSEMBLY: int G~ v_z dz = sum of atoms (G~ terms x principal parts of v_z) ---
+# G~ terms: (coeff,kind,pole); v_z: Cv + sum e1 zeta(z-a) + e2 P(z-a)
 Gterms=[(C0,'z',mp.mpf(0))]
 for nm,(aa,b) in PPr.items():
     Gterms+=[(b.get(1,0),'lns',aa),(-b.get(2,0),'zet',aa),(-(b.get(3,0))/2,'wp',aa)]
@@ -89,7 +89,7 @@ def inner(k,p,z):
     key=(k,float(p.real),float(p.imag),float(z))
     if key in _ic: return _ic[key]
     v=mp.quad(lambda t: gf(k,p,t),[z0,z]); _ic[key]=v; return v
-def atomP(ki,pi,kj,pj,z): return mp.quad(lambda t: gf(ki,pi,t)*gf(kj,pj,t),[z0,z],maxdegree=8)  # PRODOTTO
+def atomP(ki,pi,kj,pj,z): return mp.quad(lambda t: gf(ki,pi,t)*gf(kj,pj,t),[z0,z],maxdegree=8)  # PRODUCT
 def intGvz_atoms(z):  # int G~ v_z dz = sum_{i,j} ci cj int gf_i gf_j dz
     return sum(ci*cj*atomP(ki,pi,kj,pj,z) for ci,ki,pi in Gterms for cj,kj,pj in Vterms)
 def sQ(x): return np.sqrt(Q4(x))
@@ -100,11 +100,11 @@ def dphi_direct(x): return quad(lambda t: src_track(t)*vclock(t), r0, x, limit=2
 def dphi_block(x):
     z=mp.mpf(zr(x)); return complex(Gt(z)).real*vclock(x)-complex(intGvz_atoms(z)).real
 natoms=len(Gterms)*len(Vterms)
-log.info("block assembly ramo v: %d prodotti (G~ %d x v_z %d)"%(natoms,len(Gterms),len(Vterms)))
-print("=== VAIDYA v TRACKING BLOCK: delta phi_v = G~ v - sum atomi(G~ x v_z)  vs DIRETTO ===")
+log.info("block assembly, v branch: %d products (G~ %d x v_z %d)"%(natoms,len(Gterms),len(Vterms)))
+print("=== VAIDYA v TRACKING BLOCK: delta phi_v = G~ v - sum of atoms(G~ x v_z)  against DIRECT ===")
 for x in tqdm([11.0,10.5,10.0],desc="v-block"):
     db=dphi_block(x); dd=dphi_direct(x)
     print(f"  r={x:4.2f}  block={db:+.8f}  dir={dd:+.8f}  diff={abs(db-dd):.1e}")
-# conta atomi dilog (lns x zet)
+# count the dilog atoms (lns x zet)
 ndl=sum(1 for ci,ki,pi in Gterms for cj,kj,pj in Vterms if ki=='lns' and kj=='zet' and abs(ci*cj)>1e-9)
-print("atomi dilog (lnσ×ζ) = %d ; totale prodotti = %d ; coeff = residui G~ x v_z (chiusi)."%(ndl,natoms))
+print("dilog atoms (lnσ×ζ) = %d ; total products = %d ; coefficients = residues of G~ x v_z (closed)."%(ndl,natoms))

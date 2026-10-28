@@ -14,11 +14,11 @@ import unittest
 
 DRIVER = Path(__file__).resolve().parents[1] / "paper1/build_paper1.sh"
 FIGURES = (
-    "fig_indicatrici", "fig_flrw_cinematica", "fig_flrw_variazionale",
-    "fig_flrw_curvatura", "fig_kodama_conservazione", "fig_vaidya_traiettorie",
-    "fig_vaidya_plunge_t_tau", "fig_vaidya_no_inversione_evaporazione",
+    "fig_indicatrices", "fig_flrw_kinematics", "fig_flrw_variational",
+    "fig_flrw_curvature", "fig_kodama_conservation", "fig_vaidya_trajectories",
+    "fig_vaidya_plunge_t_tau", "fig_vaidya_no_inversion_evaporation",
     "fig_vaidya_bounce", "fig_vaidya_timing", "fig_vaidya_offshell",
-    "fig_vaidya_kerr_a0", "fig_verifica_minimo_brachi",
+    "fig_vaidya_kerr_a0", "fig_brachistochrone_minimum_check",
 )
 
 

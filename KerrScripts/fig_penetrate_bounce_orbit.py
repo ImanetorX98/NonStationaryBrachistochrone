@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Orbita numerica Thakurta-Kerr (ramo t, J=3.2) che PENETRA l'ergosfera, RIMBALZA
-al turning interno (dentro r_e, fuori r_+) e RIESCE. Marca i due attraversamenti
-di r_e (entrata e uscita) e il turning.
+Numerical Thakurta-Kerr orbit (t-branch, J=3.2) that PENETRATES the ergosphere, BOUNCES
+at the inner turning point (inside r_e, outside r_+) and EXITS. It marks the two crossings
+of r_e (entry and exit) and the turning point.
 """
 import os, sys
 import numpy as np
@@ -37,9 +37,9 @@ rs = np.linspace(r_plus+1e-3, r0, 30000); v = R6(rs)
 idx = np.where(np.diff(np.sign(v)))[0]
 r_turn = max(brentq(R6, rs[i], rs[i+1]) for i in idx if rs[i] > r_plus)
 print(f"r_+={r_plus:.4f}, r_e={r_e}, turning={r_turn:.4f} "
-      f"({'DENTRO' if r_turn < r_e else 'fuori'} ergosfera)")
+      f"({'INSIDE' if r_turn < r_e else 'outside'} the ergosphere)")
 
-# orbita: incoming r0->turning, poi mirror (outgoing)
+# orbit: incoming r0->turning point, then mirrored (outgoing)
 u = np.linspace(0, 1, 3000)
 rr = r0 - (r0-(r_turn+3e-4))*(1-np.cos(u*np.pi/2))
 ph = np.array([quad(lambda x: Kf(x)/np.sqrt(max(R6(x), 1e-300)), r, r0,
@@ -51,7 +51,7 @@ x, y = rr_full*np.cos(ph_full), rr_full*np.sin(ph_full)
 
 fig, ax = plt.subplots(figsize=(COL*1.15, COL*1.1))
 th = np.linspace(0, 2*np.pi, 400)
-# colora il tratto dentro l'ergosfera diverso
+# colour the part inside the ergosphere differently
 inside = rr_full < r_e
 ax.plot(x, y, 'C0-', lw=1.6, label='orbit (outside $r_e$)')
 xi = np.where(inside, x, np.nan); yi = np.where(inside, y, np.nan)
@@ -59,7 +59,7 @@ ax.plot(xi, yi, 'C3-', lw=2.2, label='inside $r_e$: analytic continuation, optim
 ax.fill(r_e*np.cos(th), r_e*np.sin(th), color='b', alpha=0.06)
 ax.plot(r_e*np.cos(th), r_e*np.sin(th), 'b:', lw=1.0, label='$r_e$ (ergosphere)')
 ax.plot(r_plus*np.cos(th), r_plus*np.sin(th), 'k-', lw=1.0, label='$r_+$ (horizon)')
-# turning (rimbalzo) e attraversamenti di r_e
+# turning point (bounce) and crossings of r_e
 it = len(rr_full)//2
 ax.plot(x[it], y[it], 'r^', ms=7, mec='k', label='turning (bounce)')
 cross = np.where(np.diff(np.sign(rr_full-r_e)))[0]
@@ -78,4 +78,4 @@ ax.set_title(rf'Thakurta--Kerr $t$-brachistochrone ($J={J}$): penetrates $r_e$,'
              r'outside $r_+$), exits', fontsize=6.6)
 ax.legend(fontsize=5.4, loc='lower right', framealpha=0.95)
 savefig(fig, HERE, 'fig_penetrate_bounce_orbit')
-print('FATTO.')
+print('DONE.')

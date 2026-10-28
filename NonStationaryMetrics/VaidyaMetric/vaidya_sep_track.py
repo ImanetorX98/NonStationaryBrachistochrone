@@ -1,7 +1,7 @@
-# SEPARATRICE-TRACKING (J=Jc(m)): correzione adiabatica con Jc mobile.
-# sorgente = dm F + (Jc/m) dJ F = N_tot/S^{3/2},  N_tot = N_m + (Jc/m) N_J  (polinomiale).
-# STESSA macchina della tau (pole-adapted G, residui chiusi, dilog): cambia solo il numeratore.
-# Verifica: delta phi_track assemblato (G esplicito) = diretto int[dmF+(Jc/m)dJF] eta dr.
+# SEPARATRIX TRACKING (J=Jc(m)): adiabatic correction with a moving Jc.
+# source = dm F + (Jc/m) dJ F = N_tot/S^{3/2},  N_tot = N_m + (Jc/m) N_J  (polynomial).
+# The SAME machinery as for tau (pole-adapted G, closed residues, dilogs): only the numerator changes.
+# Check: assembled delta phi_track (explicit G) = direct int[dmF+(Jc/m)dJF] eta dr.
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try: from tqdm import tqdm
@@ -14,14 +14,14 @@ r,J=sp.symbols('r J'); Es=sp.Rational(7,5)
 Ssym=sp.expand(r*(r-2)*((Es**2-1)*r+2)*(r**2*(r-2)-J**2*((Es**2-1)*r+2)))
 Jc=float([s for s in sp.solve(sp.Eq(sp.resultant(Ssym,sp.diff(Ssym,r),r),0),J) if s.is_real and float(s)>1][0])
 jE=Jc/m   # dJc/dm = j(E) = Jc/m
-# --- numeratori simbolici N_m, N_J, N_tot ---
+# --- symbolic numerators N_m, N_J, N_tot ---
 Msym=sp.symbols('M',positive=True)
 DEm=(Es**2-1)*r+2*Msym; Sm=r*(r-2*Msym)*DEm*(r**2*(r-2*Msym)-J**2*DEm); Km=J*DEm
 N_m_sym=sp.expand((Sm*sp.diff(Km,Msym)-sp.Rational(1,2)*Km*sp.diff(Sm,Msym)).subs(Msym,m))
 N_J_sym=sp.expand((Sm.subs(Msym,m))*sp.diff((Km.subs(Msym,m)),J)-sp.Rational(1,2)*(Km.subs(Msym,m))*sp.diff((Sm.subs(Msym,m)),J))
 def poly_np(expr): return np.array([float(c) for c in sp.Poly(expr.subs(J,Jc),r).all_coeffs()])
 Nm=poly_np(N_m_sym); NJ=poly_np(N_J_sym)
-# allinea gradi e somma N_tot = N_m + jE*N_J
+# align the degrees and sum N_tot = N_m + jE*N_J
 L=max(len(Nm),len(NJ)); Nm_p=np.r_[np.zeros(L-len(Nm)),Nm]; NJ_p=np.r_[np.zeros(L-len(NJ)),NJ]
 Ntot=Nm_p+jE*NJ_p
 def pS(mv,Jv):
@@ -31,7 +31,7 @@ Sc=pS(m,Jc); rts=np.roots(Sc); pr=[(i,j) for i in range(6) for j in range(i+1,6)
 rd=float(np.real((rts[pr[0][0]]+rts[pr[0][1]])/2)); Q,_=np.polydiv(Sc,np.polymul([1,-rd],[1,-rd]))
 er=np.sort(np.real(np.roots(Q))); a4=Q[0]; e1r,e2r,e3r,e4r=er
 def Q4(x): return np.polyval(Q,x)
-log.info("Jc=%.6f j(E)=Jc/m=%.6f  N_tot grado=%d"%(Jc,jE,len(Ntot)-1))
+log.info("Jc=%.6f j(E)=Jc/m=%.6f  N_tot degree=%d"%(Jc,jE,len(Ntot)-1))
 k2=((e3r-e2r)*(e4r-e1r))/((e4r-e2r)*(e3r-e1r)); pref=2/mp.sqrt((e4r-e2r)*(e3r-e1r))/mp.sqrt(a4)
 om1=mp.mpf(float(pref*mp.ellipk(k2))); w_im=float(pref*mp.ellipk(1-k2)); tau=mp.mpc(0,w_im)/om1; qn=mp.exp(mp.pi*1j*tau)
 L1=lambda u: mp.jtheta(1,u,qn); L1p=lambda u: mp.jtheta(1,u,qn,1); L1pp=lambda u: mp.jtheta(1,u,qn,2); th1p0=L1p(0)
@@ -50,7 +50,7 @@ def r_of_z(z): return c_r-(1/sa)*(wzet(z-z_inf)-wzet(z+z_inf))
 def Rt(z): rr=r_of_z(z); return np.polyval(Ntot,rr)/((rr-rd)**3*np.polyval(Q,complex(rr)))   # R_track
 def lau(fun,a,order,eps=1e-3):
     return {n:complex(mp.quad(lambda th: fun(a+eps*mp.exp(1j*th))*(eps*mp.exp(1j*th))**(n-1)*(1j*eps*mp.exp(1j*th)),[0,2*mp.pi])/(2j*mp.pi)) for n in range(1,order+1)}
-log.info("parti principali di R_track (contorno)")
+log.info("principal parts of R_track (contour)")
 PPr={'zd':(mp.mpf(z_d),lau(Rt,mp.mpf(z_d),3)),'mzd':(mp.mpf(-z_d),lau(Rt,mp.mpf(-z_d),3)),
      'h0':(mp.mpf(0),lau(Rt,mp.mpf(0),2)),'h2':(iw,lau(Rt,iw,2))}
 def const_of(fun,PP,zt): return complex(fun(zt)-sum(b.get(1,0)*wzet(zt-a)+b.get(2,0)*wp(zt-a)+b.get(3,0)*(-wpp(zt-a)/2) for a,b in PP.values()))
@@ -59,7 +59,7 @@ def Gt(z):
     s=C0*z
     for nm,(a,b) in PPr.items(): s+= b.get(1,0)*mp.log(wsig(z-a))-b.get(2,0)*wzet(z-a)-(b.get(3,0)/2)*wp(z-a)
     return s
-# verifica dG/dz = R_track
+# check dG/dz = R_track
 d=max(abs(complex((Gt(mp.mpf(t)+mp.mpf('1e-7'))-Gt(mp.mpf(t)-mp.mpf('1e-7')))/mp.mpf('2e-7')-Rt(mp.mpf(t)))) for t in [0.15,0.22])
 log.info("check dG_track/dz = R_track : %.1e"%d)
 def Gt_r(x): z=mp.mpf(zr(x)); return complex(Gt(z)-Gt(z0)).real
@@ -67,15 +67,15 @@ def Gt_r(x): z=mp.mpf(zr(x)); return complex(Gt(z)-Gt(z0)).real
 def sQ(x): return np.sqrt(Q4(x))
 def U(x,k): return quad(lambda t:t**k/((t-rd)*sQ(t)),r0,x,limit=200)[0]
 def eta(x): return U(x,3)-2*m*U(x,2)
-def etap(x): return (x**3-2*m*x**2)/((x-rd)*sQ(x))   # eta' forma dz
-# sorgente diretta: dm F + (Jc/m) dJ F = N_tot/S^{3/2}
+def etap(x): return (x**3-2*m*x**2)/((x-rd)*sQ(x))   # eta' as a dz form
+# direct source: dm F + (Jc/m) dJ F = N_tot/S^{3/2}
 Sn=lambda x: np.polyval(Sc,x)
 def src(x): return np.polyval(Ntot,x)/Sn(x)**1.5
 def dphi_direct(x): return quad(lambda t: src(t)*eta(t), r0, x, limit=200)[0]
-def dphi_asm(x):    # IBP: G~ eta - int G~ eta'  (delta phi = int src*eta = int (dG/dr) eta)
+def dphi_asm(x):    # by parts: G~ eta - int G~ eta'  (delta phi = int src*eta = int (dG/dr) eta)
     return Gt_r(x)*eta(x) - quad(lambda t: Gt_r(t)*etap(t), r0, x, limit=120)[0]
-log.info("delta phi_track (assemblato G esplicito) vs diretto")
-print("=== delta phi_track|_sep (tau clock, J=Jc(m) tracked) : ASSEMBLATO vs DIRETTO ===")
+log.info("delta phi_track (assembled, explicit G) against direct")
+print("=== delta phi_track|_sep (tau clock, J=Jc(m) tracked) : ASSEMBLED against DIRECT ===")
 for x in tqdm([11.0,10.0,9.2],desc="track"):
     print(f"  r={x:4.1f}  asm={dphi_asm(x):+.8f}  dir={dphi_direct(x):+.8f}  diff={abs(dphi_asm(x)-dphi_direct(x)):.1e}")
-print("\nStessa macchina della tau (N_m -> N_tot): residui b_n^a, C0, C_e in forma chiusa identica.")
+print("\nSame machinery as for tau (N_m -> N_tot): residues b_n^a, C0, C_e in identical closed form.")

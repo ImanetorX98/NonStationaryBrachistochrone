@@ -1,6 +1,6 @@
-# SEPARATRICE Thakurta-Kerr (tau, tempo proprio). Stesso pipeline Vaidya, sorgente E-deriv.
+# Thakurta-Kerr SEPARATRIX (tau, proper time). Same pipeline as Vaidya, source = E derivative.
 # delta phi_TK = -Ehat (A'/A) int eta * dE F dr,  dE F = N_tau/S^{3/2}, N_tau=E J r^4(r-2M)^2 DE.
-# clock eta=U_3-2M U_2. Curva S=r(r-2M)DE(rDelta-J^2 DE), separatrice Jc (radice doppia cubico).
+# clock eta=U_3-2M U_2. Curve S=r(r-2M)DE(rDelta-J^2 DE), separatrix Jc (double root of the cubic).
 import numpy as np, mpmath as mp, sympy as sp, sys, logging
 from scipy.integrate import quad
 try: from tqdm import tqdm
@@ -11,19 +11,19 @@ log=logging.getLogger(); mp.mp.dps=30
 M=1.0; a=0.9; E=1.2; r0=20.0
 r,J=sp.symbols('r J'); Ms=1; asq=sp.Rational(81,100); Es=sp.Rational(6,5)
 DE=(Es**2-1)*r+2*Ms; Delta=r**2-2*Ms*r+asq
-g=sp.expand(r*Delta-J**2*DE)   # cubico
+g=sp.expand(r*Delta-J**2*DE)   # cubic
 Jc=float([complex(s).real for s in sp.solve(sp.Eq(sp.resultant(g,sp.diff(g,r),r),0),J) if abs(complex(s).imag)<1e-9 and complex(s).real>5][0])
 log.info("Jc(TK)=%.6f"%Jc)
 S_sym=sp.expand(r*(r-2*Ms)*DE*(r*Delta-J**2*DE)).subs(J,Jc)
 Sc=np.array([float(c) for c in sp.Poly(S_sym,r).all_coeffs()])
-# N_tau = E J r^4 (r-2M)^2 DE  (sorgente dE F)
+# N_tau = E J r^4 (r-2M)^2 DE  (source dE F)
 Ntau_sym=sp.expand(Es*J*r**4*(r-2*Ms)**2*DE).subs(J,Jc)
 Ntau=np.array([float(c) for c in sp.Poly(Ntau_sym,r).all_coeffs()])
 rts=np.roots(Sc); pr=[(i,j) for i in range(6) for j in range(i+1,6) if abs(rts[i]-rts[j])<1e-6]
 rd=float(np.real((rts[pr[0][0]]+rts[pr[0][1]])/2)); Q,_=np.polydiv(Sc,np.polymul([1,-rd],[1,-rd]))
 er=np.sort(np.real(np.roots(Q))); a4=Q[0]; e1r,e2r,e3r,e4r=er
 def Q4(x): return np.polyval(Q,x)
-log.info("r_d=%.5f  radici Q4=%s  a4=%.4f  turning e4=%.4f"%(rd,np.round(er,4),a4,e4r))
+log.info("r_d=%.5f  roots of Q4=%s  a4=%.4f  turning point e4=%.4f"%(rd,np.round(er,4),a4,e4r))
 k2=((e3r-e2r)*(e4r-e1r))/((e4r-e2r)*(e3r-e1r)); pref=2/mp.sqrt((e4r-e2r)*(e3r-e1r))/mp.sqrt(a4)
 om1=mp.mpf(float(pref*mp.ellipk(k2))); w_im=float(pref*mp.ellipk(1-k2)); tau=mp.mpc(0,w_im)/om1; qn=mp.exp(mp.pi*1j*tau)
 L1=lambda u: mp.jtheta(1,u,qn); L1p=lambda u: mp.jtheta(1,u,qn,1); L1pp=lambda u: mp.jtheta(1,u,qn,2); th1p0=L1p(0)
@@ -61,6 +61,6 @@ def Sn(x): return np.polyval(Sc,x)
 def dEF(x): return np.polyval(Ntau,x)/Sn(x)**1.5
 def dphi_direct(x): return quad(lambda t: dEF(t)*eta(t), r0, x, limit=200)[0]
 def dphi_asm(x): return Gt_r(x)*eta(x)-quad(lambda t: Gt_r(t)*etap(t), r0, x, limit=120)[0]
-print("\n=== TK tau separatrice: I = int eta dEF dr  (delta phi = -Ehat A'/A * I) : ASM vs DIR ===")
+print("\n=== TK tau separatrix: I = int eta dEF dr  (delta phi = -Ehat A'/A * I) : assembled against direct ===")
 for x in tqdm([19.0,18.0,17.0],desc="TK-tau"):
     print(f"  r={x:4.1f}  asm={dphi_asm(x):+.8e}  dir={dphi_direct(x):+.8e}  diff={abs(dphi_asm(x)-dphi_direct(x)):.1e}")

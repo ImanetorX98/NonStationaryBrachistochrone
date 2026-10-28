@@ -41,6 +41,6 @@ for A in [1.0,1.05,1.1]:
     Jcs=[complex(s).real for s in sp.solve(resA,J) if abs(complex(s).imag)<1e-9 and 2<complex(s).real<5]
     JcA=min((abs(jj-Ja),jj) for jj in Jcs)[1] if Jcs else float('nan')
     print(f"  A={A}: dilation gives J_eff={Ja:.5f}; separatrix at E_eff would be Jc={JcA:.5f}; on-sep? {abs(Ja-JcA)<1e-3}")
-print("\n=> se il raggio di dilatazione NON resta sulla separatrice, il doppio root si DISSOLVE:")
-print("   l'orbita ATTRAVERSA la separatrice sotto l'evoluzione adiabatica (separatrix crossing).")
-print("   => non un controtermine dr_d/dl, ma un problema di strato limite (Neishtadt).")
+print("\n=> if the dilation ray does NOT stay on the separatrix, the double root DISSOLVES:")
+print("   the orbit CROSSES the separatrix under the adiabatic evolution (separatrix crossing).")
+print("   => not a counterterm dr_d/dl, but a boundary-layer problem (Neishtadt).")

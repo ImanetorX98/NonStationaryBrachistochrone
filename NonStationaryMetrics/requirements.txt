@@ -22,11 +22,13 @@ tqdm
 #       (sage_env/setup_sage_env.sh does it: fixed revision, patch, Cython 3.0):
 #         KerrScripts/kerr_thirdkind_theta_closed.sage  (third-kind L = theta-ratio)
 #         KerrScripts/kerr_psi_forward_abel.sage        (Abel map + RiemannTheta)
-#         VaidyaMetric/vaidya_thirdkind_fay.sage        (Fay third-kind, Vaidya)
+#         exploratory/VaidyaMetric/vaidya_thirdkind_fay.sage        (Fay third-kind, Vaidya)
 #       Without it these raise ModuleNotFoundError at import.
 #
-# KerrSessionScripts/ additionally holds sixteen exploratory `.sage` files
-# (naming, q-series, W_ij reduction).  They are development scaffolding: none is
+# KerrSessionScripts/ additionally holds six `.sage` files (W_ij reduction,
+# a-periods, holomorphic part, difference-form naming, dilog q-series step 5) with
+# their preparsed `.sage.py` copies, and exploratory/ holds the superseded Sage
+# steps (naming v1-v3, q-series steps 1, 3, 4, Vaidya Fay third kind).  None is
 # cited by either manuscript and none appears in paper2/provenance/MANIFEST.tsv.
 # They are kept for the record, not required to reproduce any published number.
 #

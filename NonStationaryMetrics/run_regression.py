@@ -72,7 +72,7 @@ NUM = (r"(?>[-+]?(?:\d+\.?\d*(?:[eE][-+]?\d+)?|nan|inf(?:inity)?))"
 #   horizon dilogarithm the residual is the LAST column, elsewhere it follows the
 #   keyword -- and that is exactly why a single generic rule was unsafe.
 CHECKS = [
-    ("KerrScripts/pipeline_completa_deltaphi.py",
+    ("KerrScripts/deltaphi_full_pipeline.py",
      "residual", rf"difference\s*=\s*({NUM})", 1e-12,
      "end-to-end (M,a,E,J)->delta phi", 1),
     # Two field names in this script's output, and a prose line "if diff~1e-12"
@@ -123,7 +123,7 @@ SLOW = {
 # Consumer-owned sample identities. Reordering or translating stdout has no
 # effect; a missing, substituted or duplicate sample must fail verification.
 RESULT_SAMPLES = {
-    "pipeline_completa_deltaphi.py": ("assembly",),
+    "deltaphi_full_pipeline.py": ("assembly",),
     "kerr_psi_explicit_verified.py": ("reduction_r11", "reduction_r9", "reduction_r7", "reduction_r5", "clock_decomposition"),
     "kerr_tbranch_psi_assembly.py": ("second_kind_assembly", "full_clock_assembly"),
     "vaidya_dMF_reduction.py": ("reduction_r11", "reduction_r9", "reduction_r7", "reduction_r5"),

@@ -7,7 +7,7 @@ FOUR cases (Paper II, Proposition prop:classification): |J|>J_c smooth periapsis
 outside r_e; 0<|J|<J_c cusp on r_e; J=+J_c crosses r_e and plunges to r_+
 (capture, measure zero); J=-J_c reaches r_e only asymptotically.  This script uses
 the periapsis formula (*) and the crossing line (**); the cusp and the two marginal
-cases are treated in cuspide_ergosfera.py.
+cases are treated in ergosphere_cusp.py.
 
 ANALYTIC FORMULA (derivation): with constant A, g = A^2 g_Kerr is rescaled
 Kerr: the rail worldline with Ehat = -u_eta is equivalent to the Kerr

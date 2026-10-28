@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# NAMING peso-1 a livello INTEGRALE (TK tau, genus-2): U_k = funzioni tabulate theta[delta]
-# agli e_pm. Le primitive sono valutate DIRETTAMENTE (log theta-ratio, zeta_delta), non
-# integrando le derivate -> verifica vera. Poi assemblo il clock eta=U3-2M U2 nominato.
+# Weight-1 NAMING at the INTEGRAL level (TK tau, genus-2): U_k = tabulated functions theta[delta]
+# at e_pm. The primitives are evaluated DIRECTLY (log theta-ratio, zeta_delta), not by
+# integrating the derivatives -> a genuine check. Then assemble the named clock eta=U3-2M U2.
 #   U_k(r) = a_k u1 + b_k u2 + c_k L_rat + d_k Zp1 + e_k Zp2 + f_k Zm1 + g_k Zm2 + const
-#   L_rat = log[theta[d](w-e+)/theta[d](w-e-)] (3a specie), Zpm = zeta_delta(w-e_pm) (2a).
+#   L_rat = log[theta[d](w-e+)/theta[d](w-e-)] (third kind), Zpm = zeta_delta(w-e_pm) (second kind).
 from sage.all import QQ
 from sage.schemes.riemann_surfaces.riemann_surface import RiemannSurface as SageRS
 from abelfunctions import RiemannTheta
@@ -36,13 +36,13 @@ def theta_d(z,av,bv,order=0):
     return H/th-np.outer(g/th,g/th)
 halfs=[np.array(v)/2 for v in itertools.product([0,1],repeat=2)]
 odd=[(av,bv) for av in halfs for bv in halfs if abs(theta_d(np.zeros(2),av,bv))<1e-6]
-av,bv=odd[1]   # delta #1 (migliore)
-print("uso delta #1 a=",av," b=",bv)
+av,bv=odd[1]   # delta #1 (best)
+print("using delta #1 a=",av," b=",bv)
 
 def Sn(rv):
     Dl=rv**2-2*M*rv+a**2; Emu=(Ehat**2-1)*rv+2*M
     return rv*(rv-2*M)*Emu*(rv*Dl-J**2*Emu)
-# --- (1) coefficienti dal DIFFERENZIALE: r^k/sqrtS = sum coeff * basis_diff ---
+# --- (1) coefficients from the DIFFERENTIAL: r^k/sqrtS = sum coeff * basis_diff ---
 rg=np.linspace(11.5,rmin+0.4,22); sr=1.0/rg; dsdr=-1.0/rg**2
 du1dr=(1/np.sqrt(qn(sr)))*dsdr; du2dr=(sr/np.sqrt(qn(sr)))*dsdr
 W=np.array([w_of(sv) for sv in sr]); dwdr=(ominv@np.vstack([du1dr,du2dr])).T; sqrtS=np.sqrt(Sn(rg))
@@ -56,37 +56,37 @@ for k in [2,3,4]:
     coeffs[k]=coef
     print(f"  k={k}: coeff(u1,u2,Lrat,Zp1,Zp2,Zm1,Zm2)=",np.round(coef,4))
 
-# --- (2) PRIMITIVE nominate valutate DIRETTAMENTE (non integrando derivate) ---
+# --- (2) named PRIMITIVES evaluated DIRECTLY (not by integrating derivatives) ---
 def named_prims(rv):
     sv=1.0/rv; w=w_of(sv)
     Lrat=np.log(theta_d(w-e_plus,av,bv,0)/theta_d(w-e_minus,av,bv,0))
     Zp=theta_d(w-e_plus,av,bv,1); Zm=theta_d(w-e_minus,av,bv,1)
-    # u1,u2 (olomorfe) = integrale abeliano diretto (coordinate Jacobiane, "nominate" = Abel map)
+    # u1,u2 (holomorphic) = direct abelian integral (Jacobian coordinates, "named" = Abel map)
     return w,Lrat,Zp,Zm
-def u_hol(rv):  # (u1,u2) unnormalizzate base r0
+def u_hol(rv):  # (u1,u2) unnormalised, base point r0
     s_to=1.0/rv
     I0=quad(lambda t:1.0/np.sqrt(qn(t)),1.0/11.5,s_to,limit=200)[0]
     I1=quad(lambda t:t/np.sqrt(qn(t)),1.0/11.5,s_to,limit=200)[0]
     return np.array([I0,I1])
-def named_vec(rv):   # vettore [u1,u2,Lrat,Zp1,Zp2,Zm1,Zm2]
+def named_vec(rv):   # vector [u1,u2,Lrat,Zp1,Zp2,Zm1,Zm2]
     _,Lrat,Zp,Zm=named_prims(rv); uh=u_hol(rv)
     return np.array([uh[0],uh[1],Lrat,Zp[0],Zp[1],Zm[0],Zm[1]])
 def Uk_direct(k,rv): return quad(lambda x:x**k/np.sqrt(Sn(x)),11.5,rv,limit=200)[0]
 
 r0=11.5; base=named_vec(r0)
-print("\n=== VERIFICA INTEGRALE: U_k(r) = coeff . [named(r)-named(r0)]  (floor theta ~1e-4) ===")
+print("\n=== INTEGRAL CHECK: U_k(r) = coeff . [named(r)-named(r0)]  (theta floor ~1e-4) ===")
 rtest=[10.0,8.0,6.0,4.6]
 for k in [2,3,4]:
     print(f"  k={k}:")
     for rv in rtest:
         rec=complex(coeffs[k]@(named_vec(rv)-base)).real
         dr=Uk_direct(k,rv); print(f"    r={rv}: U_k(named)={rec:+.6f}  U_k(dir)={dr:+.6f}  diff={abs(rec-dr):.1e}")
-# --- (3) clock eta = U3 - 2M U2 nominato ---
-print("\n=== clock eta = U3 - 2M U2 in forma nominata theta[delta] ===")
+# --- (3) named clock eta = U3 - 2M U2 ---
+print("\n=== clock eta = U3 - 2M U2 in named theta[delta] form ===")
 ceta=coeffs[3]-2*M*coeffs[2]
 print("  coeff eta (u1,u2,Lrat,Zp1,Zp2,Zm1,Zm2)=",np.round(ceta,4))
 for rv in rtest:
     rec=complex(ceta@(named_vec(rv)-base)).real
     dr=Uk_direct(3,rv)-2*M*Uk_direct(2,rv); print(f"    r={rv}: eta(named)={rec:+.6f} eta(dir)={dr:+.6f} diff={abs(rec-dr):.1e}")
-print("\n=> se diff~1e-4: clock e U_k NOMINATI in theta[delta] agli e_pm (funzioni tabulate).")
-print("   3a specie=log theta-ratio; 2a specie=zeta_delta. phi0 e clock CHIUSI. Coeff dal differenziale.")
+print("\n=> if diff~1e-4: clock and U_k NAMED in theta[delta] at e_pm (tabulated functions).")
+print("   third kind=log theta-ratio; second kind=zeta_delta. phi0 and clock CLOSED. Coeffs from the differential.")
