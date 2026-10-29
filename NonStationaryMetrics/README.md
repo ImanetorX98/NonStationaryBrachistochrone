@@ -201,8 +201,8 @@ measurements by default, independently of the printed messages. Optional
 is available for migration comparisons only. See [VERIFICATION_JSON.md](VERIFICATION_JSON.md)
 for the format, strict failure rules and supported scope. Run
 `python3 tests/test_verification_results.py` to check the JSON contracts without
-scientific dependencies. This development change is intended for the next release;
-the archived v1.8.3 remains unchanged.
+scientific dependencies. The JSON transport is part of release v1.8.4; v1.8.3 and
+earlier read the printed messages.
 
 - **Python (sympy/mpmath/numpy/scipy)** — algebraic reductions, genus-1 closed forms
   (Weierstrass via `mpmath.jtheta`), numerical checks, figures. Standalone:
